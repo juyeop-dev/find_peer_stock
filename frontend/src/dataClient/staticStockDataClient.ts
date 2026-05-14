@@ -9,6 +9,7 @@ function assetUrl(path: string, cacheBust = false): string {
 
 async function fetchJson<T>(path: string, cacheBust = false): Promise<T> {
   const response = await fetch(assetUrl(path, cacheBust), {
+    cache: cacheBust ? "no-store" : "default",
     headers: {
       Accept: "application/json"
     }

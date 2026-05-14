@@ -62,8 +62,29 @@ export function StockPage() {
     }
 
     let alive = true;
+    let inFlight = false;
+    let timeoutId: number | undefined;
 
-    const poll = async () => {
+    const clearScheduledPoll = () => {
+      if (timeoutId !== undefined) {
+        window.clearTimeout(timeoutId);
+        timeoutId = undefined;
+      }
+    };
+
+    const schedulePoll = () => {
+      clearScheduledPoll();
+      timeoutId = window.setTimeout(() => {
+        void poll();
+      }, STOCK_POLL_INTERVAL_MS);
+    };
+
+    async function poll() {
+      if (inFlight) {
+        return;
+      }
+
+      inFlight = true;
       try {
         const payload = await getStockSummary(ticker, true);
         if (!alive) {
@@ -76,22 +97,42 @@ export function StockPage() {
           }
           return current;
         });
-        setLastAutoCheckedAt(new Date().toISOString());
         setError(null);
       } catch (exc) {
         if (alive) {
           setError(exc instanceof Error ? exc.message : "자동 갱신 데이터를 불러오지 못했습니다.");
         }
+      } finally {
+        inFlight = false;
+        if (alive) {
+          setLastAutoCheckedAt(new Date().toISOString());
+          schedulePoll();
+        }
+      }
+    }
+
+    const pollNow = () => {
+      if (inFlight) {
+        return;
+      }
+
+      clearScheduledPoll();
+      void poll();
+    };
+
+    const handleVisibilityChange = () => {
+      if (document.visibilityState === "visible") {
+        pollNow();
       }
     };
 
-    const intervalId = window.setInterval(() => {
-      void poll();
-    }, STOCK_POLL_INTERVAL_MS);
+    schedulePoll();
+    document.addEventListener("visibilitychange", handleVisibilityChange);
 
     return () => {
       alive = false;
-      window.clearInterval(intervalId);
+      clearScheduledPoll();
+      document.removeEventListener("visibilitychange", handleVisibilityChange);
     };
   }, [ticker]);
 
