@@ -1,0 +1,91 @@
+{
+  "generated_at": "2026-05-14T21:58:47.081298+09:00",
+  "company": {
+    "id": "0981_hk",
+    "name_kr": "SMIC",
+    "name_en": "Semiconductor Manufacturing International",
+    "ticker": "0981.HK",
+    "country": "홍콩",
+    "theme": "Foundry",
+    "market_note": "",
+    "sector": "Foundry",
+    "note": "중국 파운드리",
+    "title": "",
+    "is_target": false
+  },
+  "quote": {
+    "ticker": "0981.HK",
+    "price": 71.5,
+    "previous_close": 74.15,
+    "change": -2.6500000000000057,
+    "change_pct": -3.5738368172623103,
+    "currency": "HKD",
+    "source": "Yahoo Finance",
+    "fetched_at": "2026-05-14T21:38:19.330414+09:00",
+    "market_time": "2026-05-14T17:09:00+09:00",
+    "basis_label": null,
+    "status": "ok",
+    "error": null,
+    "market": "HKEX",
+    "market_country": "홍콩",
+    "market_timezone": "Asia/Hong_Kong",
+    "market_status": "closed",
+    "market_status_reason": "outside regular session in Asia/Hong_Kong",
+    "market_session": "09:30-12:00, 13:00-16:00",
+    "refresh_status": "market_closed_reused",
+    "last_checked_at": "2026-05-14T21:58:47.081298+09:00"
+  },
+  "peer_groups": [
+    {
+      "group": {
+        "emoji": "↔",
+        "name": "연결된 대상 종목",
+        "summary": "이 종목을 peer로 보는 종목"
+      },
+      "peers": [
+        {
+          "company": {
+            "id": "samsung_electronics",
+            "name_kr": "삼성전자",
+            "name_en": "삼성전자",
+            "ticker": "005930.KS",
+            "country": "한국",
+            "theme": "메모리 / HBM / NAND / 파운드리",
+            "market_note": "메모리·파운드리 peer 가격 확인",
+            "sector": "",
+            "note": "",
+            "title": "삼성전자 peer 체크",
+            "is_target": true
+          },
+          "quote": {
+            "ticker": "005930.KS",
+            "price": 296000.0,
+            "previous_close": 284000.0,
+            "change": 12000.0,
+            "change_pct": 4.23,
+            "currency": "KRW",
+            "source": "Naver Finance / TradingView",
+            "fetched_at": "2026-05-14T21:38:19.330414+09:00",
+            "market_time": "2026-05-14T16:10:00+09:00",
+            "basis_label": "2026.05.14 KRX 장마감",
+            "status": "ok",
+            "error": null,
+            "market": "KRX",
+            "market_country": "한국",
+            "market_timezone": "Asia/Seoul",
+            "market_status": "closed",
+            "market_status_reason": "outside regular session in Asia/Seoul",
+            "market_session": "09:00-15:30",
+            "refresh_status": "market_closed_reused",
+            "last_checked_at": "2026-05-14T21:58:47.081298+09:00"
+          },
+          "summary_path": "data/stocks/005930.KS.json"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    "Naver Finance / TradingView",
+    "Yahoo Finance"
+  ]
+}

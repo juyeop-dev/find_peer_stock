@@ -1,0 +1,91 @@
+{
+  "generated_at": "2026-05-14T21:58:47.081298+09:00",
+  "company": {
+    "id": "fcx",
+    "name_kr": "Freeport-McMoRan",
+    "name_en": "Freeport-McMoRan",
+    "ticker": "FCX",
+    "country": "미국",
+    "theme": "구리 / 금 광산",
+    "market_note": "",
+    "sector": "구리 / 금 광산",
+    "note": "구리",
+    "title": "",
+    "is_target": false
+  },
+  "quote": {
+    "ticker": "FCX",
+    "price": 67.345,
+    "previous_close": 66.03,
+    "change": 1.3149999999999977,
+    "change_pct": 1.991519006512199,
+    "currency": "USD",
+    "source": "Yahoo Finance",
+    "fetched_at": "2026-05-14T21:38:19.330414+09:00",
+    "market_time": "2026-05-14T21:37:36+09:00",
+    "basis_label": null,
+    "status": "ok",
+    "error": null,
+    "market": "NYSE/Nasdaq",
+    "market_country": "미국",
+    "market_timezone": "America/New_York",
+    "market_status": "closed",
+    "market_status_reason": "outside regular session in America/New_York",
+    "market_session": "09:30-16:00",
+    "refresh_status": "market_closed_reused",
+    "last_checked_at": "2026-05-14T21:58:47.081298+09:00"
+  },
+  "peer_groups": [
+    {
+      "group": {
+        "emoji": "↔",
+        "name": "연결된 대상 종목",
+        "summary": "이 종목을 peer로 보는 종목"
+      },
+      "peers": [
+        {
+          "company": {
+            "id": "ls",
+            "name_kr": "LS",
+            "name_en": "LS",
+            "ticker": "006260.KS",
+            "country": "한국",
+            "theme": "전선 / 전력기기 / 구리",
+            "market_note": "전력망·전선·구리 peer 가격 확인",
+            "sector": "",
+            "note": "",
+            "title": "LS peer 체크",
+            "is_target": true
+          },
+          "quote": {
+            "ticker": "006260.KS",
+            "price": 505000.0,
+            "previous_close": 517000.0,
+            "change": -12000.0,
+            "change_pct": -2.32,
+            "currency": "KRW",
+            "source": "Naver Finance / TradingView",
+            "fetched_at": "2026-05-14T21:38:19.330414+09:00",
+            "market_time": "2026-05-14T16:10:00+09:00",
+            "basis_label": "2026.05.14 KRX 장마감",
+            "status": "ok",
+            "error": null,
+            "market": "KRX",
+            "market_country": "한국",
+            "market_timezone": "Asia/Seoul",
+            "market_status": "closed",
+            "market_status_reason": "outside regular session in Asia/Seoul",
+            "market_session": "09:00-15:30",
+            "refresh_status": "market_closed_reused",
+            "last_checked_at": "2026-05-14T21:58:47.081298+09:00"
+          },
+          "summary_path": "data/stocks/006260.KS.json"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    "Naver Finance / TradingView",
+    "Yahoo Finance"
+  ]
+}

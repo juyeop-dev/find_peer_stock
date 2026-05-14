@@ -1,0 +1,129 @@
+{
+  "generated_at": "2026-05-14T21:58:47.081298+09:00",
+  "company": {
+    "id": "285a_t",
+    "name_kr": "키옥시아",
+    "name_en": "Kioxia Holdings",
+    "ticker": "285A.T",
+    "country": "일본",
+    "theme": "NAND / SSD",
+    "market_note": "",
+    "sector": "NAND / SSD",
+    "note": "NAND·SSD",
+    "title": "",
+    "is_target": false
+  },
+  "quote": {
+    "ticker": "285A.T",
+    "price": 48460.0,
+    "previous_close": 50500.0,
+    "change": -2040.0,
+    "change_pct": -4.039603960396043,
+    "currency": "JPY",
+    "source": "Yahoo Finance",
+    "fetched_at": "2026-05-14T21:38:19.330414+09:00",
+    "market_time": "2026-05-14T15:30:00+09:00",
+    "basis_label": null,
+    "status": "ok",
+    "error": null,
+    "market": "TSE",
+    "market_country": "일본",
+    "market_timezone": "Asia/Tokyo",
+    "market_status": "closed",
+    "market_status_reason": "outside regular session in Asia/Tokyo",
+    "market_session": "09:00-11:30, 12:30-15:30",
+    "refresh_status": "market_closed_reused",
+    "last_checked_at": "2026-05-14T21:58:47.081298+09:00"
+  },
+  "peer_groups": [
+    {
+      "group": {
+        "emoji": "↔",
+        "name": "연결된 대상 종목",
+        "summary": "이 종목을 peer로 보는 종목"
+      },
+      "peers": [
+        {
+          "company": {
+            "id": "samsung_electronics",
+            "name_kr": "삼성전자",
+            "name_en": "삼성전자",
+            "ticker": "005930.KS",
+            "country": "한국",
+            "theme": "메모리 / HBM / NAND / 파운드리",
+            "market_note": "메모리·파운드리 peer 가격 확인",
+            "sector": "",
+            "note": "",
+            "title": "삼성전자 peer 체크",
+            "is_target": true
+          },
+          "quote": {
+            "ticker": "005930.KS",
+            "price": 296000.0,
+            "previous_close": 284000.0,
+            "change": 12000.0,
+            "change_pct": 4.23,
+            "currency": "KRW",
+            "source": "Naver Finance / TradingView",
+            "fetched_at": "2026-05-14T21:38:19.330414+09:00",
+            "market_time": "2026-05-14T16:10:00+09:00",
+            "basis_label": "2026.05.14 KRX 장마감",
+            "status": "ok",
+            "error": null,
+            "market": "KRX",
+            "market_country": "한국",
+            "market_timezone": "Asia/Seoul",
+            "market_status": "closed",
+            "market_status_reason": "outside regular session in Asia/Seoul",
+            "market_session": "09:00-15:30",
+            "refresh_status": "market_closed_reused",
+            "last_checked_at": "2026-05-14T21:58:47.081298+09:00"
+          },
+          "summary_path": "data/stocks/005930.KS.json"
+        },
+        {
+          "company": {
+            "id": "sk_hynix",
+            "name_kr": "SK하이닉스",
+            "name_en": "SK하이닉스",
+            "ticker": "000660.KS",
+            "country": "한국",
+            "theme": "HBM / DRAM / NAND",
+            "market_note": "메모리 peer 가격 확인",
+            "sector": "",
+            "note": "",
+            "title": "SK하이닉스 peer 체크",
+            "is_target": true
+          },
+          "quote": {
+            "ticker": "000660.KS",
+            "price": 1970000.0,
+            "previous_close": 1976000.0,
+            "change": -6000.0,
+            "change_pct": -0.3,
+            "currency": "KRW",
+            "source": "Naver Finance / TradingView",
+            "fetched_at": "2026-05-14T21:38:19.330414+09:00",
+            "market_time": "2026-05-14T16:10:00+09:00",
+            "basis_label": "2026.05.14 KRX 장마감",
+            "status": "ok",
+            "error": null,
+            "market": "KRX",
+            "market_country": "한국",
+            "market_timezone": "Asia/Seoul",
+            "market_status": "closed",
+            "market_status_reason": "outside regular session in Asia/Seoul",
+            "market_session": "09:00-15:30",
+            "refresh_status": "market_closed_reused",
+            "last_checked_at": "2026-05-14T21:58:47.081298+09:00"
+          },
+          "summary_path": "data/stocks/000660.KS.json"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    "Naver Finance / TradingView",
+    "Yahoo Finance"
+  ]
+}

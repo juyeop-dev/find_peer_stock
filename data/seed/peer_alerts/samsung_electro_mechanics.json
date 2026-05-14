@@ -1,0 +1,107 @@
+{
+  "id": "samsung_electro_mechanics",
+  "title": "삼성전기 peer 체크",
+  "target": {
+    "name_kr": "삼성전기",
+    "ticker": "009150.KS",
+    "theme": "MLCC / FC-BGA / 패키지기판"
+  },
+  "market_note": "일본·대만 정규장 마감 후 가격 확인",
+  "display_timezone": "Asia/Seoul",
+  "peer_groups": [
+    {
+      "emoji": "🔩",
+      "name": "MLCC / 수동부품",
+      "summary": "MLCC peer",
+      "peers": [
+        {
+          "country": "일본",
+          "name_kr": "무라타제작소",
+          "name_en": "Murata Manufacturing",
+          "ticker": "6981.T",
+          "sector": "MLCC / 수동부품",
+          "note": "MLCC 1위"
+        },
+        {
+          "country": "일본",
+          "name_kr": "TDK",
+          "name_en": "TDK Corporation",
+          "ticker": "6762.T",
+          "sector": "MLCC / 2차전지 / 센서",
+          "note": "MLCC·센서"
+        },
+        {
+          "country": "일본",
+          "name_kr": "태양유덴",
+          "name_en": "Taiyo Yuden",
+          "ticker": "6976.T",
+          "sector": "MLCC / 전자부품",
+          "note": "MLCC"
+        },
+        {
+          "country": "대만",
+          "name_kr": "야게오",
+          "name_en": "Yageo",
+          "ticker": "2327.TW",
+          "sector": "MLCC / 저항 / 수동부품",
+          "note": "MLCC·저항"
+        },
+        {
+          "country": "대만",
+          "name_kr": "Walsin Technology",
+          "name_en": "Walsin Technology",
+          "ticker": "2492.TW",
+          "sector": "MLCC / 수동부품",
+          "note": "MLCC·저항"
+        },
+        {
+          "country": "대만",
+          "name_kr": "Holy Stone",
+          "name_en": "Holy Stone",
+          "ticker": "3026.TW",
+          "sector": "MLCC",
+          "note": "MLCC"
+        }
+      ]
+    },
+    {
+      "emoji": "🧱",
+      "name": "FC-BGA / IC substrate / 패키지기판",
+      "summary": "기판 peer",
+      "peers": [
+        {
+          "country": "일본",
+          "name_kr": "이비덴",
+          "name_en": "Ibiden",
+          "ticker": "4062.T",
+          "sector": "IC substrate / ABF",
+          "note": "ABF 기판"
+        },
+        {
+          "country": "일본",
+          "name_kr": "교세라",
+          "name_en": "Kyocera",
+          "ticker": "6971.T",
+          "sector": "세라믹 / 반도체 패키지 / 전자부품",
+          "note": "세라믹 패키지"
+        },
+        {
+          "country": "대만",
+          "name_kr": "유니마이크론",
+          "name_en": "Unimicron",
+          "ticker": "3037.TW",
+          "sector": "IC substrate / PCB",
+          "note": "IC 기판"
+        },
+        {
+          "country": "대만",
+          "name_kr": "킨서스",
+          "name_en": "Kinsus",
+          "ticker": "3189.TW",
+          "sector": "IC substrate / ABF",
+          "note": "ABF 기판"
+        }
+      ]
+    }
+  ]
+}

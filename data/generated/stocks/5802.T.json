@@ -1,0 +1,91 @@
+{
+  "generated_at": "2026-05-14T21:58:47.081298+09:00",
+  "company": {
+    "id": "5802_t",
+    "name_kr": "스미토모전기공업",
+    "name_en": "Sumitomo Electric",
+    "ticker": "5802.T",
+    "country": "일본",
+    "theme": "전선 / 전장부품",
+    "market_note": "",
+    "sector": "전선 / 전장부품",
+    "note": "전선",
+    "title": "",
+    "is_target": false
+  },
+  "quote": {
+    "ticker": "5802.T",
+    "price": 12105.0,
+    "previous_close": 12775.0,
+    "change": -670.0,
+    "change_pct": -5.244618395303324,
+    "currency": "JPY",
+    "source": "Yahoo Finance",
+    "fetched_at": "2026-05-14T21:38:19.330414+09:00",
+    "market_time": "2026-05-14T15:30:00+09:00",
+    "basis_label": null,
+    "status": "ok",
+    "error": null,
+    "market": "TSE",
+    "market_country": "일본",
+    "market_timezone": "Asia/Tokyo",
+    "market_status": "closed",
+    "market_status_reason": "outside regular session in Asia/Tokyo",
+    "market_session": "09:00-11:30, 12:30-15:30",
+    "refresh_status": "market_closed_reused",
+    "last_checked_at": "2026-05-14T21:58:47.081298+09:00"
+  },
+  "peer_groups": [
+    {
+      "group": {
+        "emoji": "↔",
+        "name": "연결된 대상 종목",
+        "summary": "이 종목을 peer로 보는 종목"
+      },
+      "peers": [
+        {
+          "company": {
+            "id": "ls",
+            "name_kr": "LS",
+            "name_en": "LS",
+            "ticker": "006260.KS",
+            "country": "한국",
+            "theme": "전선 / 전력기기 / 구리",
+            "market_note": "전력망·전선·구리 peer 가격 확인",
+            "sector": "",
+            "note": "",
+            "title": "LS peer 체크",
+            "is_target": true
+          },
+          "quote": {
+            "ticker": "006260.KS",
+            "price": 505000.0,
+            "previous_close": 517000.0,
+            "change": -12000.0,
+            "change_pct": -2.32,
+            "currency": "KRW",
+            "source": "Naver Finance / TradingView",
+            "fetched_at": "2026-05-14T21:38:19.330414+09:00",
+            "market_time": "2026-05-14T16:10:00+09:00",
+            "basis_label": "2026.05.14 KRX 장마감",
+            "status": "ok",
+            "error": null,
+            "market": "KRX",
+            "market_country": "한국",
+            "market_timezone": "Asia/Seoul",
+            "market_status": "closed",
+            "market_status_reason": "outside regular session in Asia/Seoul",
+            "market_session": "09:00-15:30",
+            "refresh_status": "market_closed_reused",
+            "last_checked_at": "2026-05-14T21:58:47.081298+09:00"
+          },
+          "summary_path": "data/stocks/006260.KS.json"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    "Naver Finance / TradingView",
+    "Yahoo Finance"
+  ]
+}

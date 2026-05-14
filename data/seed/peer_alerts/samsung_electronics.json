@@ -1,0 +1,106 @@
+{
+  "id": "samsung_electronics",
+  "title": "삼성전자 peer 체크",
+  "target": {
+    "name_kr": "삼성전자",
+    "ticker": "005930.KS",
+    "theme": "메모리 / HBM / NAND / 파운드리"
+  },
+  "market_note": "메모리·파운드리 peer 가격 확인",
+  "display_timezone": "Asia/Seoul",
+  "peer_groups": [
+    {
+      "emoji": "🧠",
+      "name": "DRAM / HBM",
+      "summary": "메모리 peer",
+      "peers": [
+        {
+          "country": "미국",
+          "name_kr": "마이크론",
+          "name_en": "Micron Technology",
+          "ticker": "MU",
+          "sector": "DRAM / HBM / NAND",
+          "note": "DRAM·HBM"
+        },
+        {
+          "country": "대만",
+          "name_kr": "난야 테크놀로지",
+          "name_en": "Nanya Technology",
+          "ticker": "2408.TW",
+          "sector": "DRAM",
+          "note": "DRAM"
+        },
+        {
+          "country": "대만",
+          "name_kr": "윈본드",
+          "name_en": "Winbond Electronics",
+          "ticker": "2344.TW",
+          "sector": "Specialty DRAM / Flash",
+          "note": "특수 DRAM"
+        }
+      ]
+    },
+    {
+      "emoji": "💾",
+      "name": "NAND / SSD / Flash",
+      "summary": "NAND peer",
+      "peers": [
+        {
+          "country": "미국",
+          "name_kr": "샌디스크",
+          "name_en": "Sandisk",
+          "ticker": "SNDK",
+          "sector": "NAND / SSD",
+          "note": "NAND·SSD"
+        },
+        {
+          "country": "일본",
+          "name_kr": "키옥시아",
+          "name_en": "Kioxia Holdings",
+          "ticker": "285A.T",
+          "sector": "NAND / SSD",
+          "note": "NAND·SSD"
+        },
+        {
+          "country": "대만",
+          "name_kr": "매크로닉스",
+          "name_en": "Macronix",
+          "ticker": "2337.TW",
+          "sector": "NOR / NAND Flash",
+          "note": "Flash"
+        }
+      ]
+    },
+    {
+      "emoji": "🏭",
+      "name": "Foundry / Logic",
+      "summary": "파운드리 peer",
+      "peers": [
+        {
+          "country": "대만",
+          "name_kr": "TSMC",
+          "name_en": "Taiwan Semiconductor Manufacturing",
+          "ticker": "2330.TW",
+          "sector": "Foundry",
+          "note": "파운드리 1위"
+        },
+        {
+          "country": "대만",
+          "name_kr": "UMC",
+          "name_en": "United Microelectronics",
+          "ticker": "2303.TW",
+          "sector": "Foundry",
+          "note": "성숙공정"
+        },
+        {
+          "country": "홍콩",
+          "name_kr": "SMIC",
+          "name_en": "Semiconductor Manufacturing International",
+          "ticker": "0981.HK",
+          "sector": "Foundry",
+          "note": "중국 파운드리"
+        }
+      ]
+    }
+  ]
+}

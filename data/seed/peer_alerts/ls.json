@@ -1,0 +1,123 @@
+{
+  "id": "ls",
+  "title": "LS peer 체크",
+  "target": {
+    "name_kr": "LS",
+    "ticker": "006260.KS",
+    "theme": "전선 / 전력기기 / 구리"
+  },
+  "market_note": "전력망·전선·구리 peer 가격 확인",
+  "display_timezone": "Asia/Seoul",
+  "peer_groups": [
+    {
+      "emoji": "⚡",
+      "name": "국내 전력망 / 전선",
+      "summary": "국내 peer",
+      "active": false,
+      "peers": [
+        {
+          "country": "한국",
+          "name_kr": "LS ELECTRIC",
+          "name_en": "LS ELECTRIC",
+          "ticker": "010120.KS",
+          "sector": "전력기기 / 전력 인프라",
+          "note": "전력기기"
+        },
+        {
+          "country": "한국",
+          "name_kr": "대한전선",
+          "name_en": "Taihan Cable & Solution",
+          "ticker": "001440.KS",
+          "sector": "초고압 / 해저 케이블",
+          "note": "전력케이블"
+        },
+        {
+          "country": "한국",
+          "name_kr": "일진전기",
+          "name_en": "Iljin Electric",
+          "ticker": "103590.KS",
+          "sector": "초고압 전력기기 / 변압기",
+          "note": "변압기·전선"
+        },
+        {
+          "country": "한국",
+          "name_kr": "효성중공업",
+          "name_en": "Hyosung Heavy Industries",
+          "ticker": "298040.KS",
+          "sector": "변압기 / 전력기기",
+          "note": "변압기"
+        },
+        {
+          "country": "한국",
+          "name_kr": "가온전선",
+          "name_en": "Gaon Cable",
+          "ticker": "000500.KS",
+          "sector": "전력 / 통신 케이블",
+          "note": "전선"
+        }
+      ]
+    },
+    {
+      "emoji": "🔌",
+      "name": "일본 전선 / 전력기기",
+      "summary": "일본 peer",
+      "peers": [
+        {
+          "country": "일본",
+          "name_kr": "후지쿠라",
+          "name_en": "Fujikura",
+          "ticker": "5803.T",
+          "sector": "광섬유 / 전선",
+          "note": "광섬유·전선"
+        },
+        {
+          "country": "일본",
+          "name_kr": "스미토모전기공업",
+          "name_en": "Sumitomo Electric",
+          "ticker": "5802.T",
+          "sector": "전선 / 전장부품",
+          "note": "전선"
+        },
+        {
+          "country": "일본",
+          "name_kr": "후루카와전기",
+          "name_en": "Furukawa Electric",
+          "ticker": "5801.T",
+          "sector": "전선 / 광섬유",
+          "note": "전선·광섬유"
+        },
+        {
+          "country": "일본",
+          "name_kr": "미쓰비시전기",
+          "name_en": "Mitsubishi Electric",
+          "ticker": "6503.T",
+          "sector": "FA / 전력기기",
+          "note": "전력기기"
+        }
+      ]
+    },
+    {
+      "emoji": "🟠",
+      "name": "구리 / 원자재",
+      "summary": "구리 peer",
+      "peers": [
+        {
+          "country": "미국",
+          "name_kr": "Freeport-McMoRan",
+          "name_en": "Freeport-McMoRan",
+          "ticker": "FCX",
+          "sector": "구리 / 금 광산",
+          "note": "구리"
+        },
+        {
+          "country": "미국",
+          "name_kr": "Southern Copper",
+          "name_en": "Southern Copper",
+          "ticker": "SCCO",
+          "sector": "구리 광산",
+          "note": "구리"
+        }
+      ]
+    }
+  ]
+}
