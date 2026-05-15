@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-16T00:03:35.366369+09:00",
+  "generated_at": "2026-05-16T05:21:33.567322+09:00",
   "company": {
     "id": "2303_tw",
     "name_kr": "UMC",
@@ -30,9 +30,10 @@
     "market_country": "대만",
     "market_timezone": "Asia/Taipei",
     "market_status": "closed",
-    "market_status_reason": "outside regular session in Asia/Taipei",
+    "market_status_reason": "weekend in Asia/Taipei",
     "market_session": "09:00-13:30",
-    "refresh_status": "fetched"
+    "refresh_status": "market_closed_reused",
+    "last_checked_at": "2026-05-16T05:21:33.567322+09:00"
   },
   "peer_groups": [
     {
@@ -75,7 +76,8 @@
             "market_status": "closed",
             "market_status_reason": "weekend in Asia/Seoul",
             "market_session": "09:00-15:30",
-            "refresh_status": "fetched"
+            "refresh_status": "market_closed_reused",
+            "last_checked_at": "2026-05-16T05:21:33.567322+09:00"
           },
           "summary_path": "data/stocks/005930.KS.json"
         }

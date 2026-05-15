@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-16T00:03:35.366369+09:00",
+  "generated_at": "2026-05-16T05:21:33.567322+09:00",
   "company": {
     "id": "mu",
     "name_kr": "마이크론",
@@ -15,22 +15,22 @@
   },
   "quote": {
     "ticker": "MU",
-    "price": 729.6099853515625,
+    "price": 725.2,
     "previous_close": 776.01,
-    "change": -46.40001464843749,
-    "change_pct": -5.979306278068264,
+    "change": -50.809999999999945,
+    "change_pct": -6.547596036133552,
     "currency": "USD",
     "source": "Yahoo Finance",
-    "fetched_at": "2026-05-16T00:03:35.366369+09:00",
-    "market_time": "2026-05-16T00:03:47+09:00",
+    "fetched_at": "2026-05-16T05:21:33.567322+09:00",
+    "market_time": "2026-05-16T05:21:31+09:00",
     "basis_label": null,
     "status": "ok",
     "error": null,
     "market": "NYSE/Nasdaq",
     "market_country": "미국",
     "market_timezone": "America/New_York",
-    "market_status": "open",
-    "market_status_reason": "regular session open",
+    "market_status": "closed",
+    "market_status_reason": "post-close refresh window until 19:00 in America/New_York",
     "market_session": "09:30-16:00",
     "refresh_status": "fetched"
   },
@@ -75,7 +75,8 @@
             "market_status": "closed",
             "market_status_reason": "weekend in Asia/Seoul",
             "market_session": "09:00-15:30",
-            "refresh_status": "fetched"
+            "refresh_status": "market_closed_reused",
+            "last_checked_at": "2026-05-16T05:21:33.567322+09:00"
           },
           "summary_path": "data/stocks/005930.KS.json"
         },
@@ -112,7 +113,8 @@
             "market_status": "closed",
             "market_status_reason": "weekend in Asia/Seoul",
             "market_session": "09:00-15:30",
-            "refresh_status": "fetched"
+            "refresh_status": "market_closed_reused",
+            "last_checked_at": "2026-05-16T05:21:33.567322+09:00"
           },
           "summary_path": "data/stocks/000660.KS.json"
         }
