@@ -5,7 +5,7 @@ import json
 import shutil
 import sys
 from dataclasses import dataclass
-from datetime import datetime, time
+from datetime import datetime, time, timedelta
 from pathlib import Path
 from typing import Any
 from zoneinfo import ZoneInfo
@@ -16,6 +16,7 @@ SEED_DIR = PROJECT_ROOT / "data" / "seed" / "peer_alerts"
 GENERATED_DIR = PROJECT_ROOT / "data" / "generated"
 FRONTEND_DATA_DIR = PROJECT_ROOT / "frontend" / "public" / "data"
 KST = ZoneInfo("Asia/Seoul")
+POST_CLOSE_FETCH_GRACE_MINUTES = 180
 MARKET_SCHEDULES = {
     "한국": {
         "market": "KRX",
@@ -80,6 +81,7 @@ class MarketState:
     market: str
     timezone: str
     is_open: bool
+    should_fetch: bool
     local_time: datetime
     reason: str
     session_label: str
@@ -103,7 +105,7 @@ def main() -> None:
         )
 
     if args.skip_write_when_no_fetch and should_skip_write(quotes):
-        print("No market-open fetches were needed; kept existing static data unchanged.")
+        print("No market refresh-window fetches were needed; kept existing static data unchanged.")
         return
 
     write_static_data(catalog, quotes, generated_at=generated_at, output_dir=args.output_dir)
@@ -324,7 +326,7 @@ def build_quote_snapshot(
     if no_fetch:
         return empty_quote(ticker, generated_at, "not fetched", market_state, refresh_status="not_fetched")
 
-    if not force_fetch and not market_state.is_open:
+    if not force_fetch and not market_state.should_fetch:
         if previous_quote:
             return reuse_previous_quote(previous_quote, generated_at, market_state)
         return empty_quote(
@@ -527,6 +529,7 @@ def get_market_state(ticker: str, current_time: datetime) -> MarketState:
             market="Unknown",
             timezone="Asia/Seoul",
             is_open=False,
+            should_fetch=False,
             local_time=local_time,
             reason="market schedule not configured",
             session_label="-",
@@ -543,6 +546,7 @@ def get_market_state(ticker: str, current_time: datetime) -> MarketState:
             market=str(schedule["market"]),
             timezone=timezone,
             is_open=False,
+            should_fetch=False,
             local_time=local_time,
             reason=f"weekend in {timezone}",
             session_label=session_label,
@@ -550,13 +554,27 @@ def get_market_state(ticker: str, current_time: datetime) -> MarketState:
 
     local_clock = local_time.time()
     is_open = any(start <= local_clock < end for start, end in sessions)
+    final_close_time = sessions[-1][1]
+    final_close = datetime.combine(local_time.date(), final_close_time, tzinfo=ZoneInfo(timezone))
+    post_close_deadline = final_close + timedelta(minutes=POST_CLOSE_FETCH_GRACE_MINUTES)
+    is_post_close_refresh_window = final_close <= local_time <= post_close_deadline
+    should_fetch = is_open or is_post_close_refresh_window
+
+    if is_open:
+        reason = "regular session open"
+    elif is_post_close_refresh_window:
+        reason = f"post-close refresh window until {post_close_deadline:%H:%M} in {timezone}"
+    else:
+        reason = f"outside refresh window in {timezone}"
+
     return MarketState(
         country=country,
         market=str(schedule["market"]),
         timezone=timezone,
         is_open=is_open,
+        should_fetch=should_fetch,
         local_time=local_time,
-        reason="regular session open" if is_open else f"outside regular session in {timezone}",
+        reason=reason,
         session_label=session_label,
     )
 
