@@ -60,6 +60,10 @@ npm run build
 3. GitHub Pages artifact 업로드
 4. GitHub Pages 배포
 
-스케줄은 GitHub Actions가 허용하는 최단 주기인 5분입니다. 실제 실행 시각은 GitHub Actions 부하에 따라 지연될 수 있습니다.
+스케줄은 GitHub Actions가 허용하는 최단 주기인 5분입니다. 실제 실행 시각은 GitHub Actions 부하에 따라 지연되거나 일부 누락될 수 있으므로, 화면의 `generated_at`을 기준으로 최신성을 확인합니다.
+
+수동으로 즉시 갱신하려면 Actions에서 `Build Stock Peer Site`를 `Run workflow`로 실행합니다. 장 마감 후에도 모든 ticker를 다시 조회하려면 `force_fetch`를 켭니다.
+
+로컬에서 `data/generated`와 `frontend/public/data`를 직접 갱신해 `main`에 푸시해도 GitHub Pages 배포가 다시 실행됩니다.
 
 GitHub Pages는 repository settings에서 `GitHub Actions` 배포 소스로 설정합니다.

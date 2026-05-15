@@ -2,14 +2,17 @@ name: Build Stock Peer Site
 
 on:
   workflow_dispatch:
+    inputs:
+      force_fetch:
+        description: "Fetch every ticker, ignoring market hours."
+        required: false
+        type: boolean
+        default: false
   schedule:
     - cron: "*/5 * * * *"
   push:
     branches:
       - main
-    paths-ignore:
-      - "data/generated/**"
-      - "frontend/public/data/**"
 
 permissions:
   contents: write
@@ -33,7 +36,15 @@ jobs:
           python-version: "3.12"
 
       - name: Generate stock data
-        run: python scripts/generate_static_data.py --skip-write-when-no-fetch
+        shell: bash
+        env:
+          FORCE_FETCH: ${{ github.event_name == 'workflow_dispatch' && inputs.force_fetch == true }}
+        run: |
+          generate_args=(--skip-write-when-no-fetch)
+          if [[ "$FORCE_FETCH" == "true" ]]; then
+            generate_args=(--force-fetch)
+          fi
+          python scripts/generate_static_data.py "${generate_args[@]}"
 
       - name: Commit generated stock data
         if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
