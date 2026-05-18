@@ -19,6 +19,10 @@ TWSE_STOCK_DAY_URL = "https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY"
 TWSE_SSL_CONTEXT = ssl._create_unverified_context()
 
 
+class TaiwanQuoteUnavailable(MarketDataError):
+    pass
+
+
 def is_taiwan_ticker(ticker: str) -> bool:
     return ticker.upper().endswith(".TW")
 
@@ -26,15 +30,16 @@ def is_taiwan_ticker(ticker: str) -> bool:
 def fetch_taiwan_quote(ticker: str) -> Quote:
     code = _extract_taiwan_code(ticker)
     today = datetime.now(tz=TPE)
-    errors = []
 
-    for query_month in (today, _previous_month(today)):
+    try:
+        return _fetch_twse_stock_day_quote(ticker, code, today)
+    except TaiwanQuoteUnavailable as current_month_error:
         try:
-            return _fetch_twse_stock_day_quote(ticker, code, query_month)
-        except MarketDataError as exc:
-            errors.append(str(exc))
-
-    raise MarketDataError(f"{ticker}: TWSE daily quote failed: {'; '.join(errors)}")
+            return _fetch_twse_stock_day_quote(ticker, code, _previous_month(today))
+        except MarketDataError as previous_month_error:
+            raise MarketDataError(
+                f"{ticker}: TWSE daily quote failed: {current_month_error}; {previous_month_error}"
+            ) from previous_month_error
 
 
 def _extract_taiwan_code(ticker: str) -> str:
@@ -74,7 +79,7 @@ def _fetch_twse_stock_day_quote(ticker: str, code: str, query_month: datetime) -
     rows = payload.get("data") or []
     if payload.get("stat") != "OK" or not rows:
         stat = payload.get("stat") or "empty response"
-        raise MarketDataError(f"{ticker}: TWSE {stat}")
+        raise TaiwanQuoteUnavailable(f"{ticker}: TWSE {stat}")
 
     fields = {name: index for index, name in enumerate(payload.get("fields") or [])}
     latest = _select_quote_row(rows)
@@ -97,8 +102,6 @@ def _fetch_twse_stock_day_quote(ticker: str, code: str, query_month: datetime) -
 
 
 def _select_quote_row(rows: list[list[Any]]) -> list[Any]:
-    if len(rows) >= 2:
-        return rows[-2]
     return rows[-1]
 
 

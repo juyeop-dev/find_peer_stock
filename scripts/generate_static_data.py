@@ -81,6 +81,7 @@ class MarketState:
     market: str
     timezone: str
     is_open: bool
+    is_pre_open: bool
     should_fetch: bool
     local_time: datetime
     reason: str
@@ -326,6 +327,14 @@ def build_quote_snapshot(
     if no_fetch:
         return empty_quote(ticker, generated_at, "not fetched", market_state, refresh_status="not_fetched")
 
+    if market_state.is_pre_open and previous_quote:
+        return reuse_previous_quote(
+            previous_quote,
+            generated_at,
+            market_state,
+            refresh_status="pre_open_reused",
+        )
+
     if not force_fetch and not market_state.should_fetch:
         if previous_quote:
             return reuse_previous_quote(previous_quote, generated_at, market_state)
@@ -359,10 +368,7 @@ def fetch_quote(ticker: str) -> Quote:
         return fetch_korean_quote(ticker)
 
     if is_taiwan_ticker and is_taiwan_ticker(ticker):
-        try:
-            return fetch_taiwan_quote(ticker)
-        except MarketDataError:
-            return fetch_latest_quote(ticker)
+        return fetch_taiwan_quote(ticker)
 
     include_prepost = ticker.upper() in {"FCX", "MU", "SCCO", "SNDK"}
     return fetch_latest_quote(ticker, include_prepost=include_prepost)
@@ -390,9 +396,11 @@ def reuse_previous_quote(
     previous_quote: dict[str, Any],
     generated_at: datetime,
     market_state: MarketState,
+    *,
+    refresh_status: str = "market_closed_reused",
 ) -> dict[str, Any]:
     reused = {**previous_quote}
-    reused.update(market_state_fields(market_state, refresh_status="market_closed_reused"))
+    reused.update(market_state_fields(market_state, refresh_status=refresh_status))
     reused["last_checked_at"] = generated_at.isoformat()
     return reused
 
@@ -529,6 +537,7 @@ def get_market_state(ticker: str, current_time: datetime) -> MarketState:
             market="Unknown",
             timezone="Asia/Seoul",
             is_open=False,
+            is_pre_open=False,
             should_fetch=False,
             local_time=local_time,
             reason="market schedule not configured",
@@ -546,6 +555,7 @@ def get_market_state(ticker: str, current_time: datetime) -> MarketState:
             market=str(schedule["market"]),
             timezone=timezone,
             is_open=False,
+            is_pre_open=False,
             should_fetch=False,
             local_time=local_time,
             reason=f"weekend in {timezone}",
@@ -553,7 +563,9 @@ def get_market_state(ticker: str, current_time: datetime) -> MarketState:
         )
 
     local_clock = local_time.time()
+    first_open_time = sessions[0][0]
     is_open = any(start <= local_clock < end for start, end in sessions)
+    is_pre_open = local_clock < first_open_time
     final_close_time = sessions[-1][1]
     final_close = datetime.combine(local_time.date(), final_close_time, tzinfo=ZoneInfo(timezone))
     post_close_deadline = final_close + timedelta(minutes=POST_CLOSE_FETCH_GRACE_MINUTES)
@@ -562,6 +574,8 @@ def get_market_state(ticker: str, current_time: datetime) -> MarketState:
 
     if is_open:
         reason = "regular session open"
+    elif is_pre_open:
+        reason = f"before regular session open in {timezone}"
     elif is_post_close_refresh_window:
         reason = f"post-close refresh window until {post_close_deadline:%H:%M} in {timezone}"
     else:
@@ -572,6 +586,7 @@ def get_market_state(ticker: str, current_time: datetime) -> MarketState:
         market=str(schedule["market"]),
         timezone=timezone,
         is_open=is_open,
+        is_pre_open=is_pre_open,
         should_fetch=should_fetch,
         local_time=local_time,
         reason=reason,
@@ -635,7 +650,7 @@ def infer_source(ticker: str) -> str:
     if country == "한국":
         return "Naver Finance / TradingView"
     if country == "대만":
-        return "TWSE / Yahoo Finance"
+        return "TWSE"
     return "Yahoo Finance"
 
 
