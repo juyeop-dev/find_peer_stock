@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-18T22:23:07.045145+09:00",
+  "generated_at": "2026-05-19T03:23:52.952168+09:00",
   "company": {
     "id": "mu",
     "name_kr": "마이크론",
@@ -15,25 +15,24 @@
   },
   "quote": {
     "ticker": "MU",
-    "price": 743.5,
-    "previous_close": 776.00995,
-    "change": -32.50995,
-    "change_pct": -4.1893728295622985,
+    "price": 666.7800903320312,
+    "previous_close": 724.66,
+    "change": -57.87990966796872,
+    "change_pct": -7.987181528988597,
     "currency": "USD",
     "source": "Yahoo Finance",
-    "fetched_at": "2026-05-18T18:27:28.139075+09:00",
-    "market_time": "2026-05-18T18:27:37+09:00",
+    "fetched_at": "2026-05-19T03:23:52.952168+09:00",
+    "market_time": "2026-05-19T03:23:52+09:00",
     "basis_label": null,
     "status": "ok",
     "error": null,
     "market": "NYSE/Nasdaq",
     "market_country": "미국",
     "market_timezone": "America/New_York",
-    "market_status": "closed",
-    "market_status_reason": "before regular session open in America/New_York",
+    "market_status": "open",
+    "market_status_reason": "regular session open",
     "market_session": "09:30-16:00",
-    "refresh_status": "pre_open_reused",
-    "last_checked_at": "2026-05-18T22:23:07.045145+09:00"
+    "refresh_status": "fetched"
   },
   "peer_groups": [
     {
@@ -74,9 +73,10 @@
             "market_country": "한국",
             "market_timezone": "Asia/Seoul",
             "market_status": "closed",
-            "market_status_reason": "outside refresh window in Asia/Seoul",
+            "market_status_reason": "before regular session open in Asia/Seoul",
             "market_session": "09:00-15:30",
-            "refresh_status": "fetched"
+            "refresh_status": "pre_open_reused",
+            "last_checked_at": "2026-05-19T03:23:52.952168+09:00"
           },
           "summary_path": "data/stocks/005930.KS.json"
         },
@@ -111,9 +111,10 @@
             "market_country": "한국",
             "market_timezone": "Asia/Seoul",
             "market_status": "closed",
-            "market_status_reason": "outside refresh window in Asia/Seoul",
+            "market_status_reason": "before regular session open in Asia/Seoul",
             "market_session": "09:00-15:30",
-            "refresh_status": "fetched"
+            "refresh_status": "pre_open_reused",
+            "last_checked_at": "2026-05-19T03:23:52.952168+09:00"
           },
           "summary_path": "data/stocks/000660.KS.json"
         }
