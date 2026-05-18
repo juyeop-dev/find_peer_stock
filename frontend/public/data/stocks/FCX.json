@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-16T05:21:33.567322+09:00",
+  "generated_at": "2026-05-18T17:30:20.543525+09:00",
   "company": {
     "id": "fcx",
     "name_kr": "Freeport-McMoRan",
@@ -30,9 +30,10 @@
     "market_country": "미국",
     "market_timezone": "America/New_York",
     "market_status": "closed",
-    "market_status_reason": "post-close refresh window until 19:00 in America/New_York",
+    "market_status_reason": "outside refresh window in America/New_York",
     "market_session": "09:30-16:00",
-    "refresh_status": "fetched"
+    "refresh_status": "market_closed_reused",
+    "last_checked_at": "2026-05-18T17:30:20.543525+09:00"
   },
   "peer_groups": [
     {
@@ -58,25 +59,24 @@
           },
           "quote": {
             "ticker": "006260.KS",
-            "price": 472500.0,
-            "previous_close": 505000.0,
-            "change": -32500.0,
-            "change_pct": -6.44,
+            "price": 528000.0,
+            "previous_close": 472500.0,
+            "change": 55500.0,
+            "change_pct": 11.75,
             "currency": "KRW",
             "source": "Naver Finance / TradingView",
-            "fetched_at": "2026-05-16T00:03:35.366369+09:00",
-            "market_time": "2026-05-15T16:10:00+09:00",
-            "basis_label": "2026.05.15 KRX 장마감",
+            "fetched_at": "2026-05-18T17:30:20.543525+09:00",
+            "market_time": "2026-05-18T16:10:00+09:00",
+            "basis_label": "2026.05.18 KRX 장마감",
             "status": "ok",
             "error": null,
             "market": "KRX",
             "market_country": "한국",
             "market_timezone": "Asia/Seoul",
             "market_status": "closed",
-            "market_status_reason": "weekend in Asia/Seoul",
+            "market_status_reason": "post-close refresh window until 18:30 in Asia/Seoul",
             "market_session": "09:00-15:30",
-            "refresh_status": "market_closed_reused",
-            "last_checked_at": "2026-05-16T05:21:33.567322+09:00"
+            "refresh_status": "fetched"
           },
           "summary_path": "data/stocks/006260.KS.json"
         }
