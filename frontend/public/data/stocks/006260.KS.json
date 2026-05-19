@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-19T19:48:48.267844+09:00",
+  "generated_at": "2026-05-20T03:17:49.988101+09:00",
   "company": {
     "id": "ls",
     "name_kr": "LS",
@@ -30,10 +30,10 @@
     "market_country": "한국",
     "market_timezone": "Asia/Seoul",
     "market_status": "closed",
-    "market_status_reason": "outside refresh window in Asia/Seoul",
+    "market_status_reason": "before regular session open in Asia/Seoul",
     "market_session": "09:00-15:30",
-    "refresh_status": "market_closed_reused",
-    "last_checked_at": "2026-05-19T19:48:48.267844+09:00"
+    "refresh_status": "pre_open_reused",
+    "last_checked_at": "2026-05-20T03:17:49.988101+09:00"
   },
   "peer_groups": [
     {
@@ -74,10 +74,10 @@
             "market_country": "일본",
             "market_timezone": "Asia/Tokyo",
             "market_status": "closed",
-            "market_status_reason": "outside refresh window in Asia/Tokyo",
+            "market_status_reason": "before regular session open in Asia/Tokyo",
             "market_session": "09:00-11:30, 12:30-15:30",
-            "refresh_status": "market_closed_reused",
-            "last_checked_at": "2026-05-19T19:48:48.267844+09:00"
+            "refresh_status": "pre_open_reused",
+            "last_checked_at": "2026-05-20T03:17:49.988101+09:00"
           },
           "summary_path": "data/stocks/5803.T.json"
         },
@@ -112,10 +112,10 @@
             "market_country": "일본",
             "market_timezone": "Asia/Tokyo",
             "market_status": "closed",
-            "market_status_reason": "outside refresh window in Asia/Tokyo",
+            "market_status_reason": "before regular session open in Asia/Tokyo",
             "market_session": "09:00-11:30, 12:30-15:30",
-            "refresh_status": "market_closed_reused",
-            "last_checked_at": "2026-05-19T19:48:48.267844+09:00"
+            "refresh_status": "pre_open_reused",
+            "last_checked_at": "2026-05-20T03:17:49.988101+09:00"
           },
           "summary_path": "data/stocks/5802.T.json"
         },
@@ -150,10 +150,10 @@
             "market_country": "일본",
             "market_timezone": "Asia/Tokyo",
             "market_status": "closed",
-            "market_status_reason": "outside refresh window in Asia/Tokyo",
+            "market_status_reason": "before regular session open in Asia/Tokyo",
             "market_session": "09:00-11:30, 12:30-15:30",
-            "refresh_status": "market_closed_reused",
-            "last_checked_at": "2026-05-19T19:48:48.267844+09:00"
+            "refresh_status": "pre_open_reused",
+            "last_checked_at": "2026-05-20T03:17:49.988101+09:00"
           },
           "summary_path": "data/stocks/5801.T.json"
         },
@@ -188,10 +188,10 @@
             "market_country": "일본",
             "market_timezone": "Asia/Tokyo",
             "market_status": "closed",
-            "market_status_reason": "outside refresh window in Asia/Tokyo",
+            "market_status_reason": "before regular session open in Asia/Tokyo",
             "market_session": "09:00-11:30, 12:30-15:30",
-            "refresh_status": "market_closed_reused",
-            "last_checked_at": "2026-05-19T19:48:48.267844+09:00"
+            "refresh_status": "pre_open_reused",
+            "last_checked_at": "2026-05-20T03:17:49.988101+09:00"
           },
           "summary_path": "data/stocks/6503.T.json"
         }
@@ -220,25 +220,24 @@
           },
           "quote": {
             "ticker": "FCX",
-            "price": 60.6284,
-            "previous_close": 63.01,
-            "change": -2.381599999999999,
-            "change_pct": -3.779717505157909,
+            "price": 59.47999954223633,
+            "previous_close": 60.5,
+            "change": -1.0200004577636719,
+            "change_pct": -1.6859511698573137,
             "currency": "USD",
             "source": "Yahoo Finance",
-            "fetched_at": "2026-05-19T07:12:06.466809+09:00",
-            "market_time": "2026-05-19T07:11:46+09:00",
+            "fetched_at": "2026-05-20T03:17:49.988101+09:00",
+            "market_time": "2026-05-20T03:17:45+09:00",
             "basis_label": null,
             "status": "ok",
             "error": null,
             "market": "NYSE/Nasdaq",
             "market_country": "미국",
             "market_timezone": "America/New_York",
-            "market_status": "closed",
-            "market_status_reason": "before regular session open in America/New_York",
+            "market_status": "open",
+            "market_status_reason": "regular session open",
             "market_session": "09:30-16:00",
-            "refresh_status": "pre_open_reused",
-            "last_checked_at": "2026-05-19T19:48:48.267844+09:00"
+            "refresh_status": "fetched"
           },
           "summary_path": "data/stocks/FCX.json"
         },
@@ -258,25 +257,24 @@
           },
           "quote": {
             "ticker": "SCCO",
-            "price": 172.88,
-            "previous_close": 176.78,
-            "change": -3.9000000000000057,
-            "change_pct": -2.2061319153750425,
+            "price": 170.89999389648438,
+            "previous_close": 171.9,
+            "change": -1.0000061035156307,
+            "change_pct": -0.5817371166466745,
             "currency": "USD",
             "source": "Yahoo Finance",
-            "fetched_at": "2026-05-19T07:12:06.466809+09:00",
-            "market_time": "2026-05-19T06:38:00+09:00",
+            "fetched_at": "2026-05-20T03:17:49.988101+09:00",
+            "market_time": "2026-05-20T03:17:25+09:00",
             "basis_label": null,
             "status": "ok",
             "error": null,
             "market": "NYSE/Nasdaq",
             "market_country": "미국",
             "market_timezone": "America/New_York",
-            "market_status": "closed",
-            "market_status_reason": "before regular session open in America/New_York",
+            "market_status": "open",
+            "market_status_reason": "regular session open",
             "market_session": "09:30-16:00",
-            "refresh_status": "pre_open_reused",
-            "last_checked_at": "2026-05-19T19:48:48.267844+09:00"
+            "refresh_status": "fetched"
           },
           "summary_path": "data/stocks/SCCO.json"
         }
