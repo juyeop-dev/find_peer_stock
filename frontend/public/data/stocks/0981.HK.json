@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-19T16:27:49.284064+09:00",
+  "generated_at": "2026-05-19T19:48:48.267844+09:00",
   "company": {
     "id": "0981_hk",
     "name_kr": "SMIC",
@@ -15,22 +15,22 @@
   },
   "quote": {
     "ticker": "0981.HK",
-    "price": 68.9000015258789,
+    "price": 68.5,
     "previous_close": 68.7,
-    "change": 0.2000015258789034,
-    "change_pct": 0.2911230362138362,
+    "change": -0.20000000000000284,
+    "change_pct": -0.29112081513829047,
     "currency": "HKD",
     "source": "Yahoo Finance",
-    "fetched_at": "2026-05-19T16:27:49.284064+09:00",
-    "market_time": "2026-05-19T16:12:54+09:00",
+    "fetched_at": "2026-05-19T19:48:48.267844+09:00",
+    "market_time": "2026-05-19T17:08:00+09:00",
     "basis_label": null,
     "status": "ok",
     "error": null,
     "market": "HKEX",
     "market_country": "홍콩",
     "market_timezone": "Asia/Hong_Kong",
-    "market_status": "open",
-    "market_status_reason": "regular session open",
+    "market_status": "closed",
+    "market_status_reason": "post-close refresh window until 19:00 in Asia/Hong_Kong",
     "market_session": "09:30-12:00, 13:00-16:00",
     "refresh_status": "fetched"
   },
@@ -73,9 +73,10 @@
             "market_country": "한국",
             "market_timezone": "Asia/Seoul",
             "market_status": "closed",
-            "market_status_reason": "post-close refresh window until 18:30 in Asia/Seoul",
+            "market_status_reason": "outside refresh window in Asia/Seoul",
             "market_session": "09:00-15:30",
-            "refresh_status": "fetched"
+            "refresh_status": "market_closed_reused",
+            "last_checked_at": "2026-05-19T19:48:48.267844+09:00"
           },
           "summary_path": "data/stocks/005930.KS.json"
         }

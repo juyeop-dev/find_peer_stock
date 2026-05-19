@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-19T16:27:49.284064+09:00",
+  "generated_at": "2026-05-19T19:48:48.267844+09:00",
   "company": {
     "id": "ls",
     "name_kr": "LS",
@@ -30,9 +30,10 @@
     "market_country": "한국",
     "market_timezone": "Asia/Seoul",
     "market_status": "closed",
-    "market_status_reason": "post-close refresh window until 18:30 in Asia/Seoul",
+    "market_status_reason": "outside refresh window in Asia/Seoul",
     "market_session": "09:00-15:30",
-    "refresh_status": "fetched"
+    "refresh_status": "market_closed_reused",
+    "last_checked_at": "2026-05-19T19:48:48.267844+09:00"
   },
   "peer_groups": [
     {
@@ -73,9 +74,10 @@
             "market_country": "일본",
             "market_timezone": "Asia/Tokyo",
             "market_status": "closed",
-            "market_status_reason": "post-close refresh window until 18:30 in Asia/Tokyo",
+            "market_status_reason": "outside refresh window in Asia/Tokyo",
             "market_session": "09:00-11:30, 12:30-15:30",
-            "refresh_status": "fetched"
+            "refresh_status": "market_closed_reused",
+            "last_checked_at": "2026-05-19T19:48:48.267844+09:00"
           },
           "summary_path": "data/stocks/5803.T.json"
         },
@@ -110,9 +112,10 @@
             "market_country": "일본",
             "market_timezone": "Asia/Tokyo",
             "market_status": "closed",
-            "market_status_reason": "post-close refresh window until 18:30 in Asia/Tokyo",
+            "market_status_reason": "outside refresh window in Asia/Tokyo",
             "market_session": "09:00-11:30, 12:30-15:30",
-            "refresh_status": "fetched"
+            "refresh_status": "market_closed_reused",
+            "last_checked_at": "2026-05-19T19:48:48.267844+09:00"
           },
           "summary_path": "data/stocks/5802.T.json"
         },
@@ -147,9 +150,10 @@
             "market_country": "일본",
             "market_timezone": "Asia/Tokyo",
             "market_status": "closed",
-            "market_status_reason": "post-close refresh window until 18:30 in Asia/Tokyo",
+            "market_status_reason": "outside refresh window in Asia/Tokyo",
             "market_session": "09:00-11:30, 12:30-15:30",
-            "refresh_status": "fetched"
+            "refresh_status": "market_closed_reused",
+            "last_checked_at": "2026-05-19T19:48:48.267844+09:00"
           },
           "summary_path": "data/stocks/5801.T.json"
         },
@@ -184,9 +188,10 @@
             "market_country": "일본",
             "market_timezone": "Asia/Tokyo",
             "market_status": "closed",
-            "market_status_reason": "post-close refresh window until 18:30 in Asia/Tokyo",
+            "market_status_reason": "outside refresh window in Asia/Tokyo",
             "market_session": "09:00-11:30, 12:30-15:30",
-            "refresh_status": "fetched"
+            "refresh_status": "market_closed_reused",
+            "last_checked_at": "2026-05-19T19:48:48.267844+09:00"
           },
           "summary_path": "data/stocks/6503.T.json"
         }
@@ -233,7 +238,7 @@
             "market_status_reason": "before regular session open in America/New_York",
             "market_session": "09:30-16:00",
             "refresh_status": "pre_open_reused",
-            "last_checked_at": "2026-05-19T16:27:49.284064+09:00"
+            "last_checked_at": "2026-05-19T19:48:48.267844+09:00"
           },
           "summary_path": "data/stocks/FCX.json"
         },
@@ -271,7 +276,7 @@
             "market_status_reason": "before regular session open in America/New_York",
             "market_session": "09:30-16:00",
             "refresh_status": "pre_open_reused",
-            "last_checked_at": "2026-05-19T16:27:49.284064+09:00"
+            "last_checked_at": "2026-05-19T19:48:48.267844+09:00"
           },
           "summary_path": "data/stocks/SCCO.json"
         }
