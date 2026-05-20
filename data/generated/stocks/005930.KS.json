@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-20T17:37:18.274319+09:00",
+  "generated_at": "2026-05-20T19:35:38.329442+09:00",
   "company": {
     "id": "samsung_electronics",
     "name_kr": "삼성전자",
@@ -30,9 +30,10 @@
     "market_country": "한국",
     "market_timezone": "Asia/Seoul",
     "market_status": "closed",
-    "market_status_reason": "post-close refresh window until 18:30 in Asia/Seoul",
+    "market_status_reason": "outside refresh window in Asia/Seoul",
     "market_session": "09:00-15:30",
-    "refresh_status": "fetched"
+    "refresh_status": "market_closed_reused",
+    "last_checked_at": "2026-05-20T19:35:38.329442+09:00"
   },
   "peer_groups": [
     {
@@ -76,7 +77,7 @@
             "market_status_reason": "before regular session open in America/New_York",
             "market_session": "09:30-16:00",
             "refresh_status": "pre_open_reused",
-            "last_checked_at": "2026-05-20T17:37:18.274319+09:00"
+            "last_checked_at": "2026-05-20T19:35:38.329442+09:00"
           },
           "summary_path": "data/stocks/MU.json"
         },
@@ -113,7 +114,8 @@
             "market_status": "closed",
             "market_status_reason": "outside refresh window in Asia/Taipei",
             "market_session": "09:00-13:30",
-            "refresh_status": "fetched"
+            "refresh_status": "market_closed_reused",
+            "last_checked_at": "2026-05-20T19:35:38.329442+09:00"
           },
           "summary_path": "data/stocks/2408.TW.json"
         },
@@ -150,7 +152,8 @@
             "market_status": "closed",
             "market_status_reason": "outside refresh window in Asia/Taipei",
             "market_session": "09:00-13:30",
-            "refresh_status": "fetched"
+            "refresh_status": "market_closed_reused",
+            "last_checked_at": "2026-05-20T19:35:38.329442+09:00"
           },
           "summary_path": "data/stocks/2344.TW.json"
         }
@@ -197,7 +200,7 @@
             "market_status_reason": "before regular session open in America/New_York",
             "market_session": "09:30-16:00",
             "refresh_status": "pre_open_reused",
-            "last_checked_at": "2026-05-20T17:37:18.274319+09:00"
+            "last_checked_at": "2026-05-20T19:35:38.329442+09:00"
           },
           "summary_path": "data/stocks/SNDK.json"
         },
@@ -232,9 +235,10 @@
             "market_country": "일본",
             "market_timezone": "Asia/Tokyo",
             "market_status": "closed",
-            "market_status_reason": "post-close refresh window until 18:30 in Asia/Tokyo",
+            "market_status_reason": "outside refresh window in Asia/Tokyo",
             "market_session": "09:00-11:30, 12:30-15:30",
-            "refresh_status": "fetched"
+            "refresh_status": "market_closed_reused",
+            "last_checked_at": "2026-05-20T19:35:38.329442+09:00"
           },
           "summary_path": "data/stocks/285A.T.json"
         },
@@ -271,7 +275,8 @@
             "market_status": "closed",
             "market_status_reason": "outside refresh window in Asia/Taipei",
             "market_session": "09:00-13:30",
-            "refresh_status": "fetched"
+            "refresh_status": "market_closed_reused",
+            "last_checked_at": "2026-05-20T19:35:38.329442+09:00"
           },
           "summary_path": "data/stocks/2337.TW.json"
         }
@@ -317,7 +322,8 @@
             "market_status": "closed",
             "market_status_reason": "outside refresh window in Asia/Taipei",
             "market_session": "09:00-13:30",
-            "refresh_status": "fetched"
+            "refresh_status": "market_closed_reused",
+            "last_checked_at": "2026-05-20T19:35:38.329442+09:00"
           },
           "summary_path": "data/stocks/2330.TW.json"
         },
@@ -354,7 +360,8 @@
             "market_status": "closed",
             "market_status_reason": "outside refresh window in Asia/Taipei",
             "market_session": "09:00-13:30",
-            "refresh_status": "fetched"
+            "refresh_status": "market_closed_reused",
+            "last_checked_at": "2026-05-20T19:35:38.329442+09:00"
           },
           "summary_path": "data/stocks/2303.TW.json"
         },
@@ -374,14 +381,14 @@
           },
           "quote": {
             "ticker": "0981.HK",
-            "price": 75.0,
+            "price": 75.1500015258789,
             "previous_close": 68.5,
-            "change": 6.5,
-            "change_pct": 9.48905109489051,
+            "change": 6.650001525878906,
+            "change_pct": 9.70803142464074,
             "currency": "HKD",
             "source": "Yahoo Finance",
-            "fetched_at": "2026-05-20T17:37:18.274319+09:00",
-            "market_time": "2026-05-20T16:59:00+09:00",
+            "fetched_at": "2026-05-20T19:35:38.329442+09:00",
+            "market_time": "2026-05-20T17:08:00+09:00",
             "basis_label": null,
             "status": "ok",
             "error": null,
