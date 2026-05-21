@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-21T04:33:30.183104+09:00",
+  "generated_at": "2026-05-21T11:38:15.946305+09:00",
   "company": {
     "id": "2408_tw",
     "name_kr": "난야 테크놀로지",
@@ -21,7 +21,7 @@
     "change_pct": 0.18214936247723132,
     "currency": "TWD",
     "source": "TWSE",
-    "fetched_at": "2026-05-20T17:37:18.274319+09:00",
+    "fetched_at": "2026-05-21T11:38:15.946305+09:00",
     "market_time": "2026-05-20T13:30:00+08:00",
     "basis_label": null,
     "status": "ok",
@@ -29,11 +29,10 @@
     "market": "TWSE",
     "market_country": "대만",
     "market_timezone": "Asia/Taipei",
-    "market_status": "closed",
-    "market_status_reason": "before regular session open in Asia/Taipei",
+    "market_status": "open",
+    "market_status_reason": "regular session open",
     "market_session": "09:00-13:30",
-    "refresh_status": "pre_open_reused",
-    "last_checked_at": "2026-05-21T04:33:30.183104+09:00"
+    "refresh_status": "fetched"
   },
   "peer_groups": [
     {
@@ -59,25 +58,24 @@
           },
           "quote": {
             "ticker": "005930.KS",
-            "price": 276000.0,
-            "previous_close": 275500.0,
-            "change": 500.0,
-            "change_pct": 0.18,
+            "price": 292750.0,
+            "previous_close": 276000.0,
+            "change": 16750.0,
+            "change_pct": 6.07,
             "currency": "KRW",
             "source": "Naver Finance / TradingView",
-            "fetched_at": "2026-05-20T17:37:18.274319+09:00",
-            "market_time": "2026-05-20T16:10:00+09:00",
-            "basis_label": "2026.05.20 KRX 장마감",
+            "fetched_at": "2026-05-21T11:38:15.946305+09:00",
+            "market_time": "2026-05-21T11:38:00+09:00",
+            "basis_label": null,
             "status": "ok",
             "error": null,
             "market": "KRX",
             "market_country": "한국",
             "market_timezone": "Asia/Seoul",
-            "market_status": "closed",
-            "market_status_reason": "before regular session open in Asia/Seoul",
+            "market_status": "open",
+            "market_status_reason": "regular session open",
             "market_session": "09:00-15:30",
-            "refresh_status": "pre_open_reused",
-            "last_checked_at": "2026-05-21T04:33:30.183104+09:00"
+            "refresh_status": "fetched"
           },
           "summary_path": "data/stocks/005930.KS.json"
         },
@@ -97,25 +95,24 @@
           },
           "quote": {
             "ticker": "000660.KS",
-            "price": 1745000.0,
+            "price": 1947000.0,
             "previous_close": 1745000.0,
-            "change": 0.0,
-            "change_pct": 0.0,
+            "change": 202000.0,
+            "change_pct": 11.58,
             "currency": "KRW",
             "source": "Naver Finance / TradingView",
-            "fetched_at": "2026-05-20T17:37:18.274319+09:00",
-            "market_time": "2026-05-20T16:10:00+09:00",
-            "basis_label": "2026.05.20 KRX 장마감",
+            "fetched_at": "2026-05-21T11:38:15.946305+09:00",
+            "market_time": "2026-05-21T11:38:00+09:00",
+            "basis_label": null,
             "status": "ok",
             "error": null,
             "market": "KRX",
             "market_country": "한국",
             "market_timezone": "Asia/Seoul",
-            "market_status": "closed",
-            "market_status_reason": "before regular session open in Asia/Seoul",
+            "market_status": "open",
+            "market_status_reason": "regular session open",
             "market_session": "09:00-15:30",
-            "refresh_status": "pre_open_reused",
-            "last_checked_at": "2026-05-21T04:33:30.183104+09:00"
+            "refresh_status": "fetched"
           },
           "summary_path": "data/stocks/000660.KS.json"
         }
