@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-22T15:30:58.952354+09:00",
+  "generated_at": "2026-05-22T19:35:04.004771+09:00",
   "company": {
     "id": "2327_tw",
     "name_kr": "야게오",
@@ -30,9 +30,10 @@
     "market_country": "대만",
     "market_timezone": "Asia/Taipei",
     "market_status": "closed",
-    "market_status_reason": "post-close refresh window until 16:30 in Asia/Taipei",
+    "market_status_reason": "outside refresh window in Asia/Taipei",
     "market_session": "09:00-13:30",
-    "refresh_status": "fetched"
+    "refresh_status": "market_closed_reused",
+    "last_checked_at": "2026-05-22T19:35:04.004771+09:00"
   },
   "peer_groups": [
     {
@@ -73,9 +74,10 @@
             "market_country": "한국",
             "market_timezone": "Asia/Seoul",
             "market_status": "closed",
-            "market_status_reason": "post-close refresh window until 18:30 in Asia/Seoul",
+            "market_status_reason": "outside refresh window in Asia/Seoul",
             "market_session": "09:00-15:30",
-            "refresh_status": "fetched"
+            "refresh_status": "market_closed_reused",
+            "last_checked_at": "2026-05-22T19:35:04.004771+09:00"
           },
           "summary_path": "data/stocks/009150.KS.json"
         }
