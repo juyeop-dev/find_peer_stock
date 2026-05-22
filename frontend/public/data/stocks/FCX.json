@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-22T10:39:53.441112+09:00",
+  "generated_at": "2026-05-22T15:30:58.952354+09:00",
   "company": {
     "id": "fcx",
     "name_kr": "Freeport-McMoRan",
@@ -30,10 +30,10 @@
     "market_country": "미국",
     "market_timezone": "America/New_York",
     "market_status": "closed",
-    "market_status_reason": "outside refresh window in America/New_York",
+    "market_status_reason": "before regular session open in America/New_York",
     "market_session": "09:30-16:00",
-    "refresh_status": "market_closed_reused",
-    "last_checked_at": "2026-05-22T10:39:53.441112+09:00"
+    "refresh_status": "pre_open_reused",
+    "last_checked_at": "2026-05-22T15:30:58.952354+09:00"
   },
   "peer_groups": [
     {
@@ -59,22 +59,22 @@
           },
           "quote": {
             "ticker": "006260.KS",
-            "price": 557000.0,
+            "price": 544000.0,
             "previous_close": 521000.0,
-            "change": 36000.0,
-            "change_pct": 6.91,
+            "change": 23000.0,
+            "change_pct": 4.41,
             "currency": "KRW",
             "source": "Naver Finance / TradingView",
-            "fetched_at": "2026-05-22T10:39:53.441112+09:00",
-            "market_time": "2026-05-22T10:39:00+09:00",
-            "basis_label": null,
+            "fetched_at": "2026-05-22T15:30:58.952354+09:00",
+            "market_time": "2026-05-22T15:30:00+09:00",
+            "basis_label": "2026.05.22 KRX 장마감",
             "status": "ok",
             "error": null,
             "market": "KRX",
             "market_country": "한국",
             "market_timezone": "Asia/Seoul",
-            "market_status": "open",
-            "market_status_reason": "regular session open",
+            "market_status": "closed",
+            "market_status_reason": "post-close refresh window until 18:30 in Asia/Seoul",
             "market_session": "09:00-15:30",
             "refresh_status": "fetched"
           },
