@@ -191,6 +191,21 @@ a {
   font-weight: 680;
 }
 
+.tickerExternalLink {
+  cursor: pointer;
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.tickerExternalLink:hover,
+.tickerExternalLink:focus-visible {
+  background: #dbe8ff;
+  color: #214f9c;
+  box-shadow: 0 0 0 2px rgba(41, 98, 255, 0.16);
+}
+
 .refreshButton {
   min-width: 176px;
   min-height: 42px;

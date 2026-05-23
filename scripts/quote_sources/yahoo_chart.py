@@ -8,10 +8,7 @@ import urllib.request
 from dataclasses import dataclass
 from datetime import datetime
 from typing import Any
-from zoneinfo import ZoneInfo
-
-
-JST = ZoneInfo("Asia/Tokyo")
+from zoneinfo import ZoneInfo, ZoneInfoNotFoundError
 
 
 class MarketDataError(RuntimeError):
@@ -65,16 +62,11 @@ def fetch_latest_quote(ticker: str, *, include_prepost: bool = False) -> Quote:
     )
     closes = quote_rows.get("close") or []
 
-    latest_index = _latest_numeric_index(closes)
-    if latest_index is None:
-        meta_price = _as_float(meta.get("regularMarketPrice"))
-        if meta_price is None:
-            raise MarketDataError(f"{ticker}: no latest price in Yahoo chart data")
-        latest_price = meta_price
-        latest_time = _timestamp_to_jst(meta.get("regularMarketTime"))
-    else:
-        latest_price = float(closes[latest_index])
-        latest_time = _timestamp_to_jst(timestamps[latest_index]) if latest_index < len(timestamps) else None
+    latest = _select_latest_quote(meta, timestamps, closes)
+    if latest is None:
+        raise MarketDataError(f"{ticker}: no latest price in Yahoo chart data")
+
+    latest_price, latest_time = latest
 
     previous_close = _as_float(meta.get("chartPreviousClose"))
     change = None
@@ -115,6 +107,41 @@ def _latest_numeric_index(values: list[Any]) -> int | None:
     return None
 
 
+def _select_latest_quote(
+    meta: dict[str, Any],
+    timestamps: list[Any],
+    closes: list[Any],
+) -> tuple[float, datetime | None] | None:
+    timezone = _market_timezone(meta)
+    meta_price = _as_float(meta.get("regularMarketPrice"))
+    meta_time = _timestamp_to_datetime(meta.get("regularMarketTime"), timezone)
+
+    latest_index = _latest_numeric_index(closes)
+    if latest_index is None:
+        if meta_price is None:
+            return None
+        return meta_price, meta_time
+
+    bar_price = float(closes[latest_index])
+    bar_time = (
+        _timestamp_to_datetime(timestamps[latest_index], timezone)
+        if latest_index < len(timestamps)
+        else None
+    )
+
+    if meta_price is not None and _is_meta_quote_at_least_as_fresh(meta_time, bar_time):
+        return meta_price, meta_time
+    return bar_price, bar_time
+
+
+def _is_meta_quote_at_least_as_fresh(meta_time: datetime | None, bar_time: datetime | None) -> bool:
+    if meta_time is None:
+        return bar_time is None
+    if bar_time is None:
+        return True
+    return meta_time >= bar_time
+
+
 def _as_float(value: Any) -> float | None:
     if value is None:
         return None
@@ -127,10 +154,20 @@ def _as_float(value: Any) -> float | None:
     return number
 
 
-def _timestamp_to_jst(value: Any) -> datetime | None:
+def _market_timezone(meta: dict[str, Any]) -> ZoneInfo:
+    timezone_name = meta.get("exchangeTimezoneName")
+    if isinstance(timezone_name, str) and timezone_name:
+        try:
+            return ZoneInfo(timezone_name)
+        except ZoneInfoNotFoundError:
+            pass
+    return ZoneInfo("UTC")
+
+
+def _timestamp_to_datetime(value: Any, timezone: ZoneInfo) -> datetime | None:
     if value is None:
         return None
     try:
-        return datetime.fromtimestamp(int(value), tz=JST)
+        return datetime.fromtimestamp(int(value), tz=timezone)
     except (TypeError, ValueError, OSError):
         return None

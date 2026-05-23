@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { getExternalQuoteLink } from "../dataClient/externalLinks";
 import { changeTone, formatChange, formatDateTime, formatPrice } from "../dataClient/formatters";
 import type { PeerGroup } from "../dataClient/types";
 
@@ -32,13 +33,23 @@ export function PeerGroupSection({ group }: PeerGroupSectionProps) {
           <tbody>
             {group.peers.map((peer) => {
               const tone = changeTone(peer.quote);
+              const externalQuoteLink = getExternalQuoteLink(peer.company.ticker);
               return (
                 <tr key={peer.company.ticker}>
                   <td>
                     <Link className="companyLink" to={`/stocks/${encodeURIComponent(peer.company.ticker)}`}>
                       {peer.company.name_kr}
                     </Link>
-                    <span className="tickerText">{peer.company.ticker}</span>
+                    <a
+                      className="tickerText tickerExternalLink"
+                      href={externalQuoteLink.href}
+                      target="_blank"
+                      rel="noreferrer"
+                      title={`${peer.company.ticker} external quote (${externalQuoteLink.label})`}
+                      aria-label={`${peer.company.ticker} external quote (${externalQuoteLink.label})`}
+                    >
+                      {peer.company.ticker}
+                    </a>
                   </td>
                   <td>{peer.company.country}</td>
                   <td>{peer.company.note || peer.company.sector || "-"}</td>

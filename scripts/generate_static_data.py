@@ -15,8 +15,9 @@ PROJECT_ROOT = Path(__file__).resolve().parents[1]
 SEED_DIR = PROJECT_ROOT / "data" / "seed" / "peer_alerts"
 GENERATED_DIR = PROJECT_ROOT / "data" / "generated"
 FRONTEND_DATA_DIR = PROJECT_ROOT / "frontend" / "public" / "data"
+COMPANY_INFO_DIR = PROJECT_ROOT.parent / "company_info" / "company_by_country"
 KST = ZoneInfo("Asia/Seoul")
-POST_CLOSE_FETCH_GRACE_MINUTES = 180
+POST_CLOSE_FETCH_GRACE_MINUTES = 60
 MARKET_SCHEDULES = {
     "한국": {
         "market": "KRX",
@@ -92,7 +93,8 @@ def main() -> None:
     args = parse_args()
     generated_at = parse_now(args.now) if args.now else datetime.now(tz=KST)
     seed_configs = load_seed_configs(args.seed_dir)
-    catalog = build_catalog(seed_configs)
+    company_info = load_company_info(args.company_info_dir)
+    catalog = build_catalog(seed_configs, company_info=company_info)
     previous_quotes = load_previous_quotes(args.output_dir, args.frontend_data_dir)
 
     quotes = {}
@@ -118,6 +120,7 @@ def main() -> None:
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Generate static JSON data for the stock peer site.")
     parser.add_argument("--seed-dir", type=Path, default=SEED_DIR)
+    parser.add_argument("--company-info-dir", type=Path, default=COMPANY_INFO_DIR)
     parser.add_argument("--output-dir", type=Path, default=GENERATED_DIR)
     parser.add_argument("--frontend-data-dir", type=Path, default=FRONTEND_DATA_DIR)
     parser.add_argument("--no-fetch", action="store_true", help="Generate JSON without calling quote sources.")
@@ -151,7 +154,32 @@ def load_seed_configs(seed_dir: Path) -> list[dict[str, Any]]:
     return configs
 
 
-def build_catalog(seed_configs: list[dict[str, Any]]) -> dict[str, Any]:
+def load_company_info(company_info_dir: Path) -> dict[str, dict[str, Any]]:
+    if not company_info_dir.exists():
+        return {}
+
+    rows: dict[str, dict[str, Any]] = {}
+    for path in sorted(company_info_dir.glob("*.json")):
+        try:
+            payload = json.loads(path.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError):
+            continue
+
+        if not isinstance(payload, dict):
+            continue
+
+        for ticker, row in payload.items():
+            if isinstance(row, dict):
+                rows[str(ticker).upper()] = row
+
+    return rows
+
+
+def build_catalog(
+    seed_configs: list[dict[str, Any]],
+    *,
+    company_info: dict[str, dict[str, Any]] | None = None,
+) -> dict[str, Any]:
     companies: dict[str, dict[str, Any]] = {}
     target_tickers: list[str] = []
     target_pages: dict[str, dict[str, Any]] = {}
@@ -171,7 +199,8 @@ def build_catalog(seed_configs: list[dict[str, Any]]) -> dict[str, Any]:
                 "market_note": config.get("market_note"),
                 "country": target.get("country") or infer_country(target_ticker),
                 "is_target": True,
-            }
+            },
+            company_info=company_info,
         )
         merge_company(companies, target_profile)
         target_tickers.append(target_ticker)
@@ -191,7 +220,8 @@ def build_catalog(seed_configs: list[dict[str, Any]]) -> dict[str, Any]:
                         **peer,
                         "country": peer.get("country") or infer_country(peer.get("ticker")),
                         "is_target": False,
-                    }
+                    },
+                    company_info=company_info,
                 )
                 peer_ticker = peer_profile["ticker"]
                 merge_company(companies, peer_profile)
@@ -245,24 +275,30 @@ def add_reverse_peer_groups(target_pages: dict[str, dict[str, Any]], reverse_lin
         )
 
 
-def normalize_company(raw: dict[str, Any]) -> dict[str, Any]:
+def normalize_company(
+    raw: dict[str, Any],
+    *,
+    company_info: dict[str, dict[str, Any]] | None = None,
+) -> dict[str, Any]:
     ticker = str(raw.get("ticker") or "").strip()
     if not ticker:
         raise ValueError(f"Company ticker missing: {raw}")
 
-    name_kr = raw.get("name_kr") or raw.get("name_en") or ticker
-    name_en = raw.get("name_en") or raw.get("name_kr") or ticker
+    info = (company_info or {}).get(ticker.upper(), {})
+    company_description = info.get("description") or ""
+    name_kr = info.get("name_kr") or raw.get("name_kr") or raw.get("name_en") or ticker
+    name_en = info.get("name_en") or raw.get("name_en") or raw.get("name_kr") or ticker
 
     return {
         "id": raw.get("id") or ticker_to_id(ticker),
         "name_kr": name_kr,
         "name_en": name_en,
         "ticker": ticker,
-        "country": raw.get("country") or infer_country(ticker),
-        "theme": raw.get("theme") or raw.get("sector") or raw.get("note") or "",
-        "market_note": raw.get("market_note") or "",
-        "sector": raw.get("sector") or "",
-        "note": raw.get("note") or "",
+        "country": info.get("country") or raw.get("country") or infer_country(ticker),
+        "theme": raw.get("theme") or raw.get("sector") or company_description or raw.get("note") or "",
+        "market_note": raw.get("market_note") or company_description or "",
+        "sector": raw.get("sector") or info.get("primary_category") or "",
+        "note": raw.get("note") or company_description or "",
         "title": raw.get("title") or "",
         "is_target": bool(raw.get("is_target")),
     }
@@ -309,7 +345,7 @@ def should_skip_write(quotes: dict[str, dict[str, Any]]) -> bool:
         return False
 
     refresh_statuses = {quote.get("refresh_status") for quote in quotes.values()}
-    attempted_fetch_statuses = {"fetched", "error"}
+    attempted_fetch_statuses = {"fetched", "error", "market_closed_initialized"}
     missing_previous_statuses = {"market_closed_no_previous", "not_fetched"}
     return not (refresh_statuses & attempted_fetch_statuses) and not (refresh_statuses & missing_previous_statuses)
 
@@ -323,11 +359,12 @@ def build_quote_snapshot(
     previous_quote: dict[str, Any] | None,
 ) -> dict[str, Any]:
     market_state = get_market_state(ticker, generated_at)
+    reusable_previous_quote = is_reusable_quote(previous_quote)
 
     if no_fetch:
         return empty_quote(ticker, generated_at, "not fetched", market_state, refresh_status="not_fetched")
 
-    if market_state.is_pre_open and previous_quote:
+    if market_state.is_pre_open and reusable_previous_quote:
         return reuse_previous_quote(
             previous_quote,
             generated_at,
@@ -335,16 +372,11 @@ def build_quote_snapshot(
             refresh_status="pre_open_reused",
         )
 
+    refresh_status = "fetched"
     if not force_fetch and not market_state.should_fetch:
-        if previous_quote:
+        if reusable_previous_quote:
             return reuse_previous_quote(previous_quote, generated_at, market_state)
-        return empty_quote(
-            ticker,
-            generated_at,
-            f"market closed; no previous quote available ({market_state.reason})",
-            market_state,
-            refresh_status="market_closed_no_previous",
-        )
+        refresh_status = "market_closed_initialized"
 
     if QUOTE_IMPORT_ERROR is not None:
         return empty_quote(
@@ -356,25 +388,47 @@ def build_quote_snapshot(
         )
 
     try:
-        quote = fetch_quote(ticker)
+        quote = fetch_quote(ticker, market_state=market_state)
     except Exception as exc:
         return empty_quote(ticker, generated_at, str(exc), market_state, refresh_status="error")
 
-    return quote_to_dict(quote, fetched_at=generated_at, source=infer_source(ticker), market_state=market_state)
+    return quote_to_dict(
+        quote,
+        fetched_at=generated_at,
+        source=infer_quote_source(ticker, market_state),
+        market_state=market_state,
+        refresh_status=refresh_status,
+    )
 
 
-def fetch_quote(ticker: str) -> Quote:
+def fetch_quote(ticker: str, *, market_state: MarketState | None = None) -> Quote:
     if is_korean_ticker and is_korean_ticker(ticker):
         return fetch_korean_quote(ticker)
 
     if is_taiwan_ticker and is_taiwan_ticker(ticker):
+        market_state = market_state or get_market_state(ticker, datetime.now(tz=KST))
+        if market_state.should_fetch:
+            return fetch_latest_quote(ticker)
         return fetch_taiwan_quote(ticker)
 
     include_prepost = ticker.upper() in {"FCX", "MU", "SCCO", "SNDK"}
     return fetch_latest_quote(ticker, include_prepost=include_prepost)
 
 
-def quote_to_dict(quote: Quote, *, fetched_at: datetime, source: str, market_state: MarketState) -> dict[str, Any]:
+def infer_quote_source(ticker: str, market_state: MarketState) -> str:
+    if is_taiwan_ticker and is_taiwan_ticker(ticker) and market_state.should_fetch:
+        return "Yahoo Finance"
+    return infer_source(ticker)
+
+
+def quote_to_dict(
+    quote: Quote,
+    *,
+    fetched_at: datetime,
+    source: str,
+    market_state: MarketState,
+    refresh_status: str = "fetched",
+) -> dict[str, Any]:
     return {
         "ticker": quote.ticker,
         "price": quote.price,
@@ -388,8 +442,14 @@ def quote_to_dict(quote: Quote, *, fetched_at: datetime, source: str, market_sta
         "basis_label": quote.basis_label,
         "status": "ok",
         "error": None,
-        **market_state_fields(market_state, refresh_status="fetched"),
+        **market_state_fields(market_state, refresh_status=refresh_status),
     }
+
+
+def is_reusable_quote(previous_quote: dict[str, Any] | None) -> bool:
+    if not isinstance(previous_quote, dict):
+        return False
+    return previous_quote.get("price") is not None and previous_quote.get("status") != "error"
 
 
 def reuse_previous_quote(
@@ -420,7 +480,7 @@ def empty_quote(
         "change": None,
         "change_pct": None,
         "currency": infer_currency(ticker),
-        "source": infer_source(ticker),
+        "source": infer_quote_source(ticker, market_state),
         "fetched_at": fetched_at.isoformat(),
         "market_time": None,
         "basis_label": None,
@@ -625,7 +685,7 @@ def infer_country(ticker: str | None) -> str:
         return "한국"
     if upper.endswith(".T"):
         return "일본"
-    if upper.endswith(".TW"):
+    if upper.endswith(".TW") or upper.endswith(".TWO"):
         return "대만"
     if upper.endswith(".HK"):
         return "홍콩"
@@ -649,6 +709,8 @@ def infer_source(ticker: str) -> str:
     country = infer_country(ticker)
     if country == "한국":
         return "Naver Finance / TradingView"
+    if ticker.upper().endswith(".TWO"):
+        return "Yahoo Finance"
     if country == "대만":
         return "TWSE"
     return "Yahoo Finance"
