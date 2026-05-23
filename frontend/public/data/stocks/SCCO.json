@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-23T06:45:56.310813+09:00",
+  "generated_at": "2026-05-23T21:03:39.216279+09:00",
   "company": {
     "id": "scco",
     "name_kr": "Southern Copper",
@@ -15,14 +15,14 @@
   },
   "quote": {
     "ticker": "SCCO",
-    "price": 179.55,
+    "price": 179.92,
     "previous_close": 179.12,
-    "change": 0.4300000000000068,
-    "change_pct": 0.2400625279142421,
+    "change": 0.799999999999983,
+    "change_pct": 0.44662795891021734,
     "currency": "USD",
     "source": "Yahoo Finance",
-    "fetched_at": "2026-05-23T06:45:56.310813+09:00",
-    "market_time": "2026-05-23T06:42:36+09:00",
+    "fetched_at": "2026-05-23T21:03:39.216279+09:00",
+    "market_time": "2026-05-23T08:53:04+09:00",
     "basis_label": null,
     "status": "ok",
     "error": null,
@@ -30,7 +30,7 @@
     "market_country": "미국",
     "market_timezone": "America/New_York",
     "market_status": "closed",
-    "market_status_reason": "post-close refresh window until 19:00 in America/New_York",
+    "market_status_reason": "weekend in America/New_York",
     "market_session": "09:30-16:00",
     "refresh_status": "fetched"
   },
@@ -64,8 +64,8 @@
             "change_pct": 4.41,
             "currency": "KRW",
             "source": "Naver Finance / TradingView",
-            "fetched_at": "2026-05-22T15:30:58.952354+09:00",
-            "market_time": "2026-05-22T15:30:00+09:00",
+            "fetched_at": "2026-05-23T21:03:39.216279+09:00",
+            "market_time": "2026-05-22T16:10:00+09:00",
             "basis_label": "2026.05.22 KRX 장마감",
             "status": "ok",
             "error": null,
@@ -75,8 +75,7 @@
             "market_status": "closed",
             "market_status_reason": "weekend in Asia/Seoul",
             "market_session": "09:00-15:30",
-            "refresh_status": "market_closed_reused",
-            "last_checked_at": "2026-05-23T06:45:56.310813+09:00"
+            "refresh_status": "fetched"
           },
           "summary_path": "data/stocks/006260.KS.json"
         }
