@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-23T21:03:39.216279+09:00",
+  "generated_at": "2026-05-25T15:23:15.956891+09:00",
   "company": {
     "id": "sndk",
     "name_kr": "샌디스크",
@@ -30,9 +30,10 @@
     "market_country": "미국",
     "market_timezone": "America/New_York",
     "market_status": "closed",
-    "market_status_reason": "weekend in America/New_York",
+    "market_status_reason": "before regular session open in America/New_York",
     "market_session": "09:30-16:00",
-    "refresh_status": "fetched"
+    "refresh_status": "pre_open_reused",
+    "last_checked_at": "2026-05-25T15:23:15.956891+09:00"
   },
   "peer_groups": [
     {
@@ -64,7 +65,7 @@
             "change_pct": -2.34,
             "currency": "KRW",
             "source": "Naver Finance / TradingView",
-            "fetched_at": "2026-05-23T21:03:39.216279+09:00",
+            "fetched_at": "2026-05-25T15:23:15.956891+09:00",
             "market_time": "2026-05-22T16:10:00+09:00",
             "basis_label": "2026.05.22 KRX 장마감",
             "status": "ok",
@@ -72,8 +73,8 @@
             "market": "KRX",
             "market_country": "한국",
             "market_timezone": "Asia/Seoul",
-            "market_status": "closed",
-            "market_status_reason": "weekend in Asia/Seoul",
+            "market_status": "open",
+            "market_status_reason": "regular session open",
             "market_session": "09:00-15:30",
             "refresh_status": "fetched"
           },
@@ -101,7 +102,7 @@
             "change_pct": 0.05,
             "currency": "KRW",
             "source": "Naver Finance / TradingView",
-            "fetched_at": "2026-05-23T21:03:39.216279+09:00",
+            "fetched_at": "2026-05-25T15:23:15.956891+09:00",
             "market_time": "2026-05-22T16:10:00+09:00",
             "basis_label": "2026.05.22 KRX 장마감",
             "status": "ok",
@@ -109,8 +110,8 @@
             "market": "KRX",
             "market_country": "한국",
             "market_timezone": "Asia/Seoul",
-            "market_status": "closed",
-            "market_status_reason": "weekend in Asia/Seoul",
+            "market_status": "open",
+            "market_status_reason": "regular session open",
             "market_session": "09:00-15:30",
             "refresh_status": "fetched"
           },
