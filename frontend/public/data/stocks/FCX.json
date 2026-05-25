@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-25T15:23:15.956891+09:00",
+  "generated_at": "2026-05-26T03:18:27.624505+09:00",
   "company": {
     "id": "fcx",
     "name_kr": "Freeport-McMoRan",
@@ -21,19 +21,18 @@
     "change_pct": -0.6098539560263294,
     "currency": "USD",
     "source": "Yahoo Finance",
-    "fetched_at": "2026-05-23T21:03:39.216279+09:00",
-    "market_time": "2026-05-23T08:59:53+09:00",
+    "fetched_at": "2026-05-26T03:18:27.624505+09:00",
+    "market_time": "2026-05-22T19:59:53-04:00",
     "basis_label": null,
     "status": "ok",
     "error": null,
     "market": "NYSE/Nasdaq",
     "market_country": "미국",
     "market_timezone": "America/New_York",
-    "market_status": "closed",
-    "market_status_reason": "before regular session open in America/New_York",
+    "market_status": "open",
+    "market_status_reason": "regular session open",
     "market_session": "09:30-16:00",
-    "refresh_status": "pre_open_reused",
-    "last_checked_at": "2026-05-25T15:23:15.956891+09:00"
+    "refresh_status": "fetched"
   },
   "peer_groups": [
     {
@@ -73,10 +72,11 @@
             "market": "KRX",
             "market_country": "한국",
             "market_timezone": "Asia/Seoul",
-            "market_status": "open",
-            "market_status_reason": "regular session open",
+            "market_status": "closed",
+            "market_status_reason": "before regular session open in Asia/Seoul",
             "market_session": "09:00-15:30",
-            "refresh_status": "fetched"
+            "refresh_status": "pre_open_reused",
+            "last_checked_at": "2026-05-26T03:18:27.624505+09:00"
           },
           "summary_path": "data/stocks/006260.KS.json"
         }

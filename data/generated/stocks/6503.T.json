@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-25T15:23:15.956891+09:00",
+  "generated_at": "2026-05-26T03:18:27.624505+09:00",
   "company": {
     "id": "6503_t",
     "name_kr": "미쓰비시전기",
@@ -29,10 +29,11 @@
     "market": "TSE",
     "market_country": "일본",
     "market_timezone": "Asia/Tokyo",
-    "market_status": "open",
-    "market_status_reason": "regular session open",
+    "market_status": "closed",
+    "market_status_reason": "before regular session open in Asia/Tokyo",
     "market_session": "09:00-11:30, 12:30-15:30",
-    "refresh_status": "fetched"
+    "refresh_status": "pre_open_reused",
+    "last_checked_at": "2026-05-26T03:18:27.624505+09:00"
   },
   "peer_groups": [
     {
@@ -72,10 +73,11 @@
             "market": "KRX",
             "market_country": "한국",
             "market_timezone": "Asia/Seoul",
-            "market_status": "open",
-            "market_status_reason": "regular session open",
+            "market_status": "closed",
+            "market_status_reason": "before regular session open in Asia/Seoul",
             "market_session": "09:00-15:30",
-            "refresh_status": "fetched"
+            "refresh_status": "pre_open_reused",
+            "last_checked_at": "2026-05-26T03:18:27.624505+09:00"
           },
           "summary_path": "data/stocks/006260.KS.json"
         }
