@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-27T04:29:28.626814+09:00",
+  "generated_at": "2026-05-27T15:55:19.441867+09:00",
   "company": {
     "id": "samsung_electronics",
     "name_kr": "삼성전자",
@@ -15,25 +15,24 @@
   },
   "quote": {
     "ticker": "005930.KS",
-    "price": 299000.0,
-    "previous_close": 292500.0,
-    "change": 6500.0,
-    "change_pct": 2.22,
+    "price": 307000.0,
+    "previous_close": 299000.0,
+    "change": 8000.0,
+    "change_pct": 2.68,
     "currency": "KRW",
     "source": "Naver Finance / TradingView",
-    "fetched_at": "2026-05-26T17:31:08.562616+09:00",
-    "market_time": "2026-05-26T16:10:00+09:00",
-    "basis_label": "2026.05.26 KRX 장마감",
+    "fetched_at": "2026-05-27T15:55:19.441867+09:00",
+    "market_time": "2026-05-27T15:55:00+09:00",
+    "basis_label": "2026.05.27 KRX 장마감",
     "status": "ok",
     "error": null,
     "market": "KRX",
     "market_country": "한국",
     "market_timezone": "Asia/Seoul",
     "market_status": "closed",
-    "market_status_reason": "before regular session open in Asia/Seoul",
+    "market_status_reason": "post-close refresh window until 16:30 in Asia/Seoul",
     "market_session": "09:00-15:30",
-    "refresh_status": "pre_open_reused",
-    "last_checked_at": "2026-05-27T04:29:28.626814+09:00"
+    "refresh_status": "fetched"
   },
   "peer_groups": [
     {
@@ -73,10 +72,11 @@
             "market": "NYSE/Nasdaq",
             "market_country": "미국",
             "market_timezone": "America/New_York",
-            "market_status": "open",
-            "market_status_reason": "regular session open",
+            "market_status": "closed",
+            "market_status_reason": "before regular session open in America/New_York",
             "market_session": "09:30-16:00",
-            "refresh_status": "fetched"
+            "refresh_status": "pre_open_reused",
+            "last_checked_at": "2026-05-27T15:55:19.441867+09:00"
           },
           "summary_path": "data/stocks/MU.json"
         },
@@ -111,10 +111,10 @@
             "market_country": "대만",
             "market_timezone": "Asia/Taipei",
             "market_status": "closed",
-            "market_status_reason": "before regular session open in Asia/Taipei",
+            "market_status_reason": "outside refresh window in Asia/Taipei",
             "market_session": "09:00-13:30",
-            "refresh_status": "pre_open_reused",
-            "last_checked_at": "2026-05-27T04:29:28.626814+09:00"
+            "refresh_status": "market_closed_reused",
+            "last_checked_at": "2026-05-27T15:55:19.441867+09:00"
           },
           "summary_path": "data/stocks/2408.TW.json"
         },
@@ -149,10 +149,10 @@
             "market_country": "대만",
             "market_timezone": "Asia/Taipei",
             "market_status": "closed",
-            "market_status_reason": "before regular session open in Asia/Taipei",
+            "market_status_reason": "outside refresh window in Asia/Taipei",
             "market_session": "09:00-13:30",
-            "refresh_status": "pre_open_reused",
-            "last_checked_at": "2026-05-27T04:29:28.626814+09:00"
+            "refresh_status": "market_closed_reused",
+            "last_checked_at": "2026-05-27T15:55:19.441867+09:00"
           },
           "summary_path": "data/stocks/2344.TW.json"
         }
@@ -195,10 +195,11 @@
             "market": "NYSE/Nasdaq",
             "market_country": "미국",
             "market_timezone": "America/New_York",
-            "market_status": "open",
-            "market_status_reason": "regular session open",
+            "market_status": "closed",
+            "market_status_reason": "before regular session open in America/New_York",
             "market_session": "09:30-16:00",
-            "refresh_status": "fetched"
+            "refresh_status": "pre_open_reused",
+            "last_checked_at": "2026-05-27T15:55:19.441867+09:00"
           },
           "summary_path": "data/stocks/SNDK.json"
         },
@@ -218,14 +219,14 @@
           },
           "quote": {
             "ticker": "285A.T",
-            "price": 62460.0,
-            "previous_close": 65450.0,
-            "change": -2990.0,
-            "change_pct": -4.56837280366692,
+            "price": 60550.0,
+            "previous_close": 62460.0,
+            "change": -1910.0,
+            "change_pct": -3.0579570925392208,
             "currency": "JPY",
             "source": "Yahoo Finance",
-            "fetched_at": "2026-05-26T17:31:08.562616+09:00",
-            "market_time": "2026-05-26T15:30:00+09:00",
+            "fetched_at": "2026-05-27T15:55:19.441867+09:00",
+            "market_time": "2026-05-27T15:30:00+09:00",
             "basis_label": null,
             "status": "ok",
             "error": null,
@@ -233,10 +234,9 @@
             "market_country": "일본",
             "market_timezone": "Asia/Tokyo",
             "market_status": "closed",
-            "market_status_reason": "before regular session open in Asia/Tokyo",
+            "market_status_reason": "post-close refresh window until 16:30 in Asia/Tokyo",
             "market_session": "09:00-11:30, 12:30-15:30",
-            "refresh_status": "pre_open_reused",
-            "last_checked_at": "2026-05-27T04:29:28.626814+09:00"
+            "refresh_status": "fetched"
           },
           "summary_path": "data/stocks/285A.T.json"
         },
@@ -271,10 +271,10 @@
             "market_country": "대만",
             "market_timezone": "Asia/Taipei",
             "market_status": "closed",
-            "market_status_reason": "before regular session open in Asia/Taipei",
+            "market_status_reason": "outside refresh window in Asia/Taipei",
             "market_session": "09:00-13:30",
-            "refresh_status": "pre_open_reused",
-            "last_checked_at": "2026-05-27T04:29:28.626814+09:00"
+            "refresh_status": "market_closed_reused",
+            "last_checked_at": "2026-05-27T15:55:19.441867+09:00"
           },
           "summary_path": "data/stocks/2337.TW.json"
         }
@@ -318,10 +318,10 @@
             "market_country": "대만",
             "market_timezone": "Asia/Taipei",
             "market_status": "closed",
-            "market_status_reason": "before regular session open in Asia/Taipei",
+            "market_status_reason": "outside refresh window in Asia/Taipei",
             "market_session": "09:00-13:30",
-            "refresh_status": "pre_open_reused",
-            "last_checked_at": "2026-05-27T04:29:28.626814+09:00"
+            "refresh_status": "market_closed_reused",
+            "last_checked_at": "2026-05-27T15:55:19.441867+09:00"
           },
           "summary_path": "data/stocks/2330.TW.json"
         },
@@ -356,10 +356,10 @@
             "market_country": "대만",
             "market_timezone": "Asia/Taipei",
             "market_status": "closed",
-            "market_status_reason": "before regular session open in Asia/Taipei",
+            "market_status_reason": "outside refresh window in Asia/Taipei",
             "market_session": "09:00-13:30",
-            "refresh_status": "pre_open_reused",
-            "last_checked_at": "2026-05-27T04:29:28.626814+09:00"
+            "refresh_status": "market_closed_reused",
+            "last_checked_at": "2026-05-27T15:55:19.441867+09:00"
           },
           "summary_path": "data/stocks/2303.TW.json"
         },
@@ -379,25 +379,24 @@
           },
           "quote": {
             "ticker": "0981.HK",
-            "price": 84.4,
-            "previous_close": 79.85,
-            "change": 4.550000000000011,
-            "change_pct": 5.698184095178482,
+            "price": 84.45,
+            "previous_close": 84.4,
+            "change": 0.04999999999999716,
+            "change_pct": 0.05924170616113944,
             "currency": "HKD",
             "source": "Yahoo Finance",
-            "fetched_at": "2026-05-26T17:31:08.562616+09:00",
-            "market_time": "2026-05-26T16:08:21+08:00",
+            "fetched_at": "2026-05-27T15:55:19.441867+09:00",
+            "market_time": "2026-05-27T14:40:24+08:00",
             "basis_label": null,
             "status": "ok",
             "error": null,
             "market": "HKEX",
             "market_country": "홍콩",
             "market_timezone": "Asia/Hong_Kong",
-            "market_status": "closed",
-            "market_status_reason": "before regular session open in Asia/Hong_Kong",
+            "market_status": "open",
+            "market_status_reason": "regular session open",
             "market_session": "09:30-12:00, 13:00-16:00",
-            "refresh_status": "pre_open_reused",
-            "last_checked_at": "2026-05-27T04:29:28.626814+09:00"
+            "refresh_status": "fetched"
           },
           "summary_path": "data/stocks/0981.HK.json"
         }
