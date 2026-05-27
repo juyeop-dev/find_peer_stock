@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-27T19:20:32.830456+09:00",
+  "generated_at": "2026-05-28T05:32:22.084056+09:00",
   "company": {
     "id": "scco",
     "name_kr": "Southern Copper",
@@ -15,14 +15,14 @@
   },
   "quote": {
     "ticker": "SCCO",
-    "price": 189.06,
-    "previous_close": 179.67,
-    "change": 9.390000000000015,
-    "change_pct": 5.226248121556187,
+    "price": 187.79,
+    "previous_close": 189.88,
+    "change": -2.0900000000000034,
+    "change_pct": -1.1006951759005679,
     "currency": "USD",
     "source": "Yahoo Finance",
-    "fetched_at": "2026-05-27T04:29:28.626814+09:00",
-    "market_time": "2026-05-26T15:29:20-04:00",
+    "fetched_at": "2026-05-28T05:32:22.084056+09:00",
+    "market_time": "2026-05-27T16:28:33-04:00",
     "basis_label": null,
     "status": "ok",
     "error": null,
@@ -30,10 +30,9 @@
     "market_country": "미국",
     "market_timezone": "America/New_York",
     "market_status": "closed",
-    "market_status_reason": "before regular session open in America/New_York",
+    "market_status_reason": "post-close refresh window until 17:00 in America/New_York",
     "market_session": "09:30-16:00",
-    "refresh_status": "pre_open_reused",
-    "last_checked_at": "2026-05-27T19:20:32.830456+09:00"
+    "refresh_status": "fetched"
   },
   "peer_groups": [
     {
@@ -74,9 +73,10 @@
             "market_country": "한국",
             "market_timezone": "Asia/Seoul",
             "market_status": "closed",
-            "market_status_reason": "outside refresh window in Asia/Seoul",
+            "market_status_reason": "before regular session open in Asia/Seoul",
             "market_session": "09:00-15:30",
-            "refresh_status": "fetched"
+            "refresh_status": "pre_open_reused",
+            "last_checked_at": "2026-05-28T05:32:22.084056+09:00"
           },
           "summary_path": "data/stocks/006260.KS.json"
         }
