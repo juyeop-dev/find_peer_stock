@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-29T15:43:35.295762+09:00",
+  "generated_at": "2026-05-30T04:54:38.873703+09:00",
   "company": {
     "id": "sk_hynix",
     "name_kr": "SK하이닉스",
@@ -30,9 +30,10 @@
     "market_country": "한국",
     "market_timezone": "Asia/Seoul",
     "market_status": "closed",
-    "market_status_reason": "post-close refresh window until 16:30 in Asia/Seoul",
+    "market_status_reason": "weekend in Asia/Seoul",
     "market_session": "09:00-15:30",
-    "refresh_status": "fetched"
+    "refresh_status": "market_closed_reused",
+    "last_checked_at": "2026-05-30T04:54:38.873703+09:00"
   },
   "peer_groups": [
     {
@@ -58,25 +59,24 @@
           },
           "quote": {
             "ticker": "MU",
-            "price": 935.87,
-            "previous_close": 928.41,
-            "change": 7.460000000000036,
-            "change_pct": 0.803524304994574,
+            "price": 965.01,
+            "previous_close": 923.52,
+            "change": 41.49000000000001,
+            "change_pct": 4.492593555093549,
             "currency": "USD",
             "source": "Yahoo Finance",
-            "fetched_at": "2026-05-29T09:30:06.025924+09:00",
-            "market_time": "2026-05-28T19:59:58-04:00",
+            "fetched_at": "2026-05-30T04:54:38.873703+09:00",
+            "market_time": "2026-05-29T15:54:38-04:00",
             "basis_label": null,
             "status": "ok",
             "error": null,
             "market": "NYSE/Nasdaq",
             "market_country": "미국",
             "market_timezone": "America/New_York",
-            "market_status": "closed",
-            "market_status_reason": "before regular session open in America/New_York",
+            "market_status": "open",
+            "market_status_reason": "regular session open",
             "market_session": "09:30-16:00",
-            "refresh_status": "pre_open_reused",
-            "last_checked_at": "2026-05-29T15:43:35.295762+09:00"
+            "refresh_status": "fetched"
           },
           "summary_path": "data/stocks/MU.json"
         },
@@ -111,9 +111,10 @@
             "market_country": "대만",
             "market_timezone": "Asia/Taipei",
             "market_status": "closed",
-            "market_status_reason": "outside refresh window in Asia/Taipei",
+            "market_status_reason": "weekend in Asia/Taipei",
             "market_session": "09:00-13:30",
-            "refresh_status": "fetched"
+            "refresh_status": "market_closed_reused",
+            "last_checked_at": "2026-05-30T04:54:38.873703+09:00"
           },
           "summary_path": "data/stocks/2408.TW.json"
         },
@@ -148,9 +149,10 @@
             "market_country": "대만",
             "market_timezone": "Asia/Taipei",
             "market_status": "closed",
-            "market_status_reason": "outside refresh window in Asia/Taipei",
+            "market_status_reason": "weekend in Asia/Taipei",
             "market_session": "09:00-13:30",
-            "refresh_status": "fetched"
+            "refresh_status": "market_closed_reused",
+            "last_checked_at": "2026-05-30T04:54:38.873703+09:00"
           },
           "summary_path": "data/stocks/2344.TW.json"
         }
@@ -179,25 +181,24 @@
           },
           "quote": {
             "ticker": "SNDK",
-            "price": 1648.0,
-            "previous_close": 1589.94,
-            "change": 58.059999999999945,
-            "change_pct": 3.6517101274261776,
+            "price": 1685.25,
+            "previous_close": 1641.64,
+            "change": 43.6099999999999,
+            "change_pct": 2.6564898516117985,
             "currency": "USD",
             "source": "Yahoo Finance",
-            "fetched_at": "2026-05-29T09:30:06.025924+09:00",
-            "market_time": "2026-05-28T19:59:58-04:00",
+            "fetched_at": "2026-05-30T04:54:38.873703+09:00",
+            "market_time": "2026-05-29T15:54:38-04:00",
             "basis_label": null,
             "status": "ok",
             "error": null,
             "market": "NYSE/Nasdaq",
             "market_country": "미국",
             "market_timezone": "America/New_York",
-            "market_status": "closed",
-            "market_status_reason": "before regular session open in America/New_York",
+            "market_status": "open",
+            "market_status_reason": "regular session open",
             "market_session": "09:30-16:00",
-            "refresh_status": "pre_open_reused",
-            "last_checked_at": "2026-05-29T15:43:35.295762+09:00"
+            "refresh_status": "fetched"
           },
           "summary_path": "data/stocks/SNDK.json"
         },
@@ -232,9 +233,10 @@
             "market_country": "일본",
             "market_timezone": "Asia/Tokyo",
             "market_status": "closed",
-            "market_status_reason": "post-close refresh window until 16:30 in Asia/Tokyo",
+            "market_status_reason": "weekend in Asia/Tokyo",
             "market_session": "09:00-11:30, 12:30-15:30",
-            "refresh_status": "fetched"
+            "refresh_status": "market_closed_reused",
+            "last_checked_at": "2026-05-30T04:54:38.873703+09:00"
           },
           "summary_path": "data/stocks/285A.T.json"
         },
@@ -269,9 +271,10 @@
             "market_country": "대만",
             "market_timezone": "Asia/Taipei",
             "market_status": "closed",
-            "market_status_reason": "outside refresh window in Asia/Taipei",
+            "market_status_reason": "weekend in Asia/Taipei",
             "market_session": "09:00-13:30",
-            "refresh_status": "fetched"
+            "refresh_status": "market_closed_reused",
+            "last_checked_at": "2026-05-30T04:54:38.873703+09:00"
           },
           "summary_path": "data/stocks/2337.TW.json"
         }

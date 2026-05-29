@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-29T15:43:35.295762+09:00",
+  "generated_at": "2026-05-30T04:54:38.873703+09:00",
   "company": {
     "id": "0981_hk",
     "name_kr": "SMIC",
@@ -29,10 +29,11 @@
     "market": "HKEX",
     "market_country": "홍콩",
     "market_timezone": "Asia/Hong_Kong",
-    "market_status": "open",
-    "market_status_reason": "regular session open",
+    "market_status": "closed",
+    "market_status_reason": "weekend in Asia/Hong_Kong",
     "market_session": "09:30-12:00, 13:00-16:00",
-    "refresh_status": "fetched"
+    "refresh_status": "market_closed_reused",
+    "last_checked_at": "2026-05-30T04:54:38.873703+09:00"
   },
   "peer_groups": [
     {
@@ -73,9 +74,10 @@
             "market_country": "한국",
             "market_timezone": "Asia/Seoul",
             "market_status": "closed",
-            "market_status_reason": "post-close refresh window until 16:30 in Asia/Seoul",
+            "market_status_reason": "weekend in Asia/Seoul",
             "market_session": "09:00-15:30",
-            "refresh_status": "fetched"
+            "refresh_status": "market_closed_reused",
+            "last_checked_at": "2026-05-30T04:54:38.873703+09:00"
           },
           "summary_path": "data/stocks/005930.KS.json"
         }
