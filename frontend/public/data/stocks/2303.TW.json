@@ -3,11 +3,11 @@
   "company": {
     "id": "2303_tw",
     "name_kr": "UMC",
-    "name_en": "United Microelectronics",
+    "name_en": "United Microelectronics Corporation",
     "ticker": "2303.TW",
     "country": "대만",
     "theme": "Foundry",
-    "market_note": "",
+    "market_note": "대만 2위 파운드리 · 파운드리 세계 3위 · 파운드리 3위 · 세계 3위 파운드리",
     "sector": "Foundry",
     "note": "성숙공정",
     "title": "",
@@ -32,7 +32,8 @@
     "market_status": "closed",
     "market_status_reason": "outside refresh window in Asia/Taipei",
     "market_session": "09:00-13:30",
-    "refresh_status": "fetched"
+    "refresh_status": "market_closed_reused",
+    "last_checked_at": "2026-06-01T18:30:34.597048+09:00"
   },
   "peer_groups": [
     {
@@ -46,13 +47,13 @@
           "company": {
             "id": "samsung_electronics",
             "name_kr": "삼성전자",
-            "name_en": "삼성전자",
+            "name_en": "Samsung Electronics",
             "ticker": "005930.KS",
             "country": "한국",
             "theme": "메모리 / HBM / NAND / 파운드리",
             "market_note": "메모리·파운드리 peer 가격 확인",
-            "sector": "",
-            "note": "",
+            "sector": "semiconductor",
+            "note": "글로벌 반도체·가전 선두 · 갤럭시 AI·메모리·파운드리 · 메모리·파운드리 · 파운드리, 메모리 반도체",
             "title": "삼성전자 peer 체크",
             "is_target": true
           },
@@ -75,7 +76,8 @@
             "market_status": "closed",
             "market_status_reason": "outside refresh window in Asia/Seoul",
             "market_session": "09:00-15:30",
-            "refresh_status": "fetched"
+            "refresh_status": "market_closed_reused",
+            "last_checked_at": "2026-06-01T18:30:34.597048+09:00"
           },
           "summary_path": "data/stocks/005930.KS.json"
         }

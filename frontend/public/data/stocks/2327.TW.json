@@ -3,11 +3,11 @@
   "company": {
     "id": "2327_tw",
     "name_kr": "야게오",
-    "name_en": "Yageo",
+    "name_en": "Yageo Corporation",
     "ticker": "2327.TW",
     "country": "대만",
     "theme": "MLCC / 저항 / 수동부품",
-    "market_note": "",
+    "market_note": "MLCC / passive components · 글로벌 MLCC 1위 · MLCC 글로벌 1위 · MLCC 세계 3위 수동부품 · MLCC 등 수동부품 강자 · 피동소자 글로벌 1위 · MLCC 등 수동소자 1위 · MLCC 글로벌 3위",
     "sector": "MLCC / 저항 / 수동부품",
     "note": "MLCC·저항",
     "title": "",
@@ -32,7 +32,8 @@
     "market_status": "closed",
     "market_status_reason": "outside refresh window in Asia/Taipei",
     "market_session": "09:00-13:30",
-    "refresh_status": "fetched"
+    "refresh_status": "market_closed_reused",
+    "last_checked_at": "2026-06-01T18:30:34.597048+09:00"
   },
   "peer_groups": [
     {
@@ -46,13 +47,13 @@
           "company": {
             "id": "samsung_electro_mechanics",
             "name_kr": "삼성전기",
-            "name_en": "삼성전기",
+            "name_en": "Samsung Electro-Mechanics",
             "ticker": "009150.KS",
             "country": "한국",
             "theme": "MLCC / FC-BGA / 패키지기판",
             "market_note": "일본·대만 정규장 마감 후 가격 확인",
-            "sector": "",
-            "note": "",
+            "sector": "pcb_substrate",
+            "note": "MLCC·카메라모듈·패키지기판 · MLCC·온디바이스AI 부품 · MLCC·카메라모듈·반도체 기판 · AI 서버용 FC-BGA 및 MLCC · MLCC, 카메라모듈",
             "title": "삼성전기 peer 체크",
             "is_target": true
           },
@@ -75,7 +76,8 @@
             "market_status": "closed",
             "market_status_reason": "outside refresh window in Asia/Seoul",
             "market_session": "09:00-15:30",
-            "refresh_status": "fetched"
+            "refresh_status": "market_closed_reused",
+            "last_checked_at": "2026-06-01T18:30:34.597048+09:00"
           },
           "summary_path": "data/stocks/009150.KS.json"
         }

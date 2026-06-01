@@ -3,13 +3,13 @@
   "company": {
     "id": "ls",
     "name_kr": "LS",
-    "name_en": "LS",
+    "name_en": "LS Corp.",
     "ticker": "006260.KS",
     "country": "한국",
     "theme": "전선 / 전력기기 / 구리",
     "market_note": "전력망·전선·구리 peer 가격 확인",
-    "sector": "",
-    "note": "",
+    "sector": "energy_utility",
+    "note": "전선·전력 그룹 지주 · 전선·전력 솔루션 지주",
     "title": "LS peer 체크",
     "is_target": true
   },
@@ -32,7 +32,8 @@
     "market_status": "closed",
     "market_status_reason": "outside refresh window in Asia/Seoul",
     "market_session": "09:00-15:30",
-    "refresh_status": "fetched"
+    "refresh_status": "market_closed_reused",
+    "last_checked_at": "2026-06-01T18:30:34.597048+09:00"
   },
   "peer_groups": [
     {
@@ -46,11 +47,11 @@
           "company": {
             "id": "5803_t",
             "name_kr": "후지쿠라",
-            "name_en": "Fujikura",
+            "name_en": "Fujikura Ltd.",
             "ticker": "5803.T",
             "country": "일본",
             "theme": "광섬유 / 전선",
-            "market_note": "",
+            "market_note": "광섬유 등 데이터센터 부품 · 전선, 광케이블 등 인프라 · 광섬유, 전선 케이블",
             "sector": "광섬유 / 전선",
             "note": "광섬유·전선",
             "title": "",
@@ -75,7 +76,8 @@
             "market_status": "closed",
             "market_status_reason": "outside refresh window in Asia/Tokyo",
             "market_session": "09:00-11:30, 12:30-15:30",
-            "refresh_status": "fetched"
+            "refresh_status": "market_closed_reused",
+            "last_checked_at": "2026-06-01T18:30:34.597048+09:00"
           },
           "summary_path": "data/stocks/5803.T.json"
         },
@@ -112,19 +114,20 @@
             "market_status": "closed",
             "market_status_reason": "outside refresh window in Asia/Tokyo",
             "market_session": "09:00-11:30, 12:30-15:30",
-            "refresh_status": "fetched"
+            "refresh_status": "market_closed_reused",
+            "last_checked_at": "2026-06-01T18:30:34.597048+09:00"
           },
           "summary_path": "data/stocks/5802.T.json"
         },
         {
           "company": {
             "id": "5801_t",
-            "name_kr": "후루카와전기",
-            "name_en": "Furukawa Electric",
+            "name_kr": "Furukawa Electric",
+            "name_en": "Furukawa Electric Co., Ltd.",
             "ticker": "5801.T",
             "country": "일본",
             "theme": "전선 / 광섬유",
-            "market_note": "",
+            "market_note": "전선, 케이블, 비철금속",
             "sector": "전선 / 광섬유",
             "note": "전선·광섬유",
             "title": "",
@@ -149,7 +152,8 @@
             "market_status": "closed",
             "market_status_reason": "outside refresh window in Asia/Tokyo",
             "market_session": "09:00-11:30, 12:30-15:30",
-            "refresh_status": "fetched"
+            "refresh_status": "market_closed_reused",
+            "last_checked_at": "2026-06-01T18:30:34.597048+09:00"
           },
           "summary_path": "data/stocks/5801.T.json"
         },
@@ -157,11 +161,11 @@
           "company": {
             "id": "6503_t",
             "name_kr": "미쓰비시전기",
-            "name_en": "Mitsubishi Electric",
+            "name_en": "Mitsubishi Electric Corporation",
             "ticker": "6503.T",
             "country": "일본",
             "theme": "FA / 전력기기",
-            "market_note": "",
+            "market_note": "FA·엘리베이터·방산·전력기기 종합 · 종합 전기기기 제조",
             "sector": "FA / 전력기기",
             "note": "전력기기",
             "title": "",
@@ -186,7 +190,8 @@
             "market_status": "closed",
             "market_status_reason": "outside refresh window in Asia/Tokyo",
             "market_session": "09:00-11:30, 12:30-15:30",
-            "refresh_status": "fetched"
+            "refresh_status": "market_closed_reused",
+            "last_checked_at": "2026-06-01T18:30:34.597048+09:00"
           },
           "summary_path": "data/stocks/6503.T.json"
         }
@@ -207,7 +212,7 @@
             "ticker": "FCX",
             "country": "미국",
             "theme": "구리 / 금 광산",
-            "market_note": "",
+            "market_note": "세계 최대 구리·금 광산 운영사",
             "sector": "구리 / 금 광산",
             "note": "구리",
             "title": "",

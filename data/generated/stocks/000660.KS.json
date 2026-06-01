@@ -3,13 +3,13 @@
   "company": {
     "id": "sk_hynix",
     "name_kr": "SK하이닉스",
-    "name_en": "SK하이닉스",
+    "name_en": "SK hynix",
     "ticker": "000660.KS",
     "country": "한국",
     "theme": "HBM / DRAM / NAND",
     "market_note": "메모리 peer 가격 확인",
-    "sector": "",
-    "note": "",
+    "sector": "semiconductor",
+    "note": "HBM 등 AI 메모리 선도 · HBM·D램 글로벌 1위 · HBM 글로벌 1위",
     "title": "SK하이닉스 peer 체크",
     "is_target": true
   },
@@ -32,7 +32,8 @@
     "market_status": "closed",
     "market_status_reason": "outside refresh window in Asia/Seoul",
     "market_session": "09:00-15:30",
-    "refresh_status": "fetched"
+    "refresh_status": "market_closed_reused",
+    "last_checked_at": "2026-06-01T18:30:34.597048+09:00"
   },
   "peer_groups": [
     {
@@ -45,12 +46,12 @@
         {
           "company": {
             "id": "mu",
-            "name_kr": "마이크론",
+            "name_kr": "마이크론 테크놀로지",
             "name_en": "Micron Technology",
             "ticker": "MU",
             "country": "미국",
             "theme": "DRAM / HBM / NAND",
-            "market_note": "",
+            "market_note": "D램, 낸드 메모리 · DRAM·NAND·HBM 메모리 3대 제조사",
             "sector": "DRAM / HBM / NAND",
             "note": "DRAM·HBM",
             "title": "",
@@ -113,19 +114,20 @@
             "market_status": "closed",
             "market_status_reason": "outside refresh window in Asia/Taipei",
             "market_session": "09:00-13:30",
-            "refresh_status": "fetched"
+            "refresh_status": "market_closed_reused",
+            "last_checked_at": "2026-06-01T18:30:34.597048+09:00"
           },
           "summary_path": "data/stocks/2408.TW.json"
         },
         {
           "company": {
             "id": "2344_tw",
-            "name_kr": "윈본드",
-            "name_en": "Winbond Electronics",
+            "name_kr": "Winbond Electronics",
+            "name_en": "Winbond Electronics Corporation",
             "ticker": "2344.TW",
             "country": "대만",
             "theme": "Specialty DRAM / Flash",
-            "market_note": "",
+            "market_note": "특수 D램/플래시 메모리 · 특수 D램·플래시 · 특수 D램, NOR 플래시",
             "sector": "Specialty DRAM / Flash",
             "note": "특수 DRAM",
             "title": "",
@@ -150,7 +152,8 @@
             "market_status": "closed",
             "market_status_reason": "outside refresh window in Asia/Taipei",
             "market_session": "09:00-13:30",
-            "refresh_status": "fetched"
+            "refresh_status": "market_closed_reused",
+            "last_checked_at": "2026-06-01T18:30:34.597048+09:00"
           },
           "summary_path": "data/stocks/2344.TW.json"
         }
@@ -171,7 +174,7 @@
             "ticker": "SNDK",
             "country": "미국",
             "theme": "NAND / SSD",
-            "market_note": "",
+            "market_note": "낸드 플래시 메모리 · 데이터센터향 스토리지 수요",
             "sector": "NAND / SSD",
             "note": "NAND·SSD",
             "title": "",
@@ -234,7 +237,8 @@
             "market_status": "closed",
             "market_status_reason": "outside refresh window in Asia/Tokyo",
             "market_session": "09:00-11:30, 12:30-15:30",
-            "refresh_status": "fetched"
+            "refresh_status": "market_closed_reused",
+            "last_checked_at": "2026-06-01T18:30:34.597048+09:00"
           },
           "summary_path": "data/stocks/285A.T.json"
         },
@@ -242,11 +246,11 @@
           "company": {
             "id": "2337_tw",
             "name_kr": "매크로닉스",
-            "name_en": "Macronix",
+            "name_en": "Macronix International Co., Ltd.",
             "ticker": "2337.TW",
             "country": "대만",
             "theme": "NOR / NAND Flash",
-            "market_note": "",
+            "market_note": "NOR 플래시 메모리",
             "sector": "NOR / NAND Flash",
             "note": "Flash",
             "title": "",
@@ -271,7 +275,8 @@
             "market_status": "closed",
             "market_status_reason": "outside refresh window in Asia/Taipei",
             "market_session": "09:00-13:30",
-            "refresh_status": "fetched"
+            "refresh_status": "market_closed_reused",
+            "last_checked_at": "2026-06-01T18:30:34.597048+09:00"
           },
           "summary_path": "data/stocks/2337.TW.json"
         }
