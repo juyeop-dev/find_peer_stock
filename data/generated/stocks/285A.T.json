@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-01T18:30:34.597048+09:00",
+  "generated_at": "2026-06-02T04:27:44.826491+09:00",
   "company": {
     "id": "285a_t",
     "name_kr": "키옥시아",
@@ -30,10 +30,10 @@
     "market_country": "일본",
     "market_timezone": "Asia/Tokyo",
     "market_status": "closed",
-    "market_status_reason": "outside refresh window in Asia/Tokyo",
+    "market_status_reason": "before regular session open in Asia/Tokyo",
     "market_session": "09:00-11:30, 12:30-15:30",
-    "refresh_status": "market_closed_reused",
-    "last_checked_at": "2026-06-01T18:30:34.597048+09:00"
+    "refresh_status": "pre_open_reused",
+    "last_checked_at": "2026-06-02T04:27:44.826491+09:00"
   },
   "peer_groups": [
     {
@@ -47,13 +47,13 @@
           "company": {
             "id": "samsung_electronics",
             "name_kr": "삼성전자",
-            "name_en": "Samsung Electronics",
+            "name_en": "삼성전자",
             "ticker": "005930.KS",
             "country": "한국",
             "theme": "메모리 / HBM / NAND / 파운드리",
             "market_note": "메모리·파운드리 peer 가격 확인",
-            "sector": "semiconductor",
-            "note": "글로벌 반도체·가전 선두 · 갤럭시 AI·메모리·파운드리 · 메모리·파운드리 · 파운드리, 메모리 반도체",
+            "sector": "",
+            "note": "",
             "title": "삼성전자 peer 체크",
             "is_target": true
           },
@@ -74,10 +74,10 @@
             "market_country": "한국",
             "market_timezone": "Asia/Seoul",
             "market_status": "closed",
-            "market_status_reason": "outside refresh window in Asia/Seoul",
+            "market_status_reason": "before regular session open in Asia/Seoul",
             "market_session": "09:00-15:30",
-            "refresh_status": "market_closed_reused",
-            "last_checked_at": "2026-06-01T18:30:34.597048+09:00"
+            "refresh_status": "pre_open_reused",
+            "last_checked_at": "2026-06-02T04:27:44.826491+09:00"
           },
           "summary_path": "data/stocks/005930.KS.json"
         },
@@ -85,13 +85,13 @@
           "company": {
             "id": "sk_hynix",
             "name_kr": "SK하이닉스",
-            "name_en": "SK hynix",
+            "name_en": "SK하이닉스",
             "ticker": "000660.KS",
             "country": "한국",
             "theme": "HBM / DRAM / NAND",
             "market_note": "메모리 peer 가격 확인",
-            "sector": "semiconductor",
-            "note": "HBM 등 AI 메모리 선도 · HBM·D램 글로벌 1위 · HBM 글로벌 1위",
+            "sector": "",
+            "note": "",
             "title": "SK하이닉스 peer 체크",
             "is_target": true
           },
@@ -112,10 +112,10 @@
             "market_country": "한국",
             "market_timezone": "Asia/Seoul",
             "market_status": "closed",
-            "market_status_reason": "outside refresh window in Asia/Seoul",
+            "market_status_reason": "before regular session open in Asia/Seoul",
             "market_session": "09:00-15:30",
-            "refresh_status": "market_closed_reused",
-            "last_checked_at": "2026-06-01T18:30:34.597048+09:00"
+            "refresh_status": "pre_open_reused",
+            "last_checked_at": "2026-06-02T04:27:44.826491+09:00"
           },
           "summary_path": "data/stocks/000660.KS.json"
         }

@@ -1,15 +1,15 @@
 {
-  "generated_at": "2026-06-01T18:30:34.597048+09:00",
+  "generated_at": "2026-06-02T04:27:44.826491+09:00",
   "company": {
     "id": "ls",
     "name_kr": "LS",
-    "name_en": "LS Corp.",
+    "name_en": "LS",
     "ticker": "006260.KS",
     "country": "한국",
     "theme": "전선 / 전력기기 / 구리",
     "market_note": "전력망·전선·구리 peer 가격 확인",
-    "sector": "energy_utility",
-    "note": "전선·전력 그룹 지주 · 전선·전력 솔루션 지주",
+    "sector": "",
+    "note": "",
     "title": "LS peer 체크",
     "is_target": true
   },
@@ -30,10 +30,10 @@
     "market_country": "한국",
     "market_timezone": "Asia/Seoul",
     "market_status": "closed",
-    "market_status_reason": "outside refresh window in Asia/Seoul",
+    "market_status_reason": "before regular session open in Asia/Seoul",
     "market_session": "09:00-15:30",
-    "refresh_status": "market_closed_reused",
-    "last_checked_at": "2026-06-01T18:30:34.597048+09:00"
+    "refresh_status": "pre_open_reused",
+    "last_checked_at": "2026-06-02T04:27:44.826491+09:00"
   },
   "peer_groups": [
     {
@@ -47,11 +47,11 @@
           "company": {
             "id": "5803_t",
             "name_kr": "후지쿠라",
-            "name_en": "Fujikura Ltd.",
+            "name_en": "Fujikura",
             "ticker": "5803.T",
             "country": "일본",
             "theme": "광섬유 / 전선",
-            "market_note": "광섬유 등 데이터센터 부품 · 전선, 광케이블 등 인프라 · 광섬유, 전선 케이블",
+            "market_note": "",
             "sector": "광섬유 / 전선",
             "note": "광섬유·전선",
             "title": "",
@@ -74,10 +74,10 @@
             "market_country": "일본",
             "market_timezone": "Asia/Tokyo",
             "market_status": "closed",
-            "market_status_reason": "outside refresh window in Asia/Tokyo",
+            "market_status_reason": "before regular session open in Asia/Tokyo",
             "market_session": "09:00-11:30, 12:30-15:30",
-            "refresh_status": "market_closed_reused",
-            "last_checked_at": "2026-06-01T18:30:34.597048+09:00"
+            "refresh_status": "pre_open_reused",
+            "last_checked_at": "2026-06-02T04:27:44.826491+09:00"
           },
           "summary_path": "data/stocks/5803.T.json"
         },
@@ -112,22 +112,22 @@
             "market_country": "일본",
             "market_timezone": "Asia/Tokyo",
             "market_status": "closed",
-            "market_status_reason": "outside refresh window in Asia/Tokyo",
+            "market_status_reason": "before regular session open in Asia/Tokyo",
             "market_session": "09:00-11:30, 12:30-15:30",
-            "refresh_status": "market_closed_reused",
-            "last_checked_at": "2026-06-01T18:30:34.597048+09:00"
+            "refresh_status": "pre_open_reused",
+            "last_checked_at": "2026-06-02T04:27:44.826491+09:00"
           },
           "summary_path": "data/stocks/5802.T.json"
         },
         {
           "company": {
             "id": "5801_t",
-            "name_kr": "Furukawa Electric",
-            "name_en": "Furukawa Electric Co., Ltd.",
+            "name_kr": "후루카와전기",
+            "name_en": "Furukawa Electric",
             "ticker": "5801.T",
             "country": "일본",
             "theme": "전선 / 광섬유",
-            "market_note": "전선, 케이블, 비철금속",
+            "market_note": "",
             "sector": "전선 / 광섬유",
             "note": "전선·광섬유",
             "title": "",
@@ -150,10 +150,10 @@
             "market_country": "일본",
             "market_timezone": "Asia/Tokyo",
             "market_status": "closed",
-            "market_status_reason": "outside refresh window in Asia/Tokyo",
+            "market_status_reason": "before regular session open in Asia/Tokyo",
             "market_session": "09:00-11:30, 12:30-15:30",
-            "refresh_status": "market_closed_reused",
-            "last_checked_at": "2026-06-01T18:30:34.597048+09:00"
+            "refresh_status": "pre_open_reused",
+            "last_checked_at": "2026-06-02T04:27:44.826491+09:00"
           },
           "summary_path": "data/stocks/5801.T.json"
         },
@@ -161,11 +161,11 @@
           "company": {
             "id": "6503_t",
             "name_kr": "미쓰비시전기",
-            "name_en": "Mitsubishi Electric Corporation",
+            "name_en": "Mitsubishi Electric",
             "ticker": "6503.T",
             "country": "일본",
             "theme": "FA / 전력기기",
-            "market_note": "FA·엘리베이터·방산·전력기기 종합 · 종합 전기기기 제조",
+            "market_note": "",
             "sector": "FA / 전력기기",
             "note": "전력기기",
             "title": "",
@@ -188,10 +188,10 @@
             "market_country": "일본",
             "market_timezone": "Asia/Tokyo",
             "market_status": "closed",
-            "market_status_reason": "outside refresh window in Asia/Tokyo",
+            "market_status_reason": "before regular session open in Asia/Tokyo",
             "market_session": "09:00-11:30, 12:30-15:30",
-            "refresh_status": "market_closed_reused",
-            "last_checked_at": "2026-06-01T18:30:34.597048+09:00"
+            "refresh_status": "pre_open_reused",
+            "last_checked_at": "2026-06-02T04:27:44.826491+09:00"
           },
           "summary_path": "data/stocks/6503.T.json"
         }
@@ -212,7 +212,7 @@
             "ticker": "FCX",
             "country": "미국",
             "theme": "구리 / 금 광산",
-            "market_note": "세계 최대 구리·금 광산 운영사",
+            "market_note": "",
             "sector": "구리 / 금 광산",
             "note": "구리",
             "title": "",
@@ -220,25 +220,24 @@
           },
           "quote": {
             "ticker": "FCX",
-            "price": 65.53,
-            "previous_close": 65.87,
-            "change": -0.3400000000000034,
-            "change_pct": -0.5161682101108345,
+            "price": 67.055,
+            "previous_close": 65.71,
+            "change": 1.345000000000013,
+            "change_pct": 2.046872622127549,
             "currency": "USD",
             "source": "Yahoo Finance",
-            "fetched_at": "2026-05-30T04:54:38.873703+09:00",
-            "market_time": "2026-05-29T15:54:31-04:00",
+            "fetched_at": "2026-06-02T04:27:44.826491+09:00",
+            "market_time": "2026-06-01T15:27:43-04:00",
             "basis_label": null,
             "status": "ok",
             "error": null,
             "market": "NYSE/Nasdaq",
             "market_country": "미국",
             "market_timezone": "America/New_York",
-            "market_status": "closed",
-            "market_status_reason": "before regular session open in America/New_York",
+            "market_status": "open",
+            "market_status_reason": "regular session open",
             "market_session": "09:30-16:00",
-            "refresh_status": "pre_open_reused",
-            "last_checked_at": "2026-06-01T18:30:34.597048+09:00"
+            "refresh_status": "fetched"
           },
           "summary_path": "data/stocks/FCX.json"
         },
@@ -258,25 +257,24 @@
           },
           "quote": {
             "ticker": "SCCO",
-            "price": 191.18,
-            "previous_close": 194.88,
-            "change": -3.6999999999999886,
-            "change_pct": -1.8986042692939131,
+            "price": 194.495,
+            "previous_close": 191.3,
+            "change": 3.194999999999993,
+            "change_pct": 1.6701515943544187,
             "currency": "USD",
             "source": "Yahoo Finance",
-            "fetched_at": "2026-05-30T04:54:38.873703+09:00",
-            "market_time": "2026-05-29T15:54:33-04:00",
+            "fetched_at": "2026-06-02T04:27:44.826491+09:00",
+            "market_time": "2026-06-01T15:27:40-04:00",
             "basis_label": null,
             "status": "ok",
             "error": null,
             "market": "NYSE/Nasdaq",
             "market_country": "미국",
             "market_timezone": "America/New_York",
-            "market_status": "closed",
-            "market_status_reason": "before regular session open in America/New_York",
+            "market_status": "open",
+            "market_status_reason": "regular session open",
             "market_session": "09:30-16:00",
-            "refresh_status": "pre_open_reused",
-            "last_checked_at": "2026-06-01T18:30:34.597048+09:00"
+            "refresh_status": "fetched"
           },
           "summary_path": "data/stocks/SCCO.json"
         }

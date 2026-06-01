@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-01T18:30:34.597048+09:00",
+  "generated_at": "2026-06-02T04:27:44.826491+09:00",
   "company": {
     "id": "5802_t",
     "name_kr": "스미토모전기공업",
@@ -30,10 +30,10 @@
     "market_country": "일본",
     "market_timezone": "Asia/Tokyo",
     "market_status": "closed",
-    "market_status_reason": "outside refresh window in Asia/Tokyo",
+    "market_status_reason": "before regular session open in Asia/Tokyo",
     "market_session": "09:00-11:30, 12:30-15:30",
-    "refresh_status": "market_closed_reused",
-    "last_checked_at": "2026-06-01T18:30:34.597048+09:00"
+    "refresh_status": "pre_open_reused",
+    "last_checked_at": "2026-06-02T04:27:44.826491+09:00"
   },
   "peer_groups": [
     {
@@ -47,13 +47,13 @@
           "company": {
             "id": "ls",
             "name_kr": "LS",
-            "name_en": "LS Corp.",
+            "name_en": "LS",
             "ticker": "006260.KS",
             "country": "한국",
             "theme": "전선 / 전력기기 / 구리",
             "market_note": "전력망·전선·구리 peer 가격 확인",
-            "sector": "energy_utility",
-            "note": "전선·전력 그룹 지주 · 전선·전력 솔루션 지주",
+            "sector": "",
+            "note": "",
             "title": "LS peer 체크",
             "is_target": true
           },
@@ -74,10 +74,10 @@
             "market_country": "한국",
             "market_timezone": "Asia/Seoul",
             "market_status": "closed",
-            "market_status_reason": "outside refresh window in Asia/Seoul",
+            "market_status_reason": "before regular session open in Asia/Seoul",
             "market_session": "09:00-15:30",
-            "refresh_status": "market_closed_reused",
-            "last_checked_at": "2026-06-01T18:30:34.597048+09:00"
+            "refresh_status": "pre_open_reused",
+            "last_checked_at": "2026-06-02T04:27:44.826491+09:00"
           },
           "summary_path": "data/stocks/006260.KS.json"
         }
