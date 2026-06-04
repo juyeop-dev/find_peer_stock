@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-04T07:41:59.804766+09:00",
+  "generated_at": "2026-06-04T13:22:19.309532+09:00",
   "company": {
     "id": "2303_tw",
     "name_kr": "UMC",
@@ -15,25 +15,24 @@
   },
   "quote": {
     "ticker": "2303.TW",
-    "price": 130.5,
-    "previous_close": 141.5,
-    "change": -11.0,
-    "change_pct": -7.773851590106007,
+    "price": 125.5,
+    "previous_close": 130.5,
+    "change": -5.0,
+    "change_pct": -3.831417624521072,
     "currency": "TWD",
-    "source": "TWSE",
-    "fetched_at": "2026-06-04T00:02:08.106187+09:00",
-    "market_time": "2026-06-03T13:30:00+08:00",
+    "source": "Yahoo Finance",
+    "fetched_at": "2026-06-04T13:22:19.309532+09:00",
+    "market_time": "2026-06-04T12:02:24+08:00",
     "basis_label": null,
     "status": "ok",
     "error": null,
     "market": "TWSE",
     "market_country": "대만",
     "market_timezone": "Asia/Taipei",
-    "market_status": "closed",
-    "market_status_reason": "before regular session open in Asia/Taipei",
+    "market_status": "open",
+    "market_status_reason": "regular session open",
     "market_session": "09:00-13:30",
-    "refresh_status": "pre_open_reused",
-    "last_checked_at": "2026-06-04T07:41:59.804766+09:00"
+    "refresh_status": "fetched"
   },
   "peer_groups": [
     {
@@ -59,25 +58,24 @@
           },
           "quote": {
             "ticker": "005930.KS",
-            "price": 349000.0,
-            "previous_close": 317000.0,
-            "change": 32000.0,
-            "change_pct": 10.09,
+            "price": 358000.0,
+            "previous_close": 360500.0,
+            "change": -2500.0,
+            "change_pct": -0.69,
             "currency": "KRW",
             "source": "Naver Finance / TradingView",
-            "fetched_at": "2026-06-01T18:30:34.597048+09:00",
-            "market_time": "2026-06-01T16:10:00+09:00",
-            "basis_label": "2026.06.01 KRX 장마감",
+            "fetched_at": "2026-06-04T13:22:19.309532+09:00",
+            "market_time": "2026-06-04T13:22:00+09:00",
+            "basis_label": null,
             "status": "ok",
             "error": null,
             "market": "KRX",
             "market_country": "한국",
             "market_timezone": "Asia/Seoul",
-            "market_status": "closed",
-            "market_status_reason": "before regular session open in Asia/Seoul",
+            "market_status": "open",
+            "market_status_reason": "regular session open",
             "market_session": "09:00-15:30",
-            "refresh_status": "pre_open_reused",
-            "last_checked_at": "2026-06-04T07:41:59.804766+09:00"
+            "refresh_status": "fetched"
           },
           "summary_path": "data/stocks/005930.KS.json"
         }
@@ -86,6 +84,6 @@
   ],
   "sources": [
     "Naver Finance / TradingView",
-    "TWSE"
+    "Yahoo Finance"
   ]
 }

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-04T07:41:59.804766+09:00",
+  "generated_at": "2026-06-04T13:22:19.309532+09:00",
   "company": {
     "id": "6503_t",
     "name_kr": "미쓰비시전기",
@@ -15,25 +15,24 @@
   },
   "quote": {
     "ticker": "6503.T",
-    "price": 6088.0,
-    "previous_close": 6558.0,
-    "change": -470.0,
-    "change_pct": -7.1668191521805475,
+    "price": 5940.0,
+    "previous_close": 6085.0,
+    "change": -145.0,
+    "change_pct": -2.3829087921117487,
     "currency": "JPY",
     "source": "Yahoo Finance",
-    "fetched_at": "2026-06-01T18:30:34.597048+09:00",
-    "market_time": "2026-06-01T15:30:00+09:00",
+    "fetched_at": "2026-06-04T13:22:19.309532+09:00",
+    "market_time": "2026-06-04T13:07:25+09:00",
     "basis_label": null,
     "status": "ok",
     "error": null,
     "market": "TSE",
     "market_country": "일본",
     "market_timezone": "Asia/Tokyo",
-    "market_status": "closed",
-    "market_status_reason": "before regular session open in Asia/Tokyo",
+    "market_status": "open",
+    "market_status_reason": "regular session open",
     "market_session": "09:00-11:30, 12:30-15:30",
-    "refresh_status": "pre_open_reused",
-    "last_checked_at": "2026-06-04T07:41:59.804766+09:00"
+    "refresh_status": "fetched"
   },
   "peer_groups": [
     {
@@ -59,25 +58,24 @@
           },
           "quote": {
             "ticker": "006260.KS",
-            "price": 466000.0,
-            "previous_close": 446000.0,
-            "change": 20000.0,
-            "change_pct": 4.48,
+            "price": 446000.0,
+            "previous_close": 425500.0,
+            "change": 20500.0,
+            "change_pct": 4.82,
             "currency": "KRW",
             "source": "Naver Finance / TradingView",
-            "fetched_at": "2026-06-01T18:30:34.597048+09:00",
-            "market_time": "2026-06-01T16:10:00+09:00",
-            "basis_label": "2026.06.01 KRX 장마감",
+            "fetched_at": "2026-06-04T13:22:19.309532+09:00",
+            "market_time": "2026-06-04T13:22:00+09:00",
+            "basis_label": null,
             "status": "ok",
             "error": null,
             "market": "KRX",
             "market_country": "한국",
             "market_timezone": "Asia/Seoul",
-            "market_status": "closed",
-            "market_status_reason": "before regular session open in Asia/Seoul",
+            "market_status": "open",
+            "market_status_reason": "regular session open",
             "market_session": "09:00-15:30",
-            "refresh_status": "pre_open_reused",
-            "last_checked_at": "2026-06-04T07:41:59.804766+09:00"
+            "refresh_status": "fetched"
           },
           "summary_path": "data/stocks/006260.KS.json"
         }

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-04T07:41:59.804766+09:00",
+  "generated_at": "2026-06-04T13:22:19.309532+09:00",
   "company": {
     "id": "sk_hynix",
     "name_kr": "SK하이닉스",
@@ -15,25 +15,24 @@
   },
   "quote": {
     "ticker": "000660.KS",
-    "price": 2363000.0,
-    "previous_close": 2333000.0,
-    "change": 30000.0,
-    "change_pct": 1.29,
+    "price": 2292000.0,
+    "previous_close": 2360000.0,
+    "change": -68000.0,
+    "change_pct": -2.88,
     "currency": "KRW",
     "source": "Naver Finance / TradingView",
-    "fetched_at": "2026-06-01T18:30:34.597048+09:00",
-    "market_time": "2026-06-01T16:10:00+09:00",
-    "basis_label": "2026.06.01 KRX 장마감",
+    "fetched_at": "2026-06-04T13:22:19.309532+09:00",
+    "market_time": "2026-06-04T13:22:00+09:00",
+    "basis_label": null,
     "status": "ok",
     "error": null,
     "market": "KRX",
     "market_country": "한국",
     "market_timezone": "Asia/Seoul",
-    "market_status": "closed",
-    "market_status_reason": "before regular session open in Asia/Seoul",
+    "market_status": "open",
+    "market_status_reason": "regular session open",
     "market_session": "09:00-15:30",
-    "refresh_status": "pre_open_reused",
-    "last_checked_at": "2026-06-04T07:41:59.804766+09:00"
+    "refresh_status": "fetched"
   },
   "peer_groups": [
     {
@@ -74,9 +73,10 @@
             "market_country": "미국",
             "market_timezone": "America/New_York",
             "market_status": "closed",
-            "market_status_reason": "outside refresh window in America/New_York",
+            "market_status_reason": "before regular session open in America/New_York",
             "market_session": "09:30-16:00",
-            "refresh_status": "fetched"
+            "refresh_status": "pre_open_reused",
+            "last_checked_at": "2026-06-04T13:22:19.309532+09:00"
           },
           "summary_path": "data/stocks/MU.json"
         },
@@ -96,25 +96,24 @@
           },
           "quote": {
             "ticker": "2408.TW",
-            "price": 401.5,
-            "previous_close": 419.5,
-            "change": -18.0,
-            "change_pct": -4.290822407628129,
+            "price": 397.0,
+            "previous_close": 401.5,
+            "change": -4.5,
+            "change_pct": -1.1207970112079746,
             "currency": "TWD",
-            "source": "TWSE",
-            "fetched_at": "2026-06-04T00:02:08.106187+09:00",
-            "market_time": "2026-06-03T13:30:00+08:00",
+            "source": "Yahoo Finance",
+            "fetched_at": "2026-06-04T13:22:19.309532+09:00",
+            "market_time": "2026-06-04T12:02:19+08:00",
             "basis_label": null,
             "status": "ok",
             "error": null,
             "market": "TWSE",
             "market_country": "대만",
             "market_timezone": "Asia/Taipei",
-            "market_status": "closed",
-            "market_status_reason": "before regular session open in Asia/Taipei",
+            "market_status": "open",
+            "market_status_reason": "regular session open",
             "market_session": "09:00-13:30",
-            "refresh_status": "pre_open_reused",
-            "last_checked_at": "2026-06-04T07:41:59.804766+09:00"
+            "refresh_status": "fetched"
           },
           "summary_path": "data/stocks/2408.TW.json"
         },
@@ -134,25 +133,24 @@
           },
           "quote": {
             "ticker": "2344.TW",
-            "price": 177.5,
-            "previous_close": 184.5,
-            "change": -7.0,
-            "change_pct": -3.7940379403794036,
+            "price": 181.5,
+            "previous_close": 177.5,
+            "change": 4.0,
+            "change_pct": 2.2535211267605604,
             "currency": "TWD",
-            "source": "TWSE",
-            "fetched_at": "2026-06-04T00:02:08.106187+09:00",
-            "market_time": "2026-06-03T13:30:00+08:00",
+            "source": "Yahoo Finance",
+            "fetched_at": "2026-06-04T13:22:19.309532+09:00",
+            "market_time": "2026-06-04T12:02:24+08:00",
             "basis_label": null,
             "status": "ok",
             "error": null,
             "market": "TWSE",
             "market_country": "대만",
             "market_timezone": "Asia/Taipei",
-            "market_status": "closed",
-            "market_status_reason": "before regular session open in Asia/Taipei",
+            "market_status": "open",
+            "market_status_reason": "regular session open",
             "market_session": "09:00-13:30",
-            "refresh_status": "pre_open_reused",
-            "last_checked_at": "2026-06-04T07:41:59.804766+09:00"
+            "refresh_status": "fetched"
           },
           "summary_path": "data/stocks/2344.TW.json"
         }
@@ -196,9 +194,10 @@
             "market_country": "미국",
             "market_timezone": "America/New_York",
             "market_status": "closed",
-            "market_status_reason": "outside refresh window in America/New_York",
+            "market_status_reason": "before regular session open in America/New_York",
             "market_session": "09:30-16:00",
-            "refresh_status": "fetched"
+            "refresh_status": "pre_open_reused",
+            "last_checked_at": "2026-06-04T13:22:19.309532+09:00"
           },
           "summary_path": "data/stocks/SNDK.json"
         },
@@ -218,25 +217,24 @@
           },
           "quote": {
             "ticker": "285A.T",
-            "price": 72500.0,
-            "previous_close": 65850.0,
-            "change": 6650.0,
-            "change_pct": 10.098709187547449,
+            "price": 76200.0,
+            "previous_close": 78080.0,
+            "change": -1880.0,
+            "change_pct": -2.4077868852458995,
             "currency": "JPY",
             "source": "Yahoo Finance",
-            "fetched_at": "2026-06-01T18:30:34.597048+09:00",
-            "market_time": "2026-06-01T15:30:00+09:00",
+            "fetched_at": "2026-06-04T13:22:19.309532+09:00",
+            "market_time": "2026-06-04T13:07:25+09:00",
             "basis_label": null,
             "status": "ok",
             "error": null,
             "market": "TSE",
             "market_country": "일본",
             "market_timezone": "Asia/Tokyo",
-            "market_status": "closed",
-            "market_status_reason": "before regular session open in Asia/Tokyo",
+            "market_status": "open",
+            "market_status_reason": "regular session open",
             "market_session": "09:00-11:30, 12:30-15:30",
-            "refresh_status": "pre_open_reused",
-            "last_checked_at": "2026-06-04T07:41:59.804766+09:00"
+            "refresh_status": "fetched"
           },
           "summary_path": "data/stocks/285A.T.json"
         },
@@ -256,25 +254,24 @@
           },
           "quote": {
             "ticker": "2337.TW",
-            "price": 162.0,
-            "previous_close": 175.5,
-            "change": -13.5,
-            "change_pct": -7.6923076923076925,
+            "price": 159.0,
+            "previous_close": 162.0,
+            "change": -3.0,
+            "change_pct": -1.851851851851849,
             "currency": "TWD",
-            "source": "TWSE",
-            "fetched_at": "2026-06-04T00:02:08.106187+09:00",
-            "market_time": "2026-06-03T13:30:00+08:00",
+            "source": "Yahoo Finance",
+            "fetched_at": "2026-06-04T13:22:19.309532+09:00",
+            "market_time": "2026-06-04T12:00:09+08:00",
             "basis_label": null,
             "status": "ok",
             "error": null,
             "market": "TWSE",
             "market_country": "대만",
             "market_timezone": "Asia/Taipei",
-            "market_status": "closed",
-            "market_status_reason": "before regular session open in Asia/Taipei",
+            "market_status": "open",
+            "market_status_reason": "regular session open",
             "market_session": "09:00-13:30",
-            "refresh_status": "pre_open_reused",
-            "last_checked_at": "2026-06-04T07:41:59.804766+09:00"
+            "refresh_status": "fetched"
           },
           "summary_path": "data/stocks/2337.TW.json"
         }
@@ -283,7 +280,6 @@
   ],
   "sources": [
     "Naver Finance / TradingView",
-    "TWSE",
     "Yahoo Finance"
   ]
 }
