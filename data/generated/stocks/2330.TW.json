@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-06T03:26:23.378938+09:00",
+  "generated_at": "2026-06-07T21:49:02.327897+09:00",
   "company": {
     "id": "2330_tw",
     "name_kr": "TSMC",
@@ -15,14 +15,14 @@
   },
   "quote": {
     "ticker": "2330.TW",
-    "price": 2405.0,
-    "previous_close": 2425.0,
+    "price": 2365.0,
+    "previous_close": 2385.0,
     "change": -20.0,
-    "change_pct": -0.8247422680412342,
+    "change_pct": -0.8385744234800839,
     "currency": "TWD",
-    "source": "Yahoo Finance",
-    "fetched_at": "2026-06-04T13:22:19.309532+09:00",
-    "market_time": "2026-06-04T12:02:03+08:00",
+    "source": "TWSE",
+    "fetched_at": "2026-06-07T21:49:02.327897+09:00",
+    "market_time": "2026-06-05T13:30:00+08:00",
     "basis_label": null,
     "status": "ok",
     "error": null,
@@ -32,8 +32,7 @@
     "market_status": "closed",
     "market_status_reason": "weekend in Asia/Taipei",
     "market_session": "09:00-13:30",
-    "refresh_status": "market_closed_reused",
-    "last_checked_at": "2026-06-06T03:26:23.378938+09:00"
+    "refresh_status": "fetched"
   },
   "peer_groups": [
     {
@@ -59,15 +58,15 @@
           },
           "quote": {
             "ticker": "005930.KS",
-            "price": 358000.0,
-            "previous_close": 360500.0,
-            "change": -2500.0,
-            "change_pct": -0.69,
+            "price": 329000.0,
+            "previous_close": 351500.0,
+            "change": -22500.0,
+            "change_pct": -6.4,
             "currency": "KRW",
             "source": "Naver Finance / TradingView",
-            "fetched_at": "2026-06-04T13:22:19.309532+09:00",
-            "market_time": "2026-06-04T13:22:00+09:00",
-            "basis_label": null,
+            "fetched_at": "2026-06-07T21:49:02.327897+09:00",
+            "market_time": "2026-06-05T16:10:00+09:00",
+            "basis_label": "2026.06.05 KRX 장마감",
             "status": "ok",
             "error": null,
             "market": "KRX",
@@ -76,8 +75,7 @@
             "market_status": "closed",
             "market_status_reason": "weekend in Asia/Seoul",
             "market_session": "09:00-15:30",
-            "refresh_status": "market_closed_reused",
-            "last_checked_at": "2026-06-06T03:26:23.378938+09:00"
+            "refresh_status": "fetched"
           },
           "summary_path": "data/stocks/005930.KS.json"
         }
@@ -86,6 +84,6 @@
   ],
   "sources": [
     "Naver Finance / TradingView",
-    "Yahoo Finance"
+    "TWSE"
   ]
 }
