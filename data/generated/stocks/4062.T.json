@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-07T21:49:02.327897+09:00",
+  "generated_at": "2026-06-08T23:39:23.104227+09:00",
   "company": {
     "id": "4062_t",
     "name_kr": "이비덴",
@@ -30,9 +30,10 @@
     "market_country": "일본",
     "market_timezone": "Asia/Tokyo",
     "market_status": "closed",
-    "market_status_reason": "weekend in Asia/Tokyo",
+    "market_status_reason": "outside refresh window in Asia/Tokyo",
     "market_session": "09:00-11:30, 12:30-15:30",
-    "refresh_status": "fetched"
+    "refresh_status": "market_closed_reused",
+    "last_checked_at": "2026-06-08T23:39:23.104227+09:00"
   },
   "peer_groups": [
     {
@@ -73,9 +74,10 @@
             "market_country": "한국",
             "market_timezone": "Asia/Seoul",
             "market_status": "closed",
-            "market_status_reason": "weekend in Asia/Seoul",
+            "market_status_reason": "outside refresh window in Asia/Seoul",
             "market_session": "09:00-15:30",
-            "refresh_status": "fetched"
+            "refresh_status": "market_closed_reused",
+            "last_checked_at": "2026-06-08T23:39:23.104227+09:00"
           },
           "summary_path": "data/stocks/009150.KS.json"
         }
