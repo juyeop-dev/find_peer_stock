@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-09T23:47:39.610186+09:00",
+  "generated_at": "2026-06-10T00:30:28.513936+09:00",
   "company": {
     "id": "5803_t",
     "name_kr": "후지쿠라",
@@ -30,9 +30,10 @@
     "market_country": "일본",
     "market_timezone": "Asia/Tokyo",
     "market_status": "closed",
-    "market_status_reason": "outside refresh window in Asia/Tokyo",
+    "market_status_reason": "before regular session open in Asia/Tokyo",
     "market_session": "09:00-11:30, 12:30-15:30",
-    "refresh_status": "fetched"
+    "refresh_status": "pre_open_reused",
+    "last_checked_at": "2026-06-10T00:30:28.513936+09:00"
   },
   "peer_groups": [
     {
@@ -73,9 +74,10 @@
             "market_country": "한국",
             "market_timezone": "Asia/Seoul",
             "market_status": "closed",
-            "market_status_reason": "outside refresh window in Asia/Seoul",
+            "market_status_reason": "before regular session open in Asia/Seoul",
             "market_session": "09:00-15:30",
-            "refresh_status": "fetched"
+            "refresh_status": "pre_open_reused",
+            "last_checked_at": "2026-06-10T00:30:28.513936+09:00"
           },
           "summary_path": "data/stocks/006260.KS.json"
         }

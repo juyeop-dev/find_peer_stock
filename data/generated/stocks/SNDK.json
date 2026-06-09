@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-09T23:47:39.610186+09:00",
+  "generated_at": "2026-06-10T00:30:28.513936+09:00",
   "company": {
     "id": "sndk",
     "name_kr": "샌디스크",
@@ -15,14 +15,14 @@
   },
   "quote": {
     "ticker": "SNDK",
-    "price": 1691.79,
+    "price": 1684.5,
     "previous_close": 1642.0,
-    "change": 49.789999999999964,
-    "change_pct": 3.03227771010961,
+    "change": 42.5,
+    "change_pct": 2.5883069427527383,
     "currency": "USD",
     "source": "Yahoo Finance",
-    "fetched_at": "2026-06-09T23:47:39.610186+09:00",
-    "market_time": "2026-06-09T10:47:52-04:00",
+    "fetched_at": "2026-06-10T00:30:28.513936+09:00",
+    "market_time": "2026-06-09T11:30:46-04:00",
     "basis_label": null,
     "status": "ok",
     "error": null,
@@ -73,9 +73,10 @@
             "market_country": "한국",
             "market_timezone": "Asia/Seoul",
             "market_status": "closed",
-            "market_status_reason": "outside refresh window in Asia/Seoul",
+            "market_status_reason": "before regular session open in Asia/Seoul",
             "market_session": "09:00-15:30",
-            "refresh_status": "fetched"
+            "refresh_status": "pre_open_reused",
+            "last_checked_at": "2026-06-10T00:30:28.513936+09:00"
           },
           "summary_path": "data/stocks/005930.KS.json"
         },
@@ -110,9 +111,10 @@
             "market_country": "한국",
             "market_timezone": "Asia/Seoul",
             "market_status": "closed",
-            "market_status_reason": "outside refresh window in Asia/Seoul",
+            "market_status_reason": "before regular session open in Asia/Seoul",
             "market_session": "09:00-15:30",
-            "refresh_status": "fetched"
+            "refresh_status": "pre_open_reused",
+            "last_checked_at": "2026-06-10T00:30:28.513936+09:00"
           },
           "summary_path": "data/stocks/000660.KS.json"
         }

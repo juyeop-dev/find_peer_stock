@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-09T23:47:39.610186+09:00",
+  "generated_at": "2026-06-10T00:30:28.513936+09:00",
   "company": {
     "id": "scco",
     "name_kr": "Southern Copper",
@@ -15,14 +15,14 @@
   },
   "quote": {
     "ticker": "SCCO",
-    "price": 174.24,
+    "price": 172.4,
     "previous_close": 170.48,
-    "change": 3.7600000000000193,
-    "change_pct": 2.2055373064289174,
+    "change": 1.920000000000016,
+    "change_pct": 1.126231816048806,
     "currency": "USD",
     "source": "Yahoo Finance",
-    "fetched_at": "2026-06-09T23:47:39.610186+09:00",
-    "market_time": "2026-06-09T10:47:49-04:00",
+    "fetched_at": "2026-06-10T00:30:28.513936+09:00",
+    "market_time": "2026-06-09T11:30:25-04:00",
     "basis_label": null,
     "status": "ok",
     "error": null,
@@ -73,9 +73,10 @@
             "market_country": "한국",
             "market_timezone": "Asia/Seoul",
             "market_status": "closed",
-            "market_status_reason": "outside refresh window in Asia/Seoul",
+            "market_status_reason": "before regular session open in Asia/Seoul",
             "market_session": "09:00-15:30",
-            "refresh_status": "fetched"
+            "refresh_status": "pre_open_reused",
+            "last_checked_at": "2026-06-10T00:30:28.513936+09:00"
           },
           "summary_path": "data/stocks/006260.KS.json"
         }
