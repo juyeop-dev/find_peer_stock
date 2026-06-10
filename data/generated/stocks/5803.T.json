@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-10T03:29:31.999256+09:00",
+  "generated_at": "2026-06-11T06:24:17.991900+09:00",
   "company": {
     "id": "5803_t",
     "name_kr": "후지쿠라",
@@ -15,14 +15,14 @@
   },
   "quote": {
     "ticker": "5803.T",
-    "price": 4499.0,
-    "previous_close": 4401.0,
-    "change": 98.0,
-    "change_pct": 2.2267666439445666,
+    "price": 4194.0,
+    "previous_close": 4499.0,
+    "change": -305.0,
+    "change_pct": -6.779284285396758,
     "currency": "JPY",
     "source": "Yahoo Finance",
-    "fetched_at": "2026-06-09T23:47:39.610186+09:00",
-    "market_time": "2026-06-09T15:30:00+09:00",
+    "fetched_at": "2026-06-11T06:24:17.991900+09:00",
+    "market_time": "2026-06-10T15:30:00+09:00",
     "basis_label": null,
     "status": "ok",
     "error": null,
@@ -32,8 +32,7 @@
     "market_status": "closed",
     "market_status_reason": "before regular session open in Asia/Tokyo",
     "market_session": "09:00-11:30, 12:30-15:30",
-    "refresh_status": "pre_open_reused",
-    "last_checked_at": "2026-06-10T03:29:31.999256+09:00"
+    "refresh_status": "fetched"
   },
   "peer_groups": [
     {
@@ -59,15 +58,15 @@
           },
           "quote": {
             "ticker": "006260.KS",
-            "price": 387500.0,
-            "previous_close": 371000.0,
-            "change": 16500.0,
-            "change_pct": 4.45,
+            "price": 390000.0,
+            "previous_close": 387500.0,
+            "change": 2500.0,
+            "change_pct": 0.65,
             "currency": "KRW",
             "source": "Naver Finance / TradingView",
-            "fetched_at": "2026-06-09T23:47:39.610186+09:00",
-            "market_time": "2026-06-09T16:10:00+09:00",
-            "basis_label": "2026.06.09 KRX 장마감",
+            "fetched_at": "2026-06-11T06:24:17.991900+09:00",
+            "market_time": "2026-06-10T16:10:00+09:00",
+            "basis_label": "2026.06.10 KRX 장마감",
             "status": "ok",
             "error": null,
             "market": "KRX",
@@ -76,8 +75,7 @@
             "market_status": "closed",
             "market_status_reason": "before regular session open in Asia/Seoul",
             "market_session": "09:00-15:30",
-            "refresh_status": "pre_open_reused",
-            "last_checked_at": "2026-06-10T03:29:31.999256+09:00"
+            "refresh_status": "fetched"
           },
           "summary_path": "data/stocks/006260.KS.json"
         }

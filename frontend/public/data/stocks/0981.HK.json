@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-10T03:29:31.999256+09:00",
+  "generated_at": "2026-06-11T06:24:17.991900+09:00",
   "company": {
     "id": "0981_hk",
     "name_kr": "SMIC",
@@ -15,14 +15,14 @@
   },
   "quote": {
     "ticker": "0981.HK",
-    "price": 75.0,
-    "previous_close": 72.55,
-    "change": 2.450000000000003,
-    "change_pct": 3.3769813921433522,
+    "price": 72.35,
+    "previous_close": 75.0,
+    "change": -2.6500000000000057,
+    "change_pct": -3.533333333333344,
     "currency": "HKD",
     "source": "Yahoo Finance",
-    "fetched_at": "2026-06-10T00:30:28.513936+09:00",
-    "market_time": "2026-06-09T16:08:11+08:00",
+    "fetched_at": "2026-06-11T06:24:17.991900+09:00",
+    "market_time": "2026-06-10T16:09:05+08:00",
     "basis_label": null,
     "status": "ok",
     "error": null,
@@ -32,8 +32,7 @@
     "market_status": "closed",
     "market_status_reason": "before regular session open in Asia/Hong_Kong",
     "market_session": "09:30-12:00, 13:00-16:00",
-    "refresh_status": "pre_open_reused",
-    "last_checked_at": "2026-06-10T03:29:31.999256+09:00"
+    "refresh_status": "fetched"
   },
   "peer_groups": [
     {
@@ -59,15 +58,15 @@
           },
           "quote": {
             "ticker": "005930.KS",
-            "price": 322000.0,
-            "previous_close": 295500.0,
-            "change": 26500.0,
-            "change_pct": 8.97,
+            "price": 302500.0,
+            "previous_close": 322000.0,
+            "change": -19500.0,
+            "change_pct": -6.06,
             "currency": "KRW",
             "source": "Naver Finance / TradingView",
-            "fetched_at": "2026-06-09T23:47:39.610186+09:00",
-            "market_time": "2026-06-09T16:10:00+09:00",
-            "basis_label": "2026.06.09 KRX 장마감",
+            "fetched_at": "2026-06-11T06:24:17.991900+09:00",
+            "market_time": "2026-06-10T16:10:00+09:00",
+            "basis_label": "2026.06.10 KRX 장마감",
             "status": "ok",
             "error": null,
             "market": "KRX",
@@ -76,8 +75,7 @@
             "market_status": "closed",
             "market_status_reason": "before regular session open in Asia/Seoul",
             "market_session": "09:00-15:30",
-            "refresh_status": "pre_open_reused",
-            "last_checked_at": "2026-06-10T03:29:31.999256+09:00"
+            "refresh_status": "fetched"
           },
           "summary_path": "data/stocks/005930.KS.json"
         }
