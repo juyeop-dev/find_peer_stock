@@ -2,12 +2,6 @@ name: Build Stock Peer Site
 
 on:
   workflow_dispatch:
-    inputs:
-      force_fetch:
-        description: "Fetch every ticker, ignoring market hours."
-        required: false
-        type: boolean
-        default: false
   schedule:
     - cron: "3,8,13,18,23,28,33,38,43,48,53,58 * * * *"
   push:
@@ -36,15 +30,7 @@ jobs:
           python-version: "3.12"
 
       - name: Generate stock data
-        shell: bash
-        env:
-          FORCE_FETCH: ${{ github.event_name == 'workflow_dispatch' && inputs.force_fetch == true }}
-        run: |
-          generate_args=(--skip-write-when-no-fetch)
-          if [[ "$FORCE_FETCH" == "true" ]]; then
-            generate_args=(--force-fetch)
-          fi
-          python scripts/generate_static_data.py "${generate_args[@]}"
+        run: python scripts/generate_static_data.py
 
       - name: Commit generated stock data
         if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
@@ -55,7 +41,8 @@ jobs:
           if git diff --cached --quiet; then
             echo "No generated data changes to commit."
           else
-            git commit -m "Update stock peer data [skip ci]"
+            update_timestamp="$(TZ=Asia/Seoul date +'%y%m%d_%H%M%S')"
+            git commit -m "Update stock peer data ${update_timestamp} [skip ci]"
             git push
           fi
 

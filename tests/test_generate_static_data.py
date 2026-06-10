@@ -47,7 +47,17 @@ class GenerateStaticDataTests(unittest.TestCase):
         self.assertEqual(data_gen.infer_currency("6175.TWO"), "TWD")
         self.assertEqual(data_gen.infer_source("6175.TWO"), "Yahoo Finance")
 
-    def test_pre_open_reuses_previous_quote_even_when_force_fetching(self) -> None:
+    def test_pre_open_fetches_quote_instead_of_reusing_previous_quote(self) -> None:
+        quote = data_gen.Quote(
+            ticker="2303.TW",
+            price=112.0,
+            previous_close=110.0,
+            change=2.0,
+            change_pct=1.8181818181818181,
+            currency="TWD",
+            timestamp=datetime(2026, 5, 18, 8, 30, tzinfo=ZoneInfo("Asia/Taipei")),
+            basis_label=None,
+        )
         previous_quote = {
             "ticker": "2303.TW",
             "price": 111.0,
@@ -64,20 +74,21 @@ class GenerateStaticDataTests(unittest.TestCase):
         }
         generated_at = datetime(2026, 5, 18, 9, 30, tzinfo=data_gen.KST)
 
-        with patch.object(data_gen, "fetch_quote", side_effect=AssertionError("should not fetch")):
+        with patch.object(data_gen, "fetch_quote", return_value=quote) as fetch_quote:
             snapshot = data_gen.build_quote_snapshot(
                 "2303.TW",
                 generated_at=generated_at,
                 no_fetch=False,
-                force_fetch=True,
                 previous_quote=previous_quote,
             )
 
-        self.assertEqual(snapshot["price"], 111.0)
-        self.assertEqual(snapshot["change"], 1.0)
-        self.assertEqual(snapshot["change_pct"], 0.9090909090909091)
-        self.assertEqual(snapshot["refresh_status"], "pre_open_reused")
-        self.assertEqual(snapshot["last_checked_at"], generated_at.isoformat())
+        fetch_quote.assert_called_once()
+        self.assertEqual(snapshot["price"], 112.0)
+        self.assertEqual(snapshot["change"], 2.0)
+        self.assertEqual(snapshot["change_pct"], 1.8181818181818181)
+        self.assertEqual(snapshot["refresh_status"], "fetched")
+        self.assertEqual(snapshot["fetched_at"], generated_at.isoformat())
+        self.assertNotIn("last_checked_at", snapshot)
         self.assertEqual(snapshot["market_status"], "closed")
         self.assertIn("before regular session open", snapshot["market_status_reason"])
 
@@ -102,7 +113,6 @@ class GenerateStaticDataTests(unittest.TestCase):
                 "2492.TW",
                 generated_at=generated_at,
                 no_fetch=False,
-                force_fetch=False,
                 previous_quote=None,
             )
 
@@ -143,7 +153,6 @@ class GenerateStaticDataTests(unittest.TestCase):
                 "6976.T",
                 generated_at=generated_at,
                 no_fetch=False,
-                force_fetch=False,
                 previous_quote=previous_quote,
             )
 
@@ -153,7 +162,17 @@ class GenerateStaticDataTests(unittest.TestCase):
         self.assertEqual(snapshot["market_status"], "closed")
         self.assertIn("post-close refresh window", snapshot["market_status_reason"])
 
-    def test_post_close_refresh_window_ends_after_one_hour(self) -> None:
+    def test_after_refresh_window_fetches_instead_of_reusing_previous_quote(self) -> None:
+        quote = data_gen.Quote(
+            ticker="6976.T",
+            price=8200.0,
+            previous_close=7861.0,
+            change=339.0,
+            change_pct=4.312428444218293,
+            currency="JPY",
+            timestamp=datetime(2026, 5, 22, 15, 30, tzinfo=ZoneInfo("Asia/Tokyo")),
+            basis_label=None,
+        )
         previous_quote = {
             "ticker": "6976.T",
             "price": 8145.0,
@@ -170,18 +189,20 @@ class GenerateStaticDataTests(unittest.TestCase):
         }
         generated_at = datetime(2026, 5, 22, 16, 31, tzinfo=ZoneInfo("Asia/Tokyo"))
 
-        with patch.object(data_gen, "fetch_quote", side_effect=AssertionError("should reuse after one-hour window")):
+        with patch.object(data_gen, "fetch_quote", return_value=quote) as fetch_quote:
             snapshot = data_gen.build_quote_snapshot(
                 "6976.T",
                 generated_at=generated_at,
                 no_fetch=False,
-                force_fetch=False,
                 previous_quote=previous_quote,
             )
 
-        self.assertEqual(snapshot["price"], 8145.0)
-        self.assertEqual(snapshot["refresh_status"], "market_closed_reused")
-        self.assertEqual(snapshot["last_checked_at"], generated_at.isoformat())
+        fetch_quote.assert_called_once()
+        self.assertEqual(snapshot["price"], 8200.0)
+        self.assertEqual(snapshot["refresh_status"], "fetched")
+        self.assertEqual(snapshot["fetched_at"], generated_at.isoformat())
+        self.assertNotIn("last_checked_at", snapshot)
+        self.assertIn("outside refresh window", snapshot["market_status_reason"])
 
     def test_market_closed_without_previous_quote_initializes_quote(self) -> None:
         quote = data_gen.Quote(
@@ -201,14 +222,13 @@ class GenerateStaticDataTests(unittest.TestCase):
                 "6239.TW",
                 generated_at=generated_at,
                 no_fetch=False,
-                force_fetch=False,
                 previous_quote=None,
             )
 
         fetch_quote.assert_called_once()
         self.assertEqual(snapshot["price"], 181.0)
         self.assertEqual(snapshot["status"], "ok")
-        self.assertEqual(snapshot["refresh_status"], "market_closed_initialized")
+        self.assertEqual(snapshot["refresh_status"], "fetched")
         self.assertEqual(snapshot["market_status"], "closed")
 
     def test_market_closed_error_previous_quote_is_not_reused(self) -> None:
@@ -243,14 +263,13 @@ class GenerateStaticDataTests(unittest.TestCase):
                 "9984.T",
                 generated_at=generated_at,
                 no_fetch=False,
-                force_fetch=False,
                 previous_quote=previous_quote,
             )
 
         fetch_quote.assert_called_once()
         self.assertEqual(snapshot["price"], 9020.0)
         self.assertEqual(snapshot["status"], "ok")
-        self.assertEqual(snapshot["refresh_status"], "market_closed_initialized")
+        self.assertEqual(snapshot["refresh_status"], "fetched")
 
     def test_all_markets_fetch_during_first_hour_after_final_close(self) -> None:
         cases = [

@@ -95,7 +95,6 @@ def main() -> None:
     seed_configs = load_seed_configs(args.seed_dir)
     company_info = load_company_info(args.company_info_dir)
     catalog = build_catalog(seed_configs, company_info=company_info)
-    previous_quotes = load_previous_quotes(args.output_dir, args.frontend_data_dir)
 
     quotes = {}
     for ticker in sorted(catalog["companies"]):
@@ -103,13 +102,7 @@ def main() -> None:
             ticker,
             generated_at=generated_at,
             no_fetch=args.no_fetch,
-            force_fetch=args.force_fetch,
-            previous_quote=previous_quotes.get(ticker),
         )
-
-    if args.skip_write_when_no_fetch and should_skip_write(quotes):
-        print("No market refresh-window fetches were needed; kept existing static data unchanged.")
-        return
 
     write_static_data(catalog, quotes, generated_at=generated_at, output_dir=args.output_dir)
 
@@ -124,13 +117,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--output-dir", type=Path, default=GENERATED_DIR)
     parser.add_argument("--frontend-data-dir", type=Path, default=FRONTEND_DATA_DIR)
     parser.add_argument("--no-fetch", action="store_true", help="Generate JSON without calling quote sources.")
-    parser.add_argument("--force-fetch", action="store_true", help="Fetch every ticker, ignoring market hours.")
     parser.add_argument("--now", help="Override current time for testing. Example: 2026-05-14T10:00:00+09:00")
-    parser.add_argument(
-        "--skip-write-when-no-fetch",
-        action="store_true",
-        help="Do not rewrite JSON if all quotes were reused because markets are closed.",
-    )
     parser.add_argument(
         "--copy-to-frontend",
         action=argparse.BooleanOptionalAction,
@@ -319,64 +306,19 @@ def merge_company(companies: dict[str, dict[str, Any]], incoming: dict[str, Any]
     companies[ticker] = merged
 
 
-def load_previous_quotes(output_dir: Path, frontend_data_dir: Path) -> dict[str, dict[str, Any]]:
-    quotes: dict[str, dict[str, Any]] = {}
-    for data_dir in (frontend_data_dir, output_dir):
-        stocks_dir = data_dir / "stocks"
-        if not stocks_dir.exists():
-            continue
-
-        for path in sorted(stocks_dir.glob("*.json")):
-            try:
-                payload = json.loads(path.read_text(encoding="utf-8"))
-            except (OSError, json.JSONDecodeError):
-                continue
-
-            quote = payload.get("quote")
-            ticker = quote.get("ticker") if isinstance(quote, dict) else None
-            if ticker and ticker not in quotes:
-                quotes[ticker] = quote
-
-    return quotes
-
-
-def should_skip_write(quotes: dict[str, dict[str, Any]]) -> bool:
-    if not quotes:
-        return False
-
-    refresh_statuses = {quote.get("refresh_status") for quote in quotes.values()}
-    attempted_fetch_statuses = {"fetched", "error", "market_closed_initialized"}
-    missing_previous_statuses = {"market_closed_no_previous", "not_fetched"}
-    return not (refresh_statuses & attempted_fetch_statuses) and not (refresh_statuses & missing_previous_statuses)
-
-
 def build_quote_snapshot(
     ticker: str,
     *,
     generated_at: datetime,
     no_fetch: bool,
-    force_fetch: bool,
-    previous_quote: dict[str, Any] | None,
+    previous_quote: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
     market_state = get_market_state(ticker, generated_at)
-    reusable_previous_quote = is_reusable_quote(previous_quote)
+    # Older callers may pass previous quotes; every normal run now fetches instead of reusing them.
+    _ = previous_quote
 
     if no_fetch:
         return empty_quote(ticker, generated_at, "not fetched", market_state, refresh_status="not_fetched")
-
-    if market_state.is_pre_open and reusable_previous_quote:
-        return reuse_previous_quote(
-            previous_quote,
-            generated_at,
-            market_state,
-            refresh_status="pre_open_reused",
-        )
-
-    refresh_status = "fetched"
-    if not force_fetch and not market_state.should_fetch:
-        if reusable_previous_quote:
-            return reuse_previous_quote(previous_quote, generated_at, market_state)
-        refresh_status = "market_closed_initialized"
 
     if QUOTE_IMPORT_ERROR is not None:
         return empty_quote(
@@ -397,7 +339,7 @@ def build_quote_snapshot(
         fetched_at=generated_at,
         source=infer_quote_source(ticker, market_state),
         market_state=market_state,
-        refresh_status=refresh_status,
+        refresh_status="fetched",
     )
 
 
@@ -444,25 +386,6 @@ def quote_to_dict(
         "error": None,
         **market_state_fields(market_state, refresh_status=refresh_status),
     }
-
-
-def is_reusable_quote(previous_quote: dict[str, Any] | None) -> bool:
-    if not isinstance(previous_quote, dict):
-        return False
-    return previous_quote.get("price") is not None and previous_quote.get("status") != "error"
-
-
-def reuse_previous_quote(
-    previous_quote: dict[str, Any],
-    generated_at: datetime,
-    market_state: MarketState,
-    *,
-    refresh_status: str = "market_closed_reused",
-) -> dict[str, Any]:
-    reused = {**previous_quote}
-    reused.update(market_state_fields(market_state, refresh_status=refresh_status))
-    reused["last_checked_at"] = generated_at.isoformat()
-    return reused
 
 
 def empty_quote(
