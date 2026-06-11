@@ -2,6 +2,12 @@ name: Build Stock Peer Site
 
 on:
   workflow_dispatch:
+    inputs:
+      force_fetch:
+        description: "Fetch fresh quote data before building."
+        required: false
+        default: true
+        type: boolean
   schedule:
     - cron: "3,8,13,18,23,28,33,38,43,48,53,58 * * * *"
   push:

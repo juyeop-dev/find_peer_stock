@@ -55,7 +55,7 @@ npm run build
 
 스케줄은 GitHub Actions가 허용하는 최단 주기인 5분입니다. 정각/30분 혼잡을 피하려고 `3,8,13,...,58`분에 실행합니다. 실제 실행 시각은 GitHub Actions 부하에 따라 지연되거나 일부 누락될 수 있으므로, 화면의 `generated_at`을 기준으로 최신성을 확인합니다.
 
-수동으로 즉시 갱신하려면 Actions에서 `Build Stock Peer Site`를 `Run workflow`로 실행합니다.
+수동으로 즉시 갱신하려면 Actions에서 `Build Stock Peer Site`를 `Run workflow`로 실행합니다. `force_fetch` 입력은 기존 수동 실행/API 호출과의 호환을 위해 받으며, 현재 워크플로는 기본 실행에서 항상 새 시세 조회를 시도합니다.
 
 로컬에서 `data/generated`와 `frontend/public/data`를 직접 갱신해 `main`에 푸시해도 GitHub Pages 배포가 다시 실행됩니다.
 
