@@ -358,34 +358,22 @@ def fetch_quote_result(ticker: str, *, market_state: MarketState | None = None) 
         return QuoteFetchResult(fetch_korean_quote(ticker), infer_source(ticker))
 
     if is_taiwan_ticker and is_taiwan_ticker(ticker):
-        market_state = market_state or get_market_state(ticker, datetime.now(tz=KST))
-        if market_state.should_fetch:
-            try:
-                return QuoteFetchResult(fetch_latest_quote(ticker), "Yahoo Finance")
-            except MarketDataError as yahoo_exc:
-                try:
-                    return QuoteFetchResult(fetch_taiwan_quote(ticker), "TWSE")
-                except MarketDataError as twse_exc:
-                    raise MarketDataError(
-                        f"{ticker}: Yahoo Finance failed: {yahoo_exc}; TWSE fallback failed: {twse_exc}"
-                    ) from twse_exc
-
         try:
-            return QuoteFetchResult(fetch_taiwan_quote(ticker), "TWSE")
-        except MarketDataError as twse_exc:
+            return QuoteFetchResult(fetch_latest_quote(ticker), "Yahoo Finance")
+        except MarketDataError as yahoo_exc:
             try:
-                return QuoteFetchResult(fetch_latest_quote(ticker), "Yahoo Finance")
-            except MarketDataError as yahoo_exc:
+                return QuoteFetchResult(fetch_taiwan_quote(ticker), "TWSE")
+            except MarketDataError as twse_exc:
                 raise MarketDataError(
-                    f"{ticker}: TWSE failed: {twse_exc}; Yahoo Finance fallback failed: {yahoo_exc}"
-                ) from yahoo_exc
+                    f"{ticker}: Yahoo Finance failed: {yahoo_exc}; TWSE fallback failed: {twse_exc}"
+                ) from twse_exc
 
     include_prepost = ticker.upper() in {"FCX", "MU", "SCCO", "SNDK"}
     return QuoteFetchResult(fetch_latest_quote(ticker, include_prepost=include_prepost), infer_source(ticker))
 
 
 def infer_quote_source(ticker: str, market_state: MarketState) -> str:
-    if is_taiwan_ticker and is_taiwan_ticker(ticker) and market_state.should_fetch:
+    if is_taiwan_ticker and is_taiwan_ticker(ticker):
         return "Yahoo Finance"
     return infer_source(ticker)
 

@@ -125,8 +125,8 @@ class GenerateStaticDataTests(unittest.TestCase):
         self.assertEqual(snapshot["source"], "Yahoo Finance")
         self.assertEqual(snapshot["refresh_status"], "fetched")
 
-    def test_taiwan_tw_falls_back_to_yahoo_when_twse_is_blocked_after_close(self) -> None:
-        quote = data_gen.Quote(
+    def test_taiwan_tw_falls_back_to_twse_when_yahoo_is_unavailable(self) -> None:
+        twse_quote = data_gen.Quote(
             ticker="3026.TW",
             price=764.0,
             previous_close=695.0,
@@ -139,8 +139,8 @@ class GenerateStaticDataTests(unittest.TestCase):
         generated_at = datetime(2026, 6, 12, 20, 51, tzinfo=data_gen.KST)
 
         with (
-            patch.object(data_gen, "fetch_taiwan_quote", side_effect=data_gen.MarketDataError("TWSE HTTP 307")),
-            patch.object(data_gen, "fetch_latest_quote", return_value=quote) as fetch_latest,
+            patch.object(data_gen, "fetch_latest_quote", side_effect=data_gen.MarketDataError("Yahoo unavailable")),
+            patch.object(data_gen, "fetch_taiwan_quote", return_value=twse_quote) as fetch_twse,
         ):
             snapshot = data_gen.build_quote_snapshot(
                 "3026.TW",
@@ -149,12 +149,44 @@ class GenerateStaticDataTests(unittest.TestCase):
                 previous_quote=None,
             )
 
-        fetch_latest.assert_called_once_with("3026.TW")
+        fetch_twse.assert_called_once_with("3026.TW")
         self.assertEqual(snapshot["price"], 764.0)
-        self.assertEqual(snapshot["source"], "Yahoo Finance")
+        self.assertEqual(snapshot["source"], "TWSE")
         self.assertEqual(snapshot["status"], "ok")
         self.assertEqual(snapshot["refresh_status"], "fetched")
         self.assertIn("outside refresh window", snapshot["market_status_reason"])
+
+    def test_taiwan_tw_uses_yahoo_after_close_even_when_twse_is_available(self) -> None:
+        yahoo_quote = data_gen.Quote(
+            ticker="2327.TW",
+            price=855.0,
+            previous_close=842.0,
+            change=13.0,
+            change_pct=1.5439429928741033,
+            currency="TWD",
+            timestamp=datetime(2026, 6, 12, 13, 30, 1, tzinfo=ZoneInfo("Asia/Taipei")),
+            basis_label=None,
+        )
+        generated_at = datetime(2026, 6, 12, 20, 51, tzinfo=data_gen.KST)
+
+        with (
+            patch.object(data_gen, "fetch_latest_quote", return_value=yahoo_quote) as fetch_latest,
+            patch.object(data_gen, "fetch_taiwan_quote", side_effect=AssertionError("TWSE should be fallback only")),
+        ):
+            snapshot = data_gen.build_quote_snapshot(
+                "2327.TW",
+                generated_at=generated_at,
+                no_fetch=False,
+                previous_quote=None,
+            )
+
+        fetch_latest.assert_called_once_with("2327.TW")
+        self.assertEqual(snapshot["price"], 855.0)
+        self.assertEqual(snapshot["previous_close"], 842.0)
+        self.assertEqual(snapshot["change"], 13.0)
+        self.assertEqual(snapshot["change_pct"], 1.5439429928741033)
+        self.assertEqual(snapshot["source"], "Yahoo Finance")
+        self.assertEqual(snapshot["status"], "ok")
 
     def test_post_close_refresh_window_fetches_instead_of_reusing_previous_quote(self) -> None:
         quote = data_gen.Quote(
