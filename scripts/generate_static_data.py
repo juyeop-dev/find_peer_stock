@@ -89,6 +89,12 @@ class MarketState:
     session_label: str
 
 
+@dataclass(frozen=True)
+class QuoteFetchResult:
+    quote: Quote
+    source: str
+
+
 def main() -> None:
     args = parse_args()
     generated_at = parse_now(args.now) if args.now else datetime.now(tz=KST)
@@ -330,31 +336,52 @@ def build_quote_snapshot(
         )
 
     try:
-        quote = fetch_quote(ticker, market_state=market_state)
+        result = fetch_quote_result(ticker, market_state=market_state)
     except Exception as exc:
         return empty_quote(ticker, generated_at, str(exc), market_state, refresh_status="error")
 
     return quote_to_dict(
-        quote,
+        result.quote,
         fetched_at=generated_at,
-        source=infer_quote_source(ticker, market_state),
+        source=result.source,
         market_state=market_state,
         refresh_status="fetched",
     )
 
 
 def fetch_quote(ticker: str, *, market_state: MarketState | None = None) -> Quote:
+    return fetch_quote_result(ticker, market_state=market_state).quote
+
+
+def fetch_quote_result(ticker: str, *, market_state: MarketState | None = None) -> QuoteFetchResult:
     if is_korean_ticker and is_korean_ticker(ticker):
-        return fetch_korean_quote(ticker)
+        return QuoteFetchResult(fetch_korean_quote(ticker), infer_source(ticker))
 
     if is_taiwan_ticker and is_taiwan_ticker(ticker):
         market_state = market_state or get_market_state(ticker, datetime.now(tz=KST))
         if market_state.should_fetch:
-            return fetch_latest_quote(ticker)
-        return fetch_taiwan_quote(ticker)
+            try:
+                return QuoteFetchResult(fetch_latest_quote(ticker), "Yahoo Finance")
+            except MarketDataError as yahoo_exc:
+                try:
+                    return QuoteFetchResult(fetch_taiwan_quote(ticker), "TWSE")
+                except MarketDataError as twse_exc:
+                    raise MarketDataError(
+                        f"{ticker}: Yahoo Finance failed: {yahoo_exc}; TWSE fallback failed: {twse_exc}"
+                    ) from twse_exc
+
+        try:
+            return QuoteFetchResult(fetch_taiwan_quote(ticker), "TWSE")
+        except MarketDataError as twse_exc:
+            try:
+                return QuoteFetchResult(fetch_latest_quote(ticker), "Yahoo Finance")
+            except MarketDataError as yahoo_exc:
+                raise MarketDataError(
+                    f"{ticker}: TWSE failed: {twse_exc}; Yahoo Finance fallback failed: {yahoo_exc}"
+                ) from yahoo_exc
 
     include_prepost = ticker.upper() in {"FCX", "MU", "SCCO", "SNDK"}
-    return fetch_latest_quote(ticker, include_prepost=include_prepost)
+    return QuoteFetchResult(fetch_latest_quote(ticker, include_prepost=include_prepost), infer_source(ticker))
 
 
 def infer_quote_source(ticker: str, market_state: MarketState) -> str:

@@ -74,7 +74,11 @@ class GenerateStaticDataTests(unittest.TestCase):
         }
         generated_at = datetime(2026, 5, 18, 9, 30, tzinfo=data_gen.KST)
 
-        with patch.object(data_gen, "fetch_quote", return_value=quote) as fetch_quote:
+        with patch.object(
+            data_gen,
+            "fetch_quote_result",
+            return_value=data_gen.QuoteFetchResult(quote, "TWSE"),
+        ) as fetch_quote:
             snapshot = data_gen.build_quote_snapshot(
                 "2303.TW",
                 generated_at=generated_at,
@@ -121,6 +125,37 @@ class GenerateStaticDataTests(unittest.TestCase):
         self.assertEqual(snapshot["source"], "Yahoo Finance")
         self.assertEqual(snapshot["refresh_status"], "fetched")
 
+    def test_taiwan_tw_falls_back_to_yahoo_when_twse_is_blocked_after_close(self) -> None:
+        quote = data_gen.Quote(
+            ticker="3026.TW",
+            price=764.0,
+            previous_close=695.0,
+            change=69.0,
+            change_pct=9.928057553956826,
+            currency="TWD",
+            timestamp=datetime(2026, 6, 12, 13, 30, 30, tzinfo=ZoneInfo("Asia/Taipei")),
+            basis_label=None,
+        )
+        generated_at = datetime(2026, 6, 12, 20, 51, tzinfo=data_gen.KST)
+
+        with (
+            patch.object(data_gen, "fetch_taiwan_quote", side_effect=data_gen.MarketDataError("TWSE HTTP 307")),
+            patch.object(data_gen, "fetch_latest_quote", return_value=quote) as fetch_latest,
+        ):
+            snapshot = data_gen.build_quote_snapshot(
+                "3026.TW",
+                generated_at=generated_at,
+                no_fetch=False,
+                previous_quote=None,
+            )
+
+        fetch_latest.assert_called_once_with("3026.TW")
+        self.assertEqual(snapshot["price"], 764.0)
+        self.assertEqual(snapshot["source"], "Yahoo Finance")
+        self.assertEqual(snapshot["status"], "ok")
+        self.assertEqual(snapshot["refresh_status"], "fetched")
+        self.assertIn("outside refresh window", snapshot["market_status_reason"])
+
     def test_post_close_refresh_window_fetches_instead_of_reusing_previous_quote(self) -> None:
         quote = data_gen.Quote(
             ticker="6976.T",
@@ -148,7 +183,11 @@ class GenerateStaticDataTests(unittest.TestCase):
         }
         generated_at = datetime(2026, 5, 22, 15, 30, 15, tzinfo=ZoneInfo("Asia/Tokyo"))
 
-        with patch.object(data_gen, "fetch_quote", return_value=quote) as fetch_quote:
+        with patch.object(
+            data_gen,
+            "fetch_quote_result",
+            return_value=data_gen.QuoteFetchResult(quote, "Yahoo Finance"),
+        ) as fetch_quote:
             snapshot = data_gen.build_quote_snapshot(
                 "6976.T",
                 generated_at=generated_at,
@@ -189,7 +228,11 @@ class GenerateStaticDataTests(unittest.TestCase):
         }
         generated_at = datetime(2026, 5, 22, 16, 31, tzinfo=ZoneInfo("Asia/Tokyo"))
 
-        with patch.object(data_gen, "fetch_quote", return_value=quote) as fetch_quote:
+        with patch.object(
+            data_gen,
+            "fetch_quote_result",
+            return_value=data_gen.QuoteFetchResult(quote, "Yahoo Finance"),
+        ) as fetch_quote:
             snapshot = data_gen.build_quote_snapshot(
                 "6976.T",
                 generated_at=generated_at,
@@ -217,7 +260,11 @@ class GenerateStaticDataTests(unittest.TestCase):
         )
         generated_at = datetime(2026, 5, 23, 12, 0, tzinfo=data_gen.KST)
 
-        with patch.object(data_gen, "fetch_quote", return_value=quote) as fetch_quote:
+        with patch.object(
+            data_gen,
+            "fetch_quote_result",
+            return_value=data_gen.QuoteFetchResult(quote, "TWSE"),
+        ) as fetch_quote:
             snapshot = data_gen.build_quote_snapshot(
                 "6239.TW",
                 generated_at=generated_at,
@@ -258,7 +305,11 @@ class GenerateStaticDataTests(unittest.TestCase):
         }
         generated_at = datetime(2026, 5, 23, 12, 5, tzinfo=data_gen.KST)
 
-        with patch.object(data_gen, "fetch_quote", return_value=quote) as fetch_quote:
+        with patch.object(
+            data_gen,
+            "fetch_quote_result",
+            return_value=data_gen.QuoteFetchResult(quote, "Yahoo Finance"),
+        ) as fetch_quote:
             snapshot = data_gen.build_quote_snapshot(
                 "9984.T",
                 generated_at=generated_at,

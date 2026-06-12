@@ -81,13 +81,16 @@ def _fetch_twse_stock_day_quote(ticker: str, code: str, query_month: datetime) -
         stat = payload.get("stat") or "empty response"
         raise TaiwanQuoteUnavailable(f"{ticker}: TWSE {stat}")
 
-    fields = {name: index for index, name in enumerate(payload.get("fields") or [])}
-    latest = _select_quote_row(rows)
-    close = _parse_number(latest[fields["收盤價"]])
-    change = _parse_number(latest[fields["漲跌價差"]])
-    previous_close = close - change
-    change_pct = (change / previous_close * 100) if previous_close else None
-    timestamp = _parse_roc_date(latest[fields["日期"]])
+    try:
+        fields = {name: index for index, name in enumerate(payload.get("fields") or [])}
+        latest = _select_quote_row(rows)
+        close = _parse_number(latest[fields["收盤價"]])
+        change = _parse_change(latest[fields["漲跌價差"]])
+        previous_close = close - change if change is not None else None
+        change_pct = (change / previous_close * 100) if change is not None and previous_close else None
+        timestamp = _parse_roc_date(latest[fields["日期"]])
+    except (KeyError, IndexError, TypeError, ValueError) as exc:
+        raise MarketDataError(f"{ticker}: TWSE malformed quote data: {exc}") from exc
 
     return Quote(
         ticker=ticker,
@@ -125,3 +128,13 @@ def _parse_number(value: Any) -> float:
     if math.isnan(number) or math.isinf(number):
         raise ValueError(f"not a finite number: {value!r}")
     return number
+
+
+def _parse_change(value: Any) -> float | None:
+    text = str(value).replace(",", "").strip()
+    if text.upper().startswith("X"):
+        remainder = text[1:].strip()
+        if remainder:
+            _parse_number(remainder)
+        return None
+    return _parse_number(text)
