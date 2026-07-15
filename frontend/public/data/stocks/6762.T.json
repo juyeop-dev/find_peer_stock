@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-16T05:16:08.100482+09:00",
+  "generated_at": "2026-07-16T06:17:33.852972+09:00",
   "company": {
     "id": "6762_t",
     "name_kr": "TDK",
@@ -15,24 +15,24 @@
   },
   "quote": {
     "ticker": "6762.T",
-    "price": null,
-    "previous_close": null,
-    "change": null,
-    "change_pct": null,
+    "price": 3246.0,
+    "previous_close": 3234.0,
+    "change": 12.0,
+    "change_pct": 0.37105751391466324,
     "currency": "JPY",
     "source": "Yahoo Finance",
-    "fetched_at": "2026-07-16T05:16:08.100482+09:00",
-    "market_time": null,
+    "fetched_at": "2026-07-16T06:17:33.852972+09:00",
+    "market_time": "2026-07-15T15:30:00+09:00",
     "basis_label": null,
-    "status": "error",
-    "error": "6762.T: HTTP 400: <!doctype html public \"-//W3C//DTD HTML 4.01//EN\" \"http://www.w3.org/TR/html4/strict.dtd\">\n<html>\n<head>\n    <title>Yahoo! - Error report</title>\n    <style>\n        /* nn4 hide */ /*/*/\n        body {\n        font: small/ 1.2em arial, helvetica, clean, sans-serif;\n        font: x-small;\n        text-align: center;\n        }\n\n        table {\n        font-size: inherit;\n        font: x-small;\n        }\n\n        html>body {\n        font: 83%/ 1.2em arial, helvetica, clean, sans-serif;\n        }\n\n        input {\n        font-size: 100%;\n        vertical-align: middle;\n        }\n\n        p,form {\n        margin: 0;\n        padding: 0;\n        }\n\n        p {\n        padding-bottom: 6px;\n        margin-bottom: 10px;\n        }\n\n        #doc {\n        width: 48.5em;\n        margin: 0 auto;\n        border: 1px solid #fff;\n        text-align: center;\n        }\n\n        #ygma {\n        text-align: right;\n        margin-bottom: 53px\n        }\n\n        #ygma img {\n        float: left;\n        }\n\n        #ygma div {\n        border-bottom: 1px solid #ccc;\n        padding-bottom: 8px;\n        margin-left: 152px;\n        }\n\n        #bd {\n        clear: both;\n        text-align: left;\n        width: 75%;\n        margin: 0 auto 20px;\n        }\n\n        h1 {\n        font-size: 135%;\n        text-align: center;\n        margin: 0 0 15px;\n        }\n\n        legend {\n        display: none;\n        }\n\n        fieldset {\n        border: 0 solid #fff;\n        padding: .8em 0 .8em 4.5em;\n        }\n\n        form {\n        position: relative;\n        background: #eee;\n        margin-bottom: 15px;\n        border: 1px solid #ccc;\n        border-width: 1px 0;\n        }\n\n        #s1p {\n        width: 15em;\n        margin-right: .1em;\n        }\n\n        form span {\n        position: absolute;\n        left: 70%;\n        top: .8em;\n        }\n\n        form a {\n        font: 78%/ 1.2em arial;\n        display: block;\n        padding-left: .8em;\n        white-space: nowrap;\n        background: url(http://l.yimg.com/a/i/s/bullet.gif)\n        no-repeat left center;\n        }\n\n        form .sep {\n        display: none;\n        }\n\n        .more {\n        text-align: center;\n        }\n\n        #ft {\n        padding-top: 10px;\n        border-top: 1px solid #999;\n        }\n\n        #ft p {\n        text-align: center;\n        font: 78% arial;\n        }\n        /* end nn4 hide */\n    </style>\n</head>\n<body>\n<div id=\"doc\">\n    <div id=\"ygma\">\n        <a href=\"http://www.yahoo.com\">\n            <img src=\"http://l.yimg.com/a/i/yahoo.gif\" width=\"147\"\n                 height=\"31\" border=\"0\" alt=\"Yahoo!\">\n        </a>\n\n        <div>\n            <a href=\"http://www.yahoo.com\">Yahoo!</a>\n            - <a href=\"http://help.yahoo.com\">Help</a>\n        </div>\n    </div>\n    <div id=\"bd\">\n        <h1>HTTP Status 400 - Bad Request</h1>\n\n        <p>\n            <b>type</b>\n            Exception report\n        </p>\n\n        <p>\n            <b>message</b>\n            <u>Bad Request</u>\n        </p>\n\n        <p>\n            <b>description</b>\n            <u>Bad Request</u>\n        </p>\n\n        <p>\n            \n        </p>\n    </div>\n</div>\n</body>\n</html>\n",
+    "status": "ok",
+    "error": null,
     "market": "TSE",
     "market_country": "일본",
     "market_timezone": "Asia/Tokyo",
     "market_status": "closed",
     "market_status_reason": "before regular session open in Asia/Tokyo",
     "market_session": "09:00-11:30, 12:30-15:30",
-    "refresh_status": "error"
+    "refresh_status": "fetched"
   },
   "peer_groups": [
     {
@@ -64,7 +64,7 @@
             "change_pct": 12.14,
             "currency": "KRW",
             "source": "Naver Finance / TradingView",
-            "fetched_at": "2026-07-16T05:16:08.100482+09:00",
+            "fetched_at": "2026-07-16T06:17:33.852972+09:00",
             "market_time": "2026-07-15T16:10:00+09:00",
             "basis_label": "2026.07.15 KRX 장마감",
             "status": "ok",
