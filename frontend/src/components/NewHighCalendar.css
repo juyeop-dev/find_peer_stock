@@ -1,0 +1,238 @@
+.newHighCalendar {
+  min-width: 0;
+  padding: 18px 14px 16px;
+  border: 1px solid #dce2e8;
+  border-radius: 12px;
+  background: #fff;
+  color: #263342;
+}
+
+.newHighCalendar .newHighCalendarTop,
+.newHighCalendar .newHighCalendarNavigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.newHighCalendar .newHighCalendarTitle {
+  font-size: 13px;
+  font-weight: 700;
+  color: #637083;
+}
+
+.newHighCalendar button {
+  appearance: none;
+  font: inherit;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.newHighCalendar button:focus-visible {
+  outline: 3px solid #6c91e5;
+  outline-offset: 2px;
+  position: relative;
+  z-index: 1;
+}
+
+.newHighCalendar .newHighCalendarTodayButton {
+  min-height: 36px;
+  padding: 5px 13px;
+  border: 1px solid #dce2e8;
+  border-radius: 7px;
+  background: #fff;
+  color: #46586e;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.newHighCalendar .newHighCalendarNavigation {
+  margin: 13px 0 14px;
+}
+
+.newHighCalendar .newHighCalendarNavigation h2 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 750;
+  letter-spacing: -0.4px;
+}
+
+.newHighCalendar .newHighCalendarNavigation button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  padding: 0 0 3px;
+  border: 1px solid #e4e9ef;
+  border-radius: 8px;
+  background: #fff;
+  color: #516177;
+  font-size: 27px;
+  line-height: 1;
+}
+
+.newHighCalendar .newHighCalendarTodayButton:hover,
+.newHighCalendar .newHighCalendarNavigation button:hover:not(:disabled) {
+  border-color: #a9bce7;
+  background: #f3f6fd;
+  color: #2855b8;
+}
+
+.newHighCalendar .newHighCalendarNavigation button:disabled {
+  cursor: default;
+  opacity: 0.35;
+}
+
+.newHighCalendar .newHighCalendarWeekdays,
+.newHighCalendar .newHighCalendarGrid {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 3px;
+}
+
+.newHighCalendar .newHighCalendarWeekdays {
+  margin-bottom: 7px;
+  text-align: center;
+  font-size: 11px;
+  font-weight: 650;
+  color: #7d8795;
+}
+
+.newHighCalendar .isSunday {
+  color: #a95c64;
+}
+
+.newHighCalendar .isSaturday {
+  color: #6b87ba;
+}
+
+.newHighCalendar .newHighCalendarDay {
+  display: flex;
+  min-width: 0;
+  min-height: 53px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  padding: 5px 0;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  background: transparent;
+  color: #5c697b;
+  line-height: 1.2;
+}
+
+.newHighCalendar .newHighCalendarDay.isSunday {
+  color: #a95c64;
+}
+
+.newHighCalendar .newHighCalendarDay.isSaturday {
+  color: #6b87ba;
+}
+
+.newHighCalendar .newHighCalendarDay.hasReport {
+  background: #f1f5fc;
+  color: #263f6d;
+}
+
+.newHighCalendar .newHighCalendarDay.isToday {
+  border-color: #adc0e8;
+}
+
+.newHighCalendar .newHighCalendarDay:hover {
+  background: #e7eefb;
+}
+
+.newHighCalendar .newHighCalendarDayNumber {
+  font-size: 13px;
+  font-weight: 650;
+  font-variant-numeric: tabular-nums;
+}
+
+.newHighCalendar .newHighCalendarDayMeta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  min-height: 13px;
+  font-size: 10px;
+  font-weight: 650;
+  font-variant-numeric: tabular-nums;
+  color: #5b6e8e;
+}
+
+.newHighCalendar .newHighCalendarDots {
+  display: inline-flex;
+  gap: 2px;
+}
+
+.newHighCalendar .newHighCalendarDot {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+}
+
+.newHighCalendar .newHighCalendarDot.is52Week {
+  background: #3971dc;
+}
+
+.newHighCalendar .newHighCalendarDot.isAllTime {
+  background: #d98832;
+}
+
+.newHighCalendar .newHighCalendarZero {
+  font-size: 9px;
+  white-space: nowrap;
+  color: #7b8797;
+}
+
+.newHighCalendar .newHighCalendarDay.isSelected {
+  border-color: #2855b8;
+  background: #2855b8;
+  color: #fff;
+}
+
+.newHighCalendar .newHighCalendarDay.isSelected .newHighCalendarDayMeta,
+.newHighCalendar .newHighCalendarDay.isSelected .newHighCalendarZero {
+  color: #fff;
+}
+
+.newHighCalendar .newHighCalendarDay.isSelected .is52Week {
+  background: #b6d6ff;
+}
+
+.newHighCalendar .newHighCalendarDay.isSelected .isAllTime {
+  background: #ffd18d;
+}
+
+.newHighCalendar .newHighCalendarLegend {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 14px;
+  margin-top: 15px;
+  padding-top: 14px;
+  border-top: 1px solid #ecf0f4;
+  color: #657487;
+  font-size: 11px;
+}
+
+.newHighCalendar .newHighCalendarLegend > span {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.newHighCalendar .newHighCalendarLegend .newHighCalendarDot {
+  width: 6px;
+  height: 6px;
+}
+
+.newHighCalendar .newHighCalendarHint {
+  margin: 9px 0 0;
+  color: #7a8797;
+  font-size: 11px;
+}

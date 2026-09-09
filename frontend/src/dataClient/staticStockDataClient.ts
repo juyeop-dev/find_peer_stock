@@ -1,4 +1,5 @@
 import type { SiteIndex, StockSummary } from "./types";
+import type { NewHighIndex, NewHighReport } from "./newHighTypes";
 
 function assetUrl(path: string, cacheBust = false): string {
   const cleanBase = import.meta.env.BASE_URL.replace(/\/$/, "");
@@ -28,4 +29,14 @@ export async function getSiteIndex(cacheBust = false): Promise<SiteIndex> {
 
 export async function getStockSummary(ticker: string, cacheBust = false): Promise<StockSummary> {
   return fetchJson<StockSummary>(`data/stocks/${encodeURIComponent(ticker)}.json`, cacheBust);
+}
+
+export async function getNewHighIndex(): Promise<NewHighIndex> {
+  return fetchJson<NewHighIndex>("data/new-highs/index.json", true);
+}
+
+export async function getNewHighReport(market: string, date: string): Promise<NewHighReport> {
+  return fetchJson<NewHighReport>(
+    `data/new-highs/${encodeURIComponent(market)}/${encodeURIComponent(date)}.json`, true
+  );
 }

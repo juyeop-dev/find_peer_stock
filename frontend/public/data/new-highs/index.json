@@ -1,0 +1,114 @@
+{
+  "schema_version": 1,
+  "markets": [
+    {
+      "id": "korea",
+      "label": "한국",
+      "timezone": "Asia/Seoul",
+      "default_exchange": "KOSPI",
+      "exchanges": [
+        {
+          "id": "KOSPI",
+          "label": "코스피"
+        },
+        {
+          "id": "KOSDAQ",
+          "label": "코스닥"
+        }
+      ]
+    },
+    {
+      "id": "us",
+      "label": "미국",
+      "timezone": "America/New_York",
+      "default_exchange": "all",
+      "exchanges": [
+        {
+          "id": "NASDAQ",
+          "label": "나스닥"
+        },
+        {
+          "id": "NYSE",
+          "label": "뉴욕증권거래소"
+        },
+        {
+          "id": "AMEX",
+          "label": "NYSE American"
+        }
+      ]
+    },
+    {
+      "id": "china",
+      "label": "중국",
+      "timezone": "Asia/Shanghai",
+      "default_exchange": "all",
+      "exchanges": [
+        {
+          "id": "SSE",
+          "label": "상하이"
+        },
+        {
+          "id": "SZSE",
+          "label": "선전"
+        },
+        {
+          "id": "BSE",
+          "label": "베이징"
+        }
+      ]
+    },
+    {
+      "id": "taiwan",
+      "label": "대만",
+      "timezone": "Asia/Taipei",
+      "default_exchange": "all",
+      "exchanges": [
+        {
+          "id": "TWSE",
+          "label": "대만증권거래소"
+        },
+        {
+          "id": "TPEX",
+          "label": "타이베이거래소"
+        }
+      ]
+    },
+    {
+      "id": "japan",
+      "label": "일본",
+      "timezone": "Asia/Tokyo",
+      "default_exchange": "all",
+      "exchanges": [
+        {
+          "id": "TSE",
+          "label": "도쿄"
+        }
+      ]
+    },
+    {
+      "id": "europe",
+      "label": "유럽",
+      "timezone": "Europe/Paris",
+      "default_exchange": "all",
+      "exchanges": [
+        {
+          "id": "EURONEXT",
+          "label": "유로넥스트"
+        },
+        {
+          "id": "XETRA",
+          "label": "독일 Xetra"
+        },
+        {
+          "id": "LSE",
+          "label": "런던"
+        },
+        {
+          "id": "SIX",
+          "label": "스위스"
+        }
+      ]
+    }
+  ],
+  "reports": []
+}

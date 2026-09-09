@@ -4,7 +4,9 @@
   "version": "0.1.0",
   "type": "module",
   "scripts": {
+    "predev": "python ../scripts/generate_new_high_data.py",
     "dev": "vite",
+    "prebuild": "python ../scripts/generate_new_high_data.py",
     "build": "tsc -b && vite build",
     "preview": "vite preview"
   },
