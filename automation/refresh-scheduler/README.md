@@ -4,11 +4,22 @@ Cloudflare Worker가 PC와 관계없이 5분마다 `juyeop-dev/find_peer_stock`�
 
 `queued`, `in_progress`, `waiting`, `pending`, `requested` 실행이 있으면 이번 요청을 건너뜁니다. 상태별 조회라 오래된 진행 중 실행이 최근 완료 실행에 가려지지 않습니다. 조회 실패 시에도 실행 요청을 보내지 않습니다. 이 조회는 원자적 잠금이 아니므로 동시에 발생하는 GitHub cron까지 완전히 중복 방지하지는 못하며 기존 워크플로의 `concurrency` 설정이 배포 겹침을 제어합니다. [GitHub 실행 조회 API](https://docs.github.com/en/rest/actions/workflow-runs#list-workflow-runs-for-a-workflow)
 
+## 비용 없이 운영하는 조건
+
+**Cloudflare Workers Free 플랜만 사용합니다.** 이 작업을 위해 유료 플랜에 가입하거나 결제정보를 추가할 필요는 없습니다. 로그인한 계정의 Workers 플랜이 Free인지 확인한 뒤 배포합니다.
+
+- 5분 예약 실행은 하루 288회입니다. Workers Free의 하루 100,000회와 실행당 CPU 10ms 범위에서 동작하는 작은 HTTP 호출 스케줄러이며, 실제 수집과 빌드는 GitHub에서 수행합니다. 네트워크 응답 대기는 CPU 사용 시간에 포함되지 않습니다. 계정의 다른 Worker와 일일 한도를 공유합니다. [공식 요금](https://developers.cloudflare.com/workers/platform/pricing/)
+- 무료 한도를 넘으면 실행이 제한됩니다. 무료 플랜 사용량 초과를 이유로 유료 플랜으로 자동 전환하는 구성은 아닙니다. [무료 한도](https://developers.cloudflare.com/workers/platform/limits/)
+- 데이터베이스, 유료 서버, 사용자 도메인은 사용하지 않습니다. 기본 Worker 로그만 사용합니다.
+- 현재 `find_peer_stock`은 공개 저장소이고 워크플로는 표준 `ubuntu-latest` 실행기를 사용하므로 GitHub Actions 실행은 무료입니다. GitHub Pages를 그대로 사용하며 아티팩트는 짧은 기본 보관 기간을 유지합니다. 저장소를 비공개로 바꾸거나 유료 실행기로 바꾸는 경우에는 이 조건을 다시 확인해야 합니다. [GitHub Actions 요금](https://docs.github.com/en/billing/concepts/product-billing/github-actions)
+
+위 내용은 2026-09-12 공식 문서 기준입니다. 무료 플랜의 실행 제한으로 갱신이 실패하면 다음 예약 실행에서 다시 시도하며, 비용을 지불하는 확장으로 전환하지 않습니다.
+
 ## 최초 설정
 
 준비물:
 
-- Cloudflare 계정과 해당 계정의 Worker 배포 권한.
+- Workers Free 플랜을 사용하는 Cloudflare 계정과 해당 계정의 Worker 배포 권한.
 - Node.js 22 이상과 npm. Windows 명령은 PowerShell의 npm 스크립트 실행 정책에 영향을 받지 않도록 `npx.cmd`를 사용합니다. macOS/Linux에서는 `npx`를 사용합니다. [Wrangler 설치 안내](https://developers.cloudflare.com/workers/wrangler/install-and-update/)
 - GitHub 저장소에서 Actions와 Pages가 활성화되어 있고 `main`에 `workflow_dispatch`가 포함된 `build-site.yml`이 있어야 합니다.
 - GitHub **fine-grained personal access token**: Resource owner `juyeop-dev`, Repository access는 **Only select repositories → find_peer_stock**, Repository permissions는 **Actions: Read and write**만 추가합니다. 자동 포함되는 Metadata 읽기를 제외한 Contents·Workflows 등의 추가 권한은 필요 없습니다. 만료일을 기록하고 만료 전에 교체합니다. [GitHub workflow dispatch 권한](https://docs.github.com/en/rest/actions/workflows#create-a-workflow-dispatch-event)

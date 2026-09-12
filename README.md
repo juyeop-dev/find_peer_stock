@@ -142,6 +142,8 @@ npm run build
 
 [외부 스케줄러 설치 안내](automation/refresh-scheduler/README.md)에 따라 Cloudflare Worker를 배포합니다. Worker가 5분마다 GitHub의 `workflow_dispatch`를 호출하므로 PC가 꺼져 있어도 작동합니다. 진행 중인 작업이 있으면 중복 호출을 건너뜁니다. 시세 조회와 Pages 배포에는 추가 시간이 필요하며, 외부 서비스의 지연까지 제거하는 실시간 보장은 아닙니다.
 
+**비용 없이 운영하는 조건:** Cloudflare는 Workers Free 플랜을 사용합니다. 하루 288회 예약 실행을 무료 한도 내에서 처리하고, 실제 수집·빌드는 현재 공개 GitHub 저장소의 무료 표준 실행기에서 수행합니다. 유료 서버나 데이터베이스는 필요하지 않습니다. 자세한 무료 한도와 계정 확인 방법은 위 설치 안내에 있습니다.
+
 GitHub 자체 예약은 `3,8,13,...,58`분에 실행하는 예비 경로입니다. 2026-09-12 조사 당시 이 설정에도 실제 최근 실행은 약 2~4시간 간격이었습니다. [GitHub 문서](https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows#schedule)도 예약 실행 지연·누락 가능성을 명시합니다. 화면은 배포 데이터가 20분 넘게 갱신되지 않으면 지연 안내를 표시합니다.
 
 수동으로 즉시 갱신하려면 Actions에서 `Build Stock Peer Site`를 `Run workflow`로 실행합니다. `force_fetch` 기본값은 `true`이며 `false`이면 기존 가격을 유지하고 사이트만 다시 만듭니다. 워크플로는 전체 수집 실패를 오류로 처리하고, 테스트와 빌드 통과 후에만 게시합니다. 생성 데이터 커밋이 원격 동시 변경으로 실패하더라도 정상 생성된 사이트의 배포는 진행합니다.
