@@ -6,12 +6,16 @@
 
 1차 MVP는 FastAPI 없이 동작합니다.
 
-- GitHub Actions가 5분마다 실행되고, 모든 ticker의 가격 JSON을 매번 새로 조회합니다.
+- 외부 Cloudflare 예약 실행이 5분마다 GitHub Actions를 호출하고, 모든 ticker의 가격 JSON을 새로 조회합니다. 외부 예약 실행은 별도 계정·토큰을 등록하고 배포해야 활성화됩니다.
+- 기존 GitHub Actions 예약 실행도 예비 수단으로 유지합니다. 예약식이 5분이어도 실제 실행 간격은 길어질 수 있습니다.
 - React 프론트엔드는 `public/data/*.json`을 읽어서 화면을 그립니다.
-- 종목 상세 페이지는 1분마다 해당 종목 JSON을 다시 확인하고, 데이터가 바뀌면 화면을 자동 갱신합니다.
+- 메인·종목 상세·신고가 페이지는 1분마다 캐시 없이 JSON을 확인합니다. 다른 탭에서 돌아오거나 연결이 복구되면 바로 다시 확인합니다.
+- 조회 실패 시 마지막 정상 가격과 원래 조회 시각을 보존하며, 화면에 이전 가격임을 표시합니다. 모든 시세 조회가 실패하면 배포를 중단해 이전 사이트를 유지합니다.
 - 나중에 FastAPI를 붙일 수 있도록 JSON 응답 구조를 API 응답처럼 유지합니다.
 
 ## 로컬 데이터 생성
+
+기존 가격을 유지하면서 구조만 다시 생성하려면:
 
 ```powershell
 python .\scripts\generate_static_data.py --no-fetch
@@ -29,6 +33,10 @@ python .\scripts\generate_static_data.py
 data/generated/
 frontend/public/data/
 ```
+
+GitHub에서 자동 생성된 데이터는 로컬 파일에 자동으로 내려오지 않습니다. 저장소가 깨끗하면 `git pull --ff-only`로 받거나 위 수집 명령으로 갱신합니다. `npm run dev`만 실행하면 시세 수집은 시작되지 않습니다.
+
+`generated_at`은 파일 생성 시각, `quote.fetched_at`은 마지막 성공한 가격 조회 시각, `quote.market_time`은 제공처가 알려 준 시세 기준 시각입니다. 재조회 실패 시 `status: "stale"`, `refresh_status: "error"`, `last_checked_at`으로 실패 상태와 시도를 기록합니다. 주말이나 휴장에는 이전 거래일 가격이 유지되는 것이 정상입니다. 화면의 `브라우저 확인`은 배포 파일을 읽은 시각이며 가격이 갱신됐다는 뜻은 아닙니다.
 
 ## 일별 신고가 자료 추가
 
@@ -95,14 +103,14 @@ frontend/public/data/new-highs/{market}/{YYYY-MM-DD}.json
 
 `generate_static_data.py`의 정기 실행에도 신고가 생성이 포함되어 있습니다. 이 코드는 **신고가 종목이나 사유를 자동 조사하지 않습니다**. 매일 검증한 자료를 원본 JSON에 추가하고 배포하면 달력에 해당 날짜가 누적됩니다. 생성 파일을 직접 편집하지 말고 `data/new-highs/reports` 원본을 수정합니다.
 
-프론트엔드의 `npm run dev`와 `npm run build`도 시작 전에 신고가 생성기를 실행합니다. 개발 서버 실행 중 원본 자료를 추가했다면 위 Python 명령을 다시 실행한 뒤 페이지를 새로고침합니다.
+프론트엔드의 `npm run dev`와 `npm run build`도 시작 전에 신고가 생성기를 실행합니다. 개발 서버 실행 중 원본 자료를 추가했다면 위 Python 명령을 다시 실행합니다. 열린 페이지에는 다음 자동 확인 때 반영됩니다.
 
 시장·거래소는 `data/new-highs/markets.json`에서 관리합니다. 한국(`korea`), 미국(`us`), 중국(`china`), 대만(`taiwan`), 일본(`japan`), 유럽(`europe`)을 미리 설정했습니다. 자료가 없는 시장은 빈 상태로 표시됩니다. 새 시장은 `id`, 표시명 `label`, 유효한 IANA 기준 시간대 `timezone`, 기본 거래소 `default_exchange`, 거래소 목록 `exchanges`를 추가한 뒤 같은 형식으로 리포트를 등록합니다. `default_exchange`에는 등록된 거래소 ID 또는 전체 거래소를 뜻하는 `all`을 지정합니다. 한국은 `KOSPI`, 나머지 시장은 `all`이 기본값입니다. 유럽 거래소도 필요에 따라 목록을 확장할 수 있습니다.
 
-검증 테스트:
+전체 데이터 검증 테스트:
 
 ```powershell
-python -m unittest discover -s tests -p test_new_high_data.py
+python -m unittest discover -s tests
 ```
 
 ## 프론트엔드 실행
@@ -130,10 +138,20 @@ npm run build
 3. GitHub Pages artifact 업로드
 4. GitHub Pages 배포
 
-스케줄은 GitHub Actions가 허용하는 최단 주기인 5분입니다. 정각/30분 혼잡을 피하려고 `3,8,13,...,58`분에 실행합니다. 실제 실행 시각은 GitHub Actions 부하에 따라 지연되거나 일부 누락될 수 있으므로, 화면의 `generated_at`을 기준으로 최신성을 확인합니다.
+### PC와 무관한 5분 예약 실행
 
-수동으로 즉시 갱신하려면 Actions에서 `Build Stock Peer Site`를 `Run workflow`로 실행합니다. `force_fetch` 입력은 기존 수동 실행/API 호출과의 호환을 위해 받으며, 현재 워크플로는 기본 실행에서 항상 새 시세 조회를 시도합니다.
+[외부 스케줄러 설치 안내](automation/refresh-scheduler/README.md)에 따라 Cloudflare Worker를 배포합니다. Worker가 5분마다 GitHub의 `workflow_dispatch`를 호출하므로 PC가 꺼져 있어도 작동합니다. 진행 중인 작업이 있으면 중복 호출을 건너뜁니다. 시세 조회와 Pages 배포에는 추가 시간이 필요하며, 외부 서비스의 지연까지 제거하는 실시간 보장은 아닙니다.
+
+GitHub 자체 예약은 `3,8,13,...,58`분에 실행하는 예비 경로입니다. 2026-09-12 조사 당시 이 설정에도 실제 최근 실행은 약 2~4시간 간격이었습니다. [GitHub 문서](https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows#schedule)도 예약 실행 지연·누락 가능성을 명시합니다. 화면은 배포 데이터가 20분 넘게 갱신되지 않으면 지연 안내를 표시합니다.
+
+수동으로 즉시 갱신하려면 Actions에서 `Build Stock Peer Site`를 `Run workflow`로 실행합니다. `force_fetch` 기본값은 `true`이며 `false`이면 기존 가격을 유지하고 사이트만 다시 만듭니다. 워크플로는 전체 수집 실패를 오류로 처리하고, 테스트와 빌드 통과 후에만 게시합니다. 생성 데이터 커밋이 원격 동시 변경으로 실패하더라도 정상 생성된 사이트의 배포는 진행합니다.
 
 로컬에서 `data/generated`와 `frontend/public/data`를 직접 갱신해 `main`에 푸시해도 GitHub Pages 배포가 다시 실행됩니다.
 
 GitHub Pages는 repository settings에서 `GitHub Actions` 배포 소스로 설정합니다.
+
+외부 스케줄러 검증:
+
+```powershell
+node --test automation/refresh-scheduler/test/*.test.mjs
+```

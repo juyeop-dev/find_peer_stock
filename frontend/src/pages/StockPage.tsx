@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback } from "react";
 import { useParams } from "react-router-dom";
 import { ErrorNotice } from "../components/ErrorNotice";
 import { LoadingSpinner } from "../components/LoadingSpinner";
@@ -6,147 +6,29 @@ import { PeerGroupSection } from "../components/PeerGroupSection";
 import { QuoteSummary } from "../components/QuoteSummary";
 import { StockHeader } from "../components/StockHeader";
 import { getStockSummary } from "../dataClient/staticStockDataClient";
-import type { StockSummary } from "../dataClient/types";
-
-const STOCK_POLL_INTERVAL_MS = 60_000;
+import { usePollingData } from "../dataClient/usePollingData";
+import { DataRefreshStatus } from "../components/DataRefreshStatus";
 
 export function StockPage() {
   const params = useParams();
   const ticker = params.ticker ? decodeURIComponent(params.ticker) : "";
-  const [summary, setSummary] = useState<StockSummary | null>(null);
-  const [error, setError] = useState<string | null>(null);
-  const [loading, setLoading] = useState(true);
-  const [lastAutoCheckedAt, setLastAutoCheckedAt] = useState<string | null>(null);
-
-  useEffect(() => {
-    let alive = true;
-    setLoading(true);
-    setSummary(null);
-    setLastAutoCheckedAt(null);
-
-    if (!ticker) {
-      setError("티커가 없습니다.");
-      setLoading(false);
-      return () => {
-        alive = false;
-      };
-    }
-
-    getStockSummary(ticker, false)
-      .then((payload) => {
-        if (alive) {
-          setSummary(payload);
-          setLastAutoCheckedAt(new Date().toISOString());
-          setError(null);
-        }
-      })
-      .catch((exc: unknown) => {
-        if (alive) {
-          setError(exc instanceof Error ? exc.message : "종목 데이터를 불러오지 못했습니다.");
-        }
-      })
-      .finally(() => {
-        if (alive) {
-          setLoading(false);
-        }
-      });
-
-    return () => {
-      alive = false;
-    };
-  }, [ticker]);
-
-  useEffect(() => {
-    if (!ticker) {
-      return;
-    }
-
-    let alive = true;
-    let inFlight = false;
-    let timeoutId: number | undefined;
-
-    const clearScheduledPoll = () => {
-      if (timeoutId !== undefined) {
-        window.clearTimeout(timeoutId);
-        timeoutId = undefined;
-      }
-    };
-
-    const schedulePoll = () => {
-      clearScheduledPoll();
-      timeoutId = window.setTimeout(() => {
-        void poll();
-      }, STOCK_POLL_INTERVAL_MS);
-    };
-
-    async function poll() {
-      if (inFlight) {
-        return;
-      }
-
-      inFlight = true;
-      try {
-        const payload = await getStockSummary(ticker, true);
-        if (!alive) {
-          return;
-        }
-
-        setSummary((current) => {
-          if (!current || shouldReplaceSummary(current, payload)) {
-            return payload;
-          }
-          return current;
-        });
-        setError(null);
-      } catch (exc) {
-        if (alive) {
-          setError(exc instanceof Error ? exc.message : "자동 갱신 데이터를 불러오지 못했습니다.");
-        }
-      } finally {
-        inFlight = false;
-        if (alive) {
-          setLastAutoCheckedAt(new Date().toISOString());
-          schedulePoll();
-        }
-      }
-    }
-
-    const pollNow = () => {
-      if (inFlight) {
-        return;
-      }
-
-      clearScheduledPoll();
-      void poll();
-    };
-
-    const handleVisibilityChange = () => {
-      if (document.visibilityState === "visible") {
-        pollNow();
-      }
-    };
-
-    schedulePoll();
-    document.addEventListener("visibilitychange", handleVisibilityChange);
-
-    return () => {
-      alive = false;
-      clearScheduledPoll();
-      document.removeEventListener("visibilitychange", handleVisibilityChange);
-    };
-  }, [ticker]);
+  const loadSummary = useCallback((signal: AbortSignal) => getStockSummary(ticker, signal), [ticker]);
+  const { data: summary, error, loading, refreshing, lastCheckedAt, refresh } = usePollingData(ticker ? loadSummary : null);
 
   return (
     <main className="pageShell">
       {loading ? <LoadingSpinner /> : null}
       {error ? <ErrorNotice message={error} /> : null}
+      {!ticker ? <ErrorNotice message="티커가 없습니다." /> : null}
+
+      <DataRefreshStatus refreshing={refreshing} lastCheckedAt={lastCheckedAt}
+        generatedAt={summary?.generated_at} onRefresh={refresh} />
 
       {summary ? (
         <>
           <StockHeader company={summary.company} />
           <QuoteSummary
             generatedAt={summary.generated_at}
-            lastAutoCheckedAt={lastAutoCheckedAt}
             quote={summary.quote}
           />
 
@@ -185,15 +67,5 @@ export function StockPage() {
         </>
       ) : null}
     </main>
-  );
-}
-
-function shouldReplaceSummary(current: StockSummary, next: StockSummary): boolean {
-  return (
-    current.generated_at !== next.generated_at ||
-    current.quote.fetched_at !== next.quote.fetched_at ||
-    current.quote.price !== next.quote.price ||
-    current.quote.change !== next.quote.change ||
-    current.quote.change_pct !== next.quote.change_pct
   );
 }

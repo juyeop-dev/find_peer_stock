@@ -1,40 +1,14 @@
-import { useEffect, useMemo, useState } from "react";
+import { useMemo } from "react";
 import { Link } from "react-router-dom";
 import { formatDateTime } from "../dataClient/formatters";
 import { getSiteIndex } from "../dataClient/staticStockDataClient";
-import type { SiteIndex } from "../dataClient/types";
+import { usePollingData } from "../dataClient/usePollingData";
+import { DataRefreshStatus } from "../components/DataRefreshStatus";
 import { ErrorNotice } from "../components/ErrorNotice";
 import { LoadingSpinner } from "../components/LoadingSpinner";
 
 export function HomePage() {
-  const [index, setIndex] = useState<SiteIndex | null>(null);
-  const [error, setError] = useState<string | null>(null);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    let alive = true;
-    getSiteIndex()
-      .then((payload) => {
-        if (alive) {
-          setIndex(payload);
-          setError(null);
-        }
-      })
-      .catch((exc: unknown) => {
-        if (alive) {
-          setError(exc instanceof Error ? exc.message : "데이터를 불러오지 못했습니다.");
-        }
-      })
-      .finally(() => {
-        if (alive) {
-          setLoading(false);
-        }
-      });
-
-    return () => {
-      alive = false;
-    };
-  }, []);
+  const { data: index, error, loading, refreshing, lastCheckedAt, refresh } = usePollingData(getSiteIndex);
 
   const featured = useMemo(() => {
     if (!index) {
@@ -50,8 +24,11 @@ export function HomePage() {
           <p className="eyebrow">Peer Market Dashboard</p>
           <h1>Stock Peer Site</h1>
         </div>
-        <div className="generatedBadge">{index ? formatDateTime(index.generated_at) : "-"}</div>
+        <div className="generatedBadge">데이터 생성 · {index ? formatDateTime(index.generated_at) : "-"}</div>
       </header>
+
+      <DataRefreshStatus refreshing={refreshing} lastCheckedAt={lastCheckedAt}
+        generatedAt={index?.generated_at} onRefresh={refresh} />
 
       {loading ? <LoadingSpinner /> : null}
       {error ? <ErrorNotice message={error} /> : null}

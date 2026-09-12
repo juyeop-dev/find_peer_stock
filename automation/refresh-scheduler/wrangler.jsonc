@@ -1,0 +1,18 @@
+{
+  "name": "find-peer-stock-refresh-scheduler",
+  "main": "src/worker.js",
+  "compatibility_date": "2026-09-12",
+  "workers_dev": false,
+  "preview_urls": false,
+  "observability": {
+    "enabled": true
+  },
+  "triggers": {
+    "crons": ["*/5 * * * *"]
+  },
+  "vars": {
+    "GITHUB_REPOSITORY": "juyeop-dev/find_peer_stock",
+    "GITHUB_WORKFLOW": "build-site.yml",
+    "GITHUB_REF": "main"
+  }
+}

@@ -1,15 +1,15 @@
-import { changeTone, formatChange, formatPrice } from "../dataClient/formatters";
+import { changeTone, formatChange, formatPrice, quoteRefreshNotice } from "../dataClient/formatters";
 import type { QuoteSnapshot } from "../dataClient/types";
 import { SourceMeta } from "./SourceMeta";
 
 interface QuoteSummaryProps {
   quote: QuoteSnapshot;
   generatedAt: string;
-  lastAutoCheckedAt?: string | null;
 }
 
-export function QuoteSummary({ quote, generatedAt, lastAutoCheckedAt }: QuoteSummaryProps) {
+export function QuoteSummary({ quote, generatedAt }: QuoteSummaryProps) {
   const tone = changeTone(quote);
+  const refreshNotice = quoteRefreshNotice(quote);
 
   return (
     <section className="quoteSummary" aria-label="가격 요약">
@@ -18,8 +18,8 @@ export function QuoteSummary({ quote, generatedAt, lastAutoCheckedAt }: QuoteSum
         <div className="priceLine">{formatPrice(quote)}</div>
         <div className={`changeLine ${tone}`}>{formatChange(quote)}</div>
       </div>
-      <SourceMeta generatedAt={generatedAt} lastAutoCheckedAt={lastAutoCheckedAt} quote={quote} />
-      {quote.status === "error" ? <p className="quoteError">{quote.error}</p> : null}
+      <SourceMeta generatedAt={generatedAt} quote={quote} />
+      {refreshNotice ? <p className="quoteError" role="status">{refreshNotice}</p> : null}
     </section>
   );
 }

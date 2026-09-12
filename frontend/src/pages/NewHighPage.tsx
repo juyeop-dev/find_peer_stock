@@ -1,10 +1,12 @@
-import { useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import { ErrorNotice } from "../components/ErrorNotice";
 import { LoadingSpinner } from "../components/LoadingSpinner";
 import { NewHighCalendar } from "../components/NewHighCalendar";
+import { DataRefreshStatus } from "../components/DataRefreshStatus";
 import { getNewHighIndex, getNewHighReport, getSiteIndex } from "../dataClient/staticStockDataClient";
-import type { HighType, NewHighCounts, NewHighEntry, NewHighIndex, NewHighReport } from "../dataClient/newHighTypes";
+import { usePollingData } from "../dataClient/usePollingData";
+import type { HighType, NewHighCounts, NewHighEntry } from "../dataClient/newHighTypes";
 
 const EMPTY_COUNTS: NewHighCounts = { total: 0, high_52_week: 0, high_all_time: 0 };
 const HIGH_TYPES: { id: HighType; label: string; description: string }[] = [
@@ -33,28 +35,13 @@ function readableDate(value: string): string {
 
 export function NewHighPage() {
   const [params, setParams] = useSearchParams();
-  const [index, setIndex] = useState<NewHighIndex | null>(null);
-  const [indexError, setIndexError] = useState<string | null>(null);
-  const [indexLoading, setIndexLoading] = useState(true);
-  const [revision, setRevision] = useState(0);
+  const { data: index, error: indexError, loading: indexLoading,
+    refreshing: indexRefreshing, lastCheckedAt, refresh: refreshIndex } = usePollingData(getNewHighIndex);
+  const { data: peerIndex, refresh: refreshPeers } = usePollingData(getSiteIndex);
   const [month, setMonth] = useState("");
   const [search, setSearch] = useState("");
   const [highType, setHighType] = useState<HighType | "all">("all");
-  const [peerTickers, setPeerTickers] = useState<Set<string>>(new Set());
-  const [reportState, setReportState] = useState<{
-    key: string; report?: NewHighReport; error?: string;
-  }>({ key: "" });
-
-  useEffect(() => {
-    let alive = true;
-    setIndexLoading(true);
-    getNewHighIndex().then((payload) => {
-      if (alive) { setIndex(payload); setIndexError(null); }
-    }).catch((error: unknown) => {
-      if (alive) setIndexError(error instanceof Error ? error.message : "신고가 목록을 불러오지 못했습니다.");
-    }).finally(() => { if (alive) setIndexLoading(false); });
-    return () => { alive = false; };
-  }, [revision]);
+  const peerTickers = useMemo(() => new Set(peerIndex?.stocks.map((stock) => stock.ticker) ?? []), [peerIndex]);
 
   const market = index?.markets.find((item) => item.id === params.get("market"))
     ?? index?.markets.find((item) => item.id === "korea") ?? index?.markets[0];
@@ -71,37 +58,25 @@ export function NewHighPage() {
   const exchangeLabel = exchange === "all" ? "전체 거래소"
     : market?.exchanges.find((item) => item.id === exchange)?.label ?? exchange;
   const indexedReport = marketReports.find((item) => item.date === selectedDate);
-  const reportKey = `${marketId}/${selectedDate}/${revision}`;
-  const report = indexedReport && reportState.key === reportKey ? reportState.report : undefined;
-  const reportError = indexedReport && reportState.key === reportKey ? reportState.error : undefined;
-  const reportLoading = Boolean(indexedReport && !report && !reportError);
   const hasReport = Boolean(indexedReport);
+  const loadReport = useCallback(async (signal: AbortSignal) => {
+    const payload = await getNewHighReport(marketId, selectedDate, signal);
+    if (payload.date !== selectedDate || payload.market !== marketId) {
+      throw new Error("선택한 날짜와 기록이 일치하지 않습니다. 새로고침해 주세요.");
+    }
+    return payload;
+  }, [marketId, selectedDate]);
+  const { data: reportData, error: reportError, loading: reportLoading,
+    refreshing: reportRefreshing, refresh: refreshReport } = usePollingData(hasReport ? loadReport : null);
+  const report = hasReport && reportData?.date === selectedDate && reportData.market === marketId ? reportData : null;
 
   useEffect(() => { setMonth(selectedDate.slice(0, 7)); }, [selectedDate, marketId]);
 
-  useEffect(() => {
-    if (!hasReport) return;
-    let alive = true;
-    setReportState({ key: reportKey });
-    getNewHighReport(marketId, selectedDate).then((payload) => {
-      if (payload.date !== selectedDate || payload.market !== marketId) {
-        throw new Error("선택한 날짜와 기록이 일치하지 않습니다. 새로고침해 주세요.");
-      }
-      if (alive) setReportState({ key: reportKey, report: payload });
-    }).catch((error: unknown) => {
-      if (alive) setReportState({ key: reportKey,
-        error: error instanceof Error ? error.message : "신고가 기록을 불러오지 못했습니다." });
-    });
-    return () => { alive = false; };
-  }, [marketId, selectedDate, hasReport, reportKey, index]);
-
-  useEffect(() => {
-    let alive = true;
-    getSiteIndex().then((payload) => {
-      if (alive) setPeerTickers(new Set(payload.stocks.map((stock) => stock.ticker)));
-    }).catch(() => { /* Peer links are optional; the archive can load independently. */ });
-    return () => { alive = false; };
-  }, []);
+  function refresh() {
+    refreshIndex();
+    refreshReport();
+    refreshPeers();
+  }
 
   const days = useMemo(() => Object.fromEntries(marketReports.map((item) => [
     item.date, exchange === "all" ? item.counts : item.exchanges[exchange] ?? EMPTY_COUNTS
@@ -141,11 +116,10 @@ export function NewHighPage() {
           <h1>신고가 캘린더</h1>
           <p className="newHighLead">새로운 고점을 만든 종목, 그 뒤의 이야기를 날짜별로 살펴보세요.</p>
         </div>
-        <button className="newHighButton" disabled={indexLoading || reportLoading}
-          onClick={() => setRevision((value) => value + 1)}>
-          {indexLoading ? "확인 중…" : "새로고침"}
-        </button>
       </header>
+
+      <DataRefreshStatus refreshing={indexRefreshing || reportRefreshing}
+        lastCheckedAt={lastCheckedAt} onRefresh={refresh} />
 
       {indexError ? <ErrorNotice message={indexError} /> : null}
       {!index && indexLoading ? <LoadingSpinner /> : null}

@@ -1,6 +1,8 @@
 from __future__ import annotations
 
 import sys
+import json
+import tempfile
 import unittest
 from datetime import datetime
 from pathlib import Path
@@ -16,6 +18,95 @@ import generate_static_data as data_gen  # noqa: E402
 
 
 class GenerateStaticDataTests(unittest.TestCase):
+    def previous_quote(self) -> dict:
+        return {
+            "ticker": "3026.TW", "price": 758.0, "previous_close": 747.0,
+            "change": 11.0, "change_pct": 1.47, "currency": "TWD",
+            "source": "Yahoo Finance", "fetched_at": "2026-09-09T23:02:08+09:00",
+            "market_time": "2026-09-09T13:30:10+08:00", "basis_label": None,
+            "status": "ok", "error": None, "refresh_status": "fetched",
+        }
+
+    def test_failed_refresh_keeps_price_and_original_timestamps(self) -> None:
+        previous = self.previous_quote()
+        now = datetime(2026, 9, 12, 12, 0, tzinfo=data_gen.KST)
+        with patch.object(data_gen, "fetch_quote_result", side_effect=TimeoutError("provider timeout")):
+            result = data_gen.build_quote_snapshot("3026.TW", generated_at=now, no_fetch=False,
+                                                   previous_quote=previous)
+        for field in ("price", "previous_close", "change", "source", "fetched_at", "market_time"):
+            self.assertEqual(result[field], previous[field])
+        self.assertEqual(result["status"], "stale")
+        self.assertEqual(result["refresh_status"], "error")
+        self.assertEqual(result["last_checked_at"], now.isoformat())
+        self.assertEqual(result["error"], "provider timeout")
+        self.assertEqual(previous["status"], "ok")
+
+    def test_no_fetch_does_not_erase_previous_price(self) -> None:
+        previous = self.previous_quote()
+        with patch.object(data_gen, "fetch_quote_result") as fetch:
+            result = data_gen.build_quote_snapshot("3026.TW", generated_at=datetime.now(data_gen.KST),
+                                                   no_fetch=True, previous_quote=previous)
+        fetch.assert_not_called()
+        self.assertEqual(result["price"], previous["price"])
+        self.assertEqual(result["fetched_at"], previous["fetched_at"])
+        self.assertNotIn("last_checked_at", result)
+        self.assertEqual(result["refresh_status"], "not_fetched")
+
+    def test_repeated_failure_keeps_last_success_and_recovers(self) -> None:
+        previous = {**self.previous_quote(), "status": "stale", "error": "old error"}
+        now = datetime.now(data_gen.KST)
+        with patch.object(data_gen, "fetch_quote_result", side_effect=TimeoutError("new error")):
+            stale = data_gen.build_quote_snapshot("3026.TW", generated_at=now, no_fetch=False,
+                                                  previous_quote=previous)
+        self.assertEqual(stale["fetched_at"], previous["fetched_at"])
+        self.assertEqual(stale["price"], 758.0)
+        quote = data_gen.Quote("3026.TW", 760, 758, 2, 0.26, "TWD", now)
+        with patch.object(data_gen, "fetch_quote_result", return_value=data_gen.QuoteFetchResult(quote, "TWSE")):
+            recovered = data_gen.build_quote_snapshot("3026.TW", generated_at=now, no_fetch=False,
+                                                      previous_quote=stale)
+        self.assertEqual(recovered["status"], "ok")
+        self.assertEqual(recovered["price"], 760)
+        self.assertIsNone(recovered["error"])
+        self.assertNotIn("last_checked_at", recovered)
+
+    def test_invalid_previous_quote_is_not_used_as_fallback(self) -> None:
+        for overrides in ({"ticker": "MU"}, {"price": None}, {"price": float("nan")},
+                          {"price": True}, {"price": -1}, {"status": "error"}):
+            with self.subTest(overrides=overrides), patch.object(data_gen, "fetch_quote_result", side_effect=RuntimeError("failed")):
+                result = data_gen.build_quote_snapshot("3026.TW", generated_at=datetime.now(data_gen.KST),
+                                                       no_fetch=False, previous_quote={**self.previous_quote(), **overrides})
+                self.assertIsNone(result["price"])
+                self.assertEqual(result["status"], "error")
+
+    def test_load_previous_quotes_ignores_corrupt_or_mismatched_files(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            output = Path(tmp)
+            (output / "stocks").mkdir()
+            (output / "stocks/3026.TW.json").write_text(json.dumps({"quote": self.previous_quote()}), encoding="utf-8")
+            (output / "stocks/broken.json").write_text("{", encoding="utf-8")
+            (output / "stocks/array.json").write_text("[]", encoding="utf-8")
+            (output / "stocks/MU.json").write_text(json.dumps({"quote": self.previous_quote()}), encoding="utf-8")
+            self.assertEqual(list(data_gen.load_previous_quotes(output)), ["3026.TW"])
+
+    def test_total_source_failure_exits_without_publishing(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / "seed").mkdir()
+            (root / "seed/example.json").write_text(json.dumps({"target": {"ticker": "3026.TW"}}), encoding="utf-8")
+            output = root / "generated"
+            (output / "stocks").mkdir(parents=True)
+            snapshot = output / "stocks/3026.TW.json"
+            original = json.dumps({"quote": self.previous_quote()})
+            snapshot.write_text(original, encoding="utf-8")
+            argv = ["generate_static_data.py", "--seed-dir", str(root / "seed"), "--output-dir", str(output)]
+            with patch.object(sys, "argv", argv), patch.object(data_gen, "fetch_quote_result", side_effect=RuntimeError("offline")), \
+                 patch.object(data_gen, "write_static_data") as write, patch.object(data_gen, "sync_frontend_data") as sync:
+                with self.assertRaisesRegex(SystemExit, "No quotes fetched"):
+                    data_gen.main()
+                write.assert_not_called()
+                sync.assert_not_called()
+            self.assertEqual(snapshot.read_text(encoding="utf-8"), original)
+
     def test_normalize_company_prefers_company_info_metadata(self) -> None:
         profile = data_gen.normalize_company(
             {

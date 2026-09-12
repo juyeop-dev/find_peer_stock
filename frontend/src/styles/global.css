@@ -223,6 +223,41 @@ a {
   opacity: 0.72;
 }
 
+.dataRefreshStatus {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 18px;
+  color: #637083;
+  font-size: 13px;
+}
+
+.dataRefreshStatus p {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 18px;
+  margin: 0;
+}
+
+.dataAgeNotice {
+  margin: 0 0 18px;
+  padding: 12px 16px;
+  border: 1px solid #e9ca90;
+  border-radius: 8px;
+  background: #fff8eb;
+  color: #7d520b;
+  font-size: 14px;
+}
+
+.peerQuoteNotice {
+  display: block;
+  margin-top: 4px;
+  color: #8a5100;
+  font-size: 12px;
+}
+
 .quoteSummary {
   display: grid;
   grid-template-columns: minmax(280px, 1fr) minmax(520px, 1.7fr);

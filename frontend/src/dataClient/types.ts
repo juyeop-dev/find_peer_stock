@@ -49,7 +49,7 @@ export interface QuoteSnapshot {
   fetched_at: string;
   market_time: string | null;
   basis_label: string | null;
-  status: "ok" | "error";
+  status: "ok" | "stale" | "error";
   error: string | null;
   market?: string;
   market_country?: string;

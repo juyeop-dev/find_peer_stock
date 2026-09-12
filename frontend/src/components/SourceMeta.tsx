@@ -3,27 +3,28 @@ import type { QuoteSnapshot } from "../dataClient/types";
 
 interface SourceMetaProps {
   generatedAt: string;
-  lastAutoCheckedAt?: string | null;
   quote: QuoteSnapshot;
 }
 
-export function SourceMeta({ generatedAt, lastAutoCheckedAt, quote }: SourceMetaProps) {
+export function SourceMeta({ generatedAt, quote }: SourceMetaProps) {
+  const hasSuccessfulQuote = quote.price !== null && quote.status !== "error";
+  const notFetched = !hasSuccessfulQuote && quote.refresh_status === "not_fetched";
   return (
     <dl className="sourceMeta">
-      {lastAutoCheckedAt ? (
-        <div>
-          <dt>자동 확인</dt>
-          <dd>{formatDateTime(lastAutoCheckedAt)}</dd>
-        </div>
-      ) : null}
       <div>
-        <dt>가격 조회</dt>
-        <dd>{formatDateTime(quote.fetched_at)}</dd>
+        <dt>{hasSuccessfulQuote ? "가격 조회 성공" : notFetched ? "가격 조회" : "가격 조회 시도"}</dt>
+        <dd>{notFetched ? "미조회" : formatDateTime(quote.fetched_at)}</dd>
       </div>
       <div>
-        <dt>JSON 생성</dt>
+        <dt>데이터 생성</dt>
         <dd>{formatDateTime(generatedAt)}</dd>
       </div>
+      {quote.last_checked_at && quote.last_checked_at !== quote.fetched_at ? (
+        <div>
+          <dt>가격 조회 시도</dt>
+          <dd>{formatDateTime(quote.last_checked_at)}</dd>
+        </div>
+      ) : null}
       <div>
         <dt>출처</dt>
         <dd>{quote.source}</dd>

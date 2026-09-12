@@ -207,7 +207,9 @@ def _fetch_tradingview_quote(ticker: str, code: str) -> Quote:
         change=change,
         change_pct=change_pct,
         currency=currency,
-        timestamp=datetime.now(tz=KST),
+        # The scanner response has no trade timestamp. Collection time belongs
+        # in fetched_at; using it here would make stale quotes look current.
+        timestamp=None,
         basis_label=None,
     )
 

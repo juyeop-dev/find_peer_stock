@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import math
 import shutil
 import sys
 from dataclasses import dataclass
@@ -103,6 +104,7 @@ def main() -> None:
     seed_configs = load_seed_configs(args.seed_dir)
     company_info = load_company_info(args.company_info_dir)
     catalog = build_catalog(seed_configs, company_info=company_info)
+    previous_quotes = load_previous_quotes(args.output_dir)
 
     quotes = {}
     for ticker in sorted(catalog["companies"]):
@@ -110,7 +112,17 @@ def main() -> None:
             ticker,
             generated_at=generated_at,
             no_fetch=args.no_fetch,
+            previous_quote=previous_quotes.get(ticker),
         )
+
+    fetched = sum(quote["refresh_status"] == "fetched" for quote in quotes.values())
+    retained = sum(quote["status"] == "stale" for quote in quotes.values())
+    errors = sum(quote["status"] == "error" for quote in quotes.values())
+    print(f"Quotes: {fetched} fetched, {retained} retained after failure, {errors} unavailable; {len(quotes)} total.")
+    if not args.no_fetch and fetched == 0:
+        for ticker, quote in quotes.items():
+            print(f"{ticker}: {quote.get('error')}", file=sys.stderr)
+        raise SystemExit("No quotes fetched successfully; existing published files were preserved.")
 
     write_static_data(catalog, quotes, generated_at=generated_at, output_dir=args.output_dir)
     generate_new_high_data(args.new_high_source_dir, args.output_dir, frontend_data_dir=None)
@@ -149,6 +161,31 @@ def load_seed_configs(seed_dir: Path) -> list[dict[str, Any]]:
         raise SystemExit(f"No seed JSON files found in: {seed_dir}")
 
     return configs
+
+
+def load_previous_quotes(output_dir: Path) -> dict[str, dict[str, Any]]:
+    quotes = {}
+    for path in sorted((output_dir / "stocks").glob("*.json")):
+        try:
+            payload = json.loads(path.read_text(encoding="utf-8"))
+        except (OSError, ValueError):
+            continue
+        quote = payload.get("quote") if isinstance(payload, dict) else None
+        if usable_previous_quote(quote, path.stem):
+            quotes[path.stem] = quote
+    return quotes
+
+
+def usable_previous_quote(quote: Any, ticker: str) -> bool:
+    return (
+        isinstance(quote, dict)
+        and quote.get("ticker") == ticker
+        and quote.get("status") in {"ok", "stale"}
+        and type(quote.get("price")) in {int, float}
+        and math.isfinite(quote["price"])
+        and quote["price"] > 0
+        and bool(quote.get("fetched_at"))
+    )
 
 
 def load_company_info(company_info_dir: Path) -> dict[str, dict[str, Any]]:
@@ -324,25 +361,29 @@ def build_quote_snapshot(
     previous_quote: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
     market_state = get_market_state(ticker, generated_at)
-    # Older callers may pass previous quotes; every normal run now fetches instead of reusing them.
-    _ = previous_quote
+    def retain_or_empty(error: str, refresh_status: str) -> dict[str, Any]:
+        if usable_previous_quote(previous_quote, ticker):
+            snapshot = {
+                **previous_quote,
+                **market_state_fields(market_state, refresh_status=refresh_status),
+            }
+            if refresh_status == "error":
+                snapshot.update(status="stale", error=error, last_checked_at=generated_at.isoformat())
+            return snapshot
+        return empty_quote(ticker, generated_at, error, market_state, refresh_status=refresh_status)
 
     if no_fetch:
-        return empty_quote(ticker, generated_at, "not fetched", market_state, refresh_status="not_fetched")
+        return retain_or_empty("not fetched", "not_fetched")
 
     if QUOTE_IMPORT_ERROR is not None:
-        return empty_quote(
-            ticker,
-            generated_at,
-            f"quote source import failed: {QUOTE_IMPORT_ERROR}",
-            market_state,
-            refresh_status="error",
-        )
+        return retain_or_empty(f"quote source import failed: {QUOTE_IMPORT_ERROR}", "error")
 
     try:
         result = fetch_quote_result(ticker, market_state=market_state)
+        if not math.isfinite(result.quote.price) or result.quote.price <= 0:
+            raise MarketDataError(f"{ticker}: invalid quote price")
     except Exception as exc:
-        return empty_quote(ticker, generated_at, str(exc), market_state, refresh_status="error")
+        return retain_or_empty(str(exc), "error")
 
     return quote_to_dict(
         result.quote,
@@ -512,14 +553,20 @@ def write_static_data(
 
 
 def sync_frontend_data(output_dir: Path, frontend_data_dir: Path) -> None:
-    if frontend_data_dir.exists():
-        shutil.rmtree(frontend_data_dir)
-    shutil.copytree(output_dir, frontend_data_dir)
+    # Keep the served directory available while a local dev server is polling it.
+    for source in output_dir.rglob("*.json"):
+        destination = frontend_data_dir / source.relative_to(output_dir)
+        destination.parent.mkdir(parents=True, exist_ok=True)
+        temporary = destination.with_suffix(".json.tmp")
+        shutil.copyfile(source, temporary)
+        temporary.replace(destination)
 
 
 def write_json(path: Path, payload: dict[str, Any]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    temporary = path.with_suffix(".json.tmp")
+    temporary.write_text(json.dumps(payload, ensure_ascii=False, indent=2, allow_nan=False) + "\n", encoding="utf-8")
+    temporary.replace(path)
 
 
 def flatten_group_tickers(groups: list[dict[str, Any]]) -> list[str]:

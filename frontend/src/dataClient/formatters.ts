@@ -1,5 +1,18 @@
 import type { QuoteSnapshot } from "./types";
 
+export function quoteRefreshNotice(quote: QuoteSnapshot): string | null {
+  if (quote.status === "stale" || (quote.refresh_status === "error" && quote.price !== null)) {
+    return "최신 시세를 받지 못해 마지막으로 조회한 가격을 표시합니다.";
+  }
+  if (quote.status === "error") {
+    return "시세를 불러오지 못했습니다. 다음 업데이트 때 다시 조회합니다.";
+  }
+  if (quote.refresh_status === "not_fetched") {
+    return "이번 업데이트에서는 시세를 조회하지 않아 저장된 가격을 표시합니다.";
+  }
+  return null;
+}
+
 export function formatDateTime(value: string | null): string {
   if (!value) {
     return "-";

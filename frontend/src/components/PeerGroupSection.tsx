@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { getExternalQuoteLink } from "../dataClient/externalLinks";
-import { changeTone, formatChange, formatDateTime, formatPrice } from "../dataClient/formatters";
+import { changeTone, formatChange, formatDateTime, formatPrice, quoteRefreshNotice } from "../dataClient/formatters";
 import type { PeerGroup } from "../dataClient/types";
 
 interface PeerGroupSectionProps {
@@ -33,6 +33,7 @@ export function PeerGroupSection({ group }: PeerGroupSectionProps) {
           <tbody>
             {group.peers.map((peer) => {
               const tone = changeTone(peer.quote);
+              const refreshNotice = quoteRefreshNotice(peer.quote);
               const externalQuoteLink = getExternalQuoteLink(peer.company.ticker);
               return (
                 <tr key={peer.company.ticker}>
@@ -53,7 +54,9 @@ export function PeerGroupSection({ group }: PeerGroupSectionProps) {
                   </td>
                   <td>{peer.company.country}</td>
                   <td>{peer.company.note || peer.company.sector || "-"}</td>
-                  <td>{formatPrice(peer.quote)}</td>
+                  <td>{formatPrice(peer.quote)}
+                    {refreshNotice ? <small className="peerQuoteNotice">{refreshNotice}</small> : null}
+                  </td>
                   <td className={tone}>{formatChange(peer.quote)}</td>
                   <td>{formatDateTime(peer.quote.fetched_at)}</td>
                   <td>{peer.quote.source}</td>
