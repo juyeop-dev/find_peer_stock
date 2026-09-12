@@ -20,6 +20,8 @@ Cloudflare Worker가 PC와 관계없이 5분마다 `juyeop-dev/find_peer_stock`�
 준비물:
 
 - Workers Free 플랜을 사용하는 Cloudflare 계정과 해당 계정의 Worker 배포 권한.
+- 가입 이메일 인증을 완료해야 합니다. `10034` 오류는 이메일 인증이 끝나지 않았다는 뜻입니다.
+- 새 계정은 Workers 대시보드를 처음 열어 무료 `workers.dev` 계정 주소를 설정해야 합니다. `10063` 오류는 이 초기 설정이 없다는 뜻입니다. Cron 전용 Worker도 계정 주소가 필요하지만, 이 Worker의 공개 HTTP 접속은 계속 꺼져 있습니다.
 - Node.js 22 이상과 npm. Windows 명령은 PowerShell의 npm 스크립트 실행 정책에 영향을 받지 않도록 `npx.cmd`를 사용합니다. macOS/Linux에서는 `npx`를 사용합니다. [Wrangler 설치 안내](https://developers.cloudflare.com/workers/wrangler/install-and-update/)
 - GitHub 저장소에서 Actions와 Pages가 활성화되어 있고 `main`에 `workflow_dispatch`가 포함된 `build-site.yml`이 있어야 합니다.
 - GitHub **fine-grained personal access token**: Resource owner `juyeop-dev`, Repository access는 **Only select repositories → find_peer_stock**, Repository permissions는 **Actions: Read and write**만 추가합니다. 자동 포함되는 Metadata 읽기를 제외한 Contents·Workflows 등의 추가 권한은 필요 없습니다. 만료일을 기록하고 만료 전에 교체합니다. [GitHub workflow dispatch 권한](https://docs.github.com/en/rest/actions/workflows#create-a-workflow-dispatch-event)
@@ -29,13 +31,21 @@ Cloudflare Worker가 PC와 관계없이 5분마다 `juyeop-dev/find_peer_stock`�
 ```powershell
 Set-Location automation/refresh-scheduler
 node --test
-npx.cmd wrangler@4.131.1 login
+npx.cmd wrangler@4.131.1 login --scopes account:read user:read workers_scripts:write workers_tail:read
 npx.cmd wrangler@4.131.1 deploy --dry-run
 npx.cmd wrangler@4.131.1 deploy
 npx.cmd wrangler@4.131.1 secret put GITHUB_TOKEN
 ```
 
 마지막 명령의 비공개 입력창에 GitHub 토큰을 입력합니다. 토큰을 채팅, 명령 인자, `wrangler.jsonc`, Git 추적 파일에 붙여 넣지 않습니다. 이 이름은 Worker의 비밀값 이름이며, GitHub Actions가 실행마다 제공하는 임시 `GITHUB_TOKEN`을 복사하는 방식이 아닙니다. `secret put`은 비밀값을 저장한 새 Worker 버전을 즉시 배포합니다. 최초 `deploy`부터 비밀값 등록 전까지 호출되면 `missing_github_token`으로 실패하며 GitHub에는 요청하지 않습니다. [Cloudflare Secrets](https://developers.cloudflare.com/workers/configuration/secrets/)
+
+Windows에서는 준비된 비공개 입력 도구로 마지막 명령을 대신할 수 있습니다.
+
+```powershell
+powershell.exe -NoProfile -STA -ExecutionPolicy Bypass -File .\register-github-token.ps1
+```
+
+[토큰 생성 화면](https://github.com/settings/personal-access-tokens/new?name=Stock%20Peer%20Scheduler&description=Trigger%20find_peer_stock%20refresh%20from%20Cloudflare&target_name=juyeop-dev&expires_in=90&actions=write)은 이름·소유자·90일 만료·Actions 권한을 미리 채웁니다. **Repository access는 직접 `Only select repositories → find_peer_stock`으로 선택**하고 생성합니다. 복사한 토큰을 별도 등록 창에 붙여 넣고 **등록**을 누릅니다. 입력 내용은 가려지고 Wrangler의 표준 입력으로 전달됩니다. 파일에는 토큰을 저장하지 않으며 Git에서 제외되는 `.wrangler/registration-status.json`에는 진행 상태만 남깁니다. 90일은 생성 화면의 기본값이므로 실제 선택한 만료일을 기록해 교체합니다.
 
 계정이 여러 개라면 Wrangler가 제시하는 계정 중 사용할 계정을 선택합니다. 필요하면 `wrangler.jsonc`에 해당 Cloudflare `account_id`를 추가합니다. 설치를 생략하고 `npx`로 Wrangler를 실행하는 구성이며 Worker 자체의 실행 의존성은 없습니다.
 
