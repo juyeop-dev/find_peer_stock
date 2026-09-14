@@ -207,6 +207,32 @@
       }
     },
     {
+      "market": "us",
+      "date": "2026-09-14",
+      "counts": {
+        "total": 129,
+        "high_52_week": 58,
+        "high_all_time": 71
+      },
+      "exchanges": {
+        "NASDAQ": {
+          "total": 70,
+          "high_52_week": 31,
+          "high_all_time": 39
+        },
+        "NYSE": {
+          "total": 49,
+          "high_52_week": 25,
+          "high_all_time": 24
+        },
+        "AMEX": {
+          "total": 10,
+          "high_52_week": 2,
+          "high_all_time": 8
+        }
+      }
+    },
+    {
       "market": "europe",
       "date": "2026-09-11",
       "counts": {
@@ -331,11 +357,12 @@
       "last_success_at": "2026-09-14T12:29:38.083995+00:00"
     },
     "us": {
-      "last_success_at": "2026-09-13T14:33:40.975313+00:00",
-      "last_success_date": "2026-09-11",
-      "status": "pending",
+      "status": "updated",
       "target_date": "2026-09-14",
-      "message": "장 마감 후 일별 자료를 확인합니다."
+      "last_attempt_at": "2026-09-14T21:01:27.301197+00:00",
+      "last_success_at": "2026-09-14T21:01:27.301197+00:00",
+      "last_success_date": "2026-09-14",
+      "message": "장 마감 후 신고가 자료를 갱신했습니다."
     },
     "china": {
       "status": "unsupported",
