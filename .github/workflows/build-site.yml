@@ -36,7 +36,59 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Set up Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+
+      - name: Test data pipeline and external scheduler
+        # Fail before collecting or pushing source data when collector or
+        # scheduler code does not satisfy its local safety contracts.
+        run: |
+          python -m unittest discover -s tests
+          node --test automation/refresh-scheduler/test/*.test.mjs
+
+      - name: Collect daily new highs after each market close
+        # Completed session files are reused. Failed markets retry after 30 minutes.
+        # A provider failure must not stop the independent peer quote deployment.
+        continue-on-error: true
+        run: python scripts/refresh_new_highs.py
+
+      - name: Validate collected daily archive
+        # Validate every source report and refresh state before any source push.
+        # Keep validation output outside the checkout so a concurrent push can
+        # still be rebased without unstaged generated files blocking Git.
+        run: >-
+          python scripts/generate_new_high_data.py
+          --output-dir "$RUNNER_TEMP/new-high-validation"
+          --no-copy-to-frontend
+
+      - name: Save daily archive before building
+        # Persist successes/retry state even when quote collection or a later build fails.
+        # Do not publish an archive whose durable source could not be saved.
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/new-highs
+          if ! git diff --cached --quiet; then
+            git commit -m "Save daily new-high archive [skip ci]"
+            for attempt in 1 2 3; do
+              if git push origin HEAD:main; then
+                exit 0
+              fi
+              if [ "$attempt" = "3" ]; then exit 1; fi
+              git fetch origin main
+              git rebase origin/main
+            done
+          fi
+
       - name: Generate stock data
+        id: quotes
+        # The generator preserves all files on total quote-source failure.
+        # Daily new highs can still be published with the previous price snapshot.
+        continue-on-error: true
         env:
           FETCH_QUOTES: ${{ github.event_name != 'workflow_dispatch' || inputs.force_fetch }}
         run: |
@@ -46,21 +98,15 @@ jobs:
             python scripts/generate_static_data.py --no-fetch
           fi
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v5
-        with:
-          node-version: "22"
-          cache: npm
-          cache-dependency-path: frontend/package-lock.json
+      - name: Report retained prices
+        if: steps.quotes.outcome == 'failure'
+        run: |
+          echo "::warning::Quote collection failed. Retaining the previous prices and their timestamps while updating the daily archive."
+          test -f frontend/public/data/index.json
 
       - name: Install frontend dependencies
         working-directory: frontend
         run: npm ci
-
-      - name: Test data pipeline and external scheduler
-        run: |
-          python -m unittest discover -s tests
-          node --test automation/refresh-scheduler/test/*.test.mjs
 
       - name: Build frontend
         working-directory: frontend
@@ -78,7 +124,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/generated frontend/public/data
+          git add data/generated frontend/public/data data/new-highs
           if git diff --cached --quiet; then
             echo "No generated data changes to commit."
           else

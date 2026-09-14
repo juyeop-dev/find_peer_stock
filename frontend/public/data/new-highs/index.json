@@ -15,7 +15,8 @@
           "id": "KOSDAQ",
           "label": "코스닥"
         }
-      ]
+      ],
+      "refresh_after": "16:30"
     },
     {
       "id": "us",
@@ -35,7 +36,8 @@
           "id": "AMEX",
           "label": "NYSE American"
         }
-      ]
+      ],
+      "refresh_after": "17:00"
     },
     {
       "id": "china",
@@ -55,7 +57,8 @@
           "id": "BSE",
           "label": "베이징"
         }
-      ]
+      ],
+      "refresh_after": "16:00"
     },
     {
       "id": "taiwan",
@@ -71,7 +74,8 @@
           "id": "TPEX",
           "label": "타이베이거래소"
         }
-      ]
+      ],
+      "refresh_after": "14:30"
     },
     {
       "id": "japan",
@@ -83,7 +87,8 @@
           "id": "TSE",
           "label": "도쿄"
         }
-      ]
+      ],
+      "refresh_after": "16:30"
     },
     {
       "id": "europe",
@@ -107,8 +112,166 @@
           "id": "SIX",
           "label": "스위스"
         }
-      ]
+      ],
+      "refresh_after": "19:00"
     }
   ],
-  "reports": []
+  "reports": [
+    {
+      "market": "europe",
+      "date": "2026-09-11",
+      "counts": {
+        "total": 112,
+        "high_52_week": 58,
+        "high_all_time": 54
+      },
+      "exchanges": {
+        "EURONEXT": {
+          "total": 8,
+          "high_52_week": 5,
+          "high_all_time": 3
+        },
+        "XETRA": {
+          "total": 29,
+          "high_52_week": 9,
+          "high_all_time": 20
+        },
+        "LSE": {
+          "total": 62,
+          "high_52_week": 38,
+          "high_all_time": 24
+        },
+        "SIX": {
+          "total": 13,
+          "high_52_week": 6,
+          "high_all_time": 7
+        }
+      }
+    },
+    {
+      "market": "japan",
+      "date": "2026-09-11",
+      "counts": {
+        "total": 48,
+        "high_52_week": 27,
+        "high_all_time": 21
+      },
+      "exchanges": {
+        "TSE": {
+          "total": 48,
+          "high_52_week": 27,
+          "high_all_time": 21
+        }
+      }
+    },
+    {
+      "market": "korea",
+      "date": "2026-09-11",
+      "counts": {
+        "total": 8,
+        "high_52_week": 7,
+        "high_all_time": 1
+      },
+      "exchanges": {
+        "KOSPI": {
+          "total": 2,
+          "high_52_week": 2,
+          "high_all_time": 0
+        },
+        "KOSDAQ": {
+          "total": 6,
+          "high_52_week": 5,
+          "high_all_time": 1
+        }
+      }
+    },
+    {
+      "market": "taiwan",
+      "date": "2026-09-11",
+      "counts": {
+        "total": 28,
+        "high_52_week": 10,
+        "high_all_time": 18
+      },
+      "exchanges": {
+        "TWSE": {
+          "total": 18,
+          "high_52_week": 8,
+          "high_all_time": 10
+        },
+        "TPEX": {
+          "total": 10,
+          "high_52_week": 2,
+          "high_all_time": 8
+        }
+      }
+    },
+    {
+      "market": "us",
+      "date": "2026-09-11",
+      "counts": {
+        "total": 103,
+        "high_52_week": 49,
+        "high_all_time": 54
+      },
+      "exchanges": {
+        "NASDAQ": {
+          "total": 61,
+          "high_52_week": 27,
+          "high_all_time": 34
+        },
+        "NYSE": {
+          "total": 41,
+          "high_52_week": 22,
+          "high_all_time": 19
+        },
+        "AMEX": {
+          "total": 1,
+          "high_52_week": 0,
+          "high_all_time": 1
+        }
+      }
+    }
+  ],
+  "refresh": {
+    "korea": {
+      "status": "updated",
+      "target_date": "2026-09-11",
+      "last_success_date": "2026-09-11",
+      "message": "이 거래일의 신고가 자료가 등록되었습니다.",
+      "last_success_at": "2026-09-13T14:33:40.975313+00:00"
+    },
+    "us": {
+      "status": "updated",
+      "target_date": "2026-09-11",
+      "last_success_date": "2026-09-11",
+      "message": "이 거래일의 신고가 자료가 등록되었습니다.",
+      "last_success_at": "2026-09-13T14:33:40.975313+00:00"
+    },
+    "china": {
+      "status": "unsupported",
+      "message": "자동 수집을 지원하는 자료원을 준비 중입니다."
+    },
+    "taiwan": {
+      "status": "updated",
+      "target_date": "2026-09-11",
+      "last_success_date": "2026-09-11",
+      "message": "이 거래일의 신고가 자료가 등록되었습니다.",
+      "last_success_at": "2026-09-13T14:33:40.975313+00:00"
+    },
+    "japan": {
+      "status": "updated",
+      "target_date": "2026-09-11",
+      "last_success_date": "2026-09-11",
+      "message": "이 거래일의 신고가 자료가 등록되었습니다.",
+      "last_success_at": "2026-09-13T14:33:40.975313+00:00"
+    },
+    "europe": {
+      "status": "updated",
+      "target_date": "2026-09-11",
+      "last_success_date": "2026-09-11",
+      "message": "이 거래일의 신고가 자료가 등록되었습니다.",
+      "last_success_at": "2026-09-13T14:33:40.975313+00:00"
+    }
+  }
 }

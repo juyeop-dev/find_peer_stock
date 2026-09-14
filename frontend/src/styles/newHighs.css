@@ -35,6 +35,13 @@ body:has(.newHighPage) { min-width: 320px; }
 .newHighMarkets button span { color: #7b8899; font-size: 10px; font-weight: 500; white-space: nowrap; }
 .newHighMarkets button[aria-pressed="true"] { color: #244f9f; background: #fff; border-color: #d6e0ef; box-shadow: 0 1px 3px #203b6010; }
 .newHighMarkets button:hover { background: #f9fbff; }
+.newHighRefreshNotice { margin: 0 0 24px; padding: 14px 18px; border: 1px solid #dce4ef; border-radius: 8px; background: #f7f9fc; color: #60738d; font-size: 12px; line-height: 1.8; }
+.newHighRefreshNotice > strong { color: #344e72; font-size: 13px; }
+.newHighRefreshNotice p { margin: 4px 0 0; }
+.newHighRefreshNotice.error { border-color: #ebd8bc; background: #fffbf4; }
+.newHighRefreshNotice.error > strong { color: #90631e; }
+.newHighRefreshNotice.updated > strong { color: #377653; }
+.newHighRefreshDates { display: flex; flex-wrap: wrap; gap: 2px 18px; margin-top: 5px; }
 .newHighLayout { display: grid; grid-template-columns: 322px minmax(0, 1fr); gap: 24px; align-items: start; }
 .newHighSidebar { display: grid; gap: 16px; }
 .newHighScope { padding: 2px 2px 0; }

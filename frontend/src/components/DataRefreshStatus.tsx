@@ -5,22 +5,27 @@ interface DataRefreshStatusProps {
   refreshing: boolean;
   lastCheckedAt?: string | null;
   generatedAt?: string;
+  cadence?: "quote" | "daily";
   onRefresh: () => void;
 }
 
-export function DataRefreshStatus({ refreshing, lastCheckedAt, generatedAt, onRefresh }: DataRefreshStatusProps) {
+export function DataRefreshStatus({ refreshing, lastCheckedAt, generatedAt, cadence = "quote", onRefresh }: DataRefreshStatusProps) {
   const [now, setNow] = useState(Date.now);
   useEffect(() => {
     const timer = window.setInterval(() => setNow(Date.now()), 60_000);
     return () => window.clearInterval(timer);
   }, []);
+  // The daily archive changes only after a market close, but its published
+  // index should still be checked by the same site-wide deployment heartbeat.
   const delayed = Boolean(generatedAt && now - new Date(generatedAt).getTime() > 20 * 60_000);
 
   return (
     <>
       <div className="dataRefreshStatus">
         <p>
-          <span>{generatedAt
+          <span>{cadence === "daily"
+            ? "신고가는 장 마감 후 거래일당 한 번 갱신합니다. 게시 결과는 1분마다 확인합니다."
+            : generatedAt
             ? "시세 업데이트 목표는 5분 간격이며, 화면은 1분마다 확인합니다."
             : "게시된 데이터를 1분마다 자동 확인합니다."}</span>
           {lastCheckedAt ? <span>브라우저 확인 · {formatDateTime(lastCheckedAt)}</span> : null}

@@ -1,0 +1,135 @@
+{
+  "schema_version": 1,
+  "market": "korea",
+  "date": "2026-09-11",
+  "summary": "장 마감 후 TradingView 주식 스냅샷 기준. 당일 장중 고가가 52주·전체기간 고가에 도달한 종목이며, 전체기간 신고가를 우선 표시합니다. 신고가 배경은 별도 확인 전입니다.",
+  "sources": [
+    {
+      "label": "TradingView stock screener",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    },
+    {
+      "label": "Naver Finance 상장 시장 정보",
+      "url": "https://stock.naver.com/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "0197V0.KQ",
+      "name": "NH Special Purpose Acquisition 34 Company",
+      "exchange": "KOSDAQ",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "신고가 배경 미확인",
+      "description": "NH Special Purpose Acquisition 34 Company · Financial Conglomerates",
+      "change_pct": -6.9397590361445785,
+      "source_symbol": "KRX:0197V0"
+    },
+    {
+      "ticker": "053260.KQ",
+      "name": "Keum Kang Steel Co., Ltd.",
+      "exchange": "KOSDAQ",
+      "category": "Non-Energy Minerals",
+      "high_type": "52_week",
+      "reason": "신고가 배경 미확인",
+      "description": "Keum Kang Steel Co., Ltd. · Steel",
+      "change_pct": 2.340702210663199,
+      "source_symbol": "KRX:053260"
+    },
+    {
+      "ticker": "093380.KQ",
+      "name": "PungKang Co., Ltd.",
+      "exchange": "KOSDAQ",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "신고가 배경 미확인",
+      "description": "PungKang Co., Ltd. · Auto Parts: OEM",
+      "change_pct": -0.3205128205128205,
+      "source_symbol": "KRX:093380"
+    },
+    {
+      "ticker": "098120.KQ",
+      "name": "Micro Contact Solution Co., Ltd.",
+      "exchange": "KOSDAQ",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "신고가 배경 미확인",
+      "description": "Micro Contact Solution Co., Ltd. · Electronic Production Equipment",
+      "change_pct": 9.411764705882353,
+      "source_symbol": "KRX:098120"
+    },
+    {
+      "ticker": "224060.KQ",
+      "name": "Codi Co., Ltd.",
+      "exchange": "KOSDAQ",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "신고가 배경 미확인",
+      "description": "Codi Co., Ltd. · Semiconductors",
+      "change_pct": 0,
+      "source_symbol": "KRX:224060"
+    },
+    {
+      "ticker": "465320.KQ",
+      "name": "Kyobo 15 Special Purpose Acquisition Company",
+      "exchange": "KOSDAQ",
+      "category": "Commercial Services",
+      "high_type": "52_week",
+      "reason": "신고가 배경 미확인",
+      "description": "Kyobo 15 Special Purpose Acquisition Company · Miscellaneous Commercial Services",
+      "change_pct": 0,
+      "source_symbol": "KRX:465320"
+    },
+    {
+      "ticker": "003350.KS",
+      "name": "Hankook Cosmetics Manufacturing Co., Ltd",
+      "exchange": "KOSPI",
+      "category": "Consumer Non-Durables",
+      "high_type": "52_week",
+      "reason": "신고가 배경 미확인",
+      "description": "Hankook Cosmetics Manufacturing Co., Ltd · Household/Personal Care",
+      "change_pct": 19.376899696048632,
+      "source_symbol": "KRX:003350"
+    },
+    {
+      "ticker": "248170.KS",
+      "name": "Sempio Foods Co.",
+      "exchange": "KOSPI",
+      "category": "Consumer Non-Durables",
+      "high_type": "52_week",
+      "reason": "신고가 배경 미확인",
+      "description": "Sempio Foods Co. · Food: Specialty/Candy",
+      "change_pct": -14.759535655058043,
+      "source_symbol": "KRX:248170"
+    }
+  ],
+  "source_metadata": {
+    "provider": "TradingView public scanner",
+    "scanner": "korea",
+    "fetched_at": "2026-09-13T14:33:43.902976+00:00",
+    "universe": "TradingView-listed stock instruments, including common and preferred shares; ETFs excluded",
+    "definition": "daily high >= period high; all-time takes precedence; ties included",
+    "scanner_exchanges": [
+      "KRX"
+    ],
+    "latest_session_by_exchange": {
+      "KRX": "2026-09-11"
+    },
+    "current_session_reference_symbols": {
+      "KRX": "KRX:000020",
+      "KOSPI": "KRX:000020",
+      "KOSDAQ": "KRX:0001A0"
+    },
+    "scanned_symbols": 2745,
+    "current_session_symbols": 2712,
+    "excluded_symbols": {
+      "other_session": 33
+    },
+    "pagination_complete": true
+  },
+  "collected_at": "2026-09-13T14:33:40.975313+00:00"
+}

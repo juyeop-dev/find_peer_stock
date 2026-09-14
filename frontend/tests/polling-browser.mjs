@@ -23,7 +23,16 @@ const stock = JSON.parse(await readFile(join(frontend, "public/data/stocks/3026.
 const archive = JSON.parse(await readFile(join(frontend, "public/data/new-highs/index.json"), "utf8"));
 fixtures.set("/data/index.json", { ...siteIndex, generated_at: new Date().toISOString() });
 fixtures.set("/data/stocks/3026.TW.json", stock);
-fixtures.set("/data/new-highs/index.json", { ...archive, reports: [] });
+const dailyArchive = {
+  ...archive,
+  markets: archive.markets.map((market) => market.id === "korea" ? { ...market, refresh_after: "16:10" } : market),
+  reports: [],
+  refresh: {
+    korea: { status: "pending", target_date: "2026-09-11" },
+    europe: { status: "unsupported" }
+  }
+};
+fixtures.set("/data/new-highs/index.json", dailyArchive);
 let failStock = false;
 const server = createServer(async (request, response) => {
   const pathname = new URL(request.url, "http://localhost").pathname;
@@ -151,6 +160,11 @@ try {
 
   await send("Page.navigate", { url: `${origin}/new-highs` });
   await until(() => contains("아직 등록된 신고가 기록이 없습니다"), "Archive empty state did not load.");
+  assert.equal(await contains("신고가는 장 마감 후 거래일당 한 번 갱신합니다. 게시 결과는 1분마다 확인합니다."), true);
+  assert.equal(await contains("한국 자동 갱신 · 갱신 대기"), true);
+  assert.equal(await contains("갱신 시작 · 현지 거래일 16:10 이후 (Asia/Seoul)"), true);
+  assert.equal(await evaluate("[...document.querySelectorAll('.newHighStats strong')].every(item => item.innerText.startsWith('—'))"), true,
+    "Pending collection should not appear as zero new highs.");
   const report = {
     schema_version: 1, market: "korea", date: "2026-09-11", entries: [{
       ticker: "TEST.KS", name: "새 기록 자동 갱신 검증", exchange: "KOSPI", category: "테스트",
@@ -158,16 +172,75 @@ try {
     }]
   };
   fixtures.set("/data/new-highs/korea/2026-09-11.json", report);
-  fixtures.set("/data/new-highs/index.json", { ...archive, reports: [{
+  dailyArchive.reports = [{
     market: "korea", date: report.date, counts: { total: 1, high_52_week: 1, high_all_time: 0 },
     exchanges: { KOSPI: { total: 1, high_52_week: 1, high_all_time: 0 } }
-  }] });
+  }];
+  dailyArchive.refresh.korea = {
+    status: "updated", target_date: report.date, last_success_date: report.date,
+    last_success_at: "2026-09-11T07:20:00Z"
+  };
   await until(() => contains("새 기록 자동 갱신 검증"), "New archive report was not discovered automatically.");
+  assert.equal(await contains("한국 자동 갱신 · 갱신 완료"), true);
+  assert.equal(await contains("최근 게시 거래일 · 2026-09-11"), true);
+  assert.equal(await contains("최근 갱신 성공 거래일 · 2026-09-11"), true);
   report.entries[0].reason = "기존 날짜 내용 자동 수정 검증";
   await until(() => contains("기존 날짜 내용 자동 수정 검증"), "Existing archive report did not refresh.");
-  assert.equal(await contains("데이터 생성 후 20분 이상"), false, "Curated archive should not warn about data age.");
+  assert.equal(await contains("데이터 생성 후 20분 이상"), false, "A fresh site heartbeat should not warn on the daily page.");
+  fixtures.set("/data/index.json", {
+    ...fixtures.get("/data/index.json"), generated_at: new Date(Date.now() - 25 * 60_000).toISOString()
+  });
+  await until(() => contains("데이터 생성 후 20분 이상"), "Daily page did not report a stalled site deployment.");
+  fixtures.set("/data/index.json", {
+    ...fixtures.get("/data/index.json"), generated_at: new Date().toISOString()
+  });
+  await until(async () => !(await contains("데이터 생성 후 20분 이상")), "Daily page did not clear the deployment warning.");
+  dailyArchive.refresh.korea = {
+    ...dailyArchive.refresh.korea, status: "error", target_date: "2026-09-14",
+    next_retry_at: "2026-09-14T07:30:00Z", message: "private-provider-exception"
+  };
+  await until(() => contains("한국 자동 갱신 · 갱신 지연"), "Daily collection failure was not shown.");
+  assert.equal(await contains("기존 날짜 내용 자동 수정 검증"), true, "Daily collection failure hid the previous report.");
+  assert.equal(await contains("최근 갱신 성공 거래일 · 2026-09-11"), true);
+  assert.equal(await contains("다음 재시도"), true);
+  assert.equal(await contains("private-provider-exception"), false, "Internal provider errors should not be user-facing.");
+  dailyArchive.refresh.korea = { ...dailyArchive.refresh.korea, status: "closed", target_date: "2026-09-12" };
+  await until(() => contains("한국 자동 갱신 · 휴장"), "Closed-market state was not shown.");
+  await send("Page.navigate", { url: `${origin}/new-highs?market=europe` });
+  await until(() => contains("유럽 자동 갱신 · 자동 수집 미지원"), "Unsupported market state was not shown.");
+  assert.equal(await evaluate("[...document.querySelectorAll('.newHighStats strong')].every(item => item.innerText.startsWith('—'))"), true,
+    "Unsupported collection should not appear as zero new highs.");
   assert.ok(requests.every((url) => url.includes("?t=")));
-  console.log("PASS archive discovers new dates and updates selected reports without reloading");
+  console.log("PASS daily archive discovers reports, preserves successes on errors, and distinguishes waiting/closed/unsupported states");
+
+  await evaluate("[...document.querySelectorAll('.newHighMarkets button')].find(button => button.innerText.startsWith('한국')).click()");
+  await until(() => contains("기존 날짜 내용 자동 수정 검증"), "Switching markets did not load the latest report.");
+  await evaluate("[...document.querySelectorAll('.newHighExchanges button')].find(button => button.innerText === '전체').click()");
+  assert.equal(await evaluate("new URLSearchParams(location.search).has('date')"), false,
+    "Market and exchange selection must keep following the latest date.");
+  const nextReport = structuredClone(report);
+  nextReport.date = "2026-09-14";
+  nextReport.entries[0].name = "다음 거래일 자동 이동 검증";
+  fixtures.set(`/data/new-highs/korea/${nextReport.date}.json`, nextReport);
+  dailyArchive.reports.unshift({ ...dailyArchive.reports[0], date: nextReport.date });
+  await until(() => contains("다음 거래일 자동 이동 검증"), "The calendar did not follow the next trading day.");
+
+  await send("Page.navigate", { url: `${origin}/new-highs?market=korea&date=2026-09-11` });
+  await until(() => contains("기존 날짜 내용 자동 수정 검증"), "An explicitly selected historical date was not preserved.");
+  await evaluate("[...document.querySelectorAll('.newHighExchanges button')].find(button => button.innerText === '전체').click()");
+  assert.equal(await evaluate("new URLSearchParams(location.search).get('date')"), "2026-09-11");
+  const laterReport = structuredClone(nextReport);
+  laterReport.date = "2026-09-15";
+  laterReport.entries[0].name = "최신 자동 보기 복귀 검증";
+  fixtures.set(`/data/new-highs/korea/${laterReport.date}.json`, laterReport);
+  dailyArchive.reports.unshift({ ...dailyArchive.reports[0], date: laterReport.date });
+  await until(() => contains("최신 기록 자동 보기 · 2026-09-15"), "The archive index did not refresh while viewing history.");
+  assert.equal(await contains("기존 날짜 내용 자동 수정 검증"), true,
+    "A new trading day must not interrupt an explicitly selected historical date.");
+  await evaluate("[...document.querySelectorAll('.newHighTextButton')].find(button => button.innerText.startsWith('최신 기록 자동 보기')).click()");
+  await until(() => contains("최신 자동 보기 복귀 검증"), "Returning to the latest report failed.");
+  assert.equal(await evaluate("new URLSearchParams(location.search).has('date')"), false);
+  console.log("PASS calendar follows new trading days across filters, preserves historical selection and resumes automatic following");
 } finally {
   if (send && socket?.readyState === WebSocket.OPEN) await send("Browser.close").catch(() => {});
   socket?.close();

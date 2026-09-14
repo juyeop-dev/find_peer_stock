@@ -1,0 +1,569 @@
+{
+  "schema_version": 1,
+  "market": "japan",
+  "date": "2026-09-11",
+  "summary": "장 마감 후 TradingView 주식 스냅샷 기준. 당일 장중 고가가 52주·전체기간 고가에 도달한 종목이며, 전체기간 신고가를 우선 표시합니다. 신고가 배경은 별도 확인 전입니다.",
+  "sources": [
+    {
+      "label": "TradingView stock screener",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "1783.T",
+      "name": "Fantasista Co.,Ltd",
+      "exchange": "TSE",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "신고가 배경 미확인",
+      "description": "Fantasista Co.,Ltd · Real Estate Development",
+      "change_pct": 9.859154929577464,
+      "source_symbol": "TSE:1783"
+    },
+    {
+      "ticker": "2004.T",
+      "name": "Showa Sangyo Co., Ltd.",
+      "exchange": "TSE",
+      "category": "Process Industries",
+      "high_type": "all_time",
+      "reason": "신고가 배경 미확인",
+      "description": "Showa Sangyo Co., Ltd. · Agricultural Commodities/Milling",
+      "change_pct": 1.6839378238341969,
+      "source_symbol": "TSE:2004"
+    },
+    {
+      "ticker": "2371.T",
+      "name": "Kakaku.com, Inc.",
+      "exchange": "TSE",
+      "category": "Consumer Services",
+      "high_type": "52_week",
+      "reason": "신고가 배경 미확인",
+      "description": "Kakaku.com, Inc. · Other Consumer Services",
+      "change_pct": 2.733423545331529,
+      "source_symbol": "TSE:2371"
+    },
+    {
+      "ticker": "2531.T",
+      "name": "TAKARA HOLDINGS INC.",
+      "exchange": "TSE",
+      "category": "Consumer Non-Durables",
+      "high_type": "all_time",
+      "reason": "신고가 배경 미확인",
+      "description": "TAKARA HOLDINGS INC. · Beverages: Alcoholic",
+      "change_pct": 1.0564082120789318,
+      "source_symbol": "TSE:2531"
+    },
+    {
+      "ticker": "2602.T",
+      "name": "Nisshin OilliO Group, Ltd.",
+      "exchange": "TSE",
+      "category": "Consumer Non-Durables",
+      "high_type": "all_time",
+      "reason": "신고가 배경 미확인",
+      "description": "Nisshin OilliO Group, Ltd. · Food: Specialty/Candy",
+      "change_pct": 0.8658008658008658,
+      "source_symbol": "TSE:2602"
+    },
+    {
+      "ticker": "2737.T",
+      "name": "Tomen Devices Corp.",
+      "exchange": "TSE",
+      "category": "Distribution Services",
+      "high_type": "all_time",
+      "reason": "신고가 배경 미확인",
+      "description": "Tomen Devices Corp. · Electronics Distributors",
+      "change_pct": -2.6573426573426575,
+      "source_symbol": "TSE:2737"
+    },
+    {
+      "ticker": "3187.T",
+      "name": "miratap inc.",
+      "exchange": "TSE",
+      "category": "Distribution Services",
+      "high_type": "52_week",
+      "reason": "신고가 배경 미확인",
+      "description": "miratap inc. · Wholesale Distributors",
+      "change_pct": 13.461538461538462,
+      "source_symbol": "TSE:3187"
+    },
+    {
+      "ticker": "3845.T",
+      "name": "I-Freek Mobile Inc.",
+      "exchange": "TSE",
+      "category": "Technology Services",
+      "high_type": "52_week",
+      "reason": "신고가 배경 미확인",
+      "description": "I-Freek Mobile Inc. · Internet Software/Services",
+      "change_pct": -1.8808777429467085,
+      "source_symbol": "TSE:3845"
+    },
+    {
+      "ticker": "4052.T",
+      "name": "Ficha, Inc.",
+      "exchange": "TSE",
+      "category": "Technology Services",
+      "high_type": "52_week",
+      "reason": "신고가 배경 미확인",
+      "description": "Ficha, Inc. · Packaged Software",
+      "change_pct": -16.567164179104477,
+      "source_symbol": "TSE:4052"
+    },
+    {
+      "ticker": "4174.T",
+      "name": "Appirits Inc.",
+      "exchange": "TSE",
+      "category": "Technology Services",
+      "high_type": "52_week",
+      "reason": "신고가 배경 미확인",
+      "description": "Appirits Inc. · Information Technology Services",
+      "change_pct": 2.6522593320235757,
+      "source_symbol": "TSE:4174"
+    },
+    {
+      "ticker": "4440.T",
+      "name": "WITZ Corp.",
+      "exchange": "TSE",
+      "category": "Technology Services",
+      "high_type": "52_week",
+      "reason": "신고가 배경 미확인",
+      "description": "WITZ Corp. · Packaged Software",
+      "change_pct": 2.1011673151750974,
+      "source_symbol": "TSE:4440"
+    },
+    {
+      "ticker": "4588.T",
+      "name": "Oncolys BioPharma, Inc.",
+      "exchange": "TSE",
+      "category": "Health Technology",
+      "high_type": "all_time",
+      "reason": "신고가 배경 미확인",
+      "description": "Oncolys BioPharma, Inc. · Biotechnology",
+      "change_pct": -0.8635578583765112,
+      "source_symbol": "TSE:4588"
+    },
+    {
+      "ticker": "5301.T",
+      "name": "Tokai Carbon Co., Ltd.",
+      "exchange": "TSE",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "신고가 배경 미확인",
+      "description": "Tokai Carbon Co., Ltd. · Electrical Products",
+      "change_pct": -0.625,
+      "source_symbol": "TSE:5301"
+    },
+    {
+      "ticker": "5533.T",
+      "name": "Elitz Holdings Co.,Ltd.",
+      "exchange": "TSE",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "신고가 배경 미확인",
+      "description": "Elitz Holdings Co.,Ltd. · Real Estate Development",
+      "change_pct": 4.616805170821792,
+      "source_symbol": "TSE:5533"
+    },
+    {
+      "ticker": "6027.T",
+      "name": "Bengo4.com, Inc.",
+      "exchange": "TSE",
+      "category": "Commercial Services",
+      "high_type": "52_week",
+      "reason": "신고가 배경 미확인",
+      "description": "Bengo4.com, Inc. · Miscellaneous Commercial Services",
+      "change_pct": 3.364485981308411,
+      "source_symbol": "TSE:6027"
+    },
+    {
+      "ticker": "618A.T",
+      "name": "KOMPEITO Inc.",
+      "exchange": "TSE",
+      "category": "Transportation",
+      "high_type": "all_time",
+      "reason": "신고가 배경 미확인",
+      "description": "KOMPEITO Inc. · Air Freight/Couriers",
+      "change_pct": null,
+      "source_symbol": "TSE:618A"
+    },
+    {
+      "ticker": "6191.T",
+      "name": "AirTrip Corp.",
+      "exchange": "TSE",
+      "category": "Technology Services",
+      "high_type": "52_week",
+      "reason": "신고가 배경 미확인",
+      "description": "AirTrip Corp. · Internet Software/Services",
+      "change_pct": 16.251354279523294,
+      "source_symbol": "TSE:6191"
+    },
+    {
+      "ticker": "6203.T",
+      "name": "Howa Machinery, Ltd.",
+      "exchange": "TSE",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "신고가 배경 미확인",
+      "description": "Howa Machinery, Ltd. · Industrial Machinery",
+      "change_pct": 21.331058020477816,
+      "source_symbol": "TSE:6203"
+    },
+    {
+      "ticker": "6316.T",
+      "name": "Maruyama Mfg.Co., Inc.",
+      "exchange": "TSE",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "신고가 배경 미확인",
+      "description": "Maruyama Mfg.Co., Inc. · Trucks/Construction/Farm Machinery",
+      "change_pct": 1.9335142469470827,
+      "source_symbol": "TSE:6316"
+    },
+    {
+      "ticker": "6694.T",
+      "name": "Zoom Corp.",
+      "exchange": "TSE",
+      "category": "Consumer Durables",
+      "high_type": "52_week",
+      "reason": "신고가 배경 미확인",
+      "description": "Zoom Corp. · Recreational Products",
+      "change_pct": -0.1199040767386091,
+      "source_symbol": "TSE:6694"
+    },
+    {
+      "ticker": "7119.T",
+      "name": "halmek holdings Co.,Ltd.",
+      "exchange": "TSE",
+      "category": "Technology Services",
+      "high_type": "52_week",
+      "reason": "신고가 배경 미확인",
+      "description": "halmek holdings Co.,Ltd. · Internet Software/Services",
+      "change_pct": 3.2528339083292264,
+      "source_symbol": "TSE:7119"
+    },
+    {
+      "ticker": "7184.T",
+      "name": "First Bank of Toyama Ltd.",
+      "exchange": "TSE",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "신고가 배경 미확인",
+      "description": "First Bank of Toyama Ltd. · Regional Banks",
+      "change_pct": 3.587443946188341,
+      "source_symbol": "TSE:7184"
+    },
+    {
+      "ticker": "7384.T",
+      "name": "Procrea Holdings,Inc.",
+      "exchange": "TSE",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "신고가 배경 미확인",
+      "description": "Procrea Holdings,Inc. · Regional Banks",
+      "change_pct": 1.5904572564612325,
+      "source_symbol": "TSE:7384"
+    },
+    {
+      "ticker": "7433.T",
+      "name": "Hakuto Co., Ltd.",
+      "exchange": "TSE",
+      "category": "Distribution Services",
+      "high_type": "52_week",
+      "reason": "신고가 배경 미확인",
+      "description": "Hakuto Co., Ltd. · Electronics Distributors",
+      "change_pct": 3.0476190476190474,
+      "source_symbol": "TSE:7433"
+    },
+    {
+      "ticker": "7475.T",
+      "name": "ALBIS Co., Ltd.",
+      "exchange": "TSE",
+      "category": "Retail Trade",
+      "high_type": "52_week",
+      "reason": "신고가 배경 미확인",
+      "description": "ALBIS Co., Ltd. · Food Retail",
+      "change_pct": 2.027027027027027,
+      "source_symbol": "TSE:7475"
+    },
+    {
+      "ticker": "7698.T",
+      "name": "Iceco Inc.",
+      "exchange": "TSE",
+      "category": "Distribution Services",
+      "high_type": "all_time",
+      "reason": "신고가 배경 미확인",
+      "description": "Iceco Inc. · Food Distributors",
+      "change_pct": 1.4919941775836971,
+      "source_symbol": "TSE:7698"
+    },
+    {
+      "ticker": "7743.T",
+      "name": "Seed Co., Ltd.",
+      "exchange": "TSE",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "신고가 배경 미확인",
+      "description": "Seed Co., Ltd. · Medical Specialties",
+      "change_pct": 0,
+      "source_symbol": "TSE:7743"
+    },
+    {
+      "ticker": "7976.T",
+      "name": "Mitsubishi Pencil Company, Limited",
+      "exchange": "TSE",
+      "category": "Consumer Durables",
+      "high_type": "52_week",
+      "reason": "신고가 배경 미확인",
+      "description": "Mitsubishi Pencil Company, Limited · Other Consumer Specialties",
+      "change_pct": 1.4285714285714286,
+      "source_symbol": "TSE:7976"
+    },
+    {
+      "ticker": "8131.T",
+      "name": "Mitsuuroko Group Holdings Co., Ltd.",
+      "exchange": "TSE",
+      "category": "Distribution Services",
+      "high_type": "52_week",
+      "reason": "신고가 배경 미확인",
+      "description": "Mitsuuroko Group Holdings Co., Ltd. · Wholesale Distributors",
+      "change_pct": 3.5522511358942586,
+      "source_symbol": "TSE:8131"
+    },
+    {
+      "ticker": "8137.T",
+      "name": "Sun-Wa Technos Corporation",
+      "exchange": "TSE",
+      "category": "Distribution Services",
+      "high_type": "all_time",
+      "reason": "신고가 배경 미확인",
+      "description": "Sun-Wa Technos Corporation · Electronics Distributors",
+      "change_pct": 1.3904982618771726,
+      "source_symbol": "TSE:8137"
+    },
+    {
+      "ticker": "8343.T",
+      "name": "Akita Bank, Ltd.",
+      "exchange": "TSE",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "신고가 배경 미확인",
+      "description": "Akita Bank, Ltd. · Regional Banks",
+      "change_pct": 0.6396588486140725,
+      "source_symbol": "TSE:8343"
+    },
+    {
+      "ticker": "8344.T",
+      "name": "Yamagata Bank, Ltd.",
+      "exchange": "TSE",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "신고가 배경 미확인",
+      "description": "Yamagata Bank, Ltd. · Regional Banks",
+      "change_pct": 2.57201646090535,
+      "source_symbol": "TSE:8344"
+    },
+    {
+      "ticker": "8345.T",
+      "name": "Bank of Iwate Ltd.",
+      "exchange": "TSE",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "신고가 배경 미확인",
+      "description": "Bank of Iwate Ltd. · Regional Banks",
+      "change_pct": 0.6137322593018796,
+      "source_symbol": "TSE:8345"
+    },
+    {
+      "ticker": "8349.T",
+      "name": "Tohoku Bank, Ltd.",
+      "exchange": "TSE",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "신고가 배경 미확인",
+      "description": "Tohoku Bank, Ltd. · Major Banks",
+      "change_pct": 3.4378769601930035,
+      "source_symbol": "TSE:8349"
+    },
+    {
+      "ticker": "8362.T",
+      "name": "Fukui Bank, Ltd.",
+      "exchange": "TSE",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "신고가 배경 미확인",
+      "description": "Fukui Bank, Ltd. · Major Banks",
+      "change_pct": 4.918032786885246,
+      "source_symbol": "TSE:8362"
+    },
+    {
+      "ticker": "8387.T",
+      "name": "Shikoku Bank Ltd.",
+      "exchange": "TSE",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "신고가 배경 미확인",
+      "description": "Shikoku Bank Ltd. · Regional Banks",
+      "change_pct": 1.8518518518518516,
+      "source_symbol": "TSE:8387"
+    },
+    {
+      "ticker": "8392.T",
+      "name": "Oita Bank, Ltd.",
+      "exchange": "TSE",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "신고가 배경 미확인",
+      "description": "Oita Bank, Ltd. · Regional Banks",
+      "change_pct": 0.8291873963515755,
+      "source_symbol": "TSE:8392"
+    },
+    {
+      "ticker": "8393.T",
+      "name": "Miyazaki Bank Ltd.",
+      "exchange": "TSE",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "신고가 배경 미확인",
+      "description": "Miyazaki Bank Ltd. · Regional Banks",
+      "change_pct": 0.7105459985041137,
+      "source_symbol": "TSE:8393"
+    },
+    {
+      "ticker": "8541.T",
+      "name": "Ehime Bank, Ltd.",
+      "exchange": "TSE",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "신고가 배경 미확인",
+      "description": "Ehime Bank, Ltd. · Regional Banks",
+      "change_pct": 0.9188361408882083,
+      "source_symbol": "TSE:8541"
+    },
+    {
+      "ticker": "8551.T",
+      "name": "Kita-Nippon Bank, Ltd.",
+      "exchange": "TSE",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "신고가 배경 미확인",
+      "description": "Kita-Nippon Bank, Ltd. · Regional Banks",
+      "change_pct": 2.4154589371980677,
+      "source_symbol": "TSE:8551"
+    },
+    {
+      "ticker": "9082.T",
+      "name": "Daiwa Motor Transportation Co., Ltd.",
+      "exchange": "TSE",
+      "category": "Transportation",
+      "high_type": "52_week",
+      "reason": "신고가 배경 미확인",
+      "description": "Daiwa Motor Transportation Co., Ltd. · Other Transportation",
+      "change_pct": -2.798581001182499,
+      "source_symbol": "TSE:9082"
+    },
+    {
+      "ticker": "9087.T",
+      "name": "Takase Corporation",
+      "exchange": "TSE",
+      "category": "Transportation",
+      "high_type": "52_week",
+      "reason": "신고가 배경 미확인",
+      "description": "Takase Corporation · Trucking",
+      "change_pct": -4.444444444444445,
+      "source_symbol": "TSE:9087"
+    },
+    {
+      "ticker": "9324.T",
+      "name": "Yasuda Logistics Corporation",
+      "exchange": "TSE",
+      "category": "Transportation",
+      "high_type": "all_time",
+      "reason": "신고가 배경 미확인",
+      "description": "Yasuda Logistics Corporation · Marine Shipping",
+      "change_pct": 0.8355488036460311,
+      "source_symbol": "TSE:9324"
+    },
+    {
+      "ticker": "9432.T",
+      "name": "NTT Inc",
+      "exchange": "TSE",
+      "category": "Communications",
+      "high_type": "52_week",
+      "reason": "신고가 배경 미확인",
+      "description": "NTT Inc · Specialty Telecommunications",
+      "change_pct": 0.2853881278538813,
+      "source_symbol": "TSE:9432"
+    },
+    {
+      "ticker": "9434.T",
+      "name": "SoftBank Corp.",
+      "exchange": "TSE",
+      "category": "Communications",
+      "high_type": "all_time",
+      "reason": "신고가 배경 미확인",
+      "description": "SoftBank Corp. · Wireless Telecommunications",
+      "change_pct": 1.5213815789473757,
+      "source_symbol": "TSE:9434"
+    },
+    {
+      "ticker": "9436.T",
+      "name": "Okinawa Cellular Telephone Company",
+      "exchange": "TSE",
+      "category": "Communications",
+      "high_type": "all_time",
+      "reason": "신고가 배경 미확인",
+      "description": "Okinawa Cellular Telephone Company · Wireless Telecommunications",
+      "change_pct": 1.650943396226415,
+      "source_symbol": "TSE:9436"
+    },
+    {
+      "ticker": "9507.T",
+      "name": "Shikoku Electric Power Company, Incorporated",
+      "exchange": "TSE",
+      "category": "Utilities",
+      "high_type": "52_week",
+      "reason": "신고가 배경 미확인",
+      "description": "Shikoku Electric Power Company, Incorporated · Electric Utilities",
+      "change_pct": -0.22941041523285155,
+      "source_symbol": "TSE:9507"
+    },
+    {
+      "ticker": "9535.T",
+      "name": "Hiroshima Gas Co., Ltd.",
+      "exchange": "TSE",
+      "category": "Utilities",
+      "high_type": "52_week",
+      "reason": "신고가 배경 미확인",
+      "description": "Hiroshima Gas Co., Ltd. · Gas Distributors",
+      "change_pct": 1.1389521640091116,
+      "source_symbol": "TSE:9535"
+    }
+  ],
+  "source_metadata": {
+    "provider": "TradingView public scanner",
+    "scanner": "japan",
+    "fetched_at": "2026-09-13T14:33:54.188970+00:00",
+    "universe": "TradingView-listed stock instruments, including common and preferred shares; ETFs excluded",
+    "definition": "daily high >= period high; all-time takes precedence; ties included",
+    "scanner_exchanges": [
+      "TSE"
+    ],
+    "latest_session_by_exchange": {
+      "TSE": "2026-09-11"
+    },
+    "current_session_reference_symbols": {
+      "TSE": "TSE:1301"
+    },
+    "scanned_symbols": 3770,
+    "current_session_symbols": 3729,
+    "excluded_symbols": {
+      "other_session": 41
+    },
+    "pagination_complete": true
+  },
+  "collected_at": "2026-09-13T14:33:40.975313+00:00"
+}

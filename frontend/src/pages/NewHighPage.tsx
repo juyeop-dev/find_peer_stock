@@ -6,13 +6,24 @@ import { NewHighCalendar } from "../components/NewHighCalendar";
 import { DataRefreshStatus } from "../components/DataRefreshStatus";
 import { getNewHighIndex, getNewHighReport, getSiteIndex } from "../dataClient/staticStockDataClient";
 import { usePollingData } from "../dataClient/usePollingData";
-import type { HighType, NewHighCounts, NewHighEntry } from "../dataClient/newHighTypes";
+import { formatDateTime } from "../dataClient/formatters";
+import type { HighType, NewHighCounts, NewHighEntry, NewHighRefresh } from "../dataClient/newHighTypes";
 
 const EMPTY_COUNTS: NewHighCounts = { total: 0, high_52_week: 0, high_all_time: 0 };
 const HIGH_TYPES: { id: HighType; label: string; description: string }[] = [
   { id: "all_time", label: "역대 신고가", description: "상장 이후 최고가를 새로 기록한 종목" },
   { id: "52_week", label: "52주 신고가", description: "최근 52주 최고가를 새로 기록한 종목" }
 ];
+const REFRESH_LABELS: Record<NewHighRefresh["status"], string> = {
+  updated: "갱신 완료", pending: "갱신 대기", error: "갱신 지연", closed: "휴장", unsupported: "자동 수집 미지원"
+};
+const REFRESH_DESCRIPTIONS: Record<NewHighRefresh["status"], string> = {
+  updated: "장 마감 후 신고가 기록을 갱신했습니다.",
+  pending: "장 마감 후 게시할 기록을 기다리고 있습니다.",
+  error: "최신 기록을 가져오지 못했습니다. 자동으로 다시 시도하며, 기존 기록은 계속 확인할 수 있습니다.",
+  closed: "해당 날짜는 휴장일입니다. 다음 거래일 장 마감 후 갱신합니다.",
+  unsupported: "이 시장은 아직 자동 수집을 지원하지 않습니다. 등록된 기록만 조회할 수 있습니다."
+};
 
 function validDate(value: string | null): value is string {
   if (!value || !/^\d{4}-\d{2}-\d{2}$/.test(value) || Number(value.slice(0, 4)) < 1) return false;
@@ -37,7 +48,7 @@ export function NewHighPage() {
   const [params, setParams] = useSearchParams();
   const { data: index, error: indexError, loading: indexLoading,
     refreshing: indexRefreshing, lastCheckedAt, refresh: refreshIndex } = usePollingData(getNewHighIndex);
-  const { data: peerIndex, refresh: refreshPeers } = usePollingData(getSiteIndex);
+  const { data: peerIndex, refreshing: peersRefreshing, refresh: refreshPeers } = usePollingData(getSiteIndex);
   const [month, setMonth] = useState("");
   const [search, setSearch] = useState("");
   const [highType, setHighType] = useState<HighType | "all">("all");
@@ -46,6 +57,7 @@ export function NewHighPage() {
   const market = index?.markets.find((item) => item.id === params.get("market"))
     ?? index?.markets.find((item) => item.id === "korea") ?? index?.markets[0];
   const marketId = market?.id ?? "korea";
+  const marketRefresh = index?.refresh?.[marketId];
   const today = dateInTimezone(market?.timezone ?? "Asia/Seoul");
   const marketReports = useMemo(() => (index?.reports ?? [])
     .filter((item) => item.market === marketId)
@@ -101,11 +113,14 @@ export function NewHighPage() {
   function selectMarket(id: string) {
     const nextMarket = index?.markets.find((item) => item.id === id);
     if (!nextMarket) return;
-    const date = index?.reports.filter((item) => item.market === id)
-      .map((item) => item.date).sort().at(-1) ?? dateInTimezone(nextMarket.timezone);
-    setParams({ market: id, exchange: nextMarket.default_exchange, date });
+    setParams({ market: id, exchange: nextMarket.default_exchange });
     setSearch("");
     setHighType("all");
+  }
+
+  function selectExchange(id: string) {
+    setParams({ market: marketId, exchange: id,
+      ...(validDate(requestedDate) ? { date: requestedDate } : {}) });
   }
 
   return (
@@ -118,8 +133,8 @@ export function NewHighPage() {
         </div>
       </header>
 
-      <DataRefreshStatus refreshing={indexRefreshing || reportRefreshing}
-        lastCheckedAt={lastCheckedAt} onRefresh={refresh} />
+      <DataRefreshStatus refreshing={indexRefreshing || reportRefreshing || peersRefreshing}
+        cadence="daily" lastCheckedAt={lastCheckedAt} generatedAt={peerIndex?.generated_at} onRefresh={refresh} />
 
       {indexError ? <ErrorNotice message={indexError} /> : null}
       {!index && indexLoading ? <LoadingSpinner /> : null}
@@ -127,11 +142,27 @@ export function NewHighPage() {
         <div className="newHighMarkets" role="group" aria-label="국가별 시장">
           {index.markets.map((item) => {
             const recorded = index.reports.some((record) => record.market === item.id);
+            const refreshStatus = index.refresh?.[item.id]?.status;
             return <button key={item.id} aria-pressed={marketId === item.id}
               onClick={() => selectMarket(item.id)}>
-              {item.label}<span>{recorded ? "기록 있음" : "기록 대기"}</span>
+              {item.label}<span>{refreshStatus ? REFRESH_LABELS[refreshStatus] : recorded ? "기록 있음" : "기록 대기"}</span>
             </button>;
           })}
+        </div>
+
+        <div className={`newHighRefreshNotice ${marketRefresh?.status ?? "pending"}`} role="status">
+          <strong>{market.label} 자동 갱신 · {marketRefresh ? REFRESH_LABELS[marketRefresh.status] : "갱신 정보 대기"}</strong>
+          {marketRefresh ? <p>{REFRESH_DESCRIPTIONS[marketRefresh.status]}</p> : null}
+          <div className="newHighRefreshDates">
+            <span>최근 게시 거래일 · {marketReports[0]?.date ?? "아직 없음"}</span>
+            {marketRefresh?.target_date ? <span>갱신 대상 거래일 · {marketRefresh.target_date}</span> : null}
+            {marketRefresh?.last_success_date ? <span>최근 갱신 성공 거래일 · {marketRefresh.last_success_date}</span> : null}
+            {marketRefresh?.last_success_at ? <span>최근 갱신 완료 · {formatDateTime(marketRefresh.last_success_at)}</span> : null}
+            {marketRefresh?.status === "error" && marketRefresh.next_retry_at
+              ? <span>다음 재시도 · {formatDateTime(marketRefresh.next_retry_at)}</span> : null}
+          </div>
+          {market.refresh_after && marketRefresh?.status !== "unsupported"
+            ? <p>갱신 시작 · 현지 거래일 {market.refresh_after} 이후 ({market.timezone})</p> : null}
         </div>
 
         <div className="newHighLayout">
@@ -142,7 +173,7 @@ export function NewHighPage() {
               <div className="newHighExchanges" role="group" aria-label="거래소 선택">
                 {[{ id: "all", label: "전체" }, ...market.exchanges].map((item) => (
                   <button key={item.id} aria-pressed={exchange === item.id}
-                    onClick={() => setParams({ market: marketId, date: selectedDate, exchange: item.id })}>
+                    onClick={() => selectExchange(item.id)}>
                     {item.label}
                   </button>
                 ))}
@@ -160,8 +191,11 @@ export function NewHighPage() {
               </label>
               <p><strong>{marketReports.length}일</strong>의 기록이 쌓였어요.</p>
               {marketReports[0] ? <button className="newHighTextButton"
-                onClick={() => selectDate(marketReports[0].date)}>최근 기록 · {marketReports[0].date} →</button>
+                onClick={() => setParams({ market: marketId, exchange })}>최신 기록 자동 보기 · {marketReports[0].date} →</button>
                 : <p>첫 기록이 등록되면 달력에 표시됩니다.</p>}
+              <p>{validDate(requestedDate)
+                ? "선택한 날짜를 보고 있습니다. 최신 기록 자동 보기로 돌아갈 수 있습니다."
+                : "새 거래일 기록이 등록되면 자동으로 이동합니다."}</p>
               <p className="newHighTimezone">날짜는 각 시장의 현지 거래일 기준입니다.</p>
             </div>
           </aside>
@@ -188,8 +222,12 @@ export function NewHighPage() {
             {reportError ? <ErrorNotice message={reportError} /> : null}
             {!hasReport ? <div className="newHighEmpty" role="status">
               <span className="newHighEmptyIcon" aria-hidden="true">▦</span>
-              <h3>{marketReports.length === 0 ? "아직 등록된 신고가 기록이 없습니다" : "이 날짜의 기록이 아직 없습니다"}</h3>
-              <p>{marketReports.length === 0
+              <h3>{marketRefresh?.status === "unsupported" && marketReports.length === 0
+                ? "이 시장은 아직 자동 수집을 지원하지 않습니다"
+                : marketReports.length === 0 ? "아직 등록된 신고가 기록이 없습니다" : "이 날짜의 기록이 아직 없습니다"}</h3>
+              <p>{marketRefresh?.status === "unsupported" && marketReports.length === 0
+                ? "기록이 등록되면 해당 거래일의 신고가 종목과 사유를 확인할 수 있습니다."
+                : marketReports.length === 0
                 ? `${market.label} 시장의 첫 기록을 기다리고 있어요. 매일의 기록이 등록되면 이곳에 종목과 사유가 쌓입니다.`
                 : "달력에 표시된 날짜를 선택하면 해당 거래일의 신고가 종목과 사유를 확인할 수 있습니다."}</p>
               <span>미등록 날짜는 신고가 0종목을 뜻하지 않습니다.</span>

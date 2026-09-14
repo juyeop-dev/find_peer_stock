@@ -8,7 +8,8 @@
     "dev": "vite",
     "prebuild": "python ../scripts/generate_new_high_data.py",
     "build": "tsc -b && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test:browser": "node tests/polling-browser.mjs"
   },
   "dependencies": {
     "react": "^19.0.0",

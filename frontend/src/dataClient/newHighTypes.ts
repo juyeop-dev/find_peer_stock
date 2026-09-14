@@ -10,6 +10,7 @@ export interface NewHighMarket {
   id: string;
   label: string;
   timezone: string;
+  refresh_after?: string;
   default_exchange: string;
   exchanges: { id: string; label: string }[];
 }
@@ -25,6 +26,17 @@ export interface NewHighIndex {
   schema_version: 1;
   markets: NewHighMarket[];
   reports: NewHighReportIndex[];
+  refresh?: Record<string, NewHighRefresh>;
+}
+
+export interface NewHighRefresh {
+  status: "updated" | "pending" | "error" | "closed" | "unsupported";
+  target_date?: string;
+  last_attempt_at?: string;
+  last_success_at?: string;
+  last_success_date?: string;
+  next_retry_at?: string;
+  message?: string;
 }
 
 export interface NewHighEntry {

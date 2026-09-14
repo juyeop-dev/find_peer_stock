@@ -6,7 +6,7 @@ import argparse
 import json
 import math
 import re
-from datetime import date
+from datetime import date, time
 from pathlib import Path
 from typing import Any
 from urllib.parse import urlsplit
@@ -71,6 +71,14 @@ def load_markets(source_dir: Path) -> list[dict[str, Any]]:
             ZoneInfo(market["timezone"])
         except (ValueError, ZoneInfoNotFoundError) as exc:
             raise NewHighDataError(f"{path}: {market_id}.timezone must be a valid IANA timezone") from exc
+        if "refresh_after" in market:
+            require(isinstance(market["refresh_after"], str) and
+                    re.fullmatch(r"\d{2}:\d{2}", market["refresh_after"]) is not None,
+                    f"{path}: refresh_after must be HH:MM")
+            try:
+                time.fromisoformat(market["refresh_after"])
+            except ValueError as exc:
+                raise NewHighDataError(f"{path}: invalid refresh_after") from exc
         exchanges = market.get("exchanges")
         require(isinstance(exchanges, list) and bool(exchanges), f"{path}: {market_id}.exchanges must be a nonempty list")
         exchange_ids: set[str] = set()
@@ -184,6 +192,16 @@ def generate_new_high_data(source_dir: Path = SOURCE_DIR, output_dir: Path = GEN
             },
         })
     index = {"schema_version": 1, "markets": markets, "reports": summaries}
+    status_path = source_dir / "refresh-status.json"
+    if status_path.exists():
+        statuses = read_json(status_path).get("markets")
+        require(isinstance(statuses, dict), f"{status_path}: markets must be an object")
+        for market_id, status in statuses.items():
+            require(market_id in markets_by_id and isinstance(status, dict),
+                    f"{status_path}: unknown market or invalid refresh status")
+            require(status.get("status") in {"updated", "pending", "error", "closed", "unsupported"},
+                    f"{status_path}: invalid status for {market_id}")
+        index["refresh"] = statuses
     destinations = [output_dir]
     if frontend_data_dir is not None and frontend_data_dir.resolve() != output_dir.resolve():
         destinations.append(frontend_data_dir)

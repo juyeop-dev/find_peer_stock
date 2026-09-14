@@ -1,8 +1,12 @@
 # 외부 데이터 갱신 스케줄러
 
-Cloudflare Worker가 PC와 관계없이 5분마다 `juyeop-dev/find_peer_stock`의 `main` 브랜치에 있는 `build-site.yml`을 실행합니다. Worker는 실행 요청만 보내며 실제 시세 수집·정적 데이터 생성·GitHub Pages 배포는 기존 Actions가 담당합니다. 저장소의 GitHub cron은 예비 경로로 유지합니다.
+Cloudflare Worker가 PC와 관계없이 5분마다 `juyeop-dev/find_peer_stock`의 `main` 브랜치에 있는 `build-site.yml`을 실행합니다. Worker는 실행 요청과 오래 멈춘 대기열 복구를 담당하며 실제 시세 수집·정적 데이터 생성·GitHub Pages 배포는 기존 Actions가 담당합니다. 저장소의 GitHub cron은 예비 경로로 유지합니다.
 
 `queued`, `in_progress`, `waiting`, `pending`, `requested` 실행이 있으면 이번 요청을 건너뜁니다. 상태별 조회라 오래된 진행 중 실행이 최근 완료 실행에 가려지지 않습니다. 조회 실패 시에도 실행 요청을 보내지 않습니다. 이 조회는 원자적 잠금이 아니므로 동시에 발생하는 GitHub cron까지 완전히 중복 방지하지는 못하며 기존 워크플로의 `concurrency` 설정이 배포 겹침을 제어합니다. [GitHub 실행 조회 API](https://docs.github.com/en/rest/actions/workflow-runs#list-workflow-runs-for-a-workflow)
+
+생성 시각과 마지막 변경 시각이 모두 45분 이상 지난 `queued`·`pending` 실행은 한 번의 예약 실행에서 최대 1건만 취소 요청합니다. 먼저 실행 중인 빌드와 승인 대기 여부를 확인하고, 두 대기 상태를 각각 최대 100건까지 확인해 검증 가능한 가장 오래된 한 건을 고릅니다. 따라서 같은 상태의 최근 실행이 오래 멈춘 실행을 가리지 않습니다. 대상 실행의 ID·워크플로·브랜치·상태·시각은 개별 조회로 다시 검증합니다. 취소를 요청한 회차에는 새 빌드를 시작하지 않으며, 이후 예약 실행에서 대기열이 비었음을 확인한 뒤 재개합니다. 정상 실행은 API 요청 6회, 복구는 최대 7회입니다. GitHub API는 상태 확인과 취소를 원자적으로 묶지 않으므로 마지막 조회 직후 시작된 실행이 취소될 가능성은 남습니다. `in_progress`로 확인된 실행이나 승인 대기는 취소하지 않고, 강제 취소도 사용하지 않습니다. [GitHub 실행 취소 API](https://docs.github.com/en/rest/actions/workflow-runs#cancel-a-workflow-run)
+
+2026-09-12 운영 점검에서 Workers 런타임이 `fetch(..., { redirect: "error" })`를 거부해 GitHub 요청 전 `list_runs_network_error`가 발생하는 문제를 재현하고 수정했습니다. `redirect: "manual"`로 요청하며 3xx 응답은 오류로 처리합니다. 다른 주소로 인증정보를 전달하지 않습니다. Node의 모의 응답 테스트 외에 실제 workerd와 Cloudflare 원격 프리뷰에서 요청 성공을 확인했습니다.
 
 ## 비용 없이 운영하는 조건
 
@@ -57,11 +61,13 @@ npx.cmd wrangler@4.131.1 tail
 
 Cloudflare 대시보드의 Worker 설정에서 Cron Trigger `*/5 * * * *`가 있는지 확인합니다. Cron은 UTC 기준이며 변경 전파에 최대 15분이 걸릴 수 있습니다. [Cloudflare Cron Triggers](https://developers.cloudflare.com/workers/configuration/cron-triggers/)
 
-로그의 `dispatched`는 GitHub가 실행 요청을 수락했다는 뜻입니다. [GitHub Actions 실행 목록](https://github.com/juyeop-dev/find_peer_stock/actions/workflows/build-site.yml)에서 `workflow_dispatch` 실행과 Pages 배포 성공을 확인하고 사이트의 데이터 갱신 시각이 바뀌었는지 확인합니다. `skipped`와 `active_workflow`는 앞선 실행이 끝나기를 기다리는 정상 상태입니다. 5분은 실행 요청 주기이며 실제 화면 반영에는 GitHub 실행 대기·수집·빌드·배포 시간이 추가됩니다.
+로그의 `dispatched`는 GitHub가 실행 요청을 수락했다는 뜻입니다. [GitHub Actions 실행 목록](https://github.com/juyeop-dev/find_peer_stock/actions/workflows/build-site.yml)에서 `workflow_dispatch` 실행과 Pages 배포 성공을 확인하고 사이트의 데이터 갱신 시각이 바뀌었는지 확인합니다. `skipped`와 `active_workflow`는 앞선 실행이 끝나기를 기다리는 정상 상태입니다. `cancel_requested`·`stale_queue`는 오래된 대기열의 취소 요청이며 완료를 뜻하지 않습니다. `queue_state_changed`와 `queue_cancel_conflict`는 다음 예약 실행에서 다시 확인합니다. 5분은 실행 요청 주기이며 실제 화면 반영에는 GitHub 실행 대기·수집·빌드·배포 시간이 추가됩니다.
 
 오류 코드는 `missing_github_token`, `list_runs_http_401`, `dispatch_http_403`, `list_runs_timeout` 등의 형태입니다. 401은 토큰·만료 여부, 403은 저장소 선택·Actions 권한·API 제한을 확인합니다. 각 API 요청의 제한 시간은 10초입니다. 응답 본문과 원본 예외는 로그에 기록하지 않습니다. 불확실한 dispatch 결과를 같은 호출 안에서 재전송하지 않고 다음 cron에서 실행 상태부터 다시 확인합니다.
 
 Worker는 `scheduled()`만 제공하며 `workers_dev`, `preview_urls`를 끄고 HTTP route를 설정하지 않았습니다. 공개 URL로 실행시키는 수동 엔드포인트는 없습니다. 수동 갱신은 GitHub Actions의 **Run workflow**를 사용합니다. [Wrangler 설정](https://developers.cloudflare.com/workers/wrangler/configuration/)
+
+저장소 루트에서 `python scripts/check_refresh_status.py`를 실행하면 공개 사이트의 생성 시각과 경과 시간을 확인합니다. 20분 넘게 갱신되지 않았거나 응답을 읽지 못하면 종료 코드 `1`을 반환합니다. 배포 명령 성공이나 토큰 등록만으로 운영 검증을 끝내지 말고, 실제 예약 실행에 따른 GitHub 실행과 새 JSON 게시까지 확인합니다.
 
 ## 수정·비밀값 교체·중지
 
