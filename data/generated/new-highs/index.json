@@ -118,6 +118,37 @@
   ],
   "reports": [
     {
+      "market": "europe",
+      "date": "2026-09-14",
+      "counts": {
+        "total": 151,
+        "high_52_week": 79,
+        "high_all_time": 72
+      },
+      "exchanges": {
+        "EURONEXT": {
+          "total": 12,
+          "high_52_week": 10,
+          "high_all_time": 2
+        },
+        "XETRA": {
+          "total": 52,
+          "high_52_week": 16,
+          "high_all_time": 36
+        },
+        "LSE": {
+          "total": 83,
+          "high_52_week": 51,
+          "high_all_time": 32
+        },
+        "SIX": {
+          "total": 4,
+          "high_52_week": 2,
+          "high_all_time": 2
+        }
+      }
+    },
+    {
       "market": "japan",
       "date": "2026-09-14",
       "counts": {
@@ -325,11 +356,12 @@
       "last_success_at": "2026-09-14T12:29:38.083995+00:00"
     },
     "europe": {
-      "last_success_at": "2026-09-13T14:33:40.975313+00:00",
-      "last_success_date": "2026-09-11",
-      "status": "pending",
+      "status": "updated",
       "target_date": "2026-09-14",
-      "message": "장 마감 후 일별 자료를 확인합니다."
+      "last_attempt_at": "2026-09-14T17:01:42.569333+00:00",
+      "last_success_at": "2026-09-14T17:01:42.569333+00:00",
+      "last_success_date": "2026-09-14",
+      "message": "장 마감 후 신고가 자료를 갱신했습니다."
     }
   }
 }
