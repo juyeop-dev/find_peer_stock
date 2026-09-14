@@ -53,6 +53,8 @@ python .\scripts\check_refresh_status.py
 
 신고가 원본은 시세 JSON과 별도로 누적합니다. 아래 경로에 시장별·날짜별 JSON 파일을 추가하면 됩니다. `date`는 해당 시장의 거래일이며 파일명과 일치해야 합니다.
 
+한국 신고가의 종목명은 네이버의 종목코드별 표시 명칭을 사용합니다. 수집 후보는 해당 거래일의 일봉 고가·거래량과 이전 52주 일봉으로 추가 대조하며, 일봉으로 반박되는 후보는 제외하고 자료를 읽지 못하면 재시도합니다. 기존 한국 원본의 이름만 보완하려면 `python scripts/localize_korean_new_highs.py`를 실행한 뒤 게시 자료를 생성합니다. 이 명령은 과거 가격·분류·수집 시각을 바꾸지 않습니다. 날짜별 검토 근거는 `data/new-highs/reviews`에 보관합니다.
+
 ```text
 data/new-highs/
   markets.json

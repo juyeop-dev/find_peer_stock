@@ -2,7 +2,7 @@
   "schema_version": 1,
   "market": "korea",
   "date": "2026-09-14",
-  "summary": "장 마감 후 TradingView 주식 스냅샷 기준. 당일 장중 고가가 52주·전체기간 고가에 도달한 종목이며, 전체기간 신고가를 우선 표시합니다. 신고가 배경은 별도 확인 전입니다.",
+  "summary": "장 마감 후 TradingView 주식 스냅샷 후보를 네이버 일봉으로 추가 대조한 10종목입니다. 당일 장중 고가가 52주·전체기간 고가에 도달한 종목이며, 전체기간 신고가를 우선 표시합니다. 인콘은 일봉 고가가 이전 52주 고가보다 낮아 제외했습니다. 신고가 배경은 별도 확인 전입니다.",
   "sources": [
     {
       "label": "TradingView stock screener",
@@ -15,129 +15,262 @@
     {
       "label": "Naver Finance 상장 시장 정보",
       "url": "https://stock.naver.com/"
+    },
+    {
+      "label": "Naver Finance 한국 종목명",
+      "url": "https://stock.naver.com/"
     }
   ],
   "entries": [
     {
       "ticker": "035610.KQ",
-      "name": "Solborn, Inc.",
+      "name": "솔본",
       "exchange": "KOSDAQ",
       "category": "Technology Services",
       "high_type": "52_week",
       "reason": "신고가 배경 미확인",
-      "description": "Solborn, Inc. · Packaged Software",
+      "description": "솔본 · Packaged Software",
       "change_pct": 0.992063492063492,
-      "source_symbol": "KRX:035610"
+      "source_symbol": "KRX:035610",
+      "name_original": "Solborn, Inc.",
+      "name_source_url": "https://m.stock.naver.com/api/stock/035610/basic",
+      "high_verification": {
+        "source": "Naver Finance adjusted daily history",
+        "source_url": "https://api.finance.naver.com/siseJson.naver?symbol=035610&requestType=1&startTime=20250915&endTime=20260914&timeframe=day",
+        "date": "2026-09-14",
+        "daily_high": 5600,
+        "volume": 575826,
+        "prior_52_week_high": 5130,
+        "observed_bars": 243,
+        "first_observed_date": "2025-09-15",
+        "confirmed": true,
+        "matches_prior_high": false
+      }
     },
     {
       "ticker": "036800.KQ",
-      "name": "NICE Information & Telecommunication, Inc.",
+      "name": "나이스정보통신",
       "exchange": "KOSDAQ",
       "category": "Commercial Services",
       "high_type": "52_week",
       "reason": "신고가 배경 미확인",
-      "description": "NICE Information & Telecommunication, Inc. · Miscellaneous Commercial Services",
+      "description": "나이스정보통신 · Miscellaneous Commercial Services",
       "change_pct": 4.755784061696658,
-      "source_symbol": "KRX:036800"
+      "source_symbol": "KRX:036800",
+      "name_original": "NICE Information & Telecommunication, Inc.",
+      "name_source_url": "https://m.stock.naver.com/api/stock/036800/basic",
+      "high_verification": {
+        "source": "Naver Finance adjusted daily history",
+        "source_url": "https://api.finance.naver.com/siseJson.naver?symbol=036800&requestType=1&startTime=20250915&endTime=20260914&timeframe=day",
+        "date": "2026-09-14",
+        "daily_high": 8320,
+        "volume": 288954,
+        "prior_52_week_high": 8060,
+        "observed_bars": 243,
+        "first_observed_date": "2025-09-15",
+        "confirmed": true,
+        "matches_prior_high": false
+      }
     },
     {
       "ticker": "071200.KQ",
-      "name": "Infinitt Healthcare Co., Ltd",
+      "name": "인피니트헬스케어",
       "exchange": "KOSDAQ",
       "category": "Health Services",
       "high_type": "52_week",
       "reason": "신고가 배경 미확인",
-      "description": "Infinitt Healthcare Co., Ltd · Medical/Nursing Services",
+      "description": "인피니트헬스케어 · Medical/Nursing Services",
       "change_pct": 30,
-      "source_symbol": "KRX:071200"
-    },
-    {
-      "ticker": "083640.KQ",
-      "name": "INCON Co., Ltd.",
-      "exchange": "KOSDAQ",
-      "category": "Consumer Durables",
-      "high_type": "52_week",
-      "reason": "신고가 배경 미확인",
-      "description": "INCON Co., Ltd. · Electronics/Appliances",
-      "change_pct": 424.3790248390065,
-      "source_symbol": "KRX:083640"
+      "source_symbol": "KRX:071200",
+      "name_original": "Infinitt Healthcare Co., Ltd",
+      "name_source_url": "https://m.stock.naver.com/api/stock/071200/basic",
+      "high_verification": {
+        "source": "Naver Finance adjusted daily history",
+        "source_url": "https://api.finance.naver.com/siseJson.naver?symbol=071200&requestType=1&startTime=20250915&endTime=20260914&timeframe=day",
+        "date": "2026-09-14",
+        "daily_high": 11310,
+        "volume": 559978,
+        "prior_52_week_high": 10980,
+        "observed_bars": 243,
+        "first_observed_date": "2025-09-15",
+        "confirmed": true,
+        "matches_prior_high": false
+      }
     },
     {
       "ticker": "134580.KQ",
-      "name": "Topco Media Co.Ltd.",
+      "name": "탑코미디어",
       "exchange": "KOSDAQ",
       "category": "Electronic Technology",
       "high_type": "52_week",
       "reason": "신고가 배경 미확인",
-      "description": "Topco Media Co.Ltd. · Telecommunications Equipment",
+      "description": "탑코미디어 · Telecommunications Equipment",
       "change_pct": 15.32033426183844,
-      "source_symbol": "KRX:134580"
+      "source_symbol": "KRX:134580",
+      "name_original": "Topco Media Co.Ltd.",
+      "name_source_url": "https://m.stock.naver.com/api/stock/134580/basic",
+      "high_verification": {
+        "source": "Naver Finance adjusted daily history",
+        "source_url": "https://api.finance.naver.com/siseJson.naver?symbol=134580&requestType=1&startTime=20250915&endTime=20260914&timeframe=day",
+        "date": "2026-09-14",
+        "daily_high": 4400,
+        "volume": 1637127,
+        "prior_52_week_high": 4300,
+        "observed_bars": 243,
+        "first_observed_date": "2025-09-15",
+        "confirmed": true,
+        "matches_prior_high": false
+      }
     },
     {
       "ticker": "252990.KQ",
-      "name": "SEMCNS Co., Ltd.",
+      "name": "샘씨엔에스",
       "exchange": "KOSDAQ",
       "category": "Producer Manufacturing",
       "high_type": "all_time",
       "reason": "신고가 배경 미확인",
-      "description": "SEMCNS Co., Ltd. · Electrical Products",
+      "description": "샘씨엔에스 · Electrical Products",
       "change_pct": 5.133079847908745,
-      "source_symbol": "KRX:252990"
+      "source_symbol": "KRX:252990",
+      "name_original": "SEMCNS Co., Ltd.",
+      "name_source_url": "https://m.stock.naver.com/api/stock/252990/basic",
+      "high_verification": {
+        "source": "Naver Finance adjusted daily history",
+        "source_url": "https://api.finance.naver.com/siseJson.naver?symbol=252990&requestType=1&startTime=20250915&endTime=20260914&timeframe=day",
+        "date": "2026-09-14",
+        "daily_high": 17250,
+        "volume": 1622146,
+        "prior_52_week_high": 16960,
+        "observed_bars": 243,
+        "first_observed_date": "2025-09-15",
+        "confirmed": true,
+        "matches_prior_high": false
+      }
     },
     {
       "ticker": "377450.KQ",
-      "name": "REFINE Co., Ltd.",
+      "name": "리파인",
       "exchange": "KOSDAQ",
       "category": "Finance",
       "high_type": "52_week",
       "reason": "신고가 배경 미확인",
-      "description": "REFINE Co., Ltd. · Real Estate Development",
+      "description": "리파인 · Real Estate Development",
       "change_pct": 1.238938053097345,
-      "source_symbol": "KRX:377450"
+      "source_symbol": "KRX:377450",
+      "name_original": "REFINE Co., Ltd.",
+      "name_source_url": "https://m.stock.naver.com/api/stock/377450/basic",
+      "high_verification": {
+        "source": "Naver Finance adjusted daily history",
+        "source_url": "https://api.finance.naver.com/siseJson.naver?symbol=377450&requestType=1&startTime=20250915&endTime=20260914&timeframe=day",
+        "date": "2026-09-14",
+        "daily_high": 17210,
+        "volume": 645078,
+        "prior_52_week_high": 17090,
+        "observed_bars": 243,
+        "first_observed_date": "2025-09-15",
+        "confirmed": true,
+        "matches_prior_high": false
+      }
     },
     {
       "ticker": "465320.KQ",
-      "name": "Kyobo 15 Special Purpose Acquisition Company",
+      "name": "교보15호스팩",
       "exchange": "KOSDAQ",
       "category": "Commercial Services",
       "high_type": "52_week",
       "reason": "신고가 배경 미확인",
-      "description": "Kyobo 15 Special Purpose Acquisition Company · Miscellaneous Commercial Services",
+      "description": "교보15호스팩 · Miscellaneous Commercial Services",
       "change_pct": -0.23364485981308408,
-      "source_symbol": "KRX:465320"
+      "source_symbol": "KRX:465320",
+      "name_original": "Kyobo 15 Special Purpose Acquisition Company",
+      "name_source_url": "https://m.stock.naver.com/api/stock/465320/basic",
+      "high_verification": {
+        "source": "Naver Finance adjusted daily history",
+        "source_url": "https://api.finance.naver.com/siseJson.naver?symbol=465320&requestType=1&startTime=20250915&endTime=20260914&timeframe=day",
+        "date": "2026-09-14",
+        "daily_high": 2140,
+        "volume": 169387,
+        "prior_52_week_high": 2140,
+        "observed_bars": 243,
+        "first_observed_date": "2025-09-15",
+        "confirmed": true,
+        "matches_prior_high": true
+      }
     },
     {
       "ticker": "003350.KS",
-      "name": "Hankook Cosmetics Manufacturing Co., Ltd",
+      "name": "한국화장품제조",
       "exchange": "KOSPI",
       "category": "Consumer Non-Durables",
       "high_type": "all_time",
       "reason": "신고가 배경 미확인",
-      "description": "Hankook Cosmetics Manufacturing Co., Ltd · Household/Personal Care",
+      "description": "한국화장품제조 · Household/Personal Care",
       "change_pct": -4.7103755569700825,
-      "source_symbol": "KRX:003350"
+      "source_symbol": "KRX:003350",
+      "name_original": "Hankook Cosmetics Manufacturing Co., Ltd",
+      "name_source_url": "https://m.stock.naver.com/api/stock/003350/basic",
+      "high_verification": {
+        "source": "Naver Finance adjusted daily history",
+        "source_url": "https://api.finance.naver.com/siseJson.naver?symbol=003350&requestType=1&startTime=20250915&endTime=20260914&timeframe=day",
+        "date": "2026-09-14",
+        "daily_high": 17910,
+        "volume": 5002986,
+        "prior_52_week_high": 16920,
+        "observed_bars": 243,
+        "first_observed_date": "2025-09-15",
+        "confirmed": true,
+        "matches_prior_high": false
+      }
     },
     {
       "ticker": "020120.KS",
-      "name": "KidariStudio, Inc.",
+      "name": "키다리스튜디오",
       "exchange": "KOSPI",
       "category": "Technology Services",
       "high_type": "52_week",
       "reason": "신고가 배경 미확인",
-      "description": "KidariStudio, Inc. · Information Technology Services",
+      "description": "키다리스튜디오 · Information Technology Services",
       "change_pct": 11.11111111111111,
-      "source_symbol": "KRX:020120"
+      "source_symbol": "KRX:020120",
+      "name_original": "KidariStudio, Inc.",
+      "name_source_url": "https://m.stock.naver.com/api/stock/020120/basic",
+      "high_verification": {
+        "source": "Naver Finance adjusted daily history",
+        "source_url": "https://api.finance.naver.com/siseJson.naver?symbol=020120&requestType=1&startTime=20250915&endTime=20260914&timeframe=day",
+        "date": "2026-09-14",
+        "daily_high": 9300,
+        "volume": 696218,
+        "prior_52_week_high": 8670,
+        "observed_bars": 243,
+        "first_observed_date": "2025-09-15",
+        "confirmed": true,
+        "matches_prior_high": false
+      }
     },
     {
       "ticker": "025000.KS",
-      "name": "KPX Chemical Co., Ltd.",
+      "name": "KPX케미칼",
       "exchange": "KOSPI",
       "category": "Process Industries",
       "high_type": "52_week",
       "reason": "신고가 배경 미확인",
-      "description": "KPX Chemical Co., Ltd. · Chemicals: Specialty",
+      "description": "KPX케미칼 · Chemicals: Specialty",
       "change_pct": 0.53475935828877,
-      "source_symbol": "KRX:025000"
+      "source_symbol": "KRX:025000",
+      "name_original": "KPX Chemical Co., Ltd.",
+      "name_source_url": "https://m.stock.naver.com/api/stock/025000/basic",
+      "high_verification": {
+        "source": "Naver Finance adjusted daily history",
+        "source_url": "https://api.finance.naver.com/siseJson.naver?symbol=025000&requestType=1&startTime=20250915&endTime=20260914&timeframe=day",
+        "date": "2026-09-14",
+        "daily_high": 57000,
+        "volume": 7011,
+        "prior_52_week_high": 57000,
+        "observed_bars": 243,
+        "first_observed_date": "2025-09-15",
+        "confirmed": true,
+        "matches_prior_high": true
+      }
     }
   ],
   "source_metadata": {
@@ -162,7 +295,15 @@
     "excluded_symbols": {
       "other_session": 28
     },
-    "pagination_complete": true
+    "pagination_complete": true,
+    "daily_history_review": {
+      "reviewed_at": "2026-09-14T12:51:06.304323+00:00",
+      "original_entries": 11,
+      "retained_entries": 10,
+      "excluded_tickers": [
+        "083640.KQ"
+      ]
+    }
   },
   "collected_at": "2026-09-14T12:29:38.083995+00:00"
 }

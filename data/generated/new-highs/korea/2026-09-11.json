@@ -2,7 +2,7 @@
   "schema_version": 1,
   "market": "korea",
   "date": "2026-09-11",
-  "summary": "장 마감 후 TradingView 주식 스냅샷 기준. 당일 장중 고가가 52주·전체기간 고가에 도달한 종목이며, 전체기간 신고가를 우선 표시합니다. 신고가 배경은 별도 확인 전입니다.",
+  "summary": "9월 11일 일봉을 재검증한 신고가 7종목입니다(코스피 2·코스닥 5). 마이크로컨텍솔은 역대 신고가, 나머지 6종목은 52주 신고가입니다. 풍강·교보15호스팩은 이전 최고가와 같은 가격에 재도달한 경우를 포함합니다. 엔에이치스팩34호는 당일 고가 2,035원이 전날 고가 5,700원보다 낮아 제외했습니다. 신고가 배경은 별도 확인 전입니다.",
   "sources": [
     {
       "label": "TradingView stock screener",
@@ -15,96 +15,187 @@
     {
       "label": "Naver Finance 상장 시장 정보",
       "url": "https://stock.naver.com/"
+    },
+    {
+      "label": "Naver Finance 한국 종목명",
+      "url": "https://stock.naver.com/"
     }
   ],
   "entries": [
     {
-      "ticker": "0197V0.KQ",
-      "name": "NH Special Purpose Acquisition 34 Company",
-      "exchange": "KOSDAQ",
-      "category": "Finance",
-      "high_type": "52_week",
-      "reason": "신고가 배경 미확인",
-      "description": "NH Special Purpose Acquisition 34 Company · Financial Conglomerates",
-      "change_pct": -6.9397590361445785,
-      "source_symbol": "KRX:0197V0"
-    },
-    {
       "ticker": "053260.KQ",
-      "name": "Keum Kang Steel Co., Ltd.",
+      "name": "금강철강",
       "exchange": "KOSDAQ",
       "category": "Non-Energy Minerals",
       "high_type": "52_week",
       "reason": "신고가 배경 미확인",
-      "description": "Keum Kang Steel Co., Ltd. · Steel",
+      "description": "금강철강 · Steel",
       "change_pct": 2.340702210663199,
-      "source_symbol": "KRX:053260"
+      "source_symbol": "KRX:053260",
+      "name_original": "Keum Kang Steel Co., Ltd.",
+      "name_source_url": "https://m.stock.naver.com/api/stock/053260/basic",
+      "high_verification": {
+        "source": "Naver Finance adjusted daily history",
+        "source_url": "https://api.finance.naver.com/siseJson.naver?symbol=053260&requestType=1&startTime=20250912&endTime=20260911&timeframe=day",
+        "date": "2026-09-11",
+        "daily_high": 9170,
+        "volume": 10702660,
+        "prior_52_week_high": 8840,
+        "observed_bars": 243,
+        "first_observed_date": "2025-09-12",
+        "confirmed": true,
+        "matches_prior_high": false
+      }
     },
     {
       "ticker": "093380.KQ",
-      "name": "PungKang Co., Ltd.",
+      "name": "풍강",
       "exchange": "KOSDAQ",
       "category": "Producer Manufacturing",
       "high_type": "52_week",
       "reason": "신고가 배경 미확인",
-      "description": "PungKang Co., Ltd. · Auto Parts: OEM",
+      "description": "풍강 · Auto Parts: OEM",
       "change_pct": -0.3205128205128205,
-      "source_symbol": "KRX:093380"
+      "source_symbol": "KRX:093380",
+      "name_original": "PungKang Co., Ltd.",
+      "name_source_url": "https://m.stock.naver.com/api/stock/093380/basic",
+      "high_verification": {
+        "source": "Naver Finance adjusted daily history",
+        "source_url": "https://api.finance.naver.com/siseJson.naver?symbol=093380&requestType=1&startTime=20250912&endTime=20260911&timeframe=day",
+        "date": "2026-09-11",
+        "daily_high": 3290,
+        "volume": 12985,
+        "prior_52_week_high": 3290,
+        "observed_bars": 243,
+        "first_observed_date": "2025-09-12",
+        "confirmed": true,
+        "matches_prior_high": true
+      }
     },
     {
       "ticker": "098120.KQ",
-      "name": "Micro Contact Solution Co., Ltd.",
+      "name": "마이크로컨텍솔",
       "exchange": "KOSDAQ",
       "category": "Electronic Technology",
       "high_type": "all_time",
       "reason": "신고가 배경 미확인",
-      "description": "Micro Contact Solution Co., Ltd. · Electronic Production Equipment",
+      "description": "마이크로컨텍솔 · Electronic Production Equipment",
       "change_pct": 9.411764705882353,
-      "source_symbol": "KRX:098120"
+      "source_symbol": "KRX:098120",
+      "name_original": "Micro Contact Solution Co., Ltd.",
+      "name_source_url": "https://m.stock.naver.com/api/stock/098120/basic",
+      "high_verification": {
+        "source": "Naver Finance adjusted daily history",
+        "source_url": "https://api.finance.naver.com/siseJson.naver?symbol=098120&requestType=1&startTime=20250912&endTime=20260911&timeframe=day",
+        "date": "2026-09-11",
+        "daily_high": 56500,
+        "volume": 298962,
+        "prior_52_week_high": 52000,
+        "observed_bars": 243,
+        "first_observed_date": "2025-09-12",
+        "confirmed": true,
+        "matches_prior_high": false
+      }
     },
     {
       "ticker": "224060.KQ",
-      "name": "Codi Co., Ltd.",
+      "name": "더코디",
       "exchange": "KOSDAQ",
       "category": "Electronic Technology",
       "high_type": "52_week",
       "reason": "신고가 배경 미확인",
-      "description": "Codi Co., Ltd. · Semiconductors",
+      "description": "더코디 · Semiconductors",
       "change_pct": 0,
-      "source_symbol": "KRX:224060"
+      "source_symbol": "KRX:224060",
+      "name_original": "Codi Co., Ltd.",
+      "name_source_url": "https://m.stock.naver.com/api/stock/224060/basic",
+      "high_verification": {
+        "source": "Naver Finance adjusted daily history",
+        "source_url": "https://api.finance.naver.com/siseJson.naver?symbol=224060&requestType=1&startTime=20250912&endTime=20260911&timeframe=day",
+        "date": "2026-09-11",
+        "daily_high": 12750,
+        "volume": 2890750,
+        "prior_52_week_high": 9890,
+        "observed_bars": 243,
+        "first_observed_date": "2025-09-12",
+        "confirmed": true,
+        "matches_prior_high": false
+      }
     },
     {
       "ticker": "465320.KQ",
-      "name": "Kyobo 15 Special Purpose Acquisition Company",
+      "name": "교보15호스팩",
       "exchange": "KOSDAQ",
       "category": "Commercial Services",
       "high_type": "52_week",
       "reason": "신고가 배경 미확인",
-      "description": "Kyobo 15 Special Purpose Acquisition Company · Miscellaneous Commercial Services",
+      "description": "교보15호스팩 · Miscellaneous Commercial Services",
       "change_pct": 0,
-      "source_symbol": "KRX:465320"
+      "source_symbol": "KRX:465320",
+      "name_original": "Kyobo 15 Special Purpose Acquisition Company",
+      "name_source_url": "https://m.stock.naver.com/api/stock/465320/basic",
+      "high_verification": {
+        "source": "Naver Finance adjusted daily history",
+        "source_url": "https://api.finance.naver.com/siseJson.naver?symbol=465320&requestType=1&startTime=20250912&endTime=20260911&timeframe=day",
+        "date": "2026-09-11",
+        "daily_high": 2140,
+        "volume": 1170,
+        "prior_52_week_high": 2140,
+        "observed_bars": 243,
+        "first_observed_date": "2025-09-12",
+        "confirmed": true,
+        "matches_prior_high": true
+      }
     },
     {
       "ticker": "003350.KS",
-      "name": "Hankook Cosmetics Manufacturing Co., Ltd",
+      "name": "한국화장품제조",
       "exchange": "KOSPI",
       "category": "Consumer Non-Durables",
       "high_type": "52_week",
       "reason": "신고가 배경 미확인",
-      "description": "Hankook Cosmetics Manufacturing Co., Ltd · Household/Personal Care",
+      "description": "한국화장품제조 · Household/Personal Care",
       "change_pct": 19.376899696048632,
-      "source_symbol": "KRX:003350"
+      "source_symbol": "KRX:003350",
+      "name_original": "Hankook Cosmetics Manufacturing Co., Ltd",
+      "name_source_url": "https://m.stock.naver.com/api/stock/003350/basic",
+      "high_verification": {
+        "source": "Naver Finance adjusted daily history",
+        "source_url": "https://api.finance.naver.com/siseJson.naver?symbol=003350&requestType=1&startTime=20250912&endTime=20260911&timeframe=day",
+        "date": "2026-09-11",
+        "daily_high": 16920,
+        "volume": 11798448,
+        "prior_52_week_high": 15690,
+        "observed_bars": 243,
+        "first_observed_date": "2025-09-12",
+        "confirmed": true,
+        "matches_prior_high": false
+      }
     },
     {
       "ticker": "248170.KS",
-      "name": "Sempio Foods Co.",
+      "name": "샘표식품",
       "exchange": "KOSPI",
       "category": "Consumer Non-Durables",
       "high_type": "52_week",
       "reason": "신고가 배경 미확인",
-      "description": "Sempio Foods Co. · Food: Specialty/Candy",
+      "description": "샘표식품 · Food: Specialty/Candy",
       "change_pct": -14.759535655058043,
-      "source_symbol": "KRX:248170"
+      "source_symbol": "KRX:248170",
+      "name_original": "Sempio Foods Co.",
+      "name_source_url": "https://m.stock.naver.com/api/stock/248170/basic",
+      "high_verification": {
+        "source": "Naver Finance adjusted daily history",
+        "source_url": "https://api.finance.naver.com/siseJson.naver?symbol=248170&requestType=1&startTime=20250912&endTime=20260911&timeframe=day",
+        "date": "2026-09-11",
+        "daily_high": 36200,
+        "volume": 2355899,
+        "prior_52_week_high": 34750,
+        "observed_bars": 243,
+        "first_observed_date": "2025-09-12",
+        "confirmed": true,
+        "matches_prior_high": false
+      }
     }
   ],
   "source_metadata": {
@@ -129,7 +220,15 @@
     "excluded_symbols": {
       "other_session": 33
     },
-    "pagination_complete": true
+    "pagination_complete": true,
+    "daily_history_review": {
+      "reviewed_at": "2026-09-14T12:49:02.040930+00:00",
+      "original_entries": 8,
+      "retained_entries": 7,
+      "excluded_tickers": [
+        "0197V0.KQ"
+      ]
+    }
   },
   "collected_at": "2026-09-13T14:33:40.975313+00:00"
 }

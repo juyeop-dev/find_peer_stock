@@ -99,11 +99,54 @@ class TradingViewNewHighTests(unittest.TestCase):
             row("KRX:0197V0", high=120),
         ]
         with patch.object(source, "_request_json", side_effect=[
-            response(rows), {"itemCode": "0197V0", "stockExchangeType": {"name": "KOSDAQ"}},
-        ]) as request:
+            response(rows),
+            {"itemCode": "005930", "stockName": "삼성전자", "stockExchangeType": {"name": "KOSPI"}},
+            {"itemCode": "0197V0", "stockName": "엔에이치스팩34호", "stockExchangeType": {"name": "KOSDAQ"}},
+        ]) as request, patch.object(source, "verify_korean_daily_high", return_value={"confirmed": True}):
             report = source.fetch_report("korea", DAY)
         self.assertEqual({entry["ticker"] for entry in report["entries"]}, {"005930.KS", "0197V0.KQ"})
+        self.assertEqual({entry["name"] for entry in report["entries"]}, {"삼성전자", "엔에이치스팩34호"})
+        self.assertTrue(all(entry["description"].startswith(entry["name"] + " · ") for entry in report["entries"]))
         self.assertIn("/0197V0/basic", request.call_args.args[0])
+
+    def test_korean_names_require_matching_code_and_nonempty_verified_name(self):
+        for metadata in (
+            {"itemCode": "wrong", "stockName": "다른 종목", "stockExchangeType": {"name": "KOSPI"}},
+            {"itemCode": "005930", "stockName": " ", "stockExchangeType": {"name": "KOSPI"}},
+        ):
+            with patch.object(source, "_request_json", return_value=metadata), self.assertRaises(source.TradingViewSourceError):
+                source.fetch_korean_listing("005930")
+
+    def test_korean_daily_history_vetoes_false_new_listing_high_and_keeps_ties(self):
+        # Regression: 0197V0 on Sep 11 was below its Sep 10 listing-day high.
+        for high, confirmed, tied in [(2035, False, False), (5700, True, True), (5800, True, False)]:
+            with patch.object(source, "_request_daily_history", return_value=[
+                ["20260910", 2000, 5700, 2000, 2075, 1000],
+                ["20260911", 2000, high, 1931, 1931, 7560653],
+            ]):
+                evidence = source.verify_korean_daily_high("0197V0", DAY)
+            self.assertEqual(evidence["confirmed"], confirmed)
+            self.assertEqual(evidence["matches_prior_high"], tied)
+
+    def test_daily_history_missing_target_bad_values_and_duplicates_fail(self):
+        good = ["20260911", 100, 150, 90, 120, 1000]
+        for rows in ([], [["20260910", 100, 150, 90, 120, 1000]], [good, good],
+                     [["20260911", 100, float("nan"), 90, 120, 1000]],
+                     [["20260912", 100, 150, 90, 120, 1000]], [["bad"]]):
+            with patch.object(source, "_request_daily_history", return_value=rows), self.assertRaises(source.TradingViewSourceError):
+                source.verify_korean_daily_high("005930", DAY)
+        with patch.object(source, "_request_daily_history", return_value=[["20260911", 100, 150, 90, 120, 0]]):
+            self.assertFalse(source.verify_korean_daily_high("005930", DAY)["confirmed"])
+
+    def test_korean_scanner_candidate_contradicted_by_daily_history_is_excluded(self):
+        rows = [row("KRX:005930", indexes=[{"proname": "KRX:KOSPI"}]),
+                row("KRX:098120", indexes=[{"proname": "KRX:KOSDAQ"}], high=150)]
+        with patch.object(source, "_request_json", return_value=response(rows)), \
+             patch.object(source, "fetch_korean_listing", return_value={"name": "마이크로컨텍솔", "exchange": "KOSDAQ", "source_url": "https://stock.naver.com/"}), \
+             patch.object(source, "verify_korean_daily_high", return_value={"confirmed": False}):
+            report = source.fetch_report("korea", DAY)
+        self.assertEqual(report["entries"], [])
+        self.assertEqual(report["source_metadata"]["excluded_symbols"], {"korean_daily_history_disagrees": 1})
 
     def test_korean_board_cannot_be_guessed(self):
         rows = [

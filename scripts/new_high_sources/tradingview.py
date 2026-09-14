@@ -10,13 +10,14 @@ The daily high must equal or exceed the period high; all-time takes precedence.
 
 from __future__ import annotations
 
+import ast
 import json
 import math
 from collections import Counter
-from datetime import date, datetime, timezone
+from datetime import date, datetime, timedelta, timezone
 from typing import Any
 from urllib.error import HTTPError, URLError
-from urllib.parse import quote
+from urllib.parse import quote, urlencode
 from urllib.request import Request, urlopen
 from zoneinfo import ZoneInfo
 
@@ -139,21 +140,75 @@ def _korean_index_board(row: dict[str, Any]) -> str | None:
     return next(iter(matches), None)
 
 
-def _korean_board(row: dict[str, Any], timeout: float) -> str:
-    board = _korean_index_board(row)
-    if board is not None:
-        return board
-    # Preferred shares and newly listed stocks may not have composite membership.
-    # Naver supplies listing metadata only; all high/price data remains one source.
-    url = f"https://m.stock.naver.com/api/stock/{quote(row['name'], safe='')}/basic"
+def fetch_korean_listing(code: str, timeout: float = 30) -> dict[str, str]:
+    """Resolve Naver's Korean display name by stock code, never translation."""
+    url = f"https://m.stock.naver.com/api/stock/{quote(code, safe='')}/basic"
     data = _request_json(url, None, timeout)
-    if not isinstance(data, dict) or data.get("itemCode") != row["name"]:
-        raise TradingViewSourceError(f"{row['symbol']}: could not verify Korean board")
+    if not isinstance(data, dict) or data.get("itemCode") != code:
+        raise TradingViewSourceError(f"KRX:{code}: could not verify Korean listing")
     exchange = data.get("stockExchangeType")
     board = exchange.get("name") if isinstance(exchange, dict) else None
     if board not in {"KOSPI", "KOSDAQ"}:
-        raise TradingViewSourceError(f"{row['symbol']}: unsupported or missing Korean board: {board}")
-    return board
+        raise TradingViewSourceError(f"KRX:{code}: unsupported or missing Korean board: {board}")
+    if not _text(data.get("stockName")):
+        raise TradingViewSourceError(f"KRX:{code}: missing Korean listing name")
+    return {"name": data["stockName"].strip(), "exchange": board, "source_url": url}
+
+
+def _request_daily_history(url: str, timeout: float) -> list:
+    request = Request(url, headers={"User-Agent": "Mozilla/5.0"})
+    try:
+        with urlopen(request, timeout=timeout) as response:
+            payload = ast.literal_eval(response.read().decode("utf-8-sig").strip())
+        if not isinstance(payload, list) or not payload:
+            raise ValueError("missing daily history")
+        return payload[1:]
+    except (HTTPError, URLError, TimeoutError, OSError, ValueError, SyntaxError) as exc:
+        raise TradingViewSourceError(f"Cannot read Korean daily history: {exc}") from exc
+
+
+def verify_korean_daily_high(code: str, session_date: date, timeout: float = 30) -> dict[str, Any]:
+    """Veto scanner candidates contradicted by the dated, adjusted daily bars.
+
+    This is an independent check of candidates, not a replacement universe scan
+    or proof of all-time history. Newly listed stocks use their available bars.
+    """
+    start = session_date - timedelta(weeks=52)
+    url = "https://api.finance.naver.com/siseJson.naver?" + urlencode({
+        "symbol": code, "requestType": "1", "startTime": start.strftime("%Y%m%d"),
+        "endTime": session_date.strftime("%Y%m%d"), "timeframe": "day",
+    })
+    rows = _request_daily_history(url, timeout)
+    previous_highs = []
+    current = None
+    seen = set()
+    for row in rows:
+        if not isinstance(row, list) or len(row) < 6:
+            raise TradingViewSourceError(f"KRX:{code}: malformed daily history")
+        try:
+            day = datetime.strptime(str(row[0]), "%Y%m%d").date()
+        except ValueError as exc:
+            raise TradingViewSourceError(f"KRX:{code}: invalid daily history date") from exc
+        if day in seen or not start <= day <= session_date:
+            raise TradingViewSourceError(f"KRX:{code}: duplicate or unexpected daily history date")
+        seen.add(day)
+        if not _number(row[2]) or row[2] < 0 or not _number(row[5]) or row[5] < 0:
+            raise TradingViewSourceError(f"KRX:{code}: invalid daily high or volume")
+        if day == session_date:
+            current = row
+        elif row[2] > 0:
+            previous_highs.append(row[2])
+    if current is None:
+        raise TradingViewSourceNotReady(f"KRX:{code}: daily history has no {session_date} bar")
+    prior_high = max(previous_highs, default=None)
+    confirmed = current[2] > 0 and current[5] > 0 and (prior_high is None or current[2] >= prior_high)
+    return {
+        "source": "Naver Finance adjusted daily history", "source_url": url,
+        "date": session_date.isoformat(), "daily_high": current[2], "volume": current[5],
+        "prior_52_week_high": prior_high, "observed_bars": len(rows),
+        "first_observed_date": min(seen).isoformat(), "confirmed": confirmed,
+        "matches_prior_high": prior_high is not None and current[2] == prior_high,
+    }
 
 
 def _high_type(row: dict[str, Any]) -> str | None:
@@ -235,7 +290,14 @@ def fetch_report(market_id: str, session_date: date, *, timeout: float = 30,
         high_type = _high_type(row)
         if high_type is None:
             continue
-        exchange = _korean_board(row, timeout) if market_id == "korea" else row["exchange"]
+        listing = fetch_korean_listing(row["name"], timeout) if market_id == "korea" else None
+        exchange = listing["exchange"] if listing else row["exchange"]
+        if listing and _korean_index_board(row) not in {None, exchange}:
+            raise TradingViewSourceError(f"{row['symbol']}: conflicting Korean listing exchange")
+        evidence = verify_korean_daily_high(row["name"], session_date, timeout) if listing else None
+        if evidence and not evidence["confirmed"]:
+            excluded["korean_daily_history_disagrees"] += 1
+            continue
         exchange = "XETRA" if exchange == "XETR" else exchange
         ticker = _ticker(row, exchange, market_id)
         if ticker.upper() in used_tickers:
@@ -247,11 +309,14 @@ def fetch_report(market_id: str, session_date: date, *, timeout: float = 30,
             raise TradingViewSourceError(f"{row['symbol']}: invalid price change")
         sector = row["sector"].strip() if _text(row["sector"]) else "미분류"
         industry = row["industry"].strip() if _text(row["industry"]) else "업종 정보 미확인"
+        display_name = listing["name"] if listing else row["description"]
         entries.append({
-            "ticker": ticker, "name": row["description"], "exchange": exchange,
+            "ticker": ticker, "name": display_name, "exchange": exchange,
             "category": sector, "high_type": high_type, "reason": "신고가 배경 미확인",
-            "description": f"{row['description']} · {industry}", "change_pct": row["change"],
+            "description": f"{display_name} · {industry}", "change_pct": row["change"],
             "source_symbol": row["symbol"],
+            **({"name_original": row["description"], "name_source_url": listing["source_url"],
+                "high_verification": evidence} if listing else {}),
         })
     entries.sort(key=lambda entry: (entry["exchange"], entry["ticker"]))
     return {
@@ -260,7 +325,7 @@ def fetch_report(market_id: str, session_date: date, *, timeout: float = 30,
         "sources": [
             {"label": "TradingView stock screener", "url": "https://www.tradingview.com/screener/"},
             {"label": "TradingView 신고가 산정 기준", "url": _DEFINITION_URL},
-        ] + ([{"label": "Naver Finance 상장 시장 정보", "url": "https://stock.naver.com/"}] if market_id == "korea" else []),
+        ] + ([{"label": "Naver Finance 종목명·상장 시장·일봉 검증", "url": "https://stock.naver.com/"}] if market_id == "korea" else []),
         "entries": entries,
         "source_metadata": {
             "provider": "TradingView public scanner", "scanner": scanner,
