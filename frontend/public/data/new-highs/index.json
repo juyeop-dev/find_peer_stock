@@ -118,6 +118,64 @@
   ],
   "reports": [
     {
+      "market": "japan",
+      "date": "2026-09-14",
+      "counts": {
+        "total": 76,
+        "high_52_week": 33,
+        "high_all_time": 43
+      },
+      "exchanges": {
+        "TSE": {
+          "total": 76,
+          "high_52_week": 33,
+          "high_all_time": 43
+        }
+      }
+    },
+    {
+      "market": "korea",
+      "date": "2026-09-14",
+      "counts": {
+        "total": 11,
+        "high_52_week": 9,
+        "high_all_time": 2
+      },
+      "exchanges": {
+        "KOSPI": {
+          "total": 3,
+          "high_52_week": 2,
+          "high_all_time": 1
+        },
+        "KOSDAQ": {
+          "total": 8,
+          "high_52_week": 7,
+          "high_all_time": 1
+        }
+      }
+    },
+    {
+      "market": "taiwan",
+      "date": "2026-09-14",
+      "counts": {
+        "total": 31,
+        "high_52_week": 11,
+        "high_all_time": 20
+      },
+      "exchanges": {
+        "TWSE": {
+          "total": 20,
+          "high_52_week": 7,
+          "high_all_time": 13
+        },
+        "TPEX": {
+          "total": 11,
+          "high_52_week": 4,
+          "high_all_time": 7
+        }
+      }
+    },
+    {
       "market": "europe",
       "date": "2026-09-11",
       "counts": {
@@ -236,10 +294,10 @@
   "refresh": {
     "korea": {
       "status": "updated",
-      "target_date": "2026-09-11",
-      "last_success_date": "2026-09-11",
+      "target_date": "2026-09-14",
+      "last_success_date": "2026-09-14",
       "message": "이 거래일의 신고가 자료가 등록되었습니다.",
-      "last_success_at": "2026-09-13T14:33:40.975313+00:00"
+      "last_success_at": "2026-09-14T12:29:38.083995+00:00"
     },
     "us": {
       "status": "updated",
@@ -254,24 +312,24 @@
     },
     "taiwan": {
       "status": "updated",
-      "target_date": "2026-09-11",
-      "last_success_date": "2026-09-11",
+      "target_date": "2026-09-14",
+      "last_success_date": "2026-09-14",
       "message": "이 거래일의 신고가 자료가 등록되었습니다.",
-      "last_success_at": "2026-09-13T14:33:40.975313+00:00"
+      "last_success_at": "2026-09-14T12:29:38.083995+00:00"
     },
     "japan": {
       "status": "updated",
-      "target_date": "2026-09-11",
-      "last_success_date": "2026-09-11",
+      "target_date": "2026-09-14",
+      "last_success_date": "2026-09-14",
       "message": "이 거래일의 신고가 자료가 등록되었습니다.",
-      "last_success_at": "2026-09-13T14:33:40.975313+00:00"
+      "last_success_at": "2026-09-14T12:29:38.083995+00:00"
     },
     "europe": {
-      "status": "updated",
-      "target_date": "2026-09-11",
+      "last_success_at": "2026-09-13T14:33:40.975313+00:00",
       "last_success_date": "2026-09-11",
-      "message": "이 거래일의 신고가 자료가 등록되었습니다.",
-      "last_success_at": "2026-09-13T14:33:40.975313+00:00"
+      "status": "pending",
+      "target_date": "2026-09-14",
+      "message": "장 마감 후 일별 자료를 확인합니다."
     }
   }
 }

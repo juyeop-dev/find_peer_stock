@@ -1,0 +1,385 @@
+{
+  "schema_version": 1,
+  "market": "taiwan",
+  "date": "2026-09-14",
+  "summary": "장 마감 후 TradingView 주식 스냅샷 기준. 당일 장중 고가가 52주·전체기간 고가에 도달한 종목이며, 전체기간 신고가를 우선 표시합니다. 신고가 배경은 별도 확인 전입니다.",
+  "sources": [
+    {
+      "label": "TradingView stock screener",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "1260.TWO",
+      "name": "Flavor Full Foods, Inc.",
+      "exchange": "TPEX",
+      "category": "Process Industries",
+      "high_type": "52_week",
+      "reason": "신고가 배경 미확인",
+      "description": "Flavor Full Foods, Inc. · Agricultural Commodities/Milling",
+      "change_pct": 0,
+      "source_symbol": "TPEX:1260"
+    },
+    {
+      "ticker": "2252.TWO",
+      "name": "CUBTEK Inc.",
+      "exchange": "TPEX",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "신고가 배경 미확인",
+      "description": "CUBTEK Inc. · Electrical Products",
+      "change_pct": 15.371024734982324,
+      "source_symbol": "TPEX:2252"
+    },
+    {
+      "ticker": "3441.TWO",
+      "name": "Unique Opto-Electronics Co.,Ltd",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "신고가 배경 미확인",
+      "description": "Unique Opto-Electronics Co.,Ltd · Electronic Components",
+      "change_pct": -3.313253012048193,
+      "source_symbol": "TPEX:3441"
+    },
+    {
+      "ticker": "4995.TWO",
+      "name": "Litemax Electronics Inc.",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "신고가 배경 미확인",
+      "description": "Litemax Electronics Inc. · Electronic Production Equipment",
+      "change_pct": 1.3861386138613918,
+      "source_symbol": "TPEX:4995"
+    },
+    {
+      "ticker": "6021.TWO",
+      "name": "Good Finance Securities Co Ltd",
+      "exchange": "TPEX",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "신고가 배경 미확인",
+      "description": "Good Finance Securities Co Ltd · Investment Banks/Brokers",
+      "change_pct": 3.948896631823468,
+      "source_symbol": "TPEX:6021"
+    },
+    {
+      "ticker": "6027.TWO",
+      "name": "Reliance Securities Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "신고가 배경 미확인",
+      "description": "Reliance Securities Co., Ltd. · Investment Banks/Brokers",
+      "change_pct": -5.1446945337620615,
+      "source_symbol": "TPEX:6027"
+    },
+    {
+      "ticker": "6467.TWO",
+      "name": "TAHO Pharmaceuticals Ltd",
+      "exchange": "TPEX",
+      "category": "Health Technology",
+      "high_type": "all_time",
+      "reason": "신고가 배경 미확인",
+      "description": "TAHO Pharmaceuticals Ltd · Pharmaceuticals: Major",
+      "change_pct": -7.718696397941681,
+      "source_symbol": "TPEX:6467"
+    },
+    {
+      "ticker": "6538.TWO",
+      "name": "Brave C&H Supply Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "신고가 배경 미확인",
+      "description": "Brave C&H Supply Co., Ltd. · Metal Fabrication",
+      "change_pct": 1.2228260869565217,
+      "source_symbol": "TPEX:6538"
+    },
+    {
+      "ticker": "7871.TWO",
+      "name": "Elixiron Immunotherapeutics (Cayman) Limited",
+      "exchange": "TPEX",
+      "category": "Health Technology",
+      "high_type": "all_time",
+      "reason": "신고가 배경 미확인",
+      "description": "Elixiron Immunotherapeutics (Cayman) Limited · Pharmaceuticals: Major",
+      "change_pct": -0.684931506849315,
+      "source_symbol": "TPEX:7871"
+    },
+    {
+      "ticker": "7934.TWO",
+      "name": "ReTech Environmental Solutions Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "신고가 배경 미확인",
+      "description": "ReTech Environmental Solutions Co., Ltd. · Industrial Machinery",
+      "change_pct": 8.589607635206786,
+      "source_symbol": "TPEX:7934"
+    },
+    {
+      "ticker": "8227.TWO",
+      "name": "Progate Group Corporation",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "신고가 배경 미확인",
+      "description": "Progate Group Corporation · Semiconductors",
+      "change_pct": 0.8368200836820083,
+      "source_symbol": "TPEX:8227"
+    },
+    {
+      "ticker": "2033.TW",
+      "name": "Chia Ta World Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "신고가 배경 미확인",
+      "description": "Chia Ta World Co., Ltd. · Metal Fabrication",
+      "change_pct": -6.161971830985916,
+      "source_symbol": "TWSE:2033"
+    },
+    {
+      "ticker": "2305.TW",
+      "name": "Microtek International, Inc.",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "신고가 배경 미확인",
+      "description": "Microtek International, Inc. · Computer Peripherals",
+      "change_pct": 9.987819732034108,
+      "source_symbol": "TWSE:2305"
+    },
+    {
+      "ticker": "2351.TW",
+      "name": "SDI Corporation",
+      "exchange": "TWSE",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "신고가 배경 미확인",
+      "description": "SDI Corporation · Industrial Machinery",
+      "change_pct": 9.82905982905983,
+      "source_symbol": "TWSE:2351"
+    },
+    {
+      "ticker": "2801.TW",
+      "name": "Chang Hwa Commercial Bank, Ltd.",
+      "exchange": "TWSE",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "신고가 배경 미확인",
+      "description": "Chang Hwa Commercial Bank, Ltd. · Regional Banks",
+      "change_pct": 2.32974910394266,
+      "source_symbol": "TWSE:2801"
+    },
+    {
+      "ticker": "2834.TW",
+      "name": "Taiwan Business Bank, Ltd.",
+      "exchange": "TWSE",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "신고가 배경 미확인",
+      "description": "Taiwan Business Bank, Ltd. · Regional Banks",
+      "change_pct": 1.9444444444444524,
+      "source_symbol": "TWSE:2834"
+    },
+    {
+      "ticker": "2845.TW",
+      "name": "Far Eastern International Bank",
+      "exchange": "TWSE",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "신고가 배경 미확인",
+      "description": "Far Eastern International Bank · Major Banks",
+      "change_pct": 0.36496350364964025,
+      "source_symbol": "TWSE:2845"
+    },
+    {
+      "ticker": "2849.TW",
+      "name": "Entie Commercial Bank",
+      "exchange": "TWSE",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "신고가 배경 미확인",
+      "description": "Entie Commercial Bank · Regional Banks",
+      "change_pct": 2.2364217252396146,
+      "source_symbol": "TWSE:2849"
+    },
+    {
+      "ticker": "2880.TW",
+      "name": "Hua Nan Financial Holdings Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "신고가 배경 미확인",
+      "description": "Hua Nan Financial Holdings Co., Ltd. · Regional Banks",
+      "change_pct": 0.981461286804789,
+      "source_symbol": "TWSE:2880"
+    },
+    {
+      "ticker": "2883.TW",
+      "name": "KGI Financial Holding Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "신고가 배경 미확인",
+      "description": "KGI Financial Holding Co., Ltd. · Life/Health Insurance",
+      "change_pct": 2.509907529722578,
+      "source_symbol": "TWSE:2883"
+    },
+    {
+      "ticker": "2884.TW",
+      "name": "E.SUN Financial Holding Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "신고가 배경 미확인",
+      "description": "E.SUN Financial Holding Co., Ltd. · Major Banks",
+      "change_pct": 0.10799136069115393,
+      "source_symbol": "TWSE:2884"
+    },
+    {
+      "ticker": "2887.TW",
+      "name": "TS Financial Holding Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "신고가 배경 미확인",
+      "description": "TS Financial Holding Co., Ltd. · Financial Conglomerates",
+      "change_pct": 2.110199296600231,
+      "source_symbol": "TWSE:2887"
+    },
+    {
+      "ticker": "2890.TW",
+      "name": "SinoPac Financial Holdings Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "신고가 배경 미확인",
+      "description": "SinoPac Financial Holdings Co., Ltd. · Regional Banks",
+      "change_pct": 2.5171624713958676,
+      "source_symbol": "TWSE:2890"
+    },
+    {
+      "ticker": "2892.TW",
+      "name": "First Financial Holding Co. Ltd.",
+      "exchange": "TWSE",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "신고가 배경 미확인",
+      "description": "First Financial Holding Co. Ltd. · Major Banks",
+      "change_pct": 2.4421593830334265,
+      "source_symbol": "TWSE:2892"
+    },
+    {
+      "ticker": "2897.TW",
+      "name": "O-Bank Co. Ltd.",
+      "exchange": "TWSE",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "신고가 배경 미확인",
+      "description": "O-Bank Co. Ltd. · Major Banks",
+      "change_pct": 2.272727272727273,
+      "source_symbol": "TWSE:2897"
+    },
+    {
+      "ticker": "3045.TW",
+      "name": "Taiwan Mobile Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Communications",
+      "high_type": "52_week",
+      "reason": "신고가 배경 미확인",
+      "description": "Taiwan Mobile Co., Ltd. · Wireless Telecommunications",
+      "change_pct": 0.4132231404958678,
+      "source_symbol": "TWSE:3045"
+    },
+    {
+      "ticker": "3229.TW",
+      "name": "Cheer Time Enterprise Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "신고가 배경 미확인",
+      "description": "Cheer Time Enterprise Co., Ltd. · Electronic Components",
+      "change_pct": -0.8888888888888804,
+      "source_symbol": "TWSE:3229"
+    },
+    {
+      "ticker": "3443.TW",
+      "name": "Global Unichip Corp.",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "신고가 배경 미확인",
+      "description": "Global Unichip Corp. · Semiconductors",
+      "change_pct": 4.57516339869281,
+      "source_symbol": "TWSE:3443"
+    },
+    {
+      "ticker": "5876.TW",
+      "name": "Shanghai Commercial & Savings Bank, Ltd.",
+      "exchange": "TWSE",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "신고가 배경 미확인",
+      "description": "Shanghai Commercial & Savings Bank, Ltd. · Regional Banks",
+      "change_pct": 2.5693730729701953,
+      "source_symbol": "TWSE:5876"
+    },
+    {
+      "ticker": "5880.TW",
+      "name": "Taiwan Cooperative Financial Holding Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "신고가 배경 미확인",
+      "description": "Taiwan Cooperative Financial Holding Co., Ltd. · Regional Banks",
+      "change_pct": 0.9191176470588236,
+      "source_symbol": "TWSE:5880"
+    },
+    {
+      "ticker": "6416.TW",
+      "name": "Caswell, Inc.",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "신고가 배경 미확인",
+      "description": "Caswell, Inc. · Semiconductors",
+      "change_pct": 3.0303030303030303,
+      "source_symbol": "TWSE:6416"
+    }
+  ],
+  "source_metadata": {
+    "provider": "TradingView public scanner",
+    "scanner": "taiwan",
+    "fetched_at": "2026-09-14T12:29:40.311642+00:00",
+    "universe": "TradingView-listed stock instruments, including common and preferred shares; ETFs excluded",
+    "definition": "daily high >= period high; all-time takes precedence; ties included",
+    "scanner_exchanges": [
+      "TWSE",
+      "TPEX"
+    ],
+    "latest_session_by_exchange": {
+      "TWSE": "2026-09-14",
+      "TPEX": "2026-09-14"
+    },
+    "current_session_reference_symbols": {
+      "TWSE": "TWSE:01001T",
+      "TPEX": "TPEX:1240"
+    },
+    "scanned_symbols": 2344,
+    "current_session_symbols": 2297,
+    "excluded_symbols": {
+      "other_session": 47
+    },
+    "pagination_complete": true
+  },
+  "collected_at": "2026-09-14T12:29:38.083995+00:00"
+}

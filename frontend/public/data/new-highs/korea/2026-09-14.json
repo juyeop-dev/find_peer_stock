@@ -1,0 +1,168 @@
+{
+  "schema_version": 1,
+  "market": "korea",
+  "date": "2026-09-14",
+  "summary": "장 마감 후 TradingView 주식 스냅샷 기준. 당일 장중 고가가 52주·전체기간 고가에 도달한 종목이며, 전체기간 신고가를 우선 표시합니다. 신고가 배경은 별도 확인 전입니다.",
+  "sources": [
+    {
+      "label": "TradingView stock screener",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    },
+    {
+      "label": "Naver Finance 상장 시장 정보",
+      "url": "https://stock.naver.com/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "035610.KQ",
+      "name": "Solborn, Inc.",
+      "exchange": "KOSDAQ",
+      "category": "Technology Services",
+      "high_type": "52_week",
+      "reason": "신고가 배경 미확인",
+      "description": "Solborn, Inc. · Packaged Software",
+      "change_pct": 0.992063492063492,
+      "source_symbol": "KRX:035610"
+    },
+    {
+      "ticker": "036800.KQ",
+      "name": "NICE Information & Telecommunication, Inc.",
+      "exchange": "KOSDAQ",
+      "category": "Commercial Services",
+      "high_type": "52_week",
+      "reason": "신고가 배경 미확인",
+      "description": "NICE Information & Telecommunication, Inc. · Miscellaneous Commercial Services",
+      "change_pct": 4.755784061696658,
+      "source_symbol": "KRX:036800"
+    },
+    {
+      "ticker": "071200.KQ",
+      "name": "Infinitt Healthcare Co., Ltd",
+      "exchange": "KOSDAQ",
+      "category": "Health Services",
+      "high_type": "52_week",
+      "reason": "신고가 배경 미확인",
+      "description": "Infinitt Healthcare Co., Ltd · Medical/Nursing Services",
+      "change_pct": 30,
+      "source_symbol": "KRX:071200"
+    },
+    {
+      "ticker": "083640.KQ",
+      "name": "INCON Co., Ltd.",
+      "exchange": "KOSDAQ",
+      "category": "Consumer Durables",
+      "high_type": "52_week",
+      "reason": "신고가 배경 미확인",
+      "description": "INCON Co., Ltd. · Electronics/Appliances",
+      "change_pct": 424.3790248390065,
+      "source_symbol": "KRX:083640"
+    },
+    {
+      "ticker": "134580.KQ",
+      "name": "Topco Media Co.Ltd.",
+      "exchange": "KOSDAQ",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "신고가 배경 미확인",
+      "description": "Topco Media Co.Ltd. · Telecommunications Equipment",
+      "change_pct": 15.32033426183844,
+      "source_symbol": "KRX:134580"
+    },
+    {
+      "ticker": "252990.KQ",
+      "name": "SEMCNS Co., Ltd.",
+      "exchange": "KOSDAQ",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "신고가 배경 미확인",
+      "description": "SEMCNS Co., Ltd. · Electrical Products",
+      "change_pct": 5.133079847908745,
+      "source_symbol": "KRX:252990"
+    },
+    {
+      "ticker": "377450.KQ",
+      "name": "REFINE Co., Ltd.",
+      "exchange": "KOSDAQ",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "신고가 배경 미확인",
+      "description": "REFINE Co., Ltd. · Real Estate Development",
+      "change_pct": 1.238938053097345,
+      "source_symbol": "KRX:377450"
+    },
+    {
+      "ticker": "465320.KQ",
+      "name": "Kyobo 15 Special Purpose Acquisition Company",
+      "exchange": "KOSDAQ",
+      "category": "Commercial Services",
+      "high_type": "52_week",
+      "reason": "신고가 배경 미확인",
+      "description": "Kyobo 15 Special Purpose Acquisition Company · Miscellaneous Commercial Services",
+      "change_pct": -0.23364485981308408,
+      "source_symbol": "KRX:465320"
+    },
+    {
+      "ticker": "003350.KS",
+      "name": "Hankook Cosmetics Manufacturing Co., Ltd",
+      "exchange": "KOSPI",
+      "category": "Consumer Non-Durables",
+      "high_type": "all_time",
+      "reason": "신고가 배경 미확인",
+      "description": "Hankook Cosmetics Manufacturing Co., Ltd · Household/Personal Care",
+      "change_pct": -4.7103755569700825,
+      "source_symbol": "KRX:003350"
+    },
+    {
+      "ticker": "020120.KS",
+      "name": "KidariStudio, Inc.",
+      "exchange": "KOSPI",
+      "category": "Technology Services",
+      "high_type": "52_week",
+      "reason": "신고가 배경 미확인",
+      "description": "KidariStudio, Inc. · Information Technology Services",
+      "change_pct": 11.11111111111111,
+      "source_symbol": "KRX:020120"
+    },
+    {
+      "ticker": "025000.KS",
+      "name": "KPX Chemical Co., Ltd.",
+      "exchange": "KOSPI",
+      "category": "Process Industries",
+      "high_type": "52_week",
+      "reason": "신고가 배경 미확인",
+      "description": "KPX Chemical Co., Ltd. · Chemicals: Specialty",
+      "change_pct": 0.53475935828877,
+      "source_symbol": "KRX:025000"
+    }
+  ],
+  "source_metadata": {
+    "provider": "TradingView public scanner",
+    "scanner": "korea",
+    "fetched_at": "2026-09-14T12:29:39.276348+00:00",
+    "universe": "TradingView-listed stock instruments, including common and preferred shares; ETFs excluded",
+    "definition": "daily high >= period high; all-time takes precedence; ties included",
+    "scanner_exchanges": [
+      "KRX"
+    ],
+    "latest_session_by_exchange": {
+      "KRX": "2026-09-14"
+    },
+    "current_session_reference_symbols": {
+      "KRX": "KRX:000020",
+      "KOSPI": "KRX:000020",
+      "KOSDAQ": "KRX:0001A0"
+    },
+    "scanned_symbols": 2749,
+    "current_session_symbols": 2721,
+    "excluded_symbols": {
+      "other_session": 28
+    },
+    "pagination_complete": true
+  },
+  "collected_at": "2026-09-14T12:29:38.083995+00:00"
+}
