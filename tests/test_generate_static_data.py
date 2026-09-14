@@ -133,6 +133,16 @@ class GenerateStaticDataTests(unittest.TestCase):
         self.assertEqual(profile["market_note"], "Memory packaging and test")
         self.assertEqual(profile["note"], "Event note")
 
+    def test_seed_keeps_holy_stone_korean_name_without_external_company_info(self) -> None:
+        configs = data_gen.load_seed_configs(data_gen.SEED_DIR)
+        catalog = data_gen.build_catalog(configs, company_info={})
+
+        self.assertEqual(catalog["companies"]["3026.TW"]["name_kr"], "홀리스톤")
+        self.assertEqual(
+            catalog["companies"]["3026.TW"]["name_en"],
+            "Holy Stone Enterprise Co., Ltd.",
+        )
+
     def test_tpex_ticker_uses_taiwan_schedule_and_yahoo_source(self) -> None:
         self.assertEqual(data_gen.infer_country("6175.TWO"), "대만")
         self.assertEqual(data_gen.infer_currency("6175.TWO"), "TWD")
