@@ -340,14 +340,82 @@ test("state or freshness changes after a normal cancellation conflict forbid for
   }
 });
 
-test("a force-cancel conflict is final for the tick", async () => {
+test("a force-cancel conflict with unverified jobs does not dispatch", async () => {
   const mock = queuedFetch({ cancelStatus: 409, forceCancelStatus: 409 });
   assert.deepEqual(await runScheduledRefresh(env, { ...mock, now: queueCheckTime }), {
     status: "conflict", reason: "queue_force_cancel_conflict", run_id: oldQueuedRun.id,
   });
   assert.equal(mock.calls.filter(({ url }) => url.pathname.endsWith("/force-cancel")).length, 1);
   assert.equal(mock.calls.some(({ url }) => url.pathname.endsWith("/dispatches")), false);
-  assert.equal(mock.calls.length, 9);
+  assert.equal(mock.calls.length, 10);
+});
+
+function emptyQueueConflictFetch({ jobs = { total_count: 0, jobs: [] }, recheck } = {}) {
+  const mock = queuedFetch({ cancelStatus: 409, forceCancelStatus: 409 });
+  const calls = [];
+  let checkingBypass = false;
+  return {
+    calls,
+    fetchImpl: async (address, options) => {
+      const url = new URL(address);
+      calls.push({ url, options });
+      if (url.pathname.endsWith('/jobs')) {
+        checkingBypass = true;
+        return Response.json(jobs);
+      }
+      if (url.pathname.endsWith('/dispatches')) return new Response(null, { status: 204 });
+      if (checkingBypass && recheck) {
+        const response = recheck(url.searchParams.get('status'));
+        if (response) return Response.json(response);
+      }
+      return mock.fetchImpl(address, options);
+    },
+  };
+}
+
+test("bypasses only an empty stale queue after both cancellations conflict and all runs are rechecked", async () => {
+  const mock = emptyQueueConflictFetch();
+  assert.deepEqual(await runScheduledRefresh(env, { ...mock, now: queueCheckTime }), {
+    status: 'dispatched', reason: 'empty_stale_queue', run_id: oldQueuedRun.id,
+  });
+  assert.equal(mock.calls.length, 16);
+  assert.deepEqual(mock.calls.slice(-6, -1).map(({ url }) => url.searchParams.get('status')),
+    ['in_progress', 'waiting', 'requested', 'queued', 'pending']);
+  assert.equal(mock.calls.filter(({ url }) => url.pathname.endsWith('/dispatches')).length, 1);
+});
+
+test("jobs, malformed job responses, or any changed/new workflow prevent an empty-queue bypass", async () => {
+  const scenarios = [
+    ...[{}, { total_count: '0', jobs: [] }, { total_count: 0 },
+      { total_count: 1, jobs: [{ status: 'queued' }] }, { total_count: 0, jobs: [{}] }]
+      .map(jobs => ({ jobs })),
+    ...['in_progress', 'waiting', 'requested', 'queued', 'pending'].map(status => ({
+      recheck: observed => observed === status ? {
+        total_count: 1, workflow_runs: [{ ...oldQueuedRun, id: 999, status }],
+      } : null,
+    })),
+    ...[{ updated_at: '2026-09-13T02:59:00Z' }, { workflow_id: 999 }, { head_branch: 'other' }]
+      .map(change => ({ recheck: status => status === 'queued' ? {
+        total_count: 1, workflow_runs: [{ ...oldQueuedRun, ...change }],
+      } : null })),
+    { recheck: status => status === 'queued' ? { total_count: 2, workflow_runs: [oldQueuedRun] } : null },
+  ];
+  for (const scenario of scenarios) {
+    const mock = emptyQueueConflictFetch(scenario);
+    const result = await runScheduledRefresh(env, { ...mock, now: queueCheckTime });
+    assert.equal(result.status, 'conflict');
+    assert.equal(mock.calls.some(({ url }) => url.pathname.endsWith('/dispatches')), false);
+  }
+});
+
+test("failure reading stale-run jobs prevents dispatch and returns a sanitized error", async () => {
+  const mock = emptyQueueConflictFetch();
+  await assert.rejects(runScheduledRefresh(env, {
+    now: queueCheckTime,
+    fetchImpl: (address, options) => new URL(address).pathname.endsWith('/jobs')
+      ? new Response(env.GITHUB_TOKEN, { status: 403 }) : mock.fetchImpl(address, options),
+  }), { message: 'list_stale_run_jobs_http_403' });
+  assert.equal(mock.calls.some(({ url }) => url.pathname.endsWith('/dispatches')), false);
 });
 
 test("cancellation failures have sanitized errors and never trigger a new build", async () => {

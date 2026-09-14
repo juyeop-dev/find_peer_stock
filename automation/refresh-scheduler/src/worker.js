@@ -167,6 +167,28 @@ function oldestStaleQueueCandidate(runs, config, now) {
   return candidates[0] ?? null;
 }
 
+async function canBypassEmptyQueue(run, config, requestOptions, now) {
+  // GitHub can retain a queued run with no jobs while rejecting both cancel
+  // endpoints with 409. It must not block this scheduler forever. Only bypass
+  // that exact, revalidated run, after proving there are no jobs or other runs.
+  const jobs = await githubRequest(`${config.repositoryPath}/actions/runs/${run.id}/jobs?per_page=1`, {
+    ...requestOptions, stage: "list_stale_run_jobs",
+  });
+  if (jobs?.total_count !== 0 || !Array.isArray(jobs.jobs) || jobs.jobs.length !== 0) return false;
+
+  for (const status of [...BLOCKING_STATUSES, ...QUEUE_STATUSES]) {
+    const query = new URLSearchParams({ branch: config.ref, status, per_page: "100" });
+    const listed = await githubRequest(`${config.workflowPath}/runs?${query}`, requestOptions);
+    if (listed.total_count !== listed.workflow_runs.length) return false;
+    if (BLOCKING_STATUSES.includes(status)) {
+      if (listed.total_count !== 0) return false;
+    } else if (listed.workflow_runs.some((item) => !sameStaleQueueRun(item, run, config, now))) {
+      return false;
+    }
+  }
+  return true;
+}
+
 export async function runScheduledRefresh(
   env,
   { fetchImpl = fetch, timeoutMs = REQUEST_TIMEOUT_MS, now = Date.now() } = {},
@@ -188,9 +210,8 @@ export async function runScheduledRefresh(
   // GitHub returns workflow runs newest first. Scan one maximum-sized, bounded
   // page for both queue states so a recent entry cannot hide an older stuck
   // entry. Select globally before issuing at most one individually verified
-  // cancellation target in this invocation. The worst case is bounded at nine
-  // API requests: three blocker checks, two queue lists, detail + normal cancel,
-  // then detail + force-cancel after a normal-cancel conflict.
+  // cancellation target in this invocation. Cancellation takes at most nine
+  // requests. An empty-queue bypass adds six read-only checks and one dispatch.
   const listedQueueRuns = [];
   let activeQueueStatus = null;
   for (const status of QUEUE_STATUSES) {
@@ -204,8 +225,14 @@ export async function runScheduledRefresh(
     }
   }
   const candidate = oldestStaleQueueCandidate(listedQueueRuns, config, now);
-  if (candidate) return recoverStaleQueue(candidate, config, requestOptions, now);
-  if (activeQueueStatus) {
+  let bypassedRun = null;
+  if (candidate) {
+    const recovery = await recoverStaleQueue(candidate, config, requestOptions, now);
+    if (recovery?.reason !== "queue_force_cancel_conflict" ||
+        !await canBypassEmptyQueue(candidate, config, requestOptions, now)) return recovery;
+    bypassedRun = candidate.id;
+  }
+  if (activeQueueStatus && bypassedRun === null) {
     return { status: "skipped", reason: "active_workflow", active_status: activeQueueStatus };
   }
 
@@ -214,7 +241,8 @@ export async function runScheduledRefresh(
     method: "POST",
     body: { ref, inputs: { force_fetch: true } },
   });
-  return { status: "dispatched" };
+  return bypassedRun === null ? { status: "dispatched" }
+    : { status: "dispatched", reason: "empty_stale_queue", run_id: bypassedRun };
 }
 
 export default {
