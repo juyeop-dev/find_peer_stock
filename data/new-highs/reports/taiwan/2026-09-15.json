@@ -1,0 +1,162 @@
+{
+  "schema_version": 1,
+  "market": "taiwan",
+  "date": "2026-09-15",
+  "summary": "장 마감 후 TradingView 주식 스냅샷 기준. 당일 장중 고가가 52주·전체기간 고가에 도달하고, 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다. 전체기간 신고가를 우선 표시하며 신고가 배경은 별도 확인 전입니다.",
+  "sources": [
+    {
+      "label": "TradingView stock screener",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "1260.TWO",
+      "name": "Flavor Full Foods, Inc.",
+      "exchange": "TPEX",
+      "category": "Process Industries",
+      "high_type": "52_week",
+      "reason": "신고가 배경 미확인",
+      "description": "Flavor Full Foods, Inc. · Agricultural Commodities/Milling",
+      "change_pct": 0,
+      "session_open": 31.45,
+      "session_close": 31.45,
+      "source_symbol": "TPEX:1260"
+    },
+    {
+      "ticker": "3441.TWO",
+      "name": "Unique Opto-Electronics Co.,Ltd",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "신고가 배경 미확인",
+      "description": "Unique Opto-Electronics Co.,Ltd · Electronic Components",
+      "change_pct": 5.607476635514018,
+      "session_open": 162,
+      "session_close": 169.5,
+      "source_symbol": "TPEX:3441"
+    },
+    {
+      "ticker": "6218.TWO",
+      "name": "Hauman Technologies Corp.",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "신고가 배경 미확인",
+      "description": "Hauman Technologies Corp. · Semiconductors",
+      "change_pct": 9.93303571428572,
+      "session_open": 44.75,
+      "session_close": 49.25,
+      "source_symbol": "TPEX:6218"
+    },
+    {
+      "ticker": "6590.TWO",
+      "name": "Provision Information Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Technology Services",
+      "high_type": "52_week",
+      "reason": "신고가 배경 미확인",
+      "description": "Provision Information Co., Ltd. · Packaged Software",
+      "change_pct": 9.920000000000005,
+      "session_open": 64.8,
+      "session_close": 68.7,
+      "source_symbol": "TPEX:6590"
+    },
+    {
+      "ticker": "6870.TWO",
+      "name": "Turn Cloud Technology Service Inc.",
+      "exchange": "TPEX",
+      "category": "Technology Services",
+      "high_type": "all_time",
+      "reason": "신고가 배경 미확인",
+      "description": "Turn Cloud Technology Service Inc. · Information Technology Services",
+      "change_pct": 8.045977011494253,
+      "session_open": 306,
+      "session_close": 329,
+      "source_symbol": "TPEX:6870"
+    },
+    {
+      "ticker": "2880.TW",
+      "name": "Hua Nan Financial Holdings Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "신고가 배경 미확인",
+      "description": "Hua Nan Financial Holdings Co., Ltd. · Regional Banks",
+      "change_pct": 1.2958963282937397,
+      "session_open": 46.3,
+      "session_close": 46.9,
+      "source_symbol": "TWSE:2880"
+    },
+    {
+      "ticker": "2905.TW",
+      "name": "Mercuries & Associates, Holding Ltd.",
+      "exchange": "TWSE",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "신고가 배경 미확인",
+      "description": "Mercuries & Associates, Holding Ltd. · Life/Health Insurance",
+      "change_pct": 1.8918918918918997,
+      "session_open": 18.55,
+      "session_close": 18.85,
+      "source_symbol": "TWSE:2905"
+    },
+    {
+      "ticker": "3045.TW",
+      "name": "Taiwan Mobile Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Communications",
+      "high_type": "all_time",
+      "reason": "신고가 배경 미확인",
+      "description": "Taiwan Mobile Co., Ltd. · Wireless Telecommunications",
+      "change_pct": 2.05761316872428,
+      "session_open": 121.5,
+      "session_close": 124,
+      "source_symbol": "TWSE:3045"
+    },
+    {
+      "ticker": "6214.TW",
+      "name": "Systex Corp",
+      "exchange": "TWSE",
+      "category": "Technology Services",
+      "high_type": "all_time",
+      "reason": "신고가 배경 미확인",
+      "description": "Systex Corp · Packaged Software",
+      "change_pct": 1.3333333333333335,
+      "session_open": 189,
+      "session_close": 190,
+      "source_symbol": "TWSE:6214"
+    }
+  ],
+  "source_metadata": {
+    "provider": "TradingView public scanner",
+    "scanner": "taiwan",
+    "fetched_at": "2026-09-15T06:31:30.431759+00:00",
+    "universe": "TradingView-listed stock instruments, including common and preferred shares; ETFs excluded",
+    "definition": "daily high >= period high; close >= open; close >= previous close; all-time takes precedence; ties included",
+    "scanner_exchanges": [
+      "TWSE",
+      "TPEX"
+    ],
+    "latest_session_by_exchange": {
+      "TWSE": "2026-09-15",
+      "TPEX": "2026-09-15"
+    },
+    "current_session_reference_symbols": {
+      "TWSE": "TWSE:01001T",
+      "TPEX": "TPEX:1240"
+    },
+    "scanned_symbols": 2343,
+    "current_session_symbols": 2290,
+    "excluded_symbols": {
+      "other_session": 53,
+      "bearish_or_down_close": 13
+    },
+    "pagination_complete": true
+  },
+  "collected_at": "2026-09-15T06:31:29.962618+00:00"
+}
