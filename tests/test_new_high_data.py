@@ -7,6 +7,7 @@ import tempfile
 import unittest
 from argparse import Namespace
 from pathlib import Path
+from types import SimpleNamespace
 from unittest.mock import patch
 
 
@@ -105,6 +106,46 @@ class NewHighDataTests(unittest.TestCase):
         zero = {"total": 0, "high_52_week": 0, "high_all_time": 0}
         self.assertEqual(index["reports"][0]["counts"], zero)
         self.assertEqual(index["reports"][0]["exchanges"], {"KOSPI": zero, "KOSDAQ": zero})
+
+    def test_market_cap_is_published_without_changing_source_and_is_preserved(self) -> None:
+        self.write_report(self.report)
+        fetched_at = "2026-09-15T10:00:00+09:00"
+        caps = {
+            "TEST1.KS": SimpleNamespace(
+                value=123_000_000_000,
+                currency="KRW",
+                value_usd=92_000_000,
+                source="TradingView",
+            ),
+        }
+        new_highs.generate_new_high_data(
+            self.source,
+            self.generated,
+            self.frontend,
+            market_caps=caps,
+            market_cap_fetched_at=fetched_at,
+        )
+
+        source_entry = json.loads(
+            (self.source / "reports" / "korea" / "2026-09-09.json").read_text(encoding="utf-8")
+        )["entries"][0]
+        self.assertNotIn("market_cap", source_entry)
+        for destination in (self.generated, self.frontend):
+            published_entry = json.loads(
+                (destination / "new-highs" / "korea" / "2026-09-09.json").read_text(encoding="utf-8")
+            )["entries"][0]
+            self.assertEqual(published_entry["market_cap"], 123_000_000_000)
+            self.assertEqual(published_entry["market_cap_currency"], "KRW")
+            self.assertEqual(published_entry["market_cap_usd"], 92_000_000)
+            self.assertEqual(published_entry["market_cap_fetched_at"], fetched_at)
+
+        # The archive-only prebuild does not fetch, so it must retain the last fetched values.
+        self.generate()
+        preserved_entry = json.loads(
+            (self.generated / "new-highs" / "korea" / "2026-09-09.json").read_text(encoding="utf-8")
+        )["entries"][0]
+        self.assertEqual(preserved_entry["market_cap"], 123_000_000_000)
+        self.assertEqual(preserved_entry["market_cap_fetched_at"], fetched_at)
 
     def test_invalid_reports_fail_before_changing_published_archive(self) -> None:
         self.write_report(self.report)

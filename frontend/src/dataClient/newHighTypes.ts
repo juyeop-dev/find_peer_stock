@@ -51,6 +51,11 @@ export interface NewHighEntry {
   session_open?: number | null;
   session_close?: number | null;
   currency?: string;
+  market_cap?: number | null;
+  market_cap_currency?: string | null;
+  market_cap_usd?: number | null;
+  market_cap_source?: string;
+  market_cap_fetched_at?: string | null;
 }
 
 export interface NewHighReport {

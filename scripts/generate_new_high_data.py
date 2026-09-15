@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+import copy
 import json
 import math
 import re
@@ -18,6 +19,13 @@ SOURCE_DIR = PROJECT_ROOT / "data" / "new-highs"
 GENERATED_DIR = PROJECT_ROOT / "data" / "generated"
 FRONTEND_DATA_DIR = PROJECT_ROOT / "frontend" / "public" / "data"
 HIGH_TYPES = {"52_week", "all_time"}
+MARKET_CAP_FIELDS = (
+    "market_cap",
+    "market_cap_currency",
+    "market_cap_usd",
+    "market_cap_source",
+    "market_cap_fetched_at",
+)
 
 
 class NewHighDataError(ValueError):
@@ -176,8 +184,67 @@ def write_json(path: Path, payload: dict[str, Any]) -> None:
     path.write_text(json.dumps(payload, ensure_ascii=False, indent=2, allow_nan=False) + "\n", encoding="utf-8")
 
 
+def load_published_market_caps(output_dir: Path) -> dict[tuple[str, str, str], dict[str, Any]]:
+    """Keep the last fetched caps when this archive-only generator runs without a network fetch."""
+    result: dict[tuple[str, str, str], dict[str, Any]] = {}
+    namespace = output_dir / "new-highs"
+    if not namespace.exists():
+        return result
+    for path in namespace.glob("*/*.json"):
+        try:
+            report = json.loads(path.read_text(encoding="utf-8-sig"))
+        except (OSError, ValueError):
+            continue
+        if not isinstance(report, dict) or not isinstance(report.get("entries"), list):
+            continue
+        market = report.get("market")
+        report_date = report.get("date")
+        if not isinstance(market, str) or not isinstance(report_date, str):
+            continue
+        for entry in report["entries"]:
+            if not isinstance(entry, dict) or not isinstance(entry.get("ticker"), str):
+                continue
+            value = entry.get("market_cap")
+            currency = entry.get("market_cap_currency")
+            if (type(value) not in {int, float} or not math.isfinite(value) or value <= 0 or
+                    not isinstance(currency, str) or re.fullmatch(r"[A-Z]{3}", currency) is None):
+                continue
+            cap = {field: entry[field] for field in MARKET_CAP_FIELDS if field in entry}
+            value_usd = cap.get("market_cap_usd")
+            if value_usd is not None and (type(value_usd) not in {int, float} or
+                                          not math.isfinite(value_usd) or value_usd <= 0):
+                cap["market_cap_usd"] = None
+            result[(market, report_date, entry["ticker"])] = cap
+    return result
+
+
+def publish_reports(reports: list[dict[str, Any]], output_dir: Path,
+                    market_caps: dict[str, Any] | None,
+                    market_cap_fetched_at: str | None) -> list[dict[str, Any]]:
+    existing_caps = load_published_market_caps(output_dir)
+    published = copy.deepcopy(reports)
+    for report in published:
+        for entry in report["entries"]:
+            cap = (market_caps or {}).get(entry["ticker"])
+            if cap is not None:
+                entry.update({
+                    "market_cap": cap.value,
+                    "market_cap_currency": cap.currency,
+                    "market_cap_usd": cap.value_usd,
+                    "market_cap_source": cap.source,
+                    "market_cap_fetched_at": market_cap_fetched_at,
+                })
+                continue
+            saved = existing_caps.get((report["market"], report["date"], entry["ticker"]))
+            if saved:
+                entry.update(saved)
+    return published
+
+
 def generate_new_high_data(source_dir: Path = SOURCE_DIR, output_dir: Path = GENERATED_DIR,
-                           frontend_data_dir: Path | None = FRONTEND_DATA_DIR) -> dict[str, Any]:
+                           frontend_data_dir: Path | None = FRONTEND_DATA_DIR, *,
+                           market_caps: dict[str, Any] | None = None,
+                           market_cap_fetched_at: str | None = None) -> dict[str, Any]:
     """Validate all reports first, then write only the new-highs output namespace."""
     markets = load_markets(source_dir)
     markets_by_id = {market["id"]: market for market in markets}
@@ -188,6 +255,7 @@ def generate_new_high_data(source_dir: Path = SOURCE_DIR, output_dir: Path = GEN
         validate_report(payload, path, reports_dir, markets_by_id)
         reports.append(payload)
     reports.sort(key=lambda report: (-date.fromisoformat(report["date"]).toordinal(), report["market"]))
+    published_reports = publish_reports(reports, output_dir, market_caps, market_cap_fetched_at)
     summaries = []
     for report in reports:
         entries = report["entries"]
@@ -216,7 +284,7 @@ def generate_new_high_data(source_dir: Path = SOURCE_DIR, output_dir: Path = GEN
         destinations.append(frontend_data_dir)
     for destination in destinations:
         namespace = destination / "new-highs"
-        for report in reports:
+        for report in published_reports:
             write_json(namespace / report["market"] / f"{report['date']}.json", report)
         # Publish the index after its referenced reports are present.
         write_json(namespace / "index.json", index)

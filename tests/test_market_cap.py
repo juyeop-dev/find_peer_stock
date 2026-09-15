@@ -22,6 +22,24 @@ class MarketCapTests(unittest.TestCase):
             market_cap._symbol_candidates("MU"),
             [("america", "NASDAQ:MU"), ("america", "NYSE:MU"), ("america", "AMEX:MU")],
         )
+        self.assertEqual(market_cap._source_symbol_candidate("EURONEXT:A5G"), [("global", "EURONEXT:A5G")])
+
+    def test_explicit_source_symbol_supports_new_high_only_exchanges(self) -> None:
+        def response(url, payload, _timeout):
+            if "/global/" in url:
+                self.assertEqual(payload["symbols"]["tickers"], ["EURONEXT:A5G"])
+                return {"data": [{"s": "EURONEXT:A5G", "d": ["A5G", 8_500_000_000, "EUR"]}]}
+            if "/forex/" in url:
+                return {"data": [{"s": "FX_IDC:USDEUR", "d": ["USDEUR", 0.85, "EUR"]}]}
+            self.fail(f"Unexpected URL: {url}")
+
+        with patch.object(market_cap, "_request_json", side_effect=response):
+            result = market_cap.fetch_market_caps(
+                ["A5G.PA"], source_symbols={"A5G.PA": "EURONEXT:A5G"}
+            )
+
+        self.assertEqual(result["A5G.PA"].currency, "EUR")
+        self.assertEqual(result["A5G.PA"].value_usd, 10_000_000_000)
 
     def test_fetch_market_caps_converts_local_values_to_usd(self) -> None:
         def response(url, payload, _timeout):

@@ -129,9 +129,14 @@ def main() -> None:
             print(f"{ticker}: {quote.get('error')}", file=sys.stderr)
         raise SystemExit("No quotes fetched successfully; existing published files were preserved.")
 
+    new_high_source_symbols = load_new_high_market_cap_symbols(args.new_high_source_dir)
+    market_cap_tickers = set(catalog["companies"]) | set(new_high_source_symbols)
     market_caps = {}
     if not args.no_fetch and fetch_market_caps is not None:
-        market_caps = fetch_market_caps(catalog["companies"])
+        market_caps = fetch_market_caps(
+            market_cap_tickers,
+            source_symbols=new_high_source_symbols,
+        )
     apply_market_caps(
         quotes,
         market_caps,
@@ -143,7 +148,13 @@ def main() -> None:
     print(f"Market caps: {current_caps} fetched, {retained_caps} retained; {len(quotes)} total.")
 
     write_static_data(catalog, quotes, generated_at=generated_at, output_dir=args.output_dir)
-    generate_new_high_data(args.new_high_source_dir, args.output_dir, frontend_data_dir=None)
+    generate_new_high_data(
+        args.new_high_source_dir,
+        args.output_dir,
+        frontend_data_dir=None,
+        market_caps=market_caps,
+        market_cap_fetched_at=generated_at.isoformat(),
+    )
 
     if args.copy_to_frontend:
         sync_frontend_data(args.output_dir, args.frontend_data_dir)
@@ -192,6 +203,26 @@ def load_previous_quotes(output_dir: Path) -> dict[str, dict[str, Any]]:
         if usable_previous_quote(quote, path.stem):
             quotes[path.stem] = quote
     return quotes
+
+
+def load_new_high_market_cap_symbols(source_dir: Path) -> dict[str, str]:
+    symbols = {}
+    for path in sorted((source_dir / "reports").rglob("*.json")):
+        try:
+            payload = json.loads(path.read_text(encoding="utf-8-sig"))
+        except (OSError, ValueError):
+            continue
+        entries = payload.get("entries") if isinstance(payload, dict) else None
+        if not isinstance(entries, list):
+            continue
+        for entry in entries:
+            if not isinstance(entry, dict):
+                continue
+            ticker = entry.get("ticker")
+            source_symbol = entry.get("source_symbol")
+            if isinstance(ticker, str) and ticker and isinstance(source_symbol, str) and source_symbol:
+                symbols[ticker] = source_symbol
+    return symbols
 
 
 def usable_previous_quote(quote: Any, ticker: str) -> bool:

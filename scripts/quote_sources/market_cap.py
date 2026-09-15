@@ -11,6 +11,22 @@ from typing import Any, Iterable
 TRADINGVIEW_SCANNER_URL = "https://scanner.tradingview.com/{scanner}/scan"
 MARKET_CAP_COLUMNS = ("name", "market_cap_basic", "fundamental_currency_code")
 FX_COLUMNS = ("name", "close", "currency")
+EXCHANGE_SCANNERS = {
+    "KRX": "korea",
+    "TWSE": "taiwan",
+    "TPEX": "taiwan",
+    "TSE": "japan",
+    "HKEX": "hongkong",
+    "SSE": "china",
+    "SZSE": "china",
+    "NASDAQ": "america",
+    "NYSE": "america",
+    "AMEX": "america",
+    "EURONEXT": "global",
+    "XETR": "global",
+    "LSE": "global",
+    "SIX": "global",
+}
 
 
 class MarketCapError(RuntimeError):
@@ -26,10 +42,17 @@ class MarketCap:
     source: str = "TradingView"
 
 
-def fetch_market_caps(tickers: Iterable[str], *, timeout: float = 30) -> dict[str, MarketCap]:
+def fetch_market_caps(
+    tickers: Iterable[str],
+    *,
+    source_symbols: dict[str, str] | None = None,
+    timeout: float = 30,
+) -> dict[str, MarketCap]:
     requests_by_scanner: dict[str, dict[str, str]] = {}
     for ticker in tickers:
-        for scanner, symbol in _symbol_candidates(ticker):
+        source_symbol = (source_symbols or {}).get(ticker)
+        candidates = _source_symbol_candidate(source_symbol) if source_symbol else None
+        for scanner, symbol in candidates or _symbol_candidates(ticker):
             requests_by_scanner.setdefault(scanner, {})[symbol] = ticker
 
     local_caps: dict[str, tuple[float, str]] = {}
@@ -72,10 +95,21 @@ def _symbol_candidates(ticker: str) -> list[tuple[str, str]]:
     return [("america", f"{exchange}:{upper}") for exchange in ("NASDAQ", "NYSE", "AMEX")]
 
 
+def _source_symbol_candidate(source_symbol: str) -> list[tuple[str, str]] | None:
+    if not isinstance(source_symbol, str) or ":" not in source_symbol:
+        return None
+    exchange, symbol = source_symbol.strip().upper().split(":", 1)
+    scanner = EXCHANGE_SCANNERS.get(exchange)
+    if not scanner or not symbol:
+        return None
+    return [(scanner, f"{exchange}:{symbol}")]
+
+
 def _scan(scanner: str, symbol_map: dict[str, str], columns: tuple[str, ...], timeout: float) -> dict[str, Any]:
     payload = {
         "symbols": {"tickers": list(symbol_map), "query": {"types": []}},
         "columns": list(columns),
+        "range": [0, len(symbol_map)],
     }
     return _request_json(TRADINGVIEW_SCANNER_URL.format(scanner=scanner), payload, timeout)
 

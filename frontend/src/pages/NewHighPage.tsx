@@ -6,7 +6,7 @@ import { NewHighCalendar } from "../components/NewHighCalendar";
 import { DataRefreshStatus } from "../components/DataRefreshStatus";
 import { getNewHighIndex, getNewHighReport, getSiteIndex } from "../dataClient/staticStockDataClient";
 import { usePollingData } from "../dataClient/usePollingData";
-import { formatDateTime } from "../dataClient/formatters";
+import { compareMarketCapDesc, formatDateTime, formatMarketCap } from "../dataClient/formatters";
 import type { HighType, NewHighCounts, NewHighEntry, NewHighRefresh } from "../dataClient/newHighTypes";
 
 const EMPTY_COUNTS: NewHighCounts = { total: 0, high_52_week: 0, high_all_time: 0 };
@@ -134,7 +134,8 @@ export function NewHighPage() {
   const query = search.trim().toLocaleLowerCase();
   const filteredEntries = entries.filter((entry) => (highType === "all" || entry.high_type === highType)
     && [entry.name, entry.ticker, entry.category, entry.reason, entry.description,
-      report?.category_reasons?.[entry.category]].filter(Boolean).join(" ").toLocaleLowerCase().includes(query));
+      report?.category_reasons?.[entry.category]].filter(Boolean).join(" ").toLocaleLowerCase().includes(query))
+    .sort((left, right) => compareMarketCapDesc(left, right) || left.ticker.localeCompare(right.ticker));
 
   function selectDate(date: string) {
     setParams({ market: marketId, exchange, date });
@@ -297,7 +298,10 @@ export function NewHighPage() {
                         <div className="newHighStockTop"><div className="newHighStockIdentity"><strong>{entry.name}</strong>
                           <span className="newHighTicker">{entry.ticker}</span><span className="newHighExchange">{entry.exchange}</span></div>
                           <div className="newHighMarketData">
-                            <span className="newHighSessionPrice">{formatSessionPrice(entry, marketId)}</span>
+                            <div className="newHighPriceBlock">
+                              <span className="newHighSessionPrice">{formatSessionPrice(entry, marketId)}</span>
+                              <small className="newHighMarketCap">현재 시총 {formatMarketCap(entry)}</small>
+                            </div>
                             <span className={`newHighChange ${entry.change_pct == null || entry.change_pct === 0 ? "flat" : entry.change_pct > 0 ? "up" : "down"}`}
                               aria-label={entry.change_pct == null ? "등락률 미등록" : `당일 등락률 ${entry.change_pct}%`}>
                               {entry.change_pct == null ? "등락률 미등록" : `${entry.change_pct > 0 ? "+" : ""}${entry.change_pct.toFixed(2)}%`}
