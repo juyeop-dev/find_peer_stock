@@ -216,7 +216,7 @@ export function NewHighPage() {
               <div className="allTimeStat"><span><i />역대 신고가</span><strong>{counts?.high_all_time ?? "—"}<small>종목</small></strong></div>
               <div className="weekStat"><span><i />52주 신고가</span><strong>{counts?.high_52_week ?? "—"}<small>종목</small></strong></div>
             </div>
-            <p className="newHighCountNote">역대 신고가는 52주 신고가에 중복 집계하지 않습니다.</p>
+            <p className="newHighCountNote">장중 신고가 기준이며 음봉과 전일 대비 하락 마감은 제외합니다. 역대 신고가는 52주 신고가에 중복 집계하지 않습니다.</p>
 
             {reportLoading ? <LoadingSpinner /> : null}
             {reportError ? <ErrorNotice message={reportError} /> : null}

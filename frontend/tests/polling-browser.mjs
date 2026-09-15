@@ -163,6 +163,7 @@ try {
   assert.equal(await evaluate("document.querySelector('.newHighExchanges button[aria-pressed=true]').innerText"), "전체",
     "Korean new highs should initially include both KOSPI and KOSDAQ.");
   assert.equal(await contains("신고가는 장 마감 후 거래일당 한 번 갱신합니다. 게시 결과는 1분마다 확인합니다."), true);
+  assert.equal(await contains("장중 신고가 기준이며 음봉과 전일 대비 하락 마감은 제외합니다."), true);
   assert.equal(await contains("한국 자동 갱신 · 갱신 대기"), true);
   assert.equal(await contains("갱신 시작 · 현지 거래일 16:10 이후 (Asia/Seoul)"), true);
   assert.equal(await evaluate("[...document.querySelectorAll('.newHighStats strong')].every(item => item.innerText.startsWith('—'))"), true,

@@ -147,6 +147,44 @@
       "source_url": "https://api.finance.naver.com/siseJson.naver?symbol=083640&requestType=1&startTime=20250915&endTime=20260914&timeframe=day"
     }
   ],
+  "close_filter_excluded": [
+    {
+      "ticker": "035610.KQ",
+      "name": "솔본",
+      "open": 5190,
+      "close": 5090,
+      "previous_close": 5040,
+      "bearish_candle": true,
+      "down_close": false
+    },
+    {
+      "ticker": "465320.KQ",
+      "name": "교보15호스팩",
+      "open": 2135,
+      "close": 2135,
+      "previous_close": 2140,
+      "bearish_candle": false,
+      "down_close": true
+    },
+    {
+      "ticker": "003350.KS",
+      "name": "한국화장품제조",
+      "open": 16100,
+      "close": 14540,
+      "previous_close": 15710,
+      "bearish_candle": true,
+      "down_close": true
+    },
+    {
+      "ticker": "025000.KS",
+      "name": "KPX케미칼",
+      "open": 56600,
+      "close": 56300,
+      "previous_close": 56100,
+      "bearish_candle": true,
+      "down_close": false
+    }
+  ],
   "user_reported_candidates": [
     {
       "ticker": "023760.KQ",

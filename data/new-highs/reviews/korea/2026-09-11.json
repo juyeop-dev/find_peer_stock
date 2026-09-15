@@ -135,6 +135,35 @@
     "prior_high": 52000,
     "daily_high": 56500
   },
+  "close_filter_excluded": [
+    {
+      "ticker": "093380.KQ",
+      "name": "풍강",
+      "open": 3095,
+      "close": 3110,
+      "previous_close": 3120,
+      "bearish_candle": false,
+      "down_close": true
+    },
+    {
+      "ticker": "224060.KQ",
+      "name": "더코디",
+      "open": 12750,
+      "close": 9890,
+      "previous_close": 9890,
+      "bearish_candle": true,
+      "down_close": false
+    },
+    {
+      "ticker": "248170.KS",
+      "name": "샘표식품",
+      "open": 34550,
+      "close": 25700,
+      "previous_close": 30150,
+      "bearish_candle": true,
+      "down_close": true
+    }
+  ],
   "additional_candidates": [
     {
       "code": "162300",

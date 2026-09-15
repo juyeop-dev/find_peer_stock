@@ -5,7 +5,8 @@ exchange-wide data guarantee. Fail closed if its response, coverage, or session
 changes. The caller decides when exchanges have closed and persists each report.
 
 Definition: https://www.tradingview.com/support/solutions/43000753745/
-The daily high must equal or exceed the period high; all-time takes precedence.
+The daily high must equal or exceed the period high. This archive additionally
+requires close >= open and close >= previous close; all-time takes precedence.
 """
 
 from __future__ import annotations
@@ -40,7 +41,7 @@ _CONFIG = {
 }
 COLUMNS = (
     "name", "description", "exchange", "type", "subtype", "sector", "industry",
-    "change", "high", "price_52_week_high", "High.All", "time", "volume", "indexes",
+    "change", "open", "high", "low", "close", "price_52_week_high", "High.All", "time", "volume", "indexes",
 )
 _DEFINITION_URL = "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
 
@@ -180,6 +181,7 @@ def verify_korean_daily_high(code: str, session_date: date, timeout: float = 30)
     })
     rows = _request_daily_history(url, timeout)
     previous_highs = []
+    previous_closes: list[tuple[date, float | int]] = []
     current = None
     seen = set()
     for row in rows:
@@ -192,23 +194,43 @@ def verify_korean_daily_high(code: str, session_date: date, timeout: float = 30)
         if day in seen or not start <= day <= session_date:
             raise TradingViewSourceError(f"KRX:{code}: duplicate or unexpected daily history date")
         seen.add(day)
-        if not _number(row[2]) or row[2] < 0 or not _number(row[5]) or row[5] < 0:
-            raise TradingViewSourceError(f"KRX:{code}: invalid daily high or volume")
+        if not _number(row[2]) or row[2] < 0 or not _number(row[4]) or row[4] <= 0 or \
+                not _number(row[5]) or row[5] < 0:
+            raise TradingViewSourceError(f"KRX:{code}: invalid daily high, close or volume")
         if day == session_date:
+            if any(not _number(row[index]) or row[index] <= 0 for index in (1, 3)):
+                raise TradingViewSourceError(f"KRX:{code}: invalid current-session open or low")
             current = row
-        elif row[2] > 0:
-            previous_highs.append(row[2])
+        else:
+            if row[2] > 0:
+                previous_highs.append(row[2])
+            previous_closes.append((day, row[4]))
     if current is None:
         raise TradingViewSourceNotReady(f"KRX:{code}: daily history has no {session_date} bar")
     prior_high = max(previous_highs, default=None)
+    previous_close = max(previous_closes, default=(None, None), key=lambda item: item[0])[1]
+    bearish_candle = current[4] < current[1]
+    down_close = previous_close is not None and current[4] < previous_close
     confirmed = current[2] > 0 and current[5] > 0 and (prior_high is None or current[2] >= prior_high)
     return {
         "source": "Naver Finance adjusted daily history", "source_url": url,
-        "date": session_date.isoformat(), "daily_high": current[2], "volume": current[5],
+        "date": session_date.isoformat(), "open": current[1], "daily_high": current[2],
+        "low": current[3], "close": current[4], "previous_close": previous_close, "volume": current[5],
         "prior_52_week_high": prior_high, "observed_bars": len(rows),
         "first_observed_date": min(seen).isoformat(), "confirmed": confirmed,
         "matches_prior_high": prior_high is not None and current[2] == prior_high,
+        "bearish_candle": bearish_candle, "down_close": down_close,
+        "passes_close_filter": not bearish_candle and not down_close,
     }
+
+
+def _passes_close_filter(row: dict[str, Any]) -> bool:
+    for field in ("open", "close", "change"):
+        if not _number(row[field]):
+            raise TradingViewSourceError(f"{row['symbol']}: missing OHLC/change prevents close-direction filtering")
+    if row["open"] <= 0 or row["close"] <= 0:
+        raise TradingViewSourceError(f"{row['symbol']}: invalid open or close")
+    return row["close"] >= row["open"] and row["change"] >= 0
 
 
 def _high_type(row: dict[str, Any]) -> str | None:
@@ -298,6 +320,13 @@ def fetch_report(market_id: str, session_date: date, *, timeout: float = 30,
         if evidence and not evidence["confirmed"]:
             excluded["korean_daily_history_disagrees"] += 1
             continue
+        if evidence is not None:
+            if not evidence["passes_close_filter"]:
+                excluded["bearish_or_down_close"] += 1
+                continue
+        elif not _passes_close_filter(row):
+            excluded["bearish_or_down_close"] += 1
+            continue
         exchange = "XETRA" if exchange == "XETR" else exchange
         ticker = _ticker(row, exchange, market_id)
         if ticker.upper() in used_tickers:
@@ -314,6 +343,8 @@ def fetch_report(market_id: str, session_date: date, *, timeout: float = 30,
             "ticker": ticker, "name": display_name, "exchange": exchange,
             "category": sector, "high_type": high_type, "reason": "신고가 배경 미확인",
             "description": f"{display_name} · {industry}", "change_pct": row["change"],
+            "session_open": evidence["open"] if evidence else row["open"],
+            "session_close": evidence["close"] if evidence else row["close"],
             "source_symbol": row["symbol"],
             **({"name_original": row["description"], "name_source_url": listing["source_url"],
                 "high_verification": evidence} if listing else {}),
@@ -321,7 +352,7 @@ def fetch_report(market_id: str, session_date: date, *, timeout: float = 30,
     entries.sort(key=lambda entry: (entry["exchange"], entry["ticker"]))
     return {
         "schema_version": 1, "market": market_id, "date": session_date.isoformat(),
-        "summary": "장 마감 후 TradingView 주식 스냅샷 기준. 당일 장중 고가가 52주·전체기간 고가에 도달한 종목이며, 전체기간 신고가를 우선 표시합니다. 신고가 배경은 별도 확인 전입니다.",
+        "summary": "장 마감 후 TradingView 주식 스냅샷 기준. 당일 장중 고가가 52주·전체기간 고가에 도달하고, 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다. 전체기간 신고가를 우선 표시하며 신고가 배경은 별도 확인 전입니다.",
         "sources": [
             {"label": "TradingView stock screener", "url": "https://www.tradingview.com/screener/"},
             {"label": "TradingView 신고가 산정 기준", "url": _DEFINITION_URL},
@@ -331,7 +362,7 @@ def fetch_report(market_id: str, session_date: date, *, timeout: float = 30,
             "provider": "TradingView public scanner", "scanner": scanner,
             "fetched_at": datetime.now(timezone.utc).isoformat(),
             "universe": "TradingView-listed stock instruments, including common and preferred shares; ETFs excluded",
-            "definition": "daily high >= period high; all-time takes precedence; ties included",
+            "definition": "daily high >= period high; close >= open; close >= previous close; all-time takes precedence; ties included",
             "scanner_exchanges": list(exchanges),
             "latest_session_by_exchange": {exchange: day.isoformat() for exchange, day in latest.items()},
             "current_session_reference_symbols": references,

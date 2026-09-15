@@ -23,7 +23,7 @@ def row(symbol: str, **changes: object) -> dict:
     values = {
         "name": name, "description": f"Company {name}", "exchange": exchange,
         "type": "stock", "subtype": "common", "sector": "Technology",
-        "industry": "Semiconductors", "change": 2.5, "high": 100,
+        "industry": "Semiconductors", "change": 2.5, "open": 95, "high": 100, "low": 90, "close": 98,
         "price_52_week_high": 120, "High.All": 150, "time": STAMP,
         "volume": 1000, "indexes": [],
     }
@@ -54,6 +54,22 @@ class TradingViewNewHighTests(unittest.TestCase):
         self.assertTrue(report["source_metadata"]["pagination_complete"])
         self.assertEqual(report["source_metadata"]["scanned_symbols"], 3)
         self.assertEqual(report["entries"][0]["reason"], "신고가 배경 미확인")
+
+    def test_intraday_high_excludes_bearish_candles_and_down_closes(self):
+        rows = [
+            row("TSE:1000", high=150, open=100, close=99, change=1),
+            row("TSE:2000", high=150, open=100, close=101, change=-1),
+            row("TSE:3000", high=150, open=100, close=100, change=0),
+            row("TSE:4000", high=150, open=100, close=101, change=1),
+        ]
+        report = self.fetch(rows)
+        self.assertEqual([entry["ticker"] for entry in report["entries"]], ["3000.T", "4000.T"])
+        self.assertEqual(report["source_metadata"]["excluded_symbols"], {"bearish_or_down_close": 2})
+
+    def test_close_filter_requires_complete_finite_prices(self):
+        for changes in ({"open": None}, {"close": float("nan")}, {"change": None}, {"open": 0}):
+            with self.subTest(changes=changes), self.assertRaises(source.TradingViewSourceError):
+                self.fetch([row("TSE:1000", high=150, **changes)])
 
     def test_zero_requires_nonempty_current_universe(self):
         report = self.fetch([row("TSE:1000")])
@@ -102,7 +118,9 @@ class TradingViewNewHighTests(unittest.TestCase):
             response(rows),
             {"itemCode": "005930", "stockName": "삼성전자", "stockExchangeType": {"name": "KOSPI"}},
             {"itemCode": "0197V0", "stockName": "엔에이치스팩34호", "stockExchangeType": {"name": "KOSDAQ"}},
-        ]) as request, patch.object(source, "verify_korean_daily_high", return_value={"confirmed": True}):
+        ]) as request, patch.object(source, "verify_korean_daily_high", return_value={
+            "confirmed": True, "passes_close_filter": True, "open": 100, "close": 120,
+        }):
             report = source.fetch_report("korea", DAY)
         self.assertEqual({entry["ticker"] for entry in report["entries"]}, {"005930.KS", "0197V0.KQ"})
         self.assertEqual({entry["name"] for entry in report["entries"]}, {"삼성전자", "엔에이치스팩34호"})
@@ -128,6 +146,22 @@ class TradingViewNewHighTests(unittest.TestCase):
             self.assertEqual(evidence["confirmed"], confirmed)
             self.assertEqual(evidence["matches_prior_high"], tied)
 
+    def test_korean_daily_history_requires_non_bearish_non_down_close(self):
+        cases = [
+            (110, 105, 100, False),
+            (100, 105, 110, False),
+            (100, 100, 100, True),
+            (100, 105, 100, True),
+        ]
+        for open_price, close, previous_close, expected in cases:
+            with self.subTest(open=open_price, close=close, previous_close=previous_close), \
+                    patch.object(source, "_request_daily_history", return_value=[
+                        ["20260910", 100, 120, 90, previous_close, 1000],
+                        ["20260911", open_price, 150, 90, close, 1000],
+                    ]):
+                evidence = source.verify_korean_daily_high("005930", DAY)
+            self.assertEqual(evidence["passes_close_filter"], expected)
+
     def test_daily_history_missing_target_bad_values_and_duplicates_fail(self):
         good = ["20260911", 100, 150, 90, 120, 1000]
         for rows in ([], [["20260910", 100, 150, 90, 120, 1000]], [good, good],
@@ -147,6 +181,19 @@ class TradingViewNewHighTests(unittest.TestCase):
             report = source.fetch_report("korea", DAY)
         self.assertEqual(report["entries"], [])
         self.assertEqual(report["source_metadata"]["excluded_symbols"], {"korean_daily_history_disagrees": 1})
+
+    def test_korean_daily_close_filter_vetoes_scanner_candidate(self):
+        rows = [row("KRX:005930", indexes=[{"proname": "KRX:KOSPI"}]),
+                row("KRX:098120", indexes=[{"proname": "KRX:KOSDAQ"}], high=150)]
+        with patch.object(source, "_request_json", return_value=response(rows)), \
+             patch.object(source, "fetch_korean_listing", return_value={
+                 "name": "마이크로컨텍솔", "exchange": "KOSDAQ", "source_url": "https://stock.naver.com/",
+             }), patch.object(source, "verify_korean_daily_high", return_value={
+                 "confirmed": True, "passes_close_filter": False, "open": 100, "close": 90,
+             }):
+            report = source.fetch_report("korea", DAY)
+        self.assertEqual(report["entries"], [])
+        self.assertEqual(report["source_metadata"]["excluded_symbols"], {"bearish_or_down_close": 1})
 
     def test_korean_board_cannot_be_guessed(self):
         rows = [

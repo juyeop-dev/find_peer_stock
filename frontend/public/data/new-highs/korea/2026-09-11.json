@@ -2,7 +2,7 @@
   "schema_version": 1,
   "market": "korea",
   "date": "2026-09-11",
-  "summary": "9월 11일 일봉을 재검증한 신고가 7종목입니다(코스피 2·코스닥 5). 마이크로컨텍솔은 역대 신고가, 나머지 6종목은 52주 신고가입니다. 풍강·교보15호스팩은 이전 최고가와 같은 가격에 재도달한 경우를 포함합니다. 엔에이치스팩34호는 당일 고가 2,035원이 전날 고가 5,700원보다 낮아 제외했습니다. 신고가 배경은 별도 확인 전입니다.",
+  "summary": "9월 11일 장중 신고가 후보를 일봉으로 재검증한 4종목입니다(코스피 1·코스닥 3). 마이크로컨텍솔은 역대 신고가, 나머지 3종목은 52주 신고가입니다. 음봉 또는 전일 대비 하락 마감 종목과 일봉으로 신고가가 확인되지 않은 종목은 제외했습니다. 신고가 배경은 별도 확인 전입니다.",
   "sources": [
     {
       "label": "TradingView stock screener",
@@ -48,31 +48,6 @@
       }
     },
     {
-      "ticker": "093380.KQ",
-      "name": "풍강",
-      "exchange": "KOSDAQ",
-      "category": "Producer Manufacturing",
-      "high_type": "52_week",
-      "reason": "신고가 배경 미확인",
-      "description": "풍강 · Auto Parts: OEM",
-      "change_pct": -0.3205128205128205,
-      "source_symbol": "KRX:093380",
-      "name_original": "PungKang Co., Ltd.",
-      "name_source_url": "https://m.stock.naver.com/api/stock/093380/basic",
-      "high_verification": {
-        "source": "Naver Finance adjusted daily history",
-        "source_url": "https://api.finance.naver.com/siseJson.naver?symbol=093380&requestType=1&startTime=20250912&endTime=20260911&timeframe=day",
-        "date": "2026-09-11",
-        "daily_high": 3290,
-        "volume": 12985,
-        "prior_52_week_high": 3290,
-        "observed_bars": 243,
-        "first_observed_date": "2025-09-12",
-        "confirmed": true,
-        "matches_prior_high": true
-      }
-    },
-    {
       "ticker": "098120.KQ",
       "name": "마이크로컨텍솔",
       "exchange": "KOSDAQ",
@@ -91,31 +66,6 @@
         "daily_high": 56500,
         "volume": 298962,
         "prior_52_week_high": 52000,
-        "observed_bars": 243,
-        "first_observed_date": "2025-09-12",
-        "confirmed": true,
-        "matches_prior_high": false
-      }
-    },
-    {
-      "ticker": "224060.KQ",
-      "name": "더코디",
-      "exchange": "KOSDAQ",
-      "category": "Electronic Technology",
-      "high_type": "52_week",
-      "reason": "신고가 배경 미확인",
-      "description": "더코디 · Semiconductors",
-      "change_pct": 0,
-      "source_symbol": "KRX:224060",
-      "name_original": "Codi Co., Ltd.",
-      "name_source_url": "https://m.stock.naver.com/api/stock/224060/basic",
-      "high_verification": {
-        "source": "Naver Finance adjusted daily history",
-        "source_url": "https://api.finance.naver.com/siseJson.naver?symbol=224060&requestType=1&startTime=20250912&endTime=20260911&timeframe=day",
-        "date": "2026-09-11",
-        "daily_high": 12750,
-        "volume": 2890750,
-        "prior_52_week_high": 9890,
         "observed_bars": 243,
         "first_observed_date": "2025-09-12",
         "confirmed": true,
@@ -171,31 +121,6 @@
         "confirmed": true,
         "matches_prior_high": false
       }
-    },
-    {
-      "ticker": "248170.KS",
-      "name": "샘표식품",
-      "exchange": "KOSPI",
-      "category": "Consumer Non-Durables",
-      "high_type": "52_week",
-      "reason": "신고가 배경 미확인",
-      "description": "샘표식품 · Food: Specialty/Candy",
-      "change_pct": -14.759535655058043,
-      "source_symbol": "KRX:248170",
-      "name_original": "Sempio Foods Co.",
-      "name_source_url": "https://m.stock.naver.com/api/stock/248170/basic",
-      "high_verification": {
-        "source": "Naver Finance adjusted daily history",
-        "source_url": "https://api.finance.naver.com/siseJson.naver?symbol=248170&requestType=1&startTime=20250912&endTime=20260911&timeframe=day",
-        "date": "2026-09-11",
-        "daily_high": 36200,
-        "volume": 2355899,
-        "prior_52_week_high": 34750,
-        "observed_bars": 243,
-        "first_observed_date": "2025-09-12",
-        "confirmed": true,
-        "matches_prior_high": false
-      }
     }
   ],
   "source_metadata": {
@@ -203,7 +128,7 @@
     "scanner": "korea",
     "fetched_at": "2026-09-13T14:33:43.902976+00:00",
     "universe": "TradingView-listed stock instruments, including common and preferred shares; ETFs excluded",
-    "definition": "daily high >= period high; all-time takes precedence; ties included",
+    "definition": "daily high >= period high; close >= open; close >= previous close; all-time takes precedence; ties included",
     "scanner_exchanges": [
       "KRX"
     ],
@@ -227,6 +152,15 @@
       "retained_entries": 7,
       "excluded_tickers": [
         "0197V0.KQ"
+      ]
+    },
+    "close_filter_review": {
+      "reviewed_at": "2026-09-15T03:10:00+00:00",
+      "criteria": "close >= open and close >= previous close",
+      "excluded_tickers": [
+        "093380.KQ",
+        "224060.KQ",
+        "248170.KS"
       ]
     }
   },
