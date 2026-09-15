@@ -108,6 +108,10 @@ def scan_historical(market_id: str, max_offset: int, timeout: float = 30,
         if not isinstance(response, dict) or type(response.get("totalCount")) is not int:
             raise TradingViewSourceError(f"{scanner}: malformed historical scanner response")
         count, page = response["totalCount"], response.get("data")
+        if count == 0 and symbols:
+            if page != []:
+                raise TradingViewSourceError(f"{scanner}: malformed empty filtered scanner response")
+            return []
         if count <= 0 or count > 100_000:
             raise TradingViewSourceError(f"{scanner}: invalid stock-universe count: {count}")
         if total is not None and count != total:

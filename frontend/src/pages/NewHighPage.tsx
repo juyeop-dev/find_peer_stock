@@ -294,7 +294,7 @@ export function NewHighPage() {
                       <header><h4>{category}<span>{stocks.length}종목</span></h4>
                         {report.category_reasons?.[category] ? <p>{report.category_reasons[category]}</p> : null}</header>
                       <ul>{stocks.map((entry) => <li key={entry.ticker}>
-                        <div className="newHighStockTop"><div><strong>{entry.name}</strong>
+                        <div className="newHighStockTop"><div className="newHighStockIdentity"><strong>{entry.name}</strong>
                           <span className="newHighTicker">{entry.ticker}</span><span className="newHighExchange">{entry.exchange}</span></div>
                           <div className="newHighMarketData">
                             <span className="newHighSessionPrice">{formatSessionPrice(entry, marketId)}</span>

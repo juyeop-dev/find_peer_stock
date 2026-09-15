@@ -101,15 +101,15 @@ body:has(.newHighPage) { min-width: 320px; }
 .newHighTheme ul { padding: 0; margin: 0; list-style: none; }
 .newHighTheme li { padding: 17px; }
 .newHighTheme li + li { border-top: 1px solid #edf0f5; }
-.newHighStockTop { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
-.newHighStockTop > div { display: flex; align-items: baseline; flex-wrap: wrap; gap: 7px; }
+.newHighStockTop { display: grid; grid-template-columns: minmax(0, 1fr) 256px; align-items: baseline; gap: 12px; }
+.newHighStockIdentity { display: flex; min-width: 0; align-items: baseline; flex-wrap: wrap; gap: 7px; }
 .newHighStockTop strong { color: #253a55; font-size: 15px; }
 .newHighTicker { color: #6c7f98; font-size: 11px; overflow-wrap: anywhere; }
 .newHighExchange { padding: 1px 5px; border-radius: 3px; color: #8490a0; background: #f0f3f6; font-size: 9px; }
-.newHighMarketData { display: flex; flex-shrink: 0; align-items: baseline; gap: 10px; }
-.newHighSessionPrice { color: #4f627a; font-size: 12px; font-weight: 650; font-variant-numeric: tabular-nums; }
-.newHighChange { flex-shrink: 0; font-size: 14px; font-weight: 700; font-variant-numeric: tabular-nums; }
-.newHighChange.flat { font-size: 12px; }
+.newHighMarketData { display: grid; grid-template-columns: 150px 92px; align-items: baseline; gap: 14px; }
+.newHighSessionPrice { color: #4f627a; font-size: 15px; font-weight: 700; font-variant-numeric: tabular-nums; text-align: right; white-space: nowrap; }
+.newHighChange { min-width: 0; font-size: 15px; font-weight: 750; font-variant-numeric: tabular-nums; text-align: right; white-space: nowrap; }
+.newHighChange.flat { font-size: 14px; }
 .newHighIndustry { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin: 8px 0 0; color: #52677f; font-size: 12px; }
 .newHighIndustry > span { margin-right: 2px; color: #8795a7; font-size: 10px; }
 .newHighIndustry strong { font-weight: 700; color: #445972; }
@@ -166,7 +166,7 @@ body:has(.newHighPage) { min-width: 320px; }
   .newHighEmpty { min-height: 270px; padding: 28px 18px; }
   .newHighEmpty h3 { font-size: 16px; }
   .newHighEmpty p { font-size: 12px; }
-  .newHighStockTop { flex-direction: column; gap: 4px; }
-  .newHighMarketData { width: 100%; justify-content: space-between; }
+  .newHighStockTop { grid-template-columns: minmax(0, 1fr); gap: 6px; }
+  .newHighMarketData { grid-template-columns: minmax(0, 1fr) 92px; width: 100%; gap: 14px; }
   .newHighTheme li, .newHighTheme > header { padding: 13px; }
 }

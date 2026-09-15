@@ -24,7 +24,7 @@
       "exchange": "KOSDAQ",
       "category": "Process Industries",
       "high_type": "52_week",
-      "reason": "신고가 배경 미확인",
+      "reason": "업종: Process Industries · Containers/Packaging",
       "description": "대륙제관 · Containers/Packaging",
       "change_pct": 0.819672131147541,
       "session_open": 4240,
@@ -50,7 +50,8 @@
         "bearish_candle": false,
         "down_close": false,
         "passes_close_filter": true
-      }
+      },
+      "currency": "KRW"
     },
     {
       "ticker": "031980.KQ",
@@ -58,7 +59,7 @@
       "exchange": "KOSDAQ",
       "category": "Electronic Technology",
       "high_type": "all_time",
-      "reason": "신고가 배경 미확인",
+      "reason": "업종: Electronic Technology · Semiconductors",
       "description": "피에스케이홀딩스 · Semiconductors",
       "change_pct": 7.331189710610933,
       "session_open": 154300,
@@ -84,7 +85,8 @@
         "bearish_candle": false,
         "down_close": false,
         "passes_close_filter": true
-      }
+      },
+      "currency": "KRW"
     },
     {
       "ticker": "071200.KQ",
@@ -92,7 +94,7 @@
       "exchange": "KOSDAQ",
       "category": "Health Services",
       "high_type": "52_week",
-      "reason": "신고가 배경 미확인",
+      "reason": "업종: Health Services · Medical/Nursing Services",
       "description": "인피니트헬스케어 · Medical/Nursing Services",
       "change_pct": 14.500442086648983,
       "session_open": 12490,
@@ -118,7 +120,8 @@
         "bearish_candle": false,
         "down_close": false,
         "passes_close_filter": true
-      }
+      },
+      "currency": "KRW"
     },
     {
       "ticker": "028100.KS",
@@ -126,7 +129,7 @@
       "exchange": "KOSPI",
       "category": "Industrial Services",
       "high_type": "52_week",
-      "reason": "신고가 배경 미확인",
+      "reason": "업종: Industrial Services · Engineering & Construction",
       "description": "동아지질 · Engineering & Construction",
       "change_pct": 5.414551607445008,
       "session_open": 17450,
@@ -152,7 +155,8 @@
         "bearish_candle": false,
         "down_close": false,
         "passes_close_filter": true
-      }
+      },
+      "currency": "KRW"
     }
   ],
   "source_metadata": {
@@ -178,7 +182,12 @@
       "other_session": 28,
       "bearish_or_down_close": 2
     },
-    "pagination_complete": true
+    "pagination_complete": true,
+    "price_enrichment": {
+      "status": "complete",
+      "provider": "Naver Finance dated daily history",
+      "missing_symbols": []
+    }
   },
   "collected_at": "2026-09-15T07:31:33.879444+00:00"
 }

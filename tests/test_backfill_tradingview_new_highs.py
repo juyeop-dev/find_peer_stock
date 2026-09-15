@@ -4,6 +4,7 @@ import sys
 import unittest
 from datetime import date, datetime, timezone
 from pathlib import Path
+from unittest.mock import patch
 
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
@@ -78,6 +79,13 @@ class BackfillTradingViewNewHighTests(unittest.TestCase):
                 "japan", [DAY], [row("TSE:1000", time=STAMP - 86400)], 0,
                 minimum_coverage=1,
             )
+
+    def test_empty_targeted_symbol_search_is_not_an_empty_market_report(self) -> None:
+        with patch.object(backfill, "_request_json", return_value={"totalCount": 0, "data": []}):
+            self.assertEqual(backfill.scan_historical("us", 1, symbols={"AMEX:GONE"}), [])
+        with patch.object(backfill, "_request_json", return_value={"totalCount": 0, "data": []}), \
+                self.assertRaises(backfill.TradingViewSourceError):
+            backfill.scan_historical("japan", 1)
 
 
 if __name__ == "__main__":
