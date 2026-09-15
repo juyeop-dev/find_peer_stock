@@ -36,9 +36,11 @@
     "europe": {
       "last_success_at": "2026-09-14T17:01:42.569333+00:00",
       "last_success_date": "2026-09-14",
-      "status": "pending",
+      "status": "error",
       "target_date": "2026-09-15",
-      "message": "장 마감 후 일별 자료를 확인합니다."
+      "last_attempt_at": "2026-09-15T17:01:35.357114+00:00",
+      "next_retry_at": "2026-09-15T17:31:35.357114+00:00",
+      "message": "수집 또는 검증에 실패해 기존 기록을 보존했습니다."
     }
   }
 }
