@@ -35,7 +35,7 @@ data/generated/
 frontend/public/data/
 ```
 
-GitHub에서 자동 생성된 데이터는 로컬 파일에 자동으로 내려오지 않습니다. 저장소가 깨끗하면 `git pull --ff-only`로 받거나 위 수집 명령으로 갱신합니다. `npm run dev`만 실행하면 시세 수집은 시작되지 않습니다.
+예약 실행에서 생성한 가격 데이터는 GitHub Pages artifact에만 포함하며 `main`에 반복 커밋하지 않습니다. 기능 변경을 커밋할 때도 `data/generated`와 `frontend/public/data`의 변동성 높은 가격 스냅샷은 가급적 제외하고, 로컬 확인이 필요할 때만 위 수집 명령으로 갱신합니다. 이 방식은 5분 단위 자동 시세 커밋과 개발 커밋 사이의 반복적인 merge conflict를 막습니다. `npm run dev`만 실행하면 시세 수집은 시작되지 않습니다.
 
 `generated_at`은 파일 생성 시각, `quote.fetched_at`은 마지막 성공한 가격 조회 시각, `quote.market_time`은 제공처가 알려 준 시세 기준 시각입니다. 재조회 실패 시 `status: "stale"`, `refresh_status: "error"`, `last_checked_at`으로 실패 상태와 시도를 기록합니다. 주말이나 휴장에는 이전 거래일 가격이 유지되는 것이 정상입니다. 화면의 `브라우저 확인`은 배포 파일을 읽은 시각이며 가격이 갱신됐다는 뜻은 아닙니다.
 
@@ -216,9 +216,9 @@ npm.cmd run test:browser
 
 GitHub 자체 예약은 `3,8,13,...,58`분에 실행하는 예비 경로입니다. 2026-09-12 조사 당시 이 설정에도 실제 최근 실행은 약 2~4시간 간격이었습니다. [GitHub 문서](https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows#schedule)도 예약 실행 지연·누락 가능성을 명시합니다. 화면은 배포 데이터가 20분 넘게 갱신되지 않으면 지연 안내를 표시합니다.
 
-수동으로 즉시 갱신하려면 Actions에서 `Build Stock Peer Site`를 `Run workflow`로 실행합니다. `force_fetch` 기본값은 `true`이며 `false`이면 기존 가격을 유지하고 사이트만 다시 만듭니다. 워크플로는 시세 전체 수집 실패 시 기존 가격을 보존하고, 테스트와 빌드 통과 후에 게시합니다. 일별 신고가 원본 저장 실패 시 게시를 중단합니다. 생성 데이터 커밋이 원격 동시 변경으로 실패하더라도 정상 생성된 사이트의 배포는 진행합니다.
+수동으로 즉시 갱신하려면 Actions에서 `Build Stock Peer Site`를 `Run workflow`로 실행합니다. `force_fetch` 기본값은 `true`이며 `false`이면 기존 가격을 유지하고 사이트만 다시 만듭니다. 워크플로는 시세 전체 수집 실패 시 기존 가격을 보존하고, 테스트와 빌드 통과 후에 게시합니다. 일별 신고가 원본 저장 실패 시 게시를 중단합니다. 예약 실행의 가격 스냅샷은 저장소가 아닌 Pages artifact에만 게시합니다.
 
-로컬에서 `data/generated`와 `frontend/public/data`를 직접 갱신해 `main`에 푸시해도 GitHub Pages 배포가 다시 실행됩니다.
+소스 코드를 `main`에 푸시하면 워크플로가 최신 가격 데이터를 새로 생성한 뒤 GitHub Pages를 배포합니다. 따라서 일반적인 기능 변경 커밋에 로컬 생성 가격 파일을 함께 넣을 필요가 없습니다.
 
 GitHub Pages는 repository settings에서 `GitHub Actions` 배포 소스로 설정합니다.
 

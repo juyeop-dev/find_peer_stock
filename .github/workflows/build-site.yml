@@ -117,22 +117,6 @@ jobs:
       - name: Copy SPA fallback
         run: cp frontend/dist/index.html frontend/dist/404.html
 
-      - name: Commit generated stock data
-        if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
-        # A concurrent source push must not block publishing an otherwise valid build.
-        continue-on-error: true
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/generated frontend/public/data data/new-highs
-          if git diff --cached --quiet; then
-            echo "No generated data changes to commit."
-          else
-            update_timestamp="$(TZ=Asia/Seoul date +'%y%m%d_%H%M%S')"
-            git commit -m "Update stock peer data ${update_timestamp} [skip ci]"
-            git push
-          fi
-
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v4
         with:
