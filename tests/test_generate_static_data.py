@@ -472,6 +472,47 @@ class GenerateStaticDataTests(unittest.TestCase):
                 self.assertTrue(state.should_fetch)
                 self.assertIn("post-close refresh window", state.reason)
 
+    def test_market_cap_refresh_and_fallback(self) -> None:
+        now = datetime(2026, 9, 15, 12, 0, tzinfo=data_gen.KST)
+        previous = {
+            **self.previous_quote(),
+            "market_cap": 100_000_000_000,
+            "market_cap_currency": "TWD",
+            "market_cap_usd": 3_125_000_000,
+            "market_cap_source": "TradingView",
+            "market_cap_fetched_at": "2026-09-14T12:00:00+09:00",
+        }
+        quotes = {
+            "3026.TW": {"ticker": "3026.TW"},
+            "MU": {"ticker": "MU"},
+        }
+        market_caps = {
+            "MU": data_gen.MarketCap("MU", 900_000_000_000, "USD", 900_000_000_000),
+            "3026.TW": data_gen.MarketCap("3026.TW", 110_000_000_000, "TWD", None),
+        }
+
+        data_gen.apply_market_caps(
+            quotes,
+            market_caps,
+            previous_quotes={"3026.TW": previous},
+            fetched_at=now,
+        )
+
+        self.assertEqual(quotes["MU"]["market_cap_status"], "ok")
+        self.assertEqual(quotes["MU"]["market_cap_fetched_at"], now.isoformat())
+        self.assertEqual(quotes["3026.TW"]["market_cap"], 110_000_000_000)
+        self.assertEqual(quotes["3026.TW"]["market_cap_usd"], 3_437_500_000)
+        self.assertEqual(quotes["3026.TW"]["market_cap_status"], "ok")
+
+    def test_market_cap_sort_places_largest_first_and_missing_last(self) -> None:
+        quotes = {
+            "SMALL": {"market_cap_usd": 10},
+            "LARGE": {"market_cap_usd": 100},
+            "MISSING": {"market_cap_usd": None},
+        }
+        tickers = sorted(quotes, key=lambda ticker: data_gen.market_cap_sort_key(ticker, quotes))
+        self.assertEqual(tickers, ["LARGE", "SMALL", "MISSING"])
+
 
 if __name__ == "__main__":
     unittest.main()

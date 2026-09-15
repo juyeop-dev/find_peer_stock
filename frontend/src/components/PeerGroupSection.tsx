@@ -1,6 +1,14 @@
 import { Link } from "react-router-dom";
 import { getExternalQuoteLink } from "../dataClient/externalLinks";
-import { changeTone, formatChange, formatDateTime, formatPrice, quoteRefreshNotice } from "../dataClient/formatters";
+import {
+  changeTone,
+  compareMarketCapDesc,
+  formatChange,
+  formatDateTime,
+  formatMarketCap,
+  formatPrice,
+  quoteRefreshNotice
+} from "../dataClient/formatters";
 import type { PeerGroup } from "../dataClient/types";
 
 interface PeerGroupSectionProps {
@@ -8,6 +16,11 @@ interface PeerGroupSectionProps {
 }
 
 export function PeerGroupSection({ group }: PeerGroupSectionProps) {
+  const peers = [...group.peers].sort((left, right) =>
+    compareMarketCapDesc(left.quote, right.quote)
+    || left.company.ticker.localeCompare(right.company.ticker)
+  );
+
   return (
     <section className="peerSection">
       <div className="sectionTitle">
@@ -31,7 +44,7 @@ export function PeerGroupSection({ group }: PeerGroupSectionProps) {
             </tr>
           </thead>
           <tbody>
-            {group.peers.map((peer) => {
+            {peers.map((peer) => {
               const tone = changeTone(peer.quote);
               const refreshNotice = quoteRefreshNotice(peer.quote);
               const externalQuoteLink = getExternalQuoteLink(peer.company.ticker);
@@ -51,6 +64,7 @@ export function PeerGroupSection({ group }: PeerGroupSectionProps) {
                     >
                       {peer.company.ticker}
                     </a>
+                    <small className="marketCapText">시총 {formatMarketCap(peer.quote)}</small>
                   </td>
                   <td>{peer.company.country}</td>
                   <td>{peer.company.note || peer.company.sector || "-"}</td>

@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 import { Link } from "react-router-dom";
-import { formatDateTime } from "../dataClient/formatters";
+import { compareMarketCapDesc, formatDateTime, formatMarketCap } from "../dataClient/formatters";
 import { getSiteIndex } from "../dataClient/staticStockDataClient";
 import { usePollingData } from "../dataClient/usePollingData";
 import { DataRefreshStatus } from "../components/DataRefreshStatus";
@@ -14,7 +14,9 @@ export function HomePage() {
     if (!index) {
       return [];
     }
-    return index.stocks.filter((stock) => stock.is_target);
+    return index.stocks
+      .filter((stock) => stock.is_target)
+      .sort((left, right) => compareMarketCapDesc(left, right) || left.ticker.localeCompare(right.ticker));
   }, [index]);
 
   return (
@@ -55,6 +57,7 @@ export function HomePage() {
                   <span className="tickerText">{stock.ticker}</span>
                   <strong>{stock.name_kr}</strong>
                   <p>{stock.theme}</p>
+                  <small className="marketCapText">시가총액 {formatMarketCap(stock)}</small>
                 </Link>
               ))}
             </div>

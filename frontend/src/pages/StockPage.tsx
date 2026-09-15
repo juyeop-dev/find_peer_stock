@@ -8,6 +8,7 @@ import { StockHeader } from "../components/StockHeader";
 import { getStockSummary } from "../dataClient/staticStockDataClient";
 import { usePollingData } from "../dataClient/usePollingData";
 import { DataRefreshStatus } from "../components/DataRefreshStatus";
+import { formatMarketCap } from "../dataClient/formatters";
 
 export function StockPage() {
   const params = useParams();
@@ -40,7 +41,7 @@ export function StockPage() {
             <dl>
               <div>
                 <dt>시가총액</dt>
-                <dd>준비 중</dd>
+                <dd>{formatMarketCap(summary.quote)}</dd>
               </div>
               <div>
                 <dt>순위</dt>

@@ -59,11 +59,13 @@ sys.path.insert(0, str(QUOTE_SOURCE_DIR))
 
 try:
     from korea_quote import fetch_korean_quote, is_korean_ticker
+    from market_cap import MarketCap, fetch_market_caps
     from taiwan_quote import fetch_taiwan_quote, is_taiwan_ticker
     from yahoo_chart import MarketDataError, Quote, fetch_latest_quote
 except ImportError as exc:  # pragma: no cover - handled at runtime for friendly CLI errors
     fetch_korean_quote = None
     is_korean_ticker = None
+    fetch_market_caps = None
     fetch_taiwan_quote = None
     is_taiwan_ticker = None
     fetch_latest_quote = None
@@ -72,6 +74,9 @@ except ImportError as exc:  # pragma: no cover - handled at runtime for friendly
         pass
 
     class Quote:  # type: ignore[no-redef]
+        pass
+
+    class MarketCap:  # type: ignore[no-redef]
         pass
 
     QUOTE_IMPORT_ERROR: Exception | None = exc
@@ -123,6 +128,19 @@ def main() -> None:
         for ticker, quote in quotes.items():
             print(f"{ticker}: {quote.get('error')}", file=sys.stderr)
         raise SystemExit("No quotes fetched successfully; existing published files were preserved.")
+
+    market_caps = {}
+    if not args.no_fetch and fetch_market_caps is not None:
+        market_caps = fetch_market_caps(catalog["companies"])
+    apply_market_caps(
+        quotes,
+        market_caps,
+        previous_quotes=previous_quotes,
+        fetched_at=generated_at,
+    )
+    current_caps = sum(quote.get("market_cap_status") == "ok" for quote in quotes.values())
+    retained_caps = sum(quote.get("market_cap_status") == "stale" for quote in quotes.values())
+    print(f"Market caps: {current_caps} fetched, {retained_caps} retained; {len(quotes)} total.")
 
     write_static_data(catalog, quotes, generated_at=generated_at, output_dir=args.output_dir)
     generate_new_high_data(args.new_high_source_dir, args.output_dir, frontend_data_dir=None)
@@ -186,6 +204,80 @@ def usable_previous_quote(quote: Any, ticker: str) -> bool:
         and quote["price"] > 0
         and bool(quote.get("fetched_at"))
     )
+
+
+def apply_market_caps(
+    quotes: dict[str, dict[str, Any]],
+    market_caps: dict[str, MarketCap],
+    *,
+    previous_quotes: dict[str, dict[str, Any]],
+    fetched_at: datetime,
+) -> None:
+    for ticker, quote in quotes.items():
+        market_cap = market_caps.get(ticker)
+        previous = previous_quotes.get(ticker)
+        if market_cap is not None:
+            value_usd = market_cap.value_usd or estimate_market_cap_usd(market_cap, previous)
+            quote.update(
+                market_cap=market_cap.value,
+                market_cap_currency=market_cap.currency,
+                market_cap_usd=value_usd,
+                market_cap_source=market_cap.source,
+                market_cap_fetched_at=fetched_at.isoformat(),
+                market_cap_status="ok",
+            )
+            continue
+
+        if usable_previous_market_cap(previous, ticker):
+            quote.update(
+                market_cap=previous["market_cap"],
+                market_cap_currency=previous["market_cap_currency"],
+                market_cap_usd=previous.get("market_cap_usd"),
+                market_cap_source=previous.get("market_cap_source") or "TradingView",
+                market_cap_fetched_at=previous.get("market_cap_fetched_at"),
+                market_cap_status="stale",
+            )
+            continue
+
+        quote.update(
+            market_cap=None,
+            market_cap_currency=None,
+            market_cap_usd=None,
+            market_cap_source="TradingView",
+            market_cap_fetched_at=None,
+            market_cap_status="unavailable",
+        )
+
+
+def usable_previous_market_cap(quote: Any, ticker: str) -> bool:
+    if not isinstance(quote, dict) or quote.get("ticker") != ticker:
+        return False
+    value = quote.get("market_cap")
+    currency = quote.get("market_cap_currency")
+    value_usd = quote.get("market_cap_usd")
+    return (
+        type(value) in {int, float}
+        and math.isfinite(value)
+        and value > 0
+        and isinstance(currency, str)
+        and bool(currency.strip())
+        and (
+            value_usd is None
+            or (type(value_usd) in {int, float} and math.isfinite(value_usd) and value_usd > 0)
+        )
+    )
+
+
+def estimate_market_cap_usd(market_cap: MarketCap, previous: Any) -> float | None:
+    if not usable_previous_market_cap(previous, market_cap.ticker):
+        return None
+    if previous["market_cap_currency"] != market_cap.currency:
+        return None
+    previous_value = previous["market_cap"]
+    previous_usd = previous.get("market_cap_usd")
+    if type(previous_usd) not in {int, float} or not math.isfinite(previous_usd) or previous_usd <= 0:
+        return None
+    return market_cap.value * previous_usd / previous_value
 
 
 def load_company_info(company_info_dir: Path) -> dict[str, dict[str, Any]]:
@@ -497,7 +589,8 @@ def write_static_data(
 
     companies = catalog["companies"]
     stock_index = []
-    for ticker, company in sorted(companies.items(), key=lambda item: (not item[1].get("is_target"), item[0])):
+    for ticker, company in sorted(companies.items(), key=lambda item: market_cap_sort_key(item[0], quotes)):
+        quote = quotes[ticker]
         stock_index.append(
             {
                 "id": company["id"],
@@ -507,6 +600,9 @@ def write_static_data(
                 "country": company["country"],
                 "theme": company["theme"],
                 "is_target": company["is_target"],
+                "market_cap": quote.get("market_cap"),
+                "market_cap_currency": quote.get("market_cap_currency"),
+                "market_cap_usd": quote.get("market_cap_usd"),
                 "summary_path": stock_summary_path(ticker),
             }
         )
@@ -534,7 +630,7 @@ def write_static_data(
                             "quote": quotes[peer_ticker],
                             "summary_path": stock_summary_path(peer_ticker),
                         }
-                        for peer_ticker in group["peers"]
+                        for peer_ticker in sorted(group["peers"], key=lambda value: market_cap_sort_key(value, quotes))
                     ],
                 }
             )
@@ -550,6 +646,13 @@ def write_static_data(
                 "sources": sources,
             },
         )
+
+
+def market_cap_sort_key(ticker: str, quotes: dict[str, dict[str, Any]]) -> tuple[bool, float, str]:
+    value = quotes.get(ticker, {}).get("market_cap_usd")
+    if type(value) in {int, float} and math.isfinite(value) and value > 0:
+        return False, -float(value), ticker
+    return True, 0.0, ticker
 
 
 def sync_frontend_data(output_dir: Path, frontend_data_dir: Path) -> None:

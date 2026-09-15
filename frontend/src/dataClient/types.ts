@@ -21,6 +21,9 @@ export interface StockIndexItem {
   country: string;
   theme: string;
   is_target: boolean;
+  market_cap?: number | null;
+  market_cap_currency?: string | null;
+  market_cap_usd?: number | null;
   summary_path: string;
 }
 
@@ -59,6 +62,12 @@ export interface QuoteSnapshot {
   market_session?: string;
   refresh_status?: string;
   last_checked_at?: string;
+  market_cap?: number | null;
+  market_cap_currency?: string | null;
+  market_cap_usd?: number | null;
+  market_cap_source?: string;
+  market_cap_fetched_at?: string | null;
+  market_cap_status?: "ok" | "stale" | "unavailable";
 }
 
 export interface PeerGroup {
