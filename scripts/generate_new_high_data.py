@@ -146,6 +146,15 @@ def validate_report(payload: dict[str, Any], path: Path, reports_dir: Path,
         change_pct = entry.get("change_pct")
         require(change_pct is None or type(change_pct) is int or (type(change_pct) is float and math.isfinite(change_pct)),
                 f"{prefix}: change_pct must be a finite number or null")
+        for field in ("session_open", "session_close"):
+            if field in entry:
+                value = entry[field]
+                require((type(value) is int and value > 0) or
+                        (type(value) is float and math.isfinite(value) and value > 0),
+                        f"{prefix}: {field} must be a positive finite number")
+        if "currency" in entry:
+            require(isinstance(entry["currency"], str) and re.fullmatch(r"[A-Z]{3}", entry["currency"]) is not None,
+                    f"{prefix}: currency must be a three-letter uppercase code")
     category_reasons = payload.get("category_reasons", {})
     require(isinstance(category_reasons, dict), f"{path}: category_reasons must be an object")
     categories = {entry["category"] for entry in entries}

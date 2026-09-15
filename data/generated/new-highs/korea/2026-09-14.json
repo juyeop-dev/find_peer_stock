@@ -28,7 +28,7 @@
       "exchange": "KOSDAQ",
       "category": "Commercial Services",
       "high_type": "52_week",
-      "reason": "신고가 배경 미확인",
+      "reason": "업종: Commercial Services · Miscellaneous Commercial Services",
       "description": "나이스정보통신 · Miscellaneous Commercial Services",
       "change_pct": 4.755784061696658,
       "source_symbol": "KRX:036800",
@@ -45,7 +45,10 @@
         "first_observed_date": "2025-09-15",
         "confirmed": true,
         "matches_prior_high": false
-      }
+      },
+      "session_open": 7820,
+      "session_close": 8210,
+      "currency": "KRW"
     },
     {
       "ticker": "071200.KQ",
@@ -53,7 +56,7 @@
       "exchange": "KOSDAQ",
       "category": "Health Services",
       "high_type": "52_week",
-      "reason": "신고가 배경 미확인",
+      "reason": "업종: Health Services · Medical/Nursing Services",
       "description": "인피니트헬스케어 · Medical/Nursing Services",
       "change_pct": 30,
       "source_symbol": "KRX:071200",
@@ -70,7 +73,10 @@
         "first_observed_date": "2025-09-15",
         "confirmed": true,
         "matches_prior_high": false
-      }
+      },
+      "session_open": 11310,
+      "session_close": 11310,
+      "currency": "KRW"
     },
     {
       "ticker": "053160.KQ",
@@ -78,7 +84,7 @@
       "exchange": "KOSDAQ",
       "category": "Producer Manufacturing",
       "high_type": "52_week",
-      "reason": "신고가 배경 미확인",
+      "reason": "업종: Producer Manufacturing · Industrial Machinery",
       "description": "프리엠스 · Industrial Machinery",
       "change_pct": 3.118908382066276,
       "source_symbol": "KRX:053160",
@@ -95,7 +101,10 @@
         "first_observed_date": "2025-09-15",
         "confirmed": true,
         "matches_prior_high": false
-      }
+      },
+      "session_open": 10220,
+      "session_close": 10580,
+      "currency": "KRW"
     },
     {
       "ticker": "134580.KQ",
@@ -103,7 +112,7 @@
       "exchange": "KOSDAQ",
       "category": "Electronic Technology",
       "high_type": "52_week",
-      "reason": "신고가 배경 미확인",
+      "reason": "업종: Electronic Technology · Telecommunications Equipment",
       "description": "탑코미디어 · Telecommunications Equipment",
       "change_pct": 15.32033426183844,
       "source_symbol": "KRX:134580",
@@ -120,7 +129,10 @@
         "first_observed_date": "2025-09-15",
         "confirmed": true,
         "matches_prior_high": false
-      }
+      },
+      "session_open": 3590,
+      "session_close": 4170,
+      "currency": "KRW"
     },
     {
       "ticker": "252990.KQ",
@@ -128,7 +140,7 @@
       "exchange": "KOSDAQ",
       "category": "Producer Manufacturing",
       "high_type": "all_time",
-      "reason": "신고가 배경 미확인",
+      "reason": "업종: Producer Manufacturing · Electrical Products",
       "description": "샘씨엔에스 · Electrical Products",
       "change_pct": 5.133079847908745,
       "source_symbol": "KRX:252990",
@@ -145,7 +157,10 @@
         "first_observed_date": "2025-09-15",
         "confirmed": true,
         "matches_prior_high": false
-      }
+      },
+      "session_open": 15620,
+      "session_close": 16160,
+      "currency": "KRW"
     },
     {
       "ticker": "377450.KQ",
@@ -153,7 +168,7 @@
       "exchange": "KOSDAQ",
       "category": "Finance",
       "high_type": "52_week",
-      "reason": "신고가 배경 미확인",
+      "reason": "업종: Finance · Real Estate Development",
       "description": "리파인 · Real Estate Development",
       "change_pct": 1.238938053097345,
       "source_symbol": "KRX:377450",
@@ -170,7 +185,10 @@
         "first_observed_date": "2025-09-15",
         "confirmed": true,
         "matches_prior_high": false
-      }
+      },
+      "session_open": 16970,
+      "session_close": 17200,
+      "currency": "KRW"
     },
     {
       "ticker": "020120.KS",
@@ -178,7 +196,7 @@
       "exchange": "KOSPI",
       "category": "Technology Services",
       "high_type": "52_week",
-      "reason": "신고가 배경 미확인",
+      "reason": "업종: Technology Services · Information Technology Services",
       "description": "키다리스튜디오 · Information Technology Services",
       "change_pct": 11.11111111111111,
       "source_symbol": "KRX:020120",
@@ -195,7 +213,10 @@
         "first_observed_date": "2025-09-15",
         "confirmed": true,
         "matches_prior_high": false
-      }
+      },
+      "session_open": 8160,
+      "session_close": 9000,
+      "currency": "KRW"
     },
     {
       "ticker": "213500.KS",
@@ -203,7 +224,7 @@
       "exchange": "KOSPI",
       "category": "Process Industries",
       "high_type": "52_week",
-      "reason": "신고가 배경 미확인",
+      "reason": "업종: Process Industries · Pulp & Paper",
       "description": "한솔제지 · Pulp & Paper",
       "change_pct": 0.6613756613756614,
       "source_symbol": "KRX:213500",
@@ -220,7 +241,10 @@
         "first_observed_date": "2025-09-15",
         "confirmed": true,
         "matches_prior_high": false
-      }
+      },
+      "session_open": 7580,
+      "session_close": 7610,
+      "currency": "KRW"
     }
   ],
   "source_metadata": {
@@ -280,6 +304,11 @@
         "035610.KQ",
         "465320.KQ"
       ]
+    },
+    "price_enrichment": {
+      "status": "complete",
+      "provider": "Naver Finance dated daily history",
+      "missing_symbols": []
     }
   },
   "collected_at": "2026-09-14T12:29:38.083995+00:00"

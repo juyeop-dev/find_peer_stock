@@ -171,7 +171,9 @@ try {
   const report = {
     schema_version: 1, market: "korea", date: "2026-09-11", entries: [{
       ticker: "TEST.KS", name: "새 기록 자동 갱신 검증", exchange: "KOSPI", category: "테스트",
-      high_type: "52_week", reason: "브라우저 회귀 검증용 기록"
+      high_type: "52_week", reason: "브라우저 회귀 검증용 기록",
+      description: "새 기록 자동 갱신 검증 · 반도체 장비", session_close: 123400,
+      change_pct: 2.5, currency: "KRW"
     }]
   };
   fixtures.set("/data/new-highs/korea/2026-09-11.json", report);
@@ -184,6 +186,10 @@ try {
     last_success_at: "2026-09-11T07:20:00Z"
   };
   await until(() => contains("새 기록 자동 갱신 검증"), "New archive report was not discovered automatically.");
+  assert.equal(await evaluate("document.querySelector('.newHighIndustry')?.innerText.includes('테스트') && document.querySelector('.newHighIndustry')?.innerText.includes('반도체 장비')"), true,
+    "Industry details are not shown on the new-high card.");
+  assert.equal(await evaluate("document.querySelector('.newHighSessionPrice')?.innerText"), "종가 123,400 KRW",
+    "Session close is not shown next to the daily return.");
   assert.equal(await contains("한국 자동 갱신 · 갱신 완료"), true);
   assert.equal(await contains("최근 게시 거래일 · 2026-09-11"), true);
   assert.equal(await contains("최근 갱신 성공 거래일 · 2026-09-11"), true);

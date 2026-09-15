@@ -48,6 +48,9 @@ export interface NewHighEntry {
   reason: string;
   description?: string;
   change_pct?: number | null;
+  session_open?: number | null;
+  session_close?: number | null;
+  currency?: string;
 }
 
 export interface NewHighReport {

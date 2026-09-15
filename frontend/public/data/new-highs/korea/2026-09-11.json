@@ -28,7 +28,7 @@
       "exchange": "KOSDAQ",
       "category": "Non-Energy Minerals",
       "high_type": "52_week",
-      "reason": "신고가 배경 미확인",
+      "reason": "업종: Non-Energy Minerals · Steel",
       "description": "금강철강 · Steel",
       "change_pct": 2.340702210663199,
       "source_symbol": "KRX:053260",
@@ -45,7 +45,10 @@
         "first_observed_date": "2025-09-12",
         "confirmed": true,
         "matches_prior_high": false
-      }
+      },
+      "session_open": 7670,
+      "session_close": 7870,
+      "currency": "KRW"
     },
     {
       "ticker": "098120.KQ",
@@ -53,7 +56,7 @@
       "exchange": "KOSDAQ",
       "category": "Electronic Technology",
       "high_type": "all_time",
-      "reason": "신고가 배경 미확인",
+      "reason": "업종: Electronic Technology · Electronic Production Equipment",
       "description": "마이크로컨텍솔 · Electronic Production Equipment",
       "change_pct": 9.411764705882353,
       "source_symbol": "KRX:098120",
@@ -70,7 +73,10 @@
         "first_observed_date": "2025-09-12",
         "confirmed": true,
         "matches_prior_high": false
-      }
+      },
+      "session_open": 50500,
+      "session_close": 55800,
+      "currency": "KRW"
     },
     {
       "ticker": "465320.KQ",
@@ -78,7 +84,7 @@
       "exchange": "KOSDAQ",
       "category": "Commercial Services",
       "high_type": "52_week",
-      "reason": "신고가 배경 미확인",
+      "reason": "업종: Commercial Services · Miscellaneous Commercial Services",
       "description": "교보15호스팩 · Miscellaneous Commercial Services",
       "change_pct": 0,
       "source_symbol": "KRX:465320",
@@ -95,7 +101,10 @@
         "first_observed_date": "2025-09-12",
         "confirmed": true,
         "matches_prior_high": true
-      }
+      },
+      "session_open": 2135,
+      "session_close": 2140,
+      "currency": "KRW"
     },
     {
       "ticker": "003350.KS",
@@ -103,7 +112,7 @@
       "exchange": "KOSPI",
       "category": "Consumer Non-Durables",
       "high_type": "52_week",
-      "reason": "신고가 배경 미확인",
+      "reason": "업종: Consumer Non-Durables · Household/Personal Care",
       "description": "한국화장품제조 · Household/Personal Care",
       "change_pct": 19.376899696048632,
       "source_symbol": "KRX:003350",
@@ -120,7 +129,10 @@
         "first_observed_date": "2025-09-12",
         "confirmed": true,
         "matches_prior_high": false
-      }
+      },
+      "session_open": 12910,
+      "session_close": 15710,
+      "currency": "KRW"
     }
   ],
   "source_metadata": {
@@ -162,6 +174,11 @@
         "224060.KQ",
         "248170.KS"
       ]
+    },
+    "price_enrichment": {
+      "status": "complete",
+      "provider": "Naver Finance dated daily history",
+      "missing_symbols": []
     }
   },
   "collected_at": "2026-09-13T14:33:40.975313+00:00"

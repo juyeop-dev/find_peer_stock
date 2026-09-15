@@ -106,8 +106,14 @@ body:has(.newHighPage) { min-width: 320px; }
 .newHighStockTop strong { color: #253a55; font-size: 15px; }
 .newHighTicker { color: #6c7f98; font-size: 11px; overflow-wrap: anywhere; }
 .newHighExchange { padding: 1px 5px; border-radius: 3px; color: #8490a0; background: #f0f3f6; font-size: 9px; }
+.newHighMarketData { display: flex; flex-shrink: 0; align-items: baseline; gap: 10px; }
+.newHighSessionPrice { color: #4f627a; font-size: 12px; font-weight: 650; font-variant-numeric: tabular-nums; }
 .newHighChange { flex-shrink: 0; font-size: 14px; font-weight: 700; font-variant-numeric: tabular-nums; }
 .newHighChange.flat { font-size: 12px; }
+.newHighIndustry { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin: 8px 0 0; color: #52677f; font-size: 12px; }
+.newHighIndustry > span { margin-right: 2px; color: #8795a7; font-size: 10px; }
+.newHighIndustry strong { font-weight: 700; color: #445972; }
+.newHighIndustry em { padding-left: 7px; border-left: 1px solid #d8e0e9; color: #687b91; font-style: normal; }
 .newHighDescription { margin: 5px 0 0; color: #76869a; font-size: 12px; }
 .newHighReason { margin: 9px 0 0; color: #445972; font-size: 13px; line-height: 1.75; white-space: pre-line; overflow-wrap: anywhere; }
 .newHighReason span { display: inline-block; margin-right: 8px; font-size: 10px; color: #8795a7; }
@@ -161,5 +167,6 @@ body:has(.newHighPage) { min-width: 320px; }
   .newHighEmpty h3 { font-size: 16px; }
   .newHighEmpty p { font-size: 12px; }
   .newHighStockTop { flex-direction: column; gap: 4px; }
+  .newHighMarketData { width: 100%; justify-content: space-between; }
   .newHighTheme li, .newHighTheme > header { padding: 13px; }
 }

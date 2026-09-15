@@ -126,6 +126,13 @@ class NewHighDataTests(unittest.TestCase):
                              ("change_pct", float("nan"))]:
             entry = {**self.report["entries"][0], field: value}
             cases.append((f"invalid {field}: {value}", {"entries": [entry]}))
+        for field, value in [("session_open", 0), ("session_close", -1), ("session_close", float("inf")),
+                             ("session_close", None)]:
+            entry = {**self.report["entries"][0], field: value}
+            cases.append((f"invalid {field}: {value}", {"entries": [entry]}))
+        for value in ("usd", "US", "USDT", 123):
+            entry = {**self.report["entries"][0], "currency": value}
+            cases.append((f"invalid currency: {value}", {"entries": [entry]}))
         cases.append(("duplicate ticker across high types", {"entries": [
             self.report["entries"][0], {**self.report["entries"][0], "ticker": "test1.ks", "high_type": "52_week"},
         ]}))

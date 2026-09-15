@@ -182,9 +182,10 @@ def build_reports(start: date, end: date, *, timeout: float = 30,
             change_pct = (evidence["close"] - evidence["previous_close"]) / evidence["previous_close"] * 100
             entries.append({
                 "ticker": code + suffix, "name": name, "exchange": exchange,
-                "category": sector, "high_type": high_type, "reason": "신고가 배경 미확인",
+                "category": sector, "high_type": high_type, "reason": f"업종: {sector} · {industry}",
                 "description": f"{name} · {industry}", "change_pct": change_pct,
                 "session_open": evidence["open"], "session_close": evidence["close"],
+                "currency": "KRW",
                 "source_symbol": source_row["symbol"], "name_original": source_row["description"],
                 "name_source_url": listing["source_url"],
                 "high_verification": {

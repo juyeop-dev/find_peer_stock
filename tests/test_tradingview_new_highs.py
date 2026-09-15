@@ -26,6 +26,7 @@ def row(symbol: str, **changes: object) -> dict:
         "industry": "Semiconductors", "change": 2.5, "open": 95, "high": 100, "low": 90, "close": 98,
         "price_52_week_high": 120, "High.All": 150, "time": STAMP,
         "volume": 1000, "indexes": [],
+        "currency": "JPY",
     }
     values.update(changes)
     return {"s": symbol, "d": [values[column] for column in source.COLUMNS]}
@@ -53,7 +54,8 @@ class TradingViewNewHighTests(unittest.TestCase):
         self.assertEqual([call.args[1]["range"] for call in request.call_args_list], [[0, 2], [2, 4]])
         self.assertTrue(report["source_metadata"]["pagination_complete"])
         self.assertEqual(report["source_metadata"]["scanned_symbols"], 3)
-        self.assertEqual(report["entries"][0]["reason"], "신고가 배경 미확인")
+        self.assertEqual(report["entries"][0]["reason"], "업종: Technology · Semiconductors")
+        self.assertEqual(report["entries"][0]["currency"], "JPY")
 
     def test_intraday_high_excludes_bearish_candles_and_down_closes(self):
         rows = [

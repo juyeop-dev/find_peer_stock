@@ -24,6 +24,37 @@ const REFRESH_DESCRIPTIONS: Record<NewHighRefresh["status"], string> = {
   closed: "해당 날짜는 휴장일입니다. 다음 거래일 장 마감 후 갱신합니다.",
   unsupported: "이 시장은 아직 자동 수집을 지원하지 않습니다. 등록된 기록만 조회할 수 있습니다."
 };
+const DEFAULT_REASON = "신고가 배경 미확인";
+const MARKET_CURRENCIES: Record<string, string> = {
+  korea: "KRW", japan: "JPY", taiwan: "TWD", us: "USD", china: "CNY", europe: "EUR"
+};
+const EXCHANGE_CURRENCIES: Record<string, string> = { LSE: "GBP", SIX: "CHF" };
+
+function detailedIndustry(entry: NewHighEntry): string | null {
+  if (!entry.description) return null;
+  const separator = entry.description.lastIndexOf(" · ");
+  if (separator < 0) return null;
+  const detail = entry.description.slice(separator + 3).trim();
+  return detail && detail !== entry.category ? detail : null;
+}
+
+function standaloneDescription(entry: NewHighEntry): string | null {
+  if (!entry.description || entry.description.startsWith(`${entry.name} · `)) return null;
+  return entry.description;
+}
+
+function isIndustryReason(reason: string): boolean {
+  return reason === DEFAULT_REASON || reason.startsWith("업종:");
+}
+
+function formatSessionPrice(entry: NewHighEntry, marketId: string): string {
+  if (entry.session_close == null) return "종가 미등록";
+  const currency = entry.currency ?? EXCHANGE_CURRENCIES[entry.exchange] ?? MARKET_CURRENCIES[marketId] ?? "";
+  const maximumFractionDigits = currency === "KRW" || currency === "JPY"
+    ? 0 : Math.abs(entry.session_close) < 1 ? 4 : 2;
+  const price = new Intl.NumberFormat("ko-KR", { maximumFractionDigits }).format(entry.session_close);
+  return `종가 ${price}${currency ? ` ${currency}` : ""}`;
+}
 
 function validDate(value: string | null): value is string {
   if (!value || !/^\d{4}-\d{2}-\d{2}$/.test(value) || Number(value.slice(0, 4)) < 1) return false;
@@ -129,7 +160,7 @@ export function NewHighPage() {
         <div>
           <p className="eyebrow">DAILY MARKET ARCHIVE</p>
           <h1>신고가 캘린더</h1>
-          <p className="newHighLead">새로운 고점을 만든 종목, 그 뒤의 이야기를 날짜별로 살펴보세요.</p>
+          <p className="newHighLead">새로운 고점을 만든 종목의 업종과 당시 종가를 날짜별로 살펴보세요.</p>
         </div>
       </header>
 
@@ -226,10 +257,10 @@ export function NewHighPage() {
                 ? "이 시장은 아직 자동 수집을 지원하지 않습니다"
                 : marketReports.length === 0 ? "아직 등록된 신고가 기록이 없습니다" : "이 날짜의 기록이 아직 없습니다"}</h3>
               <p>{marketRefresh?.status === "unsupported" && marketReports.length === 0
-                ? "기록이 등록되면 해당 거래일의 신고가 종목과 사유를 확인할 수 있습니다."
+                ? "기록이 등록되면 해당 거래일의 신고가 종목과 업종을 확인할 수 있습니다."
                 : marketReports.length === 0
-                ? `${market.label} 시장의 첫 기록을 기다리고 있어요. 매일의 기록이 등록되면 이곳에 종목과 사유가 쌓입니다.`
-                : "달력에 표시된 날짜를 선택하면 해당 거래일의 신고가 종목과 사유를 확인할 수 있습니다."}</p>
+                ? `${market.label} 시장의 첫 기록을 기다리고 있어요. 매일의 기록이 등록되면 이곳에 종목과 업종이 쌓입니다.`
+                : "달력에 표시된 날짜를 선택하면 해당 거래일의 신고가 종목과 업종을 확인할 수 있습니다."}</p>
               <span>미등록 날짜는 신고가 0종목을 뜻하지 않습니다.</span>
             </div> : null}
 
@@ -241,8 +272,8 @@ export function NewHighPage() {
                   {HIGH_TYPES.map((type) => <button key={type.id} aria-pressed={highType === type.id}
                     onClick={() => setHighType(type.id)}>{type.label}</button>)}
                 </div>
-                <input type="search" value={search} placeholder="종목명, 티커, 테마 검색"
-                  aria-label="종목명, 티커, 테마, 사유 검색" onChange={(event) => setSearch(event.target.value)} />
+                <input type="search" value={search} placeholder="종목명, 티커, 업종 검색"
+                  aria-label="종목명, 티커, 업종 검색" onChange={(event) => setSearch(event.target.value)} />
               </div>
 
               {entries.length === 0 ? <div className="newHighEmpty" role="status">
@@ -265,13 +296,19 @@ export function NewHighPage() {
                       <ul>{stocks.map((entry) => <li key={entry.ticker}>
                         <div className="newHighStockTop"><div><strong>{entry.name}</strong>
                           <span className="newHighTicker">{entry.ticker}</span><span className="newHighExchange">{entry.exchange}</span></div>
-                          <span className={`newHighChange ${entry.change_pct == null || entry.change_pct === 0 ? "flat" : entry.change_pct > 0 ? "up" : "down"}`}
-                            aria-label={entry.change_pct == null ? "등락률 미등록" : `당일 등락률 ${entry.change_pct}%`}>
-                            {entry.change_pct == null ? "등락률 미등록" : `${entry.change_pct > 0 ? "+" : ""}${entry.change_pct.toFixed(2)}%`}
-                          </span>
+                          <div className="newHighMarketData">
+                            <span className="newHighSessionPrice">{formatSessionPrice(entry, marketId)}</span>
+                            <span className={`newHighChange ${entry.change_pct == null || entry.change_pct === 0 ? "flat" : entry.change_pct > 0 ? "up" : "down"}`}
+                              aria-label={entry.change_pct == null ? "등락률 미등록" : `당일 등락률 ${entry.change_pct}%`}>
+                              {entry.change_pct == null ? "등락률 미등록" : `${entry.change_pct > 0 ? "+" : ""}${entry.change_pct.toFixed(2)}%`}
+                            </span>
+                          </div>
                         </div>
-                        {entry.description ? <p className="newHighDescription">{entry.description}</p> : null}
-                        {entry.reason !== report.category_reasons?.[category] ? <p className="newHighReason"><span>신고가 사유</span>{entry.reason}</p> : null}
+                        <p className="newHighIndustry"><span>업종</span><strong>{entry.category}</strong>
+                          {detailedIndustry(entry) ? <em>{detailedIndustry(entry)}</em> : null}</p>
+                        {standaloneDescription(entry) ? <p className="newHighDescription">{standaloneDescription(entry)}</p> : null}
+                        {!isIndustryReason(entry.reason) && entry.reason !== report.category_reasons?.[category]
+                          ? <p className="newHighReason"><span>확인된 배경</span>{entry.reason}</p> : null}
                         {peerTickers.has(entry.ticker) ? <Link className="newHighPeerLink" to={`/stocks/${encodeURIComponent(entry.ticker)}`}>Peer 비교 보기 →</Link> : null}
                       </li>)}</ul>
                     </article>)}

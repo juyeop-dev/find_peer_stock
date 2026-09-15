@@ -42,6 +42,7 @@ _CONFIG = {
 COLUMNS = (
     "name", "description", "exchange", "type", "subtype", "sector", "industry",
     "change", "open", "high", "low", "close", "price_52_week_high", "High.All", "time", "volume", "indexes",
+    "currency",
 )
 _DEFINITION_URL = "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
 
@@ -341,11 +342,12 @@ def fetch_report(market_id: str, session_date: date, *, timeout: float = 30,
         display_name = listing["name"] if listing else row["description"]
         entries.append({
             "ticker": ticker, "name": display_name, "exchange": exchange,
-            "category": sector, "high_type": high_type, "reason": "신고가 배경 미확인",
+            "category": sector, "high_type": high_type, "reason": f"업종: {sector} · {industry}",
             "description": f"{display_name} · {industry}", "change_pct": row["change"],
             "session_open": evidence["open"] if evidence else row["open"],
             "session_close": evidence["close"] if evidence else row["close"],
             "source_symbol": row["symbol"],
+            **({"currency": row["currency"].strip().upper()} if _text(row["currency"]) else {}),
             **({"name_original": row["description"], "name_source_url": listing["source_url"],
                 "high_verification": evidence} if listing else {}),
         })
