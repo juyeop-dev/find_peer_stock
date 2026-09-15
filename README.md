@@ -123,6 +123,13 @@ python .\scripts\refresh_new_highs.py
 python .\scripts\generate_new_high_data.py
 ```
 
+한국의 지난 거래일을 다시 채울 때는 네이버 조정 일봉으로 현재 한국 주식 종목군 전체를 대조하는 전용 명령을 사용합니다. 날짜 구간의 각 평일을 한 번에 계산하며, 기존 원본을 교체하려면 `--force`를 추가합니다.
+
+```powershell
+python .\scripts\backfill_korean_new_highs.py --start 2026-09-07 --end 2026-09-10
+python .\scripts\generate_new_high_data.py
+```
+
 | 시장 | 수집 시작 (각 시장 현지시간) |
 |---|---|
 | 한국·일본 | 16:30 이후 |
