@@ -98,6 +98,31 @@
       }
     },
     {
+      "ticker": "053160.KQ",
+      "name": "프리엠스",
+      "exchange": "KOSDAQ",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "신고가 배경 미확인",
+      "description": "프리엠스 · Industrial Machinery",
+      "change_pct": 3.118908382066276,
+      "source_symbol": "KRX:053160",
+      "name_original": "FreeMs Corporation",
+      "name_source_url": "https://m.stock.naver.com/api/stock/053160/basic",
+      "high_verification": {
+        "source": "Naver Finance adjusted daily history",
+        "source_url": "https://api.finance.naver.com/siseJson.naver?symbol=053160&requestType=1&startTime=20250915&endTime=20260914&timeframe=day",
+        "date": "2026-09-14",
+        "daily_high": 11180,
+        "volume": 7634,
+        "prior_52_week_high": 10750,
+        "observed_bars": 243,
+        "first_observed_date": "2025-09-15",
+        "confirmed": true,
+        "matches_prior_high": false
+      }
+    },
+    {
       "ticker": "134580.KQ",
       "name": "탑코미디어",
       "exchange": "KOSDAQ",
@@ -271,6 +296,31 @@
         "confirmed": true,
         "matches_prior_high": true
       }
+    },
+    {
+      "ticker": "213500.KS",
+      "name": "한솔제지",
+      "exchange": "KOSPI",
+      "category": "Process Industries",
+      "high_type": "52_week",
+      "reason": "신고가 배경 미확인",
+      "description": "한솔제지 · Pulp & Paper",
+      "change_pct": 0.6613756613756614,
+      "source_symbol": "KRX:213500",
+      "name_original": "Hansol Paper Co., Ltd.",
+      "name_source_url": "https://m.stock.naver.com/api/stock/213500/basic",
+      "high_verification": {
+        "source": "Naver Finance adjusted daily history",
+        "source_url": "https://api.finance.naver.com/siseJson.naver?symbol=213500&requestType=1&startTime=20250915&endTime=20260914&timeframe=day",
+        "date": "2026-09-14",
+        "daily_high": 9810,
+        "volume": 14786,
+        "prior_52_week_high": 9390,
+        "observed_bars": 243,
+        "first_observed_date": "2025-09-15",
+        "confirmed": true,
+        "matches_prior_high": false
+      }
     }
   ],
   "source_metadata": {
@@ -302,6 +352,23 @@
       "retained_entries": 10,
       "excluded_tickers": [
         "083640.KQ"
+      ]
+    },
+    "supplemental_daily_history_review": {
+      "reviewed_at": "2026-09-15T02:56:01.279088+00:00",
+      "reported_tickers": [
+        "023760.KQ",
+        "027970.KS",
+        "053160.KQ",
+        "213500.KS"
+      ],
+      "added_tickers": [
+        "053160.KQ",
+        "213500.KS"
+      ],
+      "rejected_tickers": [
+        "023760.KQ",
+        "027970.KS"
       ]
     }
   },

@@ -54,6 +54,11 @@ class NewHighDataTests(unittest.TestCase):
     def generate(self) -> dict:
         return new_highs.generate_new_high_data(self.source, self.generated, self.frontend)
 
+    def test_deployed_korea_market_defaults_to_all_exchanges(self) -> None:
+        markets = new_highs.load_markets(new_highs.SOURCE_DIR)
+        korea = next(market for market in markets if market["id"] == "korea")
+        self.assertEqual(korea["default_exchange"], "all")
+
     def test_empty_archive_has_markets_and_no_invented_reports(self) -> None:
         index = self.generate()
         self.assertEqual(index, {**self.markets, "reports": []})

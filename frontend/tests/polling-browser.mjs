@@ -160,6 +160,8 @@ try {
 
   await send("Page.navigate", { url: `${origin}/new-highs` });
   await until(() => contains("아직 등록된 신고가 기록이 없습니다"), "Archive empty state did not load.");
+  assert.equal(await evaluate("document.querySelector('.newHighExchanges button[aria-pressed=true]').innerText"), "전체",
+    "Korean new highs should initially include both KOSPI and KOSDAQ.");
   assert.equal(await contains("신고가는 장 마감 후 거래일당 한 번 갱신합니다. 게시 결과는 1분마다 확인합니다."), true);
   assert.equal(await contains("한국 자동 갱신 · 갱신 대기"), true);
   assert.equal(await contains("갱신 시작 · 현지 거래일 16:10 이후 (Asia/Seoul)"), true);

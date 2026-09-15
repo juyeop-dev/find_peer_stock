@@ -146,5 +146,67 @@
       "prior_52_week_high": 20869,
       "source_url": "https://api.finance.naver.com/siseJson.naver?symbol=083640&requestType=1&startTime=20250915&endTime=20260914&timeframe=day"
     }
+  ],
+  "user_reported_candidates": [
+    {
+      "ticker": "023760.KQ",
+      "name": "한국캐피탈",
+      "source": "Naver Finance adjusted daily history",
+      "source_url": "https://api.finance.naver.com/siseJson.naver?symbol=023760&requestType=1&startTime=20250915&endTime=20260914&timeframe=day",
+      "date": "2026-09-14",
+      "daily_high": 1451,
+      "volume": 14780,
+      "prior_52_week_high": 2500,
+      "observed_bars": 243,
+      "first_observed_date": "2025-09-15",
+      "confirmed": false,
+      "matches_prior_high": false,
+      "action": "rejected"
+    },
+    {
+      "ticker": "027970.KS",
+      "name": "한국제지",
+      "source": "Naver Finance adjusted daily history",
+      "source_url": "https://api.finance.naver.com/siseJson.naver?symbol=027970&requestType=1&startTime=20250915&endTime=20260914&timeframe=day",
+      "date": "2026-09-14",
+      "daily_high": 3480,
+      "volume": 12079,
+      "prior_52_week_high": 4285,
+      "observed_bars": 243,
+      "first_observed_date": "2025-09-15",
+      "confirmed": false,
+      "matches_prior_high": false,
+      "action": "rejected"
+    },
+    {
+      "ticker": "053160.KQ",
+      "name": "프리엠스",
+      "source": "Naver Finance adjusted daily history",
+      "source_url": "https://api.finance.naver.com/siseJson.naver?symbol=053160&requestType=1&startTime=20250915&endTime=20260914&timeframe=day",
+      "date": "2026-09-14",
+      "daily_high": 11180,
+      "volume": 7634,
+      "prior_52_week_high": 10750,
+      "observed_bars": 243,
+      "first_observed_date": "2025-09-15",
+      "confirmed": true,
+      "matches_prior_high": false,
+      "action": "added"
+    },
+    {
+      "ticker": "213500.KS",
+      "name": "한솔제지",
+      "source": "Naver Finance adjusted daily history",
+      "source_url": "https://api.finance.naver.com/siseJson.naver?symbol=213500&requestType=1&startTime=20250915&endTime=20260914&timeframe=day",
+      "date": "2026-09-14",
+      "daily_high": 9810,
+      "volume": 14786,
+      "prior_52_week_high": 9390,
+      "observed_bars": 243,
+      "first_observed_date": "2025-09-15",
+      "confirmed": true,
+      "matches_prior_high": false,
+      "action": "added"
+    }
   ]
 }
