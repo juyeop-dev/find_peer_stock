@@ -7,6 +7,7 @@ import { DataRefreshStatus } from "../components/DataRefreshStatus";
 import { getNewHighIndex, getNewHighReport, getSiteIndex } from "../dataClient/staticStockDataClient";
 import { usePollingData } from "../dataClient/usePollingData";
 import { compareMarketCapDesc, formatDateTime, formatMarketCap } from "../dataClient/formatters";
+import { getExternalQuoteLink } from "../dataClient/externalLinks";
 import type { HighType, NewHighCounts, NewHighEntry, NewHighRefresh } from "../dataClient/newHighTypes";
 
 const EMPTY_COUNTS: NewHighCounts = { total: 0, high_52_week: 0, high_all_time: 0 };
@@ -294,9 +295,16 @@ export function NewHighPage() {
                     {[...groups].map(([category, stocks]) => <article className="newHighTheme" key={category}>
                       <header><h4>{category}<span>{stocks.length}종목</span></h4>
                         {report.category_reasons?.[category] ? <p>{report.category_reasons[category]}</p> : null}</header>
-                      <ul>{stocks.map((entry) => <li key={entry.ticker}>
+                      <ul>{stocks.map((entry) => {
+                        const externalQuoteLink = getExternalQuoteLink(entry.ticker);
+                        return <li key={entry.ticker}>
                         <div className="newHighStockTop"><div className="newHighStockIdentity"><strong>{entry.name}</strong>
-                          <span className="newHighTicker">{entry.ticker}</span><span className="newHighExchange">{entry.exchange}</span></div>
+                          <a className="newHighTicker newHighTickerLink" href={externalQuoteLink.href}
+                            target="_blank" rel="noreferrer"
+                            title={`${entry.ticker} 외부 시세 (${externalQuoteLink.label})`}
+                            aria-label={`${entry.ticker} 외부 시세 (${externalQuoteLink.label})`}>
+                            {entry.ticker}
+                          </a><span className="newHighExchange">{entry.exchange}</span></div>
                           <div className="newHighMarketData">
                             <div className="newHighPriceBlock">
                               <span className="newHighSessionPrice">{formatSessionPrice(entry, marketId)}</span>
@@ -314,7 +322,7 @@ export function NewHighPage() {
                         {!isIndustryReason(entry.reason) && entry.reason !== report.category_reasons?.[category]
                           ? <p className="newHighReason"><span>확인된 배경</span>{entry.reason}</p> : null}
                         {peerTickers.has(entry.ticker) ? <Link className="newHighPeerLink" to={`/stocks/${encodeURIComponent(entry.ticker)}`}>Peer 비교 보기 →</Link> : null}
-                      </li>)}</ul>
+                      </li>})}</ul>
                     </article>)}
                   </section>;
                 })}

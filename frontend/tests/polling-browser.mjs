@@ -190,6 +190,12 @@ try {
     "Industry details are not shown on the new-high card.");
   assert.equal(await evaluate("document.querySelector('.newHighSessionPrice')?.innerText"), "종가 123,400 KRW",
     "Session close is not shown next to the daily return.");
+  assert.deepEqual(await evaluate(`(() => {
+    const link = document.querySelector('.newHighTickerLink');
+    return { text: link?.textContent, href: link?.getAttribute('href'), target: link?.getAttribute('target') };
+  })()`), {
+    text: "TEST.KS", href: "https://finance.yahoo.com/quote/TEST.KS", target: "_blank"
+  }, "New-high ticker does not link to its external quote page.");
   assert.equal(await contains("한국 자동 갱신 · 갱신 완료"), true);
   assert.equal(await contains("최근 게시 거래일 · 2026-09-11"), true);
   assert.equal(await contains("최근 갱신 성공 거래일 · 2026-09-11"), true);

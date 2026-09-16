@@ -105,6 +105,8 @@ body:has(.newHighPage) { min-width: 320px; }
 .newHighStockIdentity { display: flex; min-width: 0; align-items: baseline; flex-wrap: wrap; gap: 7px; }
 .newHighStockTop strong { color: #253a55; font-size: 15px; }
 .newHighTicker { color: #6c7f98; font-size: 11px; overflow-wrap: anywhere; }
+.newHighTickerLink { text-decoration: underline; text-decoration-color: #b7c5d8; text-underline-offset: 2px; }
+.newHighTickerLink:hover, .newHighTickerLink:focus-visible { color: #214f9c; text-decoration-color: currentColor; }
 .newHighExchange { padding: 1px 5px; border-radius: 3px; color: #8490a0; background: #f0f3f6; font-size: 9px; }
 .newHighMarketData { display: grid; grid-template-columns: 150px 92px; align-items: baseline; gap: 14px; }
 .newHighPriceBlock { display: grid; gap: 2px; min-width: 0; text-align: right; }
