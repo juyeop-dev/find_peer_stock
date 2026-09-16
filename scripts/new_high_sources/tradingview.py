@@ -226,12 +226,24 @@ def verify_korean_daily_high(code: str, session_date: date, timeout: float = 30)
 
 
 def _passes_close_filter(row: dict[str, Any]) -> bool:
-    for field in ("open", "close", "change"):
+    for field in ("open", "close"):
         if not _number(row[field]):
-            raise TradingViewSourceError(f"{row['symbol']}: missing OHLC/change prevents close-direction filtering")
+            raise TradingViewSourceError(f"{row['symbol']}: missing OHLC prevents close-direction filtering")
     if row["open"] <= 0 or row["close"] <= 0:
         raise TradingViewSourceError(f"{row['symbol']}: invalid open or close")
-    return row["close"] >= row["open"] and row["change"] >= 0
+    # A bearish candle is already a definitive exclusion.  Newly listed stocks
+    # may not have a previous close, so TradingView legitimately returns no
+    # change value; that must not abort an otherwise complete market report.
+    if row["close"] < row["open"]:
+        return False
+    if row["change"] is None and row.get("price_52_week_high") is None and _number(row.get("High.All")):
+        # A first-session listing has no previous close to compare against.
+        # Its all-time high still proves the high classification, while the
+        # open/close comparison above proves the non-bearish-candle rule.
+        return True
+    if not _number(row["change"]):
+        raise TradingViewSourceError(f"{row['symbol']}: missing change prevents previous-close filtering")
+    return row["change"] >= 0
 
 
 def _high_type(row: dict[str, Any]) -> str | None:
@@ -364,7 +376,7 @@ def fetch_report(market_id: str, session_date: date, *, timeout: float = 30,
             "provider": "TradingView public scanner", "scanner": scanner,
             "fetched_at": datetime.now(timezone.utc).isoformat(),
             "universe": "TradingView-listed stock instruments, including common and preferred shares; ETFs excluded",
-            "definition": "daily high >= period high; close >= open; close >= previous close; all-time takes precedence; ties included",
+            "definition": "daily high >= period high; close >= open; close >= previous close when one exists; all-time takes precedence; ties included",
             "scanner_exchanges": list(exchanges),
             "latest_session_by_exchange": {exchange: day.isoformat() for exchange, day in latest.items()},
             "current_session_reference_symbols": references,

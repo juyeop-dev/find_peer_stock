@@ -59,6 +59,7 @@ class BackfillTradingViewNewHighTests(unittest.TestCase):
         self.assertEqual(reports[DAY]["source_metadata"]["raw_new_high_candidates"], 3)
         self.assertEqual(reports[DAY]["source_metadata"]["excluded_bearish_or_down_close"], 1)
         self.assertEqual(len(reviews[DAY]["checks"]), 3)
+        self.assertEqual(reviews[DAY]["checks"][0]["change_pct"], 2.5)
 
     def test_target_date_is_matched_by_timestamp_not_assumed_offset(self) -> None:
         previous = STAMP - 86400
@@ -78,6 +79,23 @@ class BackfillTradingViewNewHighTests(unittest.TestCase):
             backfill.reports_from_rows(
                 "japan", [DAY], [row("TSE:1000", time=STAMP - 86400)], 0,
                 minimum_coverage=1,
+            )
+
+    def test_us_backfill_requires_and_accepts_all_configured_exchanges(self) -> None:
+        rows = [
+            row("NASDAQ:AAPL", currency="USD"),
+            row("NYSE:IBM", currency="USD"),
+            row("AMEX:ABC", currency="USD", open=120, close=110, change=None),
+        ]
+        reports, _ = backfill.reports_from_rows(
+            "us", [DAY], rows, 0, minimum_coverage=1,
+            collected_at="2026-09-15T00:00:00+00:00",
+        )
+        self.assertEqual({entry["ticker"] for entry in reports[DAY]["entries"]}, {"AAPL", "IBM"})
+        with self.assertRaisesRegex(backfill.TradingViewSourceError, "AMEX"):
+            backfill.reports_from_rows(
+                "us", [DAY], rows[:2], 0, minimum_coverage=1,
+                collected_at="2026-09-15T00:00:00+00:00",
             )
 
     def test_empty_targeted_symbol_search_is_not_an_empty_market_report(self) -> None:

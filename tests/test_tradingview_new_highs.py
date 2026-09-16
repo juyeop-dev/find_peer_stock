@@ -73,6 +73,22 @@ class TradingViewNewHighTests(unittest.TestCase):
             with self.subTest(changes=changes), self.assertRaises(source.TradingViewSourceError):
                 self.fetch([row("TSE:1000", high=150, **changes)])
 
+    def test_bearish_new_listing_without_previous_close_is_excluded(self):
+        report = self.fetch([
+            row("TSE:619A", high=150, open=110, close=100, change=None,
+                price_52_week_high=None),
+        ])
+        self.assertEqual(report["entries"], [])
+        self.assertEqual(report["source_metadata"]["excluded_symbols"], {"bearish_or_down_close": 1})
+
+    def test_non_bearish_new_listing_without_previous_close_is_included(self):
+        report = self.fetch([
+            row("TSE:621A", high=150, open=100, close=150, change=None,
+                price_52_week_high=None),
+        ])
+        self.assertEqual([entry["ticker"] for entry in report["entries"]], ["621A.T"])
+        self.assertIsNone(report["entries"][0]["change_pct"])
+
     def test_zero_requires_nonempty_current_universe(self):
         report = self.fetch([row("TSE:1000")])
         self.assertEqual(report["entries"], [])

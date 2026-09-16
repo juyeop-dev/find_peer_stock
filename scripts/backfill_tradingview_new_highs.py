@@ -1,8 +1,7 @@
 """Backfill recent daily new-high reports from dated TradingView scanner bars.
 
-Only Japan is enabled for now.  The scanner and report builder are deliberately
-market-parameterized so another validated market (the US is the next planned
-one) can be enabled without duplicating the historical-bar logic.
+Japan and the US are enabled.  The same dated scanner-bar path is used to
+recover a session after the live scanner has already advanced to a newer day.
 """
 
 from __future__ import annotations
@@ -30,7 +29,7 @@ from new_high_sources.tradingview import (
 from refresh_new_highs import atomic_json
 
 
-SUPPORTED_BACKFILL_MARKETS = frozenset({"japan"})
+SUPPORTED_BACKFILL_MARKETS = frozenset({"japan", "us"})
 SUPPORTED_HISTORICAL_SCAN_MARKETS = frozenset(_CONFIG)
 IDENTITY_COLUMNS = COLUMNS[:7] + ("currency",)
 BAR_COLUMNS = ("change", "open", "high", "low", "close", "price_52_week_high", "High.All", "time", "volume")
@@ -163,17 +162,17 @@ def reports_from_rows(market_id: str, sessions: list[date], rows: list[dict[str,
     if minimum_coverage < 1:
         raise ValueError("minimum_coverage must be positive")
     _scanner, exchanges = _CONFIG[market_id]
-    if len(exchanges) != 1:
-        raise TradingViewSourceError("historical backfill currently requires one configured exchange")
-    timezone_name = next(iter(exchanges.values()))
     session_set = set(sessions)
     matched: dict[date, list[tuple[dict[str, Any], dict[str, Any]]]] = {
         session: [] for session in sessions
     }
     for row in rows:
+        exchange = row.get("exchange")
+        if exchange not in exchanges:
+            raise TradingViewSourceError(f"{row.get('symbol', market_id)}: unsupported historical exchange")
         symbol_dates: set[date] = set()
         for offset in range(max_offset + 1):
-            bar = historical_bar(row, offset, timezone_name)
+            bar = historical_bar(row, offset, exchanges[exchange])
             if bar is None or bar["date"] not in session_set:
                 continue
             if bar["date"] in symbol_dates:
@@ -185,6 +184,13 @@ def reports_from_rows(market_id: str, sessions: list[date], rows: list[dict[str,
             raise TradingViewSourceError(
                 f"{market_id} {session}: incomplete or non-trading session coverage "
                 f"({len(matches)} symbols; require {minimum_coverage})"
+            )
+        covered_exchanges = {row["exchange"] for row, _bar in matches}
+        missing_exchanges = set(exchanges) - covered_exchanges
+        if missing_exchanges:
+            raise TradingViewSourceError(
+                f"{market_id} {session}: missing historical exchange coverage: "
+                f"{', '.join(sorted(missing_exchanges))}"
             )
 
     collected_at = collected_at or datetime.now(timezone.utc).isoformat()
@@ -206,7 +212,7 @@ def reports_from_rows(market_id: str, sessions: list[date], rows: list[dict[str,
                 "ticker": row["name"], "source_symbol": row["symbol"],
                 "date": session.isoformat(), "bar_offset": bar["offset"],
                 "open": bar["open"], "daily_high": bar["high"], "low": bar["low"],
-                "close": bar["close"], "volume": bar["volume"],
+                "close": bar["close"], "change_pct": bar["change"], "volume": bar["volume"],
                 "period_52_week_high": bar["price_52_week_high"],
                 "period_all_time_high": bar["High.All"], "high_type": high_type,
                 "passes_close_filter": passes_close, "included": passes_close,
@@ -253,7 +259,7 @@ def reports_from_rows(market_id: str, sessions: list[date], rows: list[dict[str,
                 "universe_provider": "TradingView public scanner",
                 "fetched_at": collected_at,
                 "universe": "Current TradingView-listed stock instruments; ETFs and listings no longer in the current universe excluded",
-                "definition": "daily high >= period high; close >= open; close >= previous close; all-time takes precedence; ties included",
+                "definition": "daily high >= period high; close >= open; close >= previous close when one exists; all-time takes precedence; ties included",
                 "scanner": scanner, "scanner_exchanges": list(exchanges),
                 "scanned_symbols": len(rows), "session_symbols": coverage,
                 "raw_new_high_candidates": len(checks),
