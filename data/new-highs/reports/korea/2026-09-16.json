@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "market": "korea",
+  "date": "2026-09-16",
+  "summary": "장 마감 후 TradingView 주식 스냅샷 기준. 당일 장중 고가가 52주·전체기간 고가에 도달하고, 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다. 전체기간 신고가를 우선 표시하며 신고가 배경은 별도 확인 전입니다.",
+  "sources": [
+    {
+      "label": "TradingView stock screener",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    },
+    {
+      "label": "Naver Finance 종목명·상장 시장·일봉 검증",
+      "url": "https://stock.naver.com/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "130580.KQ",
+      "name": "나이스디앤비",
+      "exchange": "KOSDAQ",
+      "category": "Commercial Services",
+      "high_type": "52_week",
+      "reason": "업종: Commercial Services · Miscellaneous Commercial Services",
+      "description": "나이스디앤비 · Miscellaneous Commercial Services",
+      "change_pct": 2.635658914728682,
+      "session_open": 6440,
+      "session_close": 6620,
+      "source_symbol": "KRX:130580",
+      "currency": "KRW",
+      "name_original": "NICE D&B Co., Ltd.",
+      "name_source_url": "https://m.stock.naver.com/api/stock/130580/basic",
+      "high_verification": {
+        "source": "Naver Finance adjusted daily history",
+        "source_url": "https://api.finance.naver.com/siseJson.naver?symbol=130580&requestType=1&startTime=20250917&endTime=20260916&timeframe=day",
+        "date": "2026-09-16",
+        "open": 6440,
+        "daily_high": 6640,
+        "low": 6440,
+        "close": 6620,
+        "previous_close": 6280,
+        "volume": 28571,
+        "prior_52_week_high": 6590,
+        "observed_bars": 243,
+        "first_observed_date": "2025-09-17",
+        "confirmed": true,
+        "matches_prior_high": false,
+        "bearish_candle": false,
+        "down_close": false,
+        "passes_close_filter": true
+      }
+    },
+    {
+      "ticker": "020120.KS",
+      "name": "키다리스튜디오",
+      "exchange": "KOSPI",
+      "category": "Technology Services",
+      "high_type": "52_week",
+      "reason": "업종: Technology Services · Information Technology Services",
+      "description": "키다리스튜디오 · Information Technology Services",
+      "change_pct": 0.2232142857142857,
+      "session_open": 8800,
+      "session_close": 8980,
+      "source_symbol": "KRX:020120",
+      "currency": "KRW",
+      "name_original": "KidariStudio, Inc.",
+      "name_source_url": "https://m.stock.naver.com/api/stock/020120/basic",
+      "high_verification": {
+        "source": "Naver Finance adjusted daily history",
+        "source_url": "https://api.finance.naver.com/siseJson.naver?symbol=020120&requestType=1&startTime=20250917&endTime=20260916&timeframe=day",
+        "date": "2026-09-16",
+        "open": 8800,
+        "daily_high": 9450,
+        "low": 8750,
+        "close": 8980,
+        "previous_close": 8960,
+        "volume": 161668,
+        "prior_52_week_high": 9430,
+        "observed_bars": 243,
+        "first_observed_date": "2025-09-17",
+        "confirmed": true,
+        "matches_prior_high": false,
+        "bearish_candle": false,
+        "down_close": false,
+        "passes_close_filter": true
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "TradingView public scanner",
+    "scanner": "korea",
+    "fetched_at": "2026-09-16T07:31:33.563906+00:00",
+    "universe": "TradingView-listed stock instruments, including common and preferred shares; ETFs excluded",
+    "definition": "daily high >= period high; close >= open; close >= previous close; all-time takes precedence; ties included",
+    "scanner_exchanges": [
+      "KRX"
+    ],
+    "latest_session_by_exchange": {
+      "KRX": "2026-09-16"
+    },
+    "current_session_reference_symbols": {
+      "KRX": "KRX:000020",
+      "KOSPI": "KRX:000020",
+      "KOSDAQ": "KRX:0001A0"
+    },
+    "scanned_symbols": 2745,
+    "current_session_symbols": 2713,
+    "excluded_symbols": {
+      "other_session": 32
+    },
+    "pagination_complete": true
+  },
+  "collected_at": "2026-09-16T07:31:29.190771+00:00"
+}
