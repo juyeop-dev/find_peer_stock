@@ -1,5 +1,6 @@
 import type { SiteIndex, StockSummary } from "./types";
 import type { NewHighIndex, NewHighReport } from "./newHighTypes";
+import type { TurnoverIndex, TurnoverReport } from "./turnoverTypes";
 
 function assetUrl(path: string): string {
   const cleanBase = import.meta.env.BASE_URL.replace(/\/$/, "");
@@ -52,5 +53,15 @@ export async function getNewHighIndex(signal?: AbortSignal): Promise<NewHighInde
 export async function getNewHighReport(market: string, date: string, signal?: AbortSignal): Promise<NewHighReport> {
   return fetchJson<NewHighReport>(
     `data/new-highs/${encodeURIComponent(market)}/${encodeURIComponent(date)}.json`, signal
+  );
+}
+
+export async function getTurnoverIndex(signal?: AbortSignal): Promise<TurnoverIndex> {
+  return fetchJson<TurnoverIndex>("data/turnover/index.json", signal);
+}
+
+export async function getTurnoverReport(market: string, date: string, signal?: AbortSignal): Promise<TurnoverReport> {
+  return fetchJson<TurnoverReport>(
+    `data/turnover/${encodeURIComponent(market)}/${encodeURIComponent(date)}.json`, signal
   );
 }

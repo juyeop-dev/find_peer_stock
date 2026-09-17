@@ -2,6 +2,7 @@ import { Navigate, NavLink, Route, Routes } from "react-router-dom";
 import { HomePage } from "../pages/HomePage";
 import { StockPage } from "../pages/StockPage";
 import { NewHighPage } from "../pages/NewHighPage";
+import { TurnoverPage } from "../pages/TurnoverPage";
 import "../styles/newHighs.css";
 
 export function App() {
@@ -12,12 +13,14 @@ export function App() {
         <div className="siteNavLinks">
           <NavLink to="/" end>Peer 비교</NavLink>
           <NavLink to="/new-highs">신고가 캘린더</NavLink>
+          <NavLink to="/turnover">거래대금 캘린더</NavLink>
         </div>
       </nav>
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/stocks/:ticker" element={<StockPage />} />
         <Route path="/new-highs" element={<NewHighPage />} />
+        <Route path="/turnover" element={<TurnoverPage />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </>

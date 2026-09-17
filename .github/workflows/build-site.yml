@@ -56,6 +56,10 @@ jobs:
         continue-on-error: true
         run: python scripts/refresh_new_highs.py
 
+      - name: Collect daily turnover rankings after each market close
+        continue-on-error: true
+        run: python scripts/refresh_turnover.py
+
       - name: Validate collected daily archive
         # Validate every source report and refresh state before any source push.
         # Keep validation output outside the checkout so a concurrent push can
@@ -65,15 +69,21 @@ jobs:
           --output-dir "$RUNNER_TEMP/new-high-validation"
           --no-copy-to-frontend
 
+      - name: Validate collected turnover archive
+        run: >-
+          python scripts/generate_turnover_data.py
+          --output-dir "$RUNNER_TEMP/turnover-validation"
+          --no-copy-to-frontend
+
       - name: Save daily archive before building
         # Persist successes/retry state even when quote collection or a later build fails.
         # Do not publish an archive whose durable source could not be saved.
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/new-highs
+          git add data/new-highs data/turnover
           if ! git diff --cached --quiet; then
-            git commit -m "Save daily new-high archive [skip ci]"
+            git commit -m "Save daily market archives [skip ci]"
             for attempt in 1 2 3; do
               if git push origin HEAD:main; then
                 exit 0
@@ -87,7 +97,7 @@ jobs:
       - name: Generate stock data
         id: quotes
         # The generator preserves all files on total quote-source failure.
-        # Daily new highs can still be published with the previous price snapshot.
+        # Daily archives can still be published with the previous price snapshot.
         continue-on-error: true
         env:
           FETCH_QUOTES: ${{ github.event_name != 'workflow_dispatch' || inputs.force_fetch }}

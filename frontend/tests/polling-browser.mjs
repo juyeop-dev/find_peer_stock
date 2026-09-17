@@ -21,6 +21,11 @@ const requests = [];
 const siteIndex = JSON.parse(await readFile(join(frontend, "public/data/index.json"), "utf8"));
 const stock = JSON.parse(await readFile(join(frontend, "public/data/stocks/3026.TW.json"), "utf8"));
 const archive = JSON.parse(await readFile(join(frontend, "public/data/new-highs/index.json"), "utf8"));
+const turnoverArchive = JSON.parse(await readFile(join(frontend, "public/data/turnover/index.json"), "utf8"));
+const turnoverSummary = turnoverArchive.reports.find((item) => item.market === "korea");
+const turnoverReport = JSON.parse(await readFile(
+  join(frontend, `public/data/turnover/korea/${turnoverSummary.date}.json`), "utf8"
+));
 fixtures.set("/data/index.json", { ...siteIndex, generated_at: new Date().toISOString() });
 fixtures.set("/data/stocks/3026.TW.json", stock);
 const dailyArchive = {
@@ -33,6 +38,8 @@ const dailyArchive = {
   }
 };
 fixtures.set("/data/new-highs/index.json", dailyArchive);
+fixtures.set("/data/turnover/index.json", turnoverArchive);
+fixtures.set(`/data/turnover/korea/${turnoverSummary.date}.json`, turnoverReport);
 let failStock = false;
 const server = createServer(async (request, response) => {
   const pathname = new URL(request.url, "http://localhost").pathname;
@@ -256,6 +263,19 @@ try {
   await until(() => contains("최신 자동 보기 복귀 검증"), "Returning to the latest report failed.");
   assert.equal(await evaluate("new URLSearchParams(location.search).has('date')"), false);
   console.log("PASS calendar follows new trading days across filters, preserves historical selection and resumes automatic following");
+
+  await send("Page.navigate", { url: `${origin}/turnover` });
+  await until(() => contains("거래대금 캘린더"), "Turnover calendar did not load.");
+  await until(() => contains(turnoverReport.entries[0].name), "Turnover ranking did not load.");
+  assert.equal(await evaluate("document.querySelectorAll('.turnoverTable tbody tr').length"), 30);
+  assert.deepEqual(await evaluate(`(() => {
+    const headers = [...document.querySelectorAll('.turnoverTable th')].map((item) => item.innerText);
+    const first = document.querySelector('.turnoverTable tbody tr');
+    return { headers, rank: first?.querySelector('.turnoverRank')?.innerText, hasLogo: Boolean(first?.querySelector('.turnoverLogo img')) };
+  })()`), {
+    headers: ["순위", "종목명", "현재가", "등락률", "거래대금", "시가총액", "산업"], rank: "1", hasLogo: true
+  });
+  console.log("PASS turnover calendar renders the top-30 table, requested columns and company logos");
 } finally {
   if (send && socket?.readyState === WebSocket.OPEN) await send("Browser.close").catch(() => {});
   socket?.close();

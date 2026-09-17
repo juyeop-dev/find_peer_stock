@@ -12,6 +12,7 @@ from typing import Any
 from zoneinfo import ZoneInfo
 
 from generate_new_high_data import SOURCE_DIR as NEW_HIGH_SOURCE_DIR, generate_new_high_data
+from generate_turnover_data import SOURCE_DIR as TURNOVER_SOURCE_DIR, generate_turnover_data
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
@@ -155,6 +156,8 @@ def main() -> None:
         market_caps=market_caps,
         market_cap_fetched_at=generated_at.isoformat(),
     )
+    generate_turnover_data(getattr(args, "turnover_source_dir", TURNOVER_SOURCE_DIR),
+                           args.output_dir, frontend_data_dir=None)
 
     if args.copy_to_frontend:
         sync_frontend_data(args.output_dir, args.frontend_data_dir)
@@ -167,6 +170,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--output-dir", type=Path, default=GENERATED_DIR)
     parser.add_argument("--frontend-data-dir", type=Path, default=FRONTEND_DATA_DIR)
     parser.add_argument("--new-high-source-dir", type=Path, default=NEW_HIGH_SOURCE_DIR)
+    parser.add_argument("--turnover-source-dir", type=Path, default=TURNOVER_SOURCE_DIR)
     parser.add_argument("--no-fetch", action="store_true", help="Generate JSON without calling quote sources.")
     parser.add_argument("--now", help="Override current time for testing. Example: 2026-05-14T10:00:00+09:00")
     parser.add_argument(
