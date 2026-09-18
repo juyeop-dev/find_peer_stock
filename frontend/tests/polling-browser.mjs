@@ -26,7 +26,8 @@ const turnoverSummary = turnoverArchive.reports.find((item) => item.market === "
 const turnoverReport = JSON.parse(await readFile(
   join(frontend, `public/data/turnover/korea/${turnoverSummary.date}.json`), "utf8"
 ));
-turnoverReport.entries[0].market_cap = 12_345_678;
+turnoverReport.entries[0].market_cap = 12_345_600_000_000;
+turnoverReport.entries[1].market_cap = 12_345_678;
 fixtures.set("/data/index.json", { ...siteIndex, generated_at: new Date().toISOString() });
 fixtures.set("/data/stocks/3026.TW.json", stock);
 const dailyArchive = {
@@ -277,7 +278,8 @@ try {
     headers: ["순위", "종목명", "현재가", "등락률", "거래대금", "시가총액", "산업"], rank: "1", hasLogo: true
   });
   assert.equal(await evaluate("document.querySelector('.turnoverValue')?.innerText.endsWith('억 원')"), true);
-  assert.equal(await evaluate("document.querySelector('.marketCapValue')?.innerText"), "1,235만 원");
+  assert.equal(await evaluate("document.querySelector('.marketCapValue')?.innerText"), "12조 3,456억 원");
+  assert.equal(await evaluate("document.querySelectorAll('.marketCapValue')[1]?.innerText"), "1,235만 원");
   console.log("PASS turnover calendar renders the top-30 table, requested columns and company logos");
 } finally {
   if (send && socket?.readyState === WebSocket.OPEN) await send("Browser.close").catch(() => {});

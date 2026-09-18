@@ -31,7 +31,7 @@ function formatMoney(value: number | null, currency: string): string {
   } catch { return `${new Intl.NumberFormat("ko-KR", { maximumFractionDigits: 2 }).format(value)} ${currency}`; }
 }
 
-function formatHundredMillions(value: number | null, currency: string): string {
+function formatHundredMillions(value: number | null, currency: string, splitTrillions = false): string {
   if (value == null) return "-";
   const currencyNames: Record<string, string> = {
     KRW: "원", USD: "달러", JPY: "엔", TWD: "대만달러", CNY: "위안",
@@ -45,6 +45,14 @@ function formatHundredMillions(value: number | null, currency: string): string {
       : `${new Intl.NumberFormat("ko-KR").format(tenThousands)}만 ${unit}`;
   }
   const hundredMillions = Math.round(value / 100_000_000);
+  if (splitTrillions && hundredMillions >= 10_000) {
+    const trillions = Math.floor(hundredMillions / 10_000);
+    const remainingHundredMillions = hundredMillions % 10_000;
+    const trillionText = `${new Intl.NumberFormat("ko-KR").format(trillions)}조`;
+    return remainingHundredMillions === 0
+      ? `${trillionText} ${unit}`
+      : `${trillionText} ${new Intl.NumberFormat("ko-KR").format(remainingHundredMillions)}억 ${unit}`;
+  }
   return `${new Intl.NumberFormat("ko-KR").format(hundredMillions)}억 ${unit}`;
 }
 
@@ -113,7 +121,7 @@ export function TurnoverPage() {
                 <span className="turnoverLogo"><span>{initials(entry)}</span>{entry.logo_url ? <img src={entry.logo_url} alt="" loading="lazy" onError={(event) => { event.currentTarget.style.display = "none"; }} /> : null}</span>
                 <span><strong>{entry.name}</strong><small>{entry.ticker} · {entry.exchange}</small></span></a></td>
                 <td className="number">{formatMoney(entry.price, entry.currency)}</td><td className={`number change ${changeClass(entry.change_pct)}`}>{changeText(entry.change_pct)}</td>
-                <td className="number turnoverValue"><strong>{formatHundredMillions(entry.turnover, entry.currency)}</strong></td><td className="number marketCapValue">{formatHundredMillions(entry.market_cap, entry.currency)}</td>
+                <td className="number turnoverValue"><strong>{formatHundredMillions(entry.turnover, entry.currency)}</strong></td><td className="number marketCapValue">{formatHundredMillions(entry.market_cap, entry.currency, true)}</td>
                 <td><span className="turnoverIndustry"><strong>{entry.sector}</strong><small>{entry.industry}</small></span></td></tr>;
             })}</tbody></table></div>
             {entries.length === 0 ? <div className="turnoverEmpty compact"><strong>검색 결과가 없습니다.</strong><button onClick={() => setSearch("")}>검색 초기화</button></div> : null}
