@@ -1,0 +1,188 @@
+{
+  "schema_version": 1,
+  "market": "korea",
+  "date": "2026-09-18",
+  "summary": "장 마감 후 TradingView 주식 스냅샷 기준. 당일 장중 고가가 52주·전체기간 고가에 도달하고, 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다. 전체기간 신고가를 우선 표시하며 신고가 배경은 별도 확인 전입니다.",
+  "sources": [
+    {
+      "label": "TradingView stock screener",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    },
+    {
+      "label": "Naver Finance 종목명·상장 시장·일봉 검증",
+      "url": "https://stock.naver.com/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "051160.KQ",
+      "name": "지어소프트",
+      "exchange": "KOSDAQ",
+      "category": "Commercial Services",
+      "high_type": "52_week",
+      "reason": "업종: Commercial Services · Advertising/Marketing Services",
+      "description": "지어소프트 · Advertising/Marketing Services",
+      "change_pct": 0.667779632721202,
+      "session_open": 11750,
+      "session_close": 12060,
+      "source_symbol": "KRX:051160",
+      "currency": "KRW",
+      "name_original": "GaeaSoft Corp.",
+      "name_source_url": "https://m.stock.naver.com/api/stock/051160/basic",
+      "high_verification": {
+        "source": "Naver Finance adjusted daily history",
+        "source_url": "https://api.finance.naver.com/siseJson.naver?symbol=051160&requestType=1&startTime=20250919&endTime=20260918&timeframe=day",
+        "date": "2026-09-18",
+        "open": 11750,
+        "daily_high": 12900,
+        "low": 11620,
+        "close": 12060,
+        "previous_close": 11750,
+        "volume": 1225301,
+        "prior_52_week_high": 12890,
+        "observed_bars": 243,
+        "first_observed_date": "2025-09-19",
+        "confirmed": true,
+        "matches_prior_high": false,
+        "bearish_candle": false,
+        "down_close": false,
+        "passes_close_filter": true
+      }
+    },
+    {
+      "ticker": "228850.KQ",
+      "name": "레이언스",
+      "exchange": "KOSDAQ",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Medical Specialties",
+      "description": "레이언스 · Medical Specialties",
+      "change_pct": 14.383561643835616,
+      "session_open": 7380,
+      "session_close": 8340,
+      "source_symbol": "KRX:228850",
+      "currency": "KRW",
+      "name_original": "Rayence Co., Ltd.",
+      "name_source_url": "https://m.stock.naver.com/api/stock/228850/basic",
+      "high_verification": {
+        "source": "Naver Finance adjusted daily history",
+        "source_url": "https://api.finance.naver.com/siseJson.naver?symbol=228850&requestType=1&startTime=20250919&endTime=20260918&timeframe=day",
+        "date": "2026-09-18",
+        "open": 7380,
+        "daily_high": 8460,
+        "low": 7300,
+        "close": 8340,
+        "previous_close": 7330,
+        "volume": 416023,
+        "prior_52_week_high": 8020,
+        "observed_bars": 243,
+        "first_observed_date": "2025-09-19",
+        "confirmed": true,
+        "matches_prior_high": false,
+        "bearish_candle": false,
+        "down_close": false,
+        "passes_close_filter": true
+      }
+    },
+    {
+      "ticker": "252990.KQ",
+      "name": "샘씨엔에스",
+      "exchange": "KOSDAQ",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Electrical Products",
+      "description": "샘씨엔에스 · Electrical Products",
+      "change_pct": 3.341288782816229,
+      "session_open": 16950,
+      "session_close": 17330,
+      "source_symbol": "KRX:252990",
+      "currency": "KRW",
+      "name_original": "SEMCNS Co., Ltd.",
+      "name_source_url": "https://m.stock.naver.com/api/stock/252990/basic",
+      "high_verification": {
+        "source": "Naver Finance adjusted daily history",
+        "source_url": "https://api.finance.naver.com/siseJson.naver?symbol=252990&requestType=1&startTime=20250919&endTime=20260918&timeframe=day",
+        "date": "2026-09-18",
+        "open": 16950,
+        "daily_high": 17800,
+        "low": 16870,
+        "close": 17330,
+        "previous_close": 16820,
+        "volume": 656564,
+        "prior_52_week_high": 17250,
+        "observed_bars": 243,
+        "first_observed_date": "2025-09-19",
+        "confirmed": true,
+        "matches_prior_high": false,
+        "bearish_candle": false,
+        "down_close": false,
+        "passes_close_filter": true
+      }
+    },
+    {
+      "ticker": "004080.KS",
+      "name": "신흥",
+      "exchange": "KOSPI",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Medical Specialties",
+      "description": "신흥 · Medical Specialties",
+      "change_pct": 3.4875444839857654,
+      "session_open": 14040,
+      "session_close": 14680,
+      "source_symbol": "KRX:004080",
+      "currency": "KRW",
+      "name_original": "Shinhung Co., Ltd",
+      "name_source_url": "https://m.stock.naver.com/api/stock/004080/basic",
+      "high_verification": {
+        "source": "Naver Finance adjusted daily history",
+        "source_url": "https://api.finance.naver.com/siseJson.naver?symbol=004080&requestType=1&startTime=20250919&endTime=20260918&timeframe=day",
+        "date": "2026-09-18",
+        "open": 14040,
+        "daily_high": 16470,
+        "low": 13970,
+        "close": 14680,
+        "previous_close": 14050,
+        "volume": 25510,
+        "prior_52_week_high": 14760,
+        "observed_bars": 243,
+        "first_observed_date": "2025-09-19",
+        "confirmed": true,
+        "matches_prior_high": false,
+        "bearish_candle": false,
+        "down_close": false,
+        "passes_close_filter": true
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "TradingView public scanner",
+    "scanner": "korea",
+    "fetched_at": "2026-09-18T07:31:36.741344+00:00",
+    "universe": "TradingView-listed stock instruments, including common and preferred shares; ETFs excluded",
+    "definition": "daily high >= period high; close >= open; close >= previous close when one exists; all-time takes precedence; ties included",
+    "scanner_exchanges": [
+      "KRX"
+    ],
+    "latest_session_by_exchange": {
+      "KRX": "2026-09-18"
+    },
+    "current_session_reference_symbols": {
+      "KRX": "KRX:000020",
+      "KOSPI": "KRX:000020",
+      "KOSDAQ": "KRX:0001A0"
+    },
+    "scanned_symbols": 2746,
+    "current_session_symbols": 2711,
+    "excluded_symbols": {
+      "other_session": 35,
+      "korean_daily_history_disagrees": 4
+    },
+    "pagination_complete": true
+  },
+  "collected_at": "2026-09-18T07:31:23.598978+00:00"
+}
