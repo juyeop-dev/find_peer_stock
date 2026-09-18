@@ -24,11 +24,28 @@ function readableDate(value: string): string {
   return new Intl.DateTimeFormat("ko-KR", { timeZone: "UTC", year: "numeric", month: "long", day: "numeric", weekday: "long" }).format(new Date(`${value}T00:00:00Z`));
 }
 
-function formatMoney(value: number | null, currency: string, compact = false): string {
+function formatMoney(value: number | null, currency: string): string {
   if (value == null) return "-";
   try {
-    return new Intl.NumberFormat("ko-KR", { style: "currency", currency, notation: compact ? "compact" : "standard", maximumFractionDigits: currency === "KRW" || currency === "JPY" ? 0 : 2 }).format(value);
-  } catch { return `${new Intl.NumberFormat("ko-KR", { notation: compact ? "compact" : "standard", maximumFractionDigits: 2 }).format(value)} ${currency}`; }
+    return new Intl.NumberFormat("ko-KR", { style: "currency", currency, maximumFractionDigits: currency === "KRW" || currency === "JPY" ? 0 : 2 }).format(value);
+  } catch { return `${new Intl.NumberFormat("ko-KR", { maximumFractionDigits: 2 }).format(value)} ${currency}`; }
+}
+
+function formatHundredMillions(value: number | null, currency: string): string {
+  if (value == null) return "-";
+  const currencyNames: Record<string, string> = {
+    KRW: "원", USD: "달러", JPY: "엔", TWD: "대만달러", CNY: "위안",
+    EUR: "유로", GBP: "파운드", CHF: "스위스프랑"
+  };
+  const unit = currencyNames[currency] ?? currency;
+  if (value < 100_000_000) {
+    const tenThousands = Math.round(value / 10_000);
+    return tenThousands === 0
+      ? `1만 ${unit} 미만`
+      : `${new Intl.NumberFormat("ko-KR").format(tenThousands)}만 ${unit}`;
+  }
+  const hundredMillions = Math.round(value / 100_000_000);
+  return `${new Intl.NumberFormat("ko-KR").format(hundredMillions)}억 ${unit}`;
 }
 
 function changeText(value: number | null): string { return value == null ? "-" : `${value > 0 ? "+" : ""}${value.toFixed(2)}%`; }
@@ -96,7 +113,7 @@ export function TurnoverPage() {
                 <span className="turnoverLogo"><span>{initials(entry)}</span>{entry.logo_url ? <img src={entry.logo_url} alt="" loading="lazy" onError={(event) => { event.currentTarget.style.display = "none"; }} /> : null}</span>
                 <span><strong>{entry.name}</strong><small>{entry.ticker} · {entry.exchange}</small></span></a></td>
                 <td className="number">{formatMoney(entry.price, entry.currency)}</td><td className={`number change ${changeClass(entry.change_pct)}`}>{changeText(entry.change_pct)}</td>
-                <td className="number turnoverValue"><strong>{formatMoney(entry.turnover, entry.currency, true)}</strong></td><td className="number">{formatMoney(entry.market_cap, entry.currency, true)}</td>
+                <td className="number turnoverValue"><strong>{formatHundredMillions(entry.turnover, entry.currency)}</strong></td><td className="number marketCapValue">{formatHundredMillions(entry.market_cap, entry.currency)}</td>
                 <td><span className="turnoverIndustry"><strong>{entry.sector}</strong><small>{entry.industry}</small></span></td></tr>;
             })}</tbody></table></div>
             {entries.length === 0 ? <div className="turnoverEmpty compact"><strong>검색 결과가 없습니다.</strong><button onClick={() => setSearch("")}>검색 초기화</button></div> : null}
