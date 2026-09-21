@@ -44,6 +44,17 @@ class TradingViewTurnoverTests(unittest.TestCase):
             with self.assertRaises(source.TurnoverSourceNotReady):
                 source.fetch_report("japan", DAY)
 
+    def test_china_ranks_sse_and_szse_with_peer_tickers(self) -> None:
+        rows = [
+            row("SSE:600000", 200, currency="CNY"),
+            row("SZSE:000001", 300, currency="CNY"),
+        ]
+        with patch.object(source, "_request_json", return_value={"totalCount": 2, "data": rows}) as request:
+            report = source.fetch_report("china", DAY)
+        self.assertEqual(request.call_args.args[0], "https://scanner.tradingview.com/china/scan")
+        self.assertEqual([entry["ticker"] for entry in report["entries"]], ["000001.SZ", "600000.SS"])
+        self.assertEqual({entry["exchange"] for entry in report["entries"]}, {"SSE", "SZSE"})
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -52,10 +52,6 @@
         {
           "id": "SZSE",
           "label": "선전"
-        },
-        {
-          "id": "BSE",
-          "label": "베이징"
         }
       ],
       "refresh_after": "16:00"
@@ -118,19 +114,120 @@
   ],
   "reports": [
     {
+      "market": "china",
+      "date": "2026-09-21",
+      "count": 30,
+      "total_turnover": 293094273191.93,
+      "currency": "CNY"
+    },
+    {
+      "market": "korea",
+      "date": "2026-09-21",
+      "count": 30,
+      "total_turnover": 17941564263210,
+      "currency": "KRW"
+    },
+    {
+      "market": "taiwan",
+      "date": "2026-09-21",
+      "count": 30,
+      "total_turnover": 509290108137.4,
+      "currency": "TWD"
+    },
+    {
+      "market": "europe",
+      "date": "2026-09-18",
+      "count": 30,
+      "total_turnover": 31611031558.687145,
+      "currency": "EUR"
+    },
+    {
+      "market": "japan",
+      "date": "2026-09-18",
+      "count": 30,
+      "total_turnover": 5726490244600,
+      "currency": "JPY"
+    },
+    {
+      "market": "korea",
+      "date": "2026-09-18",
+      "count": 30,
+      "total_turnover": 20424043686140,
+      "currency": "KRW"
+    },
+    {
+      "market": "taiwan",
+      "date": "2026-09-18",
+      "count": 30,
+      "total_turnover": 649001525446.0,
+      "currency": "TWD"
+    },
+    {
+      "market": "us",
+      "date": "2026-09-18",
+      "count": 30,
+      "total_turnover": 469431579749.38,
+      "currency": "USD"
+    },
+    {
       "market": "korea",
       "date": "2026-09-17",
       "count": 30,
       "total_turnover": 12815764985030,
       "currency": "KRW"
+    },
+    {
+      "market": "taiwan",
+      "date": "2026-09-17",
+      "count": 30,
+      "total_turnover": 522107742672.0,
+      "currency": "TWD"
+    },
+    {
+      "market": "us",
+      "date": "2026-09-17",
+      "count": 30,
+      "total_turnover": 241999701076.8,
+      "currency": "USD"
     }
   ],
   "refresh": {
     "korea": {
       "status": "updated",
-      "target_date": "2026-09-17",
-      "last_success_date": "2026-09-17",
-      "last_success_at": "2026-09-17T23:48:06.728145+00:00"
+      "target_date": "2026-09-21",
+      "last_success_at": "2026-09-21T07:31:33.613484+00:00",
+      "last_success_date": "2026-09-21"
+    },
+    "us": {
+      "status": "pending",
+      "message": "장 마감 후 수집합니다.",
+      "last_success_at": "2026-09-18T21:01:27.306954+00:00",
+      "last_success_date": "2026-09-18"
+    },
+    "china": {
+      "status": "updated",
+      "target_date": "2026-09-21",
+      "last_success_date": "2026-09-21",
+      "last_success_at": "2026-09-21T14:26:30.969485+00:00"
+    },
+    "taiwan": {
+      "status": "updated",
+      "target_date": "2026-09-21",
+      "last_success_at": "2026-09-21T06:31:14.710547+00:00",
+      "last_success_date": "2026-09-21"
+    },
+    "japan": {
+      "status": "pending",
+      "target_date": "2026-09-21",
+      "message": "japan/TSE: source session is 2026-09-18, requested 2026-09-21",
+      "last_success_at": "2026-09-18T07:31:38.089629+00:00",
+      "last_success_date": "2026-09-18"
+    },
+    "europe": {
+      "status": "pending",
+      "message": "장 마감 후 수집합니다.",
+      "last_success_at": "2026-09-19T17:51:16.652954+00:00",
+      "last_success_date": "2026-09-18"
     }
   }
 }

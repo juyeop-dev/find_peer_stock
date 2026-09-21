@@ -267,10 +267,16 @@ class TradingViewNewHighTests(unittest.TestCase):
                 with self.assertRaises(source.TradingViewSourceError):
                     source.fetch_report("japan", DAY)
 
-    def test_china_does_not_publish_partial_sse_szse_as_complete_bse_report(self):
-        with patch.object(source, "_request_json") as request, self.assertRaisesRegex(source.TradingViewSourceError, "BSE"):
-            source.fetch_report("china", DAY)
-        request.assert_not_called()
+    def test_china_uses_complete_configured_sse_szse_scope_and_peer_tickers(self):
+        rows = [
+            row("SSE:600000", high=150, currency="CNY"),
+            row("SZSE:000001", high=120, currency="CNY"),
+        ]
+        with patch.object(source, "_request_json", return_value=response(rows)) as request:
+            report = source.fetch_report("china", DAY)
+        self.assertEqual(request.call_args.args[0], "https://scanner.tradingview.com/china/scan")
+        self.assertEqual({entry["ticker"] for entry in report["entries"]}, {"600000.SS", "000001.SZ"})
+        self.assertEqual(set(report["source_metadata"]["scanner_exchanges"]), {"SSE", "SZSE"})
 
 
 if __name__ == "__main__":

@@ -31,10 +31,15 @@ class TradingViewSourceNotReady(TradingViewSourceError):
     """A requested trading session is not the latest available source session."""
 
 
-SUPPORTED_MARKETS = frozenset({"korea", "us", "taiwan", "japan", "europe"})
+SUPPORTED_MARKETS = frozenset({"korea", "us", "china", "taiwan", "japan", "europe"})
 _CONFIG = {
     "korea": ("korea", {"KRX": "Asia/Seoul"}),
     "us": ("america", {"NASDAQ": "America/New_York", "NYSE": "America/New_York", "AMEX": "America/New_York"}),
+    # TradingView's China scanner covers the Shanghai and Shenzhen A-share
+    # universes.  Beijing is intentionally not configured: the scanner returns
+    # no BSE listings, so claiming all three exchanges would publish a partial
+    # China report as if it were complete.
+    "china": ("china", {"SSE": "Asia/Shanghai", "SZSE": "Asia/Shanghai"}),
     "taiwan": ("taiwan", {"TWSE": "Asia/Taipei", "TPEX": "Asia/Taipei"}),
     "japan": ("japan", {"TSE": "Asia/Tokyo"}),
     "europe": ("global", {"EURONEXT": "Europe/Paris", "XETR": "Europe/Berlin", "LSE": "Europe/London", "SIX": "Europe/Zurich"}),
@@ -265,7 +270,10 @@ def _high_type(row: dict[str, Any]) -> str | None:
 
 
 def _ticker(row: dict[str, Any], exchange: str, market_id: str) -> str:
-    suffixes = {"KOSPI": ".KS", "KOSDAQ": ".KQ", "TWSE": ".TW", "TPEX": ".TWO", "TSE": ".T"}
+    suffixes = {
+        "KOSPI": ".KS", "KOSDAQ": ".KQ", "SSE": ".SS", "SZSE": ".SZ",
+        "TWSE": ".TW", "TPEX": ".TWO", "TSE": ".T",
+    }
     if exchange in suffixes:
         return row["name"] + suffixes[exchange]
     return row["name"] if market_id == "us" else row["symbol"]
@@ -280,8 +288,7 @@ def fetch_report(market_id: str, session_date: date, *, timeout: float = 30,
     impossible with this endpoint and raise TradingViewSourceNotReady.
     """
     if market_id not in SUPPORTED_MARKETS:
-        detail = ": TradingView does not cover the configured Beijing exchange (BSE)" if market_id == "china" else ""
-        raise TradingViewSourceError(f"Unsupported automatic new-high market: {market_id}{detail}")
+        raise TradingViewSourceError(f"Unsupported automatic new-high market: {market_id}")
     if type(session_date) is not date:
         raise TradingViewSourceError("session_date must be a datetime.date")
     if type(page_size) is not int or not 1 <= page_size <= 5000:

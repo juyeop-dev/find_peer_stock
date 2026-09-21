@@ -20,10 +20,14 @@ class TurnoverSourceNotReady(TurnoverSourceError):
     """The requested session is not the source's latest completed session."""
 
 
-SUPPORTED_MARKETS = frozenset({"korea", "us", "taiwan", "japan", "europe"})
+SUPPORTED_MARKETS = frozenset({"korea", "us", "china", "taiwan", "japan", "europe"})
 _CONFIG = {
     "korea": ("korea", {"KRX": "Asia/Seoul"}),
     "us": ("america", {"NASDAQ": "America/New_York", "NYSE": "America/New_York", "AMEX": "America/New_York"}),
+    # The China scanner currently exposes SSE and SZSE listings, but no BSE
+    # listings. Keep the published scope honest instead of silently treating a
+    # missing Beijing universe as zero activity.
+    "china": ("china", {"SSE": "Asia/Shanghai", "SZSE": "Asia/Shanghai"}),
     "taiwan": ("taiwan", {"TWSE": "Asia/Taipei", "TPEX": "Asia/Taipei"}),
     "japan": ("japan", {"TSE": "Asia/Tokyo"}),
     "europe": ("global", {"EURONEXT": "Europe/Paris", "XETR": "Europe/Berlin", "LSE": "Europe/London", "SIX": "Europe/Zurich"}),
@@ -93,7 +97,10 @@ def _korean_listing(code: str, timeout: float) -> dict[str, str]:
 
 
 def _ticker(code: str, exchange: str, market_id: str, symbol: str) -> str:
-    suffixes = {"KOSPI": ".KS", "KOSDAQ": ".KQ", "TWSE": ".TW", "TPEX": ".TWO", "TSE": ".T"}
+    suffixes = {
+        "KOSPI": ".KS", "KOSDAQ": ".KQ", "SSE": ".SS", "SZSE": ".SZ",
+        "TWSE": ".TW", "TPEX": ".TWO", "TSE": ".T",
+    }
     if exchange in suffixes:
         return code + suffixes[exchange]
     return code if market_id == "us" else symbol

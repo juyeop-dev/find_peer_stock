@@ -1,0 +1,154 @@
+{
+  "schema_version": 1,
+  "market": "korea",
+  "date": "2026-09-17",
+  "summary": "장 마감 후 TradingView 주식 스냅샷 기준. 당일 장중 고가가 52주·전체기간 고가에 도달하고, 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다. 전체기간 신고가를 우선 표시하며 신고가 배경은 별도 확인 전입니다.",
+  "sources": [
+    {
+      "label": "TradingView stock screener",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    },
+    {
+      "label": "Naver Finance 종목명·상장 시장·일봉 검증",
+      "url": "https://stock.naver.com/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "005160.KQ",
+      "name": "동국산업",
+      "exchange": "KOSDAQ",
+      "category": "Non-Energy Minerals",
+      "high_type": "52_week",
+      "reason": "업종: Non-Energy Minerals · Steel",
+      "description": "동국산업 · Steel",
+      "change_pct": 5.157593123209169,
+      "session_open": 3435,
+      "session_close": 3650,
+      "source_symbol": "KRX:005160",
+      "currency": "KRW",
+      "name_original": "Dongkuk Industries Co., Ltd.",
+      "name_source_url": "https://m.stock.naver.com/api/stock/005160/basic",
+      "high_verification": {
+        "source": "Naver Finance adjusted daily history",
+        "source_url": "https://api.finance.naver.com/siseJson.naver?symbol=005160&requestType=1&startTime=20250918&endTime=20260917&timeframe=day",
+        "date": "2026-09-17",
+        "open": 3435,
+        "daily_high": 3960,
+        "low": 3395,
+        "close": 3650,
+        "previous_close": 3390,
+        "volume": 10682030,
+        "prior_52_week_high": 3945,
+        "observed_bars": 243,
+        "first_observed_date": "2025-09-18",
+        "confirmed": true,
+        "matches_prior_high": false,
+        "bearish_candle": false,
+        "down_close": false,
+        "passes_close_filter": true
+      }
+    },
+    {
+      "ticker": "051160.KQ",
+      "name": "지어소프트",
+      "exchange": "KOSDAQ",
+      "category": "Commercial Services",
+      "high_type": "52_week",
+      "reason": "업종: Commercial Services · Advertising/Marketing Services",
+      "description": "지어소프트 · Advertising/Marketing Services",
+      "change_pct": 20.766129032258064,
+      "session_open": 10000,
+      "session_close": 12370,
+      "source_symbol": "KRX:051160",
+      "currency": "KRW",
+      "name_original": "GaeaSoft Corp.",
+      "name_source_url": "https://m.stock.naver.com/api/stock/051160/basic",
+      "high_verification": {
+        "source": "Naver Finance adjusted daily history",
+        "source_url": "https://api.finance.naver.com/siseJson.naver?symbol=051160&requestType=1&startTime=20250918&endTime=20260917&timeframe=day",
+        "date": "2026-09-17",
+        "open": 10000,
+        "daily_high": 12890,
+        "low": 9850,
+        "close": 12370,
+        "previous_close": 10000,
+        "volume": 3676669,
+        "prior_52_week_high": 11640,
+        "observed_bars": 243,
+        "first_observed_date": "2025-09-18",
+        "confirmed": true,
+        "matches_prior_high": false,
+        "bearish_candle": false,
+        "down_close": false,
+        "passes_close_filter": true
+      }
+    },
+    {
+      "ticker": "130580.KQ",
+      "name": "나이스디앤비",
+      "exchange": "KOSDAQ",
+      "category": "Commercial Services",
+      "high_type": "52_week",
+      "reason": "업종: Commercial Services · Miscellaneous Commercial Services",
+      "description": "나이스디앤비 · Miscellaneous Commercial Services",
+      "change_pct": 2.719033232628399,
+      "session_open": 6640,
+      "session_close": 6860,
+      "source_symbol": "KRX:130580",
+      "currency": "KRW",
+      "name_original": "NICE D&B Co., Ltd.",
+      "name_source_url": "https://m.stock.naver.com/api/stock/130580/basic",
+      "high_verification": {
+        "source": "Naver Finance adjusted daily history",
+        "source_url": "https://api.finance.naver.com/siseJson.naver?symbol=130580&requestType=1&startTime=20250918&endTime=20260917&timeframe=day",
+        "date": "2026-09-17",
+        "open": 6640,
+        "daily_high": 6860,
+        "low": 6570,
+        "close": 6860,
+        "previous_close": 6620,
+        "volume": 43242,
+        "prior_52_week_high": 6640,
+        "observed_bars": 243,
+        "first_observed_date": "2025-09-18",
+        "confirmed": true,
+        "matches_prior_high": false,
+        "bearish_candle": false,
+        "down_close": false,
+        "passes_close_filter": true
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "TradingView public scanner",
+    "scanner": "korea",
+    "fetched_at": "2026-09-17T07:31:37.855001+00:00",
+    "universe": "TradingView-listed stock instruments, including common and preferred shares; ETFs excluded",
+    "definition": "daily high >= period high; close >= open; close >= previous close when one exists; all-time takes precedence; ties included",
+    "scanner_exchanges": [
+      "KRX"
+    ],
+    "latest_session_by_exchange": {
+      "KRX": "2026-09-17"
+    },
+    "current_session_reference_symbols": {
+      "KRX": "KRX:000020",
+      "KOSPI": "KRX:000020",
+      "KOSDAQ": "KRX:0001A0"
+    },
+    "scanned_symbols": 2743,
+    "current_session_symbols": 2710,
+    "excluded_symbols": {
+      "other_session": 33,
+      "korean_daily_history_disagrees": 1,
+      "bearish_or_down_close": 1
+    },
+    "pagination_complete": true
+  },
+  "collected_at": "2026-09-17T07:31:30.555098+00:00"
+}
