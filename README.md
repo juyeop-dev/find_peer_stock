@@ -169,6 +169,20 @@ TradingView 스크리너의 주식 전체 목록을 페이지 끝까지 확인�
 
 중국은 TradingView 중국 스크리너가 제공하는 상하이(SSE)·선전(SZSE) A주를 자동 수집합니다. 베이징거래소(BSE)는 같은 자료원에서 종목을 제공하지 않으므로 자동 수집 범위에 포함하지 않습니다. 신고가 및 거래대금 화면의 중국 전체는 이 두 거래소를 뜻합니다.
 
+### 해외 캘린더 과거 구간 복원
+
+일본·중국·유럽의 누락된 최근 구간은 TradingView의 현재 주식 종목군과 Yahoo Finance의 날짜별 OHLCV를 결합해 신고가와 거래대금 캘린더를 함께 복원할 수 있습니다. 거래대금은 TradingView의 일봉 `Value.Traded`와 동일한 종가×거래량으로 계산합니다. 52주 신고가는 분할 조정 일봉, 역대 신고가는 후보 종목의 분할 조정 전체 월봉으로 추가 판정합니다.
+
+```powershell
+python .\scripts\backfill_yahoo_calendars.py --market japan --start 2026-09-01 --end 2026-09-21
+python .\scripts\backfill_yahoo_calendars.py --market china --start 2026-09-01 --end 2026-09-21
+python .\scripts\backfill_yahoo_calendars.py --market europe --start 2026-09-01 --end 2026-09-21
+python .\scripts\generate_new_high_data.py
+python .\scripts\generate_turnover_data.py
+```
+
+도구는 시장별 장 마감 전 날짜와 휴장일을 게시하지 않으며 기존 원본을 기본적으로 보존합니다. Yahoo 회사명과 TradingView 회사명을 대조해 유럽의 동일 티커 오매핑을 차단하고, 거래가 없었던 종목은 별도로 제외합니다. 활성·매핑 가능 종목 및 거래소별 수집률이 기준보다 낮으면 아무 파일도 저장하지 않습니다. 현재 종목군에서 사라진 과거 상장 종목은 복원 범위에 포함되지 않는다는 한계가 원본 메타데이터에 기록됩니다. 다운로드 캐시는 `data/tmp_calendar_history`에 저장되며 Git에서는 제외됩니다.
+
 자동 자료의 업종·세부 업종은 자료원 분류를 사용합니다. 가격 데이터만으로 상승 원인을 추측하지 않고 업종 정보를 기본 설명으로 표시하며, 검증한 뉴스나 실제 상승 배경은 원본 자료에 보완할 수 있습니다. `data/new-highs/refresh-status.json`은 시장별 대상일·성공일·재시도 시각을 기록하며, 화면에는 최근 게시 거래일과 갱신 상태를 표시합니다.
 
 GitHub 워크플로는 신고가 원본과 재시도 상태를 먼저 저장한 뒤 시세 수집·빌드를 진행합니다. 저장 실패 시 게시를 중단하고 다음 실행에서 재시도합니다. 외부 예약 실행이나 자료원의 지연이 있어 정확한 시각의 게시를 보장하지는 않습니다. 브라우저의 1분 확인은 새 일별 자료를 화면에 반영하기 위한 동작입니다.

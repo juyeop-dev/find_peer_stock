@@ -1,0 +1,413 @@
+{
+  "schema_version": 1,
+  "market": "china",
+  "date": "2026-09-08",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "600127.SS",
+      "name": "JinJian Cereals Industry Co Ltd Class A",
+      "exchange": "SSE",
+      "category": "Consumer Non-Durables",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Non-Durables · Food: Specialty/Candy",
+      "description": "JinJian Cereals Industry Co Ltd Class A · Food: Specialty/Candy",
+      "change_pct": 9.3126404563878,
+      "session_open": 14.069999694824219,
+      "session_close": 14.789999961853027,
+      "currency": "CNY",
+      "source_symbol": "SSE:600127",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/600127.SS/history/",
+        "date": "2026-09-08",
+        "daily_high": 14.880000114440918,
+        "prior_all_time_or_current_month_high": 16.3799991607666,
+        "passes_close_filter": true,
+        "yahoo_symbol": "600127.SS"
+      }
+    },
+    {
+      "ticker": "600354.SS",
+      "name": "Gansu Dunhuang Seed Group Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Process Industries",
+      "high_type": "52_week",
+      "reason": "업종: Process Industries · Agricultural Commodities/Milling",
+      "description": "Gansu Dunhuang Seed Group Co., Ltd. Class A · Agricultural Commodities/Milling",
+      "change_pct": 9.968518739600762,
+      "session_open": 10.399999618530273,
+      "session_close": 10.479999542236328,
+      "currency": "CNY",
+      "source_symbol": "SSE:600354",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/600354.SS/history/",
+        "date": "2026-09-08",
+        "daily_high": 10.479999542236328,
+        "prior_all_time_or_current_month_high": 16.799999237060547,
+        "passes_close_filter": true,
+        "yahoo_symbol": "600354.SS"
+      }
+    },
+    {
+      "ticker": "600371.SS",
+      "name": "Wanxiang Doneed Co. Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Process Industries",
+      "high_type": "52_week",
+      "reason": "업종: Process Industries · Agricultural Commodities/Milling",
+      "description": "Wanxiang Doneed Co. Ltd. Class A · Agricultural Commodities/Milling",
+      "change_pct": 5.043133671348765,
+      "session_open": 15.369999885559082,
+      "session_close": 15.829999923706055,
+      "currency": "CNY",
+      "source_symbol": "SSE:600371",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/600371.SS/history/",
+        "date": "2026-09-08",
+        "daily_high": 16.579999923706055,
+        "prior_all_time_or_current_month_high": 20.469999313354492,
+        "passes_close_filter": true,
+        "yahoo_symbol": "600371.SS"
+      }
+    },
+    {
+      "ticker": "600479.SS",
+      "name": "Zhuzhou Qianjin Pharmaceutical Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Pharmaceuticals: Major",
+      "description": "Zhuzhou Qianjin Pharmaceutical Co., Ltd. Class A · Pharmaceuticals: Major",
+      "change_pct": 6.854262528655819,
+      "session_open": 13.949999809265137,
+      "session_close": 14.8100004196167,
+      "currency": "CNY",
+      "source_symbol": "SSE:600479",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/600479.SS/history/",
+        "date": "2026-09-08",
+        "daily_high": 15.25,
+        "prior_all_time_or_current_month_high": 22.02777703603109,
+        "passes_close_filter": true,
+        "yahoo_symbol": "600479.SS"
+      }
+    },
+    {
+      "ticker": "601086.SS",
+      "name": "Gansu Guofang Industry & Trade (Group) Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Distribution Services",
+      "high_type": "52_week",
+      "reason": "업종: Distribution Services · Wholesale Distributors",
+      "description": "Gansu Guofang Industry & Trade (Group) Co., Ltd. Class A · Wholesale Distributors",
+      "change_pct": 7.399423328490506,
+      "session_open": 14.020000457763672,
+      "session_close": 14.949999809265137,
+      "currency": "CNY",
+      "source_symbol": "SSE:601086",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/601086.SS/history/",
+        "date": "2026-09-08",
+        "daily_high": 14.979999542236328,
+        "prior_all_time_or_current_month_high": 15.770000457763672,
+        "passes_close_filter": true,
+        "yahoo_symbol": "601086.SS"
+      }
+    },
+    {
+      "ticker": "603323.SS",
+      "name": "Jiangsu Suzhou Rural Commercial Bank Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "업종: Finance · Regional Banks",
+      "description": "Jiangsu Suzhou Rural Commercial Bank Co., Ltd. Class A · Regional Banks",
+      "change_pct": 2.2321407189022535,
+      "session_open": 4.5,
+      "session_close": 4.579999923706055,
+      "currency": "CNY",
+      "source_symbol": "SSE:603323",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/603323.SS/history/",
+        "date": "2026-09-08",
+        "daily_high": 4.590000152587891,
+        "prior_all_time_or_current_month_high": 12.576477944985266,
+        "passes_close_filter": true,
+        "yahoo_symbol": "603323.SS"
+      }
+    },
+    {
+      "ticker": "603679.SS",
+      "name": "Sichuan Huati Lighting Technology Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Electrical Products",
+      "description": "Sichuan Huati Lighting Technology Co., Ltd. Class A · Electrical Products",
+      "change_pct": 10.012617227313747,
+      "session_open": 24.719999313354492,
+      "session_close": 26.149999618530273,
+      "currency": "CNY",
+      "source_symbol": "SSE:603679",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/603679.SS/history/",
+        "date": "2026-09-08",
+        "daily_high": 26.149999618530273,
+        "prior_all_time_or_current_month_high": 33.38999938964844,
+        "passes_close_filter": true,
+        "yahoo_symbol": "603679.SS"
+      }
+    },
+    {
+      "ticker": "603991.SS",
+      "name": "Shenzhen Leading Semiconductor Industry Co Ltd Class A",
+      "exchange": "SSE",
+      "category": "Process Industries",
+      "high_type": "all_time",
+      "reason": "업종: Process Industries · Industrial Specialties",
+      "description": "Shenzhen Leading Semiconductor Industry Co Ltd Class A · Industrial Specialties",
+      "change_pct": 6.01099278316537,
+      "session_open": 167.17999267578125,
+      "session_close": 177.4199981689453,
+      "currency": "CNY",
+      "source_symbol": "SSE:603991",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/603991.SS/history/",
+        "date": "2026-09-08",
+        "daily_high": 182.3699951171875,
+        "prior_all_time_or_current_month_high": 182.3699951171875,
+        "passes_close_filter": true,
+        "yahoo_symbol": "603991.SS"
+      }
+    },
+    {
+      "ticker": "605577.SS",
+      "name": "Heilongjiang Publishing & Media Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Consumer Services",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Services · Publishing: Books/Magazines",
+      "description": "Heilongjiang Publishing & Media Co., Ltd. Class A · Publishing: Books/Magazines",
+      "change_pct": 9.117471714165703,
+      "session_open": 18.18000030517578,
+      "session_close": 18.670000076293945,
+      "currency": "CNY",
+      "source_symbol": "SSE:605577",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/605577.SS/history/",
+        "date": "2026-09-08",
+        "daily_high": 18.81999969482422,
+        "prior_all_time_or_current_month_high": 32.689998626708984,
+        "passes_close_filter": true,
+        "yahoo_symbol": "605577.SS"
+      }
+    },
+    {
+      "ticker": "900934.SS",
+      "name": "Shanghai Jin Jiang International Hotels Co., Ltd. Class B",
+      "exchange": "SSE",
+      "category": "Consumer Services",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Services · Hotels/Resorts/Cruise lines",
+      "description": "Shanghai Jin Jiang International Hotels Co., Ltd. Class B · Hotels/Resorts/Cruise lines",
+      "change_pct": 0.9204430447258938,
+      "session_open": 1.5219999551773071,
+      "session_close": 1.534999966621399,
+      "currency": "USD",
+      "source_symbol": "SSE:900934",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/900934.SS/history/",
+        "date": "2026-09-08",
+        "daily_high": 1.534999966621399,
+        "prior_all_time_or_current_month_high": 4.197999954223633,
+        "passes_close_filter": true,
+        "yahoo_symbol": "900934.SS"
+      }
+    },
+    {
+      "ticker": "000428.SZ",
+      "name": "Huatian Hotel Group Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Consumer Services",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Services · Hotels/Resorts/Cruise lines",
+      "description": "Huatian Hotel Group Co., Ltd. Class A · Hotels/Resorts/Cruise lines",
+      "change_pct": 2.7131850283477865,
+      "session_open": 5.010000228881836,
+      "session_close": 5.300000190734863,
+      "currency": "CNY",
+      "source_symbol": "SZSE:000428",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/000428.SZ/history/",
+        "date": "2026-09-08",
+        "daily_high": 5.46999979019165,
+        "prior_all_time_or_current_month_high": 18.360000610351562,
+        "passes_close_filter": true,
+        "yahoo_symbol": "000428.SZ"
+      }
+    },
+    {
+      "ticker": "002872.SZ",
+      "name": "Tiansheng Pharmaceutical Group Co. Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Pharmaceuticals: Major",
+      "description": "Tiansheng Pharmaceutical Group Co. Ltd. Class A · Pharmaceuticals: Major",
+      "change_pct": 2.6981505713482345,
+      "session_open": 5.940000057220459,
+      "session_close": 6.090000152587891,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002872",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002872.SZ/history/",
+        "date": "2026-09-08",
+        "daily_high": 6.170000076293945,
+        "prior_all_time_or_current_month_high": 23.453333536783852,
+        "passes_close_filter": true,
+        "yahoo_symbol": "002872.SZ"
+      }
+    },
+    {
+      "ticker": "201872.SZ",
+      "name": "China Merchants Port Group Co., Ltd. Class B",
+      "exchange": "SZSE",
+      "category": "Transportation",
+      "high_type": "52_week",
+      "reason": "업종: Transportation · Other Transportation",
+      "description": "China Merchants Port Group Co., Ltd. Class B · Other Transportation",
+      "change_pct": 0.44518601426213333,
+      "session_open": 17.959999084472656,
+      "session_close": 18.049999237060547,
+      "currency": "HKD",
+      "source_symbol": "SZSE:201872",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/201872.SZ/history/",
+        "date": "2026-09-08",
+        "daily_high": 18.079999923706055,
+        "prior_all_time_or_current_month_high": 21.110000610351562,
+        "passes_close_filter": true,
+        "yahoo_symbol": "201872.SZ"
+      }
+    },
+    {
+      "ticker": "300227.SZ",
+      "name": "Shenzhen Sunshine Laser & Electronics Technology Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Technology Services",
+      "high_type": "52_week",
+      "reason": "업종: Technology Services · Packaged Software",
+      "description": "Shenzhen Sunshine Laser & Electronics Technology Co., Ltd. Class A · Packaged Software",
+      "change_pct": 2.800295674183806,
+      "session_open": 13.569999694824219,
+      "session_close": 13.949999809265137,
+      "currency": "CNY",
+      "source_symbol": "SZSE:300227",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/300227.SZ/history/",
+        "date": "2026-09-08",
+        "daily_high": 14.119999885559082,
+        "prior_all_time_or_current_month_high": 15.819999694824219,
+        "passes_close_filter": true,
+        "yahoo_symbol": "300227.SZ"
+      }
+    },
+    {
+      "ticker": "301108.SZ",
+      "name": "Tongling Jieya Biologic Technology Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Consumer Non-Durables",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Non-Durables · Household/Personal Care",
+      "description": "Tongling Jieya Biologic Technology Co., Ltd. Class A · Household/Personal Care",
+      "change_pct": 1.8689331153030286,
+      "session_open": 41.13999938964844,
+      "session_close": 41.970001220703125,
+      "currency": "CNY",
+      "source_symbol": "SZSE:301108",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/301108.SZ/history/",
+        "date": "2026-09-08",
+        "daily_high": 42.0,
+        "prior_all_time_or_current_month_high": 69.7000013078962,
+        "passes_close_filter": true,
+        "yahoo_symbol": "301108.SZ"
+      }
+    },
+    {
+      "ticker": "302132.SZ",
+      "name": "AVIC Chengdu Aircraft Company Limited Class A",
+      "exchange": "SZSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Electronic Equipment/Instruments",
+      "description": "AVIC Chengdu Aircraft Company Limited Class A · Electronic Equipment/Instruments",
+      "change_pct": 0.0,
+      "session_open": 72.18000030517578,
+      "session_close": 72.18000030517578,
+      "currency": "CNY",
+      "source_symbol": "SZSE:302132",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/302132.SZ/history/",
+        "date": "2026-09-08",
+        "daily_high": 72.18000030517578,
+        "prior_all_time_or_current_month_high": 96.9000015258789,
+        "passes_close_filter": true,
+        "yahoo_symbol": "302132.SZ"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-09-21T15:19:53.786071+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 5311,
+    "history_symbols": 5311,
+    "failed_symbols": 0,
+    "coverage_ratio": 1.0,
+    "coverage_by_exchange": {
+      "SSE": {
+        "covered": 2361,
+        "total": 2361
+      },
+      "SZSE": {
+        "covered": 2950,
+        "total": 2950
+      }
+    },
+    "session_symbols": 5306,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-09-21T15:19:53.786071+00:00"
+}
