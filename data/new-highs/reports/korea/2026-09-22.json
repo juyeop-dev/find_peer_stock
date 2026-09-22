@@ -1,0 +1,189 @@
+{
+  "schema_version": 1,
+  "market": "korea",
+  "date": "2026-09-22",
+  "summary": "장 마감 후 TradingView 주식 스냅샷 기준. 당일 장중 고가가 52주·전체기간 고가에 도달하고, 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다. 전체기간 신고가를 우선 표시하며 신고가 배경은 별도 확인 전입니다.",
+  "sources": [
+    {
+      "label": "TradingView stock screener",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    },
+    {
+      "label": "Naver Finance 종목명·상장 시장·일봉 검증",
+      "url": "https://stock.naver.com/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "005160.KQ",
+      "name": "동국산업",
+      "exchange": "KOSDAQ",
+      "category": "Non-Energy Minerals",
+      "high_type": "52_week",
+      "reason": "업종: Non-Energy Minerals · Steel",
+      "description": "동국산업 · Steel",
+      "change_pct": 13.580246913580247,
+      "session_open": 3270,
+      "session_close": 3675,
+      "source_symbol": "KRX:005160",
+      "currency": "KRW",
+      "name_original": "Dongkuk Industries Co., Ltd.",
+      "name_source_url": "https://m.stock.naver.com/api/stock/005160/basic",
+      "high_verification": {
+        "source": "Naver Finance adjusted daily history",
+        "source_url": "https://api.finance.naver.com/siseJson.naver?symbol=005160&requestType=1&startTime=20250923&endTime=20260922&timeframe=day",
+        "date": "2026-09-22",
+        "open": 3270,
+        "daily_high": 3980,
+        "low": 3165,
+        "close": 3675,
+        "previous_close": 3275,
+        "volume": 11791081,
+        "prior_52_week_high": 3960,
+        "observed_bars": 243,
+        "first_observed_date": "2025-09-23",
+        "confirmed": true,
+        "matches_prior_high": false,
+        "bearish_candle": false,
+        "down_close": false,
+        "passes_close_filter": true
+      }
+    },
+    {
+      "ticker": "119850.KQ",
+      "name": "지엔씨에너지",
+      "exchange": "KOSDAQ",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Electrical Products",
+      "description": "지엔씨에너지 · Electrical Products",
+      "change_pct": 4.97131931166348,
+      "session_open": 54000,
+      "session_close": 54600,
+      "source_symbol": "KRX:119850",
+      "currency": "KRW",
+      "name_original": "GnCenergy Co., Ltd.",
+      "name_source_url": "https://m.stock.naver.com/api/stock/119850/basic",
+      "high_verification": {
+        "source": "Naver Finance adjusted daily history",
+        "source_url": "https://api.finance.naver.com/siseJson.naver?symbol=119850&requestType=1&startTime=20250923&endTime=20260922&timeframe=day",
+        "date": "2026-09-22",
+        "open": 54000,
+        "daily_high": 58000,
+        "low": 53500,
+        "close": 54600,
+        "previous_close": 53000,
+        "volume": 757826,
+        "prior_52_week_high": 58000,
+        "observed_bars": 243,
+        "first_observed_date": "2025-09-23",
+        "confirmed": true,
+        "matches_prior_high": true,
+        "bearish_candle": false,
+        "down_close": false,
+        "passes_close_filter": true
+      }
+    },
+    {
+      "ticker": "003490.KS",
+      "name": "대한항공",
+      "exchange": "KOSPI",
+      "category": "Transportation",
+      "high_type": "52_week",
+      "reason": "업종: Transportation · Airlines",
+      "description": "대한항공 · Airlines",
+      "change_pct": 8.838821490467938,
+      "session_open": 29250,
+      "session_close": 31200,
+      "source_symbol": "KRX:003490",
+      "currency": "KRW",
+      "name_original": "Korean Air Lines Co., Ltd.",
+      "name_source_url": "https://m.stock.naver.com/api/stock/003490/basic",
+      "high_verification": {
+        "source": "Naver Finance adjusted daily history",
+        "source_url": "https://api.finance.naver.com/siseJson.naver?symbol=003490&requestType=1&startTime=20250923&endTime=20260922&timeframe=day",
+        "date": "2026-09-22",
+        "open": 29250,
+        "daily_high": 31550,
+        "low": 29150,
+        "close": 31200,
+        "previous_close": 29050,
+        "volume": 6860104,
+        "prior_52_week_high": 31200,
+        "observed_bars": 243,
+        "first_observed_date": "2025-09-23",
+        "confirmed": true,
+        "matches_prior_high": false,
+        "bearish_candle": false,
+        "down_close": false,
+        "passes_close_filter": true
+      }
+    },
+    {
+      "ticker": "010955.KS",
+      "name": "S-Oil우",
+      "exchange": "KOSPI",
+      "category": "Energy Minerals",
+      "high_type": "52_week",
+      "reason": "업종: Energy Minerals · Oil Refining/Marketing",
+      "description": "S-Oil우 · Oil Refining/Marketing",
+      "change_pct": 4.491413474240423,
+      "session_open": 75700,
+      "session_close": 77000,
+      "source_symbol": "KRX:010955",
+      "currency": "KRW",
+      "name_original": "S-Oil Corp Pfd Shs Non-Voting",
+      "name_source_url": "https://m.stock.naver.com/api/stock/010955/basic",
+      "high_verification": {
+        "source": "Naver Finance adjusted daily history",
+        "source_url": "https://api.finance.naver.com/siseJson.naver?symbol=010955&requestType=1&startTime=20250923&endTime=20260922&timeframe=day",
+        "date": "2026-09-22",
+        "open": 75700,
+        "daily_high": 81000,
+        "low": 74600,
+        "close": 77000,
+        "previous_close": 74900,
+        "volume": 21222,
+        "prior_52_week_high": 79900,
+        "observed_bars": 243,
+        "first_observed_date": "2025-09-23",
+        "confirmed": true,
+        "matches_prior_high": false,
+        "bearish_candle": false,
+        "down_close": false,
+        "passes_close_filter": true
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "TradingView public scanner",
+    "scanner": "korea",
+    "fetched_at": "2026-09-22T07:31:35.706273+00:00",
+    "universe": "TradingView-listed stock instruments, including common and preferred shares; ETFs excluded",
+    "definition": "daily high >= period high; close >= open; close >= previous close when one exists; all-time takes precedence; ties included",
+    "scanner_exchanges": [
+      "KRX"
+    ],
+    "latest_session_by_exchange": {
+      "KRX": "2026-09-22"
+    },
+    "current_session_reference_symbols": {
+      "KRX": "KRX:000020",
+      "KOSPI": "KRX:000020",
+      "KOSDAQ": "KRX:0001A0"
+    },
+    "scanned_symbols": 2744,
+    "current_session_symbols": 2717,
+    "excluded_symbols": {
+      "other_session": 27,
+      "bearish_or_down_close": 5,
+      "korean_daily_history_disagrees": 1
+    },
+    "pagination_complete": true
+  },
+  "collected_at": "2026-09-22T07:31:19.222946+00:00"
+}

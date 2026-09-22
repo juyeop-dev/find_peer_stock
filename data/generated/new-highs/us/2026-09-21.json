@@ -2,14 +2,10 @@
   "schema_version": 1,
   "market": "us",
   "date": "2026-09-21",
-  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "summary": "장 마감 후 TradingView 주식 스냅샷 기준. 당일 장중 고가가 52주·전체기간 고가에 도달하고, 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다. 전체기간 신고가를 우선 표시하며 신고가 배경은 별도 확인 전입니다.",
   "sources": [
     {
-      "label": "Yahoo Finance historical data",
-      "url": "https://finance.yahoo.com/"
-    },
-    {
-      "label": "TradingView stock universe",
+      "label": "TradingView stock screener",
       "url": "https://www.tradingview.com/screener/"
     },
     {
@@ -19,29 +15,6 @@
   ],
   "entries": [
     {
-      "ticker": "AACO",
-      "name": "Abony Acquisition Corp. I Class A",
-      "exchange": "NASDAQ",
-      "category": "Finance",
-      "high_type": "all_time",
-      "reason": "업종: Finance · Financial Conglomerates",
-      "description": "Abony Acquisition Corp. I Class A · Financial Conglomerates",
-      "change_pct": 0.0,
-      "session_open": 9.989999771118164,
-      "session_close": 9.989999771118164,
-      "currency": "USD",
-      "source_symbol": "NASDAQ:AACO",
-      "high_verification": {
-        "source": "Yahoo Finance split-adjusted daily/monthly history",
-        "source_url": "https://finance.yahoo.com/quote/AACO/history/",
-        "date": "2026-09-21",
-        "daily_high": 9.989999771118164,
-        "prior_all_time_or_current_month_high": 9.989999771118164,
-        "passes_close_filter": true,
-        "yahoo_symbol": "AACO"
-      }
-    },
-    {
       "ticker": "AACP",
       "name": "Apogee Acquisition Corp Class A",
       "exchange": "NASDAQ",
@@ -49,20 +22,11 @@
       "high_type": "all_time",
       "reason": "업종: Finance · Financial Conglomerates",
       "description": "Apogee Acquisition Corp Class A · Financial Conglomerates",
-      "change_pct": 0.09930714185597544,
-      "session_open": 10.069999694824219,
-      "session_close": 10.079999923706055,
-      "currency": "USD",
+      "change_pct": 0.09930486593842885,
+      "session_open": 10.07,
+      "session_close": 10.08,
       "source_symbol": "NASDAQ:AACP",
-      "high_verification": {
-        "source": "Yahoo Finance split-adjusted daily/monthly history",
-        "source_url": "https://finance.yahoo.com/quote/AACP/history/",
-        "date": "2026-09-21",
-        "daily_high": 10.079999923706055,
-        "prior_all_time_or_current_month_high": 10.079999923706055,
-        "passes_close_filter": true,
-        "yahoo_symbol": "AACP"
-      }
+      "currency": "USD"
     },
     {
       "ticker": "ADAMM",
@@ -72,20 +36,11 @@
       "high_type": "52_week",
       "reason": "업종: Finance · Real Estate Investment Trusts",
       "description": "Adamas Trust, Inc. Cum Conv Red Pfd Registered Shs Series E · Real Estate Investment Trusts",
-      "change_pct": 0.31164753980632565,
-      "session_open": 25.719999313354492,
+      "change_pct": 0.31164783794311757,
+      "session_open": 25.72,
       "session_close": 25.75,
-      "currency": "USD",
       "source_symbol": "NASDAQ:ADAMM",
-      "high_verification": {
-        "source": "Yahoo Finance split-adjusted daily/monthly history",
-        "source_url": "https://finance.yahoo.com/quote/ADAMM/history/",
-        "date": "2026-09-21",
-        "daily_high": 25.799999237060547,
-        "prior_all_time_or_current_month_high": 26.299999237060547,
-        "passes_close_filter": true,
-        "yahoo_symbol": "ADAMM"
-      }
+      "currency": "USD"
     },
     {
       "ticker": "ALDF",
@@ -95,20 +50,11 @@
       "high_type": "all_time",
       "reason": "업종: Finance · Financial Conglomerates",
       "description": "Aldel Financial II, Inc. Class A · Financial Conglomerates",
-      "change_pct": 0.0,
-      "session_open": 10.819999694824219,
-      "session_close": 10.819999694824219,
-      "currency": "USD",
+      "change_pct": 0,
+      "session_open": 10.82,
+      "session_close": 10.82,
       "source_symbol": "NASDAQ:ALDF",
-      "high_verification": {
-        "source": "Yahoo Finance split-adjusted daily/monthly history",
-        "source_url": "https://finance.yahoo.com/quote/ALDF/history/",
-        "date": "2026-09-21",
-        "daily_high": 10.819999694824219,
-        "prior_all_time_or_current_month_high": 10.819999694824219,
-        "passes_close_filter": true,
-        "yahoo_symbol": "ALDF"
-      }
+      "currency": "USD"
     },
     {
       "ticker": "AMD",
@@ -118,20 +64,11 @@
       "high_type": "all_time",
       "reason": "업종: Electronic Technology · Semiconductors",
       "description": "Advanced Micro Devices, Inc. · Semiconductors",
-      "change_pct": 9.949628716069213,
-      "session_open": 583.8800048828125,
-      "session_close": 615.52001953125,
-      "currency": "USD",
+      "change_pct": 9.949626665713966,
+      "session_open": 583.88,
+      "session_close": 615.52,
       "source_symbol": "NASDAQ:AMD",
-      "high_verification": {
-        "source": "Yahoo Finance split-adjusted daily/monthly history",
-        "source_url": "https://finance.yahoo.com/quote/AMD/history/",
-        "date": "2026-09-21",
-        "daily_high": 616.6900024414062,
-        "prior_all_time_or_current_month_high": 616.6900024414062,
-        "passes_close_filter": true,
-        "yahoo_symbol": "AMD"
-      }
+      "currency": "USD"
     },
     {
       "ticker": "AMRX",
@@ -141,20 +78,11 @@
       "high_type": "52_week",
       "reason": "업종: Health Technology · Pharmaceuticals: Major",
       "description": "Amneal Pharmaceuticals, Inc. Class A · Pharmaceuticals: Major",
-      "change_pct": 7.749870838544304,
-      "session_open": 18.959999084472656,
-      "session_close": 20.15999984741211,
-      "currency": "USD",
+      "change_pct": 7.749866381614106,
+      "session_open": 18.96,
+      "session_close": 20.16,
       "source_symbol": "NASDAQ:AMRX",
-      "high_verification": {
-        "source": "Yahoo Finance split-adjusted daily/monthly history",
-        "source_url": "https://finance.yahoo.com/quote/AMRX/history/",
-        "date": "2026-09-21",
-        "daily_high": 21.174999237060547,
-        "prior_all_time_or_current_month_high": 24.479999542236328,
-        "passes_close_filter": true,
-        "yahoo_symbol": "AMRX"
-      }
+      "currency": "USD"
     },
     {
       "ticker": "AOUT",
@@ -164,66 +92,11 @@
       "high_type": "52_week",
       "reason": "업종: Consumer Durables · Recreational Products",
       "description": "American Outdoor Brands, Inc. · Recreational Products",
-      "change_pct": 2.496953992125972,
-      "session_open": 16.829999923706055,
-      "session_close": 16.829999923706055,
-      "currency": "USD",
+      "change_pct": 2.496954933008505,
+      "session_open": 16.83,
+      "session_close": 16.83,
       "source_symbol": "NASDAQ:AOUT",
-      "high_verification": {
-        "source": "Yahoo Finance split-adjusted daily/monthly history",
-        "source_url": "https://finance.yahoo.com/quote/AOUT/history/",
-        "date": "2026-09-21",
-        "daily_high": 16.989999771118164,
-        "prior_all_time_or_current_month_high": 36.619998931884766,
-        "passes_close_filter": true,
-        "yahoo_symbol": "AOUT"
-      }
-    },
-    {
-      "ticker": "APAC",
-      "name": "StoneBridge Acquisition II Corporation Class A",
-      "exchange": "NASDAQ",
-      "category": "Finance",
-      "high_type": "all_time",
-      "reason": "업종: Finance · Financial Conglomerates",
-      "description": "StoneBridge Acquisition II Corporation Class A · Financial Conglomerates",
-      "change_pct": 0.0,
-      "session_open": 10.260000228881836,
-      "session_close": 10.260000228881836,
-      "currency": "USD",
-      "source_symbol": "NASDAQ:APAC",
-      "high_verification": {
-        "source": "Yahoo Finance split-adjusted daily/monthly history",
-        "source_url": "https://finance.yahoo.com/quote/APAC/history/",
-        "date": "2026-09-21",
-        "daily_high": 10.260000228881836,
-        "prior_all_time_or_current_month_high": 10.260000228881836,
-        "passes_close_filter": true,
-        "yahoo_symbol": "APAC"
-      }
-    },
-    {
-      "ticker": "ARTC",
-      "name": "Art Technology Acquisition Corp. Class A",
-      "exchange": "NASDAQ",
-      "category": "Finance",
-      "high_type": "all_time",
-      "reason": "업종: Finance · Financial Conglomerates",
-      "description": "Art Technology Acquisition Corp. Class A · Financial Conglomerates",
-      "change_pct": 0.3009000217422342,
-      "session_open": 9.970000267028809,
-      "session_close": 10.0,
-      "currency": "USD",
-      "source_symbol": "NASDAQ:ARTC",
-      "high_verification": {
-        "source": "Yahoo Finance split-adjusted daily/monthly history",
-        "source_url": "https://finance.yahoo.com/quote/ARTC/history/",
-        "date": "2026-09-21",
-        "daily_high": 10.0,
-        "prior_all_time_or_current_month_high": 10.0,
-        "passes_close_filter": true,
-        "yahoo_symbol": "ARTC"
-      }
+      "currency": "USD"
     },
     {
       "ticker": "BIXI",
@@ -233,20 +106,11 @@
       "high_type": "all_time",
       "reason": "업종: Finance · Financial Conglomerates",
       "description": "Bitcoin Infrastructure Acquisition Corp Ltd. Class A · Financial Conglomerates",
-      "change_pct": 2.3785903616325488,
-      "session_open": 10.09000015258789,
-      "session_close": 10.329999923706055,
-      "currency": "USD",
+      "change_pct": 2.3785926660059484,
+      "session_open": 10.0901,
+      "session_close": 10.33,
       "source_symbol": "NASDAQ:BIXI",
-      "high_verification": {
-        "source": "Yahoo Finance split-adjusted daily/monthly history",
-        "source_url": "https://finance.yahoo.com/quote/BIXI/history/",
-        "date": "2026-09-21",
-        "daily_high": 10.329999923706055,
-        "prior_all_time_or_current_month_high": 10.329999923706055,
-        "passes_close_filter": true,
-        "yahoo_symbol": "BIXI"
-      }
+      "currency": "USD"
     },
     {
       "ticker": "BLSM",
@@ -256,43 +120,11 @@
       "high_type": "all_time",
       "reason": "업종: Health Technology · Pharmaceuticals: Major",
       "description": "BlossomHill Therapeutics, Inc. · Pharmaceuticals: Major",
-      "change_pct": 4.118102079906638,
-      "session_open": 26.09000015258789,
-      "session_close": 26.799999237060547,
-      "currency": "USD",
+      "change_pct": 4.118104118104127,
+      "session_open": 26.09,
+      "session_close": 26.8,
       "source_symbol": "NASDAQ:BLSM",
-      "high_verification": {
-        "source": "Yahoo Finance split-adjusted daily/monthly history",
-        "source_url": "https://finance.yahoo.com/quote/BLSM/history/",
-        "date": "2026-09-21",
-        "daily_high": 27.989999771118164,
-        "prior_all_time_or_current_month_high": 27.989999771118164,
-        "passes_close_filter": true,
-        "yahoo_symbol": "BLSM"
-      }
-    },
-    {
-      "ticker": "CCAQ",
-      "name": "Collective Acquisition Corp. Class A",
-      "exchange": "NASDAQ",
-      "category": "Finance",
-      "high_type": "all_time",
-      "reason": "업종: Finance · Financial Conglomerates",
-      "description": "Collective Acquisition Corp. Class A · Financial Conglomerates",
-      "change_pct": 0.0,
-      "session_open": 10.699999809265137,
-      "session_close": 10.699999809265137,
-      "currency": "USD",
-      "source_symbol": "NASDAQ:CCAQ",
-      "high_verification": {
-        "source": "Yahoo Finance split-adjusted daily/monthly history",
-        "source_url": "https://finance.yahoo.com/quote/CCAQ/history/",
-        "date": "2026-09-21",
-        "daily_high": 10.699999809265137,
-        "prior_all_time_or_current_month_high": 10.699999809265137,
-        "passes_close_filter": true,
-        "yahoo_symbol": "CCAQ"
-      }
+      "currency": "USD"
     },
     {
       "ticker": "CRAC",
@@ -302,20 +134,11 @@
       "high_type": "all_time",
       "reason": "업종: Finance · Financial Conglomerates",
       "description": "Crown Reserve Acquisition Corp. I Class A · Financial Conglomerates",
-      "change_pct": 0.09784026366201903,
-      "session_open": 10.229999542236328,
-      "session_close": 10.229999542236328,
-      "currency": "USD",
+      "change_pct": 0.09784735812132864,
+      "session_open": 10.23,
+      "session_close": 10.23,
       "source_symbol": "NASDAQ:CRAC",
-      "high_verification": {
-        "source": "Yahoo Finance split-adjusted daily/monthly history",
-        "source_url": "https://finance.yahoo.com/quote/CRAC/history/",
-        "date": "2026-09-21",
-        "daily_high": 10.229999542236328,
-        "prior_all_time_or_current_month_high": 10.229999542236328,
-        "passes_close_filter": true,
-        "yahoo_symbol": "CRAC"
-      }
+      "currency": "USD"
     },
     {
       "ticker": "CYRX",
@@ -325,20 +148,11 @@
       "high_type": "52_week",
       "reason": "업종: Transportation · Air Freight/Couriers",
       "description": "CryoPort, Inc. · Air Freight/Couriers",
-      "change_pct": 3.525266541318084,
-      "session_open": 17.170000076293945,
-      "session_close": 17.6200008392334,
-      "currency": "USD",
+      "change_pct": 3.5252643948296205,
+      "session_open": 17.17,
+      "session_close": 17.62,
       "source_symbol": "NASDAQ:CYRX",
-      "high_verification": {
-        "source": "Yahoo Finance split-adjusted daily/monthly history",
-        "source_url": "https://finance.yahoo.com/quote/CYRX/history/",
-        "date": "2026-09-21",
-        "daily_high": 17.649999618530273,
-        "prior_all_time_or_current_month_high": 92160.0,
-        "passes_close_filter": true,
-        "yahoo_symbol": "CYRX"
-      }
+      "currency": "USD"
     },
     {
       "ticker": "DBCA",
@@ -348,43 +162,11 @@
       "high_type": "all_time",
       "reason": "업종: Finance · Financial Conglomerates",
       "description": "D. Boral Acquisition I Corp. Class A · Financial Conglomerates",
-      "change_pct": 0.5987970379371932,
-      "session_open": 10.050000190734863,
-      "session_close": 10.079999923706055,
-      "currency": "USD",
+      "change_pct": 0.5988023952095858,
+      "session_open": 10.05,
+      "session_close": 10.08,
       "source_symbol": "NASDAQ:DBCA",
-      "high_verification": {
-        "source": "Yahoo Finance split-adjusted daily/monthly history",
-        "source_url": "https://finance.yahoo.com/quote/DBCA/history/",
-        "date": "2026-09-21",
-        "daily_high": 10.100000381469727,
-        "prior_all_time_or_current_month_high": 10.100000381469727,
-        "passes_close_filter": true,
-        "yahoo_symbol": "DBCA"
-      }
-    },
-    {
-      "ticker": "DRDB",
-      "name": "Roman DBDR Acquisition Corp. II",
-      "exchange": "NASDAQ",
-      "category": "Finance",
-      "high_type": "all_time",
-      "reason": "업종: Finance · Financial Conglomerates",
-      "description": "Roman DBDR Acquisition Corp. II · Financial Conglomerates",
-      "change_pct": 0.0,
-      "session_open": 10.680000305175781,
-      "session_close": 10.680000305175781,
-      "currency": "USD",
-      "source_symbol": "NASDAQ:DRDB",
-      "high_verification": {
-        "source": "Yahoo Finance split-adjusted daily/monthly history",
-        "source_url": "https://finance.yahoo.com/quote/DRDB/history/",
-        "date": "2026-09-21",
-        "daily_high": 10.680000305175781,
-        "prior_all_time_or_current_month_high": 10.680000305175781,
-        "passes_close_filter": true,
-        "yahoo_symbol": "DRDB"
-      }
+      "currency": "USD"
     },
     {
       "ticker": "ECOR",
@@ -394,20 +176,11 @@
       "high_type": "52_week",
       "reason": "업종: Health Technology · Medical Specialties",
       "description": "electroCore, Inc. · Medical Specialties",
-      "change_pct": 2.6969141451453016,
-      "session_open": 11.739999771118164,
-      "session_close": 11.994999885559082,
-      "currency": "USD",
+      "change_pct": 2.696917808219174,
+      "session_open": 11.74,
+      "session_close": 11.995,
       "source_symbol": "NASDAQ:ECOR",
-      "high_verification": {
-        "source": "Yahoo Finance split-adjusted daily/monthly history",
-        "source_url": "https://finance.yahoo.com/quote/ECOR/history/",
-        "date": "2026-09-21",
-        "daily_high": 12.119999885559082,
-        "prior_all_time_or_current_month_high": 4556.25,
-        "passes_close_filter": true,
-        "yahoo_symbol": "ECOR"
-      }
+      "currency": "USD"
     },
     {
       "ticker": "EMIS",
@@ -417,20 +190,11 @@
       "high_type": "all_time",
       "reason": "업종: Finance · Finance/Rental/Leasing",
       "description": "Emmis Acquisition Corp. Class A · Finance/Rental/Leasing",
-      "change_pct": 0.0,
-      "session_open": 10.260000228881836,
-      "session_close": 10.260000228881836,
-      "currency": "USD",
+      "change_pct": 0,
+      "session_open": 10.26,
+      "session_close": 10.26,
       "source_symbol": "NASDAQ:EMIS",
-      "high_verification": {
-        "source": "Yahoo Finance split-adjusted daily/monthly history",
-        "source_url": "https://finance.yahoo.com/quote/EMIS/history/",
-        "date": "2026-09-21",
-        "daily_high": 10.260000228881836,
-        "prior_all_time_or_current_month_high": 10.260000228881836,
-        "passes_close_filter": true,
-        "yahoo_symbol": "EMIS"
-      }
+      "currency": "USD"
     },
     {
       "ticker": "FBLA",
@@ -440,20 +204,11 @@
       "high_type": "all_time",
       "reason": "업종: Finance · Regional Banks",
       "description": "FB Bancorp, Inc. · Regional Banks",
-      "change_pct": 0.9624383176106921,
-      "session_open": 16.15999984741211,
-      "session_close": 16.260000228881836,
-      "currency": "USD",
+      "change_pct": 0.9624340266997896,
+      "session_open": 16.16,
+      "session_close": 16.26,
       "source_symbol": "NASDAQ:FBLA",
-      "high_verification": {
-        "source": "Yahoo Finance split-adjusted daily/monthly history",
-        "source_url": "https://finance.yahoo.com/quote/FBLA/history/",
-        "date": "2026-09-21",
-        "daily_high": 16.329999923706055,
-        "prior_all_time_or_current_month_high": 16.329999923706055,
-        "passes_close_filter": true,
-        "yahoo_symbol": "FBLA"
-      }
+      "currency": "USD"
     },
     {
       "ticker": "FFIV",
@@ -463,20 +218,11 @@
       "high_type": "all_time",
       "reason": "업종: Technology Services · Packaged Software",
       "description": "F5, Inc. · Packaged Software",
-      "change_pct": 4.182581620553116,
-      "session_open": 433.0,
-      "session_close": 450.1000061035156,
-      "currency": "USD",
+      "change_pct": 4.182579913431949,
+      "session_open": 433,
+      "session_close": 450.1,
       "source_symbol": "NASDAQ:FFIV",
-      "high_verification": {
-        "source": "Yahoo Finance split-adjusted daily/monthly history",
-        "source_url": "https://finance.yahoo.com/quote/FFIV/history/",
-        "date": "2026-09-21",
-        "daily_high": 451.0199890136719,
-        "prior_all_time_or_current_month_high": 451.0199890136719,
-        "passes_close_filter": true,
-        "yahoo_symbol": "FFIV"
-      }
+      "currency": "USD"
     },
     {
       "ticker": "FIVN",
@@ -486,66 +232,11 @@
       "high_type": "52_week",
       "reason": "업종: Technology Services · Packaged Software",
       "description": "Five9, Inc. · Packaged Software",
-      "change_pct": 13.982127903140773,
-      "session_open": 33.0,
-      "session_close": 37.0099983215332,
-      "currency": "USD",
+      "change_pct": 13.982137357560823,
+      "session_open": 33,
+      "session_close": 37.01,
       "source_symbol": "NASDAQ:FIVN",
-      "high_verification": {
-        "source": "Yahoo Finance split-adjusted daily/monthly history",
-        "source_url": "https://finance.yahoo.com/quote/FIVN/history/",
-        "date": "2026-09-21",
-        "daily_high": 37.130001068115234,
-        "prior_all_time_or_current_month_high": 211.67999267578125,
-        "passes_close_filter": true,
-        "yahoo_symbol": "FIVN"
-      }
-    },
-    {
-      "ticker": "FMAC",
-      "name": "Future Money Acquisition Corporation",
-      "exchange": "NASDAQ",
-      "category": "Finance",
-      "high_type": "all_time",
-      "reason": "업종: Finance · Financial Conglomerates",
-      "description": "Future Money Acquisition Corporation · Financial Conglomerates",
-      "change_pct": 0.0,
-      "session_open": 10.09000015258789,
-      "session_close": 10.09000015258789,
-      "currency": "USD",
-      "source_symbol": "NASDAQ:FMAC",
-      "high_verification": {
-        "source": "Yahoo Finance split-adjusted daily/monthly history",
-        "source_url": "https://finance.yahoo.com/quote/FMAC/history/",
-        "date": "2026-09-21",
-        "daily_high": 10.09000015258789,
-        "prior_all_time_or_current_month_high": 10.09000015258789,
-        "passes_close_filter": true,
-        "yahoo_symbol": "FMAC"
-      }
-    },
-    {
-      "ticker": "GSRF",
-      "name": "GSR IV Acquisition Corp. Class A",
-      "exchange": "NASDAQ",
-      "category": "Finance",
-      "high_type": "all_time",
-      "reason": "업종: Finance · Financial Conglomerates",
-      "description": "GSR IV Acquisition Corp. Class A · Financial Conglomerates",
-      "change_pct": 0.0,
-      "session_open": 10.239999771118164,
-      "session_close": 10.239999771118164,
-      "currency": "USD",
-      "source_symbol": "NASDAQ:GSRF",
-      "high_verification": {
-        "source": "Yahoo Finance split-adjusted daily/monthly history",
-        "source_url": "https://finance.yahoo.com/quote/GSRF/history/",
-        "date": "2026-09-21",
-        "daily_high": 10.239999771118164,
-        "prior_all_time_or_current_month_high": 10.239999771118164,
-        "passes_close_filter": true,
-        "yahoo_symbol": "GSRF"
-      }
+      "currency": "USD"
     },
     {
       "ticker": "GTERA",
@@ -555,43 +246,11 @@
       "high_type": "all_time",
       "reason": "업종: Finance · Financial Conglomerates",
       "description": "Globa Terra Acquisition Corp. Class A · Financial Conglomerates",
-      "change_pct": 0.09597148568729619,
-      "session_open": 10.430000305175781,
-      "session_close": 10.430000305175781,
-      "currency": "USD",
+      "change_pct": 0.09596928982725324,
+      "session_open": 10.43,
+      "session_close": 10.43,
       "source_symbol": "NASDAQ:GTERA",
-      "high_verification": {
-        "source": "Yahoo Finance split-adjusted daily/monthly history",
-        "source_url": "https://finance.yahoo.com/quote/GTERA/history/",
-        "date": "2026-09-21",
-        "daily_high": 10.430000305175781,
-        "prior_all_time_or_current_month_high": 10.430000305175781,
-        "passes_close_filter": true,
-        "yahoo_symbol": "GTERA"
-      }
-    },
-    {
-      "ticker": "HAVA",
-      "name": "Harvard Ave Acquisition Corporation Class A",
-      "exchange": "NASDAQ",
-      "category": "Finance",
-      "high_type": "all_time",
-      "reason": "업종: Finance · Financial Conglomerates",
-      "description": "Harvard Ave Acquisition Corporation Class A · Financial Conglomerates",
-      "change_pct": 0.0,
-      "session_open": 10.220000267028809,
-      "session_close": 10.220000267028809,
-      "currency": "USD",
-      "source_symbol": "NASDAQ:HAVA",
-      "high_verification": {
-        "source": "Yahoo Finance split-adjusted daily/monthly history",
-        "source_url": "https://finance.yahoo.com/quote/HAVA/history/",
-        "date": "2026-09-21",
-        "daily_high": 10.220000267028809,
-        "prior_all_time_or_current_month_high": 10.220000267028809,
-        "passes_close_filter": true,
-        "yahoo_symbol": "HAVA"
-      }
+      "currency": "USD"
     },
     {
       "ticker": "HHS",
@@ -601,20 +260,11 @@
       "high_type": "52_week",
       "reason": "업종: Commercial Services · Miscellaneous Commercial Services",
       "description": "Harte-Hanks, Inc. · Miscellaneous Commercial Services",
-      "change_pct": 0.6535889318931121,
-      "session_open": 4.579999923706055,
-      "session_close": 4.619999885559082,
-      "currency": "USD",
+      "change_pct": 0.6535947712418355,
+      "session_open": 4.58,
+      "session_close": 4.62,
       "source_symbol": "NASDAQ:HHS",
-      "high_verification": {
-        "source": "Yahoo Finance split-adjusted daily/monthly history",
-        "source_url": "https://finance.yahoo.com/quote/HHS/history/",
-        "date": "2026-09-21",
-        "daily_high": 4.670000076293945,
-        "prior_all_time_or_current_month_high": 3147.0001220703125,
-        "passes_close_filter": true,
-        "yahoo_symbol": "HHS"
-      }
+      "currency": "USD"
     },
     {
       "ticker": "INAC",
@@ -624,20 +274,11 @@
       "high_type": "all_time",
       "reason": "업종: Finance · Financial Conglomerates",
       "description": "Indigo Acquisition Corp · Financial Conglomerates",
-      "change_pct": 0.38647304713768094,
-      "session_open": 10.390000343322754,
-      "session_close": 10.390000343322754,
-      "currency": "USD",
+      "change_pct": 0.38647342995169975,
+      "session_open": 10.39,
+      "session_close": 10.39,
       "source_symbol": "NASDAQ:INAC",
-      "high_verification": {
-        "source": "Yahoo Finance split-adjusted daily/monthly history",
-        "source_url": "https://finance.yahoo.com/quote/INAC/history/",
-        "date": "2026-09-21",
-        "daily_high": 10.390000343322754,
-        "prior_all_time_or_current_month_high": 10.390000343322754,
-        "passes_close_filter": true,
-        "yahoo_symbol": "INAC"
-      }
+      "currency": "USD"
     },
     {
       "ticker": "IOND",
@@ -647,43 +288,11 @@
       "high_type": "all_time",
       "reason": "업종: Technology Services · Data Processing Services",
       "description": "Ionic Digital Inc. Class A · Data Processing Services",
-      "change_pct": 1.3570941171460627,
-      "session_open": 84.12999725341797,
-      "session_close": 85.88999938964844,
-      "currency": "USD",
+      "change_pct": 1.3570922822752014,
+      "session_open": 84.13,
+      "session_close": 85.89,
       "source_symbol": "NASDAQ:IOND",
-      "high_verification": {
-        "source": "Yahoo Finance split-adjusted daily/monthly history",
-        "source_url": "https://finance.yahoo.com/quote/IOND/history/",
-        "date": "2026-09-21",
-        "daily_high": 86.9000015258789,
-        "prior_all_time_or_current_month_high": 86.9000015258789,
-        "passes_close_filter": true,
-        "yahoo_symbol": "IOND"
-      }
-    },
-    {
-      "ticker": "KFII",
-      "name": "K&F Growth Acquisition Corp. II Class A",
-      "exchange": "NASDAQ",
-      "category": "Finance",
-      "high_type": "all_time",
-      "reason": "업종: Finance · Financial Conglomerates",
-      "description": "K&F Growth Acquisition Corp. II Class A · Financial Conglomerates",
-      "change_pct": 0.0,
-      "session_open": 10.670000076293945,
-      "session_close": 10.670000076293945,
-      "currency": "USD",
-      "source_symbol": "NASDAQ:KFII",
-      "high_verification": {
-        "source": "Yahoo Finance split-adjusted daily/monthly history",
-        "source_url": "https://finance.yahoo.com/quote/KFII/history/",
-        "date": "2026-09-21",
-        "daily_high": 10.670000076293945,
-        "prior_all_time_or_current_month_high": 10.670000076293945,
-        "passes_close_filter": true,
-        "yahoo_symbol": "KFII"
-      }
+      "currency": "USD"
     },
     {
       "ticker": "KRT",
@@ -693,66 +302,25 @@
       "high_type": "all_time",
       "reason": "업종: Process Industries · Containers/Packaging",
       "description": "Karat Packaging, Inc. · Containers/Packaging",
-      "change_pct": 1.4838614283460005,
-      "session_open": 50.0,
-      "session_close": 50.61000061035156,
-      "currency": "USD",
+      "change_pct": 1.4838580308802929,
+      "session_open": 50,
+      "session_close": 50.61,
       "source_symbol": "NASDAQ:KRT",
-      "high_verification": {
-        "source": "Yahoo Finance split-adjusted daily/monthly history",
-        "source_url": "https://finance.yahoo.com/quote/KRT/history/",
-        "date": "2026-09-21",
-        "daily_high": 51.0,
-        "prior_all_time_or_current_month_high": 51.0,
-        "passes_close_filter": true,
-        "yahoo_symbol": "KRT"
-      }
-    },
-    {
-      "ticker": "KTWO",
-      "name": "K2 Capital Acquisition Corp. Class A",
-      "exchange": "NASDAQ",
-      "category": "Finance",
-      "high_type": "all_time",
-      "reason": "업종: Finance · Financial Conglomerates",
-      "description": "K2 Capital Acquisition Corp. Class A · Financial Conglomerates",
-      "change_pct": 0.0,
-      "session_open": 10.100000381469727,
-      "session_close": 10.100000381469727,
-      "currency": "USD",
-      "source_symbol": "NASDAQ:KTWO",
-      "high_verification": {
-        "source": "Yahoo Finance split-adjusted daily/monthly history",
-        "source_url": "https://finance.yahoo.com/quote/KTWO/history/",
-        "date": "2026-09-21",
-        "daily_high": 10.100000381469727,
-        "prior_all_time_or_current_month_high": 10.100000381469727,
-        "passes_close_filter": true,
-        "yahoo_symbol": "KTWO"
-      }
+      "currency": "USD"
     },
     {
       "ticker": "LWAC",
       "name": "LightWave Acquisition Corp. Class A",
       "exchange": "NASDAQ",
       "category": "Finance",
-      "high_type": "all_time",
+      "high_type": "52_week",
       "reason": "업종: Finance · Financial Conglomerates",
       "description": "LightWave Acquisition Corp. Class A · Financial Conglomerates",
-      "change_pct": 0.5808365930284776,
-      "session_open": 10.350000381469727,
-      "session_close": 10.390000343322754,
-      "currency": "USD",
+      "change_pct": 0.5808325266214955,
+      "session_open": 10.35,
+      "session_close": 10.39,
       "source_symbol": "NASDAQ:LWAC",
-      "high_verification": {
-        "source": "Yahoo Finance split-adjusted daily/monthly history",
-        "source_url": "https://finance.yahoo.com/quote/LWAC/history/",
-        "date": "2026-09-21",
-        "daily_high": 10.390000343322754,
-        "prior_all_time_or_current_month_high": 10.390000343322754,
-        "passes_close_filter": true,
-        "yahoo_symbol": "LWAC"
-      }
+      "currency": "USD"
     },
     {
       "ticker": "MRNA",
@@ -762,43 +330,11 @@
       "high_type": "52_week",
       "reason": "업종: Health Technology · Biotechnology",
       "description": "Moderna, Inc. · Biotechnology",
-      "change_pct": 12.269546857332191,
-      "session_open": 161.0500030517578,
-      "session_close": 172.94000244140625,
-      "currency": "USD",
+      "change_pct": 12.26954037912231,
+      "session_open": 161.05,
+      "session_close": 172.94,
       "source_symbol": "NASDAQ:MRNA",
-      "high_verification": {
-        "source": "Yahoo Finance split-adjusted daily/monthly history",
-        "source_url": "https://finance.yahoo.com/quote/MRNA/history/",
-        "date": "2026-09-21",
-        "daily_high": 176.86000061035156,
-        "prior_all_time_or_current_month_high": 497.489990234375,
-        "passes_close_filter": true,
-        "yahoo_symbol": "MRNA"
-      }
-    },
-    {
-      "ticker": "NBRG",
-      "name": "Newbridge Acquisition Limited Class A",
-      "exchange": "NASDAQ",
-      "category": "Finance",
-      "high_type": "all_time",
-      "reason": "업종: Finance · Financial Conglomerates",
-      "description": "Newbridge Acquisition Limited Class A · Financial Conglomerates",
-      "change_pct": 0.0,
-      "session_open": 10.09000015258789,
-      "session_close": 10.09000015258789,
-      "currency": "USD",
-      "source_symbol": "NASDAQ:NBRG",
-      "high_verification": {
-        "source": "Yahoo Finance split-adjusted daily/monthly history",
-        "source_url": "https://finance.yahoo.com/quote/NBRG/history/",
-        "date": "2026-09-21",
-        "daily_high": 10.09000015258789,
-        "prior_all_time_or_current_month_high": 10.09000015258789,
-        "passes_close_filter": true,
-        "yahoo_symbol": "NBRG"
-      }
+      "currency": "USD"
     },
     {
       "ticker": "NEOG",
@@ -808,66 +344,11 @@
       "high_type": "52_week",
       "reason": "업종: Health Technology · Medical Specialties",
       "description": "Neogen Corp · Medical Specialties",
-      "change_pct": 4.692305051363421,
-      "session_open": 13.119999885559082,
-      "session_close": 13.609999656677246,
-      "currency": "USD",
+      "change_pct": 4.692307692307688,
+      "session_open": 13.12,
+      "session_close": 13.61,
       "source_symbol": "NASDAQ:NEOG",
-      "high_verification": {
-        "source": "Yahoo Finance split-adjusted daily/monthly history",
-        "source_url": "https://finance.yahoo.com/quote/NEOG/history/",
-        "date": "2026-09-21",
-        "daily_high": 13.720000267028809,
-        "prior_all_time_or_current_month_high": 47.79999923706055,
-        "passes_close_filter": true,
-        "yahoo_symbol": "NEOG"
-      }
-    },
-    {
-      "ticker": "NMP",
-      "name": "NMP Acquisition Corp. Class A",
-      "exchange": "NASDAQ",
-      "category": "Finance",
-      "high_type": "all_time",
-      "reason": "업종: Finance · Financial Conglomerates",
-      "description": "NMP Acquisition Corp. Class A · Financial Conglomerates",
-      "change_pct": 0.0,
-      "session_open": 10.390000343322754,
-      "session_close": 10.390000343322754,
-      "currency": "USD",
-      "source_symbol": "NASDAQ:NMP",
-      "high_verification": {
-        "source": "Yahoo Finance split-adjusted daily/monthly history",
-        "source_url": "https://finance.yahoo.com/quote/NMP/history/",
-        "date": "2026-09-21",
-        "daily_high": 10.390000343322754,
-        "prior_all_time_or_current_month_high": 10.390000343322754,
-        "passes_close_filter": true,
-        "yahoo_symbol": "NMP"
-      }
-    },
-    {
-      "ticker": "NSAI",
-      "name": "NorthStrive Acquisition Corp I. Class A",
-      "exchange": "NASDAQ",
-      "category": "Finance",
-      "high_type": "all_time",
-      "reason": "업종: Finance · Financial Conglomerates",
-      "description": "NorthStrive Acquisition Corp I. Class A · Financial Conglomerates",
-      "change_pct": 0.0,
-      "session_open": 9.869999885559082,
-      "session_close": 9.869999885559082,
-      "currency": "USD",
-      "source_symbol": "NASDAQ:NSAI",
-      "high_verification": {
-        "source": "Yahoo Finance split-adjusted daily/monthly history",
-        "source_url": "https://finance.yahoo.com/quote/NSAI/history/",
-        "date": "2026-09-21",
-        "daily_high": 9.880000114440918,
-        "prior_all_time_or_current_month_high": 9.880000114440918,
-        "passes_close_filter": true,
-        "yahoo_symbol": "NSAI"
-      }
+      "currency": "USD"
     },
     {
       "ticker": "OPRT",
@@ -877,43 +358,11 @@
       "high_type": "52_week",
       "reason": "업종: Finance · Finance/Rental/Leasing",
       "description": "Oportun Financial Corp. · Finance/Rental/Leasing",
-      "change_pct": 1.960782480441492,
-      "session_open": 8.279999732971191,
-      "session_close": 8.319999694824219,
-      "currency": "USD",
+      "change_pct": 1.960784313725492,
+      "session_open": 8.28,
+      "session_close": 8.32,
       "source_symbol": "NASDAQ:OPRT",
-      "high_verification": {
-        "source": "Yahoo Finance split-adjusted daily/monthly history",
-        "source_url": "https://finance.yahoo.com/quote/OPRT/history/",
-        "date": "2026-09-21",
-        "daily_high": 8.369999885559082,
-        "prior_all_time_or_current_month_high": 27.950000762939453,
-        "passes_close_filter": true,
-        "yahoo_symbol": "OPRT"
-      }
-    },
-    {
-      "ticker": "ORIQ",
-      "name": "Origin Investment Corp I",
-      "exchange": "NASDAQ",
-      "category": "Finance",
-      "high_type": "all_time",
-      "reason": "업종: Finance · Financial Conglomerates",
-      "description": "Origin Investment Corp I · Financial Conglomerates",
-      "change_pct": 0.0,
-      "session_open": 10.40999984741211,
-      "session_close": 10.40999984741211,
-      "currency": "USD",
-      "source_symbol": "NASDAQ:ORIQ",
-      "high_verification": {
-        "source": "Yahoo Finance split-adjusted daily/monthly history",
-        "source_url": "https://finance.yahoo.com/quote/ORIQ/history/",
-        "date": "2026-09-21",
-        "daily_high": 10.40999984741211,
-        "prior_all_time_or_current_month_high": 10.40999984741211,
-        "passes_close_filter": true,
-        "yahoo_symbol": "ORIQ"
-      }
+      "currency": "USD"
     },
     {
       "ticker": "RFAM",
@@ -923,20 +372,11 @@
       "high_type": "all_time",
       "reason": "업종: Finance · Financial Conglomerates",
       "description": "RF Acquisition Corp III · Financial Conglomerates",
-      "change_pct": 0.10010239350302097,
-      "session_open": 10.0,
-      "session_close": 10.0,
-      "currency": "USD",
+      "change_pct": 0.10010010010009797,
+      "session_open": 10,
+      "session_close": 10,
       "source_symbol": "NASDAQ:RFAM",
-      "high_verification": {
-        "source": "Yahoo Finance split-adjusted daily/monthly history",
-        "source_url": "https://finance.yahoo.com/quote/RFAM/history/",
-        "date": "2026-09-21",
-        "daily_high": 10.0,
-        "prior_all_time_or_current_month_high": 10.0,
-        "passes_close_filter": true,
-        "yahoo_symbol": "RFAM"
-      }
+      "currency": "USD"
     },
     {
       "ticker": "SAFT",
@@ -946,20 +386,11 @@
       "high_type": "52_week",
       "reason": "업종: Finance · Property/Casualty Insurance",
       "description": "Safety Insurance Group, Inc. · Property/Casualty Insurance",
-      "change_pct": 0.12558907422963728,
-      "session_open": 103.55999755859375,
-      "session_close": 103.63999938964844,
-      "currency": "USD",
+      "change_pct": 0.1255917302676026,
+      "session_open": 103.56,
+      "session_close": 103.64,
       "source_symbol": "NASDAQ:SAFT",
-      "high_verification": {
-        "source": "Yahoo Finance split-adjusted daily/monthly history",
-        "source_url": "https://finance.yahoo.com/quote/SAFT/history/",
-        "date": "2026-09-21",
-        "daily_high": 103.87999725341797,
-        "prior_all_time_or_current_month_high": 103.95999908447266,
-        "passes_close_filter": true,
-        "yahoo_symbol": "SAFT"
-      }
+      "currency": "USD"
     },
     {
       "ticker": "SBC",
@@ -969,20 +400,11 @@
       "high_type": "52_week",
       "reason": "업종: Commercial Services · Miscellaneous Commercial Services",
       "description": "SBC Medical Group Holdings Incorporated · Miscellaneous Commercial Services",
-      "change_pct": 8.210523504959898,
-      "session_open": 4.800000190734863,
-      "session_close": 5.139999866485596,
-      "currency": "USD",
+      "change_pct": 8.210526315789467,
+      "session_open": 4.8,
+      "session_close": 5.14,
       "source_symbol": "NASDAQ:SBC",
-      "high_verification": {
-        "source": "Yahoo Finance split-adjusted daily/monthly history",
-        "source_url": "https://finance.yahoo.com/quote/SBC/history/",
-        "date": "2026-09-21",
-        "daily_high": 5.295000076293945,
-        "prior_all_time_or_current_month_high": 36.52000045776367,
-        "passes_close_filter": true,
-        "yahoo_symbol": "SBC"
-      }
+      "currency": "USD"
     },
     {
       "ticker": "SDGR",
@@ -992,43 +414,11 @@
       "high_type": "52_week",
       "reason": "업종: Technology Services · Packaged Software",
       "description": "Schrodinger, Inc. · Packaged Software",
-      "change_pct": 4.203994810855027,
-      "session_open": 29.43000030517578,
-      "session_close": 30.239999771118164,
-      "currency": "USD",
+      "change_pct": 4.203997243280493,
+      "session_open": 29.43,
+      "session_close": 30.24,
       "source_symbol": "NASDAQ:SDGR",
-      "high_verification": {
-        "source": "Yahoo Finance split-adjusted daily/monthly history",
-        "source_url": "https://finance.yahoo.com/quote/SDGR/history/",
-        "date": "2026-09-21",
-        "daily_high": 31.027999877929688,
-        "prior_all_time_or_current_month_high": 117.0,
-        "passes_close_filter": true,
-        "yahoo_symbol": "SDGR"
-      }
-    },
-    {
-      "ticker": "SDHI",
-      "name": "Siddhi Acquisition Corp. Class A",
-      "exchange": "NASDAQ",
-      "category": "Finance",
-      "high_type": "all_time",
-      "reason": "업종: Finance · Financial Conglomerates",
-      "description": "Siddhi Acquisition Corp. Class A · Financial Conglomerates",
-      "change_pct": 0.0,
-      "session_open": 10.5600004196167,
-      "session_close": 10.5600004196167,
-      "currency": "USD",
-      "source_symbol": "NASDAQ:SDHI",
-      "high_verification": {
-        "source": "Yahoo Finance split-adjusted daily/monthly history",
-        "source_url": "https://finance.yahoo.com/quote/SDHI/history/",
-        "date": "2026-09-21",
-        "daily_high": 10.5600004196167,
-        "prior_all_time_or_current_month_high": 10.5600004196167,
-        "passes_close_filter": true,
-        "yahoo_symbol": "SDHI"
-      }
+      "currency": "USD"
     },
     {
       "ticker": "SUMA",
@@ -1038,20 +428,11 @@
       "high_type": "all_time",
       "reason": "업종: Finance · Financial Conglomerates",
       "description": "SUMA Acquisition Corporation Class A · Financial Conglomerates",
-      "change_pct": 0.0,
-      "session_open": 9.970000267028809,
-      "session_close": 9.970000267028809,
-      "currency": "USD",
+      "change_pct": 0,
+      "session_open": 9.97,
+      "session_close": 9.97,
       "source_symbol": "NASDAQ:SUMA",
-      "high_verification": {
-        "source": "Yahoo Finance split-adjusted daily/monthly history",
-        "source_url": "https://finance.yahoo.com/quote/SUMA/history/",
-        "date": "2026-09-21",
-        "daily_high": 9.970000267028809,
-        "prior_all_time_or_current_month_high": 9.970000267028809,
-        "passes_close_filter": true,
-        "yahoo_symbol": "SUMA"
-      }
+      "currency": "USD"
     },
     {
       "ticker": "TDWD",
@@ -1061,20 +442,11 @@
       "high_type": "all_time",
       "reason": "업종: Finance · Financial Conglomerates",
       "description": "Tailwind 2.0 Acquisition Corp. Class A · Financial Conglomerates",
-      "change_pct": 0.19782847124492076,
-      "session_open": 10.130000114440918,
-      "session_close": 10.130000114440918,
-      "currency": "USD",
+      "change_pct": 0.19782393669635362,
+      "session_open": 10.13,
+      "session_close": 10.13,
       "source_symbol": "NASDAQ:TDWD",
-      "high_verification": {
-        "source": "Yahoo Finance split-adjusted daily/monthly history",
-        "source_url": "https://finance.yahoo.com/quote/TDWD/history/",
-        "date": "2026-09-21",
-        "daily_high": 10.149999618530273,
-        "prior_all_time_or_current_month_high": 10.149999618530273,
-        "passes_close_filter": true,
-        "yahoo_symbol": "TDWD"
-      }
+      "currency": "USD"
     },
     {
       "ticker": "TKNO",
@@ -1084,66 +456,11 @@
       "high_type": "52_week",
       "reason": "업종: Health Technology · Pharmaceuticals: Major",
       "description": "Alpha Teknova, Inc. · Pharmaceuticals: Major",
-      "change_pct": 7.060336244264032,
-      "session_open": 7.869999885559082,
-      "session_close": 8.34000015258789,
-      "currency": "USD",
+      "change_pct": 7.060333761232347,
+      "session_open": 7.87,
+      "session_close": 8.34,
       "source_symbol": "NASDAQ:TKNO",
-      "high_verification": {
-        "source": "Yahoo Finance split-adjusted daily/monthly history",
-        "source_url": "https://finance.yahoo.com/quote/TKNO/history/",
-        "date": "2026-09-21",
-        "daily_high": 8.380000114440918,
-        "prior_all_time_or_current_month_high": 30.889999389648438,
-        "passes_close_filter": true,
-        "yahoo_symbol": "TKNO"
-      }
-    },
-    {
-      "ticker": "TWIN",
-      "name": "Twin Disc, incorporated",
-      "exchange": "NASDAQ",
-      "category": "Producer Manufacturing",
-      "high_type": "52_week",
-      "reason": "업종: Producer Manufacturing · Trucks/Construction/Farm Machinery",
-      "description": "Twin Disc, incorporated · Trucks/Construction/Farm Machinery",
-      "change_pct": 1.8488786468557006,
-      "session_open": 24.959999084472656,
-      "session_close": 25.34000015258789,
-      "currency": "USD",
-      "source_symbol": "NASDAQ:TWIN",
-      "high_verification": {
-        "source": "Yahoo Finance split-adjusted daily/monthly history",
-        "source_url": "https://finance.yahoo.com/quote/TWIN/history/",
-        "date": "2026-09-21",
-        "daily_high": 25.5,
-        "prior_all_time_or_current_month_high": 47.38999938964844,
-        "passes_close_filter": true,
-        "yahoo_symbol": "TWIN"
-      }
-    },
-    {
-      "ticker": "VNME",
-      "name": "Vendome Acquisition Corporation I Class A",
-      "exchange": "NASDAQ",
-      "category": "Finance",
-      "high_type": "all_time",
-      "reason": "업종: Finance · Financial Conglomerates",
-      "description": "Vendome Acquisition Corporation I Class A · Financial Conglomerates",
-      "change_pct": 0.0,
-      "session_open": 10.300000190734863,
-      "session_close": 10.300000190734863,
-      "currency": "USD",
-      "source_symbol": "NASDAQ:VNME",
-      "high_verification": {
-        "source": "Yahoo Finance split-adjusted daily/monthly history",
-        "source_url": "https://finance.yahoo.com/quote/VNME/history/",
-        "date": "2026-09-21",
-        "daily_high": 10.300000190734863,
-        "prior_all_time_or_current_month_high": 10.300000190734863,
-        "passes_close_filter": true,
-        "yahoo_symbol": "VNME"
-      }
+      "currency": "USD"
     },
     {
       "ticker": "VRME",
@@ -1153,43 +470,11 @@
       "high_type": "52_week",
       "reason": "업종: Technology Services · Packaged Software",
       "description": "VerifyMe, Inc. · Packaged Software",
-      "change_pct": 73.58490141654373,
-      "session_open": 0.9423999786376953,
-      "session_close": 1.3799999952316284,
-      "currency": "USD",
+      "change_pct": 73.58490566037733,
+      "session_open": 0.9424,
+      "session_close": 1.38,
       "source_symbol": "NASDAQ:VRME",
-      "high_verification": {
-        "source": "Yahoo Finance split-adjusted daily/monthly history",
-        "source_url": "https://finance.yahoo.com/quote/VRME/history/",
-        "date": "2026-09-21",
-        "daily_high": 1.9500000476837158,
-        "prior_all_time_or_current_month_high": 14088750.0,
-        "passes_close_filter": true,
-        "yahoo_symbol": "VRME"
-      }
-    },
-    {
-      "ticker": "VWAV",
-      "name": "VisionWave Holdings, Inc.",
-      "exchange": "NASDAQ",
-      "category": "Technology Services",
-      "high_type": "all_time",
-      "reason": "업종: Technology Services · Packaged Software",
-      "description": "VisionWave Holdings, Inc. · Packaged Software",
-      "change_pct": 0.0,
-      "session_open": 105.67999839782715,
-      "session_close": 124.04000282287598,
-      "currency": "USD",
-      "source_symbol": "NASDAQ:VWAV",
-      "high_verification": {
-        "source": "Yahoo Finance split-adjusted daily/monthly history",
-        "source_url": "https://finance.yahoo.com/quote/VWAV/history/",
-        "date": "2026-09-21",
-        "daily_high": 137.88000106811523,
-        "prior_all_time_or_current_month_high": 137.88000106811523,
-        "passes_close_filter": true,
-        "yahoo_symbol": "VWAV"
-      }
+      "currency": "USD"
     },
     {
       "ticker": "WBD",
@@ -1199,20 +484,11 @@
       "high_type": "52_week",
       "reason": "업종: Consumer Services · Cable/Satellite TV",
       "description": "Warner Bros. Discovery, Inc. Series A · Cable/Satellite TV",
-      "change_pct": 10.791367202631651,
-      "session_open": 29.760000228881836,
-      "session_close": 30.799999237060547,
-      "currency": "USD",
+      "change_pct": 10.79136690647482,
+      "session_open": 29.76,
+      "session_close": 30.8,
       "source_symbol": "NASDAQ:WBD",
-      "high_verification": {
-        "source": "Yahoo Finance split-adjusted daily/monthly history",
-        "source_url": "https://finance.yahoo.com/quote/WBD/history/",
-        "date": "2026-09-21",
-        "daily_high": 30.920000076293945,
-        "prior_all_time_or_current_month_high": 78.13999938964844,
-        "passes_close_filter": true,
-        "yahoo_symbol": "WBD"
-      }
+      "currency": "USD"
     },
     {
       "ticker": "ASBH",
@@ -1222,20 +498,11 @@
       "high_type": "all_time",
       "reason": "업종: Finance · Major Banks",
       "description": "American Savings Bank N.A. · Major Banks",
-      "change_pct": 4.325556300981148,
-      "session_open": 17.65999984741211,
-      "session_close": 18.329999923706055,
-      "currency": "USD",
+      "change_pct": 4.325554923164473,
+      "session_open": 17.66,
+      "session_close": 18.33,
       "source_symbol": "NYSE:ASBH",
-      "high_verification": {
-        "source": "Yahoo Finance split-adjusted daily/monthly history",
-        "source_url": "https://finance.yahoo.com/quote/ASBH/history/",
-        "date": "2026-09-21",
-        "daily_high": 18.489999771118164,
-        "prior_all_time_or_current_month_high": 18.489999771118164,
-        "passes_close_filter": true,
-        "yahoo_symbol": "ASBH"
-      }
+      "currency": "USD"
     },
     {
       "ticker": "BMNP",
@@ -1245,20 +512,11 @@
       "high_type": "all_time",
       "reason": "업종: Finance · Financial Conglomerates",
       "description": "BitMine Immersion Technologies Inc Non-Cum.Perpetual Pfd Shs Series A · Financial Conglomerates",
-      "change_pct": 0.857926980361956,
-      "session_open": 98.05999755859375,
+      "change_pct": 0.8579307527321044,
+      "session_open": 98.06,
       "session_close": 98.75,
-      "currency": "USD",
       "source_symbol": "NYSE:BMNP",
-      "high_verification": {
-        "source": "Yahoo Finance split-adjusted daily/monthly history",
-        "source_url": "https://finance.yahoo.com/quote/BMNP/history/",
-        "date": "2026-09-21",
-        "daily_high": 99.62000274658203,
-        "prior_all_time_or_current_month_high": 99.62000274658203,
-        "passes_close_filter": true,
-        "yahoo_symbol": "BMNP"
-      }
+      "currency": "USD"
     },
     {
       "ticker": "BNS",
@@ -1268,20 +526,11 @@
       "high_type": "all_time",
       "reason": "업종: Finance · Major Banks",
       "description": "Bank of Nova Scotia · Major Banks",
-      "change_pct": 1.3606875554899256,
+      "change_pct": 1.3606888487296707,
       "session_open": 94.75,
-      "session_close": 95.3499984741211,
-      "currency": "USD",
+      "session_close": 95.35,
       "source_symbol": "NYSE:BNS",
-      "high_verification": {
-        "source": "Yahoo Finance split-adjusted daily/monthly history",
-        "source_url": "https://finance.yahoo.com/quote/BNS/history/",
-        "date": "2026-09-21",
-        "daily_high": 95.58000183105469,
-        "prior_all_time_or_current_month_high": 95.58000183105469,
-        "passes_close_filter": true,
-        "yahoo_symbol": "BNS"
-      }
+      "currency": "USD"
     },
     {
       "ticker": "BWIV",
@@ -1291,20 +540,11 @@
       "high_type": "all_time",
       "reason": "업종: Finance · Financial Conglomerates",
       "description": "Blue Water Acquisition Corp. IV Class A · Financial Conglomerates",
-      "change_pct": 0.0,
-      "session_open": 10.0,
-      "session_close": 10.0,
-      "currency": "USD",
+      "change_pct": 0,
+      "session_open": 10,
+      "session_close": 10,
       "source_symbol": "NYSE:BWIV",
-      "high_verification": {
-        "source": "Yahoo Finance split-adjusted daily/monthly history",
-        "source_url": "https://finance.yahoo.com/quote/BWIV/history/",
-        "date": "2026-09-21",
-        "daily_high": 10.0,
-        "prior_all_time_or_current_month_high": 10.0,
-        "passes_close_filter": true,
-        "yahoo_symbol": "BWIV"
-      }
+      "currency": "USD"
     },
     {
       "ticker": "JACS",
@@ -1314,20 +554,11 @@
       "high_type": "all_time",
       "reason": "업종: Finance · Financial Conglomerates",
       "description": "Jackson Acquisition Co. II Class A · Financial Conglomerates",
-      "change_pct": 0.23202388018275233,
-      "session_open": 10.800000190734863,
-      "session_close": 10.800000190734863,
-      "currency": "USD",
+      "change_pct": 0.2320185614849221,
+      "session_open": 10.8,
+      "session_close": 10.8,
       "source_symbol": "NYSE:JACS",
-      "high_verification": {
-        "source": "Yahoo Finance split-adjusted daily/monthly history",
-        "source_url": "https://finance.yahoo.com/quote/JACS/history/",
-        "date": "2026-09-21",
-        "daily_high": 10.800000190734863,
-        "prior_all_time_or_current_month_high": 10.800000190734863,
-        "passes_close_filter": true,
-        "yahoo_symbol": "JACS"
-      }
+      "currency": "USD"
     },
     {
       "ticker": "MTW",
@@ -1337,20 +568,11 @@
       "high_type": "52_week",
       "reason": "업종: Producer Manufacturing · Trucks/Construction/Farm Machinery",
       "description": "Manitowoc Company, Inc. · Trucks/Construction/Farm Machinery",
-      "change_pct": 1.8344511875357128,
-      "session_open": 22.559999465942383,
-      "session_close": 22.760000228881836,
-      "currency": "USD",
+      "change_pct": 1.834451901565996,
+      "session_open": 22.56,
+      "session_close": 22.76,
       "source_symbol": "NYSE:MTW",
-      "high_verification": {
-        "source": "Yahoo Finance split-adjusted daily/monthly history",
-        "source_url": "https://finance.yahoo.com/quote/MTW/history/",
-        "date": "2026-09-21",
-        "daily_high": 23.0,
-        "prior_all_time_or_current_month_high": 168.47999572753906,
-        "passes_close_filter": true,
-        "yahoo_symbol": "MTW"
-      }
+      "currency": "USD"
     },
     {
       "ticker": "NET",
@@ -1360,20 +582,11 @@
       "high_type": "all_time",
       "reason": "업종: Technology Services · Information Technology Services",
       "description": "Cloudflare Inc Class A · Information Technology Services",
-      "change_pct": 8.674291345729923,
-      "session_open": 327.0,
-      "session_close": 351.6700134277344,
-      "currency": "USD",
+      "change_pct": 8.674289245982692,
+      "session_open": 327,
+      "session_close": 351.67,
       "source_symbol": "NYSE:NET",
-      "high_verification": {
-        "source": "Yahoo Finance split-adjusted daily/monthly history",
-        "source_url": "https://finance.yahoo.com/quote/NET/history/",
-        "date": "2026-09-21",
-        "daily_high": 352.45001220703125,
-        "prior_all_time_or_current_month_high": 352.45001220703125,
-        "passes_close_filter": true,
-        "yahoo_symbol": "NET"
-      }
+      "currency": "USD"
     },
     {
       "ticker": "OCAC",
@@ -1383,43 +596,11 @@
       "high_type": "all_time",
       "reason": "업종: Finance · Financial Conglomerates",
       "description": "Ocean Capital Acquisition Corp. · Financial Conglomerates",
-      "change_pct": 0.0,
-      "session_open": 9.979999542236328,
-      "session_close": 9.979999542236328,
-      "currency": "USD",
+      "change_pct": 0,
+      "session_open": 9.98,
+      "session_close": 9.98,
       "source_symbol": "NYSE:OCAC",
-      "high_verification": {
-        "source": "Yahoo Finance split-adjusted daily/monthly history",
-        "source_url": "https://finance.yahoo.com/quote/OCAC/history/",
-        "date": "2026-09-21",
-        "daily_high": 9.979999542236328,
-        "prior_all_time_or_current_month_high": 9.979999542236328,
-        "passes_close_filter": true,
-        "yahoo_symbol": "OCAC"
-      }
-    },
-    {
-      "ticker": "QRED",
-      "name": "QuasarEdge Acquisition Corp",
-      "exchange": "NYSE",
-      "category": "Finance",
-      "high_type": "all_time",
-      "reason": "업종: Finance · Financial Conglomerates",
-      "description": "QuasarEdge Acquisition Corp · Financial Conglomerates",
-      "change_pct": 0.0996038737035132,
-      "session_open": 10.039999961853027,
-      "session_close": 10.050000190734863,
-      "currency": "USD",
-      "source_symbol": "NYSE:QRED",
-      "high_verification": {
-        "source": "Yahoo Finance split-adjusted daily/monthly history",
-        "source_url": "https://finance.yahoo.com/quote/QRED/history/",
-        "date": "2026-09-21",
-        "daily_high": 10.050000190734863,
-        "prior_all_time_or_current_month_high": 10.050000190734863,
-        "passes_close_filter": true,
-        "yahoo_symbol": "QRED"
-      }
+      "currency": "USD"
     },
     {
       "ticker": "RBRK",
@@ -1429,66 +610,11 @@
       "high_type": "all_time",
       "reason": "업종: Technology Services · Information Technology Services",
       "description": "Rubrik, Inc. Class A · Information Technology Services",
-      "change_pct": 5.8569956457898975,
-      "session_open": 107.56999969482422,
-      "session_close": 112.95999908447266,
-      "currency": "USD",
+      "change_pct": 5.8569955955393125,
+      "session_open": 107.57,
+      "session_close": 112.96,
       "source_symbol": "NYSE:RBRK",
-      "high_verification": {
-        "source": "Yahoo Finance split-adjusted daily/monthly history",
-        "source_url": "https://finance.yahoo.com/quote/RBRK/history/",
-        "date": "2026-09-21",
-        "daily_high": 113.16000366210938,
-        "prior_all_time_or_current_month_high": 113.16000366210938,
-        "passes_close_filter": true,
-        "yahoo_symbol": "RBRK"
-      }
-    },
-    {
-      "ticker": "SAGU",
-      "name": "Shreya Acquisition Group Class A",
-      "exchange": "NYSE",
-      "category": "Finance",
-      "high_type": "all_time",
-      "reason": "업종: Finance · Financial Conglomerates",
-      "description": "Shreya Acquisition Group Class A · Financial Conglomerates",
-      "change_pct": 0.0,
-      "session_open": 10.050000190734863,
-      "session_close": 10.050000190734863,
-      "currency": "USD",
-      "source_symbol": "NYSE:SAGU",
-      "high_verification": {
-        "source": "Yahoo Finance split-adjusted daily/monthly history",
-        "source_url": "https://finance.yahoo.com/quote/SAGU/history/",
-        "date": "2026-09-21",
-        "daily_high": 10.050000190734863,
-        "prior_all_time_or_current_month_high": 10.050000190734863,
-        "passes_close_filter": true,
-        "yahoo_symbol": "SAGU"
-      }
-    },
-    {
-      "ticker": "SECZ",
-      "name": "Securitize Corp.",
-      "exchange": "NYSE",
-      "category": "Technology Services",
-      "high_type": "all_time",
-      "reason": "업종: Technology Services · Packaged Software",
-      "description": "Securitize Corp. · Packaged Software",
-      "change_pct": 24.309396195050105,
-      "session_open": 11.670000076293945,
-      "session_close": 13.5,
-      "currency": "USD",
-      "source_symbol": "NYSE:SECZ",
-      "high_verification": {
-        "source": "Yahoo Finance split-adjusted daily/monthly history",
-        "source_url": "https://finance.yahoo.com/quote/SECZ/history/",
-        "date": "2026-09-21",
-        "daily_high": 13.930000305175781,
-        "prior_all_time_or_current_month_high": 13.930000305175781,
-        "passes_close_filter": true,
-        "yahoo_symbol": "SECZ"
-      }
+      "currency": "USD"
     },
     {
       "ticker": "TBBB",
@@ -1498,20 +624,11 @@
       "high_type": "all_time",
       "reason": "업종: Retail Trade · Food Retail",
       "description": "BBB Foods, Inc. Class A · Food Retail",
-      "change_pct": 2.1811154427715973,
+      "change_pct": 2.18111002921129,
       "session_open": 51.75,
-      "session_close": 52.470001220703125,
-      "currency": "USD",
+      "session_close": 52.47,
       "source_symbol": "NYSE:TBBB",
-      "high_verification": {
-        "source": "Yahoo Finance split-adjusted daily/monthly history",
-        "source_url": "https://finance.yahoo.com/quote/TBBB/history/",
-        "date": "2026-09-21",
-        "daily_high": 52.97999954223633,
-        "prior_all_time_or_current_month_high": 52.97999954223633,
-        "passes_close_filter": true,
-        "yahoo_symbol": "TBBB"
-      }
+      "currency": "USD"
     },
     {
       "ticker": "TEVA",
@@ -1521,20 +638,11 @@
       "high_type": "52_week",
       "reason": "업종: Health Technology · Pharmaceuticals: Generic",
       "description": "Teva Pharmaceutical Industries Limited · Pharmaceuticals: Generic",
-      "change_pct": 2.7706563461717515,
-      "session_open": 39.09000015258789,
-      "session_close": 40.060001373291016,
-      "currency": "USD",
+      "change_pct": 2.770651616213457,
+      "session_open": 39.09,
+      "session_close": 40.06,
       "source_symbol": "NYSE:TEVA",
-      "high_verification": {
-        "source": "Yahoo Finance split-adjusted daily/monthly history",
-        "source_url": "https://finance.yahoo.com/quote/TEVA/history/",
-        "date": "2026-09-21",
-        "daily_high": 40.790000915527344,
-        "prior_all_time_or_current_month_high": 72.30999755859375,
-        "passes_close_filter": true,
-        "yahoo_symbol": "TEVA"
-      }
+      "currency": "USD"
     },
     {
       "ticker": "TWLO",
@@ -1544,20 +652,11 @@
       "high_type": "52_week",
       "reason": "업종: Technology Services · Packaged Software",
       "description": "Twilio, Inc. Class A · Packaged Software",
-      "change_pct": 9.112533445871907,
-      "session_open": 247.1199951171875,
-      "session_close": 266.05999755859375,
-      "currency": "USD",
+      "change_pct": 9.11253280839895,
+      "session_open": 247.12,
+      "session_close": 266.06,
       "source_symbol": "NYSE:TWLO",
-      "high_verification": {
-        "source": "Yahoo Finance split-adjusted daily/monthly history",
-        "source_url": "https://finance.yahoo.com/quote/TWLO/history/",
-        "date": "2026-09-21",
-        "daily_high": 266.4800109863281,
-        "prior_all_time_or_current_month_high": 457.29998779296875,
-        "passes_close_filter": true,
-        "yahoo_symbol": "TWLO"
-      }
+      "currency": "USD"
     },
     {
       "ticker": "WENC",
@@ -1567,20 +666,11 @@
       "high_type": "all_time",
       "reason": "업종: Finance · Financial Conglomerates",
       "description": "West Enclave Merger Corp. · Financial Conglomerates",
-      "change_pct": 0.2000045776367143,
-      "session_open": 10.020000457763672,
-      "session_close": 10.020000457763672,
-      "currency": "USD",
+      "change_pct": 0.16093723447855118,
+      "session_open": 10.02,
+      "session_close": 10.02,
       "source_symbol": "NYSE:WENC",
-      "high_verification": {
-        "source": "Yahoo Finance split-adjusted daily/monthly history",
-        "source_url": "https://finance.yahoo.com/quote/WENC/history/",
-        "date": "2026-09-21",
-        "daily_high": 10.020000457763672,
-        "prior_all_time_or_current_month_high": 10.020000457763672,
-        "passes_close_filter": true,
-        "yahoo_symbol": "WENC"
-      }
+      "currency": "USD"
     },
     {
       "ticker": "ZIM",
@@ -1590,48 +680,41 @@
       "high_type": "52_week",
       "reason": "업종: Transportation · Marine Shipping",
       "description": "ZIM Integrated Shipping Services Ltd. · Marine Shipping",
-      "change_pct": 1.1960089649186711,
-      "session_open": 30.09000015258789,
-      "session_close": 30.459999084472656,
-      "currency": "USD",
+      "change_pct": 1.196013289036543,
+      "session_open": 30.09,
+      "session_close": 30.46,
       "source_symbol": "NYSE:ZIM",
-      "high_verification": {
-        "source": "Yahoo Finance split-adjusted daily/monthly history",
-        "source_url": "https://finance.yahoo.com/quote/ZIM/history/",
-        "date": "2026-09-21",
-        "daily_high": 30.4950008392334,
-        "prior_all_time_or_current_month_high": 91.2300033569336,
-        "passes_close_filter": true,
-        "yahoo_symbol": "ZIM"
-      }
+      "currency": "USD"
     }
   ],
   "source_metadata": {
-    "provider": "Yahoo Finance chart history",
-    "universe_provider": "TradingView public scanner",
-    "fetched_at": "2026-09-22T14:55:16.211009+00:00",
-    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
-    "scanned_symbols": 5724,
-    "history_symbols": 5703,
-    "inactive_symbols": 20,
-    "failed_symbols": 1,
-    "coverage_ratio": 0.9998246844319776,
-    "coverage_by_exchange": {
-      "NASDAQ": {
-        "covered": 3333,
-        "total": 3334
-      },
-      "NYSE": {
-        "covered": 2125,
-        "total": 2125
-      },
-      "AMEX": {
-        "covered": 245,
-        "total": 245
-      }
+    "provider": "TradingView public scanner",
+    "scanner": "america",
+    "fetched_at": "2026-09-21T21:01:19.729343+00:00",
+    "universe": "TradingView-listed stock instruments, including common and preferred shares; ETFs excluded",
+    "definition": "daily high >= period high; close >= open; close >= previous close when one exists; all-time takes precedence; ties included",
+    "scanner_exchanges": [
+      "NASDAQ",
+      "NYSE",
+      "AMEX"
+    ],
+    "latest_session_by_exchange": {
+      "NYSE": "2026-09-21",
+      "NASDAQ": "2026-09-21",
+      "AMEX": "2026-09-21"
     },
-    "session_symbols": 5703,
-    "split_adjusted": true
+    "current_session_reference_symbols": {
+      "NYSE": "NYSE:A",
+      "NASDAQ": "NASDAQ:AACI",
+      "AMEX": "AMEX:ACCS"
+    },
+    "scanned_symbols": 5725,
+    "current_session_symbols": 5594,
+    "excluded_symbols": {
+      "other_session": 131,
+      "bearish_or_down_close": 41
+    },
+    "pagination_complete": true
   },
-  "collected_at": "2026-09-22T14:55:16.211009+00:00"
+  "collected_at": "2026-09-21T21:01:18.157044+00:00"
 }
