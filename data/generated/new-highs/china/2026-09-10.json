@@ -1,0 +1,528 @@
+{
+  "schema_version": 1,
+  "market": "china",
+  "date": "2026-09-10",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "600177.SS",
+      "name": "Youngor Fashion Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Consumer Non-Durables",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Non-Durables · Apparel/Footwear",
+      "description": "Youngor Fashion Co., Ltd. Class A · Apparel/Footwear",
+      "change_pct": 0.24039012616927646,
+      "session_open": 8.329999923706055,
+      "session_close": 8.34000015258789,
+      "currency": "CNY",
+      "source_symbol": "SSE:600177",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/600177.SS/history/",
+        "date": "2026-09-10",
+        "daily_high": 8.380000114440918,
+        "prior_all_time_or_current_month_high": 9.960000038146973,
+        "passes_close_filter": true,
+        "yahoo_symbol": "600177.SS"
+      }
+    },
+    {
+      "ticker": "600354.SS",
+      "name": "Gansu Dunhuang Seed Group Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Process Industries",
+      "high_type": "52_week",
+      "reason": "업종: Process Industries · Agricultural Commodities/Milling",
+      "description": "Gansu Dunhuang Seed Group Co., Ltd. Class A · Agricultural Commodities/Milling",
+      "change_pct": 4.280512628628785,
+      "session_open": 10.8100004196167,
+      "session_close": 11.449999809265137,
+      "currency": "CNY",
+      "source_symbol": "SSE:600354",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/600354.SS/history/",
+        "date": "2026-09-10",
+        "daily_high": 12.079999923706055,
+        "prior_all_time_or_current_month_high": 16.799999237060547,
+        "passes_close_filter": true,
+        "yahoo_symbol": "600354.SS"
+      }
+    },
+    {
+      "ticker": "600359.SS",
+      "name": "Xinjiang Talimu Agriculture Development Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Consumer Non-Durables",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Non-Durables · Food: Meat/Fish/Dairy",
+      "description": "Xinjiang Talimu Agriculture Development Co., Ltd. Class A · Food: Meat/Fish/Dairy",
+      "change_pct": 10.045663144386063,
+      "session_open": 9.640000343322754,
+      "session_close": 9.640000343322754,
+      "currency": "CNY",
+      "source_symbol": "SSE:600359",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/600359.SS/history/",
+        "date": "2026-09-10",
+        "daily_high": 9.640000343322754,
+        "prior_all_time_or_current_month_high": 25.899999618530273,
+        "passes_close_filter": true,
+        "yahoo_symbol": "600359.SS"
+      }
+    },
+    {
+      "ticker": "600919.SS",
+      "name": "Bank of Jiangsu Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "업종: Finance · Regional Banks",
+      "description": "Bank of Jiangsu Co., Ltd. Class A · Regional Banks",
+      "change_pct": 2.351986728689792,
+      "session_open": 12.369999885559082,
+      "session_close": 12.619999885559082,
+      "currency": "CNY",
+      "source_symbol": "SSE:600919",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/600919.SS/history/",
+        "date": "2026-09-10",
+        "daily_high": 12.65999984741211,
+        "prior_all_time_or_current_month_high": 12.65999984741211,
+        "passes_close_filter": true,
+        "yahoo_symbol": "600919.SS"
+      }
+    },
+    {
+      "ticker": "600926.SS",
+      "name": "Bank of Hangzhou Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "업종: Finance · Regional Banks",
+      "description": "Bank of Hangzhou Co., Ltd. Class A · Regional Banks",
+      "change_pct": 2.314812515252984,
+      "session_open": 17.309999465942383,
+      "session_close": 17.68000030517578,
+      "currency": "CNY",
+      "source_symbol": "SSE:600926",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/600926.SS/history/",
+        "date": "2026-09-10",
+        "daily_high": 17.690000534057617,
+        "prior_all_time_or_current_month_high": 18.450000762939453,
+        "passes_close_filter": true,
+        "yahoo_symbol": "600926.SS"
+      }
+    },
+    {
+      "ticker": "601009.SS",
+      "name": "Bank of Nanjing Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "업종: Finance · Major Banks",
+      "description": "Bank of Nanjing Co., Ltd. Class A · Major Banks",
+      "change_pct": 3.161390568177236,
+      "session_open": 12.0600004196167,
+      "session_close": 12.399999618530273,
+      "currency": "CNY",
+      "source_symbol": "SSE:601009",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/601009.SS/history/",
+        "date": "2026-09-10",
+        "daily_high": 12.40999984741211,
+        "prior_all_time_or_current_month_high": 12.4399995803833,
+        "passes_close_filter": true,
+        "yahoo_symbol": "601009.SS"
+      }
+    },
+    {
+      "ticker": "601086.SS",
+      "name": "Gansu Guofang Industry & Trade (Group) Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Distribution Services",
+      "high_type": "52_week",
+      "reason": "업종: Distribution Services · Wholesale Distributors",
+      "description": "Gansu Guofang Industry & Trade (Group) Co., Ltd. Class A · Wholesale Distributors",
+      "change_pct": 1.545695836474592,
+      "session_open": 14.550000190734863,
+      "session_close": 15.109999656677246,
+      "currency": "CNY",
+      "source_symbol": "SSE:601086",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/601086.SS/history/",
+        "date": "2026-09-10",
+        "daily_high": 15.119999885559082,
+        "prior_all_time_or_current_month_high": 15.770000457763672,
+        "passes_close_filter": true,
+        "yahoo_symbol": "601086.SS"
+      }
+    },
+    {
+      "ticker": "601128.SS",
+      "name": "Jiangsu Changshu Rural Commercial Bank Co. Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "업종: Finance · Regional Banks",
+      "description": "Jiangsu Changshu Rural Commercial Bank Co. Ltd. Class A · Regional Banks",
+      "change_pct": 0.7800341953993817,
+      "session_open": 6.420000076293945,
+      "session_close": 6.460000038146973,
+      "currency": "CNY",
+      "source_symbol": "SSE:601128",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/601128.SS/history/",
+        "date": "2026-09-10",
+        "daily_high": 6.53000020980835,
+        "prior_all_time_or_current_month_high": 8.918687690029817,
+        "passes_close_filter": true,
+        "yahoo_symbol": "601128.SS"
+      }
+    },
+    {
+      "ticker": "601577.SS",
+      "name": "Bank of Changsha Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "업종: Finance · Regional Banks",
+      "description": "Bank of Changsha Co., Ltd. Class A · Regional Banks",
+      "change_pct": 0.597009600036591,
+      "session_open": 10.069999694824219,
+      "session_close": 10.109999656677246,
+      "currency": "CNY",
+      "source_symbol": "SSE:601577",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/601577.SS/history/",
+        "date": "2026-09-10",
+        "daily_high": 10.180000305175781,
+        "prior_all_time_or_current_month_high": 12.819999694824219,
+        "passes_close_filter": true,
+        "yahoo_symbol": "601577.SS"
+      }
+    },
+    {
+      "ticker": "601665.SS",
+      "name": "Qilu Bank Co Ltd Class A",
+      "exchange": "SSE",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "업종: Finance · Regional Banks",
+      "description": "Qilu Bank Co Ltd Class A · Regional Banks",
+      "change_pct": 1.9635324577631286,
+      "session_open": 7.130000114440918,
+      "session_close": 7.269999980926514,
+      "currency": "CNY",
+      "source_symbol": "SSE:601665",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/601665.SS/history/",
+        "date": "2026-09-10",
+        "daily_high": 7.320000171661377,
+        "prior_all_time_or_current_month_high": 12.430000305175781,
+        "passes_close_filter": true,
+        "yahoo_symbol": "601665.SS"
+      }
+    },
+    {
+      "ticker": "601838.SS",
+      "name": "Bank of Chengdu Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "업종: Finance · Regional Banks",
+      "description": "Bank of Chengdu Co., Ltd. Class A · Regional Banks",
+      "change_pct": 2.1148039445428424,
+      "session_open": 19.889999389648438,
+      "session_close": 20.280000686645508,
+      "currency": "CNY",
+      "source_symbol": "SSE:601838",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/601838.SS/history/",
+        "date": "2026-09-10",
+        "daily_high": 20.290000915527344,
+        "prior_all_time_or_current_month_high": 20.959999084472656,
+        "passes_close_filter": true,
+        "yahoo_symbol": "601838.SS"
+      }
+    },
+    {
+      "ticker": "601998.SS",
+      "name": "China CITIC Bank Corporation Ltd Class A",
+      "exchange": "SSE",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "업종: Finance · Major Banks",
+      "description": "China CITIC Bank Corporation Ltd Class A · Major Banks",
+      "change_pct": 0.3370863812515834,
+      "session_open": 8.90999984741211,
+      "session_close": 8.930000305175781,
+      "currency": "CNY",
+      "source_symbol": "SSE:601998",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/601998.SS/history/",
+        "date": "2026-09-10",
+        "daily_high": 9.020000457763672,
+        "prior_all_time_or_current_month_high": 12.238226890563965,
+        "passes_close_filter": true,
+        "yahoo_symbol": "601998.SS"
+      }
+    },
+    {
+      "ticker": "603268.SS",
+      "name": "Guangdong Songfa Ceramics Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Consumer Durables",
+      "high_type": "all_time",
+      "reason": "업종: Consumer Durables · Home Furnishings",
+      "description": "Guangdong Songfa Ceramics Co., Ltd. Class A · Home Furnishings",
+      "change_pct": 0.9559936362281585,
+      "session_open": 196.0,
+      "session_close": 199.58999633789062,
+      "currency": "CNY",
+      "source_symbol": "SSE:603268",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/603268.SS/history/",
+        "date": "2026-09-10",
+        "daily_high": 202.0,
+        "prior_all_time_or_current_month_high": 202.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "603268.SS"
+      }
+    },
+    {
+      "ticker": "603323.SS",
+      "name": "Jiangsu Suzhou Rural Commercial Bank Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "업종: Finance · Regional Banks",
+      "description": "Jiangsu Suzhou Rural Commercial Bank Co., Ltd. Class A · Regional Banks",
+      "change_pct": 1.5317219298652818,
+      "session_open": 4.570000171661377,
+      "session_close": 4.639999866485596,
+      "currency": "CNY",
+      "source_symbol": "SSE:603323",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/603323.SS/history/",
+        "date": "2026-09-10",
+        "daily_high": 4.650000095367432,
+        "prior_all_time_or_current_month_high": 12.576477944985266,
+        "passes_close_filter": true,
+        "yahoo_symbol": "603323.SS"
+      }
+    },
+    {
+      "ticker": "000978.SZ",
+      "name": "Guilin Tourism Corp. Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Consumer Services",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Services · Other Consumer Services",
+      "description": "Guilin Tourism Corp. Ltd. Class A · Other Consumer Services",
+      "change_pct": 9.988639260528975,
+      "session_open": 9.6899995803833,
+      "session_close": 9.6899995803833,
+      "currency": "CNY",
+      "source_symbol": "SZSE:000978",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/000978.SZ/history/",
+        "date": "2026-09-10",
+        "daily_high": 9.6899995803833,
+        "prior_all_time_or_current_month_high": 20.5,
+        "passes_close_filter": true,
+        "yahoo_symbol": "000978.SZ"
+      }
+    },
+    {
+      "ticker": "002142.SZ",
+      "name": "Bank of Ningbo Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "업종: Finance · Regional Banks",
+      "description": "Bank of Ningbo Co., Ltd. Class A · Regional Banks",
+      "change_pct": 3.4910533462192195,
+      "session_open": 34.810001373291016,
+      "session_close": 35.869998931884766,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002142",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002142.SZ/history/",
+        "date": "2026-09-10",
+        "daily_high": 36.029998779296875,
+        "prior_all_time_or_current_month_high": 42.60887145996094,
+        "passes_close_filter": true,
+        "yahoo_symbol": "002142.SZ"
+      }
+    },
+    {
+      "ticker": "002966.SZ",
+      "name": "Bank of Suzhou Co Ltd Class A",
+      "exchange": "SZSE",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "업종: Finance · Regional Banks",
+      "description": "Bank of Suzhou Co Ltd Class A · Regional Banks",
+      "change_pct": 2.4122836599720143,
+      "session_open": 9.100000381469727,
+      "session_close": 9.34000015258789,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002966",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002966.SZ/history/",
+        "date": "2026-09-10",
+        "daily_high": 9.359999656677246,
+        "prior_all_time_or_current_month_high": 12.454545281150123,
+        "passes_close_filter": true,
+        "yahoo_symbol": "002966.SZ"
+      }
+    },
+    {
+      "ticker": "201872.SZ",
+      "name": "China Merchants Port Group Co., Ltd. Class B",
+      "exchange": "SZSE",
+      "category": "Transportation",
+      "high_type": "52_week",
+      "reason": "업종: Transportation · Other Transportation",
+      "description": "China Merchants Port Group Co., Ltd. Class B · Other Transportation",
+      "change_pct": 1.2034972926188825,
+      "session_open": 18.329999923706055,
+      "session_close": 18.5,
+      "currency": "HKD",
+      "source_symbol": "SZSE:201872",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/201872.SZ/history/",
+        "date": "2026-09-10",
+        "daily_high": 18.520000457763672,
+        "prior_all_time_or_current_month_high": 21.110000610351562,
+        "passes_close_filter": true,
+        "yahoo_symbol": "201872.SZ"
+      }
+    },
+    {
+      "ticker": "300951.SZ",
+      "name": "Shenzhen BSC Technology Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Computer Communications",
+      "description": "Shenzhen BSC Technology Co., Ltd. Class A · Computer Communications",
+      "change_pct": 3.025386243087702,
+      "session_open": 86.9800033569336,
+      "session_close": 88.87999725341797,
+      "currency": "CNY",
+      "source_symbol": "SZSE:300951",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/300951.SZ/history/",
+        "date": "2026-09-10",
+        "daily_high": 89.9800033569336,
+        "prior_all_time_or_current_month_high": 89.9800033569336,
+        "passes_close_filter": true,
+        "yahoo_symbol": "300951.SZ"
+      }
+    },
+    {
+      "ticker": "301251.SZ",
+      "name": "Jiangxi Welgao Electronics Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Electronic Components",
+      "description": "Jiangxi Welgao Electronics Co., Ltd. Class A · Electronic Components",
+      "change_pct": 4.861355703785875,
+      "session_open": 56.560001373291016,
+      "session_close": 59.75,
+      "currency": "CNY",
+      "source_symbol": "SZSE:301251",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/301251.SZ/history/",
+        "date": "2026-09-10",
+        "daily_high": 61.20000076293945,
+        "prior_all_time_or_current_month_high": 61.20000076293945,
+        "passes_close_filter": true,
+        "yahoo_symbol": "301251.SZ"
+      }
+    },
+    {
+      "ticker": "302132.SZ",
+      "name": "AVIC Chengdu Aircraft Company Limited Class A",
+      "exchange": "SZSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Electronic Equipment/Instruments",
+      "description": "AVIC Chengdu Aircraft Company Limited Class A · Electronic Equipment/Instruments",
+      "change_pct": 0.0,
+      "session_open": 72.18000030517578,
+      "session_close": 72.18000030517578,
+      "currency": "CNY",
+      "source_symbol": "SZSE:302132",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/302132.SZ/history/",
+        "date": "2026-09-10",
+        "daily_high": 72.18000030517578,
+        "prior_all_time_or_current_month_high": 96.9000015258789,
+        "passes_close_filter": true,
+        "yahoo_symbol": "302132.SZ"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-09-21T15:19:53.786071+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 5311,
+    "history_symbols": 5311,
+    "failed_symbols": 0,
+    "coverage_ratio": 1.0,
+    "coverage_by_exchange": {
+      "SSE": {
+        "covered": 2361,
+        "total": 2361
+      },
+      "SZSE": {
+        "covered": 2950,
+        "total": 2950
+      }
+    },
+    "session_symbols": 5308,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-09-21T15:19:53.786071+00:00"
+}

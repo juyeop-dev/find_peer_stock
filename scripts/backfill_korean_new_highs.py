@@ -3,6 +3,9 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
+import json
+import os
 import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import date, datetime, timedelta, timezone
@@ -11,6 +14,7 @@ from typing import Any, Callable
 from urllib.parse import urlencode
 
 from generate_new_high_data import SOURCE_DIR, load_markets, validate_report
+from generate_turnover_data import SOURCE_DIR as TURNOVER_DIR, validate_report as validate_turnover
 from new_high_sources.tradingview import (
     TradingViewSourceError,
     _request_daily_history,
@@ -97,7 +101,7 @@ def classify_window(history: dict[date, list], sessions: list[date]) -> dict[dat
     return results
 
 
-def request_with_retry(url: str, timeout: float, attempts: int = 3) -> list:
+def request_with_retry(url: str, timeout: float, attempts: int = 7) -> list:
     last_error: Exception | None = None
     for attempt in range(attempts):
         try:
@@ -107,8 +111,25 @@ def request_with_retry(url: str, timeout: float, attempts: int = 3) -> list:
                 return []
             last_error = exc
             if attempt + 1 < attempts:
-                time.sleep(0.5 * (attempt + 1))
+                time.sleep(min(8, 0.75 * 2 ** attempt))
     raise TradingViewSourceError(f"Cannot complete historical backfill: {last_error}")
+
+
+def cached_request(url: str, timeout: float, cache_dir: Path) -> list:
+    path = cache_dir / f"{hashlib.sha256(url.encode('utf-8')).hexdigest()}.json"
+    if path.exists():
+        try:
+            cached = json.loads(path.read_text(encoding="utf-8"))
+            if isinstance(cached, list):
+                return cached
+        except (OSError, ValueError):
+            path.unlink(missing_ok=True)
+    rows = request_with_retry(url, timeout)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    temporary = path.with_suffix(".tmp")
+    temporary.write_text(json.dumps(rows, ensure_ascii=False), encoding="utf-8")
+    os.replace(temporary, path)
+    return rows
 
 
 def parallel_map(items: list, worker: Callable, workers: int, label: str) -> list:
@@ -123,7 +144,8 @@ def parallel_map(items: list, worker: Callable, workers: int, label: str) -> lis
 
 
 def build_reports(start: date, end: date, *, timeout: float = 30,
-                  workers: int = 24) -> tuple[dict[date, dict], dict[date, dict]]:
+                  workers: int = 24,
+                  cache_dir: Path = SOURCE_DIR.parent / "tmp_korean_history") -> tuple[dict[date, dict], dict[date, dict], dict[date, dict]]:
     sessions = requested_dates(start, end)
     if not sessions:
         raise ValueError("date range has no weekdays")
@@ -134,7 +156,7 @@ def build_reports(start: date, end: date, *, timeout: float = 30,
     def fetch_window(row: dict) -> tuple[str, dict[date, list]]:
         code = row["name"]
         url = history_url(code, window_start, sessions[-1])
-        raw = request_with_retry(url, timeout)
+        raw = cached_request(url, timeout, cache_dir)
         return code, parse_history(raw, code=code, start=window_start, end=sessions[-1])
 
     histories = dict(parallel_map(universe, fetch_window, workers, "52-week histories"))
@@ -148,18 +170,31 @@ def build_reports(start: date, end: date, *, timeout: float = 30,
         for session, evidence in classify_window(history, sessions).items():
             candidates[session].append((code, evidence))
     candidate_codes = sorted({code for rows in candidates.values() for code, _ in rows})
+    turnover_rankings: dict[date, list[tuple[float, str]]] = {}
+    for session in sessions:
+        ranked = sorted(
+            ((history[session][4] * history[session][5], code)
+             for code, history in histories.items()
+             if session in history and history[session][4] > 0 and history[session][5] > 0),
+            key=lambda item: (-item[0], item[1]),
+        )[:30]
+        turnover_rankings[session] = ranked
+    detail_codes = sorted(set(candidate_codes) | {
+        code for ranked in turnover_rankings.values() for _turnover, code in ranked
+    })
 
     def fetch_details(code: str) -> tuple[str, dict[date, list], dict[str, str]]:
         url = history_url(code, date(1980, 1, 1), sessions[-1])
-        raw = request_with_retry(url, timeout)
+        raw = cached_request(url, timeout, cache_dir)
         history = parse_history(raw, code=code, start=date(1980, 1, 1), end=sessions[-1])
         return code, history, fetch_korean_listing(code, timeout)
 
     details = {code: (history, listing) for code, history, listing in
-               parallel_map(candidate_codes, fetch_details, workers, "candidate histories")}
+               parallel_map(detail_codes, fetch_details, workers, "candidate and turnover histories")}
     collected_at = datetime.now(timezone.utc).isoformat()
     reports: dict[date, dict] = {}
     reviews: dict[date, dict] = {}
+    turnover_reports: dict[date, dict] = {}
     for session in sessions:
         entries = []
         checks = []
@@ -220,7 +255,42 @@ def build_reports(start: date, end: date, *, timeout: float = 30,
             "reviewed_at": collected_at, "scanned_symbols": len(universe),
             "session_symbols": session_coverage[session], "checks": checks,
         }
-    return reports, reviews
+        turnover_entries = []
+        for rank, (turnover, code) in enumerate(turnover_rankings[session], start=1):
+            history, listing = details[code]
+            current = history[session]
+            previous_days = [day for day in history if day < session]
+            previous_close = history[max(previous_days)][4] if previous_days else None
+            change_pct = None if previous_close is None else (current[4] / previous_close - 1) * 100
+            source_row = row_by_code[code]
+            exchange = listing["exchange"]
+            suffix = ".KS" if exchange == "KOSPI" else ".KQ"
+            sector = source_row["sector"].strip() if isinstance(source_row["sector"], str) and source_row["sector"].strip() else "미분류"
+            industry = source_row["industry"].strip() if isinstance(source_row["industry"], str) and source_row["industry"].strip() else "업종 정보 미확인"
+            turnover_entries.append({
+                "rank": rank, "ticker": code + suffix, "name": listing["name"],
+                "exchange": exchange, "price": current[4], "change_pct": change_pct,
+                "turnover": turnover, "currency": "KRW", "market_cap": None,
+                "sector": sector, "industry": industry, "source_symbol": source_row["symbol"],
+            })
+        turnover_reports[session] = {
+            "schema_version": 1, "market": "korea", "date": session.isoformat(),
+            "summary": "네이버 과거 조정 일봉의 종가×거래량 기준 거래대금 상위 30개 종목입니다.",
+            "sources": [
+                {"label": "Naver Finance 조정 일봉·한국 종목명", "url": "https://stock.naver.com/"},
+                {"label": "TradingView 한국 주식 종목군·업종", "url": "https://www.tradingview.com/screener/"},
+            ],
+            "entries": turnover_entries,
+            "source_metadata": {
+                "provider": "Naver Finance adjusted daily history",
+                "universe_provider": "TradingView public scanner",
+                "fetched_at": collected_at,
+                "ranking": "adjusted close × adjusted volume descending",
+                "scanned_symbols": len(universe), "session_symbols": session_coverage[session],
+                "pagination_complete": True,
+            },
+        }
+    return reports, reviews, turnover_reports
 
 
 def main() -> None:
@@ -231,20 +301,30 @@ def main() -> None:
     parser.add_argument("--timeout", type=float, default=30)
     parser.add_argument("--force", action="store_true")
     parser.add_argument("--source-dir", type=Path, default=SOURCE_DIR)
+    parser.add_argument("--cache-dir", type=Path, default=SOURCE_DIR.parent / "tmp_korean_history")
     args = parser.parse_args()
     if not 1 <= args.workers <= 64:
         parser.error("--workers must be between 1 and 64")
-    reports, reviews = build_reports(args.start, args.end, timeout=args.timeout, workers=args.workers)
+    reports, reviews, turnover_reports = build_reports(
+        args.start, args.end, timeout=args.timeout, workers=args.workers, cache_dir=args.cache_dir
+    )
     markets = {market["id"]: market for market in load_markets(args.source_dir)}
+    turnover_markets = {market["id"]: market for market in load_markets(TURNOVER_DIR)}
     for session, report in reports.items():
         report_path = args.source_dir / "reports" / "korea" / f"{session}.json"
         if report_path.exists() and not args.force:
             parser.error(f"report already exists: {report_path}; use --force to replace it")
         validate_report(report, report_path, args.source_dir / "reports", markets)
+    for session, report in turnover_reports.items():
+        report_path = TURNOVER_DIR / "reports" / "korea" / f"{session}.json"
+        if report_path.exists() and not args.force:
+            parser.error(f"report already exists: {report_path}; use --force to replace it")
+        validate_turnover(report, report_path, TURNOVER_DIR / "reports", turnover_markets)
     for session, report in reports.items():
         atomic_json(args.source_dir / "reports" / "korea" / f"{session}.json", report)
         atomic_json(args.source_dir / "reviews" / "korea" / f"{session}.json", reviews[session])
-        print(f"korea {session}: {len(report['entries'])} entries")
+        atomic_json(TURNOVER_DIR / "reports" / "korea" / f"{session}.json", turnover_reports[session])
+        print(f"korea {session}: new-high={len(report['entries'])}, turnover=30")
 
 
 if __name__ == "__main__":

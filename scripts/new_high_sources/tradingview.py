@@ -166,11 +166,18 @@ def _request_daily_history(url: str, timeout: float) -> list:
     request = Request(url, headers={"User-Agent": "Mozilla/5.0"})
     try:
         with urlopen(request, timeout=timeout) as response:
-            payload = ast.literal_eval(response.read().decode("utf-8-sig").strip())
+            raw = response.read()
+        try:
+            decoded = raw.decode("utf-8-sig")
+        except UnicodeDecodeError:
+            # Naver's throttling/error pages can still use its legacy Korean
+            # encoding. Decode them so the caller can retry the malformed body.
+            decoded = raw.decode("euc-kr")
+        payload = ast.literal_eval(decoded.strip())
         if not isinstance(payload, list) or not payload:
             raise ValueError("missing daily history")
         return payload[1:]
-    except (HTTPError, URLError, TimeoutError, OSError, ValueError, SyntaxError) as exc:
+    except (HTTPError, URLError, TimeoutError, OSError, UnicodeError, ValueError, SyntaxError) as exc:
         raise TradingViewSourceError(f"Cannot read Korean daily history: {exc}") from exc
 
 

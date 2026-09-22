@@ -1,0 +1,459 @@
+{
+  "schema_version": 1,
+  "market": "china",
+  "date": "2026-09-14",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "600177.SS",
+      "name": "Youngor Fashion Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Consumer Non-Durables",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Non-Durables · Apparel/Footwear",
+      "description": "Youngor Fashion Co., Ltd. Class A · Apparel/Footwear",
+      "change_pct": 1.3205241018574565,
+      "session_open": 8.34000015258789,
+      "session_close": 8.4399995803833,
+      "currency": "CNY",
+      "source_symbol": "SSE:600177",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/600177.SS/history/",
+        "date": "2026-09-14",
+        "daily_high": 8.5,
+        "prior_all_time_or_current_month_high": 9.960000038146973,
+        "passes_close_filter": true,
+        "yahoo_symbol": "600177.SS"
+      }
+    },
+    {
+      "ticker": "600926.SS",
+      "name": "Bank of Hangzhou Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "업종: Finance · Regional Banks",
+      "description": "Bank of Hangzhou Co., Ltd. Class A · Regional Banks",
+      "change_pct": 1.0279857385660174,
+      "session_open": 17.479999542236328,
+      "session_close": 17.690000534057617,
+      "currency": "CNY",
+      "source_symbol": "SSE:600926",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/600926.SS/history/",
+        "date": "2026-09-14",
+        "daily_high": 17.719999313354492,
+        "prior_all_time_or_current_month_high": 18.450000762939453,
+        "passes_close_filter": true,
+        "yahoo_symbol": "600926.SS"
+      }
+    },
+    {
+      "ticker": "601086.SS",
+      "name": "Gansu Guofang Industry & Trade (Group) Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Distribution Services",
+      "high_type": "all_time",
+      "reason": "업종: Distribution Services · Wholesale Distributors",
+      "description": "Gansu Guofang Industry & Trade (Group) Co., Ltd. Class A · Wholesale Distributors",
+      "change_pct": 10.03057707269004,
+      "session_open": 16.3700008392334,
+      "session_close": 17.989999771118164,
+      "currency": "CNY",
+      "source_symbol": "SSE:601086",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/601086.SS/history/",
+        "date": "2026-09-14",
+        "daily_high": 17.989999771118164,
+        "prior_all_time_or_current_month_high": 17.989999771118164,
+        "passes_close_filter": true,
+        "yahoo_symbol": "601086.SS"
+      }
+    },
+    {
+      "ticker": "601199.SS",
+      "name": "Jiangsu Jiangnan Water Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Utilities",
+      "high_type": "52_week",
+      "reason": "업종: Utilities · Water Utilities",
+      "description": "Jiangsu Jiangnan Water Co., Ltd. Class A · Water Utilities",
+      "change_pct": 4.945906986681647,
+      "session_open": 6.5,
+      "session_close": 6.789999961853027,
+      "currency": "CNY",
+      "source_symbol": "SSE:601199",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/601199.SS/history/",
+        "date": "2026-09-14",
+        "daily_high": 6.829999923706055,
+        "prior_all_time_or_current_month_high": 10.680000305175781,
+        "passes_close_filter": true,
+        "yahoo_symbol": "601199.SS"
+      }
+    },
+    {
+      "ticker": "601838.SS",
+      "name": "Bank of Chengdu Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "업종: Finance · Regional Banks",
+      "description": "Bank of Chengdu Co., Ltd. Class A · Regional Banks",
+      "change_pct": 0.9975100775553747,
+      "session_open": 20.09000015258789,
+      "session_close": 20.25,
+      "currency": "CNY",
+      "source_symbol": "SSE:601838",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/601838.SS/history/",
+        "date": "2026-09-14",
+        "daily_high": 20.389999389648438,
+        "prior_all_time_or_current_month_high": 20.959999084472656,
+        "passes_close_filter": true,
+        "yahoo_symbol": "601838.SS"
+      }
+    },
+    {
+      "ticker": "601988.SS",
+      "name": "Bank of China Limited Class A",
+      "exchange": "SSE",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "업종: Finance · Major Banks",
+      "description": "Bank of China Limited Class A · Major Banks",
+      "change_pct": 1.0654443378274259,
+      "session_open": 6.559999942779541,
+      "session_close": 6.639999866485596,
+      "currency": "CNY",
+      "source_symbol": "SSE:601988",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/601988.SS/history/",
+        "date": "2026-09-14",
+        "daily_high": 6.730000019073486,
+        "prior_all_time_or_current_month_high": 7.342613220214844,
+        "passes_close_filter": true,
+        "yahoo_symbol": "601988.SS"
+      }
+    },
+    {
+      "ticker": "688835.SS",
+      "name": "JIANGSU GAO KAI PRECISION FLUID",
+      "exchange": "SSE",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Industrial Machinery",
+      "description": "JIANGSU GAO KAI PRECISION FLUID · Industrial Machinery",
+      "change_pct": 20.00074278932744,
+      "session_open": 274.0,
+      "session_close": 324.4100036621094,
+      "currency": "CNY",
+      "source_symbol": "SSE:688835",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/688835.SS/history/",
+        "date": "2026-09-14",
+        "daily_high": 324.4100036621094,
+        "prior_all_time_or_current_month_high": 324.4100036621094,
+        "passes_close_filter": true,
+        "yahoo_symbol": "688835.SS"
+      }
+    },
+    {
+      "ticker": "000978.SZ",
+      "name": "Guilin Tourism Corp. Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Consumer Services",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Services · Other Consumer Services",
+      "description": "Guilin Tourism Corp. Ltd. Class A · Other Consumer Services",
+      "change_pct": 10.030392934113852,
+      "session_open": 10.329999923706055,
+      "session_close": 10.859999656677246,
+      "currency": "CNY",
+      "source_symbol": "SZSE:000978",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/000978.SZ/history/",
+        "date": "2026-09-14",
+        "daily_high": 10.859999656677246,
+        "prior_all_time_or_current_month_high": 20.5,
+        "passes_close_filter": true,
+        "yahoo_symbol": "000978.SZ"
+      }
+    },
+    {
+      "ticker": "001326.SZ",
+      "name": "Shenzhen SNC Opto Electronic Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Electrical Products",
+      "description": "Shenzhen SNC Opto Electronic Co., Ltd. Class A · Electrical Products",
+      "change_pct": 6.244111885469761,
+      "session_open": 73.05999755859375,
+      "session_close": 78.94999694824219,
+      "currency": "CNY",
+      "source_symbol": "SZSE:001326",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/001326.SZ/history/",
+        "date": "2026-09-14",
+        "daily_high": 79.87000274658203,
+        "prior_all_time_or_current_month_high": 90.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "001326.SZ"
+      }
+    },
+    {
+      "ticker": "002708.SZ",
+      "name": "Changzhou Nrb Corporation Class A",
+      "exchange": "SZSE",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Metal Fabrication",
+      "description": "Changzhou Nrb Corporation Class A · Metal Fabrication",
+      "change_pct": 2.9250429414965806,
+      "session_open": 16.709999084472656,
+      "session_close": 16.889999389648438,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002708",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002708.SZ/history/",
+        "date": "2026-09-14",
+        "daily_high": 17.1299991607666,
+        "prior_all_time_or_current_month_high": 21.479999542236328,
+        "passes_close_filter": true,
+        "yahoo_symbol": "002708.SZ"
+      }
+    },
+    {
+      "ticker": "002815.SZ",
+      "name": "Suntak Technology Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Electronic Components",
+      "description": "Suntak Technology Co., Ltd. Class A · Electronic Components",
+      "change_pct": 5.17928744760372,
+      "session_open": 19.649999618530273,
+      "session_close": 21.1200008392334,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002815",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002815.SZ/history/",
+        "date": "2026-09-14",
+        "daily_high": 21.329999923706055,
+        "prior_all_time_or_current_month_high": 24.8799991607666,
+        "passes_close_filter": true,
+        "yahoo_symbol": "002815.SZ"
+      }
+    },
+    {
+      "ticker": "002913.SZ",
+      "name": "Aoshikang Technology Co. Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Electronic Components",
+      "description": "Aoshikang Technology Co. Ltd. Class A · Electronic Components",
+      "change_pct": 5.586981888686204,
+      "session_open": 71.7699966430664,
+      "session_close": 76.54000091552734,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002913",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002913.SZ/history/",
+        "date": "2026-09-14",
+        "daily_high": 77.06999969482422,
+        "prior_all_time_or_current_month_high": 77.06999969482422,
+        "passes_close_filter": true,
+        "yahoo_symbol": "002913.SZ"
+      }
+    },
+    {
+      "ticker": "300154.SZ",
+      "name": "Shenzhen Riland Industry Group Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Industrial Machinery",
+      "description": "Shenzhen Riland Industry Group Co., Ltd. Class A · Industrial Machinery",
+      "change_pct": 8.788595776876452,
+      "session_open": 12.6899995803833,
+      "session_close": 13.739999771118164,
+      "currency": "CNY",
+      "source_symbol": "SZSE:300154",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/300154.SZ/history/",
+        "date": "2026-09-14",
+        "daily_high": 14.100000381469727,
+        "prior_all_time_or_current_month_high": 16.670000076293945,
+        "passes_close_filter": true,
+        "yahoo_symbol": "300154.SZ"
+      }
+    },
+    {
+      "ticker": "300592.SZ",
+      "name": "Huakai Yibai Technology Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Retail Trade",
+      "high_type": "52_week",
+      "reason": "업종: Retail Trade · Internet Retail",
+      "description": "Huakai Yibai Technology Co., Ltd. Class A · Internet Retail",
+      "change_pct": 7.2086713751124964,
+      "session_open": 18.450000762939453,
+      "session_close": 19.780000686645508,
+      "currency": "CNY",
+      "source_symbol": "SZSE:300592",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/300592.SZ/history/",
+        "date": "2026-09-14",
+        "daily_high": 19.809999465942383,
+        "prior_all_time_or_current_month_high": 20.7397951398577,
+        "passes_close_filter": true,
+        "yahoo_symbol": "300592.SZ"
+      }
+    },
+    {
+      "ticker": "300741.SZ",
+      "name": "Huabao Technology Co Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Process Industries",
+      "high_type": "52_week",
+      "reason": "업종: Process Industries · Chemicals: Specialty",
+      "description": "Huabao Technology Co Ltd. Class A · Chemicals: Specialty",
+      "change_pct": 6.464650181650877,
+      "session_open": 20.200000762939453,
+      "session_close": 21.079999923706055,
+      "currency": "CNY",
+      "source_symbol": "SZSE:300741",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/300741.SZ/history/",
+        "date": "2026-09-14",
+        "daily_high": 22.579999923706055,
+        "prior_all_time_or_current_month_high": 80.25,
+        "passes_close_filter": true,
+        "yahoo_symbol": "300741.SZ"
+      }
+    },
+    {
+      "ticker": "300951.SZ",
+      "name": "Shenzhen BSC Technology Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Computer Communications",
+      "description": "Shenzhen BSC Technology Co., Ltd. Class A · Computer Communications",
+      "change_pct": 8.151023969419246,
+      "session_open": 83.69999694824219,
+      "session_close": 91.94999694824219,
+      "currency": "CNY",
+      "source_symbol": "SZSE:300951",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/300951.SZ/history/",
+        "date": "2026-09-14",
+        "daily_high": 94.77999877929688,
+        "prior_all_time_or_current_month_high": 94.77999877929688,
+        "passes_close_filter": true,
+        "yahoo_symbol": "300951.SZ"
+      }
+    },
+    {
+      "ticker": "301251.SZ",
+      "name": "Jiangxi Welgao Electronics Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Electronic Components",
+      "description": "Jiangxi Welgao Electronics Co., Ltd. Class A · Electronic Components",
+      "change_pct": 11.28814180018538,
+      "session_open": 58.0,
+      "session_close": 65.66000366210938,
+      "currency": "CNY",
+      "source_symbol": "SZSE:301251",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/301251.SZ/history/",
+        "date": "2026-09-14",
+        "daily_high": 66.9800033569336,
+        "prior_all_time_or_current_month_high": 66.9800033569336,
+        "passes_close_filter": true,
+        "yahoo_symbol": "301251.SZ"
+      }
+    },
+    {
+      "ticker": "302132.SZ",
+      "name": "AVIC Chengdu Aircraft Company Limited Class A",
+      "exchange": "SZSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Electronic Equipment/Instruments",
+      "description": "AVIC Chengdu Aircraft Company Limited Class A · Electronic Equipment/Instruments",
+      "change_pct": 0.0,
+      "session_open": 72.18000030517578,
+      "session_close": 72.18000030517578,
+      "currency": "CNY",
+      "source_symbol": "SZSE:302132",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/302132.SZ/history/",
+        "date": "2026-09-14",
+        "daily_high": 72.18000030517578,
+        "prior_all_time_or_current_month_high": 96.9000015258789,
+        "passes_close_filter": true,
+        "yahoo_symbol": "302132.SZ"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-09-21T15:19:53.786071+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 5311,
+    "history_symbols": 5311,
+    "failed_symbols": 0,
+    "coverage_ratio": 1.0,
+    "coverage_by_exchange": {
+      "SSE": {
+        "covered": 2361,
+        "total": 2361
+      },
+      "SZSE": {
+        "covered": 2950,
+        "total": 2950
+      }
+    },
+    "session_symbols": 5309,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-09-21T15:19:53.786071+00:00"
+}

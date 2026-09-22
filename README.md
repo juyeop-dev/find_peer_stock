@@ -134,11 +134,12 @@ python .\scripts\refresh_new_highs.py
 python .\scripts\generate_new_high_data.py
 ```
 
-한국의 지난 거래일을 다시 채울 때는 네이버 조정 일봉으로 현재 한국 주식 종목군 전체를 대조하는 전용 명령을 사용합니다. 날짜 구간의 각 평일을 한 번에 계산하며, 기존 원본을 교체하려면 `--force`를 추가합니다.
+한국의 지난 거래일을 다시 채울 때는 네이버 조정 일봉으로 현재 한국 주식 종목군 전체를 대조하는 전용 명령을 사용합니다. 신고가와 거래대금 상위 30개를 함께 계산하며, 기존 원본을 교체하려면 `--force`를 추가합니다. 성공한 종목 이력은 `data/tmp_korean_history`에 캐시합니다.
 
 ```powershell
 python .\scripts\backfill_korean_new_highs.py --start 2026-09-07 --end 2026-09-10
 python .\scripts\generate_new_high_data.py
+python .\scripts\generate_turnover_data.py
 ```
 
 기존 리포트에 당시 종가가 없거나 자동 생성된 신고가 사유가 미확인으로 남아 있으면 다음 명령으로 실제 거래일의 시가·종가와 업종 설명을 보완한 뒤 다시 게시합니다.
@@ -148,7 +149,7 @@ python .\scripts\enrich_new_high_reports.py
 python .\scripts\generate_new_high_data.py
 ```
 
-일본의 최근 거래일은 TradingView의 날짜별 일봉 필드로 현재 TSE 주식 종목군 전체를 대조해 채웁니다. 각 종목의 실제 일봉 날짜를 확인하므로 휴장일은 빈 리포트로 저장하지 않습니다. 현재는 일본만 허용하며, 같은 수집기를 다음 미국 백필에 확장할 수 있도록 시장 인자를 분리했습니다.
+일본·미국의 최근 거래일은 TradingView의 날짜별 일봉 필드로 현재 주식 종목군 전체를 대조해 채웁니다. 각 종목의 실제 일봉 날짜를 확인하므로 휴장일은 빈 리포트로 저장하지 않습니다.
 
 ```powershell
 python .\scripts\backfill_tradingview_new_highs.py --market japan --start 2026-09-07 --end 2026-09-10
@@ -171,12 +172,14 @@ TradingView 스크리너의 주식 전체 목록을 페이지 끝까지 확인�
 
 ### 해외 캘린더 과거 구간 복원
 
-일본·중국·유럽의 누락된 최근 구간은 TradingView의 현재 주식 종목군과 Yahoo Finance의 날짜별 OHLCV를 결합해 신고가와 거래대금 캘린더를 함께 복원할 수 있습니다. 거래대금은 TradingView의 일봉 `Value.Traded`와 동일한 종가×거래량으로 계산합니다. 52주 신고가는 분할 조정 일봉, 역대 신고가는 후보 종목의 분할 조정 전체 월봉으로 추가 판정합니다.
+일본·중국·유럽·미국·대만의 누락된 최근 구간은 TradingView의 현재 주식 종목군과 Yahoo Finance의 날짜별 OHLCV를 결합해 신고가와 거래대금 캘린더를 함께 복원할 수 있습니다. 거래대금은 TradingView의 일봉 `Value.Traded`와 동일한 종가×거래량으로 계산합니다. 52주 신고가는 분할 조정 일봉, 역대 신고가는 후보 종목의 분할 조정 전체 월봉으로 추가 판정합니다.
 
 ```powershell
 python .\scripts\backfill_yahoo_calendars.py --market japan --start 2026-09-01 --end 2026-09-21
 python .\scripts\backfill_yahoo_calendars.py --market china --start 2026-09-01 --end 2026-09-21
 python .\scripts\backfill_yahoo_calendars.py --market europe --start 2026-09-01 --end 2026-09-21
+python .\scripts\backfill_yahoo_calendars.py --market us --start 2026-09-01 --end 2026-09-21
+python .\scripts\backfill_yahoo_calendars.py --market taiwan --start 2026-09-01 --end 2026-09-21
 python .\scripts\generate_new_high_data.py
 python .\scripts\generate_turnover_data.py
 ```

@@ -17,6 +17,9 @@ class YahooCalendarBackfillTests(unittest.TestCase):
             ({"exchange": "TSE", "name": "7203", "symbol": "TSE:7203"}, ["7203.T"]),
             ({"exchange": "SSE", "name": "600000", "symbol": "SSE:600000"}, ["600000.SS"]),
             ({"exchange": "XETR", "name": "SAP", "symbol": "XETR:SAP"}, ["SAP.DE"]),
+            ({"exchange": "TWSE", "name": "2330", "symbol": "TWSE:2330"}, ["2330.TW"]),
+            ({"exchange": "TPEX", "name": "6488", "symbol": "TPEX:6488"}, ["6488.TWO"]),
+            ({"exchange": "NASDAQ", "name": "AAPL", "symbol": "NASDAQ:AAPL"}, ["AAPL"]),
             ({"exchange": "EURONEXT", "name": "AIR", "symbol": "EURONEXT:AIR"},
              ["AIR.PA", "AIR.AS", "AIR.BR", "AIR.LS", "AIR.IR"]),
         ]

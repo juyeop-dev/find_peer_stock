@@ -36,13 +36,15 @@ from refresh_new_highs import atomic_json, collection_date
 from turnover_sources.tradingview import _logo_url
 
 
-SUPPORTED_MARKETS = frozenset({"china", "japan", "europe"})
+SUPPORTED_MARKETS = frozenset({"china", "japan", "europe", "taiwan", "us"})
 UNIVERSE_COLUMNS = (
     "name", "description", "exchange", "type", "subtype", "sector",
     "industry", "currency", "logoid",
 )
 YAHOO_SUFFIXES = {
     "SSE": (".SS",), "SZSE": (".SZ",), "TSE": (".T",),
+    "TWSE": (".TW",), "TPEX": (".TWO",),
+    "NASDAQ": ("",), "NYSE": ("",), "AMEX": ("",),
     "XETR": (".DE",), "LSE": (".L",), "SIX": (".SW",),
     "EURONEXT": (".PA", ".AS", ".BR", ".LS", ".IR"),
 }
@@ -272,9 +274,18 @@ def parse_bars(payload: dict[str, Any], symbol: str, timezone_name: str, *,
     return bars
 
 
+def market_for_exchange(exchange: str) -> str:
+    markets = {
+        "TSE": "japan", "SSE": "china", "SZSE": "china",
+        "TWSE": "taiwan", "TPEX": "taiwan",
+        "NASDAQ": "us", "NYSE": "us", "AMEX": "us",
+    }
+    return markets.get(exchange, "europe")
+
+
 def fetch_listing_history(row: dict[str, Any], start: date, end: date, *, timeout: float,
                           cache_dir: Path) -> ListingHistory:
-    timezone_name = _CONFIG[{"TSE": "japan", "SSE": "china", "SZSE": "china"}.get(row["exchange"], "europe")][1][row["exchange"]]
+    timezone_name = _CONFIG[market_for_exchange(row["exchange"])][1][row["exchange"]]
     errors = []
     for candidate in yahoo_candidates(row):
         try:
@@ -319,7 +330,7 @@ def daily_candidates(history: ListingHistory, sessions: set[date]) -> dict[date,
 def fetch_prior_all_time_high(history: ListingHistory, start: date, *, timeout: float,
                               cache_dir: Path) -> float:
     exchange = history.row["exchange"]
-    timezone_name = _CONFIG[{"TSE": "japan", "SSE": "china", "SZSE": "china"}.get(exchange, "europe")][1][exchange]
+    timezone_name = _CONFIG[market_for_exchange(exchange)][1][exchange]
     payload = request_yahoo(
         history.yahoo_symbol, period1=None, period2=None, range_name="max", interval="1mo",
         timeout=timeout, cache_dir=cache_dir,
@@ -333,7 +344,9 @@ def published_exchange(exchange: str) -> str:
 
 
 def archive_ticker(row: dict[str, Any]) -> str:
-    suffixes = {"SSE": ".SS", "SZSE": ".SZ", "TSE": ".T"}
+    suffixes = {"SSE": ".SS", "SZSE": ".SZ", "TSE": ".T", "TWSE": ".TW", "TPEX": ".TWO"}
+    if row["exchange"] in {"NASDAQ", "NYSE", "AMEX"}:
+        return row["name"]
     return row["name"] + suffixes[row["exchange"]] if row["exchange"] in suffixes else row["symbol"]
 
 
