@@ -2,11 +2,11 @@
   "schema_version": 1,
   "markets": {
     "korea": {
-      "status": "updated",
-      "target_date": "2026-09-22",
+      "last_success_at": "2026-09-22T07:31:19.222946+00:00",
       "last_success_date": "2026-09-22",
-      "message": "이 거래일의 신고가 자료가 등록되었습니다.",
-      "last_success_at": "2026-09-22T07:31:19.222946+00:00"
+      "status": "pending",
+      "target_date": "2026-09-23",
+      "message": "장 마감 후 일별 자료를 확인합니다."
     },
     "us": {
       "status": "updated",
@@ -33,10 +33,8 @@
       "last_success_at": "2026-09-18T07:31:23.598978+00:00",
       "last_success_date": "2026-09-18",
       "status": "pending",
-      "target_date": "2026-09-22",
-      "last_attempt_at": "2026-09-22T23:26:20.826660+00:00",
-      "next_retry_at": "2026-09-22T23:56:20.826660+00:00",
-      "message": "해당 거래일 자료 확인 대기 중입니다."
+      "target_date": "2026-09-23",
+      "message": "장 마감 후 일별 자료를 확인합니다."
     },
     "europe": {
       "status": "updated",
