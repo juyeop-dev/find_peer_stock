@@ -3,7 +3,8 @@
   "markets": {
     "korea": {
       "status": "pending",
-      "message": "장 마감 후 수집합니다.",
+      "target_date": "2026-09-25",
+      "message": "korea/KRX: source session is 2026-09-23, requested 2026-09-25",
       "last_success_at": "2026-09-23T07:31:43.124107+00:00",
       "last_success_date": "2026-09-23"
     },
@@ -27,10 +28,10 @@
       "last_success_date": "2026-09-24"
     },
     "japan": {
-      "status": "pending",
-      "message": "장 마감 후 수집합니다.",
-      "last_success_at": "2026-09-24T07:31:33.450764+00:00",
-      "last_success_date": "2026-09-24"
+      "status": "updated",
+      "target_date": "2026-09-25",
+      "last_success_date": "2026-09-25",
+      "last_success_at": "2026-09-25T07:31:27.369866+00:00"
     },
     "europe": {
       "status": "pending",
