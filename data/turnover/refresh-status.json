@@ -2,9 +2,9 @@
   "schema_version": 1,
   "markets": {
     "korea": {
-      "status": "error",
+      "status": "pending",
       "target_date": "2026-09-25",
-      "message": "Cannot read https://scanner.tradingview.com/korea/scan: <urlopen error [Errno 104] Connection reset by peer>",
+      "message": "korea/KRX: source session is 2026-09-23, requested 2026-09-25",
       "last_success_at": "2026-09-23T07:31:43.124107+00:00",
       "last_success_date": "2026-09-23"
     },
