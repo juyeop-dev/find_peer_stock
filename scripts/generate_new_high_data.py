@@ -169,6 +169,32 @@ def validate_report(payload: dict[str, Any], path: Path, reports_dir: Path,
     for category, reason in category_reasons.items():
         require(category in categories and nonempty_text(reason),
                 f"{path}: category_reasons keys must match entry categories and values must be nonempty strings")
+    source_metadata = payload.get("source_metadata")
+    if source_metadata is not None:
+        require(isinstance(source_metadata, dict), f"{path}: source_metadata must be an object")
+        previous_sessions = source_metadata.get("previous_session_by_exchange")
+        if previous_sessions is not None:
+            scanner_exchanges = source_metadata.get("scanner_exchanges")
+            latest_sessions = source_metadata.get("latest_session_by_exchange")
+            require(isinstance(scanner_exchanges, list) and bool(scanner_exchanges) and
+                    all(nonempty_text(exchange) for exchange in scanner_exchanges) and
+                    len(scanner_exchanges) == len(set(scanner_exchanges)),
+                    f"{path}: scanner_exchanges must be a nonempty unique string list")
+            require(isinstance(previous_sessions, dict) and
+                    set(previous_sessions) == set(scanner_exchanges),
+                    f"{path}: previous sessions must cover every scanner exchange")
+            require(isinstance(latest_sessions, dict) and set(latest_sessions) == set(scanner_exchanges) and
+                    all(value == report_date for value in latest_sessions.values()),
+                    f"{path}: latest sessions must match the report date for every scanner exchange")
+            current_day = date.fromisoformat(report_date)
+            for exchange, value in previous_sessions.items():
+                require(isinstance(value, str), f"{path}: invalid previous session for {exchange}")
+                try:
+                    previous_day = date.fromisoformat(value)
+                except ValueError as exc:
+                    raise NewHighDataError(f"{path}: invalid previous session for {exchange}") from exc
+                require(previous_day < current_day,
+                        f"{path}: previous session must precede report date for {exchange}")
 
 
 def count_entries(entries: list[dict[str, Any]]) -> dict[str, int]:
@@ -177,6 +203,41 @@ def count_entries(entries: list[dict[str, Any]]) -> dict[str, int]:
         "high_52_week": sum(entry["high_type"] == "52_week" for entry in entries),
         "high_all_time": sum(entry["high_type"] == "all_time" for entry in entries),
     }
+
+
+def confirmed_market_closures(reports: list[dict[str, Any]]) -> list[dict[str, str]]:
+    """Derive weekday closures only from a source-proven gap between sessions.
+
+    Missing reports alone are never treated as closures. For multi-exchange
+    markets, a date is closed only when every covered exchange skipped it.
+    """
+    closures: set[tuple[str, date]] = set()
+    recorded_sessions = {(report["market"], date.fromisoformat(report["date"])) for report in reports}
+    for report in reports:
+        metadata = report.get("source_metadata")
+        if not isinstance(metadata, dict):
+            continue
+        previous_sessions = metadata.get("previous_session_by_exchange")
+        scanner_exchanges = metadata.get("scanner_exchanges")
+        if not isinstance(previous_sessions, dict) or not isinstance(scanner_exchanges, list):
+            continue
+        current_day = date.fromisoformat(report["date"])
+        gaps: list[set[date]] = []
+        for exchange in scanner_exchanges:
+            previous_day = date.fromisoformat(previous_sessions[exchange])
+            gap = {
+                date.fromordinal(ordinal)
+                for ordinal in range(previous_day.toordinal() + 1, current_day.toordinal())
+                if date.fromordinal(ordinal).weekday() < 5
+            }
+            gaps.append(gap)
+        if gaps:
+            closures.update((report["market"], day) for day in set.intersection(*gaps))
+    closures.difference_update(recorded_sessions)
+    return [
+        {"market": market, "date": closed_day.isoformat(), "label": "휴장"}
+        for market, closed_day in sorted(closures, key=lambda item: (-item[1].toordinal(), item[0]))
+    ]
 
 
 def write_json(path: Path, payload: dict[str, Any]) -> None:
@@ -268,7 +329,12 @@ def generate_new_high_data(source_dir: Path = SOURCE_DIR, output_dir: Path = GEN
                 for exchange in markets_by_id[report["market"]]["exchanges"]
             },
         })
-    index = {"schema_version": 1, "markets": markets, "reports": summaries}
+    index = {
+        "schema_version": 1,
+        "markets": markets,
+        "reports": summaries,
+        "closures": confirmed_market_closures(reports),
+    }
     status_path = source_dir / "refresh-status.json"
     if status_path.exists():
         statuses = read_json(status_path).get("markets")

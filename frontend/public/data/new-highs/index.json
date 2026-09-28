@@ -114,6 +114,27 @@
   ],
   "reports": [
     {
+      "market": "korea",
+      "date": "2026-09-28",
+      "counts": {
+        "total": 10,
+        "high_52_week": 8,
+        "high_all_time": 2
+      },
+      "exchanges": {
+        "KOSPI": {
+          "total": 2,
+          "high_52_week": 2,
+          "high_all_time": 0
+        },
+        "KOSDAQ": {
+          "total": 8,
+          "high_52_week": 6,
+          "high_all_time": 2
+        }
+      }
+    },
+    {
       "market": "china",
       "date": "2026-09-22",
       "counts": {
@@ -2175,13 +2196,26 @@
       }
     }
   ],
+  "closures": [
+    {
+      "market": "korea",
+      "date": "2026-09-25",
+      "label": "휴장"
+    },
+    {
+      "market": "korea",
+      "date": "2026-09-24",
+      "label": "휴장"
+    }
+  ],
   "refresh": {
     "korea": {
       "status": "updated",
-      "target_date": "2026-09-22",
-      "last_success_date": "2026-09-22",
-      "message": "이 거래일의 신고가 자료가 등록되었습니다.",
-      "last_success_at": "2026-09-22T07:31:19.222946+00:00"
+      "target_date": "2026-09-28",
+      "last_attempt_at": "2026-09-28T14:30:36.229123+00:00",
+      "last_success_at": "2026-09-28T14:30:36.229123+00:00",
+      "last_success_date": "2026-09-28",
+      "message": "장 마감 후 신고가 자료를 갱신했습니다."
     },
     "us": {
       "last_success_at": "2026-09-21T21:01:18.157044+00:00",

@@ -136,6 +136,15 @@
   color: #263f6d;
 }
 
+.newHighCalendar .newHighCalendarDay.isClosed {
+  background: #f5f6f7;
+  color: #929aa5;
+}
+
+.newHighCalendar .newHighCalendarDay.isClosed:hover {
+  background: #eceff2;
+}
+
 .newHighCalendar .newHighCalendarDay.isToday {
   border-color: #adc0e8;
 }
@@ -189,6 +198,13 @@
   color: #7b8797;
 }
 
+.newHighCalendar .newHighCalendarClosed {
+  font-size: 9px;
+  font-weight: 700;
+  white-space: nowrap;
+  color: #8a939e;
+}
+
 .newHighCalendar .newHighCalendarDay.isSelected {
   border-color: #2855b8;
   background: #2855b8;
@@ -197,6 +213,10 @@
 
 .newHighCalendar .newHighCalendarDay.isSelected .newHighCalendarDayMeta,
 .newHighCalendar .newHighCalendarDay.isSelected .newHighCalendarZero {
+  color: #fff;
+}
+
+.newHighCalendar .newHighCalendarDay.isSelected .newHighCalendarClosed {
   color: #fff;
 }
 
@@ -229,6 +249,14 @@
 .newHighCalendar .newHighCalendarLegend .newHighCalendarDot {
   width: 6px;
   height: 6px;
+}
+
+.newHighCalendar .newHighCalendarClosedMark {
+  display: inline-block;
+  width: 9px;
+  height: 6px;
+  border-radius: 2px;
+  background: #c6cbd1;
 }
 
 .newHighCalendar .newHighCalendarHint {

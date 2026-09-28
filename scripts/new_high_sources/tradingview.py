@@ -47,7 +47,7 @@ _CONFIG = {
 COLUMNS = (
     "name", "description", "exchange", "type", "subtype", "sector", "industry",
     "change", "open", "high", "low", "close", "price_52_week_high", "High.All", "time", "volume", "indexes",
-    "currency",
+    "currency", "time[1]",
 )
 _DEFINITION_URL = "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
 
@@ -132,6 +132,19 @@ def _bar_date(row: dict[str, Any], timezone_name: str) -> date | None:
         return datetime.fromtimestamp(value, timezone.utc).astimezone(ZoneInfo(timezone_name)).date()
     except (OverflowError, OSError, ValueError) as exc:
         raise TradingViewSourceError(f"{row['symbol']}: invalid daily bar timestamp") from exc
+
+
+def _previous_bar_date(row: dict[str, Any], timezone_name: str) -> date | None:
+    """Return the preceding dated bar used to prove gaps between sessions."""
+    value = row["time[1]"]
+    if value is None:
+        return None
+    if not _number(value) or value <= 0:
+        raise TradingViewSourceError(f"{row['symbol']}: invalid previous daily bar timestamp")
+    try:
+        return datetime.fromtimestamp(value, timezone.utc).astimezone(ZoneInfo(timezone_name)).date()
+    except (OverflowError, OSError, ValueError) as exc:
+        raise TradingViewSourceError(f"{row['symbol']}: invalid previous daily bar timestamp") from exc
 
 
 def _korean_index_board(row: dict[str, Any]) -> str | None:
@@ -305,6 +318,7 @@ def fetch_report(market_id: str, session_date: date, *, timeout: float = 30,
     scanner, exchanges = _CONFIG[market_id]
     rows = _scan(market_id, timeout, page_size)
     latest: dict[str, date] = {}
+    previous: dict[str, date] = {}
     references: dict[str, str] = {}
     current: list[dict[str, Any]] = []
     excluded = Counter()
@@ -320,6 +334,11 @@ def fetch_report(market_id: str, session_date: date, *, timeout: float = 30,
             continue
         current.append(row)
         references.setdefault(exchange, row["symbol"])
+        previous_day = _previous_bar_date(row, exchanges[exchange])
+        if previous_day is not None:
+            if previous_day >= session_date:
+                raise TradingViewSourceError(f"{row['symbol']}: previous daily bar is not before current session")
+            previous[exchange] = max(previous_day, previous.get(exchange, previous_day))
         if market_id == "korea":
             board = _korean_index_board(row)
             if board:
@@ -333,6 +352,11 @@ def fetch_report(market_id: str, session_date: date, *, timeout: float = 30,
             )
     if market_id == "korea" and not {"KOSPI", "KOSDAQ"}.issubset(references):
         raise TradingViewSourceError("korea: cannot verify current-session coverage of both KOSPI and KOSDAQ")
+    missing_previous = set(exchanges) - previous.keys()
+    if missing_previous:
+        raise TradingViewSourceError(
+            f"{market_id}: cannot verify previous session for exchanges: {', '.join(sorted(missing_previous))}"
+        )
     entries = []
     used_tickers: set[str] = set()
     for row in current:
@@ -393,6 +417,7 @@ def fetch_report(market_id: str, session_date: date, *, timeout: float = 30,
             "definition": "daily high >= period high; close >= open; close >= previous close when one exists; all-time takes precedence; ties included",
             "scanner_exchanges": list(exchanges),
             "latest_session_by_exchange": {exchange: day.isoformat() for exchange, day in latest.items()},
+            "previous_session_by_exchange": {exchange: day.isoformat() for exchange, day in previous.items()},
             "current_session_reference_symbols": references,
             "scanned_symbols": len(rows), "current_session_symbols": len(current),
             "excluded_symbols": dict(excluded), "pagination_complete": True,

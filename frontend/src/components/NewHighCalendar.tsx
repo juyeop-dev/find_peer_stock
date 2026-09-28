@@ -7,6 +7,7 @@ interface NewHighCalendarProps {
   selectedDate: string;
   today: string;
   days: Record<string, { total: number; high_52_week: number; high_all_time: number }>;
+  closedDates: ReadonlySet<string>;
   onMonthChange: (month: string) => void;
   onSelectDate: (date: string) => void;
 }
@@ -37,6 +38,7 @@ export function NewHighCalendar({
   selectedDate,
   today,
   days,
+  closedDates,
   onMonthChange,
   onSelectDate,
 }: NewHighCalendarProps) {
@@ -131,16 +133,18 @@ export function NewHighCalendar({
           const date = utcDate(year, monthNumber - 1, day);
           const key = dateKey(date);
           const report = days[key];
+          const closed = !report && (date.getUTCDay() === 0 || date.getUTCDay() === 6 || closedDates.has(key));
           const selected = key === selectedDate;
           const isToday = key === today;
           const label = `${fullDateLabel(date)}, ${report
             ? `등록 ${report.total}종목, 52주 신고가 ${report.high_52_week}종목, 역대 신고가 ${report.high_all_time}종목`
-            : "등록된 데이터 없음"}`;
+            : closed ? "휴장" : "등록된 데이터 없음"}`;
           const classes = [
             "newHighCalendarDay",
             selected ? "isSelected" : "",
             isToday ? "isToday" : "",
             report ? "hasReport" : "",
+            closed ? "isClosed" : "",
             index % 7 === 0 ? "isSunday" : index % 7 === 6 ? "isSaturday" : "",
           ].filter(Boolean).join(" ");
 
@@ -172,7 +176,7 @@ export function NewHighCalendar({
                       <span>{report.total}</span>
                     </>
                   ) : <span className="newHighCalendarZero">등록 0</span>
-                ) : null}
+                ) : closed ? <span className="newHighCalendarClosed">휴장</span> : null}
               </span>
             </button>
           );
@@ -181,8 +185,9 @@ export function NewHighCalendar({
       <div className="newHighCalendarLegend">
         <span><i className="newHighCalendarDot is52Week" />52주 신고가</span>
         <span><i className="newHighCalendarDot isAllTime" />역대 신고가</span>
+        <span><i className="newHighCalendarClosedMark" />휴장</span>
       </div>
-      <p className="newHighCalendarHint">숫자는 등록된 종목 수입니다.</p>
+      <p className="newHighCalendarHint">숫자는 등록된 종목 수이며, 평일 휴장은 다음 거래일 자료로 확인해 표시합니다.</p>
     </section>
   );
 }

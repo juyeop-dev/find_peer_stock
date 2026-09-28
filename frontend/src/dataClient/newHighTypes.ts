@@ -22,10 +22,17 @@ export interface NewHighReportIndex {
   exchanges: Record<string, NewHighCounts>;
 }
 
+export interface NewHighClosure {
+  market: string;
+  date: string;
+  label: string;
+}
+
 export interface NewHighIndex {
   schema_version: 1;
   markets: NewHighMarket[];
   reports: NewHighReportIndex[];
+  closures: NewHighClosure[];
   refresh?: Record<string, NewHighRefresh>;
 }
 

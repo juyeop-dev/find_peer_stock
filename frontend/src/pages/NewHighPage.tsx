@@ -76,6 +76,11 @@ function readableDate(value: string): string {
   }).format(new Date(`${value}T00:00:00Z`));
 }
 
+function isWeekend(value: string): boolean {
+  const weekday = new Date(`${value}T00:00:00Z`).getUTCDay();
+  return weekday === 0 || weekday === 6;
+}
+
 export function NewHighPage() {
   const [params, setParams] = useSearchParams();
   const { data: index, error: indexError, loading: indexLoading,
@@ -94,6 +99,9 @@ export function NewHighPage() {
   const marketReports = useMemo(() => (index?.reports ?? [])
     .filter((item) => item.market === marketId)
     .sort((a, b) => b.date.localeCompare(a.date)), [index, marketId]);
+  const closedDates = useMemo(() => new Set((index?.closures ?? [])
+    .filter((item) => item.market === marketId)
+    .map((item) => item.date)), [index, marketId]);
   const requestedDate = params.get("date");
   const selectedDate = validDate(requestedDate) ? requestedDate : marketReports[0]?.date ?? today;
   const requestedExchange = params.get("exchange");
@@ -103,6 +111,7 @@ export function NewHighPage() {
     : market?.exchanges.find((item) => item.id === exchange)?.label ?? exchange;
   const indexedReport = marketReports.find((item) => item.date === selectedDate);
   const hasReport = Boolean(indexedReport);
+  const isClosedDate = !hasReport && (isWeekend(selectedDate) || closedDates.has(selectedDate));
   const loadReport = useCallback(async (signal: AbortSignal) => {
     const payload = await getNewHighReport(marketId, selectedDate, signal);
     if (payload.date !== selectedDate || payload.market !== marketId) {
@@ -213,7 +222,8 @@ export function NewHighPage() {
               </div>
             </div>
             <NewHighCalendar month={month || selectedDate.slice(0, 7)} selectedDate={selectedDate}
-              today={today} days={days} onMonthChange={setMonth} onSelectDate={selectDate} />
+              today={today} days={days} closedDates={closedDates}
+              onMonthChange={setMonth} onSelectDate={selectDate} />
             <div className="newHighArchiveMeta">
               <label>월 바로 이동
                 <input type="month" aria-label="조회할 달" value={month || selectedDate.slice(0, 7)}
@@ -239,8 +249,8 @@ export function NewHighPage() {
                 <p className="eyebrow">{market.label} · {exchangeLabel}</p>
                 <h2>{readableDate(selectedDate)}</h2>
               </div>
-              <span className={`newHighRecordStatus${hasReport ? " isRecorded" : ""}`}>
-                {hasReport ? "기록 등록됨" : "미등록"}
+              <span className={`newHighRecordStatus${hasReport ? " isRecorded" : isClosedDate ? " isClosed" : ""}`}>
+                {hasReport ? "기록 등록됨" : isClosedDate ? "휴장" : "미등록"}
               </span>
             </div>
 
@@ -255,15 +265,18 @@ export function NewHighPage() {
             {reportError ? <ErrorNotice message={reportError} /> : null}
             {!hasReport ? <div className="newHighEmpty" role="status">
               <span className="newHighEmptyIcon" aria-hidden="true">▦</span>
-              <h3>{marketRefresh?.status === "unsupported" && marketReports.length === 0
+              <h3>{isClosedDate ? `${market.label} 시장 휴장일입니다`
+                : marketRefresh?.status === "unsupported" && marketReports.length === 0
                 ? "이 시장은 아직 자동 수집을 지원하지 않습니다"
                 : marketReports.length === 0 ? "아직 등록된 신고가 기록이 없습니다" : "이 날짜의 기록이 아직 없습니다"}</h3>
-              <p>{marketRefresh?.status === "unsupported" && marketReports.length === 0
+              <p>{isClosedDate ? "거래가 열리지 않은 날이므로 신고가 종목 기록이 생성되지 않습니다."
+                : marketRefresh?.status === "unsupported" && marketReports.length === 0
                 ? "기록이 등록되면 해당 거래일의 신고가 종목과 업종을 확인할 수 있습니다."
                 : marketReports.length === 0
                 ? `${market.label} 시장의 첫 기록을 기다리고 있어요. 매일의 기록이 등록되면 이곳에 종목과 업종이 쌓입니다.`
                 : "달력에 표시된 날짜를 선택하면 해당 거래일의 신고가 종목과 업종을 확인할 수 있습니다."}</p>
-              <span>미등록 날짜는 신고가 0종목을 뜻하지 않습니다.</span>
+              <span>{isClosedDate ? "평일 휴장은 다음 정상 거래일의 직전 거래일을 대조해 확인합니다."
+                : "미등록 날짜는 신고가 0종목을 뜻하지 않습니다."}</span>
             </div> : null}
 
             {report ? <>

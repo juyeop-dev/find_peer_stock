@@ -62,7 +62,7 @@ class NewHighDataTests(unittest.TestCase):
 
     def test_empty_archive_has_markets_and_no_invented_reports(self) -> None:
         index = self.generate()
-        self.assertEqual(index, {**self.markets, "reports": []})
+        self.assertEqual(index, {**self.markets, "reports": [], "closures": []})
         self.assertEqual(list((self.generated / "new-highs").rglob("*.json")),
                          [self.generated / "new-highs" / "index.json"])
         self.assertEqual((self.frontend / "new-highs" / "index.json").read_bytes(),
@@ -106,6 +106,68 @@ class NewHighDataTests(unittest.TestCase):
         zero = {"total": 0, "high_52_week": 0, "high_all_time": 0}
         self.assertEqual(index["reports"][0]["counts"], zero)
         self.assertEqual(index["reports"][0]["exchanges"], {"KOSPI": zero, "KOSDAQ": zero})
+
+    def test_source_proven_weekday_gaps_are_published_as_market_closures(self) -> None:
+        report = copy.deepcopy(self.report)
+        report["date"] = "2026-09-28"
+        report["source_metadata"] = {
+            "scanner_exchanges": ["KRX"],
+            "latest_session_by_exchange": {"KRX": "2026-09-28"},
+            "previous_session_by_exchange": {"KRX": "2026-09-23"},
+        }
+        self.write_report(report)
+        index = self.generate()
+        self.assertEqual(index["closures"], [
+            {"market": "korea", "date": "2026-09-25", "label": "휴장"},
+            {"market": "korea", "date": "2026-09-24", "label": "휴장"},
+        ])
+
+    def test_multi_exchange_market_closes_only_when_every_exchange_skips_date(self) -> None:
+        report = copy.deepcopy(self.report)
+        report["date"] = "2026-09-14"
+        report["source_metadata"] = {
+            "scanner_exchanges": ["ONE", "TWO"],
+            "latest_session_by_exchange": {"ONE": "2026-09-14", "TWO": "2026-09-14"},
+            "previous_session_by_exchange": {"ONE": "2026-09-11", "TWO": "2026-09-10"},
+        }
+        self.write_report(report)
+        self.assertEqual(self.generate()["closures"], [])
+
+    def test_missing_reports_do_not_invent_market_closures(self) -> None:
+        first = copy.deepcopy(self.report)
+        first["date"] = "2026-09-21"
+        second = copy.deepcopy(self.report)
+        second["date"] = "2026-09-28"
+        self.write_report(first)
+        self.write_report(second)
+        self.assertEqual(self.generate()["closures"], [])
+
+    def test_registered_report_takes_precedence_over_conflicting_closure_gap(self) -> None:
+        open_report = copy.deepcopy(self.report)
+        open_report["date"] = "2026-09-25"
+        next_report = copy.deepcopy(self.report)
+        next_report["date"] = "2026-09-28"
+        next_report["source_metadata"] = {
+            "scanner_exchanges": ["KRX"],
+            "latest_session_by_exchange": {"KRX": "2026-09-28"},
+            "previous_session_by_exchange": {"KRX": "2026-09-23"},
+        }
+        self.write_report(open_report)
+        self.write_report(next_report)
+        self.assertEqual(self.generate()["closures"], [
+            {"market": "korea", "date": "2026-09-24", "label": "휴장"},
+        ])
+
+    def test_invalid_previous_session_metadata_is_rejected(self) -> None:
+        report = copy.deepcopy(self.report)
+        report["source_metadata"] = {
+            "scanner_exchanges": ["KRX"],
+            "latest_session_by_exchange": {"KRX": report["date"]},
+            "previous_session_by_exchange": {"OTHER": "2026-09-08"},
+        }
+        self.write_report(report)
+        with self.assertRaises(new_highs.NewHighDataError):
+            self.generate()
 
     def test_market_cap_is_published_without_changing_source_and_is_preserved(self) -> None:
         self.write_report(self.report)

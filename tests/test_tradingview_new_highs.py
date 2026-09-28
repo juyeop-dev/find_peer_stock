@@ -16,6 +16,7 @@ from new_high_sources import tradingview as source  # noqa: E402
 
 DAY = date(2026, 9, 11)
 STAMP = int(datetime(2026, 9, 11, 13, tzinfo=timezone.utc).timestamp())
+PREVIOUS_STAMP = int(datetime(2026, 9, 10, 13, tzinfo=timezone.utc).timestamp())
 
 
 def row(symbol: str, **changes: object) -> dict:
@@ -26,7 +27,7 @@ def row(symbol: str, **changes: object) -> dict:
         "industry": "Semiconductors", "change": 2.5, "open": 95, "high": 100, "low": 90, "close": 98,
         "price_52_week_high": 120, "High.All": 150, "time": STAMP,
         "volume": 1000, "indexes": [],
-        "currency": "JPY",
+        "currency": "JPY", "time[1]": PREVIOUS_STAMP,
     }
     values.update(changes)
     return {"s": symbol, "d": [values[column] for column in source.COLUMNS]}
@@ -54,6 +55,7 @@ class TradingViewNewHighTests(unittest.TestCase):
         self.assertEqual([call.args[1]["range"] for call in request.call_args_list], [[0, 2], [2, 4]])
         self.assertTrue(report["source_metadata"]["pagination_complete"])
         self.assertEqual(report["source_metadata"]["scanned_symbols"], 3)
+        self.assertEqual(report["source_metadata"]["previous_session_by_exchange"], {"TSE": "2026-09-10"})
         self.assertEqual(report["entries"][0]["reason"], "업종: Technology · Semiconductors")
         self.assertEqual(report["entries"][0]["currency"], "JPY")
 
@@ -105,6 +107,19 @@ class TradingViewNewHighTests(unittest.TestCase):
         report = self.fetch([row("TSE:1000"), row("TSE:2000", high=150, time=STAMP - 86400)])
         self.assertEqual(report["entries"], [])
         self.assertEqual(report["source_metadata"]["excluded_symbols"], {"other_session": 1})
+
+    def test_latest_previous_bar_proves_the_preceding_market_session(self):
+        older = int(datetime(2026, 9, 8, 13, tzinfo=timezone.utc).timestamp())
+        report = self.fetch([
+            row("TSE:1000", **{"time[1]": older}),
+            row("TSE:2000"),
+        ])
+        self.assertEqual(report["source_metadata"]["previous_session_by_exchange"], {"TSE": "2026-09-10"})
+
+    def test_missing_or_invalid_previous_session_fails_closed(self):
+        for stamp in (None, False, 0, STAMP, STAMP + 86400):
+            with self.subTest(stamp=stamp), self.assertRaises(source.TradingViewSourceError):
+                self.fetch([row("TSE:1000", **{"time[1]": stamp})])
 
     def test_every_configured_exchange_must_be_present_and_current(self):
         with self.assertRaisesRegex(source.TradingViewSourceError, "TPEX"):
@@ -247,7 +262,8 @@ class TradingViewNewHighTests(unittest.TestCase):
     def test_no_price_history_is_explicitly_excluded(self):
         report = self.fetch([
             row("TSE:1000"),
-            row("TSE:2000", time=None, high=None, price_52_week_high=None, volume=None, **{"High.All": None}),
+            row("TSE:2000", time=None, high=None, price_52_week_high=None, volume=None,
+                **{"High.All": None, "time[1]": None}),
         ])
         self.assertEqual(report["source_metadata"]["excluded_symbols"], {"no_price_history": 1})
 

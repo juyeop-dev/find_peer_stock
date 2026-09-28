@@ -64,6 +64,7 @@ body:has(.newHighPage) { min-width: 320px; }
 .newHighReportHeading h2 { margin: 0; font-size: 23px; letter-spacing: -.04em; }
 .newHighRecordStatus { flex-shrink: 0; padding: 4px 9px; border-radius: 5px; background: #f0f3f6; color: #7a889a; font-size: 11px; }
 .newHighRecordStatus.isRecorded { background: #edf6f1; color: #377653; }
+.newHighRecordStatus.isClosed { background: #f0f1f3; color: #707984; }
 .newHighStats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border: 1px solid #e0e6ed; border-radius: 9px; overflow: hidden; }
 .newHighStats > div { padding: 16px 19px; background: #fafbfd; }
 .newHighStats > div + div { border-left: 1px solid #e0e6ed; }
