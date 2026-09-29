@@ -2,8 +2,8 @@
   "schema_version": 1,
   "markets": {
     "korea": {
-      "status": "updated",
-      "target_date": "2026-09-29",
+      "status": "pending",
+      "message": "장 마감 후 수집합니다.",
       "last_success_at": "2026-09-29T07:31:01.308112+00:00",
       "last_success_date": "2026-09-29"
     },
@@ -26,15 +26,15 @@
       "last_success_date": "2026-09-29"
     },
     "japan": {
-      "status": "updated",
-      "target_date": "2026-09-29",
+      "status": "pending",
+      "message": "장 마감 후 수집합니다.",
       "last_success_at": "2026-09-29T07:31:01.308112+00:00",
       "last_success_date": "2026-09-29"
     },
     "europe": {
       "status": "error",
       "target_date": "2026-09-29",
-      "message": "XETR:VG80: duplicate or incomplete scanner row",
+      "message": "LSE:CCPC: duplicate or incomplete scanner row",
       "last_success_at": "2026-09-28T17:01:02.106817+00:00",
       "last_success_date": "2026-09-28"
     }
