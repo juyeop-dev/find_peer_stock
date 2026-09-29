@@ -1,0 +1,189 @@
+{
+  "schema_version": 1,
+  "market": "china",
+  "date": "2026-09-29",
+  "summary": "장 마감 후 TradingView 주식 스냅샷 기준. 당일 장중 고가가 52주·전체기간 고가에 도달하고, 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다. 전체기간 신고가를 우선 표시하며 신고가 배경은 별도 확인 전입니다.",
+  "sources": [
+    {
+      "label": "TradingView stock screener",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "600825.SS",
+      "name": "Shanghai Xinhua Media Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Distribution Services",
+      "high_type": "52_week",
+      "reason": "업종: Distribution Services · Wholesale Distributors",
+      "description": "Shanghai Xinhua Media Co., Ltd. Class A · Wholesale Distributors",
+      "change_pct": 10.058479532163735,
+      "session_open": 9.41,
+      "session_close": 9.41,
+      "source_symbol": "SSE:600825",
+      "currency": "CNY"
+    },
+    {
+      "ticker": "601298.SS",
+      "name": "Qingdao Port International Co Ltd Class A",
+      "exchange": "SSE",
+      "category": "Transportation",
+      "high_type": "52_week",
+      "reason": "업종: Transportation · Other Transportation",
+      "description": "Qingdao Port International Co Ltd Class A · Other Transportation",
+      "change_pct": 2.3326572008113633,
+      "session_open": 9.8,
+      "session_close": 10.09,
+      "source_symbol": "SSE:601298",
+      "currency": "CNY"
+    },
+    {
+      "ticker": "603797.SS",
+      "name": "Guangdong Liantai Environmental Protection Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Industrial Services",
+      "high_type": "52_week",
+      "reason": "업종: Industrial Services · Engineering & Construction",
+      "description": "Guangdong Liantai Environmental Protection Co., Ltd. Class A · Engineering & Construction",
+      "change_pct": 3.0769230769230793,
+      "session_open": 5.21,
+      "session_close": 5.36,
+      "source_symbol": "SSE:603797",
+      "currency": "CNY"
+    },
+    {
+      "ticker": "688137.SS",
+      "name": "Suzhou Novoprotein Scientific Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Commercial Services",
+      "high_type": "all_time",
+      "reason": "업종: Commercial Services · Miscellaneous Commercial Services",
+      "description": "Suzhou Novoprotein Scientific Co., Ltd. Class A · Miscellaneous Commercial Services",
+      "change_pct": 10.360712054965632,
+      "session_open": 123.38,
+      "session_close": 141.35,
+      "source_symbol": "SSE:688137",
+      "currency": "CNY"
+    },
+    {
+      "ticker": "900948.SS",
+      "name": "Inner Mongolia Yitai Coal Company Limited Class B",
+      "exchange": "SSE",
+      "category": "Energy Minerals",
+      "high_type": "52_week",
+      "reason": "업종: Energy Minerals · Coal",
+      "description": "Inner Mongolia Yitai Coal Company Limited Class B · Coal",
+      "change_pct": 2.330097087378643,
+      "session_open": 3.604,
+      "session_close": 3.689,
+      "source_symbol": "SSE:900948",
+      "currency": "USD"
+    },
+    {
+      "ticker": "002872.SZ",
+      "name": "Tiansheng Pharmaceutical Group Co. Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Pharmaceuticals: Major",
+      "description": "Tiansheng Pharmaceutical Group Co. Ltd. Class A · Pharmaceuticals: Major",
+      "change_pct": 1.3245033112582794,
+      "session_open": 6.02,
+      "session_close": 6.12,
+      "source_symbol": "SZSE:002872",
+      "currency": "CNY"
+    },
+    {
+      "ticker": "300746.SZ",
+      "name": "Hanjia Digital Intelligence Science and Technology Group Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Industrial Services",
+      "high_type": "52_week",
+      "reason": "업종: Industrial Services · Engineering & Construction",
+      "description": "Hanjia Digital Intelligence Science and Technology Group Co., Ltd. Class A · Engineering & Construction",
+      "change_pct": 12.366310160427792,
+      "session_open": 14.84,
+      "session_close": 16.81,
+      "source_symbol": "SZSE:300746",
+      "currency": "CNY"
+    },
+    {
+      "ticker": "301041.SZ",
+      "name": "Shenzhen King Brother Electronics Technology Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Electronic Components",
+      "description": "Shenzhen King Brother Electronics Technology Co., Ltd. Class A · Electronic Components",
+      "change_pct": 12.123793299261793,
+      "session_open": 35.77,
+      "session_close": 39.49,
+      "source_symbol": "SZSE:301041",
+      "currency": "CNY"
+    },
+    {
+      "ticker": "301122.SZ",
+      "name": "Caina Technology Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Health Technology",
+      "high_type": "all_time",
+      "reason": "업종: Health Technology · Medical Specialties",
+      "description": "Caina Technology Co., Ltd. Class A · Medical Specialties",
+      "change_pct": 4.945139854736522,
+      "session_open": 65.78,
+      "session_close": 67.91,
+      "source_symbol": "SZSE:301122",
+      "currency": "CNY"
+    },
+    {
+      "ticker": "301190.SZ",
+      "name": "Jiujiang Shanshui Technology Co. Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Process Industries",
+      "high_type": "52_week",
+      "reason": "업종: Process Industries · Chemicals: Specialty",
+      "description": "Jiujiang Shanshui Technology Co. Ltd. Class A · Chemicals: Specialty",
+      "change_pct": 20.00000000000001,
+      "session_open": 26,
+      "session_close": 29.94,
+      "source_symbol": "SZSE:301190",
+      "currency": "CNY"
+    }
+  ],
+  "source_metadata": {
+    "provider": "TradingView public scanner",
+    "scanner": "china",
+    "fetched_at": "2026-09-29T08:01:10.839838+00:00",
+    "universe": "TradingView-listed stock instruments, including common and preferred shares; ETFs excluded",
+    "definition": "daily high >= period high; close >= open; close >= previous close when one exists; all-time takes precedence; ties included",
+    "scanner_exchanges": [
+      "SSE",
+      "SZSE"
+    ],
+    "latest_session_by_exchange": {
+      "SZSE": "2026-09-29",
+      "SSE": "2026-09-29"
+    },
+    "previous_session_by_exchange": {
+      "SZSE": "2026-09-28",
+      "SSE": "2026-09-28"
+    },
+    "current_session_reference_symbols": {
+      "SZSE": "SZSE:000001",
+      "SSE": "SSE:508060"
+    },
+    "scanned_symbols": 5309,
+    "current_session_symbols": 5304,
+    "excluded_symbols": {
+      "other_session": 5,
+      "bearish_or_down_close": 8
+    },
+    "pagination_complete": true
+  },
+  "collected_at": "2026-09-29T08:00:54.702102+00:00"
+}
