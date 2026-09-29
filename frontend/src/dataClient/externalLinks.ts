@@ -18,6 +18,13 @@ export function getExternalQuoteLink(ticker: string): ExternalQuoteLink {
     };
   }
 
+  if (/^(EURONEXT|XETR|LSE|SIX):[A-Z0-9.\-]+$/.test(normalizedTicker)) {
+    return {
+      href: `https://www.tradingview.com/symbols/${normalizedTicker.replace(":", "-")}/`,
+      label: "TradingView"
+    };
+  }
+
   return {
     href: `https://finance.yahoo.com/quote/${encodeURIComponent(normalizedTicker)}`,
     label: "Yahoo Finance"

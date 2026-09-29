@@ -36,7 +36,10 @@ from refresh_new_highs import atomic_json, collection_date
 from turnover_sources.tradingview import _logo_url
 
 
-SUPPORTED_MARKETS = frozenset({"china", "japan", "europe", "taiwan", "us"})
+# European history is not publishable here: the available Yahoo mapping covered
+# only 3,592 of 5,411 scanned listings, and GBX raw values skewed mixed-currency
+# turnover rankings. Keep the failed path closed until both are solved.
+SUPPORTED_MARKETS = frozenset({"china", "japan", "taiwan", "us"})
 UNIVERSE_COLUMNS = (
     "name", "description", "exchange", "type", "subtype", "sector",
     "industry", "currency", "logoid",
@@ -315,7 +318,7 @@ def daily_candidates(history: ListingHistory, sessions: set[date]) -> dict[date,
     result: dict[date, tuple[Bar, float, bool]] = {}
     bars = history.bars
     for index, bar in enumerate(bars):
-        if bar.day not in sessions:
+        if bar.day not in sessions or bar.volume <= 0:
             continue
         lookback = bar.day - timedelta(weeks=52)
         high_52 = max((item.high for item in bars if lookback <= item.day <= bar.day), default=bar.high)
@@ -449,6 +452,7 @@ def build_reports(market_id: str, start: date, end: date, *, workers: int = 24,
                 "high_type": high_type, "reason": f"업종: {sector} · {industry}",
                 "description": f"{name} · {industry}", "change_pct": change_pct,
                 "session_open": bar.open, "session_close": bar.close,
+                "session_volume": bar.volume,
                 "currency": row["currency"].strip().upper(), "source_symbol": row["symbol"],
                 "high_verification": {
                     "source": "Yahoo Finance split-adjusted daily/monthly history",

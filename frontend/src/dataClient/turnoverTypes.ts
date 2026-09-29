@@ -24,6 +24,8 @@ export interface TurnoverEntry {
   change_pct: number | null;
   turnover: number;
   currency: string;
+  turnover_currency?: string;
+  market_cap_currency?: string;
   market_cap: number | null;
   sector: string;
   industry: string;

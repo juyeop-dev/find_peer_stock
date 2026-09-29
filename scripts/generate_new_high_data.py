@@ -160,6 +160,10 @@ def validate_report(payload: dict[str, Any], path: Path, reports_dir: Path,
                 require((type(value) is int and value > 0) or
                         (type(value) is float and math.isfinite(value) and value > 0),
                         f"{prefix}: {field} must be a positive finite number")
+        if "session_volume" in entry:
+            volume = entry["session_volume"]
+            require(type(volume) in (int, float) and math.isfinite(volume) and volume > 0,
+                    f"{prefix}: session_volume must be a positive finite number")
         if "currency" in entry:
             require(isinstance(entry["currency"], str) and re.fullmatch(r"[A-Z]{3}", entry["currency"]) is not None,
                     f"{prefix}: currency must be a three-letter uppercase code")

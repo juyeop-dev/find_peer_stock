@@ -141,6 +141,11 @@ class TradingViewNewHighTests(unittest.TestCase):
         self.assertEqual({entry["exchange"] for entry in report["entries"]}, {"EURONEXT", "XETRA", "LSE", "SIX"})
         self.assertEqual(len({entry["ticker"] for entry in report["entries"]}), 4)
 
+    def test_zero_volume_cannot_create_a_new_high(self):
+        report = self.fetch([row("TSE:1000", high=150, volume=0)])
+        self.assertEqual(report["entries"], [])
+        self.assertEqual(report["source_metadata"]["excluded_symbols"], {"zero_or_missing_volume": 1})
+
     def test_korean_composite_membership_and_board_metadata_fallback(self):
         rows = [
             row("KRX:005930", indexes=[{"proname": "KRX:KOSPI"}], high=150),

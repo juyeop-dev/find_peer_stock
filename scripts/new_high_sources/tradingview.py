@@ -363,6 +363,12 @@ def fetch_report(market_id: str, session_date: date, *, timeout: float = 30,
         high_type = _high_type(row)
         if high_type is None:
             continue
+        volume = row["volume"]
+        if volume is None or volume == 0:
+            excluded["zero_or_missing_volume"] += 1
+            continue
+        if not _number(volume) or volume < 0:
+            raise TradingViewSourceError(f"{row['symbol']}: invalid session volume")
         listing = fetch_korean_listing(row["name"], timeout) if market_id == "korea" else None
         exchange = listing["exchange"] if listing else row["exchange"]
         if listing and _korean_index_board(row) not in {None, exchange}:
@@ -396,6 +402,7 @@ def fetch_report(market_id: str, session_date: date, *, timeout: float = 30,
             "description": f"{display_name} · {industry}", "change_pct": row["change"],
             "session_open": evidence["open"] if evidence else row["open"],
             "session_close": evidence["close"] if evidence else row["close"],
+            "session_volume": evidence.get("volume", volume) if evidence else volume,
             "source_symbol": row["symbol"],
             **({"currency": row["currency"].strip().upper()} if _text(row["currency"]) else {}),
             **({"name_original": row["description"], "name_source_url": listing["source_url"],

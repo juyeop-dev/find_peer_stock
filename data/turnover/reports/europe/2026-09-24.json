@@ -2,7 +2,7 @@
   "schema_version": 1,
   "market": "europe",
   "date": "2026-09-24",
-  "summary": "장 마감 후 TradingView 주식 스크리너의 당일 Turnover 기준 상위 30개 종목입니다.",
+  "summary": "장 마감 후 TradingView 주식 스크리너의 거래대금 상위 30개 종목입니다. 거래대금과 시가총액은 미달러 환산값이며 주가는 종목별 표시 통화입니다.",
   "sources": [
     {
       "label": "TradingView Stock Screener",
@@ -23,7 +23,9 @@
       "sector": "Electronic Technology",
       "industry": "Semiconductors",
       "source_symbol": "EURONEXT:ASML",
-      "logo_url": "https://s3-symbol-logo.tradingview.com/asml--big.svg"
+      "logo_url": "https://s3-symbol-logo.tradingview.com/asml--big.svg",
+      "turnover_currency": "USD",
+      "market_cap_currency": "USD"
     },
     {
       "rank": 2,
@@ -38,7 +40,9 @@
       "sector": "Non-Energy Minerals",
       "industry": "Other Metals/Minerals",
       "source_symbol": "LSE:RIO",
-      "logo_url": "https://s3-symbol-logo.tradingview.com/rio-tinto--big.svg"
+      "logo_url": "https://s3-symbol-logo.tradingview.com/rio-tinto--big.svg",
+      "turnover_currency": "USD",
+      "market_cap_currency": "USD"
     },
     {
       "rank": 3,
@@ -53,7 +57,9 @@
       "sector": "Technology Services",
       "industry": "Packaged Software",
       "source_symbol": "XETR:SAP",
-      "logo_url": "https://s3-symbol-logo.tradingview.com/sap--big.svg"
+      "logo_url": "https://s3-symbol-logo.tradingview.com/sap--big.svg",
+      "turnover_currency": "USD",
+      "market_cap_currency": "USD"
     },
     {
       "rank": 4,
@@ -68,7 +74,9 @@
       "sector": "Health Technology",
       "industry": "Pharmaceuticals: Major",
       "source_symbol": "SIX:NOVN",
-      "logo_url": "https://s3-symbol-logo.tradingview.com/novartis--big.svg"
+      "logo_url": "https://s3-symbol-logo.tradingview.com/novartis--big.svg",
+      "turnover_currency": "USD",
+      "market_cap_currency": "USD"
     },
     {
       "rank": 5,
@@ -83,7 +91,9 @@
       "sector": "Finance",
       "industry": "Major Banks",
       "source_symbol": "EURONEXT:BNP",
-      "logo_url": "https://s3-symbol-logo.tradingview.com/paribas--big.svg"
+      "logo_url": "https://s3-symbol-logo.tradingview.com/paribas--big.svg",
+      "turnover_currency": "USD",
+      "market_cap_currency": "USD"
     },
     {
       "rank": 6,
@@ -98,7 +108,9 @@
       "sector": "Finance",
       "industry": "Major Banks",
       "source_symbol": "LSE:LLOY",
-      "logo_url": "https://s3-symbol-logo.tradingview.com/lloyds--big.svg"
+      "logo_url": "https://s3-symbol-logo.tradingview.com/lloyds--big.svg",
+      "turnover_currency": "USD",
+      "market_cap_currency": "USD"
     },
     {
       "rank": 7,
@@ -113,7 +125,9 @@
       "sector": "Energy Minerals",
       "industry": "Integrated Oil",
       "source_symbol": "LSE:BP.",
-      "logo_url": "https://s3-symbol-logo.tradingview.com/bp--big.svg"
+      "logo_url": "https://s3-symbol-logo.tradingview.com/bp--big.svg",
+      "turnover_currency": "USD",
+      "market_cap_currency": "USD"
     },
     {
       "rank": 8,
@@ -128,7 +142,9 @@
       "sector": "Finance",
       "industry": "Investment Managers",
       "source_symbol": "SIX:UBSG",
-      "logo_url": "https://s3-symbol-logo.tradingview.com/ubs-group--big.svg"
+      "logo_url": "https://s3-symbol-logo.tradingview.com/ubs-group--big.svg",
+      "turnover_currency": "USD",
+      "market_cap_currency": "USD"
     },
     {
       "rank": 9,
@@ -143,7 +159,9 @@
       "sector": "Health Technology",
       "industry": "Pharmaceuticals: Major",
       "source_symbol": "LSE:AZN",
-      "logo_url": "https://s3-symbol-logo.tradingview.com/astrazeneca--big.svg"
+      "logo_url": "https://s3-symbol-logo.tradingview.com/astrazeneca--big.svg",
+      "turnover_currency": "USD",
+      "market_cap_currency": "USD"
     },
     {
       "rank": 10,
@@ -158,7 +176,9 @@
       "sector": "Finance",
       "industry": "Multi-Line Insurance",
       "source_symbol": "XETR:ALV",
-      "logo_url": "https://s3-symbol-logo.tradingview.com/allianz--big.svg"
+      "logo_url": "https://s3-symbol-logo.tradingview.com/allianz--big.svg",
+      "turnover_currency": "USD",
+      "market_cap_currency": "USD"
     },
     {
       "rank": 11,
@@ -173,7 +193,9 @@
       "sector": "Finance",
       "industry": "Investment Banks/Brokers",
       "source_symbol": "LSE:BARC",
-      "logo_url": "https://s3-symbol-logo.tradingview.com/barclays--big.svg"
+      "logo_url": "https://s3-symbol-logo.tradingview.com/barclays--big.svg",
+      "turnover_currency": "USD",
+      "market_cap_currency": "USD"
     },
     {
       "rank": 12,
@@ -188,7 +210,9 @@
       "sector": "Electronic Technology",
       "industry": "Aerospace & Defense",
       "source_symbol": "LSE:RR.",
-      "logo_url": "https://s3-symbol-logo.tradingview.com/rolls-royce--big.svg"
+      "logo_url": "https://s3-symbol-logo.tradingview.com/rolls-royce--big.svg",
+      "turnover_currency": "USD",
+      "market_cap_currency": "USD"
     },
     {
       "rank": 13,
@@ -203,7 +227,9 @@
       "sector": "Commercial Services",
       "industry": "Miscellaneous Commercial Services",
       "source_symbol": "LSE:ITRK",
-      "logo_url": "https://s3-symbol-logo.tradingview.com/intertek--big.svg"
+      "logo_url": "https://s3-symbol-logo.tradingview.com/intertek--big.svg",
+      "turnover_currency": "USD",
+      "market_cap_currency": "USD"
     },
     {
       "rank": 14,
@@ -218,7 +244,9 @@
       "sector": "Energy Minerals",
       "industry": "Integrated Oil",
       "source_symbol": "EURONEXT:TTE",
-      "logo_url": "https://s3-symbol-logo.tradingview.com/total--big.svg"
+      "logo_url": "https://s3-symbol-logo.tradingview.com/total--big.svg",
+      "turnover_currency": "USD",
+      "market_cap_currency": "USD"
     },
     {
       "rank": 15,
@@ -233,7 +261,9 @@
       "sector": "Finance",
       "industry": "Major Banks",
       "source_symbol": "LSE:HSBA",
-      "logo_url": "https://s3-symbol-logo.tradingview.com/hsbc--big.svg"
+      "logo_url": "https://s3-symbol-logo.tradingview.com/hsbc--big.svg",
+      "turnover_currency": "USD",
+      "market_cap_currency": "USD"
     },
     {
       "rank": 16,
@@ -248,7 +278,9 @@
       "sector": "Consumer Non-Durables",
       "industry": "Apparel/Footwear",
       "source_symbol": "EURONEXT:MC",
-      "logo_url": "https://s3-symbol-logo.tradingview.com/lvmh--big.svg"
+      "logo_url": "https://s3-symbol-logo.tradingview.com/lvmh--big.svg",
+      "turnover_currency": "USD",
+      "market_cap_currency": "USD"
     },
     {
       "rank": 17,
@@ -263,7 +295,9 @@
       "sector": "Energy Minerals",
       "industry": "Integrated Oil",
       "source_symbol": "LSE:TTE",
-      "logo_url": "https://s3-symbol-logo.tradingview.com/total--big.svg"
+      "logo_url": "https://s3-symbol-logo.tradingview.com/total--big.svg",
+      "turnover_currency": "USD",
+      "market_cap_currency": "USD"
     },
     {
       "rank": 18,
@@ -278,7 +312,9 @@
       "sector": "Finance",
       "industry": "Major Banks",
       "source_symbol": "LSE:NWG",
-      "logo_url": "https://s3-symbol-logo.tradingview.com/natwest-group--big.svg"
+      "logo_url": "https://s3-symbol-logo.tradingview.com/natwest-group--big.svg",
+      "turnover_currency": "USD",
+      "market_cap_currency": "USD"
     },
     {
       "rank": 19,
@@ -293,7 +329,9 @@
       "sector": "Finance",
       "industry": "Investment Managers",
       "source_symbol": "LSE:SDR",
-      "logo_url": "https://s3-symbol-logo.tradingview.com/schroders-plc--big.svg"
+      "logo_url": "https://s3-symbol-logo.tradingview.com/schroders-plc--big.svg",
+      "turnover_currency": "USD",
+      "market_cap_currency": "USD"
     },
     {
       "rank": 20,
@@ -308,7 +346,9 @@
       "sector": "Finance",
       "industry": "Multi-Line Insurance",
       "source_symbol": "LSE:BEZ",
-      "logo_url": "https://s3-symbol-logo.tradingview.com/beazley-plc-ord-5p--big.svg"
+      "logo_url": "https://s3-symbol-logo.tradingview.com/beazley-plc-ord-5p--big.svg",
+      "turnover_currency": "USD",
+      "market_cap_currency": "USD"
     },
     {
       "rank": 21,
@@ -323,7 +363,9 @@
       "sector": "Producer Manufacturing",
       "industry": "Electrical Products",
       "source_symbol": "EURONEXT:SU",
-      "logo_url": "https://s3-symbol-logo.tradingview.com/schneider--big.svg"
+      "logo_url": "https://s3-symbol-logo.tradingview.com/schneider--big.svg",
+      "turnover_currency": "USD",
+      "market_cap_currency": "USD"
     },
     {
       "rank": 22,
@@ -338,7 +380,9 @@
       "sector": "Distribution Services",
       "industry": "Wholesale Distributors",
       "source_symbol": "LSE:GLEN",
-      "logo_url": "https://s3-symbol-logo.tradingview.com/glencore--big.svg"
+      "logo_url": "https://s3-symbol-logo.tradingview.com/glencore--big.svg",
+      "turnover_currency": "USD",
+      "market_cap_currency": "USD"
     },
     {
       "rank": 23,
@@ -353,7 +397,9 @@
       "sector": "Health Technology",
       "industry": "Pharmaceuticals: Major",
       "source_symbol": "SIX:ROP",
-      "logo_url": "https://s3-symbol-logo.tradingview.com/roche--big.svg"
+      "logo_url": "https://s3-symbol-logo.tradingview.com/roche--big.svg",
+      "turnover_currency": "USD",
+      "market_cap_currency": "USD"
     },
     {
       "rank": 24,
@@ -368,7 +414,9 @@
       "sector": "Finance",
       "industry": "Investment Banks/Brokers",
       "source_symbol": "XETR:DBK",
-      "logo_url": "https://s3-symbol-logo.tradingview.com/deutsche-bank-ag--big.svg"
+      "logo_url": "https://s3-symbol-logo.tradingview.com/deutsche-bank-ag--big.svg",
+      "turnover_currency": "USD",
+      "market_cap_currency": "USD"
     },
     {
       "rank": 25,
@@ -383,7 +431,9 @@
       "sector": "Finance",
       "industry": "Major Banks",
       "source_symbol": "EURONEXT:GLE",
-      "logo_url": "https://s3-symbol-logo.tradingview.com/societe-generale--big.svg"
+      "logo_url": "https://s3-symbol-logo.tradingview.com/societe-generale--big.svg",
+      "turnover_currency": "USD",
+      "market_cap_currency": "USD"
     },
     {
       "rank": 26,
@@ -398,7 +448,9 @@
       "sector": "Consumer Non-Durables",
       "industry": "Food: Major Diversified",
       "source_symbol": "SIX:NESN",
-      "logo_url": "https://s3-symbol-logo.tradingview.com/nestle--big.svg"
+      "logo_url": "https://s3-symbol-logo.tradingview.com/nestle--big.svg",
+      "turnover_currency": "USD",
+      "market_cap_currency": "USD"
     },
     {
       "rank": 27,
@@ -413,7 +465,9 @@
       "sector": "Electronic Technology",
       "industry": "Aerospace & Defense",
       "source_symbol": "XETR:RHM",
-      "logo_url": "https://s3-symbol-logo.tradingview.com/rheinmetall-ag--big.svg"
+      "logo_url": "https://s3-symbol-logo.tradingview.com/rheinmetall-ag--big.svg",
+      "turnover_currency": "USD",
+      "market_cap_currency": "USD"
     },
     {
       "rank": 28,
@@ -428,7 +482,9 @@
       "sector": "Producer Manufacturing",
       "industry": "Electrical Products",
       "source_symbol": "XETR:ENR",
-      "logo_url": "https://s3-symbol-logo.tradingview.com/siemens-energy--big.svg"
+      "logo_url": "https://s3-symbol-logo.tradingview.com/siemens-energy--big.svg",
+      "turnover_currency": "USD",
+      "market_cap_currency": "USD"
     },
     {
       "rank": 29,
@@ -443,7 +499,9 @@
       "sector": "Utilities",
       "industry": "Electric Utilities",
       "source_symbol": "LSE:NG.",
-      "logo_url": "https://s3-symbol-logo.tradingview.com/national-grid--big.svg"
+      "logo_url": "https://s3-symbol-logo.tradingview.com/national-grid--big.svg",
+      "turnover_currency": "USD",
+      "market_cap_currency": "USD"
     },
     {
       "rank": 30,
@@ -458,7 +516,9 @@
       "sector": "Producer Manufacturing",
       "industry": "Industrial Machinery",
       "source_symbol": "XETR:SIE",
-      "logo_url": "https://s3-symbol-logo.tradingview.com/siemens--big.svg"
+      "logo_url": "https://s3-symbol-logo.tradingview.com/siemens--big.svg",
+      "turnover_currency": "USD",
+      "market_cap_currency": "USD"
     }
   ],
   "source_metadata": {
@@ -472,6 +532,8 @@
       "LSE": "2026-09-24",
       "XETR": "2026-09-24",
       "SIX": "2026-09-24"
-    }
+    },
+    "turnover_currency": "USD",
+    "market_cap_currency": "USD"
   }
 }

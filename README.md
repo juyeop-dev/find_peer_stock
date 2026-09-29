@@ -173,19 +173,20 @@ TradingView 스크리너의 주식 전체 목록을 페이지 끝까지 확인�
 
 ### 해외 캘린더 과거 구간 복원
 
-일본·중국·유럽·미국·대만의 누락된 최근 구간은 TradingView의 현재 주식 종목군과 Yahoo Finance의 날짜별 OHLCV를 결합해 신고가와 거래대금 캘린더를 함께 복원할 수 있습니다. 거래대금은 TradingView의 일봉 `Value.Traded`와 동일한 종가×거래량으로 계산합니다. 52주 신고가는 분할 조정 일봉, 역대 신고가는 후보 종목의 분할 조정 전체 월봉으로 추가 판정합니다.
+일본·중국·미국·대만의 누락된 최근 구간은 TradingView의 현재 주식 종목군과 Yahoo Finance의 날짜별 OHLCV를 결합해 신고가와 거래대금 캘린더를 함께 복원할 수 있습니다. 과거 거래대금은 Yahoo 종가×거래량 추정치로, TradingView의 `Value.Traded`와 값이나 표시 통화가 다를 수 있습니다. 52주 신고가는 분할 조정 일봉, 역대 신고가는 후보 종목의 분할 조정 전체 월봉으로 추가 판정합니다. 유럽은 과거 Yahoo 종목 매핑의 수집 범위와 통화 환산 문제 때문에 현재 이 방식의 복원을 중지했습니다.
 
 ```powershell
 python .\scripts\backfill_yahoo_calendars.py --market japan --start 2026-09-01 --end 2026-09-21
 python .\scripts\backfill_yahoo_calendars.py --market china --start 2026-09-01 --end 2026-09-21
-python .\scripts\backfill_yahoo_calendars.py --market europe --start 2026-09-01 --end 2026-09-21
 python .\scripts\backfill_yahoo_calendars.py --market us --start 2026-09-01 --end 2026-09-21
 python .\scripts\backfill_yahoo_calendars.py --market taiwan --start 2026-09-01 --end 2026-09-21
 python .\scripts\generate_new_high_data.py
 python .\scripts\generate_turnover_data.py
 ```
 
-도구는 시장별 장 마감 전 날짜와 휴장일을 게시하지 않으며 기존 원본을 기본적으로 보존합니다. Yahoo 회사명과 TradingView 회사명을 대조해 유럽의 동일 티커 오매핑을 차단하고, 거래가 없었던 종목은 별도로 제외합니다. 활성·매핑 가능 종목 및 거래소별 수집률이 기준보다 낮으면 아무 파일도 저장하지 않습니다. 현재 종목군에서 사라진 과거 상장 종목은 복원 범위에 포함되지 않는다는 한계가 원본 메타데이터에 기록됩니다. 다운로드 캐시는 `data/tmp_calendar_history`에 저장되며 Git에서는 제외됩니다.
+도구는 시장별 장 마감 전 날짜와 휴장일을 게시하지 않으며 기존 원본을 기본적으로 보존합니다. Yahoo 회사명과 TradingView 회사명을 대조하고, 거래가 없었던 종목은 별도로 제외합니다. 활성·매핑 가능 종목 및 거래소별 수집률이 기준보다 낮으면 아무 파일도 저장하지 않습니다. 현재 종목군에서 사라진 과거 상장 종목은 복원 범위에 포함되지 않는다는 한계가 원본 메타데이터에 기록됩니다. 다운로드 캐시는 `data/tmp_calendar_history`에 저장되며 Git에서는 제외됩니다.
+
+유럽 화면은 유로넥스트·Xetra·런던·스위스 거래소만 다룹니다. TradingView 유럽 거래대금과 시가총액은 미달러 환산값으로 표시하고, 주가는 종목별 표시 통화를 유지합니다. 수집 범위가 부족하거나 거래량 0 신고가가 포함된 2026년 9월 Yahoo 복원본은 `data/review/europe`에 보관하고 게시 목록에서 제외했습니다. 9월 23일 거래대금은 검증 가능한 전체 순위를 복원할 수 없어 공백으로 남겨 두었습니다.
 
 자동 자료의 업종·세부 업종은 자료원 분류를 사용합니다. 가격 데이터만으로 상승 원인을 추측하지 않고 업종 정보를 기본 설명으로 표시하며, 검증한 뉴스나 실제 상승 배경은 원본 자료에 보완할 수 있습니다. `data/new-highs/refresh-status.json`은 시장별 대상일·성공일·재시도 시각을 기록하며, 화면에는 최근 게시 거래일과 갱신 상태를 표시합니다.
 

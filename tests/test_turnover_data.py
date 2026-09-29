@@ -59,6 +59,27 @@ class TurnoverDataTests(unittest.TestCase):
         with self.assertRaises(turnover.TurnoverDataError):
             turnover.generate_turnover_data(self.source, self.output, self.frontend)
 
+    def test_europe_rejects_tradingview_values_without_usd_units(self) -> None:
+        self.write(self.source / "markets.json", {
+            "schema_version": 1,
+            "markets": [{"id": "europe", "label": "유럽 주요 4거래소", "timezone": "Europe/Paris",
+                         "default_exchange": "all", "exchanges": [{"id": "LSE", "label": "런던"}]}],
+        })
+        report = {"schema_version": 1, "market": "europe", "date": "2026-09-18",
+                  "source_metadata": {"provider": "TradingView public scanner"},
+                  "entries": [{"rank": 1, "ticker": "LSE:SHEL", "name": "Shell", "exchange": "LSE",
+                               "price": 3500, "change_pct": 1, "turnover": 1_000_000,
+                               "currency": "GBX", "market_cap": 200_000_000,
+                               "sector": "Energy", "industry": "Oil"}]}
+        path = self.source / "reports" / "europe" / "2026-09-18.json"
+        self.write(path, report)
+        with self.assertRaisesRegex(turnover.TurnoverDataError, "declare USD"):
+            turnover.generate_turnover_data(self.source, self.output, self.frontend)
+        report["entries"][0].update(turnover_currency="USD", market_cap_currency="USD")
+        self.write(path, report)
+        index = turnover.generate_turnover_data(self.source, self.output, self.frontend)
+        self.assertEqual(index["reports"][0]["currency"], "USD")
+
 
 if __name__ == "__main__":
     unittest.main()

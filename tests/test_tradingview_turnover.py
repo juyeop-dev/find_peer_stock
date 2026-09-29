@@ -55,6 +55,15 @@ class TradingViewTurnoverTests(unittest.TestCase):
         self.assertEqual([entry["ticker"] for entry in report["entries"]], ["000001.SZ", "600000.SS"])
         self.assertEqual({entry["exchange"] for entry in report["entries"]}, {"SSE", "SZSE"})
 
+    def test_europe_keeps_price_currency_separate_from_usd_metrics(self) -> None:
+        rows = [row(f"{exchange}:ABC", 100, currency="GBX" if exchange == "LSE" else "EUR")
+                for exchange in ("EURONEXT", "XETR", "LSE", "SIX")]
+        with patch.object(source, "_request_json", return_value={"totalCount": 4, "data": rows}):
+            report = source.fetch_report("europe", DAY)
+        self.assertEqual(next(entry for entry in report["entries"] if entry["exchange"] == "LSE")["currency"], "GBX")
+        self.assertTrue(all(entry["turnover_currency"] == "USD" and
+                            entry["market_cap_currency"] == "USD" for entry in report["entries"]))
+
 
 if __name__ == "__main__":
     unittest.main()

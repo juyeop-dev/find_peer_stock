@@ -107,6 +107,13 @@ class NewHighDataTests(unittest.TestCase):
         self.assertEqual(index["reports"][0]["counts"], zero)
         self.assertEqual(index["reports"][0]["exchanges"], {"KOSPI": zero, "KOSDAQ": zero})
 
+    def test_rejects_reported_zero_session_volume(self) -> None:
+        report = copy.deepcopy(self.report)
+        report["entries"][0]["session_volume"] = 0
+        self.write_report(report)
+        with self.assertRaisesRegex(new_highs.NewHighDataError, "session_volume"):
+            self.generate()
+
     def test_source_proven_weekday_gaps_are_published_as_market_closures(self) -> None:
         report = copy.deepcopy(self.report)
         report["date"] = "2026-09-28"

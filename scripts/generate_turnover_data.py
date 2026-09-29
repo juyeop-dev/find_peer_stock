@@ -76,12 +76,19 @@ def validate_report(payload: dict[str, Any], path: Path, reports_dir: Path,
             raise TurnoverDataError(f"{prefix}: unknown exchange")
         if not re.fullmatch(r"[A-Z]{3}", entry["currency"]):
             raise TurnoverDataError(f"{prefix}: currency must be a three-letter uppercase code")
+        for field in ("turnover_currency", "market_cap_currency"):
+            if field in entry and (not isinstance(entry[field], str) or
+                                   re.fullmatch(r"[A-Z]{3}", entry[field]) is None):
+                raise TurnoverDataError(f"{prefix}: {field} must be a three-letter uppercase code")
         if not _finite(entry.get("price"), positive=True) or not _finite(entry.get("turnover"), positive=True):
             raise TurnoverDataError(f"{prefix}: price and turnover must be positive finite numbers")
         if entry.get("change_pct") is not None and not _finite(entry["change_pct"]):
             raise TurnoverDataError(f"{prefix}: change_pct must be finite or null")
         if entry.get("market_cap") is not None and not _finite(entry["market_cap"], positive=True):
             raise TurnoverDataError(f"{prefix}: market_cap must be positive or null")
+        if market_id == "europe" and payload.get("source_metadata", {}).get("provider") == "TradingView public scanner":
+            if entry.get("turnover_currency") != "USD" or entry.get("market_cap_currency") != "USD":
+                raise TurnoverDataError(f"{prefix}: European TradingView monetary fields must declare USD")
         if previous_turnover is not None and entry["turnover"] > previous_turnover:
             raise TurnoverDataError(f"{prefix}: entries must be sorted by turnover descending")
         previous_turnover = entry["turnover"]
@@ -124,7 +131,7 @@ def generate_turnover_data(source_dir: Path = SOURCE_DIR, output_dir: Path = GEN
         "reports": [{
             "market": report["market"], "date": report["date"], "count": len(report["entries"]),
             "total_turnover": sum(entry["turnover"] for entry in report["entries"]),
-            "currency": report["entries"][0]["currency"] if report["entries"] else None,
+            "currency": report["entries"][0].get("turnover_currency", report["entries"][0]["currency"]) if report["entries"] else None,
         } for report in reports],
     }
     status_path = source_dir / "refresh-status.json"

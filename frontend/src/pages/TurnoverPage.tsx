@@ -26,6 +26,7 @@ function readableDate(value: string): string {
 
 function formatMoney(value: number | null, currency: string): string {
   if (value == null) return "-";
+  if (currency === "GBX") return `${new Intl.NumberFormat("ko-KR", { maximumFractionDigits: 2 }).format(value)}p`;
   try {
     return new Intl.NumberFormat("ko-KR", { style: "currency", currency, maximumFractionDigits: currency === "KRW" || currency === "JPY" ? 0 : 2 }).format(value);
   } catch { return `${new Intl.NumberFormat("ko-KR", { maximumFractionDigits: 2 }).format(value)} ${currency}`; }
@@ -35,7 +36,7 @@ function formatHundredMillions(value: number | null, currency: string, splitTril
   if (value == null) return "-";
   const currencyNames: Record<string, string> = {
     KRW: "원", USD: "달러", JPY: "엔", TWD: "대만달러", CNY: "위안",
-    EUR: "유로", GBP: "파운드", CHF: "스위스프랑"
+    EUR: "유로", GBP: "파운드", GBX: "펜스", CHF: "스위스프랑"
   };
   const unit = currencyNames[currency] ?? currency;
   if (value < 100_000_000) {
@@ -121,7 +122,7 @@ export function TurnoverPage() {
                 <span className="turnoverLogo"><span>{initials(entry)}</span>{entry.logo_url ? <img src={entry.logo_url} alt="" loading="lazy" onError={(event) => { event.currentTarget.style.display = "none"; }} /> : null}</span>
                 <span><strong>{entry.name}</strong><small>{entry.ticker} · {entry.exchange}</small></span></a></td>
                 <td className="number">{formatMoney(entry.price, entry.currency)}</td><td className={`number change ${changeClass(entry.change_pct)}`}>{changeText(entry.change_pct)}</td>
-                <td className="number turnoverValue"><strong>{formatHundredMillions(entry.turnover, entry.currency)}</strong></td><td className="number marketCapValue">{formatHundredMillions(entry.market_cap, entry.currency, true)}</td>
+                <td className="number turnoverValue"><strong>{formatHundredMillions(entry.turnover, entry.turnover_currency ?? entry.currency)}</strong></td><td className="number marketCapValue">{formatHundredMillions(entry.market_cap, entry.market_cap_currency ?? entry.currency, true)}</td>
                 <td><span className="turnoverIndustry"><strong>{entry.sector}</strong><small>{entry.industry}</small></span></td></tr>;
             })}</tbody></table></div>
             {entries.length === 0 ? <div className="turnoverEmpty compact"><strong>검색 결과가 없습니다.</strong><button onClick={() => setSearch("")}>검색 초기화</button></div> : null}

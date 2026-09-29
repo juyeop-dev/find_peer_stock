@@ -55,6 +55,13 @@ class YahooCalendarBackfillTests(unittest.TestCase):
         self.assertTrue(result[date(2026, 9, 1)][2])
         self.assertFalse(result[date(2026, 9, 2)][2])
 
+    def test_zero_volume_day_is_not_a_new_high(self) -> None:
+        history = backfill.ListingHistory({"symbol": "TSE:1"}, "1.T", [
+            backfill.Bar(date(2026, 9, 1), 100, 110, 100, 110, 0),
+        ])
+        self.assertEqual(backfill.daily_candidates(history, {date(2026, 9, 1)}), {})
+        self.assertNotIn("europe", backfill.SUPPORTED_MARKETS)
+
     def test_monthly_parser_can_merge_duplicate_dates(self) -> None:
         stamp = int(datetime(2026, 9, 1, tzinfo=timezone.utc).timestamp())
         payload = {"chart": {"result": [{
