@@ -4,9 +4,11 @@
     "korea": {
       "last_success_at": "2026-09-28T14:30:36.229123+00:00",
       "last_success_date": "2026-09-28",
-      "status": "pending",
+      "status": "error",
       "target_date": "2026-09-30",
-      "message": "장 마감 후 일별 자료를 확인합니다."
+      "last_attempt_at": "2026-09-30T07:30:44.092964+00:00",
+      "next_retry_at": "2026-09-30T08:00:44.092964+00:00",
+      "message": "수집 또는 검증에 실패해 기존 기록을 보존했습니다."
     },
     "us": {
       "status": "updated",
@@ -30,11 +32,12 @@
       "last_success_at": "2026-09-30T06:30:47.483419+00:00"
     },
     "japan": {
-      "last_success_at": "2026-09-29T07:30:43.694480+00:00",
-      "last_success_date": "2026-09-29",
-      "status": "pending",
+      "status": "updated",
       "target_date": "2026-09-30",
-      "message": "장 마감 후 일별 자료를 확인합니다."
+      "last_attempt_at": "2026-09-30T07:30:44.092964+00:00",
+      "last_success_at": "2026-09-30T07:30:44.092964+00:00",
+      "last_success_date": "2026-09-30",
+      "message": "장 마감 후 신고가 자료를 갱신했습니다."
     },
     "europe": {
       "last_success_at": "2026-09-29T17:00:43.475998+00:00",
