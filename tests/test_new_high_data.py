@@ -60,6 +60,20 @@ class NewHighDataTests(unittest.TestCase):
         korea = next(market for market in markets if market["id"] == "korea")
         self.assertEqual(korea["default_exchange"], "all")
 
+    def test_japan_october_second_archive_has_verified_advantest_close(self) -> None:
+        path = new_highs.SOURCE_DIR / "reports" / "japan" / "2026-10-02.json"
+        report = json.loads(path.read_text(encoding="utf-8"))
+        markets = {market["id"]: market for market in new_highs.load_markets(new_highs.SOURCE_DIR)}
+        new_highs.validate_report(report, path, new_highs.SOURCE_DIR / "reports", markets)
+        self.assertEqual(len(report["entries"]), 47)
+        self.assertEqual(sum(entry["high_type"] == "all_time" for entry in report["entries"]), 26)
+        self.assertEqual(sum(entry["high_type"] == "52_week" for entry in report["entries"]), 21)
+        advantest = next(entry for entry in report["entries"] if entry["ticker"] == "6857.T")
+        self.assertEqual(advantest["session_close"], 38630)
+        self.assertEqual(advantest["high_verification"]["close"], 38630)
+        self.assertEqual([peer["ticker"] for peer in advantest["peers"]],
+                         ["089030.KQ", "232140.KQ", "003160.KS"])
+
     def test_empty_archive_has_markets_and_no_invented_reports(self) -> None:
         index = self.generate()
         self.assertEqual(index, {**self.markets, "reports": [], "closures": []})
