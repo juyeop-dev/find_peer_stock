@@ -25,6 +25,11 @@ function readableDate(value: string): string {
   return new Intl.DateTimeFormat("ko-KR", { timeZone: "UTC", year: "numeric", month: "long", day: "numeric", weekday: "long" }).format(new Date(`${value}T00:00:00Z`));
 }
 
+function isWeekend(value: string): boolean {
+  const weekday = new Date(`${value}T00:00:00Z`).getUTCDay();
+  return weekday === 0 || weekday === 6;
+}
+
 function formatMoney(value: number | null, currency: string): string {
   if (value == null) return "-";
   if (currency === "GBX") return `${new Intl.NumberFormat("ko-KR", { maximumFractionDigits: 2 }).format(value)}p`;
@@ -72,9 +77,14 @@ export function TurnoverPage() {
   const marketId = market?.id ?? "korea";
   const reports = useMemo(() => (index?.reports ?? []).filter((item) => item.market === marketId)
     .sort((a, b) => b.date.localeCompare(a.date)), [index, marketId]);
+  const closedDates = useMemo(() => new Map((index?.closures ?? [])
+    .filter((item) => item.market === marketId)
+    .map((item) => [item.date, item.reason ?? ""] as const)), [index, marketId]);
   const today = dateInTimezone(market?.timezone ?? "Asia/Seoul");
   const selectedDate = validDate(params.get("date")) ? params.get("date")! : reports[0]?.date ?? today;
   const hasReport = reports.some((item) => item.date === selectedDate);
+  const isClosedDate = !hasReport && (isWeekend(selectedDate) || closedDates.has(selectedDate));
+  const closureReason = closedDates.get(selectedDate);
   const loadReport = useCallback((signal: AbortSignal) => getTurnoverReport(marketId, selectedDate, signal), [marketId, selectedDate]);
   const { data: loadedReport, error: reportError, loading: reportLoading } = usePollingData(hasReport ? loadReport : null);
   const report = loadedReport?.market === marketId && loadedReport.date === selectedDate ? loadedReport : null;
@@ -102,7 +112,7 @@ export function TurnoverPage() {
         <aside className="turnoverSidebar">
           <div className="turnoverScope"><span className="eyebrow">조회 시장</span><strong>{market.label}</strong><p>장 마감 기준 · {market.timezone}</p></div>
           <TurnoverCalendar month={month || selectedDate.slice(0, 7)} selectedDate={selectedDate} today={today}
-            days={days} onMonthChange={setMonth} onSelectDate={selectDate} />
+            days={days} closedDates={closedDates} onMonthChange={setMonth} onSelectDate={selectDate} />
           <div className="turnoverArchiveMeta"><label>달 바로 이동<input type="month" value={month || selectedDate.slice(0, 7)}
             onChange={(event) => validDate(`${event.target.value}-01`) && setMonth(event.target.value)} /></label>
             <p><strong>{reports.length}일</strong>의 순위가 저장되어 있어요.</p>
@@ -110,9 +120,10 @@ export function TurnoverPage() {
         </aside>
         <section className="turnoverReport" aria-busy={reportLoading}>
           <div className="turnoverReportHeading"><div><p className="eyebrow">{market.label} · 거래대금 TOP 30</p><h2>{readableDate(selectedDate)}</h2></div>
-            <span className={hasReport ? "isRecorded" : ""}>{hasReport ? `${report?.entries.length ?? 30}종목` : "미등록"}</span></div>
+            <span className={hasReport ? "isRecorded" : isClosedDate ? "isClosed" : ""}>{hasReport ? `${report?.entries.length ?? 30}종목` : isClosedDate ? "휴장" : "미등록"}</span></div>
           {reportLoading ? <LoadingSpinner /> : null}{reportError ? <ErrorNotice message={reportError} /> : null}
-          {!hasReport ? <div className="turnoverEmpty"><strong>이 날짜의 거래대금 순위가 아직 없습니다.</strong><p>순위가 수집된 거래일을 달력에서 선택해 주세요.</p></div> : null}
+          {!hasReport ? <div className="turnoverEmpty"><strong>{isClosedDate ? `${market.label} 시장 휴장일입니다.` : "이 날짜의 거래대금 순위가 아직 없습니다."}</strong>
+            <p>{isClosedDate ? `${closureReason ? `${closureReason}로 ` : ""}거래가 열리지 않아 거래대금 순위가 생성되지 않습니다.` : "순위가 수집된 거래일을 달력에서 선택해 주세요."}</p></div> : null}
           {report ? <>
             <div className="turnoverToolbar"><p>{report.summary}</p><input type="search" value={search} onChange={(event) => setSearch(event.target.value)} placeholder="종목명 · 티커 · 산업 검색" aria-label="순위표 검색" /></div>
             <div className="turnoverTableWrap"><table className="turnoverTable"><thead><tr>

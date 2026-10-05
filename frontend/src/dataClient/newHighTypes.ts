@@ -28,6 +28,7 @@ export interface NewHighClosure {
   market: string;
   date: string;
   label: string;
+  reason?: string;
 }
 
 export interface NewHighIndex {

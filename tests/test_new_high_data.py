@@ -159,6 +159,21 @@ class NewHighDataTests(unittest.TestCase):
             {"market": "korea", "date": "2026-09-24", "label": "휴장"},
         ])
 
+    def test_official_closure_is_visible_before_next_trading_report(self) -> None:
+        self.write(self.root / "market-closures" / "2026.json", {
+            "schema_version": 1, "year": 2026, "markets": [{
+                "market": "korea", "source_urls": ["https://example.com/krx"],
+                "dates": {"2026-10-05": "개천절 대체공휴일"},
+            }],
+        })
+        expected = {"market": "korea", "date": "2026-10-05", "label": "휴장",
+                    "reason": "개천절 대체공휴일"}
+        self.assertEqual(self.generate()["closures"], [expected])
+        report = copy.deepcopy(self.report)
+        report["date"] = "2026-10-05"
+        self.write_report(report)
+        self.assertEqual(self.generate()["closures"], [])
+
     def test_multi_exchange_market_closes_only_when_every_exchange_skips_date(self) -> None:
         report = copy.deepcopy(self.report)
         report["date"] = "2026-09-14"

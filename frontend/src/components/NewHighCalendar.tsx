@@ -7,7 +7,7 @@ interface NewHighCalendarProps {
   selectedDate: string;
   today: string;
   days: Record<string, { total: number; high_52_week: number; high_all_time: number }>;
-  closedDates: ReadonlySet<string>;
+  closedDates: ReadonlyMap<string, string>;
   onMonthChange: (month: string) => void;
   onSelectDate: (date: string) => void;
 }
@@ -138,7 +138,7 @@ export function NewHighCalendar({
           const isToday = key === today;
           const label = `${fullDateLabel(date)}, ${report
             ? `등록 ${report.total}종목, 52주 신고가 ${report.high_52_week}종목, 역대 신고가 ${report.high_all_time}종목`
-            : closed ? "휴장" : "등록된 데이터 없음"}`;
+            : closed ? `휴장${closedDates.get(key) ? ` (${closedDates.get(key)})` : ""}` : "등록된 데이터 없음"}`;
           const classes = [
             "newHighCalendarDay",
             selected ? "isSelected" : "",
@@ -187,7 +187,7 @@ export function NewHighCalendar({
         <span><i className="newHighCalendarDot isAllTime" />역대 신고가</span>
         <span><i className="newHighCalendarClosedMark" />휴장</span>
       </div>
-      <p className="newHighCalendarHint">숫자는 등록된 종목 수이며, 평일 휴장은 다음 거래일 자료로 확인해 표시합니다.</p>
+      <p className="newHighCalendarHint">숫자는 등록된 종목 수입니다. 평일 휴장은 공식 일정 또는 다음 거래일 자료로 확인합니다.</p>
     </section>
   );
 }

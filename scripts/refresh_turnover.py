@@ -6,9 +6,11 @@ import argparse
 from datetime import date, datetime, timezone
 from pathlib import Path
 from typing import Callable
+from zoneinfo import ZoneInfo
 
 from archive_paths import monthly_report_path
 from generate_turnover_data import SOURCE_DIR, load_markets, read_json, validate_report
+from market_closures import load_scheduled_closures
 from refresh_new_highs import atomic_json, collection_date, previous_success
 
 
@@ -22,6 +24,8 @@ def refresh_turnover(source_dir: Path = SOURCE_DIR, *, now: datetime | None = No
     now = now or datetime.now(timezone.utc)
     fetch_report = fetch_report or source_fetch
     markets = {market["id"]: market for market in load_markets(source_dir)}
+    scheduled = {(item["market"], item["date"]): item for item in
+                 load_scheduled_closures(source_dir.parent / "market-closures", set(markets))}
     if market_ids and not market_ids <= markets.keys():
         raise ValueError("Unknown market in --market")
     state_path = source_dir / "refresh-status.json"
@@ -35,11 +39,24 @@ def refresh_turnover(source_dir: Path = SOURCE_DIR, *, now: datetime | None = No
             continue
         target = target_date or collection_date(market, now)
         if target is None:
-            state["markets"][market_id] = {"status": "pending", "message": "장 마감 후 수집합니다.", **previous_success(previous)}
+            local_day = now.astimezone(ZoneInfo(market["timezone"])).date().isoformat()
+            closure = scheduled.get((market_id, local_day))
+            state["markets"][market_id] = {
+                "status": "closed" if closure else "pending", "target_date": local_day,
+                "message": f"{closure['reason']} 휴장입니다." if closure else "장 마감 후 수집합니다.",
+                **previous_success(previous),
+            }
             continue
         path = monthly_report_path(source_dir / "reports", market_id, target)
         if path.exists() and not force:
             state["markets"][market_id] = {"status": "updated", "target_date": target.isoformat(), **previous_success(previous)}
+            continue
+        closure = scheduled.get((market_id, target.isoformat())) if target_date is None else None
+        if closure:
+            state["markets"][market_id] = {
+                "status": "closed", "target_date": target.isoformat(),
+                "message": f"{closure['reason']} 휴장입니다.", **previous_success(previous),
+            }
             continue
         try:
             report = fetch_report(market_id, target)

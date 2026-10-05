@@ -1,4 +1,4 @@
-import type { NewHighMarket, NewHighRefresh } from "./newHighTypes";
+import type { NewHighClosure, NewHighMarket, NewHighRefresh } from "./newHighTypes";
 import type { PeriodReturns } from "./periodReturnTypes";
 
 export interface TurnoverReportIndex {
@@ -13,6 +13,7 @@ export interface TurnoverIndex {
   schema_version: 1;
   markets: NewHighMarket[];
   reports: TurnoverReportIndex[];
+  closures?: NewHighClosure[];
   refresh?: Record<string, NewHighRefresh>;
 }
 

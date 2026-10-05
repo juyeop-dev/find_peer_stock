@@ -7,6 +7,7 @@ interface Props {
   selectedDate: string;
   today: string;
   days: Record<string, number>;
+  closedDates: ReadonlyMap<string, string>;
   onMonthChange: (month: string) => void;
   onSelectDate: (date: string) => void;
 }
@@ -21,7 +22,7 @@ function utcDate(year: number, monthIndex: number, day: number): Date {
 
 function dateKey(value: Date): string { return value.toISOString().slice(0, 10); }
 
-export function TurnoverCalendar({ month, selectedDate, today, days, onMonthChange, onSelectDate }: Props) {
+export function TurnoverCalendar({ month, selectedDate, today, days, closedDates, onMonthChange, onSelectDate }: Props) {
   const [year, monthNumber] = month.split("-").map(Number);
   const firstWeekday = utcDate(year, monthNumber - 1, 1).getUTCDay();
   const dayCount = utcDate(year, monthNumber, 0).getUTCDate();
@@ -75,22 +76,26 @@ export function TurnoverCalendar({ month, selectedDate, today, days, onMonthChan
         const value = utcDate(year, monthNumber - 1, day);
         const key = dateKey(value);
         const count = days[key];
+        const closed = count === undefined && (value.getUTCDay() === 0 || value.getUTCDay() === 6 || closedDates.has(key));
         const selected = key === selectedDate;
-        const label = `${year}년 ${monthNumber}월 ${day}일, ${count === undefined ? "등록된 데이터 없음" : `거래대금 순위 ${count}종목`}`;
+        const label = `${year}년 ${monthNumber}월 ${day}일, ${count !== undefined
+          ? `거래대금 순위 ${count}종목` : closed
+          ? `휴장${closedDates.get(key) ? ` (${closedDates.get(key)})` : ""}` : "등록된 데이터 없음"}`;
         return <button key={key} ref={(button) => {
           if (button) buttons.current.set(key, button);
           else buttons.current.delete(key);
         }}
           type="button" aria-label={label} aria-pressed={selected} aria-current={key === today ? "date" : undefined}
           className={["newHighCalendarDay", selected && "isSelected", key === today && "isToday",
-            count !== undefined && "hasReport", index % 7 === 0 ? "isSunday" : index % 7 === 6 ? "isSaturday" : ""].filter(Boolean).join(" ")}
+            count !== undefined && "hasReport", closed && "isClosed", index % 7 === 0 ? "isSunday" : index % 7 === 6 ? "isSaturday" : ""].filter(Boolean).join(" ")}
           onClick={() => onSelectDate(key)} onKeyDown={(event) => move(event, value)}>
           <span className="newHighCalendarDayNumber">{day}</span>
-          <span className="newHighCalendarDayMeta">{count !== undefined ? <><i className="turnoverCalendarDot" />{count}</> : null}</span>
+          <span className="newHighCalendarDayMeta">{count !== undefined ? <><i className="turnoverCalendarDot" />{count}</>
+            : closed ? <span className="newHighCalendarClosed">휴장</span> : null}</span>
         </button>;
       })}
     </div>
-    <div className="newHighCalendarLegend"><span><i className="turnoverCalendarDot" />거래대금 순위 등록</span></div>
-    <p className="newHighCalendarHint">숫자는 등록된 상위 종목 수입니다.</p>
+    <div className="newHighCalendarLegend"><span><i className="turnoverCalendarDot" />거래대금 순위 등록</span><span><i className="newHighCalendarClosedMark" />휴장</span></div>
+    <p className="newHighCalendarHint">숫자는 등록된 상위 종목 수입니다. 평일 휴장은 공식 거래소 일정으로 확인합니다.</p>
   </section>;
 }

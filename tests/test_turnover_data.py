@@ -4,8 +4,9 @@ import json
 import sys
 import tempfile
 import unittest
-from datetime import date
+from datetime import date, datetime
 from pathlib import Path
+from unittest.mock import Mock
 
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
@@ -48,6 +49,25 @@ class TurnoverDataTests(unittest.TestCase):
         self.assertTrue((self.output / "turnover" / "korea" / "2026_09" / "2026-09-17.json").exists())
         self.assertEqual((self.output / "turnover" / "index.json").read_bytes(),
                          (self.frontend / "turnover" / "index.json").read_bytes())
+
+    def test_official_closure_is_shared_with_turnover_calendar(self) -> None:
+        self.write(self.source.parent / "market-closures" / "2026.json", {
+            "schema_version": 1, "year": 2026, "markets": [{
+                "market": "korea", "source_urls": ["https://example.com/krx"],
+                "dates": {"2026-10-05": "개천절 대체공휴일"},
+            }],
+        })
+        index = turnover.generate_turnover_data(self.source, self.output, self.frontend)
+        self.assertEqual(index["closures"], [{
+            "market": "korea", "date": "2026-10-05", "label": "휴장", "reason": "개천절 대체공휴일",
+        }])
+        fetch = Mock()
+        state = refresh_turnover(
+            self.source, now=datetime.fromisoformat("2026-10-05T16:30:00+09:00"),
+            market_ids={"korea"}, fetch_report=fetch,
+        )
+        self.assertEqual(state["markets"]["korea"]["status"], "closed")
+        fetch.assert_not_called()
 
     def test_rejects_rank_gap_and_wrong_sort_order(self) -> None:
         report = self.report()

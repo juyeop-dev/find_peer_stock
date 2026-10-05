@@ -13,6 +13,7 @@ from typing import Any
 from urllib.parse import urlsplit
 
 from period_returns import validate_period_returns
+from market_closures import load_scheduled_closures, merge_closures
 from zoneinfo import ZoneInfo, ZoneInfoNotFoundError
 
 
@@ -367,11 +368,15 @@ def generate_new_high_data(source_dir: Path = SOURCE_DIR, output_dir: Path = GEN
                 for exchange in markets_by_id[report["market"]]["exchanges"]
             },
         })
+    try:
+        scheduled_closures = load_scheduled_closures(source_dir.parent / "market-closures", set(markets_by_id))
+    except ValueError as exc:
+        raise NewHighDataError(str(exc)) from exc
     index = {
         "schema_version": 1,
         "markets": markets,
         "reports": summaries,
-        "closures": confirmed_market_closures(reports),
+        "closures": merge_closures(scheduled_closures, confirmed_market_closures(reports), reports),
     }
     status_path = source_dir / "refresh-status.json"
     if status_path.exists():

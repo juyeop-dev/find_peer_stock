@@ -11,6 +11,7 @@ from typing import Callable
 from zoneinfo import ZoneInfo
 
 from generate_new_high_data import SOURCE_DIR, load_markets, read_json, validate_report
+from market_closures import load_scheduled_closures
 
 
 RETRY_MINUTES = 30
@@ -83,6 +84,8 @@ def refresh_new_highs(source_dir: Path = SOURCE_DIR, *, now: datetime | None = N
         raise ValueError("now must include a timezone")
     fetch_report = fetch_report or source_fetch
     markets = {market["id"]: market for market in load_markets(source_dir)}
+    scheduled = {(item["market"], item["date"]): item for item in
+                 load_scheduled_closures(source_dir.parent / "market-closures", set(markets))}
     if market_ids and not market_ids <= markets.keys():
         raise ValueError("Unknown market in --market")
     state_path = source_dir / "refresh-status.json"
@@ -104,11 +107,13 @@ def refresh_new_highs(source_dir: Path = SOURCE_DIR, *, now: datetime | None = N
             continue
         target = collection_date(market, now)
         if target is None:
+            local_day = now.astimezone(ZoneInfo(market["timezone"])).date().isoformat()
+            closure = scheduled.get((market_id, local_day))
             state["markets"][market_id] = {
                 **previous_success(previous),
-                "status": "pending",
-                "target_date": now.astimezone(ZoneInfo(market["timezone"])).date().isoformat(),
-                "message": "장 마감 후 일별 자료를 확인합니다.",
+                "status": "closed" if closure else "pending",
+                "target_date": local_day,
+                "message": f"{closure['reason']} 휴장입니다." if closure else "장 마감 후 일별 자료를 확인합니다.",
             }
             atomic_json(state_path, state)
             continue
@@ -127,6 +132,14 @@ def refresh_new_highs(source_dir: Path = SOURCE_DIR, *, now: datetime | None = N
             if isinstance(report.get("collected_at"), str):
                 status["last_success_at"] = report["collected_at"]
             state["markets"][market_id] = status
+            atomic_json(state_path, state)
+            continue
+        closure = scheduled.get((market_id, target_date))
+        if closure:
+            state["markets"][market_id] = {
+                **previous_success(previous), "status": "closed", "target_date": target_date,
+                "message": f"{closure['reason']} 휴장입니다.",
+            }
             atomic_json(state_path, state)
             continue
         retry_at = previous.get("next_retry_at")

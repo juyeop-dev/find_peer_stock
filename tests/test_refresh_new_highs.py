@@ -39,6 +39,22 @@ class DailyRefreshTests(unittest.TestCase):
             with self.subTest(stamp=stamp):
                 self.assertEqual(refresh.collection_date(self.market, datetime.fromisoformat(stamp)), expected)
 
+    def test_official_holiday_skips_fetch_and_marks_closed_before_close(self):
+        calendar = self.source.parent / "market-closures" / "2026.json"
+        calendar.parent.mkdir()
+        calendar.write_text(json.dumps({
+            "schema_version": 1, "year": 2026, "markets": [{
+                "market": "korea", "source_urls": ["https://example.com/krx"],
+                "dates": {"2026-10-05": "개천절 대체공휴일"},
+            }],
+        }), encoding="utf-8")
+        fetch = Mock()
+        for stamp in ("2026-10-05T09:00:00+09:00", "2026-10-05T16:30:00+09:00"):
+            state = self.collect(fetch, datetime.fromisoformat(stamp))
+            self.assertEqual(state["markets"]["korea"]["status"], "closed")
+            self.assertEqual(state["markets"]["korea"]["target_date"], "2026-10-05")
+        fetch.assert_not_called()
+
     def test_us_daylight_saving_and_local_trading_date(self):
         market = {"id": "us", "timezone": "America/New_York"}
         cases = [("2026-07-07T20:59:00+00:00", None), ("2026-07-07T21:00:00+00:00", date(2026, 7, 7)),

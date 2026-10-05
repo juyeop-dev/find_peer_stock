@@ -13,6 +13,7 @@ from urllib.parse import urlsplit
 
 from archive_paths import monthly_report_path
 from generate_new_high_data import load_markets, nonempty_text, require
+from market_closures import load_scheduled_closures, merge_closures
 from period_returns import validate_period_returns
 
 
@@ -131,6 +132,10 @@ def generate_turnover_data(source_dir: Path = SOURCE_DIR, output_dir: Path = GEN
         validate_report(payload, path, reports_dir, markets_by_id)
         reports.append(payload)
     reports.sort(key=lambda report: (-date.fromisoformat(report["date"]).toordinal(), report["market"]))
+    try:
+        scheduled_closures = load_scheduled_closures(source_dir.parent / "market-closures", set(markets_by_id))
+    except ValueError as exc:
+        raise TurnoverDataError(str(exc)) from exc
     index: dict[str, Any] = {
         "schema_version": 1,
         "markets": markets,
@@ -139,6 +144,7 @@ def generate_turnover_data(source_dir: Path = SOURCE_DIR, output_dir: Path = GEN
             "total_turnover": sum(entry["turnover"] for entry in report["entries"]),
             "currency": report["entries"][0].get("turnover_currency", report["entries"][0]["currency"]) if report["entries"] else None,
         } for report in reports],
+        "closures": merge_closures(scheduled_closures, [], reports),
     }
     status_path = source_dir / "refresh-status.json"
     if status_path.exists():

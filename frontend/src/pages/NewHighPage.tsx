@@ -100,9 +100,9 @@ export function NewHighPage() {
   const marketReports = useMemo(() => (index?.reports ?? [])
     .filter((item) => item.market === marketId)
     .sort((a, b) => b.date.localeCompare(a.date)), [index, marketId]);
-  const closedDates = useMemo(() => new Set((index?.closures ?? [])
+  const closedDates = useMemo(() => new Map((index?.closures ?? [])
     .filter((item) => item.market === marketId)
-    .map((item) => item.date)), [index, marketId]);
+    .map((item) => [item.date, item.reason ?? ""] as const)), [index, marketId]);
   const requestedDate = params.get("date");
   const selectedDate = validDate(requestedDate) ? requestedDate : marketReports[0]?.date ?? today;
   const requestedExchange = params.get("exchange");
@@ -113,6 +113,7 @@ export function NewHighPage() {
   const indexedReport = marketReports.find((item) => item.date === selectedDate);
   const hasReport = Boolean(indexedReport);
   const isClosedDate = !hasReport && (isWeekend(selectedDate) || closedDates.has(selectedDate));
+  const closureReason = closedDates.get(selectedDate);
   const loadReport = useCallback(async (signal: AbortSignal) => {
     const payload = await getNewHighReport(marketId, selectedDate, signal);
     if (payload.date !== selectedDate || payload.market !== marketId) {
@@ -270,7 +271,7 @@ export function NewHighPage() {
                 : marketRefresh?.status === "unsupported" && marketReports.length === 0
                 ? "이 시장은 아직 자동 수집을 지원하지 않습니다"
                 : marketReports.length === 0 ? "아직 등록된 신고가 기록이 없습니다" : "이 날짜의 기록이 아직 없습니다"}</h3>
-              <p>{isClosedDate ? "거래가 열리지 않은 날이므로 신고가 종목 기록이 생성되지 않습니다."
+              <p>{isClosedDate ? `${closureReason ? `${closureReason}로 ` : ""}거래가 열리지 않아 신고가 기록이 생성되지 않습니다.`
                 : marketRefresh?.status === "unsupported" && marketReports.length === 0
                 ? "기록이 등록되면 해당 거래일의 신고가 종목과 업종을 확인할 수 있습니다."
                 : marketReports.length === 0
