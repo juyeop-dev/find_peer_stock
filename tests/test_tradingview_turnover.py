@@ -56,10 +56,22 @@ class TradingViewTurnoverTests(unittest.TestCase):
         self.assertEqual({entry["exchange"] for entry in report["entries"]}, {"SSE", "SZSE"})
 
     def test_europe_keeps_price_currency_separate_from_usd_metrics(self) -> None:
-        rows = [row(f"{exchange}:ABC", 100, currency="GBX" if exchange == "LSE" else "EUR")
-                for exchange in ("EURONEXT", "XETR", "LSE", "SIX")]
-        with patch.object(source, "_request_json", return_value={"totalCount": 4, "data": rows}):
+        exchanges = ("EURONEXT", "XETR", "LSE", "SIX")
+
+        def scanner(_url: str, payload: dict, _timeout: float) -> dict:
+            exchange = payload["filter"][1]["right"][0]
+            self.assertEqual(len(payload["filter"][1]["right"]), 1)
+            self.assertEqual(payload["range"], [0, 5000])
+            item = row(f"{exchange}:ABC", 100 + exchanges.index(exchange),
+                       currency="GBX" if exchange == "LSE" else "EUR")
+            return {"totalCount": 1, "data": [item]}
+
+        with patch.object(source, "_request_json", side_effect=scanner) as request:
             report = source.fetch_report("europe", DAY)
+        self.assertEqual(request.call_count, 4)
+        self.assertEqual(report["source_metadata"]["scanned_symbols"], 4)
+        self.assertEqual(report["entries"][0]["exchange"], "SIX")
+        self.assertEqual([entry["rank"] for entry in report["entries"]], [1, 2, 3, 4])
         self.assertEqual(next(entry for entry in report["entries"] if entry["exchange"] == "LSE")["currency"], "GBX")
         self.assertTrue(all(entry["turnover_currency"] == "USD" and
                             entry["market_cap_currency"] == "USD" for entry in report["entries"]))

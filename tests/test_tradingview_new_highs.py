@@ -42,6 +42,20 @@ class TradingViewNewHighTests(unittest.TestCase):
         with patch.object(source, "_request_json", return_value=response(rows)):
             return source.fetch_report(market, DAY)
 
+    def test_europe_scans_each_exchange_without_cross_exchange_pagination(self):
+        exchanges = ("EURONEXT", "XETR", "LSE", "SIX")
+
+        def scanner(_url: str, payload: dict, _timeout: float) -> dict:
+            exchange = payload["filter"][1]["right"][0]
+            self.assertEqual(len(payload["filter"][1]["right"]), 1)
+            self.assertEqual(payload["range"], [0, 5000])
+            return response([row(f"{exchange}:ABC")])
+
+        with patch.object(source, "_request_json", side_effect=scanner) as request:
+            rows = source._scan("europe", 30, 500)
+        self.assertEqual(request.call_count, 4)
+        self.assertEqual({item["exchange"] for item in rows}, set(exchanges))
+
     def test_full_pagination_preserves_all_time_precedence_and_ticker(self):
         rows = [
             row("TSE:1000", high=150),
@@ -134,10 +148,14 @@ class TradingViewNewHighTests(unittest.TestCase):
         self.assertEqual(us["entries"][0]["ticker"], "AAPL")
 
     def test_europe_uses_global_exchange_universe_and_qualified_tickers(self):
-        rows = [row(f"{exchange}:ABC", high=150) for exchange in ("EURONEXT", "XETR", "LSE", "SIX")]
-        with patch.object(source, "_request_json", return_value=response(rows)) as request:
+        def scanner(_url: str, payload: dict, _timeout: float) -> dict:
+            exchange = payload["filter"][1]["right"][0]
+            return response([row(f"{exchange}:ABC", high=150)])
+
+        with patch.object(source, "_request_json", side_effect=scanner) as request:
             report = source.fetch_report("europe", DAY)
         self.assertEqual(request.call_args.args[0], "https://scanner.tradingview.com/global/scan")
+        self.assertEqual(request.call_count, 4)
         self.assertEqual({entry["exchange"] for entry in report["entries"]}, {"EURONEXT", "XETRA", "LSE", "SIX"})
         self.assertEqual(len({entry["ticker"] for entry in report["entries"]}), 4)
 

@@ -73,8 +73,18 @@ def _text(value: Any) -> bool:
     return isinstance(value, str) and bool(value.strip())
 
 
-def _scan(market_id: str, timeout: float, page_size: int) -> list[dict[str, Any]]:
+def _scan(market_id: str, timeout: float, page_size: int,
+          exchange_scope: str | None = None) -> list[dict[str, Any]]:
     scanner, exchanges = _CONFIG[market_id]
+    if market_id == "europe" and exchange_scope is None:
+        # The global scanner's cross-exchange name sort is not stable across
+        # pages. Each configured exchange fits in one scanner page today.
+        return [
+            row
+            for exchange in exchanges
+            for row in _scan(market_id, timeout, max(page_size, 5000), exchange)
+        ]
+    scoped_exchanges = [exchange_scope] if exchange_scope else list(exchanges)
     endpoint = f"https://scanner.tradingview.com/{scanner}/scan"
     rows: list[dict[str, Any]] = []
     seen: set[str] = set()
@@ -84,7 +94,7 @@ def _scan(market_id: str, timeout: float, page_size: int) -> list[dict[str, Any]
         payload = {
             "filter": [
                 {"left": "type", "operation": "equal", "right": "stock"},
-                {"left": "exchange", "operation": "in_range", "right": list(exchanges)},
+                {"left": "exchange", "operation": "in_range", "right": scoped_exchanges},
             ],
             "columns": list(COLUMNS),
             "sort": {"sortBy": "name", "sortOrder": "asc"},
@@ -110,7 +120,7 @@ def _scan(market_id: str, timeout: float, page_size: int) -> list[dict[str, Any]
             if not isinstance(values, list) or len(values) != len(COLUMNS):
                 raise TradingViewSourceError(f"{symbol}: incomplete scanner columns")
             row = dict(zip(COLUMNS, values), symbol=symbol)
-            if row["exchange"] not in exchanges or row["type"] != "stock":
+            if row["exchange"] not in scoped_exchanges or row["type"] != "stock":
                 raise TradingViewSourceError(f"{symbol}: scanner did not honor exchange/stock filters")
             if not _text(row["name"]) or symbol != f"{row['exchange']}:{row['name']}":
                 raise TradingViewSourceError(f"{symbol}: inconsistent symbol identity")

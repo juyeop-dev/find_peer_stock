@@ -116,7 +116,8 @@ def _logo_url(logoid: Any) -> str | None:
 
 
 def fetch_report(market_id: str, session_date: date, *, timeout: float = 30,
-                 page_size: int = 1000, limit: int = 30) -> dict[str, Any]:
+                 page_size: int = 1000, limit: int = 30,
+                 exchange_scope: str | None = None) -> dict[str, Any]:
     if market_id not in SUPPORTED_MARKETS:
         raise TurnoverSourceError(f"Unsupported automatic turnover market: {market_id}")
     if type(session_date) is not date:
@@ -129,6 +130,39 @@ def fetch_report(market_id: str, session_date: date, *, timeout: float = 30,
         raise TurnoverSourceError("timeout must be positive and finite")
 
     scanner, exchanges = _CONFIG[market_id]
+    if market_id == "europe" and exchange_scope is None:
+        # Global mixed-exchange pagination can repeat symbols at page
+        # boundaries. Scan each exchange in one page, then merge its top 30;
+        # no global top-30 constituent can be below rank 30 locally.
+        reports = [
+            fetch_report(market_id, session_date, timeout=timeout,
+                         page_size=max(page_size, 5000), limit=limit,
+                         exchange_scope=exchange)
+            for exchange in exchanges
+        ]
+        entries = sorted(
+            (entry for report in reports for entry in report["entries"]),
+            key=lambda entry: (-entry["turnover"], entry["source_symbol"]),
+        )[:limit]
+        for rank, entry in enumerate(entries, start=1):
+            entry["rank"] = rank
+        metadata = reports[0]["source_metadata"]
+        metadata["scanned_symbols"] = sum(
+            report["source_metadata"]["scanned_symbols"] for report in reports
+        )
+        metadata["current_session_symbols"] = sum(
+            report["source_metadata"]["current_session_symbols"] for report in reports
+        )
+        metadata["latest_session_by_exchange"] = {
+            exchange: day
+            for report in reports
+            for exchange, day in report["source_metadata"]["latest_session_by_exchange"].items()
+        }
+        return {**reports[0], "entries": entries, "source_metadata": metadata}
+    if exchange_scope is not None:
+        if exchange_scope not in exchanges:
+            raise TurnoverSourceError(f"Unsupported exchange: {exchange_scope}")
+        exchanges = {exchange_scope: exchanges[exchange_scope]}
     endpoint = f"https://scanner.tradingview.com/{scanner}/scan"
     rows: list[dict[str, Any]] = []
     seen: set[str] = set()

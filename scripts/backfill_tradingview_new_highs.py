@@ -73,7 +73,8 @@ def default_max_offset(start: date, as_of: date) -> int:
 
 
 def scan_historical(market_id: str, max_offset: int, timeout: float = 30,
-                    page_size: int = 500, symbols: set[str] | None = None) -> list[dict[str, Any]]:
+                    page_size: int = 500, symbols: set[str] | None = None,
+                    exchange_scope: str | None = None) -> list[dict[str, Any]]:
     if market_id not in SUPPORTED_HISTORICAL_SCAN_MARKETS:
         raise TradingViewSourceError(f"Unsupported historical scanner market: {market_id}")
     if not _number(timeout) or timeout <= 0:
@@ -81,6 +82,14 @@ def scan_historical(market_id: str, max_offset: int, timeout: float = 30,
     if type(page_size) is not int or not 1 <= page_size <= 5000:
         raise TradingViewSourceError("page_size must be an integer between 1 and 5000")
     scanner, exchanges = _CONFIG[market_id]
+    if market_id == "europe" and exchange_scope is None:
+        return [
+            row
+            for exchange in exchanges
+            for row in scan_historical(market_id, max_offset, timeout, max(page_size, 5000),
+                                       symbols, exchange)
+        ]
+    scoped_exchanges = [exchange_scope] if exchange_scope else list(exchanges)
     columns = historical_columns(max_offset)
     endpoint = f"https://scanner.tradingview.com/{scanner}/scan"
     rows: list[dict[str, Any]] = []
@@ -90,7 +99,7 @@ def scan_historical(market_id: str, max_offset: int, timeout: float = 30,
         start = len(rows)
         filters = [
                 {"left": "type", "operation": "equal", "right": "stock"},
-                {"left": "exchange", "operation": "in_range", "right": list(exchanges)},
+                {"left": "exchange", "operation": "in_range", "right": scoped_exchanges},
         ]
         if symbols:
             filters.append({
@@ -127,7 +136,7 @@ def scan_historical(market_id: str, max_offset: int, timeout: float = 30,
             if not isinstance(values, list) or len(values) != len(columns):
                 raise TradingViewSourceError(f"{symbol}: incomplete historical scanner columns")
             row = dict(zip(columns, values), symbol=symbol)
-            if row["exchange"] not in exchanges or row["type"] != "stock":
+            if row["exchange"] not in scoped_exchanges or row["type"] != "stock":
                 raise TradingViewSourceError(f"{symbol}: scanner did not honor exchange/stock filters")
             if not _text(row["name"]) or symbol != f"{row['exchange']}:{row['name']}":
                 raise TradingViewSourceError(f"{symbol}: inconsistent symbol identity")
@@ -203,7 +212,7 @@ def reports_from_rows(market_id: str, sessions: list[date], rows: list[dict[str,
         excluded_close = 0
         used_tickers: set[str] = set()
         for row, bar in matched[session]:
-            candidate = {field: bar[field] for field in BAR_COLUMNS}
+            candidate = {**{field: bar[field] for field in BAR_COLUMNS}, "symbol": row["symbol"]}
             high_type = _high_type(candidate)
             if high_type is None:
                 continue
