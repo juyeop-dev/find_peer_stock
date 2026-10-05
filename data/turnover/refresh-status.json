@@ -2,38 +2,41 @@
   "schema_version": 1,
   "markets": {
     "korea": {
-      "status": "updated",
-      "target_date": "2026-09-30",
+      "status": "pending",
+      "target_date": "2026-10-05",
+      "message": "korea/KRX: source session is 2026-10-02, requested 2026-10-05",
       "last_success_at": "2026-09-30T07:31:02.582445+00:00",
       "last_success_date": "2026-09-30"
     },
     "us": {
       "status": "pending",
-      "message": "장 마감 후 수집합니다.",
+      "target_date": "2026-10-02",
+      "message": "us/NASDAQ: source session is 2026-10-05, requested 2026-10-02",
       "last_success_at": "2026-09-29T21:00:55.800667+00:00",
       "last_success_date": "2026-09-29"
     },
     "china": {
-      "status": "updated",
-      "target_date": "2026-09-30",
+      "status": "pending",
+      "target_date": "2026-10-05",
+      "message": "china/SSE: source session is 2026-09-30, requested 2026-10-05",
       "last_success_at": "2026-09-30T08:01:10.356568+00:00",
       "last_success_date": "2026-09-30"
     },
     "taiwan": {
       "status": "updated",
-      "target_date": "2026-09-30",
-      "last_success_at": "2026-09-30T06:30:48.177821+00:00",
-      "last_success_date": "2026-09-30"
+      "target_date": "2026-10-05",
+      "last_success_date": "2026-10-05",
+      "last_success_at": "2026-10-05T12:50:38.287844+00:00"
     },
     "japan": {
       "status": "updated",
-      "target_date": "2026-09-30",
-      "last_success_at": "2026-09-30T07:31:02.582445+00:00",
-      "last_success_date": "2026-09-30"
+      "target_date": "2026-10-05",
+      "last_success_date": "2026-10-05",
+      "last_success_at": "2026-10-05T12:50:38.287844+00:00"
     },
     "europe": {
-      "status": "updated",
-      "target_date": "2026-09-30",
+      "status": "pending",
+      "message": "장 마감 후 수집합니다.",
       "last_success_at": "2026-09-30T17:00:50.293428+00:00",
       "last_success_date": "2026-09-30"
     }
