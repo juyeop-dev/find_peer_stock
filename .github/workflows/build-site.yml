@@ -19,12 +19,12 @@ permissions:
   pages: write
   id-token: write
 
-concurrency:
-  group: pages
-  cancel-in-progress: false
-
 jobs:
   build:
+    # A Pages deployment can wait indefinitely. Keep archive collection independent.
+    concurrency:
+      group: market-archive-${{ github.ref }}
+      cancel-in-progress: false
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
@@ -133,6 +133,10 @@ jobs:
           path: frontend/dist
 
   deploy:
+    # Replace a stuck Pages deployment without blocking the next archive build.
+    concurrency:
+      group: pages
+      cancel-in-progress: true
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
