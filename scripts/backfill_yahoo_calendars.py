@@ -29,6 +29,7 @@ from zoneinfo import ZoneInfo
 
 from generate_new_high_data import SOURCE_DIR as NEW_HIGH_DIR
 from generate_new_high_data import load_markets, validate_report as validate_new_high
+from archive_paths import monthly_report_path
 from generate_turnover_data import SOURCE_DIR as TURNOVER_DIR
 from generate_turnover_data import validate_report as validate_turnover
 from new_high_sources.tradingview import _CONFIG, _DEFINITION_URL, _request_json, _text
@@ -552,7 +553,7 @@ def main() -> None:
     markets_turnover = {market["id"]: market for market in load_markets(TURNOVER_DIR)}
     for session in sorted(reports_new):
         new_path = NEW_HIGH_DIR / "reports" / args.market / f"{session}.json"
-        turnover_path = TURNOVER_DIR / "reports" / args.market / f"{session}.json"
+        turnover_path = monthly_report_path(TURNOVER_DIR / "reports", args.market, session)
         wrote = []
         if args.force or not new_path.exists():
             validate_new_high(reports_new[session], new_path, NEW_HIGH_DIR / "reports", markets_new)

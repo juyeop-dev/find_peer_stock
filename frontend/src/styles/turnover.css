@@ -61,6 +61,7 @@ body:has(.turnoverPage) { min-width: 320px; }
 .turnoverTable .change.up { color: #d64a49; }
 .turnoverTable .change.down { color: #2670be; }
 .turnoverTable .change.flat { color: #728196; }
+.turnoverTable .periodReturns { justify-content: flex-end; margin-top: 3px; font-size: 9px; white-space: normal; }
 .turnoverValue strong { color: #254f86; }
 .turnoverIndustry { display: grid; gap: 2px; }
 .turnoverIndustry strong { overflow: hidden; color: #455b73; font-size: 11px; text-overflow: ellipsis; white-space: nowrap; }

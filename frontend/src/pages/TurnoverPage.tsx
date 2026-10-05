@@ -2,6 +2,7 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { ErrorNotice } from "../components/ErrorNotice";
 import { LoadingSpinner } from "../components/LoadingSpinner";
+import { PeriodReturns } from "../components/PeriodReturns";
 import { TurnoverCalendar } from "../components/TurnoverCalendar";
 import { getTurnoverIndex, getTurnoverReport } from "../dataClient/staticStockDataClient";
 import { getExternalQuoteLink } from "../dataClient/externalLinks";
@@ -121,7 +122,7 @@ export function TurnoverPage() {
               return <tr key={entry.ticker}><td className="turnoverRank"><strong>{entry.rank}</strong></td><td><a className="turnoverCompany" href={quote.href} target="_blank" rel="noreferrer" title={`${quote.label}에서 ${entry.name} 보기`}>
                 <span className="turnoverLogo"><span>{initials(entry)}</span>{entry.logo_url ? <img src={entry.logo_url} alt="" loading="lazy" onError={(event) => { event.currentTarget.style.display = "none"; }} /> : null}</span>
                 <span><strong>{entry.name}</strong><small>{entry.ticker} · {entry.exchange}</small></span></a></td>
-                <td className="number">{formatMoney(entry.price, entry.currency)}</td><td className={`number change ${changeClass(entry.change_pct)}`}>{changeText(entry.change_pct)}</td>
+                <td className="number">{formatMoney(entry.price, entry.currency)}</td><td className={`number change ${changeClass(entry.change_pct)}`}>{changeText(entry.change_pct)}<PeriodReturns values={entry.period_returns} /></td>
                 <td className="number turnoverValue"><strong>{formatHundredMillions(entry.turnover, entry.turnover_currency ?? entry.currency)}</strong></td><td className="number marketCapValue">{formatHundredMillions(entry.market_cap, entry.market_cap_currency ?? entry.currency, true)}</td>
                 <td><span className="turnoverIndustry"><strong>{entry.sector}</strong><small>{entry.industry}</small></span></td></tr>;
             })}</tbody></table></div>

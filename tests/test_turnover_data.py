@@ -4,11 +4,13 @@ import json
 import sys
 import tempfile
 import unittest
+from datetime import date
 from pathlib import Path
 
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 import generate_turnover_data as turnover  # noqa: E402
+from refresh_turnover import refresh_turnover  # noqa: E402
 
 
 class TurnoverDataTests(unittest.TestCase):
@@ -39,24 +41,56 @@ class TurnoverDataTests(unittest.TestCase):
         ]}
 
     def test_publishes_ranked_archive_and_calendar_summary(self) -> None:
-        self.write(self.source / "reports" / "korea" / "2026-09-17.json", self.report())
+        self.write(self.source / "reports" / "korea" / "2026_09" / "2026-09-17.json", self.report())
         index = turnover.generate_turnover_data(self.source, self.output, self.frontend)
         self.assertEqual(index["reports"][0]["count"], 2)
         self.assertEqual(index["reports"][0]["total_turnover"], 3_000_000_000_000)
-        self.assertTrue((self.output / "turnover" / "korea" / "2026-09-17.json").exists())
+        self.assertTrue((self.output / "turnover" / "korea" / "2026_09" / "2026-09-17.json").exists())
         self.assertEqual((self.output / "turnover" / "index.json").read_bytes(),
                          (self.frontend / "turnover" / "index.json").read_bytes())
 
     def test_rejects_rank_gap_and_wrong_sort_order(self) -> None:
         report = self.report()
         report["entries"][1]["rank"] = 3
-        self.write(self.source / "reports" / "korea" / "2026-09-17.json", report)
+        self.write(self.source / "reports" / "korea" / "2026_09" / "2026-09-17.json", report)
         with self.assertRaises(turnover.TurnoverDataError):
             turnover.generate_turnover_data(self.source, self.output, self.frontend)
         report["entries"][1]["rank"] = 2
         report["entries"][1]["turnover"] = 3_000_000_000_000
-        self.write(self.source / "reports" / "korea" / "2026-09-17.json", report)
+        self.write(self.source / "reports" / "korea" / "2026_09" / "2026-09-17.json", report)
         with self.assertRaises(turnover.TurnoverDataError):
+            turnover.generate_turnover_data(self.source, self.output, self.frontend)
+
+    def test_rejects_wrong_month_folder(self) -> None:
+        self.write(self.source / "reports" / "korea" / "2026_10" / "2026-09-17.json", self.report())
+        with self.assertRaisesRegex(turnover.TurnoverDataError, "month or date"):
+            turnover.generate_turnover_data(self.source, self.output, self.frontend)
+
+    def test_refresh_writes_and_reuses_monthly_report(self) -> None:
+        calls = []
+        def fetch(market: str, session: date) -> dict:
+            calls.append((market, session))
+            return self.report()
+        args = {"target_date": date(2026, 9, 17), "market_ids": {"korea"}, "fetch_report": fetch}
+        refresh_turnover(self.source, **args)
+        refresh_turnover(self.source, **args)
+        self.assertEqual(calls, [("korea", date(2026, 9, 17))])
+        self.assertTrue((self.source / "reports" / "korea" / "2026_09" / "2026-09-17.json").exists())
+
+    def test_accepts_period_returns_with_dated_close_basis(self) -> None:
+        report = self.report()
+        report["entries"][0]["period_returns"] = {
+            "1w": {"change_pct": 4.5, "start_date": "2026-09-10", "end_date": "2026-09-17",
+                   "basis": "close_to_close"},
+        }
+        path = self.source / "reports" / "korea" / "2026_09" / "2026-09-17.json"
+        self.write(path, report)
+        turnover.generate_turnover_data(self.source, self.output, self.frontend)
+        published = json.loads((self.output / "turnover" / "korea" / "2026_09" / "2026-09-17.json").read_text(encoding="utf-8"))
+        self.assertEqual(published["entries"][0]["period_returns"]["1w"]["change_pct"], 4.5)
+        report["entries"][0]["period_returns"]["1w"]["end_date"] = "2026-09-16"
+        self.write(path, report)
+        with self.assertRaisesRegex(turnover.TurnoverDataError, "report date"):
             turnover.generate_turnover_data(self.source, self.output, self.frontend)
 
     def test_europe_rejects_tradingview_values_without_usd_units(self) -> None:
@@ -71,7 +105,7 @@ class TurnoverDataTests(unittest.TestCase):
                                "price": 3500, "change_pct": 1, "turnover": 1_000_000,
                                "currency": "GBX", "market_cap": 200_000_000,
                                "sector": "Energy", "industry": "Oil"}]}
-        path = self.source / "reports" / "europe" / "2026-09-18.json"
+        path = self.source / "reports" / "europe" / "2026_09" / "2026-09-18.json"
         self.write(path, report)
         with self.assertRaisesRegex(turnover.TurnoverDataError, "declare USD"):
             turnover.generate_turnover_data(self.source, self.output, self.frontend)

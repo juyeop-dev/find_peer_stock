@@ -1,3 +1,5 @@
+import type { PeriodReturns } from "./periodReturnTypes";
+
 export type HighType = "52_week" | "all_time";
 
 export interface NewHighCounts {
@@ -54,7 +56,9 @@ export interface NewHighEntry {
   high_type: HighType;
   reason: string;
   description?: string;
+  peers?: { ticker: string; name: string }[];
   change_pct?: number | null;
+  period_returns?: PeriodReturns;
   session_open?: number | null;
   session_close?: number | null;
   currency?: string;

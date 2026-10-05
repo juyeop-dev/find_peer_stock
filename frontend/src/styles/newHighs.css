@@ -120,6 +120,9 @@ body:has(.newHighPage) { min-width: 320px; }
 .newHighIndustry strong { font-weight: 700; color: #445972; }
 .newHighIndustry em { padding-left: 7px; border-left: 1px solid #d8e0e9; color: #687b91; font-style: normal; }
 .newHighDescription { margin: 5px 0 0; color: #76869a; font-size: 12px; }
+.newHighPeers { margin: 7px 0 0; color: #52677f; font-size: 12px; line-height: 1.6; }
+.newHighPeers > span:first-child { margin-right: 4px; }
+.newHighTheme .periodReturns { margin-top: 7px; }
 .newHighReason { margin: 9px 0 0; color: #445972; font-size: 13px; line-height: 1.75; white-space: pre-line; overflow-wrap: anywhere; }
 .newHighReason span { display: inline-block; margin-right: 8px; font-size: 10px; color: #8795a7; }
 .newHighPeerLink { display: inline-block; margin-top: 10px; color: #3d65a2; font-size: 11px; font-weight: 650; }

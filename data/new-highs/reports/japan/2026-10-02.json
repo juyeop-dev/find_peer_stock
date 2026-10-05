@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "market": "japan",
+  "date": "2026-10-02",
+  "summary": "사용자 제공 2026-10-02 신고가 목록과 업종별 분류를 기록했습니다. 등락률과 신고가 유형은 제공값이며 별도 시세 검증 전입니다.",
+  "sources": [
+    {
+      "label": "2026-10-02 사용자 제공 japan 신고가 목록"
+    }
+  ],
+  "category_reasons": {
+    "반도체 장비": "AI 반도체 투자 확대 수혜"
+  },
+  "entries": [
+    {
+      "ticker": "6857.T",
+      "name": "Advantest Corporation",
+      "exchange": "TSE",
+      "category": "반도체 장비",
+      "high_type": "all_time",
+      "reason": "AI 반도체 투자 확대 수혜",
+      "description": "반도체 테스트 장비",
+      "change_pct": 2.71,
+      "currency": "JPY",
+      "peers": [
+        {
+          "ticker": "089030.KQ",
+          "name": "테크윙"
+        },
+        {
+          "ticker": "232140.KQ",
+          "name": "와이아이케이"
+        },
+        {
+          "ticker": "003160.KS",
+          "name": "디아이"
+        }
+      ]
+    }
+  ]
+}

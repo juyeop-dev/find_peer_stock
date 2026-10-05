@@ -3,6 +3,7 @@ import { Link, useSearchParams } from "react-router-dom";
 import { ErrorNotice } from "../components/ErrorNotice";
 import { LoadingSpinner } from "../components/LoadingSpinner";
 import { NewHighCalendar } from "../components/NewHighCalendar";
+import { PeriodReturns } from "../components/PeriodReturns";
 import { DataRefreshStatus } from "../components/DataRefreshStatus";
 import { getNewHighIndex, getNewHighReport, getSiteIndex } from "../dataClient/staticStockDataClient";
 import { usePollingData } from "../dataClient/usePollingData";
@@ -332,6 +333,8 @@ export function NewHighPage() {
                         <p className="newHighIndustry"><span>업종</span><strong>{entry.category}</strong>
                           {detailedIndustry(entry) ? <em>{detailedIndustry(entry)}</em> : null}</p>
                         {standaloneDescription(entry) ? <p className="newHighDescription">{standaloneDescription(entry)}</p> : null}
+                        <PeriodReturns values={entry.period_returns} />
+                        {entry.peers?.length ? <p className="newHighPeers"><span aria-label="비교 기업">👀</span>{entry.peers.map((peer, index) => <span key={peer.ticker}>{index > 0 ? ", " : " "}{peer.name}</span>)}</p> : null}
                         {!isIndustryReason(entry.reason) && entry.reason !== report.category_reasons?.[category]
                           ? <p className="newHighReason"><span>확인된 배경</span>{entry.reason}</p> : null}
                         {peerTickers.has(entry.ticker) ? <Link className="newHighPeerLink" to={`/stocks/${encodeURIComponent(entry.ticker)}`}>Peer 비교 보기 →</Link> : null}

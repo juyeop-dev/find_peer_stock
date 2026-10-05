@@ -1,4 +1,5 @@
 import type { NewHighMarket, NewHighRefresh } from "./newHighTypes";
+import type { PeriodReturns } from "./periodReturnTypes";
 
 export interface TurnoverReportIndex {
   market: string;
@@ -22,6 +23,7 @@ export interface TurnoverEntry {
   exchange: string;
   price: number;
   change_pct: number | null;
+  period_returns?: PeriodReturns;
   turnover: number;
   currency: string;
   turnover_currency?: string;

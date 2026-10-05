@@ -11,7 +11,9 @@ from pathlib import Path
 from typing import Any
 from urllib.parse import urlsplit
 
+from archive_paths import monthly_report_path
 from generate_new_high_data import load_markets, nonempty_text, require
+from period_returns import validate_period_returns
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
@@ -41,8 +43,8 @@ def _finite(value: Any, *, positive: bool = False) -> bool:
 def validate_report(payload: dict[str, Any], path: Path, reports_dir: Path,
                     markets: dict[str, dict[str, Any]]) -> None:
     relative = path.relative_to(reports_dir)
-    if len(relative.parts) != 2:
-        raise TurnoverDataError(f"{path}: expected reports/{{market}}/{{YYYY-MM-DD}}.json")
+    if len(relative.parts) != 3:
+        raise TurnoverDataError(f"{path}: expected reports/{{market}}/{{YYYY_MM}}/{{YYYY-MM-DD}}.json")
     market_id, report_date = payload.get("market"), payload.get("date")
     if market_id not in markets or relative.parts[0] != market_id:
         raise TurnoverDataError(f"{path}: unknown or mismatched market")
@@ -52,8 +54,8 @@ def validate_report(payload: dict[str, Any], path: Path, reports_dir: Path,
         date.fromisoformat(report_date)
     except ValueError as exc:
         raise TurnoverDataError(f"{path}: invalid date") from exc
-    if path.stem != report_date:
-        raise TurnoverDataError(f"{path}: date does not match filename")
+    if path != monthly_report_path(reports_dir, market_id, report_date):
+        raise TurnoverDataError(f"{path}: market, month or date does not match report path")
 
     entries = payload.get("entries")
     if not isinstance(entries, list) or len(entries) > 30:
@@ -84,6 +86,10 @@ def validate_report(payload: dict[str, Any], path: Path, reports_dir: Path,
             raise TurnoverDataError(f"{prefix}: price and turnover must be positive finite numbers")
         if entry.get("change_pct") is not None and not _finite(entry["change_pct"]):
             raise TurnoverDataError(f"{prefix}: change_pct must be finite or null")
+        try:
+            validate_period_returns(entry, report_date, prefix)
+        except ValueError as exc:
+            raise TurnoverDataError(str(exc)) from exc
         if entry.get("market_cap") is not None and not _finite(entry["market_cap"], positive=True):
             raise TurnoverDataError(f"{prefix}: market_cap must be positive or null")
         if market_id == "europe" and payload.get("source_metadata", {}).get("provider") == "TradingView public scanner":
@@ -146,7 +152,7 @@ def generate_turnover_data(source_dir: Path = SOURCE_DIR, output_dir: Path = GEN
     for destination in destinations:
         namespace = destination / "turnover"
         for report in reports:
-            write_json(namespace / report["market"] / f"{report['date']}.json", report)
+            write_json(monthly_report_path(namespace, report["market"], report["date"]), report)
         write_json(namespace / "index.json", index)
     return index
 

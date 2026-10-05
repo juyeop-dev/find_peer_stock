@@ -61,7 +61,8 @@ export async function getTurnoverIndex(signal?: AbortSignal): Promise<TurnoverIn
 }
 
 export async function getTurnoverReport(market: string, date: string, signal?: AbortSignal): Promise<TurnoverReport> {
+  const month = date.slice(0, 7).replace("-", "_");
   return fetchJson<TurnoverReport>(
-    `data/turnover/${encodeURIComponent(market)}/${encodeURIComponent(date)}.json`, signal
+    `data/turnover/${encodeURIComponent(market)}/${month}/${encodeURIComponent(date)}.json`, signal
   );
 }

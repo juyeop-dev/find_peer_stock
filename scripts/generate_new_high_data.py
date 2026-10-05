@@ -11,6 +11,8 @@ from datetime import date, time
 from pathlib import Path
 from typing import Any
 from urllib.parse import urlsplit
+
+from period_returns import validate_period_returns
 from zoneinfo import ZoneInfo, ZoneInfoNotFoundError
 
 
@@ -151,9 +153,22 @@ def validate_report(payload: dict[str, Any], path: Path, reports_dir: Path,
         require(entry["high_type"] in HIGH_TYPES, f"{prefix}: high_type must be 52_week or all_time")
         if "description" in entry:
             require(isinstance(entry["description"], str), f"{prefix}: description must be a string")
+        if "peers" in entry:
+            require(isinstance(entry["peers"], list), f"{prefix}: peers must be a list")
+            peer_tickers: set[str] = set()
+            for peer in entry["peers"]:
+                require(isinstance(peer, dict) and nonempty_text(peer.get("ticker")) and
+                        nonempty_text(peer.get("name")), f"{prefix}: each peer needs a ticker and name")
+                require(peer["ticker"] != ticker and peer["ticker"] not in peer_tickers,
+                        f"{prefix}: duplicate or self-referencing peer")
+                peer_tickers.add(peer["ticker"])
         change_pct = entry.get("change_pct")
         require(change_pct is None or type(change_pct) is int or (type(change_pct) is float and math.isfinite(change_pct)),
                 f"{prefix}: change_pct must be a finite number or null")
+        try:
+            validate_period_returns(entry, report_date, prefix)
+        except ValueError as exc:
+            raise NewHighDataError(str(exc)) from exc
         for field in ("session_open", "session_close"):
             if field in entry:
                 value = entry[field]
@@ -285,11 +300,14 @@ def load_published_market_caps(output_dir: Path) -> dict[tuple[str, str, str], d
 
 def publish_reports(reports: list[dict[str, Any]], output_dir: Path,
                     market_caps: dict[str, Any] | None,
-                    market_cap_fetched_at: str | None) -> list[dict[str, Any]]:
+                    market_cap_fetched_at: str | None,
+                    peers_by_ticker: dict[str, list[dict[str, str]]]) -> list[dict[str, Any]]:
     existing_caps = load_published_market_caps(output_dir)
     published = copy.deepcopy(reports)
     for report in published:
         for entry in report["entries"]:
+            if "peers" not in entry and entry["ticker"] in peers_by_ticker:
+                entry["peers"] = copy.deepcopy(peers_by_ticker[entry["ticker"]])
             cap = (market_caps or {}).get(entry["ticker"])
             if cap is not None:
                 entry.update({
@@ -320,7 +338,23 @@ def generate_new_high_data(source_dir: Path = SOURCE_DIR, output_dir: Path = GEN
         validate_report(payload, path, reports_dir, markets_by_id)
         reports.append(payload)
     reports.sort(key=lambda report: (-date.fromisoformat(report["date"]).toordinal(), report["market"]))
-    published_reports = publish_reports(reports, output_dir, market_caps, market_cap_fetched_at)
+    peer_path = source_dir / "peer-map.json"
+    peers_by_ticker: dict[str, list[dict[str, str]]] = {}
+    if peer_path.exists():
+        peer_data = read_json(peer_path).get("peers_by_ticker")
+        require(isinstance(peer_data, dict), f"{peer_path}: peers_by_ticker must be an object")
+        for ticker, peers in peer_data.items():
+            require(nonempty_text(ticker) and isinstance(peers, list) and bool(peers),
+                    f"{peer_path}: invalid peers for {ticker!r}")
+            seen: set[str] = set()
+            for peer in peers:
+                require(isinstance(peer, dict) and nonempty_text(peer.get("ticker")) and
+                        nonempty_text(peer.get("name")), f"{peer_path}: invalid peer for {ticker}")
+                require(peer["ticker"] != ticker and peer["ticker"] not in seen,
+                        f"{peer_path}: duplicate or self-referencing peer for {ticker}")
+                seen.add(peer["ticker"])
+            peers_by_ticker[ticker] = peers
+    published_reports = publish_reports(reports, output_dir, market_caps, market_cap_fetched_at, peers_by_ticker)
     summaries = []
     for report in reports:
         entries = report["entries"]

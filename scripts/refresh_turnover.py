@@ -7,6 +7,7 @@ from datetime import date, datetime, timezone
 from pathlib import Path
 from typing import Callable
 
+from archive_paths import monthly_report_path
 from generate_turnover_data import SOURCE_DIR, load_markets, read_json, validate_report
 from refresh_new_highs import atomic_json, collection_date, previous_success
 
@@ -36,7 +37,7 @@ def refresh_turnover(source_dir: Path = SOURCE_DIR, *, now: datetime | None = No
         if target is None:
             state["markets"][market_id] = {"status": "pending", "message": "장 마감 후 수집합니다.", **previous_success(previous)}
             continue
-        path = source_dir / "reports" / market_id / f"{target.isoformat()}.json"
+        path = monthly_report_path(source_dir / "reports", market_id, target)
         if path.exists() and not force:
             state["markets"][market_id] = {"status": "updated", "target_date": target.isoformat(), **previous_success(previous)}
             continue

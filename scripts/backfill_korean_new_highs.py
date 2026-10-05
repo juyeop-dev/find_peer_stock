@@ -14,6 +14,7 @@ from typing import Any, Callable
 from urllib.parse import urlencode
 
 from generate_new_high_data import SOURCE_DIR, load_markets, validate_report
+from archive_paths import monthly_report_path
 from generate_turnover_data import SOURCE_DIR as TURNOVER_DIR, validate_report as validate_turnover
 from new_high_sources.tradingview import (
     TradingViewSourceError,
@@ -316,14 +317,14 @@ def main() -> None:
             parser.error(f"report already exists: {report_path}; use --force to replace it")
         validate_report(report, report_path, args.source_dir / "reports", markets)
     for session, report in turnover_reports.items():
-        report_path = TURNOVER_DIR / "reports" / "korea" / f"{session}.json"
+        report_path = monthly_report_path(TURNOVER_DIR / "reports", "korea", session)
         if report_path.exists() and not args.force:
             parser.error(f"report already exists: {report_path}; use --force to replace it")
         validate_turnover(report, report_path, TURNOVER_DIR / "reports", turnover_markets)
     for session, report in reports.items():
         atomic_json(args.source_dir / "reports" / "korea" / f"{session}.json", report)
         atomic_json(args.source_dir / "reviews" / "korea" / f"{session}.json", reviews[session])
-        atomic_json(TURNOVER_DIR / "reports" / "korea" / f"{session}.json", turnover_reports[session])
+        atomic_json(monthly_report_path(TURNOVER_DIR / "reports", "korea", session), turnover_reports[session])
         print(f"korea {session}: new-high={len(report['entries'])}, turnover=30")
 
 

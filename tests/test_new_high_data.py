@@ -114,6 +114,36 @@ class NewHighDataTests(unittest.TestCase):
         with self.assertRaisesRegex(new_highs.NewHighDataError, "session_volume"):
             self.generate()
 
+    def test_publishes_catalog_peers_and_preserves_explicit_peers(self) -> None:
+        self.write(self.source / "peer-map.json", {
+            "schema_version": 1,
+            "peers_by_ticker": {"TEST1.KS": [{"ticker": "PEER.KS", "name": "국내 비교 기업"}]},
+        })
+        self.write_report(self.report)
+        self.generate()
+        path = self.generated / "new-highs" / "korea" / "2026-09-09.json"
+        published = json.loads(path.read_text(encoding="utf-8"))
+        self.assertEqual(published["entries"][0]["peers"], [{"ticker": "PEER.KS", "name": "국내 비교 기업"}])
+        explicit = copy.deepcopy(self.report)
+        explicit["entries"][0]["peers"] = [{"ticker": "OTHER.KS", "name": "직접 입력 peer"}]
+        self.write_report(explicit)
+        self.generate()
+        published = json.loads(path.read_text(encoding="utf-8"))
+        self.assertEqual(published["entries"][0]["peers"], explicit["entries"][0]["peers"])
+
+    def test_period_returns_require_report_date_and_close_basis(self) -> None:
+        report = copy.deepcopy(self.report)
+        report["entries"][0]["period_returns"] = {
+            "1m": {"change_pct": 8.0, "start_date": "2026-08-10", "end_date": "2026-09-09",
+                   "basis": "close_to_close"},
+        }
+        self.write_report(report)
+        self.generate()
+        report["entries"][0]["period_returns"]["1m"]["basis"] = "unknown"
+        self.write_report(report)
+        with self.assertRaisesRegex(new_highs.NewHighDataError, "close_to_close"):
+            self.generate()
+
     def test_source_proven_weekday_gaps_are_published_as_market_closures(self) -> None:
         report = copy.deepcopy(self.report)
         report["date"] = "2026-09-28"
