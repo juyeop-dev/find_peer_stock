@@ -31,6 +31,10 @@ class TradingViewSourceNotReady(TradingViewSourceError):
     """A requested trading session is not the latest available source session."""
 
 
+class TradingViewUnsupportedKoreanBoard(TradingViewSourceError):
+    """A verified Korean listing is outside the KOSPI/KOSDAQ archive."""
+
+
 SUPPORTED_MARKETS = frozenset({"korea", "us", "china", "taiwan", "japan", "europe"})
 _CONFIG = {
     "korea": ("korea", {"KRX": "Asia/Seoul"}),
@@ -178,6 +182,8 @@ def fetch_korean_listing(code: str, timeout: float = 30) -> dict[str, str]:
         raise TradingViewSourceError(f"KRX:{code}: could not verify Korean listing")
     exchange = data.get("stockExchangeType")
     board = exchange.get("name") if isinstance(exchange, dict) else None
+    if board == "KONEX":
+        raise TradingViewUnsupportedKoreanBoard(f"KRX:{code}: unsupported Korean board: {board}")
     if board not in {"KOSPI", "KOSDAQ"}:
         raise TradingViewSourceError(f"KRX:{code}: unsupported or missing Korean board: {board}")
     if not _text(data.get("stockName")):
@@ -379,7 +385,11 @@ def fetch_report(market_id: str, session_date: date, *, timeout: float = 30,
             continue
         if not _number(volume) or volume < 0:
             raise TradingViewSourceError(f"{row['symbol']}: invalid session volume")
-        listing = fetch_korean_listing(row["name"], timeout) if market_id == "korea" else None
+        try:
+            listing = fetch_korean_listing(row["name"], timeout) if market_id == "korea" else None
+        except TradingViewUnsupportedKoreanBoard:
+            excluded["unsupported_korean_board"] += 1
+            continue
         exchange = listing["exchange"] if listing else row["exchange"]
         if listing and _korean_index_board(row) not in {None, exchange}:
             raise TradingViewSourceError(f"{row['symbol']}: conflicting Korean listing exchange")

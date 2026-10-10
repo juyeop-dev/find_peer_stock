@@ -18,6 +18,7 @@ from archive_paths import monthly_report_path
 from generate_turnover_data import SOURCE_DIR as TURNOVER_DIR, validate_report as validate_turnover
 from new_high_sources.tradingview import (
     TradingViewSourceError,
+    TradingViewUnsupportedKoreanBoard,
     _request_daily_history,
     _scan,
     fetch_korean_listing,
@@ -178,17 +179,21 @@ def build_reports(start: date, end: date, *, timeout: float = 30,
              for code, history in histories.items()
              if session in history and history[session][4] > 0 and history[session][5] > 0),
             key=lambda item: (-item[0], item[1]),
-        )[:30]
+        )[:60]
         turnover_rankings[session] = ranked
     detail_codes = sorted(set(candidate_codes) | {
         code for ranked in turnover_rankings.values() for _turnover, code in ranked
     })
 
-    def fetch_details(code: str) -> tuple[str, dict[date, list], dict[str, str]]:
+    def fetch_details(code: str) -> tuple[str, dict[date, list], dict[str, str] | None]:
         url = history_url(code, date(1980, 1, 1), sessions[-1])
         raw = cached_request(url, timeout, cache_dir)
         history = parse_history(raw, code=code, start=date(1980, 1, 1), end=sessions[-1])
-        return code, history, fetch_korean_listing(code, timeout)
+        try:
+            listing = fetch_korean_listing(code, timeout)
+        except TradingViewUnsupportedKoreanBoard:
+            listing = None
+        return code, history, listing
 
     details = {code: (history, listing) for code, history, listing in
                parallel_map(detail_codes, fetch_details, workers, "candidate and turnover histories")}
@@ -199,8 +204,12 @@ def build_reports(start: date, end: date, *, timeout: float = 30,
     for session in sessions:
         entries = []
         checks = []
+        unsupported_board = 0
         for code, evidence in sorted(candidates[session]):
             full_history, listing = details[code]
+            if listing is None:
+                unsupported_board += 1
+                continue
             prior_all_time = max((row[2] for day, row in full_history.items()
                                   if day < session and row[2] > 0), default=None)
             high_type = "all_time" if prior_all_time is None or evidence["daily_high"] >= prior_all_time else "52_week"
@@ -246,7 +255,8 @@ def build_reports(start: date, end: date, *, timeout: float = 30,
                 "definition": "daily high >= prior 52-week high; close >= open; close >= previous close; all-time takes precedence; ties included",
                 "scanned_symbols": len(universe), "session_symbols": session_coverage[session],
                 "raw_new_high_candidates": len(candidates[session]),
-                "excluded_bearish_or_down_close": sum(not evidence["passes_close_filter"] for _, evidence in candidates[session]),
+                "excluded_unsupported_korean_board": unsupported_board,
+                "excluded_bearish_or_down_close": sum(not check["included"] for check in checks),
                 "pagination_complete": True,
             },
             "collected_at": collected_at,
@@ -254,11 +264,15 @@ def build_reports(start: date, end: date, *, timeout: float = 30,
         reviews[session] = {
             "schema_version": 1, "market": "korea", "date": session.isoformat(),
             "reviewed_at": collected_at, "scanned_symbols": len(universe),
-            "session_symbols": session_coverage[session], "checks": checks,
+            "session_symbols": session_coverage[session],
+            "excluded_unsupported_korean_board": unsupported_board, "checks": checks,
         }
         turnover_entries = []
-        for rank, (turnover, code) in enumerate(turnover_rankings[session], start=1):
+        for turnover, code in turnover_rankings[session]:
             history, listing = details[code]
+            if listing is None:
+                continue
+            rank = len(turnover_entries) + 1
             current = history[session]
             previous_days = [day for day in history if day < session]
             previous_close = history[max(previous_days)][4] if previous_days else None
@@ -274,6 +288,10 @@ def build_reports(start: date, end: date, *, timeout: float = 30,
                 "turnover": turnover, "currency": "KRW", "market_cap": None,
                 "sector": sector, "industry": industry, "source_symbol": source_row["symbol"],
             })
+            if rank == 30:
+                break
+        if len(turnover_entries) != 30:
+            raise TradingViewSourceError(f"{session}: fewer than 30 supported Korean turnover listings")
         turnover_reports[session] = {
             "schema_version": 1, "market": "korea", "date": session.isoformat(),
             "summary": "네이버 과거 조정 일봉의 종가×거래량 기준 거래대금 상위 30개 종목입니다.",
@@ -301,6 +319,7 @@ def main() -> None:
     parser.add_argument("--workers", type=int, default=24)
     parser.add_argument("--timeout", type=float, default=30)
     parser.add_argument("--force", action="store_true")
+    parser.add_argument("--skip-turnover", action="store_true", help="Keep existing turnover reports untouched.")
     parser.add_argument("--source-dir", type=Path, default=SOURCE_DIR)
     parser.add_argument("--cache-dir", type=Path, default=SOURCE_DIR.parent / "tmp_korean_history")
     args = parser.parse_args()
@@ -316,16 +335,19 @@ def main() -> None:
         if report_path.exists() and not args.force:
             parser.error(f"report already exists: {report_path}; use --force to replace it")
         validate_report(report, report_path, args.source_dir / "reports", markets)
-    for session, report in turnover_reports.items():
-        report_path = monthly_report_path(TURNOVER_DIR / "reports", "korea", session)
-        if report_path.exists() and not args.force:
-            parser.error(f"report already exists: {report_path}; use --force to replace it")
-        validate_turnover(report, report_path, TURNOVER_DIR / "reports", turnover_markets)
+    if not args.skip_turnover:
+        for session, report in turnover_reports.items():
+            report_path = monthly_report_path(TURNOVER_DIR / "reports", "korea", session)
+            if report_path.exists() and not args.force:
+                parser.error(f"report already exists: {report_path}; use --force to replace it")
+            validate_turnover(report, report_path, TURNOVER_DIR / "reports", turnover_markets)
     for session, report in reports.items():
         atomic_json(args.source_dir / "reports" / "korea" / f"{session}.json", report)
         atomic_json(args.source_dir / "reviews" / "korea" / f"{session}.json", reviews[session])
-        atomic_json(monthly_report_path(TURNOVER_DIR / "reports", "korea", session), turnover_reports[session])
-        print(f"korea {session}: new-high={len(report['entries'])}, turnover=30")
+        if not args.skip_turnover:
+            atomic_json(monthly_report_path(TURNOVER_DIR / "reports", "korea", session), turnover_reports[session])
+        print(f"korea {session}: new-high={len(report['entries'])}" +
+              ("" if args.skip_turnover else ", turnover=30"))
 
 
 if __name__ == "__main__":

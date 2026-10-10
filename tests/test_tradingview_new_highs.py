@@ -257,10 +257,22 @@ class TradingViewNewHighTests(unittest.TestCase):
             row("KRX:098120", indexes=[{"proname": "KRX:KOSDAQ"}]),
             row("KRX:0197V0", high=120),
         ]
-        for metadata in ({"itemCode": "wrong"}, {"itemCode": "0197V0", "stockExchangeType": {"name": "KONEX"}}):
+        for metadata in ({"itemCode": "wrong"}, {"itemCode": "0197V0", "stockExchangeType": {"name": None}}):
             with self.subTest(metadata=metadata), patch.object(source, "_request_json", side_effect=[response(rows), metadata]):
                 with self.assertRaises(source.TradingViewSourceError):
                     source.fetch_report("korea", DAY)
+
+    def test_verified_konex_high_does_not_abort_kospi_kosdaq_report(self):
+        rows = [
+            row("KRX:005930", indexes=[{"proname": "KRX:KOSPI"}]),
+            row("KRX:098120", indexes=[{"proname": "KRX:KOSDAQ"}]),
+            row("KRX:250030", high=150),
+        ]
+        metadata = {"itemCode": "250030", "stockExchangeType": {"name": "KONEX"}}
+        with patch.object(source, "_request_json", side_effect=[response(rows), metadata]):
+            report = source.fetch_report("korea", DAY)
+        self.assertEqual(report["entries"], [])
+        self.assertEqual(report["source_metadata"]["excluded_symbols"], {"unsupported_korean_board": 1})
 
     def test_new_listing_with_missing_week_high_can_prove_all_time_high(self):
         report = self.fetch([row("TSE:618A", high=150, price_52_week_high=None)])
