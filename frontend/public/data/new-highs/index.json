@@ -88,7 +88,7 @@
     },
     {
       "id": "europe",
-      "label": "유럽",
+      "label": "유럽 주요 4거래소",
       "timezone": "Europe/Paris",
       "default_exchange": "all",
       "exchanges": [
@@ -114,6 +114,1000 @@
   ],
   "reports": [
     {
+      "market": "china",
+      "date": "2026-10-09",
+      "counts": {
+        "total": 19,
+        "high_52_week": 17,
+        "high_all_time": 2
+      },
+      "exchanges": {
+        "SSE": {
+          "total": 10,
+          "high_52_week": 10,
+          "high_all_time": 0
+        },
+        "SZSE": {
+          "total": 9,
+          "high_52_week": 7,
+          "high_all_time": 2
+        }
+      }
+    },
+    {
+      "market": "europe",
+      "date": "2026-10-09",
+      "counts": {
+        "total": 104,
+        "high_52_week": 57,
+        "high_all_time": 47
+      },
+      "exchanges": {
+        "EURONEXT": {
+          "total": 10,
+          "high_52_week": 7,
+          "high_all_time": 3
+        },
+        "XETRA": {
+          "total": 43,
+          "high_52_week": 16,
+          "high_all_time": 27
+        },
+        "LSE": {
+          "total": 43,
+          "high_52_week": 29,
+          "high_all_time": 14
+        },
+        "SIX": {
+          "total": 8,
+          "high_52_week": 5,
+          "high_all_time": 3
+        }
+      }
+    },
+    {
+      "market": "japan",
+      "date": "2026-10-09",
+      "counts": {
+        "total": 74,
+        "high_52_week": 41,
+        "high_all_time": 33
+      },
+      "exchanges": {
+        "TSE": {
+          "total": 74,
+          "high_52_week": 41,
+          "high_all_time": 33
+        }
+      }
+    },
+    {
+      "market": "us",
+      "date": "2026-10-09",
+      "counts": {
+        "total": 63,
+        "high_52_week": 29,
+        "high_all_time": 34
+      },
+      "exchanges": {
+        "NASDAQ": {
+          "total": 43,
+          "high_52_week": 21,
+          "high_all_time": 22
+        },
+        "NYSE": {
+          "total": 19,
+          "high_52_week": 7,
+          "high_all_time": 12
+        },
+        "AMEX": {
+          "total": 1,
+          "high_52_week": 1,
+          "high_all_time": 0
+        }
+      }
+    },
+    {
+      "market": "china",
+      "date": "2026-10-08",
+      "counts": {
+        "total": 21,
+        "high_52_week": 18,
+        "high_all_time": 3
+      },
+      "exchanges": {
+        "SSE": {
+          "total": 13,
+          "high_52_week": 11,
+          "high_all_time": 2
+        },
+        "SZSE": {
+          "total": 8,
+          "high_52_week": 7,
+          "high_all_time": 1
+        }
+      }
+    },
+    {
+      "market": "europe",
+      "date": "2026-10-08",
+      "counts": {
+        "total": 63,
+        "high_52_week": 30,
+        "high_all_time": 33
+      },
+      "exchanges": {
+        "EURONEXT": {
+          "total": 5,
+          "high_52_week": 2,
+          "high_all_time": 3
+        },
+        "XETRA": {
+          "total": 22,
+          "high_52_week": 8,
+          "high_all_time": 14
+        },
+        "LSE": {
+          "total": 31,
+          "high_52_week": 17,
+          "high_all_time": 14
+        },
+        "SIX": {
+          "total": 5,
+          "high_52_week": 3,
+          "high_all_time": 2
+        }
+      }
+    },
+    {
+      "market": "japan",
+      "date": "2026-10-08",
+      "counts": {
+        "total": 38,
+        "high_52_week": 25,
+        "high_all_time": 13
+      },
+      "exchanges": {
+        "TSE": {
+          "total": 38,
+          "high_52_week": 25,
+          "high_all_time": 13
+        }
+      }
+    },
+    {
+      "market": "korea",
+      "date": "2026-10-08",
+      "counts": {
+        "total": 12,
+        "high_52_week": 7,
+        "high_all_time": 5
+      },
+      "exchanges": {
+        "KOSPI": {
+          "total": 2,
+          "high_52_week": 1,
+          "high_all_time": 1
+        },
+        "KOSDAQ": {
+          "total": 10,
+          "high_52_week": 6,
+          "high_all_time": 4
+        }
+      }
+    },
+    {
+      "market": "taiwan",
+      "date": "2026-10-08",
+      "counts": {
+        "total": 26,
+        "high_52_week": 18,
+        "high_all_time": 8
+      },
+      "exchanges": {
+        "TWSE": {
+          "total": 14,
+          "high_52_week": 9,
+          "high_all_time": 5
+        },
+        "TPEX": {
+          "total": 12,
+          "high_52_week": 9,
+          "high_all_time": 3
+        }
+      }
+    },
+    {
+      "market": "us",
+      "date": "2026-10-08",
+      "counts": {
+        "total": 57,
+        "high_52_week": 27,
+        "high_all_time": 30
+      },
+      "exchanges": {
+        "NASDAQ": {
+          "total": 28,
+          "high_52_week": 15,
+          "high_all_time": 13
+        },
+        "NYSE": {
+          "total": 27,
+          "high_52_week": 12,
+          "high_all_time": 15
+        },
+        "AMEX": {
+          "total": 2,
+          "high_52_week": 0,
+          "high_all_time": 2
+        }
+      }
+    },
+    {
+      "market": "europe",
+      "date": "2026-10-07",
+      "counts": {
+        "total": 71,
+        "high_52_week": 37,
+        "high_all_time": 34
+      },
+      "exchanges": {
+        "EURONEXT": {
+          "total": 9,
+          "high_52_week": 6,
+          "high_all_time": 3
+        },
+        "XETRA": {
+          "total": 23,
+          "high_52_week": 9,
+          "high_all_time": 14
+        },
+        "LSE": {
+          "total": 33,
+          "high_52_week": 19,
+          "high_all_time": 14
+        },
+        "SIX": {
+          "total": 6,
+          "high_52_week": 3,
+          "high_all_time": 3
+        }
+      }
+    },
+    {
+      "market": "japan",
+      "date": "2026-10-07",
+      "counts": {
+        "total": 43,
+        "high_52_week": 22,
+        "high_all_time": 21
+      },
+      "exchanges": {
+        "TSE": {
+          "total": 43,
+          "high_52_week": 22,
+          "high_all_time": 21
+        }
+      }
+    },
+    {
+      "market": "korea",
+      "date": "2026-10-07",
+      "counts": {
+        "total": 19,
+        "high_52_week": 14,
+        "high_all_time": 5
+      },
+      "exchanges": {
+        "KOSPI": {
+          "total": 8,
+          "high_52_week": 5,
+          "high_all_time": 3
+        },
+        "KOSDAQ": {
+          "total": 11,
+          "high_52_week": 9,
+          "high_all_time": 2
+        }
+      }
+    },
+    {
+      "market": "taiwan",
+      "date": "2026-10-07",
+      "counts": {
+        "total": 29,
+        "high_52_week": 14,
+        "high_all_time": 15
+      },
+      "exchanges": {
+        "TWSE": {
+          "total": 14,
+          "high_52_week": 6,
+          "high_all_time": 8
+        },
+        "TPEX": {
+          "total": 15,
+          "high_52_week": 8,
+          "high_all_time": 7
+        }
+      }
+    },
+    {
+      "market": "us",
+      "date": "2026-10-07",
+      "counts": {
+        "total": 45,
+        "high_52_week": 16,
+        "high_all_time": 29
+      },
+      "exchanges": {
+        "NASDAQ": {
+          "total": 26,
+          "high_52_week": 12,
+          "high_all_time": 14
+        },
+        "NYSE": {
+          "total": 19,
+          "high_52_week": 4,
+          "high_all_time": 15
+        },
+        "AMEX": {
+          "total": 0,
+          "high_52_week": 0,
+          "high_all_time": 0
+        }
+      }
+    },
+    {
+      "market": "europe",
+      "date": "2026-10-06",
+      "counts": {
+        "total": 107,
+        "high_52_week": 60,
+        "high_all_time": 47
+      },
+      "exchanges": {
+        "EURONEXT": {
+          "total": 11,
+          "high_52_week": 10,
+          "high_all_time": 1
+        },
+        "XETRA": {
+          "total": 36,
+          "high_52_week": 15,
+          "high_all_time": 21
+        },
+        "LSE": {
+          "total": 42,
+          "high_52_week": 25,
+          "high_all_time": 17
+        },
+        "SIX": {
+          "total": 18,
+          "high_52_week": 10,
+          "high_all_time": 8
+        }
+      }
+    },
+    {
+      "market": "japan",
+      "date": "2026-10-06",
+      "counts": {
+        "total": 92,
+        "high_52_week": 36,
+        "high_all_time": 56
+      },
+      "exchanges": {
+        "TSE": {
+          "total": 92,
+          "high_52_week": 36,
+          "high_all_time": 56
+        }
+      }
+    },
+    {
+      "market": "korea",
+      "date": "2026-10-06",
+      "counts": {
+        "total": 11,
+        "high_52_week": 8,
+        "high_all_time": 3
+      },
+      "exchanges": {
+        "KOSPI": {
+          "total": 2,
+          "high_52_week": 2,
+          "high_all_time": 0
+        },
+        "KOSDAQ": {
+          "total": 9,
+          "high_52_week": 6,
+          "high_all_time": 3
+        }
+      }
+    },
+    {
+      "market": "taiwan",
+      "date": "2026-10-06",
+      "counts": {
+        "total": 33,
+        "high_52_week": 14,
+        "high_all_time": 19
+      },
+      "exchanges": {
+        "TWSE": {
+          "total": 15,
+          "high_52_week": 5,
+          "high_all_time": 10
+        },
+        "TPEX": {
+          "total": 18,
+          "high_52_week": 9,
+          "high_all_time": 9
+        }
+      }
+    },
+    {
+      "market": "us",
+      "date": "2026-10-06",
+      "counts": {
+        "total": 56,
+        "high_52_week": 19,
+        "high_all_time": 37
+      },
+      "exchanges": {
+        "NASDAQ": {
+          "total": 39,
+          "high_52_week": 17,
+          "high_all_time": 22
+        },
+        "NYSE": {
+          "total": 17,
+          "high_52_week": 2,
+          "high_all_time": 15
+        },
+        "AMEX": {
+          "total": 0,
+          "high_52_week": 0,
+          "high_all_time": 0
+        }
+      }
+    },
+    {
+      "market": "europe",
+      "date": "2026-10-05",
+      "counts": {
+        "total": 77,
+        "high_52_week": 35,
+        "high_all_time": 42
+      },
+      "exchanges": {
+        "EURONEXT": {
+          "total": 7,
+          "high_52_week": 4,
+          "high_all_time": 3
+        },
+        "XETRA": {
+          "total": 25,
+          "high_52_week": 6,
+          "high_all_time": 19
+        },
+        "LSE": {
+          "total": 40,
+          "high_52_week": 22,
+          "high_all_time": 18
+        },
+        "SIX": {
+          "total": 5,
+          "high_52_week": 3,
+          "high_all_time": 2
+        }
+      }
+    },
+    {
+      "market": "japan",
+      "date": "2026-10-05",
+      "counts": {
+        "total": 49,
+        "high_52_week": 22,
+        "high_all_time": 27
+      },
+      "exchanges": {
+        "TSE": {
+          "total": 49,
+          "high_52_week": 22,
+          "high_all_time": 27
+        }
+      }
+    },
+    {
+      "market": "taiwan",
+      "date": "2026-10-05",
+      "counts": {
+        "total": 41,
+        "high_52_week": 12,
+        "high_all_time": 29
+      },
+      "exchanges": {
+        "TWSE": {
+          "total": 26,
+          "high_52_week": 6,
+          "high_all_time": 20
+        },
+        "TPEX": {
+          "total": 15,
+          "high_52_week": 6,
+          "high_all_time": 9
+        }
+      }
+    },
+    {
+      "market": "us",
+      "date": "2026-10-05",
+      "counts": {
+        "total": 79,
+        "high_52_week": 32,
+        "high_all_time": 47
+      },
+      "exchanges": {
+        "NASDAQ": {
+          "total": 54,
+          "high_52_week": 26,
+          "high_all_time": 28
+        },
+        "NYSE": {
+          "total": 21,
+          "high_52_week": 5,
+          "high_all_time": 16
+        },
+        "AMEX": {
+          "total": 4,
+          "high_52_week": 1,
+          "high_all_time": 3
+        }
+      }
+    },
+    {
+      "market": "japan",
+      "date": "2026-10-02",
+      "counts": {
+        "total": 47,
+        "high_52_week": 21,
+        "high_all_time": 26
+      },
+      "exchanges": {
+        "TSE": {
+          "total": 47,
+          "high_52_week": 21,
+          "high_all_time": 26
+        }
+      }
+    },
+    {
+      "market": "korea",
+      "date": "2026-10-02",
+      "counts": {
+        "total": 11,
+        "high_52_week": 8,
+        "high_all_time": 3
+      },
+      "exchanges": {
+        "KOSPI": {
+          "total": 4,
+          "high_52_week": 3,
+          "high_all_time": 1
+        },
+        "KOSDAQ": {
+          "total": 7,
+          "high_52_week": 5,
+          "high_all_time": 2
+        }
+      }
+    },
+    {
+      "market": "taiwan",
+      "date": "2026-10-02",
+      "counts": {
+        "total": 29,
+        "high_52_week": 15,
+        "high_all_time": 14
+      },
+      "exchanges": {
+        "TWSE": {
+          "total": 24,
+          "high_52_week": 12,
+          "high_all_time": 12
+        },
+        "TPEX": {
+          "total": 5,
+          "high_52_week": 3,
+          "high_all_time": 2
+        }
+      }
+    },
+    {
+      "market": "us",
+      "date": "2026-10-02",
+      "counts": {
+        "total": 85,
+        "high_52_week": 29,
+        "high_all_time": 56
+      },
+      "exchanges": {
+        "NASDAQ": {
+          "total": 57,
+          "high_52_week": 17,
+          "high_all_time": 40
+        },
+        "NYSE": {
+          "total": 26,
+          "high_52_week": 11,
+          "high_all_time": 15
+        },
+        "AMEX": {
+          "total": 2,
+          "high_52_week": 1,
+          "high_all_time": 1
+        }
+      }
+    },
+    {
+      "market": "japan",
+      "date": "2026-10-01",
+      "counts": {
+        "total": 52,
+        "high_52_week": 24,
+        "high_all_time": 28
+      },
+      "exchanges": {
+        "TSE": {
+          "total": 52,
+          "high_52_week": 24,
+          "high_all_time": 28
+        }
+      }
+    },
+    {
+      "market": "korea",
+      "date": "2026-10-01",
+      "counts": {
+        "total": 16,
+        "high_52_week": 7,
+        "high_all_time": 9
+      },
+      "exchanges": {
+        "KOSPI": {
+          "total": 4,
+          "high_52_week": 2,
+          "high_all_time": 2
+        },
+        "KOSDAQ": {
+          "total": 12,
+          "high_52_week": 5,
+          "high_all_time": 7
+        }
+      }
+    },
+    {
+      "market": "taiwan",
+      "date": "2026-10-01",
+      "counts": {
+        "total": 30,
+        "high_52_week": 15,
+        "high_all_time": 15
+      },
+      "exchanges": {
+        "TWSE": {
+          "total": 20,
+          "high_52_week": 11,
+          "high_all_time": 9
+        },
+        "TPEX": {
+          "total": 10,
+          "high_52_week": 4,
+          "high_all_time": 6
+        }
+      }
+    },
+    {
+      "market": "us",
+      "date": "2026-10-01",
+      "counts": {
+        "total": 62,
+        "high_52_week": 29,
+        "high_all_time": 33
+      },
+      "exchanges": {
+        "NASDAQ": {
+          "total": 46,
+          "high_52_week": 24,
+          "high_all_time": 22
+        },
+        "NYSE": {
+          "total": 15,
+          "high_52_week": 5,
+          "high_all_time": 10
+        },
+        "AMEX": {
+          "total": 1,
+          "high_52_week": 0,
+          "high_all_time": 1
+        }
+      }
+    },
+    {
+      "market": "china",
+      "date": "2026-09-30",
+      "counts": {
+        "total": 30,
+        "high_52_week": 24,
+        "high_all_time": 6
+      },
+      "exchanges": {
+        "SSE": {
+          "total": 14,
+          "high_52_week": 12,
+          "high_all_time": 2
+        },
+        "SZSE": {
+          "total": 16,
+          "high_52_week": 12,
+          "high_all_time": 4
+        }
+      }
+    },
+    {
+      "market": "europe",
+      "date": "2026-09-30",
+      "counts": {
+        "total": 76,
+        "high_52_week": 46,
+        "high_all_time": 30
+      },
+      "exchanges": {
+        "EURONEXT": {
+          "total": 8,
+          "high_52_week": 5,
+          "high_all_time": 3
+        },
+        "XETRA": {
+          "total": 23,
+          "high_52_week": 9,
+          "high_all_time": 14
+        },
+        "LSE": {
+          "total": 36,
+          "high_52_week": 24,
+          "high_all_time": 12
+        },
+        "SIX": {
+          "total": 9,
+          "high_52_week": 8,
+          "high_all_time": 1
+        }
+      }
+    },
+    {
+      "market": "japan",
+      "date": "2026-09-30",
+      "counts": {
+        "total": 57,
+        "high_52_week": 33,
+        "high_all_time": 24
+      },
+      "exchanges": {
+        "TSE": {
+          "total": 57,
+          "high_52_week": 33,
+          "high_all_time": 24
+        }
+      }
+    },
+    {
+      "market": "taiwan",
+      "date": "2026-09-30",
+      "counts": {
+        "total": 30,
+        "high_52_week": 23,
+        "high_all_time": 7
+      },
+      "exchanges": {
+        "TWSE": {
+          "total": 18,
+          "high_52_week": 15,
+          "high_all_time": 3
+        },
+        "TPEX": {
+          "total": 12,
+          "high_52_week": 8,
+          "high_all_time": 4
+        }
+      }
+    },
+    {
+      "market": "china",
+      "date": "2026-09-29",
+      "counts": {
+        "total": 10,
+        "high_52_week": 8,
+        "high_all_time": 2
+      },
+      "exchanges": {
+        "SSE": {
+          "total": 5,
+          "high_52_week": 4,
+          "high_all_time": 1
+        },
+        "SZSE": {
+          "total": 5,
+          "high_52_week": 4,
+          "high_all_time": 1
+        }
+      }
+    },
+    {
+      "market": "europe",
+      "date": "2026-09-29",
+      "counts": {
+        "total": 73,
+        "high_52_week": 45,
+        "high_all_time": 28
+      },
+      "exchanges": {
+        "EURONEXT": {
+          "total": 9,
+          "high_52_week": 5,
+          "high_all_time": 4
+        },
+        "XETRA": {
+          "total": 13,
+          "high_52_week": 8,
+          "high_all_time": 5
+        },
+        "LSE": {
+          "total": 40,
+          "high_52_week": 26,
+          "high_all_time": 14
+        },
+        "SIX": {
+          "total": 11,
+          "high_52_week": 6,
+          "high_all_time": 5
+        }
+      }
+    },
+    {
+      "market": "japan",
+      "date": "2026-09-29",
+      "counts": {
+        "total": 37,
+        "high_52_week": 25,
+        "high_all_time": 12
+      },
+      "exchanges": {
+        "TSE": {
+          "total": 37,
+          "high_52_week": 25,
+          "high_all_time": 12
+        }
+      }
+    },
+    {
+      "market": "taiwan",
+      "date": "2026-09-29",
+      "counts": {
+        "total": 22,
+        "high_52_week": 13,
+        "high_all_time": 9
+      },
+      "exchanges": {
+        "TWSE": {
+          "total": 12,
+          "high_52_week": 6,
+          "high_all_time": 6
+        },
+        "TPEX": {
+          "total": 10,
+          "high_52_week": 7,
+          "high_all_time": 3
+        }
+      }
+    },
+    {
+      "market": "us",
+      "date": "2026-09-29",
+      "counts": {
+        "total": 61,
+        "high_52_week": 27,
+        "high_all_time": 34
+      },
+      "exchanges": {
+        "NASDAQ": {
+          "total": 47,
+          "high_52_week": 20,
+          "high_all_time": 27
+        },
+        "NYSE": {
+          "total": 13,
+          "high_52_week": 7,
+          "high_all_time": 6
+        },
+        "AMEX": {
+          "total": 1,
+          "high_52_week": 0,
+          "high_all_time": 1
+        }
+      }
+    },
+    {
+      "market": "china",
+      "date": "2026-09-28",
+      "counts": {
+        "total": 16,
+        "high_52_week": 10,
+        "high_all_time": 6
+      },
+      "exchanges": {
+        "SSE": {
+          "total": 9,
+          "high_52_week": 6,
+          "high_all_time": 3
+        },
+        "SZSE": {
+          "total": 7,
+          "high_52_week": 4,
+          "high_all_time": 3
+        }
+      }
+    },
+    {
+      "market": "europe",
+      "date": "2026-09-28",
+      "counts": {
+        "total": 102,
+        "high_52_week": 53,
+        "high_all_time": 49
+      },
+      "exchanges": {
+        "EURONEXT": {
+          "total": 11,
+          "high_52_week": 6,
+          "high_all_time": 5
+        },
+        "XETRA": {
+          "total": 27,
+          "high_52_week": 10,
+          "high_all_time": 17
+        },
+        "LSE": {
+          "total": 47,
+          "high_52_week": 30,
+          "high_all_time": 17
+        },
+        "SIX": {
+          "total": 17,
+          "high_52_week": 7,
+          "high_all_time": 10
+        }
+      }
+    },
+    {
+      "market": "japan",
+      "date": "2026-09-28",
+      "counts": {
+        "total": 82,
+        "high_52_week": 44,
+        "high_all_time": 38
+      },
+      "exchanges": {
+        "TSE": {
+          "total": 82,
+          "high_52_week": 44,
+          "high_all_time": 38
+        }
+      }
+    },
+    {
       "market": "korea",
       "date": "2026-09-28",
       "counts": {
@@ -135,6 +1129,340 @@
       }
     },
     {
+      "market": "us",
+      "date": "2026-09-28",
+      "counts": {
+        "total": 54,
+        "high_52_week": 25,
+        "high_all_time": 29
+      },
+      "exchanges": {
+        "NASDAQ": {
+          "total": 38,
+          "high_52_week": 18,
+          "high_all_time": 20
+        },
+        "NYSE": {
+          "total": 14,
+          "high_52_week": 7,
+          "high_all_time": 7
+        },
+        "AMEX": {
+          "total": 2,
+          "high_52_week": 0,
+          "high_all_time": 2
+        }
+      }
+    },
+    {
+      "market": "europe",
+      "date": "2026-09-25",
+      "counts": {
+        "total": 82,
+        "high_52_week": 47,
+        "high_all_time": 35
+      },
+      "exchanges": {
+        "EURONEXT": {
+          "total": 6,
+          "high_52_week": 3,
+          "high_all_time": 3
+        },
+        "XETRA": {
+          "total": 15,
+          "high_52_week": 8,
+          "high_all_time": 7
+        },
+        "LSE": {
+          "total": 47,
+          "high_52_week": 30,
+          "high_all_time": 17
+        },
+        "SIX": {
+          "total": 14,
+          "high_52_week": 6,
+          "high_all_time": 8
+        }
+      }
+    },
+    {
+      "market": "japan",
+      "date": "2026-09-25",
+      "counts": {
+        "total": 129,
+        "high_52_week": 44,
+        "high_all_time": 85
+      },
+      "exchanges": {
+        "TSE": {
+          "total": 129,
+          "high_52_week": 44,
+          "high_all_time": 85
+        }
+      }
+    },
+    {
+      "market": "us",
+      "date": "2026-09-25",
+      "counts": {
+        "total": 56,
+        "high_52_week": 25,
+        "high_all_time": 31
+      },
+      "exchanges": {
+        "NASDAQ": {
+          "total": 43,
+          "high_52_week": 21,
+          "high_all_time": 22
+        },
+        "NYSE": {
+          "total": 13,
+          "high_52_week": 4,
+          "high_all_time": 9
+        },
+        "AMEX": {
+          "total": 0,
+          "high_52_week": 0,
+          "high_all_time": 0
+        }
+      }
+    },
+    {
+      "market": "china",
+      "date": "2026-09-24",
+      "counts": {
+        "total": 28,
+        "high_52_week": 17,
+        "high_all_time": 11
+      },
+      "exchanges": {
+        "SSE": {
+          "total": 15,
+          "high_52_week": 9,
+          "high_all_time": 6
+        },
+        "SZSE": {
+          "total": 13,
+          "high_52_week": 8,
+          "high_all_time": 5
+        }
+      }
+    },
+    {
+      "market": "europe",
+      "date": "2026-09-24",
+      "counts": {
+        "total": 104,
+        "high_52_week": 57,
+        "high_all_time": 47
+      },
+      "exchanges": {
+        "EURONEXT": {
+          "total": 8,
+          "high_52_week": 4,
+          "high_all_time": 4
+        },
+        "XETRA": {
+          "total": 33,
+          "high_52_week": 16,
+          "high_all_time": 17
+        },
+        "LSE": {
+          "total": 55,
+          "high_52_week": 34,
+          "high_all_time": 21
+        },
+        "SIX": {
+          "total": 8,
+          "high_52_week": 3,
+          "high_all_time": 5
+        }
+      }
+    },
+    {
+      "market": "japan",
+      "date": "2026-09-24",
+      "counts": {
+        "total": 66,
+        "high_52_week": 35,
+        "high_all_time": 31
+      },
+      "exchanges": {
+        "TSE": {
+          "total": 66,
+          "high_52_week": 35,
+          "high_all_time": 31
+        }
+      }
+    },
+    {
+      "market": "taiwan",
+      "date": "2026-09-24",
+      "counts": {
+        "total": 21,
+        "high_52_week": 8,
+        "high_all_time": 13
+      },
+      "exchanges": {
+        "TWSE": {
+          "total": 11,
+          "high_52_week": 4,
+          "high_all_time": 7
+        },
+        "TPEX": {
+          "total": 10,
+          "high_52_week": 4,
+          "high_all_time": 6
+        }
+      }
+    },
+    {
+      "market": "us",
+      "date": "2026-09-24",
+      "counts": {
+        "total": 73,
+        "high_52_week": 38,
+        "high_all_time": 35
+      },
+      "exchanges": {
+        "NASDAQ": {
+          "total": 52,
+          "high_52_week": 29,
+          "high_all_time": 23
+        },
+        "NYSE": {
+          "total": 20,
+          "high_52_week": 9,
+          "high_all_time": 11
+        },
+        "AMEX": {
+          "total": 1,
+          "high_52_week": 0,
+          "high_all_time": 1
+        }
+      }
+    },
+    {
+      "market": "china",
+      "date": "2026-09-23",
+      "counts": {
+        "total": 64,
+        "high_52_week": 35,
+        "high_all_time": 29
+      },
+      "exchanges": {
+        "SSE": {
+          "total": 29,
+          "high_52_week": 17,
+          "high_all_time": 12
+        },
+        "SZSE": {
+          "total": 35,
+          "high_52_week": 18,
+          "high_all_time": 17
+        }
+      }
+    },
+    {
+      "market": "europe",
+      "date": "2026-09-23",
+      "counts": {
+        "total": 112,
+        "high_52_week": 56,
+        "high_all_time": 56
+      },
+      "exchanges": {
+        "EURONEXT": {
+          "total": 7,
+          "high_52_week": 3,
+          "high_all_time": 4
+        },
+        "XETRA": {
+          "total": 41,
+          "high_52_week": 18,
+          "high_all_time": 23
+        },
+        "LSE": {
+          "total": 46,
+          "high_52_week": 31,
+          "high_all_time": 15
+        },
+        "SIX": {
+          "total": 18,
+          "high_52_week": 4,
+          "high_all_time": 14
+        }
+      }
+    },
+    {
+      "market": "korea",
+      "date": "2026-09-23",
+      "counts": {
+        "total": 9,
+        "high_52_week": 3,
+        "high_all_time": 6
+      },
+      "exchanges": {
+        "KOSPI": {
+          "total": 2,
+          "high_52_week": 2,
+          "high_all_time": 0
+        },
+        "KOSDAQ": {
+          "total": 7,
+          "high_52_week": 1,
+          "high_all_time": 6
+        }
+      }
+    },
+    {
+      "market": "taiwan",
+      "date": "2026-09-23",
+      "counts": {
+        "total": 21,
+        "high_52_week": 7,
+        "high_all_time": 14
+      },
+      "exchanges": {
+        "TWSE": {
+          "total": 13,
+          "high_52_week": 4,
+          "high_all_time": 9
+        },
+        "TPEX": {
+          "total": 8,
+          "high_52_week": 3,
+          "high_all_time": 5
+        }
+      }
+    },
+    {
+      "market": "us",
+      "date": "2026-09-23",
+      "counts": {
+        "total": 57,
+        "high_52_week": 29,
+        "high_all_time": 28
+      },
+      "exchanges": {
+        "NASDAQ": {
+          "total": 39,
+          "high_52_week": 21,
+          "high_all_time": 18
+        },
+        "NYSE": {
+          "total": 17,
+          "high_52_week": 8,
+          "high_all_time": 9
+        },
+        "AMEX": {
+          "total": 1,
+          "high_52_week": 0,
+          "high_all_time": 1
+        }
+      }
+    },
+    {
       "market": "china",
       "date": "2026-09-22",
       "counts": {
@@ -152,6 +1480,37 @@
           "total": 38,
           "high_52_week": 22,
           "high_all_time": 16
+        }
+      }
+    },
+    {
+      "market": "europe",
+      "date": "2026-09-22",
+      "counts": {
+        "total": 117,
+        "high_52_week": 77,
+        "high_all_time": 40
+      },
+      "exchanges": {
+        "EURONEXT": {
+          "total": 8,
+          "high_52_week": 7,
+          "high_all_time": 1
+        },
+        "XETRA": {
+          "total": 44,
+          "high_52_week": 21,
+          "high_all_time": 23
+        },
+        "LSE": {
+          "total": 52,
+          "high_52_week": 40,
+          "high_all_time": 12
+        },
+        "SIX": {
+          "total": 13,
+          "high_52_week": 9,
+          "high_all_time": 4
         }
       }
     },
@@ -194,6 +1553,32 @@
           "total": 11,
           "high_52_week": 4,
           "high_all_time": 7
+        }
+      }
+    },
+    {
+      "market": "us",
+      "date": "2026-09-22",
+      "counts": {
+        "total": 68,
+        "high_52_week": 35,
+        "high_all_time": 33
+      },
+      "exchanges": {
+        "NASDAQ": {
+          "total": 51,
+          "high_52_week": 24,
+          "high_all_time": 27
+        },
+        "NYSE": {
+          "total": 16,
+          "high_52_week": 10,
+          "high_all_time": 6
+        },
+        "AMEX": {
+          "total": 1,
+          "high_52_week": 1,
+          "high_all_time": 0
         }
       }
     },
@@ -747,37 +2132,6 @@
       }
     },
     {
-      "market": "europe",
-      "date": "2026-09-15",
-      "counts": {
-        "total": 77,
-        "high_52_week": 45,
-        "high_all_time": 32
-      },
-      "exchanges": {
-        "EURONEXT": {
-          "total": 15,
-          "high_52_week": 11,
-          "high_all_time": 4
-        },
-        "XETRA": {
-          "total": 22,
-          "high_52_week": 6,
-          "high_all_time": 16
-        },
-        "LSE": {
-          "total": 32,
-          "high_52_week": 26,
-          "high_all_time": 6
-        },
-        "SIX": {
-          "total": 8,
-          "high_52_week": 2,
-          "high_all_time": 6
-        }
-      }
-    },
-    {
       "market": "japan",
       "date": "2026-09-15",
       "counts": {
@@ -1155,37 +2509,6 @@
       }
     },
     {
-      "market": "europe",
-      "date": "2026-09-10",
-      "counts": {
-        "total": 71,
-        "high_52_week": 47,
-        "high_all_time": 24
-      },
-      "exchanges": {
-        "EURONEXT": {
-          "total": 14,
-          "high_52_week": 11,
-          "high_all_time": 3
-        },
-        "XETRA": {
-          "total": 19,
-          "high_52_week": 9,
-          "high_all_time": 10
-        },
-        "LSE": {
-          "total": 29,
-          "high_52_week": 25,
-          "high_all_time": 4
-        },
-        "SIX": {
-          "total": 9,
-          "high_52_week": 2,
-          "high_all_time": 7
-        }
-      }
-    },
-    {
       "market": "japan",
       "date": "2026-09-10",
       "counts": {
@@ -1287,37 +2610,6 @@
           "total": 14,
           "high_52_week": 9,
           "high_all_time": 5
-        }
-      }
-    },
-    {
-      "market": "europe",
-      "date": "2026-09-09",
-      "counts": {
-        "total": 70,
-        "high_52_week": 43,
-        "high_all_time": 27
-      },
-      "exchanges": {
-        "EURONEXT": {
-          "total": 12,
-          "high_52_week": 9,
-          "high_all_time": 3
-        },
-        "XETRA": {
-          "total": 18,
-          "high_52_week": 5,
-          "high_all_time": 13
-        },
-        "LSE": {
-          "total": 29,
-          "high_52_week": 25,
-          "high_all_time": 4
-        },
-        "SIX": {
-          "total": 11,
-          "high_52_week": 4,
-          "high_all_time": 7
         }
       }
     },
@@ -1427,37 +2719,6 @@
       }
     },
     {
-      "market": "europe",
-      "date": "2026-09-08",
-      "counts": {
-        "total": 98,
-        "high_52_week": 60,
-        "high_all_time": 38
-      },
-      "exchanges": {
-        "EURONEXT": {
-          "total": 21,
-          "high_52_week": 17,
-          "high_all_time": 4
-        },
-        "XETRA": {
-          "total": 33,
-          "high_52_week": 11,
-          "high_all_time": 22
-        },
-        "LSE": {
-          "total": 30,
-          "high_52_week": 26,
-          "high_all_time": 4
-        },
-        "SIX": {
-          "total": 14,
-          "high_52_week": 6,
-          "high_all_time": 8
-        }
-      }
-    },
-    {
       "market": "japan",
       "date": "2026-09-08",
       "counts": {
@@ -1563,37 +2824,6 @@
       }
     },
     {
-      "market": "europe",
-      "date": "2026-09-07",
-      "counts": {
-        "total": 91,
-        "high_52_week": 50,
-        "high_all_time": 41
-      },
-      "exchanges": {
-        "EURONEXT": {
-          "total": 26,
-          "high_52_week": 17,
-          "high_all_time": 9
-        },
-        "XETRA": {
-          "total": 21,
-          "high_52_week": 6,
-          "high_all_time": 15
-        },
-        "LSE": {
-          "total": 32,
-          "high_52_week": 24,
-          "high_all_time": 8
-        },
-        "SIX": {
-          "total": 12,
-          "high_52_week": 3,
-          "high_all_time": 9
-        }
-      }
-    },
-    {
       "market": "japan",
       "date": "2026-09-07",
       "counts": {
@@ -1669,37 +2899,6 @@
           "total": 11,
           "high_52_week": 8,
           "high_all_time": 3
-        }
-      }
-    },
-    {
-      "market": "europe",
-      "date": "2026-09-04",
-      "counts": {
-        "total": 95,
-        "high_52_week": 51,
-        "high_all_time": 44
-      },
-      "exchanges": {
-        "EURONEXT": {
-          "total": 24,
-          "high_52_week": 15,
-          "high_all_time": 9
-        },
-        "XETRA": {
-          "total": 28,
-          "high_52_week": 12,
-          "high_all_time": 16
-        },
-        "LSE": {
-          "total": 24,
-          "high_52_week": 17,
-          "high_all_time": 7
-        },
-        "SIX": {
-          "total": 19,
-          "high_52_week": 7,
-          "high_all_time": 12
         }
       }
     },
@@ -1809,37 +3008,6 @@
       }
     },
     {
-      "market": "europe",
-      "date": "2026-09-03",
-      "counts": {
-        "total": 124,
-        "high_52_week": 62,
-        "high_all_time": 62
-      },
-      "exchanges": {
-        "EURONEXT": {
-          "total": 25,
-          "high_52_week": 18,
-          "high_all_time": 7
-        },
-        "XETRA": {
-          "total": 46,
-          "high_52_week": 18,
-          "high_all_time": 28
-        },
-        "LSE": {
-          "total": 33,
-          "high_52_week": 21,
-          "high_all_time": 12
-        },
-        "SIX": {
-          "total": 20,
-          "high_52_week": 5,
-          "high_all_time": 15
-        }
-      }
-    },
-    {
       "market": "japan",
       "date": "2026-09-03",
       "counts": {
@@ -1941,37 +3109,6 @@
           "total": 10,
           "high_52_week": 8,
           "high_all_time": 2
-        }
-      }
-    },
-    {
-      "market": "europe",
-      "date": "2026-09-02",
-      "counts": {
-        "total": 99,
-        "high_52_week": 51,
-        "high_all_time": 48
-      },
-      "exchanges": {
-        "EURONEXT": {
-          "total": 19,
-          "high_52_week": 12,
-          "high_all_time": 7
-        },
-        "XETRA": {
-          "total": 32,
-          "high_52_week": 8,
-          "high_all_time": 24
-        },
-        "LSE": {
-          "total": 31,
-          "high_52_week": 25,
-          "high_all_time": 6
-        },
-        "SIX": {
-          "total": 17,
-          "high_52_week": 6,
-          "high_all_time": 11
         }
       }
     },
@@ -2081,37 +3218,6 @@
       }
     },
     {
-      "market": "europe",
-      "date": "2026-09-01",
-      "counts": {
-        "total": 94,
-        "high_52_week": 53,
-        "high_all_time": 41
-      },
-      "exchanges": {
-        "EURONEXT": {
-          "total": 17,
-          "high_52_week": 14,
-          "high_all_time": 3
-        },
-        "XETRA": {
-          "total": 33,
-          "high_52_week": 15,
-          "high_all_time": 18
-        },
-        "LSE": {
-          "total": 26,
-          "high_52_week": 18,
-          "high_all_time": 8
-        },
-        "SIX": {
-          "total": 18,
-          "high_52_week": 6,
-          "high_all_time": 12
-        }
-      }
-    },
-    {
       "market": "japan",
       "date": "2026-09-01",
       "counts": {
@@ -2199,60 +3305,503 @@
   "closures": [
     {
       "market": "korea",
+      "date": "2026-12-31",
+      "label": "휴장",
+      "reason": "연말 시장 휴장"
+    },
+    {
+      "market": "japan",
+      "date": "2026-12-31",
+      "label": "휴장",
+      "reason": "연말 시장 휴장"
+    },
+    {
+      "market": "us",
+      "date": "2026-12-25",
+      "label": "휴장",
+      "reason": "성탄절"
+    },
+    {
+      "market": "taiwan",
+      "date": "2026-12-25",
+      "label": "휴장",
+      "reason": "헌법기념일"
+    },
+    {
+      "market": "korea",
+      "date": "2026-12-25",
+      "label": "휴장",
+      "reason": "성탄절"
+    },
+    {
+      "market": "europe",
+      "date": "2026-12-25",
+      "label": "휴장",
+      "reason": "4개 거래소 공통 성탄절 휴장"
+    },
+    {
+      "market": "us",
+      "date": "2026-11-26",
+      "label": "휴장",
+      "reason": "추수감사절"
+    },
+    {
+      "market": "japan",
+      "date": "2026-11-23",
+      "label": "휴장",
+      "reason": "근로감사의 날"
+    },
+    {
+      "market": "japan",
+      "date": "2026-11-03",
+      "label": "휴장",
+      "reason": "문화의 날"
+    },
+    {
+      "market": "taiwan",
+      "date": "2026-10-26",
+      "label": "휴장",
+      "reason": "대만 광복절 대체휴일"
+    },
+    {
+      "market": "japan",
+      "date": "2026-10-12",
+      "label": "휴장",
+      "reason": "스포츠의 날"
+    },
+    {
+      "market": "taiwan",
+      "date": "2026-10-09",
+      "label": "휴장",
+      "reason": "국경일 대체휴일"
+    },
+    {
+      "market": "korea",
+      "date": "2026-10-09",
+      "label": "휴장",
+      "reason": "한글날"
+    },
+    {
+      "market": "china",
+      "date": "2026-10-07",
+      "label": "휴장",
+      "reason": "국경절 연휴"
+    },
+    {
+      "market": "china",
+      "date": "2026-10-06",
+      "label": "휴장",
+      "reason": "국경절 연휴"
+    },
+    {
+      "market": "korea",
+      "date": "2026-10-05",
+      "label": "휴장",
+      "reason": "개천절 대체공휴일"
+    },
+    {
+      "market": "china",
+      "date": "2026-10-05",
+      "label": "휴장",
+      "reason": "국경절 연휴"
+    },
+    {
+      "market": "china",
+      "date": "2026-10-02",
+      "label": "휴장",
+      "reason": "국경절 연휴"
+    },
+    {
+      "market": "china",
+      "date": "2026-10-01",
+      "label": "휴장",
+      "reason": "국경절 연휴"
+    },
+    {
+      "market": "taiwan",
+      "date": "2026-09-28",
+      "label": "휴장",
+      "reason": "스승의 날"
+    },
+    {
+      "market": "taiwan",
       "date": "2026-09-25",
-      "label": "휴장"
+      "label": "휴장",
+      "reason": "중추절"
+    },
+    {
+      "market": "korea",
+      "date": "2026-09-25",
+      "label": "휴장",
+      "reason": "추석"
+    },
+    {
+      "market": "china",
+      "date": "2026-09-25",
+      "label": "휴장",
+      "reason": "중추절"
     },
     {
       "market": "korea",
       "date": "2026-09-24",
-      "label": "휴장"
+      "label": "휴장",
+      "reason": "추석 연휴"
+    },
+    {
+      "market": "japan",
+      "date": "2026-09-23",
+      "label": "휴장",
+      "reason": "추분의 날"
+    },
+    {
+      "market": "japan",
+      "date": "2026-09-22",
+      "label": "휴장",
+      "reason": "국민의 휴일"
+    },
+    {
+      "market": "japan",
+      "date": "2026-09-21",
+      "label": "휴장",
+      "reason": "경로의 날"
+    },
+    {
+      "market": "us",
+      "date": "2026-09-07",
+      "label": "휴장",
+      "reason": "노동절"
+    },
+    {
+      "market": "japan",
+      "date": "2026-08-11",
+      "label": "휴장",
+      "reason": "산의 날"
+    },
+    {
+      "market": "japan",
+      "date": "2026-07-20",
+      "label": "휴장",
+      "reason": "바다의 날"
+    },
+    {
+      "market": "us",
+      "date": "2026-07-03",
+      "label": "휴장",
+      "reason": "독립기념일 대체휴일"
+    },
+    {
+      "market": "us",
+      "date": "2026-06-19",
+      "label": "휴장",
+      "reason": "준틴스"
+    },
+    {
+      "market": "taiwan",
+      "date": "2026-06-19",
+      "label": "휴장",
+      "reason": "단오절"
+    },
+    {
+      "market": "china",
+      "date": "2026-06-19",
+      "label": "휴장",
+      "reason": "단오절"
+    },
+    {
+      "market": "us",
+      "date": "2026-05-25",
+      "label": "휴장",
+      "reason": "메모리얼 데이"
+    },
+    {
+      "market": "japan",
+      "date": "2026-05-06",
+      "label": "휴장",
+      "reason": "헌법기념일 대체휴일"
+    },
+    {
+      "market": "japan",
+      "date": "2026-05-05",
+      "label": "휴장",
+      "reason": "어린이날"
+    },
+    {
+      "market": "china",
+      "date": "2026-05-05",
+      "label": "휴장",
+      "reason": "노동절 연휴"
+    },
+    {
+      "market": "japan",
+      "date": "2026-05-04",
+      "label": "휴장",
+      "reason": "녹색의 날"
+    },
+    {
+      "market": "china",
+      "date": "2026-05-04",
+      "label": "휴장",
+      "reason": "노동절 연휴"
+    },
+    {
+      "market": "taiwan",
+      "date": "2026-05-01",
+      "label": "휴장",
+      "reason": "노동절"
+    },
+    {
+      "market": "china",
+      "date": "2026-05-01",
+      "label": "휴장",
+      "reason": "노동절 연휴"
+    },
+    {
+      "market": "japan",
+      "date": "2026-04-29",
+      "label": "휴장",
+      "reason": "쇼와의 날"
+    },
+    {
+      "market": "taiwan",
+      "date": "2026-04-06",
+      "label": "휴장",
+      "reason": "청명절 대체휴일"
+    },
+    {
+      "market": "europe",
+      "date": "2026-04-06",
+      "label": "휴장",
+      "reason": "4개 거래소 공통 부활절 월요일 휴장"
+    },
+    {
+      "market": "china",
+      "date": "2026-04-06",
+      "label": "휴장",
+      "reason": "청명절"
+    },
+    {
+      "market": "us",
+      "date": "2026-04-03",
+      "label": "휴장",
+      "reason": "성금요일"
+    },
+    {
+      "market": "taiwan",
+      "date": "2026-04-03",
+      "label": "휴장",
+      "reason": "어린이날 대체휴일"
+    },
+    {
+      "market": "europe",
+      "date": "2026-04-03",
+      "label": "휴장",
+      "reason": "4개 거래소 공통 성금요일 휴장"
+    },
+    {
+      "market": "japan",
+      "date": "2026-03-20",
+      "label": "휴장",
+      "reason": "춘분의 날"
+    },
+    {
+      "market": "taiwan",
+      "date": "2026-02-27",
+      "label": "휴장",
+      "reason": "평화기념일 대체휴일"
+    },
+    {
+      "market": "japan",
+      "date": "2026-02-23",
+      "label": "휴장",
+      "reason": "천황 탄생일"
+    },
+    {
+      "market": "china",
+      "date": "2026-02-23",
+      "label": "휴장",
+      "reason": "춘절 연휴"
+    },
+    {
+      "market": "taiwan",
+      "date": "2026-02-20",
+      "label": "휴장",
+      "reason": "춘절 연휴"
+    },
+    {
+      "market": "china",
+      "date": "2026-02-20",
+      "label": "휴장",
+      "reason": "춘절 연휴"
+    },
+    {
+      "market": "taiwan",
+      "date": "2026-02-19",
+      "label": "휴장",
+      "reason": "춘절 연휴"
+    },
+    {
+      "market": "china",
+      "date": "2026-02-19",
+      "label": "휴장",
+      "reason": "춘절 연휴"
+    },
+    {
+      "market": "taiwan",
+      "date": "2026-02-18",
+      "label": "휴장",
+      "reason": "춘절 연휴"
+    },
+    {
+      "market": "china",
+      "date": "2026-02-18",
+      "label": "휴장",
+      "reason": "춘절 연휴"
+    },
+    {
+      "market": "taiwan",
+      "date": "2026-02-17",
+      "label": "휴장",
+      "reason": "춘절 연휴"
+    },
+    {
+      "market": "china",
+      "date": "2026-02-17",
+      "label": "휴장",
+      "reason": "춘절 연휴"
+    },
+    {
+      "market": "us",
+      "date": "2026-02-16",
+      "label": "휴장",
+      "reason": "대통령의 날"
+    },
+    {
+      "market": "taiwan",
+      "date": "2026-02-16",
+      "label": "휴장",
+      "reason": "춘절 연휴"
+    },
+    {
+      "market": "china",
+      "date": "2026-02-16",
+      "label": "휴장",
+      "reason": "춘절 연휴"
+    },
+    {
+      "market": "taiwan",
+      "date": "2026-02-13",
+      "label": "휴장",
+      "reason": "춘절 전 비거래일"
+    },
+    {
+      "market": "taiwan",
+      "date": "2026-02-12",
+      "label": "휴장",
+      "reason": "춘절 전 비거래일"
+    },
+    {
+      "market": "japan",
+      "date": "2026-02-11",
+      "label": "휴장",
+      "reason": "건국기념일"
+    },
+    {
+      "market": "us",
+      "date": "2026-01-19",
+      "label": "휴장",
+      "reason": "마틴 루서 킹 주니어 데이"
+    },
+    {
+      "market": "japan",
+      "date": "2026-01-12",
+      "label": "휴장",
+      "reason": "성년의 날"
+    },
+    {
+      "market": "japan",
+      "date": "2026-01-02",
+      "label": "휴장",
+      "reason": "연초 시장 휴장"
+    },
+    {
+      "market": "china",
+      "date": "2026-01-02",
+      "label": "휴장",
+      "reason": "신정 연휴"
+    },
+    {
+      "market": "us",
+      "date": "2026-01-01",
+      "label": "휴장",
+      "reason": "신정"
+    },
+    {
+      "market": "taiwan",
+      "date": "2026-01-01",
+      "label": "휴장",
+      "reason": "신정"
+    },
+    {
+      "market": "japan",
+      "date": "2026-01-01",
+      "label": "휴장",
+      "reason": "신정"
+    },
+    {
+      "market": "europe",
+      "date": "2026-01-01",
+      "label": "휴장",
+      "reason": "4개 거래소 공통 신정 휴장"
+    },
+    {
+      "market": "china",
+      "date": "2026-01-01",
+      "label": "휴장",
+      "reason": "신정 연휴"
     }
   ],
   "refresh": {
     "korea": {
-      "status": "updated",
-      "target_date": "2026-09-28",
-      "last_attempt_at": "2026-09-28T14:30:36.229123+00:00",
-      "last_success_at": "2026-09-28T14:30:36.229123+00:00",
-      "last_success_date": "2026-09-28",
-      "message": "장 마감 후 신고가 자료를 갱신했습니다."
+      "last_success_at": "2026-10-08T07:31:01.547997+00:00",
+      "last_success_date": "2026-10-08",
+      "status": "closed",
+      "target_date": "2026-10-09",
+      "message": "한글날 휴장입니다."
     },
     "us": {
-      "last_success_at": "2026-09-21T21:01:18.157044+00:00",
-      "last_success_date": "2026-09-21",
-      "status": "pending",
-      "target_date": "2026-09-22",
-      "message": "장 마감 후 일별 자료를 확인합니다."
+      "status": "updated",
+      "target_date": "2026-10-09",
+      "last_success_date": "2026-10-09",
+      "message": "이 거래일의 신고가 자료가 등록되었습니다.",
+      "last_success_at": "2026-10-09T21:01:02.273434+00:00"
     },
     "china": {
       "status": "updated",
-      "target_date": "2026-09-22",
-      "last_success_date": "2026-09-22",
+      "target_date": "2026-10-09",
+      "last_success_date": "2026-10-09",
       "message": "이 거래일의 신고가 자료가 등록되었습니다.",
-      "last_success_at": "2026-09-22T08:01:43.514503+00:00"
+      "last_success_at": "2026-10-09T08:00:54.241939+00:00"
     },
     "taiwan": {
-      "status": "updated",
-      "target_date": "2026-09-22",
-      "last_success_date": "2026-09-22",
-      "message": "이 거래일의 신고가 자료가 등록되었습니다.",
-      "last_success_at": "2026-09-22T06:31:16.496923+00:00"
+      "last_success_at": "2026-10-08T06:31:04.254021+00:00",
+      "last_success_date": "2026-10-08",
+      "status": "closed",
+      "target_date": "2026-10-09",
+      "message": "국경일 대체휴일 휴장입니다."
     },
     "japan": {
-      "last_success_at": "2026-09-18T07:31:23.598978+00:00",
-      "last_success_date": "2026-09-18",
-      "status": "pending",
-      "target_date": "2026-09-22",
-      "next_retry_at": "2026-09-22T15:11:25.146260+00:00",
-      "message": "해당 거래일 자료 확인 대기 중입니다.",
-      "last_attempt_at": "2026-09-22T14:41:25.146260+00:00"
+      "status": "updated",
+      "target_date": "2026-10-09",
+      "last_success_date": "2026-10-09",
+      "message": "이 거래일의 신고가 자료가 등록되었습니다.",
+      "last_success_at": "2026-10-09T07:31:06.349451+00:00"
     },
     "europe": {
-      "last_success_at": "2026-09-21T17:01:36.689875+00:00",
-      "last_success_date": "2026-09-21",
-      "status": "pending",
-      "target_date": "2026-09-22",
-      "message": "장 마감 후 일별 자료를 확인합니다."
+      "status": "updated",
+      "target_date": "2026-10-09",
+      "last_success_date": "2026-10-09",
+      "message": "이 거래일의 신고가 자료가 등록되었습니다.",
+      "last_success_at": "2026-10-09T17:01:08.930784+00:00"
     }
   }
 }

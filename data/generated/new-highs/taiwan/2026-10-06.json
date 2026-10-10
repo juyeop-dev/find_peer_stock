@@ -1,0 +1,602 @@
+{
+  "schema_version": 1,
+  "market": "taiwan",
+  "date": "2026-10-06",
+  "summary": "장 마감 후 TradingView 주식 스냅샷 기준. 당일 장중 고가가 52주·전체기간 고가에 도달하고, 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다. 전체기간 신고가를 우선 표시하며 신고가 배경은 별도 확인 전입니다.",
+  "sources": [
+    {
+      "label": "TradingView stock screener",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "1260.TWO",
+      "name": "Flavor Full Foods, Inc.",
+      "exchange": "TPEX",
+      "category": "Process Industries",
+      "high_type": "52_week",
+      "reason": "업종: Process Industries · Agricultural Commodities/Milling",
+      "description": "Flavor Full Foods, Inc. · Agricultural Commodities/Milling",
+      "change_pct": 0,
+      "session_open": 32,
+      "session_close": 32,
+      "session_volume": 188361,
+      "source_symbol": "TPEX:1260",
+      "currency": "TWD"
+    },
+    {
+      "ticker": "1569.TWO",
+      "name": "Bin Chuan Enterprise Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Industrial Machinery",
+      "description": "Bin Chuan Enterprise Co., Ltd. · Industrial Machinery",
+      "change_pct": 2.18978102189781,
+      "session_open": 70,
+      "session_close": 70,
+      "session_volume": 7717489,
+      "source_symbol": "TPEX:1569",
+      "currency": "TWD"
+    },
+    {
+      "ticker": "3219.TWO",
+      "name": "Aethertek Technology Co., Ltd",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Electronic Components",
+      "description": "Aethertek Technology Co., Ltd · Electronic Components",
+      "change_pct": 9.765625,
+      "session_open": 131.5,
+      "session_close": 140.5,
+      "session_volume": 1553189,
+      "source_symbol": "TPEX:3219",
+      "currency": "TWD"
+    },
+    {
+      "ticker": "3268.TWO",
+      "name": "Higher Way Electronic Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Semiconductors",
+      "description": "Higher Way Electronic Co., Ltd. · Semiconductors",
+      "change_pct": 4.545454545454533,
+      "session_open": 23.5,
+      "session_close": 24.15,
+      "session_volume": 765597,
+      "source_symbol": "TPEX:3268",
+      "currency": "TWD"
+    },
+    {
+      "ticker": "3441.TWO",
+      "name": "Unique Opto-Electronics Co.,Ltd",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Electronic Components",
+      "description": "Unique Opto-Electronics Co.,Ltd · Electronic Components",
+      "change_pct": 9.913793103448276,
+      "session_open": 238,
+      "session_close": 255,
+      "session_volume": 19688326,
+      "source_symbol": "TPEX:3441",
+      "currency": "TWD",
+      "peers": [
+        {
+          "ticker": "011070.KS",
+          "name": "LG이노텍"
+        },
+        {
+          "ticker": "082210.KQ",
+          "name": "옵트론텍"
+        },
+        {
+          "ticker": "053450.KQ",
+          "name": "세코닉스"
+        }
+      ]
+    },
+    {
+      "ticker": "3597.TWO",
+      "name": "Avertronics Inc.",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Electronic Production Equipment",
+      "description": "Avertronics Inc. · Electronic Production Equipment",
+      "change_pct": 9.852216748768484,
+      "session_open": 33.45,
+      "session_close": 33.45,
+      "session_volume": 603780,
+      "source_symbol": "TPEX:3597",
+      "currency": "TWD"
+    },
+    {
+      "ticker": "4556.TWO",
+      "name": "Bright Sheland International Co Ltd",
+      "exchange": "TPEX",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Industrial Machinery",
+      "description": "Bright Sheland International Co Ltd · Industrial Machinery",
+      "change_pct": 9.56175298804781,
+      "session_open": 124.5,
+      "session_close": 137.5,
+      "session_volume": 3796393,
+      "source_symbol": "TPEX:4556",
+      "currency": "TWD"
+    },
+    {
+      "ticker": "5432.TWO",
+      "name": "Solomon Data International Corporation",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Electronic Production Equipment",
+      "description": "Solomon Data International Corporation · Electronic Production Equipment",
+      "change_pct": 9.831460674157304,
+      "session_open": 192,
+      "session_close": 195.5,
+      "session_volume": 1141728,
+      "source_symbol": "TPEX:5432",
+      "currency": "TWD"
+    },
+    {
+      "ticker": "6187.TWO",
+      "name": "All Ring Tech Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Industrial Machinery",
+      "description": "All Ring Tech Co., Ltd. · Industrial Machinery",
+      "change_pct": 3.0201342281879198,
+      "session_open": 1500,
+      "session_close": 1535,
+      "session_volume": 5706042,
+      "source_symbol": "TPEX:6187",
+      "currency": "TWD"
+    },
+    {
+      "ticker": "6199.TWO",
+      "name": "TienPin United Enterprise Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Computer Peripherals",
+      "description": "TienPin United Enterprise Co., Ltd. · Computer Peripherals",
+      "change_pct": 1.4981273408239701,
+      "session_open": 133.5,
+      "session_close": 135.5,
+      "session_volume": 5075871,
+      "source_symbol": "TPEX:6199",
+      "currency": "TWD"
+    },
+    {
+      "ticker": "6610.TWO",
+      "name": "TWi Biotechnology, Inc",
+      "exchange": "TPEX",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Pharmaceuticals: Major",
+      "description": "TWi Biotechnology, Inc · Pharmaceuticals: Major",
+      "change_pct": 4.904904904904896,
+      "session_open": 50.2,
+      "session_close": 52.4,
+      "session_volume": 4881766,
+      "source_symbol": "TPEX:6610",
+      "currency": "TWD"
+    },
+    {
+      "ticker": "6660.TWO",
+      "name": "HMD BioMedical Inc.",
+      "exchange": "TPEX",
+      "category": "미분류",
+      "high_type": "all_time",
+      "reason": "업종: 미분류 · 업종 정보 미확인",
+      "description": "HMD BioMedical Inc. · 업종 정보 미확인",
+      "change_pct": null,
+      "session_open": 16.8,
+      "session_close": 23.75,
+      "session_volume": 747925,
+      "source_symbol": "TPEX:6660",
+      "currency": "USD"
+    },
+    {
+      "ticker": "6716.TWO",
+      "name": "PADAUK Technology Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Semiconductors",
+      "description": "PADAUK Technology Co., Ltd. · Semiconductors",
+      "change_pct": 9.774436090225564,
+      "session_open": 145,
+      "session_close": 146,
+      "session_volume": 3847261,
+      "source_symbol": "TPEX:6716",
+      "currency": "TWD"
+    },
+    {
+      "ticker": "7792.TWO",
+      "name": "AM-Power Machine International Enterprise Co Ltd",
+      "exchange": "TPEX",
+      "category": "Industrial Services",
+      "high_type": "all_time",
+      "reason": "업종: Industrial Services · Engineering & Construction",
+      "description": "AM-Power Machine International Enterprise Co Ltd · Engineering & Construction",
+      "change_pct": 2.9646522234891677,
+      "session_open": 450,
+      "session_close": 451.5,
+      "session_volume": 674628,
+      "source_symbol": "TPEX:7792",
+      "currency": "TWD"
+    },
+    {
+      "ticker": "7848.TWO",
+      "name": "Chi Yi Hsin Technology Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Industrial Services",
+      "high_type": "all_time",
+      "reason": "업종: Industrial Services · Engineering & Construction",
+      "description": "Chi Yi Hsin Technology Co., Ltd. · Engineering & Construction",
+      "change_pct": 6.1413673232908454,
+      "session_open": 437,
+      "session_close": 458,
+      "session_volume": 270695,
+      "source_symbol": "TPEX:7848",
+      "currency": "TWD"
+    },
+    {
+      "ticker": "7876.TWO",
+      "name": "Obigen Pharma, Inc.",
+      "exchange": "TPEX",
+      "category": "Health Technology",
+      "high_type": "all_time",
+      "reason": "업종: Health Technology · Biotechnology",
+      "description": "Obigen Pharma, Inc. · Biotechnology",
+      "change_pct": 17.886178861788622,
+      "session_open": 73.5,
+      "session_close": 87,
+      "session_volume": 2769140,
+      "source_symbol": "TPEX:7876",
+      "currency": "TWD"
+    },
+    {
+      "ticker": "7942.TWO",
+      "name": "Toyo Automation Co. Ltd.",
+      "exchange": "TPEX",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Industrial Machinery",
+      "description": "Toyo Automation Co. Ltd. · Industrial Machinery",
+      "change_pct": 7.671232876712329,
+      "session_open": 733,
+      "session_close": 786,
+      "session_volume": 576130,
+      "source_symbol": "TPEX:7942",
+      "currency": "TWD"
+    },
+    {
+      "ticker": "7951.TWO",
+      "name": "DA YI CHENG TECHNOLOGY CO LTD",
+      "exchange": "TPEX",
+      "category": "미분류",
+      "high_type": "all_time",
+      "reason": "업종: 미분류 · 업종 정보 미확인",
+      "description": "DA YI CHENG TECHNOLOGY CO LTD · 업종 정보 미확인",
+      "change_pct": null,
+      "session_open": 300,
+      "session_close": 712,
+      "session_volume": 1843082,
+      "source_symbol": "TPEX:7951",
+      "currency": "USD"
+    },
+    {
+      "ticker": "1303.TW",
+      "name": "Nan Ya Plastics Corporation",
+      "exchange": "TWSE",
+      "category": "Process Industries",
+      "high_type": "all_time",
+      "reason": "업종: Process Industries · Chemicals: Major Diversified",
+      "description": "Nan Ya Plastics Corporation · Chemicals: Major Diversified",
+      "change_pct": 2.4475524475524475,
+      "session_open": 288,
+      "session_close": 293,
+      "session_volume": 115319789,
+      "source_symbol": "TWSE:1303",
+      "currency": "TWD",
+      "peers": [
+        {
+          "ticker": "000150.KS",
+          "name": "두산"
+        },
+        {
+          "ticker": "007660.KS",
+          "name": "이수페타시스"
+        },
+        {
+          "ticker": "353200.KS",
+          "name": "대덕전자"
+        },
+        {
+          "ticker": "222800.KQ",
+          "name": "심텍"
+        },
+        {
+          "ticker": "009150.KS",
+          "name": "삼성전기"
+        }
+      ]
+    },
+    {
+      "ticker": "2107.TW",
+      "name": "Formosan Rubber Group Inc.",
+      "exchange": "TWSE",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "업종: Finance · Real Estate Development",
+      "description": "Formosan Rubber Group Inc. · Real Estate Development",
+      "change_pct": 2.398523985239847,
+      "session_open": 27,
+      "session_close": 27.75,
+      "session_volume": 953398,
+      "source_symbol": "TWSE:2107",
+      "currency": "TWD"
+    },
+    {
+      "ticker": "2254.TW",
+      "name": "Coplus Inc.",
+      "exchange": "TWSE",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Auto Parts: OEM",
+      "description": "Coplus Inc. · Auto Parts: OEM",
+      "change_pct": 7.06751054852321,
+      "session_open": 95.1,
+      "session_close": 101.5,
+      "session_volume": 4342807,
+      "source_symbol": "TWSE:2254",
+      "currency": "TWD"
+    },
+    {
+      "ticker": "2330.TW",
+      "name": "Taiwan Semiconductor Manufacturing Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Semiconductors",
+      "description": "Taiwan Semiconductor Manufacturing Co., Ltd. · Semiconductors",
+      "change_pct": 0.3883495145631068,
+      "session_open": 2575,
+      "session_close": 2585,
+      "session_volume": 19786778,
+      "source_symbol": "TWSE:2330",
+      "currency": "TWD",
+      "peers": [
+        {
+          "ticker": "005930.KS",
+          "name": "삼성전자"
+        },
+        {
+          "ticker": "042700.KS",
+          "name": "한미반도체"
+        },
+        {
+          "ticker": "039030.KQ",
+          "name": "이오테크닉스"
+        },
+        {
+          "ticker": "000660.KS",
+          "name": "SK하이닉스"
+        },
+        {
+          "ticker": "058470.KQ",
+          "name": "리노공업"
+        }
+      ]
+    },
+    {
+      "ticker": "2466.TW",
+      "name": "Cosmo Electronics Corporation",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Semiconductors",
+      "description": "Cosmo Electronics Corporation · Semiconductors",
+      "change_pct": 10,
+      "session_open": 160,
+      "session_close": 170.5,
+      "session_volume": 6762492,
+      "source_symbol": "TWSE:2466",
+      "currency": "TWD"
+    },
+    {
+      "ticker": "3016.TW",
+      "name": "Episil-Precision, Inc.",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Semiconductors",
+      "description": "Episil-Precision, Inc. · Semiconductors",
+      "change_pct": 3.581267217630854,
+      "session_open": 186,
+      "session_close": 188,
+      "session_volume": 4688471,
+      "source_symbol": "TWSE:3016",
+      "currency": "TWD"
+    },
+    {
+      "ticker": "3017.TW",
+      "name": "Asia Vital Components Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Electronic Production Equipment",
+      "description": "Asia Vital Components Co., Ltd. · Electronic Production Equipment",
+      "change_pct": 2.789400278940028,
+      "session_open": 3650,
+      "session_close": 3685,
+      "session_volume": 3250624,
+      "source_symbol": "TWSE:3017",
+      "currency": "TWD"
+    },
+    {
+      "ticker": "3167.TW",
+      "name": "Ta Liang Technology Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Industrial Machinery",
+      "description": "Ta Liang Technology Co., Ltd. · Industrial Machinery",
+      "change_pct": 2.4096385542168677,
+      "session_open": 1010,
+      "session_close": 1020,
+      "session_volume": 1516201,
+      "source_symbol": "TWSE:3167",
+      "currency": "TWD"
+    },
+    {
+      "ticker": "3518.TW",
+      "name": "Paragon Technologies Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Electronic Equipment/Instruments",
+      "description": "Paragon Technologies Co., Ltd. · Electronic Equipment/Instruments",
+      "change_pct": 3.1794871794871735,
+      "session_open": 49.9,
+      "session_close": 50.3,
+      "session_volume": 21586238,
+      "source_symbol": "TWSE:3518",
+      "currency": "TWD"
+    },
+    {
+      "ticker": "5292.TW",
+      "name": "Desiccant Technology Corporation",
+      "exchange": "TWSE",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Industrial Machinery",
+      "description": "Desiccant Technology Corporation · Industrial Machinery",
+      "change_pct": 0.8097165991902834,
+      "session_open": 248.5,
+      "session_close": 249,
+      "session_volume": 260655,
+      "source_symbol": "TWSE:5292",
+      "currency": "TWD"
+    },
+    {
+      "ticker": "6257.TW",
+      "name": "Sigurd Microelectronics Corp.",
+      "exchange": "TWSE",
+      "category": "Commercial Services",
+      "high_type": "all_time",
+      "reason": "업종: Commercial Services · Miscellaneous Commercial Services",
+      "description": "Sigurd Microelectronics Corp. · Miscellaneous Commercial Services",
+      "change_pct": 10,
+      "session_open": 269.5,
+      "session_close": 286,
+      "session_volume": 36137098,
+      "source_symbol": "TWSE:6257",
+      "currency": "TWD"
+    },
+    {
+      "ticker": "6456.TW",
+      "name": "General Interface Solution (GIS) Holding Ltd.",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Semiconductors",
+      "description": "General Interface Solution (GIS) Holding Ltd. · Semiconductors",
+      "change_pct": 9.933774834437086,
+      "session_open": 97.6,
+      "session_close": 99.6,
+      "session_volume": 15965707,
+      "source_symbol": "TWSE:6456",
+      "currency": "TWD"
+    },
+    {
+      "ticker": "6505.TW",
+      "name": "Formosa Petrochemical Corp",
+      "exchange": "TWSE",
+      "category": "Energy Minerals",
+      "high_type": "52_week",
+      "reason": "업종: Energy Minerals · Oil Refining/Marketing",
+      "description": "Formosa Petrochemical Corp · Oil Refining/Marketing",
+      "change_pct": 2.9411764705882413,
+      "session_open": 99.5,
+      "session_close": 101.5,
+      "session_volume": 23804259,
+      "source_symbol": "TWSE:6505",
+      "currency": "TWD"
+    },
+    {
+      "ticker": "6672.TW",
+      "name": "Ventec International Group Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Electronic Equipment/Instruments",
+      "description": "Ventec International Group Co., Ltd. · Electronic Equipment/Instruments",
+      "change_pct": 1.8847006651884701,
+      "session_open": 456,
+      "session_close": 459.5,
+      "session_volume": 2946856,
+      "source_symbol": "TWSE:6672",
+      "currency": "TWD"
+    },
+    {
+      "ticker": "7788.TW",
+      "name": "Song Chuan Precision Co Ltd",
+      "exchange": "TWSE",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Electrical Products",
+      "description": "Song Chuan Precision Co Ltd · Electrical Products",
+      "change_pct": 9.924812030075188,
+      "session_open": 339.5,
+      "session_close": 365.5,
+      "session_volume": 3959703,
+      "source_symbol": "TWSE:7788",
+      "currency": "TWD"
+    }
+  ],
+  "source_metadata": {
+    "provider": "TradingView public scanner",
+    "scanner": "taiwan",
+    "fetched_at": "2026-10-06T06:30:59.988570+00:00",
+    "universe": "TradingView-listed stock instruments, including common and preferred shares; ETFs excluded",
+    "definition": "daily high >= period high; close >= open; close >= previous close when one exists; all-time takes precedence; ties included",
+    "scanner_exchanges": [
+      "TWSE",
+      "TPEX"
+    ],
+    "latest_session_by_exchange": {
+      "TWSE": "2026-10-06",
+      "TPEX": "2026-10-06"
+    },
+    "previous_session_by_exchange": {
+      "TWSE": "2026-10-05",
+      "TPEX": "2026-10-05"
+    },
+    "current_session_reference_symbols": {
+      "TWSE": "TWSE:01001T",
+      "TPEX": "TPEX:1240"
+    },
+    "scanned_symbols": 2346,
+    "current_session_symbols": 2302,
+    "excluded_symbols": {
+      "other_session": 44,
+      "bearish_or_down_close": 22
+    },
+    "pagination_complete": true
+  },
+  "collected_at": "2026-10-06T06:30:59.216405+00:00"
+}
