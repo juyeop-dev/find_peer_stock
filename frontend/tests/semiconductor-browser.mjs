@@ -99,11 +99,46 @@ try {
   }
   await send("Page.navigate", { url: `${origin}/semiconductors/trends` });
   await until(() => evaluate("document.querySelectorAll('.semiConstituentTable tbody tr').length > 0"), "Semiconductor trends did not load.");
-  assert.deepEqual(await evaluate("[...document.querySelectorAll('.semiConstituentTable th')].map(item => item.innerText.trim())"),
+  assert.deepEqual(await evaluate("[...document.querySelectorAll('.semiTrendTable th')].map(item => item.innerText.replace(/[↕↑↓]/g, '').trim())"),
+    ["대분류", "중분류", "소분류", "종목 수", "7일", "30일", "90일", "180일", "360일"]);
+  assert.deepEqual(await evaluate("[...document.querySelectorAll('.semiConstituentTable th')].map(item => item.innerText.replace(/[↕↑↓]/g, '').trim())"),
     ["종목", "대분류", "중분류", "소분류", "시장", "현재가", "시가총액", "등락률", "30일 수익률"]);
   assert.equal(await evaluate("document.querySelector('.semiConstituentTable tbody tr')?.cells[5].innerText.includes('원')"), true);
   assert.equal(await evaluate("document.querySelector('.semiConstituentTable tbody tr')?.cells[6].innerText.includes('억')"), true);
-  console.log("PASS semiconductor classification, quote details, and sortable returns/market cap");
+  const selectedSector = await evaluate("document.querySelector('.semiTrendTable tr.selected')?.innerText");
+  const numericRows = async (table, column) => {
+    const values = await evaluate(`[...document.querySelectorAll('.${table} tbody tr')].map(row => row.cells[${column}].innerText.trim())`);
+    return values.map((value) => {
+      const units = [...value.matchAll(/([\d,]+(?:\.\d+)?)\s*(조|억|만)/g)];
+      if (units.length) return units.reduce((sum, [, number, unit]) => sum + Number(number.replaceAll(",", "")) * { 조: 1e12, 억: 1e8, 만: 1e4 }[unit], 0);
+      return Number.parseFloat(value.replaceAll(",", ""));
+    });
+  };
+  const assertOrder = (values, direction) => {
+    const available = values.filter(Number.isFinite);
+    assert.deepEqual(available, [...available].sort((a, b) => direction === "asc" ? a - b : b - a));
+    assert.ok(values.slice(available.length).every(Number.isNaN), "Missing values must sort last.");
+  };
+  for (const [label, column] of [["종목 수", 3], ["7일", 4], ["30일", 5], ["90일", 6], ["180일", 7], ["360일", 8]]) {
+    const button = `[...document.querySelectorAll('.semiTrendTable .semiSortButton')].find(item => item.innerText.includes(${JSON.stringify(label)}))`;
+    await evaluate(`${button}.click()`);
+    assert.equal(await evaluate(`document.querySelector('.semiTrendTable th[aria-sort=descending]')?.innerText.includes(${JSON.stringify(label)})`), true);
+    assertOrder(await numericRows("semiTrendTable", column), "desc");
+    await evaluate(`${button}.click()`);
+    assert.equal(await evaluate(`document.querySelector('.semiTrendTable th[aria-sort=ascending]')?.innerText.includes(${JSON.stringify(label)})`), true);
+    assertOrder(await numericRows("semiTrendTable", column), "asc");
+  }
+  assert.equal(await evaluate("document.querySelector('.semiTrendTable tr.selected')?.innerText"), selectedSector);
+  for (const [label, column] of [["현재가", 5], ["시가총액", 6], ["등락률", 7], ["30일 수익률", 8]]) {
+    const button = `[...document.querySelectorAll('.semiConstituentTable .semiSortButton')].find(item => item.innerText.includes(${JSON.stringify(label)}))`;
+    await evaluate(`${button}.click()`);
+    assert.equal(await evaluate(`document.querySelector('.semiConstituentTable th[aria-sort=descending]')?.innerText.includes(${JSON.stringify(label)})`), true);
+    assertOrder(await numericRows("semiConstituentTable", column), "desc");
+    await evaluate(`${button}.click()`);
+    assert.equal(await evaluate(`document.querySelector('.semiConstituentTable th[aria-sort=ascending]')?.innerText.includes(${JSON.stringify(label)})`), true);
+    assertOrder(await numericRows("semiConstituentTable", column), "asc");
+  }
+  console.log("PASS semiconductor classification, quote details, and sorting on both pages");
 } finally {
   if (send && socket?.readyState === WebSocket.OPEN) await send("Browser.close").catch(() => {});
   socket?.close();
