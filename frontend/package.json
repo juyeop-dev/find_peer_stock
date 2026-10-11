@@ -4,12 +4,13 @@
   "version": "0.1.0",
   "type": "module",
   "scripts": {
-    "predev": "python ../scripts/generate_new_high_data.py && python ../scripts/generate_turnover_data.py",
+    "predev": "python ../scripts/generate_new_high_data.py && python ../scripts/generate_turnover_data.py && python ../scripts/generate_semiconductor_data.py publish",
     "dev": "vite",
-    "prebuild": "python ../scripts/generate_new_high_data.py && python ../scripts/generate_turnover_data.py",
+    "prebuild": "python ../scripts/generate_new_high_data.py && python ../scripts/generate_turnover_data.py && python ../scripts/generate_semiconductor_data.py publish",
     "build": "tsc -b && vite build",
     "preview": "vite preview",
-    "test:browser": "node tests/polling-browser.mjs"
+    "test:browser": "node tests/polling-browser.mjs",
+    "test:semiconductor": "node --test tests/semiconductor-math.test.mjs"
   },
   "dependencies": {
     "react": "^19.0.0",

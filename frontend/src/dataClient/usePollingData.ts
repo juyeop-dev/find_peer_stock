@@ -3,7 +3,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 const POLL_INTERVAL_MS = 60_000;
 type DataLoader<T> = (signal: AbortSignal) => Promise<T>;
 
-export function usePollingData<T>(loadData: DataLoader<T> | null) {
+export function usePollingData<T>(loadData: DataLoader<T> | null, pollIntervalMs = POLL_INTERVAL_MS) {
   const [data, setData] = useState<T | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(Boolean(loadData));
@@ -51,7 +51,7 @@ export function usePollingData<T>(loadData: DataLoader<T> | null) {
           setLoading(false);
           setRefreshing(false);
           if (document.visibilityState === "visible") {
-            timeoutId = window.setTimeout(() => void poll(), POLL_INTERVAL_MS);
+            timeoutId = window.setTimeout(() => void poll(), pollIntervalMs);
           }
         }
       }
@@ -76,7 +76,7 @@ export function usePollingData<T>(loadData: DataLoader<T> | null) {
       window.removeEventListener("focus", refreshWhenVisible);
       window.removeEventListener("online", refreshWhenVisible);
     };
-  }, [loadData]);
+  }, [loadData, pollIntervalMs]);
 
   const refresh = useCallback(() => refreshRef.current(), []);
   return { data, error, loading, refreshing, lastCheckedAt, refresh };

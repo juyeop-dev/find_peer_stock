@@ -5,7 +5,7 @@ interface DataRefreshStatusProps {
   refreshing: boolean;
   lastCheckedAt?: string | null;
   generatedAt?: string;
-  cadence?: "quote" | "daily";
+  cadence?: "quote" | "daily" | "semiconductor";
   onRefresh: () => void;
 }
 
@@ -23,7 +23,9 @@ export function DataRefreshStatus({ refreshing, lastCheckedAt, generatedAt, cade
     <>
       <div className="dataRefreshStatus">
         <p>
-          <span>{cadence === "daily"
+          <span>{cadence === "semiconductor"
+            ? "현재가는 사이트 배포 때 갱신되며, 화면은 5분마다 확인합니다."
+            : cadence === "daily"
             ? "신고가는 장 마감 후 거래일당 한 번 갱신합니다. 게시 결과는 1분마다 확인합니다."
             : generatedAt
             ? "시세 업데이트 목표는 5분 간격이며, 화면은 1분마다 확인합니다."

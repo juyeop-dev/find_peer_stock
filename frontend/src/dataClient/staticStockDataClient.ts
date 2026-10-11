@@ -1,6 +1,7 @@
 import type { SiteIndex, StockSummary } from "./types";
 import type { NewHighIndex, NewHighReport } from "./newHighTypes";
 import type { TurnoverIndex, TurnoverReport } from "./turnoverTypes";
+import type { SemiconductorData } from "./semiconductorTypes";
 
 function assetUrl(path: string): string {
   const cleanBase = import.meta.env.BASE_URL.replace(/\/$/, "");
@@ -65,4 +66,8 @@ export async function getTurnoverReport(market: string, date: string, signal?: A
   return fetchJson<TurnoverReport>(
     `data/turnover/${encodeURIComponent(market)}/${month}/${encodeURIComponent(date)}.json`, signal
   );
+}
+
+export async function getSemiconductorData(signal?: AbortSignal): Promise<SemiconductorData> {
+  return fetchJson<SemiconductorData>("data/semiconductor/index.json", signal);
 }

@@ -94,6 +94,26 @@ jobs:
             done
           fi
 
+      - name: Refresh Korean semiconductor history and financials
+        run: python scripts/generate_semiconductor_data.py full
+
+      - name: Save semiconductor daily snapshot
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/semiconductor/index.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Refresh semiconductor daily history [skip ci]"
+            for attempt in 1 2 3; do
+              if git push origin HEAD:main; then
+                exit 0
+              fi
+              if [ "$attempt" = "3" ]; then exit 1; fi
+              git fetch origin main
+              git rebase origin/main
+            done
+          fi
+
       - name: Generate stock data
         id: quotes
         # The generator preserves all files on total quote-source failure.
@@ -117,6 +137,10 @@ jobs:
       - name: Install frontend dependencies
         working-directory: frontend
         run: npm ci
+
+      - name: Test semiconductor return calculations
+        working-directory: frontend
+        run: npm run test:semiconductor
 
       - name: Build frontend
         working-directory: frontend

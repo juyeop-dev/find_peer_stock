@@ -3,7 +3,11 @@ import { HomePage } from "../pages/HomePage";
 import { StockPage } from "../pages/StockPage";
 import { NewHighPage } from "../pages/NewHighPage";
 import { TurnoverPage } from "../pages/TurnoverPage";
+import { SemiconductorPage } from "../pages/SemiconductorPage";
+import { SemiconductorTrendsPage } from "../pages/SemiconductorTrendsPage";
+import { SemiconductorStockPage } from "../pages/SemiconductorStockPage";
 import "../styles/newHighs.css";
+import "../styles/semiconductor.css";
 
 export function App() {
   return (
@@ -14,6 +18,8 @@ export function App() {
           <NavLink to="/" end>Peer 비교</NavLink>
           <NavLink to="/new-highs">신고가 캘린더</NavLink>
           <NavLink to="/turnover">거래대금 캘린더</NavLink>
+          <NavLink to="/semiconductors" end>반도체 종목</NavLink>
+          <NavLink to="/semiconductors/trends">섹터 추이</NavLink>
         </div>
       </nav>
       <Routes>
@@ -21,6 +27,9 @@ export function App() {
         <Route path="/stocks/:ticker" element={<StockPage />} />
         <Route path="/new-highs" element={<NewHighPage />} />
         <Route path="/turnover" element={<TurnoverPage />} />
+        <Route path="/semiconductors" element={<SemiconductorPage />} />
+        <Route path="/semiconductors/trends" element={<SemiconductorTrendsPage />} />
+        <Route path="/semiconductors/:ticker" element={<SemiconductorStockPage />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </>

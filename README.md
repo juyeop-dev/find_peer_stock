@@ -1,5 +1,20 @@
 # Stock Peer Site
 
+## 국내 반도체 섹터
+
+- `/semiconductors`: 코스피·코스닥 반도체 관련 53개 종목을 대분류/중분류/소분류, 시장, 날짜로 탐색합니다.
+- `/semiconductors/trends`: 분류별 7/30/90/180/360일 수익률과 동일 비중 주가 추이, 구성 종목의 수익률을 표시합니다.
+- `/semiconductors/{ticker}`: 종목별 일봉 차트, 현재가, 시가총액·PER·PBR·52주 범위, 연간·분기 확정 실적을 표시합니다.
+
+분류는 `data/seed/semiconductor_stocks.json`의 대표 사업 기준 수작업 목록입니다. 모든 상장사를 자동 포괄하는 업종 지수가 아니며 다각화 기업은 한 분류에만 포함됩니다. 일별 종가·조정 종가는 Yahoo Finance, 현재가는 Naver Finance, 확정 매출·영업이익·당기순이익은 Naver Finance 공개 자료를 사용합니다. 재무 수치 단위는 억원이고 추정치(`isConsensus=Y`)는 제외합니다. 종목 수익률은 조정 종가 기준이며 섹터 수익률은 계산 가능한 구성 종목의 수익률을 동일 비중 평균합니다. 차트의 섹터 기준값은 100입니다.
+
+`data/semiconductor/index.json`에 가격 이력과 실적을 보존합니다. GitHub Actions는 한국 시장 마감 후 하루 한 번 이 파일을 갱신해 커밋하며, 페이지 빌드 때마다 현재가를 `frontend/public/data/semiconductor/index.json`에 갱신합니다. 로컬에서 수동 갱신할 때:
+
+```powershell
+python scripts/generate_semiconductor_data.py full --force
+python scripts/generate_semiconductor_data.py publish
+```
+
 특정 종목과 peer 기업들의 주가 정보를 비교해서 보는 정적 웹 사이트입니다.
 
 `신고가 캘린더` 페이지(`/new-highs`)에서는 달력 날짜별 신고가 종목, 업종·세부 업종, 해당 거래일 종가와 등락률을 확인합니다. 등록된 국내 peer 기업도 종목 아래에 표시합니다. 검증된 별도 상승 배경이 있을 때만 함께 표시합니다. 한국은 코스피·코스닥 전체를 기본으로 표시하며 거래소별로 좁혀 볼 수 있습니다. 52주 신고가와 역대 신고가를 별도로 집계합니다. 신고가는 장 마감 후 거래일당 한 번 자동 수집하고 날짜별로 보관합니다. 자료 미확인, 신고가 0건, 휴장일을 구분합니다.

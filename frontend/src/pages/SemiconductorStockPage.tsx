@@ -1,0 +1,70 @@
+import { useState } from "react";
+import { Link, useParams } from "react-router-dom";
+import { SemiconductorLineChart } from "../components/SemiconductorLineChart";
+import { DataRefreshStatus } from "../components/DataRefreshStatus";
+import { ErrorNotice } from "../components/ErrorNotice";
+import { LoadingSpinner } from "../components/LoadingSpinner";
+import { formatDateTime } from "../dataClient/formatters";
+import { effectiveHistory, formatEok, formatPercent, formatWon, PERIODS, stockPriceSeries, stockReturn } from "../dataClient/semiconductorMath";
+import type { Period } from "../dataClient/semiconductorMath";
+import type { SemiconductorFinancial } from "../dataClient/semiconductorTypes";
+import { getSemiconductorData } from "../dataClient/staticStockDataClient";
+import { usePollingData } from "../dataClient/usePollingData";
+
+const METRICS: [string, string][] = [
+  ["marketValue", "시가총액"], ["per", "PER"], ["pbr", "PBR"], ["eps", "EPS"],
+  ["bps", "BPS"], ["dividendYieldRatio", "배당수익률"],
+  ["highPriceOf52Weeks", "52주 최고"], ["lowPriceOf52Weeks", "52주 최저"],
+];
+
+function FinancialTable({ title, rows }: { title: string; rows: SemiconductorFinancial[] }) {
+  return <div className="semiFinanceBlock"><h3>{title}</h3>
+    {rows.length ? <div className="semiTableWrap"><table className="semiTable"><thead><tr><th>기간</th><th>매출</th><th>영업이익</th><th>순이익</th></tr></thead><tbody>
+      {rows.map((row) => <tr key={`${row.type}-${row.period}`}><td>{row.period}</td><td className="semiNumber">{formatEok(row.revenue)}</td><td className="semiNumber">{formatEok(row.operating_income)}</td><td className="semiNumber">{formatEok(row.net_income)}</td></tr>)}
+    </tbody></table></div> : <p className="semiEmpty">확정 재무 정보가 없습니다.</p>}</div>;
+}
+
+export function SemiconductorStockPage() {
+  const { ticker = "" } = useParams();
+  const { data, error, loading, refreshing, lastCheckedAt, refresh } = usePollingData(getSemiconductorData, 300_000);
+  const [period, setPeriod] = useState<Period>(90);
+  const stock = data?.stocks.find((item) => item.ticker === ticker);
+  const history = stock ? effectiveHistory(stock) : [];
+  const latest = history.at(-1);
+  const quote = stock?.quote;
+  const currentPrice = quote?.price ?? latest?.close ?? null;
+  const periodGain = stock ? stockReturn(stock, period) : null;
+
+  return <main className="pageShell semiPage">
+    <div className="semiBreadcrumb"><Link to="/semiconductors">반도체 종목</Link><span>/</span><span>{stock?.name ?? ticker}</span></div>
+    <DataRefreshStatus refreshing={refreshing} lastCheckedAt={lastCheckedAt} generatedAt={data?.quoted_at} cadence="semiconductor" onRefresh={refresh} />
+    {loading && <LoadingSpinner />}{error && <ErrorNotice message={error} />}
+    {data && !stock && <ErrorNotice message="반도체 분류에 등록된 종목이 아닙니다." />}
+    {stock && <>
+      <header className="semiDetailHeader"><div><p className="eyebrow">{stock.major} / {stock.middle} / {stock.minor}</p><h1>{stock.name}</h1>
+        <p>{stock.market} · {stock.code} · {stock.ticker}</p></div>
+        <div className="semiQuoteHero"><span>현재가 / 최근 제공 가격</span><strong>{formatWon(currentPrice)}</strong>
+          <b className={(quote?.change_pct ?? 0) >= 0 ? "semiUp" : "semiDown"}>{formatPercent(quote?.change_pct)}</b>
+          <small>{quote?.status === "stale" ? "이전 종가 · " : ""}제공처 기준 {quote?.provider_time?.replace("T", " ").slice(0, 16) ?? latest?.date ?? "-"}</small></div></header>
+      <div className="semiDetailGrid">
+        <section className="semiPanel semiChartPanel"><div className="semiPanelHeading semiHeadingSplit"><div><h2>주가 차트</h2><p>일별 종가 · {period}일 범위</p></div>
+          <div className="semiPeriodTabs" aria-label="주가 차트 기간">{PERIODS.map((days) => <button key={days} type="button" className={period === days ? "active" : ""} onClick={() => setPeriod(days)}>{days}일</button>)}</div></div>
+          <SemiconductorLineChart points={stockPriceSeries(stock, period)} title={`${stock.name} 주가`} unit="원" />
+          <div className="semiReturnSummary"><span>{period}일 조정 종가 수익률</span><strong className={(periodGain ?? 0) >= 0 ? "semiUp" : "semiDown"}>{formatPercent(periodGain)}</strong></div>
+        </section>
+        <section className="semiPanel semiMetricsPanel"><div className="semiPanelHeading"><h2>종목 기본 정보</h2><p>투자 지표는 Naver Finance 제공 값입니다.</p></div>
+          <dl>{METRICS.map(([key, label]) => <div key={key}><dt>{label}</dt><dd>{stock.metrics[key] || "-"}</dd></div>)}</dl>
+        </section>
+      </div>
+      <section className="semiPanel"><div className="semiPanelHeading"><h2>실적</h2><p>확정 실적만 표시 · 단위: 억원 · 매출/영업이익/당기순이익</p></div>
+        <div className="semiFinanceGrid"><FinancialTable title="연간" rows={stock.annual_financials} /><FinancialTable title="분기" rows={stock.quarterly_financials} /></div>
+      </section>
+      <section className="semiPanel"><div className="semiPanelHeading"><h2>최근 일별 가격</h2><p>차트 데이터 기준 · 거래일별 종가와 거래량</p></div>
+        <div className="semiTableWrap"><table className="semiTable"><thead><tr><th>날짜</th><th>종가</th><th>거래량</th></tr></thead><tbody>
+          {[...history].reverse().slice(0, 20).map((point) => <tr key={point.date}><td>{point.date}</td><td className="semiNumber">{formatWon(point.close)}</td><td className="semiNumber">{point.volume?.toLocaleString("ko-KR") ?? "-"}</td></tr>)}
+        </tbody></table></div>
+      </section>
+      <p className="semiFootnote">주가: <a href={`https://finance.yahoo.com/quote/${encodeURIComponent(stock.ticker)}/`} target="_blank" rel="noreferrer">Yahoo Finance</a> 일봉 · 현재가/투자 지표/실적: <a href={`https://m.stock.naver.com/domestic/stock/${stock.code}/total`} target="_blank" rel="noreferrer">Naver Finance</a>. 실적 수집 {formatDateTime(data?.generated_at ?? null)}, 현재가 수집 {formatDateTime(data?.quoted_at ?? null)}. 수익률 계산에는 분할·배당 조정 종가를 사용합니다. 기업 분류는 대표 사업 기준입니다.</p>
+    </>}
+  </main>;
+}

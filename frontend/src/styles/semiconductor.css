@@ -1,0 +1,110 @@
+body:has(.semiPage) { min-width: 320px; background: #f3f6f8; }
+.semiPage { width: min(1400px, calc(100% - 48px)); padding-top: 28px; color: #182735; }
+.semiPage button, .semiPage input, .semiPage select { font: inherit; }
+.semiHero { display: flex; align-items: end; justify-content: space-between; gap: 28px; padding: 32px 36px; margin-bottom: 18px; border-radius: 16px; background: linear-gradient(110deg, #142c42, #173c4c 70%, #245567); color: #fff; }
+.semiHero .eyebrow { color: #a7d8dd; letter-spacing: .12em; font-size: 11px; }
+.semiHero h1 { margin: 4px 0 12px; font-size: clamp(27px, 3vw, 38px); letter-spacing: -.04em; }
+.semiHero p:last-child { margin: 0; color: #d5e4e8; line-height: 1.6; }
+.semiHeroLink { flex: none; display: inline-flex; align-items: center; min-height: 42px; padding: 9px 16px; border: 1px solid #7899a4; border-radius: 8px; color: #fff; font-weight: 700; }
+.semiHeroLink:hover, .semiHeroLink:focus-visible { background: #ffffff1a; }
+.semiPage .dataRefreshStatus { padding: 0 4px; }
+.semiSummaryStrip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 0 0 18px; }
+.semiSummaryStrip > div { min-height: 84px; padding: 17px 20px; border: 1px solid #dce5e9; border-radius: 10px; background: #fff; }
+.semiSummaryStrip span { display: block; margin-bottom: 5px; color: #677987; font-size: 12px; font-weight: 700; }
+.semiSummaryStrip strong { font-size: 19px; }
+.semiPanel { margin-bottom: 18px; padding: 24px; border: 1px solid #dce5e9; border-radius: 12px; background: #fff; box-shadow: 0 3px 15px #1c35470a; }
+.semiPanelHeading { margin-bottom: 20px; }
+.semiPanelHeading h2 { margin: 0 0 4px; font-size: 21px; letter-spacing: -.025em; }
+.semiPanelHeading p { margin: 0; color: #667987; font-size: 13px; }
+.semiHeadingSplit { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+.semiFilters { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 15px; }
+.semiFilters label { display: flex; flex-direction: column; gap: 7px; color: #536a78; font-size: 12px; font-weight: 750; }
+.semiFilters select, .semiFilters input { width: 100%; min-height: 43px; padding: 9px 11px; border: 1px solid #cbd7dc; border-radius: 7px; background: #fff; color: #1c2d38; font-size: 14px; }
+.semiFilters select:focus-visible, .semiFilters input:focus-visible, .semiPeriodTabs button:focus-visible, .semiTextButton:focus-visible { outline: 3px solid #a0d9da; outline-offset: 2px; }
+.semiTrendFilters { grid-template-columns: repeat(2, minmax(0, 260px)); }
+.semiPeriodTabs { display: inline-flex; flex-wrap: wrap; gap: 3px; padding: 3px; border-radius: 8px; background: #edf3f5; }
+.semiPeriodTabs button { min-width: 49px; padding: 6px 9px; border: 0; border-radius: 6px; background: transparent; color: #526a78; cursor: pointer; font-size: 12px; font-weight: 750; }
+.semiPeriodTabs button.active { background: #fff; color: #0e5a69; box-shadow: 0 1px 4px #153b4e21; }
+.semiTableWrap { overflow: auto; }
+.semiTable { width: 100%; min-width: 760px; border-collapse: collapse; font-size: 13px; }
+.semiTable th { padding: 11px 12px; border-bottom: 1px solid #cedce1; color: #607681; background: #f7fafb; text-align: left; font-weight: 750; white-space: nowrap; }
+.semiTable td { padding: 12px; border-bottom: 1px solid #e8eef0; vertical-align: middle; }
+.semiTable tbody tr:hover { background: #f7fbfc; }
+.semiTable tbody tr:last-child td { border-bottom: 0; }
+.semiStockLink { display: flex; flex-direction: column; gap: 2px; width: max-content; max-width: 100%; color: #165b71; }
+.semiStockLink:hover strong { text-decoration: underline; }
+.semiStockLink strong { font-size: 14px; }
+.semiStockLink span { color: #7a8b95; font-size: 11px; }
+.semiTable .semiClass { display: block; white-space: nowrap; }
+.semiTable td small { display: block; color: #82929b; font-size: 11px; }
+.semiNumber { text-align: right !important; white-space: nowrap; font-variant-numeric: tabular-nums; font-weight: 680; }
+.semiUp { color: #c54537 !important; }
+.semiDown { color: #2b68bf !important; }
+.semiEmpty { margin: 18px 0 0; color: #71828d; }
+.semiFootnote { margin: 20px 4px 10px; color: #687b86; font-size: 12px; line-height: 1.7; }
+.semiFootnote a { color: #17667b; text-decoration: underline; }
+.semiTextButton { padding: 4px 0; border: 0; background: transparent; color: #145b72; cursor: pointer; font-weight: 730; text-align: left; }
+.semiTextButton:hover { text-decoration: underline; }
+.semiTrendTable tr.selected { background: #eaf5f5; }
+.semiTrendHeadline { display: flex; align-items: baseline; gap: 12px; margin: -2px 0 8px; }
+.semiTrendHeadline strong { font-size: 29px; letter-spacing: -.04em; }
+.semiTrendHeadline span { color: #72858f; font-size: 12px; }
+.semiChart { width: 100%; overflow-x: auto; }
+.semiChart svg { display: block; width: 100%; min-width: 650px; height: 285px; }
+.semiGridLine { stroke: #e3ecef; stroke-width: 1; }
+.semiAxisText { fill: #81939c; font-size: 11px; }
+.semiLine { fill: none; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; vector-effect: non-scaling-stroke; }
+.semiLine.up { stroke: #c54537; }.semiLine.down { stroke: #2b68bf; }
+.semiHoverLine { stroke: #a6bcc5; stroke-dasharray: 4 4; }
+.semiDot.up { fill: #c54537; }.semiDot.down { fill: #2b68bf; }
+.semiChartReadout { display: flex; justify-content: flex-end; gap: 12px; color: #607782; font-size: 13px; font-variant-numeric: tabular-nums; }
+.semiChartReadout span { color: #1b3b4b; font-weight: 750; }
+.semiChartEmpty { padding: 55px 20px; color: #738895; text-align: center; }
+.semiBreadcrumb { display: flex; gap: 10px; margin: 4px 0 18px; color: #6a7e89; font-size: 13px; }
+.semiBreadcrumb a { color: #17647a; font-weight: 700; }
+.semiDetailHeader { display: flex; align-items: stretch; justify-content: space-between; gap: 26px; margin: 0 0 18px; padding: 26px 30px; border: 1px solid #dce5e9; border-radius: 12px; background: #fff; }
+.semiDetailHeader h1 { margin: 3px 0; font-size: 32px; letter-spacing: -.04em; }
+.semiDetailHeader p:last-child { margin: 6px 0 0; color: #718590; }
+.semiQuoteHero { display: flex; flex-direction: column; align-items: flex-end; justify-content: center; }
+.semiQuoteHero span, .semiQuoteHero small { color: #718590; font-size: 12px; }
+.semiQuoteHero strong { font-size: 32px; letter-spacing: -.04em; white-space: nowrap; }
+.semiQuoteHero b { font-size: 17px; }
+.semiDetailGrid { display: grid; grid-template-columns: minmax(0, 1.75fr) minmax(270px, 1fr); gap: 18px; }
+.semiReturnSummary { display: flex; align-items: center; justify-content: space-between; padding: 16px 0 0; margin-top: 12px; border-top: 1px solid #e7eef0; color: #647883; font-size: 13px; }
+.semiReturnSummary strong { font-size: 20px; }
+.semiMetricsPanel dl { margin: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px 12px; }
+.semiMetricsPanel dl div { min-width: 0; }
+.semiMetricsPanel dt { color: #758892; font-size: 12px; }
+.semiMetricsPanel dd { margin: 3px 0 0; font-weight: 730; font-size: 14px; overflow-wrap: anywhere; }
+.semiFinanceGrid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; }
+.semiFinanceBlock h3 { margin: 0 0 12px; font-size: 16px; }
+.semiFinanceBlock .semiTable { min-width: 430px; }
+@media (max-width: 1050px) {
+  body:has(.semiPage) .siteNav { gap: 10px; padding: 12px 24px; }
+  body:has(.semiPage) .siteNavLinks { gap: 2px; }
+  body:has(.semiPage) .siteNavLinks a { padding: 7px 8px; font-size: 12px; white-space: nowrap; }
+  .semiDetailGrid { grid-template-columns: 1fr; }
+}
+@media (max-width: 720px) {
+  body:has(.semiPage) .siteNav { display: block; padding: 12px 16px 5px; }
+  body:has(.semiPage) .siteBrand { margin-bottom: 8px; }
+  body:has(.semiPage) .siteBrand span { display: none; }
+  body:has(.semiPage) .siteNavLinks { overflow-x: auto; padding-bottom: 5px; }
+  .semiPage { width: calc(100% - 28px); padding-top: 16px; }
+  .semiHero { display: block; padding: 25px 22px; }
+  .semiHeroLink { margin-top: 20px; }
+  .semiSummaryStrip { grid-template-columns: 1fr 1fr; }
+  .semiSummaryStrip > div:last-child { grid-column: 1 / -1; }
+  .semiPanel { padding: 17px; }
+  .semiFilters { grid-template-columns: 1fr 1fr; }
+  .semiHeadingSplit { align-items: flex-start; flex-direction: column; }
+  .semiFinanceGrid { grid-template-columns: 1fr; }
+  .semiDetailHeader { display: block; padding: 22px; }
+  .semiQuoteHero { align-items: flex-start; margin-top: 20px; padding-top: 18px; border-top: 1px solid #e8eef0; }
+}
+@media (max-width: 440px) {
+  .semiFilters { grid-template-columns: 1fr; }
+  .semiSummaryStrip { grid-template-columns: 1fr; }
+  .semiSummaryStrip > div:last-child { grid-column: auto; }
+  .semiMetricsPanel dl { grid-template-columns: 1fr 1fr; }
+}
