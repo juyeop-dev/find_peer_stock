@@ -115,13 +115,12 @@ export function SemiconductorPage() {
         <div className="semiPanelHeading semiHeadingSplit"><div><h2>종목별 가격</h2><p>{visible.length}개 종목 · {date === "latest" ? "가장 최근 제공 가격" : `${date} 일별 종가`}</p></div>
           <div className="semiPeriodTabs" aria-label="수익률 기간">{PERIODS.map((days) => <button key={days} type="button" className={period === days ? "active" : ""} onClick={() => setPeriod(days)}>{days}일</button>)}</div>
         </div>
-        <div className="semiTableWrap"><table className="semiTable semiStockPriceTable"><thead><tr><th>종목</th><th>대분류</th><th>중분류</th><th>소분류</th><th>시장</th><th className="semiNumber">가격</th><th>기준일</th>{sortHeader("change", "등락률")}{sortHeader("marketCap", "시가총액")}{sortHeader("gain", `${period}일 수익률`)}</tr></thead><tbody>
+        <div className="semiTableWrap"><table className="semiTable semiStockPriceTable"><thead><tr><th>종목</th><th>대분류</th><th>중분류</th><th>소분류</th><th>시장</th><th className="semiNumber">가격</th>{sortHeader("marketCap", "시가총액")}<th>기준일</th>{sortHeader("change", "등락률")}{sortHeader("gain", `${period}일 수익률`)}</tr></thead><tbody>
           {rows.map(({ stock, price, asOf, change, gain }) => {
             return <tr key={stock.ticker}><td><Link className="semiStockLink" to={`/semiconductors/${encodeURIComponent(stock.ticker)}`}><strong>{stock.name}</strong><span>{stock.code}</span></Link></td>
               <td>{stock.major}</td><td>{stock.middle}</td><td>{stock.minor}</td><td>{stock.market}</td>
-              <td className="semiNumber">{formatWon(price)}</td><td>{asOf}</td>
+              <td className="semiNumber">{formatWon(price)}</td><td className="semiNumber">{stock.metrics.marketValue || "-"}</td><td>{asOf}</td>
               <td className={`semiNumber ${change === null || change === undefined ? "" : change > 0 ? "semiUp" : change < 0 ? "semiDown" : ""}`}>{formatPercent(change)}</td>
-              <td className="semiNumber">{stock.metrics.marketValue || "-"}</td>
               <td className={`semiNumber ${gain === null ? "" : gain > 0 ? "semiUp" : gain < 0 ? "semiDown" : ""}`}>{formatPercent(gain)}</td></tr>;
           })}
         </tbody></table>{visible.length === 0 && <p className="semiEmpty">조건에 맞는 종목이 없습니다.</p>}</div>

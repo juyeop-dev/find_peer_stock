@@ -82,8 +82,8 @@ try {
   await send("Page.navigate", { url: `${origin}/semiconductors` });
   await until(() => evaluate("document.querySelectorAll('.semiStockPriceTable tbody tr').length > 0"), "Semiconductor stocks did not load.");
   assert.deepEqual(await evaluate("[...document.querySelectorAll('.semiStockPriceTable th')].map(item => item.innerText.replace(/[↕↑↓]/g, '').trim())"),
-    ["종목", "대분류", "중분류", "소분류", "시장", "가격", "기준일", "등락률", "시가총액", "30일 수익률"]);
-  const caps = () => evaluate("[...document.querySelectorAll('.semiStockPriceTable tbody tr')].map(row => row.cells[8].innerText.trim())");
+    ["종목", "대분류", "중분류", "소분류", "시장", "가격", "시가총액", "기준일", "등락률", "30일 수익률"]);
+  const caps = () => evaluate("[...document.querySelectorAll('.semiStockPriceTable tbody tr')].map(row => row.cells[6].innerText.trim())");
   const clickSort = (label) => evaluate(`[...document.querySelectorAll('.semiStockPriceTable .semiSortButton')].find(button => button.innerText.includes(${JSON.stringify(label)})).click()`);
   await clickSort("시가총액");
   assert.equal(await evaluate("document.querySelector('.semiStockPriceTable th[aria-sort=descending]')?.innerText.includes('시가총액')"), true);
@@ -100,9 +100,9 @@ try {
   await send("Page.navigate", { url: `${origin}/semiconductors/trends` });
   await until(() => evaluate("document.querySelectorAll('.semiConstituentTable tbody tr').length > 0"), "Semiconductor trends did not load.");
   assert.deepEqual(await evaluate("[...document.querySelectorAll('.semiConstituentTable th')].map(item => item.innerText.trim())"),
-    ["종목", "대분류", "중분류", "소분류", "시장", "현재가", "등락률", "시가총액", "30일 수익률"]);
+    ["종목", "대분류", "중분류", "소분류", "시장", "현재가", "시가총액", "등락률", "30일 수익률"]);
   assert.equal(await evaluate("document.querySelector('.semiConstituentTable tbody tr')?.cells[5].innerText.includes('원')"), true);
-  assert.equal(await evaluate("document.querySelector('.semiConstituentTable tbody tr')?.cells[7].innerText.includes('억')"), true);
+  assert.equal(await evaluate("document.querySelector('.semiConstituentTable tbody tr')?.cells[6].innerText.includes('억')"), true);
   console.log("PASS semiconductor classification, quote details, and sortable returns/market cap");
 } finally {
   if (send && socket?.readyState === WebSocket.OPEN) await send("Browser.close").catch(() => {});
