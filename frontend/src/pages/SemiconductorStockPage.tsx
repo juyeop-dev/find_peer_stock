@@ -7,6 +7,7 @@ import { LoadingSpinner } from "../components/LoadingSpinner";
 import { formatDateTime } from "../dataClient/formatters";
 import { effectiveHistory, formatEok, formatPercent, formatWon, PERIODS, stockPriceSeries, stockReturn } from "../dataClient/semiconductorMath";
 import type { Period } from "../dataClient/semiconductorMath";
+import { stockClassifications } from "../dataClient/semiconductorTypes";
 import type { SemiconductorFinancial } from "../dataClient/semiconductorTypes";
 import { getSemiconductorData } from "../dataClient/staticStockDataClient";
 import { usePollingData } from "../dataClient/usePollingData";
@@ -46,6 +47,10 @@ export function SemiconductorStockPage() {
         <div className="semiQuoteHero"><span>현재가 / 최근 제공 가격</span><strong>{formatWon(currentPrice)}</strong>
           <b className={(quote?.change_pct ?? 0) >= 0 ? "semiUp" : "semiDown"}>{formatPercent(quote?.change_pct)}</b>
           <small>{quote?.status === "stale" ? "이전 종가 · " : ""}제공처 기준 {quote?.provider_time?.replace("T", " ").slice(0, 16) ?? latest?.date ?? "-"}</small></div></header>
+      <section className="semiPanel semiMembershipPanel"><div className="semiPanelHeading"><h2>소속 섹터</h2><p>이미지의 산업 구조와 연관 테마를 함께 표시합니다.</p></div>
+        <div className="semiMemberships">{stockClassifications(stock).map((item) => <span key={`${item.major}/${item.middle}/${item.minor}`} className={item.major === "핵심 연관 테마" ? "theme" : ""}>
+          <small>{item.major} / {item.middle}</small><strong>{item.minor}</strong></span>)}</div>
+      </section>
       <div className="semiDetailGrid">
         <section className="semiPanel semiChartPanel"><div className="semiPanelHeading semiHeadingSplit"><div><h2>주가 차트</h2><p>일별 종가 · {period}일 범위</p></div>
           <div className="semiPeriodTabs" aria-label="주가 차트 기간">{PERIODS.map((days) => <button key={days} type="button" className={period === days ? "active" : ""} onClick={() => setPeriod(days)}>{days}일</button>)}</div></div>
@@ -64,7 +69,7 @@ export function SemiconductorStockPage() {
           {[...history].reverse().slice(0, 20).map((point) => <tr key={point.date}><td>{point.date}</td><td className="semiNumber">{formatWon(point.close)}</td><td className="semiNumber">{point.volume?.toLocaleString("ko-KR") ?? "-"}</td></tr>)}
         </tbody></table></div>
       </section>
-      <p className="semiFootnote">주가: <a href={`https://finance.yahoo.com/quote/${encodeURIComponent(stock.ticker)}/`} target="_blank" rel="noreferrer">Yahoo Finance</a> 일봉 · 현재가/투자 지표/실적: <a href={`https://m.stock.naver.com/domestic/stock/${stock.code}/total`} target="_blank" rel="noreferrer">Naver Finance</a>. 실적 수집 {formatDateTime(data?.generated_at ?? null)}, 현재가 수집 {formatDateTime(data?.quoted_at ?? null)}. 수익률 계산에는 분할·배당 조정 종가를 사용합니다. 기업 분류는 대표 사업 기준입니다.</p>
+      <p className="semiFootnote">주가: <a href={`https://finance.yahoo.com/quote/${encodeURIComponent(stock.ticker)}/`} target="_blank" rel="noreferrer">Yahoo Finance</a> 일봉 · 현재가/투자 지표/실적: <a href={`https://m.stock.naver.com/domestic/stock/${stock.code}/total`} target="_blank" rel="noreferrer">Naver Finance</a>. 실적 수집 {formatDateTime(data?.generated_at ?? null)}, 현재가 수집 {formatDateTime(data?.quoted_at ?? null)}. 수익률 계산에는 분할·배당 조정 종가를 사용합니다. 산업 구조와 연관 테마 분류는 제공 이미지 기준입니다.</p>
     </>}
   </main>;
 }

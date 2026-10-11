@@ -6,7 +6,8 @@ import { LoadingSpinner } from "../components/LoadingSpinner";
 import { formatDateTime } from "../dataClient/formatters";
 import { effectiveHistory, formatPercent, formatWon, parseMarketCapWon, PERIODS, priceOnDate, stockReturn } from "../dataClient/semiconductorMath";
 import type { Period } from "../dataClient/semiconductorMath";
-import type { SemiconductorStock } from "../dataClient/semiconductorTypes";
+import { stockClassifications } from "../dataClient/semiconductorTypes";
+import type { SemiconductorClassification, SemiconductorStock } from "../dataClient/semiconductorTypes";
 import { getSemiconductorData } from "../dataClient/staticStockDataClient";
 import { usePollingData } from "../dataClient/usePollingData";
 
@@ -26,6 +27,10 @@ function compareNullable(a: number | null | undefined, b: number | null | undefi
   return (a - b) * (direction === "asc" ? 1 : -1);
 }
 
+function matchesClassification(item: SemiconductorClassification, major: string, middle: string, minor: string): boolean {
+  return (!major || item.major === major) && (!middle || item.middle === middle) && (!minor || item.minor === minor);
+}
+
 export function SemiconductorPage() {
   const { data, error, loading, refreshing, lastCheckedAt, refresh } = usePollingData(getSemiconductorData, 300_000);
   const [major, setMajor] = useState("");
@@ -38,19 +43,21 @@ export function SemiconductorPage() {
   const [sortKey, setSortKey] = useState<SortKey>("name");
   const [sortDirection, setSortDirection] = useState<SortDirection>("asc");
   const stocks = data?.stocks ?? [];
-  const majors = [...new Set(stocks.map((stock) => stock.major))];
-  const middles = [...new Set(stocks.filter((stock) => !major || stock.major === major).map((stock) => stock.middle))];
-  const minors = [...new Set(stocks.filter((stock) => (!major || stock.major === major) && (!middle || stock.middle === middle)).map((stock) => stock.minor))];
+  const categories = data?.categories ?? stocks.flatMap(stockClassifications);
+  const majors = [...new Set(categories.map((item) => item.major))];
+  const middles = [...new Set(categories.filter((item) => !major || item.major === major).map((item) => item.middle))];
+  const minors = [...new Set(categories.filter((item) => (!major || item.major === major) && (!middle || item.middle === middle)).map((item) => item.minor))];
   const dates = useMemo(() => [...new Set(stocks.flatMap((stock) => effectiveHistory(stock).map((point) => point.date)))].sort().reverse(), [stocks]);
   const visible = useMemo(() => stocks.filter((stock) =>
-    (!major || stock.major === major) && (!middle || stock.middle === middle) &&
-    (!minor || stock.minor === minor) && (!market || stock.market === market) &&
-    (!query || `${stock.name} ${stock.code} ${stock.minor}`.toLowerCase().includes(query.toLowerCase()))
+    stockClassifications(stock).some((item) => matchesClassification(item, major, middle, minor)) &&
+    (!market || stock.market === market) &&
+    (!query || `${stock.name} ${stock.code} ${stockClassifications(stock).map((item) => item.minor).join(" ")}`.toLowerCase().includes(query.toLowerCase()))
   ), [stocks, major, middle, minor, market, query]);
   const rows = useMemo(() => visible.map((stock) => {
     const point = date === "latest" ? effectiveHistory(stock).at(-1) : priceOnDate(stock, date);
     return {
       stock,
+      classification: stockClassifications(stock).find((item) => matchesClassification(item, major, middle, minor))!,
       price: date === "latest" ? stock.quote.price ?? point?.close : point?.close,
       asOf: date === "latest" ? stock.quote.provider_time?.slice(0, 10) ?? point?.date ?? "-" : point?.date ?? "-",
       change: date === "latest" ? stock.quote.change_pct : dayChange(stock, date),
@@ -61,7 +68,7 @@ export function SemiconductorPage() {
     const result = sortKey === "name" ? a.stock.name.localeCompare(b.stock.name, "ko") * (sortDirection === "asc" ? 1 : -1)
       : compareNullable(a[sortKey], b[sortKey], sortDirection);
     return result || a.stock.name.localeCompare(b.stock.name, "ko") || a.stock.code.localeCompare(b.stock.code);
-  }), [visible, date, period, sortKey, sortDirection]);
+  }), [visible, date, period, major, middle, minor, sortKey, sortDirection]);
   function toggleSort(key: SortKey) {
     if (sortKey === key) setSortDirection((current) => current === "asc" ? "desc" : "asc");
     else { setSortKey(key); setSortDirection("desc"); }
@@ -91,7 +98,7 @@ export function SemiconductorPage() {
         <div><span>가격 조회 시각</span><strong>{formatDateTime(data.quoted_at)}</strong></div>
       </div>
       <section className="semiPanel semiFilterPanel" aria-label="종목 필터">
-        <div className="semiPanelHeading"><h2>섹터 탐색</h2><p>주 사업 기준 대표 분류이며 복수 사업 기업은 한 곳에만 포함됩니다.</p></div>
+        <div className="semiPanelHeading"><h2>섹터 탐색</h2><p>이미지의 산업 구조와 연관 테마를 반영했습니다. 한 종목이 여러 분류에 포함될 수 있습니다.</p></div>
         <div className="semiFilters">
           <label>대분류<select value={major} onChange={(event) => { setMajor(event.target.value); setMiddle(""); setMinor(""); }}>
             <option value="">전체</option>{majors.map((item) => <option key={item}>{item}</option>)}
@@ -116,9 +123,9 @@ export function SemiconductorPage() {
           <div className="semiPeriodTabs" aria-label="수익률 기간">{PERIODS.map((days) => <button key={days} type="button" className={period === days ? "active" : ""} onClick={() => setPeriod(days)}>{days}일</button>)}</div>
         </div>
         <div className="semiTableWrap"><table className="semiTable semiStockPriceTable"><thead><tr><th>종목</th><th>대분류</th><th>중분류</th><th>소분류</th><th>시장</th><th className="semiNumber">가격</th>{sortHeader("marketCap", "시가총액")}<th>기준일</th>{sortHeader("change", "등락률")}{sortHeader("gain", `${period}일 수익률`)}</tr></thead><tbody>
-          {rows.map(({ stock, price, asOf, change, gain }) => {
+          {rows.map(({ stock, classification, price, asOf, change, gain }) => {
             return <tr key={stock.ticker}><td><Link className="semiStockLink" to={`/semiconductors/${encodeURIComponent(stock.ticker)}`}><strong>{stock.name}</strong><span>{stock.code}</span></Link></td>
-              <td>{stock.major}</td><td>{stock.middle}</td><td>{stock.minor}</td><td>{stock.market}</td>
+              <td>{classification.major}</td><td>{classification.middle}</td><td>{classification.minor}</td><td>{stock.market}</td>
               <td className="semiNumber">{formatWon(price)}</td><td className="semiNumber">{stock.metrics.marketValue || "-"}</td><td>{asOf}</td>
               <td className={`semiNumber ${change === null || change === undefined ? "" : change > 0 ? "semiUp" : change < 0 ? "semiDown" : ""}`}>{formatPercent(change)}</td>
               <td className={`semiNumber ${gain === null ? "" : gain > 0 ? "semiUp" : gain < 0 ? "semiDown" : ""}`}>{formatPercent(gain)}</td></tr>;

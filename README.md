@@ -2,11 +2,11 @@
 
 ## 국내 반도체 섹터
 
-- `/semiconductors`: 코스피·코스닥 반도체 관련 53개 종목을 대분류/중분류/소분류, 시장, 날짜로 탐색합니다.
+- `/semiconductors`: 이미지에 실린 65개 기업을 포함한 코스피·코스닥 반도체 관련 82개 종목을 대분류/중분류/소분류, 시장, 날짜로 탐색합니다.
 - `/semiconductors/trends`: 분류별 7/30/90/180/360일 수익률과 동일 비중 주가 추이, 구성 종목의 수익률을 표시합니다.
 - `/semiconductors/{ticker}`: 종목별 일봉 차트, 현재가, 시가총액·PER·PBR·52주 범위, 연간·분기 확정 실적을 표시합니다.
 
-분류는 `data/seed/semiconductor_stocks.json`의 대표 사업 기준 수작업 목록입니다. 모든 상장사를 자동 포괄하는 업종 지수가 아니며 다각화 기업은 한 분류에만 포함됩니다. 일별 종가·조정 종가는 Yahoo Finance, 현재가는 Naver Finance, 확정 매출·영업이익·당기순이익은 Naver Finance 공개 자료를 사용합니다. 재무 수치 단위는 억원이고 추정치(`isConsensus=Y`)는 제외합니다. 종목 수익률은 조정 종가 기준이며 섹터 수익률은 계산 가능한 구성 종목의 수익률을 동일 비중 평균합니다. 차트의 섹터 기준값은 100입니다.
+종목과 코드는 `data/seed/semiconductor_stocks.json`, 이미지의 6개 대분류·19개 소분류와 구성 종목은 `data/seed/semiconductor_categories.json`에서 관리합니다. 이미지 밖 기존 17개 종목은 가장 가까운 산업 분류의 `additional`에 보존했습니다. 삼성전자처럼 여러 분야에 속한 종목은 각 분야에 표시하며, 상위 단계 섹터 수익률에는 종목당 한 번만 포함합니다. 모든 상장사를 자동 포괄하는 업종 지수는 아닙니다. 일별 종가·조정 종가는 Yahoo Finance, 현재가는 Naver Finance, 확정 매출·영업이익·당기순이익은 Naver Finance 공개 자료를 사용합니다. 재무 수치 단위는 억원이고 추정치(`isConsensus=Y`)는 제외합니다. 종목 수익률은 조정 종가 기준이며 섹터 수익률은 계산 가능한 구성 종목의 수익률을 동일 비중 평균합니다. 차트의 섹터 기준값은 100입니다.
 
 `data/semiconductor/index.json`에 가격 이력과 실적을 보존합니다. GitHub Actions는 한국 시장 마감 후 하루 한 번 이 파일을 갱신해 커밋하며, 페이지 빌드 때마다 현재가를 `frontend/public/data/semiconductor/index.json`에 갱신합니다. 로컬에서 수동 갱신할 때:
 

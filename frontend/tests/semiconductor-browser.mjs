@@ -81,6 +81,7 @@ try {
   await send("Page.enable");
   await send("Page.navigate", { url: `${origin}/semiconductors` });
   await until(() => evaluate("document.querySelectorAll('.semiStockPriceTable tbody tr').length > 0"), "Semiconductor stocks did not load.");
+  assert.equal(await evaluate("document.querySelectorAll('.semiStockPriceTable tbody tr').length"), 82);
   assert.deepEqual(await evaluate("[...document.querySelectorAll('.semiStockPriceTable th')].map(item => item.innerText.replace(/[↕↑↓]/g, '').trim())"),
     ["종목", "대분류", "중분류", "소분류", "시장", "가격", "시가총액", "기준일", "등락률", "30일 수익률"]);
   const caps = () => evaluate("[...document.querySelectorAll('.semiStockPriceTable tbody tr')].map(row => row.cells[6].innerText.trim())");
@@ -97,8 +98,19 @@ try {
     await clickSort(label);
     assert.equal(await evaluate(`document.querySelector('.semiStockPriceTable th[aria-sort=ascending]')?.innerText.includes(${JSON.stringify(label)})`), true);
   }
+  const selectFilter = (index, value) => evaluate(`(() => { const select = document.querySelectorAll('.semiFilters select')[${index}]; select.value = ${JSON.stringify(value)}; select.dispatchEvent(new Event('change', { bubbles: true })); })()`);
+  await selectFilter(0, "핵심 연관 테마");
+  await selectFilter(1, "인터페이스");
+  await selectFilter(2, "CXL");
+  assert.equal(await evaluate("document.querySelectorAll('.semiStockPriceTable tbody tr').length"), 4);
+  assert.equal(await evaluate("[...document.querySelectorAll('.semiStockPriceTable tbody tr')].some(row => row.innerText.includes('삼성전자') && row.cells[3].innerText === 'CXL')"), true);
+  await send("Page.navigate", { url: `${origin}/semiconductors/005930.KS` });
+  await until(() => evaluate("document.querySelectorAll('.semiMemberships > span').length > 0"), "Stock memberships did not load.");
+  assert.equal(await evaluate("document.querySelectorAll('.semiMemberships > span').length"), 5);
   await send("Page.navigate", { url: `${origin}/semiconductors/trends` });
   await until(() => evaluate("document.querySelectorAll('.semiConstituentTable tbody tr').length > 0"), "Semiconductor trends did not load.");
+  assert.equal(await evaluate("document.querySelectorAll('.semiTrendTable tbody tr').length"), 6);
+  assert.equal(await evaluate("[...document.querySelectorAll('.semiTrendTable tbody tr')].find(row => row.cells[0].innerText === '칩 생산')?.cells[3].innerText"), "3개");
   assert.deepEqual(await evaluate("[...document.querySelectorAll('.semiTrendTable th')].map(item => item.innerText.replace(/[↕↑↓]/g, '').trim())"),
     ["대분류", "중분류", "소분류", "종목 수", "7일", "30일", "90일", "180일", "360일"]);
   assert.deepEqual(await evaluate("[...document.querySelectorAll('.semiConstituentTable th')].map(item => item.innerText.replace(/[↕↑↓]/g, '').trim())"),
@@ -138,6 +150,11 @@ try {
     assert.equal(await evaluate(`document.querySelector('.semiConstituentTable th[aria-sort=ascending]')?.innerText.includes(${JSON.stringify(label)})`), true);
     assertOrder(await numericRows("semiConstituentTable", column), "asc");
   }
+  await selectFilter(0, "minor");
+  await selectFilter(1, "핵심 연관 테마");
+  assert.equal(await evaluate("document.querySelectorAll('.semiTrendTable tbody tr').length"), 8);
+  await evaluate("[...document.querySelectorAll('.semiTrendTable tbody tr')].find(row => row.cells[2].innerText === 'CXL').cells[2].querySelector('button').click()");
+  assert.equal(await evaluate("document.querySelectorAll('.semiConstituentTable tbody tr').length"), 4);
   console.log("PASS semiconductor classification, quote details, and sorting on both pages");
 } finally {
   if (send && socket?.readyState === WebSocket.OPEN) await send("Browser.close").catch(() => {});

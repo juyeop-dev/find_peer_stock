@@ -17,6 +17,7 @@ from zoneinfo import ZoneInfo
 
 ROOT = Path(__file__).resolve().parents[1]
 SEED = ROOT / "data" / "seed" / "semiconductor_stocks.json"
+CATEGORIES = ROOT / "data" / "seed" / "semiconductor_categories.json"
 SOURCE = ROOT / "data" / "semiconductor" / "index.json"
 PUBLISHED = ROOT / "frontend" / "public" / "data" / "semiconductor" / "index.json"
 KST = ZoneInfo("Asia/Seoul")
@@ -117,6 +118,41 @@ def load_existing(path: Path) -> dict:
         return {}
 
 
+def seed_fingerprint(seed_path: Path = SEED, categories_path: Path = CATEGORIES) -> str:
+    digest = hashlib.sha256()
+    digest.update(seed_path.read_bytes())
+    digest.update(categories_path.read_bytes())
+    return digest.hexdigest()
+
+
+def classified_seeds(seed_path: Path = SEED, categories_path: Path = CATEGORIES) -> list[dict]:
+    seeds = json.loads(seed_path.read_text(encoding="utf-8"))
+    categories = json.loads(categories_path.read_text(encoding="utf-8"))
+    if not isinstance(seeds, list) or not seeds or not isinstance(categories, list) or not categories:
+        raise ValueError("Semiconductor seeds and categories must be nonempty lists")
+    by_ticker = {seed["ticker"]: {**seed, "classifications": []} for seed in seeds}
+    if len(by_ticker) != len(seeds):
+        raise ValueError("Duplicate semiconductor ticker")
+    for group in categories:
+        classification = {key: group[key] for key in ("major", "middle", "minor")}
+        members = group.get("image", []) + group.get("additional", [])
+        if not members or len(members) != len(set(members)):
+            raise ValueError(f"Empty or duplicate members in {classification}")
+        for ticker in members:
+            if ticker not in by_ticker:
+                raise ValueError(f"Unknown semiconductor ticker in categories: {ticker}")
+            if classification in by_ticker[ticker]["classifications"]:
+                raise ValueError(f"Duplicate classification for {ticker}: {classification}")
+            by_ticker[ticker]["classifications"].append(classification)
+    for seed in by_ticker.values():
+        primary = next((item for item in seed["classifications"] if item["major"] != "핵심 연관 테마"),
+                       seed["classifications"][0] if seed["classifications"] else None)
+        if primary is None:
+            raise ValueError(f"No primary semiconductor category for {seed['ticker']}")
+        seed.update(primary)
+    return list(by_ticker.values())
+
+
 def collect_full_entry(seed: dict, previous: dict | None) -> dict:
     ticker = seed["ticker"]
     code = ticker.split(".", 1)[0]
@@ -154,18 +190,16 @@ def write_json(path: Path, payload: dict) -> None:
 
 
 def generate_full(seed_path: Path = SEED, output_path: Path = SOURCE, *, force: bool = False,
-                  now: datetime | None = None) -> dict:
+                  now: datetime | None = None, categories_path: Path = CATEGORIES) -> dict:
     now = now or datetime.now(tz=KST)
     existing = load_existing(output_path)
-    seed_hash = hashlib.sha256(seed_path.read_bytes()).hexdigest()
+    seed_hash = seed_fingerprint(seed_path, categories_path)
     previous_date = str(existing.get("generated_at") or "")[:10]
     if (not force and existing.get("stocks") and existing.get("seed_hash") == seed_hash
             and (now.time() < time(16, 30) or previous_date == now.date().isoformat())):
         print(f"Retaining semiconductor history from {existing.get('generated_at')}")
         return existing
-    seeds = json.loads(seed_path.read_text(encoding="utf-8"))
-    if not isinstance(seeds, list) or not seeds:
-        raise ValueError("Semiconductor seed must contain stocks")
+    seeds = classified_seeds(seed_path, categories_path)
     prior = {row["ticker"]: row for row in existing.get("stocks") or []}
     rows = [None] * len(seeds)
     with ThreadPoolExecutor(max_workers=6) as pool:
@@ -180,7 +214,10 @@ def generate_full(seed_path: Path = SEED, output_path: Path = SOURCE, *, force: 
     payload = {"generated_at": now.isoformat(), "seed_hash": seed_hash,
                "history_source": "Yahoo Finance daily chart",
                "financial_source": "Naver Finance annual/quarterly (actual only)",
-               "financial_unit": "억원", "coverage": "curated", "stocks": rows}
+               "financial_unit": "억원", "coverage": "curated",
+               "categories": [{key: group[key] for key in ("major", "middle", "minor")}
+                              for group in json.loads(categories_path.read_text(encoding="utf-8"))],
+               "stocks": rows}
     write_json(output_path, payload)
     print(f"Semiconductor history: {usable}/{len(rows)} stocks with daily prices")
     return payload
@@ -234,12 +271,13 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("mode", choices=("full", "publish"))
     parser.add_argument("--seed", type=Path, default=SEED)
+    parser.add_argument("--categories", type=Path, default=CATEGORIES)
     parser.add_argument("--source", type=Path, default=SOURCE)
     parser.add_argument("--output", type=Path, default=PUBLISHED)
     parser.add_argument("--force", action="store_true")
     args = parser.parse_args()
     if args.mode == "full":
-        generate_full(args.seed, args.source, force=args.force)
+        generate_full(args.seed, args.source, force=args.force, categories_path=args.categories)
     else:
         publish(args.source, args.output)
 

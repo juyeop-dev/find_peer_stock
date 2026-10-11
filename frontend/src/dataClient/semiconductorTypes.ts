@@ -25,6 +25,12 @@ export interface SemiconductorQuote {
   error?: string;
 }
 
+export interface SemiconductorClassification {
+  major: string;
+  middle: string;
+  minor: string;
+}
+
 export interface SemiconductorStock {
   ticker: string;
   code: string;
@@ -33,12 +39,17 @@ export interface SemiconductorStock {
   major: string;
   middle: string;
   minor: string;
+  classifications?: SemiconductorClassification[];
   history: SemiconductorPrice[];
   annual_financials: SemiconductorFinancial[];
   quarterly_financials: SemiconductorFinancial[];
   metrics: Record<string, string | null>;
   quote: SemiconductorQuote;
   data_errors: string[];
+}
+
+export function stockClassifications(stock: SemiconductorStock): SemiconductorClassification[] {
+  return stock.classifications?.length ? stock.classifications : [stock];
 }
 
 export interface SemiconductorData {
@@ -48,5 +59,6 @@ export interface SemiconductorData {
   financial_source: string;
   financial_unit: string;
   coverage: "curated";
+  categories?: SemiconductorClassification[];
   stocks: SemiconductorStock[];
 }

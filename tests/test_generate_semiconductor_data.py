@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 import json
-import hashlib
 import sys
 import tempfile
 import unittest
@@ -36,12 +35,24 @@ class SemiconductorDataTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as temp:
             output = Path(temp) / "index.json"
             existing = {"generated_at": "2026-10-08T16:45:00+09:00",
-                        "seed_hash": hashlib.sha256(semis.SEED.read_bytes()).hexdigest(),
+                        "seed_hash": semis.seed_fingerprint(),
                         "stocks": [{"ticker": "AAA"}]}
             output.write_text(json.dumps(existing), encoding="utf-8")
             result = semis.generate_full(output_path=output,
                 now=datetime(2026, 10, 12, 10, 0, tzinfo=ZoneInfo("Asia/Seoul")))
             self.assertEqual(result, existing)
+
+    def test_image_categories_cover_all_stocks_and_repeated_themes(self) -> None:
+        seeds = semis.classified_seeds()
+        groups = json.loads(semis.CATEGORIES.read_text(encoding="utf-8"))
+        image_tickers = {ticker for group in groups for ticker in group["image"]}
+        self.assertEqual((len(seeds), len(groups), len(image_tickers)), (82, 19, 65))
+        by_ticker = {seed["ticker"]: seed for seed in seeds}
+        self.assertEqual({item["minor"] for item in by_ticker["005930.KS"]["classifications"]},
+                         {"IDM", "파운드리", "HBM·AI 메모리", "CXL", "이미지센서·머신비전"})
+        self.assertEqual({item["minor"] for item in by_ticker["320000.KQ"]["classifications"]},
+                         {"이미지센서·머신비전", "MLCC"})
+        self.assertEqual(by_ticker["320000.KQ"]["name"], "한울반도체")
 
     def test_publish_preserves_last_close_when_live_quote_fails(self) -> None:
         with tempfile.TemporaryDirectory() as temp:
