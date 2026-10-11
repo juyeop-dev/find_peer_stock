@@ -4,7 +4,7 @@ import { SemiconductorLineChart } from "../components/SemiconductorLineChart";
 import { DataRefreshStatus } from "../components/DataRefreshStatus";
 import { ErrorNotice } from "../components/ErrorNotice";
 import { LoadingSpinner } from "../components/LoadingSpinner";
-import { formatPercent, PERIODS, sectorReturn, sectorSeries, stockReturn } from "../dataClient/semiconductorMath";
+import { effectiveHistory, formatPercent, formatWon, PERIODS, sectorReturn, sectorSeries, stockReturn } from "../dataClient/semiconductorMath";
 import type { Period } from "../dataClient/semiconductorMath";
 import type { SemiconductorStock } from "../dataClient/semiconductorTypes";
 import { getSemiconductorData } from "../dataClient/staticStockDataClient";
@@ -54,9 +54,12 @@ export function SemiconductorTrendsPage() {
           <label>대분류 필터<select value={major} onChange={(event) => { setMajor(event.target.value); setSelected(""); }}><option value="">전체</option>{majors.map((name) => <option key={name}>{name}</option>)}</select></label></div>
       </section>
       <section className="semiPanel"><div className="semiPanelHeading"><h2>섹터별 상승률</h2><p>구성 종목의 조정 종가 수익률을 동일 비중으로 평균했습니다.</p></div>
-        <div className="semiTableWrap"><table className="semiTable semiTrendTable"><thead><tr><th>섹터</th><th>종목 수</th>{PERIODS.map((days) => <th key={days}>{days}일</th>)}</tr></thead><tbody>
+        <div className="semiTableWrap"><table className="semiTable semiTrendTable"><thead><tr><th>대분류</th><th>중분류</th><th>소분류</th><th>종목 수</th>{PERIODS.map((days) => <th key={days} className="semiNumber">{days}일</th>)}</tr></thead><tbody>
           {groups.map(([name, members]) => <tr key={name} className={active?.[0] === name ? "selected" : ""}>
-            <td><button type="button" className="semiTextButton" onClick={() => setSelected(name)}>{name}</button></td><td>{members.length}개</td>
+            <td>{level === "major" ? <button type="button" className="semiTextButton" onClick={() => setSelected(name)}>{members[0].major}</button> : members[0].major}</td>
+            <td>{level === "middle" ? <button type="button" className="semiTextButton" onClick={() => setSelected(name)}>{members[0].middle}</button> : level === "minor" ? members[0].middle : "-"}</td>
+            <td>{level === "minor" ? <button type="button" className="semiTextButton" onClick={() => setSelected(name)}>{members[0].minor}</button> : "-"}</td>
+            <td>{members.length}개</td>
             {PERIODS.map((days) => { const result = sectorReturn(members, days); return <td key={days} className={`semiNumber ${result.value === null ? "" : result.value > 0 ? "semiUp" : result.value < 0 ? "semiDown" : ""}`} title={`${result.count}/${result.total}개 종목 계산 가능`}>
               {formatPercent(result.value)}<small>{result.count}/{result.total}</small></td>; })}</tr>)}
         </tbody></table></div>
@@ -67,11 +70,17 @@ export function SemiconductorTrendsPage() {
           <span>계산 가능 {sectorReturn(activeStocks, period).count}/{activeStocks.length}개</span></div>
         <SemiconductorLineChart points={chart} title={`${active[0]} ${period}일`} unit="지수" />
       </section>
-      <section className="semiPanel"><div className="semiPanelHeading"><h2>구성 종목 수익률</h2><p>{period}일 조정 종가 기준 · 종목을 누르면 가격 차트와 재무 정보를 볼 수 있습니다.</p></div>
-        <div className="semiTableWrap"><table className="semiTable"><thead><tr><th>종목</th><th>시장</th><th>소분류</th><th>{period}일 수익률</th></tr></thead><tbody>
-          {ranked.map((stock) => { const value = stockReturn(stock, period); return <tr key={stock.ticker}><td><Link className="semiStockLink" to={`/semiconductors/${encodeURIComponent(stock.ticker)}`}><strong>{stock.name}</strong><span>{stock.code}</span></Link></td><td>{stock.market}</td><td>{stock.minor}</td><td className={`semiNumber ${value === null ? "" : value > 0 ? "semiUp" : value < 0 ? "semiDown" : ""}`}>{formatPercent(value)}</td></tr>; })}
+      <section className="semiPanel"><div className="semiPanelHeading"><h2>구성 종목 수익률</h2><p>{period}일 조정 종가 기준 · 현재가는 종목별 제공 날짜를 함께 표시합니다. 종목을 누르면 가격 차트와 재무 정보를 볼 수 있습니다.</p></div>
+        <div className="semiTableWrap"><table className="semiTable semiConstituentTable"><thead><tr><th>종목</th><th>대분류</th><th>중분류</th><th>소분류</th><th>시장</th><th className="semiNumber">현재가</th><th className="semiNumber">등락률</th><th className="semiNumber">시가총액</th><th className="semiNumber">{period}일 수익률</th></tr></thead><tbody>
+          {ranked.map((stock) => { const value = stockReturn(stock, period); const latest = effectiveHistory(stock).at(-1); const change = stock.quote.change_pct;
+            return <tr key={stock.ticker}><td><Link className="semiStockLink" to={`/semiconductors/${encodeURIComponent(stock.ticker)}`}><strong>{stock.name}</strong><span>{stock.code}</span></Link></td>
+              <td>{stock.major}</td><td>{stock.middle}</td><td>{stock.minor}</td><td>{stock.market}</td>
+              <td className="semiNumber">{formatWon(stock.quote.price ?? latest?.close)}<small>{stock.quote.provider_time?.slice(0, 10) ?? latest?.date ?? "-"}</small></td>
+              <td className={`semiNumber ${change === null ? "" : change > 0 ? "semiUp" : change < 0 ? "semiDown" : ""}`}>{formatPercent(change)}</td>
+              <td className="semiNumber">{stock.metrics.marketValue || "-"}</td>
+              <td className={`semiNumber ${value === null ? "" : value > 0 ? "semiUp" : value < 0 ? "semiDown" : ""}`}>{formatPercent(value)}</td></tr>; })}
         </tbody></table></div></section></>}
-      <p className="semiFootnote">섹터 수익률은 지수나 ETF 수익률이 아닙니다. 각 종목의 기준일 이전 가장 가까운 거래일 대비 조정 종가 수익률을 동일 비중 평균한 값입니다. 상장 기간 부족 또는 가격 누락 종목은 계산에서 제외하며 각 셀에 포함 수를 표시합니다. 가격 출처: Yahoo Finance 일봉, Naver Finance 현재가.</p>
+      <p className="semiFootnote">섹터 수익률은 지수나 ETF 수익률이 아닙니다. 각 종목의 기준일 이전 가장 가까운 거래일 대비 조정 종가 수익률을 동일 비중 평균한 값입니다. 상장 기간 부족 또는 가격 누락 종목은 계산에서 제외하며 각 셀에 포함 수를 표시합니다. 가격 출처: Yahoo Finance 일봉, Naver Finance 현재가. 시가총액은 최근 수집값입니다.</p>
     </>}
   </main>;
 }

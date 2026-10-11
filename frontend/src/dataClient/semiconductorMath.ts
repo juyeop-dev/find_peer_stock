@@ -99,3 +99,12 @@ export function formatPercent(value: number | null | undefined): string {
 export function formatEok(value: number | null | undefined): string {
   return value === null || value === undefined ? "-" : `${Math.round(value).toLocaleString("ko-KR")}억`;
 }
+
+export function parseMarketCapWon(value: string | null | undefined): number | null {
+  if (!value) return null;
+  const unitValues: Record<string, number> = { 조: 1e12, 억: 1e8, 만: 1e4 };
+  const matches = [...value.matchAll(/([\d,]+(?:\.\d+)?)\s*(조|억|만)/g)];
+  if (!matches.length) return null;
+  const amount = matches.reduce((sum, [, number, unit]) => sum + Number(number.replaceAll(",", "")) * unitValues[unit], 0);
+  return Number.isFinite(amount) ? amount : null;
+}

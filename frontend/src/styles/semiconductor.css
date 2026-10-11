@@ -27,6 +27,9 @@ body:has(.semiPage) { min-width: 320px; background: #f3f6f8; }
 .semiPeriodTabs button.active { background: #fff; color: #0e5a69; box-shadow: 0 1px 4px #153b4e21; }
 .semiTableWrap { overflow: auto; }
 .semiTable { width: 100%; min-width: 760px; border-collapse: collapse; font-size: 13px; }
+.semiStockPriceTable { min-width: 1210px; }
+.semiTrendTable { min-width: 990px; }
+.semiConstituentTable { min-width: 1180px; }
 .semiTable th { padding: 11px 12px; border-bottom: 1px solid #cedce1; color: #607681; background: #f7fafb; text-align: left; font-weight: 750; white-space: nowrap; }
 .semiTable td { padding: 12px; border-bottom: 1px solid #e8eef0; vertical-align: middle; }
 .semiTable tbody tr:hover { background: #f7fbfc; }
@@ -38,6 +41,11 @@ body:has(.semiPage) { min-width: 320px; background: #f3f6f8; }
 .semiTable .semiClass { display: block; white-space: nowrap; }
 .semiTable td small { display: block; color: #82929b; font-size: 11px; }
 .semiNumber { text-align: right !important; white-space: nowrap; font-variant-numeric: tabular-nums; font-weight: 680; }
+.semiSortButton { display: inline-flex; align-items: center; justify-content: flex-end; gap: 5px; width: 100%; padding: 2px 0; border: 0; background: transparent; color: inherit; cursor: pointer; font-weight: inherit; white-space: nowrap; }
+.semiSortButton:hover, .semiSortButton.active { color: #145b72; }
+.semiSortButton span { width: 12px; color: #7d96a0; text-align: center; }
+.semiSortButton.active span { color: #145b72; }
+.semiSortButton:focus-visible { outline: 3px solid #a0d9da; outline-offset: 2px; border-radius: 2px; }
 .semiUp { color: #c54537 !important; }
 .semiDown { color: #2b68bf !important; }
 .semiEmpty { margin: 18px 0 0; color: #71828d; }

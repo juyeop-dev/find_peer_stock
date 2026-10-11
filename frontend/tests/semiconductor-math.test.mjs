@@ -6,7 +6,7 @@ import ts from "typescript";
 const source = await readFile(new URL("../src/dataClient/semiconductorMath.ts", import.meta.url), "utf8");
 const javascript = ts.transpileModule(source, { compilerOptions: { module: ts.ModuleKind.ESNext,
   target: ts.ScriptTarget.ES2022 } }).outputText;
-const { stockReturn, sectorReturn, sectorSeries } = await import(`data:text/javascript;base64,${Buffer.from(javascript).toString("base64")}`);
+const { stockReturn, sectorReturn, sectorSeries, parseMarketCapWon } = await import(`data:text/javascript;base64,${Buffer.from(javascript).toString("base64")}`);
 
 function stock(ticker, history) {
   return { ticker, history, quote: { status: "stale", price: null, provider_time: null } };
@@ -34,4 +34,11 @@ test("sector return equally weights available constituents", () => {
   assert.equal(result.total, 3);
   assert.ok(Math.abs(result.value - 5) < 1e-9);
   assert.ok(Math.abs(sectorSeries(members, 7).at(-1).value - 105) < 1e-9);
+});
+
+test("market cap values sort by their actual won amount", () => {
+  assert.equal(parseMarketCapWon("1,537조 5,713억"), 1_537_571_300_000_000);
+  assert.equal(parseMarketCapWon("5조 9,384억"), 5_938_400_000_000);
+  assert.equal(parseMarketCapWon("1,546억"), 154_600_000_000);
+  assert.equal(parseMarketCapWon(null), null);
 });

@@ -4,7 +4,7 @@ import { DataRefreshStatus } from "../components/DataRefreshStatus";
 import { ErrorNotice } from "../components/ErrorNotice";
 import { LoadingSpinner } from "../components/LoadingSpinner";
 import { formatDateTime } from "../dataClient/formatters";
-import { effectiveHistory, formatPercent, formatWon, PERIODS, priceOnDate, stockReturn } from "../dataClient/semiconductorMath";
+import { effectiveHistory, formatPercent, formatWon, parseMarketCapWon, PERIODS, priceOnDate, stockReturn } from "../dataClient/semiconductorMath";
 import type { Period } from "../dataClient/semiconductorMath";
 import type { SemiconductorStock } from "../dataClient/semiconductorTypes";
 import { getSemiconductorData } from "../dataClient/staticStockDataClient";
@@ -17,6 +17,15 @@ function dayChange(stock: SemiconductorStock, date: string): number | null {
   return (history[index].close / history[index - 1].close - 1) * 100;
 }
 
+type SortKey = "name" | "change" | "marketCap" | "gain";
+type SortDirection = "asc" | "desc";
+
+function compareNullable(a: number | null | undefined, b: number | null | undefined, direction: SortDirection): number {
+  if (a === null || a === undefined) return b === null || b === undefined ? 0 : 1;
+  if (b === null || b === undefined) return -1;
+  return (a - b) * (direction === "asc" ? 1 : -1);
+}
+
 export function SemiconductorPage() {
   const { data, error, loading, refreshing, lastCheckedAt, refresh } = usePollingData(getSemiconductorData, 300_000);
   const [major, setMajor] = useState("");
@@ -26,6 +35,8 @@ export function SemiconductorPage() {
   const [query, setQuery] = useState("");
   const [date, setDate] = useState("latest");
   const [period, setPeriod] = useState<Period>(30);
+  const [sortKey, setSortKey] = useState<SortKey>("name");
+  const [sortDirection, setSortDirection] = useState<SortDirection>("asc");
   const stocks = data?.stocks ?? [];
   const majors = [...new Set(stocks.map((stock) => stock.major))];
   const middles = [...new Set(stocks.filter((stock) => !major || stock.major === major).map((stock) => stock.middle))];
@@ -35,7 +46,35 @@ export function SemiconductorPage() {
     (!major || stock.major === major) && (!middle || stock.middle === middle) &&
     (!minor || stock.minor === minor) && (!market || stock.market === market) &&
     (!query || `${stock.name} ${stock.code} ${stock.minor}`.toLowerCase().includes(query.toLowerCase()))
-  ).sort((a, b) => a.name.localeCompare(b.name, "ko")), [stocks, major, middle, minor, market, query]);
+  ), [stocks, major, middle, minor, market, query]);
+  const rows = useMemo(() => visible.map((stock) => {
+    const point = date === "latest" ? effectiveHistory(stock).at(-1) : priceOnDate(stock, date);
+    return {
+      stock,
+      price: date === "latest" ? stock.quote.price ?? point?.close : point?.close,
+      asOf: date === "latest" ? stock.quote.provider_time?.slice(0, 10) ?? point?.date ?? "-" : point?.date ?? "-",
+      change: date === "latest" ? stock.quote.change_pct : dayChange(stock, date),
+      gain: date !== "latest" && !point ? null : stockReturn(stock, period, date === "latest" ? undefined : date),
+      marketCap: parseMarketCapWon(stock.metrics.marketValue),
+    };
+  }).sort((a, b) => {
+    const result = sortKey === "name" ? a.stock.name.localeCompare(b.stock.name, "ko") * (sortDirection === "asc" ? 1 : -1)
+      : compareNullable(a[sortKey], b[sortKey], sortDirection);
+    return result || a.stock.name.localeCompare(b.stock.name, "ko") || a.stock.code.localeCompare(b.stock.code);
+  }), [visible, date, period, sortKey, sortDirection]);
+  function toggleSort(key: SortKey) {
+    if (sortKey === key) setSortDirection((current) => current === "asc" ? "desc" : "asc");
+    else { setSortKey(key); setSortDirection("desc"); }
+  }
+  function sortHeader(key: SortKey, label: string) {
+    const active = sortKey === key;
+    return <th className="semiNumber" aria-sort={active ? sortDirection === "asc" ? "ascending" : "descending" : "none"}>
+      <button type="button" className={`semiSortButton ${active ? "active" : ""}`} onClick={() => toggleSort(key)}
+        aria-label={`${label} ${active && sortDirection === "desc" ? "오름차순" : "내림차순"} 정렬`}>
+        {label}<span aria-hidden="true">{active ? sortDirection === "asc" ? "↑" : "↓" : "↕"}</span>
+      </button>
+    </th>;
+  }
 
   return <main className="pageShell semiPage">
     <header className="semiHero">
@@ -76,21 +115,18 @@ export function SemiconductorPage() {
         <div className="semiPanelHeading semiHeadingSplit"><div><h2>종목별 가격</h2><p>{visible.length}개 종목 · {date === "latest" ? "가장 최근 제공 가격" : `${date} 일별 종가`}</p></div>
           <div className="semiPeriodTabs" aria-label="수익률 기간">{PERIODS.map((days) => <button key={days} type="button" className={period === days ? "active" : ""} onClick={() => setPeriod(days)}>{days}일</button>)}</div>
         </div>
-        <div className="semiTableWrap"><table className="semiTable"><thead><tr><th>종목</th><th>분류</th><th>시장</th><th>가격</th><th>기준일</th><th>등락률</th><th>{period}일 수익률</th></tr></thead><tbody>
-          {visible.map((stock) => {
-            const point = date === "latest" ? effectiveHistory(stock).at(-1) : priceOnDate(stock, date);
-            const price = date === "latest" ? stock.quote.price ?? point?.close : point?.close;
-            const change = date === "latest" ? stock.quote.change_pct : dayChange(stock, date);
-            const gain = date !== "latest" && !point ? null : stockReturn(stock, period, date === "latest" ? undefined : date);
+        <div className="semiTableWrap"><table className="semiTable semiStockPriceTable"><thead><tr><th>종목</th><th>대분류</th><th>중분류</th><th>소분류</th><th>시장</th><th className="semiNumber">가격</th><th>기준일</th>{sortHeader("change", "등락률")}{sortHeader("marketCap", "시가총액")}{sortHeader("gain", `${period}일 수익률`)}</tr></thead><tbody>
+          {rows.map(({ stock, price, asOf, change, gain }) => {
             return <tr key={stock.ticker}><td><Link className="semiStockLink" to={`/semiconductors/${encodeURIComponent(stock.ticker)}`}><strong>{stock.name}</strong><span>{stock.code}</span></Link></td>
-              <td><span className="semiClass">{stock.major} / {stock.middle}</span><small>{stock.minor}</small></td><td>{stock.market}</td>
-              <td className="semiNumber">{formatWon(price)}</td><td>{date === "latest" ? stock.quote.provider_time?.slice(0, 10) ?? point?.date ?? "-" : point?.date ?? "-"}</td>
+              <td>{stock.major}</td><td>{stock.middle}</td><td>{stock.minor}</td><td>{stock.market}</td>
+              <td className="semiNumber">{formatWon(price)}</td><td>{asOf}</td>
               <td className={`semiNumber ${change === null || change === undefined ? "" : change > 0 ? "semiUp" : change < 0 ? "semiDown" : ""}`}>{formatPercent(change)}</td>
+              <td className="semiNumber">{stock.metrics.marketValue || "-"}</td>
               <td className={`semiNumber ${gain === null ? "" : gain > 0 ? "semiUp" : gain < 0 ? "semiDown" : ""}`}>{formatPercent(gain)}</td></tr>;
           })}
         </tbody></table>{visible.length === 0 && <p className="semiEmpty">조건에 맞는 종목이 없습니다.</p>}</div>
       </section>
-      <p className="semiFootnote">가격: Naver Finance 현재가 / Yahoo Finance 일봉. 수익률은 배당·분할 조정 종가 기준이며, 기준 날짜 이전 가장 가까운 거래일과 비교합니다. 현재가는 실시간 체결가가 아니며 제공처 기준 시각을 확인하세요.</p>
+      <p className="semiFootnote">가격: Naver Finance 현재가 / Yahoo Finance 일봉. 시가총액은 선택 날짜와 관계없이 최근 수집값입니다. 수익률은 배당·분할 조정 종가 기준이며, 기준 날짜 이전 가장 가까운 거래일과 비교합니다. 현재가는 실시간 체결가가 아니며 제공처 기준 시각을 확인하세요.</p>
     </>}
   </main>;
 }
