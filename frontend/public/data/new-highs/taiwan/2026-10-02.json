@@ -2,10 +2,14 @@
   "schema_version": 1,
   "market": "taiwan",
   "date": "2026-10-02",
-  "summary": "사용자 제공 2026-10-02 신고가 목록과 업종별 분류를 기록했습니다. 등락률과 신고가 유형은 제공값이며 별도 시세 검증 전입니다.",
+  "summary": "??? ?? 2026-10-02 ??? ?????. ???? ??? ??? TradingView ?? ?? ?? ? Yahoo Finance ???? ??????. ??? ??? ??? ??? ????? ?? ?? ????.",
   "sources": [
     {
       "label": "2026-10-02 사용자 제공 taiwan 신고가 목록"
+    },
+    {
+      "label": "Yahoo Finance historical daily prices",
+      "url": "https://finance.yahoo.com/"
     }
   ],
   "category_reasons": {
@@ -22,29 +26,37 @@
   "entries": [
     {
       "ticker": "8111.TWO",
-      "name": "LIGITEK ELECTRONICS CO., LTD.",
+      "name": "Ligitek Electronics Co., Ltd.",
       "exchange": "TPEX",
       "category": "개별 종목",
       "high_type": "all_time",
       "reason": "개별 기업 이슈 또는 모멘텀",
       "description": "LED 부품 제조",
       "change_pct": 10.0,
-      "currency": "TWD"
+      "currency": "TWD",
+      "source_symbol": "TPEX:8111",
+      "session_open": 80.0999984741211,
+      "session_close": 85.80000305175781,
+      "session_volume": 23491190.0
     },
     {
       "ticker": "2466.TW",
-      "name": "Cosonic Enterprise Corp.",
+      "name": "Cosmo Electronics Corporation",
       "exchange": "TWSE",
       "category": "개별 종목",
       "high_type": "all_time",
       "reason": "개별 기업 이슈 또는 모멘텀",
       "description": "전원공급장치 제조",
       "change_pct": 9.73,
-      "currency": "TWD"
+      "currency": "TWD",
+      "source_symbol": "TWSE:2466",
+      "session_open": 130.5,
+      "session_close": 141.0,
+      "session_volume": 2447210.0
     },
     {
       "ticker": "3441.TWO",
-      "name": "LCE",
+      "name": "Unique Opto-Electronics Co.,Ltd",
       "exchange": "TPEX",
       "category": "개별 종목",
       "high_type": "all_time",
@@ -65,29 +77,41 @@
           "ticker": "053450.KQ",
           "name": "세코닉스"
         }
-      ]
+      ],
+      "source_symbol": "TPEX:3441",
+      "session_open": 210.0,
+      "session_close": 211.0,
+      "session_volume": 27869040.0
     },
     {
       "ticker": "1459.TW",
-      "name": "LIEN FUH FLOUR MILL CO., LTD.",
+      "name": "Lan Fa Textile Co., Ltd.",
       "exchange": "TWSE",
       "category": "개별 종목",
       "high_type": "52_week",
       "reason": "개별 기업 이슈 또는 모멘텀",
       "description": "제분업체",
       "change_pct": 10.0,
-      "currency": "TWD"
+      "currency": "TWD",
+      "source_symbol": "TWSE:1459",
+      "session_open": 17.0,
+      "session_close": 18.700000762939453,
+      "session_volume": 1054076.0
     },
     {
       "ticker": "3311.TW",
-      "name": "SILITECH TECHNOLOGY CORP.",
+      "name": "Silitech Technology Corporation",
       "exchange": "TWSE",
       "category": "개별 종목",
       "high_type": "52_week",
       "reason": "개별 기업 이슈 또는 모멘텀",
       "description": "키패드, 전자기기 부품",
       "change_pct": 9.97,
-      "currency": "TWD"
+      "currency": "TWD",
+      "source_symbol": "TWSE:3311",
+      "session_open": 48.25,
+      "session_close": 49.650001525878906,
+      "session_volume": 2436288.0
     },
     {
       "ticker": "9933.TW",
@@ -98,73 +122,101 @@
       "reason": "개별 기업 이슈 또는 모멘텀",
       "description": "글로벌 EPC 전문기업",
       "change_pct": 9.96,
-      "currency": "TWD"
+      "currency": "TWD",
+      "source_symbol": "TWSE:9933",
+      "session_open": 41.79999923706055,
+      "session_close": 45.79999923706055,
+      "session_volume": 20964844.0
     },
     {
       "ticker": "6708.TWO",
-      "name": "T-SKY TECHNOLOGY CO., LTD.",
+      "name": "Mars Semiconductor Corp.",
       "exchange": "TPEX",
       "category": "개별 종목",
       "high_type": "52_week",
       "reason": "개별 기업 이슈 또는 모멘텀",
       "description": "드론 방어 시스템",
       "change_pct": 9.86,
-      "currency": "TWD"
+      "currency": "TWD",
+      "source_symbol": "TPEX:6708",
+      "session_open": 62.0,
+      "session_close": 62.400001525878906,
+      "session_volume": 827050.0
     },
     {
       "ticker": "6743.TW",
-      "name": "EARSONICS INCORPORATED",
+      "name": "Ampacs Corporation",
       "exchange": "TWSE",
       "category": "개별 종목",
       "high_type": "52_week",
       "reason": "개별 기업 이슈 또는 모멘텀",
       "description": "음향 부품, 헤드폰",
       "change_pct": 5.82,
-      "currency": "TWD"
+      "currency": "TWD",
+      "source_symbol": "TWSE:6743",
+      "session_open": 33.70000076293945,
+      "session_close": 35.45000076293945,
+      "session_volume": 1546210.0
     },
     {
       "ticker": "6199.TWO",
-      "name": "TIENPIN LIFE-CARE CO., LTD.",
+      "name": "TienPin United Enterprise Co., Ltd.",
       "exchange": "TPEX",
       "category": "개별 종목",
       "high_type": "52_week",
       "reason": "개별 기업 이슈 또는 모멘텀",
       "description": "장례 서비스업",
       "change_pct": 3.12,
-      "currency": "TWD"
+      "currency": "TWD",
+      "source_symbol": "TPEX:6199",
+      "session_open": 128.0,
+      "session_close": 132.0,
+      "session_volume": 5823043.0
     },
     {
       "ticker": "6491.TW",
-      "name": "Pegavision Corporation",
+      "name": "Pegavision Corp.",
       "exchange": "TWSE",
       "category": "개별 종목",
       "high_type": "52_week",
       "reason": "개별 기업 이슈 또는 모멘텀",
       "description": "콘택트렌즈 제조",
       "change_pct": 0.59,
-      "currency": "TWD"
+      "currency": "TWD",
+      "source_symbol": "TWSE:6491",
+      "session_open": 421.5,
+      "session_close": 424.0,
+      "session_volume": 473062.0
     },
     {
       "ticker": "2254.TW",
-      "name": "G.Y. AUTO PARTS INDUSTRY CO., LTD.",
+      "name": "Coplus Inc.",
       "exchange": "TWSE",
       "category": "개별 종목",
       "high_type": "52_week",
       "reason": "개별 기업 이슈 또는 모멘텀",
       "description": "자동차용 LED 조명",
       "change_pct": 0.21,
-      "currency": "TWD"
+      "currency": "TWD",
+      "source_symbol": "TWSE:2254",
+      "session_open": 94.30000305175781,
+      "session_close": 94.30000305175781,
+      "session_volume": 2133000.0
     },
     {
       "ticker": "6672.TW",
-      "name": "Ventec International Group",
+      "name": "Ventec International Group Co., Ltd.",
       "exchange": "TWSE",
       "category": "AI PCB (ABF 기판)",
       "high_type": "all_time",
       "reason": "AI 서버 투자 확대 수혜",
       "description": "PCB용 CCL 소재",
       "change_pct": 8.26,
-      "currency": "TWD"
+      "currency": "TWD",
+      "source_symbol": "TWSE:6672",
+      "session_open": 413.0,
+      "session_close": 439.0,
+      "session_volume": 16415507.0
     },
     {
       "ticker": "3037.TW",
@@ -189,7 +241,11 @@
           "ticker": "009150.KS",
           "name": "삼성전기"
         }
-      ]
+      ],
+      "source_symbol": "TWSE:3037",
+      "session_open": 1225.0,
+      "session_close": 1305.0,
+      "session_volume": 17432208.0
     },
     {
       "ticker": "6213.TW",
@@ -206,7 +262,11 @@
           "ticker": "000150.KS",
           "name": "두산"
         }
-      ]
+      ],
+      "source_symbol": "TWSE:6213",
+      "session_open": 646.0,
+      "session_close": 683.0,
+      "session_volume": 23986872.0
     },
     {
       "ticker": "3189.TW",
@@ -231,11 +291,15 @@
           "ticker": "222800.KQ",
           "name": "심텍"
         }
-      ]
+      ],
+      "source_symbol": "TWSE:3189",
+      "session_open": 1010.0,
+      "session_close": 1050.0,
+      "session_volume": 18223375.0
     },
     {
       "ticker": "8046.TW",
-      "name": "Nan Ya Printed Circuit Board Corp.",
+      "name": "Nan Ya Printed Circuit Board Corporation",
       "exchange": "TWSE",
       "category": "AI PCB (ABF 기판)",
       "high_type": "all_time",
@@ -256,7 +320,11 @@
           "ticker": "222800.KQ",
           "name": "심텍"
         }
-      ]
+      ],
+      "source_symbol": "TWSE:8046",
+      "session_open": 1440.0,
+      "session_close": 1460.0,
+      "session_volume": 16188851.0
     },
     {
       "ticker": "6196.TW",
@@ -267,22 +335,30 @@
       "reason": "TSMC발 낙수효과 기대",
       "description": "반도체 장비 유통/설비",
       "change_pct": 2.66,
-      "currency": "TWD"
+      "currency": "TWD",
+      "source_symbol": "TWSE:6196",
+      "session_open": 609.0,
+      "session_close": 618.0,
+      "session_volume": 1679996.0
     },
     {
       "ticker": "1560.TW",
-      "name": "Kinik Company",
+      "name": "Kinik Co.",
       "exchange": "TWSE",
       "category": "반도체 장비/소재",
       "high_type": "all_time",
       "reason": "TSMC발 낙수효과 기대",
       "description": "CMP패드, 재생웨이퍼",
       "change_pct": 1.5,
-      "currency": "TWD"
+      "currency": "TWD",
+      "source_symbol": "TWSE:1560",
+      "session_open": 1005.0,
+      "session_close": 1015.0,
+      "session_volume": 1519394.0
     },
     {
       "ticker": "6691.TW",
-      "name": "YANKEY ENGINEERING CO., LTD.",
+      "name": "YANKEY ENGINEERING Co. LTD.",
       "exchange": "TWSE",
       "category": "반도체 장비/소재",
       "high_type": "all_time",
@@ -295,11 +371,15 @@
           "ticker": "045100.KQ",
           "name": "한양이엔지"
         }
-      ]
+      ],
+      "source_symbol": "TWSE:6691",
+      "session_open": 740.0,
+      "session_close": 741.0,
+      "session_volume": 1258777.0
     },
     {
       "ticker": "1709.TW",
-      "name": "Ho Yi Chemical Co., Ltd.",
+      "name": "Formosan Union Chemical Corp.",
       "exchange": "TWSE",
       "category": "석유화학",
       "high_type": "all_time",
@@ -312,44 +392,60 @@
           "ticker": "120110.KS",
           "name": "코오롱인더"
         }
-      ]
+      ],
+      "source_symbol": "TWSE:1709",
+      "session_open": 55.5,
+      "session_close": 58.5,
+      "session_volume": 33181107.0
     },
     {
       "ticker": "6505.TW",
-      "name": "Formosa Petrochemical Corp.",
+      "name": "Formosa Petrochemical Corp",
       "exchange": "TWSE",
       "category": "석유화학",
       "high_type": "52_week",
       "reason": "유가 상승 및 수요 회복",
       "description": "정유 및 석유화학",
       "change_pct": 6.16,
-      "currency": "TWD"
+      "currency": "TWD",
+      "source_symbol": "TWSE:6505",
+      "session_open": 94.5999984741211,
+      "session_close": 100.0,
+      "session_volume": 35214714.0
     },
     {
       "ticker": "3016.TW",
-      "name": "Episil-Precision Inc.",
+      "name": "Episil-Precision, Inc.",
       "exchange": "TWSE",
       "category": "전력 반도체",
       "high_type": "all_time",
       "reason": "SiC 기반 차세대 반도체",
       "description": "SiC 에피웨이퍼",
       "change_pct": 7.44,
-      "currency": "TWD"
+      "currency": "TWD",
+      "source_symbol": "TWSE:3016",
+      "session_open": 169.5,
+      "session_close": 180.5,
+      "session_volume": 8491158.0
     },
     {
       "ticker": "2340.TW",
-      "name": "TAIWAN ASIA SEMICONDUCTOR CORPORATION",
+      "name": "Taiwan-Asia Semiconductor Corporation",
       "exchange": "TWSE",
       "category": "전력 반도체",
       "high_type": "52_week",
       "reason": "SiC 기반 차세대 반도체",
       "description": "SiC 전력반도체",
       "change_pct": 4.33,
-      "currency": "TWD"
+      "currency": "TWD",
+      "source_symbol": "TWSE:2340",
+      "session_open": 45.0,
+      "session_close": 45.75,
+      "session_volume": 41589106.0
     },
     {
       "ticker": "8150.TW",
-      "name": "ChipMOS TECHNOLOGIES INC.",
+      "name": "ChipMOS Technologies, Inc.",
       "exchange": "TWSE",
       "category": "반도체 후공정",
       "high_type": "all_time",
@@ -366,7 +462,11 @@
           "ticker": "330860.KQ",
           "name": "네패스아크"
         }
-      ]
+      ],
+      "source_symbol": "TWSE:8150",
+      "session_open": 116.0,
+      "session_close": 127.0,
+      "session_volume": 98077391.0
     },
     {
       "ticker": "2444.TW",
@@ -377,7 +477,11 @@
       "reason": "데이터센터 인프라 확장",
       "description": "네트워크 장비, RF부품",
       "change_pct": 10.0,
-      "currency": "TWD"
+      "currency": "TWD",
+      "source_symbol": "TWSE:2444",
+      "session_open": 15.0,
+      "session_close": 16.5,
+      "session_volume": 5699174.0
     },
     {
       "ticker": "3094.TW",
@@ -388,29 +492,41 @@
       "reason": "데이터센터 인프라 확장",
       "description": "유선통신용 팹리스",
       "change_pct": 3.84,
-      "currency": "TWD"
+      "currency": "TWD",
+      "source_symbol": "TWSE:3094",
+      "session_open": 69.19999694824219,
+      "session_close": 70.30000305175781,
+      "session_volume": 35118563.0
     },
     {
       "ticker": "2033.TW",
-      "name": "Chia-Ta Industrial Co., Ltd.",
+      "name": "Chia Ta World Co., Ltd.",
       "exchange": "TWSE",
       "category": "철강",
       "high_type": "52_week",
       "reason": "인프라 투자 수요 기대",
       "description": "형강 등 철강제품",
       "change_pct": 9.99,
-      "currency": "TWD"
+      "currency": "TWD",
+      "source_symbol": "TWSE:2033",
+      "session_open": 51.20000076293945,
+      "session_close": 51.20000076293945,
+      "session_volume": 1035211.0
     },
     {
       "ticker": "5013.TWO",
-      "name": "Chi-Hsin Enterprise Co., Ltd.",
+      "name": "New Best Wire Industrial Co., Ltd.",
       "exchange": "TPEX",
       "category": "철강",
       "high_type": "52_week",
       "reason": "인프라 투자 수요 기대",
       "description": "스테인리스 선재",
       "change_pct": 9.98,
-      "currency": "TWD"
+      "currency": "TWD",
+      "source_symbol": "TPEX:5013",
+      "session_open": 46.849998474121094,
+      "session_close": 46.849998474121094,
+      "session_volume": 597890.0
     },
     {
       "ticker": "2409.TW",
@@ -427,7 +543,21 @@
           "ticker": "034220.KS",
           "name": "LG디스플레이"
         }
-      ]
+      ],
+      "source_symbol": "TWSE:2409",
+      "session_open": 38.75,
+      "session_close": 40.45000076293945,
+      "session_volume": 699138877.0
     }
-  ]
+  ],
+  "source_metadata": {
+    "price_enrichment": {
+      "status": "complete",
+      "provider": "Yahoo Finance split-adjusted daily OHLCV",
+      "identity_provider": "TradingView current stock universe and Yahoo chart company metadata",
+      "date": "2026-10-02",
+      "verified_entries": 29,
+      "checked_at": "2026-10-11T13:38:34.219809+00:00"
+    }
+  }
 }

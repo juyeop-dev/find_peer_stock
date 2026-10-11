@@ -1,0 +1,700 @@
+{
+  "schema_version": 1,
+  "market": "taiwan",
+  "date": "2026-08-20",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "3441.TWO",
+      "name": "Unique Opto-Electronics Co.,Ltd",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Electronic Components",
+      "description": "Unique Opto-Electronics Co.,Ltd · Electronic Components",
+      "change_pct": 9.943506273172664,
+      "session_open": 93.30000305175781,
+      "session_close": 97.30000305175781,
+      "session_volume": 17229711.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:3441",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3441.TWO/history/",
+        "date": "2026-08-20",
+        "daily_high": 97.30000305175781,
+        "prior_all_time_or_current_month_high": 97.30000305175781,
+        "passes_close_filter": true,
+        "yahoo_symbol": "3441.TWO"
+      },
+      "peers": [
+        {
+          "ticker": "011070.KS",
+          "name": "LG이노텍"
+        },
+        {
+          "ticker": "082210.KQ",
+          "name": "옵트론텍"
+        },
+        {
+          "ticker": "053450.KQ",
+          "name": "세코닉스"
+        }
+      ]
+    },
+    {
+      "ticker": "3490.TWO",
+      "name": "Single Well Industrial Co. Ltd.",
+      "exchange": "TPEX",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Industrial Machinery",
+      "description": "Single Well Industrial Co. Ltd. · Industrial Machinery",
+      "change_pct": 5.021372493864074,
+      "session_open": 47.5,
+      "session_close": 49.150001525878906,
+      "session_volume": 3522783.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:3490",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3490.TWO/history/",
+        "date": "2026-08-20",
+        "daily_high": 49.25,
+        "prior_all_time_or_current_month_high": 177.4720487662399,
+        "passes_close_filter": true,
+        "yahoo_symbol": "3490.TWO"
+      }
+    },
+    {
+      "ticker": "3633.TWO",
+      "name": "Epoch Chemtronics Corp",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Electronic Components",
+      "description": "Epoch Chemtronics Corp · Electronic Components",
+      "change_pct": 11.636363636363644,
+      "session_open": 137.0,
+      "session_close": 153.5,
+      "session_volume": 311401.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:3633",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3633.TWO/history/",
+        "date": "2026-08-20",
+        "daily_high": 153.5,
+        "prior_all_time_or_current_month_high": 168.6300048828125,
+        "passes_close_filter": true,
+        "yahoo_symbol": "3633.TWO"
+      }
+    },
+    {
+      "ticker": "4167.TWO",
+      "name": "Savior Lifetec Corp.",
+      "exchange": "TPEX",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Pharmaceuticals: Major",
+      "description": "Savior Lifetec Corp. · Pharmaceuticals: Major",
+      "change_pct": 4.282117708487365,
+      "session_open": 19.950000762939453,
+      "session_close": 20.700000762939453,
+      "session_volume": 3210372.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:4167",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4167.TWO/history/",
+        "date": "2026-08-20",
+        "daily_high": 21.0,
+        "prior_all_time_or_current_month_high": 44.3911554035535,
+        "passes_close_filter": true,
+        "yahoo_symbol": "4167.TWO"
+      }
+    },
+    {
+      "ticker": "5314.TWO",
+      "name": "Myson Century, Inc.",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Semiconductors",
+      "description": "Myson Century, Inc. · Semiconductors",
+      "change_pct": 9.999998225722194,
+      "session_open": 23.649999618530273,
+      "session_close": 23.649999618530273,
+      "session_volume": 4007600.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:5314",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/5314.TWO/history/",
+        "date": "2026-08-20",
+        "daily_high": 23.649999618530273,
+        "prior_all_time_or_current_month_high": 23.649999618530273,
+        "passes_close_filter": true,
+        "yahoo_symbol": "5314.TWO"
+      }
+    },
+    {
+      "ticker": "6240.TWO",
+      "name": "Sung Gang Corp.Limited",
+      "exchange": "TPEX",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "업종: Finance · Real Estate Development",
+      "description": "Sung Gang Corp.Limited · Real Estate Development",
+      "change_pct": 1.6867488263601293,
+      "session_open": 21.049999237060547,
+      "session_close": 21.100000381469727,
+      "session_volume": 75000.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:6240",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6240.TWO/history/",
+        "date": "2026-08-20",
+        "daily_high": 21.100000381469727,
+        "prior_all_time_or_current_month_high": 188625.64467969598,
+        "passes_close_filter": true,
+        "yahoo_symbol": "6240.TWO"
+      }
+    },
+    {
+      "ticker": "6798.TWO",
+      "name": "Flight International Co. Ltd.",
+      "exchange": "TPEX",
+      "category": "Commercial Services",
+      "high_type": "52_week",
+      "reason": "업종: Commercial Services · Advertising/Marketing Services",
+      "description": "Flight International Co. Ltd. · Advertising/Marketing Services",
+      "change_pct": 1.9672143654745122,
+      "session_open": 61.900001525878906,
+      "session_close": 62.20000076293945,
+      "session_volume": 45140.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:6798",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6798.TWO/history/",
+        "date": "2026-08-20",
+        "daily_high": 62.20000076293945,
+        "prior_all_time_or_current_month_high": 74.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "6798.TWO"
+      }
+    },
+    {
+      "ticker": "7871.TWO",
+      "name": "Elixiron Immunotherapeutics (Cayman) Limited",
+      "exchange": "TPEX",
+      "category": "Health Technology",
+      "high_type": "all_time",
+      "reason": "업종: Health Technology · Pharmaceuticals: Major",
+      "description": "Elixiron Immunotherapeutics (Cayman) Limited · Pharmaceuticals: Major",
+      "change_pct": 7.636363636363641,
+      "session_open": 138.5,
+      "session_close": 148.0,
+      "session_volume": 3870749.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:7871",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/7871.TWO/history/",
+        "date": "2026-08-20",
+        "daily_high": 153.5,
+        "prior_all_time_or_current_month_high": 153.5,
+        "passes_close_filter": true,
+        "yahoo_symbol": "7871.TWO"
+      }
+    },
+    {
+      "ticker": "1734.TW",
+      "name": "Sinphar Pharmaceutical Co. Ltd.",
+      "exchange": "TWSE",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Pharmaceuticals: Major",
+      "description": "Sinphar Pharmaceutical Co. Ltd. · Pharmaceuticals: Major",
+      "change_pct": 1.5625021718442822,
+      "session_open": 28.613385614359153,
+      "session_close": 28.92488443626548,
+      "session_volume": 390794.44,
+      "currency": "TWD",
+      "source_symbol": "TWSE:1734",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/1734.TW/history/",
+        "date": "2026-08-20",
+        "daily_high": 28.92488443626548,
+        "prior_all_time_or_current_month_high": 42.193057209468364,
+        "passes_close_filter": true,
+        "yahoo_symbol": "1734.TW"
+      }
+    },
+    {
+      "ticker": "1904.TW",
+      "name": "Cheng Loong Corp.",
+      "exchange": "TWSE",
+      "category": "Process Industries",
+      "high_type": "52_week",
+      "reason": "업종: Process Industries · Containers/Packaging",
+      "description": "Cheng Loong Corp. · Containers/Packaging",
+      "change_pct": 3.0303030303030276,
+      "session_open": 24.799999237060547,
+      "session_close": 25.5,
+      "session_volume": 4665553.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:1904",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/1904.TW/history/",
+        "date": "2026-08-20",
+        "daily_high": 25.950000762939453,
+        "prior_all_time_or_current_month_high": 51.5,
+        "passes_close_filter": true,
+        "yahoo_symbol": "1904.TW"
+      }
+    },
+    {
+      "ticker": "2027.TW",
+      "name": "TA Chen Stainless Pipe Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Non-Energy Minerals",
+      "high_type": "52_week",
+      "reason": "업종: Non-Energy Minerals · Steel",
+      "description": "TA Chen Stainless Pipe Co., Ltd. · Steel",
+      "change_pct": 1.0000000000000009,
+      "session_open": 50.0,
+      "session_close": 50.5,
+      "session_volume": 15841068.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2027",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2027.TW/history/",
+        "date": "2026-08-20",
+        "daily_high": 51.599998474121094,
+        "prior_all_time_or_current_month_high": 53.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "2027.TW"
+      }
+    },
+    {
+      "ticker": "2030.TW",
+      "name": "Froch Enterprise Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Non-Energy Minerals",
+      "high_type": "52_week",
+      "reason": "업종: Non-Energy Minerals · Steel",
+      "description": "Froch Enterprise Co., Ltd. · Steel",
+      "change_pct": 1.6279087510219892,
+      "session_open": 21.5,
+      "session_close": 21.850000381469727,
+      "session_volume": 3854250.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2030",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2030.TW/history/",
+        "date": "2026-08-20",
+        "daily_high": 22.25,
+        "prior_all_time_or_current_month_high": 52.79999923706055,
+        "passes_close_filter": true,
+        "yahoo_symbol": "2030.TW"
+      }
+    },
+    {
+      "ticker": "2542.TW",
+      "name": "Highwealth Construction Corp.",
+      "exchange": "TWSE",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "업종: Finance · Real Estate Development",
+      "description": "Highwealth Construction Corp. · Real Estate Development",
+      "change_pct": 0.3115217163617734,
+      "session_open": 48.20000076293945,
+      "session_close": 48.29999923706055,
+      "session_volume": 10206169.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2542",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2542.TW/history/",
+        "date": "2026-08-20",
+        "daily_high": 48.599998474121094,
+        "prior_all_time_or_current_month_high": 50.44882968390658,
+        "passes_close_filter": true,
+        "yahoo_symbol": "2542.TW"
+      }
+    },
+    {
+      "ticker": "2546.TW",
+      "name": "Kedge Construction Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Industrial Services",
+      "high_type": "all_time",
+      "reason": "업종: Industrial Services · Engineering & Construction",
+      "description": "Kedge Construction Co., Ltd. · Engineering & Construction",
+      "change_pct": 4.954954954954949,
+      "session_open": 114.0,
+      "session_close": 116.5,
+      "session_volume": 721907.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2546",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2546.TW/history/",
+        "date": "2026-08-20",
+        "daily_high": 120.0,
+        "prior_all_time_or_current_month_high": 120.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "2546.TW"
+      }
+    },
+    {
+      "ticker": "2603.TW",
+      "name": "Evergreen Marine Corp. (Taiwan) Ltd.",
+      "exchange": "TWSE",
+      "category": "Transportation",
+      "high_type": "52_week",
+      "reason": "업종: Transportation · Marine Shipping",
+      "description": "Evergreen Marine Corp. (Taiwan) Ltd. · Marine Shipping",
+      "change_pct": 2.2869022869022926,
+      "session_open": 241.5,
+      "session_close": 246.0,
+      "session_volume": 30485864.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2603",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2603.TW/history/",
+        "date": "2026-08-20",
+        "daily_high": 249.0,
+        "prior_all_time_or_current_month_high": 1456.25,
+        "passes_close_filter": true,
+        "yahoo_symbol": "2603.TW"
+      },
+      "peers": [
+        {
+          "ticker": "011200.KS",
+          "name": "HMM"
+        },
+        {
+          "ticker": "028670.KS",
+          "name": "팬오션"
+        }
+      ]
+    },
+    {
+      "ticker": "2615.TW",
+      "name": "Wan Hai Lines Ltd.",
+      "exchange": "TWSE",
+      "category": "Transportation",
+      "high_type": "52_week",
+      "reason": "업종: Transportation · Marine Shipping",
+      "description": "Wan Hai Lines Ltd. · Marine Shipping",
+      "change_pct": 6.572769953051649,
+      "session_open": 106.5,
+      "session_close": 113.5,
+      "session_volume": 75874359.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2615",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2615.TW/history/",
+        "date": "2026-08-20",
+        "daily_high": 113.5,
+        "prior_all_time_or_current_month_high": 220.59398545578063,
+        "passes_close_filter": true,
+        "yahoo_symbol": "2615.TW"
+      }
+    },
+    {
+      "ticker": "2637.TW",
+      "name": "Wisdom Marine Lines Co., Limited.",
+      "exchange": "TWSE",
+      "category": "Transportation",
+      "high_type": "52_week",
+      "reason": "업종: Transportation · Marine Shipping",
+      "description": "Wisdom Marine Lines Co., Limited. · Marine Shipping",
+      "change_pct": 3.1590346406081604,
+      "session_open": 94.69999694824219,
+      "session_close": 94.69999694824219,
+      "session_volume": 9199134.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2637",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2637.TW/history/",
+        "date": "2026-08-20",
+        "daily_high": 96.0,
+        "prior_all_time_or_current_month_high": 121.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "2637.TW"
+      }
+    },
+    {
+      "ticker": "2816.TW",
+      "name": "Union Insurance Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "업종: Finance · Property/Casualty Insurance",
+      "description": "Union Insurance Co., Ltd. · Property/Casualty Insurance",
+      "change_pct": 6.725143817987633,
+      "session_open": 36.20000076293945,
+      "session_close": 36.5,
+      "session_volume": 1700811.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2816",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2816.TW/history/",
+        "date": "2026-08-20",
+        "daily_high": 36.849998474121094,
+        "prior_all_time_or_current_month_high": 43711.06987326179,
+        "passes_close_filter": true,
+        "yahoo_symbol": "2816.TW"
+      }
+    },
+    {
+      "ticker": "2845.TW",
+      "name": "Far Eastern International Bank",
+      "exchange": "TWSE",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "업종: Finance · Major Banks",
+      "description": "Far Eastern International Bank · Major Banks",
+      "change_pct": 0.7407382519438066,
+      "session_open": 13.183042627177493,
+      "session_close": 13.280694466687054,
+      "session_volume": 15961443.836150002,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2845",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2845.TW/history/",
+        "date": "2026-08-20",
+        "daily_high": 13.378346306196613,
+        "prior_all_time_or_current_month_high": 14.467024310935079,
+        "passes_close_filter": true,
+        "yahoo_symbol": "2845.TW"
+      }
+    },
+    {
+      "ticker": "2850.TW",
+      "name": "Shinkong Insurance Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "업종: Finance · Property/Casualty Insurance",
+      "description": "Shinkong Insurance Co., Ltd. · Property/Casualty Insurance",
+      "change_pct": 4.0752351097178785,
+      "session_open": 163.0,
+      "session_close": 166.0,
+      "session_volume": 490262.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2850",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2850.TW/history/",
+        "date": "2026-08-20",
+        "daily_high": 166.0,
+        "prior_all_time_or_current_month_high": 166.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "2850.TW"
+      }
+    },
+    {
+      "ticker": "2851.TW",
+      "name": "Central Reinsurance Corporation",
+      "exchange": "TWSE",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "업종: Finance · Multi-Line Insurance",
+      "description": "Central Reinsurance Corporation · Multi-Line Insurance",
+      "change_pct": 9.950248567377184,
+      "session_open": 44.20000076293945,
+      "session_close": 44.20000076293945,
+      "session_volume": 4767407.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2851",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2851.TW/history/",
+        "date": "2026-08-20",
+        "daily_high": 44.20000076293945,
+        "prior_all_time_or_current_month_high": 44.20000076293945,
+        "passes_close_filter": true,
+        "yahoo_symbol": "2851.TW"
+      }
+    },
+    {
+      "ticker": "2852.TW",
+      "name": "First Insurance Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "업종: Finance · Specialty Insurance",
+      "description": "First Insurance Co., Ltd. · Specialty Insurance",
+      "change_pct": 5.605790834696478,
+      "session_open": 28.100000381469727,
+      "session_close": 29.200000762939453,
+      "session_volume": 2656668.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2852",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2852.TW/history/",
+        "date": "2026-08-20",
+        "daily_high": 29.200000762939453,
+        "prior_all_time_or_current_month_high": 31.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "2852.TW"
+      }
+    },
+    {
+      "ticker": "4736.TW",
+      "name": "Taidoc Technology Corporation",
+      "exchange": "TWSE",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Medical Specialties",
+      "description": "Taidoc Technology Corporation · Medical Specialties",
+      "change_pct": 1.7482562274150348,
+      "session_open": 119.11407525514143,
+      "session_close": 119.9383878353065,
+      "session_volume": 636051.6188024,
+      "currency": "TWD",
+      "source_symbol": "TWSE:4736",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4736.TW/history/",
+        "date": "2026-08-20",
+        "daily_high": 120.3505510522691,
+        "prior_all_time_or_current_month_high": 255.53883937759053,
+        "passes_close_filter": true,
+        "yahoo_symbol": "4736.TW"
+      }
+    },
+    {
+      "ticker": "6108.TW",
+      "name": "APCB Inc.",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Electronic Components",
+      "description": "APCB Inc. · Electronic Components",
+      "change_pct": 5.050505050505061,
+      "session_open": 25.25,
+      "session_close": 26.0,
+      "session_volume": 9830303.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:6108",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6108.TW/history/",
+        "date": "2026-08-20",
+        "daily_high": 26.600000381469727,
+        "prior_all_time_or_current_month_high": 44.79999923706055,
+        "passes_close_filter": true,
+        "yahoo_symbol": "6108.TW"
+      }
+    },
+    {
+      "ticker": "6213.TW",
+      "name": "ITEQ Corporation",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Electronic Components",
+      "description": "ITEQ Corporation · Electronic Components",
+      "change_pct": 5.371900826446274,
+      "session_open": 508.0,
+      "session_close": 510.0,
+      "session_volume": 3068481.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:6213",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6213.TW/history/",
+        "date": "2026-08-20",
+        "daily_high": 510.0,
+        "prior_all_time_or_current_month_high": 510.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "6213.TW"
+      },
+      "peers": [
+        {
+          "ticker": "000150.KS",
+          "name": "두산"
+        }
+      ]
+    },
+    {
+      "ticker": "6225.TW",
+      "name": "aiPlex Corporation",
+      "exchange": "TWSE",
+      "category": "Consumer Durables",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Durables · Electronics/Appliances",
+      "description": "aiPlex Corporation · Electronics/Appliances",
+      "change_pct": 9.888065676562906,
+      "session_open": 58.599998474121094,
+      "session_close": 58.900001525878906,
+      "session_volume": 220888.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:6225",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6225.TW/history/",
+        "date": "2026-08-20",
+        "daily_high": 58.900001525878906,
+        "prior_all_time_or_current_month_high": 43683.80068393766,
+        "passes_close_filter": true,
+        "yahoo_symbol": "6225.TW"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-10-11T13:25:31.738257+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 2346,
+    "history_symbols": 2324,
+    "inactive_symbols": 2,
+    "failed_symbols": 20,
+    "coverage_ratio": 0.9914675767918089,
+    "coverage_by_exchange": {
+      "TWSE": {
+        "covered": 1085,
+        "total": 1092
+      },
+      "TPEX": {
+        "covered": 1239,
+        "total": 1252
+      }
+    },
+    "session_symbols": 2307,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-10-11T13:25:31.738257+00:00"
+}

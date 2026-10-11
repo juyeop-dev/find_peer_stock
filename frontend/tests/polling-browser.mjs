@@ -275,7 +275,7 @@ try {
     const first = document.querySelector('.turnoverTable tbody tr');
     return { headers, rank: first?.querySelector('.turnoverRank')?.innerText, hasLogo: Boolean(first?.querySelector('.turnoverLogo img')) };
   })()`), {
-    headers: ["순위", "종목명", "현재가", "등락률", "거래대금", "시가총액", "산업"], rank: "1", hasLogo: true
+    headers: ["순위", "종목명", "당일 종가", "등락률", "거래대금", "시가총액", "산업"], rank: "1", hasLogo: true
   });
   assert.equal(await evaluate("document.querySelector('.turnoverValue')?.innerText.endsWith('억 원')"), true);
   assert.equal(await evaluate("document.querySelector('.marketCapValue')?.innerText"), "12조 3,456억 원");

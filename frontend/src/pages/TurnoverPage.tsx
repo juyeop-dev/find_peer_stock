@@ -127,7 +127,7 @@ export function TurnoverPage() {
           {report ? <>
             <div className="turnoverToolbar"><p>{report.summary}</p><input type="search" value={search} onChange={(event) => setSearch(event.target.value)} placeholder="종목명 · 티커 · 산업 검색" aria-label="순위표 검색" /></div>
             <div className="turnoverTableWrap"><table className="turnoverTable"><thead><tr>
-              <th>순위</th><th>종목명</th><th>현재가</th><th>등락률</th><th>거래대금</th><th>시가총액</th><th>산업</th>
+              <th>순위</th><th>종목명</th><th>당일 종가</th><th>등락률</th><th>거래대금</th><th>시가총액</th><th>산업</th>
             </tr></thead><tbody>{entries.map((entry) => {
               const quote = getExternalQuoteLink(entry.ticker);
               return <tr key={entry.ticker}><td className="turnoverRank"><strong>{entry.rank}</strong></td><td><a className="turnoverCompany" href={quote.href} target="_blank" rel="noreferrer" title={`${quote.label}에서 ${entry.name} 보기`}>
