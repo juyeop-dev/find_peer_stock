@@ -7,6 +7,7 @@ import hashlib
 import json
 import math
 import os
+import re
 import urllib.parse
 import urllib.request
 from concurrent.futures import ThreadPoolExecutor, as_completed
@@ -74,6 +75,41 @@ def fetch_history(ticker: str) -> list[dict]:
     return history
 
 
+def fetch_recent_naver_prices(code: str) -> list[dict]:
+    """Fetch recent trading dates that Yahoo's daily chart can omit."""
+    url = f"https://m.stock.naver.com/api/stock/{code}/price?pageSize=40&page=1"
+    request = urllib.request.Request(url, headers={"User-Agent": USER_AGENT, "Accept": "application/json"})
+    with urllib.request.urlopen(request, timeout=18) as response:
+        rows = json.loads(response.read().decode("utf-8"))
+    if not isinstance(rows, list):
+        raise ValueError(f"{code}: Naver daily prices unavailable")
+    prices = []
+    for row in rows:
+        date = row.get("localTradedAt")
+        close = numeric(row.get("closePrice"))
+        if not isinstance(date, str) or len(date) != 10 or close is None or close <= 0:
+            continue
+        volume = numeric(row.get("accumulatedTradingVolume"))
+        prices.append({"date": date, "close": round(close, 2),
+                       "volume": int(volume) if volume is not None else None})
+    if not prices:
+        raise ValueError(f"{code}: no usable Naver daily prices")
+    return prices
+
+
+def fill_missing_recent_prices(history: list[dict], recent: list[dict]) -> list[dict]:
+    """Keep Yahoo adjustments and insert trading days missing from its daily feed."""
+    merged = {row["date"]: row for row in history}
+    for row in recent:
+        date = row["date"]
+        if date in merged:
+            continue
+        nearby = next((item for item in reversed(history) if item["date"] <= date), history[-1])
+        factor = nearby["adjusted_close"] / nearby["close"]
+        merged[date] = {**row, "adjusted_close": round(row["close"] * factor, 2)}
+    return [merged[date] for date in sorted(merged)]
+
+
 def fetch_financials(code: str, period_type: str) -> list[dict]:
     url = f"https://m.stock.naver.com/api/stock/{code}/finance/{period_type}"
     info = fetch_json(url).get("financeInfo") or {}
@@ -95,6 +131,52 @@ def fetch_financials(code: str, period_type: str) -> list[dict]:
                            "type": "annual" if period_type == "annual" else "quarterly",
                            **values})
     return result
+
+
+def build_recent_financials(quarterly: list[dict], annual: list[dict]) -> dict:
+    """Use four consecutive reported standalone quarters, never annualize a partial year."""
+    def quarter_index(period: str) -> int | None:
+        match = re.fullmatch(r"(\d{4})\.(03|06|09|12)\.?", period)
+        return int(match[1]) * 4 + int(match[2]) // 3 - 1 if match else None
+
+    def period_label(index: int) -> str:
+        return f"{index // 4}년 {index % 4 + 1}Q"
+
+    def complete_sum(rows: list[dict], key: str) -> float | None:
+        values = [numeric(row.get(key)) for row in rows]
+        return round(sum(values), 2) if all(value is not None for value in values) else None
+
+    quarters = {index: row for row in quarterly
+                if row.get("type") == "quarterly"
+                and (index := quarter_index(str(row.get("period") or ""))) is not None}
+    latest = max(quarters, default=None)
+    latest_period = quarters[latest]["period"] if latest is not None else None
+    indices = list(range(latest - 3, latest + 1)) if latest is not None else []
+    if indices and all(index in quarters for index in indices):
+        rows = [quarters[index] for index in indices]
+        revenue = complete_sum(rows, "revenue")
+        operating_income = complete_sum(rows, "operating_income")
+        return {"basis": "ttm", "period_label": f"{period_label(indices[0])}~{period_label(indices[-1])}",
+                "periods": [row["period"] for row in rows], "latest_reported_period": latest_period,
+                "revenue": revenue, "operating_income": operating_income,
+                "reason": "최근 4개 분기 중 누락된 지표는 표시하지 않습니다."
+                          if revenue is None or operating_income is None else None}
+
+    # Keep a fallback explicitly labelled as a fiscal year; do not mix periods between metrics.
+    years = [row for row in annual if row.get("type") == "annual"
+             and re.fullmatch(r"\d{4}\.\d{2}\.?", str(row.get("period") or ""))
+             and any(numeric(row.get(key)) is not None for key in ("revenue", "operating_income"))]
+    if years:
+        row = max(years, key=lambda item: item["period"])
+        date = row["period"].rstrip(".")
+        label = f"{date[:4]}년 연간" if date.endswith(".12") else f"{date} 결산 연간"
+        return {"basis": "annual", "period_label": label, "periods": [row["period"]],
+                "latest_reported_period": latest_period, "revenue": numeric(row.get("revenue")),
+                "operating_income": numeric(row.get("operating_income")),
+                "reason": "최신 발표 분기까지 연속된 4개 분기가 부족해 최근 결산 연간 실적을 표시합니다."}
+    return {"basis": "unavailable", "period_label": "자료 부족", "periods": [],
+            "latest_reported_period": latest_period, "revenue": None, "operating_income": None,
+            "reason": "최근 1년 실적을 계산할 발표 자료가 부족합니다."}
 
 
 def fetch_metrics(code: str) -> tuple[str | None, dict]:
@@ -163,6 +245,11 @@ def collect_full_entry(seed: dict, previous: dict | None) -> dict:
     except Exception as exc:
         errors.append(f"history: {exc}")
         entry["history"] = (previous or {}).get("history") or []
+    if entry["history"]:
+        try:
+            entry["history"] = fill_missing_recent_prices(entry["history"], fetch_recent_naver_prices(code))
+        except Exception as exc:
+            errors.append(f"recent prices: {exc}")
     for period_type in ("annual", "quarter"):
         key = "annual_financials" if period_type == "annual" else "quarterly_financials"
         try:
@@ -170,13 +257,14 @@ def collect_full_entry(seed: dict, previous: dict | None) -> dict:
         except Exception as exc:
             errors.append(f"{period_type}: {exc}")
             entry[key] = (previous or {}).get(key) or []
+    entry["recent_financials"] = build_recent_financials(entry["quarterly_financials"], entry["annual_financials"])
     try:
         name, metrics = fetch_metrics(code)
         entry["name"] = name or (previous or {}).get("name") or ticker
         entry["metrics"] = metrics
     except Exception as exc:
         errors.append(f"metrics: {exc}")
-        entry["name"] = (previous or {}).get("name") or ticker
+        entry["name"] = (previous or {}).get("name") or seed.get("name") or ticker
         entry["metrics"] = (previous or {}).get("metrics") or {}
     entry["data_errors"] = errors
     return entry
@@ -212,7 +300,7 @@ def generate_full(seed_path: Path = SEED, output_path: Path = SOURCE, *, force: 
     if usable < max(1, int(len(rows) * 0.8)):
         raise RuntimeError(f"Only {usable}/{len(rows)} semiconductor histories available; published data preserved")
     payload = {"generated_at": now.isoformat(), "seed_hash": seed_hash,
-               "history_source": "Yahoo Finance daily chart",
+               "history_source": "Yahoo Finance daily chart; missing recent dates filled from Naver Finance daily prices",
                "financial_source": "Naver Finance annual/quarterly (actual only)",
                "financial_unit": "억원", "coverage": "curated",
                "categories": [{key: group[key] for key in ("major", "middle", "minor")}
@@ -243,6 +331,8 @@ def publish(source_path: Path = SOURCE, output_path: Path = PUBLISHED,
         raise RuntimeError(f"No semiconductor source data at {source_path}")
     now = now or datetime.now(tz=KST)
     rows = [{**row} for row in source["stocks"]]
+    for row in rows:
+        row["recent_financials"] = build_recent_financials(row.get("quarterly_financials", []), row.get("annual_financials", []))
     with ThreadPoolExecutor(max_workers=8) as pool:
         futures = {pool.submit(fetch_current_quote, row["code"]): index for index, row in enumerate(rows)}
         for future in as_completed(futures):

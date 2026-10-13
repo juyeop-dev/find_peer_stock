@@ -13,6 +13,16 @@ export interface SemiconductorFinancial {
   net_income: number | null;
 }
 
+export interface RecentFinancials {
+  basis: "ttm" | "annual" | "unavailable";
+  period_label: string;
+  periods: string[];
+  latest_reported_period: string | null;
+  revenue: number | null;
+  operating_income: number | null;
+  reason: string | null;
+}
+
 export interface SemiconductorQuote {
   price: number | null;
   change: number | null;
@@ -35,6 +45,8 @@ export interface SemiconductorStock {
   ticker: string;
   code: string;
   name: string;
+  business_summary?: string;
+  business_sources?: { label: string; url: string }[];
   market: "KOSPI" | "KOSDAQ";
   major: string;
   middle: string;
@@ -43,6 +55,7 @@ export interface SemiconductorStock {
   history: SemiconductorPrice[];
   annual_financials: SemiconductorFinancial[];
   quarterly_financials: SemiconductorFinancial[];
+  recent_financials?: RecentFinancials;
   metrics: Record<string, string | null>;
   quote: SemiconductorQuote;
   data_errors: string[];

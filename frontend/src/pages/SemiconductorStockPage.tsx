@@ -4,6 +4,7 @@ import { SemiconductorLineChart } from "../components/SemiconductorLineChart";
 import { DataRefreshStatus } from "../components/DataRefreshStatus";
 import { ErrorNotice } from "../components/ErrorNotice";
 import { LoadingSpinner } from "../components/LoadingSpinner";
+import { RecentFinancialSummary } from "../components/RecentFinancials";
 import { formatDateTime } from "../dataClient/formatters";
 import { effectiveHistory, formatEok, formatPercent, formatWon, PERIODS, stockPriceSeries, stockReturn } from "../dataClient/semiconductorMath";
 import type { Period } from "../dataClient/semiconductorMath";
@@ -47,10 +48,15 @@ export function SemiconductorStockPage() {
         <div className="semiQuoteHero"><span>현재가 / 최근 제공 가격</span><strong>{formatWon(currentPrice)}</strong>
           <b className={(quote?.change_pct ?? 0) >= 0 ? "semiUp" : "semiDown"}>{formatPercent(quote?.change_pct)}</b>
           <small>{quote?.status === "stale" ? "이전 종가 · " : ""}제공처 기준 {quote?.provider_time?.replace("T", " ").slice(0, 16) ?? latest?.date ?? "-"}</small></div></header>
-      <section className="semiPanel semiMembershipPanel"><div className="semiPanelHeading"><h2>소속 섹터</h2><p>이미지의 산업 구조와 연관 테마를 함께 표시합니다.</p></div>
+      <section className="semiPanel semiMembershipPanel"><div className="semiPanelHeading"><h2>소속 섹터</h2><p>이미지와 기업 사업 자료를 바탕으로 산업 분류와 연관 테마를 함께 표시합니다.</p></div>
         <div className="semiMemberships">{stockClassifications(stock).map((item) => <span key={`${item.major}/${item.middle}/${item.minor}`} className={item.major === "핵심 연관 테마" ? "theme" : ""}>
           <small>{item.major} / {item.middle}</small><strong>{item.minor}</strong></span>)}</div>
       </section>
+      {stock.business_summary && <section className="semiPanel semiBusinessPanel"><div className="semiPanelHeading"><h2>반도체 사업</h2></div>
+        <p>{stock.business_summary}</p>
+        {Boolean(stock.business_sources?.length) && <div className="semiBusinessSources">{stock.business_sources!.map((source) =>
+          <a key={source.url} href={source.url} target="_blank" rel="noreferrer">{source.label} ↗</a>)}</div>}
+      </section>}
       <div className="semiDetailGrid">
         <section className="semiPanel semiChartPanel"><div className="semiPanelHeading semiHeadingSplit"><div><h2>주가 차트</h2><p>일별 종가 · {period}일 범위</p></div>
           <div className="semiPeriodTabs" aria-label="주가 차트 기간">{PERIODS.map((days) => <button key={days} type="button" className={period === days ? "active" : ""} onClick={() => setPeriod(days)}>{days}일</button>)}</div></div>
@@ -62,6 +68,7 @@ export function SemiconductorStockPage() {
         </section>
       </div>
       <section className="semiPanel"><div className="semiPanelHeading"><h2>실적</h2><p>확정 실적만 표시 · 단위: 억원 · 매출/영업이익/당기순이익</p></div>
+        <RecentFinancialSummary summary={stock.recent_financials} />
         <div className="semiFinanceGrid"><FinancialTable title="연간" rows={stock.annual_financials} /><FinancialTable title="분기" rows={stock.quarterly_financials} /></div>
       </section>
       <section className="semiPanel"><div className="semiPanelHeading"><h2>최근 일별 가격</h2><p>차트 데이터 기준 · 거래일별 종가와 거래량</p></div>
@@ -69,7 +76,7 @@ export function SemiconductorStockPage() {
           {[...history].reverse().slice(0, 20).map((point) => <tr key={point.date}><td>{point.date}</td><td className="semiNumber">{formatWon(point.close)}</td><td className="semiNumber">{point.volume?.toLocaleString("ko-KR") ?? "-"}</td></tr>)}
         </tbody></table></div>
       </section>
-      <p className="semiFootnote">주가: <a href={`https://finance.yahoo.com/quote/${encodeURIComponent(stock.ticker)}/`} target="_blank" rel="noreferrer">Yahoo Finance</a> 일봉 · 현재가/투자 지표/실적: <a href={`https://m.stock.naver.com/domestic/stock/${stock.code}/total`} target="_blank" rel="noreferrer">Naver Finance</a>. 실적 수집 {formatDateTime(data?.generated_at ?? null)}, 현재가 수집 {formatDateTime(data?.quoted_at ?? null)}. 수익률 계산에는 분할·배당 조정 종가를 사용합니다. 산업 구조와 연관 테마 분류는 제공 이미지 기준입니다.</p>
+      <p className="semiFootnote">주가: <a href={`https://finance.yahoo.com/quote/${encodeURIComponent(stock.ticker)}/`} target="_blank" rel="noreferrer">Yahoo Finance</a> 일봉, 누락된 최근 거래일은 <a href={`https://m.stock.naver.com/domestic/stock/${stock.code}/total`} target="_blank" rel="noreferrer">Naver Finance</a> 일봉으로 보완. 현재가/투자 지표/실적도 Naver Finance 자료입니다. 실적 수집 {formatDateTime(data?.generated_at ?? null)}, 현재가 수집 {formatDateTime(data?.quoted_at ?? null)}. 수익률 계산에는 분할·배당 조정 종가를 사용합니다. 산업 구조와 연관 테마 분류는 제공 이미지 및 기업 공식 사업 자료 기준입니다.</p>
     </>}
   </main>;
 }

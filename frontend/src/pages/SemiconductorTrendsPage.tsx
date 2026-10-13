@@ -4,6 +4,7 @@ import { SemiconductorLineChart } from "../components/SemiconductorLineChart";
 import { DataRefreshStatus } from "../components/DataRefreshStatus";
 import { ErrorNotice } from "../components/ErrorNotice";
 import { LoadingSpinner } from "../components/LoadingSpinner";
+import { RecentFinancialCells } from "../components/RecentFinancials";
 import { effectiveHistory, formatPercent, formatWon, parseMarketCapWon, PERIODS, sectorReturn, sectorSeries, stockReturn } from "../dataClient/semiconductorMath";
 import type { Period } from "../dataClient/semiconductorMath";
 import { stockClassifications } from "../dataClient/semiconductorTypes";
@@ -14,7 +15,7 @@ import { usePollingData } from "../dataClient/usePollingData";
 type Level = "major" | "middle" | "minor";
 type SortDirection = "asc" | "desc";
 type SectorSortKey = "count" | Period;
-type StockSortKey = "price" | "marketCap" | "change" | "gain";
+type StockSortKey = "price" | "marketCap" | "change" | "gain" | "revenue" | "operatingIncome";
 
 function compareNullable(a: number | null | undefined, b: number | null | undefined, direction: SortDirection): number {
   if (a === null || a === undefined) return b === null || b === undefined ? 0 : 1;
@@ -84,6 +85,8 @@ export function SemiconductorTrendsPage() {
     marketCap: parseMarketCapWon(stock.metrics.marketValue),
     change: stock.quote.change_pct,
     gain: stockReturn(stock, period),
+    revenue: stock.recent_financials?.revenue,
+    operatingIncome: stock.recent_financials?.operating_income,
   })).sort((a, b) => compareNullable(a[stockSort.key], b[stockSort.key], stockSort.direction)
     || a.stock.name.localeCompare(b.stock.name, "ko") || a.stock.code.localeCompare(b.stock.code)), [activeStocks, active, level, period, stockSort]);
   function toggleSectorSort(key: SectorSortKey) {
@@ -134,16 +137,20 @@ export function SemiconductorTrendsPage() {
           {sortableHeader("현재가", stockSort.key === "price", stockSort.direction, () => toggleStockSort("price"))}
           {sortableHeader("시가총액", stockSort.key === "marketCap", stockSort.direction, () => toggleStockSort("marketCap"))}
           {sortableHeader("등락률", stockSort.key === "change", stockSort.direction, () => toggleStockSort("change"))}
-          {sortableHeader(`${period}일 수익률`, stockSort.key === "gain", stockSort.direction, () => toggleStockSort("gain"))}</tr></thead><tbody>
+          {sortableHeader(`${period}일 수익률`, stockSort.key === "gain", stockSort.direction, () => toggleStockSort("gain"))}
+          {sortableHeader("최근 1년 매출", stockSort.key === "revenue", stockSort.direction, () => toggleStockSort("revenue"))}
+          {sortableHeader("최근 1년 영업이익", stockSort.key === "operatingIncome", stockSort.direction, () => toggleStockSort("operatingIncome"))}<th>실적 기간</th></tr></thead><tbody>
           {ranked.map(({ stock, classification, price, change, gain }) => { const latest = effectiveHistory(stock).at(-1);
             return <tr key={stock.ticker}><td><Link className="semiStockLink" to={`/semiconductors/${encodeURIComponent(stock.ticker)}`}><strong>{stock.name}</strong><span>{stock.code}</span></Link></td>
               <td>{classification.major}</td><td>{classification.middle}</td><td>{classification.minor}</td><td>{stock.market}</td>
               <td className="semiNumber">{formatWon(price)}<small>{stock.quote.provider_time?.slice(0, 10) ?? latest?.date ?? "-"}</small></td>
               <td className="semiNumber">{stock.metrics.marketValue || "-"}</td>
               <td className={`semiNumber ${change === null ? "" : change > 0 ? "semiUp" : change < 0 ? "semiDown" : ""}`}>{formatPercent(change)}</td>
-              <td className={`semiNumber ${gain === null ? "" : gain > 0 ? "semiUp" : gain < 0 ? "semiDown" : ""}`}>{formatPercent(gain)}</td></tr>; })}
+              <td className={`semiNumber ${gain === null ? "" : gain > 0 ? "semiUp" : gain < 0 ? "semiDown" : ""}`}>{formatPercent(gain)}</td>
+              <RecentFinancialCells summary={stock.recent_financials} /></tr>; })}
         </tbody></table></div></section></>}
-      <p className="semiFootnote">섹터 수익률은 지수나 ETF 수익률이 아닙니다. 각 종목의 기준일 이전 가장 가까운 거래일 대비 조정 종가 수익률을 동일 비중 평균한 값입니다. 상장 기간 부족 또는 가격 누락 종목은 계산에서 제외하며 각 셀에 포함 수를 표시합니다. 가격 출처: Yahoo Finance 일봉, Naver Finance 현재가. 시가총액은 최근 수집값입니다.</p>
+      <p className="semiFootnote">최근 1년 실적(TTM): 최신 발표 분기까지 최근 4개 분기 매출·영업이익 합계, 단위는 억원입니다. 추정치는 제외하며 실적 기간을 종목별로 표시합니다. 연속 4개 분기가 부족하면 최근 결산 연간 실적을 대체 표시합니다.</p>
+      <p className="semiFootnote">섹터 수익률은 지수나 ETF 수익률이 아닙니다. 각 종목의 기준일 이전 가장 가까운 거래일 대비 조정 종가 수익률을 동일 비중 평균한 값입니다. 상장 기간 부족 또는 가격 누락 종목은 계산에서 제외하며 각 셀에 포함 수를 표시합니다. 가격 출처: Yahoo Finance 일봉, 누락된 최근 거래일과 현재가는 Naver Finance. 시가총액은 최근 수집값입니다.</p>
     </>}
   </main>;
 }

@@ -27,9 +27,9 @@ body:has(.semiPage) { min-width: 320px; background: #f3f6f8; }
 .semiPeriodTabs button.active { background: #fff; color: #0e5a69; box-shadow: 0 1px 4px #153b4e21; }
 .semiTableWrap { overflow: auto; }
 .semiTable { width: 100%; min-width: 760px; border-collapse: collapse; font-size: 13px; }
-.semiStockPriceTable { min-width: 1210px; }
+.semiStockPriceTable { min-width: 1670px; }
 .semiTrendTable { min-width: 990px; }
-.semiConstituentTable { min-width: 1180px; }
+.semiConstituentTable { min-width: 1640px; }
 .semiTable th { padding: 11px 12px; border-bottom: 1px solid #cedce1; color: #607681; background: #f7fafb; text-align: left; font-weight: 750; white-space: nowrap; }
 .semiTable td { padding: 12px; border-bottom: 1px solid #e8eef0; vertical-align: middle; }
 .semiTable tbody tr:hover { background: #f7fbfc; }
@@ -94,6 +94,28 @@ body:has(.semiPage) { min-width: 320px; background: #f3f6f8; }
 .semiFinanceGrid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; }
 .semiFinanceBlock h3 { margin: 0 0 12px; font-size: 16px; }
 .semiFinanceBlock .semiTable { min-width: 430px; }
+.semiFinancialPeriod { white-space: nowrap; font-size: 12px; font-variant-numeric: tabular-nums; }
+.semiRecentFinancials { margin-bottom: 24px; padding: 18px 20px; border: 1px solid #cbdfe4; border-radius: 9px; background: #f3fafb; }
+.semiRecentFinancialHeading { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 16px; }
+.semiRecentFinancialHeading h3 { margin: 0; font-size: 17px; }
+.semiRecentFinancialHeading > span { padding: 4px 9px; border-radius: 5px; background: #e2f0f2; color: #225a6a; font-weight: 700; }
+.semiRecentFinancialValues { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin: 16px 0 12px; }
+.semiRecentFinancialValues span { display: block; color: #677d89; font-size: 12px; }
+.semiRecentFinancialValues strong { display: block; margin-top: 4px; font-size: clamp(18px, 2.5vw, 25px); font-variant-numeric: tabular-nums; }
+.semiRecentFinancials > p { margin: 8px 0 0; color: #657e8b; font-size: 12px; line-height: 1.7; }
+.semiBusinessPanel .semiPanelHeading { margin-bottom: 10px; }
+.semiBusinessPanel > p { margin: 0; line-height: 1.75; font-size: 14px; color: #415c6a; }
+.semiBusinessSources { display: flex; flex-wrap: wrap; gap: 8px 18px; margin-top: 12px; font-size: 12px; }
+.semiBusinessSources a { color: #17667b; text-decoration: underline; }
+.creditSummaryStrip > button { min-height: 102px; padding: 17px 20px; border: 1px solid #dce5e9; border-radius: 10px; background: #fff; color: inherit; text-align: left; cursor: pointer; }
+.creditSummaryStrip > button.active { border-color: #69a7b3; background: #f1fafb; box-shadow: 0 0 0 2px #a4d4d742; }
+.creditSummaryStrip > button:hover { border-color: #69a7b3; }
+.creditSummaryStrip > button:focus-visible { outline: 3px solid #a0d9da; outline-offset: 2px; }
+.creditSummaryStrip small { display: block; margin-top: 5px; color: #7c8e98; font-size: 11px; }
+.creditHeadline { display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 18px; margin: -3px 0 12px; }
+.creditHeadline strong { font-size: 29px; letter-spacing: -.04em; }
+.creditHeadline span { font-size: 13px; font-weight: 700; }
+.creditTable { min-width: 600px; }
 @media (max-width: 1050px) {
   body:has(.semiPage) .siteNav { gap: 10px; padding: 12px 24px; }
   body:has(.semiPage) .siteNavLinks { gap: 2px; }

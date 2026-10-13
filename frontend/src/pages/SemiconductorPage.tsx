@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { DataRefreshStatus } from "../components/DataRefreshStatus";
 import { ErrorNotice } from "../components/ErrorNotice";
 import { LoadingSpinner } from "../components/LoadingSpinner";
+import { RecentFinancialCells } from "../components/RecentFinancials";
 import { formatDateTime } from "../dataClient/formatters";
 import { effectiveHistory, formatPercent, formatWon, parseMarketCapWon, PERIODS, priceOnDate, stockReturn } from "../dataClient/semiconductorMath";
 import type { Period } from "../dataClient/semiconductorMath";
@@ -18,7 +19,7 @@ function dayChange(stock: SemiconductorStock, date: string): number | null {
   return (history[index].close / history[index - 1].close - 1) * 100;
 }
 
-type SortKey = "name" | "change" | "marketCap" | "gain";
+type SortKey = "name" | "change" | "marketCap" | "gain" | "revenue" | "operatingIncome";
 type SortDirection = "asc" | "desc";
 
 function compareNullable(a: number | null | undefined, b: number | null | undefined, direction: SortDirection): number {
@@ -63,6 +64,8 @@ export function SemiconductorPage() {
       change: date === "latest" ? stock.quote.change_pct : dayChange(stock, date),
       gain: date !== "latest" && !point ? null : stockReturn(stock, period, date === "latest" ? undefined : date),
       marketCap: parseMarketCapWon(stock.metrics.marketValue),
+      revenue: stock.recent_financials?.revenue,
+      operatingIncome: stock.recent_financials?.operating_income,
     };
   }).sort((a, b) => {
     const result = sortKey === "name" ? a.stock.name.localeCompare(b.stock.name, "ko") * (sortDirection === "asc" ? 1 : -1)
@@ -98,7 +101,7 @@ export function SemiconductorPage() {
         <div><span>가격 조회 시각</span><strong>{formatDateTime(data.quoted_at)}</strong></div>
       </div>
       <section className="semiPanel semiFilterPanel" aria-label="종목 필터">
-        <div className="semiPanelHeading"><h2>섹터 탐색</h2><p>이미지의 산업 구조와 연관 테마를 반영했습니다. 한 종목이 여러 분류에 포함될 수 있습니다.</p></div>
+        <div className="semiPanelHeading"><h2>섹터 탐색</h2><p>이미지의 산업 구조에 기업 사업 자료로 확인한 종목과 연관 사업을 추가했습니다. 한 종목이 여러 분류에 포함될 수 있습니다.</p></div>
         <div className="semiFilters">
           <label>대분류<select value={major} onChange={(event) => { setMajor(event.target.value); setMiddle(""); setMinor(""); }}>
             <option value="">전체</option>{majors.map((item) => <option key={item}>{item}</option>)}
@@ -122,17 +125,19 @@ export function SemiconductorPage() {
         <div className="semiPanelHeading semiHeadingSplit"><div><h2>종목별 가격</h2><p>{visible.length}개 종목 · {date === "latest" ? "가장 최근 제공 가격" : `${date} 일별 종가`}</p></div>
           <div className="semiPeriodTabs" aria-label="수익률 기간">{PERIODS.map((days) => <button key={days} type="button" className={period === days ? "active" : ""} onClick={() => setPeriod(days)}>{days}일</button>)}</div>
         </div>
-        <div className="semiTableWrap"><table className="semiTable semiStockPriceTable"><thead><tr><th>종목</th><th>대분류</th><th>중분류</th><th>소분류</th><th>시장</th><th className="semiNumber">가격</th>{sortHeader("marketCap", "시가총액")}<th>기준일</th>{sortHeader("change", "등락률")}{sortHeader("gain", `${period}일 수익률`)}</tr></thead><tbody>
+        <div className="semiTableWrap"><table className="semiTable semiStockPriceTable"><thead><tr><th>종목</th><th>대분류</th><th>중분류</th><th>소분류</th><th>시장</th><th className="semiNumber">가격</th>{sortHeader("marketCap", "시가총액")}<th>기준일</th>{sortHeader("change", "등락률")}{sortHeader("gain", `${period}일 수익률`)}{sortHeader("revenue", "최근 1년 매출")}{sortHeader("operatingIncome", "최근 1년 영업이익")}<th>실적 기간</th></tr></thead><tbody>
           {rows.map(({ stock, classification, price, asOf, change, gain }) => {
             return <tr key={stock.ticker}><td><Link className="semiStockLink" to={`/semiconductors/${encodeURIComponent(stock.ticker)}`}><strong>{stock.name}</strong><span>{stock.code}</span></Link></td>
               <td>{classification.major}</td><td>{classification.middle}</td><td>{classification.minor}</td><td>{stock.market}</td>
               <td className="semiNumber">{formatWon(price)}</td><td className="semiNumber">{stock.metrics.marketValue || "-"}</td><td>{asOf}</td>
               <td className={`semiNumber ${change === null || change === undefined ? "" : change > 0 ? "semiUp" : change < 0 ? "semiDown" : ""}`}>{formatPercent(change)}</td>
-              <td className={`semiNumber ${gain === null ? "" : gain > 0 ? "semiUp" : gain < 0 ? "semiDown" : ""}`}>{formatPercent(gain)}</td></tr>;
+              <td className={`semiNumber ${gain === null ? "" : gain > 0 ? "semiUp" : gain < 0 ? "semiDown" : ""}`}>{formatPercent(gain)}</td>
+              <RecentFinancialCells summary={stock.recent_financials} /></tr>;
           })}
         </tbody></table>{visible.length === 0 && <p className="semiEmpty">조건에 맞는 종목이 없습니다.</p>}</div>
       </section>
-      <p className="semiFootnote">가격: Naver Finance 현재가 / Yahoo Finance 일봉. 시가총액은 선택 날짜와 관계없이 최근 수집값입니다. 수익률은 배당·분할 조정 종가 기준이며, 기준 날짜 이전 가장 가까운 거래일과 비교합니다. 현재가는 실시간 체결가가 아니며 제공처 기준 시각을 확인하세요.</p>
+      <p className="semiFootnote">최근 1년 실적(TTM): 최신 발표 분기까지 최근 4개 분기 매출·영업이익 합계, 단위는 억원입니다. 추정치는 제외하며 실적 기간을 종목별로 표시합니다. 연속 4개 분기가 부족하면 최근 결산 연간 실적을 대체 표시합니다. 실적은 선택한 가격 날짜와 관계없이 최신 발표 자료입니다.</p>
+      <p className="semiFootnote">가격: Naver Finance 현재가 / Yahoo Finance 일봉. 누락된 최근 거래일은 Naver Finance 일봉으로 보완합니다. 시가총액은 선택 날짜와 관계없이 최근 수집값입니다. 수익률은 배당·분할 조정 종가 기준이며, 기준 날짜 이전 가장 가까운 거래일과 비교합니다. 현재가는 실시간 체결가가 아니며 제공처 기준 시각을 확인하세요.</p>
     </>}
   </main>;
 }

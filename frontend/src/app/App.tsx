@@ -6,6 +6,7 @@ import { TurnoverPage } from "../pages/TurnoverPage";
 import { SemiconductorPage } from "../pages/SemiconductorPage";
 import { SemiconductorTrendsPage } from "../pages/SemiconductorTrendsPage";
 import { SemiconductorStockPage } from "../pages/SemiconductorStockPage";
+import { CreditBalancePage } from "../pages/CreditBalancePage";
 import "../styles/newHighs.css";
 import "../styles/semiconductor.css";
 
@@ -20,6 +21,7 @@ export function App() {
           <NavLink to="/turnover">거래대금 캘린더</NavLink>
           <NavLink to="/semiconductors" end>반도체 종목</NavLink>
           <NavLink to="/semiconductors/trends">섹터 추이</NavLink>
+          <NavLink to="/credit-balance">신용 잔고</NavLink>
         </div>
       </nav>
       <Routes>
@@ -30,6 +32,7 @@ export function App() {
         <Route path="/semiconductors" element={<SemiconductorPage />} />
         <Route path="/semiconductors/trends" element={<SemiconductorTrendsPage />} />
         <Route path="/semiconductors/:ticker" element={<SemiconductorStockPage />} />
+        <Route path="/credit-balance" element={<CreditBalancePage />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </>

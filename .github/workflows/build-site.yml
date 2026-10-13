@@ -97,11 +97,15 @@ jobs:
       - name: Refresh Korean semiconductor history and financials
         run: python scripts/generate_semiconductor_data.py full
 
+      - name: Refresh Korean margin loan balances
+        continue-on-error: true
+        run: python scripts/generate_credit_data.py
+
       - name: Save semiconductor daily snapshot
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/semiconductor/index.json
+          git add data/semiconductor/index.json data/credit/index.json frontend/public/data/credit/index.json
           if ! git diff --cached --quiet; then
             git commit -m "Refresh semiconductor daily history [skip ci]"
             for attempt in 1 2 3; do
