@@ -86,7 +86,7 @@ export function SemiconductorPage() {
     </th>;
   }
 
-  return <main className="pageShell semiPage">
+  return <main className="pageShell semiPage semiStocksPage">
     <header className="semiHero">
       <div><p className="eyebrow">KOREA SEMICONDUCTOR MAP</p><h1>국내 반도체 종목</h1>
         <p>대분류 → 중분류 → 소분류로 탐색하고, 선택한 날짜의 가격과 기간 수익률을 비교합니다.</p></div>
