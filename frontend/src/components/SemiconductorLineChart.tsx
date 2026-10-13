@@ -27,7 +27,7 @@ export function SemiconductorLineChart({ points, title, unit }: Props) {
   const y = (value: number) => TOP + (high - value) / (high - low) * PLOT_HEIGHT;
   const path = points.map((point, index) => `${index === 0 ? "M" : "L"}${x(index).toFixed(1)},${y(point.value).toFixed(1)}`).join(" ");
   const rising = values.at(-1)! >= values[0];
-  const active = hovered === null ? points.length - 1 : hovered;
+  const active = Math.min(hovered ?? points.length - 1, points.length - 1);
   const formatted = (value: number) => unit === "원" ? `${Math.round(value).toLocaleString("ko-KR")}원`
     : unit === "조원" ? `${value.toFixed(2)}조원` : value.toFixed(1);
 
@@ -35,8 +35,10 @@ export function SemiconductorLineChart({ points, title, unit }: Props) {
     <div className="semiChart" role="img" aria-label={`${title}: ${points[0].date}부터 ${points.at(-1)!.date}까지 ${unit} 추이`}>
       <svg viewBox={`0 0 ${WIDTH} ${HEIGHT}`} preserveAspectRatio="xMinYMid meet" onMouseLeave={() => setHovered(null)}
         onMouseMove={(event) => {
-          const rect = event.currentTarget.getBoundingClientRect();
-          const position = (event.clientX - rect.left) / rect.width * WIDTH;
+          const matrix = event.currentTarget.getScreenCTM();
+          if (!matrix) return;
+          // Include the viewBox scale, preserved aspect ratio, and any scrolling.
+          const position = new DOMPoint(event.clientX, event.clientY).matrixTransform(matrix.inverse()).x;
           setHovered(Math.max(0, Math.min(points.length - 1, Math.round((position - LEFT) / PLOT_WIDTH * (points.length - 1)))));
         }}>
         {[0, 0.5, 1].map((part) => {

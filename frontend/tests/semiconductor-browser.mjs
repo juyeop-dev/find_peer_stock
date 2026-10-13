@@ -78,6 +78,34 @@ try {
     if (result.exceptionDetails) throw new Error(result.exceptionDetails.text);
     return result.result.value;
   };
+  async function checkChartPointerAlignment() {
+    for (const width of [1600, 900, 390]) {
+      await send("Emulation.setDeviceMetricsOverride", { width, height: 1000, deviceScaleFactor: 1, mobile: false });
+      for (const fraction of [0, 0.25, 0.5, 0.75, 1]) {
+        const target = await evaluate(`(() => {
+          const svg = document.querySelector('.semiChart svg');
+          svg.scrollIntoView({ block: 'center' });
+          const vertices = [...svg.querySelector('.semiLine').getAttribute('d').matchAll(/[ML]([\\d.-]+),([\\d.-]+)/g)];
+          const vertex = vertices[Math.round((vertices.length - 1) * ${fraction})];
+          const point = new DOMPoint(Number(vertex[1]), Number(vertex[2]));
+          const chart = svg.parentElement;
+          chart.scrollLeft = 0;
+          const before = point.matrixTransform(svg.getScreenCTM());
+          chart.scrollLeft = Math.max(0, before.x - chart.getBoundingClientRect().left - chart.clientWidth / 2);
+          const screen = point.matrixTransform(svg.getScreenCTM());
+          return { x: screen.x, y: screen.y, scrollLeft: chart.scrollLeft };
+        })()`);
+        await send("Input.dispatchMouseEvent", { type: "mouseMoved", x: target.x, y: target.y });
+        const dot = await evaluate("(() => { const rect = document.querySelector('.semiDot').getBoundingClientRect(); return { x: rect.left + rect.width / 2, y: rect.top + rect.height / 2 }; })()");
+        assert.ok(Math.abs(dot.x - target.x) < 1.5 && Math.abs(dot.y - target.y) < 1.5,
+          `Chart pointer and dot differ at width ${width}, fraction ${fraction}: pointer=${JSON.stringify(target)}, dot=${JSON.stringify(dot)}`);
+      }
+    }
+    // Change the range while the pointer is still over the last point.
+    await evaluate("[...document.querySelectorAll('.semiPeriodTabs button')].find(button => button.innerText === '7일').click()");
+    assert.ok(await evaluate("Boolean(document.querySelector('.semiChartReadout strong')?.innerText)"), "Changing the range must preserve a valid hover point.");
+    await send("Emulation.setDeviceMetricsOverride", { width: 1440, height: 1000, deviceScaleFactor: 1, mobile: false });
+  }
   await send("Page.enable");
   await send("Page.navigate", { url: `${origin}/semiconductors` });
   await until(() => evaluate("document.querySelectorAll('.semiStockPriceTable tbody tr').length > 0"), "Semiconductor stocks did not load.");
@@ -132,6 +160,7 @@ try {
   assert.equal(await evaluate("document.querySelector('.semiMemberships')?.innerText.includes('전공정')"), false);
   assert.equal(await evaluate("document.querySelector('.semiRecentFinancials .semiFinancialPeriod')?.innerText"), "2025년 3Q~2026년 2Q");
   assert.deepEqual(await evaluate("[...document.querySelectorAll('.semiRecentFinancialValues strong')].map(item => item.innerText)"), ["2,173억", "784억"]);
+  await checkChartPointerAlignment();
   await send("Page.navigate", { url: `${origin}/semiconductors/trends` });
   await until(() => evaluate("document.querySelectorAll('.semiConstituentTable tbody tr').length > 0"), "Semiconductor trends did not load.");
   assert.equal(await evaluate("document.querySelectorAll('.semiTrendTable tbody tr').length"), 6);
@@ -167,6 +196,7 @@ try {
   assert.equal(await evaluate("document.querySelectorAll('.semiTrendTable tbody tr').length"), 11);
   await evaluate("[...document.querySelectorAll('.semiTrendTable tbody tr')].find(row => row.cells[2].innerText === 'CXL').cells[2].querySelector('button').click()");
   assert.equal(await evaluate("document.querySelectorAll('.semiConstituentTable tbody tr').length"), 4);
+  await checkChartPointerAlignment();
   await send("Page.navigate", { url: `${origin}/credit-balance` });
   await until(() => evaluate("document.querySelectorAll('.creditTable tbody tr').length > 0"), "Credit balances did not load.");
   assert.equal(await evaluate("document.querySelector('.creditTable tbody tr')?.cells[0].innerText"), "2026-10-12");
@@ -174,6 +204,7 @@ try {
   await evaluate("document.querySelectorAll('.creditSummaryStrip button')[2].click()");
   assert.equal(await evaluate("document.querySelector('.creditHeadline strong')?.innerText"), "7.573조원");
   assert.equal(await evaluate("document.querySelector('.semiChartReadout strong')?.innerText"), "2026-10-12");
+  await checkChartPointerAlignment();
   console.log("PASS semiconductor and credit balance pages");
 } finally {
   if (send && socket?.readyState === WebSocket.OPEN) await send("Browser.close").catch(() => {});
