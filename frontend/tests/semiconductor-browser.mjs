@@ -78,6 +78,27 @@ try {
     if (result.exceptionDetails) throw new Error(result.exceptionDetails.text);
     return result.result.value;
   };
+  async function overviewLayout() {
+    const layouts = [];
+    for (const width of [1920, 1440, 900, 390, 320]) {
+      await send("Emulation.setDeviceMetricsOverride", { width, height: 1000, deviceScaleFactor: 1, mobile: false });
+      const layout = await evaluate(`(() => {
+        const widthOf = selector => document.querySelector(selector).getBoundingClientRect().width;
+        return {
+          availableWidth: document.body.clientWidth,
+          page: widthOf('.semiPage'), hero: widthOf('.semiHero'), panel: widthOf('.semiFilterPanel'),
+          summary: widthOf('.semiSummaryStrip'), table: getComputedStyle(document.querySelector('.semiStockPriceTable')).minWidth,
+          summaryText: document.querySelector('.semiSummaryStrip').innerText,
+          overflow: document.documentElement.scrollWidth > window.innerWidth
+        };
+      })()`);
+      assert.equal(layout.page, layout.availableWidth - (width <= 720 ? 28 : 48));
+      assert.equal(layout.overflow, false, `Page must not overflow at width ${width}.`);
+      layouts.push(layout);
+    }
+    await send("Emulation.setDeviceMetricsOverride", { width: 1440, height: 1000, deviceScaleFactor: 1, mobile: false });
+    return layouts;
+  }
   async function checkChartPointerAlignment() {
     for (const width of [1600, 900, 390]) {
       await send("Emulation.setDeviceMetricsOverride", { width, height: 1000, deviceScaleFactor: 1, mobile: false });
@@ -110,6 +131,7 @@ try {
   await send("Page.navigate", { url: `${origin}/semiconductors` });
   await until(() => evaluate("document.querySelectorAll('.semiStockPriceTable tbody tr').length > 0"), "Semiconductor stocks did not load.");
   assert.equal(await evaluate("document.querySelectorAll('.semiStockPriceTable tbody tr').length"), 96);
+  const stockOverviewLayout = await overviewLayout();
   assert.deepEqual(await evaluate("[...document.querySelectorAll('.semiStockPriceTable th')].map(item => item.innerText.replace(/[↕↑↓]/g, '').trim())"),
     ["종목", "대분류", "중분류", "소분류", "시장", "가격", "시가총액", "기준일", "등락률", "30일 수익률", "최근 1년 매출", "최근 1년 영업이익", "실적 기간"]);
   assert.equal(await evaluate("[...document.querySelectorAll('.semiStockPriceTable .semiFinancialPeriod')].every(cell => cell.innerText.includes('2025년 3Q~2026년 2Q') && cell.innerText.includes('TTM'))"), true);
@@ -163,12 +185,13 @@ try {
   await checkChartPointerAlignment();
   await send("Page.navigate", { url: `${origin}/semiconductors/trends` });
   await until(() => evaluate("document.querySelectorAll('.semiConstituentTable tbody tr').length > 0"), "Semiconductor trends did not load.");
+  assert.deepEqual(await overviewLayout(), stockOverviewLayout, "Stock and sector pages must share the same overview layout.");
   assert.equal(await evaluate("document.querySelectorAll('.semiTrendTable tbody tr').length"), 6);
   assert.equal(await evaluate("[...document.querySelectorAll('.semiTrendTable tbody tr')].find(row => row.cells[0].innerText === '칩 생산')?.cells[3].innerText"), "3개");
   assert.deepEqual(await evaluate("[...document.querySelectorAll('.semiTrendTable th')].map(item => item.innerText.replace(/[↕↑↓]/g, '').trim())"),
     ["대분류", "중분류", "소분류", "종목 수", "7일", "30일", "90일", "180일", "360일"]);
   assert.deepEqual(await evaluate("[...document.querySelectorAll('.semiConstituentTable th')].map(item => item.innerText.replace(/[↕↑↓]/g, '').trim())"),
-    ["종목", "대분류", "중분류", "소분류", "시장", "현재가", "시가총액", "등락률", "30일 수익률", "최근 1년 매출", "최근 1년 영업이익", "실적 기간"]);
+    ["종목", "대분류", "중분류", "소분류", "시장", "가격", "시가총액", "기준일", "등락률", "30일 수익률", "최근 1년 매출", "최근 1년 영업이익", "실적 기간"]);
   assert.equal(await evaluate("document.querySelector('.semiConstituentTable tbody tr')?.cells[5].innerText.includes('원')"), true);
   assert.equal(await evaluate("document.querySelector('.semiConstituentTable tbody tr')?.cells[6].innerText.includes('억')"), true);
   const selectedSector = await evaluate("document.querySelector('.semiTrendTable tr.selected')?.innerText");
@@ -182,7 +205,7 @@ try {
     assertOrder(await numericRows("semiTrendTable", column), "asc");
   }
   assert.equal(await evaluate("document.querySelector('.semiTrendTable tr.selected')?.innerText"), selectedSector);
-  for (const [label, column] of [["현재가", 5], ["시가총액", 6], ["등락률", 7], ["30일 수익률", 8], ["최근 1년 매출", 9], ["최근 1년 영업이익", 10]]) {
+  for (const [label, column] of [["가격", 5], ["시가총액", 6], ["등락률", 8], ["30일 수익률", 9], ["최근 1년 매출", 10], ["최근 1년 영업이익", 11]]) {
     const button = `[...document.querySelectorAll('.semiConstituentTable .semiSortButton')].find(item => item.innerText.includes(${JSON.stringify(label)}))`;
     await evaluate(`${button}.click()`);
     assert.equal(await evaluate(`document.querySelector('.semiConstituentTable th[aria-sort=descending]')?.innerText.includes(${JSON.stringify(label)})`), true);

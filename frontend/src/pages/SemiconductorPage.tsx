@@ -4,7 +4,7 @@ import { DataRefreshStatus } from "../components/DataRefreshStatus";
 import { ErrorNotice } from "../components/ErrorNotice";
 import { LoadingSpinner } from "../components/LoadingSpinner";
 import { RecentFinancialCells } from "../components/RecentFinancials";
-import { formatDateTime } from "../dataClient/formatters";
+import { SemiconductorSummaryStrip } from "../components/SemiconductorSummaryStrip";
 import { effectiveHistory, formatPercent, formatWon, parseMarketCapWon, PERIODS, priceOnDate, stockReturn } from "../dataClient/semiconductorMath";
 import type { Period } from "../dataClient/semiconductorMath";
 import { stockClassifications } from "../dataClient/semiconductorTypes";
@@ -86,7 +86,7 @@ export function SemiconductorPage() {
     </th>;
   }
 
-  return <main className="pageShell semiPage semiStocksPage">
+  return <main className="pageShell semiPage semiOverviewPage">
     <header className="semiHero">
       <div><p className="eyebrow">KOREA SEMICONDUCTOR MAP</p><h1>국내 반도체 종목</h1>
         <p>대분류 → 중분류 → 소분류로 탐색하고, 선택한 날짜의 가격과 기간 수익률을 비교합니다.</p></div>
@@ -95,11 +95,7 @@ export function SemiconductorPage() {
     <DataRefreshStatus refreshing={refreshing} lastCheckedAt={lastCheckedAt} generatedAt={data?.quoted_at} cadence="semiconductor" onRefresh={refresh} />
     {loading && <LoadingSpinner />}{error && <ErrorNotice message={error} />}
     {data && <>
-      <div className="semiSummaryStrip">
-        <div><span>분류 종목</span><strong>{stocks.length}개</strong></div>
-        <div><span>현재가 수집</span><strong>{stocks.filter((stock) => stock.quote.status === "ok").length}개</strong></div>
-        <div><span>가격 조회 시각</span><strong>{formatDateTime(data.quoted_at)}</strong></div>
-      </div>
+      <SemiconductorSummaryStrip data={data} />
       <section className="semiPanel semiFilterPanel" aria-label="종목 필터">
         <div className="semiPanelHeading"><h2>섹터 탐색</h2><p>이미지의 산업 구조에 기업 사업 자료로 확인한 종목과 연관 사업을 추가했습니다. 한 종목이 여러 분류에 포함될 수 있습니다.</p></div>
         <div className="semiFilters">

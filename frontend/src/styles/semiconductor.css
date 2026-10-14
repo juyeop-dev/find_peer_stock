@@ -1,6 +1,6 @@
 body:has(.semiPage) { min-width: 320px; background: #f3f6f8; }
 .semiPage { width: min(1400px, calc(100% - 48px)); padding-top: 28px; color: #182735; }
-.semiPage.semiStocksPage { width: calc(100% - 48px); }
+.semiPage.semiOverviewPage { width: calc(100% - 48px); }
 .semiPage button, .semiPage input, .semiPage select { font: inherit; }
 .semiHero { display: flex; align-items: end; justify-content: space-between; gap: 28px; padding: 32px 36px; margin-bottom: 18px; border-radius: 16px; background: linear-gradient(110deg, #142c42, #173c4c 70%, #245567); color: #fff; }
 .semiHero .eyebrow { color: #a7d8dd; letter-spacing: .12em; font-size: 11px; }
@@ -22,7 +22,7 @@ body:has(.semiPage) { min-width: 320px; background: #f3f6f8; }
 .semiFilters label { display: flex; flex-direction: column; gap: 7px; color: #536a78; font-size: 12px; font-weight: 750; }
 .semiFilters select, .semiFilters input { width: 100%; min-height: 43px; padding: 9px 11px; border: 1px solid #cbd7dc; border-radius: 7px; background: #fff; color: #1c2d38; font-size: 14px; }
 .semiFilters select:focus-visible, .semiFilters input:focus-visible, .semiPeriodTabs button:focus-visible, .semiTextButton:focus-visible { outline: 3px solid #a0d9da; outline-offset: 2px; }
-.semiTrendFilters { grid-template-columns: repeat(2, minmax(0, 260px)); }
+.semiTrendFilters { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .semiPeriodTabs { display: inline-flex; flex-wrap: wrap; gap: 3px; padding: 3px; border-radius: 8px; background: #edf3f5; }
 .semiPeriodTabs button { min-width: 49px; padding: 6px 9px; border: 0; border-radius: 6px; background: transparent; color: #526a78; cursor: pointer; font-size: 12px; font-weight: 750; }
 .semiPeriodTabs button.active { background: #fff; color: #0e5a69; box-shadow: 0 1px 4px #153b4e21; }
@@ -30,7 +30,6 @@ body:has(.semiPage) { min-width: 320px; background: #f3f6f8; }
 .semiTable { width: 100%; min-width: 760px; border-collapse: collapse; font-size: 13px; }
 .semiStockPriceTable { min-width: 1670px; }
 .semiTrendTable { min-width: 990px; }
-.semiConstituentTable { min-width: 1640px; }
 .semiTable th { padding: 11px 12px; border-bottom: 1px solid #cedce1; color: #607681; background: #f7fafb; text-align: left; font-weight: 750; white-space: nowrap; }
 .semiTable td { padding: 12px; border-bottom: 1px solid #e8eef0; vertical-align: middle; }
 .semiTable tbody tr:hover { background: #f7fbfc; }
@@ -130,7 +129,7 @@ body:has(.semiPage) { min-width: 320px; background: #f3f6f8; }
   body:has(.semiPage) .siteBrand span { display: none; }
   body:has(.semiPage) .siteNavLinks { overflow-x: auto; padding-bottom: 5px; }
   .semiPage { width: calc(100% - 28px); padding-top: 16px; }
-  .semiPage.semiStocksPage { width: calc(100% - 28px); }
+  .semiPage.semiOverviewPage { width: calc(100% - 28px); }
   .semiHero { display: block; padding: 25px 22px; }
   .semiHeroLink { margin-top: 20px; }
   .semiSummaryStrip { grid-template-columns: 1fr 1fr; }

@@ -1,6 +1,7 @@
 import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { SemiconductorLineChart } from "../components/SemiconductorLineChart";
+import { SemiconductorSummaryStrip } from "../components/SemiconductorSummaryStrip";
 import { DataRefreshStatus } from "../components/DataRefreshStatus";
 import { ErrorNotice } from "../components/ErrorNotice";
 import { LoadingSpinner } from "../components/LoadingSpinner";
@@ -96,17 +97,18 @@ export function SemiconductorTrendsPage() {
     setStockSort((current) => ({ key, direction: current.key === key && current.direction === "desc" ? "asc" : "desc" }));
   }
 
-  return <main className="pageShell semiPage">
+  return <main className="pageShell semiPage semiOverviewPage">
     <header className="semiHero"><div><p className="eyebrow">SECTOR PERFORMANCE</p><h1>반도체 섹터 주가 추이</h1>
       <p>7·30·90·180·360일 수익률을 분류별로 비교하고, 구성 종목의 흐름을 확인합니다.</p></div>
       <Link className="semiHeroLink" to="/semiconductors">종목 목록으로 ↗</Link></header>
     <DataRefreshStatus refreshing={refreshing} lastCheckedAt={lastCheckedAt} generatedAt={data?.quoted_at} cadence="semiconductor" onRefresh={refresh} />
     {loading && <LoadingSpinner />}{error && <ErrorNotice message={error} />}
     {data && <>
-      <section className="semiPanel semiFilterPanel"><div className="semiPanelHeading"><h2>비교 범위</h2><p>산업 분류와 연관 테마를 함께 비교합니다. 여러 섹터에 속한 종목은 각 섹터에 한 번씩 포함됩니다.</p></div>
+      <SemiconductorSummaryStrip data={data} />
+      <section className="semiPanel semiFilterPanel" aria-label="섹터 필터"><div className="semiPanelHeading"><h2>섹터 탐색</h2><p>산업 분류와 연관 테마를 함께 비교합니다. 여러 섹터에 속한 종목은 각 섹터에 한 번씩 포함됩니다.</p></div>
         <div className="semiFilters semiTrendFilters"><label>분류 단계<select value={level} onChange={(event) => { setLevel(event.target.value as Level); setSelected(""); }}>
           <option value="major">대분류</option><option value="middle">중분류</option><option value="minor">소분류</option></select></label>
-          <label>대분류 필터<select value={major} onChange={(event) => { setMajor(event.target.value); setSelected(""); }}><option value="">전체</option>{majors.map((name) => <option key={name}>{name}</option>)}</select></label></div>
+          <label>대분류<select value={major} onChange={(event) => { setMajor(event.target.value); setSelected(""); }}><option value="">전체</option>{majors.map((name) => <option key={name}>{name}</option>)}</select></label></div>
       </section>
       <section className="semiPanel"><div className="semiPanelHeading"><h2>섹터별 상승률</h2><p>구성 종목의 조정 종가 수익률을 동일 비중으로 평균했습니다.</p></div>
         <div className="semiTableWrap"><table className="semiTable semiTrendTable"><thead><tr><th>대분류</th><th>중분류</th><th>소분류</th>
@@ -132,10 +134,12 @@ export function SemiconductorTrendsPage() {
           <span>계산 가능 {sectorReturn(activeStocks, period).count}/{activeStocks.length}개</span></div>
         <SemiconductorLineChart points={chart} title={`${active.name} ${period}일`} unit="지수" />
       </section>
-      <section className="semiPanel"><div className="semiPanelHeading"><h2>구성 종목 수익률</h2><p>{period}일 조정 종가 기준 · 현재가는 종목별 제공 날짜를 함께 표시합니다. 종목을 누르면 가격 차트와 재무 정보를 볼 수 있습니다.</p></div>
-        <div className="semiTableWrap"><table className="semiTable semiConstituentTable"><thead><tr><th>종목</th><th>대분류</th><th>중분류</th><th>소분류</th><th>시장</th>
-          {sortableHeader("현재가", stockSort.key === "price", stockSort.direction, () => toggleStockSort("price"))}
+      <section className="semiPanel"><div className="semiPanelHeading semiHeadingSplit"><div><h2>구성 종목 수익률</h2><p>{activeStocks.length}개 종목 · {period}일 조정 종가 기준 · 가장 최근 제공 가격</p></div>
+        <div className="semiPeriodTabs" aria-label="구성 종목 수익률 기간">{PERIODS.map((days) => <button key={days} type="button" className={period === days ? "active" : ""} onClick={() => setPeriod(days)}>{days}일</button>)}</div></div>
+        <div className="semiTableWrap"><table className="semiTable semiStockPriceTable semiConstituentTable"><thead><tr><th>종목</th><th>대분류</th><th>중분류</th><th>소분류</th><th>시장</th>
+          {sortableHeader("가격", stockSort.key === "price", stockSort.direction, () => toggleStockSort("price"))}
           {sortableHeader("시가총액", stockSort.key === "marketCap", stockSort.direction, () => toggleStockSort("marketCap"))}
+          <th>기준일</th>
           {sortableHeader("등락률", stockSort.key === "change", stockSort.direction, () => toggleStockSort("change"))}
           {sortableHeader(`${period}일 수익률`, stockSort.key === "gain", stockSort.direction, () => toggleStockSort("gain"))}
           {sortableHeader("최근 1년 매출", stockSort.key === "revenue", stockSort.direction, () => toggleStockSort("revenue"))}
@@ -143,8 +147,9 @@ export function SemiconductorTrendsPage() {
           {ranked.map(({ stock, classification, price, change, gain }) => { const latest = effectiveHistory(stock).at(-1);
             return <tr key={stock.ticker}><td><Link className="semiStockLink" to={`/semiconductors/${encodeURIComponent(stock.ticker)}`}><strong>{stock.name}</strong><span>{stock.code}</span></Link></td>
               <td>{classification.major}</td><td>{classification.middle}</td><td>{classification.minor}</td><td>{stock.market}</td>
-              <td className="semiNumber">{formatWon(price)}<small>{stock.quote.provider_time?.slice(0, 10) ?? latest?.date ?? "-"}</small></td>
+              <td className="semiNumber">{formatWon(price)}</td>
               <td className="semiNumber">{stock.metrics.marketValue || "-"}</td>
+              <td>{stock.quote.provider_time?.slice(0, 10) ?? latest?.date ?? "-"}</td>
               <td className={`semiNumber ${change === null ? "" : change > 0 ? "semiUp" : change < 0 ? "semiDown" : ""}`}>{formatPercent(change)}</td>
               <td className={`semiNumber ${gain === null ? "" : gain > 0 ? "semiUp" : gain < 0 ? "semiDown" : ""}`}>{formatPercent(gain)}</td>
               <RecentFinancialCells summary={stock.recent_financials} /></tr>; })}
