@@ -232,47 +232,156 @@
     },
     "europe": {
       "completed_through": "2026-10-13",
-      "added_reports": [],
-      "remaining_missing_dates": [
-        "2026-08-03",
-        "2026-08-04",
-        "2026-08-05",
-        "2026-08-06",
-        "2026-08-07",
-        "2026-08-10",
-        "2026-08-11",
-        "2026-08-12",
-        "2026-08-13",
-        "2026-08-14",
-        "2026-08-17",
-        "2026-08-18",
-        "2026-08-19",
-        "2026-08-20",
-        "2026-08-21",
-        "2026-08-24",
-        "2026-08-25",
-        "2026-08-26",
-        "2026-08-27",
-        "2026-08-28",
-        "2026-08-31",
-        "2026-09-01",
-        "2026-09-02",
-        "2026-09-03",
-        "2026-09-04",
-        "2026-09-07",
-        "2026-09-08",
-        "2026-09-09",
-        "2026-09-10",
-        "2026-09-15",
-        "2026-10-01",
-        "2026-10-02"
-      ]
+      "added_reports": [
+        {
+          "date": "2026-08-03",
+          "entries": 128
+        },
+        {
+          "date": "2026-08-04",
+          "entries": 161
+        },
+        {
+          "date": "2026-08-05",
+          "entries": 148
+        },
+        {
+          "date": "2026-08-06",
+          "entries": 124
+        },
+        {
+          "date": "2026-08-07",
+          "entries": 128
+        },
+        {
+          "date": "2026-08-10",
+          "entries": 116
+        },
+        {
+          "date": "2026-08-11",
+          "entries": 99
+        },
+        {
+          "date": "2026-08-12",
+          "entries": 102
+        },
+        {
+          "date": "2026-08-13",
+          "entries": 118
+        },
+        {
+          "date": "2026-08-14",
+          "entries": 114
+        },
+        {
+          "date": "2026-08-17",
+          "entries": 113
+        },
+        {
+          "date": "2026-08-18",
+          "entries": 80
+        },
+        {
+          "date": "2026-08-19",
+          "entries": 101
+        },
+        {
+          "date": "2026-08-20",
+          "entries": 91
+        },
+        {
+          "date": "2026-08-21",
+          "entries": 94
+        },
+        {
+          "date": "2026-08-24",
+          "entries": 112
+        },
+        {
+          "date": "2026-08-25",
+          "entries": 103
+        },
+        {
+          "date": "2026-08-26",
+          "entries": 98
+        },
+        {
+          "date": "2026-08-27",
+          "entries": 108
+        },
+        {
+          "date": "2026-08-28",
+          "entries": 99
+        },
+        {
+          "date": "2026-08-31",
+          "entries": 45
+        },
+        {
+          "date": "2026-09-01",
+          "entries": 88
+        },
+        {
+          "date": "2026-09-02",
+          "entries": 97
+        },
+        {
+          "date": "2026-09-03",
+          "entries": 120
+        },
+        {
+          "date": "2026-09-04",
+          "entries": 82
+        },
+        {
+          "date": "2026-09-07",
+          "entries": 75
+        },
+        {
+          "date": "2026-09-08",
+          "entries": 98
+        },
+        {
+          "date": "2026-09-09",
+          "entries": 82
+        },
+        {
+          "date": "2026-09-10",
+          "entries": 74
+        },
+        {
+          "date": "2026-09-15",
+          "entries": 92
+        },
+        {
+          "date": "2026-10-01",
+          "entries": 68
+        },
+        {
+          "date": "2026-10-02",
+          "entries": 98
+        }
+      ],
+      "remaining_missing_dates": []
     }
   },
-  "status": "partial",
-  "europe_recovery_limit": {
-    "tradingview_historical_fields": "Requested historical OHLCV fields are unavailable beyond recent bars (probed 2026-10-14).",
-    "yahoo_history": "Existing European recovery excluded 1762 symbols as inactive despite 4873 active TradingView session symbols; the incomplete mapping cannot prove complete daily reports.",
-    "evidence_file": "data/review/europe/README.md"
+  "status": "complete",
+  "europe_recovery_completed_at": "2026-10-14T15:39:44.460288+00:00",
+  "europe_recovery": {
+    "provider": "TradingView same-exchange split-adjusted daily/monthly charts",
+    "daily_histories_verified": 5371,
+    "candidate_monthly_histories_verified": 985,
+    "new_reports": 32,
+    "new_entries": 3256,
+    "unresolved_histories": 0,
+    "non_stock_exclusions": [
+      {
+        "symbol": "SIX:SMCI",
+        "type": "index",
+        "description": "SPI® Mid Total Return Index",
+        "source_id": "SIX",
+        "pro_name": "SIX:SMCI"
+      }
+    ]
   }
 }

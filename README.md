@@ -201,7 +201,7 @@ TradingView 스크리너의 주식 전체 목록을 페이지 끝까지 확인�
 
 ### 해외 캘린더 과거 구간 복원
 
-일본·중국·미국·대만의 누락된 최근 구간은 TradingView의 현재 주식 종목군과 Yahoo Finance의 날짜별 OHLCV를 결합해 신고가와 거래대금 캘린더를 함께 복원할 수 있습니다. 과거 거래대금은 Yahoo 종가×거래량 추정치로, TradingView의 `Value.Traded`와 값이나 표시 통화가 다를 수 있습니다. 52주 신고가는 분할 조정 일봉, 역대 신고가는 후보 종목의 분할 조정 전체 월봉으로 추가 판정합니다. 유럽은 과거 Yahoo 종목 매핑의 수집 범위와 통화 환산 문제 때문에 현재 이 방식의 복원을 중지했습니다.
+일본·중국·미국·대만의 누락된 최근 구간은 TradingView의 현재 주식 종목군과 Yahoo Finance의 날짜별 OHLCV를 결합해 신고가와 거래대금 캘린더를 함께 복원할 수 있습니다. 과거 거래대금은 Yahoo 종가×거래량 추정치로, TradingView의 `Value.Traded`와 값이나 표시 통화가 다를 수 있습니다. 52주 신고가는 분할 조정 일봉, 역대 신고가는 후보 종목의 분할 조정 전체 월봉으로 추가 판정합니다. 유럽은 Yahoo 종목 매핑의 수집 범위와 통화 환산 문제 때문에 이 방식의 복원을 중지했으며, 신고가는 아래의 동일 거래소 TradingView 차트 경로로 복원합니다.
 
 ```powershell
 python .\scripts\backfill_yahoo_calendars.py --market japan --start 2026-09-01 --end 2026-09-21
@@ -210,6 +210,14 @@ python .\scripts\backfill_yahoo_calendars.py --market us --start 2026-09-01 --en
 python .\scripts\backfill_yahoo_calendars.py --market taiwan --start 2026-09-01 --end 2026-09-21
 python .\scripts\generate_new_high_data.py
 python .\scripts\generate_turnover_data.py
+```
+
+유럽 신고가 전용 복원 도구는 유로넥스트·Xetra·런던·스위스의 현재 종목군 전체를 스캔하고, 각 종목의 동일 거래소 차트에서 분할 조정 일봉과 전체 월봉을 조회합니다. 심볼·거래소·통화 일치를 확인하며, 거래량 0·음봉·전일 대비 하락 종목을 제외합니다. 요청 날짜 이후의 같은 달 고가는 역대 신고가 판정에 사용하지 않습니다. 기존 기록은 보존하고 누락된 마감 거래일만 추가합니다. 거래소별 휴장은 공식 출처와 함께 `data/new-highs/europe-exchange-closures.json`에 기록합니다. 연결을 재사용하며 접속 제한이 나오면 수집을 중지합니다. 캐시는 `data/tmp_tradingview_chart`에 보존하고, 날짜별 시계열 검증이 모두 완료된 뒤 게시합니다.
+
+```powershell
+python -m pip install -r scripts/requirements-chart-history.txt
+python .\scripts\backfill_european_new_highs.py --start 2026-08-01 --end 2026-10-14
+python .\scripts\generate_new_high_data.py
 ```
 
 도구는 시장별 장 마감 전 날짜와 휴장일을 게시하지 않으며 기존 원본을 기본적으로 보존합니다. Yahoo 회사명과 TradingView 회사명을 대조하고, 거래가 없었던 종목은 별도로 제외합니다. 활성·매핑 가능 종목 및 거래소별 수집률이 기준보다 낮으면 아무 파일도 저장하지 않습니다. 현재 종목군에서 사라진 과거 상장 종목은 복원 범위에 포함되지 않는다는 한계가 원본 메타데이터에 기록됩니다. 다운로드 캐시는 `data/tmp_calendar_history`에 저장되며 Git에서는 제외됩니다.
