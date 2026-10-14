@@ -1,0 +1,382 @@
+{
+  "schema_version": 1,
+  "market": "taiwan",
+  "date": "2026-08-07",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "1268.TWO",
+      "name": "Hi-Lai Foods Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Consumer Services",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Services · Restaurants",
+      "description": "Hi-Lai Foods Co., Ltd. · Restaurants",
+      "change_pct": 7.624633431085037,
+      "session_open": 178.0,
+      "session_close": 183.5,
+      "session_volume": 213399.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:1268",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/1268.TWO/history/",
+        "date": "2026-08-07",
+        "daily_high": 185.0,
+        "prior_all_time_or_current_month_high": 190.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "1268.TWO"
+      }
+    },
+    {
+      "ticker": "3594.TWO",
+      "name": "ARBOR Technology Corp.",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Computer Processing Hardware",
+      "description": "ARBOR Technology Corp. · Computer Processing Hardware",
+      "change_pct": 3.6269402742286294,
+      "session_open": 58.70000076293945,
+      "session_close": 60.0,
+      "session_volume": 7360846.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:3594",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3594.TWO/history/",
+        "date": "2026-08-07",
+        "daily_high": 61.900001525878906,
+        "prior_all_time_or_current_month_high": 65.69999694824219,
+        "passes_close_filter": true,
+        "yahoo_symbol": "3594.TWO"
+      }
+    },
+    {
+      "ticker": "4127.TWO",
+      "name": "Tien Liang Biotech Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Health Technology",
+      "high_type": "all_time",
+      "reason": "업종: Health Technology · Pharmaceuticals: Other",
+      "description": "Tien Liang Biotech Co., Ltd. · Pharmaceuticals: Other",
+      "change_pct": 3.8372128508811665,
+      "session_open": 86.19999694824219,
+      "session_close": 89.30000305175781,
+      "session_volume": 334008.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:4127",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4127.TWO/history/",
+        "date": "2026-08-07",
+        "daily_high": 90.0,
+        "prior_all_time_or_current_month_high": 90.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "4127.TWO"
+      }
+    },
+    {
+      "ticker": "4167.TWO",
+      "name": "Savior Lifetec Corp.",
+      "exchange": "TPEX",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Pharmaceuticals: Major",
+      "description": "Savior Lifetec Corp. · Pharmaceuticals: Major",
+      "change_pct": 5.614968953057398,
+      "session_open": 19.5,
+      "session_close": 19.75,
+      "session_volume": 2832100.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:4167",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4167.TWO/history/",
+        "date": "2026-08-07",
+        "daily_high": 20.149999618530273,
+        "prior_all_time_or_current_month_high": 44.3911554035535,
+        "passes_close_filter": true,
+        "yahoo_symbol": "4167.TWO"
+      }
+    },
+    {
+      "ticker": "8050.TWO",
+      "name": "iBASE Technology Inc.",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Electronic Components",
+      "description": "iBASE Technology Inc. · Electronic Components",
+      "change_pct": 9.350240362206419,
+      "session_open": 63.599998474121094,
+      "session_close": 69.0,
+      "session_volume": 16149719.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:8050",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/8050.TWO/history/",
+        "date": "2026-08-07",
+        "daily_high": 69.4000015258789,
+        "prior_all_time_or_current_month_high": 112.5,
+        "passes_close_filter": true,
+        "yahoo_symbol": "8050.TWO"
+      }
+    },
+    {
+      "ticker": "1907.TW",
+      "name": "YFY, Inc.",
+      "exchange": "TWSE",
+      "category": "Process Industries",
+      "high_type": "52_week",
+      "reason": "업종: Process Industries · Pulp & Paper",
+      "description": "YFY, Inc. · Pulp & Paper",
+      "change_pct": 1.6474464372833397,
+      "session_open": 30.450000762939453,
+      "session_close": 30.850000381469727,
+      "session_volume": 2310465.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:1907",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/1907.TW/history/",
+        "date": "2026-08-07",
+        "daily_high": 31.149999618530273,
+        "prior_all_time_or_current_month_high": 51.79999923706055,
+        "passes_close_filter": true,
+        "yahoo_symbol": "1907.TW"
+      }
+    },
+    {
+      "ticker": "2006.TW",
+      "name": "Tung Ho Steel Enterprise Corp.",
+      "exchange": "TWSE",
+      "category": "Non-Energy Minerals",
+      "high_type": "52_week",
+      "reason": "업종: Non-Energy Minerals · Steel",
+      "description": "Tung Ho Steel Enterprise Corp. · Steel",
+      "change_pct": 2.668217091862335,
+      "session_open": 85.5999984741211,
+      "session_close": 88.5,
+      "session_volume": 7331923.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2006",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2006.TW/history/",
+        "date": "2026-08-07",
+        "daily_high": 88.5,
+        "prior_all_time_or_current_month_high": 144.1300918806845,
+        "passes_close_filter": true,
+        "yahoo_symbol": "2006.TW"
+      }
+    },
+    {
+      "ticker": "2059.TW",
+      "name": "King Slide Works Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Metal Fabrication",
+      "description": "King Slide Works Co., Ltd. · Metal Fabrication",
+      "change_pct": 10.000000000000009,
+      "session_open": 11110.0,
+      "session_close": 11110.0,
+      "session_volume": 310213.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2059",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2059.TW/history/",
+        "date": "2026-08-07",
+        "daily_high": 11110.0,
+        "prior_all_time_or_current_month_high": 11110.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "2059.TW"
+      }
+    },
+    {
+      "ticker": "2425.TW",
+      "name": "Chaintech Technology Corp.",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Electronic Components",
+      "description": "Chaintech Technology Corp. · Electronic Components",
+      "change_pct": 9.865004879484873,
+      "session_open": 48.20000076293945,
+      "session_close": 52.900001525878906,
+      "session_volume": 14417057.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2425",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2425.TW/history/",
+        "date": "2026-08-07",
+        "daily_high": 52.900001525878906,
+        "prior_all_time_or_current_month_high": 506.5126176441587,
+        "passes_close_filter": true,
+        "yahoo_symbol": "2425.TW"
+      }
+    },
+    {
+      "ticker": "2637.TW",
+      "name": "Wisdom Marine Lines Co., Limited.",
+      "exchange": "TWSE",
+      "category": "Transportation",
+      "high_type": "52_week",
+      "reason": "업종: Transportation · Marine Shipping",
+      "description": "Wisdom Marine Lines Co., Limited. · Marine Shipping",
+      "change_pct": 2.8070193285133493,
+      "session_open": 85.80000305175781,
+      "session_close": 87.9000015258789,
+      "session_volume": 3810519.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2637",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2637.TW/history/",
+        "date": "2026-08-07",
+        "daily_high": 88.4000015258789,
+        "prior_all_time_or_current_month_high": 121.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "2637.TW"
+      }
+    },
+    {
+      "ticker": "3022.TW",
+      "name": "IEI Integration Corporation",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Computer Peripherals",
+      "description": "IEI Integration Corporation · Computer Peripherals",
+      "change_pct": 2.487562189054726,
+      "session_open": 101.0,
+      "session_close": 103.0,
+      "session_volume": 6795594.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:3022",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3022.TW/history/",
+        "date": "2026-08-07",
+        "daily_high": 106.0,
+        "prior_all_time_or_current_month_high": 208.7645993875841,
+        "passes_close_filter": true,
+        "yahoo_symbol": "3022.TW"
+      }
+    },
+    {
+      "ticker": "5538.TW",
+      "name": "Tong Ming Enterprise Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Metal Fabrication",
+      "description": "Tong Ming Enterprise Co., Ltd. · Metal Fabrication",
+      "change_pct": 3.5087740823673386,
+      "session_open": 34.70000076293945,
+      "session_close": 35.400001525878906,
+      "session_volume": 1123000.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:5538",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/5538.TW/history/",
+        "date": "2026-08-07",
+        "daily_high": 37.599998474121094,
+        "prior_all_time_or_current_month_high": 67.9000015258789,
+        "passes_close_filter": true,
+        "yahoo_symbol": "5538.TW"
+      }
+    },
+    {
+      "ticker": "6024.TW",
+      "name": "Capital Futures Corp.",
+      "exchange": "TWSE",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "업종: Finance · Investment Banks/Brokers",
+      "description": "Capital Futures Corp. · Investment Banks/Brokers",
+      "change_pct": 1.011808257230773,
+      "session_open": 59.0,
+      "session_close": 59.900001525878906,
+      "session_volume": 246143.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:6024",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6024.TW/history/",
+        "date": "2026-08-07",
+        "daily_high": 60.0,
+        "prior_all_time_or_current_month_high": 60.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "6024.TW"
+      }
+    },
+    {
+      "ticker": "9939.TW",
+      "name": "Taiwan Hon Chuan Enterprise Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Process Industries",
+      "high_type": "52_week",
+      "reason": "업종: Process Industries · Containers/Packaging",
+      "description": "Taiwan Hon Chuan Enterprise Co., Ltd. · Containers/Packaging",
+      "change_pct": 1.403508771929829,
+      "session_open": 142.5,
+      "session_close": 144.5,
+      "session_volume": 3000700.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:9939",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/9939.TW/history/",
+        "date": "2026-08-07",
+        "daily_high": 145.5,
+        "prior_all_time_or_current_month_high": 178.5,
+        "passes_close_filter": true,
+        "yahoo_symbol": "9939.TW"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-10-14T14:42:45.439339+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 2348,
+    "history_symbols": 2306,
+    "inactive_symbols": 1,
+    "failed_symbols": 41,
+    "coverage_ratio": 0.9825308904985087,
+    "coverage_by_exchange": {
+      "TWSE": {
+        "covered": 1084,
+        "total": 1091
+      },
+      "TPEX": {
+        "covered": 1222,
+        "total": 1256
+      }
+    },
+    "session_symbols": 2305,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-10-14T14:42:45.439339+00:00"
+}
