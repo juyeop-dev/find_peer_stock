@@ -1,0 +1,330 @@
+{
+  "schema_version": 1,
+  "market": "japan",
+  "date": "2026-06-11",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "166A.T",
+      "name": "TASUKI Holdings Inc.",
+      "exchange": "TSE",
+      "category": "Technology Services",
+      "high_type": "all_time",
+      "reason": "업종: Technology Services · Packaged Software",
+      "description": "TASUKI Holdings Inc. · Packaged Software",
+      "change_pct": 3.816046966731901,
+      "session_open": 1024.0,
+      "session_close": 1061.0,
+      "session_volume": 1595600.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:166A",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/166A.T/history/",
+        "date": "2026-06-11",
+        "daily_high": 1076.0,
+        "prior_all_time_or_current_month_high": 1076.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "166A.T"
+      }
+    },
+    {
+      "ticker": "2108.T",
+      "name": "Nitten Co., Ltd.",
+      "exchange": "TSE",
+      "category": "Process Industries",
+      "high_type": "52_week",
+      "reason": "업종: Process Industries · Agricultural Commodities/Milling",
+      "description": "Nitten Co., Ltd. · Agricultural Commodities/Milling",
+      "change_pct": 1.7797525196248776,
+      "session_open": 1505.0,
+      "session_close": 1525.0,
+      "session_volume": 78900.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:2108",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2108.T/history/",
+        "date": "2026-06-11",
+        "daily_high": 1531.6666259765625,
+        "prior_all_time_or_current_month_high": 4522.222086588541,
+        "passes_close_filter": true,
+        "yahoo_symbol": "2108.T"
+      }
+    },
+    {
+      "ticker": "2674.T",
+      "name": "Hard Off Corporation Co., Ltd.",
+      "exchange": "TSE",
+      "category": "Retail Trade",
+      "high_type": "all_time",
+      "reason": "업종: Retail Trade · Specialty Stores",
+      "description": "Hard Off Corporation Co., Ltd. · Specialty Stores",
+      "change_pct": 5.971993410214171,
+      "session_open": 2447.0,
+      "session_close": 2573.0,
+      "session_volume": 144400.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:2674",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2674.T/history/",
+        "date": "2026-06-11",
+        "daily_high": 2575.0,
+        "prior_all_time_or_current_month_high": 2575.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "2674.T"
+      }
+    },
+    {
+      "ticker": "3063.T",
+      "name": "j-Group Holdings Corp.",
+      "exchange": "TSE",
+      "category": "Consumer Services",
+      "high_type": "all_time",
+      "reason": "업종: Consumer Services · Restaurants",
+      "description": "j-Group Holdings Corp. · Restaurants",
+      "change_pct": 0.7832898172323688,
+      "session_open": 1151.0,
+      "session_close": 1158.0,
+      "session_volume": 29500.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:3063",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3063.T/history/",
+        "date": "2026-06-11",
+        "daily_high": 1161.0,
+        "prior_all_time_or_current_month_high": 1161.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "3063.T"
+      }
+    },
+    {
+      "ticker": "5484.T",
+      "name": "Tohoku Steel Co., Ltd.",
+      "exchange": "TSE",
+      "category": "Non-Energy Minerals",
+      "high_type": "all_time",
+      "reason": "업종: Non-Energy Minerals · Steel",
+      "description": "Tohoku Steel Co., Ltd. · Steel",
+      "change_pct": 0.11160714285713969,
+      "session_open": 4480.0,
+      "session_close": 4485.0,
+      "session_volume": 129200.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:5484",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/5484.T/history/",
+        "date": "2026-06-11",
+        "daily_high": 4485.0,
+        "prior_all_time_or_current_month_high": 4485.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "5484.T"
+      }
+    },
+    {
+      "ticker": "6278.T",
+      "name": "Union Tool Co.",
+      "exchange": "TSE",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Industrial Machinery",
+      "description": "Union Tool Co. · Industrial Machinery",
+      "change_pct": 7.152436298614218,
+      "session_open": 20870.0,
+      "session_close": 23970.0,
+      "session_volume": 538800.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:6278",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6278.T/history/",
+        "date": "2026-06-11",
+        "daily_high": 24130.0,
+        "prior_all_time_or_current_month_high": 24130.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "6278.T"
+      }
+    },
+    {
+      "ticker": "8118.T",
+      "name": "King Co., Ltd.",
+      "exchange": "TSE",
+      "category": "Consumer Non-Durables",
+      "high_type": "all_time",
+      "reason": "업종: Consumer Non-Durables · Apparel/Footwear",
+      "description": "King Co., Ltd. · Apparel/Footwear",
+      "change_pct": 4.424778761061954,
+      "session_open": 1121.0,
+      "session_close": 1180.0,
+      "session_volume": 2700.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:8118",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/8118.T/history/",
+        "date": "2026-06-11",
+        "daily_high": 1220.0,
+        "prior_all_time_or_current_month_high": 1220.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "8118.T"
+      }
+    },
+    {
+      "ticker": "8173.T",
+      "name": "Joshin Corporation",
+      "exchange": "TSE",
+      "category": "Retail Trade",
+      "high_type": "52_week",
+      "reason": "업종: Retail Trade · Electronics/Appliance Stores",
+      "description": "Joshin Corporation · Electronics/Appliance Stores",
+      "change_pct": 4.557640750670244,
+      "session_open": 3770.0,
+      "session_close": 3900.0,
+      "session_volume": 225000.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:8173",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/8173.T/history/",
+        "date": "2026-06-11",
+        "daily_high": 3915.0,
+        "prior_all_time_or_current_month_high": 7770.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "8173.T"
+      }
+    },
+    {
+      "ticker": "8344.T",
+      "name": "Yamagata Bank, Ltd.",
+      "exchange": "TSE",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "업종: Finance · Regional Banks",
+      "description": "Yamagata Bank, Ltd. · Regional Banks",
+      "change_pct": 0.5970149253731405,
+      "session_open": 3350.0,
+      "session_close": 3370.0,
+      "session_volume": 146300.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:8344",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/8344.T/history/",
+        "date": "2026-06-11",
+        "daily_high": 3445.0,
+        "prior_all_time_or_current_month_high": 18325.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "8344.T"
+      }
+    },
+    {
+      "ticker": "9331.T",
+      "name": "Caster Co. Ltd.",
+      "exchange": "TSE",
+      "category": "Commercial Services",
+      "high_type": "52_week",
+      "reason": "업종: Commercial Services · Miscellaneous Commercial Services",
+      "description": "Caster Co. Ltd. · Miscellaneous Commercial Services",
+      "change_pct": 25.407478427612663,
+      "session_open": 1034.0,
+      "session_close": 1308.0,
+      "session_volume": 207000.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:9331",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/9331.T/history/",
+        "date": "2026-06-11",
+        "daily_high": 1343.0,
+        "prior_all_time_or_current_month_high": 2426.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "9331.T"
+      }
+    },
+    {
+      "ticker": "9831.T",
+      "name": "Yamada Holding Co., Ltd.",
+      "exchange": "TSE",
+      "category": "Retail Trade",
+      "high_type": "52_week",
+      "reason": "업종: Retail Trade · Electronics/Appliance Stores",
+      "description": "Yamada Holding Co., Ltd. · Electronics/Appliance Stores",
+      "change_pct": 0.8166801059129591,
+      "session_open": 684.7000122070312,
+      "session_close": 691.2999877929688,
+      "session_volume": 5416600.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:9831",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/9831.T/history/",
+        "date": "2026-06-11",
+        "daily_high": 696.7999877929688,
+        "prior_all_time_or_current_month_high": 702.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "9831.T"
+      }
+    },
+    {
+      "ticker": "9903.T",
+      "name": "Kanseki Co., Ltd.",
+      "exchange": "TSE",
+      "category": "Retail Trade",
+      "high_type": "52_week",
+      "reason": "업종: Retail Trade · Discount Stores",
+      "description": "Kanseki Co., Ltd. · Discount Stores",
+      "change_pct": 6.638655462184873,
+      "session_open": 1160.0,
+      "session_close": 1269.0,
+      "session_volume": 72200.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:9903",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/9903.T/history/",
+        "date": "2026-06-11",
+        "daily_high": 1420.0,
+        "prior_all_time_or_current_month_high": 3820.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "9903.T"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-10-17T02:04:36.924486+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 3759,
+    "history_symbols": 3744,
+    "inactive_symbols": 0,
+    "failed_symbols": 15,
+    "coverage_ratio": 0.9960095770151636,
+    "coverage_by_exchange": {
+      "TSE": {
+        "covered": 3744,
+        "total": 3759
+      }
+    },
+    "session_symbols": 3737,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-10-17T02:04:36.924486+00:00"
+}

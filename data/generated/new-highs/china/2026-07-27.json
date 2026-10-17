@@ -1,0 +1,310 @@
+{
+  "schema_version": 1,
+  "market": "china",
+  "date": "2026-07-27",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "688237.SS",
+      "name": "Hubei Chaozhuo Aviation Technology Group Co Ltd Class A",
+      "exchange": "SSE",
+      "category": "Process Industries",
+      "high_type": "52_week",
+      "reason": "업종: Process Industries · Chemicals: Major Diversified",
+      "description": "Hubei Chaozhuo Aviation Technology Group Co Ltd Class A · Chemicals: Major Diversified",
+      "change_pct": 8.785332724380556,
+      "session_open": 64.5999984741211,
+      "session_close": 71.19999694824219,
+      "session_volume": 7153469.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:688237",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/688237.SS/history/",
+        "date": "2026-07-27",
+        "daily_high": 71.68000030517578,
+        "prior_all_time_or_current_month_high": 79.77999877929688,
+        "passes_close_filter": true,
+        "yahoo_symbol": "688237.SS"
+      }
+    },
+    {
+      "ticker": "688663.SS",
+      "name": "WindSun Science & Technology Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Electronic Production Equipment",
+      "description": "WindSun Science & Technology Co., Ltd. Class A · Electronic Production Equipment",
+      "change_pct": 62.10958796204182,
+      "session_open": 48.66999816894531,
+      "session_close": 56.29999923706055,
+      "session_volume": 9826638.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:688663",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/688663.SS/history/",
+        "date": "2026-07-27",
+        "daily_high": 56.349998474121094,
+        "prior_all_time_or_current_month_high": 56.349998474121094,
+        "passes_close_filter": true,
+        "yahoo_symbol": "688663.SS"
+      }
+    },
+    {
+      "ticker": "000429.SZ",
+      "name": "Guangdong Provincial Expressway Development Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Industrial Services",
+      "high_type": "all_time",
+      "reason": "업종: Industrial Services · Engineering & Construction",
+      "description": "Guangdong Provincial Expressway Development Co., Ltd. Class A · Engineering & Construction",
+      "change_pct": 4.728792070682264,
+      "session_open": 14.380000114440918,
+      "session_close": 15.0600004196167,
+      "session_volume": 14352839.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:000429",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/000429.SZ/history/",
+        "date": "2026-07-27",
+        "daily_high": 15.300000190734863,
+        "prior_all_time_or_current_month_high": 15.300000190734863,
+        "passes_close_filter": true,
+        "yahoo_symbol": "000429.SZ"
+      }
+    },
+    {
+      "ticker": "001258.SZ",
+      "name": "Xinjiang Lixin Energy Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Utilities",
+      "high_type": "52_week",
+      "reason": "업종: Utilities · Alternative Power Generation",
+      "description": "Xinjiang Lixin Energy Co., Ltd. Class A · Alternative Power Generation",
+      "change_pct": 9.976977877024318,
+      "session_open": 13.020000457763672,
+      "session_close": 14.329999923706055,
+      "session_volume": 84052490.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:001258",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/001258.SZ/history/",
+        "date": "2026-07-27",
+        "daily_high": 14.329999923706055,
+        "prior_all_time_or_current_month_high": 19.190000534057617,
+        "passes_close_filter": true,
+        "yahoo_symbol": "001258.SZ"
+      }
+    },
+    {
+      "ticker": "002415.SZ",
+      "name": "Hangzhou Hikvision Digital Technology Co., Ltd Class A",
+      "exchange": "SZSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Telecommunications Equipment",
+      "description": "Hangzhou Hikvision Digital Technology Co., Ltd Class A · Telecommunications Equipment",
+      "change_pct": 4.226542488190721,
+      "session_open": 36.93000030517578,
+      "session_close": 36.9900016784668,
+      "session_volume": 289934387.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002415",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002415.SZ/history/",
+        "date": "2026-07-27",
+        "daily_high": 38.09000015258789,
+        "prior_all_time_or_current_month_high": 70.4800033569336,
+        "passes_close_filter": true,
+        "yahoo_symbol": "002415.SZ"
+      }
+    },
+    {
+      "ticker": "002832.SZ",
+      "name": "BIEM.L.FDLKK Garment Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Consumer Non-Durables",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Non-Durables · Apparel/Footwear",
+      "description": "BIEM.L.FDLKK Garment Co., Ltd. Class A · Apparel/Footwear",
+      "change_pct": 5.085488270809058,
+      "session_open": 22.520000457763672,
+      "session_close": 23.969999313354492,
+      "session_volume": 17746425.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002832",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002832.SZ/history/",
+        "date": "2026-07-27",
+        "daily_high": 23.969999313354492,
+        "prior_all_time_or_current_month_high": 38.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "002832.SZ"
+      }
+    },
+    {
+      "ticker": "002860.SZ",
+      "name": "Hangzhou Star Shuaier Electric Appliance Co. Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Semiconductors",
+      "description": "Hangzhou Star Shuaier Electric Appliance Co. Ltd. Class A · Semiconductors",
+      "change_pct": 3.8223629164270356,
+      "session_open": 18.049999237060547,
+      "session_close": 18.469999313354492,
+      "session_volume": 35934672.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002860",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002860.SZ/history/",
+        "date": "2026-07-27",
+        "daily_high": 18.809999465942383,
+        "prior_all_time_or_current_month_high": 18.809999465942383,
+        "passes_close_filter": true,
+        "yahoo_symbol": "002860.SZ"
+      }
+    },
+    {
+      "ticker": "003013.SZ",
+      "name": "Guangzhou Metro Design & Research Institute Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Industrial Services",
+      "high_type": "52_week",
+      "reason": "업종: Industrial Services · Engineering & Construction",
+      "description": "Guangzhou Metro Design & Research Institute Co., Ltd. Class A · Engineering & Construction",
+      "change_pct": 6.475256026877663,
+      "session_open": 16.549999237060547,
+      "session_close": 17.43000030517578,
+      "session_volume": 11683417.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:003013",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/003013.SZ/history/",
+        "date": "2026-07-27",
+        "daily_high": 17.5,
+        "prior_all_time_or_current_month_high": 29.389999389648438,
+        "passes_close_filter": true,
+        "yahoo_symbol": "003013.SZ"
+      }
+    },
+    {
+      "ticker": "200429.SZ",
+      "name": "Guangdong Provincial Expressway Development Co., Ltd. Class B",
+      "exchange": "SZSE",
+      "category": "Industrial Services",
+      "high_type": "all_time",
+      "reason": "업종: Industrial Services · Engineering & Construction",
+      "description": "Guangdong Provincial Expressway Development Co., Ltd. Class B · Engineering & Construction",
+      "change_pct": 0.6128745643564137,
+      "session_open": 9.800000190734863,
+      "session_close": 9.850000381469727,
+      "session_volume": 1336255.0,
+      "currency": "HKD",
+      "source_symbol": "SZSE:200429",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/200429.SZ/history/",
+        "date": "2026-07-27",
+        "daily_high": 9.850000381469727,
+        "prior_all_time_or_current_month_high": 9.850000381469727,
+        "passes_close_filter": true,
+        "yahoo_symbol": "200429.SZ"
+      }
+    },
+    {
+      "ticker": "300214.SZ",
+      "name": "Shandong Rike Chemical Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Process Industries",
+      "high_type": "all_time",
+      "reason": "업종: Process Industries · Chemicals: Major Diversified",
+      "description": "Shandong Rike Chemical Co., Ltd. Class A · Chemicals: Major Diversified",
+      "change_pct": 19.98313620713099,
+      "session_open": 12.350000381469727,
+      "session_close": 14.229999542236328,
+      "session_volume": 76796305.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:300214",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/300214.SZ/history/",
+        "date": "2026-07-27",
+        "daily_high": 14.229999542236328,
+        "prior_all_time_or_current_month_high": 14.229999542236328,
+        "passes_close_filter": true,
+        "yahoo_symbol": "300214.SZ"
+      }
+    },
+    {
+      "ticker": "301234.SZ",
+      "name": "Anhui Hongyu Wuzhou Medical Manufacturer Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Health Technology",
+      "high_type": "all_time",
+      "reason": "업종: Health Technology · Medical Specialties",
+      "description": "Anhui Hongyu Wuzhou Medical Manufacturer Co., Ltd. Class A · Medical Specialties",
+      "change_pct": 19.999999999999996,
+      "session_open": 70.5,
+      "session_close": 70.5,
+      "session_volume": 10649081.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:301234",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/301234.SZ/history/",
+        "date": "2026-07-27",
+        "daily_high": 70.5,
+        "prior_all_time_or_current_month_high": 70.5,
+        "passes_close_filter": true,
+        "yahoo_symbol": "301234.SZ"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-10-17T02:05:50.378803+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 5311,
+    "history_symbols": 5280,
+    "inactive_symbols": 0,
+    "failed_symbols": 31,
+    "coverage_ratio": 0.9941630578045566,
+    "coverage_by_exchange": {
+      "SSE": {
+        "covered": 2345,
+        "total": 2357
+      },
+      "SZSE": {
+        "covered": 2935,
+        "total": 2954
+      }
+    },
+    "session_symbols": 5278,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-10-17T02:05:50.378803+00:00"
+}

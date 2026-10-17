@@ -1,0 +1,101 @@
+{
+  "schema_version": 1,
+  "market": "korea",
+  "date": "2026-07-16",
+  "summary": "과거 일봉 전체 대조 기준. 당일 장중 고가가 52주·전체기간 고가에 도달하고, 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다. 전체기간 신고가를 우선 표시하며 신고가 배경은 별도 확인 전입니다.",
+  "sources": [
+    {
+      "label": "Naver Finance 조정 일봉·한국 종목명",
+      "url": "https://stock.naver.com/"
+    },
+    {
+      "label": "TradingView 한국 주식 종목군·업종",
+      "url": "https://www.tradingview.com/screener/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "035610.KQ",
+      "name": "솔본",
+      "exchange": "KOSDAQ",
+      "category": "Technology Services",
+      "high_type": "52_week",
+      "reason": "업종: Technology Services · Packaged Software",
+      "description": "솔본 · Packaged Software",
+      "change_pct": 6.084070796460177,
+      "session_open": 4520,
+      "session_close": 4795,
+      "currency": "KRW",
+      "source_symbol": "KRX:035610",
+      "name_original": "Solborn, Inc.",
+      "name_source_url": "https://m.stock.naver.com/api/stock/035610/basic",
+      "high_verification": {
+        "source": "Naver Finance adjusted daily history",
+        "source_url": "https://api.finance.naver.com/siseJson.naver?symbol=035610&requestType=1&startTime=20250717&endTime=20260716&timeframe=day",
+        "date": "2026-07-16",
+        "open": 4520,
+        "daily_high": 4940,
+        "low": 4480,
+        "close": 4795,
+        "previous_close": 4520,
+        "volume": 369098,
+        "prior_52_week_high": 4550,
+        "observed_bars": 244,
+        "first_observed_date": "2025-07-17",
+        "confirmed": true,
+        "matches_prior_high": false,
+        "bearish_candle": false,
+        "down_close": false,
+        "passes_close_filter": true
+      }
+    },
+    {
+      "ticker": "089860.KS",
+      "name": "롯데렌탈",
+      "exchange": "KOSPI",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "업종: Finance · Finance/Rental/Leasing",
+      "description": "롯데렌탈 · Finance/Rental/Leasing",
+      "change_pct": 8.088235294117647,
+      "session_open": 34000,
+      "session_close": 36750,
+      "currency": "KRW",
+      "source_symbol": "KRX:089860",
+      "name_original": "LOTTE rental co., ltd.",
+      "name_source_url": "https://m.stock.naver.com/api/stock/089860/basic",
+      "high_verification": {
+        "source": "Naver Finance adjusted daily history",
+        "source_url": "https://api.finance.naver.com/siseJson.naver?symbol=089860&requestType=1&startTime=20250717&endTime=20260716&timeframe=day",
+        "date": "2026-07-16",
+        "open": 34000,
+        "daily_high": 37350,
+        "low": 34000,
+        "close": 36750,
+        "previous_close": 34000,
+        "volume": 220502,
+        "prior_52_week_high": 35250,
+        "observed_bars": 244,
+        "first_observed_date": "2025-07-17",
+        "confirmed": true,
+        "matches_prior_high": false,
+        "bearish_candle": false,
+        "down_close": false,
+        "passes_close_filter": true
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Naver Finance adjusted daily history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-10-17T02:04:12.681900+00:00",
+    "definition": "daily high >= prior 52-week high; close >= open; close >= previous close; all-time takes precedence; ties included",
+    "scanned_symbols": 2738,
+    "session_symbols": 2718,
+    "raw_new_high_candidates": 6,
+    "excluded_unsupported_korean_board": 0,
+    "excluded_bearish_or_down_close": 4,
+    "pagination_complete": true
+  },
+  "collected_at": "2026-10-17T02:04:12.681900+00:00"
+}

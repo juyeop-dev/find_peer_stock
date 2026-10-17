@@ -1,0 +1,358 @@
+{
+  "schema_version": 1,
+  "market": "china",
+  "date": "2026-07-16",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "600664.SS",
+      "name": "Harbin Pharmaceutical Group Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Pharmaceuticals: Major",
+      "description": "Harbin Pharmaceutical Group Co., Ltd. Class A · Pharmaceuticals: Major",
+      "change_pct": 10.022278597805578,
+      "session_open": 4.940000057220459,
+      "session_close": 4.940000057220459,
+      "session_volume": 296786688.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:600664",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/600664.SS/history/",
+        "date": "2026-07-16",
+        "daily_high": 4.940000057220459,
+        "prior_all_time_or_current_month_high": 10.177514736468975,
+        "passes_close_filter": true,
+        "yahoo_symbol": "600664.SS"
+      }
+    },
+    {
+      "ticker": "603127.SS",
+      "name": "Joinn Laboratories (China) Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Health Technology",
+      "high_type": "all_time",
+      "reason": "업종: Health Technology · Biotechnology",
+      "description": "Joinn Laboratories (China) Co., Ltd. Class A · Biotechnology",
+      "change_pct": 5.195577091287995,
+      "session_open": 51.58000183105469,
+      "session_close": 53.25,
+      "session_volume": 123303671.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:603127",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/603127.SS/history/",
+        "date": "2026-07-16",
+        "daily_high": 55.68000030517578,
+        "prior_all_time_or_current_month_high": 55.68000030517578,
+        "passes_close_filter": true,
+        "yahoo_symbol": "603127.SS"
+      }
+    },
+    {
+      "ticker": "603190.SS",
+      "name": "Yantai Yatong Precision Mechanical Corporation Class A",
+      "exchange": "SSE",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Auto Parts: OEM",
+      "description": "Yantai Yatong Precision Mechanical Corporation Class A · Auto Parts: OEM",
+      "change_pct": 0.6602677752644226,
+      "session_open": 16.65999984741211,
+      "session_close": 16.770000457763672,
+      "session_volume": 2875780.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:603190",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/603190.SS/history/",
+        "date": "2026-07-16",
+        "daily_high": 17.219999313354492,
+        "prior_all_time_or_current_month_high": 23.469388144356863,
+        "passes_close_filter": true,
+        "yahoo_symbol": "603190.SS"
+      }
+    },
+    {
+      "ticker": "603580.SS",
+      "name": "AA Industrial Belting (Shanghai) Co. Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Industrial Machinery",
+      "description": "AA Industrial Belting (Shanghai) Co. Ltd. Class A · Industrial Machinery",
+      "change_pct": 9.991917526925565,
+      "session_open": 40.84000015258789,
+      "session_close": 40.84000015258789,
+      "session_volume": 147400.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:603580",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/603580.SS/history/",
+        "date": "2026-07-16",
+        "daily_high": 40.84000015258789,
+        "prior_all_time_or_current_month_high": 40.84000015258789,
+        "passes_close_filter": true,
+        "yahoo_symbol": "603580.SS"
+      }
+    },
+    {
+      "ticker": "603836.SS",
+      "name": "Bondex Supply Chain Management Co. Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Transportation",
+      "high_type": "52_week",
+      "reason": "업종: Transportation · Air Freight/Couriers",
+      "description": "Bondex Supply Chain Management Co. Ltd. Class A · Air Freight/Couriers",
+      "change_pct": 1.3953474446076086,
+      "session_open": 8.600000381469727,
+      "session_close": 8.720000267028809,
+      "session_volume": 5012960.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:603836",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/603836.SS/history/",
+        "date": "2026-07-16",
+        "daily_high": 8.770000457763672,
+        "prior_all_time_or_current_month_high": 18.122448240007675,
+        "passes_close_filter": true,
+        "yahoo_symbol": "603836.SS"
+      }
+    },
+    {
+      "ticker": "605507.SS",
+      "name": "Guobang Pharma Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Pharmaceuticals: Major",
+      "description": "Guobang Pharma Ltd. Class A · Pharmaceuticals: Major",
+      "change_pct": 4.588911958474506,
+      "session_open": 15.779999732971191,
+      "session_close": 16.40999984741211,
+      "session_volume": 12632946.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:605507",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/605507.SS/history/",
+        "date": "2026-07-16",
+        "daily_high": 16.530000686645508,
+        "prior_all_time_or_current_month_high": 24.43877628871373,
+        "passes_close_filter": true,
+        "yahoo_symbol": "605507.SS"
+      }
+    },
+    {
+      "ticker": "688046.SS",
+      "name": "GemPharmatech Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Biotechnology",
+      "description": "GemPharmatech Co., Ltd. Class A · Biotechnology",
+      "change_pct": 0.6594950974651237,
+      "session_open": 27.3700008392334,
+      "session_close": 29.0,
+      "session_volume": 27484277.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:688046",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/688046.SS/history/",
+        "date": "2026-07-16",
+        "daily_high": 31.0,
+        "prior_all_time_or_current_month_high": 35.869998931884766,
+        "passes_close_filter": true,
+        "yahoo_symbol": "688046.SS"
+      }
+    },
+    {
+      "ticker": "688796.SS",
+      "name": "Biocytogen Pharmaceuticals (Beijing) Co. Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Commercial Services",
+      "high_type": "all_time",
+      "reason": "업종: Commercial Services · Miscellaneous Commercial Services",
+      "description": "Biocytogen Pharmaceuticals (Beijing) Co. Ltd. Class A · Miscellaneous Commercial Services",
+      "change_pct": 7.9132896391972185,
+      "session_open": 128.0,
+      "session_close": 142.3699951171875,
+      "session_volume": 5089704.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:688796",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/688796.SS/history/",
+        "date": "2026-07-16",
+        "daily_high": 154.99000549316406,
+        "prior_all_time_or_current_month_high": 154.99000549316406,
+        "passes_close_filter": true,
+        "yahoo_symbol": "688796.SS"
+      }
+    },
+    {
+      "ticker": "000739.SZ",
+      "name": "Apeloa Pharmaceutical Co. Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Pharmaceuticals: Major",
+      "description": "Apeloa Pharmaceutical Co. Ltd. Class A · Pharmaceuticals: Major",
+      "change_pct": 2.5891583020217324,
+      "session_open": 20.549999237060547,
+      "session_close": 21.0,
+      "session_volume": 49543196.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:000739",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/000739.SZ/history/",
+        "date": "2026-07-16",
+        "daily_high": 21.5,
+        "prior_all_time_or_current_month_high": 41.869998931884766,
+        "passes_close_filter": true,
+        "yahoo_symbol": "000739.SZ"
+      }
+    },
+    {
+      "ticker": "001314.SZ",
+      "name": "Emdoor Information Co. Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Computer Processing Hardware",
+      "description": "Emdoor Information Co. Ltd. Class A · Computer Processing Hardware",
+      "change_pct": 1.2266012709172713,
+      "session_open": 62.029998779296875,
+      "session_close": 62.720001220703125,
+      "session_volume": 16066984.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:001314",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/001314.SZ/history/",
+        "date": "2026-07-16",
+        "daily_high": 67.87999725341797,
+        "prior_all_time_or_current_month_high": 75.66999816894531,
+        "passes_close_filter": true,
+        "yahoo_symbol": "001314.SZ"
+      }
+    },
+    {
+      "ticker": "002141.SZ",
+      "name": "Infund Holding Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Non-Energy Minerals",
+      "high_type": "52_week",
+      "reason": "업종: Non-Energy Minerals · Other Metals/Minerals",
+      "description": "Infund Holding Co., Ltd. Class A · Other Metals/Minerals",
+      "change_pct": 5.347588355755861,
+      "session_open": 5.789999961853027,
+      "session_close": 5.909999847412109,
+      "session_volume": 195774128.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002141",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002141.SZ/history/",
+        "date": "2026-07-16",
+        "daily_high": 6.170000076293945,
+        "prior_all_time_or_current_month_high": 14.510000228881836,
+        "passes_close_filter": true,
+        "yahoo_symbol": "002141.SZ"
+      }
+    },
+    {
+      "ticker": "002303.SZ",
+      "name": "MYS Group Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Process Industries",
+      "high_type": "52_week",
+      "reason": "업종: Process Industries · Containers/Packaging",
+      "description": "MYS Group Co., Ltd. Class A · Containers/Packaging",
+      "change_pct": 0.5987970379371932,
+      "session_open": 5.010000228881836,
+      "session_close": 5.039999961853027,
+      "session_volume": 145264166.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002303",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002303.SZ/history/",
+        "date": "2026-07-16",
+        "daily_high": 5.190000057220459,
+        "prior_all_time_or_current_month_high": 15.550000190734863,
+        "passes_close_filter": true,
+        "yahoo_symbol": "002303.SZ"
+      }
+    },
+    {
+      "ticker": "301520.SZ",
+      "name": "Anhui Wanbang Pharmaceutical Technology Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Health Technology",
+      "high_type": "all_time",
+      "reason": "업종: Health Technology · Biotechnology",
+      "description": "Anhui Wanbang Pharmaceutical Technology Co., Ltd. Class A · Biotechnology",
+      "change_pct": 13.369621513776186,
+      "session_open": 54.880001068115234,
+      "session_close": 66.6500015258789,
+      "session_volume": 18349584.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:301520",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/301520.SZ/history/",
+        "date": "2026-07-16",
+        "daily_high": 69.54000091552734,
+        "prior_all_time_or_current_month_high": 69.54000091552734,
+        "passes_close_filter": true,
+        "yahoo_symbol": "301520.SZ"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-10-17T02:05:50.378803+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 5311,
+    "history_symbols": 5280,
+    "inactive_symbols": 0,
+    "failed_symbols": 31,
+    "coverage_ratio": 0.9941630578045566,
+    "coverage_by_exchange": {
+      "SSE": {
+        "covered": 2345,
+        "total": 2357
+      },
+      "SZSE": {
+        "covered": 2935,
+        "total": 2954
+      }
+    },
+    "session_symbols": 5277,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-10-17T02:05:50.378803+00:00"
+}

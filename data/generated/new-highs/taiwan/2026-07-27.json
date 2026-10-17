@@ -1,0 +1,404 @@
+{
+  "schema_version": 1,
+  "market": "taiwan",
+  "date": "2026-07-27",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "1720.TW",
+      "name": "Standard Chemical & Pharmaceutical Co. Ltd.",
+      "exchange": "TWSE",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Pharmaceuticals: Major",
+      "description": "Standard Chemical & Pharmaceutical Co. Ltd. · Pharmaceuticals: Major",
+      "change_pct": 1.5929230546529283,
+      "session_open": 56.70000076293945,
+      "session_close": 57.400001525878906,
+      "session_volume": 412050.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:1720",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/1720.TW/history/",
+        "date": "2026-07-27",
+        "daily_high": 57.599998474121094,
+        "prior_all_time_or_current_month_high": 65.7851201837713,
+        "passes_close_filter": true,
+        "yahoo_symbol": "1720.TW"
+      }
+    },
+    {
+      "ticker": "1734.TW",
+      "name": "Sinphar Pharmaceutical Co. Ltd.",
+      "exchange": "TWSE",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Pharmaceuticals: Major",
+      "description": "Sinphar Pharmaceutical Co. Ltd. · Pharmaceuticals: Major",
+      "change_pct": 0.47770896467309587,
+      "session_open": 29.62264060974121,
+      "session_close": 29.764150619506836,
+      "session_volume": 292723.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:1734",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/1734.TW/history/",
+        "date": "2026-07-27",
+        "daily_high": 29.952829360961914,
+        "prior_all_time_or_current_month_high": 42.193057209468364,
+        "passes_close_filter": true,
+        "yahoo_symbol": "1734.TW"
+      }
+    },
+    {
+      "ticker": "2801.TW",
+      "name": "Chang Hwa Commercial Bank, Ltd.",
+      "exchange": "TWSE",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "업종: Finance · Regional Banks",
+      "description": "Chang Hwa Commercial Bank, Ltd. · Regional Banks",
+      "change_pct": 1.4373702783861741,
+      "session_open": 23.95121955871582,
+      "session_close": 24.09756088256836,
+      "session_volume": 36727153.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2801",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2801.TW/history/",
+        "date": "2026-07-27",
+        "daily_high": 24.2439022064209,
+        "prior_all_time_or_current_month_high": 24.2439022064209,
+        "passes_close_filter": true,
+        "yahoo_symbol": "2801.TW"
+      },
+      "peers": [
+        {
+          "ticker": "024110.KS",
+          "name": "기업은행"
+        },
+        {
+          "ticker": "138930.KS",
+          "name": "BNK금융지주"
+        },
+        {
+          "ticker": "139130.KS",
+          "name": "iM금융지주"
+        }
+      ]
+    },
+    {
+      "ticker": "2836.TW",
+      "name": "Bank of Kaohsiung Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "업종: Finance · Major Banks",
+      "description": "Bank of Kaohsiung Co., Ltd. · Major Banks",
+      "change_pct": 0.38910537760965536,
+      "session_open": 12.659160829009977,
+      "session_close": 12.70841830455591,
+      "session_volume": 7778488.362075,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2836",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2836.TW/history/",
+        "date": "2026-07-27",
+        "daily_high": 12.757676724310468,
+        "prior_all_time_or_current_month_high": 12.757676724310468,
+        "passes_close_filter": true,
+        "yahoo_symbol": "2836.TW"
+      }
+    },
+    {
+      "ticker": "2850.TW",
+      "name": "Shinkong Insurance Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "업종: Finance · Property/Casualty Insurance",
+      "description": "Shinkong Insurance Co., Ltd. · Property/Casualty Insurance",
+      "change_pct": 7.118644067796609,
+      "session_open": 152.5,
+      "session_close": 158.0,
+      "session_volume": 1181687.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2850",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2850.TW/history/",
+        "date": "2026-07-27",
+        "daily_high": 160.0,
+        "prior_all_time_or_current_month_high": 160.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "2850.TW"
+      }
+    },
+    {
+      "ticker": "2880.TW",
+      "name": "Hua Nan Financial Holdings Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "업종: Finance · Regional Banks",
+      "description": "Hua Nan Financial Holdings Co., Ltd. · Regional Banks",
+      "change_pct": 1.7199116515317137,
+      "session_open": 40.69306945800781,
+      "session_close": 40.9901008605957,
+      "session_volume": 21984525.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2880",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2880.TW/history/",
+        "date": "2026-07-27",
+        "daily_high": 41.53465270996094,
+        "prior_all_time_or_current_month_high": 41.53465270996094,
+        "passes_close_filter": true,
+        "yahoo_symbol": "2880.TW"
+      },
+      "peers": [
+        {
+          "ticker": "024110.KS",
+          "name": "기업은행"
+        },
+        {
+          "ticker": "175330.KS",
+          "name": "JB금융지주"
+        }
+      ]
+    },
+    {
+      "ticker": "2886.TW",
+      "name": "Mega Financial Holding Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "업종: Finance · Major Banks",
+      "description": "Mega Financial Holding Co., Ltd. · Major Banks",
+      "change_pct": 1.9607858575435344,
+      "session_open": 49.0,
+      "session_close": 49.400001525878906,
+      "session_volume": 30677324.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2886",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2886.TW/history/",
+        "date": "2026-07-27",
+        "daily_high": 49.79999923706055,
+        "prior_all_time_or_current_month_high": 49.79999923706055,
+        "passes_close_filter": true,
+        "yahoo_symbol": "2886.TW"
+      },
+      "peers": [
+        {
+          "ticker": "024110.KS",
+          "name": "기업은행"
+        },
+        {
+          "ticker": "138930.KS",
+          "name": "BNK금융지주"
+        },
+        {
+          "ticker": "139130.KS",
+          "name": "iM금융지주"
+        },
+        {
+          "ticker": "071050.KS",
+          "name": "한국금융지주"
+        }
+      ]
+    },
+    {
+      "ticker": "2892.TW",
+      "name": "First Financial Holding Co. Ltd.",
+      "exchange": "TWSE",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "업종: Finance · Major Banks",
+      "description": "First Financial Holding Co. Ltd. · Major Banks",
+      "change_pct": 1.4577259799462672,
+      "session_open": 34.599998474121094,
+      "session_close": 34.79999923706055,
+      "session_volume": 38485688.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2892",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2892.TW/history/",
+        "date": "2026-07-27",
+        "daily_high": 35.099998474121094,
+        "prior_all_time_or_current_month_high": 35.099998474121094,
+        "passes_close_filter": true,
+        "yahoo_symbol": "2892.TW"
+      },
+      "peers": [
+        {
+          "ticker": "316140.KS",
+          "name": "우리금융지주"
+        },
+        {
+          "ticker": "086790.KS",
+          "name": "하나금융지주"
+        },
+        {
+          "ticker": "055550.KS",
+          "name": "신한지주"
+        },
+        {
+          "ticker": "105560.KS",
+          "name": "KB금융"
+        }
+      ]
+    },
+    {
+      "ticker": "5876.TW",
+      "name": "Shanghai Commercial & Savings Bank, Ltd.",
+      "exchange": "TWSE",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "업종: Finance · Regional Banks",
+      "description": "Shanghai Commercial & Savings Bank, Ltd. · Regional Banks",
+      "change_pct": 1.8418181617817275,
+      "session_open": 45.3877061900526,
+      "session_close": 46.07391357421875,
+      "session_volume": 23478937.73,
+      "currency": "TWD",
+      "source_symbol": "TWSE:5876",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/5876.TW/history/",
+        "date": "2026-07-27",
+        "daily_high": 46.17194374008934,
+        "prior_all_time_or_current_month_high": 55.23152870706993,
+        "passes_close_filter": true,
+        "yahoo_symbol": "5876.TW"
+      }
+    },
+    {
+      "ticker": "5880.TW",
+      "name": "Taiwan Cooperative Financial Holding Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "업종: Finance · Regional Banks",
+      "description": "Taiwan Cooperative Financial Holding Co., Ltd. · Regional Banks",
+      "change_pct": 1.169597195485017,
+      "session_open": 25.170730590820312,
+      "session_close": 25.317073822021484,
+      "session_volume": 23608000.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:5880",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/5880.TW/history/",
+        "date": "2026-07-27",
+        "daily_high": 25.317073822021484,
+        "prior_all_time_or_current_month_high": 25.317073822021484,
+        "passes_close_filter": true,
+        "yahoo_symbol": "5880.TW"
+      },
+      "peers": [
+        {
+          "ticker": "024110.KS",
+          "name": "기업은행"
+        },
+        {
+          "ticker": "175330.KS",
+          "name": "JB금융지주"
+        }
+      ]
+    },
+    {
+      "ticker": "6598.TW",
+      "name": "Applied BioCode Corp.",
+      "exchange": "TWSE",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Medical Specialties",
+      "description": "Applied BioCode Corp. · Medical Specialties",
+      "change_pct": 8.303246114483054,
+      "session_open": 27.700000762939453,
+      "session_close": 30.0,
+      "session_volume": 1291406.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:6598",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6598.TW/history/",
+        "date": "2026-07-27",
+        "daily_high": 30.450000762939453,
+        "prior_all_time_or_current_month_high": 182.5,
+        "passes_close_filter": true,
+        "yahoo_symbol": "6598.TW"
+      }
+    },
+    {
+      "ticker": "8411.TW",
+      "name": "Kingcan Holdings Ltd",
+      "exchange": "TWSE",
+      "category": "Process Industries",
+      "high_type": "52_week",
+      "reason": "업종: Process Industries · Containers/Packaging",
+      "description": "Kingcan Holdings Ltd · Containers/Packaging",
+      "change_pct": 0.3816735542334193,
+      "session_open": 13.100000381469727,
+      "session_close": 13.149999618530273,
+      "session_volume": 70166.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:8411",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/8411.TW/history/",
+        "date": "2026-07-27",
+        "daily_high": 13.149999618530273,
+        "prior_all_time_or_current_month_high": 40.532656584280694,
+        "passes_close_filter": true,
+        "yahoo_symbol": "8411.TW"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-10-17T02:03:38.567846+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 2350,
+    "history_symbols": 2307,
+    "inactive_symbols": 0,
+    "failed_symbols": 43,
+    "coverage_ratio": 0.9817021276595744,
+    "coverage_by_exchange": {
+      "TWSE": {
+        "covered": 1085,
+        "total": 1093
+      },
+      "TPEX": {
+        "covered": 1222,
+        "total": 1257
+      }
+    },
+    "session_symbols": 2303,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-10-17T02:03:38.567846+00:00"
+}

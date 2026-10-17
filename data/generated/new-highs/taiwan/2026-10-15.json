@@ -1,0 +1,572 @@
+{
+  "schema_version": 1,
+  "market": "taiwan",
+  "date": "2026-10-15",
+  "summary": "장 마감 후 TradingView 주식 스냅샷 기준. 당일 장중 고가가 52주·전체기간 고가에 도달하고, 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다. 전체기간 신고가를 우선 표시하며 신고가 배경은 별도 확인 전입니다.",
+  "sources": [
+    {
+      "label": "TradingView stock screener",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "1742.TWO",
+      "name": "Taiwan Wax Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Energy Minerals",
+      "high_type": "52_week",
+      "reason": "업종: Energy Minerals · Oil Refining/Marketing",
+      "description": "Taiwan Wax Co., Ltd. · Oil Refining/Marketing",
+      "change_pct": 1.3089005235602091,
+      "session_open": 18.95,
+      "session_close": 19.35,
+      "session_volume": 444416,
+      "source_symbol": "TPEX:1742",
+      "currency": "TWD"
+    },
+    {
+      "ticker": "3287.TWO",
+      "name": "KWorld Computer Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Technology Services",
+      "high_type": "all_time",
+      "reason": "업종: Technology Services · Information Technology Services",
+      "description": "KWorld Computer Co., Ltd. · Information Technology Services",
+      "change_pct": 1.733102253032929,
+      "session_open": 57.7,
+      "session_close": 58.7,
+      "session_volume": 10455791,
+      "source_symbol": "TPEX:3287",
+      "currency": "TWD"
+    },
+    {
+      "ticker": "3354.TWO",
+      "name": "Microcosm Technology Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Metal Fabrication",
+      "description": "Microcosm Technology Co., Ltd. · Metal Fabrication",
+      "change_pct": 9.985528219971066,
+      "session_open": 38,
+      "session_close": 38,
+      "session_volume": 3968418,
+      "source_symbol": "TPEX:3354",
+      "currency": "TWD"
+    },
+    {
+      "ticker": "3644.TWO",
+      "name": "Linco Technology Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Industrial Machinery",
+      "description": "Linco Technology Co., Ltd. · Industrial Machinery",
+      "change_pct": 1.7035775127768313,
+      "session_open": 569,
+      "session_close": 597,
+      "session_volume": 899988,
+      "source_symbol": "TPEX:3644",
+      "currency": "TWD"
+    },
+    {
+      "ticker": "4565.TWO",
+      "name": "Hong Wei Electrical Industry Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Building Products",
+      "description": "Hong Wei Electrical Industry Co., Ltd. · Building Products",
+      "change_pct": 2.7586206896551726,
+      "session_open": 141.5,
+      "session_close": 149,
+      "session_volume": 194202,
+      "source_symbol": "TPEX:4565",
+      "currency": "TWD"
+    },
+    {
+      "ticker": "4924.TWO",
+      "name": "HTM International Holding Ltd.",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Computer Peripherals",
+      "description": "HTM International Holding Ltd. · Computer Peripherals",
+      "change_pct": 9.809264305177095,
+      "session_open": 18.3,
+      "session_close": 20.15,
+      "session_volume": 1159250,
+      "source_symbol": "TPEX:4924",
+      "currency": "TWD"
+    },
+    {
+      "ticker": "6240.TWO",
+      "name": "Sung Gang Corp.Limited",
+      "exchange": "TPEX",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "업종: Finance · Real Estate Development",
+      "description": "Sung Gang Corp.Limited · Real Estate Development",
+      "change_pct": 7.6923076923077,
+      "session_open": 27.95,
+      "session_close": 30.1,
+      "session_volume": 132060,
+      "source_symbol": "TPEX:6240",
+      "currency": "TWD"
+    },
+    {
+      "ticker": "6930.TWO",
+      "name": "Taisic Materials Corp",
+      "exchange": "TPEX",
+      "category": "미분류",
+      "high_type": "all_time",
+      "reason": "업종: 미분류 · 업종 정보 미확인",
+      "description": "Taisic Materials Corp · 업종 정보 미확인",
+      "change_pct": null,
+      "session_open": 45,
+      "session_close": 57,
+      "session_volume": 3367751,
+      "source_symbol": "TPEX:6930",
+      "currency": "USD"
+    },
+    {
+      "ticker": "7863.TWO",
+      "name": "Central Taiwan Science Park Logistics Co. Ltd.",
+      "exchange": "TPEX",
+      "category": "Transportation",
+      "high_type": "52_week",
+      "reason": "업종: Transportation · Air Freight/Couriers",
+      "description": "Central Taiwan Science Park Logistics Co. Ltd. · Air Freight/Couriers",
+      "change_pct": 0.175746924428825,
+      "session_open": 54.2,
+      "session_close": 57,
+      "session_volume": 23,
+      "source_symbol": "TPEX:7863",
+      "currency": "TWD"
+    },
+    {
+      "ticker": "1321.TW",
+      "name": "Ocean Plastics Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Process Industries",
+      "high_type": "52_week",
+      "reason": "업종: Process Industries · Chemicals: Specialty",
+      "description": "Ocean Plastics Co., Ltd. · Chemicals: Specialty",
+      "change_pct": 1.6949152542372923,
+      "session_open": 35.4,
+      "session_close": 36,
+      "session_volume": 929798,
+      "source_symbol": "TWSE:1321",
+      "currency": "TWD"
+    },
+    {
+      "ticker": "1416.TW",
+      "name": "Kwong Fong Industries Corporation",
+      "exchange": "TWSE",
+      "category": "Technology Services",
+      "high_type": "52_week",
+      "reason": "업종: Technology Services · Information Technology Services",
+      "description": "Kwong Fong Industries Corporation · Information Technology Services",
+      "change_pct": 1.5325670498084236,
+      "session_open": 13.05,
+      "session_close": 13.25,
+      "session_volume": 1673031,
+      "source_symbol": "TWSE:1416",
+      "currency": "TWD"
+    },
+    {
+      "ticker": "1470.TW",
+      "name": "Evertex Fabrinology Ltd.",
+      "exchange": "TWSE",
+      "category": "Process Industries",
+      "high_type": "52_week",
+      "reason": "업종: Process Industries · Textiles",
+      "description": "Evertex Fabrinology Ltd. · Textiles",
+      "change_pct": 0.4048582995951474,
+      "session_open": 24.65,
+      "session_close": 24.8,
+      "session_volume": 13113,
+      "source_symbol": "TWSE:1470",
+      "currency": "TWD"
+    },
+    {
+      "ticker": "2347.TW",
+      "name": "Synnex Technology International Corp.",
+      "exchange": "TWSE",
+      "category": "Distribution Services",
+      "high_type": "all_time",
+      "reason": "업종: Distribution Services · Electronics Distributors",
+      "description": "Synnex Technology International Corp. · Electronics Distributors",
+      "change_pct": 0,
+      "session_open": 102.5,
+      "session_close": 102.5,
+      "session_volume": 5355173,
+      "source_symbol": "TWSE:2347",
+      "currency": "TWD"
+    },
+    {
+      "ticker": "2412.TW",
+      "name": "Chunghwa Telecom Co., Ltd",
+      "exchange": "TWSE",
+      "category": "Communications",
+      "high_type": "all_time",
+      "reason": "업종: Communications · Major Telecommunications",
+      "description": "Chunghwa Telecom Co., Ltd · Major Telecommunications",
+      "change_pct": 2.6936026936026933,
+      "session_open": 149.5,
+      "session_close": 152.5,
+      "session_volume": 24559413,
+      "source_symbol": "TWSE:2412",
+      "currency": "TWD"
+    },
+    {
+      "ticker": "2468.TW",
+      "name": "Fortune Information System Corp.",
+      "exchange": "TWSE",
+      "category": "Commercial Services",
+      "high_type": "52_week",
+      "reason": "업종: Commercial Services · Miscellaneous Commercial Services",
+      "description": "Fortune Information System Corp. · Miscellaneous Commercial Services",
+      "change_pct": 0.7583965330444234,
+      "session_open": 44.9,
+      "session_close": 46.5,
+      "session_volume": 13443203,
+      "source_symbol": "TWSE:2468",
+      "currency": "TWD"
+    },
+    {
+      "ticker": "2816.TW",
+      "name": "Union Insurance Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "업종: Finance · Property/Casualty Insurance",
+      "description": "Union Insurance Co., Ltd. · Property/Casualty Insurance",
+      "change_pct": 1.6853932584269662,
+      "session_open": 44.25,
+      "session_close": 45.25,
+      "session_volume": 1109807,
+      "source_symbol": "TWSE:2816",
+      "currency": "TWD"
+    },
+    {
+      "ticker": "2850.TW",
+      "name": "Shinkong Insurance Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "업종: Finance · Property/Casualty Insurance",
+      "description": "Shinkong Insurance Co., Ltd. · Property/Casualty Insurance",
+      "change_pct": 2.976190476190476,
+      "session_open": 168.5,
+      "session_close": 173,
+      "session_volume": 680860,
+      "source_symbol": "TWSE:2850",
+      "currency": "TWD"
+    },
+    {
+      "ticker": "2851.TW",
+      "name": "Central Reinsurance Corporation",
+      "exchange": "TWSE",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "업종: Finance · Multi-Line Insurance",
+      "description": "Central Reinsurance Corporation · Multi-Line Insurance",
+      "change_pct": 2.504816955684016,
+      "session_open": 51.1,
+      "session_close": 53.2,
+      "session_volume": 4641091,
+      "source_symbol": "TWSE:2851",
+      "currency": "TWD"
+    },
+    {
+      "ticker": "2880.TW",
+      "name": "Hua Nan Financial Holdings Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "업종: Finance · Regional Banks",
+      "description": "Hua Nan Financial Holdings Co., Ltd. · Regional Banks",
+      "change_pct": 1.5337423312883436,
+      "session_open": 49.15,
+      "session_close": 49.65,
+      "session_volume": 22657515,
+      "source_symbol": "TWSE:2880",
+      "currency": "TWD",
+      "peers": [
+        {
+          "ticker": "024110.KS",
+          "name": "기업은행"
+        },
+        {
+          "ticker": "175330.KS",
+          "name": "JB금융지주"
+        }
+      ]
+    },
+    {
+      "ticker": "2884.TW",
+      "name": "E.SUN Financial Holding Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "업종: Finance · Major Banks",
+      "description": "E.SUN Financial Holding Co., Ltd. · Major Banks",
+      "change_pct": 3.1712473572938693,
+      "session_open": 48.35,
+      "session_close": 48.8,
+      "session_volume": 63044838,
+      "source_symbol": "TWSE:2884",
+      "currency": "TWD",
+      "peers": [
+        {
+          "ticker": "138930.KS",
+          "name": "BNK금융지주"
+        },
+        {
+          "ticker": "139130.KS",
+          "name": "iM금융지주"
+        }
+      ]
+    },
+    {
+      "ticker": "2885.TW",
+      "name": "Yuanta Financial Holding Co. Ltd.",
+      "exchange": "TWSE",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "업종: Finance · Investment Banks/Brokers",
+      "description": "Yuanta Financial Holding Co. Ltd. · Investment Banks/Brokers",
+      "change_pct": 0.6925207756232686,
+      "session_open": 72.4,
+      "session_close": 72.7,
+      "session_volume": 33281839,
+      "source_symbol": "TWSE:2885",
+      "currency": "TWD",
+      "peers": [
+        {
+          "ticker": "006800.KS",
+          "name": "미래에셋증권"
+        },
+        {
+          "ticker": "071050.KS",
+          "name": "한국금융지주"
+        },
+        {
+          "ticker": "039490.KS",
+          "name": "키움증권"
+        },
+        {
+          "ticker": "016360.KS",
+          "name": "삼성증권"
+        },
+        {
+          "ticker": "005940.KS",
+          "name": "NH투자증권"
+        }
+      ]
+    },
+    {
+      "ticker": "2891.TW",
+      "name": "CTBC Financial Holding Company Ltd.",
+      "exchange": "TWSE",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "업종: Finance · Regional Banks",
+      "description": "CTBC Financial Holding Company Ltd. · Regional Banks",
+      "change_pct": 2.1008403361344534,
+      "session_open": 72,
+      "session_close": 72.9,
+      "session_volume": 76761063,
+      "source_symbol": "TWSE:2891",
+      "currency": "TWD",
+      "peers": [
+        {
+          "ticker": "086790.KS",
+          "name": "하나금융지주"
+        },
+        {
+          "ticker": "055550.KS",
+          "name": "신한지주"
+        },
+        {
+          "ticker": "316140.KS",
+          "name": "우리금융지주"
+        },
+        {
+          "ticker": "105560.KS",
+          "name": "KB금융"
+        }
+      ]
+    },
+    {
+      "ticker": "2892.TW",
+      "name": "First Financial Holding Co. Ltd.",
+      "exchange": "TWSE",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "업종: Finance · Major Banks",
+      "description": "First Financial Holding Co. Ltd. · Major Banks",
+      "change_pct": 2.3370233702337098,
+      "session_open": 40.65,
+      "session_close": 41.6,
+      "session_volume": 37074830,
+      "source_symbol": "TWSE:2892",
+      "currency": "TWD",
+      "peers": [
+        {
+          "ticker": "316140.KS",
+          "name": "우리금융지주"
+        },
+        {
+          "ticker": "086790.KS",
+          "name": "하나금융지주"
+        },
+        {
+          "ticker": "055550.KS",
+          "name": "신한지주"
+        },
+        {
+          "ticker": "105560.KS",
+          "name": "KB금융"
+        }
+      ]
+    },
+    {
+      "ticker": "3045.TW",
+      "name": "Taiwan Mobile Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Communications",
+      "high_type": "all_time",
+      "reason": "업종: Communications · Wireless Telecommunications",
+      "description": "Taiwan Mobile Co., Ltd. · Wireless Telecommunications",
+      "change_pct": 3.557312252964427,
+      "session_open": 127,
+      "session_close": 131,
+      "session_volume": 16408909,
+      "source_symbol": "TWSE:3045",
+      "currency": "TWD",
+      "peers": [
+        {
+          "ticker": "032640.KS",
+          "name": "LG유플러스"
+        },
+        {
+          "ticker": "030200.KS",
+          "name": "KT"
+        }
+      ]
+    },
+    {
+      "ticker": "5876.TW",
+      "name": "Shanghai Commercial & Savings Bank, Ltd.",
+      "exchange": "TWSE",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "업종: Finance · Regional Banks",
+      "description": "Shanghai Commercial & Savings Bank, Ltd. · Regional Banks",
+      "change_pct": 3.2882011605415777,
+      "session_open": 51.9,
+      "session_close": 53.4,
+      "session_volume": 13292736,
+      "source_symbol": "TWSE:5876",
+      "currency": "TWD"
+    },
+    {
+      "ticker": "6214.TW",
+      "name": "Systex Corp",
+      "exchange": "TWSE",
+      "category": "Technology Services",
+      "high_type": "all_time",
+      "reason": "업종: Technology Services · Packaged Software",
+      "description": "Systex Corp · Packaged Software",
+      "change_pct": 0.5102040816326531,
+      "session_open": 196.5,
+      "session_close": 197,
+      "session_volume": 1230689,
+      "source_symbol": "TWSE:6214",
+      "currency": "TWD"
+    },
+    {
+      "ticker": "6278.TW",
+      "name": "Taiwan Surface Mounting Technology Corp.",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Semiconductors",
+      "description": "Taiwan Surface Mounting Technology Corp. · Semiconductors",
+      "change_pct": 4.482758620689655,
+      "session_open": 289,
+      "session_close": 303,
+      "session_volume": 57135196,
+      "source_symbol": "TWSE:6278",
+      "currency": "TWD"
+    },
+    {
+      "ticker": "6782.TW",
+      "name": "Visco Vision Inc.",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Electronic Components",
+      "description": "Visco Vision Inc. · Electronic Components",
+      "change_pct": 2.658486707566462,
+      "session_open": 247,
+      "session_close": 251,
+      "session_volume": 1189644,
+      "source_symbol": "TWSE:6782",
+      "currency": "TWD"
+    },
+    {
+      "ticker": "6885.TW",
+      "name": "BRIM Biotechnology, Inc.",
+      "exchange": "TWSE",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Biotechnology",
+      "description": "BRIM Biotechnology, Inc. · Biotechnology",
+      "change_pct": 5.015673981191227,
+      "session_open": 32.75,
+      "session_close": 33.5,
+      "session_volume": 4111951,
+      "source_symbol": "TWSE:6885",
+      "currency": "TWD"
+    }
+  ],
+  "source_metadata": {
+    "provider": "TradingView public scanner",
+    "scanner": "taiwan",
+    "fetched_at": "2026-10-15T06:31:22.957968+00:00",
+    "universe": "TradingView-listed stock instruments, including common and preferred shares; ETFs excluded",
+    "definition": "daily high >= period high; close >= open; close >= previous close when one exists; all-time takes precedence; ties included",
+    "scanner_exchanges": [
+      "TWSE",
+      "TPEX"
+    ],
+    "latest_session_by_exchange": {
+      "TWSE": "2026-10-15",
+      "TPEX": "2026-10-15"
+    },
+    "previous_session_by_exchange": {
+      "TWSE": "2026-10-14",
+      "TPEX": "2026-10-14"
+    },
+    "current_session_reference_symbols": {
+      "TWSE": "TWSE:01001T",
+      "TPEX": "TPEX:1240"
+    },
+    "scanned_symbols": 2349,
+    "current_session_symbols": 2308,
+    "excluded_symbols": {
+      "other_session": 41,
+      "bearish_or_down_close": 17
+    },
+    "pagination_complete": true
+  },
+  "collected_at": "2026-10-15T06:31:22.282045+00:00"
+}

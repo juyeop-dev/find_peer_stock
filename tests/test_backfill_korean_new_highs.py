@@ -33,6 +33,16 @@ class BackfillKoreanNewHighTests(unittest.TestCase):
         self.assertTrue(result[date(2026, 9, 9)]["passes_close_filter"])
         self.assertNotIn(date(2026, 9, 10), result)
 
+    def test_requested_dates_excludes_official_weekday_closures(self) -> None:
+        sessions = backfill.requested_dates(
+            date(2026, 6, 1), date(2026, 7, 31),
+            closed_dates={date(2026, 6, 3), date(2026, 7, 17)},
+        )
+        self.assertEqual(len(sessions), 43)
+        self.assertNotIn(date(2026, 6, 3), sessions)
+        self.assertNotIn(date(2026, 7, 17), sessions)
+        self.assertIn(date(2026, 6, 4), sessions)
+
     def test_parse_history_rejects_duplicates_and_bad_prices(self) -> None:
         valid = ["20260907", 90, 110, 88, 105, 1000]
         for rows in ([valid, valid], [["bad", 90, 110, 88, 105, 1000]],

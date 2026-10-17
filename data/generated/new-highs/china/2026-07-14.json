@@ -1,0 +1,286 @@
+{
+  "schema_version": 1,
+  "market": "china",
+  "date": "2026-07-14",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "600428.SS",
+      "name": "COSCO Shipping Specialized Carriers Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Transportation",
+      "high_type": "52_week",
+      "reason": "업종: Transportation · Marine Shipping",
+      "description": "COSCO Shipping Specialized Carriers Co., Ltd. Class A · Marine Shipping",
+      "change_pct": 7.7393101069280545,
+      "session_open": 9.979999542236328,
+      "session_close": 10.579999923706055,
+      "session_volume": 184010304.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:600428",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/600428.SS/history/",
+        "date": "2026-07-14",
+        "daily_high": 10.640000343322754,
+        "prior_all_time_or_current_month_high": 17.190000534057617,
+        "passes_close_filter": true,
+        "yahoo_symbol": "600428.SS"
+      }
+    },
+    {
+      "ticker": "603065.SS",
+      "name": "Suqian Unitech Corp., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Process Industries",
+      "high_type": "all_time",
+      "reason": "업종: Process Industries · Chemicals: Major Diversified",
+      "description": "Suqian Unitech Corp., Ltd. Class A · Chemicals: Major Diversified",
+      "change_pct": 10.000006238990977,
+      "session_open": 21.84000015258789,
+      "session_close": 23.540000915527344,
+      "session_volume": 54394768.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:603065",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/603065.SS/history/",
+        "date": "2026-07-14",
+        "daily_high": 23.540000915527344,
+        "prior_all_time_or_current_month_high": 23.540000915527344,
+        "passes_close_filter": true,
+        "yahoo_symbol": "603065.SS"
+      }
+    },
+    {
+      "ticker": "603137.SS",
+      "name": "Jiangsu Hengshang Energy Conservation Technology Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Building Products",
+      "description": "Jiangsu Hengshang Energy Conservation Technology Co., Ltd. Class A · Building Products",
+      "change_pct": 9.989801550195487,
+      "session_open": 31.0,
+      "session_close": 32.369998931884766,
+      "session_volume": 36924688.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:603137",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/603137.SS/history/",
+        "date": "2026-07-14",
+        "daily_high": 32.369998931884766,
+        "prior_all_time_or_current_month_high": 32.369998931884766,
+        "passes_close_filter": true,
+        "yahoo_symbol": "603137.SS"
+      }
+    },
+    {
+      "ticker": "603580.SS",
+      "name": "AA Industrial Belting (Shanghai) Co. Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Industrial Machinery",
+      "description": "AA Industrial Belting (Shanghai) Co. Ltd. Class A · Industrial Machinery",
+      "change_pct": 10.006517810582615,
+      "session_open": 33.75,
+      "session_close": 33.75,
+      "session_volume": 614919.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:603580",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/603580.SS/history/",
+        "date": "2026-07-14",
+        "daily_high": 33.75,
+        "prior_all_time_or_current_month_high": 33.75,
+        "passes_close_filter": true,
+        "yahoo_symbol": "603580.SS"
+      }
+    },
+    {
+      "ticker": "603669.SS",
+      "name": "Lionco Pharmaceutical Group Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Pharmaceuticals: Other",
+      "description": "Lionco Pharmaceutical Group Co., Ltd. Class A · Pharmaceuticals: Other",
+      "change_pct": 8.823527761809192,
+      "session_open": 6.739999771118164,
+      "session_close": 7.400000095367432,
+      "session_volume": 101650661.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:603669",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/603669.SS/history/",
+        "date": "2026-07-14",
+        "daily_high": 7.480000019073486,
+        "prior_all_time_or_current_month_high": 12.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "603669.SS"
+      }
+    },
+    {
+      "ticker": "688072.SS",
+      "name": "Piotech, Inc. Class A",
+      "exchange": "SSE",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Semiconductors",
+      "description": "Piotech, Inc. Class A · Semiconductors",
+      "change_pct": 0.5929005639792928,
+      "session_open": 805.0,
+      "session_close": 850.010009765625,
+      "session_volume": 17026694.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:688072",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/688072.SS/history/",
+        "date": "2026-07-14",
+        "daily_high": 945.0,
+        "prior_all_time_or_current_month_high": 945.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "688072.SS"
+      }
+    },
+    {
+      "ticker": "688410.SS",
+      "name": "SWS Hemodialysis Care Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Health Technology",
+      "high_type": "all_time",
+      "reason": "업종: Health Technology · Medical Specialties",
+      "description": "SWS Hemodialysis Care Co., Ltd. Class A · Medical Specialties",
+      "change_pct": 8.178439551319293,
+      "session_open": 10.760000228881836,
+      "session_close": 11.640000343322754,
+      "session_volume": 19023127.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:688410",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/688410.SS/history/",
+        "date": "2026-07-14",
+        "daily_high": 11.680000305175781,
+        "prior_all_time_or_current_month_high": 11.680000305175781,
+        "passes_close_filter": true,
+        "yahoo_symbol": "688410.SS"
+      }
+    },
+    {
+      "ticker": "300214.SZ",
+      "name": "Shandong Rike Chemical Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Process Industries",
+      "high_type": "all_time",
+      "reason": "업종: Process Industries · Chemicals: Major Diversified",
+      "description": "Shandong Rike Chemical Co., Ltd. Class A · Chemicals: Major Diversified",
+      "change_pct": 8.94308464014495,
+      "session_open": 13.119999885559082,
+      "session_close": 13.399999618530273,
+      "session_volume": 93556667.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:300214",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/300214.SZ/history/",
+        "date": "2026-07-14",
+        "daily_high": 13.970000267028809,
+        "prior_all_time_or_current_month_high": 13.970000267028809,
+        "passes_close_filter": true,
+        "yahoo_symbol": "300214.SZ"
+      }
+    },
+    {
+      "ticker": "300990.SZ",
+      "name": "Sanhe Tongfei Refrigeration Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Industrial Machinery",
+      "description": "Sanhe Tongfei Refrigeration Co., Ltd. Class A · Industrial Machinery",
+      "change_pct": 14.687118879979577,
+      "session_open": 107.08999633789062,
+      "session_close": 120.41000366210938,
+      "session_volume": 15413161.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:300990",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/300990.SZ/history/",
+        "date": "2026-07-14",
+        "daily_high": 125.98999786376953,
+        "prior_all_time_or_current_month_high": 125.98999786376953,
+        "passes_close_filter": true,
+        "yahoo_symbol": "300990.SZ"
+      }
+    },
+    {
+      "ticker": "301099.SZ",
+      "name": "Shanghai YCT Electronics Group Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Distribution Services",
+      "high_type": "all_time",
+      "reason": "업종: Distribution Services · Electronics Distributors",
+      "description": "Shanghai YCT Electronics Group Co., Ltd. Class A · Electronics Distributors",
+      "change_pct": 45.53931228158077,
+      "session_open": 63.83000183105469,
+      "session_close": 70.0999984741211,
+      "session_volume": 15099705.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:301099",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/301099.SZ/history/",
+        "date": "2026-07-14",
+        "daily_high": 70.87999725341797,
+        "prior_all_time_or_current_month_high": 70.87999725341797,
+        "passes_close_filter": true,
+        "yahoo_symbol": "301099.SZ"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-10-17T02:05:50.378803+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 5311,
+    "history_symbols": 5280,
+    "inactive_symbols": 0,
+    "failed_symbols": 31,
+    "coverage_ratio": 0.9941630578045566,
+    "coverage_by_exchange": {
+      "SSE": {
+        "covered": 2345,
+        "total": 2357
+      },
+      "SZSE": {
+        "covered": 2935,
+        "total": 2954
+      }
+    },
+    "session_symbols": 5277,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-10-17T02:05:50.378803+00:00"
+}

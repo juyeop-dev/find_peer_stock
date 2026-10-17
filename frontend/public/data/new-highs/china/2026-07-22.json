@@ -1,0 +1,334 @@
+{
+  "schema_version": 1,
+  "market": "china",
+  "date": "2026-07-22",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "600267.SS",
+      "name": "Zhejiang Hisun Pharmaceutical Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Pharmaceuticals: Major",
+      "description": "Zhejiang Hisun Pharmaceutical Co., Ltd. Class A · Pharmaceuticals: Major",
+      "change_pct": 2.4630478616085583,
+      "session_open": 11.949999809265137,
+      "session_close": 12.479999542236328,
+      "session_volume": 85641379.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:600267",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/600267.SS/history/",
+        "date": "2026-07-22",
+        "daily_high": 12.770000457763672,
+        "prior_all_time_or_current_month_high": 27.93000030517578,
+        "passes_close_filter": true,
+        "yahoo_symbol": "600267.SS"
+      }
+    },
+    {
+      "ticker": "600428.SS",
+      "name": "COSCO Shipping Specialized Carriers Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Transportation",
+      "high_type": "52_week",
+      "reason": "업종: Transportation · Marine Shipping",
+      "description": "COSCO Shipping Specialized Carriers Co., Ltd. Class A · Marine Shipping",
+      "change_pct": 2.0183511442954716,
+      "session_open": 11.020000457763672,
+      "session_close": 11.119999885559082,
+      "session_volume": 112714671.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:600428",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/600428.SS/history/",
+        "date": "2026-07-22",
+        "daily_high": 11.550000190734863,
+        "prior_all_time_or_current_month_high": 17.190000534057617,
+        "passes_close_filter": true,
+        "yahoo_symbol": "600428.SS"
+      }
+    },
+    {
+      "ticker": "600664.SS",
+      "name": "Harbin Pharmaceutical Group Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Pharmaceuticals: Major",
+      "description": "Harbin Pharmaceutical Group Co., Ltd. Class A · Pharmaceuticals: Major",
+      "change_pct": 2.3972579251313464,
+      "session_open": 5.800000190734863,
+      "session_close": 5.980000019073486,
+      "session_volume": 638655189.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:600664",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/600664.SS/history/",
+        "date": "2026-07-22",
+        "daily_high": 6.349999904632568,
+        "prior_all_time_or_current_month_high": 10.177514736468975,
+        "passes_close_filter": true,
+        "yahoo_symbol": "600664.SS"
+      }
+    },
+    {
+      "ticker": "603296.SS",
+      "name": "Huaqin Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Telecommunications Equipment",
+      "description": "Huaqin Co., Ltd. Class A · Telecommunications Equipment",
+      "change_pct": 10.00000191452819,
+      "session_open": 82.5,
+      "session_close": 87.66999816894531,
+      "session_volume": 28140013.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:603296",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/603296.SS/history/",
+        "date": "2026-07-22",
+        "daily_high": 87.66999816894531,
+        "prior_all_time_or_current_month_high": 87.66999816894531,
+        "passes_close_filter": true,
+        "yahoo_symbol": "603296.SS"
+      }
+    },
+    {
+      "ticker": "603823.SS",
+      "name": "Lily Group Co. Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Process Industries",
+      "high_type": "all_time",
+      "reason": "업종: Process Industries · Chemicals: Specialty",
+      "description": "Lily Group Co. Ltd. Class A · Chemicals: Specialty",
+      "change_pct": 0.0,
+      "session_open": 79.16999816894531,
+      "session_close": 81.93000030517578,
+      "session_volume": 24207369.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:603823",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/603823.SS/history/",
+        "date": "2026-07-22",
+        "daily_high": 85.0199966430664,
+        "prior_all_time_or_current_month_high": 85.0199966430664,
+        "passes_close_filter": true,
+        "yahoo_symbol": "603823.SS"
+      }
+    },
+    {
+      "ticker": "688702.SS",
+      "name": "Suzhou Centec Communications Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Technology Services",
+      "high_type": "all_time",
+      "reason": "업종: Technology Services · Information Technology Services",
+      "description": "Suzhou Centec Communications Co., Ltd. Class A · Information Technology Services",
+      "change_pct": 8.887703673581203,
+      "session_open": 394.5799865722656,
+      "session_close": 430.1499938964844,
+      "session_volume": 18719824.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:688702",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/688702.SS/history/",
+        "date": "2026-07-22",
+        "daily_high": 458.8800048828125,
+        "prior_all_time_or_current_month_high": 458.8800048828125,
+        "passes_close_filter": true,
+        "yahoo_symbol": "688702.SS"
+      }
+    },
+    {
+      "ticker": "688758.SS",
+      "name": "Suzhou Sepax Technologies Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Medical Specialties",
+      "description": "Suzhou Sepax Technologies Co., Ltd. Class A · Medical Specialties",
+      "change_pct": 1.9230760593457852,
+      "session_open": 25.0,
+      "session_close": 25.969999313354492,
+      "session_volume": 15983893.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:688758",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/688758.SS/history/",
+        "date": "2026-07-22",
+        "daily_high": 27.280000686645508,
+        "prior_all_time_or_current_month_high": 29.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "688758.SS"
+      }
+    },
+    {
+      "ticker": "000938.SZ",
+      "name": "Unisplendour Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Computer Peripherals",
+      "description": "Unisplendour Co., Ltd. Class A · Computer Peripherals",
+      "change_pct": 8.29715995506275,
+      "session_open": 43.09000015258789,
+      "session_close": 44.900001525878906,
+      "session_volume": 537821615.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:000938",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/000938.SZ/history/",
+        "date": "2026-07-22",
+        "daily_high": 45.61000061035156,
+        "prior_all_time_or_current_month_high": 45.61000061035156,
+        "passes_close_filter": true,
+        "yahoo_symbol": "000938.SZ"
+      }
+    },
+    {
+      "ticker": "002396.SZ",
+      "name": "Fujian Star-Net Communication Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Computer Communications",
+      "description": "Fujian Star-Net Communication Co., Ltd. Class A · Computer Communications",
+      "change_pct": 9.427394763353615,
+      "session_open": 30.15999984741211,
+      "session_close": 34.59000015258789,
+      "session_volume": 218924198.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002396",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002396.SZ/history/",
+        "date": "2026-07-22",
+        "daily_high": 34.77000045776367,
+        "prior_all_time_or_current_month_high": 34.77000045776367,
+        "passes_close_filter": true,
+        "yahoo_symbol": "002396.SZ"
+      }
+    },
+    {
+      "ticker": "300105.SZ",
+      "name": "Yantai Longyuan Power Technology Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Industrial Machinery",
+      "description": "Yantai Longyuan Power Technology Co., Ltd. Class A · Industrial Machinery",
+      "change_pct": 17.511514408392337,
+      "session_open": 8.539999961853027,
+      "session_close": 10.199999809265137,
+      "session_volume": 90900413.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:300105",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/300105.SZ/history/",
+        "date": "2026-07-22",
+        "daily_high": 10.34000015258789,
+        "prior_all_time_or_current_month_high": 24.549999237060547,
+        "passes_close_filter": true,
+        "yahoo_symbol": "300105.SZ"
+      }
+    },
+    {
+      "ticker": "301165.SZ",
+      "name": "Ruijie Networks Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Technology Services",
+      "high_type": "all_time",
+      "reason": "업종: Technology Services · Information Technology Services",
+      "description": "Ruijie Networks Co., Ltd. Class A · Information Technology Services",
+      "change_pct": 13.656863888051184,
+      "session_open": 107.76000213623047,
+      "session_close": 126.0,
+      "session_volume": 50890886.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:301165",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/301165.SZ/history/",
+        "date": "2026-07-22",
+        "daily_high": 133.02999877929688,
+        "prior_all_time_or_current_month_high": 133.02999877929688,
+        "passes_close_filter": true,
+        "yahoo_symbol": "301165.SZ"
+      }
+    },
+    {
+      "ticker": "301536.SZ",
+      "name": "Sigmastar Technology Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Semiconductors",
+      "description": "Sigmastar Technology Ltd. Class A · Semiconductors",
+      "change_pct": 12.12964450630829,
+      "session_open": 119.7300033569336,
+      "session_close": 137.0,
+      "session_volume": 37789316.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:301536",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/301536.SZ/history/",
+        "date": "2026-07-22",
+        "daily_high": 146.6199951171875,
+        "prior_all_time_or_current_month_high": 146.6199951171875,
+        "passes_close_filter": true,
+        "yahoo_symbol": "301536.SZ"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-10-17T02:05:50.378803+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 5311,
+    "history_symbols": 5280,
+    "inactive_symbols": 0,
+    "failed_symbols": 31,
+    "coverage_ratio": 0.9941630578045566,
+    "coverage_by_exchange": {
+      "SSE": {
+        "covered": 2345,
+        "total": 2357
+      },
+      "SZSE": {
+        "covered": 2935,
+        "total": 2954
+      }
+    },
+    "session_symbols": 5278,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-10-17T02:05:50.378803+00:00"
+}

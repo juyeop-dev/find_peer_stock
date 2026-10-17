@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "market": "korea",
+  "date": "2026-07-31",
+  "summary": "과거 일봉 전체 대조 기준. 당일 장중 고가가 52주·전체기간 고가에 도달하고, 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다. 전체기간 신고가를 우선 표시하며 신고가 배경은 별도 확인 전입니다.",
+  "sources": [
+    {
+      "label": "Naver Finance 조정 일봉·한국 종목명",
+      "url": "https://stock.naver.com/"
+    },
+    {
+      "label": "TradingView 한국 주식 종목군·업종",
+      "url": "https://www.tradingview.com/screener/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "094840.KQ",
+      "name": "슈프리마에이치큐",
+      "exchange": "KOSDAQ",
+      "category": "Commercial Services",
+      "high_type": "52_week",
+      "reason": "업종: Commercial Services · Miscellaneous Commercial Services",
+      "description": "슈프리마에이치큐 · Miscellaneous Commercial Services",
+      "change_pct": 8.166189111747851,
+      "session_open": 14200,
+      "session_close": 15100,
+      "currency": "KRW",
+      "source_symbol": "KRX:094840",
+      "name_original": "Suprema HQ Inc.",
+      "name_source_url": "https://m.stock.naver.com/api/stock/094840/basic",
+      "high_verification": {
+        "source": "Naver Finance adjusted daily history",
+        "source_url": "https://api.finance.naver.com/siseJson.naver?symbol=094840&requestType=1&startTime=20250801&endTime=20260731&timeframe=day",
+        "date": "2026-07-31",
+        "open": 14200,
+        "daily_high": 15600,
+        "low": 13500,
+        "close": 15100,
+        "previous_close": 13960,
+        "volume": 169462,
+        "prior_52_week_high": 13970,
+        "observed_bars": 243,
+        "first_observed_date": "2025-08-01",
+        "confirmed": true,
+        "matches_prior_high": false,
+        "bearish_candle": false,
+        "down_close": false,
+        "passes_close_filter": true
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Naver Finance adjusted daily history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-10-17T02:04:12.681900+00:00",
+    "definition": "daily high >= prior 52-week high; close >= open; close >= previous close; all-time takes precedence; ties included",
+    "scanned_symbols": 2738,
+    "session_symbols": 2720,
+    "raw_new_high_candidates": 2,
+    "excluded_unsupported_korean_board": 1,
+    "excluded_bearish_or_down_close": 0,
+    "pagination_complete": true
+  },
+  "collected_at": "2026-10-17T02:04:12.681900+00:00"
+}

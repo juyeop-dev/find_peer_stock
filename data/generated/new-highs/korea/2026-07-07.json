@@ -1,0 +1,101 @@
+{
+  "schema_version": 1,
+  "market": "korea",
+  "date": "2026-07-07",
+  "summary": "과거 일봉 전체 대조 기준. 당일 장중 고가가 52주·전체기간 고가에 도달하고, 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다. 전체기간 신고가를 우선 표시하며 신고가 배경은 별도 확인 전입니다.",
+  "sources": [
+    {
+      "label": "Naver Finance 조정 일봉·한국 종목명",
+      "url": "https://stock.naver.com/"
+    },
+    {
+      "label": "TradingView 한국 주식 종목군·업종",
+      "url": "https://www.tradingview.com/screener/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "317400.KS",
+      "name": "자이에스앤디",
+      "exchange": "KOSPI",
+      "category": "Commercial Services",
+      "high_type": "52_week",
+      "reason": "업종: Commercial Services · Miscellaneous Commercial Services",
+      "description": "자이에스앤디 · Miscellaneous Commercial Services",
+      "change_pct": 6.015037593984962,
+      "session_open": 4775,
+      "session_close": 4935,
+      "currency": "KRW",
+      "source_symbol": "KRX:317400",
+      "name_original": "Xi S&D Inc.",
+      "name_source_url": "https://m.stock.naver.com/api/stock/317400/basic",
+      "high_verification": {
+        "source": "Naver Finance adjusted daily history",
+        "source_url": "https://api.finance.naver.com/siseJson.naver?symbol=317400&requestType=1&startTime=20250708&endTime=20260707&timeframe=day",
+        "date": "2026-07-07",
+        "open": 4775,
+        "daily_high": 5230,
+        "low": 4650,
+        "close": 4935,
+        "previous_close": 4655,
+        "volume": 780842,
+        "prior_52_week_high": 5150,
+        "observed_bars": 244,
+        "first_observed_date": "2025-07-08",
+        "confirmed": true,
+        "matches_prior_high": false,
+        "bearish_candle": false,
+        "down_close": false,
+        "passes_close_filter": true
+      }
+    },
+    {
+      "ticker": "415640.KS",
+      "name": "KB발해인프라",
+      "exchange": "KOSPI",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "업종: Finance · Financial Conglomerates",
+      "description": "KB발해인프라 · Financial Conglomerates",
+      "change_pct": 5.089538171536287,
+      "session_open": 10620,
+      "session_close": 11150,
+      "currency": "KRW",
+      "source_symbol": "KRX:415640",
+      "name_original": "KB Balhae Infrastructure Fund",
+      "name_source_url": "https://m.stock.naver.com/api/stock/415640/basic",
+      "high_verification": {
+        "source": "Naver Finance adjusted daily history",
+        "source_url": "https://api.finance.naver.com/siseJson.naver?symbol=415640&requestType=1&startTime=20250708&endTime=20260707&timeframe=day",
+        "date": "2026-07-07",
+        "open": 10620,
+        "daily_high": 11380,
+        "low": 10100,
+        "close": 11150,
+        "previous_close": 10610,
+        "volume": 436524,
+        "prior_52_week_high": 10790,
+        "observed_bars": 244,
+        "first_observed_date": "2025-07-08",
+        "confirmed": true,
+        "matches_prior_high": false,
+        "bearish_candle": false,
+        "down_close": false,
+        "passes_close_filter": true
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Naver Finance adjusted daily history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-10-17T02:04:12.681900+00:00",
+    "definition": "daily high >= prior 52-week high; close >= open; close >= previous close; all-time takes precedence; ties included",
+    "scanned_symbols": 2738,
+    "session_symbols": 2717,
+    "raw_new_high_candidates": 6,
+    "excluded_unsupported_korean_board": 1,
+    "excluded_bearish_or_down_close": 3,
+    "pagination_complete": true
+  },
+  "collected_at": "2026-10-17T02:04:12.681900+00:00"
+}

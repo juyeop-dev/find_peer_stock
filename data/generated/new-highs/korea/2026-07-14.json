@@ -1,0 +1,101 @@
+{
+  "schema_version": 1,
+  "market": "korea",
+  "date": "2026-07-14",
+  "summary": "과거 일봉 전체 대조 기준. 당일 장중 고가가 52주·전체기간 고가에 도달하고, 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다. 전체기간 신고가를 우선 표시하며 신고가 배경은 별도 확인 전입니다.",
+  "sources": [
+    {
+      "label": "Naver Finance 조정 일봉·한국 종목명",
+      "url": "https://stock.naver.com/"
+    },
+    {
+      "label": "TradingView 한국 주식 종목군·업종",
+      "url": "https://www.tradingview.com/screener/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "071200.KQ",
+      "name": "인피니트헬스케어",
+      "exchange": "KOSDAQ",
+      "category": "Health Services",
+      "high_type": "52_week",
+      "reason": "업종: Health Services · Medical/Nursing Services",
+      "description": "인피니트헬스케어 · Medical/Nursing Services",
+      "change_pct": 3.360370799536501,
+      "session_open": 8630,
+      "session_close": 8920,
+      "currency": "KRW",
+      "source_symbol": "KRX:071200",
+      "name_original": "Infinitt Healthcare Co., Ltd",
+      "name_source_url": "https://m.stock.naver.com/api/stock/071200/basic",
+      "high_verification": {
+        "source": "Naver Finance adjusted daily history",
+        "source_url": "https://api.finance.naver.com/siseJson.naver?symbol=071200&requestType=1&startTime=20250715&endTime=20260714&timeframe=day",
+        "date": "2026-07-14",
+        "open": 8630,
+        "daily_high": 9290,
+        "low": 8500,
+        "close": 8920,
+        "previous_close": 8630,
+        "volume": 330007,
+        "prior_52_week_high": 9180,
+        "observed_bars": 244,
+        "first_observed_date": "2025-07-15",
+        "confirmed": true,
+        "matches_prior_high": false,
+        "bearish_candle": false,
+        "down_close": false,
+        "passes_close_filter": true
+      }
+    },
+    {
+      "ticker": "003680.KS",
+      "name": "한성기업",
+      "exchange": "KOSPI",
+      "category": "Process Industries",
+      "high_type": "52_week",
+      "reason": "업종: Process Industries · Agricultural Commodities/Milling",
+      "description": "한성기업 · Agricultural Commodities/Milling",
+      "change_pct": 20.107526881720432,
+      "session_open": 9490,
+      "session_close": 11170,
+      "currency": "KRW",
+      "source_symbol": "KRX:003680",
+      "name_original": "Hansung Enterprise Co., Ltd",
+      "name_source_url": "https://m.stock.naver.com/api/stock/003680/basic",
+      "high_verification": {
+        "source": "Naver Finance adjusted daily history",
+        "source_url": "https://api.finance.naver.com/siseJson.naver?symbol=003680&requestType=1&startTime=20250715&endTime=20260714&timeframe=day",
+        "date": "2026-07-14",
+        "open": 9490,
+        "daily_high": 12000,
+        "low": 9490,
+        "close": 11170,
+        "previous_close": 9300,
+        "volume": 9401384,
+        "prior_52_week_high": 10990,
+        "observed_bars": 244,
+        "first_observed_date": "2025-07-15",
+        "confirmed": true,
+        "matches_prior_high": false,
+        "bearish_candle": false,
+        "down_close": false,
+        "passes_close_filter": true
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Naver Finance adjusted daily history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-10-17T02:04:12.681900+00:00",
+    "definition": "daily high >= prior 52-week high; close >= open; close >= previous close; all-time takes precedence; ties included",
+    "scanned_symbols": 2738,
+    "session_symbols": 2718,
+    "raw_new_high_candidates": 3,
+    "excluded_unsupported_korean_board": 1,
+    "excluded_bearish_or_down_close": 0,
+    "pagination_complete": true
+  },
+  "collected_at": "2026-10-17T02:04:12.681900+00:00"
+}

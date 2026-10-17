@@ -24,13 +24,15 @@ from new_high_sources.tradingview import (
     fetch_korean_listing,
 )
 from refresh_new_highs import atomic_json
+from market_closures import load_scheduled_closures
 
 
-def requested_dates(start: date, end: date) -> list[date]:
+def requested_dates(start: date, end: date, *, closed_dates: set[date] | None = None) -> list[date]:
     if end < start:
         raise ValueError("end date must not precede start date")
     return [start + timedelta(days=offset) for offset in range((end - start).days + 1)
-            if (start + timedelta(days=offset)).weekday() < 5]
+            if (start + timedelta(days=offset)).weekday() < 5
+            and start + timedelta(days=offset) not in (closed_dates or set())]
 
 
 def history_url(code: str, start: date, end: date) -> str:
@@ -148,7 +150,11 @@ def parallel_map(items: list, worker: Callable, workers: int, label: str) -> lis
 def build_reports(start: date, end: date, *, timeout: float = 30,
                   workers: int = 24,
                   cache_dir: Path = SOURCE_DIR.parent / "tmp_korean_history") -> tuple[dict[date, dict], dict[date, dict], dict[date, dict]]:
-    sessions = requested_dates(start, end)
+    known_markets = {market['id'] for market in load_markets(SOURCE_DIR)}
+    closed_dates = {date.fromisoformat(item['date']) for item in
+                    load_scheduled_closures(SOURCE_DIR.parent / 'market-closures', known_markets)
+                    if item['market'] == 'korea'}
+    sessions = requested_dates(start, end, closed_dates=closed_dates)
     if not sessions:
         raise ValueError("date range has no weekdays")
     universe = _scan("korea", timeout, 500)
