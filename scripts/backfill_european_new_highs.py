@@ -134,7 +134,7 @@ def verify_series_end(row: dict, bars: list[Bar], requested_end: date) -> None:
 
 
 def build_reports(sessions: list[date], *, workers: int = 4, timeout: float = 30,
-                  cache_dir: Path = CACHE_DIR) -> dict[date, dict]:
+                  cache_dir: Path = CACHE_DIR, daily_bars: int = 400) -> dict[date, dict]:
     if not sessions:
         return {}
     rows = _scan("europe", timeout, 5000)
@@ -153,7 +153,7 @@ def build_reports(sessions: list[date], *, workers: int = 4, timeout: float = 30
     print(f"europe: {len(rows)} scanned, {len(eligible)} histories required, {len(excluded)} pre-range/no-history symbols", flush=True)
     histories, failures, non_stock = {}, {}, []
     with ThreadPoolExecutor(max_workers=workers) as pool:
-        futures = {pool.submit(cached_chart, row, "1D", 400, cache_dir=cache_dir, timeout=timeout,
+        futures = {pool.submit(cached_chart, row, "1D", daily_bars, cache_dir=cache_dir, timeout=timeout,
                                required_end=latest): row for row in eligible}
         for completed, future in enumerate(as_completed(futures), start=1):
             row = futures[future]
@@ -162,7 +162,7 @@ def build_reports(sessions: list[date], *, workers: int = 4, timeout: float = 30
                 bars = chart_bars(payload, row)
                 if not bars:
                     raise ChartHistoryError(f"{row['symbol']}: scanner has prices but chart has no bars")
-                if len(bars) == 400 and bars[0].day > earliest - timedelta(weeks=52):
+                if len(bars) == daily_bars and bars[0].day > earliest - timedelta(weeks=52):
                     raise ChartHistoryError(f"{row['symbol']}: truncated 52-week lookback")
                 verify_series_end(row, bars, latest)
                 histories[row["symbol"]] = (row, bars, payload)
@@ -226,6 +226,8 @@ def build_reports(sessions: list[date], *, workers: int = 4, timeout: float = 30
             if not check:
                 continue
             row, bars, payload = histories[symbol]
+            if row["exchange"] in scheduled_closed:
+                continue
             bar, previous = check["bar"], check["previous"]
             high_type, all_time_level = classify_high(bars, monthly[symbol], session, earliest)
             sector, industry = row.get("sector") or "미분류", row.get("industry") or "업종 정보 미확인"
@@ -273,10 +275,12 @@ def main() -> None:
     parser.add_argument("--end", required=True, type=date.fromisoformat)
     parser.add_argument("--workers", type=int, default=4)
     parser.add_argument("--timeout", type=float, default=30)
+    parser.add_argument("--daily-bars", type=int, default=400,
+                        help="Daily history depth; increase for earlier backfills (maximum 5000).")
     parser.add_argument("--cache-dir", type=Path, default=CACHE_DIR)
     args = parser.parse_args()
-    if args.end < args.start or not 1 <= args.workers <= 4:
-        parser.error("Invalid date range; workers must be between 1 and 4")
+    if args.end < args.start or not 1 <= args.workers <= 4 or not 1 <= args.daily_bars <= 5000:
+        parser.error("Invalid date range, workers (1-4), or daily history depth (1-5000)")
     markets = {market["id"]: market for market in load_markets(SOURCE_DIR)}
     now = datetime.now(timezone.utc)
     end = min(args.end, completed_through(now))
@@ -288,7 +292,8 @@ def main() -> None:
                 and not (SOURCE_DIR / "reports/europe" / f"{args.start + timedelta(days=offset)}.json").exists()]
     print(f"europe: recovering {len(sessions)} missing completed sessions", flush=True)
     try:
-        reports = build_reports(sessions, workers=args.workers, timeout=args.timeout, cache_dir=args.cache_dir)
+        reports = build_reports(sessions, workers=args.workers, timeout=args.timeout,
+                                cache_dir=args.cache_dir, daily_bars=args.daily_bars)
         for session, report in reports.items():
             validate_report(report, SOURCE_DIR / "reports/europe" / f"{session}.json", SOURCE_DIR / "reports", markets)
         for session, report in reports.items():

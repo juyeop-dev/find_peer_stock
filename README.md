@@ -217,14 +217,17 @@ python .\scripts\generate_turnover_data.py
 ```powershell
 python -m pip install -r scripts/requirements-chart-history.txt
 python .\scripts\backfill_european_new_highs.py --start 2026-08-01 --end 2026-10-14
+python .\scripts\backfill_european_new_highs.py --start 2026-01-01 --end 2026-05-31 --daily-bars 650
 python .\scripts\generate_new_high_data.py
 ```
 
 도구는 시장별 장 마감 전 날짜와 휴장일을 게시하지 않으며 기존 원본을 기본적으로 보존합니다. Yahoo 회사명과 TradingView 회사명을 대조하고, 거래가 없었던 종목은 별도로 제외합니다. 활성·매핑 가능 종목 및 거래소별 수집률이 기준보다 낮으면 아무 파일도 저장하지 않습니다. 현재 종목군에서 사라진 과거 상장 종목은 복원 범위에 포함되지 않는다는 한계가 원본 메타데이터에 기록됩니다. 다운로드 캐시는 `data/tmp_calendar_history`에 저장되며 Git에서는 제외됩니다.
 
+유럽 역대 고가 판정은 전체 월봉의 가격만 사용합니다. 과거 월봉의 거래량이 누락되거나 음수이면 `volume_unavailable`로 기록하고 거래량 계산에서 사용하지 않습니다. 일봉의 가격·거래량 검증과 거래대금 순위 계산은 그대로 유지하며, 1~5월의 가격 조정 대조·원본 해시는 `data/new-highs/reviews/europe/2026-01_to_2026-05.json`에 보관합니다.
+
 유럽 화면은 유로넥스트·Xetra·런던·스위스 거래소만 다룹니다. TradingView 유럽 거래대금과 시가총액은 미달러 환산값으로 표시하고, 주가는 종목별 표시 통화를 유지합니다. 수집 범위가 부족하거나 거래량 0 신고가가 포함된 2026년 9월 Yahoo 복원본은 `data/review/europe`에 보관하고 게시 목록에서 제외했습니다. 9월 23일 거래대금은 검증 가능한 전체 순위를 복원할 수 없어 공백으로 남겨 두었습니다.
 
-2026년 6~8월 신고가·거래대금 캘린더는 6개 시장의 거래일 전체를 보완했습니다. 한국 6월 3일 지방선거일·7월 17일 제헌절과 대만 7월 10일 태풍 휴장은 출처와 함께 휴장일로 기록합니다. 한국은 Naver Finance, 일본·중국·대만·미국은 Yahoo Finance의 과거 일봉을 사용합니다. 유럽 66거래일은 검증된 동일 거래소 TradingView 일봉 5,371개 종목의 종가×거래량을 Yahoo Finance의 당일 통화별 환율로 미달러 환산해 순위를 복원했습니다. GBX는 GBP의 1/100로 환산하고, 8월 31일 휴장한 런던 거래소는 해당 날짜의 순위에서 제외했습니다. 복원 거래대금은 실제 체결 금액 합계와 다를 수 있는 추정치이며, 과거 상장폐지 종목은 현재 종목군에 포함되지 않습니다. 날짜별 수집 범위·환율·원본 해시는 `data/turnover/reviews/europe/2026-06_to_2026-07.json`과 `data/turnover/reviews/europe/2026-08.json`에 보관합니다.
+2026년 1~8월 신고가·거래대금 캘린더는 6개 시장의 거래일 전체를 보완했습니다. 한국 6월 3일 지방선거일·7월 17일 제헌절과 대만 7월 10일 태풍 휴장은 출처와 함께 휴장일로 기록합니다. 한국은 Naver Finance, 일본·중국·대만·미국은 Yahoo Finance의 과거 일봉을 사용합니다. 유럽 170거래일은 검증된 동일 거래소 TradingView 일봉 5,371개 종목의 종가×거래량을 Yahoo Finance의 당일 통화별 환율로 미달러 환산해 순위를 복원했습니다. GBX는 GBP의 1/100로 환산하고, 거래소별 휴장일은 해당 거래소의 순위에서 제외했습니다. 연초 신고가 판정에 필요한 52주 일봉은 `--daily-bars 650`으로 조회 기간을 확장하며, 기간이 부족하면 게시하지 않습니다. 복원 거래대금은 실제 체결 금액 합계와 다를 수 있는 추정치이며, 과거 상장폐지 종목은 현재 종목군에 포함되지 않습니다. 날짜별 수집 범위·환율·원본 해시는 `data/turnover/reviews/europe/2026-01_to_2026-05.json`, `data/turnover/reviews/europe/2026-06_to_2026-07.json`, `data/turnover/reviews/europe/2026-08.json`에 보관합니다.
 
 자동 자료의 업종·세부 업종은 자료원 분류를 사용합니다. 가격 데이터만으로 상승 원인을 추측하지 않고 업종 정보를 기본 설명으로 표시하며, 검증한 뉴스나 실제 상승 배경은 원본 자료에 보완할 수 있습니다. `data/new-highs/refresh-status.json`은 시장별 대상일·성공일·재시도 시각을 기록하며, 화면에는 최근 게시 거래일과 갱신 상태를 표시합니다.
 

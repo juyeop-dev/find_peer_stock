@@ -65,10 +65,14 @@ def parse_chart_bars(points: list[dict], *, require_volume: bool = True) -> list
         if any(type(value) not in (float, int) or not math.isfinite(value) for value in values[:5]):
             raise ChartHistoryError("Missing or nonfinite chart OHLCV")
         stamp, opening, high, low, close, volume = values[:6]
-        if volume is None and not require_volume:
+        volume_available = type(volume) in (float, int) and math.isfinite(volume) and volume >= 0
+        if not volume_available:
+            if require_volume:
+                raise ChartHistoryError("Missing or invalid chart volume")
+            # Complete monthly price history determines all-time highs; its
+            # volume is never used for turnover or daily eligibility. Some old
+            # corporate-action bars contain missing/negative monthly volume.
             volume = 0
-        if type(volume) not in (float, int) or not math.isfinite(volume) or volume < 0:
-            raise ChartHistoryError("Missing or invalid chart volume")
         # Some London foreign listings publish a zero low with otherwise valid
         # traded prices. Preserve that sentinel; new-high rules need high/open/
         # close and volume, so an unavailable low must not drop the whole series.
@@ -77,6 +81,8 @@ def parse_chart_bars(points: list[dict], *, require_volume: bool = True) -> list
         if high < max(opening, low, close) or low > min(opening, high, close):
             raise ChartHistoryError("Inconsistent chart OHLC range")
         bar = dict(timestamp=stamp, open=opening, high=high, low=low, close=close, volume=volume)
+        if not volume_available:
+            bar["volume_unavailable"] = True
         if stamp in bars and bars[stamp] != bar:
             raise ChartHistoryError("Conflicting duplicate chart timestamp")
         bars[stamp] = bar

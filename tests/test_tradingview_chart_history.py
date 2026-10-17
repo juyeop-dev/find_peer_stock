@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 import sys
+import tempfile
 import unittest
 from datetime import date, datetime, timezone
 from pathlib import Path
@@ -10,10 +11,39 @@ from unittest.mock import patch
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 from quote_sources import tradingview_chart as chart
+import backfill_european_new_highs as european
 from backfill_european_new_highs import Bar, candidates, chart_bars, classify_high, completed_through, stamp_date, validate_session_coverage, verify_series_end
 
 
 class TradingViewChartHistoryTests(unittest.TestCase):
+    def test_early_backfill_uses_requested_depth_and_excludes_closed_exchange_quotes(self):
+        session = date(2026, 5, 1)
+        rows = [{"symbol": f"{exchange}:TEST", "name": "TEST", "exchange": exchange,
+                 "currency": "EUR", "description": "Test Company", "time": 1777593600}
+                for exchange in ["EURONEXT", "XETR", "LSE", "SIX"]]
+        def point(day, high, close):
+            return {"timestamp": datetime.combine(day, datetime.min.time(), timezone.utc).timestamp(),
+                    "open": 10, "high": high, "low": 9, "close": close, "volume": 100}
+        depths = []
+        def cached(row, interval, count, **_kwargs):
+            if interval == "1D":
+                depths.append(count)
+            return {"symbol": row["symbol"], "info": {
+                "pro_name": row["symbol"], "source_id": row["exchange"],
+                "currency_code": "EUR", "timezone": "UTC", "description": "Test Company", "type": "stock"},
+                "bars": [point(date(2025, 1, 2), 12, 10), point(session, 20, 20)]}
+        with tempfile.TemporaryDirectory() as temporary:
+            source = Path(temporary) / "new-highs"
+            source.mkdir()
+            (source / "europe-exchange-closures.json").write_text(json.dumps({"closures": [
+                {"date": str(session), "exchange": exchange}
+                for exchange in ["EURONEXT", "XETR", "SIX"]]}), encoding="utf-8")
+            with patch.object(european, "SOURCE_DIR", source), patch.object(european, "_scan", return_value=rows), \
+                 patch.object(european, "cached_chart", side_effect=cached):
+                reports = european.build_reports([session], workers=1, daily_bars=650, cache_dir=Path(temporary) / "cache")
+        self.assertEqual(depths, [650] * 4)
+        self.assertEqual([entry["exchange"] for entry in reports[session]["entries"]], ["LSE"])
+
     def test_framing_reads_concatenated_heartbeat_and_unicode(self):
         body = json.dumps({"description": "München ® 🚀"}, ensure_ascii=False)
         heartbeat = "~h~123"
@@ -37,6 +67,17 @@ class TradingViewChartHistoryTests(unittest.TestCase):
         self.assertEqual(result[0]["high"], 11.48)
         with self.assertRaises(chart.ChartHistoryError):
             chart.parse_chart_bars([{"v": [1779951600, 0, 11.48, 0, 11.4597, 7088]}])
+
+    def test_invalid_monthly_volume_does_not_discard_valid_all_time_prices(self):
+        for volume in [-31479944, None, float("nan"), "unknown"]:
+            points = [{"v": [1567407600, 33.299999, 36.150002, 33, 35.700001, volume]}]
+            with self.subTest(volume=volume):
+                with self.assertRaises(chart.ChartHistoryError):
+                    chart.parse_chart_bars(points)
+                bar = chart.parse_chart_bars(points, require_volume=False)[0]
+                self.assertEqual(bar["high"], 36.150002)
+                self.assertEqual(bar["volume"], 0)
+                self.assertTrue(bar["volume_unavailable"])
 
     def test_zero_volume_bearish_and_down_close_are_excluded(self):
         bars = [Bar(date(2026, 8, 3), 90, 100, 80, 95, 10),

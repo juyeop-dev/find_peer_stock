@@ -1,0 +1,430 @@
+{
+  "schema_version": 1,
+  "market": "taiwan",
+  "date": "2026-03-09",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "1294.TWO",
+      "name": "Hantech Bio-Technology Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Pharmaceuticals: Other",
+      "description": "Hantech Bio-Technology Co., Ltd. · Pharmaceuticals: Other",
+      "change_pct": 2.752293674304296,
+      "session_open": 72.58333587646484,
+      "session_close": 74.66666412353516,
+      "session_volume": 990232.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:1294",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/1294.TWO/history/",
+        "date": "2026-03-09",
+        "daily_high": 79.41666412353516,
+        "prior_all_time_or_current_month_high": 121.77592484163813,
+        "passes_close_filter": true,
+        "yahoo_symbol": "1294.TWO"
+      }
+    },
+    {
+      "ticker": "2256.TWO",
+      "name": "oToBrite Electronic,Inc.",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Electronic Equipment/Instruments",
+      "description": "oToBrite Electronic,Inc. · Electronic Equipment/Instruments",
+      "change_pct": 14.999999999999991,
+      "session_open": 39.599998474121094,
+      "session_close": 46.0,
+      "session_volume": 557017.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:2256",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2256.TWO/history/",
+        "date": "2026-03-09",
+        "daily_high": 46.099998474121094,
+        "prior_all_time_or_current_month_high": 142.32562255859375,
+        "passes_close_filter": true,
+        "yahoo_symbol": "2256.TWO"
+      }
+    },
+    {
+      "ticker": "5386.TWO",
+      "name": "Albatron Technology Co., Ltd",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Electronic Production Equipment",
+      "description": "Albatron Technology Co., Ltd · Electronic Production Equipment",
+      "change_pct": 10.000006162203444,
+      "session_open": 172.0,
+      "session_close": 190.6666717529297,
+      "session_volume": 2835361.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:5386",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/5386.TWO/history/",
+        "date": "2026-03-09",
+        "daily_high": 190.6666717529297,
+        "prior_all_time_or_current_month_high": 190.6666717529297,
+        "passes_close_filter": true,
+        "yahoo_symbol": "5386.TWO"
+      }
+    },
+    {
+      "ticker": "6220.TWO",
+      "name": "YFC-BonEagle Electric Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Electrical Products",
+      "description": "YFC-BonEagle Electric Co., Ltd. · Electrical Products",
+      "change_pct": 2.145405708733006,
+      "session_open": 39.79999923706055,
+      "session_close": 42.849998474121094,
+      "session_volume": 2324789.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:6220",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6220.TWO/history/",
+        "date": "2026-03-09",
+        "daily_high": 43.0,
+        "prior_all_time_or_current_month_high": 74.77027130126953,
+        "passes_close_filter": true,
+        "yahoo_symbol": "6220.TWO"
+      }
+    },
+    {
+      "ticker": "6907.TWO",
+      "name": "Artery Technology Corporation",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Semiconductors",
+      "description": "Artery Technology Corporation · Semiconductors",
+      "change_pct": 8.421052631578952,
+      "session_open": 90.5999984741211,
+      "session_close": 103.0,
+      "session_volume": 822553.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:6907",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6907.TWO/history/",
+        "date": "2026-03-09",
+        "daily_high": 103.5,
+        "prior_all_time_or_current_month_high": 103.5,
+        "passes_close_filter": true,
+        "yahoo_symbol": "6907.TWO"
+      }
+    },
+    {
+      "ticker": "8917.TWO",
+      "name": "Hsin Tai Gas Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Utilities",
+      "high_type": "52_week",
+      "reason": "업종: Utilities · Gas Distributors",
+      "description": "Hsin Tai Gas Co., Ltd. · Gas Distributors",
+      "change_pct": 10.00000484406003,
+      "session_open": 69.30000305175781,
+      "session_close": 69.30000305175781,
+      "session_volume": 538796.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:8917",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/8917.TWO/history/",
+        "date": "2026-03-09",
+        "daily_high": 69.30000305175781,
+        "prior_all_time_or_current_month_high": 92.5,
+        "passes_close_filter": true,
+        "yahoo_symbol": "8917.TWO"
+      }
+    },
+    {
+      "ticker": "2426.TW",
+      "name": "Tyntek Corporation",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Semiconductors",
+      "description": "Tyntek Corporation · Semiconductors",
+      "change_pct": 9.868421382851222,
+      "session_open": 22.0,
+      "session_close": 25.049999237060547,
+      "session_volume": 40179085.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2426",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2426.TW/history/",
+        "date": "2026-03-09",
+        "daily_high": 25.049999237060547,
+        "prior_all_time_or_current_month_high": 81.9221665087364,
+        "passes_close_filter": true,
+        "yahoo_symbol": "2426.TW"
+      }
+    },
+    {
+      "ticker": "2616.TW",
+      "name": "Shan-Loong Transportation Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Retail Trade",
+      "high_type": "52_week",
+      "reason": "업종: Retail Trade · Specialty Stores",
+      "description": "Shan-Loong Transportation Co., Ltd. · Specialty Stores",
+      "change_pct": 9.885055717380563,
+      "session_open": 23.899999618530273,
+      "session_close": 23.899999618530273,
+      "session_volume": 6387574.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2616",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2616.TW/history/",
+        "date": "2026-03-09",
+        "daily_high": 23.899999618530273,
+        "prior_all_time_or_current_month_high": 40.5,
+        "passes_close_filter": true,
+        "yahoo_symbol": "2616.TW"
+      }
+    },
+    {
+      "ticker": "3036.TW",
+      "name": "WT Microelectronics Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Distribution Services",
+      "high_type": "all_time",
+      "reason": "업종: Distribution Services · Electronics Distributors",
+      "description": "WT Microelectronics Co., Ltd. · Electronics Distributors",
+      "change_pct": 0.0,
+      "session_open": 200.0,
+      "session_close": 215.5,
+      "session_volume": 14834191.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:3036",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3036.TW/history/",
+        "date": "2026-03-09",
+        "daily_high": 217.0,
+        "prior_all_time_or_current_month_high": 217.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "3036.TW"
+      }
+    },
+    {
+      "ticker": "3054.TW",
+      "name": "LIWANLI Innovation Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Computer Peripherals",
+      "description": "LIWANLI Innovation Co., Ltd. · Computer Peripherals",
+      "change_pct": 10.000000000000009,
+      "session_open": 49.5,
+      "session_close": 49.5,
+      "session_volume": 848460.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:3054",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3054.TW/history/",
+        "date": "2026-03-09",
+        "daily_high": 49.5,
+        "prior_all_time_or_current_month_high": 666.0317689712247,
+        "passes_close_filter": true,
+        "yahoo_symbol": "3054.TW"
+      }
+    },
+    {
+      "ticker": "6505.TW",
+      "name": "Formosa Petrochemical Corp",
+      "exchange": "TWSE",
+      "category": "Energy Minerals",
+      "high_type": "52_week",
+      "reason": "업종: Energy Minerals · Oil Refining/Marketing",
+      "description": "Formosa Petrochemical Corp · Oil Refining/Marketing",
+      "change_pct": 9.999995077809976,
+      "session_open": 68.19999694824219,
+      "session_close": 68.19999694824219,
+      "session_volume": 59045757.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:6505",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6505.TW/history/",
+        "date": "2026-03-09",
+        "daily_high": 68.19999694824219,
+        "prior_all_time_or_current_month_high": 151.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "6505.TW"
+      }
+    },
+    {
+      "ticker": "6715.TW",
+      "name": "Lintes Technology Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Electrical Products",
+      "description": "Lintes Technology Co., Ltd. · Electrical Products",
+      "change_pct": 9.882352941176475,
+      "session_open": 195.5,
+      "session_close": 233.5,
+      "session_volume": 6205066.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:6715",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6715.TW/history/",
+        "date": "2026-03-09",
+        "daily_high": 233.5,
+        "prior_all_time_or_current_month_high": 233.5,
+        "passes_close_filter": true,
+        "yahoo_symbol": "6715.TW"
+      }
+    },
+    {
+      "ticker": "9908.TW",
+      "name": "Great Taipei Gas Corporation",
+      "exchange": "TWSE",
+      "category": "Utilities",
+      "high_type": "52_week",
+      "reason": "업종: Utilities · Gas Distributors",
+      "description": "Great Taipei Gas Corporation · Gas Distributors",
+      "change_pct": 7.981218078775232,
+      "session_open": 33.29999923706055,
+      "session_close": 34.5,
+      "session_volume": 19187465.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:9908",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/9908.TW/history/",
+        "date": "2026-03-09",
+        "daily_high": 35.099998474121094,
+        "prior_all_time_or_current_month_high": 35.20000076293945,
+        "passes_close_filter": true,
+        "yahoo_symbol": "9908.TW"
+      }
+    },
+    {
+      "ticker": "9918.TW",
+      "name": "Shin Shin Natural Gas Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Utilities",
+      "high_type": "all_time",
+      "reason": "업종: Utilities · Gas Distributors",
+      "description": "Shin Shin Natural Gas Co., Ltd. · Gas Distributors",
+      "change_pct": 9.85663095914,
+      "session_open": 61.29999923706055,
+      "session_close": 61.29999923706055,
+      "session_volume": 1584371.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:9918",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/9918.TW/history/",
+        "date": "2026-03-09",
+        "daily_high": 61.29999923706055,
+        "prior_all_time_or_current_month_high": 61.29999923706055,
+        "passes_close_filter": true,
+        "yahoo_symbol": "9918.TW"
+      }
+    },
+    {
+      "ticker": "9926.TW",
+      "name": "Shin Hai Gas Corporation",
+      "exchange": "TWSE",
+      "category": "Utilities",
+      "high_type": "52_week",
+      "reason": "업종: Utilities · Gas Distributors",
+      "description": "Shin Hai Gas Corporation · Gas Distributors",
+      "change_pct": 10.000001467191266,
+      "session_open": 57.099998474121094,
+      "session_close": 57.20000076293945,
+      "session_volume": 2111526.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:9926",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/9926.TW/history/",
+        "date": "2026-03-09",
+        "daily_high": 57.20000076293945,
+        "prior_all_time_or_current_month_high": 57.79999923706055,
+        "passes_close_filter": true,
+        "yahoo_symbol": "9926.TW"
+      }
+    },
+    {
+      "ticker": "9931.TW",
+      "name": "Hsin Kao Gas Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Utilities",
+      "high_type": "all_time",
+      "reason": "업종: Utilities · Gas Distributors",
+      "description": "Hsin Kao Gas Co., Ltd. · Gas Distributors",
+      "change_pct": 9.967840426761976,
+      "session_open": 51.29999923706055,
+      "session_close": 51.29999923706055,
+      "session_volume": 1264737.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:9931",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/9931.TW/history/",
+        "date": "2026-03-09",
+        "daily_high": 51.29999923706055,
+        "prior_all_time_or_current_month_high": 51.29999923706055,
+        "passes_close_filter": true,
+        "yahoo_symbol": "9931.TW"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-10-17T02:14:13.921961+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 2350,
+    "history_symbols": 2291,
+    "inactive_symbols": 1,
+    "failed_symbols": 58,
+    "coverage_ratio": 0.9753086419753086,
+    "coverage_by_exchange": {
+      "TWSE": {
+        "covered": 1084,
+        "total": 1093
+      },
+      "TPEX": {
+        "covered": 1207,
+        "total": 1256
+      }
+    },
+    "session_symbols": 2274,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-10-17T02:14:13.921961+00:00"
+}

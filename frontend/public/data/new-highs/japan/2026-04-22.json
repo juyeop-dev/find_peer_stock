@@ -1,0 +1,858 @@
+{
+  "schema_version": 1,
+  "market": "japan",
+  "date": "2026-04-22",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "2303.T",
+      "name": "Dawn Corporation",
+      "exchange": "TSE",
+      "category": "Technology Services",
+      "high_type": "52_week",
+      "reason": "업종: Technology Services · Packaged Software",
+      "description": "Dawn Corporation · Packaged Software",
+      "change_pct": 6.239168110918536,
+      "session_open": 729.0,
+      "session_close": 766.25,
+      "session_volume": 124800.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:2303",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2303.T/history/",
+        "date": "2026-04-22",
+        "daily_high": 775.0,
+        "prior_all_time_or_current_month_high": 1003.75,
+        "passes_close_filter": true,
+        "yahoo_symbol": "2303.T"
+      }
+    },
+    {
+      "ticker": "2408.T",
+      "name": "KG Intelligence Co., Ltd.",
+      "exchange": "TSE",
+      "category": "Consumer Services",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Services · Publishing: Books/Magazines",
+      "description": "KG Intelligence Co., Ltd. · Publishing: Books/Magazines",
+      "change_pct": 1.1597938144329856,
+      "session_open": 780.0,
+      "session_close": 785.0,
+      "session_volume": 29400.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:2408",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2408.T/history/",
+        "date": "2026-04-22",
+        "daily_high": 787.0,
+        "prior_all_time_or_current_month_high": 1990.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "2408.T"
+      }
+    },
+    {
+      "ticker": "255A.T",
+      "name": "Gltechno Holdings, Inc.",
+      "exchange": "TSE",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Industrial Machinery",
+      "description": "Gltechno Holdings, Inc. · Industrial Machinery",
+      "change_pct": 8.536585365853666,
+      "session_open": 4905.0,
+      "session_close": 5340.0,
+      "session_volume": 344000.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:255A",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/255A.T/history/",
+        "date": "2026-04-22",
+        "daily_high": 5400.0,
+        "prior_all_time_or_current_month_high": 5400.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "255A.T"
+      }
+    },
+    {
+      "ticker": "3035.T",
+      "name": "ktk Inc.",
+      "exchange": "TSE",
+      "category": "Distribution Services",
+      "high_type": "52_week",
+      "reason": "업종: Distribution Services · Wholesale Distributors",
+      "description": "ktk Inc. · Wholesale Distributors",
+      "change_pct": 4.881266490765168,
+      "session_open": 758.0,
+      "session_close": 795.0,
+      "session_volume": 16600.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:3035",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3035.T/history/",
+        "date": "2026-04-22",
+        "daily_high": 798.0,
+        "prior_all_time_or_current_month_high": 1190.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "3035.T"
+      }
+    },
+    {
+      "ticker": "3445.T",
+      "name": "RS Technologies Co. Ltd.",
+      "exchange": "TSE",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Industrial Machinery",
+      "description": "RS Technologies Co. Ltd. · Industrial Machinery",
+      "change_pct": 2.909482758620685,
+      "session_open": 4640.0,
+      "session_close": 4775.0,
+      "session_volume": 147100.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:3445",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3445.T/history/",
+        "date": "2026-04-22",
+        "daily_high": 4775.0,
+        "prior_all_time_or_current_month_high": 4775.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "3445.T"
+      }
+    },
+    {
+      "ticker": "4004.T",
+      "name": "Resonac Holdings Corporation",
+      "exchange": "TSE",
+      "category": "Process Industries",
+      "high_type": "52_week",
+      "reason": "업종: Process Industries · Chemicals: Specialty",
+      "description": "Resonac Holdings Corporation · Chemicals: Specialty",
+      "change_pct": 8.43960990247561,
+      "session_open": 13860.0,
+      "session_close": 14455.0,
+      "session_volume": 5223800.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:4004",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4004.T/history/",
+        "date": "2026-04-22",
+        "daily_high": 14530.0,
+        "prior_all_time_or_current_month_high": 55100.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "4004.T"
+      }
+    },
+    {
+      "ticker": "4062.T",
+      "name": "IBIDEN CO., LTD.",
+      "exchange": "TSE",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Electronic Components",
+      "description": "IBIDEN CO., LTD. · Electronic Components",
+      "change_pct": 6.060606060606055,
+      "session_open": 5250.0,
+      "session_close": 5600.0,
+      "session_volume": 15192400.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:4062",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4062.T/history/",
+        "date": "2026-04-22",
+        "daily_high": 5600.0,
+        "prior_all_time_or_current_month_high": 5600.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "4062.T"
+      },
+      "peers": [
+        {
+          "ticker": "009150.KS",
+          "name": "삼성전기"
+        },
+        {
+          "ticker": "353200.KS",
+          "name": "대덕전자"
+        },
+        {
+          "ticker": "222800.KQ",
+          "name": "심텍"
+        }
+      ]
+    },
+    {
+      "ticker": "4657.T",
+      "name": "Environmental Control Center Co., Ltd.",
+      "exchange": "TSE",
+      "category": "Commercial Services",
+      "high_type": "52_week",
+      "reason": "업종: Commercial Services · Miscellaneous Commercial Services",
+      "description": "Environmental Control Center Co., Ltd. · Miscellaneous Commercial Services",
+      "change_pct": 8.768267223382043,
+      "session_open": 491.0,
+      "session_close": 521.0,
+      "session_volume": 1218400.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:4657",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4657.T/history/",
+        "date": "2026-04-22",
+        "daily_high": 559.0,
+        "prior_all_time_or_current_month_high": 1734.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "4657.T"
+      }
+    },
+    {
+      "ticker": "4970.T",
+      "name": "Toyo Gosei Co., Ltd.",
+      "exchange": "TSE",
+      "category": "Process Industries",
+      "high_type": "52_week",
+      "reason": "업종: Process Industries · Chemicals: Specialty",
+      "description": "Toyo Gosei Co., Ltd. · Chemicals: Specialty",
+      "change_pct": 2.943396226415085,
+      "session_open": 13300.0,
+      "session_close": 13640.0,
+      "session_volume": 61100.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:4970",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4970.T/history/",
+        "date": "2026-04-22",
+        "daily_high": 13700.0,
+        "prior_all_time_or_current_month_high": 19270.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "4970.T"
+      }
+    },
+    {
+      "ticker": "5344.T",
+      "name": "MARUWA CO., LTD.",
+      "exchange": "TSE",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Electrical Products",
+      "description": "MARUWA CO., LTD. · Electrical Products",
+      "change_pct": 0.3494623655913909,
+      "session_open": 72300.0,
+      "session_close": 74660.0,
+      "session_volume": 361000.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:5344",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/5344.T/history/",
+        "date": "2026-04-22",
+        "daily_high": 75870.0,
+        "prior_all_time_or_current_month_high": 75870.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "5344.T"
+      }
+    },
+    {
+      "ticker": "554A.T",
+      "name": "Batonz.Co.,Ltd.",
+      "exchange": "TSE",
+      "category": "Commercial Services",
+      "high_type": "all_time",
+      "reason": "업종: Commercial Services · Miscellaneous Commercial Services",
+      "description": "Batonz.Co.,Ltd. · Miscellaneous Commercial Services",
+      "change_pct": 0.0,
+      "session_open": 1674.0,
+      "session_close": 1930.0,
+      "session_volume": 1389000.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:554A",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/554A.T/history/",
+        "date": "2026-04-22",
+        "daily_high": 1968.0,
+        "prior_all_time_or_current_month_high": 1968.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "554A.T"
+      }
+    },
+    {
+      "ticker": "5915.T",
+      "name": "Komaihaltec Inc.",
+      "exchange": "TSE",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Metal Fabrication",
+      "description": "Komaihaltec Inc. · Metal Fabrication",
+      "change_pct": 0.8394160583941712,
+      "session_open": 2730.0,
+      "session_close": 2763.0,
+      "session_volume": 78800.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:5915",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/5915.T/history/",
+        "date": "2026-04-22",
+        "daily_high": 2796.0,
+        "prior_all_time_or_current_month_high": 63400.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "5915.T"
+      }
+    },
+    {
+      "ticker": "6085.T",
+      "name": "Architects Studio Japan, Inc.",
+      "exchange": "TSE",
+      "category": "Industrial Services",
+      "high_type": "all_time",
+      "reason": "업종: Industrial Services · Engineering & Construction",
+      "description": "Architects Studio Japan, Inc. · Engineering & Construction",
+      "change_pct": 1031.578947368421,
+      "session_open": 396.0,
+      "session_close": 430.0,
+      "session_volume": 8562600.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:6085",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6085.T/history/",
+        "date": "2026-04-22",
+        "daily_high": 460.0,
+        "prior_all_time_or_current_month_high": 460.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "6085.T"
+      }
+    },
+    {
+      "ticker": "6217.T",
+      "name": "TSUDAKOMA Corp.",
+      "exchange": "TSE",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Industrial Machinery",
+      "description": "TSUDAKOMA Corp. · Industrial Machinery",
+      "change_pct": 40.581818181818186,
+      "session_open": 1500.0,
+      "session_close": 1933.0,
+      "session_volume": 6351300.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:6217",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6217.T/history/",
+        "date": "2026-04-22",
+        "daily_high": 2563.0,
+        "prior_all_time_or_current_month_high": 64500.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "6217.T"
+      }
+    },
+    {
+      "ticker": "6232.T",
+      "name": "ACSL Ltd.",
+      "exchange": "TSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Aerospace & Defense",
+      "description": "ACSL Ltd. · Aerospace & Defense",
+      "change_pct": 23.228803716608603,
+      "session_open": 1859.0,
+      "session_close": 2122.0,
+      "session_volume": 5941300.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:6232",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6232.T/history/",
+        "date": "2026-04-22",
+        "daily_high": 2122.0,
+        "prior_all_time_or_current_month_high": 5430.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "6232.T"
+      }
+    },
+    {
+      "ticker": "6265.T",
+      "name": "CONVUM Ltd.",
+      "exchange": "TSE",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Industrial Machinery",
+      "description": "CONVUM Ltd. · Industrial Machinery",
+      "change_pct": 3.588605253422128,
+      "session_open": 2703.0,
+      "session_close": 2800.0,
+      "session_volume": 3100.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:6265",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6265.T/history/",
+        "date": "2026-04-22",
+        "daily_high": 2800.0,
+        "prior_all_time_or_current_month_high": 17875.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "6265.T"
+      }
+    },
+    {
+      "ticker": "6336.T",
+      "name": "Ishii Hyoki Co., Ltd.",
+      "exchange": "TSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Electronic Components",
+      "description": "Ishii Hyoki Co., Ltd. · Electronic Components",
+      "change_pct": 4.766355140186906,
+      "session_open": 1084.0,
+      "session_close": 1121.0,
+      "session_volume": 59100.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:6336",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6336.T/history/",
+        "date": "2026-04-22",
+        "daily_high": 1126.0,
+        "prior_all_time_or_current_month_high": 3790.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "6336.T"
+      }
+    },
+    {
+      "ticker": "6516.T",
+      "name": "Sanyo Denki Co., Ltd.",
+      "exchange": "TSE",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Electrical Products",
+      "description": "Sanyo Denki Co., Ltd. · Electrical Products",
+      "change_pct": 2.8735632183908066,
+      "session_open": 5220.0,
+      "session_close": 5370.0,
+      "session_volume": 126900.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:6516",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6516.T/history/",
+        "date": "2026-04-22",
+        "daily_high": 5430.0,
+        "prior_all_time_or_current_month_high": 5430.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "6516.T"
+      }
+    },
+    {
+      "ticker": "6555.T",
+      "name": "MS&Consulting Co.,Ltd.",
+      "exchange": "TSE",
+      "category": "Commercial Services",
+      "high_type": "52_week",
+      "reason": "업종: Commercial Services · Miscellaneous Commercial Services",
+      "description": "MS&Consulting Co.,Ltd. · Miscellaneous Commercial Services",
+      "change_pct": 5.841121495327095,
+      "session_open": 428.0,
+      "session_close": 453.0,
+      "session_volume": 41800.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:6555",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6555.T/history/",
+        "date": "2026-04-22",
+        "daily_high": 460.0,
+        "prior_all_time_or_current_month_high": 1783.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "6555.T"
+      }
+    },
+    {
+      "ticker": "6666.T",
+      "name": "RIVER ELETEC CORPORATION",
+      "exchange": "TSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Electronic Production Equipment",
+      "description": "RIVER ELETEC CORPORATION · Electronic Production Equipment",
+      "change_pct": 10.5815061963775,
+      "session_open": 1035.0,
+      "session_close": 1160.0,
+      "session_volume": 1669400.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:6666",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6666.T/history/",
+        "date": "2026-04-22",
+        "daily_high": 1311.0,
+        "prior_all_time_or_current_month_high": 1907.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "6666.T"
+      }
+    },
+    {
+      "ticker": "6707.T",
+      "name": "Sanken Electric Co., Ltd.",
+      "exchange": "TSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Semiconductors",
+      "description": "Sanken Electric Co., Ltd. · Semiconductors",
+      "change_pct": 3.5807959858592753,
+      "session_open": 8769.0,
+      "session_close": 9083.0,
+      "session_volume": 140200.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:6707",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6707.T/history/",
+        "date": "2026-04-22",
+        "daily_high": 9201.0,
+        "prior_all_time_or_current_month_high": 58000.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "6707.T"
+      }
+    },
+    {
+      "ticker": "6769.T",
+      "name": "Thine Electronics, Inc.",
+      "exchange": "TSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Semiconductors",
+      "description": "Thine Electronics, Inc. · Semiconductors",
+      "change_pct": 9.365853658536594,
+      "session_open": 1092.0,
+      "session_close": 1121.0,
+      "session_volume": 402900.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:6769",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6769.T/history/",
+        "date": "2026-04-22",
+        "daily_high": 1151.0,
+        "prior_all_time_or_current_month_high": 2250.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "6769.T"
+      }
+    },
+    {
+      "ticker": "6834.T",
+      "name": "Seikoh Giken Co., Ltd.",
+      "exchange": "TSE",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Industrial Machinery",
+      "description": "Seikoh Giken Co., Ltd. · Industrial Machinery",
+      "change_pct": 3.0674846625766916,
+      "session_open": 6440.0,
+      "session_close": 6720.0,
+      "session_volume": 1321000.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:6834",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6834.T/history/",
+        "date": "2026-04-22",
+        "daily_high": 6750.0,
+        "prior_all_time_or_current_month_high": 6750.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "6834.T"
+      }
+    },
+    {
+      "ticker": "6920.T",
+      "name": "Lasertec Corp.",
+      "exchange": "TSE",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Electronic Equipment/Instruments",
+      "description": "Lasertec Corp. · Electronic Equipment/Instruments",
+      "change_pct": 0.6289308176100628,
+      "session_open": 44700.0,
+      "session_close": 44800.0,
+      "session_volume": 4291700.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:6920",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6920.T/history/",
+        "date": "2026-04-22",
+        "daily_high": 45520.0,
+        "prior_all_time_or_current_month_high": 45520.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "6920.T"
+      },
+      "peers": [
+        {
+          "ticker": "348210.KQ",
+          "name": "넥스틴"
+        },
+        {
+          "ticker": "140860.KQ",
+          "name": "파크시스템스"
+        },
+        {
+          "ticker": "322310.KQ",
+          "name": "오로스테크놀로지"
+        },
+        {
+          "ticker": "064290.KQ",
+          "name": "인텍플러스"
+        },
+        {
+          "ticker": "403870.KQ",
+          "name": "HPSP"
+        }
+      ]
+    },
+    {
+      "ticker": "6962.T",
+      "name": "Daishinku Corp.,",
+      "exchange": "TSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Electronic Production Equipment",
+      "description": "Daishinku Corp., · Electronic Production Equipment",
+      "change_pct": 5.733333333333324,
+      "session_open": 778.0,
+      "session_close": 793.0,
+      "session_volume": 1171800.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:6962",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6962.T/history/",
+        "date": "2026-04-22",
+        "daily_high": 794.0,
+        "prior_all_time_or_current_month_high": 1790.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "6962.T"
+      }
+    },
+    {
+      "ticker": "6981.T",
+      "name": "Murata Manufacturing Co., Ltd.",
+      "exchange": "TSE",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Electronic Production Equipment",
+      "description": "Murata Manufacturing Co., Ltd. · Electronic Production Equipment",
+      "change_pct": 2.099792099792097,
+      "session_open": 4827.0,
+      "session_close": 4911.0,
+      "session_volume": 7750500.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:6981",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6981.T/history/",
+        "date": "2026-04-22",
+        "daily_high": 4977.0,
+        "prior_all_time_or_current_month_high": 4977.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "6981.T"
+      },
+      "peers": [
+        {
+          "ticker": "009150.KS",
+          "name": "삼성전기"
+        },
+        {
+          "ticker": "001820.KS",
+          "name": "삼화콘덴서"
+        },
+        {
+          "ticker": "052710.KQ",
+          "name": "아모텍"
+        },
+        {
+          "ticker": "036010.KQ",
+          "name": "아비코전자"
+        },
+        {
+          "ticker": "122990.KQ",
+          "name": "와이솔"
+        }
+      ]
+    },
+    {
+      "ticker": "7220.T",
+      "name": "Musashi Seimitsu Industry Co., Ltd.",
+      "exchange": "TSE",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Auto Parts: OEM",
+      "description": "Musashi Seimitsu Industry Co., Ltd. · Auto Parts: OEM",
+      "change_pct": 16.81997371879107,
+      "session_open": 3765.0,
+      "session_close": 4445.0,
+      "session_volume": 4744200.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:7220",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/7220.T/history/",
+        "date": "2026-04-22",
+        "daily_high": 4505.0,
+        "prior_all_time_or_current_month_high": 4505.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "7220.T"
+      }
+    },
+    {
+      "ticker": "8141.T",
+      "name": "Shinko Shoji Co., Ltd.",
+      "exchange": "TSE",
+      "category": "Distribution Services",
+      "high_type": "all_time",
+      "reason": "업종: Distribution Services · Electronics Distributors",
+      "description": "Shinko Shoji Co., Ltd. · Electronics Distributors",
+      "change_pct": 1.74193548387096,
+      "session_open": 1556.0,
+      "session_close": 1577.0,
+      "session_volume": 296700.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:8141",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/8141.T/history/",
+        "date": "2026-04-22",
+        "daily_high": 1584.0,
+        "prior_all_time_or_current_month_high": 1584.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "8141.T"
+      }
+    },
+    {
+      "ticker": "9307.T",
+      "name": "Sugimura Warehouse Co., Ltd.",
+      "exchange": "TSE",
+      "category": "Transportation",
+      "high_type": "52_week",
+      "reason": "업종: Transportation · Air Freight/Couriers",
+      "description": "Sugimura Warehouse Co., Ltd. · Air Freight/Couriers",
+      "change_pct": 2.5116279069767433,
+      "session_open": 1082.0,
+      "session_close": 1102.0,
+      "session_volume": 43100.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:9307",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/9307.T/history/",
+        "date": "2026-04-22",
+        "daily_high": 1119.0,
+        "prior_all_time_or_current_month_high": 3680.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "9307.T"
+      }
+    },
+    {
+      "ticker": "9972.T",
+      "name": "Altech Co., Ltd.",
+      "exchange": "TSE",
+      "category": "Distribution Services",
+      "high_type": "52_week",
+      "reason": "업종: Distribution Services · Wholesale Distributors",
+      "description": "Altech Co., Ltd. · Wholesale Distributors",
+      "change_pct": 2.564102564102555,
+      "session_open": 273.0,
+      "session_close": 280.0,
+      "session_volume": 397200.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:9972",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/9972.T/history/",
+        "date": "2026-04-22",
+        "daily_high": 319.0,
+        "prior_all_time_or_current_month_high": 1235.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "9972.T"
+      }
+    },
+    {
+      "ticker": "9984.T",
+      "name": "SoftBank Group Corp.",
+      "exchange": "TSE",
+      "category": "Communications",
+      "high_type": "all_time",
+      "reason": "업종: Communications · Specialty Telecommunications",
+      "description": "SoftBank Group Corp. · Specialty Telecommunications",
+      "change_pct": 8.473267708936504,
+      "session_open": 5130.0,
+      "session_close": 5620.0,
+      "session_volume": 154144000.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:9984",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/9984.T/history/",
+        "date": "2026-04-22",
+        "daily_high": 5727.0,
+        "prior_all_time_or_current_month_high": 5727.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "9984.T"
+      },
+      "peers": [
+        {
+          "ticker": "000660.KS",
+          "name": "SK하이닉스"
+        },
+        {
+          "ticker": "035420.KS",
+          "name": "NAVER"
+        },
+        {
+          "ticker": "035720.KS",
+          "name": "카카오"
+        }
+      ]
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-10-17T02:16:10.688567+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 3759,
+    "history_symbols": 3735,
+    "inactive_symbols": 1,
+    "failed_symbols": 23,
+    "coverage_ratio": 0.9938797232570517,
+    "coverage_by_exchange": {
+      "TSE": {
+        "covered": 3735,
+        "total": 3758
+      }
+    },
+    "session_symbols": 3733,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-10-17T02:16:10.688567+00:00"
+}

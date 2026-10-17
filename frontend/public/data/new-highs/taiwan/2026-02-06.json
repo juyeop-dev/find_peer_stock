@@ -1,0 +1,382 @@
+{
+  "schema_version": 1,
+  "market": "taiwan",
+  "date": "2026-02-06",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "4537.TWO",
+      "name": "Shuz Tung Machinery Industrial Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Industrial Machinery",
+      "description": "Shuz Tung Machinery Industrial Co., Ltd. · Industrial Machinery",
+      "change_pct": 5.943150366196148,
+      "session_open": 77.4000015258789,
+      "session_close": 82.0,
+      "session_volume": 324831.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:4537",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4537.TWO/history/",
+        "date": "2026-02-06",
+        "daily_high": 82.0,
+        "prior_all_time_or_current_month_high": 82.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "4537.TWO"
+      }
+    },
+    {
+      "ticker": "4542.TWO",
+      "name": "Asia Neo Tech Industrial Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Industrial Machinery",
+      "description": "Asia Neo Tech Industrial Co., Ltd. · Industrial Machinery",
+      "change_pct": 3.076923076923066,
+      "session_open": 129.0,
+      "session_close": 134.0,
+      "session_volume": 4701368.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:4542",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4542.TWO/history/",
+        "date": "2026-02-06",
+        "daily_high": 143.0,
+        "prior_all_time_or_current_month_high": 143.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "4542.TWO"
+      }
+    },
+    {
+      "ticker": "5386.TWO",
+      "name": "Albatron Technology Co., Ltd",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Electronic Production Equipment",
+      "description": "Albatron Technology Co., Ltd · Electronic Production Equipment",
+      "change_pct": 9.86546367198915,
+      "session_open": 81.66666412353516,
+      "session_close": 81.66666412353516,
+      "session_volume": 9459945.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:5386",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/5386.TWO/history/",
+        "date": "2026-02-06",
+        "daily_high": 81.66666412353516,
+        "prior_all_time_or_current_month_high": 81.66666412353516,
+        "passes_close_filter": true,
+        "yahoo_symbol": "5386.TWO"
+      }
+    },
+    {
+      "ticker": "6220.TWO",
+      "name": "YFC-BonEagle Electric Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Electrical Products",
+      "description": "YFC-BonEagle Electric Co., Ltd. · Electrical Products",
+      "change_pct": 0.16666412353516513,
+      "session_open": 29.899999618530273,
+      "session_close": 30.049999237060547,
+      "session_volume": 1122383.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:6220",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6220.TWO/history/",
+        "date": "2026-02-06",
+        "daily_high": 30.75,
+        "prior_all_time_or_current_month_high": 74.77027130126953,
+        "passes_close_filter": true,
+        "yahoo_symbol": "6220.TWO"
+      }
+    },
+    {
+      "ticker": "7734.TWO",
+      "name": "Ableprint Technology Co Ltd",
+      "exchange": "TPEX",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Industrial Machinery",
+      "description": "Ableprint Technology Co Ltd · Industrial Machinery",
+      "change_pct": 6.2745098039215685,
+      "session_open": 1265.0,
+      "session_close": 1355.0,
+      "session_volume": 943993.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:7734",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/7734.TWO/history/",
+        "date": "2026-02-06",
+        "daily_high": 1395.0,
+        "prior_all_time_or_current_month_high": 1395.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "7734.TWO"
+      }
+    },
+    {
+      "ticker": "7806.TWO",
+      "name": "Gin Hwa Biotech, Inc.",
+      "exchange": "TPEX",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Biotechnology",
+      "description": "Gin Hwa Biotech, Inc. · Biotechnology",
+      "change_pct": 0.2564092820447561,
+      "session_open": 74.28571319580078,
+      "session_close": 74.47618865966797,
+      "session_volume": 51409.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:7806",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/7806.TWO/history/",
+        "date": "2026-02-06",
+        "daily_high": 77.61904907226562,
+        "prior_all_time_or_current_month_high": 80.61713082449776,
+        "passes_close_filter": true,
+        "yahoo_symbol": "7806.TWO"
+      }
+    },
+    {
+      "ticker": "7896.TWO",
+      "name": "Sil-More Industrial Ltd.",
+      "exchange": "TPEX",
+      "category": "Process Industries",
+      "high_type": "all_time",
+      "reason": "업종: Process Industries · Chemicals: Specialty",
+      "description": "Sil-More Industrial Ltd. · Chemicals: Specialty",
+      "change_pct": 15.67567567567567,
+      "session_open": 372.5,
+      "session_close": 428.0,
+      "session_volume": 120676.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:7896",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/7896.TWO/history/",
+        "date": "2026-02-06",
+        "daily_high": 476.0,
+        "prior_all_time_or_current_month_high": 476.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "7896.TWO"
+      }
+    },
+    {
+      "ticker": "8905.TWO",
+      "name": "Eagle Cold Storage Enterprise Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Consumer Non-Durables",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Non-Durables · Food: Meat/Fish/Dairy",
+      "description": "Eagle Cold Storage Enterprise Co., Ltd. · Food: Meat/Fish/Dairy",
+      "change_pct": 0.5154658940003776,
+      "session_open": 38.95000076293945,
+      "session_close": 39.0,
+      "session_volume": 494002.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:8905",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/8905.TWO/history/",
+        "date": "2026-02-06",
+        "daily_high": 39.04999923706055,
+        "prior_all_time_or_current_month_high": 39.29999923706055,
+        "passes_close_filter": true,
+        "yahoo_symbol": "8905.TWO"
+      }
+    },
+    {
+      "ticker": "2731.TW",
+      "name": "Lion Travel Service Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Consumer Services",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Services · Other Consumer Services",
+      "description": "Lion Travel Service Co., Ltd. · Other Consumer Services",
+      "change_pct": 4.545454545454541,
+      "session_open": 176.0,
+      "session_close": 184.0,
+      "session_volume": 2995745.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2731",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2731.TW/history/",
+        "date": "2026-02-06",
+        "daily_high": 184.0,
+        "prior_all_time_or_current_month_high": 201.5,
+        "passes_close_filter": true,
+        "yahoo_symbol": "2731.TW"
+      }
+    },
+    {
+      "ticker": "3550.TW",
+      "name": "Copartner Technology Corporation",
+      "exchange": "TWSE",
+      "category": "Distribution Services",
+      "high_type": "52_week",
+      "reason": "업종: Distribution Services · Wholesale Distributors",
+      "description": "Copartner Technology Corporation · Wholesale Distributors",
+      "change_pct": 9.970679407681526,
+      "session_open": 17.049999237060547,
+      "session_close": 18.75,
+      "session_volume": 14553531.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:3550",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3550.TW/history/",
+        "date": "2026-02-06",
+        "daily_high": 18.75,
+        "prior_all_time_or_current_month_high": 39.62750198992104,
+        "passes_close_filter": true,
+        "yahoo_symbol": "3550.TW"
+      }
+    },
+    {
+      "ticker": "3576.TW",
+      "name": "United Renewable Energy Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Semiconductors",
+      "description": "United Renewable Energy Co., Ltd. · Semiconductors",
+      "change_pct": 7.070701751434072,
+      "session_open": 15.550000190734863,
+      "session_close": 15.899999618530273,
+      "session_volume": 141406691.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:3576",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3576.TW/history/",
+        "date": "2026-02-06",
+        "daily_high": 16.049999237060547,
+        "prior_all_time_or_current_month_high": 238.98400500992588,
+        "passes_close_filter": true,
+        "yahoo_symbol": "3576.TW"
+      }
+    },
+    {
+      "ticker": "6949.TW",
+      "name": "PELL Bio-Med Technology Co Ltd",
+      "exchange": "TWSE",
+      "category": "Health Technology",
+      "high_type": "all_time",
+      "reason": "업종: Health Technology · Biotechnology",
+      "description": "PELL Bio-Med Technology Co Ltd · Biotechnology",
+      "change_pct": 4.783950617283961,
+      "session_open": 648.0,
+      "session_close": 679.0,
+      "session_volume": 148120.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:6949",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6949.TW/history/",
+        "date": "2026-02-06",
+        "daily_high": 679.0,
+        "prior_all_time_or_current_month_high": 679.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "6949.TW"
+      }
+    },
+    {
+      "ticker": "7610.TW",
+      "name": "LIANYOU METALS CO.,LTD.",
+      "exchange": "TWSE",
+      "category": "Non-Energy Minerals",
+      "high_type": "all_time",
+      "reason": "업종: Non-Energy Minerals · Other Metals/Minerals",
+      "description": "LIANYOU METALS CO.,LTD. · Other Metals/Minerals",
+      "change_pct": 7.073172147822615,
+      "session_open": 169.15821838378906,
+      "session_close": 182.9075469970703,
+      "session_volume": 1841568.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:7610",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/7610.TW/history/",
+        "date": "2026-02-06",
+        "daily_high": 185.82406616210938,
+        "prior_all_time_or_current_month_high": 185.82406616210938,
+        "passes_close_filter": true,
+        "yahoo_symbol": "7610.TW"
+      }
+    },
+    {
+      "ticker": "7750.TW",
+      "name": "Syntec Technology Co. Ltd.",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Electronic Equipment/Instruments",
+      "description": "Syntec Technology Co. Ltd. · Electronic Equipment/Instruments",
+      "change_pct": 2.8037383177569986,
+      "session_open": 1060.0,
+      "session_close": 1100.0,
+      "session_volume": 858336.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:7750",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/7750.TW/history/",
+        "date": "2026-02-06",
+        "daily_high": 1130.0,
+        "prior_all_time_or_current_month_high": 1130.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "7750.TW"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-10-17T02:14:13.921961+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 2350,
+    "history_symbols": 2291,
+    "inactive_symbols": 1,
+    "failed_symbols": 58,
+    "coverage_ratio": 0.9753086419753086,
+    "coverage_by_exchange": {
+      "TWSE": {
+        "covered": 1084,
+        "total": 1093
+      },
+      "TPEX": {
+        "covered": 1207,
+        "total": 1256
+      }
+    },
+    "session_symbols": 2272,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-10-17T02:14:13.921961+00:00"
+}
