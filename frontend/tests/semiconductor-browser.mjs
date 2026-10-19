@@ -130,7 +130,7 @@ try {
   await send("Page.enable");
   await send("Page.navigate", { url: `${origin}/semiconductors` });
   await until(() => evaluate("document.querySelectorAll('.semiStockPriceTable tbody tr').length > 0"), "Semiconductor stocks did not load.");
-  assert.equal(await evaluate("document.querySelectorAll('.semiStockPriceTable tbody tr').length"), 96);
+  assert.equal(await evaluate("document.querySelectorAll('.semiStockPriceTable tbody tr').length"), 102);
   const stockOverviewLayout = await overviewLayout();
   assert.deepEqual(await evaluate("[...document.querySelectorAll('.semiStockPriceTable th')].map(item => item.innerText.replace(/[↕↑↓]/g, '').trim())"),
     ["종목", "대분류", "중분류", "소분류", "시장", "가격", "시가총액", "기준일", "등락률", "30일 수익률", "최근 1년 매출", "최근 1년 영업이익", "실적 기간"]);
@@ -216,7 +216,7 @@ try {
   }
   await selectFilter(0, "minor");
   await selectFilter(1, "핵심 연관 테마");
-  assert.equal(await evaluate("document.querySelectorAll('.semiTrendTable tbody tr').length"), 11);
+  assert.equal(await evaluate("document.querySelectorAll('.semiTrendTable tbody tr').length"), 16);
   await evaluate("[...document.querySelectorAll('.semiTrendTable tbody tr')].find(row => row.cells[2].innerText === 'CXL').cells[2].querySelector('button').click()");
   assert.equal(await evaluate("document.querySelectorAll('.semiConstituentTable tbody tr').length"), 4);
   await checkChartPointerAlignment();

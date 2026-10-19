@@ -100,7 +100,7 @@ class SemiconductorDataTests(unittest.TestCase):
         seeds = semis.classified_seeds()
         groups = json.loads(semis.CATEGORIES.read_text(encoding="utf-8"))
         image_tickers = {ticker for group in groups for ticker in group["image"]}
-        self.assertEqual((len(seeds), len(groups), len(image_tickers)), (96, 22, 65))
+        self.assertEqual((len(seeds), len(groups), len(image_tickers)), (102, 28, 65))
         self.assertEqual(sum(bool(group["image"]) for group in groups), 19)
         by_ticker = {seed["ticker"]: seed for seed in seeds}
         self.assertEqual({item["minor"] for item in by_ticker["005930.KS"]["classifications"]},
