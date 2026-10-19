@@ -4,7 +4,7 @@ import type { ChartPoint } from "../dataClient/semiconductorMath";
 interface Props {
   points: ChartPoint[];
   title: string;
-  unit: "원" | "지수" | "조원";
+  unit: string;
 }
 
 const WIDTH = 760;
@@ -29,7 +29,8 @@ export function SemiconductorLineChart({ points, title, unit }: Props) {
   const rising = values.at(-1)! >= values[0];
   const active = Math.min(hovered ?? points.length - 1, points.length - 1);
   const formatted = (value: number) => unit === "원" ? `${Math.round(value).toLocaleString("ko-KR")}원`
-    : unit === "조원" ? `${value.toFixed(2)}조원` : value.toFixed(1);
+    : unit === "조원" ? `${value.toFixed(2)}조원` : unit === "지수" ? value.toFixed(1)
+    : `${new Intl.NumberFormat("ko-KR", { maximumFractionDigits: 2 }).format(value)} ${unit}`;
 
   return (
     <div className="semiChart" role="img" aria-label={`${title}: ${points[0].date}부터 ${points.at(-1)!.date}까지 ${unit} 추이`}>

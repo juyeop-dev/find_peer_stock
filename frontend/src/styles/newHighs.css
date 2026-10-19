@@ -105,6 +105,8 @@ body:has(.newHighPage) { min-width: 320px; }
 .newHighStockTop { display: grid; grid-template-columns: minmax(0, 1fr) 256px; align-items: baseline; gap: 12px; }
 .newHighStockIdentity { display: flex; min-width: 0; align-items: baseline; flex-wrap: wrap; gap: 7px; }
 .newHighStockTop strong { color: #253a55; font-size: 15px; }
+.newHighStockDetailLink:hover strong, .newHighStockDetailLink:focus-visible strong { color: #2855b8; text-decoration: underline; }
+.newHighStockDetailLink > span { font-size: 11px; color: #6d87a5; }
 .newHighTicker { color: #6c7f98; font-size: 11px; overflow-wrap: anywhere; }
 .newHighTickerLink { text-decoration: underline; text-decoration-color: #b7c5d8; text-underline-offset: 2px; }
 .newHighTickerLink:hover, .newHighTickerLink:focus-visible { color: #214f9c; text-decoration-color: currentColor; }

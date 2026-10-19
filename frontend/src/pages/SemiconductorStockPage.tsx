@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useSearchParams } from "react-router-dom";
 import { SemiconductorLineChart } from "../components/SemiconductorLineChart";
 import { DataRefreshStatus } from "../components/DataRefreshStatus";
 import { ErrorNotice } from "../components/ErrorNotice";
@@ -12,6 +12,7 @@ import { stockClassifications } from "../dataClient/semiconductorTypes";
 import type { SemiconductorFinancial } from "../dataClient/semiconductorTypes";
 import { getSemiconductorData } from "../dataClient/staticStockDataClient";
 import { usePollingData } from "../dataClient/usePollingData";
+import { calendarReturnLink } from "../dataClient/stockDetailLinks";
 
 const METRICS: [string, string][] = [
   ["marketValue", "시가총액"], ["per", "PER"], ["pbr", "PBR"], ["eps", "EPS"],
@@ -28,6 +29,8 @@ function FinancialTable({ title, rows }: { title: string; rows: SemiconductorFin
 
 export function SemiconductorStockPage() {
   const { ticker = "" } = useParams();
+  const [params] = useSearchParams();
+  const returnTo = params.get("returnTo") ? calendarReturnLink(params.get("returnTo")) : null;
   const { data, error, loading, refreshing, lastCheckedAt, refresh } = usePollingData(getSemiconductorData, 300_000);
   const [period, setPeriod] = useState<Period>(90);
   const stock = data?.stocks.find((item) => item.ticker === ticker);
@@ -38,6 +41,7 @@ export function SemiconductorStockPage() {
   const periodGain = stock ? stockReturn(stock, period) : null;
 
   return <main className="pageShell semiPage">
+    {returnTo ? <div className="semiBreadcrumb"><Link to={returnTo}>← {returnTo.startsWith("/turnover") ? "거래대금 캘린더" : returnTo.startsWith("/calendar-history") ? "누적 기록" : "신고가 캘린더"}로 돌아가기</Link></div> : null}
     <div className="semiBreadcrumb"><Link to="/semiconductors">반도체 종목</Link><span>/</span><span>{stock?.name ?? ticker}</span></div>
     <DataRefreshStatus refreshing={refreshing} lastCheckedAt={lastCheckedAt} generatedAt={data?.quoted_at} cadence="semiconductor" onRefresh={refresh} />
     {loading && <LoadingSpinner />}{error && <ErrorNotice message={error} />}

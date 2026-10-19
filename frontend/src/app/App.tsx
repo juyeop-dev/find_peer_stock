@@ -8,6 +8,7 @@ import { SemiconductorTrendsPage } from "../pages/SemiconductorTrendsPage";
 import { SemiconductorStockPage } from "../pages/SemiconductorStockPage";
 import { CreditBalancePage } from "../pages/CreditBalancePage";
 import { CalendarHistoryPage } from "../pages/CalendarHistoryPage";
+import { MarketStockPage } from "../pages/MarketStockPage";
 import "../styles/newHighs.css";
 import "../styles/semiconductor.css";
 
@@ -29,6 +30,7 @@ export function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/stocks/:ticker" element={<StockPage />} />
+        <Route path="/market-stocks/:ticker" element={<MarketStockPage />} />
         <Route path="/new-highs" element={<NewHighPage />} />
         <Route path="/turnover" element={<TurnoverPage />} />
         <Route path="/calendar-history" element={<CalendarHistoryPage />} />

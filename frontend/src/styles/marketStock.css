@@ -1,0 +1,28 @@
+.marketStockActions { display: flex; flex-wrap: wrap; gap: 8px 18px; margin-top: 16px; }
+.marketStockActions a { color: #17647a; font-size: 12px; text-decoration: underline; text-underline-offset: 3px; }
+.marketStockSnapshot dl { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; margin: 0; }
+.marketStockSnapshot dt { color: #758892; font-size: 12px; }
+.marketStockSnapshot dd { margin: 4px 0 0; font-size: 14px; font-weight: 700; overflow-wrap: anywhere; }
+.marketStockSnapshot .periodReturns { margin-top: 18px; }
+.marketStockDescription { margin: 18px 0 0; color: #617887; font-size: 13px; line-height: 1.8; }
+.marketFullChartButton { margin-top: 18px; }
+.marketStockChart .semiTable { min-width: 280px; }
+.marketWidget { position: relative; width: 100%; min-width: 0; }
+.marketWidgetHost { width: 100%; height: 560px; overflow: hidden; }
+.marketWidget-financials .marketWidgetHost { height: 650px; }
+.marketWidgetHost > .tradingview-widget-container { width: 100%; height: 100%; }
+.marketWidgetHost .tradingview-widget-container__widget { width: 100%; height: 100%; }
+.marketWidgetLoading { color: #718590; font-size: 12px; }
+.marketWidgetError { padding: 45px 20px; background: #f6f9fa; text-align: center; color: #657d87; font-size: 13px; }
+.marketWidgetError button { padding: 8px 14px; border: 1px solid #c7dce1; border-radius: 6px; background: #fff; color: #17647a; cursor: pointer; }
+.marketWidget .tradingview-widget-copyright { margin-top: 8px; font-size: 11px; color: #82949b; }
+.marketWidget .tradingview-widget-copyright a { color: #17647a; text-decoration: underline; }
+.marketStockPage .semiQuoteHero strong { font-size: clamp(20px, 3vw, 32px); }
+.marketStockPage .semiBreadcrumb { flex-wrap: wrap; overflow-wrap: anywhere; }
+.marketStockPage :is(a, button):focus-visible { outline: 3px solid #a0d9da; outline-offset: 3px; }
+@media (max-width: 720px) {
+  .marketStockSnapshot dl { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px 12px; }
+  .marketWidgetHost { height: 430px; }
+  .marketStockPage .semiDetailHeader { align-items: flex-start; }
+  .marketStockPage .semiQuoteHero { align-items: flex-start; }
+}

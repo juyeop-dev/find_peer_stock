@@ -55,6 +55,8 @@ body:has(.turnoverPage) { min-width: 320px; }
 .turnoverCompany > span:last-child { display: grid; min-width: 0; }
 .turnoverCompany strong { overflow: hidden; color: #253a55; font-size: 13px; text-overflow: ellipsis; white-space: nowrap; }
 .turnoverCompany small { overflow: hidden; margin-top: 2px; color: #8190a2; font-size: 9px; text-overflow: ellipsis; white-space: nowrap; }
+.turnoverExternalQuote { display: inline-block; margin: 5px 0 0 40px; color: #6f89aa; font-size: 10px; }
+.turnoverExternalQuote:hover { color: #2855b8; text-decoration: underline; }
 .turnoverLogo { position: relative; display: flex; width: 30px; height: 30px; flex: 0 0 30px; align-items: center; justify-content: center; overflow: hidden; border: 1px solid #e1e6ec; border-radius: 50%; background: #eef3f8; color: #657a93; font-size: 9px; font-weight: 750; }
 .turnoverLogo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; background: #fff; }
 .turnoverTable .number { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }

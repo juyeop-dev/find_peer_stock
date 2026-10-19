@@ -81,3 +81,14 @@ export async function getCreditData(signal?: AbortSignal): Promise<CreditData> {
 export async function getCalendarHistory(kind: HistoryKind, market: string, year: string, signal?: AbortSignal): Promise<CalendarHistory> {
   return fetchJson<CalendarHistory>(`data/${kind}/history/${encodeURIComponent(market)}/${encodeURIComponent(year)}.json`, signal);
 }
+
+export interface CalendarStockPrices {
+  market: string;
+  ticker: string;
+  history: { date: string; close: number; currency: string }[];
+}
+
+export async function getCalendarStockPrices(market: string, ticker: string, signal?: AbortSignal): Promise<CalendarStockPrices> {
+  const filename = encodeURIComponent(ticker).replaceAll("%", "~");
+  return fetchJson<CalendarStockPrices>(`data/calendar-stocks/${encodeURIComponent(market)}/${filename}.json`, signal);
+}

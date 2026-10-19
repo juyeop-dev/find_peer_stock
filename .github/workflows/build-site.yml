@@ -150,6 +150,10 @@ jobs:
         working-directory: frontend
         run: npm run test:calendar-history
 
+      - name: Test calendar stock detail navigation
+        working-directory: frontend
+        run: npm run test:stock-details
+
       - name: Build frontend
         working-directory: frontend
         env:

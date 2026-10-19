@@ -6,6 +6,7 @@ import { PeriodReturns } from "../components/PeriodReturns";
 import { TurnoverCalendar } from "../components/TurnoverCalendar";
 import { getTurnoverIndex, getTurnoverReport } from "../dataClient/staticStockDataClient";
 import { getExternalQuoteLink } from "../dataClient/externalLinks";
+import { calendarStockLink } from "../dataClient/stockDetailLinks";
 import { usePollingData } from "../dataClient/usePollingData";
 import type { TurnoverEntry } from "../dataClient/turnoverTypes";
 import "../styles/turnover.css";
@@ -131,9 +132,12 @@ export function TurnoverPage() {
               <th>순위</th><th>종목명</th><th>당일 종가</th><th>등락률</th><th>거래대금</th><th>시가총액</th><th>산업</th>
             </tr></thead><tbody>{entries.map((entry) => {
               const quote = getExternalQuoteLink(entry.ticker);
-              return <tr key={entry.ticker}><td className="turnoverRank"><strong>{entry.rank}</strong></td><td><a className="turnoverCompany" href={quote.href} target="_blank" rel="noreferrer" title={`${quote.label}에서 ${entry.name} 보기`}>
+              return <tr key={entry.ticker}><td className="turnoverRank"><strong>{entry.rank}</strong></td><td><Link className="turnoverCompany"
+                to={calendarStockLink(entry.ticker, "turnover", marketId, selectedDate, `/turnover?${new URLSearchParams({ market: marketId, date: selectedDate })}`)}
+                title={`${entry.name} 종목 상세 보기`}>
                 <span className="turnoverLogo"><span>{initials(entry)}</span>{entry.logo_url ? <img src={entry.logo_url} alt="" loading="lazy" onError={(event) => { event.currentTarget.style.display = "none"; }} /> : null}</span>
-                <span><strong>{entry.name}</strong><small>{entry.ticker} · {entry.exchange}</small></span></a></td>
+                <span><strong>{entry.name}</strong><small>{entry.ticker} · {entry.exchange}</small></span></Link>
+                <a className="turnoverExternalQuote" href={quote.href} target="_blank" rel="noreferrer" aria-label={`${entry.name} 외부 시세 (${quote.label})`}>외부 시세 ↗</a></td>
                 <td className="number">{formatMoney(entry.price, entry.currency)}</td><td className={`number change ${changeClass(entry.change_pct)}`}>{changeText(entry.change_pct)}<PeriodReturns values={entry.period_returns} /></td>
                 <td className="number turnoverValue"><strong>{formatHundredMillions(entry.turnover, entry.turnover_currency ?? entry.currency)}</strong></td><td className="number marketCapValue">{formatHundredMillions(entry.market_cap, entry.market_cap_currency ?? entry.currency, true)}</td>
                 <td><span className="turnoverIndustry"><strong>{entry.sector}</strong><small>{entry.industry}</small></span></td></tr>;

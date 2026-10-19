@@ -1,11 +1,12 @@
 import { useCallback, useMemo, useState } from "react";
-import { Link, useSearchParams } from "react-router-dom";
+import { Link, useLocation, useSearchParams } from "react-router-dom";
 import { ErrorNotice } from "../components/ErrorNotice";
 import { LoadingSpinner } from "../components/LoadingSpinner";
 import { getCalendarHistory, getNewHighIndex, getTurnoverIndex } from "../dataClient/staticStockDataClient";
 import { usePollingData } from "../dataClient/usePollingData";
 import { addMoney, formatHistoryMoney, historyDays, mergeHistoryStocks, summarizeDays } from "../dataClient/calendarHistory";
 import type { HistoryKind, MoneyTotals } from "../dataClient/calendarHistory";
+import { calendarStockLink } from "../dataClient/stockDetailLinks";
 import "../styles/calendarHistory.css";
 
 async function loadIndexes(signal: AbortSignal) {
@@ -17,6 +18,7 @@ const WEEKDAYS = ["일", "월", "화", "수", "목", "금", "토"];
 
 export function CalendarHistoryPage() {
   const [params, setParams] = useSearchParams();
+  const location = useLocation();
   const { data: indexes, error, loading } = usePollingData(loadIndexes);
   const [search, setSearch] = useState("");
   const [visibleStocks, setVisibleStocks] = useState(50);
@@ -186,7 +188,8 @@ export function CalendarHistoryPage() {
             {kind === "new-highs" ? <th scope="col">52주 / 역대</th> : <th scope="col">누적 거래대금</th>}
             <th scope="col">최초 기록</th><th scope="col">최근 기록</th>
           </tr></thead><tbody>{matchingStocks.slice(0, visibleStocks).map((stock, i) => <tr key={stock.ticker}>
-            <td>{i + 1}</td><th scope="row"><Link to={detailsUrl(stock.dates.at(-1)!)}><strong>{stock.name}</strong><small>{stock.ticker} · {stock.exchange}</small></Link></th>
+            <td>{i + 1}</td><th scope="row"><Link to={calendarStockLink(stock.ticker, kind, marketId, stock.dates.at(-1)!, `${location.pathname}${location.search}`)}
+              title={`${stock.name} 종목 상세 보기`}><strong>{stock.name}</strong><small>{stock.ticker} · {stock.exchange}</small></Link></th>
             <td className="historyCategory">{stock.category}</td><td><strong>{stock.dates.length}일</strong></td>
             <td>{kind === "new-highs" ? `${stock.high_52_week} / ${stock.high_all_time}` : formatHistoryMoney(stock.turnover_by_currency)}</td>
             <td><Link to={detailsUrl(stock.dates[0])}>{stock.dates[0]} ↗</Link></td><td><Link to={detailsUrl(stock.dates.at(-1)!)}>{stock.dates.at(-1)} ↗</Link></td>

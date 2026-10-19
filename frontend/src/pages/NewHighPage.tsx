@@ -9,6 +9,7 @@ import { getNewHighIndex, getNewHighReport, getSiteIndex } from "../dataClient/s
 import { usePollingData } from "../dataClient/usePollingData";
 import { compareMarketCapDesc, formatDateTime, formatMarketCap } from "../dataClient/formatters";
 import { getExternalQuoteLink } from "../dataClient/externalLinks";
+import { calendarStockLink } from "../dataClient/stockDetailLinks";
 import type { HighType, NewHighCounts, NewHighEntry, NewHighRefresh } from "../dataClient/newHighTypes";
 
 const EMPTY_COUNTS: NewHighCounts = { total: 0, high_52_week: 0, high_all_time: 0 };
@@ -314,7 +315,9 @@ export function NewHighPage() {
                       <ul>{stocks.map((entry) => {
                         const externalQuoteLink = getExternalQuoteLink(entry.ticker);
                         return <li key={entry.ticker}>
-                        <div className="newHighStockTop"><div className="newHighStockIdentity"><strong>{entry.name}</strong>
+                        <div className="newHighStockTop"><div className="newHighStockIdentity"><Link className="newHighStockDetailLink"
+                          to={calendarStockLink(entry.ticker, "new-highs", marketId, selectedDate, `/new-highs?${new URLSearchParams({ market: marketId, date: selectedDate, exchange })}`)}
+                          title={`${entry.name} 종목 상세 보기`}><strong>{entry.name}</strong><span aria-hidden="true"> ↗</span></Link>
                           <a className="newHighTicker newHighTickerLink" href={externalQuoteLink.href}
                             target="_blank" rel="noreferrer"
                             title={`${entry.ticker} 외부 시세 (${externalQuoteLink.label})`}
