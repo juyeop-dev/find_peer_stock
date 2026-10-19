@@ -1,0 +1,67 @@
+name: Deploy prepared stock snapshots
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: [.github/workflows/deploy-prepared-snapshots.yml]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    concurrency:
+      group: prepared-stock-snapshots-${{ github.ref }}
+      cancel-in-progress: true
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - uses: actions/setup-node@v5
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+      - name: Validate snapshot readers and original provider adapters
+        run: |
+          python -m unittest discover -s tests
+          node --test automation/live-api/test/*.test.mjs
+      - name: Install frontend dependencies
+        working-directory: frontend
+        run: npm ci
+      - name: Validate chart coverage and reported statement retention
+        working-directory: frontend
+        run: |
+          npm run test:stock-history
+          npm run test:stock-information
+          npm run test:stock-details
+      - name: Build from committed stock snapshots
+        working-directory: frontend
+        env:
+          VITE_BASE_PATH: /${{ github.event.repository.name }}/
+        run: npm run build
+      - name: Copy SPA fallback
+        run: cp frontend/dist/index.html frontend/dist/404.html
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: frontend/dist
+  deploy:
+    concurrency:
+      group: pages
+      cancel-in-progress: true
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
