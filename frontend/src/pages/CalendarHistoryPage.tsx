@@ -1,4 +1,4 @@
-import { useCallback, useMemo, useState } from "react";
+import { useCallback, useMemo, useRef, useState } from "react";
 import { Link, useLocation, useSearchParams } from "react-router-dom";
 import { ErrorNotice } from "../components/ErrorNotice";
 import { LoadingSpinner } from "../components/LoadingSpinner";
@@ -7,6 +7,9 @@ import { usePollingData } from "../dataClient/usePollingData";
 import { addMoney, formatHistoryMoney, historyDays, mergeHistoryStocks, summarizeDays } from "../dataClient/calendarHistory";
 import type { HistoryKind, MoneyTotals } from "../dataClient/calendarHistory";
 import { calendarStockLink } from "../dataClient/stockDetailLinks";
+import { DataRefreshStatus } from "../components/DataRefreshStatus";
+import { livePriceLabel, refreshQuotes } from "../dataClient/liveStockDataClient";
+import type { SourceMetadata, StockRequest } from "../dataClient/liveStockDataClient";
 import "../styles/calendarHistory.css";
 
 async function loadIndexes(signal: AbortSignal) {
@@ -55,6 +58,10 @@ export function CalendarHistoryPage() {
   const stocks = useMemo(() => history ? mergeHistoryStocks(history, prefix) : [], [history, prefix]);
   const query = search.trim().toLocaleLowerCase();
   const matchingStocks = stocks.filter((stock) => [stock.name, stock.ticker, stock.category, stock.exchange].join(" ").toLocaleLowerCase().includes(query));
+  const quoteTargets = useRef<StockRequest[]>([]);
+  quoteTargets.current = matchingStocks.slice(0, visibleStocks);
+  const loadQuotes = useCallback((signal: AbortSignal, fromSource = false): Promise<SourceMetadata> => fromSource ? refreshQuotes(quoteTargets.current, signal) : Promise.resolve({}), [marketId, kind, prefix]);
+  const sourceQuotes = usePollingData(loadQuotes);
   const index = kind === "new-highs" ? indexes?.highs : indexes?.turnover;
   const closures = new Map((index?.closures ?? []).filter((item) => item.market === marketId).map((item) => [item.date, item.reason || "시장 휴장"]));
   const dayMap = new Map(days.map((day) => [day.date, day]));
@@ -117,6 +124,8 @@ export function CalendarHistoryPage() {
           <button className="historyLatest" onClick={() => update({ year: null, month: null })}>최신 기록</button>
         </div>
       </section>
+      <DataRefreshStatus refreshing={sourceQuotes.refreshing} lastCheckedAt={sourceQuotes.lastCheckedAt} lastSourceAt={sourceQuotes.lastSourceAt} onRefresh={sourceQuotes.refresh} />
+      {sourceQuotes.error ? <ErrorNotice message={sourceQuotes.error} /> : null}
       <div className="historyPeriodHeading"><div><span className="eyebrow">{market.label} · {yearly ? "연간" : "월간"} 아카이브</span>
         <h2>{year ? periodLabel : "저장된 기록 없음"} <span>{label}</span></h2></div>
         {days.length ? <p>{days[0].date} ~ {days.at(-1)!.date}<br />저장된 거래일 기준</p> : null}
@@ -186,13 +195,14 @@ export function CalendarHistoryPage() {
           <div className="historyTableScroll"><table className="historyTable historyStocksTable"><thead><tr>
             <th scope="col">순번</th><th scope="col">종목</th><th scope="col">업종</th><th scope="col">등장일</th>
             {kind === "new-highs" ? <th scope="col">52주 / 역대</th> : <th scope="col">누적 거래대금</th>}
-            <th scope="col">최초 기록</th><th scope="col">최근 기록</th>
+            <th scope="col">최초 기록</th><th scope="col">최근 기록</th>{sourceQuotes.lastSourceAt ? <th scope="col">현재가 · 직접 조회</th> : null}
           </tr></thead><tbody>{matchingStocks.slice(0, visibleStocks).map((stock, i) => <tr key={stock.ticker}>
             <td>{i + 1}</td><th scope="row"><Link to={calendarStockLink(stock.ticker, kind, marketId, stock.dates.at(-1)!, `${location.pathname}${location.search}`)}
               title={`${stock.name} 종목 상세 보기`}><strong>{stock.name}</strong><small>{stock.ticker} · {stock.exchange}</small></Link></th>
             <td className="historyCategory">{stock.category}</td><td><strong>{stock.dates.length}일</strong></td>
             <td>{kind === "new-highs" ? `${stock.high_52_week} / ${stock.high_all_time}` : formatHistoryMoney(stock.turnover_by_currency)}</td>
             <td><Link to={detailsUrl(stock.dates[0])}>{stock.dates[0]} ↗</Link></td><td><Link to={detailsUrl(stock.dates.at(-1)!)}>{stock.dates.at(-1)} ↗</Link></td>
+            {sourceQuotes.lastSourceAt ? <td className="sourceQuote">{livePriceLabel(stock.ticker) ?? "조회 실패 · 기존 기록 유지"}</td> : null}
           </tr>)}</tbody></table></div>
           {!matchingStocks.length ? <div className="historyEmpty"><strong>{search ? "검색 결과가 없습니다." : "이 기간에 기록된 종목이 없습니다."}</strong></div> : null}
           {matchingStocks.length > visibleStocks ? <button className="historyShowMore" onClick={() => setVisibleStocks((value) => value + 50)}>50종목 더 보기 · {number(visibleStocks)} / {number(matchingStocks.length)}</button> : null}

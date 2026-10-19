@@ -10,7 +10,8 @@ import { usePollingData } from "../dataClient/usePollingData";
 import { compareMarketCapDesc, formatDateTime, formatMarketCap } from "../dataClient/formatters";
 import { getExternalQuoteLink } from "../dataClient/externalLinks";
 import { calendarStockLink } from "../dataClient/stockDetailLinks";
-import type { HighType, NewHighCounts, NewHighEntry, NewHighRefresh } from "../dataClient/newHighTypes";
+import type { HighType, NewHighCounts, NewHighEntry, NewHighIndex, NewHighRefresh } from "../dataClient/newHighTypes";
+import { livePriceLabel } from "../dataClient/liveStockDataClient";
 
 const EMPTY_COUNTS: NewHighCounts = { total: 0, high_52_week: 0, high_all_time: 0 };
 const HIGH_TYPES: { id: HighType; label: string; description: string }[] = [
@@ -85,9 +86,11 @@ function isWeekend(value: string): boolean {
 
 export function NewHighPage() {
   const [params, setParams] = useSearchParams();
+  const requestedMarket = params.get("market") ?? "korea";
+  const loadIndex = useCallback((signal: AbortSignal, fromSource = false, current?: NewHighIndex | null) => getNewHighIndex(signal, fromSource, current, requestedMarket), [requestedMarket]);
   const { data: index, error: indexError, loading: indexLoading,
-    refreshing: indexRefreshing, lastCheckedAt, refresh: refreshIndex } = usePollingData(getNewHighIndex);
-  const { data: peerIndex, refreshing: peersRefreshing, refresh: refreshPeers } = usePollingData(getSiteIndex);
+    refreshing: indexRefreshing, lastCheckedAt, lastSourceAt, refresh: refreshIndex } = usePollingData(loadIndex);
+  const { data: peerIndex, refreshing: peersRefreshing, reload: refreshPeers } = usePollingData(getSiteIndex);
   const [month, setMonth] = useState("");
   const [search, setSearch] = useState("");
   const [highType, setHighType] = useState<HighType | "all">("all");
@@ -115,23 +118,23 @@ export function NewHighPage() {
   const hasReport = Boolean(indexedReport);
   const isClosedDate = !hasReport && (isWeekend(selectedDate) || closedDates.has(selectedDate));
   const closureReason = closedDates.get(selectedDate);
-  const loadReport = useCallback(async (signal: AbortSignal) => {
-    const payload = await getNewHighReport(marketId, selectedDate, signal);
+  const loadReport = useCallback(async (signal: AbortSignal, fromSource = false) => {
+    const payload = await getNewHighReport(marketId, selectedDate, signal, fromSource);
     if (payload.date !== selectedDate || payload.market !== marketId) {
       throw new Error("선택한 날짜와 기록이 일치하지 않습니다. 새로고침해 주세요.");
     }
     return payload;
   }, [marketId, selectedDate]);
   const { data: reportData, error: reportError, loading: reportLoading,
-    refreshing: reportRefreshing, refresh: refreshReport } = usePollingData(hasReport ? loadReport : null);
+    refreshing: reportRefreshing, lastSourceAt: reportSourceAt, refresh: refreshReport } = usePollingData(hasReport ? loadReport : null);
   const report = hasReport && reportData?.date === selectedDate && reportData.market === marketId ? reportData : null;
 
   useEffect(() => { setMonth(selectedDate.slice(0, 7)); }, [selectedDate, marketId]);
 
-  function refresh() {
-    refreshIndex();
-    refreshReport();
-    refreshPeers();
+  async function refresh() {
+    await refreshIndex();
+    await refreshReport();
+    await refreshPeers();
   }
 
   const days = useMemo(() => Object.fromEntries(marketReports.map((item) => [
@@ -180,7 +183,7 @@ export function NewHighPage() {
       </header>
 
       <DataRefreshStatus refreshing={indexRefreshing || reportRefreshing || peersRefreshing}
-        cadence="daily" lastCheckedAt={lastCheckedAt} generatedAt={peerIndex?.generated_at} onRefresh={refresh} />
+        cadence="daily" lastCheckedAt={lastCheckedAt} lastSourceAt={reportSourceAt ?? lastSourceAt} generatedAt={peerIndex?.generated_at} onRefresh={refresh} />
 
       {indexError ? <ErrorNotice message={indexError} /> : null}
       {!index && indexLoading ? <LoadingSpinner /> : null}
@@ -327,6 +330,7 @@ export function NewHighPage() {
                           <div className="newHighMarketData">
                             <div className="newHighPriceBlock">
                               <span className="newHighSessionPrice">{formatSessionPrice(entry, marketId)}</span>
+                              {livePriceLabel(entry.ticker) ? <small className="sourceQuote">현재 {livePriceLabel(entry.ticker)} · 직접 조회</small> : null}
                               <small className="newHighMarketCap">현재 시총 {formatMarketCap(entry)}</small>
                             </div>
                             <span className={`newHighChange ${entry.change_pct == null || entry.change_pct === 0 ? "flat" : entry.change_pct > 0 ? "up" : "down"}`}

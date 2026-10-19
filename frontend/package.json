@@ -14,7 +14,8 @@
     "test:calendar-history": "node --test tests/calendar-history.test.mjs",
     "test:calendar-history:browser": "node tests/calendar-history-browser.mjs",
     "test:stock-details": "node --test tests/stock-detail-links.test.mjs",
-    "test:stock-details:browser": "node tests/stock-details-browser.mjs"
+    "test:stock-details:browser": "node tests/stock-details-browser.mjs",
+    "test:live-refresh:browser": "node tests/live-refresh-browser.mjs"
   },
   "dependencies": {
     "react": "^19.0.0",

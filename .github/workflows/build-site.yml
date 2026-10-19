@@ -49,6 +49,7 @@ jobs:
         run: |
           python -m unittest discover -s tests
           node --test automation/refresh-scheduler/test/*.test.mjs
+          node --test automation/live-api/test/*.test.mjs
 
       - name: Collect daily new highs after each market close
         # Completed session files are reused. Failed markets retry after 30 minutes.

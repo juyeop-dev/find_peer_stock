@@ -30,7 +30,7 @@ function periodHistory(history: CreditPoint[], days: number): CreditPoint[] {
 }
 
 export function CreditBalancePage() {
-  const { data, error, loading, refreshing, lastCheckedAt, refresh } = usePollingData(getCreditData, 300_000);
+  const { data, error, loading, refreshing, lastCheckedAt, lastSourceAt, refresh } = usePollingData(getCreditData, 300_000);
   const [market, setMarket] = useState<Market>("total");
   const [period, setPeriod] = useState<Period>(90);
   const history = data?.history ?? [];
@@ -46,7 +46,7 @@ export function CreditBalancePage() {
   return <main className="pageShell semiPage creditPage">
     <header className="semiHero"><div><p className="eyebrow">MARGIN BALANCE</p><h1>신용 잔고 추이</h1>
       <p>신용거래융자 잔고를 전체·코스피·코스닥별로 살펴봅니다. 기준일은 금융투자협회 통계의 거래일입니다.</p></div></header>
-    <DataRefreshStatus refreshing={refreshing} lastCheckedAt={lastCheckedAt} cadence="credit" onRefresh={refresh} />
+    <DataRefreshStatus refreshing={refreshing} lastCheckedAt={lastCheckedAt} lastSourceAt={lastSourceAt} cadence="credit" onRefresh={refresh} />
     {loading && <LoadingSpinner />}{error && <ErrorNotice message={error} />}
     {data && latest && <>
       <div className="semiSummaryStrip creditSummaryStrip">{MARKETS.map(({ key, label }) => <button key={key} type="button"

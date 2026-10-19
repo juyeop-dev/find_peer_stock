@@ -9,12 +9,13 @@ import { getStockSummary } from "../dataClient/staticStockDataClient";
 import { usePollingData } from "../dataClient/usePollingData";
 import { DataRefreshStatus } from "../components/DataRefreshStatus";
 import { formatMarketCap } from "../dataClient/formatters";
+import type { StockSummary } from "../dataClient/types";
 
 export function StockPage() {
   const params = useParams();
   const ticker = params.ticker ? decodeURIComponent(params.ticker) : "";
-  const loadSummary = useCallback((signal: AbortSignal) => getStockSummary(ticker, signal), [ticker]);
-  const { data: summary, error, loading, refreshing, lastCheckedAt, refresh } = usePollingData(ticker ? loadSummary : null);
+  const loadSummary = useCallback((signal: AbortSignal, fromSource = false, current?: StockSummary | null) => getStockSummary(ticker, signal, fromSource, current), [ticker]);
+  const { data: summary, error, loading, refreshing, lastCheckedAt, lastSourceAt, refresh } = usePollingData(ticker ? loadSummary : null);
 
   return (
     <main className="pageShell">
@@ -23,7 +24,7 @@ export function StockPage() {
       {!ticker ? <ErrorNotice message="티커가 없습니다." /> : null}
 
       <DataRefreshStatus refreshing={refreshing} lastCheckedAt={lastCheckedAt}
-        generatedAt={summary?.generated_at} onRefresh={refresh} />
+        generatedAt={summary?.generated_at} lastSourceAt={lastSourceAt} onRefresh={refresh} />
 
       {summary ? (
         <>

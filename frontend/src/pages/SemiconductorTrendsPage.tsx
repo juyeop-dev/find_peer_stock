@@ -46,7 +46,7 @@ interface SectorGroup {
 }
 
 export function SemiconductorTrendsPage() {
-  const { data, error, loading, refreshing, lastCheckedAt, refresh } = usePollingData(getSemiconductorData, 300_000);
+  const { data, error, loading, refreshing, lastCheckedAt, lastSourceAt, refresh } = usePollingData(getSemiconductorData, 300_000);
   const [level, setLevel] = useState<Level>("major");
   const [major, setMajor] = useState("");
   const [period, setPeriod] = useState<Period>(30);
@@ -101,7 +101,7 @@ export function SemiconductorTrendsPage() {
     <header className="semiHero"><div><p className="eyebrow">SECTOR PERFORMANCE</p><h1>반도체 섹터 주가 추이</h1>
       <p>7·30·90·180·360일 수익률을 분류별로 비교하고, 구성 종목의 흐름을 확인합니다.</p></div>
       <Link className="semiHeroLink" to="/semiconductors">종목 목록으로 ↗</Link></header>
-    <DataRefreshStatus refreshing={refreshing} lastCheckedAt={lastCheckedAt} generatedAt={data?.quoted_at} cadence="semiconductor" onRefresh={refresh} />
+    <DataRefreshStatus refreshing={refreshing} lastCheckedAt={lastCheckedAt} lastSourceAt={lastSourceAt} generatedAt={data?.quoted_at} cadence="semiconductor" onRefresh={refresh} />
     {loading && <LoadingSpinner />}{error && <ErrorNotice message={error} />}
     {data && <>
       <SemiconductorSummaryStrip data={data} />

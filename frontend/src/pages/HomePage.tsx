@@ -6,9 +6,10 @@ import { usePollingData } from "../dataClient/usePollingData";
 import { DataRefreshStatus } from "../components/DataRefreshStatus";
 import { ErrorNotice } from "../components/ErrorNotice";
 import { LoadingSpinner } from "../components/LoadingSpinner";
+import { livePriceLabel } from "../dataClient/liveStockDataClient";
 
 export function HomePage() {
-  const { data: index, error, loading, refreshing, lastCheckedAt, refresh } = usePollingData(getSiteIndex);
+  const { data: index, error, loading, refreshing, lastCheckedAt, lastSourceAt, refresh } = usePollingData(getSiteIndex);
 
   const featured = useMemo(() => {
     if (!index) {
@@ -30,7 +31,7 @@ export function HomePage() {
       </header>
 
       <DataRefreshStatus refreshing={refreshing} lastCheckedAt={lastCheckedAt}
-        generatedAt={index?.generated_at} onRefresh={refresh} />
+        generatedAt={index?.generated_at} lastSourceAt={lastSourceAt} onRefresh={refresh} />
 
       {loading ? <LoadingSpinner /> : null}
       {error ? <ErrorNotice message={error} /> : null}
@@ -58,6 +59,7 @@ export function HomePage() {
                   <strong>{stock.name_kr}</strong>
                   <p>{stock.theme}</p>
                   <small className="marketCapText">시가총액 {formatMarketCap(stock)}</small>
+                  {livePriceLabel(stock.ticker) ? <small className="sourceQuote">현재 {livePriceLabel(stock.ticker)} · 직접 조회</small> : null}
                 </Link>
               ))}
             </div>

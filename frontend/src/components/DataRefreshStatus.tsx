@@ -5,11 +5,12 @@ interface DataRefreshStatusProps {
   refreshing: boolean;
   lastCheckedAt?: string | null;
   generatedAt?: string;
+  lastSourceAt?: string | null;
   cadence?: "quote" | "daily" | "semiconductor" | "credit";
   onRefresh: () => void;
 }
 
-export function DataRefreshStatus({ refreshing, lastCheckedAt, generatedAt, cadence = "quote", onRefresh }: DataRefreshStatusProps) {
+export function DataRefreshStatus({ refreshing, lastCheckedAt, lastSourceAt, generatedAt, cadence = "quote", onRefresh }: DataRefreshStatusProps) {
   const [now, setNow] = useState(Date.now);
   useEffect(() => {
     const timer = window.setInterval(() => setNow(Date.now()), 60_000);
@@ -17,30 +18,30 @@ export function DataRefreshStatus({ refreshing, lastCheckedAt, generatedAt, cade
   }, []);
   // The daily archive changes only after a market close, but its published
   // index should still be checked by the same site-wide deployment heartbeat.
-  const delayed = Boolean(generatedAt && now - new Date(generatedAt).getTime() > 20 * 60_000);
+  const freshnessTime = lastSourceAt ?? generatedAt;
+  const delayed = Boolean(freshnessTime && now - new Date(freshnessTime).getTime() > 20 * 60_000);
 
   return (
     <>
       <div className="dataRefreshStatus">
         <p>
           <span>{cadence === "credit"
-            ? "신용융자 잔고는 금융투자협회 발표 후 갱신되며, 화면은 5분마다 확인합니다."
+            ? "새로고침하면 금융투자협회 원본에서 최신 발표값을 조회합니다."
             : cadence === "semiconductor"
-            ? "현재가는 사이트 배포 때 갱신되며, 화면은 5분마다 확인합니다."
+            ? "새로고침하면 현재가·일봉·투자 지표·실적을 원본 제공처에서 조회합니다."
             : cadence === "daily"
-            ? "신고가는 장 마감 후 거래일당 한 번 갱신합니다. 게시 결과는 1분마다 확인합니다."
-            : generatedAt
-            ? "시세 업데이트 목표는 5분 간격이며, 화면은 1분마다 확인합니다."
-            : "게시된 데이터를 1분마다 자동 확인합니다."}</span>
+            ? "새로고침하면 최신 목록과 현재가를 원본에서 조회합니다. 과거 기록은 보존됩니다."
+            : "새로고침하면 표시된 종목의 현재 값을 원본 제공처에서 직접 조회합니다."}</span>
+          {lastSourceAt ? <span className="sourceFetchedAt">원본 조회 완료 · {formatDateTime(lastSourceAt)}</span> : null}
           {lastCheckedAt ? <span>브라우저 확인 · {formatDateTime(lastCheckedAt)}</span> : null}
         </p>
         <button type="button" className="refreshButton" disabled={refreshing} onClick={onRefresh}>
-          {refreshing ? "확인 중…" : "새로고침"}
+          {refreshing ? "조회 중…" : "새로고침"}
         </button>
       </div>
       {delayed ? <p className="dataAgeNotice" role="status">
         데이터 생성 후 20분 이상 지났습니다. 자동 업데이트가 지연될 수 있어요.
-        {" "}마지막 생성 · {formatDateTime(generatedAt!)}
+        {" "}{lastSourceAt ? "마지막 원본 조회" : "마지막 생성"} · {formatDateTime(freshnessTime!)}
       </p> : null}
     </>
   );

@@ -7,6 +7,9 @@ import { TurnoverCalendar } from "../components/TurnoverCalendar";
 import { getTurnoverIndex, getTurnoverReport } from "../dataClient/staticStockDataClient";
 import { getExternalQuoteLink } from "../dataClient/externalLinks";
 import { calendarStockLink } from "../dataClient/stockDetailLinks";
+import { DataRefreshStatus } from "../components/DataRefreshStatus";
+import { livePriceLabel, sourceMetadata } from "../dataClient/liveStockDataClient";
+import type { TurnoverIndex } from "../dataClient/turnoverTypes";
 import { usePollingData } from "../dataClient/usePollingData";
 import type { TurnoverEntry } from "../dataClient/turnoverTypes";
 import "../styles/turnover.css";
@@ -70,7 +73,9 @@ function initials(entry: TurnoverEntry): string { return entry.name.replace(/[^\
 
 export function TurnoverPage() {
   const [params, setParams] = useSearchParams();
-  const { data: index, error: indexError, loading: indexLoading } = usePollingData(getTurnoverIndex);
+  const requestedMarket = params.get("market") ?? "korea";
+  const loadIndex = useCallback((signal: AbortSignal, fromSource = false, current?: TurnoverIndex | null) => getTurnoverIndex(signal, fromSource, current, requestedMarket), [requestedMarket]);
+  const { data: index, error: indexError, loading: indexLoading, refreshing: indexRefreshing, lastCheckedAt, lastSourceAt, refresh: refreshIndex } = usePollingData(loadIndex);
   const [month, setMonth] = useState("");
   const [search, setSearch] = useState("");
   const market = index?.markets.find((item) => item.id === params.get("market"))
@@ -86,8 +91,8 @@ export function TurnoverPage() {
   const hasReport = reports.some((item) => item.date === selectedDate);
   const isClosedDate = !hasReport && (isWeekend(selectedDate) || closedDates.has(selectedDate));
   const closureReason = closedDates.get(selectedDate);
-  const loadReport = useCallback((signal: AbortSignal) => getTurnoverReport(marketId, selectedDate, signal), [marketId, selectedDate]);
-  const { data: loadedReport, error: reportError, loading: reportLoading } = usePollingData(hasReport ? loadReport : null);
+  const loadReport = useCallback((signal: AbortSignal, fromSource = false) => getTurnoverReport(marketId, selectedDate, signal, fromSource), [marketId, selectedDate]);
+  const { data: loadedReport, error: reportError, loading: reportLoading, refreshing: reportRefreshing, lastSourceAt: reportSourceAt, refresh: refreshReport } = usePollingData(hasReport ? loadReport : null);
   const report = loadedReport?.market === marketId && loadedReport.date === selectedDate ? loadedReport : null;
   useEffect(() => setMonth(selectedDate.slice(0, 7)), [selectedDate, marketId]);
   const query = search.trim().toLocaleLowerCase();
@@ -102,6 +107,8 @@ export function TurnoverPage() {
     <header className="turnoverHeader"><div><p className="eyebrow">DAILY TURNOVER RANKING</p><h1>거래대금 캘린더</h1>
       <p>매 거래일 시장에서 거래대금이 가장 컸던 종목 1위부터 30위까지 확인하세요.</p></div>
       <Link className="backLink" to={`/calendar-history?kind=turnover&market=${marketId}`}>월별·연도별 누적 기록 →</Link></header>
+    <DataRefreshStatus cadence="daily" refreshing={indexRefreshing || reportRefreshing} lastCheckedAt={lastCheckedAt} lastSourceAt={reportSourceAt ?? lastSourceAt}
+      onRefresh={async () => { await refreshIndex(); await refreshReport(); }} />
     {indexError ? <ErrorNotice message={indexError} /> : null}
     {!index && indexLoading ? <LoadingSpinner /> : null}
     {index && market ? <>
@@ -129,7 +136,7 @@ export function TurnoverPage() {
           {report ? <>
             <div className="turnoverToolbar"><p>{report.summary}</p><input type="search" value={search} onChange={(event) => setSearch(event.target.value)} placeholder="종목명 · 티커 · 산업 검색" aria-label="순위표 검색" /></div>
             <div className="turnoverTableWrap"><table className="turnoverTable"><thead><tr>
-              <th>순위</th><th>종목명</th><th>당일 종가</th><th>등락률</th><th>거래대금</th><th>시가총액</th><th>산업</th>
+              <th>순위</th><th>종목명</th><th>{sourceMetadata(report).source_fetched_at ? "제공처 최근가" : "당일 종가"}</th><th>등락률</th><th>거래대금</th><th>시가총액</th><th>산업</th>
             </tr></thead><tbody>{entries.map((entry) => {
               const quote = getExternalQuoteLink(entry.ticker);
               return <tr key={entry.ticker}><td className="turnoverRank"><strong>{entry.rank}</strong></td><td><Link className="turnoverCompany"
@@ -138,7 +145,7 @@ export function TurnoverPage() {
                 <span className="turnoverLogo"><span>{initials(entry)}</span>{entry.logo_url ? <img src={entry.logo_url} alt="" loading="lazy" onError={(event) => { event.currentTarget.style.display = "none"; }} /> : null}</span>
                 <span><strong>{entry.name}</strong><small>{entry.ticker} · {entry.exchange}</small></span></Link>
                 <a className="turnoverExternalQuote" href={quote.href} target="_blank" rel="noreferrer" aria-label={`${entry.name} 외부 시세 (${quote.label})`}>외부 시세 ↗</a></td>
-                <td className="number">{formatMoney(entry.price, entry.currency)}</td><td className={`number change ${changeClass(entry.change_pct)}`}>{changeText(entry.change_pct)}<PeriodReturns values={entry.period_returns} /></td>
+                <td className="number">{formatMoney(entry.price, entry.currency)}{livePriceLabel(entry.ticker) ? <small className="sourceQuote">현재 {livePriceLabel(entry.ticker)}</small> : null}</td><td className={`number change ${changeClass(entry.change_pct)}`}>{changeText(entry.change_pct)}<PeriodReturns values={entry.period_returns} /></td>
                 <td className="number turnoverValue"><strong>{formatHundredMillions(entry.turnover, entry.turnover_currency ?? entry.currency)}</strong></td><td className="number marketCapValue">{formatHundredMillions(entry.market_cap, entry.market_cap_currency ?? entry.currency, true)}</td>
                 <td><span className="turnoverIndustry"><strong>{entry.sector}</strong><small>{entry.industry}</small></span></td></tr>;
             })}</tbody></table></div>

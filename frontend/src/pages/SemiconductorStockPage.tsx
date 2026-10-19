@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import { Link, useParams, useSearchParams } from "react-router-dom";
 import { SemiconductorLineChart } from "../components/SemiconductorLineChart";
 import { DataRefreshStatus } from "../components/DataRefreshStatus";
@@ -9,7 +9,7 @@ import { formatDateTime } from "../dataClient/formatters";
 import { effectiveHistory, formatEok, formatPercent, formatWon, PERIODS, stockPriceSeries, stockReturn } from "../dataClient/semiconductorMath";
 import type { Period } from "../dataClient/semiconductorMath";
 import { stockClassifications } from "../dataClient/semiconductorTypes";
-import type { SemiconductorFinancial } from "../dataClient/semiconductorTypes";
+import type { SemiconductorData, SemiconductorFinancial } from "../dataClient/semiconductorTypes";
 import { getSemiconductorData } from "../dataClient/staticStockDataClient";
 import { usePollingData } from "../dataClient/usePollingData";
 import { calendarReturnLink } from "../dataClient/stockDetailLinks";
@@ -20,7 +20,7 @@ const METRICS: [string, string][] = [
   ["highPriceOf52Weeks", "52주 최고"], ["lowPriceOf52Weeks", "52주 최저"],
 ];
 
-function FinancialTable({ title, rows }: { title: string; rows: SemiconductorFinancial[] }) {
+export function FinancialTable({ title, rows }: { title: string; rows: SemiconductorFinancial[] }) {
   return <div className="semiFinanceBlock"><h3>{title}</h3>
     {rows.length ? <div className="semiTableWrap"><table className="semiTable"><thead><tr><th>기간</th><th>매출</th><th>영업이익</th><th>순이익</th></tr></thead><tbody>
       {rows.map((row) => <tr key={`${row.type}-${row.period}`}><td>{row.period}</td><td className="semiNumber">{formatEok(row.revenue)}</td><td className="semiNumber">{formatEok(row.operating_income)}</td><td className="semiNumber">{formatEok(row.net_income)}</td></tr>)}
@@ -31,7 +31,8 @@ export function SemiconductorStockPage() {
   const { ticker = "" } = useParams();
   const [params] = useSearchParams();
   const returnTo = params.get("returnTo") ? calendarReturnLink(params.get("returnTo")) : null;
-  const { data, error, loading, refreshing, lastCheckedAt, refresh } = usePollingData(getSemiconductorData, 300_000);
+  const loadData = useCallback((signal: AbortSignal, fromSource = false, current?: SemiconductorData | null) => getSemiconductorData(signal, fromSource, current, [ticker]), [ticker]);
+  const { data, error, loading, refreshing, lastCheckedAt, lastSourceAt, refresh } = usePollingData(loadData, 300_000);
   const [period, setPeriod] = useState<Period>(90);
   const stock = data?.stocks.find((item) => item.ticker === ticker);
   const history = stock ? effectiveHistory(stock) : [];
@@ -43,7 +44,7 @@ export function SemiconductorStockPage() {
   return <main className="pageShell semiPage">
     {returnTo ? <div className="semiBreadcrumb"><Link to={returnTo}>← {returnTo.startsWith("/turnover") ? "거래대금 캘린더" : returnTo.startsWith("/calendar-history") ? "누적 기록" : "신고가 캘린더"}로 돌아가기</Link></div> : null}
     <div className="semiBreadcrumb"><Link to="/semiconductors">반도체 종목</Link><span>/</span><span>{stock?.name ?? ticker}</span></div>
-    <DataRefreshStatus refreshing={refreshing} lastCheckedAt={lastCheckedAt} generatedAt={data?.quoted_at} cadence="semiconductor" onRefresh={refresh} />
+    <DataRefreshStatus refreshing={refreshing} lastCheckedAt={lastCheckedAt} lastSourceAt={lastSourceAt} generatedAt={data?.quoted_at} cadence="semiconductor" onRefresh={refresh} />
     {loading && <LoadingSpinner />}{error && <ErrorNotice message={error} />}
     {data && !stock && <ErrorNotice message="반도체 분류에 등록된 종목이 아닙니다." />}
     {stock && <>

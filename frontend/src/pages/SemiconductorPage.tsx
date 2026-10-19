@@ -33,7 +33,7 @@ function matchesClassification(item: SemiconductorClassification, major: string,
 }
 
 export function SemiconductorPage() {
-  const { data, error, loading, refreshing, lastCheckedAt, refresh } = usePollingData(getSemiconductorData, 300_000);
+  const { data, error, loading, refreshing, lastCheckedAt, lastSourceAt, refresh } = usePollingData(getSemiconductorData, 300_000);
   const [major, setMajor] = useState("");
   const [middle, setMiddle] = useState("");
   const [minor, setMinor] = useState("");
@@ -92,7 +92,7 @@ export function SemiconductorPage() {
         <p>대분류 → 중분류 → 소분류로 탐색하고, 선택한 날짜의 가격과 기간 수익률을 비교합니다.</p></div>
       <Link className="semiHeroLink" to="/semiconductors/trends">섹터 주가 추이 보기 ↗</Link>
     </header>
-    <DataRefreshStatus refreshing={refreshing} lastCheckedAt={lastCheckedAt} generatedAt={data?.quoted_at} cadence="semiconductor" onRefresh={refresh} />
+    <DataRefreshStatus refreshing={refreshing} lastCheckedAt={lastCheckedAt} lastSourceAt={lastSourceAt} generatedAt={data?.quoted_at} cadence="semiconductor" onRefresh={refresh} />
     {loading && <LoadingSpinner />}{error && <ErrorNotice message={error} />}
     {data && <>
       <SemiconductorSummaryStrip data={data} />
