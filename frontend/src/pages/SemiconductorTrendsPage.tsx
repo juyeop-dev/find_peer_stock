@@ -100,7 +100,7 @@ export function SemiconductorTrendsPage() {
   return <main className="pageShell semiPage semiOverviewPage">
     <header className="semiHero"><div><p className="eyebrow">SECTOR PERFORMANCE</p><h1>반도체 섹터 주가 추이</h1>
       <p>7·30·90·180·360일 수익률을 분류별로 비교하고, 구성 종목의 흐름을 확인합니다.</p></div>
-      <Link className="semiHeroLink" to="/semiconductors">종목 목록으로 ↗</Link></header>
+      <div><Link className="semiHeroLink" to="/sectors">국내 전체 섹터 상승률 ↗</Link><Link className="semiHeroLink" to="/semiconductors">종목 목록으로 ↗</Link></div></header>
     <DataRefreshStatus refreshing={refreshing} lastCheckedAt={lastCheckedAt} lastSourceAt={lastSourceAt} generatedAt={data?.quoted_at} cadence="semiconductor" onRefresh={refresh} />
     {loading && <LoadingSpinner />}{error && <ErrorNotice message={error} />}
     {data && <>

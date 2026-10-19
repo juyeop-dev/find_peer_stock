@@ -1,5 +1,6 @@
 .siteNav {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   gap: 24px;
@@ -10,8 +11,8 @@
 
 .siteBrand { display: flex; align-items: center; gap: 12px; font-size: 15px; font-weight: 800; letter-spacing: .04em; color: #233c62; }
 .siteBrand span { border-left: 1px solid #dce2e8; padding-left: 12px; color: #69778a; font-size: 12px; font-weight: 500; letter-spacing: 0; }
-.siteNavLinks { display: flex; gap: 8px; }
-.siteNavLinks a { padding: 8px 14px; border-radius: 6px; color: #5d6b7a; font-size: 14px; font-weight: 700; }
+.siteNavLinks { display: flex; gap: 8px; max-width: 100%; overflow-x: auto; }
+.siteNavLinks a { padding: 8px 14px; border-radius: 6px; color: #5d6b7a; font-size: 14px; font-weight: 700; white-space: nowrap; }
 .siteNavLinks a.active { color: #2855b8; background: #edf3ff; }
 .siteNav a:focus-visible { outline: 3px solid #8baff4; outline-offset: 3px; }
 

@@ -11,7 +11,7 @@ export function calendarStockLink(ticker: string, source: CalendarSource, market
 }
 
 export function calendarReturnLink(value: string | null, fallback = "/new-highs"): string {
-  return value && /^\/(new-highs|turnover|calendar-history)(?:\?|$)/.test(value) ? value : fallback;
+  return value && /^\/(new-highs|turnover|calendar-history|sectors)(?:\?|$)/.test(value) ? value : fallback;
 }
 
 export function tradingViewSymbol(ticker: string, exchange: string): string | null {

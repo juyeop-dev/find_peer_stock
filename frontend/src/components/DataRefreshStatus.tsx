@@ -6,7 +6,7 @@ interface DataRefreshStatusProps {
   lastCheckedAt?: string | null;
   generatedAt?: string;
   lastSourceAt?: string | null;
-  cadence?: "quote" | "daily" | "semiconductor" | "credit";
+  cadence?: "quote" | "daily" | "semiconductor" | "credit" | "sectors";
   onRefresh: () => void;
 }
 
@@ -27,6 +27,8 @@ export function DataRefreshStatus({ refreshing, lastCheckedAt, lastSourceAt, gen
         <p>
           <span>{cadence === "credit"
             ? "새로고침하면 금융투자협회 원본에서 최신 발표값을 조회합니다."
+            : cadence === "sectors"
+            ? "새로고침하면 국내 전체 종목의 업종·수익률·거래대금·시가총액을 원본에서 다시 조회합니다."
             : cadence === "semiconductor"
             ? "새로고침하면 현재가·일봉·투자 지표·실적을 원본 제공처에서 조회합니다."
             : cadence === "daily"

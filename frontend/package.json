@@ -4,9 +4,9 @@
   "version": "0.1.0",
   "type": "module",
   "scripts": {
-    "predev": "python ../scripts/generate_new_high_data.py && python ../scripts/generate_turnover_data.py && python ../scripts/generate_calendar_stock_data.py && python ../scripts/stock_chart_history.py publish && python ../scripts/stock_information.py publish && python ../scripts/generate_semiconductor_data.py publish",
+    "predev": "python ../scripts/generate_new_high_data.py && python ../scripts/generate_turnover_data.py && python ../scripts/generate_calendar_stock_data.py && python ../scripts/stock_chart_history.py publish && python ../scripts/stock_information.py publish && python ../scripts/generate_semiconductor_data.py publish && node ../scripts/refresh_sectors.mjs publish",
     "dev": "vite",
-    "prebuild": "python ../scripts/generate_new_high_data.py && python ../scripts/generate_turnover_data.py && python ../scripts/generate_calendar_stock_data.py && python ../scripts/stock_chart_history.py publish && python ../scripts/stock_information.py publish && python ../scripts/generate_semiconductor_data.py publish",
+    "prebuild": "python ../scripts/generate_new_high_data.py && python ../scripts/generate_turnover_data.py && python ../scripts/generate_calendar_stock_data.py && python ../scripts/stock_chart_history.py publish && python ../scripts/stock_information.py publish && python ../scripts/generate_semiconductor_data.py publish && node ../scripts/refresh_sectors.mjs publish",
     "build": "tsc -b && vite build",
     "preview": "vite preview",
     "test:browser": "node tests/polling-browser.mjs",
@@ -18,7 +18,9 @@
     "test:live-refresh:browser": "node tests/live-refresh-browser.mjs",
     "test:stock-history": "node --test tests/stock-history.test.mjs",
     "test:stock-information": "node --test tests/stock-information.test.mjs",
-    "test:stock-information:production": "node tests/stock-information-production.mjs"
+    "test:stock-information:production": "node tests/stock-information-production.mjs",
+    "test:sectors": "node --test tests/sector-rankings.test.mjs",
+    "test:sectors:browser": "node tests/sector-rankings-browser.mjs"
   },
   "dependencies": {
     "react": "^19.0.0",

@@ -1,6 +1,7 @@
 import { MARKETS, credit, detail, quote, scan } from "./providers.js";
 import { history } from "./history.js";
 import { information } from "./information.js";
+import { sectors } from "./sectors.js";
 
 const validTicker = value => typeof value === "string" && value.length <= 48 && /^(?:[A-Z]+:)?[A-Z0-9][A-Z0-9.\-]*(?:\/[A-Z0-9.\-]+)?$/.test(value);
 const validOrigin = (origin, env) => origin === (env.ALLOWED_ORIGIN ?? "https://juyeop-dev.github.io") || /^http:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/.test(origin);
@@ -22,6 +23,7 @@ export async function handle(request, env = {}, fetcher = fetch) {
   catch { return response({ error: "요청을 읽을 수 없습니다." }, 400); }
   if (!body || typeof body !== "object") return response({ error: "요청을 확인해 주세요." }, 400);
   try {
+    if (body.kind === "sectors") return response(await sectors(fetcher));
     if (body.kind === "credit") return response(await credit(fetcher));
     if (body.kind === "scan") {
       if (!Object.hasOwn(MARKETS, body.market) || !["new-highs", "turnover"].includes(body.source)) return response({ error: "지원하는 시장과 자료 종류를 선택해 주세요." }, 400);

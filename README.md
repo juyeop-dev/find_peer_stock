@@ -1,5 +1,9 @@
 # Stock Peer Site
 
+`섹터 상승률`(`/sectors`)에서 국내 KOSPI·KOSDAQ 보통주의 업종별 등락률·거래대금·시가총액·대표 종목을 비교합니다. 기본 거래대금순이며 등락률·시가총액·종목 수로 정렬할 수 있습니다. 오늘·1주·1개월·3개월·1년, 세부 업종·대분류, 시장 필터와 검색을 지원합니다. 섹터를 선택하면 구성 종목, 종목을 선택하면 기존 주가·실적 상세 화면으로 이동하고 원래 필터로 돌아옵니다. 등락률은 같은 거래일의 제공 수익률을 동일 비중으로 평균하며 누락값과 오래된 거래일은 제외합니다. 금액은 원화 합계이며 기간 선택은 수익률에만 적용합니다. TradingView 업종 분류를 사용하므로 다른 서비스의 테마 구성과 다를 수 있습니다.
+
+섹터 원본 수집: `node scripts/refresh_sectors.mjs`, 저장 자료 발행: `node scripts/refresh_sectors.mjs publish`. 정상 사이트 빌드 workflow에서 원본을 갱신하고, 브라우저의 새로고침도 운영 API로 국내 전체 목록을 직접 다시 조회합니다. 실패 시 이전 표를 유지합니다. 검증: `node --test automation/live-api/test/sectors.test.mjs`, 프런트엔드에서 `npm run test:sectors`, 빌드/미리보기 후 `npm run test:sectors:browser`. 운영 검증에는 `STOCK_SITE_BASE_URL`을 지정합니다.
+
 신고가·거래대금 캘린더와 누적 기록의 종목명을 선택하면 내부 종목 상세 화면으로 이동합니다. 반도체 목록의 종목은 `/semiconductors/{ticker}`의 주가·투자 지표·확정 실적 화면을 재사용합니다. 그 외 종목은 `/market-stocks/{ticker}`에서 선택한 거래일의 기본 정보와 최근 일봉, TradingView 실적 위젯을 표시합니다. 피어 상세(`/stocks/{ticker}`)를 포함한 모든 개별 종목 차트는 기본 최근 1년을 표시합니다. 실제 일봉을 사용하며 캘린더 등장일만 연결한 가격을 연속 이력으로 취급하지 않습니다. 거래소별 종목 코드와 통화를 유지하고, 자료 수신 실패 시 기존 이력·재시도·외부 시세 링크를 제공합니다. `캘린더로 돌아가기`는 원래 시장·날짜·거래소 조건을 보존합니다.
 
 종목 연결 검증: 프런트엔드에서 `npm run test:stock-details`, `npm run build` 후 `npm run test:stock-details:browser`.
