@@ -61,7 +61,8 @@ export function yahooSymbol(ticker) {
     if (!suffix) return null; // EURONEXT spans several listings; do not guess a different listing.
     return symbol + suffix;
   }
-  return ticker;
+  const normalized = ticker.replaceAll("/", "-");
+  return /\.(KS|KQ|T|TW|TWO|SS|SZ|HK|DE|L|SW|PA|AS|BR|LS)$/.test(normalized) ? normalized : normalized.replaceAll(".", "-");
 }
 export async function yahooData(ticker, fetcher = fetch, history = false) {
   const symbol = yahooSymbol(ticker);
@@ -81,7 +82,9 @@ export async function yahooData(ticker, fetcher = fetch, history = false) {
   const day = meta.regularMarketTime ? localDay(meta.regularMarketTime * 1000, timezone) : points.at(-1)?.date;
   const previous = [...points].reverse().find(point => point.date < day)?.close ?? numeric(meta.previousClose);
   const timestamp = meta.regularMarketTime ? new Date(meta.regularMarketTime * 1000).toISOString() : null;
-  return { quote: { ticker, price, previous_close: previous ?? null, change: previous ? price - previous : null,
+  return { symbol: meta.symbol, instrument_type: meta.instrumentType,
+    first_trade_date: meta.firstTradeDate ? localDay(meta.firstTradeDate * 1000, timezone) : null,
+    quote: { ticker, price, previous_close: previous ?? null, change: previous ? price - previous : null,
     change_pct: previous ? (price / previous - 1) * 100 : null, currency: meta.currency ?? "USD",
     provider_time: timestamp, market_time: timestamp, name: meta.longName ?? meta.shortName,
     exchange: ({ NMS: "NASDAQ", NGM: "NASDAQ", NCM: "NASDAQ", NYQ: "NYSE", ASE: "AMEX", PCX: "AMEX" })[meta.exchangeName],

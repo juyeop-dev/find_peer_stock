@@ -1,13 +1,12 @@
-import { useCallback, useState } from "react";
+import { useCallback } from "react";
 import { Link, useParams, useSearchParams } from "react-router-dom";
-import { SemiconductorLineChart } from "../components/SemiconductorLineChart";
+import { StockHistoryChart } from "../components/StockHistoryChart";
 import { DataRefreshStatus } from "../components/DataRefreshStatus";
 import { ErrorNotice } from "../components/ErrorNotice";
 import { LoadingSpinner } from "../components/LoadingSpinner";
 import { RecentFinancialSummary } from "../components/RecentFinancials";
 import { formatDateTime } from "../dataClient/formatters";
-import { effectiveHistory, formatEok, formatPercent, formatWon, PERIODS, stockPriceSeries, stockReturn } from "../dataClient/semiconductorMath";
-import type { Period } from "../dataClient/semiconductorMath";
+import { effectiveHistory, formatEok, formatPercent, formatWon } from "../dataClient/semiconductorMath";
 import { stockClassifications } from "../dataClient/semiconductorTypes";
 import type { SemiconductorData, SemiconductorFinancial } from "../dataClient/semiconductorTypes";
 import { getSemiconductorData } from "../dataClient/staticStockDataClient";
@@ -33,13 +32,11 @@ export function SemiconductorStockPage() {
   const returnTo = params.get("returnTo") ? calendarReturnLink(params.get("returnTo")) : null;
   const loadData = useCallback((signal: AbortSignal, fromSource = false, current?: SemiconductorData | null) => getSemiconductorData(signal, fromSource, current, [ticker]), [ticker]);
   const { data, error, loading, refreshing, lastCheckedAt, lastSourceAt, refresh } = usePollingData(loadData, 300_000);
-  const [period, setPeriod] = useState<Period>(90);
   const stock = data?.stocks.find((item) => item.ticker === ticker);
   const history = stock ? effectiveHistory(stock) : [];
   const latest = history.at(-1);
   const quote = stock?.quote;
   const currentPrice = quote?.price ?? latest?.close ?? null;
-  const periodGain = stock ? stockReturn(stock, period) : null;
 
   return <main className="pageShell semiPage">
     {returnTo ? <div className="semiBreadcrumb"><Link to={returnTo}>← {returnTo.startsWith("/turnover") ? "거래대금 캘린더" : returnTo.startsWith("/calendar-history") ? "누적 기록" : "신고가 캘린더"}로 돌아가기</Link></div> : null}
@@ -63,11 +60,7 @@ export function SemiconductorStockPage() {
           <a key={source.url} href={source.url} target="_blank" rel="noreferrer">{source.label} ↗</a>)}</div>}
       </section>}
       <div className="semiDetailGrid">
-        <section className="semiPanel semiChartPanel"><div className="semiPanelHeading semiHeadingSplit"><div><h2>주가 차트</h2><p>일별 종가 · {period}일 범위</p></div>
-          <div className="semiPeriodTabs" aria-label="주가 차트 기간">{PERIODS.map((days) => <button key={days} type="button" className={period === days ? "active" : ""} onClick={() => setPeriod(days)}>{days}일</button>)}</div></div>
-          <SemiconductorLineChart points={stockPriceSeries(stock, period)} title={`${stock.name} 주가`} unit="원" />
-          <div className="semiReturnSummary"><span>{period}일 조정 종가 수익률</span><strong className={(periodGain ?? 0) >= 0 ? "semiUp" : "semiDown"}>{formatPercent(periodGain)}</strong></div>
-        </section>
+        <StockHistoryChart ticker={stock.ticker} name={stock.name} exchange={stock.market} currency="KRW" history={stock.history} source={data?.history_source} generatedAt={data?.generated_at} refreshKey={stock.quote.fetched_at} />
         <section className="semiPanel semiMetricsPanel"><div className="semiPanelHeading"><h2>종목 기본 정보</h2><p>투자 지표는 Naver Finance 제공 값입니다.</p></div>
           <dl>{METRICS.map(([key, label]) => <div key={key}><dt>{label}</dt><dd>{stock.metrics[key] || "-"}</dd></div>)}</dl>
         </section>

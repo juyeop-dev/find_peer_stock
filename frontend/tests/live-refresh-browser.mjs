@@ -23,6 +23,10 @@ const requests = [];
 let failSource = false;
 let partialSource = false;
 const sourceAt = "2099-01-01T00:00:00Z";
+const chartHistory = Array.from({ length: 380 }, (_, i) => {
+  const date = new Date(Date.UTC(2025, 9, 5 + i));
+  return { date: date.toISOString().slice(0, 10), close: 980000 + i, adjusted_close: 980000 + i, volume: 100 };
+}).filter(point => new Date(point.date).getUTCDay() % 6 !== 0);
 function quote(ticker) {
   const currency = /\.(KS|KQ)$/.test(ticker) ? "KRW" : ticker.endsWith(".T") ? "JPY" : "USD";
   return { ticker, price: 987654, previous_close: 980000, change: 7654, change_pct: 0.78, currency,
@@ -81,11 +85,14 @@ try {
           const stocks = partialSource ? body.stocks.slice(1) : body.stocks;
           response = { fetched_at: sourceAt, errors: rejected.map(stock => ({ ticker: stock.ticker, message: "부분 실패" })), items: stocks.map(stock => body.kind === "quotes" ? quote(stock.ticker) : {
             ticker: stock.ticker, quote: quote(stock.ticker), fetched_at: sourceAt, warnings: [],
-            history: [{ date: "2026-10-16", close: 980000, adjusted_close: 980000, volume: 100 }, { date: "2026-10-19", close: 987654, adjusted_close: 987654, volume: 200 }],
+            history: chartHistory,
             metrics: { marketValue: "1조 2,345억", per: "11.11배" },
             annual_financials: [{ period: "2025.12", type: "annual", revenue: 777777, operating_income: 12345, net_income: 1000 }],
             quarterly_financials: [], recent_financials: { basis: "annual", period_label: "2025년 결산 연간", periods: ["2025.12"], latest_reported_period: null, revenue: 777777, operating_income: 12345, reason: null },
           }) };
+        } else if (body.kind === "history") {
+          response = { items: body.stocks.map(stock => ({ ticker: stock.ticker, currency: quote(stock.ticker).currency,
+            source: "Original history test provider", fetched_at: sourceAt, first_trade_date: "2000-01-01", history: chartHistory })), errors: [], fetched_at: sourceAt };
         } else if (body.kind === "scan") {
           response = { ...structuredClone(body.source === "new-highs" ? highReport : turnoverReport), live_fetched_at: sourceAt };
         } else if (body.kind === "credit") response = { fetched_at: sourceAt, history: [{ date: "2026-10-19", total: 40000000, kospi: 30000000, kosdaq: 10000000 }] };

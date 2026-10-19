@@ -1,6 +1,6 @@
 # Stock Peer Site
 
-신고가·거래대금 캘린더와 누적 기록의 종목명을 선택하면 내부 종목 상세 화면으로 이동합니다. 반도체 목록의 종목은 `/semiconductors/{ticker}`의 기존 주가·투자 지표·확정 실적 화면을 재사용합니다. 그 외 종목은 `/market-stocks/{ticker}`에서 선택한 날짜의 기본 정보, 캘린더 등장일의 종가 차트·표, TradingView의 실적 위젯과 선택적 전체 일봉 차트를 표시합니다. `generate_calendar_stock_data.py`가 모든 캘린더 원본에서 시장·티커별 가격 기록을 만들며 개발·빌드에 자동으로 포함됩니다. 등장일 가격은 연속 일봉이나 조정 종가가 아니며 서로 다른 통화를 섞지 않습니다. 거래소별 종목 코드를 유지하고, 외부 자료 수신 실패 시 재시도와 외부 시세 링크를 제공합니다. `캘린더로 돌아가기`는 원래 시장·날짜·거래소 조건을 보존합니다. 위젯은 제공처의 지원 범위에 따라 일부 종목의 자료가 없을 수 있습니다.
+신고가·거래대금 캘린더와 누적 기록의 종목명을 선택하면 내부 종목 상세 화면으로 이동합니다. 반도체 목록의 종목은 `/semiconductors/{ticker}`의 주가·투자 지표·확정 실적 화면을 재사용합니다. 그 외 종목은 `/market-stocks/{ticker}`에서 선택한 거래일의 기본 정보와 최근 일봉, TradingView 실적 위젯을 표시합니다. 피어 상세(`/stocks/{ticker}`)를 포함한 모든 개별 종목 차트는 기본 최근 1년을 표시합니다. 실제 일봉을 사용하며 캘린더 등장일만 연결한 가격을 연속 이력으로 취급하지 않습니다. 거래소별 종목 코드와 통화를 유지하고, 자료 수신 실패 시 기존 이력·재시도·외부 시세 링크를 제공합니다. `캘린더로 돌아가기`는 원래 시장·날짜·거래소 조건을 보존합니다.
 
 종목 연결 검증: 프런트엔드에서 `npm run test:stock-details`, `npm run build` 후 `npm run test:stock-details:browser`.
 
@@ -9,6 +9,23 @@
 두 캘린더의 기존 데이터 생성 명령은 `history/{market}/{year}.json` 연간 파일도 함께 생성합니다. 이 파일에는 월별 종목 집계가 들어 있어 연간 조회에도 일별 리포트 전체를 내려받지 않습니다. 기존 예약 갱신과 빌드 과정에 자동으로 포함됩니다.
 
 검증: `python -m unittest discover -s tests -p 'test_calendar_history.py'`, 프런트엔드에서 `npm run test:calendar-history`, `npm run build` 후 `npm run test:calendar-history:browser`.
+
+## 개별 종목 차트와 순차 점검
+
+차트의 기본 기간은 달력 기준 1년이며 7·30·90·180일, 2년도 선택할 수 있습니다. 윤년과 기준일의 휴장을 고려하며, 상장 1년 미만 또는 제공처 이력 부족은 실제 제공 기간을 명시합니다. 없는 가격을 만들어 채우지 않습니다. 저장된 일봉이 없거나 오래되면 원본 조회 API에서 자동으로 최근 2년을 요청합니다. Yahoo Finance를 우선 사용하고 TradingView에서 동일 종목·거래소의 일봉으로 보완합니다. 외부 TradingView 차트도 기본 12개월로 열립니다.
+
+검증한 원본 일봉은 `data/stock-history/*.json.gz`에 보관하고 빌드 때 `data/stock-history/{ticker}.json`으로 게시합니다. 개발 PC의 과거 복원 캐시가 없는 배포 환경에서도 같은 데이터를 복원합니다. 반도체 → 피어 → 캘린더 시장·종목코드 순으로 처리하며, 목록은 `data/chart-audit/roster.json`, 종목별 결과는 `results.jsonl`, 진행 요약·재개 명령은 `progress.json`에 저장합니다. [작업 기록](docs/worklogs/stock-chart-one-year.md)에서 중단 지점과 남은 작업을 확인할 수 있습니다.
+
+```powershell
+python scripts/stock_chart_history.py prepare
+python scripts/stock_chart_history.py import-caches
+python scripts/stock_chart_history.py refresh-batches --limit 1000
+python scripts/stock_chart_history.py audit
+python scripts/stock_chart_history.py export
+python scripts/stock_chart_history.py publish
+```
+
+순차 보완은 종목별 결과를 즉시 저장하고 확인된 종목을 건너뜁니다. 원본 요청 제한이 발생하면 체크포인트를 남기고 중단합니다. 로컬 SQLite 작업 캐시는 Git에서 제외되며, 다른 PC에서도 저장소의 압축 원본을 이용해 재개할 수 있습니다.
 
 ## 국내 반도체 섹터
 

@@ -10,6 +10,7 @@ import { usePollingData } from "../dataClient/usePollingData";
 import { DataRefreshStatus } from "../components/DataRefreshStatus";
 import { formatMarketCap } from "../dataClient/formatters";
 import type { StockSummary } from "../dataClient/types";
+import { StockHistoryChart } from "../components/StockHistoryChart";
 
 export function StockPage() {
   const params = useParams();
@@ -33,6 +34,7 @@ export function StockPage() {
             generatedAt={summary.generated_at}
             quote={summary.quote}
           />
+          <StockHistoryChart ticker={ticker} name={summary.company.name_kr} currency={summary.quote.currency} refreshKey={summary.quote.fetched_at} />
 
           <section className="companyInfo">
             <div>

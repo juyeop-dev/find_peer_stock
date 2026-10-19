@@ -5,6 +5,7 @@ import type { SemiconductorData } from "./semiconductorTypes";
 import type { CreditData } from "./creditTypes";
 import type { CalendarHistory, HistoryKind } from "./calendarHistory";
 import { applyHighIndex, applyIndex, applySemiconductor, applySummary, applyTurnoverIndex, liveDetailFor, liveQuoteFor, liveReportFor, refreshDetails, refreshQuotes, refreshScan, requestOriginal } from "./liveStockDataClient";
+import { refreshStockHistory } from "./stockHistoryClient";
 let refreshedCredit: CreditData | null = null;
 
 function assetUrl(path: string): string {
@@ -52,6 +53,13 @@ export async function getSiteIndex(signal?: AbortSignal, fromSource = false, cur
 export async function getStockSummary(ticker: string, signal?: AbortSignal, fromSource = false, current?: StockSummary | null): Promise<StockSummary> {
   const base = fromSource && current ? current : await fetchJson<StockSummary>(`data/stocks/${encodeURIComponent(ticker)}.json`, signal);
   const metadata = fromSource ? await refreshQuotes([{ ticker }, ...base.peer_groups.flatMap(group => group.peers.map(peer => ({ ticker: peer.company.ticker })))], signal) : {};
+  if (fromSource) {
+    try { await refreshStockHistory(ticker, undefined, signal); }
+    catch (error) {
+      if (signal?.aborted) throw error;
+      Object.assign(metadata, { refresh_warning: `${"refresh_warning" in metadata && metadata.refresh_warning ? metadata.refresh_warning + " " : ""}일봉 조회에 실패해 이전 차트를 유지합니다.` });
+    }
+  }
   return { ...applySummary(base), ...metadata };
 }
 

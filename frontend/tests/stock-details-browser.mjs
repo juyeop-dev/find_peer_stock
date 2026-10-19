@@ -28,6 +28,10 @@ const fixtures = new Map([
   ["/data/turnover/korea/2026_10/2026-10-19.json", report("korea", turnoverEntries)],
   ...reports.map(item => [`/data/new-highs/${item.market}/2026-10-19.json`, item]),
 ]);
+for (const [ticker, currency] of [["035420.KS", "KRW"], ["6503.T", "JPY"], ["AAPL", "USD"]]) {
+  fixtures.set(`/data/stock-history/${ticker}.json`, { ticker, currency, source: "Daily history test fixture", fetched_at: new Date().toISOString(), first_trade_date: "2000-01-01",
+    prices: Array.from({ length: 380 }, (_, i) => [new Date(Date.UTC(2025, 9, 5 + i)).toISOString().slice(0, 10), 100 + i, 100 + i]) });
+}
 const server = createServer(async (request, response) => {
   const pathname = new URL(request.url, "http://localhost").pathname;
   if (fixtures.has(pathname)) { response.writeHead(200, { "Content-Type": "application/json" }).end(JSON.stringify(fixtures.get(pathname))); return; }
@@ -117,12 +121,15 @@ try {
   assert.equal(await evaluate("document.querySelectorAll('.newHighTickerLink[target=_blank]').length"), 2);
   await evaluate("document.querySelector('.newHighStockDetailLink').click()");
   await until(() => evaluate("document.querySelector('.marketStockPage h1')?.innerText === 'NAVER'"), "New-high click did not open stock detail.");
-  await until(() => evaluate("document.querySelectorAll('.marketStockChart .semiTable tbody tr').length > 0"), "Native price history did not load.");
+  await until(() => evaluate("document.querySelector('.marketStockChart .semiChart') !== null"), "Native one-year daily chart did not load.");
+  assert.equal(await evaluate("document.querySelector('.stockHistoryChart .semiPeriodTabs .active').innerText"), "1년");
+  assert.ok(await evaluate("document.querySelector('.marketStockChart .semiChart').getAttribute('aria-label').includes('2025-10')"));
   await showChart();
   await until(() => evaluate("document.querySelectorAll('.marketWidget iframe').length === 2 && document.querySelectorAll('.marketWidgetLoading').length === 0"), "Widgets did not become ready.");
   assert.equal(await evaluate("document.querySelector('.semiQuoteHero strong').innerText"), "200,000 KRW");
   assert.equal(await evaluate("document.querySelector('.semiBreadcrumb a').getAttribute('href')"), calendar);
   assert.equal(await evaluate("window.widgetConfigs.every(item => item.symbol === 'KRX:035420')"), true);
+  assert.equal(await evaluate("window.widgetConfigs.filter(item => item.interval === 'D').every(item => item.range === '12M')"), true);
   for (const width of [1440, 900, 390, 320]) {
     await send("Emulation.setDeviceMetricsOverride", { width, height: 1000, deviceScaleFactor: 1, mobile: false });
     assert.equal(await evaluate("document.documentElement.scrollWidth > window.innerWidth"), false, `Horizontal overflow at ${width}px.`);
@@ -134,6 +141,7 @@ try {
   await navigate(semiLink, ".semiDetailHeader h1");
   assert.equal(await evaluate("document.querySelector('.semiDetailHeader h1').innerText"), "제주반도체");
   assert.ok(await evaluate("document.querySelector('.semiMetricsPanel') !== null && document.querySelector('.semiFinanceGrid') !== null"));
+  assert.equal(await evaluate("document.querySelector('.stockHistoryChart .semiPeriodTabs .active').innerText"), "1년");
   assert.equal(await evaluate("document.querySelector('.semiBreadcrumb a').getAttribute('href')"), calendar);
   await navigate("/turnover?market=korea&date=2026-10-19", ".turnoverCompany");
   assert.equal(await evaluate("document.querySelectorAll('.turnoverCompany:not([target])').length"), 2);
@@ -150,6 +158,9 @@ try {
     await send("Page.reload");
     await until(() => evaluate("document.querySelector('.marketStockPage h1') !== null"), "Shared detail URL did not survive reload.");
   }
+  await navigate("/stocks/6503.T", ".quoteSummary");
+  await until(() => evaluate("document.querySelector('.stockHistoryChart .semiChart') !== null"), "Peer detail must also display a native chart.");
+  assert.equal(await evaluate("document.querySelector('.stockHistoryChart .semiPeriodTabs .active').innerText"), "1년");
   failWidgets = true;
   await navigate(genericLink, ".marketStockPage h1");
   await showChart();

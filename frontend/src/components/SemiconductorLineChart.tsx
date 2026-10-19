@@ -20,7 +20,7 @@ export function SemiconductorLineChart({ points, title, unit }: Props) {
   const values = points.map((point) => point.value);
   const minimum = Math.min(...values);
   const maximum = Math.max(...values);
-  const padding = Math.max((maximum - minimum) * 0.12, maximum * 0.01, 1);
+  const padding = Math.max((maximum - minimum) * 0.12, Math.abs(maximum) * 0.01, 1e-12);
   const low = minimum - padding;
   const high = maximum + padding;
   const x = (index: number) => LEFT + index / (points.length - 1) * PLOT_WIDTH;
@@ -30,7 +30,7 @@ export function SemiconductorLineChart({ points, title, unit }: Props) {
   const active = Math.min(hovered ?? points.length - 1, points.length - 1);
   const formatted = (value: number) => unit === "원" ? `${Math.round(value).toLocaleString("ko-KR")}원`
     : unit === "조원" ? `${value.toFixed(2)}조원` : unit === "지수" ? value.toFixed(1)
-    : `${new Intl.NumberFormat("ko-KR", { maximumFractionDigits: 2 }).format(value)} ${unit}`;
+    : `${new Intl.NumberFormat("ko-KR", { maximumFractionDigits: Math.abs(value) < 0.01 ? 8 : Math.abs(value) < 1 ? 4 : 2 }).format(value)} ${unit}`;
 
   return (
     <div className="semiChart" role="img" aria-label={`${title}: ${points[0].date}부터 ${points.at(-1)!.date}까지 ${unit} 추이`}>

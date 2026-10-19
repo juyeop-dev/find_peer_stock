@@ -25,7 +25,7 @@ export function TradingViewWidget({ symbol, kind }: Props) {
     script.src = `https://s3.tradingview.com/external-embedding/embed-widget-${kind === "chart" ? "advanced-chart" : "financials"}.js`;
     script.async = true;
     script.textContent = JSON.stringify(kind === "chart" ? {
-      autosize: true, symbol, interval: "D", timezone: "exchange", theme: "light", style: "1",
+      autosize: true, symbol, interval: "D", range: "12M", timezone: "exchange", theme: "light", style: "1",
       locale: "kr", allow_symbol_change: false, withdateranges: true, hide_side_toolbar: true,
       hide_top_toolbar: false, save_image: false, calendar: false, support_host: "https://www.tradingview.com",
     } : { symbol, colorTheme: "light", displayMode: "regular", isTransparent: false, locale: "kr", width: "100%", height: "100%" });

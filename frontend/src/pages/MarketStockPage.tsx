@@ -4,15 +4,14 @@ import { ErrorNotice } from "../components/ErrorNotice";
 import { LoadingSpinner } from "../components/LoadingSpinner";
 import { PeriodReturns } from "../components/PeriodReturns";
 import { TradingViewWidget } from "../components/TradingViewWidget";
-import { SemiconductorLineChart } from "../components/SemiconductorLineChart";
-import { getCalendarStockPrices, getNewHighReport, getTurnoverReport } from "../dataClient/staticStockDataClient";
+import { StockHistoryChart } from "../components/StockHistoryChart";
+import { getNewHighReport, getTurnoverReport } from "../dataClient/staticStockDataClient";
 import { usePollingData } from "../dataClient/usePollingData";
 import { calendarReturnLink, tradingViewSymbol, tradingViewUrl } from "../dataClient/stockDetailLinks";
 import { getExternalQuoteLink } from "../dataClient/externalLinks";
 import { formatMarketCap } from "../dataClient/formatters";
 import { formatHistoryMoney } from "../dataClient/calendarHistory";
-import { formatPercent, PERIODS } from "../dataClient/semiconductorMath";
-import type { Period } from "../dataClient/semiconductorMath";
+import { formatPercent } from "../dataClient/semiconductorMath";
 import "../styles/marketStock.css";
 import { DataRefreshStatus } from "../components/DataRefreshStatus";
 import { RecentFinancialSummary } from "../components/RecentFinancials";
@@ -34,7 +33,6 @@ function priceLabel(price: number | null | undefined, currency: string): string 
 export function MarketStockPage() {
   const { ticker = "" } = useParams();
   const [params] = useSearchParams();
-  const [period, setPeriod] = useState<Period>(90);
   const [showFullChart, setShowFullChart] = useState(false);
   const source = params.get("source") === "turnover" ? "turnover" : "new-highs";
   const market = params.get("market") ?? "";
@@ -61,19 +59,10 @@ export function MarketStockPage() {
   const category = stock && "category" in stock ? stock.category : stock && "industry" in stock ? stock.industry : "";
   const symbol = stock ? tradingViewSymbol(stock.ticker, stock.exchange) : null;
   const quote = getExternalQuoteLink(ticker);
-  const loadPrices = useCallback((signal: AbortSignal) => getCalendarStockPrices(market, ticker.toUpperCase(), signal), [market, ticker]);
-  const { data: prices, error: pricesError, loading: pricesLoading, refresh: refreshPrices, reload: reloadPrices } = usePollingData(contextValid ? loadPrices : null);
-  const chartDate = sourceDetail?.history?.at(-1)?.date ?? date;
-  const since = new Date(`${chartDate || "2000-01-01"}T00:00:00Z`);
-  since.setUTCDate(since.getUTCDate() - period);
-  const sinceDate = Number.isFinite(since.getTime()) ? since.toISOString().slice(0, 10) : "";
-  const history = prices?.market === market && prices.ticker.toUpperCase() === ticker.toUpperCase()
-    ? prices.history.filter((point) => point.currency === currency && point.date <= chartDate && point.date >= sinceDate) : [];
 
   return <main className="pageShell semiPage marketStockPage">
     <div className="semiBreadcrumb"><Link to={back}>← {back.startsWith("/calendar-history") ? "누적 기록" : sourceLabel}로 돌아가기</Link><span>/</span><span>{stock?.name ?? ticker}</span></div>
-    <DataRefreshStatus refreshing={refreshing || pricesLoading} lastCheckedAt={lastCheckedAt} lastSourceAt={lastSourceAt ?? currentQuote?.fetched_at}
-      onRefresh={async () => { await refresh(); await reloadPrices(); }} />
+    <DataRefreshStatus refreshing={refreshing} lastCheckedAt={lastCheckedAt} lastSourceAt={lastSourceAt ?? currentQuote?.fetched_at} onRefresh={refresh} />
     {!contextValid ? <ErrorNotice message="조회할 시장과 거래일이 없습니다. 캘린더에서 종목을 선택해 주세요." /> : null}
     {loading ? <LoadingSpinner /> : null}
     {error ? <div><ErrorNotice message={error} /><button className="semiTextButton" onClick={refresh}>다시 불러오기</button></div> : null}
@@ -95,19 +84,10 @@ export function MarketStockPage() {
         <PeriodReturns values={stock.period_returns} />
         {"description" in stock && stock.description ? <p className="marketStockDescription">{stock.description}</p> : null}
       </section>
-      <section className="semiPanel marketStockChart"><div className="semiPanelHeading semiHeadingSplit"><div><h2>{sourceDetail?.history ? "주가 차트 · 원본 조회" : "캘린더 가격 기록"}</h2>
-        <p>{sourceDetail?.history ? "Yahoo Finance 일별 종가 · 새로고침으로 원본에서 갱신" : "캘린더에 등장한 거래일의 종가 · 전체 거래일의 연속 일봉과 다릅니다."}</p></div>
-        <div className="semiPeriodTabs" aria-label="가격 기록 조회 기간">{PERIODS.map((days) => <button key={days} className={days === period ? "active" : ""} onClick={() => setPeriod(days)}>{days}일</button>)}</div></div>
-        {pricesLoading ? <LoadingSpinner /> : null}
-        {pricesError ? <><ErrorNotice message={pricesError} /><button className="semiTextButton" onClick={refreshPrices}>가격 기록 다시 불러오기</button></> : null}
-        <SemiconductorLineChart points={history.map((point) => ({ date: point.date, value: point.close }))} title={`${stock.name} 캘린더 종가`} unit={currency === "KRW" ? "원" : currency} />
-        <p className="semiFootnote">{history.length}개 거래일의 기록 · {chartDate}까지 · 분할·배당을 조정하지 않은 당시 종가입니다.</p>
-        <div className="semiTableWrap"><table className="semiTable"><thead><tr><th>기록일</th><th>종가</th></tr></thead><tbody>
-          {[...history].reverse().slice(0, 20).map((point) => <tr key={point.date}><td>{point.date}</td><td className="semiNumber">{priceLabel(point.close, point.currency)}</td></tr>)}
-        </tbody></table></div>
+      <div className="marketStockChart"><StockHistoryChart ticker={stock.ticker} name={stock.name} exchange={stock.exchange} currency={currency} refreshKey={sourceDetail?.fetched_at} />
         {symbol ? <><button className="semiTextButton marketFullChartButton" aria-expanded={showFullChart} onClick={() => setShowFullChart((value) => !value)}>{showFullChart ? "전체 일봉 차트 접기" : "TradingView 전체 일봉 차트 보기"}</button>
           {showFullChart ? <><p className="semiFootnote">제공처가 외부 표시를 지원하는 종목에 한해 표시됩니다.</p><TradingViewWidget key={currentQuote?.fetched_at} symbol={symbol} kind="chart" /></> : null}</> : null}
-      </section>
+      </div>
       <section className="semiPanel marketStockFinancials"><div className="semiPanelHeading"><h2>실적 · 투자 지표</h2><p>매출·이익·재무비율 등 제공처가 지원하는 기업 정보입니다. 자료가 없는 종목은 원문에서 확인해 주세요.</p>
         <a className="semiTextButton" href={stock.exchange === "KOSPI" || stock.exchange === "KOSDAQ"
           ? `https://m.stock.naver.com/domestic/stock/${stock.ticker.split(".")[0]}/total` : symbol ? `${tradingViewUrl(symbol)}financials-overview/` : quote.href}
