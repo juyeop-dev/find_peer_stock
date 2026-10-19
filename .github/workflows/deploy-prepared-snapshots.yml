@@ -8,7 +8,6 @@ on:
 
 permissions:
   contents: read
-  actions: write
   pages: write
   id-token: write
 
@@ -20,35 +19,6 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
-      - name: Release obsolete deployment waits after completed snapshot builds
-        uses: actions/github-script@v8
-        with:
-          script: |
-            const repo = {owner: context.repo.owner, repo: context.repo.repo};
-            const current = await github.rest.actions.getWorkflowRun({...repo, run_id: context.runId});
-            const runs = await github.rest.actions.listWorkflowRunsForRepo({...repo, per_page: 30});
-            for (const run of runs.data.workflow_runs) {
-              if (run.id === context.runId || run.head_branch !== 'main' || run.created_at >= current.data.created_at
-                  || !['Build Stock Peer Site', 'Deploy prepared stock snapshots'].includes(run.name)
-                  || !['queued', 'pending', 'waiting', 'in_progress'].includes(run.status)) continue;
-              const artifacts = await github.rest.actions.listWorkflowRunArtifacts({...repo, run_id: run.id});
-              if (!artifacts.data.artifacts.some(item => item.name === 'github-pages')) continue;
-              const pending = await github.request('GET /repos/{owner}/{repo}/actions/runs/{run_id}/pending_deployments', {...repo, run_id: run.id});
-              if (pending.data.some(item => (item.reviewers ?? []).length > 0 || item.wait_timer > 0)) continue;
-              try {
-                await github.rest.actions.cancelWorkflowRun({...repo, run_id: run.id});
-                core.info(`Cancelled obsolete deployment run ${run.id}; its snapshot artifact was already uploaded.`);
-              } catch (error) {
-                if (error.status !== 409) throw error;
-                try {
-                  await github.request('POST /repos/{owner}/{repo}/actions/runs/{run_id}/force-cancel', {...repo, run_id: run.id});
-                  core.info(`Force-cancelled obsolete deployment run ${run.id}.`);
-                } catch (retry) {
-                  if (retry.status !== 409) throw retry;
-                  core.warning(`Run ${run.id} could not be cancelled; retaining the existing snapshot artifact.`);
-                }
-              }
-            }
       - uses: actions/checkout@v5
       - uses: actions/setup-python@v6
         with:

@@ -20,7 +20,7 @@ export function StockPage() {
   const { data: summary, error, loading, refreshing, lastCheckedAt, lastSourceAt, refresh } = usePollingData(ticker ? loadSummary : null);
 
   return (
-    <main className="pageShell">
+    <main className="pageShell stockDetailPage">
       {loading ? <LoadingSpinner /> : null}
       {error ? <ErrorNotice message={error} /> : null}
       {!ticker ? <ErrorNotice message="티커가 없습니다." /> : null}

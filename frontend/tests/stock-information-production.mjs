@@ -7,7 +7,7 @@ import { join, resolve, sep } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const root = fileURLToPath(new URL("../../", import.meta.url));
-const base = "https://juyeop-dev.github.io/find_peer_stock";
+const base = process.env.STOCK_SITE_BASE_URL ?? "https://juyeop-dev.github.io/find_peer_stock";
 const rows = (await readFile(join(root, "data/information-audit/results.jsonl"), "utf8")).trim().split("\n").map(JSON.parse);
 const routes = ["/semiconductors/000660.KS", "/stocks/2330.TW", ...["korea", "us", "japan", "taiwan", "china", "europe"].map(market => {
   const row = rows.find(row => row.market === market && row.pages.length === 1 && row.pages[0] === "market" && row.history_status === "complete" && row.financial_first?.startsWith("2025"));
