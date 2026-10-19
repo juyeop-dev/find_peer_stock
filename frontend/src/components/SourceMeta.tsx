@@ -41,6 +41,8 @@ export function SourceMeta({ generatedAt, quote }: SourceMetaProps) {
           <dd>{formatDateTime(quote.market_time)}</dd>
         </div>
       ) : null}
+      {!quote.market_time && quote.provider_time ? <div><dt>제공처 봉 시각</dt><dd>{formatDateTime(quote.provider_time)}</dd></div> : null}
+      {!quote.provider_time && quote.provider_date ? <div><dt>일봉 제공일</dt><dd>{quote.provider_date}</dd></div> : null}
     </dl>
   );
 }

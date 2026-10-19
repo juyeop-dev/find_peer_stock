@@ -11,6 +11,7 @@ import { DataRefreshStatus } from "../components/DataRefreshStatus";
 import { formatMarketCap } from "../dataClient/formatters";
 import type { StockSummary } from "../dataClient/types";
 import { StockHistoryChart } from "../components/StockHistoryChart";
+import { StockInformationPanel } from "../components/StockInformationPanel";
 
 export function StockPage() {
   const params = useParams();
@@ -35,6 +36,7 @@ export function StockPage() {
             quote={summary.quote}
           />
           <StockHistoryChart ticker={ticker} name={summary.company.name_kr} currency={summary.quote.currency} refreshKey={summary.quote.fetched_at} />
+          <StockInformationPanel ticker={ticker} refreshKey={summary.quote.fetched_at} />
 
           <section className="companyInfo">
             <div>

@@ -29,8 +29,9 @@ const fixtures = new Map([
   ...reports.map(item => [`/data/new-highs/${item.market}/2026-10-19.json`, item]),
 ]);
 for (const [ticker, currency] of [["035420.KS", "KRW"], ["6503.T", "JPY"], ["AAPL", "USD"]]) {
+  fixtures.set(`/data/stock-information/${ticker}.json`, {ticker,requested_start:"2025-01-01",fetched_at:new Date().toISOString(),quote:{ticker,currency,price:ticker==="035420.KS"?200000:ticker==="6503.T"?5000:220,change_pct:1.2,source:"Stock information fixture",fetched_at:new Date().toISOString()},metrics:{},financials:[{type:"annual",period_end:"2025-12-31",currency,revenue:100,source:"Reported fixture"}],warnings:[]});
   fixtures.set(`/data/stock-history/${ticker}.json`, { ticker, currency, source: "Daily history test fixture", fetched_at: new Date().toISOString(), first_trade_date: "2000-01-01",
-    prices: Array.from({ length: 380 }, (_, i) => [new Date(Date.UTC(2025, 9, 5 + i)).toISOString().slice(0, 10), 100 + i, 100 + i]) });
+    prices: Array.from({ length: 669 }, (_, i) => [new Date(Date.UTC(2024, 11, 20 + i)).toISOString().slice(0, 10), 100 + i, 100 + i]) });
 }
 const server = createServer(async (request, response) => {
   const pathname = new URL(request.url, "http://localhost").pathname;
@@ -124,6 +125,10 @@ try {
   await until(() => evaluate("document.querySelector('.marketStockChart .semiChart') !== null"), "Native one-year daily chart did not load.");
   assert.equal(await evaluate("document.querySelector('.stockHistoryChart .semiPeriodTabs .active').innerText"), "1년");
   assert.ok(await evaluate("document.querySelector('.marketStockChart .semiChart').getAttribute('aria-label').includes('2025-10')"));
+  await evaluate("[...document.querySelectorAll('.stockHistoryChart .semiPeriodTabs button')].find(button => button.innerText === '2025년~').click()");
+  assert.ok(await evaluate("document.querySelector('.marketStockChart .semiChart').getAttribute('aria-label').includes('2025-01-01')"), "The 2025 period must use the requested calendar start.");
+  assert.ok(await evaluate("document.querySelector('.stockInformationPanel').innerText.includes('2025-12-31') && document.querySelector('.stockInformationPanel').innerText.includes('KRW')"));
+  await evaluate("[...document.querySelectorAll('.stockHistoryChart .semiPeriodTabs button')].find(button => button.innerText === '1년').click()");
   await showChart();
   await until(() => evaluate("document.querySelectorAll('.marketWidget iframe').length === 2 && document.querySelectorAll('.marketWidgetLoading').length === 0"), "Widgets did not become ready.");
   assert.equal(await evaluate("document.querySelector('.semiQuoteHero strong').innerText"), "200,000 KRW");
@@ -140,7 +145,7 @@ try {
   assert.equal(await evaluate("location.pathname + location.search"), calendar);
   await navigate(semiLink, ".semiDetailHeader h1");
   assert.equal(await evaluate("document.querySelector('.semiDetailHeader h1').innerText"), "제주반도체");
-  assert.ok(await evaluate("document.querySelector('.semiMetricsPanel') !== null && document.querySelector('.semiFinanceGrid') !== null"));
+  assert.ok(await evaluate("document.querySelector('.semiMetricsPanel') !== null && document.querySelector('.stockInformationPanel') !== null"));
   assert.equal(await evaluate("document.querySelector('.stockHistoryChart .semiPeriodTabs .active').innerText"), "1년");
   assert.equal(await evaluate("document.querySelector('.semiBreadcrumb a').getAttribute('href')"), calendar);
   await navigate("/turnover?market=korea&date=2026-10-19", ".turnoverCompany");

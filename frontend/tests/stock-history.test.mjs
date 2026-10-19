@@ -10,6 +10,7 @@ const { chartStart, historyRange, yearCovered } = await import(`data:text/javasc
 const point = date => ({ date, close: 100, adjusted_close: 100, volume: null });
 
 test("one year follows calendar dates including leap days instead of using 360 days", () => {
+  assert.equal(chartStart("2026-10-20", "since2025"), "2025-01-01");
   assert.equal(chartStart("2026-10-19", "1y"), "2025-10-19");
   assert.equal(chartStart("2024-02-29", "1y"), "2023-02-28");
   assert.equal(chartStart("2025-02-28", "1y"), "2024-02-28");

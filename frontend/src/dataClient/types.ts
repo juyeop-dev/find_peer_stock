@@ -51,6 +51,8 @@ export interface QuoteSnapshot {
   source: string;
   fetched_at: string;
   market_time: string | null;
+  provider_time?: string | null;
+  provider_date?: string;
   basis_label: string | null;
   status: "ok" | "stale" | "error";
   error: string | null;

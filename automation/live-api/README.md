@@ -9,6 +9,7 @@
 - 신고가·거래대금 캘린더: 선택 시장의 최근 거래일 목록과 선택 날짜에 표시된 종목의 현재가
 - 월별·연도별 누적 기록: 과거 집계를 보존하고 현재 표시 중인 순위 종목의 현재가 조회
 - 일반 종목 상세: 해당 종목의 현재가·일봉 및 제공되는 실적
+- 모든 개별 상세의 `information`: 최신 시세·기업 정보·투자 지표와 2025년 이후 확정 연간/분기/반기 실적. Yahoo 과거 분기는 2025년 범위를 추가 요청해 응답 개수 제한을 보완하며 국내 확정 실적은 Naver Finance를 우선 사용. 통화·회계기간을 개별 보존하고 조회는 한 종목씩 처리
 - 모든 개별 종목 차트: 기본 최근 1년을 표시하고 저장된 이력이 없거나 오래되면 최근 2년 일봉 자동 조회. `history` 요청은 한 종목씩 처리하며 Yahoo에서 확인되지 않는 상장 심볼은 TradingView 동일 거래소 일봉으로 보완
 - 신용융자 잔고: 금융투자협회 최근 공표 자료
 
@@ -27,7 +28,7 @@ npx wrangler@4.131.1 deploy
 
 배포 대상·허용 Origin은 `wrangler.jsonc`에 있습니다. 프론트엔드는 기본 운영 주소를 사용하며 다른 환경은 빌드 시 `VITE_LIVE_API_URL`로 지정합니다. 운영 GitHub Pages Origin과 로컬 개발 Origin만 브라우저 접근을 허용합니다. 고정된 제공처의 허용된 조회만 지원하며 임의 URL 프록시는 제공하지 않습니다. Cloudflare 인증 상태와 로컬 Wrangler 파일은 Git에서 제외합니다.
 
-`GET /health`는 상태를, `POST /refresh`는 JSON의 `kind`에 따라 `quotes`, `details`, `history`, `scan`, `credit`를 처리합니다. `scan`에는 `market`과 `source`(`new-highs` 또는 `turnover`), 종목 조회에는 `stocks: [{ticker, exchange?}]`를 전달합니다. 이 Worker의 소스 변경은 위 명령으로 별도 배포해야 합니다.
+`GET /health`는 상태를, `POST /refresh`는 JSON의 `kind`에 따라 `quotes`, `details`, `history`, `information`, `scan`, `credit`를 처리합니다. `scan`에는 `market`과 `source`(`new-highs` 또는 `turnover`), 종목 조회에는 `stocks: [{ticker, exchange?}]`를 전달합니다. 이 Worker의 소스 변경은 위 명령으로 별도 배포해야 합니다.
 
 빌드된 프론트엔드에서 모든 버튼과 실패 시 보존 동작을 검증합니다.
 

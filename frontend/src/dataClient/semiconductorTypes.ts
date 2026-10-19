@@ -67,6 +67,7 @@ export function stockClassifications(stock: SemiconductorStock): SemiconductorCl
 
 export interface SemiconductorData {
   generated_at: string;
+  financials_updated_at?: string;
   quoted_at: string;
   history_source: string;
   financial_source: string;

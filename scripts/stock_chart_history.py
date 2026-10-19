@@ -115,14 +115,18 @@ def parse_yahoo(payload: dict, ticker: str) -> dict:
 
 def parse_tradingview(payload: dict, ticker: str) -> dict:
     info = payload["info"]
-    if payload["symbol"] != ticker or info["pro_name"] != ticker or info["source_id"] != ticker.split(":")[0]:
+    exchange, code = ticker.split(":", 1)
+    cboe = (exchange in {"NASDAQ", "NYSE", "AMEX"} and info.get("source_id") == "BATS"
+            and info.get("name") == code and info.get("full_name") == f"BATS:{code}"
+            and info.get("currency_code") == "USD" and info.get("type") == "stock")
+    if payload["symbol"] != ticker or info["pro_name"] != ticker or not (info["source_id"] == exchange or cboe):
         raise ValueError("TradingView listing identity mismatch")
     if info.get("type") in {"index", "forex", "crypto", "futures", "bond", "economic"}:
         raise ValueError("TradingView instrument is not a stock")
     zone = ZoneInfo(info["timezone"])
     prices = [[datetime.fromtimestamp(bar["timestamp"], zone).date().isoformat(), bar["close"], bar["close"]]
               for bar in payload["bars"] if bar["close"] > 0]
-    return {"ticker": ticker, "currency": info["currency_code"], "source": "TradingView split-adjusted daily chart",
+    return {"ticker": ticker, "currency": info["currency_code"], "source": "TradingView · Cboe One split-adjusted daily chart" if cboe else "TradingView split-adjusted daily chart",
             "fetched_at": payload.get("fetched_at"), "first_trade_date": None,
             "requested_bars": payload.get("requested_bars"), "prices": prices}
 
@@ -157,8 +161,14 @@ def save_candidate(db: sqlite3.Connection, value: dict) -> None:
     previous = db.execute("SELECT value FROM history WHERE ticker=?", (value["ticker"],)).fetchone()
     if previous:
         old = json.loads(previous[0])
-        verified_full_request = value.get("requested_range") == "2y" or (value.get("requested_bars") or 0) >= 366
-        newer_full_request = verified_full_request and value["prices"][-1][0] >= old["prices"][-1][0] and str(value.get("fetched_at") or "") >= str(old.get("fetched_at") or "")
+        verified_full_request = value.get("requested_range") in {"2y", "5y", "10y", "max"} or (value.get("requested_bars") or 0) >= 366
+        def fetched_time(item):
+            try:
+                timestamp = datetime.fromisoformat(item.get("fetched_at") or "")
+                return timestamp.replace(tzinfo=timestamp.tzinfo or timezone.utc).timestamp()
+            except (TypeError, ValueError):
+                return 0
+        newer_full_request = verified_full_request and value["prices"][-1][0] >= old["prices"][-1][0] and fetched_time(value) >= fetched_time(old)
         if not newer_full_request and quality(old) >= quality(value):
             return
     db.execute("INSERT OR REPLACE INTO history VALUES (?,?)", (value["ticker"], json.dumps(value, ensure_ascii=False, separators=(",", ":"), allow_nan=False)))
@@ -205,14 +215,14 @@ def assessment(value: dict | None, as_of: date) -> str:
     cutoff = as_of.replace(year=as_of.year - 1) if (as_of.month, as_of.day) != (2, 29) else date(as_of.year - 1, 2, 28)
     if value["prices"][-1][0] < (as_of - timedelta(days=7)).isoformat():
         recent_query = str(value.get("fetched_at") or "")[:10] >= (as_of - timedelta(days=1)).isoformat()
-        if recent_query and value.get("requested_range") == "2y" and value.get("provider_date", "") <= value["prices"][-1][0]:
+        if recent_query and (value.get("requested_range") in {"2y", "5y", "10y", "max"} or (value.get("requested_bars") or 0) >= 366) and value.get("provider_date", "") <= value["prices"][-1][0]:
             return "no_recent_data"
         return "stale"
     if value["prices"][0][0] <= cutoff.isoformat():
         return "complete"
     if value.get("first_trade_date") and value["first_trade_date"] > cutoff.isoformat():
         return "short_listing"
-    if value.get("requested_range") == "2y" or (value.get("requested_bars") or 0) >= 366:
+    if value.get("requested_range") in {"2y", "5y", "10y", "max"} or (value.get("requested_bars") or 0) >= 366:
         return "limited_history"
     return "insufficient"
 

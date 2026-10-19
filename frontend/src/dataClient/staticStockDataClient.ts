@@ -6,6 +6,7 @@ import type { CreditData } from "./creditTypes";
 import type { CalendarHistory, HistoryKind } from "./calendarHistory";
 import { applyHighIndex, applyIndex, applySemiconductor, applySummary, applyTurnoverIndex, liveDetailFor, liveQuoteFor, liveReportFor, refreshDetails, refreshQuotes, refreshScan, requestOriginal } from "./liveStockDataClient";
 import { refreshStockHistory } from "./stockHistoryClient";
+import { getStockInformation } from "./stockInformationClient";
 let refreshedCredit: CreditData | null = null;
 
 function assetUrl(path: string): string {
@@ -52,8 +53,14 @@ export async function getSiteIndex(signal?: AbortSignal, fromSource = false, cur
 
 export async function getStockSummary(ticker: string, signal?: AbortSignal, fromSource = false, current?: StockSummary | null): Promise<StockSummary> {
   const base = fromSource && current ? current : await fetchJson<StockSummary>(`data/stocks/${encodeURIComponent(ticker)}.json`, signal);
+  if (!fromSource) await getStockInformation(ticker, undefined, signal).catch(error => { if (signal?.aborted) throw error; });
   const metadata = fromSource ? await refreshQuotes([{ ticker }, ...base.peer_groups.flatMap(group => group.peers.map(peer => ({ ticker: peer.company.ticker })))], signal) : {};
   if (fromSource) {
+    try { await getStockInformation(ticker, undefined, signal, true); }
+    catch (error) {
+      if (signal?.aborted) throw error;
+      Object.assign(metadata, {refresh_warning: "일부 기업 정보·실적 조회에 실패해 이전 자료를 유지합니다."});
+    }
     try { await refreshStockHistory(ticker, undefined, signal); }
     catch (error) {
       if (signal?.aborted) throw error;
@@ -97,6 +104,10 @@ export async function getTurnoverReport(market: string, date: string, signal?: A
 export async function getSemiconductorData(signal?: AbortSignal, fromSource = false, current?: SemiconductorData | null, tickers?: string[]): Promise<SemiconductorData> {
   const base = fromSource && current ? current : await fetchJson<SemiconductorData>("data/semiconductor/index.json", signal);
   const metadata = fromSource ? await refreshDetails(base.stocks.filter(stock => !tickers || tickers.includes(stock.ticker)), signal) : {};
+  if (fromSource && tickers?.length === 1) {
+    try { await getStockInformation(tickers[0], undefined, signal, true); }
+    catch (error) { if (signal?.aborted) throw error; Object.assign(metadata, {refresh_warning: "일부 기업 정보·실적 조회에 실패해 이전 자료를 유지합니다."}); }
+  }
   return { ...applySemiconductor(base), ...metadata };
 }
 

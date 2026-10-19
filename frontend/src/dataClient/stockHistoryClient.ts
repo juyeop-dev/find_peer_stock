@@ -5,10 +5,11 @@ export interface StockHistory {
   ticker: string; currency: string; source: string; fetched_at?: string; first_trade_date?: string | null;
   history: SemiconductorPrice[]; warning?: string;
 }
-export const CHART_PERIODS = [7, 30, 90, 180, "1y", "2y"] as const;
+export const CHART_PERIODS = [7, 30, 90, 180, "1y", "2y", "since2025"] as const;
 export type ChartPeriod = typeof CHART_PERIODS[number];
-export const chartPeriodLabel = (period: ChartPeriod) => typeof period === "number" ? `${period}일` : period === "1y" ? "1년" : "2년";
+export const chartPeriodLabel = (period: ChartPeriod) => typeof period === "number" ? `${period}일` : period === "since2025" ? "2025년~" : period === "1y" ? "1년" : "2년";
 export function chartStart(end: string, period: ChartPeriod): string {
+  if (period === "since2025") return "2025-01-01";
   const day = new Date(`${end}T12:00:00Z`);
   if (typeof period === "number") day.setUTCDate(day.getUTCDate() - period);
   else {

@@ -11,7 +11,7 @@ import re
 import urllib.parse
 import urllib.request
 from concurrent.futures import ThreadPoolExecutor, as_completed
-from datetime import datetime, time
+from datetime import datetime, time, timedelta
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
@@ -45,8 +45,10 @@ def numeric(value: object) -> float | None:
 
 
 def fetch_history(ticker: str) -> list[dict]:
+    now = datetime.now(tz=KST)
+    start = min(now - timedelta(days=732), datetime(2024, 12, 20, tzinfo=KST))
     url = (f"https://query1.finance.yahoo.com/v8/finance/chart/"
-           f"{urllib.parse.quote(ticker)}?range=2y&interval=1d")
+           f"{urllib.parse.quote(ticker)}?period1={int(start.timestamp())}&period2={int(now.timestamp()) + 60}&interval=1d")
     chart = fetch_json(url).get("chart") or {}
     if chart.get("error") or not chart.get("result"):
         raise ValueError(f"{ticker}: Yahoo chart unavailable: {chart.get('error')}")

@@ -6,7 +6,7 @@ import type { TurnoverIndex, TurnoverReport } from "./turnoverTypes";
 export interface LiveQuote {
   ticker: string; price: number; previous_close: number | null; change: number | null; change_pct: number | null;
   currency: string; source: string; fetched_at: string; provider_time: string | null; market_time: string | null;
-  status: "ok"; name?: string; market_cap?: number | null; market_cap_currency?: string; market_cap_usd?: number; metrics?: Record<string, string | null>; warnings?: string[];
+  status: "ok" | "stale"; provider_date?: string; name?: string; market_cap?: number | null; market_cap_currency?: string; market_cap_usd?: number; metrics?: Record<string, string | null>; warnings?: string[];
 }
 export interface LiveDetail {
   ticker: string; quote: LiveQuote; fetched_at: string; warnings: string[]; history?: SemiconductorPrice[];
@@ -26,6 +26,11 @@ export function sourceMetadata(value: unknown): SourceMetadata {
   return { source_fetched_at: metadata.source_fetched_at, refresh_warning: metadata.refresh_warning };
 }
 export const liveQuoteFor = (ticker: string) => quotes.get(ticker.toUpperCase());
+export function rememberInformationQuote(quote: LiveQuote) {
+  const key = quote.ticker.toUpperCase(), old = quotes.get(key);
+  if (old && quote.status === "stale" && Date.parse(quote.provider_time ?? quote.provider_date ?? quote.fetched_at) < Date.parse(old.provider_time ?? old.provider_date ?? old.market_time ?? old.fetched_at)) return;
+  if (!old || Date.parse(quote.fetched_at) >= Date.parse(old.fetched_at)) quotes.set(key, { ...old, ...quote });
+}
 export const liveDetailFor = (ticker: string) => details.get(ticker.toUpperCase());
 export function livePriceLabel(ticker: string): string | null {
   const quote = liveQuoteFor(ticker);
@@ -101,7 +106,8 @@ export async function refreshDetails(stocks: StockRequest[], signal?: AbortSigna
 }
 export function applyQuote(base: QuoteSnapshot): QuoteSnapshot {
   const fresh = liveQuoteFor(base.ticker);
-  return fresh && fresh.fetched_at >= base.fetched_at ? { ...base, ...fresh, error: null, refresh_status: "fetched" } : base;
+  if (fresh?.status === "stale" && Date.parse(fresh.provider_time ?? fresh.provider_date ?? fresh.fetched_at) < Date.parse(base.provider_time ?? base.provider_date ?? base.market_time ?? base.fetched_at)) return base;
+  return fresh && Date.parse(fresh.fetched_at) >= Date.parse(base.fetched_at) ? { ...base, ...fresh, error: null, refresh_status: "fetched" } : base;
 }
 export function applySummary(base: StockSummary): StockSummary {
   return { ...base, quote: applyQuote(base.quote), peer_groups: base.peer_groups.map(group => ({ ...group, peers: group.peers.map(peer => ({ ...peer, quote: applyQuote(peer.quote) })) })) };
@@ -109,13 +115,13 @@ export function applySummary(base: StockSummary): StockSummary {
 export function applyIndex(base: SiteIndex): SiteIndex {
   return { ...base, stocks: base.stocks.map(stock => {
     const fresh = liveQuoteFor(stock.ticker);
-    return fresh && fresh.fetched_at >= base.generated_at && fresh.market_cap ? { ...stock, market_cap: fresh.market_cap, market_cap_currency: fresh.market_cap_currency, ...(fresh.market_cap_usd ? { market_cap_usd: fresh.market_cap_usd } : {}) } : stock;
+    return fresh && Date.parse(fresh.fetched_at) >= Date.parse(base.generated_at) && fresh.market_cap ? { ...stock, market_cap: fresh.market_cap, market_cap_currency: fresh.market_cap_currency, ...(fresh.market_cap_usd ? { market_cap_usd: fresh.market_cap_usd } : {}) } : stock;
   }) };
 }
 export function applySemiconductor(base: SemiconductorData): SemiconductorData {
   return { ...base, stocks: base.stocks.map(stock => {
     const quote = liveQuoteFor(stock.ticker), detail = liveDetailFor(stock.ticker);
-    const recent = detail && detail.fetched_at >= base.generated_at ? detail : null;
+    const recent = detail && Date.parse(detail.fetched_at) >= Date.parse(base.generated_at) ? detail : null;
     return { ...stock, ...(recent?.history ? { history: recent.history } : {}), ...(recent?.metrics ? { metrics: { ...stock.metrics, ...recent.metrics } } : {}),
       ...(recent?.annual_financials ? { annual_financials: recent.annual_financials } : {}), ...(recent?.quarterly_financials ? { quarterly_financials: recent.quarterly_financials } : {}),
       ...(recent?.recent_financials ? { recent_financials: recent.recent_financials } : {}), quote: quote && quote.fetched_at >= stock.quote.fetched_at ? { ...stock.quote, ...quote } : stock.quote };

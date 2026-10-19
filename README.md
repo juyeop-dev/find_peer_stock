@@ -12,6 +12,24 @@
 
 ## 개별 종목 차트와 순차 점검
 
+### 2025년 1월 1일~현재 종목 정보
+
+세 종류 상세 페이지에 최신 제공 시세·기업 업종·임직원 수·시가총액·PER/PBR/EPS·배당수익률·52주 고저와 2025년 이후 확정 연간/분기/반기 실적을 표시합니다. 주가 차트는 기본 1년을 유지하고 `2025년~`을 선택하면 2025년 초부터 확인할 수 있습니다. 재무 통화와 시세 통화를 구분하고 추정치·미공시 기간은 제외합니다. 제공처의 최신 분기 개수 제한 때문에 누락되는 2025년 자료는 날짜 범위를 나누어 수집합니다. 신규 상장, 과거 이력 부족, 미지원 종목은 따로 기록합니다.
+
+`정보 다시 조회`와 상세 페이지 새로고침은 원본 `information` API를 호출하며 이미 확보한 과거 실적을 보존합니다. 과거 캘린더의 당시 기록은 최신 시세로 바꾸지 않습니다. 정기 수집은 `refresh-stock-information.yml`에서 미국 장 종료 후 KST 화~토 07:30에 시작합니다. 과거 2025년 분기는 30일 단위로 재확인하며 현재 발표 실적과 시세는 정기 실행마다 갱신합니다. 데이터 생성과 조회 시각은 실제 가격의 기준 시각과 구분합니다.
+
+```powershell
+python scripts/stock_information.py collect
+python scripts/backfill_stock_information_2025.py
+python scripts/refresh_stock_information_history.py
+python scripts/stock_information.py refresh-quotes
+python scripts/stock_information.py checkpoint
+python scripts/stock_information.py export
+python scripts/stock_information.py publish
+```
+
+종목별 진행과 예외는 `data/information-audit/`, 압축 원본은 `data/stock-information/`에 보관합니다. [진행 기록](docs/worklogs/stock-information-2025-current.md)을 먼저 읽고 저장된 다음 종목부터 재개합니다. 2025년 보완과 일봉 갱신도 별도 체크포인트를 사용합니다. 빌드 시 보관 원본을 정적 파일로 복원합니다.
+
 차트의 기본 기간은 달력 기준 1년이며 7·30·90·180일, 2년도 선택할 수 있습니다. 윤년과 기준일의 휴장을 고려하며, 상장 1년 미만 또는 제공처 이력 부족은 실제 제공 기간을 명시합니다. 없는 가격을 만들어 채우지 않습니다. 저장된 일봉이 없거나 오래되면 원본 조회 API에서 자동으로 최근 2년을 요청합니다. Yahoo Finance를 우선 사용하고 TradingView에서 동일 종목·거래소의 일봉으로 보완합니다. 외부 TradingView 차트도 기본 12개월로 열립니다.
 
 검증한 원본 일봉은 `data/stock-history/*.json.gz`에 보관하고 빌드 때 `data/stock-history/{ticker}.json`으로 게시합니다. 개발 PC의 과거 복원 캐시가 없는 배포 환경에서도 같은 데이터를 복원합니다. 반도체 → 피어 → 캘린더 시장·종목코드 순으로 처리하며, 목록은 `data/chart-audit/roster.json`, 종목별 결과는 `results.jsonl`, 진행 요약·재개 명령은 `progress.json`에 저장합니다. [작업 기록](docs/worklogs/stock-chart-one-year.md)에서 중단 지점과 남은 작업을 확인할 수 있습니다.

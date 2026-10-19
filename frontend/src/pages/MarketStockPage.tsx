@@ -14,8 +14,8 @@ import { formatHistoryMoney } from "../dataClient/calendarHistory";
 import { formatPercent } from "../dataClient/semiconductorMath";
 import "../styles/marketStock.css";
 import { DataRefreshStatus } from "../components/DataRefreshStatus";
-import { RecentFinancialSummary } from "../components/RecentFinancials";
-import { FinancialTable } from "./SemiconductorStockPage";
+import { StockInformationPanel } from "../components/StockInformationPanel";
+import { getStockInformation } from "../dataClient/stockInformationClient";
 import { liveDetailFor, liveQuoteFor, refreshDetails } from "../dataClient/liveStockDataClient";
 
 const MARKET_CURRENCIES: Record<string, string> = { korea: "KRW", us: "USD", japan: "JPY", taiwan: "TWD", china: "CNY", europe: "EUR" };
@@ -27,7 +27,7 @@ function validDate(value: string): boolean {
 }
 
 function priceLabel(price: number | null | undefined, currency: string): string {
-  return price == null ? "미등록" : `${new Intl.NumberFormat("ko-KR", { maximumFractionDigits: currency === "KRW" || currency === "JPY" ? 0 : 4 }).format(price)} ${currency}`;
+  return price == null ? "미등록" : `${new Intl.NumberFormat("ko-KR", { maximumFractionDigits: currency === "KRW" || currency === "JPY" ? 0 : Math.abs(price) < 0.01 ? 8 : Math.abs(price) < 1 ? 4 : 2 }).format(price)} ${currency}`;
 }
 
 export function MarketStockPage() {
@@ -47,7 +47,12 @@ export function MarketStockPage() {
     const stock = report.entries.find((item) => item.ticker.toUpperCase() === ticker.toUpperCase());
     if (!stock) throw new Error("선택한 날짜의 캘린더에서 이 종목을 찾을 수 없습니다.");
     const metadata = fromSource ? await refreshDetails([{ ticker, exchange: stock.exchange }], signal) : {};
-    return { stock, source, market, date, ...metadata };
+    const information = await getStockInformation(ticker, stock.exchange, signal, fromSource).catch(error => {
+      if (signal.aborted) throw error;
+      if (fromSource) Object.assign(metadata, {refresh_warning: "일부 기업 정보·실적 조회에 실패해 이전 자료를 유지합니다."});
+      return undefined;
+    });
+    return { stock, source, market, date, information, ...metadata };
   }, [source, market, date, ticker]);
   const { data, error, loading, refreshing, lastCheckedAt, lastSourceAt, refresh } = usePollingData(contextValid && ticker ? loadStock : null);
   const stock = data?.source === source && data.market === market && data.date === date && data.stock.ticker.toUpperCase() === ticker.toUpperCase() ? data.stock : null;
@@ -70,7 +75,7 @@ export function MarketStockPage() {
       <header className="semiDetailHeader"><div><p className="eyebrow">{stock.exchange} / {category}</p><h1>{stock.name}</h1>
         <p>{stock.ticker} · {sourceLabel}</p><div className="marketStockActions"><a href={quote.href} target="_blank" rel="noreferrer">{quote.label} 외부 시세 ↗</a>
           {symbol ? <a href={tradingViewUrl(symbol)} target="_blank" rel="noreferrer">TradingView에서 보기 ↗</a> : null}</div></div>
-        <div className="semiQuoteHero"><span>{currentQuote ? "현재가 · 원본 직접 조회" : "캘린더 기록 종가"}</span><strong>{priceLabel(price, currency)}</strong>
+        <div className="semiQuoteHero"><span>{currentQuote ? "현재가 / 최근 제공 가격" : "캘린더 기록 종가"}</span><strong>{priceLabel(price, currency)}</strong>
           <b className={((currentQuote?.change_pct ?? stock.change_pct) ?? 0) >= 0 ? "semiUp" : "semiDown"}>{formatPercent(currentQuote?.change_pct ?? stock.change_pct)}</b>
           <small>{currentQuote ? `${currentQuote.source} · ${currentQuote.provider_time?.replace("T", " ") ?? "기준 시각 미제공"}` : `${date} 거래일 기준`}</small></div>
       </header>
@@ -88,16 +93,13 @@ export function MarketStockPage() {
         {symbol ? <><button className="semiTextButton marketFullChartButton" aria-expanded={showFullChart} onClick={() => setShowFullChart((value) => !value)}>{showFullChart ? "전체 일봉 차트 접기" : "TradingView 전체 일봉 차트 보기"}</button>
           {showFullChart ? <><p className="semiFootnote">제공처가 외부 표시를 지원하는 종목에 한해 표시됩니다.</p><TradingViewWidget key={currentQuote?.fetched_at} symbol={symbol} kind="chart" /></> : null}</> : null}
       </div>
-      <section className="semiPanel marketStockFinancials"><div className="semiPanelHeading"><h2>실적 · 투자 지표</h2><p>매출·이익·재무비율 등 제공처가 지원하는 기업 정보입니다. 자료가 없는 종목은 원문에서 확인해 주세요.</p>
+      <div className="marketStockFinancials"><StockInformationPanel ticker={ticker} exchange={stock.exchange} refreshKey={data?.information?.financials_fetched_at ?? sourceDetail?.fetched_at} /><div className="semiPanelHeading">
         <a className="semiTextButton" href={stock.exchange === "KOSPI" || stock.exchange === "KOSDAQ"
           ? `https://m.stock.naver.com/domestic/stock/${stock.ticker.split(".")[0]}/total` : symbol ? `${tradingViewUrl(symbol)}financials-overview/` : quote.href}
           target="_blank" rel="noreferrer">실적 원문 보기 ↗</a></div>
-        {sourceDetail?.annual_financials || sourceDetail?.quarterly_financials ? <>
-          <p className="semiFootnote">Naver Finance 확정 실적 · 단위: 억원 · 원본 직접 조회</p><RecentFinancialSummary summary={sourceDetail.recent_financials} />
-          <div className="semiFinanceGrid"><FinancialTable title="연간" rows={sourceDetail.annual_financials ?? []} /><FinancialTable title="분기" rows={sourceDetail.quarterly_financials ?? []} /></div>
-        </> : symbol ? <TradingViewWidget key={currentQuote?.fetched_at} symbol={symbol} kind="financials" /> : <p className="semiEmpty">이 거래소의 내장 재무 자료는 지원하지 않습니다. 위의 외부 시세 링크에서 확인해 주세요.</p>}
-      </section>
-      <p className="semiFootnote">기본 정보의 가격·등락률은 {date} 캘린더에 저장된 값입니다. 외부 전체 일봉 차트와 실적은 TradingView 제공 자료로 기준일과 통화가 다를 수 있으며,
+        {symbol ? <details><summary>TradingView 실적 원문 화면</summary><TradingViewWidget key={currentQuote?.fetched_at} symbol={symbol} kind="financials" /></details> : null}
+      </div>
+      <p className="semiFootnote">캘린더의 {date} 당시 가격은 과거 기록입니다. 상단에 현재가가 표시되면 원본의 최근 제공 가격이며, 실적은 각 행의 회계기간·통화 기준입니다. 외부 차트와 실적은 제공처 자료로 기준일과 통화가 다를 수 있으며,
         종목·거래소에 따라 일부 자료가 제공되지 않을 수 있습니다. <a href={quote.href} target="_blank" rel="noreferrer">{quote.label}에서 종목 확인 ↗</a></p>
     </> : null}
   </main>;

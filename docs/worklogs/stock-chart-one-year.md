@@ -64,3 +64,7 @@ python scripts/stock_chart_history.py checkpoint
 python scripts/stock_chart_history.py export
 python scripts/stock_chart_history.py publish
 ```
+
+## 2026-10-20 후속 갱신
+
+[2025-01-01~현재 전 종목 정보 갱신](stock-information-2025-current.md)에서 전체 일봉을 다시 조회했다. 최신 `data/chart-audit/progress.json` 기준으로 1년 이력 13,365종목, 제공처 최초 거래일 1년 이내 975종목, 제공 기간 부족 272종목, 최근 자료 미제공 116종목, 유효 일봉 2개 미만 23종목이다. 위 2026-10-19 표와 44종목 기록은 당시 체크포인트이며 현재 미완료 수와 다르다. 최초 미완료 순서는 여전히 1,884번 BLFS이다. 최신 전체 정보·예외 재개 기록은 후속 문서를 우선 확인한다.

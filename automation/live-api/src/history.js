@@ -26,7 +26,7 @@ export async function tradingViewHistory(stock, fetcher = fetch) {
   socket.accept();
   return new Promise((resolve, reject) => {
     const session = `cs_${crypto.randomUUID().replaceAll("-", "").slice(0, 12)}`;
-    let info = null, points = [], settled = false;
+    let info = null, points = [], settled = false, cboe = false;
     const finish = (value, error) => {
       if (settled) return; settled = true; clearTimeout(timer);
       socket.close(1000, "history complete");
@@ -44,7 +44,9 @@ export async function tradingViewHistory(stock, fetcher = fetch) {
           if (p[0] !== session) continue;
           if (m === "symbol_resolved" && p[1] === "symbol_1") {
             info = p[2];
-            if (info.pro_name !== symbol || info.source_id !== symbol.split(":")[0]
+            const [exchange, code] = symbol.split(":");
+            cboe = ["NASDAQ", "NYSE", "AMEX"].includes(exchange) && info.source_id === "BATS" && info.name === code && info.full_name === `BATS:${code}` && info.currency_code === "USD" && info.type === "stock";
+            if (info.pro_name !== symbol || !(info.source_id === exchange || cboe)
               || ["index", "forex", "crypto", "futures", "bond", "economic"].includes(info.type)) throw new Error("일봉 종목·거래소가 일치하지 않습니다.");
           } else if (m === "timescale_update") points.push(...(p[1]?.s1?.s ?? []));
           else if (m === "series_completed" && p[1] === "s1") {
@@ -59,7 +61,7 @@ export async function tradingViewHistory(stock, fetcher = fetch) {
             }
             const history = [...days.values()].sort((a, b) => a.date.localeCompare(b.date));
             if (history.length < 2) throw new Error("표시할 일봉이 부족합니다.");
-            finish({ ticker: stock.ticker, currency: info.currency_code, source: "TradingView split-adjusted daily chart",
+            finish({ ticker: stock.ticker, currency: info.currency_code, source: cboe ? "TradingView · Cboe One split-adjusted daily chart" : "TradingView split-adjusted daily chart",
               fetched_at: new Date().toISOString(), first_trade_date: null, history });
           }
         }
@@ -68,7 +70,9 @@ export async function tradingViewHistory(stock, fetcher = fetch) {
     socket.send(encode("set_auth_token", ["unauthorized_user_token"]));
     socket.send(encode("chart_create_session", [session, ""]));
     socket.send(encode("resolve_symbol", [session, "symbol_1", "=" + JSON.stringify({ symbol, adjustment: "splits", session: "regular" })]));
-    socket.send(encode("create_series", [session, "s1", "s1", "symbol_1", "1D", 550]));
+    const days = Math.max(0, (Date.now() - Date.parse("2024-12-20T00:00:00Z")) / 86400000);
+    const count = Math.min(5000, Math.max(550, Math.ceil(days * 5 / 7) + 60));
+    socket.send(encode("create_series", [session, "s1", "s1", "symbol_1", "1D", count]));
   });
 }
 

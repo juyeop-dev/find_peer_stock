@@ -13,6 +13,21 @@ import stock_chart_history as charts
 
 
 class StockChartHistoryTests(unittest.TestCase):
+    def test_fresh_utc_daily_values_replace_older_kst_snapshots_for_the_same_session(self):
+        db = sqlite3.connect(":memory:")
+        db.execute("CREATE TABLE history(ticker TEXT PRIMARY KEY,value TEXT NOT NULL)")
+        old = {"ticker":"A","currency":"USD","source":"fixture","requested_range":"2y","fetched_at":"2026-10-20T00:00:00+09:00","prices":[["2025-01-01",100,100],["2026-10-19",100,100]]}
+        charts.save_candidate(db,old)
+        charts.save_candidate(db,{**old,"fetched_at":"2026-10-19T15:05:00Z","prices":[["2025-01-01",100,100],["2026-10-19",120,120]]})
+        self.assertEqual(json.loads(db.execute("SELECT value FROM history").fetchone()[0])["prices"][-1][1],120)
+        db.close()
+
+    def test_us_cboe_fallback_requires_same_security_and_is_explicitly_labelled(self):
+        payload = {"symbol": "NYSE:EP/PC", "info": {"pro_name": "NYSE:EP/PC", "name": "EP/PC", "full_name": "BATS:EP/PC", "source_id": "BATS", "type": "stock", "currency_code": "USD", "timezone": "America/New_York"}, "bars": [{"timestamp": 1758211200, "close": 10}]}
+        self.assertIn("Cboe One", charts.parse_tradingview(payload, "NYSE:EP/PC")["source"])
+        payload["info"]["full_name"] = "BATS:OTHER"
+        with self.assertRaises(ValueError): charts.parse_tradingview(payload, "NYSE:EP/PC")
+
     def test_resume_repairs_only_the_pending_stock_and_preserves_completed_results(self):
         with tempfile.TemporaryDirectory() as folder:
             root = Path(folder)

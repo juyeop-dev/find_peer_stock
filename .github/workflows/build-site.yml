@@ -159,6 +159,10 @@ jobs:
         working-directory: frontend
         run: npm run test:stock-history
 
+      - name: Test reported financial information retention
+        working-directory: frontend
+        run: npm run test:stock-information
+
       - name: Build frontend
         working-directory: frontend
         env:

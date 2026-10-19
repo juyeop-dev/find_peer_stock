@@ -1,5 +1,6 @@
 import { MARKETS, credit, detail, quote, scan } from "./providers.js";
 import { history } from "./history.js";
+import { information } from "./information.js";
 
 const validTicker = value => typeof value === "string" && value.length <= 48 && /^(?:[A-Z]+:)?[A-Z0-9][A-Z0-9.\-]*(?:\/[A-Z0-9.\-]+)?$/.test(value);
 const validOrigin = (origin, env) => origin === (env.ALLOWED_ORIGIN ?? "https://juyeop-dev.github.io") || /^http:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/.test(origin);
@@ -26,11 +27,11 @@ export async function handle(request, env = {}, fetcher = fetch) {
       if (!Object.hasOwn(MARKETS, body.market) || !["new-highs", "turnover"].includes(body.source)) return response({ error: "지원하는 시장과 자료 종류를 선택해 주세요." }, 400);
       return response(await scan(body.market, body.source, fetcher));
     }
-    if (!["quotes", "details", "history"].includes(body.kind) || !Array.isArray(body.stocks) || !body.stocks.length || body.stocks.length > (body.kind === "history" ? 1 : body.kind === "details" ? 4 : 12)
+    if (!["quotes", "details", "history", "information"].includes(body.kind) || !Array.isArray(body.stocks) || !body.stocks.length || body.stocks.length > (["history", "information"].includes(body.kind) ? 1 : body.kind === "details" ? 4 : 12)
       || body.stocks.some(stock => !stock || !validTicker(stock.ticker) || stock.exchange && !/^[A-Z]{2,12}$/.test(stock.exchange))) return response({ error: "종목 요청을 확인해 주세요." }, 400);
     const items = [], errors = [];
     // Keep each invocation below the free-plan subrequest limit, including fallbacks.
-    const operation = body.kind === "history" ? history : body.kind === "details" ? detail : quote;
+    const operation = body.kind === "information" ? information : body.kind === "history" ? history : body.kind === "details" ? detail : quote;
     for (let offset = 0; offset < body.stocks.length; offset += 3) {
       await Promise.all(body.stocks.slice(offset, offset + 3).map(async stock => {
         try { items.push(await operation(stock, fetcher)); } catch (error) {

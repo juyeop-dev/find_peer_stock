@@ -93,6 +93,8 @@ try {
         } else if (body.kind === "history") {
           response = { items: body.stocks.map(stock => ({ ticker: stock.ticker, currency: quote(stock.ticker).currency,
             source: "Original history test provider", fetched_at: sourceAt, first_trade_date: "2000-01-01", history: chartHistory })), errors: [], fetched_at: sourceAt };
+        } else if (body.kind === "information") {
+          response = {items: body.stocks.map(stock => ({ticker:stock.ticker,requested_start:"2025-01-01",fetched_at:sourceAt,financials_fetched_at:sourceAt,quote:quote(stock.ticker),metrics:{per:11.11},metrics_currency:quote(stock.ticker).currency,warnings:[],financials:[{type:"annual",period_end:"2025-12-31",currency:"KRW",source:"Original reported financial test provider",revenue:777777e8,operating_income:12345e8,net_income:1000e8}]})),errors:[],fetched_at:sourceAt};
         } else if (body.kind === "scan") {
           response = { ...structuredClone(body.source === "new-highs" ? highReport : turnoverReport), live_fetched_at: sourceAt };
         } else if (body.kind === "credit") response = { fetched_at: sourceAt, history: [{ date: "2026-10-19", total: 40000000, kospi: 30000000, kosdaq: 10000000 }] };
@@ -145,7 +147,19 @@ try {
     assert.equal(sent.some(request => request.kind === "details" && request.stocks.length > 4), false);
     assert.equal(sent.some(request => request.kind === "quotes" && request.stocks.length > 12), false);
     if (path === "/semiconductors" || path === "/semiconductors/trends") assert.equal(new Set(sent.flatMap(request => request.stocks ?? []).map(stock => stock.ticker)).size, semi.stocks.length);
-    if (path.startsWith("/market-stocks")) assert.ok(await evaluate("document.body.innerText.includes('원본 조회') && document.body.innerText.includes('777,777')"));
+    if (path.startsWith("/market-stocks")) assert.ok(await evaluate("document.querySelector('.stockInformationPanel').innerText.includes('Original reported financial test provider') && document.querySelector('.stockInformationPanel').innerText.includes('2025-12-31')"));
+    if (path.startsWith("/market-stocks")) {
+      const prior = requests.length;
+      await evaluate("document.querySelector('.stockInformationPanel button').click()");
+      await until(() => evaluate("!document.querySelector('.stockInformationPanel button').disabled"), "Information-only refresh did not finish.");
+      assert.ok(requests.slice(prior).some(request => request.kind === "information"));
+      const table = await evaluate("document.querySelector('.stockInformationPanel tbody').innerText");
+      failSource = true;
+      await evaluate("document.querySelector('.stockInformationPanel button').click()");
+      await until(() => evaluate("document.querySelector('.stockInformationPanel .notice') && !document.querySelector('.stockInformationPanel button').disabled"), "Information source failure was not shown.");
+      assert.equal(await evaluate("document.querySelector('.stockInformationPanel tbody').innerText"), table, "Failed financial refresh must preserve the table.");
+      failSource = false;
+    }
     console.log(`PASS original refresh ${path}`);
   }
   await navigate("/semiconductors/000660.KS", ".semiDetailHeader");

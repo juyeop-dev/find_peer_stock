@@ -30,14 +30,16 @@ export function StockHistoryChart({ ticker, name, exchange, currency, history, s
   const startCovered = latest && points[0] && points[0].date <= chartStart(latest.date, period);
   const gain = startCovered && points[0].adjusted_close > 0 ? (points.at(-1)!.adjusted_close / points[0].adjusted_close - 1) * 100 : null;
   return <section className="semiPanel semiChartPanel stockHistoryChart">
-    <div className="semiPanelHeading semiHeadingSplit"><div><h2>주가 차트</h2><p>{oldHistory ? `${latest!.date} 기준 ` : ""}최근 {chartPeriodLabel(period)} · 일별 종가</p></div>
+    <div className="semiPanelHeading semiHeadingSplit"><div><h2>주가 차트</h2><p>{oldHistory ? `${latest!.date} 기준 ` : ""}{period === "since2025" ? "2025년 1월 1일부터" : `최근 ${chartPeriodLabel(period)}`} · 일별 종가</p></div>
       <div className="semiPeriodTabs" aria-label="주가 차트 기간">{CHART_PERIODS.map(value => <button key={value} type="button" className={period === value ? "active" : ""} onClick={() => setPeriod(value)}>{chartPeriodLabel(value)}</button>)}</div>
     </div>
     {loading && !daily.length ? <LoadingSpinner /> : null}
     {error ? <ErrorNotice message={error} /> : null}
     {data?.warning ? <p className="semiFootnote" role="status">{data.warning}</p> : null}
+    {shown?.source.includes("Cboe One") ? <p className="semiFootnote" role="status">미국 Cboe One의 대체 거래 자료입니다. 주 거래소의 종가와 다를 수 있습니다.</p> : null}
     {oldHistory ? <p className="semiFootnote" role="status">제공처의 최근 일봉은 {latest!.date}입니다. 이후 제공되지 않은 가격은 채우지 않습니다.</p> : null}
     {daily.length > 0 && !covered ? <p className="semiFootnote" role="status">{shortListing ? `제공 이력은 1년 미만입니다. 최초 거래일: ${shown?.first_trade_date}` : "최근 1년 전체 이력이 부족합니다. 제공처에서 확인된 날짜만 표시합니다."}</p> : null}
+    {period === "since2025" && points.length > 0 && points[0].date > "2025-01-01" ? <p className="semiFootnote" role="status">2025년 초 이전의 일봉은 제공되지 않습니다. 실제 제공 시작일 {points[0].date}부터 표시합니다.</p> : null}
     <SemiconductorLineChart points={points.map(point => ({ date: point.date, value: point.close }))} title={`${name} 주가`} unit={(shown?.currency ?? currency) === "KRW" ? "원" : shown?.currency ?? currency ?? ""} />
     <div className="semiReturnSummary"><span>{chartPeriodLabel(period)} 수익률</span><strong className={(gain ?? 0) >= 0 ? "semiUp" : "semiDown"}>{formatPercent(gain)}</strong></div>
     {points.length ? <p className="semiFootnote">{points[0].date} ~ {points.at(-1)!.date} · {points.length}개 거래일 · {shown?.source ?? source} · 실제 제공된 일봉 기준. 수익률은 조정 종가가 제공되면 이를 사용하고, 없으면 제공 종가 기준입니다.</p> : null}
