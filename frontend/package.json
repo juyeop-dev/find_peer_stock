@@ -10,7 +10,9 @@
     "build": "tsc -b && vite build",
     "preview": "vite preview",
     "test:browser": "node tests/polling-browser.mjs",
-    "test:semiconductor": "node --test tests/semiconductor-math.test.mjs"
+    "test:semiconductor": "node --test tests/semiconductor-math.test.mjs",
+    "test:calendar-history": "node --test tests/calendar-history.test.mjs",
+    "test:calendar-history:browser": "node tests/calendar-history-browser.mjs"
   },
   "dependencies": {
     "react": "^19.0.0",

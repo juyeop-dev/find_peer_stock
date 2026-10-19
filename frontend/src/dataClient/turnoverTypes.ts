@@ -6,6 +6,7 @@ export interface TurnoverReportIndex {
   date: string;
   count: number;
   total_turnover: number;
+  turnover_by_currency?: Record<string, number>;
   currency: string | null;
 }
 

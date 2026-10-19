@@ -1,0 +1,138 @@
+body:has(.historyPage) { min-width: 320px; background: #f4f7f8; }
+.historyPage { width: min(1320px, calc(100% - 48px)); color: #233439; }
+.historyPage button, .historyPage select, .historyPage input { font: inherit; }
+.historyPage button, .historyPage select { cursor: pointer; }
+.historyPage :is(button, a, select, input):focus-visible { outline: 3px solid #72afa6; outline-offset: 3px; }
+.historyHero { display: flex; justify-content: space-between; align-items: center; gap: 24px; margin: 8px 0 28px; }
+.historyHero .eyebrow { margin: 0 0 8px; font-size: 11px; letter-spacing: .14em; color: #27766c; }
+.historyHero h1 { margin: 0; font-size: 34px; letter-spacing: -.05em; }
+.historyHero p:last-child { margin: 10px 0 0; color: #6d7b80; font-size: 14px; }
+.historyHeroLinks { display: flex; flex-wrap: wrap; gap: 8px; }
+.historyHeroLinks a { border: 1px solid #dbe4e5; border-radius: 8px; padding: 9px 12px; background: #fff; font-size: 12px; color: #45645e; }
+.historyFilters, .historyPanel { border: 1px solid #dce5e7; border-radius: 12px; background: #fff; }
+.historyFilters { padding: 20px 24px; margin-bottom: 30px; }
+.historyFilterTop, .historyFilterFields { display: flex; align-items: center; flex-wrap: wrap; gap: 20px; }
+.historyFilterTop { justify-content: space-between; padding-bottom: 18px; margin-bottom: 18px; border-bottom: 1px solid #edf1f2; }
+.historySwitch { display: inline-flex; padding: 4px; gap: 4px; border-radius: 9px; background: #f0f4f5; }
+.historySwitch button { padding: 8px 22px; border: 0; border-radius: 6px; background: transparent; color: #677b7d; font-size: 13px; font-weight: 700; }
+.historySwitch button[aria-pressed="true"] { color: #fff; background: #24776c; box-shadow: 0 2px 4px #1a534b20; }
+.historyFilterFields label { display: flex; align-items: center; gap: 12px; color: #607174; font-size: 12px; font-weight: 700; }
+.historyFilterFields select { min-width: 130px; padding: 9px 30px 9px 12px; border: 1px solid #d9e2e4; border-radius: 7px; color: #243d3a; background: #fff; }
+.historyLatest, .historyRetry { border: 1px solid #d7e3e0; border-radius: 7px; background: #f5faf8; padding: 10px 16px; color: #246b60; font-size: 12px !important; }
+.historyLatest { margin-left: auto; }
+.historyPeriodHeading { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; gap: 12px; }
+.historyPeriodHeading .eyebrow { margin: 0 0 6px; color: #788b8c; font-size: 11px; }
+.historyPeriodHeading h2 { font-size: 25px; margin: 0; letter-spacing: -.04em; }
+.historyPeriodHeading h2 span { margin-left: 6px; color: #27766c; }
+.historyPeriodHeading > p { color: #7c8b8d; font-size: 11px; text-align: right; line-height: 1.7; margin: 0; }
+.historySummary { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin-bottom: 24px; }
+.historySummary article { padding: 20px; background: #fff; border: 1px solid #dce5e7; border-radius: 10px; min-width: 0; }
+.historySummary article > span { font-size: 12px; color: #677e80; font-weight: 600; }
+.historySummary article > strong { display: block; margin: 12px 0; font-size: 28px; font-variant-numeric: tabular-nums; letter-spacing: -.04em; line-height: 1.35; overflow-wrap: anywhere; }
+.historySummary strong small { margin-left: 6px; font-size: 12px; color: #748887; font-weight: 500; }
+.historySummary article > p { color: #879493; font-size: 10px; margin: 0; }
+.historySummary article.historySummaryAccent { border-color: #9bc4ba; background: #edf6f2; }
+.historySummaryAccent > strong { color: #1a7061; }
+.historySummary article > .historyMoney { font-size: 23px; }
+.historyPanel { padding: 24px; margin-bottom: 24px; min-width: 0; }
+.historySectionHeading { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-bottom: 20px; }
+.historySectionHeading h3 { margin: 0; font-size: 17px; letter-spacing: -.03em; }
+.historySectionHeading h3 span { margin-left: 6px; font-size: 12px; font-weight: 500; color: #278371; }
+.historySectionHeading p { margin: 6px 0 0; font-size: 12px; color: #7a8a8d; }
+.historySectionHeading input { min-width: 200px; width: 240px; padding: 10px 12px; border: 1px solid #dce5e7; border-radius: 7px; font-size: 12px; }
+.historyLegend { display: flex; align-items: center; flex-shrink: 0; gap: 6px; font-size: 10px; color: #80908e; }
+.historyLegend i { width: 9px; height: 9px; background: #a6cdbf; border-radius: 2px; }
+.historyLegend i.isEmpty { margin-left: 8px; background: #f5f7f8; border: 1px solid #e3e8e9; }
+.historyMonthGrid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+.historyMonthGrid button { display: flex; flex-direction: column; gap: 14px; text-align: left; border: 1px solid #e6eced; background: #fafbfc; border-radius: 9px; padding: 16px; min-height: 125px; }
+.historyMonthGrid button.hasRecords { background: #f7fbf9; border-color: #d9e8e1; }
+.historyMonthGrid button:hover { border-color: #428f7d; }
+.historyMonthGrid button > span { display: flex; justify-content: space-between; gap: 6px; width: 100%; font-size: 14px; font-weight: 700; }
+.historyMonthGrid small { font-size: 10px; font-weight: 400; color: #83958e; }
+.historyMonthGrid strong { font-size: 18px; color: #357967; overflow-wrap: anywhere; }
+.historyMonthBar { height: 4px; width: 100%; margin-top: auto; border-radius: 8px; background: #e4eee9; }
+.historyMonthBar i { display: block; height: 100%; border-radius: inherit; background: #72aa98; }
+.historyCalendar { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 6px; }
+.historyWeekday { padding: 5px 0 10px; text-align: center; color: #708682; font-size: 11px; }
+.historyWeekday:first-child { color: #be7775; }
+.historyWeekday:nth-child(7) { color: #688fb1; }
+.historyDay { display: flex; flex-direction: column; gap: 6px; min-height: 96px; padding: 12px; border: 1px solid #e6eced; border-radius: 7px; background: #fafbfc; overflow-wrap: anywhere; }
+.historyDay > span { font-size: 12px; font-weight: 600; }
+.historyDay strong { font-size: 14px; font-weight: 600; }
+.historyDay small { font-size: 10px; color: #5c7b71; }
+.historyDay.hasRecords { color: #216a59; border-color: #d9e7e0; }
+.historyDay.hasRecords:hover { border-color: #2d8c72; box-shadow: 0 0 0 1px #2d8c72; }
+.historyDay:not(.hasRecords) strong { color: #b0bcbc; font-size: 11px; font-weight: 400; }
+.historyDay.isClosed { background: #f5f6f7; color: #9aa7a9; }
+.historyTableScroll { width: 100%; overflow-x: auto; }
+.historyTable { border-collapse: collapse; width: 100%; font-size: 12px; white-space: nowrap; }
+.historyTable thead th { background: #f4f7f7; color: #758883; font-size: 11px; font-weight: 600; }
+.historyTable :is(th, td) { text-align: right; padding: 13px 14px; border-bottom: 1px solid #edf1f1; font-variant-numeric: tabular-nums; }
+.historyTable :is(th, td):first-child { text-align: left; }
+.historyTable tbody th { font-weight: 500; }
+.historyTable tbody tr:hover { background: #f8fbfa; }
+.historyTable tbody tr:last-child :is(th, td) { border-bottom: 0; }
+.historyTable button { border: 0; background: none; color: #347564; padding: 0; }
+.historyTable a:hover { color: #17775e; text-decoration: underline; }
+.historyTable .historyCumulative { color: #1e7661; font-weight: 700; }
+.historyStocksTable { min-width: 840px; }
+.historyStocksTable th:nth-child(2) { text-align: left; }
+.historyStocksTable th strong { font-size: 13px; }
+.historyStocksTable th small { display: block; margin-top: 4px; font-size: 10px; color: #8a9997; }
+.historyCategory { max-width: 180px; overflow: hidden; text-overflow: ellipsis; }
+.historyShowMore { display: block; margin: 20px auto 0; border: 1px solid #d6e4dd; border-radius: 7px; color: #4e7e6d; background: #f6faf8; padding: 10px 24px; font-size: 12px !important; }
+.historyEmpty { padding: 35px 20px; text-align: center; color: #718782; font-size: 13px; }
+.historyEmpty p { font-size: 12px; color: #95a39f; }
+.historyFootnote { display: flex; gap: 16px; align-items: baseline; font-size: 11px; color: #849590; line-height: 1.9; }
+.historyFootnote strong { flex-shrink: 0; color: #657d73; }
+.historyFootnote p { margin: 0; }
+@media (max-width: 1150px) {
+  body:has(.historyPage) .siteNav { gap: 12px; padding: 12px 24px; }
+  body:has(.historyPage) .siteNavLinks { gap: 2px; }
+  body:has(.historyPage) .siteNavLinks a { font-size: 12px; padding: 7px 8px; white-space: nowrap; }
+  .historySummary { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 800px) {
+  body:has(.historyPage) .siteNav { display: block; padding: 12px 16px 5px; }
+  body:has(.historyPage) .siteBrand { margin-bottom: 8px; }
+  body:has(.historyPage) .siteBrand span { display: none; }
+  body:has(.historyPage) .siteNavLinks { overflow-x: auto; padding-bottom: 5px; }
+  .historyHero { align-items: flex-start; flex-direction: column; gap: 14px; }
+  .historyFilterFields { gap: 12px; }
+  .historyLatest { margin-left: 0; }
+  .historyMonthGrid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .historyDay { min-height: 90px; padding: 8px; }
+  .historyDay small { font-size: 9px; }
+  .historySectionHeading { flex-wrap: wrap; }
+}
+@media (max-width: 540px) {
+  .historyPage { width: calc(100% - 28px); padding-top: 24px; }
+  .historyHero h1 { font-size: 28px; }
+  .historyHero p:last-child { font-size: 12px; }
+  .historyFilters, .historyPanel { padding: 16px 12px; }
+  .historyFilterTop { gap: 8px; }
+  .historySwitch button { padding: 7px 14px; font-size: 12px; }
+  .historyFilterFields { gap: 12px 8px; }
+  .historyFilterFields label { flex-direction: column; align-items: flex-start; gap: 6px; flex: 1 1 28%; }
+  .historyFilterFields select { min-width: 0; width: 100%; font-size: 12px; padding: 8px 2px 8px 5px; }
+  .historyPeriodHeading { align-items: flex-start; }
+  .historyPeriodHeading h2 { font-size: 21px; }
+  .historyPeriodHeading > p { font-size: 9px; }
+  .historySummary { gap: 8px; }
+  .historySummary article { padding: 14px 12px; }
+  .historySummary article > strong { font-size: 23px; }
+  .historySummary article > .historyMoney { font-size: 18px; }
+  .historySummary article > p { font-size: 9px; }
+  .historyMonthGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+  .historyMonthGrid button { padding: 12px; }
+  .historyMonthGrid strong { font-size: 16px; }
+  .historyCalendar { gap: 3px; }
+  .historyDay { min-height: 90px; padding: 7px 3px; gap: 6px; }
+  .historyDay > span { font-size: 10px; }
+  .historyDay strong { font-size: 11px; }
+  .historyDay small { font-size: 8px; }
+  .historySectionHeading input { width: 100%; min-width: 0; }
+  .historySectionHeading p { font-size: 11px; }
+  .historyTotalsTable { min-width: 560px; }
+  .historyFootnote { display: block; }
+}

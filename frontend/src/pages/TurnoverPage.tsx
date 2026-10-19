@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
-import { useSearchParams } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { ErrorNotice } from "../components/ErrorNotice";
 import { LoadingSpinner } from "../components/LoadingSpinner";
 import { PeriodReturns } from "../components/PeriodReturns";
@@ -99,7 +99,8 @@ export function TurnoverPage() {
 
   return <main className="pageShell turnoverPage">
     <header className="turnoverHeader"><div><p className="eyebrow">DAILY TURNOVER RANKING</p><h1>거래대금 캘린더</h1>
-      <p>매 거래일 시장에서 거래대금이 가장 컸던 종목 1위부터 30위까지 확인하세요.</p></div></header>
+      <p>매 거래일 시장에서 거래대금이 가장 컸던 종목 1위부터 30위까지 확인하세요.</p></div>
+      <Link className="backLink" to={`/calendar-history?kind=turnover&market=${marketId}`}>월별·연도별 누적 기록 →</Link></header>
     {indexError ? <ErrorNotice message={indexError} /> : null}
     {!index && indexLoading ? <LoadingSpinner /> : null}
     {index && market ? <>

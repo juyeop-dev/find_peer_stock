@@ -3,6 +3,7 @@ import type { NewHighIndex, NewHighReport } from "./newHighTypes";
 import type { TurnoverIndex, TurnoverReport } from "./turnoverTypes";
 import type { SemiconductorData } from "./semiconductorTypes";
 import type { CreditData } from "./creditTypes";
+import type { CalendarHistory, HistoryKind } from "./calendarHistory";
 
 function assetUrl(path: string): string {
   const cleanBase = import.meta.env.BASE_URL.replace(/\/$/, "");
@@ -75,4 +76,8 @@ export async function getSemiconductorData(signal?: AbortSignal): Promise<Semico
 
 export async function getCreditData(signal?: AbortSignal): Promise<CreditData> {
   return fetchJson<CreditData>("data/credit/index.json", signal);
+}
+
+export async function getCalendarHistory(kind: HistoryKind, market: string, year: string, signal?: AbortSignal): Promise<CalendarHistory> {
+  return fetchJson<CalendarHistory>(`data/${kind}/history/${encodeURIComponent(market)}/${encodeURIComponent(year)}.json`, signal);
 }

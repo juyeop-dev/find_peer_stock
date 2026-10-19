@@ -1,5 +1,11 @@
 # Stock Peer Site
 
+`캘린더 누적 기록` 페이지(`/calendar-history`)에서 시장별 신고가·거래대금 기록을 월별 또는 연도별로 조회합니다. 기록일 수, 신고가 유형별 누적 건수, 거래대금 TOP 30의 통화별 누적 거래대금, 고유 종목 수와 종목별 등장일 수를 표시하며 날짜를 선택하면 기존 일별 리포트로 이동합니다. 미등록 날짜는 0건으로 간주하지 않습니다.
+
+두 캘린더의 기존 데이터 생성 명령은 `history/{market}/{year}.json` 연간 파일도 함께 생성합니다. 이 파일에는 월별 종목 집계가 들어 있어 연간 조회에도 일별 리포트 전체를 내려받지 않습니다. 기존 예약 갱신과 빌드 과정에 자동으로 포함됩니다.
+
+검증: `python -m unittest discover -s tests -p 'test_calendar_history.py'`, 프런트엔드에서 `npm run test:calendar-history`, `npm run build` 후 `npm run test:calendar-history:browser`.
+
 ## 국내 반도체 섹터
 
 - `/semiconductors`: 이미지에 실린 65개 기업을 포함한 코스피·코스닥 반도체 관련 96개 종목을 대분류/중분류/소분류, 시장, 날짜로 탐색합니다.

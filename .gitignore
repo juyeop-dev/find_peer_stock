@@ -1,6 +1,11 @@
 frontend/node_modules/
 frontend/dist/
 frontend/public/data/semiconductor/
+# Calendar history is rebuilt from the durable daily source reports.
+data/generated/new-highs/history/
+data/generated/turnover/history/
+frontend/public/data/new-highs/history/
+frontend/public/data/turnover/history/
 frontend/.vite/
 frontend/tsconfig.tsbuildinfo
 frontend/*.log

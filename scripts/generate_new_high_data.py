@@ -13,6 +13,7 @@ from typing import Any
 from urllib.parse import urlsplit
 
 from period_returns import validate_period_returns
+from calendar_history import build_history, publish_history
 from market_closures import load_scheduled_closures, merge_closures
 from zoneinfo import ZoneInfo, ZoneInfoNotFoundError
 
@@ -391,10 +392,12 @@ def generate_new_high_data(source_dir: Path = SOURCE_DIR, output_dir: Path = GEN
     destinations = [output_dir]
     if frontend_data_dir is not None and frontend_data_dir.resolve() != output_dir.resolve():
         destinations.append(frontend_data_dir)
+    history = build_history(reports, "new-highs")
     for destination in destinations:
         namespace = destination / "new-highs"
         for report in published_reports:
             write_json(namespace / report["market"] / f"{report['date']}.json", report)
+        publish_history(namespace, history)
         # Publish the index after its referenced reports are present.
         write_json(namespace / "index.json", index)
     return index

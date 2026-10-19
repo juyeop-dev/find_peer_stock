@@ -46,9 +46,15 @@ class TurnoverDataTests(unittest.TestCase):
         index = turnover.generate_turnover_data(self.source, self.output, self.frontend)
         self.assertEqual(index["reports"][0]["count"], 2)
         self.assertEqual(index["reports"][0]["total_turnover"], 3_000_000_000_000)
+        self.assertEqual(index["reports"][0]["turnover_by_currency"], {"KRW": 3_000_000_000_000})
         self.assertTrue((self.output / "turnover" / "korea" / "2026_09" / "2026-09-17.json").exists())
         self.assertEqual((self.output / "turnover" / "index.json").read_bytes(),
                          (self.frontend / "turnover" / "index.json").read_bytes())
+        history_path = Path("turnover/history/korea/2026.json")
+        self.assertEqual((self.output / history_path).read_bytes(), (self.frontend / history_path).read_bytes())
+        history = json.loads((self.output / history_path).read_text(encoding="utf-8"))
+        self.assertEqual(len(history["months"][0]["stocks"]), 2)
+        self.assertEqual(history["months"][0]["stocks"][0]["dates"], ["2026-09-17"])
 
     def test_official_closure_is_shared_with_turnover_calendar(self) -> None:
         self.write(self.source.parent / "market-closures" / "2026.json", {

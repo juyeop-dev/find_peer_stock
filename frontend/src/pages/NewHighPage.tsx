@@ -175,6 +175,7 @@ export function NewHighPage() {
           <h1>신고가 캘린더</h1>
           <p className="newHighLead">새로운 고점을 만든 종목의 업종과 당시 종가를 날짜별로 살펴보세요.</p>
         </div>
+        <Link className="newHighButton" to={`/calendar-history?kind=new-highs&market=${marketId}`}>월별·연도별 누적 기록 →</Link>
       </header>
 
       <DataRefreshStatus refreshing={indexRefreshing || reportRefreshing || peersRefreshing}

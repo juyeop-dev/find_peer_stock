@@ -12,6 +12,7 @@ from typing import Any
 from urllib.parse import urlsplit
 
 from archive_paths import monthly_report_path
+from calendar_history import build_history, publish_history, turnover_by_currency
 from generate_new_high_data import load_markets, nonempty_text, require
 from market_closures import load_scheduled_closures, merge_closures
 from period_returns import validate_period_returns
@@ -142,6 +143,7 @@ def generate_turnover_data(source_dir: Path = SOURCE_DIR, output_dir: Path = GEN
         "reports": [{
             "market": report["market"], "date": report["date"], "count": len(report["entries"]),
             "total_turnover": sum(entry["turnover"] for entry in report["entries"]),
+            "turnover_by_currency": turnover_by_currency(report["entries"]),
             "currency": report["entries"][0].get("turnover_currency", report["entries"][0]["currency"]) if report["entries"] else None,
         } for report in reports],
         "closures": merge_closures(scheduled_closures, [], reports),
@@ -155,10 +157,12 @@ def generate_turnover_data(source_dir: Path = SOURCE_DIR, output_dir: Path = GEN
     destinations = [output_dir]
     if frontend_data_dir is not None and frontend_data_dir.resolve() != output_dir.resolve():
         destinations.append(frontend_data_dir)
+    history = build_history(reports, "turnover")
     for destination in destinations:
         namespace = destination / "turnover"
         for report in reports:
             write_json(monthly_report_path(namespace, report["market"], report["date"]), report)
+        publish_history(namespace, history)
         write_json(namespace / "index.json", index)
     return index
 
