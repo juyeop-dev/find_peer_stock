@@ -1,0 +1,197 @@
+{
+  "schema_version": 1,
+  "market": "korea",
+  "date": "2026-10-20",
+  "summary": "장 마감 후 TradingView 주식 스냅샷 기준. 당일 장중 고가가 52주·전체기간 고가에 도달하고, 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다. 전체기간 신고가를 우선 표시하며 신고가 배경은 별도 확인 전입니다.",
+  "sources": [
+    {
+      "label": "TradingView stock screener",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    },
+    {
+      "label": "Naver Finance 종목명·상장 시장·일봉 검증",
+      "url": "https://stock.naver.com/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "051160.KQ",
+      "name": "지어소프트",
+      "exchange": "KOSDAQ",
+      "category": "Commercial Services",
+      "high_type": "52_week",
+      "reason": "업종: Commercial Services · Advertising/Marketing Services",
+      "description": "지어소프트 · Advertising/Marketing Services",
+      "change_pct": -0.13540961408259986,
+      "session_open": 14400,
+      "session_close": 14890,
+      "session_volume": 136832,
+      "source_symbol": "KRX:051160",
+      "currency": "KRW",
+      "name_original": "GaeaSoft Corp.",
+      "name_source_url": "https://m.stock.naver.com/api/stock/051160/basic",
+      "high_verification": {
+        "source": "Naver Finance adjusted daily history",
+        "source_url": "https://api.finance.naver.com/siseJson.naver?symbol=051160&requestType=1&startTime=20251021&endTime=20261020&timeframe=day",
+        "date": "2026-10-20",
+        "open": 14400,
+        "daily_high": 15600,
+        "low": 14030,
+        "close": 14890,
+        "previous_close": 14760,
+        "volume": 136832,
+        "prior_52_week_high": 14920,
+        "observed_bars": 244,
+        "first_observed_date": "2025-10-21",
+        "confirmed": true,
+        "matches_prior_high": false,
+        "bearish_candle": false,
+        "down_close": false,
+        "passes_close_filter": true
+      }
+    },
+    {
+      "ticker": "396300.KQ",
+      "name": "HT로보틱스",
+      "exchange": "KOSDAQ",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Computer Communications",
+      "description": "HT로보틱스 · Computer Communications",
+      "change_pct": 7.12719298245614,
+      "session_open": 9500,
+      "session_close": 10040,
+      "session_volume": 26895554,
+      "source_symbol": "KRX:396300",
+      "currency": "KRW",
+      "name_original": "HT ROBOTICS Co. Ltd",
+      "name_source_url": "https://m.stock.naver.com/api/stock/396300/basic",
+      "high_verification": {
+        "source": "Naver Finance adjusted daily history",
+        "source_url": "https://api.finance.naver.com/siseJson.naver?symbol=396300&requestType=1&startTime=20251021&endTime=20261020&timeframe=day",
+        "date": "2026-10-20",
+        "open": 9500,
+        "daily_high": 11250,
+        "low": 9370,
+        "close": 10040,
+        "previous_close": 9140,
+        "volume": 26895554,
+        "prior_52_week_high": 9500,
+        "observed_bars": 244,
+        "first_observed_date": "2025-10-21",
+        "confirmed": true,
+        "matches_prior_high": false,
+        "bearish_candle": false,
+        "down_close": false,
+        "passes_close_filter": true
+      }
+    },
+    {
+      "ticker": "021240.KS",
+      "name": "코웨이",
+      "exchange": "KOSPI",
+      "category": "Consumer Durables",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Durables · Electronics/Appliances",
+      "description": "코웨이 · Electronics/Appliances",
+      "change_pct": -0.6457564575645757,
+      "session_open": 107700,
+      "session_close": 107700,
+      "session_volume": 148039,
+      "source_symbol": "KRX:021240",
+      "currency": "KRW",
+      "name_original": "Coway Co., Ltd.",
+      "name_source_url": "https://m.stock.naver.com/api/stock/021240/basic",
+      "high_verification": {
+        "source": "Naver Finance adjusted daily history",
+        "source_url": "https://api.finance.naver.com/siseJson.naver?symbol=021240&requestType=1&startTime=20251021&endTime=20261020&timeframe=day",
+        "date": "2026-10-20",
+        "open": 107700,
+        "daily_high": 111800,
+        "low": 106400,
+        "close": 107700,
+        "previous_close": 106900,
+        "volume": 148039,
+        "prior_52_week_high": 110900,
+        "observed_bars": 244,
+        "first_observed_date": "2025-10-21",
+        "confirmed": true,
+        "matches_prior_high": false,
+        "bearish_candle": false,
+        "down_close": false,
+        "passes_close_filter": true
+      }
+    },
+    {
+      "ticker": "033780.KS",
+      "name": "KT&G",
+      "exchange": "KOSPI",
+      "category": "Consumer Non-Durables",
+      "high_type": "all_time",
+      "reason": "업종: Consumer Non-Durables · Tobacco",
+      "description": "KT&G · Tobacco",
+      "change_pct": 0.4660797514241326,
+      "session_open": 191000,
+      "session_close": 193700,
+      "session_volume": 222364,
+      "source_symbol": "KRX:033780",
+      "currency": "KRW",
+      "name_original": "KT & G Corporation",
+      "name_source_url": "https://m.stock.naver.com/api/stock/033780/basic",
+      "high_verification": {
+        "source": "Naver Finance adjusted daily history",
+        "source_url": "https://api.finance.naver.com/siseJson.naver?symbol=033780&requestType=1&startTime=20251021&endTime=20261020&timeframe=day",
+        "date": "2026-10-20",
+        "open": 191000,
+        "daily_high": 195500,
+        "low": 190900,
+        "close": 193700,
+        "previous_close": 190700,
+        "volume": 222364,
+        "prior_52_week_high": 195500,
+        "observed_bars": 244,
+        "first_observed_date": "2025-10-21",
+        "confirmed": true,
+        "matches_prior_high": true,
+        "bearish_candle": false,
+        "down_close": false,
+        "passes_close_filter": true
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "TradingView public scanner",
+    "scanner": "korea",
+    "fetched_at": "2026-10-20T07:31:23.774004+00:00",
+    "universe": "TradingView-listed stock instruments, including common and preferred shares; ETFs excluded",
+    "definition": "daily high >= period high; close >= open; close >= previous close when one exists; all-time takes precedence; ties included",
+    "scanner_exchanges": [
+      "KRX"
+    ],
+    "latest_session_by_exchange": {
+      "KRX": "2026-10-20"
+    },
+    "previous_session_by_exchange": {
+      "KRX": "2026-10-19"
+    },
+    "current_session_reference_symbols": {
+      "KRX": "KRX:000020",
+      "KOSPI": "KRX:000020",
+      "KOSDAQ": "KRX:0001A0"
+    },
+    "scanned_symbols": 2741,
+    "current_session_symbols": 2708,
+    "excluded_symbols": {
+      "other_session": 33,
+      "bearish_or_down_close": 5,
+      "korean_daily_history_disagrees": 4,
+      "unsupported_korean_board": 1
+    },
+    "pagination_complete": true
+  },
+  "collected_at": "2026-10-20T07:31:02.843376+00:00"
+}
