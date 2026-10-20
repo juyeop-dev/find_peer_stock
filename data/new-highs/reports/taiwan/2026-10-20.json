@@ -1,0 +1,259 @@
+{
+  "schema_version": 1,
+  "market": "taiwan",
+  "date": "2026-10-20",
+  "summary": "장 마감 후 TradingView 주식 스냅샷 기준. 당일 장중 고가가 52주·전체기간 고가에 도달하고, 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다. 전체기간 신고가를 우선 표시하며 신고가 배경은 별도 확인 전입니다.",
+  "sources": [
+    {
+      "label": "TradingView stock screener",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "3354.TWO",
+      "name": "Microcosm Technology Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Metal Fabrication",
+      "description": "Microcosm Technology Co., Ltd. · Metal Fabrication",
+      "change_pct": 9.902067464635467,
+      "session_open": 47.5,
+      "session_close": 50.5,
+      "session_volume": 23891065,
+      "source_symbol": "TPEX:3354",
+      "currency": "TWD"
+    },
+    {
+      "ticker": "5465.TWO",
+      "name": "Loyalty Founder Enterprise Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Miscellaneous Manufacturing",
+      "description": "Loyalty Founder Enterprise Co., Ltd. · Miscellaneous Manufacturing",
+      "change_pct": 4.532967032967029,
+      "session_open": 35.8,
+      "session_close": 38.05,
+      "session_volume": 2240172,
+      "source_symbol": "TPEX:5465",
+      "currency": "TWD"
+    },
+    {
+      "ticker": "5487.TWO",
+      "name": "Tontek Design Technology Ltd.",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Semiconductors",
+      "description": "Tontek Design Technology Ltd. · Semiconductors",
+      "change_pct": 3.577512776831336,
+      "session_open": 29.35,
+      "session_close": 30.4,
+      "session_volume": 331584,
+      "source_symbol": "TPEX:5487",
+      "currency": "TWD"
+    },
+    {
+      "ticker": "6870.TWO",
+      "name": "Turn Cloud Technology Service Inc.",
+      "exchange": "TPEX",
+      "category": "Technology Services",
+      "high_type": "all_time",
+      "reason": "업종: Technology Services · Information Technology Services",
+      "description": "Turn Cloud Technology Service Inc. · Information Technology Services",
+      "change_pct": 9.872611464968154,
+      "session_open": 317,
+      "session_close": 345,
+      "session_volume": 310162,
+      "source_symbol": "TPEX:6870",
+      "currency": "TWD"
+    },
+    {
+      "ticker": "2412.TW",
+      "name": "Chunghwa Telecom Co., Ltd",
+      "exchange": "TWSE",
+      "category": "Communications",
+      "high_type": "all_time",
+      "reason": "업종: Communications · Major Telecommunications",
+      "description": "Chunghwa Telecom Co., Ltd · Major Telecommunications",
+      "change_pct": 0,
+      "session_open": 152,
+      "session_close": 154.5,
+      "session_volume": 9833711,
+      "source_symbol": "TWSE:2412",
+      "currency": "TWD"
+    },
+    {
+      "ticker": "4566.TW",
+      "name": "GLOBAL TEK FABRICATION CO., Ltd.",
+      "exchange": "TWSE",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Auto Parts: OEM",
+      "description": "GLOBAL TEK FABRICATION CO., Ltd. · Auto Parts: OEM",
+      "change_pct": 6.982543640897748,
+      "session_open": 80.2,
+      "session_close": 85.8,
+      "session_volume": 10981506,
+      "source_symbol": "TWSE:4566",
+      "currency": "TWD"
+    },
+    {
+      "ticker": "4938.TW",
+      "name": "Pegatron Corporation",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Computer Processing Hardware",
+      "description": "Pegatron Corporation · Computer Processing Hardware",
+      "change_pct": 2.941176470588235,
+      "session_open": 100.5,
+      "session_close": 105,
+      "session_volume": 19587194,
+      "source_symbol": "TWSE:4938",
+      "currency": "TWD"
+    },
+    {
+      "ticker": "6108.TW",
+      "name": "APCB Inc.",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Electronic Components",
+      "description": "APCB Inc. · Electronic Components",
+      "change_pct": 3.797468354430366,
+      "session_open": 31,
+      "session_close": 32.8,
+      "session_volume": 8656575,
+      "source_symbol": "TWSE:6108",
+      "currency": "TWD"
+    },
+    {
+      "ticker": "6141.TW",
+      "name": "Plotech Co. Ltd.",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Electronic Components",
+      "description": "Plotech Co. Ltd. · Electronic Components",
+      "change_pct": 2.2260273972602813,
+      "session_open": 59,
+      "session_close": 59.7,
+      "session_volume": 10904123,
+      "source_symbol": "TWSE:6141",
+      "currency": "TWD"
+    },
+    {
+      "ticker": "6209.TW",
+      "name": "Kinko Optical Co. Ltd.",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Electronic Components",
+      "description": "Kinko Optical Co. Ltd. · Electronic Components",
+      "change_pct": 9.803921568627452,
+      "session_open": 101,
+      "session_close": 112,
+      "session_volume": 31103009,
+      "source_symbol": "TWSE:6209",
+      "currency": "TWD"
+    },
+    {
+      "ticker": "6277.TW",
+      "name": "Aten International Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Computer Peripherals",
+      "description": "Aten International Co., Ltd. · Computer Peripherals",
+      "change_pct": 8.220720720720717,
+      "session_open": 88.8,
+      "session_close": 96.1,
+      "session_volume": 4606261,
+      "source_symbol": "TWSE:6277",
+      "currency": "TWD"
+    },
+    {
+      "ticker": "6467.TW",
+      "name": "6467",
+      "exchange": "TWSE",
+      "category": "미분류",
+      "high_type": "all_time",
+      "reason": "업종: 미분류 · 업종 정보 미확인",
+      "description": "6467 · 업종 정보 미확인",
+      "change_pct": null,
+      "session_open": 179,
+      "session_close": 200,
+      "session_volume": 3096923,
+      "source_symbol": "TWSE:6467",
+      "currency": "TWD"
+    },
+    {
+      "ticker": "6756.TW",
+      "name": "VIA Labs, Inc.",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Semiconductors",
+      "description": "VIA Labs, Inc. · Semiconductors",
+      "change_pct": 2.8925619834710745,
+      "session_open": 119,
+      "session_close": 124.5,
+      "session_volume": 4477794,
+      "source_symbol": "TWSE:6756",
+      "currency": "TWD"
+    },
+    {
+      "ticker": "6782.TW",
+      "name": "Visco Vision Inc.",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Electronic Components",
+      "description": "Visco Vision Inc. · Electronic Components",
+      "change_pct": 3.346456692913386,
+      "session_open": 251,
+      "session_close": 262.5,
+      "session_volume": 714561,
+      "source_symbol": "TWSE:6782",
+      "currency": "TWD"
+    }
+  ],
+  "source_metadata": {
+    "provider": "TradingView public scanner",
+    "scanner": "taiwan",
+    "fetched_at": "2026-10-20T06:31:08.288424+00:00",
+    "universe": "TradingView-listed stock instruments, including common and preferred shares; ETFs excluded",
+    "definition": "daily high >= period high; close >= open; close >= previous close when one exists; all-time takes precedence; ties included",
+    "scanner_exchanges": [
+      "TWSE",
+      "TPEX"
+    ],
+    "latest_session_by_exchange": {
+      "TWSE": "2026-10-20",
+      "TPEX": "2026-10-20"
+    },
+    "previous_session_by_exchange": {
+      "TWSE": "2026-10-19",
+      "TPEX": "2026-10-19"
+    },
+    "current_session_reference_symbols": {
+      "TWSE": "TWSE:01001T",
+      "TPEX": "TPEX:1240"
+    },
+    "scanned_symbols": 2349,
+    "current_session_symbols": 2298,
+    "excluded_symbols": {
+      "other_session": 51,
+      "bearish_or_down_close": 9
+    },
+    "pagination_complete": true
+  },
+  "collected_at": "2026-10-20T06:31:07.713868+00:00"
+}
