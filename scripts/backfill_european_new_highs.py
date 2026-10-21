@@ -134,7 +134,8 @@ def verify_series_end(row: dict, bars: list[Bar], requested_end: date) -> None:
 
 
 def build_reports(sessions: list[date], *, workers: int = 4, timeout: float = 30,
-                  cache_dir: Path = CACHE_DIR, daily_bars: int = 400) -> dict[date, dict]:
+                  cache_dir: Path = CACHE_DIR, daily_bars: int = 400,
+                  partial_history: bool = False) -> dict[date, dict]:
     if not sessions:
         return {}
     rows = _scan("europe", timeout, 5000)
@@ -219,7 +220,13 @@ def build_reports(sessions: list[date], *, workers: int = 4, timeout: float = 30
         members = {symbol: row for symbol, (row, bars, _) in histories.items() if any(bar.day == session for bar in bars)}
         by_exchange = {exchange: sum(row["exchange"] == exchange for row in members.values()) for exchange in _CONFIG["europe"][1]}
         scheduled_closed = {item["exchange"] for item in closure_rows if item["date"] == str(session)}
-        validate_session_coverage(session, by_exchange, eligible, scheduled_closed)
+        coverage_warning = None
+        try:
+            validate_session_coverage(session, by_exchange, eligible, scheduled_closed)
+        except ChartHistoryError as exc:
+            if not partial_history:
+                raise
+            coverage_warning = str(exc)
         entries = []
         for symbol in candidate_symbols:
             check = evidence[symbol].get(session)
@@ -249,7 +256,7 @@ def build_reports(sessions: list[date], *, workers: int = 4, timeout: float = 30
             })
         entries.sort(key=lambda entry: (entry["exchange"], entry["ticker"]))
         reports[session] = {"schema_version": 1, "market": "europe", "date": str(session),
-            "summary": "TradingView 동일 거래소의 분할 조정 일봉·전체 월봉으로 복원했습니다. 거래량이 있는 신고가 종목 중 음봉 또는 전일 대비 하락 마감 종목은 제외합니다.",
+            "summary": ("부분 복원: 당시 일봉을 제공하는 종목만 포함하며 시장 전체 신고가 수와 다를 수 있습니다. " + " · ".join(f"{exchange} {by_exchange[exchange]}/{sum(row['exchange'] == exchange for row in eligible)}종목 확인" for exchange in by_exchange) + ". " if partial_history else "") + "TradingView 동일 거래소의 분할 조정 일봉·전체 월봉으로 복원했습니다. 거래량이 있는 신고가 종목 중 음봉 또는 전일 대비 하락 마감 종목은 제외합니다.",
             "sources": [{"label": "TradingView historical charts", "url": "https://www.tradingview.com/chart/"},
                         {"label": "TradingView 신고가 산정 기준", "url": _DEFINITION_URL}],
             "entries": entries, "collected_at": collected_at,
@@ -263,7 +270,8 @@ def build_reports(sessions: list[date], *, workers: int = 4, timeout: float = 30
                 "session_symbols": len(members), "session_symbols_by_exchange": by_exchange,
                 "scheduled_closed_exchanges": sorted(scheduled_closed),
                 "scanner_confirmed_no_trade_gaps": gap_proofs,
-                "coverage_ratio": 1.0, "pagination_complete": True, "split_adjusted": True,
+                "coverage_ratio": len(members) / len(eligible), "coverage_status": "partial" if partial_history else "verified",
+                "coverage_warning": coverage_warning, "pagination_complete": True, "split_adjusted": True,
                 "session": "regular", "monthly_history_complete": True,
                 "definition": "daily high >= 52-week/all-time high; volume > 0; close >= open and prior close; ties included"}}
     return reports
@@ -278,6 +286,7 @@ def main() -> None:
     parser.add_argument("--daily-bars", type=int, default=400,
                         help="Daily history depth; increase for earlier backfills (maximum 5000).")
     parser.add_argument("--cache-dir", type=Path, default=CACHE_DIR)
+    parser.add_argument("--partial-history", action="store_true", help="Publish explicitly labelled partial historical observations; never claim complete session coverage.")
     args = parser.parse_args()
     if args.end < args.start or not 1 <= args.workers <= 4 or not 1 <= args.daily_bars <= 5000:
         parser.error("Invalid date range, workers (1-4), or daily history depth (1-5000)")
@@ -293,7 +302,7 @@ def main() -> None:
     print(f"europe: recovering {len(sessions)} missing completed sessions", flush=True)
     try:
         reports = build_reports(sessions, workers=args.workers, timeout=args.timeout,
-                                cache_dir=args.cache_dir, daily_bars=args.daily_bars)
+                                cache_dir=args.cache_dir, daily_bars=args.daily_bars, partial_history=args.partial_history)
         for session, report in reports.items():
             validate_report(report, SOURCE_DIR / "reports/europe" / f"{session}.json", SOURCE_DIR / "reports", markets)
         for session, report in reports.items():

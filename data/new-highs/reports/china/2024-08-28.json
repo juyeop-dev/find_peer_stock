@@ -1,0 +1,238 @@
+{
+  "schema_version": 1,
+  "market": "china",
+  "date": "2024-08-28",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "600377.SS",
+      "name": "Jiangsu Expressway Co. Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Transportation",
+      "high_type": "all_time",
+      "reason": "업종: Transportation · Other Transportation",
+      "description": "Jiangsu Expressway Co. Ltd. Class A · Other Transportation",
+      "change_pct": 1.4227644640279369,
+      "session_open": 14.619999885559082,
+      "session_close": 14.970000267028809,
+      "session_volume": 10525291.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:600377",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/600377.SS/history/",
+        "date": "2024-08-28",
+        "daily_high": 15.09000015258789,
+        "prior_all_time_or_current_month_high": 15.09000015258789,
+        "passes_close_filter": true,
+        "yahoo_symbol": "600377.SS"
+      }
+    },
+    {
+      "ticker": "601298.SS",
+      "name": "Qingdao Port International Co Ltd Class A",
+      "exchange": "SSE",
+      "category": "Transportation",
+      "high_type": "52_week",
+      "reason": "업종: Transportation · Other Transportation",
+      "description": "Qingdao Port International Co Ltd Class A · Other Transportation",
+      "change_pct": 1.02669798582804,
+      "session_open": 9.710000038146973,
+      "session_close": 9.84000015258789,
+      "session_volume": 11722100.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:601298",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/601298.SS/history/",
+        "date": "2024-08-28",
+        "daily_high": 9.960000038146973,
+        "prior_all_time_or_current_month_high": 11.399999618530273,
+        "passes_close_filter": true,
+        "yahoo_symbol": "601298.SS"
+      }
+    },
+    {
+      "ticker": "603237.SS",
+      "name": "Zhejiang Wufangzhai Industry Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Consumer Non-Durables",
+      "high_type": "all_time",
+      "reason": "업종: Consumer Non-Durables · Food: Major Diversified",
+      "description": "Zhejiang Wufangzhai Industry Co., Ltd. Class A · Food: Major Diversified",
+      "change_pct": 3.745547440818897,
+      "session_open": 17.0,
+      "session_close": 17.450000762939453,
+      "session_volume": 5985431.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:603237",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/603237.SS/history/",
+        "date": "2024-08-28",
+        "daily_high": 18.190000534057617,
+        "prior_all_time_or_current_month_high": 18.190000534057617,
+        "passes_close_filter": true,
+        "yahoo_symbol": "603237.SS"
+      }
+    },
+    {
+      "ticker": "688251.SS",
+      "name": "Hefei Jingsong Intelligent Technology Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Trucks/Construction/Farm Machinery",
+      "description": "Hefei Jingsong Intelligent Technology Co., Ltd. Class A · Trucks/Construction/Farm Machinery",
+      "change_pct": 15.135136982176366,
+      "session_open": 11.5,
+      "session_close": 12.853447914123535,
+      "session_volume": 7629378.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:688251",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/688251.SS/history/",
+        "date": "2024-08-28",
+        "daily_high": 13.396551132202148,
+        "prior_all_time_or_current_month_high": 22.975309283498074,
+        "passes_close_filter": true,
+        "yahoo_symbol": "688251.SS"
+      }
+    },
+    {
+      "ticker": "688513.SS",
+      "name": "Chengdu Easton Biopharmaceuticals Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Pharmaceuticals: Major",
+      "description": "Chengdu Easton Biopharmaceuticals Co., Ltd. Class A · Pharmaceuticals: Major",
+      "change_pct": 0.621461572099169,
+      "session_open": 35.209999084472656,
+      "session_close": 35.619998931884766,
+      "session_volume": 764288.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:688513",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/688513.SS/history/",
+        "date": "2024-08-28",
+        "daily_high": 36.130001068115234,
+        "prior_all_time_or_current_month_high": 40.723772113826,
+        "passes_close_filter": true,
+        "yahoo_symbol": "688513.SS"
+      }
+    },
+    {
+      "ticker": "000062.SZ",
+      "name": "Shenzhen Huaqiang Industry Co., Ltd Class A",
+      "exchange": "SZSE",
+      "category": "Distribution Services",
+      "high_type": "52_week",
+      "reason": "업종: Distribution Services · Electronics Distributors",
+      "description": "Shenzhen Huaqiang Industry Co., Ltd Class A · Electronics Distributors",
+      "change_pct": 9.980521644041595,
+      "session_open": 20.68000030517578,
+      "session_close": 22.59000015258789,
+      "session_volume": 118666130.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:000062",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/000062.SZ/history/",
+        "date": "2024-08-28",
+        "daily_high": 22.59000015258789,
+        "prior_all_time_or_current_month_high": 44.546966552734375,
+        "passes_close_filter": true,
+        "yahoo_symbol": "000062.SZ"
+      }
+    },
+    {
+      "ticker": "301571.SZ",
+      "name": "Teemsun Technology Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Commercial Services",
+      "high_type": "all_time",
+      "reason": "업종: Commercial Services · Miscellaneous Commercial Services",
+      "description": "Teemsun Technology Co., Ltd. Class A · Miscellaneous Commercial Services",
+      "change_pct": 19.994885126016683,
+      "session_open": 38.70000076293945,
+      "session_close": 46.93000030517578,
+      "session_volume": 10973345.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:301571",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/301571.SZ/history/",
+        "date": "2024-08-28",
+        "daily_high": 46.93000030517578,
+        "prior_all_time_or_current_month_high": 46.93000030517578,
+        "passes_close_filter": true,
+        "yahoo_symbol": "301571.SZ"
+      }
+    },
+    {
+      "ticker": "301586.SZ",
+      "name": "Anhui Jialiqi Advanced Composites Technology Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Aerospace & Defense",
+      "description": "Anhui Jialiqi Advanced Composites Technology Co., Ltd. Class A · Aerospace & Defense",
+      "change_pct": 0.0,
+      "session_open": 60.0099983215332,
+      "session_close": 62.290000915527344,
+      "session_volume": 15506451.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:301586",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/301586.SZ/history/",
+        "date": "2024-08-28",
+        "daily_high": 68.16000366210938,
+        "prior_all_time_or_current_month_high": 68.16000366210938,
+        "passes_close_filter": true,
+        "yahoo_symbol": "301586.SZ"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-10-21T14:33:25.825538+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 5313,
+    "history_symbols": 5147,
+    "inactive_symbols": 0,
+    "failed_symbols": 166,
+    "coverage_ratio": 0.96875588179936,
+    "coverage_by_exchange": {
+      "SSE": {
+        "covered": 2282,
+        "total": 2358
+      },
+      "SZSE": {
+        "covered": 2865,
+        "total": 2955
+      }
+    },
+    "session_symbols": 5115,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-10-21T14:33:25.825538+00:00"
+}

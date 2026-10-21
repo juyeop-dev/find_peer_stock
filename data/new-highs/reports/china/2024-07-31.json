@@ -1,0 +1,334 @@
+{
+  "schema_version": 1,
+  "market": "china",
+  "date": "2024-07-31",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "600114.SS",
+      "name": "NBTM New Materials Group Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Metal Fabrication",
+      "description": "NBTM New Materials Group Co., Ltd. Class A · Metal Fabrication",
+      "change_pct": 7.372656674563238,
+      "session_open": 15.079999923706055,
+      "session_close": 16.020000457763672,
+      "session_volume": 48103495.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:600114",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/600114.SS/history/",
+        "date": "2024-07-31",
+        "daily_high": 16.15999984741211,
+        "prior_all_time_or_current_month_high": 16.15999984741211,
+        "passes_close_filter": true,
+        "yahoo_symbol": "600114.SS"
+      }
+    },
+    {
+      "ticker": "600216.SS",
+      "name": "Zhejiang Medicine Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Pharmaceuticals: Other",
+      "description": "Zhejiang Medicine Co., Ltd. Class A · Pharmaceuticals: Other",
+      "change_pct": 9.968348425505624,
+      "session_open": 12.329999923706055,
+      "session_close": 13.899999618530273,
+      "session_volume": 76393967.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:600216",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/600216.SS/history/",
+        "date": "2024-07-31",
+        "daily_high": 13.899999618530273,
+        "prior_all_time_or_current_month_high": 22.309999465942383,
+        "passes_close_filter": true,
+        "yahoo_symbol": "600216.SS"
+      }
+    },
+    {
+      "ticker": "600368.SS",
+      "name": "Guangxi Wuzhou Communications Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Transportation",
+      "high_type": "all_time",
+      "reason": "업종: Transportation · Other Transportation",
+      "description": "Guangxi Wuzhou Communications Co., Ltd. Class A · Other Transportation",
+      "change_pct": 2.7247929851148767,
+      "session_open": 3.6500000953674316,
+      "session_close": 3.7699999809265137,
+      "session_volume": 44085848.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:600368",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/600368.SS/history/",
+        "date": "2024-07-31",
+        "daily_high": 3.9100000858306885,
+        "prior_all_time_or_current_month_high": 3.9100000858306885,
+        "passes_close_filter": true,
+        "yahoo_symbol": "600368.SS"
+      }
+    },
+    {
+      "ticker": "600452.SS",
+      "name": "Chongqing Fuling Electric Power Industrial Co Ltd Class A",
+      "exchange": "SSE",
+      "category": "Utilities",
+      "high_type": "all_time",
+      "reason": "업종: Utilities · Electric Utilities",
+      "description": "Chongqing Fuling Electric Power Industrial Co Ltd Class A · Electric Utilities",
+      "change_pct": 2.259327459149385,
+      "session_open": 10.140000343322754,
+      "session_close": 10.40999984741211,
+      "session_volume": 16820097.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:600452",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/600452.SS/history/",
+        "date": "2024-07-31",
+        "daily_high": 10.4399995803833,
+        "prior_all_time_or_current_month_high": 10.4399995803833,
+        "passes_close_filter": true,
+        "yahoo_symbol": "600452.SS"
+      }
+    },
+    {
+      "ticker": "600501.SS",
+      "name": "Aerosun Corporation Class A",
+      "exchange": "SSE",
+      "category": "Consumer Durables",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Durables · Motor Vehicles",
+      "description": "Aerosun Corporation Class A · Motor Vehicles",
+      "change_pct": 9.976929221526776,
+      "session_open": 18.899999618530273,
+      "session_close": 19.06999969482422,
+      "session_volume": 82510176.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:600501",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/600501.SS/history/",
+        "date": "2024-07-31",
+        "daily_high": 19.06999969482422,
+        "prior_all_time_or_current_month_high": 39.119998931884766,
+        "passes_close_filter": true,
+        "yahoo_symbol": "600501.SS"
+      }
+    },
+    {
+      "ticker": "601200.SS",
+      "name": "Shanghai Environment Group Co. Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Industrial Services",
+      "high_type": "52_week",
+      "reason": "업종: Industrial Services · Environmental Services",
+      "description": "Shanghai Environment Group Co. Ltd. Class A · Environmental Services",
+      "change_pct": 1.3422870339588666,
+      "session_open": 7.449999809265137,
+      "session_close": 7.550000190734863,
+      "session_volume": 7423638.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:601200",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/601200.SS/history/",
+        "date": "2024-07-31",
+        "daily_high": 7.590000152587891,
+        "prior_all_time_or_current_month_high": 17.41042014880058,
+        "passes_close_filter": true,
+        "yahoo_symbol": "601200.SS"
+      }
+    },
+    {
+      "ticker": "688617.SS",
+      "name": "APT Medical Inc. Class A",
+      "exchange": "SSE",
+      "category": "Health Technology",
+      "high_type": "all_time",
+      "reason": "업종: Health Technology · Medical Specialties",
+      "description": "APT Medical Inc. Class A · Medical Specialties",
+      "change_pct": 4.591217322686103,
+      "session_open": 216.45516967773438,
+      "session_close": 226.39309692382812,
+      "session_volume": 1162212.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:688617",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/688617.SS/history/",
+        "date": "2024-07-31",
+        "daily_high": 228.2413787841797,
+        "prior_all_time_or_current_month_high": 228.2413787841797,
+        "passes_close_filter": true,
+        "yahoo_symbol": "688617.SS"
+      }
+    },
+    {
+      "ticker": "000550.SZ",
+      "name": "Jiangling Motors Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Consumer Durables",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Durables · Motor Vehicles",
+      "description": "Jiangling Motors Co., Ltd. Class A · Motor Vehicles",
+      "change_pct": 9.996564020604337,
+      "session_open": 32.02000045776367,
+      "session_close": 32.02000045776367,
+      "session_volume": 55669634.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:000550",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/000550.SZ/history/",
+        "date": "2024-07-31",
+        "daily_high": 32.02000045776367,
+        "prior_all_time_or_current_month_high": 48.93000030517578,
+        "passes_close_filter": true,
+        "yahoo_symbol": "000550.SZ"
+      }
+    },
+    {
+      "ticker": "002232.SZ",
+      "name": "Qiming Information Technology Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Technology Services",
+      "high_type": "52_week",
+      "reason": "업종: Technology Services · Information Technology Services",
+      "description": "Qiming Information Technology Co., Ltd. Class A · Information Technology Services",
+      "change_pct": 6.448877715078849,
+      "session_open": 24.729999542236328,
+      "session_close": 25.09000015258789,
+      "session_volume": 119222600.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002232",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002232.SZ/history/",
+        "date": "2024-07-31",
+        "daily_high": 25.93000030517578,
+        "prior_all_time_or_current_month_high": 33.7400016784668,
+        "passes_close_filter": true,
+        "yahoo_symbol": "002232.SZ"
+      }
+    },
+    {
+      "ticker": "003026.SZ",
+      "name": "Zhejiang MTCN Technology Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Semiconductors",
+      "description": "Zhejiang MTCN Technology Co., Ltd. Class A · Semiconductors",
+      "change_pct": 9.988515067319327,
+      "session_open": 18.88275718688965,
+      "session_close": 19.820688247680664,
+      "session_volume": 22779762.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:003026",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/003026.SZ/history/",
+        "date": "2024-07-31",
+        "daily_high": 19.820688247680664,
+        "prior_all_time_or_current_month_high": 32.61825601997678,
+        "passes_close_filter": true,
+        "yahoo_symbol": "003026.SZ"
+      }
+    },
+    {
+      "ticker": "300061.SZ",
+      "name": "QITIAN Technology Group Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Commercial Services",
+      "high_type": "52_week",
+      "reason": "업종: Commercial Services · Advertising/Marketing Services",
+      "description": "QITIAN Technology Group Co., Ltd. Class A · Advertising/Marketing Services",
+      "change_pct": 19.972448533771757,
+      "session_open": 8.0,
+      "session_close": 8.710000038146973,
+      "session_volume": 197746083.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:300061",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/300061.SZ/history/",
+        "date": "2024-07-31",
+        "daily_high": 8.710000038146973,
+        "prior_all_time_or_current_month_high": 18.733727381779595,
+        "passes_close_filter": true,
+        "yahoo_symbol": "300061.SZ"
+      }
+    },
+    {
+      "ticker": "301259.SZ",
+      "name": "Hunan Airbluer Environmental Protection Technology Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Commercial Services",
+      "high_type": "all_time",
+      "reason": "업종: Commercial Services · Miscellaneous Commercial Services",
+      "description": "Hunan Airbluer Environmental Protection Technology Co., Ltd. Class A · Miscellaneous Commercial Services",
+      "change_pct": 12.467184305594525,
+      "session_open": 16.186206817626953,
+      "session_close": 17.731033325195312,
+      "session_volume": 7102829.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:301259",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/301259.SZ/history/",
+        "date": "2024-07-31",
+        "daily_high": 18.593103408813477,
+        "prior_all_time_or_current_month_high": 18.593103408813477,
+        "passes_close_filter": true,
+        "yahoo_symbol": "301259.SZ"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-10-21T14:33:25.825538+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 5313,
+    "history_symbols": 5147,
+    "inactive_symbols": 0,
+    "failed_symbols": 166,
+    "coverage_ratio": 0.96875588179936,
+    "coverage_by_exchange": {
+      "SSE": {
+        "covered": 2282,
+        "total": 2358
+      },
+      "SZSE": {
+        "covered": 2865,
+        "total": 2955
+      }
+    },
+    "session_symbols": 5108,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-10-21T14:33:25.825538+00:00"
+}

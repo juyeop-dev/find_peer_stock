@@ -1,0 +1,101 @@
+{
+  "schema_version": 1,
+  "market": "korea",
+  "date": "2024-11-01",
+  "summary": "과거 일봉 전체 대조 기준. 당일 장중 고가가 52주·전체기간 고가에 도달하고, 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다. 전체기간 신고가를 우선 표시하며 신고가 배경은 별도 확인 전입니다.",
+  "sources": [
+    {
+      "label": "Naver Finance 조정 일봉·한국 종목명",
+      "url": "https://stock.naver.com/"
+    },
+    {
+      "label": "TradingView 한국 주식 종목군·업종",
+      "url": "https://www.tradingview.com/screener/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "082800.KQ",
+      "name": "비보존 제약",
+      "exchange": "KOSDAQ",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Semiconductors",
+      "description": "비보존 제약 · Semiconductors",
+      "change_pct": 7.405524487375022,
+      "session_open": 5901,
+      "session_close": 6338,
+      "currency": "KRW",
+      "source_symbol": "KRX:082800",
+      "name_original": "VIVOZON PHARMACEUTICAL CO., LTD.",
+      "name_source_url": "https://m.stock.naver.com/api/stock/082800/basic",
+      "high_verification": {
+        "source": "Naver Finance adjusted daily history",
+        "source_url": "https://api.finance.naver.com/siseJson.naver?symbol=082800&requestType=1&startTime=20231103&endTime=20241101&timeframe=day",
+        "date": "2024-11-01",
+        "open": 5901,
+        "daily_high": 6538,
+        "low": 5901,
+        "close": 6338,
+        "previous_close": 5901,
+        "volume": 1109459,
+        "prior_52_week_high": 6262,
+        "observed_bars": 243,
+        "first_observed_date": "2023-11-03",
+        "confirmed": true,
+        "matches_prior_high": false,
+        "bearish_candle": false,
+        "down_close": false,
+        "passes_close_filter": true
+      }
+    },
+    {
+      "ticker": "192080.KS",
+      "name": "더블유게임즈",
+      "exchange": "KOSPI",
+      "category": "Technology Services",
+      "high_type": "52_week",
+      "reason": "업종: Technology Services · Packaged Software",
+      "description": "더블유게임즈 · Packaged Software",
+      "change_pct": 0.0,
+      "session_open": 52800,
+      "session_close": 53200,
+      "currency": "KRW",
+      "source_symbol": "KRX:192080",
+      "name_original": "DoubleUGames Co., Ltd.",
+      "name_source_url": "https://m.stock.naver.com/api/stock/192080/basic",
+      "high_verification": {
+        "source": "Naver Finance adjusted daily history",
+        "source_url": "https://api.finance.naver.com/siseJson.naver?symbol=192080&requestType=1&startTime=20231103&endTime=20241101&timeframe=day",
+        "date": "2024-11-01",
+        "open": 52800,
+        "daily_high": 53700,
+        "low": 52400,
+        "close": 53200,
+        "previous_close": 53200,
+        "volume": 58117,
+        "prior_52_week_high": 53300,
+        "observed_bars": 243,
+        "first_observed_date": "2023-11-03",
+        "confirmed": true,
+        "matches_prior_high": false,
+        "bearish_candle": false,
+        "down_close": false,
+        "passes_close_filter": true
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Naver Finance adjusted daily history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-10-21T14:22:28.972093+00:00",
+    "definition": "daily high >= prior 52-week high; close >= open; close >= previous close; all-time takes precedence; ties included",
+    "scanned_symbols": 2739,
+    "session_symbols": 2536,
+    "raw_new_high_candidates": 9,
+    "excluded_unsupported_korean_board": 1,
+    "excluded_bearish_or_down_close": 6,
+    "pagination_complete": true
+  },
+  "collected_at": "2026-10-21T14:22:28.972093+00:00"
+}

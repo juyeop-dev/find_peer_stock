@@ -5,10 +5,11 @@ export interface StockHistory {
   ticker: string; currency: string; source: string; fetched_at?: string; first_trade_date?: string | null;
   history: SemiconductorPrice[]; warning?: string;
 }
-export const CHART_PERIODS = [7, 30, 90, 180, "1y", "2y", "since2025"] as const;
+export const CHART_PERIODS = [7, 30, 90, 180, "1y", "2y", "since2025", "since2024H2"] as const;
 export type ChartPeriod = typeof CHART_PERIODS[number];
-export const chartPeriodLabel = (period: ChartPeriod) => typeof period === "number" ? `${period}일` : period === "since2025" ? "2025년~" : period === "1y" ? "1년" : "2년";
+export const chartPeriodLabel = (period: ChartPeriod) => typeof period === "number" ? `${period}일` : period === "since2024H2" ? "2024년 하반기~" : period === "since2025" ? "2025년~" : period === "1y" ? "1년" : "2년";
 export function chartStart(end: string, period: ChartPeriod): string {
+  if (period === "since2024H2") return "2024-07-01";
   if (period === "since2025") return "2025-01-01";
   const day = new Date(`${end}T12:00:00Z`);
   if (typeof period === "number") day.setUTCDate(day.getUTCDate() - period);
@@ -51,16 +52,20 @@ export async function getStockHistory(ticker: string, exchange?: string, signal?
   const detail = liveDetailFor(ticker);
   let base = detail?.history?.length ? { ticker, currency: detail.quote.currency, source: detail.quote.source,
     fetched_at: detail.fetched_at, history: detail.history } : histories.get(ticker.toUpperCase()) ?? initial;
-  if (!base) {
+  // Inline peer/quote snapshots may still contain a shorter window. Consult
+  // the durable archive before treating a fresh one-year snapshot as enough.
+  const requestedStart = "2024-07-01";
+  if (!base || base.history[0].date > requestedStart && !(base.first_trade_date && base.first_trade_date > requestedStart)) {
     try {
       const filename = encodeURIComponent(ticker.toUpperCase()).replaceAll("%", "~");
       const response = await fetch(`${import.meta.env.BASE_URL}data/stock-history/${filename}.json?t=${Date.now()}`, { signal, cache: "no-store" });
       if (!response.ok) throw new Error("저장된 일봉 없음");
       const packed = await response.json();
-      base = validate({ ...packed, history: packed.prices.map(([date, close, adjusted_close]: [string, number, number]) => ({ date, close, adjusted_close, volume: null })) }, ticker);
+      const archived = validate({ ...packed, history: packed.prices.map(([date, close, adjusted_close]: [string, number, number]) => ({ date, close, adjusted_close, volume: null })) }, ticker);
+      if (!base || archived.history[0].date < base.history[0].date) base = archived;
     } catch (error) { if (signal?.aborted) throw error; }
   }
-  if (base && !signal?.aborted) onCached?.(base);
+  if (base && !signal?.aborted) { histories.set(ticker.toUpperCase(), base); onCached?.(base); }
   const freshEnough = base?.history?.length && Date.now() - Date.parse(`${base.history.at(-1)!.date}T23:59:59Z`) < 7 * 86400000
     && Date.now() - Date.parse(base.fetched_at ?? "") < 6 * 3600000;
   const shortListing = Boolean(base?.first_trade_date && base.history.length && base.first_trade_date > chartStart(base.history.at(-1)!.date, "1y"));

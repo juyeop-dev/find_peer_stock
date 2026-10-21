@@ -1,0 +1,406 @@
+{
+  "schema_version": 1,
+  "market": "china",
+  "date": "2024-07-24",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "600018.SS",
+      "name": "Shanghai International Port (Group) Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Transportation",
+      "high_type": "52_week",
+      "reason": "업종: Transportation · Other Transportation",
+      "description": "Shanghai International Port (Group) Co., Ltd. Class A · Other Transportation",
+      "change_pct": 1.9704414212221133,
+      "session_open": 6.079999923706055,
+      "session_close": 6.210000038146973,
+      "session_volume": 50841537.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:600018",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/600018.SS/history/",
+        "date": "2024-07-24",
+        "daily_high": 6.230000019073486,
+        "prior_all_time_or_current_month_high": 18.850000381469727,
+        "passes_close_filter": true,
+        "yahoo_symbol": "600018.SS"
+      }
+    },
+    {
+      "ticker": "600025.SS",
+      "name": "Huaneng Lancang River Hydropower Co Ltd Class A",
+      "exchange": "SSE",
+      "category": "Utilities",
+      "high_type": "all_time",
+      "reason": "업종: Utilities · Electric Utilities",
+      "description": "Huaneng Lancang River Hydropower Co Ltd Class A · Electric Utilities",
+      "change_pct": 2.0168128780337025,
+      "session_open": 11.930000305175781,
+      "session_close": 12.140000343322754,
+      "session_volume": 38199894.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:600025",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/600025.SS/history/",
+        "date": "2024-07-24",
+        "daily_high": 12.229999542236328,
+        "prior_all_time_or_current_month_high": 12.229999542236328,
+        "passes_close_filter": true,
+        "yahoo_symbol": "600025.SS"
+      }
+    },
+    {
+      "ticker": "600452.SS",
+      "name": "Chongqing Fuling Electric Power Industrial Co Ltd Class A",
+      "exchange": "SSE",
+      "category": "Utilities",
+      "high_type": "all_time",
+      "reason": "업종: Utilities · Electric Utilities",
+      "description": "Chongqing Fuling Electric Power Industrial Co Ltd Class A · Electric Utilities",
+      "change_pct": 2.6639367088582944,
+      "session_open": 9.779999732971191,
+      "session_close": 10.020000457763672,
+      "session_volume": 16513908.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:600452",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/600452.SS/history/",
+        "date": "2024-07-24",
+        "daily_high": 10.180000305175781,
+        "prior_all_time_or_current_month_high": 10.180000305175781,
+        "passes_close_filter": true,
+        "yahoo_symbol": "600452.SS"
+      }
+    },
+    {
+      "ticker": "600611.SS",
+      "name": "Dazhong Transportation (Group) Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Transportation",
+      "high_type": "52_week",
+      "reason": "업종: Transportation · Other Transportation",
+      "description": "Dazhong Transportation (Group) Co., Ltd. Class A · Other Transportation",
+      "change_pct": 5.333335311324516,
+      "session_open": 6.980000019073486,
+      "session_close": 7.110000133514404,
+      "session_volume": 422306312.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:600611",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/600611.SS/history/",
+        "date": "2024-07-24",
+        "daily_high": 7.269999980926514,
+        "prior_all_time_or_current_month_high": 12.422222137451172,
+        "passes_close_filter": true,
+        "yahoo_symbol": "600611.SS"
+      }
+    },
+    {
+      "ticker": "600674.SS",
+      "name": "Sichuan Chuantou Energy Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Utilities",
+      "high_type": "all_time",
+      "reason": "업종: Utilities · Electric Utilities",
+      "description": "Sichuan Chuantou Energy Co., Ltd. Class A · Electric Utilities",
+      "change_pct": 2.545824926367013,
+      "session_open": 19.6299991607666,
+      "session_close": 20.139999389648438,
+      "session_volume": 19977117.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:600674",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/600674.SS/history/",
+        "date": "2024-07-24",
+        "daily_high": 20.229999542236328,
+        "prior_all_time_or_current_month_high": 20.229999542236328,
+        "passes_close_filter": true,
+        "yahoo_symbol": "600674.SS"
+      }
+    },
+    {
+      "ticker": "601288.SS",
+      "name": "Agricultural Bank of China Limited Class A",
+      "exchange": "SSE",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "업종: Finance · Major Banks",
+      "description": "Agricultural Bank of China Limited Class A · Major Banks",
+      "change_pct": 0.6329158493033615,
+      "session_open": 4.730000019073486,
+      "session_close": 4.769999980926514,
+      "session_volume": 447234096.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:601288",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/601288.SS/history/",
+        "date": "2024-07-24",
+        "daily_high": 4.809999942779541,
+        "prior_all_time_or_current_month_high": 4.820000171661377,
+        "passes_close_filter": true,
+        "yahoo_symbol": "601288.SS"
+      }
+    },
+    {
+      "ticker": "601333.SS",
+      "name": "Guangshen Railway Company Limited Class A",
+      "exchange": "SSE",
+      "category": "Transportation",
+      "high_type": "52_week",
+      "reason": "업종: Transportation · Railroads",
+      "description": "Guangshen Railway Company Limited Class A · Railroads",
+      "change_pct": 0.8064508376086854,
+      "session_open": 3.7200000286102295,
+      "session_close": 3.75,
+      "session_volume": 61875080.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:601333",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/601333.SS/history/",
+        "date": "2024-07-24",
+        "daily_high": 3.799999952316284,
+        "prior_all_time_or_current_month_high": 11.399999618530273,
+        "passes_close_filter": true,
+        "yahoo_symbol": "601333.SS"
+      }
+    },
+    {
+      "ticker": "601728.SS",
+      "name": "China Telecom Corp. Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Communications",
+      "high_type": "52_week",
+      "reason": "업종: Communications · Wireless Telecommunications",
+      "description": "China Telecom Corp. Ltd. Class A · Wireless Telecommunications",
+      "change_pct": 1.2658215432457043,
+      "session_open": 6.309999942779541,
+      "session_close": 6.400000095367432,
+      "session_volume": 113463600.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:601728",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/601728.SS/history/",
+        "date": "2024-07-24",
+        "daily_high": 6.429999828338623,
+        "prior_all_time_or_current_month_high": 7.510000228881836,
+        "passes_close_filter": true,
+        "yahoo_symbol": "601728.SS"
+      }
+    },
+    {
+      "ticker": "601985.SS",
+      "name": "China National Nuclear Power Co. Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Utilities",
+      "high_type": "52_week",
+      "reason": "업종: Utilities · Electric Utilities",
+      "description": "China National Nuclear Power Co. Ltd. Class A · Electric Utilities",
+      "change_pct": 4.095559140785032,
+      "session_open": 11.720000267028809,
+      "session_close": 12.199999809265137,
+      "session_volume": 183215416.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:601985",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/601985.SS/history/",
+        "date": "2024-07-24",
+        "daily_high": 12.199999809265137,
+        "prior_all_time_or_current_month_high": 14.380000114440918,
+        "passes_close_filter": true,
+        "yahoo_symbol": "601985.SS"
+      }
+    },
+    {
+      "ticker": "000598.SZ",
+      "name": "Chengdu Xingrong Environment Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Utilities",
+      "high_type": "52_week",
+      "reason": "업종: Utilities · Water Utilities",
+      "description": "Chengdu Xingrong Environment Co., Ltd. Class A · Water Utilities",
+      "change_pct": 5.981788789167841,
+      "session_open": 7.639999866485596,
+      "session_close": 8.149999618530273,
+      "session_volume": 61242024.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:000598",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/000598.SZ/history/",
+        "date": "2024-07-24",
+        "daily_high": 8.270000457763672,
+        "prior_all_time_or_current_month_high": 13.09000015258789,
+        "passes_close_filter": true,
+        "yahoo_symbol": "000598.SZ"
+      }
+    },
+    {
+      "ticker": "002911.SZ",
+      "name": "Foran Energy Group Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Utilities",
+      "high_type": "52_week",
+      "reason": "업종: Utilities · Gas Distributors",
+      "description": "Foran Energy Group Co., Ltd. Class A · Gas Distributors",
+      "change_pct": 3.3846146021133894,
+      "session_open": 9.800000190734863,
+      "session_close": 10.079999923706055,
+      "session_volume": 10627109.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002911",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002911.SZ/history/",
+        "date": "2024-07-24",
+        "daily_high": 10.279999732971191,
+        "prior_all_time_or_current_month_high": 11.593232736423813,
+        "passes_close_filter": true,
+        "yahoo_symbol": "002911.SZ"
+      }
+    },
+    {
+      "ticker": "003816.SZ",
+      "name": "CGN Power Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Utilities",
+      "high_type": "52_week",
+      "reason": "업종: Utilities · Electric Utilities",
+      "description": "CGN Power Co., Ltd. Class A · Electric Utilities",
+      "change_pct": 5.0403225418804265,
+      "session_open": 4.940000057220459,
+      "session_close": 5.210000038146973,
+      "session_volume": 233480291.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:003816",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/003816.SZ/history/",
+        "date": "2024-07-24",
+        "daily_high": 5.21999979019165,
+        "prior_all_time_or_current_month_high": 5.25,
+        "passes_close_filter": true,
+        "yahoo_symbol": "003816.SZ"
+      }
+    },
+    {
+      "ticker": "180501.SZ",
+      "name": "Hotland Innovation Shenzhen Anju Talent Affordable Rental Housing Real Estate Investment Trust",
+      "exchange": "SZSE",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "업종: Finance · Real Estate Investment Trusts",
+      "description": "Hotland Innovation Shenzhen Anju Talent Affordable Rental Housing Real Estate Investment Trust · Real Estate Investment Trusts",
+      "change_pct": 1.0891785311289315,
+      "session_open": 2.9179999828338623,
+      "session_close": 2.9700000286102295,
+      "session_volume": 1793161.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:180501",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/180501.SZ/history/",
+        "date": "2024-07-24",
+        "daily_high": 2.9749999046325684,
+        "prior_all_time_or_current_month_high": 3.5999999046325684,
+        "passes_close_filter": true,
+        "yahoo_symbol": "180501.SZ"
+      }
+    },
+    {
+      "ticker": "300240.SZ",
+      "name": "Jiangsu Feiliks International Logistics Inc. Class A",
+      "exchange": "SZSE",
+      "category": "Transportation",
+      "high_type": "52_week",
+      "reason": "업종: Transportation · Air Freight/Couriers",
+      "description": "Jiangsu Feiliks International Logistics Inc. Class A · Air Freight/Couriers",
+      "change_pct": 2.2727337543113624,
+      "session_open": 8.399999618530273,
+      "session_close": 8.550000190734863,
+      "session_volume": 123394356.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:300240",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/300240.SZ/history/",
+        "date": "2024-07-24",
+        "daily_high": 9.279999732971191,
+        "prior_all_time_or_current_month_high": 14.989999771118164,
+        "passes_close_filter": true,
+        "yahoo_symbol": "300240.SZ"
+      }
+    },
+    {
+      "ticker": "300476.SZ",
+      "name": "Victory Giant Technology (HuiZhou) Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Electronic Components",
+      "description": "Victory Giant Technology (HuiZhou) Co., Ltd. Class A · Electronic Components",
+      "change_pct": 3.2597773376187744,
+      "session_open": 39.880001068115234,
+      "session_close": 41.18000030517578,
+      "session_volume": 41996446.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:300476",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/300476.SZ/history/",
+        "date": "2024-07-24",
+        "daily_high": 43.81999969482422,
+        "prior_all_time_or_current_month_high": 43.81999969482422,
+        "passes_close_filter": true,
+        "yahoo_symbol": "300476.SZ"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-10-21T14:33:25.825538+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 5313,
+    "history_symbols": 5147,
+    "inactive_symbols": 0,
+    "failed_symbols": 166,
+    "coverage_ratio": 0.96875588179936,
+    "coverage_by_exchange": {
+      "SSE": {
+        "covered": 2282,
+        "total": 2358
+      },
+      "SZSE": {
+        "covered": 2865,
+        "total": 2955
+      }
+    },
+    "session_symbols": 5106,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-10-21T14:33:25.825538+00:00"
+}

@@ -1,0 +1,238 @@
+{
+  "schema_version": 1,
+  "market": "china",
+  "date": "2024-09-03",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "600114.SS",
+      "name": "NBTM New Materials Group Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Metal Fabrication",
+      "description": "NBTM New Materials Group Co., Ltd. Class A · Metal Fabrication",
+      "change_pct": 3.6092093013098125,
+      "session_open": 15.789999961853027,
+      "session_close": 16.649999618530273,
+      "session_volume": 72669565.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:600114",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/600114.SS/history/",
+        "date": "2024-09-03",
+        "daily_high": 17.260000228881836,
+        "prior_all_time_or_current_month_high": 17.260000228881836,
+        "passes_close_filter": true,
+        "yahoo_symbol": "600114.SS"
+      }
+    },
+    {
+      "ticker": "600552.SS",
+      "name": "Triumph Science & Technology Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Process Industries",
+      "high_type": "all_time",
+      "reason": "업종: Process Industries · Industrial Specialties",
+      "description": "Triumph Science & Technology Co., Ltd. Class A · Industrial Specialties",
+      "change_pct": 9.999993467984304,
+      "session_open": 14.399999618530273,
+      "session_close": 16.059999465942383,
+      "session_volume": 147874845.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:600552",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/600552.SS/history/",
+        "date": "2024-09-03",
+        "daily_high": 16.059999465942383,
+        "prior_all_time_or_current_month_high": 16.059999465942383,
+        "passes_close_filter": true,
+        "yahoo_symbol": "600552.SS"
+      }
+    },
+    {
+      "ticker": "601319.SS",
+      "name": "People's Insurance Co. (Group) of China Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "업종: Finance · Multi-Line Insurance",
+      "description": "People's Insurance Co. (Group) of China Ltd. Class A · Multi-Line Insurance",
+      "change_pct": 1.3050558272844404,
+      "session_open": 6.059999942779541,
+      "session_close": 6.210000038146973,
+      "session_volume": 113951052.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:601319",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/601319.SS/history/",
+        "date": "2024-09-03",
+        "daily_high": 6.21999979019165,
+        "prior_all_time_or_current_month_high": 12.890000343322754,
+        "passes_close_filter": true,
+        "yahoo_symbol": "601319.SS"
+      }
+    },
+    {
+      "ticker": "603626.SS",
+      "name": "Kunshan Kersen Science & Technology Co. Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Industrial Machinery",
+      "description": "Kunshan Kersen Science & Technology Co. Ltd. Class A · Industrial Machinery",
+      "change_pct": 9.966784040075026,
+      "session_open": 9.930000305175781,
+      "session_close": 9.930000305175781,
+      "session_volume": 85940633.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:603626",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/603626.SS/history/",
+        "date": "2024-09-03",
+        "daily_high": 9.930000305175781,
+        "prior_all_time_or_current_month_high": 26.015306200299946,
+        "passes_close_filter": true,
+        "yahoo_symbol": "603626.SS"
+      }
+    },
+    {
+      "ticker": "688513.SS",
+      "name": "Chengdu Easton Biopharmaceuticals Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Pharmaceuticals: Major",
+      "description": "Chengdu Easton Biopharmaceuticals Co., Ltd. Class A · Pharmaceuticals: Major",
+      "change_pct": 1.6293846106195886,
+      "session_open": 35.91999816894531,
+      "session_close": 36.79999923706055,
+      "session_volume": 995228.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:688513",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/688513.SS/history/",
+        "date": "2024-09-03",
+        "daily_high": 37.7400016784668,
+        "prior_all_time_or_current_month_high": 40.723772113826,
+        "passes_close_filter": true,
+        "yahoo_symbol": "688513.SS"
+      }
+    },
+    {
+      "ticker": "000062.SZ",
+      "name": "Shenzhen Huaqiang Industry Co., Ltd Class A",
+      "exchange": "SZSE",
+      "category": "Distribution Services",
+      "high_type": "52_week",
+      "reason": "업종: Distribution Services · Electronics Distributors",
+      "description": "Shenzhen Huaqiang Industry Co., Ltd Class A · Electronics Distributors",
+      "change_pct": 10.007048049930866,
+      "session_open": 28.0,
+      "session_close": 31.219999313354492,
+      "session_volume": 99325043.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:000062",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/000062.SZ/history/",
+        "date": "2024-09-03",
+        "daily_high": 31.219999313354492,
+        "prior_all_time_or_current_month_high": 44.546966552734375,
+        "passes_close_filter": true,
+        "yahoo_symbol": "000062.SZ"
+      }
+    },
+    {
+      "ticker": "000908.SZ",
+      "name": "CSPC Hunan Jingfeng Pharmaceutical Co Ltd Class A",
+      "exchange": "SZSE",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Pharmaceuticals: Major",
+      "description": "CSPC Hunan Jingfeng Pharmaceutical Co Ltd Class A · Pharmaceuticals: Major",
+      "change_pct": 5.000000518301273,
+      "session_open": 4.829999923706055,
+      "session_close": 4.829999923706055,
+      "session_volume": 2197714.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:000908",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/000908.SZ/history/",
+        "date": "2024-09-03",
+        "daily_high": 4.829999923706055,
+        "prior_all_time_or_current_month_high": 22.314049113880504,
+        "passes_close_filter": true,
+        "yahoo_symbol": "000908.SZ"
+      }
+    },
+    {
+      "ticker": "003001.SZ",
+      "name": "Zhongyan Technology Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Industrial Services",
+      "high_type": "52_week",
+      "reason": "업종: Industrial Services · Engineering & Construction",
+      "description": "Zhongyan Technology Co., Ltd. Class A · Engineering & Construction",
+      "change_pct": 2.6387599259942274,
+      "session_open": 15.736696243286133,
+      "session_close": 16.122608184814453,
+      "session_volume": 6922119.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:003001",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/003001.SZ/history/",
+        "date": "2024-09-03",
+        "daily_high": 16.45849609375,
+        "prior_all_time_or_current_month_high": 18.65831504539177,
+        "passes_close_filter": true,
+        "yahoo_symbol": "003001.SZ"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-10-21T14:33:25.825538+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 5313,
+    "history_symbols": 5147,
+    "inactive_symbols": 0,
+    "failed_symbols": 166,
+    "coverage_ratio": 0.96875588179936,
+    "coverage_by_exchange": {
+      "SSE": {
+        "covered": 2282,
+        "total": 2358
+      },
+      "SZSE": {
+        "covered": 2865,
+        "total": 2955
+      }
+    },
+    "session_symbols": 5117,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-10-21T14:33:25.825538+00:00"
+}

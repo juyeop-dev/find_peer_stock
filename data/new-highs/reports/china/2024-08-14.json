@@ -1,0 +1,190 @@
+{
+  "schema_version": 1,
+  "market": "china",
+  "date": "2024-08-14",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "600377.SS",
+      "name": "Jiangsu Expressway Co. Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Transportation",
+      "high_type": "all_time",
+      "reason": "업종: Transportation · Other Transportation",
+      "description": "Jiangsu Expressway Co. Ltd. Class A · Other Transportation",
+      "change_pct": 0.44842649797607326,
+      "session_open": 13.380000114440918,
+      "session_close": 13.4399995803833,
+      "session_volume": 3838259.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:600377",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/600377.SS/history/",
+        "date": "2024-08-14",
+        "daily_high": 13.600000381469727,
+        "prior_all_time_or_current_month_high": 13.600000381469727,
+        "passes_close_filter": true,
+        "yahoo_symbol": "600377.SS"
+      }
+    },
+    {
+      "ticker": "603310.SS",
+      "name": "Zhejiang Weihua New Material Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Process Industries",
+      "high_type": "all_time",
+      "reason": "업종: Process Industries · Chemicals: Major Diversified",
+      "description": "Zhejiang Weihua New Material Co., Ltd. Class A · Chemicals: Major Diversified",
+      "change_pct": 0.0,
+      "session_open": 23.299999237060547,
+      "session_close": 23.59000015258789,
+      "session_volume": 42652213.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:603310",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/603310.SS/history/",
+        "date": "2024-08-14",
+        "daily_high": 29.040000915527344,
+        "prior_all_time_or_current_month_high": 29.040000915527344,
+        "passes_close_filter": true,
+        "yahoo_symbol": "603310.SS"
+      }
+    },
+    {
+      "ticker": "688090.SS",
+      "name": "Guangzhou Risong Intelligent Technology Holding Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Industrial Machinery",
+      "description": "Guangzhou Risong Intelligent Technology Holding Co., Ltd. Class A · Industrial Machinery",
+      "change_pct": 14.18219376203307,
+      "session_open": 22.86390495300293,
+      "session_close": 26.106508255004883,
+      "session_volume": 8311501.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:688090",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/688090.SS/history/",
+        "date": "2024-08-14",
+        "daily_high": 26.585798263549805,
+        "prior_all_time_or_current_month_high": 26.585798263549805,
+        "passes_close_filter": true,
+        "yahoo_symbol": "688090.SS"
+      }
+    },
+    {
+      "ticker": "300147.SZ",
+      "name": "Xiangxue Pharmaceutical Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Pharmaceuticals: Major",
+      "description": "Xiangxue Pharmaceutical Co., Ltd. Class A · Pharmaceuticals: Major",
+      "change_pct": 6.586824523553081,
+      "session_open": 9.710000038146973,
+      "session_close": 10.680000305175781,
+      "session_volume": 242393120.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:300147",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/300147.SZ/history/",
+        "date": "2024-08-14",
+        "daily_high": 11.789999961853027,
+        "prior_all_time_or_current_month_high": 42.59775924682617,
+        "passes_close_filter": true,
+        "yahoo_symbol": "300147.SZ"
+      }
+    },
+    {
+      "ticker": "300622.SZ",
+      "name": "Doctorglasses Chain Co. Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Health Technology",
+      "high_type": "all_time",
+      "reason": "업종: Health Technology · Medical Specialties",
+      "description": "Doctorglasses Chain Co. Ltd. Class A · Medical Specialties",
+      "change_pct": 20.018272312187623,
+      "session_open": 13.30769157409668,
+      "session_close": 14.428570747375488,
+      "session_volume": 79528993.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:300622",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/300622.SZ/history/",
+        "date": "2024-08-14",
+        "daily_high": 14.428570747375488,
+        "prior_all_time_or_current_month_high": 14.428570747375488,
+        "passes_close_filter": true,
+        "yahoo_symbol": "300622.SZ"
+      }
+    },
+    {
+      "ticker": "301127.SZ",
+      "name": "Wuhan Tianyuan Group Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Industrial Services",
+      "high_type": "52_week",
+      "reason": "업종: Industrial Services · Environmental Services",
+      "description": "Wuhan Tianyuan Group Co., Ltd. Class A · Environmental Services",
+      "change_pct": 1.6853997599312276,
+      "session_open": 8.920000076293945,
+      "session_close": 9.050000190734863,
+      "session_volume": 19548448.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:301127",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/301127.SZ/history/",
+        "date": "2024-08-14",
+        "daily_high": 9.25,
+        "prior_all_time_or_current_month_high": 12.438789805695983,
+        "passes_close_filter": true,
+        "yahoo_symbol": "301127.SZ"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-10-21T14:33:25.825538+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 5313,
+    "history_symbols": 5147,
+    "inactive_symbols": 0,
+    "failed_symbols": 166,
+    "coverage_ratio": 0.96875588179936,
+    "coverage_by_exchange": {
+      "SSE": {
+        "covered": 2282,
+        "total": 2358
+      },
+      "SZSE": {
+        "covered": 2865,
+        "total": 2955
+      }
+    },
+    "session_symbols": 5111,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-10-21T14:33:25.825538+00:00"
+}

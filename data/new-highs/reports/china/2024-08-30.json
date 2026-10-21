@@ -1,0 +1,214 @@
+{
+  "schema_version": 1,
+  "market": "china",
+  "date": "2024-08-30",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "600114.SS",
+      "name": "NBTM New Materials Group Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Metal Fabrication",
+      "description": "NBTM New Materials Group Co., Ltd. Class A · Metal Fabrication",
+      "change_pct": 7.76827709971748,
+      "session_open": 15.470000267028809,
+      "session_close": 16.3700008392334,
+      "session_volume": 103721687.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:600114",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/600114.SS/history/",
+        "date": "2024-08-30",
+        "daily_high": 16.709999084472656,
+        "prior_all_time_or_current_month_high": 16.709999084472656,
+        "passes_close_filter": true,
+        "yahoo_symbol": "600114.SS"
+      }
+    },
+    {
+      "ticker": "600551.SS",
+      "name": "Time Publishing & Media Co. Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Consumer Services",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Services · Publishing: Books/Magazines",
+      "description": "Time Publishing & Media Co. Ltd. Class A · Publishing: Books/Magazines",
+      "change_pct": 0.0,
+      "session_open": 7.800000190734863,
+      "session_close": 7.860000133514404,
+      "session_volume": 6217260.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:600551",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/600551.SS/history/",
+        "date": "2024-08-30",
+        "daily_high": 7.96999979019165,
+        "prior_all_time_or_current_month_high": 16.11224446977888,
+        "passes_close_filter": true,
+        "yahoo_symbol": "600551.SS"
+      }
+    },
+    {
+      "ticker": "000062.SZ",
+      "name": "Shenzhen Huaqiang Industry Co., Ltd Class A",
+      "exchange": "SZSE",
+      "category": "Distribution Services",
+      "high_type": "52_week",
+      "reason": "업종: Distribution Services · Electronics Distributors",
+      "description": "Shenzhen Huaqiang Industry Co., Ltd Class A · Electronics Distributors",
+      "change_pct": 10.021315128633379,
+      "session_open": 24.25,
+      "session_close": 25.799999237060547,
+      "session_volume": 97754287.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:000062",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/000062.SZ/history/",
+        "date": "2024-08-30",
+        "daily_high": 25.799999237060547,
+        "prior_all_time_or_current_month_high": 44.546966552734375,
+        "passes_close_filter": true,
+        "yahoo_symbol": "000062.SZ"
+      }
+    },
+    {
+      "ticker": "000908.SZ",
+      "name": "CSPC Hunan Jingfeng Pharmaceutical Co Ltd Class A",
+      "exchange": "SZSE",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Pharmaceuticals: Major",
+      "description": "CSPC Hunan Jingfeng Pharmaceutical Co Ltd Class A · Pharmaceuticals: Major",
+      "change_pct": 5.035972045679404,
+      "session_open": 4.380000114440918,
+      "session_close": 4.380000114440918,
+      "session_volume": 3257981.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:000908",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/000908.SZ/history/",
+        "date": "2024-08-30",
+        "daily_high": 4.380000114440918,
+        "prior_all_time_or_current_month_high": 22.314049113880504,
+        "passes_close_filter": true,
+        "yahoo_symbol": "000908.SZ"
+      }
+    },
+    {
+      "ticker": "002600.SZ",
+      "name": "Lingyi iTech (Guangdong) Company Class A",
+      "exchange": "SZSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Computer Processing Hardware",
+      "description": "Lingyi iTech (Guangdong) Company Class A · Computer Processing Hardware",
+      "change_pct": 9.973756434329317,
+      "session_open": 7.760000228881836,
+      "session_close": 8.380000114440918,
+      "session_volume": 455742195.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002600",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002600.SZ/history/",
+        "date": "2024-08-30",
+        "daily_high": 8.380000114440918,
+        "prior_all_time_or_current_month_high": 14.880000114440918,
+        "passes_close_filter": true,
+        "yahoo_symbol": "002600.SZ"
+      }
+    },
+    {
+      "ticker": "300274.SZ",
+      "name": "Sungrow Power Supply Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Electrical Products",
+      "description": "Sungrow Power Supply Co., Ltd. Class A · Electrical Products",
+      "change_pct": 1.650165016501659,
+      "session_open": 75.44999694824219,
+      "session_close": 77.0,
+      "session_volume": 32333827.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:300274",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/300274.SZ/history/",
+        "date": "2024-08-30",
+        "daily_high": 78.56999969482422,
+        "prior_all_time_or_current_month_high": 91.91836765834263,
+        "passes_close_filter": true,
+        "yahoo_symbol": "300274.SZ"
+      }
+    },
+    {
+      "ticker": "301326.SZ",
+      "name": "J.Pond Precision Technology Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Metal Fabrication",
+      "description": "J.Pond Precision Technology Co., Ltd. Class A · Metal Fabrication",
+      "change_pct": 9.812288901910748,
+      "session_open": 37.7400016784668,
+      "session_close": 38.61000061035156,
+      "session_volume": 11429645.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:301326",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/301326.SZ/history/",
+        "date": "2024-08-30",
+        "daily_high": 42.189998626708984,
+        "prior_all_time_or_current_month_high": 51.720001220703125,
+        "passes_close_filter": true,
+        "yahoo_symbol": "301326.SZ"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-10-21T14:33:25.825538+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 5313,
+    "history_symbols": 5147,
+    "inactive_symbols": 0,
+    "failed_symbols": 166,
+    "coverage_ratio": 0.96875588179936,
+    "coverage_by_exchange": {
+      "SSE": {
+        "covered": 2282,
+        "total": 2358
+      },
+      "SZSE": {
+        "covered": 2865,
+        "total": 2955
+      }
+    },
+    "session_symbols": 5115,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-10-21T14:33:25.825538+00:00"
+}

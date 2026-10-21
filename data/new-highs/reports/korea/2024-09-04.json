@@ -1,0 +1,101 @@
+{
+  "schema_version": 1,
+  "market": "korea",
+  "date": "2024-09-04",
+  "summary": "과거 일봉 전체 대조 기준. 당일 장중 고가가 52주·전체기간 고가에 도달하고, 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다. 전체기간 신고가를 우선 표시하며 신고가 배경은 별도 확인 전입니다.",
+  "sources": [
+    {
+      "label": "Naver Finance 조정 일봉·한국 종목명",
+      "url": "https://stock.naver.com/"
+    },
+    {
+      "label": "TradingView 한국 주식 종목군·업종",
+      "url": "https://www.tradingview.com/screener/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "123330.KQ",
+      "name": "제닉",
+      "exchange": "KOSDAQ",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Pharmaceuticals: Major",
+      "description": "제닉 · Pharmaceuticals: Major",
+      "change_pct": 29.903978052126202,
+      "session_open": 6800,
+      "session_close": 9470,
+      "currency": "KRW",
+      "source_symbol": "KRX:123330",
+      "name_original": "Genic Co., Ltd",
+      "name_source_url": "https://m.stock.naver.com/api/stock/123330/basic",
+      "high_verification": {
+        "source": "Naver Finance adjusted daily history",
+        "source_url": "https://api.finance.naver.com/siseJson.naver?symbol=123330&requestType=1&startTime=20230906&endTime=20240904&timeframe=day",
+        "date": "2024-09-04",
+        "open": 6800,
+        "daily_high": 9470,
+        "low": 6800,
+        "close": 9470,
+        "previous_close": 7290,
+        "volume": 1571311,
+        "prior_52_week_high": 7800,
+        "observed_bars": 244,
+        "first_observed_date": "2023-09-06",
+        "confirmed": true,
+        "matches_prior_high": false,
+        "bearish_candle": false,
+        "down_close": false,
+        "passes_close_filter": true
+      }
+    },
+    {
+      "ticker": "002870.KS",
+      "name": "신풍",
+      "exchange": "KOSPI",
+      "category": "Process Industries",
+      "high_type": "52_week",
+      "reason": "업종: Process Industries · Containers/Packaging",
+      "description": "신풍 · Containers/Packaging",
+      "change_pct": 3.979460847240052,
+      "session_open": 1542,
+      "session_close": 1620,
+      "currency": "KRW",
+      "source_symbol": "KRX:002870",
+      "name_original": "SHINPOONG INC.",
+      "name_source_url": "https://m.stock.naver.com/api/stock/002870/basic",
+      "high_verification": {
+        "source": "Naver Finance adjusted daily history",
+        "source_url": "https://api.finance.naver.com/siseJson.naver?symbol=002870&requestType=1&startTime=20230906&endTime=20240904&timeframe=day",
+        "date": "2024-09-04",
+        "open": 1542,
+        "daily_high": 1636,
+        "low": 1453,
+        "close": 1620,
+        "previous_close": 1558,
+        "volume": 843168,
+        "prior_52_week_high": 1599,
+        "observed_bars": 244,
+        "first_observed_date": "2023-09-06",
+        "confirmed": true,
+        "matches_prior_high": false,
+        "bearish_candle": false,
+        "down_close": false,
+        "passes_close_filter": true
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Naver Finance adjusted daily history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-10-21T14:22:28.972093+00:00",
+    "definition": "daily high >= prior 52-week high; close >= open; close >= previous close; all-time takes precedence; ties included",
+    "scanned_symbols": 2739,
+    "session_symbols": 2518,
+    "raw_new_high_candidates": 5,
+    "excluded_unsupported_korean_board": 0,
+    "excluded_bearish_or_down_close": 3,
+    "pagination_complete": true
+  },
+  "collected_at": "2026-10-21T14:22:28.972093+00:00"
+}

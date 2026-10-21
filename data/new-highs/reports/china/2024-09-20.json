@@ -1,0 +1,190 @@
+{
+  "schema_version": 1,
+  "market": "china",
+  "date": "2024-09-20",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "600268.SS",
+      "name": "Guodian Nanjing Automation Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Electrical Products",
+      "description": "Guodian Nanjing Automation Co., Ltd. Class A · Electrical Products",
+      "change_pct": 2.3890761654579373,
+      "session_open": 5.860000133514404,
+      "session_close": 6.0,
+      "session_volume": 57796977.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:600268",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/600268.SS/history/",
+        "date": "2024-09-20",
+        "daily_high": 6.28000020980835,
+        "prior_all_time_or_current_month_high": 9.317129188113743,
+        "passes_close_filter": true,
+        "yahoo_symbol": "600268.SS"
+      }
+    },
+    {
+      "ticker": "600543.SS",
+      "name": "Gansu Mogao Industrial Development Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Consumer Non-Durables",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Non-Durables · Beverages: Alcoholic",
+      "description": "Gansu Mogao Industrial Development Co., Ltd. Class A · Beverages: Alcoholic",
+      "change_pct": 10.00000234510081,
+      "session_open": 6.25,
+      "session_close": 6.710000038146973,
+      "session_volume": 70003565.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:600543",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/600543.SS/history/",
+        "date": "2024-09-20",
+        "daily_high": 6.710000038146973,
+        "prior_all_time_or_current_month_high": 25.43000030517578,
+        "passes_close_filter": true,
+        "yahoo_symbol": "600543.SS"
+      }
+    },
+    {
+      "ticker": "600550.SS",
+      "name": "Baoding Tianwei Baobian Electric Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Electrical Products",
+      "description": "Baoding Tianwei Baobian Electric Co., Ltd. Class A · Electrical Products",
+      "change_pct": 9.99011140633197,
+      "session_open": 11.119999885559082,
+      "session_close": 11.119999885559082,
+      "session_volume": 40061320.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:600550",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/600550.SS/history/",
+        "date": "2024-09-20",
+        "daily_high": 11.119999885559082,
+        "prior_all_time_or_current_month_high": 39.90087127685547,
+        "passes_close_filter": true,
+        "yahoo_symbol": "600550.SS"
+      }
+    },
+    {
+      "ticker": "603881.SS",
+      "name": "Shanghai AtHub Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Technology Services",
+      "high_type": "all_time",
+      "reason": "업종: Technology Services · Information Technology Services",
+      "description": "Shanghai AtHub Co., Ltd. Class A · Information Technology Services",
+      "change_pct": 1.4221684144263724,
+      "session_open": 9.291666030883789,
+      "session_close": 9.409722328186035,
+      "session_volume": 9004852.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:603881",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/603881.SS/history/",
+        "date": "2024-09-20",
+        "daily_high": 9.472222328186035,
+        "prior_all_time_or_current_month_high": 9.472222328186035,
+        "passes_close_filter": true,
+        "yahoo_symbol": "603881.SS"
+      }
+    },
+    {
+      "ticker": "300598.SZ",
+      "name": "ArcherMind Technology Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Technology Services",
+      "high_type": "52_week",
+      "reason": "업종: Technology Services · Information Technology Services",
+      "description": "ArcherMind Technology Co., Ltd. Class A · Information Technology Services",
+      "change_pct": 6.003534264300603,
+      "session_open": 34.68000030517578,
+      "session_close": 36.02000045776367,
+      "session_volume": 42628934.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:300598",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/300598.SZ/history/",
+        "date": "2024-09-20",
+        "daily_high": 37.5,
+        "prior_all_time_or_current_month_high": 67.03806255182255,
+        "passes_close_filter": true,
+        "yahoo_symbol": "300598.SZ"
+      }
+    },
+    {
+      "ticker": "300746.SZ",
+      "name": "Hanjia Digital Intelligence Science and Technology Group Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Industrial Services",
+      "high_type": "52_week",
+      "reason": "업종: Industrial Services · Engineering & Construction",
+      "description": "Hanjia Digital Intelligence Science and Technology Group Co., Ltd. Class A · Engineering & Construction",
+      "change_pct": 11.218227432855809,
+      "session_open": 11.510000228881836,
+      "session_close": 12.6899995803833,
+      "session_volume": 52255475.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:300746",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/300746.SZ/history/",
+        "date": "2024-09-20",
+        "daily_high": 13.539999961853027,
+        "prior_all_time_or_current_month_high": 43.45000076293945,
+        "passes_close_filter": true,
+        "yahoo_symbol": "300746.SZ"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-10-21T14:33:25.825538+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 5313,
+    "history_symbols": 5147,
+    "inactive_symbols": 0,
+    "failed_symbols": 166,
+    "coverage_ratio": 0.96875588179936,
+    "coverage_by_exchange": {
+      "SSE": {
+        "covered": 2282,
+        "total": 2358
+      },
+      "SZSE": {
+        "covered": 2865,
+        "total": 2955
+      }
+    },
+    "session_symbols": 5120,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-10-21T14:33:25.825538+00:00"
+}

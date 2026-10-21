@@ -82,6 +82,7 @@ export function MarketStockPage() {
           <small>{currentQuote ? `${currentQuote.source} · ${currentQuote.provider_time?.replace("T", " ") ?? "기준 시각 미제공"}` : `${recordDate} 거래일 기준`}</small></div>
       </header>
       <section className="semiPanel marketStockSnapshot"><div className="semiPanelHeading"><h2>종목 기본 정보</h2><p>{source === "sectors" ? "선택한 거래일의 섹터 목록에 저장된 종목 정보입니다." : "선택한 거래일에 저장된 캘린더 기록입니다."} 외부 일봉 차트·실적은 제공처의 최신 자료를 표시합니다.</p></div>
+        {"reconstruction_note" in stock && stock.reconstruction_note ? <p className="semiFootnote" role="status">{stock.reconstruction_note}</p> : null}
         <dl><div><dt>거래소</dt><dd>{stock.exchange}</dd></div><div><dt>업종</dt><dd>{category || "미등록"}</dd></div>
           <div><dt>통화</dt><dd>{currency}</dd></div><div><dt>{"market_cap_fetched_at" in stock ? "시가총액 · 수집 시점 기준" : "기록된 시가총액"}</dt><dd>{formatMarketCap({ ...stock, market_cap_currency: stock.market_cap_currency ?? currency })}</dd></div>
           {"rank" in stock ? <div><dt>거래대금 순위</dt><dd>{stock.rank}위</dd></div> : null}

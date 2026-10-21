@@ -1,4 +1,4 @@
-name: Refresh stock information from 2025
+name: Refresh stock information from July 2024
 
 on:
   workflow_dispatch:
@@ -45,7 +45,7 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/stock-information data/stock-history data/information-audit
           if ! git diff --cached --quiet; then
-            git commit -m "Refresh stock information and prices from 2025"
+            git commit -m "Refresh stock information and prices from July 2024"
             for attempt in 1 2 3; do
               if git push origin HEAD:main; then exit 0; fi
               if [ "$attempt" = "3" ]; then exit 1; fi

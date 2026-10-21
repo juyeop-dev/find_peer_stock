@@ -14,6 +14,7 @@ export interface SectorSnapshot {
   universe: string; received: number; excluded: Record<string, number>; stale_count: number; stocks: SectorStock[];
   source_fetched_at?: string;
   archived?: boolean;
+  reconstruction?: {classification_date: string; classification_source: string; note: string; returns: string};
 }
 export interface SectorCalendarRecord { date: string; fetched_at: string; count: number; industries: number }
 export interface SectorCalendar { schema_version: 1; market: "korea"; latest_date: string; records: SectorCalendarRecord[] }

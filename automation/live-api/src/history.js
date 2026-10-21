@@ -70,7 +70,7 @@ export async function tradingViewHistory(stock, fetcher = fetch) {
     socket.send(encode("set_auth_token", ["unauthorized_user_token"]));
     socket.send(encode("chart_create_session", [session, ""]));
     socket.send(encode("resolve_symbol", [session, "symbol_1", "=" + JSON.stringify({ symbol, adjustment: "splits", session: "regular" })]));
-    const days = Math.max(0, (Date.now() - Date.parse("2024-12-20T00:00:00Z")) / 86400000);
+    const days = Math.max(0, (Date.now() - Date.parse("2024-06-20T00:00:00Z")) / 86400000);
     const count = Math.min(5000, Math.max(550, Math.ceil(days * 5 / 7) + 60));
     socket.send(encode("create_series", [session, "s1", "s1", "symbol_1", "1D", count]));
   });

@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "year": 2024,
+  "markets": [
+    {
+      "market": "korea",
+      "source_urls": [
+        "https://global.krx.co.kr/contents/GLB/05/0501/0501110000/GLB0501110000.jsp",
+        "https://english.samsungpop.com/ux/kor/customer/notice/notice/noticeViewContent.do?MenuSeqNo=21198",
+        "https://samsungpop.com/ux/kor/customer/notice/notice/noticeViewContent.do?MenuSeqNo=21325",
+        "https://www.ssfutures.com/ssf/customer/notice/CUS_01102.cmd?_PATH=Ad202_4214.shtm"
+      ],
+      "dates": {
+        "2024-08-15": "광복절",
+        "2024-09-16": "추석 연휴",
+        "2024-09-17": "추석",
+        "2024-09-18": "추석 연휴",
+        "2024-10-01": "국군의 날 임시공휴일",
+        "2024-10-03": "개천절",
+        "2024-10-09": "한글날",
+        "2024-12-25": "성탄절",
+        "2024-12-31": "연말 시장 휴장"
+      }
+    },
+    {
+      "market": "europe",
+      "source_urls": ["https://www.euronext.com/en/trading/trading-hours-holidays"],
+      "dates": {"2024-12-25": "성탄절", "2024-12-26": "박싱 데이"}
+    }
+  ]
+}

@@ -75,6 +75,12 @@ def roster() -> list[dict]:
         ticker = stock["ticker"]
         market = next((market for suffix, market in [(".KS", "korea"), (".KQ", "korea"), (".T", "japan"), (".TW", "taiwan"), (".HK", "hongkong")] if ticker.endswith(suffix)), "us")
         append({"ticker": ticker, "name": stock["name_kr"], "market": market}, "peer")
+    sector_index = ROOT / "data/sectors/index.json"
+    if sector_index.exists():
+        sector_snapshot = json.loads(sector_index.read_text(encoding="utf-8"))
+        for stock in sorted(sector_snapshot["stocks"], key=lambda stock: stock["ticker"]):
+            append({"ticker": stock["ticker"], "name": stock["name"], "market": "korea", "exchange": stock["exchange"],
+                    "date": sector_snapshot["date"], "source": "sectors"}, "sector")
     ordered.extend(sorted(rows.values(), key=lambda row: (MARKETS.index(row["market"]), row["ticker"])))
     return [{"order": i + 1, **row} for i, row in enumerate(ordered)]
 
@@ -93,6 +99,8 @@ def parse_yahoo(payload: dict, ticker: str) -> dict:
     meta = result["meta"]
     if meta.get("symbol", "").upper() != yahoo_symbol(ticker) or meta.get("instrumentType") not in {"EQUITY", "ETF", "MUTUALFUND"}:
         raise ValueError("Yahoo symbol or listed instrument identity mismatch")
+    if not isinstance(meta.get("currency"), str) or not meta["currency"].strip():
+        raise ValueError("Yahoo history currency is unavailable")
     zone = ZoneInfo(meta["exchangeTimezoneName"])
     indicators = result["indicators"]
     closes = indicators["quote"][0]["close"]
@@ -123,6 +131,8 @@ def parse_tradingview(payload: dict, ticker: str) -> dict:
         raise ValueError("TradingView listing identity mismatch")
     if info.get("type") in {"index", "forex", "crypto", "futures", "bond", "economic"}:
         raise ValueError("TradingView instrument is not a stock")
+    if not isinstance(info.get("currency_code"), str) or not info["currency_code"].strip():
+        raise ValueError("TradingView history currency is unavailable")
     zone = ZoneInfo(info["timezone"])
     prices = [[datetime.fromtimestamp(bar["timestamp"], zone).date().isoformat(), bar["close"], bar["close"]]
               for bar in payload["bars"] if bar["close"] > 0]
@@ -155,6 +165,8 @@ def quality(value: dict) -> tuple:
 def save_candidate(db: sqlite3.Connection, value: dict) -> None:
     if not value["prices"]:
         return
+    if not isinstance(value.get("currency"), str) or not value["currency"].strip():
+        raise ValueError("Daily history currency is unavailable")
     dates = [point[0] for point in value["prices"]]
     if dates != sorted(set(dates)):
         raise ValueError("Daily history contains duplicate or unordered sessions")
@@ -169,7 +181,7 @@ def save_candidate(db: sqlite3.Connection, value: dict) -> None:
             except (TypeError, ValueError):
                 return 0
         newer_full_request = verified_full_request and value["prices"][-1][0] >= old["prices"][-1][0] and fetched_time(value) >= fetched_time(old)
-        if not newer_full_request and quality(old) >= quality(value):
+        if old.get("currency") and not newer_full_request and quality(old) >= quality(value):
             return
     db.execute("INSERT OR REPLACE INTO history VALUES (?,?)", (value["ticker"], json.dumps(value, ensure_ascii=False, separators=(",", ":"), allow_nan=False)))
 

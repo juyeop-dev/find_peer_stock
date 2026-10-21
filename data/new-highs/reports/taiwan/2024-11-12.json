@@ -1,0 +1,286 @@
+{
+  "schema_version": 1,
+  "market": "taiwan",
+  "date": "2024-11-12",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "3211.TWO",
+      "name": "Dynapack International Technology Corporation",
+      "exchange": "TPEX",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Electrical Products",
+      "description": "Dynapack International Technology Corporation · Electrical Products",
+      "change_pct": 7.8947368421052655,
+      "session_open": 134.0,
+      "session_close": 143.5,
+      "session_volume": 58060000.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:3211",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3211.TWO/history/",
+        "date": "2024-11-12",
+        "daily_high": 146.0,
+        "prior_all_time_or_current_month_high": 188.5,
+        "passes_close_filter": true,
+        "yahoo_symbol": "3211.TWO"
+      }
+    },
+    {
+      "ticker": "4931.TWO",
+      "name": "STL Technology Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Electrical Products",
+      "description": "STL Technology Co., Ltd. · Electrical Products",
+      "change_pct": 9.98720000531419,
+      "session_open": 39.599998474121094,
+      "session_close": 42.95000076293945,
+      "session_volume": 40641000.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:4931",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4931.TWO/history/",
+        "date": "2024-11-12",
+        "daily_high": 42.95000076293945,
+        "prior_all_time_or_current_month_high": 60.099998474121094,
+        "passes_close_filter": true,
+        "yahoo_symbol": "4931.TWO"
+      }
+    },
+    {
+      "ticker": "6864.TWO",
+      "name": "Anti-Microbial Savior BioteQ Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Commercial Services",
+      "high_type": "52_week",
+      "reason": "업종: Commercial Services · Miscellaneous Commercial Services",
+      "description": "Anti-Microbial Savior BioteQ Co., Ltd. · Miscellaneous Commercial Services",
+      "change_pct": 7.1428556063249715,
+      "session_open": 53.0,
+      "session_close": 57.0,
+      "session_volume": 782825.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:6864",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6864.TWO/history/",
+        "date": "2024-11-12",
+        "daily_high": 59.900001525878906,
+        "prior_all_time_or_current_month_high": 69.92317199707031,
+        "passes_close_filter": true,
+        "yahoo_symbol": "6864.TWO"
+      }
+    },
+    {
+      "ticker": "6868.TWO",
+      "name": "Iscom Online International Information Inc.",
+      "exchange": "TPEX",
+      "category": "Technology Services",
+      "high_type": "all_time",
+      "reason": "업종: Technology Services · Packaged Software",
+      "description": "Iscom Online International Information Inc. · Packaged Software",
+      "change_pct": 8.333333333333325,
+      "session_open": 73.4000015258789,
+      "session_close": 78.0,
+      "session_volume": 131194.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:6868",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6868.TWO/history/",
+        "date": "2024-11-12",
+        "daily_high": 82.80000305175781,
+        "prior_all_time_or_current_month_high": 82.80000305175781,
+        "passes_close_filter": true,
+        "yahoo_symbol": "6868.TWO"
+      }
+    },
+    {
+      "ticker": "8937.TWO",
+      "name": "Her Chee Industrial Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Consumer Durables",
+      "high_type": "all_time",
+      "reason": "업종: Consumer Durables · Motor Vehicles",
+      "description": "Her Chee Industrial Co., Ltd. · Motor Vehicles",
+      "change_pct": 0.0,
+      "session_open": 31.25,
+      "session_close": 31.25,
+      "session_volume": 3764000.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:8937",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/8937.TWO/history/",
+        "date": "2024-11-12",
+        "daily_high": 32.125,
+        "prior_all_time_or_current_month_high": 32.125,
+        "passes_close_filter": true,
+        "yahoo_symbol": "8937.TWO"
+      }
+    },
+    {
+      "ticker": "2618.TW",
+      "name": "Eva Airways Corporation",
+      "exchange": "TWSE",
+      "category": "Transportation",
+      "high_type": "52_week",
+      "reason": "업종: Transportation · Airlines",
+      "description": "Eva Airways Corporation · Airlines",
+      "change_pct": 0.6369426751592355,
+      "session_open": 39.20000076293945,
+      "session_close": 39.5,
+      "session_volume": 54208243.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2618",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2618.TW/history/",
+        "date": "2024-11-12",
+        "daily_high": 39.849998474121094,
+        "prior_all_time_or_current_month_high": 42.400001525878906,
+        "passes_close_filter": true,
+        "yahoo_symbol": "2618.TW"
+      }
+    },
+    {
+      "ticker": "2637.TW",
+      "name": "Wisdom Marine Lines Co., Limited.",
+      "exchange": "TWSE",
+      "category": "Transportation",
+      "high_type": "52_week",
+      "reason": "업종: Transportation · Marine Shipping",
+      "description": "Wisdom Marine Lines Co., Limited. · Marine Shipping",
+      "change_pct": 0.7594917393937806,
+      "session_open": 79.0999984741211,
+      "session_close": 79.5999984741211,
+      "session_volume": 10453277.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2637",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2637.TW/history/",
+        "date": "2024-11-12",
+        "daily_high": 81.5,
+        "prior_all_time_or_current_month_high": 121.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "2637.TW"
+      }
+    },
+    {
+      "ticker": "3706.TW",
+      "name": "MiTAC Holdings Corp.",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Computer Processing Hardware",
+      "description": "MiTAC Holdings Corp. · Computer Processing Hardware",
+      "change_pct": 7.070704715955611,
+      "session_open": 49.58677673339844,
+      "session_close": 52.561981201171875,
+      "session_volume": 420064440.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:3706",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3706.TW/history/",
+        "date": "2024-11-12",
+        "daily_high": 53.80165100097656,
+        "prior_all_time_or_current_month_high": 53.80165100097656,
+        "passes_close_filter": true,
+        "yahoo_symbol": "3706.TW"
+      }
+    },
+    {
+      "ticker": "6807.TW",
+      "name": "FY Group Ltd.",
+      "exchange": "TWSE",
+      "category": "Consumer Durables",
+      "high_type": "all_time",
+      "reason": "업종: Consumer Durables · Home Furnishings",
+      "description": "FY Group Ltd. · Home Furnishings",
+      "change_pct": 8.004642424780982,
+      "session_open": 91.5999984741211,
+      "session_close": 93.0999984741211,
+      "session_volume": 1041016.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:6807",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6807.TW/history/",
+        "date": "2024-11-12",
+        "daily_high": 93.5,
+        "prior_all_time_or_current_month_high": 93.5,
+        "passes_close_filter": true,
+        "yahoo_symbol": "6807.TW"
+      }
+    },
+    {
+      "ticker": "8114.TW",
+      "name": "Posiflex Technology Inc.",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Computer Processing Hardware",
+      "description": "Posiflex Technology Inc. · Computer Processing Hardware",
+      "change_pct": 5.240174672489073,
+      "session_open": 233.5,
+      "session_close": 241.0,
+      "session_volume": 3752305.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:8114",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/8114.TW/history/",
+        "date": "2024-11-12",
+        "daily_high": 248.5,
+        "prior_all_time_or_current_month_high": 248.5,
+        "passes_close_filter": true,
+        "yahoo_symbol": "8114.TW"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-10-21T14:28:44.304462+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 2349,
+    "history_symbols": 2162,
+    "inactive_symbols": 3,
+    "failed_symbols": 184,
+    "coverage_ratio": 0.9215686274509803,
+    "coverage_by_exchange": {
+      "TWSE": {
+        "covered": 1065,
+        "total": 1092
+      },
+      "TPEX": {
+        "covered": 1097,
+        "total": 1254
+      }
+    },
+    "session_symbols": 2151,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-10-21T14:28:44.304462+00:00"
+}

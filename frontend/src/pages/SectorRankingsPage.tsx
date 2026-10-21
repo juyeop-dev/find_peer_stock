@@ -64,6 +64,7 @@ export function SectorRankingsPage() {
     {selectedDate && <SectorCalendar month={month || selectedDate.slice(0, 7)} selectedDate={selectedDate} latestDate={latestDate} records={records} onMonthChange={setMonth} onSelectDate={date => { setMonth(date.slice(0, 7)); change("date", date); }} onLatest={() => { setMonth(latestDate.slice(0, 7)); change("date", ""); }} />}
     {loading && <LoadingSpinner />}{error && <ErrorNotice message={error} />}
     {data && <>
+      {data.reconstruction && <p className="semiFootnote" role="status"><strong>과거 주가 재구성 · {data.reconstruction.classification_date} 업종 분류 기준</strong> · {data.reconstruction.note}</p>}
       <div className="sectorSummary" aria-label="집계 요약"><div><span>거래일</span><strong>{data.date}</strong></div><div><span>집계 종목</span><strong>{latestStocks.length.toLocaleString("ko-KR")}개</strong></div><div><span>상승 / 하락 섹터</span><strong><b className="semiUp">{groups.filter(group => (group.value ?? 0) > 0).length}</b><span> / </span><b className="semiDown">{groups.filter(group => (group.value ?? 0) < 0).length}</b></strong></div><div><span>전체 거래대금</span><strong>{sectorMoney(groups.some(group => group.turnover !== null) ? groups.reduce((sum, group) => sum + (group.turnover ?? 0), 0) : null)}</strong></div></div>
       <section className="semiPanel sectorRankingPanel" aria-label="섹터별 순위">
         <div className="sectorControls"><div className="semiPeriodTabs" aria-label="수익률 기간">{SECTOR_PERIODS.map(item => <button key={item.key} className={period === item.key ? "active" : ""} aria-pressed={period === item.key} onClick={() => change("period", item.key)}>{item.label}</button>)}</div>
@@ -79,7 +80,7 @@ export function SectorRankingsPage() {
         <p className="semiFootnote">{data.universe}. {data.stale_count ? `최신 거래일 자료가 없는 ${data.stale_count}종목은 순위에서 제외했습니다. ` : ""}등락률이 없는 종목은 평균에서 제외하고, 금액 미제공 시 집계된 종목 수를 표시합니다.</p>
       </section>
 
-      <p className="semiFootnote sectorMethodology">등락률은 같은 거래일의 구성 종목 수익률을 동일 비중으로 평균한 값이며 지수 수익률과 다릅니다. 기간 선택은 등락률에 적용하고, 거래대금은 해당 거래일 값, 시가총액은 조회 시점 제공값의 합계입니다. 대표 종목은 제공 시가총액이 가장 큰 종목입니다. 업종은 <a href={data.source_url} target="_blank" rel="noreferrer">TradingView 분류</a> 기준입니다. {data.archived ? "과거 기록은 해당 거래일의 마지막 저장 스냅샷으로 최신 시세로 바꾸지 않습니다." : "새로고침은 국내 전체 목록을 원본에서 다시 조회합니다."}</p>
+      <p className="semiFootnote sectorMethodology">등락률은 같은 거래일의 구성 종목 수익률을 동일 비중으로 평균한 값이며 지수 수익률과 다릅니다. 기간 선택은 등락률에 적용합니다. {data.reconstruction ? "거래대금은 당시 종가×거래량 추정치이며 시가총액은 미제공입니다. 대표 종목은 추정 거래대금이 가장 큰 종목입니다." : "거래대금은 해당 거래일 값, 시가총액은 조회 시점 제공값의 합계입니다. 대표 종목은 제공 시가총액이 가장 큰 종목입니다."} 업종은 <a href={data.reconstruction?.classification_source ?? data.source_url} target="_blank" rel="noreferrer">TradingView 분류</a> 기준입니다. {data.reconstruction ? "과거 일봉으로 재구성한 기록을 표시합니다." : data.archived ? "과거 기록은 해당 거래일의 마지막 저장 스냅샷으로 최신 시세로 바꾸지 않습니다." : "새로고침은 국내 전체 목록을 원본에서 다시 조회합니다."}</p>
     </>}
   </main>;
 }

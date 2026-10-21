@@ -1,0 +1,310 @@
+{
+  "schema_version": 1,
+  "market": "china",
+  "date": "2024-09-06",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "600418.SS",
+      "name": "Anhui Jianghuai Automobile Group Corp., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Auto Parts: OEM",
+      "description": "Anhui Jianghuai Automobile Group Corp., Ltd. Class A · Auto Parts: OEM",
+      "change_pct": 8.132813141796857,
+      "session_open": 20.829999923706055,
+      "session_close": 22.469999313354492,
+      "session_volume": 184491440.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:600418",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/600418.SS/history/",
+        "date": "2024-09-06",
+        "daily_high": 22.860000610351562,
+        "prior_all_time_or_current_month_high": 23.59000015258789,
+        "passes_close_filter": true,
+        "yahoo_symbol": "600418.SS"
+      }
+    },
+    {
+      "ticker": "600551.SS",
+      "name": "Time Publishing & Media Co. Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Consumer Services",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Services · Publishing: Books/Magazines",
+      "description": "Time Publishing & Media Co. Ltd. Class A · Publishing: Books/Magazines",
+      "change_pct": 0.6211203670828613,
+      "session_open": 8.010000228881836,
+      "session_close": 8.100000381469727,
+      "session_volume": 4195420.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:600551",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/600551.SS/history/",
+        "date": "2024-09-06",
+        "daily_high": 8.140000343322754,
+        "prior_all_time_or_current_month_high": 16.11224446977888,
+        "passes_close_filter": true,
+        "yahoo_symbol": "600551.SS"
+      }
+    },
+    {
+      "ticker": "600611.SS",
+      "name": "Dazhong Transportation (Group) Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Transportation",
+      "high_type": "52_week",
+      "reason": "업종: Transportation · Other Transportation",
+      "description": "Dazhong Transportation (Group) Co., Ltd. Class A · Other Transportation",
+      "change_pct": 10.000000000000009,
+      "session_open": 11.4399995803833,
+      "session_close": 11.4399995803833,
+      "session_volume": 17277712.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:600611",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/600611.SS/history/",
+        "date": "2024-09-06",
+        "daily_high": 11.4399995803833,
+        "prior_all_time_or_current_month_high": 12.422222137451172,
+        "passes_close_filter": true,
+        "yahoo_symbol": "600611.SS"
+      }
+    },
+    {
+      "ticker": "601601.SS",
+      "name": "China Pacific Insurance (Group) Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "업종: Finance · Multi-Line Insurance",
+      "description": "China Pacific Insurance (Group) Co., Ltd. Class A · Multi-Line Insurance",
+      "change_pct": 2.4462802351013613,
+      "session_open": 30.25,
+      "session_close": 30.989999771118164,
+      "session_volume": 39854009.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:601601",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/601601.SS/history/",
+        "date": "2024-09-06",
+        "daily_high": 31.40999984741211,
+        "prior_all_time_or_current_month_high": 50.279998779296875,
+        "passes_close_filter": true,
+        "yahoo_symbol": "601601.SS"
+      }
+    },
+    {
+      "ticker": "603626.SS",
+      "name": "Kunshan Kersen Science & Technology Co. Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Industrial Machinery",
+      "description": "Kunshan Kersen Science & Technology Co. Ltd. Class A · Industrial Machinery",
+      "change_pct": 9.991671826777804,
+      "session_open": 13.0,
+      "session_close": 13.210000038146973,
+      "session_volume": 96168217.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:603626",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/603626.SS/history/",
+        "date": "2024-09-06",
+        "daily_high": 13.210000038146973,
+        "prior_all_time_or_current_month_high": 26.015306200299946,
+        "passes_close_filter": true,
+        "yahoo_symbol": "603626.SS"
+      }
+    },
+    {
+      "ticker": "688617.SS",
+      "name": "APT Medical Inc. Class A",
+      "exchange": "SSE",
+      "category": "Health Technology",
+      "high_type": "all_time",
+      "reason": "업종: Health Technology · Medical Specialties",
+      "description": "APT Medical Inc. Class A · Medical Specialties",
+      "change_pct": 0.9291263962034835,
+      "session_open": 251.72413635253906,
+      "session_close": 255.46206665039062,
+      "session_volume": 1044353.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:688617",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/688617.SS/history/",
+        "date": "2024-09-06",
+        "daily_high": 259.96551513671875,
+        "prior_all_time_or_current_month_high": 259.96551513671875,
+        "passes_close_filter": true,
+        "yahoo_symbol": "688617.SS"
+      }
+    },
+    {
+      "ticker": "000062.SZ",
+      "name": "Shenzhen Huaqiang Industry Co., Ltd Class A",
+      "exchange": "SZSE",
+      "category": "Distribution Services",
+      "high_type": "52_week",
+      "reason": "업종: Distribution Services · Electronics Distributors",
+      "description": "Shenzhen Huaqiang Industry Co., Ltd Class A · Electronics Distributors",
+      "change_pct": 10.007939458523074,
+      "session_open": 38.7599983215332,
+      "session_close": 41.54999923706055,
+      "session_volume": 112108429.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:000062",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/000062.SZ/history/",
+        "date": "2024-09-06",
+        "daily_high": 41.54999923706055,
+        "prior_all_time_or_current_month_high": 44.546966552734375,
+        "passes_close_filter": true,
+        "yahoo_symbol": "000062.SZ"
+      }
+    },
+    {
+      "ticker": "000429.SZ",
+      "name": "Guangdong Provincial Expressway Development Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Industrial Services",
+      "high_type": "52_week",
+      "reason": "업종: Industrial Services · Engineering & Construction",
+      "description": "Guangdong Provincial Expressway Development Co., Ltd. Class A · Engineering & Construction",
+      "change_pct": 1.125542097784571,
+      "session_open": 11.5,
+      "session_close": 11.680000305175781,
+      "session_volume": 5772375.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:000429",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/000429.SZ/history/",
+        "date": "2024-09-06",
+        "daily_high": 11.770000457763672,
+        "prior_all_time_or_current_month_high": 12.729999542236328,
+        "passes_close_filter": true,
+        "yahoo_symbol": "000429.SZ"
+      }
+    },
+    {
+      "ticker": "001298.SZ",
+      "name": "Shenzhen Best of Best Holdings Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Distribution Services",
+      "high_type": "all_time",
+      "reason": "업종: Distribution Services · Electronics Distributors",
+      "description": "Shenzhen Best of Best Holdings Co., Ltd. Class A · Electronics Distributors",
+      "change_pct": 9.999996354363194,
+      "session_open": 13.555291175842285,
+      "session_close": 14.387633323669434,
+      "session_volume": 74009383.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:001298",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/001298.SZ/history/",
+        "date": "2024-09-06",
+        "daily_high": 14.387633323669434,
+        "prior_all_time_or_current_month_high": 14.387633323669434,
+        "passes_close_filter": true,
+        "yahoo_symbol": "001298.SZ"
+      }
+    },
+    {
+      "ticker": "201872.SZ",
+      "name": "China Merchants Port Group Co., Ltd. Class B",
+      "exchange": "SZSE",
+      "category": "Transportation",
+      "high_type": "52_week",
+      "reason": "업종: Transportation · Other Transportation",
+      "description": "China Merchants Port Group Co., Ltd. Class B · Other Transportation",
+      "change_pct": 1.8814657301220228,
+      "session_open": 10.609999656677246,
+      "session_close": 10.829999923706055,
+      "session_volume": 859713.0,
+      "currency": "HKD",
+      "source_symbol": "SZSE:201872",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/201872.SZ/history/",
+        "date": "2024-09-06",
+        "daily_high": 10.920000076293945,
+        "prior_all_time_or_current_month_high": 21.110000610351562,
+        "passes_close_filter": true,
+        "yahoo_symbol": "201872.SZ"
+      }
+    },
+    {
+      "ticker": "300209.SZ",
+      "name": "Xingyun Technology Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Retail Trade",
+      "high_type": "52_week",
+      "reason": "업종: Retail Trade · Internet Retail",
+      "description": "Xingyun Technology Co., Ltd. Class A · Internet Retail",
+      "change_pct": 7.951805207774032,
+      "session_open": 4.230000019073486,
+      "session_close": 4.480000019073486,
+      "session_volume": 25079500.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:300209",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/300209.SZ/history/",
+        "date": "2024-09-06",
+        "daily_high": 4.78000020980835,
+        "prior_all_time_or_current_month_high": 42.349998474121094,
+        "passes_close_filter": true,
+        "yahoo_symbol": "300209.SZ"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-10-21T14:33:25.825538+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 5313,
+    "history_symbols": 5147,
+    "inactive_symbols": 0,
+    "failed_symbols": 166,
+    "coverage_ratio": 0.96875588179936,
+    "coverage_by_exchange": {
+      "SSE": {
+        "covered": 2282,
+        "total": 2358
+      },
+      "SZSE": {
+        "covered": 2865,
+        "total": 2955
+      }
+    },
+    "session_symbols": 5118,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-10-21T14:33:25.825538+00:00"
+}

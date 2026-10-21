@@ -21,7 +21,8 @@
     "test:stock-information:production": "node tests/stock-information-production.mjs",
     "test:sectors": "node --test tests/sector-rankings.test.mjs tests/sector-history-client.test.mjs ../tests/sector-archive.test.mjs",
     "test:sectors:browser": "node tests/sector-rankings-browser.mjs",
-    "test:chart-tooltip:browser": "node tests/chart-tooltip-browser.mjs"
+    "test:chart-tooltip:browser": "node tests/chart-tooltip-browser.mjs",
+    "test:stock-information:2024-h2": "node tests/stock-information-2024-h2-browser.mjs"
   },
   "dependencies": {
     "react": "^19.0.0",

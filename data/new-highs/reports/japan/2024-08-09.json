@@ -1,0 +1,402 @@
+{
+  "schema_version": 1,
+  "market": "japan",
+  "date": "2024-08-09",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "2181.T",
+      "name": "PERSOL HOLDINGS CO. LTD.",
+      "exchange": "TSE",
+      "category": "Commercial Services",
+      "high_type": "52_week",
+      "reason": "업종: Commercial Services · Personnel Services",
+      "description": "PERSOL HOLDINGS CO. LTD. · Personnel Services",
+      "change_pct": 12.06612074670712,
+      "session_open": 265.29998779296875,
+      "session_close": 271.20001220703125,
+      "session_volume": 20944300.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:2181",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2181.T/history/",
+        "date": "2024-08-09",
+        "daily_high": 271.8999938964844,
+        "prior_all_time_or_current_month_high": 6566.666666666667,
+        "passes_close_filter": true,
+        "yahoo_symbol": "2181.T"
+      }
+    },
+    {
+      "ticker": "3064.T",
+      "name": "MonotaRO Co., Ltd.",
+      "exchange": "TSE",
+      "category": "Distribution Services",
+      "high_type": "52_week",
+      "reason": "업종: Distribution Services · Wholesale Distributors",
+      "description": "MonotaRO Co., Ltd. · Wholesale Distributors",
+      "change_pct": 2.2116218560277456,
+      "session_open": 2349.0,
+      "session_close": 2357.0,
+      "session_volume": 2917900.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:3064",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3064.T/history/",
+        "date": "2024-08-09",
+        "daily_high": 2421.0,
+        "prior_all_time_or_current_month_high": 3185.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "3064.T"
+      }
+    },
+    {
+      "ticker": "3261.T",
+      "name": "Grandes, Inc.",
+      "exchange": "TSE",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "업종: Finance · Real Estate Development",
+      "description": "Grandes, Inc. · Real Estate Development",
+      "change_pct": 5.2208835341365445,
+      "session_open": 500.0,
+      "session_close": 524.0,
+      "session_volume": 28600.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:3261",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3261.T/history/",
+        "date": "2024-08-09",
+        "daily_high": 538.0,
+        "prior_all_time_or_current_month_high": 780.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "3261.T"
+      }
+    },
+    {
+      "ticker": "3529.T",
+      "name": "Atsugi Co., Ltd.",
+      "exchange": "TSE",
+      "category": "Consumer Non-Durables",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Non-Durables · Apparel/Footwear",
+      "description": "Atsugi Co., Ltd. · Apparel/Footwear",
+      "change_pct": 7.352941176470584,
+      "session_open": 771.0,
+      "session_close": 803.0,
+      "session_volume": 353000.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:3529",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3529.T/history/",
+        "date": "2024-08-09",
+        "daily_high": 807.0,
+        "prior_all_time_or_current_month_high": 25000.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "3529.T"
+      }
+    },
+    {
+      "ticker": "3623.T",
+      "name": "Billing System Corporation",
+      "exchange": "TSE",
+      "category": "Commercial Services",
+      "high_type": "52_week",
+      "reason": "업종: Commercial Services · Miscellaneous Commercial Services",
+      "description": "Billing System Corporation · Miscellaneous Commercial Services",
+      "change_pct": 3.9203860072376306,
+      "session_open": 1670.0,
+      "session_close": 1723.0,
+      "session_volume": 273000.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:3623",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3623.T/history/",
+        "date": "2024-08-09",
+        "daily_high": 1812.0,
+        "prior_all_time_or_current_month_high": 2035.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "3623.T"
+      }
+    },
+    {
+      "ticker": "3673.T",
+      "name": "Broadleaf Co., Ltd.",
+      "exchange": "TSE",
+      "category": "Technology Services",
+      "high_type": "all_time",
+      "reason": "업종: Technology Services · Packaged Software",
+      "description": "Broadleaf Co., Ltd. · Packaged Software",
+      "change_pct": 10.659898477157359,
+      "session_open": 310.5,
+      "session_close": 327.0,
+      "session_volume": 1526400.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:3673",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3673.T/history/",
+        "date": "2024-08-09",
+        "daily_high": 329.5,
+        "prior_all_time_or_current_month_high": 329.5,
+        "passes_close_filter": true,
+        "yahoo_symbol": "3673.T"
+      }
+    },
+    {
+      "ticker": "3836.T",
+      "name": "AVANT GROUP CORPORATION",
+      "exchange": "TSE",
+      "category": "Technology Services",
+      "high_type": "52_week",
+      "reason": "업종: Technology Services · Packaged Software",
+      "description": "AVANT GROUP CORPORATION · Packaged Software",
+      "change_pct": 3.5563592525617915,
+      "session_open": 1697.0,
+      "session_close": 1718.0,
+      "session_volume": 186200.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:3836",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3836.T/history/",
+        "date": "2024-08-09",
+        "daily_high": 1719.0,
+        "prior_all_time_or_current_month_high": 1872.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "3836.T"
+      }
+    },
+    {
+      "ticker": "4769.T",
+      "name": "IC CO.,LTD.",
+      "exchange": "TSE",
+      "category": "Technology Services",
+      "high_type": "52_week",
+      "reason": "업종: Technology Services · Information Technology Services",
+      "description": "IC CO.,LTD. · Information Technology Services",
+      "change_pct": 1.4537902388369606,
+      "session_open": 969.0,
+      "session_close": 977.0,
+      "session_volume": 7700.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:4769",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4769.T/history/",
+        "date": "2024-08-09",
+        "daily_high": 979.0,
+        "prior_all_time_or_current_month_high": 1248.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "4769.T"
+      }
+    },
+    {
+      "ticker": "4914.T",
+      "name": "Takasago International Corporation",
+      "exchange": "TSE",
+      "category": "Consumer Non-Durables",
+      "high_type": "all_time",
+      "reason": "업종: Consumer Non-Durables · Food: Specialty/Candy",
+      "description": "Takasago International Corporation · Food: Specialty/Candy",
+      "change_pct": 19.390581717451518,
+      "session_open": 856.0,
+      "session_close": 862.0,
+      "session_volume": 239000.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:4914",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4914.T/history/",
+        "date": "2024-08-09",
+        "daily_high": 862.0,
+        "prior_all_time_or_current_month_high": 862.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "4914.T"
+      }
+    },
+    {
+      "ticker": "5458.T",
+      "name": "Takasago Tekko K.K.",
+      "exchange": "TSE",
+      "category": "Non-Energy Minerals",
+      "high_type": "52_week",
+      "reason": "업종: Non-Energy Minerals · Steel",
+      "description": "Takasago Tekko K.K. · Steel",
+      "change_pct": 2.062975027144409,
+      "session_open": 939.0,
+      "session_close": 940.0,
+      "session_volume": 8600.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:5458",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/5458.T/history/",
+        "date": "2024-08-09",
+        "daily_high": 954.0,
+        "prior_all_time_or_current_month_high": 36400.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "5458.T"
+      }
+    },
+    {
+      "ticker": "8976.T",
+      "name": "Daiwa Office Investment Corporation",
+      "exchange": "TSE",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "업종: Finance · Real Estate Investment Trusts",
+      "description": "Daiwa Office Investment Corporation · Real Estate Investment Trusts",
+      "change_pct": 1.242444593687031,
+      "session_open": 298300.0,
+      "session_close": 301500.0,
+      "session_volume": 3817.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:8976",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/8976.T/history/",
+        "date": "2024-08-09",
+        "daily_high": 303000.0,
+        "prior_all_time_or_current_month_high": 303000.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "8976.T"
+      }
+    },
+    {
+      "ticker": "9028.T",
+      "name": "Zero Co., Ltd.",
+      "exchange": "TSE",
+      "category": "Transportation",
+      "high_type": "all_time",
+      "reason": "업종: Transportation · Trucking",
+      "description": "Zero Co., Ltd. · Trucking",
+      "change_pct": 17.393939393939384,
+      "session_open": 1930.0,
+      "session_close": 1937.0,
+      "session_volume": 137400.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:9028",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/9028.T/history/",
+        "date": "2024-08-09",
+        "daily_high": 2022.0,
+        "prior_all_time_or_current_month_high": 2022.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "9028.T"
+      }
+    },
+    {
+      "ticker": "9267.T",
+      "name": "Genky DrugStores Co., Ltd.",
+      "exchange": "TSE",
+      "category": "Retail Trade",
+      "high_type": "all_time",
+      "reason": "업종: Retail Trade · Drugstore Chains",
+      "description": "Genky DrugStores Co., Ltd. · Drugstore Chains",
+      "change_pct": 3.4833091436865082,
+      "session_open": 3515.0,
+      "session_close": 3565.0,
+      "session_volume": 110500.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:9267",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/9267.T/history/",
+        "date": "2024-08-09",
+        "daily_high": 3585.0,
+        "prior_all_time_or_current_month_high": 3585.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "9267.T"
+      }
+    },
+    {
+      "ticker": "9302.T",
+      "name": "MITSUI-SOKO HOLDINGS Co., Ltd.",
+      "exchange": "TSE",
+      "category": "Transportation",
+      "high_type": "52_week",
+      "reason": "업종: Transportation · Marine Shipping",
+      "description": "MITSUI-SOKO HOLDINGS Co., Ltd. · Marine Shipping",
+      "change_pct": 2.1912325747976746,
+      "session_open": 1710.0,
+      "session_close": 1710.0,
+      "session_volume": 481800.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:9302",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/9302.T/history/",
+        "date": "2024-08-09",
+        "daily_high": 1746.6666259765625,
+        "prior_all_time_or_current_month_high": 2455.5556233723955,
+        "passes_close_filter": true,
+        "yahoo_symbol": "9302.T"
+      }
+    },
+    {
+      "ticker": "9438.T",
+      "name": "MTI Ltd.",
+      "exchange": "TSE",
+      "category": "Technology Services",
+      "high_type": "52_week",
+      "reason": "업종: Technology Services · Internet Software/Services",
+      "description": "MTI Ltd. · Internet Software/Services",
+      "change_pct": 5.602536997885843,
+      "session_open": 954.0,
+      "session_close": 999.0,
+      "session_volume": 186500.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:9438",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/9438.T/history/",
+        "date": "2024-08-09",
+        "daily_high": 1008.0,
+        "prior_all_time_or_current_month_high": 1028.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "9438.T"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-10-21T14:25:46.566059+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 3759,
+    "history_symbols": 3655,
+    "inactive_symbols": 2,
+    "failed_symbols": 102,
+    "coverage_ratio": 0.9728506787330317,
+    "coverage_by_exchange": {
+      "TSE": {
+        "covered": 3655,
+        "total": 3757
+      }
+    },
+    "session_symbols": 3619,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-10-21T14:25:46.566059+00:00"
+}

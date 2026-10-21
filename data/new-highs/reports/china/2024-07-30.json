@@ -1,0 +1,382 @@
+{
+  "schema_version": 1,
+  "market": "china",
+  "date": "2024-07-30",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "600452.SS",
+      "name": "Chongqing Fuling Electric Power Industrial Co Ltd Class A",
+      "exchange": "SSE",
+      "category": "Utilities",
+      "high_type": "all_time",
+      "reason": "업종: Utilities · Electric Utilities",
+      "description": "Chongqing Fuling Electric Power Industrial Co Ltd Class A · Electric Utilities",
+      "change_pct": 0.4935852928924067,
+      "session_open": 10.100000381469727,
+      "session_close": 10.180000305175781,
+      "session_volume": 10405047.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:600452",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/600452.SS/history/",
+        "date": "2024-07-30",
+        "daily_high": 10.260000228881836,
+        "prior_all_time_or_current_month_high": 10.260000228881836,
+        "passes_close_filter": true,
+        "yahoo_symbol": "600452.SS"
+      }
+    },
+    {
+      "ticker": "600530.SS",
+      "name": "Shanghai Jiaoda Onlly Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Pharmaceuticals: Major",
+      "description": "Shanghai Jiaoda Onlly Co., Ltd. Class A · Pharmaceuticals: Major",
+      "change_pct": 9.89010912234891,
+      "session_open": 2.9000000953674316,
+      "session_close": 3.0,
+      "session_volume": 46854234.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:600530",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/600530.SS/history/",
+        "date": "2024-07-30",
+        "daily_high": 3.0,
+        "prior_all_time_or_current_month_high": 10.399999618530273,
+        "passes_close_filter": true,
+        "yahoo_symbol": "600530.SS"
+      }
+    },
+    {
+      "ticker": "600611.SS",
+      "name": "Dazhong Transportation (Group) Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Transportation",
+      "high_type": "52_week",
+      "reason": "업종: Transportation · Other Transportation",
+      "description": "Dazhong Transportation (Group) Co., Ltd. Class A · Other Transportation",
+      "change_pct": 10.03235496846806,
+      "session_open": 9.579999923706055,
+      "session_close": 10.199999809265137,
+      "session_volume": 324513199.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:600611",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/600611.SS/history/",
+        "date": "2024-07-30",
+        "daily_high": 10.199999809265137,
+        "prior_all_time_or_current_month_high": 12.422222137451172,
+        "passes_close_filter": true,
+        "yahoo_symbol": "600611.SS"
+      }
+    },
+    {
+      "ticker": "600635.SS",
+      "name": "Shanghai Dazhong Public Utilities (Group) Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Utilities",
+      "high_type": "52_week",
+      "reason": "업종: Utilities · Gas Distributors",
+      "description": "Shanghai Dazhong Public Utilities (Group) Co., Ltd. Class A · Gas Distributors",
+      "change_pct": 10.025709367269586,
+      "session_open": 4.28000020980835,
+      "session_close": 4.28000020980835,
+      "session_volume": 20528088.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:600635",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/600635.SS/history/",
+        "date": "2024-07-30",
+        "daily_high": 4.28000020980835,
+        "prior_all_time_or_current_month_high": 16.8799991607666,
+        "passes_close_filter": true,
+        "yahoo_symbol": "600635.SS"
+      }
+    },
+    {
+      "ticker": "600650.SS",
+      "name": "Shanghai Jin Jiang Online Network Service Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Transportation",
+      "high_type": "52_week",
+      "reason": "업종: Transportation · Trucking",
+      "description": "Shanghai Jin Jiang Online Network Service Co., Ltd. Class A · Trucking",
+      "change_pct": 9.993155868964765,
+      "session_open": 14.300000190734863,
+      "session_close": 16.06999969482422,
+      "session_volume": 59185438.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:600650",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/600650.SS/history/",
+        "date": "2024-07-30",
+        "daily_high": 16.06999969482422,
+        "prior_all_time_or_current_month_high": 53.70000076293945,
+        "passes_close_filter": true,
+        "yahoo_symbol": "600650.SS"
+      }
+    },
+    {
+      "ticker": "600686.SS",
+      "name": "Xiamen King Long Motor Group Co. Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Consumer Durables",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Durables · Motor Vehicles",
+      "description": "Xiamen King Long Motor Group Co. Ltd. Class A · Motor Vehicles",
+      "change_pct": 9.987108191644278,
+      "session_open": 15.5,
+      "session_close": 17.06999969482422,
+      "session_volume": 215601524.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:600686",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/600686.SS/history/",
+        "date": "2024-07-30",
+        "daily_high": 17.06999969482422,
+        "prior_all_time_or_current_month_high": 34.150001525878906,
+        "passes_close_filter": true,
+        "yahoo_symbol": "600686.SS"
+      }
+    },
+    {
+      "ticker": "601000.SS",
+      "name": "Tangshan Port Group Co. Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Transportation",
+      "high_type": "all_time",
+      "reason": "업종: Transportation · Other Transportation",
+      "description": "Tangshan Port Group Co. Ltd. Class A · Other Transportation",
+      "change_pct": 2.6565439656981216,
+      "session_open": 5.260000228881836,
+      "session_close": 5.409999847412109,
+      "session_volume": 54034810.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:601000",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/601000.SS/history/",
+        "date": "2024-07-30",
+        "daily_high": 5.429999828338623,
+        "prior_all_time_or_current_month_high": 5.429999828338623,
+        "passes_close_filter": true,
+        "yahoo_symbol": "601000.SS"
+      }
+    },
+    {
+      "ticker": "601200.SS",
+      "name": "Shanghai Environment Group Co. Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Industrial Services",
+      "high_type": "52_week",
+      "reason": "업종: Industrial Services · Environmental Services",
+      "description": "Shanghai Environment Group Co. Ltd. Class A · Environmental Services",
+      "change_pct": 0.675671800720723,
+      "session_open": 7.409999847412109,
+      "session_close": 7.449999809265137,
+      "session_volume": 4051912.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:601200",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/601200.SS/history/",
+        "date": "2024-07-30",
+        "daily_high": 7.460000038146973,
+        "prior_all_time_or_current_month_high": 17.41042014880058,
+        "passes_close_filter": true,
+        "yahoo_symbol": "601200.SS"
+      }
+    },
+    {
+      "ticker": "688090.SS",
+      "name": "Guangzhou Risong Intelligent Technology Holding Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Industrial Machinery",
+      "description": "Guangzhou Risong Intelligent Technology Holding Co., Ltd. Class A · Industrial Machinery",
+      "change_pct": 9.517426470391243,
+      "session_open": 21.982248306274414,
+      "session_close": 24.17159652709961,
+      "session_volume": 11589066.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:688090",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/688090.SS/history/",
+        "date": "2024-07-30",
+        "daily_high": 24.550294876098633,
+        "prior_all_time_or_current_month_high": 24.550294876098633,
+        "passes_close_filter": true,
+        "yahoo_symbol": "688090.SS"
+      }
+    },
+    {
+      "ticker": "002130.SZ",
+      "name": "Shenzhen Woer Heat-Shrinkable Material Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Electrical Products",
+      "description": "Shenzhen Woer Heat-Shrinkable Material Co., Ltd. Class A · Electrical Products",
+      "change_pct": 1.930034356433774,
+      "session_open": 16.389999389648438,
+      "session_close": 16.899999618530273,
+      "session_volume": 175860706.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002130",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002130.SZ/history/",
+        "date": "2024-07-30",
+        "daily_high": 17.889999389648438,
+        "prior_all_time_or_current_month_high": 32.029998779296875,
+        "passes_close_filter": true,
+        "yahoo_symbol": "002130.SZ"
+      }
+    },
+    {
+      "ticker": "002232.SZ",
+      "name": "Qiming Information Technology Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Technology Services",
+      "high_type": "52_week",
+      "reason": "업종: Technology Services · Information Technology Services",
+      "description": "Qiming Information Technology Co., Ltd. Class A · Information Technology Services",
+      "change_pct": 9.985997942947233,
+      "session_open": 23.56999969482422,
+      "session_close": 23.56999969482422,
+      "session_volume": 38884043.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002232",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002232.SZ/history/",
+        "date": "2024-07-30",
+        "daily_high": 23.56999969482422,
+        "prior_all_time_or_current_month_high": 33.7400016784668,
+        "passes_close_filter": true,
+        "yahoo_symbol": "002232.SZ"
+      }
+    },
+    {
+      "ticker": "200550.SZ",
+      "name": "Jiangling Motors Co., Ltd. Class B",
+      "exchange": "SZSE",
+      "category": "Consumer Durables",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Durables · Motor Vehicles",
+      "description": "Jiangling Motors Co., Ltd. Class B · Motor Vehicles",
+      "change_pct": 4.077670568120451,
+      "session_open": 10.25,
+      "session_close": 10.720000267028809,
+      "session_volume": 1532912.0,
+      "currency": "HKD",
+      "source_symbol": "SZSE:200550",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/200550.SZ/history/",
+        "date": "2024-07-30",
+        "daily_high": 10.779999732971191,
+        "prior_all_time_or_current_month_high": 45.119998931884766,
+        "passes_close_filter": true,
+        "yahoo_symbol": "200550.SZ"
+      }
+    },
+    {
+      "ticker": "300046.SZ",
+      "name": "Tech Semiconductors Co.,Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Semiconductors",
+      "description": "Tech Semiconductors Co.,Ltd. Class A · Semiconductors",
+      "change_pct": 13.41852214205197,
+      "session_open": 18.450000762939453,
+      "session_close": 21.299999237060547,
+      "session_volume": 67568210.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:300046",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/300046.SZ/history/",
+        "date": "2024-07-30",
+        "daily_high": 21.8799991607666,
+        "prior_all_time_or_current_month_high": 38.29999923706055,
+        "passes_close_filter": true,
+        "yahoo_symbol": "300046.SZ"
+      }
+    },
+    {
+      "ticker": "300061.SZ",
+      "name": "QITIAN Technology Group Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Commercial Services",
+      "high_type": "52_week",
+      "reason": "업종: Commercial Services · Advertising/Marketing Services",
+      "description": "QITIAN Technology Group Co., Ltd. Class A · Advertising/Marketing Services",
+      "change_pct": 19.999999999999996,
+      "session_open": 7.260000228881836,
+      "session_close": 7.260000228881836,
+      "session_volume": 12255626.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:300061",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/300061.SZ/history/",
+        "date": "2024-07-30",
+        "daily_high": 7.260000228881836,
+        "prior_all_time_or_current_month_high": 18.733727381779595,
+        "passes_close_filter": true,
+        "yahoo_symbol": "300061.SZ"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-10-21T14:33:25.825538+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 5313,
+    "history_symbols": 5147,
+    "inactive_symbols": 0,
+    "failed_symbols": 166,
+    "coverage_ratio": 0.96875588179936,
+    "coverage_by_exchange": {
+      "SSE": {
+        "covered": 2282,
+        "total": 2358
+      },
+      "SZSE": {
+        "covered": 2865,
+        "total": 2955
+      }
+    },
+    "session_symbols": 5107,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-10-21T14:33:25.825538+00:00"
+}

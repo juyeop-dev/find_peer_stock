@@ -1,0 +1,101 @@
+{
+  "schema_version": 1,
+  "market": "korea",
+  "date": "2024-08-06",
+  "summary": "과거 일봉 전체 대조 기준. 당일 장중 고가가 52주·전체기간 고가에 도달하고, 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다. 전체기간 신고가를 우선 표시하며 신고가 배경은 별도 확인 전입니다.",
+  "sources": [
+    {
+      "label": "Naver Finance 조정 일봉·한국 종목명",
+      "url": "https://stock.naver.com/"
+    },
+    {
+      "label": "TradingView 한국 주식 종목군·업종",
+      "url": "https://www.tradingview.com/screener/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "001755.KS",
+      "name": "한양증권우",
+      "exchange": "KOSPI",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "업종: Finance · Investment Banks/Brokers",
+      "description": "한양증권우 · Investment Banks/Brokers",
+      "change_pct": 29.81798715203426,
+      "session_open": 19800,
+      "session_close": 24250,
+      "currency": "KRW",
+      "source_symbol": "KRX:001755",
+      "name_original": "Hanyang Securities Co Ltd Pfd Registered Shs Non-Voting",
+      "name_source_url": "https://m.stock.naver.com/api/stock/001755/basic",
+      "high_verification": {
+        "source": "Naver Finance adjusted daily history",
+        "source_url": "https://api.finance.naver.com/siseJson.naver?symbol=001755&requestType=1&startTime=20230808&endTime=20240806&timeframe=day",
+        "date": "2024-08-06",
+        "open": 19800,
+        "daily_high": 24250,
+        "low": 19790,
+        "close": 24250,
+        "previous_close": 18680,
+        "volume": 459301,
+        "prior_52_week_high": 18680,
+        "observed_bars": 244,
+        "first_observed_date": "2023-08-08",
+        "confirmed": true,
+        "matches_prior_high": false,
+        "bearish_candle": false,
+        "down_close": false,
+        "passes_close_filter": true
+      }
+    },
+    {
+      "ticker": "005870.KS",
+      "name": "휴니드",
+      "exchange": "KOSPI",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Computer Communications",
+      "description": "휴니드 · Computer Communications",
+      "change_pct": 12.039045553145336,
+      "session_open": 8750,
+      "session_close": 10330,
+      "currency": "KRW",
+      "source_symbol": "KRX:005870",
+      "name_original": "Huneed Technologies Co., Ltd.",
+      "name_source_url": "https://m.stock.naver.com/api/stock/005870/basic",
+      "high_verification": {
+        "source": "Naver Finance adjusted daily history",
+        "source_url": "https://api.finance.naver.com/siseJson.naver?symbol=005870&requestType=1&startTime=20230808&endTime=20240806&timeframe=day",
+        "date": "2024-08-06",
+        "open": 8750,
+        "daily_high": 11160,
+        "low": 8710,
+        "close": 10330,
+        "previous_close": 9220,
+        "volume": 29106901,
+        "prior_52_week_high": 10050,
+        "observed_bars": 244,
+        "first_observed_date": "2023-08-08",
+        "confirmed": true,
+        "matches_prior_high": false,
+        "bearish_candle": false,
+        "down_close": false,
+        "passes_close_filter": true
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Naver Finance adjusted daily history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-10-21T14:22:28.972093+00:00",
+    "definition": "daily high >= prior 52-week high; close >= open; close >= previous close; all-time takes precedence; ties included",
+    "scanned_symbols": 2739,
+    "session_symbols": 2508,
+    "raw_new_high_candidates": 4,
+    "excluded_unsupported_korean_board": 1,
+    "excluded_bearish_or_down_close": 1,
+    "pagination_complete": true
+  },
+  "collected_at": "2026-10-21T14:22:28.972093+00:00"
+}

@@ -1,0 +1,382 @@
+{
+  "schema_version": 1,
+  "market": "china",
+  "date": "2024-08-19",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "600018.SS",
+      "name": "Shanghai International Port (Group) Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Transportation",
+      "high_type": "52_week",
+      "reason": "업종: Transportation · Other Transportation",
+      "description": "Shanghai International Port (Group) Co., Ltd. Class A · Other Transportation",
+      "change_pct": 1.5948948155784848,
+      "session_open": 6.269999980926514,
+      "session_close": 6.369999885559082,
+      "session_volume": 29269129.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:600018",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/600018.SS/history/",
+        "date": "2024-08-19",
+        "daily_high": 6.369999885559082,
+        "prior_all_time_or_current_month_high": 18.850000381469727,
+        "passes_close_filter": true,
+        "yahoo_symbol": "600018.SS"
+      }
+    },
+    {
+      "ticker": "600028.SS",
+      "name": "China Petroleum & Chemical Corporation Class A",
+      "exchange": "SSE",
+      "category": "Energy Minerals",
+      "high_type": "52_week",
+      "reason": "업종: Energy Minerals · Oil Refining/Marketing",
+      "description": "China Petroleum & Chemical Corporation Class A · Oil Refining/Marketing",
+      "change_pct": 0.5988018395350014,
+      "session_open": 6.679999828338623,
+      "session_close": 6.71999979019165,
+      "session_volume": 115984327.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:600028",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/600028.SS/history/",
+        "date": "2024-08-19",
+        "daily_high": 6.800000190734863,
+        "prior_all_time_or_current_month_high": 17.343193934513973,
+        "passes_close_filter": true,
+        "yahoo_symbol": "600028.SS"
+      }
+    },
+    {
+      "ticker": "600350.SS",
+      "name": "Shandong Hi-speed Co. Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Transportation",
+      "high_type": "52_week",
+      "reason": "업종: Transportation · Other Transportation",
+      "description": "Shandong Hi-speed Co. Ltd. Class A · Other Transportation",
+      "change_pct": 3.54838620363489,
+      "session_open": 9.3100004196167,
+      "session_close": 9.630000114440918,
+      "session_volume": 11929518.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:600350",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/600350.SS/history/",
+        "date": "2024-08-19",
+        "daily_high": 9.640000343322754,
+        "prior_all_time_or_current_month_high": 11.899999618530273,
+        "passes_close_filter": true,
+        "yahoo_symbol": "600350.SS"
+      }
+    },
+    {
+      "ticker": "600377.SS",
+      "name": "Jiangsu Expressway Co. Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Transportation",
+      "high_type": "all_time",
+      "reason": "업종: Transportation · Other Transportation",
+      "description": "Jiangsu Expressway Co. Ltd. Class A · Other Transportation",
+      "change_pct": 2.6529153901814206,
+      "session_open": 13.569999694824219,
+      "session_close": 13.930000305175781,
+      "session_volume": 6907084.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:600377",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/600377.SS/history/",
+        "date": "2024-08-19",
+        "daily_high": 13.949999809265137,
+        "prior_all_time_or_current_month_high": 13.949999809265137,
+        "passes_close_filter": true,
+        "yahoo_symbol": "600377.SS"
+      }
+    },
+    {
+      "ticker": "600817.SS",
+      "name": "Yutong Heavy Industries Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Electronic Components",
+      "description": "Yutong Heavy Industries Co., Ltd. Class A · Electronic Components",
+      "change_pct": 9.97547271212509,
+      "session_open": 11.960000038146973,
+      "session_close": 13.449999809265137,
+      "session_volume": 37269726.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:600817",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/600817.SS/history/",
+        "date": "2024-08-19",
+        "daily_high": 13.449999809265137,
+        "prior_all_time_or_current_month_high": 22.81999969482422,
+        "passes_close_filter": true,
+        "yahoo_symbol": "600817.SS"
+      }
+    },
+    {
+      "ticker": "601288.SS",
+      "name": "Agricultural Bank of China Limited Class A",
+      "exchange": "SSE",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "업종: Finance · Major Banks",
+      "description": "Agricultural Bank of China Limited Class A · Major Banks",
+      "change_pct": 2.731084692285779,
+      "session_open": 4.760000228881836,
+      "session_close": 4.889999866485596,
+      "session_volume": 416477384.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:601288",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/601288.SS/history/",
+        "date": "2024-08-19",
+        "daily_high": 4.900000095367432,
+        "prior_all_time_or_current_month_high": 4.900000095367432,
+        "passes_close_filter": true,
+        "yahoo_symbol": "601288.SS"
+      }
+    },
+    {
+      "ticker": "601326.SS",
+      "name": "Qinhuangdao Port Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Transportation",
+      "high_type": "52_week",
+      "reason": "업종: Transportation · Other Transportation",
+      "description": "Qinhuangdao Port Co., Ltd. Class A · Other Transportation",
+      "change_pct": 2.312136497804751,
+      "session_open": 3.4700000286102295,
+      "session_close": 3.5399999618530273,
+      "session_volume": 19165700.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:601326",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/601326.SS/history/",
+        "date": "2024-08-19",
+        "daily_high": 3.549999952316284,
+        "prior_all_time_or_current_month_high": 12.4399995803833,
+        "passes_close_filter": true,
+        "yahoo_symbol": "601326.SS"
+      }
+    },
+    {
+      "ticker": "601328.SS",
+      "name": "Bank of Communications Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "업종: Finance · Major Banks",
+      "description": "Bank of Communications Co., Ltd. Class A · Major Banks",
+      "change_pct": 2.4579567496978205,
+      "session_open": 7.710000038146973,
+      "session_close": 7.920000076293945,
+      "session_volume": 121365542.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:601328",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/601328.SS/history/",
+        "date": "2024-08-19",
+        "daily_high": 7.940000057220459,
+        "prior_all_time_or_current_month_high": 14.1157020222057,
+        "passes_close_filter": true,
+        "yahoo_symbol": "601328.SS"
+      }
+    },
+    {
+      "ticker": "601398.SS",
+      "name": "Industrial and Commercial Bank of China Limited Class A",
+      "exchange": "SSE",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "업종: Finance · Major Banks",
+      "description": "Industrial and Commercial Bank of China Limited Class A · Major Banks",
+      "change_pct": 2.117265753546782,
+      "session_open": 6.139999866485596,
+      "session_close": 6.269999980926514,
+      "session_volume": 338863514.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:601398",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/601398.SS/history/",
+        "date": "2024-08-19",
+        "daily_high": 6.289999961853027,
+        "prior_all_time_or_current_month_high": 8.844164848327637,
+        "passes_close_filter": true,
+        "yahoo_symbol": "601398.SS"
+      }
+    },
+    {
+      "ticker": "601939.SS",
+      "name": "China Construction Bank Corporation Class A",
+      "exchange": "SSE",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "업종: Finance · Major Banks",
+      "description": "China Construction Bank Corporation Class A · Major Banks",
+      "change_pct": 2.1573613429573646,
+      "session_open": 7.880000114440918,
+      "session_close": 8.050000190734863,
+      "session_volume": 131720127.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:601939",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/601939.SS/history/",
+        "date": "2024-08-19",
+        "daily_high": 8.079999923706055,
+        "prior_all_time_or_current_month_high": 11.579999923706055,
+        "passes_close_filter": true,
+        "yahoo_symbol": "601939.SS"
+      }
+    },
+    {
+      "ticker": "605499.SS",
+      "name": "Eastroc Beverage (Group) Co. Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Consumer Non-Durables",
+      "high_type": "all_time",
+      "reason": "업종: Consumer Non-Durables · Beverages: Non-Alcoholic",
+      "description": "Eastroc Beverage (Group) Co. Ltd. Class A · Beverages: Non-Alcoholic",
+      "change_pct": 0.03361024039665317,
+      "session_open": 108.32953819861778,
+      "session_close": 108.36594801682692,
+      "session_volume": 2044088.8,
+      "currency": "CNY",
+      "source_symbol": "SSE:605499",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/605499.SS/history/",
+        "date": "2024-08-19",
+        "daily_high": 110.66454373873196,
+        "prior_all_time_or_current_month_high": 110.66454373873196,
+        "passes_close_filter": true,
+        "yahoo_symbol": "605499.SS"
+      }
+    },
+    {
+      "ticker": "688617.SS",
+      "name": "APT Medical Inc. Class A",
+      "exchange": "SSE",
+      "category": "Health Technology",
+      "high_type": "all_time",
+      "reason": "업종: Health Technology · Medical Specialties",
+      "description": "APT Medical Inc. Class A · Medical Specialties",
+      "change_pct": 0.8067223557621572,
+      "session_open": 247.57241821289062,
+      "session_close": 248.19309997558594,
+      "session_volume": 689418.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:688617",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/688617.SS/history/",
+        "date": "2024-08-19",
+        "daily_high": 251.72413635253906,
+        "prior_all_time_or_current_month_high": 251.72413635253906,
+        "passes_close_filter": true,
+        "yahoo_symbol": "688617.SS"
+      }
+    },
+    {
+      "ticker": "001298.SZ",
+      "name": "Shenzhen Best of Best Holdings Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Distribution Services",
+      "high_type": "all_time",
+      "reason": "업종: Distribution Services · Electronics Distributors",
+      "description": "Shenzhen Best of Best Holdings Co., Ltd. Class A · Electronics Distributors",
+      "change_pct": 9.99149537352071,
+      "session_open": 11.828775405883789,
+      "session_close": 12.304398536682129,
+      "session_volume": 46281144.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:001298",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/001298.SZ/history/",
+        "date": "2024-08-19",
+        "daily_high": 12.304398536682129,
+        "prior_all_time_or_current_month_high": 12.304398536682129,
+        "passes_close_filter": true,
+        "yahoo_symbol": "001298.SZ"
+      }
+    },
+    {
+      "ticker": "300827.SZ",
+      "name": "Sineng Electric Co.Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Electronic Equipment/Instruments",
+      "description": "Sineng Electric Co.Ltd. Class A · Electronic Equipment/Instruments",
+      "change_pct": 3.794290083509444,
+      "session_open": 31.5,
+      "session_close": 33.099998474121094,
+      "session_volume": 13355895.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:300827",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/300827.SZ/history/",
+        "date": "2024-08-19",
+        "daily_high": 34.20000076293945,
+        "prior_all_time_or_current_month_high": 34.20000076293945,
+        "passes_close_filter": true,
+        "yahoo_symbol": "300827.SZ"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-10-21T14:33:25.825538+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 5313,
+    "history_symbols": 5147,
+    "inactive_symbols": 0,
+    "failed_symbols": 166,
+    "coverage_ratio": 0.96875588179936,
+    "coverage_by_exchange": {
+      "SSE": {
+        "covered": 2282,
+        "total": 2358
+      },
+      "SZSE": {
+        "covered": 2865,
+        "total": 2955
+      }
+    },
+    "session_symbols": 5112,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-10-21T14:33:25.825538+00:00"
+}

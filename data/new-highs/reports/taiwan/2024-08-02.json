@@ -1,0 +1,334 @@
+{
+  "schema_version": 1,
+  "market": "taiwan",
+  "date": "2024-08-02",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "2070.TWO",
+      "name": "Ching Chan Optical Technology Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Trucks/Construction/Farm Machinery",
+      "description": "Ching Chan Optical Technology Co., Ltd. · Trucks/Construction/Farm Machinery",
+      "change_pct": 9.984157217280455,
+      "session_open": 61.099998474121094,
+      "session_close": 69.4000015258789,
+      "session_volume": 5602000.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:2070",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2070.TWO/history/",
+        "date": "2024-08-02",
+        "daily_high": 69.4000015258789,
+        "prior_all_time_or_current_month_high": 69.4000015258789,
+        "passes_close_filter": true,
+        "yahoo_symbol": "2070.TWO"
+      }
+    },
+    {
+      "ticker": "2924.TWO",
+      "name": "Cayman Island Grand Galactica Corp Limited",
+      "exchange": "TPEX",
+      "category": "Consumer Non-Durables",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Non-Durables · Apparel/Footwear",
+      "description": "Cayman Island Grand Galactica Corp Limited · Apparel/Footwear",
+      "change_pct": 0.0,
+      "session_open": 35.5,
+      "session_close": 35.5,
+      "session_volume": 4000.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:2924",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2924.TWO/history/",
+        "date": "2024-08-02",
+        "daily_high": 35.5,
+        "prior_all_time_or_current_month_high": 83.9000015258789,
+        "passes_close_filter": true,
+        "yahoo_symbol": "2924.TWO"
+      }
+    },
+    {
+      "ticker": "4510.TWO",
+      "name": "Kao Fong Machinery Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Industrial Machinery",
+      "description": "Kao Fong Machinery Co., Ltd. · Industrial Machinery",
+      "change_pct": 9.913795513148592,
+      "session_open": 33.5,
+      "session_close": 38.25,
+      "session_volume": 21781000.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:4510",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4510.TWO/history/",
+        "date": "2024-08-02",
+        "daily_high": 38.25,
+        "prior_all_time_or_current_month_high": 38.25,
+        "passes_close_filter": true,
+        "yahoo_symbol": "4510.TWO"
+      }
+    },
+    {
+      "ticker": "4513.TWO",
+      "name": "Falcon Machine Tools Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Industrial Machinery",
+      "description": "Falcon Machine Tools Co., Ltd. · Industrial Machinery",
+      "change_pct": 2.836886577338804,
+      "session_open": 61.140712844991235,
+      "session_close": 63.32430973231235,
+      "session_volume": 26815847.8,
+      "currency": "TWD",
+      "source_symbol": "TPEX:4513",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4513.TWO/history/",
+        "date": "2024-08-02",
+        "daily_high": 65.33321487569363,
+        "prior_all_time_or_current_month_high": 65.33321487569363,
+        "passes_close_filter": true,
+        "yahoo_symbol": "4513.TWO"
+      }
+    },
+    {
+      "ticker": "6199.TWO",
+      "name": "TienPin United Enterprise Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Computer Peripherals",
+      "description": "TienPin United Enterprise Co., Ltd. · Computer Peripherals",
+      "change_pct": 9.920188004990681,
+      "session_open": 48.20000076293945,
+      "session_close": 48.20000076293945,
+      "session_volume": 543000.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:6199",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6199.TWO/history/",
+        "date": "2024-08-02",
+        "daily_high": 48.20000076293945,
+        "prior_all_time_or_current_month_high": 67.59213180119659,
+        "passes_close_filter": true,
+        "yahoo_symbol": "6199.TWO"
+      }
+    },
+    {
+      "ticker": "6877.TWO",
+      "name": "HYE Technology Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Electrical Products",
+      "description": "HYE Technology Co., Ltd. · Electrical Products",
+      "change_pct": 9.897604933890314,
+      "session_open": 56.45454406738281,
+      "session_close": 58.54545211791992,
+      "session_volume": 1339800.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:6877",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6877.TWO/history/",
+        "date": "2024-08-02",
+        "daily_high": 58.54545211791992,
+        "prior_all_time_or_current_month_high": 58.54545211791992,
+        "passes_close_filter": true,
+        "yahoo_symbol": "6877.TWO"
+      }
+    },
+    {
+      "ticker": "2236.TW",
+      "name": "Patec Precision Industry Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Industrial Machinery",
+      "description": "Patec Precision Industry Co., Ltd. · Industrial Machinery",
+      "change_pct": 4.694830563442176,
+      "session_open": 96.82847714167224,
+      "session_close": 103.31458961661046,
+      "session_volume": 5922154.15346376,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2236",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2236.TW/history/",
+        "date": "2024-08-02",
+        "daily_high": 108.41082564878072,
+        "prior_all_time_or_current_month_high": 108.41082564878072,
+        "passes_close_filter": true,
+        "yahoo_symbol": "2236.TW"
+      }
+    },
+    {
+      "ticker": "2524.TW",
+      "name": "King's Town Construction Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Consumer Durables",
+      "high_type": "all_time",
+      "reason": "업종: Consumer Durables · Homebuilding",
+      "description": "King's Town Construction Co., Ltd. · Homebuilding",
+      "change_pct": 1.7621145374449254,
+      "session_open": 112.5,
+      "session_close": 115.5,
+      "session_volume": 32939473.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2524",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2524.TW/history/",
+        "date": "2024-08-02",
+        "daily_high": 121.5,
+        "prior_all_time_or_current_month_high": 121.5,
+        "passes_close_filter": true,
+        "yahoo_symbol": "2524.TW"
+      }
+    },
+    {
+      "ticker": "4441.TW",
+      "name": "Great Giant Fibre Garment Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Consumer Non-Durables",
+      "high_type": "all_time",
+      "reason": "업종: Consumer Non-Durables · Apparel/Footwear",
+      "description": "Great Giant Fibre Garment Co., Ltd. · Apparel/Footwear",
+      "change_pct": 0.5263157894736858,
+      "session_open": 188.0,
+      "session_close": 191.0,
+      "session_volume": 113862.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:4441",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4441.TW/history/",
+        "date": "2024-08-02",
+        "daily_high": 197.0,
+        "prior_all_time_or_current_month_high": 197.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "4441.TW"
+      }
+    },
+    {
+      "ticker": "4564.TW",
+      "name": "Mosa Industrial Corp.",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Semiconductors",
+      "description": "Mosa Industrial Corp. · Semiconductors",
+      "change_pct": 3.113554597891066,
+      "session_open": 26.75,
+      "session_close": 28.149999618530273,
+      "session_volume": 18967460.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:4564",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4564.TW/history/",
+        "date": "2024-08-02",
+        "daily_high": 29.5,
+        "prior_all_time_or_current_month_high": 74.635986328125,
+        "passes_close_filter": true,
+        "yahoo_symbol": "4564.TW"
+      }
+    },
+    {
+      "ticker": "4583.TW",
+      "name": "Apex Dynamics, Inc.",
+      "exchange": "TWSE",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Miscellaneous Manufacturing",
+      "description": "Apex Dynamics, Inc. · Miscellaneous Manufacturing",
+      "change_pct": 2.083333333333326,
+      "session_open": 336.0,
+      "session_close": 343.0,
+      "session_volume": 1516227.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:4583",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4583.TW/history/",
+        "date": "2024-08-02",
+        "daily_high": 363.5,
+        "prior_all_time_or_current_month_high": 370.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "4583.TW"
+      }
+    },
+    {
+      "ticker": "6807.TW",
+      "name": "FY Group Ltd.",
+      "exchange": "TWSE",
+      "category": "Consumer Durables",
+      "high_type": "all_time",
+      "reason": "업종: Consumer Durables · Home Furnishings",
+      "description": "FY Group Ltd. · Home Furnishings",
+      "change_pct": 1.3803705030743352,
+      "session_open": 64.4000015258789,
+      "session_close": 66.0999984741211,
+      "session_volume": 625416.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:6807",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6807.TW/history/",
+        "date": "2024-08-02",
+        "daily_high": 68.80000305175781,
+        "prior_all_time_or_current_month_high": 68.80000305175781,
+        "passes_close_filter": true,
+        "yahoo_symbol": "6807.TW"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-10-21T14:28:44.304462+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 2349,
+    "history_symbols": 2162,
+    "inactive_symbols": 3,
+    "failed_symbols": 184,
+    "coverage_ratio": 0.9215686274509803,
+    "coverage_by_exchange": {
+      "TWSE": {
+        "covered": 1065,
+        "total": 1092
+      },
+      "TPEX": {
+        "covered": 1097,
+        "total": 1254
+      }
+    },
+    "session_symbols": 2119,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-10-21T14:28:44.304462+00:00"
+}

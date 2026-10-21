@@ -1,0 +1,214 @@
+{
+  "schema_version": 1,
+  "market": "china",
+  "date": "2024-08-26",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "600028.SS",
+      "name": "China Petroleum & Chemical Corporation Class A",
+      "exchange": "SSE",
+      "category": "Energy Minerals",
+      "high_type": "52_week",
+      "reason": "업종: Energy Minerals · Oil Refining/Marketing",
+      "description": "China Petroleum & Chemical Corporation Class A · Oil Refining/Marketing",
+      "change_pct": 1.0263884613241459,
+      "session_open": 6.849999904632568,
+      "session_close": 6.889999866485596,
+      "session_volume": 136585649.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:600028",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/600028.SS/history/",
+        "date": "2024-08-26",
+        "daily_high": 6.920000076293945,
+        "prior_all_time_or_current_month_high": 17.343193934513973,
+        "passes_close_filter": true,
+        "yahoo_symbol": "600028.SS"
+      }
+    },
+    {
+      "ticker": "600114.SS",
+      "name": "NBTM New Materials Group Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Metal Fabrication",
+      "description": "NBTM New Materials Group Co., Ltd. Class A · Metal Fabrication",
+      "change_pct": 5.0485420233043365,
+      "session_open": 15.550000190734863,
+      "session_close": 16.229999542236328,
+      "session_volume": 61574556.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:600114",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/600114.SS/history/",
+        "date": "2024-08-26",
+        "daily_high": 16.5,
+        "prior_all_time_or_current_month_high": 16.5,
+        "passes_close_filter": true,
+        "yahoo_symbol": "600114.SS"
+      }
+    },
+    {
+      "ticker": "601939.SS",
+      "name": "China Construction Bank Corporation Class A",
+      "exchange": "SSE",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "업종: Finance · Major Banks",
+      "description": "China Construction Bank Corporation Class A · Major Banks",
+      "change_pct": 0.0,
+      "session_open": 8.229999542236328,
+      "session_close": 8.239999771118164,
+      "session_volume": 76198102.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:601939",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/601939.SS/history/",
+        "date": "2024-08-26",
+        "daily_high": 8.270000457763672,
+        "prior_all_time_or_current_month_high": 11.579999923706055,
+        "passes_close_filter": true,
+        "yahoo_symbol": "601939.SS"
+      }
+    },
+    {
+      "ticker": "603207.SS",
+      "name": "Shanghai Xiao Fang Pharmaceutical Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Health Technology",
+      "high_type": "all_time",
+      "reason": "업종: Health Technology · Pharmaceuticals: Major",
+      "description": "Shanghai Xiao Fang Pharmaceutical Co., Ltd. Class A · Pharmaceuticals: Major",
+      "change_pct": 0.0,
+      "session_open": 30.0,
+      "session_close": 33.29999923706055,
+      "session_volume": 30344670.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:603207",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/603207.SS/history/",
+        "date": "2024-08-26",
+        "daily_high": 39.0,
+        "prior_all_time_or_current_month_high": 39.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "603207.SS"
+      }
+    },
+    {
+      "ticker": "603826.SS",
+      "name": "Fujian Kuncai Material Technology Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Process Industries",
+      "high_type": "all_time",
+      "reason": "업종: Process Industries · Chemicals: Specialty",
+      "description": "Fujian Kuncai Material Technology Co., Ltd. Class A · Chemicals: Specialty",
+      "change_pct": 1.2181021780230061,
+      "session_open": 26.30769157409668,
+      "session_close": 26.846153259277344,
+      "session_volume": 5410879.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:603826",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/603826.SS/history/",
+        "date": "2024-08-26",
+        "daily_high": 27.184614181518555,
+        "prior_all_time_or_current_month_high": 27.184614181518555,
+        "passes_close_filter": true,
+        "yahoo_symbol": "603826.SS"
+      }
+    },
+    {
+      "ticker": "000062.SZ",
+      "name": "Shenzhen Huaqiang Industry Co., Ltd Class A",
+      "exchange": "SZSE",
+      "category": "Distribution Services",
+      "high_type": "52_week",
+      "reason": "업종: Distribution Services · Electronics Distributors",
+      "description": "Shenzhen Huaqiang Industry Co., Ltd Class A · Electronics Distributors",
+      "change_pct": 10.017683156897018,
+      "session_open": 18.670000076293945,
+      "session_close": 18.670000076293945,
+      "session_volume": 12004510.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:000062",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/000062.SZ/history/",
+        "date": "2024-08-26",
+        "daily_high": 18.670000076293945,
+        "prior_all_time_or_current_month_high": 44.546966552734375,
+        "passes_close_filter": true,
+        "yahoo_symbol": "000062.SZ"
+      }
+    },
+    {
+      "ticker": "301571.SZ",
+      "name": "Teemsun Technology Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Commercial Services",
+      "high_type": "all_time",
+      "reason": "업종: Commercial Services · Miscellaneous Commercial Services",
+      "description": "Teemsun Technology Co., Ltd. Class A · Miscellaneous Commercial Services",
+      "change_pct": 2.889584094640707,
+      "session_open": 38.7599983215332,
+      "session_close": 39.880001068115234,
+      "session_volume": 21454379.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:301571",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/301571.SZ/history/",
+        "date": "2024-08-26",
+        "daily_high": 45.869998931884766,
+        "prior_all_time_or_current_month_high": 45.869998931884766,
+        "passes_close_filter": true,
+        "yahoo_symbol": "301571.SZ"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-10-21T14:33:25.825538+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 5313,
+    "history_symbols": 5147,
+    "inactive_symbols": 0,
+    "failed_symbols": 166,
+    "coverage_ratio": 0.96875588179936,
+    "coverage_by_exchange": {
+      "SSE": {
+        "covered": 2282,
+        "total": 2358
+      },
+      "SZSE": {
+        "covered": 2865,
+        "total": 2955
+      }
+    },
+    "session_symbols": 5114,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-10-21T14:33:25.825538+00:00"
+}

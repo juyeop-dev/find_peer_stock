@@ -13,6 +13,15 @@ import stock_chart_history as charts
 
 
 class StockChartHistoryTests(unittest.TestCase):
+    def test_history_without_currency_cannot_replace_verified_prices(self):
+        db = sqlite3.connect(":memory:")
+        db.execute("CREATE TABLE history(ticker TEXT PRIMARY KEY,value TEXT NOT NULL)")
+        value = {"ticker": "TEST", "currency": None, "source": "fixture", "prices": [["2024-07-01", 1, 1], ["2026-10-21", 2, 2]]}
+        with self.assertRaisesRegex(ValueError, "currency"):
+            charts.save_candidate(db, value)
+        self.assertEqual(db.execute("SELECT count(*) FROM history").fetchone()[0], 0)
+        db.close()
+
     def test_fresh_utc_daily_values_replace_older_kst_snapshots_for_the_same_session(self):
         db = sqlite3.connect(":memory:")
         db.execute("CREATE TABLE history(ticker TEXT PRIMARY KEY,value TEXT NOT NULL)")

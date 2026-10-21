@@ -1,0 +1,334 @@
+{
+  "schema_version": 1,
+  "market": "china",
+  "date": "2024-08-07",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "600262.SS",
+      "name": "Inner Mongolia North Hauler Joint Stock Co., Ltd Class A",
+      "exchange": "SSE",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Trucks/Construction/Farm Machinery",
+      "description": "Inner Mongolia North Hauler Joint Stock Co., Ltd Class A · Trucks/Construction/Farm Machinery",
+      "change_pct": 10.015327208544589,
+      "session_open": 14.578571319580078,
+      "session_close": 15.378570556640625,
+      "session_volume": 36181427.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:600262",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/600262.SS/history/",
+        "date": "2024-08-07",
+        "daily_high": 15.378570556640625,
+        "prior_all_time_or_current_month_high": 28.801018851143972,
+        "passes_close_filter": true,
+        "yahoo_symbol": "600262.SS"
+      }
+    },
+    {
+      "ticker": "600879.SS",
+      "name": "China Aerospace Times Electronics Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Aerospace & Defense",
+      "description": "China Aerospace Times Electronics Co., Ltd. Class A · Aerospace & Defense",
+      "change_pct": 2.085890604306573,
+      "session_open": 8.199999809265137,
+      "session_close": 8.319999694824219,
+      "session_volume": 146031332.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:600879",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/600879.SS/history/",
+        "date": "2024-08-07",
+        "daily_high": 8.449999809265137,
+        "prior_all_time_or_current_month_high": 10.09000015258789,
+        "passes_close_filter": true,
+        "yahoo_symbol": "600879.SS"
+      }
+    },
+    {
+      "ticker": "603050.SS",
+      "name": "Shijiazhuang Kelin Electric Co. Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Electrical Products",
+      "description": "Shijiazhuang Kelin Electric Co. Ltd. Class A · Electrical Products",
+      "change_pct": 1.092689144658987,
+      "session_open": 17.858108520507812,
+      "session_close": 18.12837791442871,
+      "session_volume": 5255719.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:603050",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/603050.SS/history/",
+        "date": "2024-08-07",
+        "daily_high": 18.364864349365234,
+        "prior_all_time_or_current_month_high": 18.364864349365234,
+        "passes_close_filter": true,
+        "yahoo_symbol": "603050.SS"
+      }
+    },
+    {
+      "ticker": "688617.SS",
+      "name": "APT Medical Inc. Class A",
+      "exchange": "SSE",
+      "category": "Health Technology",
+      "high_type": "all_time",
+      "reason": "업종: Health Technology · Medical Specialties",
+      "description": "APT Medical Inc. Class A · Medical Specialties",
+      "change_pct": 2.391744641379767,
+      "session_open": 237.3103485107422,
+      "session_close": 242.9862060546875,
+      "session_volume": 1033613.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:688617",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/688617.SS/history/",
+        "date": "2024-08-07",
+        "daily_high": 247.58621215820312,
+        "prior_all_time_or_current_month_high": 247.58621215820312,
+        "passes_close_filter": true,
+        "yahoo_symbol": "688617.SS"
+      }
+    },
+    {
+      "ticker": "000901.SZ",
+      "name": "Aerospace Hi-Tech Holding Group Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Electrical Products",
+      "description": "Aerospace Hi-Tech Holding Group Co., Ltd. Class A · Electrical Products",
+      "change_pct": 10.000003754623354,
+      "session_open": 12.699999809265137,
+      "session_close": 13.970000267028809,
+      "session_volume": 166957068.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:000901",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/000901.SZ/history/",
+        "date": "2024-08-07",
+        "daily_high": 13.970000267028809,
+        "prior_all_time_or_current_month_high": 28.49178397021682,
+        "passes_close_filter": true,
+        "yahoo_symbol": "000901.SZ"
+      }
+    },
+    {
+      "ticker": "002700.SZ",
+      "name": "Xinjiang Wanjing Energy Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Industrial Services",
+      "high_type": "52_week",
+      "reason": "업종: Industrial Services · Oil & Gas Pipelines",
+      "description": "Xinjiang Wanjing Energy Co., Ltd. Class A · Oil & Gas Pipelines",
+      "change_pct": 5.000000000000004,
+      "session_open": 10.0,
+      "session_close": 10.5,
+      "session_volume": 5053300.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002700",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002700.SZ/history/",
+        "date": "2024-08-07",
+        "daily_high": 10.5,
+        "prior_all_time_or_current_month_high": 21.899999618530273,
+        "passes_close_filter": true,
+        "yahoo_symbol": "002700.SZ"
+      }
+    },
+    {
+      "ticker": "002785.SZ",
+      "name": "XIAMEN WANLI STONE STOCK CO LTD Class A",
+      "exchange": "SZSE",
+      "category": "Non-Energy Minerals",
+      "high_type": "52_week",
+      "reason": "업종: Non-Energy Minerals · Forest Products",
+      "description": "XIAMEN WANLI STONE STOCK CO LTD Class A · Forest Products",
+      "change_pct": 5.853652798492415,
+      "session_open": 28.75,
+      "session_close": 30.3799991607666,
+      "session_volume": 12824900.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002785",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002785.SZ/history/",
+        "date": "2024-08-07",
+        "daily_high": 30.649999618530273,
+        "prior_all_time_or_current_month_high": 48.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "002785.SZ"
+      }
+    },
+    {
+      "ticker": "180501.SZ",
+      "name": "Hotland Innovation Shenzhen Anju Talent Affordable Rental Housing Real Estate Investment Trust",
+      "exchange": "SZSE",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "업종: Finance · Real Estate Investment Trusts",
+      "description": "Hotland Innovation Shenzhen Anju Talent Affordable Rental Housing Real Estate Investment Trust · Real Estate Investment Trusts",
+      "change_pct": 2.629873105578562,
+      "session_open": 3.0799999237060547,
+      "session_close": 3.1610000133514404,
+      "session_volume": 3327862.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:180501",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/180501.SZ/history/",
+        "date": "2024-08-07",
+        "daily_high": 3.1649999618530273,
+        "prior_all_time_or_current_month_high": 3.5999999046325684,
+        "passes_close_filter": true,
+        "yahoo_symbol": "180501.SZ"
+      }
+    },
+    {
+      "ticker": "180601.SZ",
+      "name": "CNAMC China Resources Commercial Asset Closed Infrastructure Real Estate Investment Trust",
+      "exchange": "SZSE",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "업종: Finance · Real Estate Investment Trusts",
+      "description": "CNAMC China Resources Commercial Asset Closed Infrastructure Real Estate Investment Trust · Real Estate Investment Trusts",
+      "change_pct": 3.3808340773227696,
+      "session_open": 7.150000095367432,
+      "session_close": 7.400000095367432,
+      "session_volume": 2114238.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:180601",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/180601.SZ/history/",
+        "date": "2024-08-07",
+        "daily_high": 7.449999809265137,
+        "prior_all_time_or_current_month_high": 7.449999809265137,
+        "passes_close_filter": true,
+        "yahoo_symbol": "180601.SZ"
+      }
+    },
+    {
+      "ticker": "180602.SZ",
+      "name": "CICC-SCPG Consumption Industrial Park Closed Infrastructure REIT",
+      "exchange": "SZSE",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "업종: Finance · Real Estate Investment Trusts",
+      "description": "CICC-SCPG Consumption Industrial Park Closed Infrastructure REIT · Real Estate Investment Trusts",
+      "change_pct": 3.398365039703677,
+      "session_open": 3.177999973297119,
+      "session_close": 3.2860000133514404,
+      "session_volume": 7825537.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:180602",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/180602.SZ/history/",
+        "date": "2024-08-07",
+        "daily_high": 3.2990000247955322,
+        "prior_all_time_or_current_month_high": 3.2990000247955322,
+        "passes_close_filter": true,
+        "yahoo_symbol": "180602.SZ"
+      }
+    },
+    {
+      "ticker": "300147.SZ",
+      "name": "Xiangxue Pharmaceutical Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Pharmaceuticals: Major",
+      "description": "Xiangxue Pharmaceutical Co., Ltd. Class A · Pharmaceuticals: Major",
+      "change_pct": 18.232821456788994,
+      "session_open": 7.510000228881836,
+      "session_close": 8.430000305175781,
+      "session_volume": 191476914.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:300147",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/300147.SZ/history/",
+        "date": "2024-08-07",
+        "daily_high": 8.5600004196167,
+        "prior_all_time_or_current_month_high": 42.59775924682617,
+        "passes_close_filter": true,
+        "yahoo_symbol": "300147.SZ"
+      }
+    },
+    {
+      "ticker": "300192.SZ",
+      "name": "Suzhou Kingswood Education Technology Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Process Industries",
+      "high_type": "52_week",
+      "reason": "업종: Process Industries · Industrial Specialties",
+      "description": "Suzhou Kingswood Education Technology Co., Ltd. Class A · Industrial Specialties",
+      "change_pct": 6.153843309752283,
+      "session_open": 9.25,
+      "session_close": 9.857142448425293,
+      "session_volume": 132588579.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:300192",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/300192.SZ/history/",
+        "date": "2024-08-07",
+        "daily_high": 10.714284896850586,
+        "prior_all_time_or_current_month_high": 14.68367304120745,
+        "passes_close_filter": true,
+        "yahoo_symbol": "300192.SZ"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-10-21T14:33:25.825538+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 5313,
+    "history_symbols": 5147,
+    "inactive_symbols": 0,
+    "failed_symbols": 166,
+    "coverage_ratio": 0.96875588179936,
+    "coverage_by_exchange": {
+      "SSE": {
+        "covered": 2282,
+        "total": 2358
+      },
+      "SZSE": {
+        "covered": 2865,
+        "total": 2955
+      }
+    },
+    "session_symbols": 5110,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-10-21T14:33:25.825538+00:00"
+}

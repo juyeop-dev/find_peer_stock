@@ -68,7 +68,7 @@ export async function yahooData(ticker, fetcher = fetch, history = false) {
   const symbol = yahooSymbol(ticker);
   if (!symbol) throw new Error("이 거래소는 TradingView에서 직접 조회합니다.");
   const twoYearsAgo = new Date(); twoYearsAgo.setUTCFullYear(twoYearsAgo.getUTCFullYear() - 2);
-  const start = Math.floor(Math.min(twoYearsAgo.getTime(), Date.parse("2024-12-20T00:00:00Z")) / 1000);
+  const start = Math.floor(Math.min(twoYearsAgo.getTime(), Date.parse("2024-06-20T00:00:00Z")) / 1000);
   const period = history ? `period1=${start}&period2=${Math.floor(Date.now() / 1000) + 60}` : "range=5d";
   const payload = await jsonSource(`https://query1.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(symbol)}?${period}&interval=1d&includePrePost=true`, undefined, fetcher);
   const result = payload.chart?.result?.[0];

@@ -1,0 +1,406 @@
+{
+  "schema_version": 1,
+  "market": "taiwan",
+  "date": "2024-12-24",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "5314.TWO",
+      "name": "Myson Century, Inc.",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Semiconductors",
+      "description": "Myson Century, Inc. · Semiconductors",
+      "change_pct": 9.92510376806377,
+      "session_open": 6.663412094116211,
+      "session_close": 7.060329914093018,
+      "session_volume": 156720006.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:5314",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/5314.TWO/history/",
+        "date": "2024-12-24",
+        "daily_high": 7.060329914093018,
+        "prior_all_time_or_current_month_high": 7.060329914093018,
+        "passes_close_filter": true,
+        "yahoo_symbol": "5314.TWO"
+      }
+    },
+    {
+      "ticker": "6808.TWO",
+      "name": "3D Global Biotech Inc.",
+      "exchange": "TPEX",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Medical Specialties",
+      "description": "3D Global Biotech Inc. · Medical Specialties",
+      "change_pct": 3.3663381444345664,
+      "session_open": 50.70000076293945,
+      "session_close": 52.20000076293945,
+      "session_volume": 552320.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:6808",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6808.TWO/history/",
+        "date": "2024-12-24",
+        "daily_high": 52.79999923706055,
+        "prior_all_time_or_current_month_high": 76.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "6808.TWO"
+      }
+    },
+    {
+      "ticker": "8059.TWO",
+      "name": "CastleNet Technology, Inc.",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Computer Communications",
+      "description": "CastleNet Technology, Inc. · Computer Communications",
+      "change_pct": 5.633802968271651,
+      "session_open": 72.15550994873047,
+      "session_close": 74.98841094970703,
+      "session_volume": 1030959.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:8059",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/8059.TWO/history/",
+        "date": "2024-12-24",
+        "daily_high": 74.98841094970703,
+        "prior_all_time_or_current_month_high": 120.79597092222002,
+        "passes_close_filter": true,
+        "yahoo_symbol": "8059.TWO"
+      }
+    },
+    {
+      "ticker": "8401.TWO",
+      "name": "Bai Sha Technology Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Commercial Services",
+      "high_type": "all_time",
+      "reason": "업종: Commercial Services · Commercial Printing/Forms",
+      "description": "Bai Sha Technology Co., Ltd. · Commercial Printing/Forms",
+      "change_pct": 1.500000374158228,
+      "session_open": 28.22429847717285,
+      "session_close": 28.457942962646484,
+      "session_volume": 297460.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:8401",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/8401.TWO/history/",
+        "date": "2024-12-24",
+        "daily_high": 28.551401138305664,
+        "prior_all_time_or_current_month_high": 28.551401138305664,
+        "passes_close_filter": true,
+        "yahoo_symbol": "8401.TWO"
+      }
+    },
+    {
+      "ticker": "2049.TW",
+      "name": "HIWIN Technologies Corp.",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Electronic Components",
+      "description": "HIWIN Technologies Corp. · Electronic Components",
+      "change_pct": 6.988352745424287,
+      "session_open": 301.5,
+      "session_close": 321.5,
+      "session_volume": 24872911.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2049",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2049.TW/history/",
+        "date": "2024-12-24",
+        "daily_high": 329.5,
+        "prior_all_time_or_current_month_high": 437.1788247117718,
+        "passes_close_filter": true,
+        "yahoo_symbol": "2049.TW"
+      }
+    },
+    {
+      "ticker": "2233.TW",
+      "name": "Turvo International Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Metal Fabrication",
+      "description": "Turvo International Co., Ltd. · Metal Fabrication",
+      "change_pct": 9.84682713347922,
+      "session_open": 230.0,
+      "session_close": 251.0,
+      "session_volume": 5819589.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2233",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2233.TW/history/",
+        "date": "2024-12-24",
+        "daily_high": 251.0,
+        "prior_all_time_or_current_month_high": 251.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "2233.TW"
+      }
+    },
+    {
+      "ticker": "2314.TW",
+      "name": "Microelectronics Technology Inc.",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Telecommunications Equipment",
+      "description": "Microelectronics Technology Inc. · Telecommunications Equipment",
+      "change_pct": 7.344640613112774,
+      "session_open": 86.32373809814453,
+      "session_close": 90.24214935302734,
+      "session_volume": 8286797.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2314",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2314.TW/history/",
+        "date": "2024-12-24",
+        "daily_high": 92.2607192993164,
+        "prior_all_time_or_current_month_high": 2512.9134126416384,
+        "passes_close_filter": true,
+        "yahoo_symbol": "2314.TW"
+      }
+    },
+    {
+      "ticker": "2466.TW",
+      "name": "Cosmo Electronics Corporation",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Semiconductors",
+      "description": "Cosmo Electronics Corporation · Semiconductors",
+      "change_pct": 9.945750589294855,
+      "session_open": 60.79999923706055,
+      "session_close": 60.79999923706055,
+      "session_volume": 2018931.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2466",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2466.TW/history/",
+        "date": "2024-12-24",
+        "daily_high": 60.79999923706055,
+        "prior_all_time_or_current_month_high": 103.87660685119559,
+        "passes_close_filter": true,
+        "yahoo_symbol": "2466.TW"
+      }
+    },
+    {
+      "ticker": "3054.TW",
+      "name": "LIWANLI Innovation Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Computer Peripherals",
+      "description": "LIWANLI Innovation Co., Ltd. · Computer Peripherals",
+      "change_pct": 1.4256635126137507,
+      "session_open": 24.5,
+      "session_close": 24.899999618530273,
+      "session_volume": 105407.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:3054",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3054.TW/history/",
+        "date": "2024-12-24",
+        "daily_high": 25.0,
+        "prior_all_time_or_current_month_high": 666.0317689712247,
+        "passes_close_filter": true,
+        "yahoo_symbol": "3054.TW"
+      }
+    },
+    {
+      "ticker": "4571.TW",
+      "name": "Khgears International Ltd.",
+      "exchange": "TWSE",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Industrial Machinery",
+      "description": "Khgears International Ltd. · Industrial Machinery",
+      "change_pct": 3.155818540433919,
+      "session_open": 252.5,
+      "session_close": 261.5,
+      "session_volume": 3026185.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:4571",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4571.TW/history/",
+        "date": "2024-12-24",
+        "daily_high": 265.0,
+        "prior_all_time_or_current_month_high": 265.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "4571.TW"
+      }
+    },
+    {
+      "ticker": "4576.TW",
+      "name": "HIWIN Mikrosystem Corp.",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Electronic Equipment/Instruments",
+      "description": "HIWIN Mikrosystem Corp. · Electronic Equipment/Instruments",
+      "change_pct": 9.92907801418439,
+      "session_open": 143.0,
+      "session_close": 155.0,
+      "session_volume": 32336165.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:4576",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4576.TW/history/",
+        "date": "2024-12-24",
+        "daily_high": 155.0,
+        "prior_all_time_or_current_month_high": 172.49596585199978,
+        "passes_close_filter": true,
+        "yahoo_symbol": "4576.TW"
+      }
+    },
+    {
+      "ticker": "4583.TW",
+      "name": "Apex Dynamics, Inc.",
+      "exchange": "TWSE",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Miscellaneous Manufacturing",
+      "description": "Apex Dynamics, Inc. · Miscellaneous Manufacturing",
+      "change_pct": 10.000000000000009,
+      "session_open": 834.0,
+      "session_close": 891.0,
+      "session_volume": 4000564.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:4583",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4583.TW/history/",
+        "date": "2024-12-24",
+        "daily_high": 891.0,
+        "prior_all_time_or_current_month_high": 891.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "4583.TW"
+      }
+    },
+    {
+      "ticker": "4912.TW",
+      "name": "Lemtech Holdings Co., Limited",
+      "exchange": "TWSE",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Industrial Machinery",
+      "description": "Lemtech Holdings Co., Limited · Industrial Machinery",
+      "change_pct": 3.584227085426006,
+      "session_open": 137.14285278320312,
+      "session_close": 137.61904907226562,
+      "session_volume": 6578898.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:4912",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4912.TW/history/",
+        "date": "2024-12-24",
+        "daily_high": 142.85714721679688,
+        "prior_all_time_or_current_month_high": 167.34693254743303,
+        "passes_close_filter": true,
+        "yahoo_symbol": "4912.TW"
+      }
+    },
+    {
+      "ticker": "6215.TW",
+      "name": "Aurotek Corporation",
+      "exchange": "TWSE",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Electrical Products",
+      "description": "Aurotek Corporation · Electrical Products",
+      "change_pct": 6.627217129137386,
+      "session_open": 85.80000305175781,
+      "session_close": 90.0999984741211,
+      "session_volume": 47211420.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:6215",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6215.TW/history/",
+        "date": "2024-12-24",
+        "daily_high": 92.5999984741211,
+        "prior_all_time_or_current_month_high": 92.5999984741211,
+        "passes_close_filter": true,
+        "yahoo_symbol": "6215.TW"
+      }
+    },
+    {
+      "ticker": "8482.TW",
+      "name": "Shane Global Holding, Inc.",
+      "exchange": "TWSE",
+      "category": "Consumer Durables",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Durables · Home Furnishings",
+      "description": "Shane Global Holding, Inc. · Home Furnishings",
+      "change_pct": 0.9080625035343237,
+      "session_open": 88.30000305175781,
+      "session_close": 88.9000015258789,
+      "session_volume": 309014.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:8482",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/8482.TW/history/",
+        "date": "2024-12-24",
+        "daily_high": 89.0999984741211,
+        "prior_all_time_or_current_month_high": 152.5,
+        "passes_close_filter": true,
+        "yahoo_symbol": "8482.TW"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-10-21T14:28:44.304462+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 2349,
+    "history_symbols": 2162,
+    "inactive_symbols": 3,
+    "failed_symbols": 184,
+    "coverage_ratio": 0.9215686274509803,
+    "coverage_by_exchange": {
+      "TWSE": {
+        "covered": 1065,
+        "total": 1092
+      },
+      "TPEX": {
+        "covered": 1097,
+        "total": 1254
+      }
+    },
+    "session_symbols": 2161,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-10-21T14:28:44.304462+00:00"
+}

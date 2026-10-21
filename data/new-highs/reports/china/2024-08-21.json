@@ -1,0 +1,310 @@
+{
+  "schema_version": 1,
+  "market": "china",
+  "date": "2024-08-21",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "600187.SS",
+      "name": "Heilongjiang Interchina Water Treatment Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Industrial Services",
+      "high_type": "52_week",
+      "reason": "업종: Industrial Services · Environmental Services",
+      "description": "Heilongjiang Interchina Water Treatment Co., Ltd. Class A · Environmental Services",
+      "change_pct": 9.939764119281392,
+      "session_open": 3.390000104904175,
+      "session_close": 3.6500000953674316,
+      "session_volume": 356209422.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:600187",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/600187.SS/history/",
+        "date": "2024-08-21",
+        "daily_high": 3.6500000953674316,
+        "prior_all_time_or_current_month_high": 11.369999885559082,
+        "passes_close_filter": true,
+        "yahoo_symbol": "600187.SS"
+      }
+    },
+    {
+      "ticker": "600326.SS",
+      "name": "Xizang Tianlu Co Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Transportation",
+      "high_type": "52_week",
+      "reason": "업종: Transportation · Other Transportation",
+      "description": "Xizang Tianlu Co Ltd. Class A · Other Transportation",
+      "change_pct": 5.996756579966278,
+      "session_open": 5.920000076293945,
+      "session_close": 6.539999961853027,
+      "session_volume": 304986064.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:600326",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/600326.SS/history/",
+        "date": "2024-08-21",
+        "daily_high": 6.760000228881836,
+        "prior_all_time_or_current_month_high": 7.786981876079852,
+        "passes_close_filter": true,
+        "yahoo_symbol": "600326.SS"
+      }
+    },
+    {
+      "ticker": "601328.SS",
+      "name": "Bank of Communications Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "업종: Finance · Major Banks",
+      "description": "Bank of Communications Co., Ltd. Class A · Major Banks",
+      "change_pct": 0.0,
+      "session_open": 7.940000057220459,
+      "session_close": 7.960000038146973,
+      "session_volume": 89925231.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:601328",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/601328.SS/history/",
+        "date": "2024-08-21",
+        "daily_high": 7.989999771118164,
+        "prior_all_time_or_current_month_high": 14.1157020222057,
+        "passes_close_filter": true,
+        "yahoo_symbol": "601328.SS"
+      }
+    },
+    {
+      "ticker": "601921.SS",
+      "name": "Zhejiang Publishing & Media Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Consumer Services",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Services · Publishing: Books/Magazines",
+      "description": "Zhejiang Publishing & Media Co., Ltd. Class A · Publishing: Books/Magazines",
+      "change_pct": 10.031348680880026,
+      "session_open": 10.529999732971191,
+      "session_close": 10.529999732971191,
+      "session_volume": 140685120.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:601921",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/601921.SS/history/",
+        "date": "2024-08-21",
+        "daily_high": 10.529999732971191,
+        "prior_all_time_or_current_month_high": 16.280000686645508,
+        "passes_close_filter": true,
+        "yahoo_symbol": "601921.SS"
+      }
+    },
+    {
+      "ticker": "603360.SS",
+      "name": "Dalian Bio-Chem Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Process Industries",
+      "high_type": "all_time",
+      "reason": "업종: Process Industries · Chemicals: Major Diversified",
+      "description": "Dalian Bio-Chem Co., Ltd. Class A · Chemicals: Major Diversified",
+      "change_pct": 5.481719727550782,
+      "session_open": 8.635713577270508,
+      "session_close": 9.071428298950195,
+      "session_volume": 14531294.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:603360",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/603360.SS/history/",
+        "date": "2024-08-21",
+        "daily_high": 9.228570938110352,
+        "prior_all_time_or_current_month_high": 9.228570938110352,
+        "passes_close_filter": true,
+        "yahoo_symbol": "603360.SS"
+      }
+    },
+    {
+      "ticker": "605368.SS",
+      "name": "Henan Lantian Gas Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Utilities",
+      "high_type": "all_time",
+      "reason": "업종: Utilities · Gas Distributors",
+      "description": "Henan Lantian Gas Co., Ltd. Class A · Gas Distributors",
+      "change_pct": 1.7353562721774018,
+      "session_open": 13.729999542236328,
+      "session_close": 14.069999694824219,
+      "session_volume": 4071261.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:605368",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/605368.SS/history/",
+        "date": "2024-08-21",
+        "daily_high": 14.170000076293945,
+        "prior_all_time_or_current_month_high": 14.170000076293945,
+        "passes_close_filter": true,
+        "yahoo_symbol": "605368.SS"
+      }
+    },
+    {
+      "ticker": "688360.SS",
+      "name": "Damon Technology Group Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Commercial Services",
+      "high_type": "52_week",
+      "reason": "업종: Commercial Services · Miscellaneous Commercial Services",
+      "description": "Damon Technology Group Co., Ltd. Class A · Miscellaneous Commercial Services",
+      "change_pct": 5.938241075016171,
+      "session_open": 8.89285659790039,
+      "session_close": 9.55714225769043,
+      "session_volume": 8046579.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:688360",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/688360.SS/history/",
+        "date": "2024-08-21",
+        "daily_high": 9.771428108215332,
+        "prior_all_time_or_current_month_high": 10.461468043202215,
+        "passes_close_filter": true,
+        "yahoo_symbol": "688360.SS"
+      }
+    },
+    {
+      "ticker": "000062.SZ",
+      "name": "Shenzhen Huaqiang Industry Co., Ltd Class A",
+      "exchange": "SZSE",
+      "category": "Distribution Services",
+      "high_type": "52_week",
+      "reason": "업종: Distribution Services · Electronics Distributors",
+      "description": "Shenzhen Huaqiang Industry Co., Ltd Class A · Electronics Distributors",
+      "change_pct": 10.039213591930917,
+      "session_open": 14.0,
+      "session_close": 14.029999732971191,
+      "session_volume": 23856993.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:000062",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/000062.SZ/history/",
+        "date": "2024-08-21",
+        "daily_high": 14.029999732971191,
+        "prior_all_time_or_current_month_high": 44.546966552734375,
+        "passes_close_filter": true,
+        "yahoo_symbol": "000062.SZ"
+      }
+    },
+    {
+      "ticker": "001965.SZ",
+      "name": "China Merchants Expressway Network & Technology Holdings Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Transportation",
+      "high_type": "52_week",
+      "reason": "업종: Transportation · Other Transportation",
+      "description": "China Merchants Expressway Network & Technology Holdings Co., Ltd. Class A · Other Transportation",
+      "change_pct": 1.417325258890667,
+      "session_open": 12.6899995803833,
+      "session_close": 12.880000114440918,
+      "session_volume": 17024523.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:001965",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/001965.SZ/history/",
+        "date": "2024-08-21",
+        "daily_high": 13.0,
+        "prior_all_time_or_current_month_high": 15.380000114440918,
+        "passes_close_filter": true,
+        "yahoo_symbol": "001965.SZ"
+      }
+    },
+    {
+      "ticker": "003001.SZ",
+      "name": "Zhongyan Technology Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Industrial Services",
+      "high_type": "52_week",
+      "reason": "업종: Industrial Services · Engineering & Construction",
+      "description": "Zhongyan Technology Co., Ltd. Class A · Engineering & Construction",
+      "change_pct": 9.327439371237922,
+      "session_open": 14.300239562988281,
+      "session_close": 15.915358543395996,
+      "session_volume": 15879540.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:003001",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/003001.SZ/history/",
+        "date": "2024-08-21",
+        "daily_high": 16.015411376953125,
+        "prior_all_time_or_current_month_high": 18.65831504539177,
+        "passes_close_filter": true,
+        "yahoo_symbol": "003001.SZ"
+      }
+    },
+    {
+      "ticker": "300184.SZ",
+      "name": "Wuhan P&S Information Technology Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Distribution Services",
+      "high_type": "52_week",
+      "reason": "업종: Distribution Services · Electronics Distributors",
+      "description": "Wuhan P&S Information Technology Co., Ltd. Class A · Electronics Distributors",
+      "change_pct": 8.88888653413753,
+      "session_open": 7.800000190734863,
+      "session_close": 8.329999923706055,
+      "session_volume": 535896393.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:300184",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/300184.SZ/history/",
+        "date": "2024-08-21",
+        "daily_high": 8.84000015258789,
+        "prior_all_time_or_current_month_high": 12.100000381469727,
+        "passes_close_filter": true,
+        "yahoo_symbol": "300184.SZ"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-10-21T14:33:25.825538+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 5313,
+    "history_symbols": 5147,
+    "inactive_symbols": 0,
+    "failed_symbols": 166,
+    "coverage_ratio": 0.96875588179936,
+    "coverage_by_exchange": {
+      "SSE": {
+        "covered": 2282,
+        "total": 2358
+      },
+      "SZSE": {
+        "covered": 2865,
+        "total": 2955
+      }
+    },
+    "session_symbols": 5113,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-10-21T14:33:25.825538+00:00"
+}

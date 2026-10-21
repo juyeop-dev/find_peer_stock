@@ -25,5 +25,5 @@ test("manual information refresh requests both current fundamentals and historic
     }
     return Response.json({timeseries:{result:[{meta:{symbol:["AAPL"]},annualTotalRevenue:[{asOfDate:"2025-09-30",periodType:"12M",currencyCode:"USD",reportedValue:{raw:1000}}]}]}});
   });
-  assert.equal(calls.length,3); assert.ok(calls[1].includes("period1=1735689600")); assert.ok(calls.some(url=>url.includes("period2=1767225600"))); assert.equal(result.financials[0].revenue,1000); assert.equal(result.quote.price,100);
+  assert.equal(calls.length,4); assert.ok(calls[1].includes("period1=1719792000")); assert.ok(calls.some(url=>url.includes("period2=1767225600"))); assert.ok(calls.some(url=>url.includes("period2=1735689600"))); assert.equal(result.financials[0].revenue,1000); assert.equal(result.quote.price,100);
 });
