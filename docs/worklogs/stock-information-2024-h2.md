@@ -34,7 +34,9 @@
 - 전 종목 팩을 검사하는 `python scripts/audit_stock_information_2024_h2.py` 통과. 실제 결과와 예외는 같은 감사 디렉터리의 coverage*.json에 저장.
 - 운영 API 배포 완료: 5ca5d24c-2433-4453-a8ef-246391bf6c86. 실제 SK하이닉스 조회로 2024-06-20부터의 일봉 및 FY2024 매출·영업이익 반환 확인.
 - 최종 정적 빌드 성공: index-CMhItj5L.js / index-Dd40UYFY.css. 생성 중 Vite 새로고침으로 초기 브라우저 시도가 시간 초과됐으나, 완료된 정적 산출물에서 재검증 통과. 6개 시장 월별·연도별 2024 캘린더, 유럽 부분 복원 경고, 섹터 재구성 안내, 8개 대표 상세의 2024-07-01 차트·실적, 원본 새로고침 200 응답, 모바일 폭을 확인했다. 섹터 브라우저 검사와 36회 툴팁 검사도 통과.
-- Git push 및 Pages 배포는 아직 완료하지 않았다.
+- 구현·데이터 커밋 b1e6c2e5fc28cdd06c96af4b8a0f7c41480125d4를 최신 원격 변경 위에 rebase한 뒤 push 완료. 충돌한 섹터 날짜 목록은 원본에서 다시 생성해 2024년 123개 날짜와 기존 최신 기록을 모두 보존했다.
+- 자동 실행 https://github.com/juyeop-dev/find_peer_stock/actions/runs/39624060105 : build 성공. deploy는 2026-10-21 15:19:20 UTC부터 실행기 배정 대기(queued). 이 실행의 pending_deployments는 비어 있다. 아직 운영 사이트에서 2024년 데이터가 노출되지 않아 배포 완료로 보고하면 안 된다.
+- GitHub 공식 장애 https://www.githubstatus.com/incidents/nms1dpzmh9d9 : 15:15 UTC 갱신에서 Actions 성능 저하를 공지했다. 기존 오래된 검토 대기 실행 34749222162 및 Cloudflare 스케줄러는 변경하지 않았다. 배포가 재개되면 GitHub가 준비된 아티팩트를 자동 발행한다.
 
 ## 재개와 데이터 보존
 
@@ -43,4 +45,5 @@
 - 주가 재개: `python -u scripts/refresh_stock_information_history.py --state-dir data/tmp_2024_h2 --import-europe-cache`; 오류만 `--retry-errors`; 짧은 이력만 `--extend-to-start`.
 - 유럽 기록: backfill_european_new_highs.py와 backfill_european_turnover.py에 `--start 2024-07-01 --end 2024-12-31 --daily-bars 1000 --partial-history`. 신규 날짜만 작성하므로 기존 파일을 지우지 않는다.
 - 원래 사용자 수정 4개 인덱스와 미추적 16개 October19 파일은 `data/tmp_2024_h2/user-files/manifest.json` 및 같은 경로의 복사본에 보존. **최종 빌드 후 20개 원본을 복원하고 SHA256 일치를 검증했다. 커밋에서 제외한다.**
-- 수집·내보내기·최종 빌드·로컬 검증·원본 20개 복원 완료. Vite 개발 서버 89132 / 정적 미리보기 25870. commit/pull/push·운영 배포 확인이 남아 있다.
+- 수집·내보내기·최종 빌드·로컬 검증·원본 20개 복원·commit/pull/push 완료. 검증용 로컬 서버는 종료했다. GitHub 외부 장애로 대기하는 운영 배포 확인만 남아 있다.
+- 재개 확인: 공개 Actions 실행 39624060105 및 운영 data/new-highs/index.json의 2024 리포트 756개 확인. 배포 후 프런트엔드에서 `npm run test:stock-information:2024-h2` 실행(기본 운영 URL), `STOCK_SITE_BASE_URL=https://juyeop-dev.github.io/find_peer_stock`으로 `test:sectors:browser`와 `test:chart-tooltip:browser` 실행. 운영 결과를 기록하고 최종 완료 보고한다.
