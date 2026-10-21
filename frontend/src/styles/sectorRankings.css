@@ -19,9 +19,9 @@
 .sectorTableCaption strong { color: #385361; }
 .sectorRankingsPage .sectorRankingTable { min-width: 900px; font-size: 14px; }
 .sectorRankingTable thead th { background: #f8fafc; color: #728593; padding: 13px 16px; font-weight: 600; }
-.sectorRankingTable th:first-child, .sectorRankingTable td:first-child { padding-left: 24px; }
-.sectorRankingTable tbody :is(td, th) { padding: 12px 16px; border-bottom: 1px solid #e8eef2; white-space: nowrap; }
-.sectorRankingTable tbody th { color: #203c4f; background: transparent; font-weight: 650; }
+.sectorRankingTable > thead > tr > th:first-child, .sectorRankingTable > tbody > tr[data-sector] > td:first-child { padding-left: 24px; }
+.sectorRankingTable > tbody > tr[data-sector] > :is(td, th) { padding: 12px 16px; border-bottom: 1px solid #e8eef2; white-space: nowrap; }
+.sectorRankingTable > tbody > tr[data-sector] > th { color: #203c4f; background: transparent; font-weight: 650; }
 .sectorRankingTable tbody tr.selected { background: #f0f7fa; }
 .sectorRank { width: 65px; color: #668092; font-size: 14px; font-variant-numeric: tabular-nums; }
 .sectorNameButton { display: flex; align-items: center; gap: 12px; padding: 0; border: none; background: none; color: inherit; font: inherit; cursor: pointer; text-align: left; }
@@ -37,6 +37,25 @@
 .sectorMethodology { line-height: 1.8; }
 .sectorRankingsPage :is(button, a, select, input):focus-visible { outline: 3px solid #78bbc8; outline-offset: 3px; }
 .sectorSrOnly { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.sectorExpandIcon { margin-left: auto; color: #7f99a6; font-size: 11px; }
+.sectorRankingsPage .sectorRankingTable > tbody > .sectorExpansionRow > td { padding: 0; white-space: normal; background: #f3f9fb; }
+.sectorConstituents { width: min(100%, calc(100vw - 96px)); padding: 22px 24px; }
+.sectorMemberActions { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; }
+.sectorConstituents .sectorMemberTable { min-width: 700px; background: white; }
+.sectorCalendarHeading { display: flex; justify-content: space-between; align-items: start; gap: 14px; }
+.sectorCalendarHeading h2 { margin: 0 0 5px; font-size: 19px; }
+.sectorCalendarHeading p { margin: 0; color: #718592; font-size: 12px; }
+.sectorCalendarHeading > button { white-space: nowrap; }
+.sectorCalendarNavigation { display: flex; justify-content: center; align-items: center; gap: 20px; margin: 18px 0 12px; }
+.sectorCalendarNavigation :is(button, input) { border: 1px solid #d7e4eb; border-radius: 6px; padding: 6px 12px; background: white; color: #2d5268; }
+.sectorCalendarNavigation button:disabled { opacity: .3; }
+.sectorCalendarGrid { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 5px; }
+.sectorCalendarWeekday { padding: 5px 0; text-align: center; color: #82939e; font-size: 12px; }
+.sectorCalendarGrid > button { display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 8px 2px; border: 1px solid #d7e5ec; border-radius: 8px; background: #f3f9fb; color: #215c70; cursor: pointer; }
+.sectorCalendarGrid > button span { font-size: 10px; }
+.sectorCalendarGrid > button:disabled { color: #adb9c1; border-color: transparent; background: #f8fafb; cursor: default; }
+.sectorCalendarGrid > button[aria-pressed="true"] { border-color: #24738c; box-shadow: inset 0 0 0 1px #24738c; background: #e4f3f8; }
+.sectorCalendar > .semiFootnote { margin-bottom: 0; }
 @media (max-width: 720px) {
   .semiPage.sectorRankingsPage { width: calc(100% - 28px); }
   .sectorHero { display: block; }
@@ -52,9 +71,13 @@
   .sectorSearch input { width: 100%; }
   .sectorRankingPanel > .semiFootnote { padding: 0 14px; }
   .sectorRankingsPage .sectorRankingTable { min-width: 830px; table-layout: fixed; }
-  .sectorRankingTable :is(th, td):first-child { width: 42px; padding-left: 12px; padding-right: 6px; }
-  .sectorRankingTable :is(th, td):nth-child(2) { width: 150px; padding-left: 6px; padding-right: 6px; }
-  .sectorRankingTable :is(th, td):nth-child(3) { width: 90px; padding-left: 6px; padding-right: 6px; }
+  .sectorRankingTable > :is(thead, tbody) > tr:not(.sectorExpansionRow) > :is(th, td):first-child { width: 42px; padding-left: 12px; padding-right: 6px; }
+  .sectorRankingTable > :is(thead, tbody) > tr:not(.sectorExpansionRow) > :is(th, td):nth-child(2) { width: 150px; padding-left: 6px; padding-right: 6px; }
+  .sectorRankingTable > :is(thead, tbody) > tr:not(.sectorExpansionRow) > :is(th, td):nth-child(3) { width: 90px; padding-left: 6px; padding-right: 6px; }
   .sectorNameButton { gap: 7px; }
   .sectorIcon { width: 26px; height: 26px; font-size: 16px; }
+  .sectorConstituents { width: min(100%, calc(100vw - 30px)); padding: 16px 12px; }
+  .sectorCalendarGrid { gap: 3px; }
+  .sectorCalendarHeading { display: block; }
+  .sectorCalendarHeading > button { margin-top: 8px; }
 }

@@ -6,7 +6,7 @@ interface DataRefreshStatusProps {
   lastCheckedAt?: string | null;
   generatedAt?: string;
   lastSourceAt?: string | null;
-  cadence?: "quote" | "daily" | "semiconductor" | "credit" | "sectors";
+  cadence?: "quote" | "daily" | "semiconductor" | "credit" | "sectors" | "sector-history";
   onRefresh: () => void;
 }
 
@@ -19,7 +19,7 @@ export function DataRefreshStatus({ refreshing, lastCheckedAt, lastSourceAt, gen
   // The daily archive changes only after a market close, but its published
   // index should still be checked by the same site-wide deployment heartbeat.
   const freshnessTime = lastSourceAt ?? generatedAt;
-  const delayed = Boolean(freshnessTime && now - new Date(freshnessTime).getTime() > 20 * 60_000);
+  const delayed = cadence !== "sector-history" && Boolean(freshnessTime && now - new Date(freshnessTime).getTime() > 20 * 60_000);
 
   return (
     <>
@@ -27,6 +27,8 @@ export function DataRefreshStatus({ refreshing, lastCheckedAt, lastSourceAt, gen
         <p>
           <span>{cadence === "credit"
             ? "새로고침하면 금융투자협회 원본에서 최신 발표값을 조회합니다."
+            : cadence === "sector-history"
+            ? "새로고침하면 선택한 날짜의 저장된 섹터 기록을 다시 불러옵니다. 최신 값은 '최신 기록'에서 조회하세요."
             : cadence === "sectors"
             ? "새로고침하면 국내 전체 종목의 업종·수익률·거래대금·시가총액을 원본에서 다시 조회합니다."
             : cadence === "semiconductor"

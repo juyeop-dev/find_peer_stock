@@ -57,7 +57,7 @@ body:has(.semiPage) { min-width: 320px; background: #f3f6f8; }
 .semiTrendHeadline { display: flex; align-items: baseline; gap: 12px; margin: -2px 0 8px; }
 .semiTrendHeadline strong { font-size: 29px; letter-spacing: -.04em; }
 .semiTrendHeadline span { color: #72858f; font-size: 12px; }
-.semiChart { width: 100%; overflow-x: auto; }
+.semiChart { position: relative; width: 100%; overflow-x: auto; padding-bottom: 62px; }
 .semiChart svg { display: block; width: 100%; min-width: 650px; height: 285px; }
 .semiGridLine { stroke: #e3ecef; stroke-width: 1; }
 .semiAxisText { fill: #81939c; font-size: 11px; }
@@ -65,7 +65,7 @@ body:has(.semiPage) { min-width: 320px; background: #f3f6f8; }
 .semiLine.up { stroke: #c54537; }.semiLine.down { stroke: #2b68bf; }
 .semiHoverLine { stroke: #a6bcc5; stroke-dasharray: 4 4; }
 .semiDot.up { fill: #c54537; }.semiDot.down { fill: #2b68bf; }
-.semiChartReadout { display: flex; justify-content: flex-end; gap: 12px; color: #607782; font-size: 13px; font-variant-numeric: tabular-nums; }
+.semiChartReadout { position: absolute; z-index: 2; display: flex; flex-direction: column; gap: 3px; width: max-content; max-width: min(240px, calc(100% - 12px)); padding: 9px 12px; border: 1px solid #d9e4e9; border-radius: 8px; background: #fff; box-shadow: 0 4px 15px #203c4f20; color: #607782; font-size: 13px; font-variant-numeric: tabular-nums; pointer-events: none; }
 .semiChartReadout span { color: #1b3b4b; font-weight: 750; }
 .semiChartEmpty { padding: 55px 20px; color: #738895; text-align: center; }
 .semiBreadcrumb { display: flex; gap: 10px; margin: 4px 0 18px; color: #6a7e89; font-size: 13px; }

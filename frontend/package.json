@@ -19,8 +19,9 @@
     "test:stock-history": "node --test tests/stock-history.test.mjs",
     "test:stock-information": "node --test tests/stock-information.test.mjs",
     "test:stock-information:production": "node tests/stock-information-production.mjs",
-    "test:sectors": "node --test tests/sector-rankings.test.mjs",
-    "test:sectors:browser": "node tests/sector-rankings-browser.mjs"
+    "test:sectors": "node --test tests/sector-rankings.test.mjs tests/sector-history-client.test.mjs ../tests/sector-archive.test.mjs",
+    "test:sectors:browser": "node tests/sector-rankings-browser.mjs",
+    "test:chart-tooltip:browser": "node tests/chart-tooltip-browser.mjs"
   },
   "dependencies": {
     "react": "^19.0.0",

@@ -13,7 +13,10 @@ export interface SectorSnapshot {
   schema_version: 1; market: "korea"; currency: "KRW"; date: string; fetched_at: string; source: string; source_url: string;
   universe: string; received: number; excluded: Record<string, number>; stale_count: number; stocks: SectorStock[];
   source_fetched_at?: string;
+  archived?: boolean;
 }
+export interface SectorCalendarRecord { date: string; fetched_at: string; count: number; industries: number }
+export interface SectorCalendar { schema_version: 1; market: "korea"; latest_date: string; records: SectorCalendarRecord[] }
 export interface SectorRanking {
   key: string; name: string; sector: string; members: SectorStock[]; representative: SectorStock;
   value: number | null; returnCount: number; turnover: number | null; turnoverCount: number; marketCap: number | null; capCount: number;

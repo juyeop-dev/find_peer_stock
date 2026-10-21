@@ -51,25 +51,53 @@ try {
   };
   await send("Runtime.enable");await send("Network.enable");
 
-  const waitRows = () => until(() => evaluate("document.querySelectorAll('.sectorRankingTable tbody tr').length>50"), "Sector rows did not load");
+  const waitRows = () => until(() => evaluate("document.querySelectorAll('.sectorRankingTable > tbody > tr[data-sector]').length>50"), "Sector rows did not load");
   await send("Page.navigate",{url:base+"/sectors"});
   await waitRows();
+
+  await until(()=>evaluate("document.querySelectorAll('.sectorCalendarGrid button:not(:disabled)').length>=2"),'Calendar records did not load');
+  const calendar=await(await fetch(base+'/data/sectors/calendar.json')).json();
+  const historic=calendar.records.find(record=>record.date!==calendar.latest_date);
+  assert.ok(historic,'No genuine historical snapshot is available for verification');
+  await evaluate(`(()=>{const input=document.querySelector('.sectorCalendarNavigation input');Object.getOwnPropertyDescriptor(HTMLInputElement.prototype,'value').set.call(input,${JSON.stringify(historic.date.slice(0,7))});input.dispatchEvent(new Event('input',{bubbles:true}));})()`);
+  await evaluate(`document.querySelector('.sectorCalendarGrid button[data-date="${historic.date}"]').click()`);
+  await until(()=>evaluate(`document.querySelector('.sectorSummary strong')?.innerText===${JSON.stringify(historic.date)}`),'Historical ranking did not load');
+  const sourceSnapshot=await(await fetch(base+'/data/sectors/daily/'+historic.date+'.json')).json();
+  await evaluate("document.querySelector('.sectorNameButton').click()");
+  await until(()=>evaluate("Boolean(document.querySelector('.sectorExpansionRow .sectorMemberTable'))"),'Inline sector members did not expand');
+  const expanded=await evaluate("(()=>{const row=document.querySelector('.sectorRankingTable tr.selected');return {key:row.dataset.sector,inline:row.nextElementSibling.classList.contains('sectorExpansionRow'),count:document.querySelectorAll('.sectorMemberTable tbody tr').length,code:document.querySelector('.sectorMemberTable .semiStockLink span').innerText,price:document.querySelector('.sectorMemberTable tbody tr').children[2].innerText};})()");
+  const [parent,industry]=expanded.key.split('\t');
+  const expectedMembers=sourceSnapshot.stocks.filter(stock=>stock.date===historic.date&&stock.sector===parent&&stock.industry===industry);
+  assert.equal(expanded.inline,true);assert.equal(expanded.count,expectedMembers.length);
+  assert.equal(Number(expanded.price.replace(/[^0-9.]/g,'')),expectedMembers.find(stock=>stock.code===expanded.code).price);
+  const sourceBefore=statuses.filter(item=>item.kind==='sectors').length;
+  await evaluate("document.querySelector('.refreshButton').click()");
+  await until(()=>evaluate("!document.querySelector('.refreshButton').disabled"),'Historical reload did not finish');
+  assert.equal(statuses.filter(item=>item.kind==='sectors').length,sourceBefore,'Reloading history must not replace it with current original prices');
+  assert.equal(await evaluate("document.querySelector('.sectorSummary strong').innerText"),historic.date);
+  await evaluate("document.querySelector('.sectorCalendarHeading button').click()");
+  await until(()=>evaluate(`document.querySelector('.sectorSummary strong')?.innerText===${JSON.stringify(calendar.latest_date)}`),'Return to latest failed');
+  await evaluate("document.querySelector('.sectorRankingTable tr.selected .sectorNameButton').click()");
+  await until(()=>evaluate("!document.querySelector('.sectorExpansionRow')"),'Clicking an open sector did not collapse it');
+
   assert.equal(await evaluate("document.querySelector('.sectorRankingTable [aria-sort=descending]').innerText.includes('거래대금')"),true);
-  const rowCount = await evaluate("document.querySelectorAll('.sectorRankingTable tbody tr').length");
+  const rowCount = await evaluate("document.querySelectorAll('.sectorRankingTable > tbody > tr[data-sector]').length");
   const click = expression => evaluate(`(${expression}).click()`);
   await click("document.querySelector('.sectorRankingTable th:nth-child(3) button')");
-  const returns = await evaluate("[...document.querySelectorAll('.sectorRankingTable tbody tr')].map(row=>parseFloat(row.children[2].innerText)).filter(Number.isFinite)");
+  const returns = await evaluate("[...document.querySelectorAll('.sectorRankingTable > tbody > tr[data-sector]')].map(row=>parseFloat(row.children[2].innerText)).filter(Number.isFinite)");
   assert.ok(returns.every((value,i)=>i===0||returns[i-1]>=value),"Sector gain sorting failed");
   await click("[...document.querySelectorAll('[aria-label=\"수익률 기간\"] button')].find(button=>button.innerText==='1개월')");
   await until(()=>evaluate("document.querySelector('.sectorTableCaption').innerText.includes('1개월')"),"Period did not change");
   await evaluate("(()=>{const input=document.querySelector('.sectorSearch input');Object.getOwnPropertyDescriptor(HTMLInputElement.prototype,'value').set.call(input,'반도체');input.dispatchEvent(new Event('input',{bubbles:true}));})()");
-  await until(()=>evaluate(`document.querySelectorAll('.sectorRankingTable tbody tr').length>0 && document.querySelectorAll('.sectorRankingTable tbody tr').length<${rowCount}`),"Sector search failed");
+  await until(()=>evaluate(`document.querySelectorAll('.sectorRankingTable > tbody > tr[data-sector]').length>0 && document.querySelectorAll('.sectorRankingTable > tbody > tr[data-sector]').length<${rowCount}`),"Sector search failed");
+  await evaluate("[...document.querySelectorAll('.sectorNameButton')].find(button=>button.querySelector('span:nth-child(2)').innerText==='반도체').click()");
+  await until(()=>evaluate("Boolean(document.querySelector('.sectorMemberTable'))"),"Selected industry did not expand");
   await evaluate("(()=>{const select=document.querySelectorAll('.sectorFilters select')[1];select.value='KOSDAQ';select.dispatchEvent(new Event('change',{bubbles:true}));})()");
   await until(()=>evaluate("document.querySelectorAll('.sectorMemberTable tbody tr').length>0 && [...document.querySelectorAll('.sectorMemberTable tbody tr')].every(row=>row.children[1].innerText==='KOSDAQ')"),"Board filter failed");
   await evaluate("(()=>{const select=document.querySelectorAll('.sectorFilters select')[1];select.value='';select.dispatchEvent(new Event('change',{bubbles:true}));})()");
   await until(()=>evaluate("[...document.querySelectorAll('.sectorMemberTable tbody tr')].some(row=>row.children[1].innerText==='KOSPI')"),"Board reset failed");
-  await click("[...document.querySelectorAll('.sectorNameButton')].find(button=>button.innerText.trim().endsWith('반도체'))");
-  await until(()=>evaluate("document.querySelector('.sectorRankingTable tr.selected .sectorNameButton')?.innerText.trim().endsWith('반도체')"),"Sector selection did not update");
+  await evaluate("(()=>{const button=[...document.querySelectorAll('.sectorNameButton')].find(button=>button.querySelector('span:nth-child(2)').innerText==='반도체');if(button.getAttribute('aria-expanded')!=='true')button.click();})()");
+  await until(()=>evaluate("document.querySelector('.sectorRankingTable tr.selected .sectorNameButton span:nth-child(2)')?.innerText==='반도체'"),"Sector selection did not update");
   const detailName=await evaluate("document.querySelector('.sectorRankingTable tr.selected .sectorRepresentative').innerText");
   await click("document.querySelector('.sectorRankingTable tr.selected .sectorRepresentative')");
   await until(()=>evaluate("Boolean(document.querySelector('.marketStockPage h1')) && Boolean(document.querySelector('.stockHistoryChart .semiChart')) && Boolean(document.querySelector('.stockInformationPanel table'))"),"Sector stock detail did not load");
@@ -106,7 +134,7 @@ try {
   await until(()=>evaluate("document.querySelector('.errorNotice')?.innerText.includes('의도한 원본 조회 실패')"),'Failure did not appear');
   assert.equal(await evaluate("document.querySelector('.sectorRankingTable tbody').innerText"),retained);
   assert.deepEqual(exceptions,[]);
-  console.log(JSON.stringify({result:'PASS',rowCount,detailName,checks:'sector ranking, period, sort, search, board, stock detail and return, native refresh, failure retention, 1440/900/320 widths'}));
+  console.log(JSON.stringify({result:'PASS',rowCount,detailName,checks:'calendar history, stored prices and complete inline members, collapse, latest return, period, sort, search, board, stock detail and return, native refresh, failure retention, 1440/900/320 widths'}));
 } finally {
   if (send && socket?.readyState === WebSocket.OPEN) await send("Browser.close").catch(()=>{});
   socket?.close();browser.kill();
