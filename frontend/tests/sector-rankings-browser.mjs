@@ -75,6 +75,12 @@ try {
   await until(()=>evaluate("!document.querySelector('.refreshButton').disabled"),'Historical reload did not finish');
   assert.equal(statuses.filter(item=>item.kind==='sectors').length,sourceBefore,'Reloading history must not replace it with current original prices');
   assert.equal(await evaluate("document.querySelector('.sectorSummary strong').innerText"),historic.date);
+  await evaluate("document.querySelector('.sectorRankingTable tr.selected .sectorRepresentative').click()");
+  await until(()=>evaluate("Boolean(document.querySelector('.marketStockPage h1')) && Boolean(document.querySelector('.marketStockSnapshot dl'))"),'Historical stock detail did not load');
+  assert.equal(await evaluate("new URL(location.href).searchParams.get('date')"),historic.date);
+  assert.equal(await evaluate("[...document.querySelectorAll('.marketStockSnapshot dl > div')].find(item=>item.querySelector('dt').innerText==='기록일').querySelector('dd').innerText"),historic.date);
+  await evaluate("document.querySelector('.semiBreadcrumb a').click()");
+  await until(()=>evaluate(`document.querySelector('.sectorSummary strong')?.innerText===${JSON.stringify(historic.date)} && Boolean(document.querySelector('.sectorExpansionRow'))`),'Historical detail did not restore the selected date and open sector');
   await evaluate("document.querySelector('.sectorCalendarHeading button').click()");
   await until(()=>evaluate(`document.querySelector('.sectorSummary strong')?.innerText===${JSON.stringify(calendar.latest_date)}`),'Return to latest failed');
   await evaluate("document.querySelector('.sectorRankingTable tr.selected .sectorNameButton').click()");
