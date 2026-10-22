@@ -1,5 +1,7 @@
 name: Deploy prepared stock snapshots
 
+# Publish committed UI and snapshots independently of collector write conflicts.
+# This path does not push newly collected data back to main.
 on:
   workflow_dispatch:
   push:
