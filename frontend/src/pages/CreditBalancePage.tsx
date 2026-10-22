@@ -49,6 +49,11 @@ export function CreditBalancePage() {
     <DataRefreshStatus refreshing={refreshing} lastCheckedAt={lastCheckedAt} lastSourceAt={lastSourceAt} cadence="credit" onRefresh={refresh} />
     {loading && <LoadingSpinner />}{error && <ErrorNotice message={error} />}
     {data && latest && <>
+      <section className="semiPanel" aria-label="신용잔고 공표 안내">
+        <div className="semiPanelHeading"><h2>자료 기준일 · {latest.date}</h2>
+          <p>신용잔고는 거래일 이후 집계·공표됩니다. 이후 기준일의 자료는 금융투자협회 공표 후 자동 갱신으로 반영됩니다.
+            새로고침으로 현재 공표된 최신 자료를 직접 확인할 수 있습니다.</p></div>
+      </section>
       <div className="semiSummaryStrip creditSummaryStrip">{MARKETS.map(({ key, label }) => <button key={key} type="button"
         className={market === key ? "active" : ""} onClick={() => setMarket(key)} aria-pressed={market === key}>
         <span>{label} 신용융자 잔고</span><strong>{trillion(latest[key])}</strong>
