@@ -1,0 +1,89 @@
+{
+  "schema_version": 1,
+  "market": "korea",
+  "date": "2026-10-23",
+  "summary": "장 마감 후 TradingView 주식 스냅샷 기준. 당일 장중 고가가 52주·전체기간 고가에 도달하고, 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다. 전체기간 신고가를 우선 표시하며 신고가 배경은 별도 확인 전입니다.",
+  "sources": [
+    {
+      "label": "TradingView stock screener",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    },
+    {
+      "label": "Naver Finance 종목명·상장 시장·일봉 검증",
+      "url": "https://stock.naver.com/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "100250.KS",
+      "name": "진양홀딩스",
+      "exchange": "KOSPI",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "업종: Finance · Investment Managers",
+      "description": "진양홀딩스 · Investment Managers",
+      "change_pct": 3.642384105960265,
+      "session_open": 3025,
+      "session_close": 3220,
+      "session_volume": 13265832,
+      "source_symbol": "KRX:100250",
+      "currency": "KRW",
+      "name_original": "Chinyang Holdings Corporation",
+      "name_source_url": "https://m.stock.naver.com/api/stock/100250/basic",
+      "high_verification": {
+        "source": "Naver Finance adjusted daily history",
+        "source_url": "https://api.finance.naver.com/siseJson.naver?symbol=100250&requestType=1&startTime=20251024&endTime=20261023&timeframe=day",
+        "date": "2026-10-23",
+        "open": 3025,
+        "daily_high": 3805,
+        "low": 2970,
+        "close": 3220,
+        "previous_close": 3035,
+        "volume": 13265832,
+        "prior_52_week_high": 3360,
+        "observed_bars": 244,
+        "first_observed_date": "2025-10-24",
+        "confirmed": true,
+        "matches_prior_high": false,
+        "bearish_candle": false,
+        "down_close": false,
+        "passes_close_filter": true
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "TradingView public scanner",
+    "scanner": "korea",
+    "fetched_at": "2026-10-23T07:31:10.539934+00:00",
+    "universe": "TradingView-listed stock instruments, including common and preferred shares; ETFs excluded",
+    "definition": "daily high >= period high; close >= open; close >= previous close when one exists; all-time takes precedence; ties included",
+    "scanner_exchanges": [
+      "KRX"
+    ],
+    "latest_session_by_exchange": {
+      "KRX": "2026-10-23"
+    },
+    "previous_session_by_exchange": {
+      "KRX": "2026-10-22"
+    },
+    "current_session_reference_symbols": {
+      "KRX": "KRX:000020",
+      "KOSPI": "KRX:000020",
+      "KOSDAQ": "KRX:0001A0"
+    },
+    "scanned_symbols": 2740,
+    "current_session_symbols": 2714,
+    "excluded_symbols": {
+      "other_session": 26,
+      "korean_daily_history_disagrees": 1,
+      "bearish_or_down_close": 3,
+      "unsupported_korean_board": 1
+    },
+    "pagination_complete": true
+  },
+  "collected_at": "2026-10-23T07:31:03.023137+00:00"
+}
