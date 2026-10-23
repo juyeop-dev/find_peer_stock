@@ -1,0 +1,199 @@
+{
+  "schema_version": 1,
+  "market": "china",
+  "date": "2026-10-23",
+  "summary": "장 마감 후 TradingView 주식 스냅샷 기준. 당일 장중 고가가 52주·전체기간 고가에 도달하고, 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다. 전체기간 신고가를 우선 표시하며 신고가 배경은 별도 확인 전입니다.",
+  "sources": [
+    {
+      "label": "TradingView stock screener",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "603838.SS",
+      "name": "Guang Dong Sitong Group Co. Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Consumer Durables",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Durables · Home Furnishings",
+      "description": "Guang Dong Sitong Group Co. Ltd. Class A · Home Furnishings",
+      "change_pct": 10.014947683109117,
+      "session_open": 13,
+      "session_close": 14.72,
+      "session_volume": 11665769,
+      "source_symbol": "SSE:603838",
+      "currency": "CNY"
+    },
+    {
+      "ticker": "688018.SS",
+      "name": "Espressif Systems (Shanghai) Co. Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Semiconductors",
+      "description": "Espressif Systems (Shanghai) Co. Ltd. Class A · Semiconductors",
+      "change_pct": 9.19637804187889,
+      "session_open": 140.33,
+      "session_close": 154.36,
+      "session_volume": 17472695,
+      "source_symbol": "SSE:688018",
+      "currency": "CNY"
+    },
+    {
+      "ticker": "688071.SS",
+      "name": "Shanghai W-Ibeda High Tech.Group Co. Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Electronic Equipment/Instruments",
+      "description": "Shanghai W-Ibeda High Tech.Group Co. Ltd. Class A · Electronic Equipment/Instruments",
+      "change_pct": 20.000000000000004,
+      "session_open": 38.16,
+      "session_close": 47.52,
+      "session_volume": 16710518,
+      "source_symbol": "SSE:688071",
+      "currency": "CNY"
+    },
+    {
+      "ticker": "000530.SZ",
+      "name": "Bingshan Refrigeration & Heat Transfer Technologies Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Industrial Machinery",
+      "description": "Bingshan Refrigeration & Heat Transfer Technologies Co., Ltd. Class A · Industrial Machinery",
+      "change_pct": 0.42149631190726183,
+      "session_open": 8.81,
+      "session_close": 9.53,
+      "session_volume": 231837027,
+      "source_symbol": "SZSE:000530",
+      "currency": "CNY"
+    },
+    {
+      "ticker": "002343.SZ",
+      "name": "Ciwen Media Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Consumer Services",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Services · Movies/Entertainment",
+      "description": "Ciwen Media Co., Ltd. Class A · Movies/Entertainment",
+      "change_pct": 10.000000000000002,
+      "session_open": 9.91,
+      "session_close": 10.89,
+      "session_volume": 200667974,
+      "source_symbol": "SZSE:002343",
+      "currency": "CNY"
+    },
+    {
+      "ticker": "002687.SZ",
+      "name": "Zhejiang Giuseppe Garment Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Consumer Non-Durables",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Non-Durables · Apparel/Footwear",
+      "description": "Zhejiang Giuseppe Garment Co., Ltd. Class A · Apparel/Footwear",
+      "change_pct": 9.934853420195445,
+      "session_open": 6.12,
+      "session_close": 6.75,
+      "session_volume": 37267822,
+      "source_symbol": "SZSE:002687",
+      "currency": "CNY"
+    },
+    {
+      "ticker": "002724.SZ",
+      "name": "Ocean's King Lighting Science & Technology Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Electrical Products",
+      "description": "Ocean's King Lighting Science & Technology Co., Ltd. Class A · Electrical Products",
+      "change_pct": 9.991079393398744,
+      "session_open": 11.14,
+      "session_close": 12.33,
+      "session_volume": 159210341,
+      "source_symbol": "SZSE:002724",
+      "currency": "CNY"
+    },
+    {
+      "ticker": "300307.SZ",
+      "name": "Ningbo Cixing Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Industrial Machinery",
+      "description": "Ningbo Cixing Co., Ltd. Class A · Industrial Machinery",
+      "change_pct": 19.99999999999999,
+      "session_open": 7.29,
+      "session_close": 8.94,
+      "session_volume": 129606047,
+      "source_symbol": "SZSE:300307",
+      "currency": "CNY"
+    },
+    {
+      "ticker": "301273.SZ",
+      "name": "Shanghai Rychen Technologies Co. Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Technology Services",
+      "high_type": "all_time",
+      "reason": "업종: Technology Services · Information Technology Services",
+      "description": "Shanghai Rychen Technologies Co. Ltd. Class A · Information Technology Services",
+      "change_pct": 6.8653421633554075,
+      "session_open": 45.33,
+      "session_close": 48.41,
+      "session_volume": 4004857,
+      "source_symbol": "SZSE:301273",
+      "currency": "CNY"
+    },
+    {
+      "ticker": "301529.SZ",
+      "name": "WuHu Foresight Technology Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Auto Parts: OEM",
+      "description": "WuHu Foresight Technology Co., Ltd. Class A · Auto Parts: OEM",
+      "change_pct": 11.43942591810892,
+      "session_open": 140.72,
+      "session_close": 158.4,
+      "session_volume": 5090286,
+      "source_symbol": "SZSE:301529",
+      "currency": "CNY"
+    }
+  ],
+  "source_metadata": {
+    "provider": "TradingView public scanner",
+    "scanner": "china",
+    "fetched_at": "2026-10-23T08:01:05.623462+00:00",
+    "universe": "TradingView-listed stock instruments, including common and preferred shares; ETFs excluded",
+    "definition": "daily high >= period high; close >= open; close >= previous close when one exists; all-time takes precedence; ties included",
+    "scanner_exchanges": [
+      "SSE",
+      "SZSE"
+    ],
+    "latest_session_by_exchange": {
+      "SZSE": "2026-10-23",
+      "SSE": "2026-10-23"
+    },
+    "previous_session_by_exchange": {
+      "SZSE": "2026-10-22",
+      "SSE": "2026-10-22"
+    },
+    "current_session_reference_symbols": {
+      "SZSE": "SZSE:000001",
+      "SSE": "SSE:508060"
+    },
+    "scanned_symbols": 5316,
+    "current_session_symbols": 5312,
+    "excluded_symbols": {
+      "other_session": 4,
+      "bearish_or_down_close": 3
+    },
+    "pagination_complete": true
+  },
+  "collected_at": "2026-10-23T08:01:03.280190+00:00"
+}
