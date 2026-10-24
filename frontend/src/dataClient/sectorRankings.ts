@@ -16,7 +16,8 @@ export interface SectorSnapshot {
   universe: string; received: number; excluded: Record<string, number>; stale_count: number; stocks: SectorStock[];
   source_fetched_at?: string;
   archived?: boolean;
-  reconstruction?: {classification_date: string; classification_source: string; note: string; returns: string};
+  reconstruction?: {classification_date: string; classification_source: string; note: string; returns: string; market_cap_restored?: boolean; turnover_restored?: boolean};
+  historical_metrics?: { version: string; date: string; provider: string; source_url: string; matched: number; unmatched: number; currency: string; turnover_basis: string };
 }
 export interface SectorCalendarRecord { date: string; fetched_at: string; count: number; industries: number }
 export interface SectorCalendar { schema_version: 1; market: "korea"; latest_date: string; records: SectorCalendarRecord[] }

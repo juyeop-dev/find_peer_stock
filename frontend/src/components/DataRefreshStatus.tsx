@@ -6,7 +6,7 @@ interface DataRefreshStatusProps {
   lastCheckedAt?: string | null;
   generatedAt?: string;
   lastSourceAt?: string | null;
-  cadence?: "quote" | "daily" | "turnover-korea" | "semiconductor" | "credit" | "sectors" | "sector-history";
+  cadence?: "quote" | "daily" | "turnover-korea" | "turnover-history" | "semiconductor" | "credit" | "sectors" | "sector-history";
   onRefresh: () => void;
 }
 
@@ -19,7 +19,7 @@ export function DataRefreshStatus({ refreshing, lastCheckedAt, lastSourceAt, gen
   // The daily archive changes only after a market close, but its published
   // index should still be checked by the same site-wide deployment heartbeat.
   const freshnessTime = lastSourceAt ?? generatedAt;
-  const delayed = cadence !== "sector-history" && cadence !== "turnover-korea" && Boolean(freshnessTime && now - new Date(freshnessTime).getTime() > 20 * 60_000);
+  const delayed = cadence !== "sector-history" && cadence !== "turnover-korea" && cadence !== "turnover-history" && Boolean(freshnessTime && now - new Date(freshnessTime).getTime() > 20 * 60_000);
 
   return (
     <>
@@ -37,6 +37,8 @@ export function DataRefreshStatus({ refreshing, lastCheckedAt, lastSourceAt, gen
             ? "새로고침하면 최신 목록과 현재가를 원본에서 조회합니다. 과거 기록은 보존됩니다."
             : cadence === "turnover-korea"
             ? "한국 거래대금 순위는 정규장 15:30 마감 기준입니다. 제공처 지연을 고려해 15:50부터 수집하며, 새로고침은 저장된 마감 순위를 다시 불러옵니다."
+            : cadence === "turnover-history"
+            ? "과거 한국 거래대금은 KRX 일별 확정 자료로 복원했습니다. 시간외가 포함될 수 있어 15:30 마감 기록과 구분하며, 새로고침은 저장된 순위를 다시 불러옵니다."
             : "새로고침하면 표시된 종목의 현재 값을 원본 제공처에서 직접 조회합니다."}</span>
           {lastSourceAt ? <span className="sourceFetchedAt">원본 조회 완료 · {formatDateTime(lastSourceAt)}</span> : null}
           {lastCheckedAt ? <span>브라우저 확인 · {formatDateTime(lastCheckedAt)}</span> : null}

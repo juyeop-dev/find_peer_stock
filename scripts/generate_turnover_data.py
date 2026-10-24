@@ -64,6 +64,10 @@ def validate_report(payload: dict[str, Any], path: Path, reports_dir: Path,
     if market_id == "korea" and metadata.get("session") == "regular":
         if metadata.get("session_close") != "15:30" or metadata.get("session_close_at") != f"{report_date}T15:30:00+09:00":
             raise TurnoverDataError(f"{path}: regular-session close must match report date at 15:30 KST")
+    if market_id == "korea" and metadata.get("session") == "daily" and (
+        metadata.get("session_close") or metadata.get("session_close_at")
+    ):
+        raise TurnoverDataError(f"{path}: daily totals cannot assert a regular-session cutoff")
     if not isinstance(entries, list) or len(entries) > 30:
         raise TurnoverDataError(f"{path}: entries must be a list of at most 30 stocks")
     known_exchanges = {item["id"] for item in markets[market_id]["exchanges"]}

@@ -107,7 +107,7 @@ export function TurnoverPage() {
     <header className="turnoverHeader"><div><p className="eyebrow">DAILY TURNOVER RANKING</p><h1>거래대금 캘린더</h1>
       <p>매 거래일 시장에서 거래대금이 가장 컸던 종목 1위부터 30위까지 확인하세요.</p></div>
       <Link className="backLink" to={`/calendar-history?kind=turnover&market=${marketId}`}>월별·연도별 누적 기록 →</Link></header>
-    <DataRefreshStatus cadence={marketId === "korea" ? "turnover-korea" : "daily"} refreshing={indexRefreshing || reportRefreshing} lastCheckedAt={lastCheckedAt} lastSourceAt={reportSourceAt ?? lastSourceAt}
+    <DataRefreshStatus cadence={marketId === "korea" ? report?.source_metadata?.session === "daily" ? "turnover-history" : "turnover-korea" : "daily"} refreshing={indexRefreshing || reportRefreshing} lastCheckedAt={lastCheckedAt} lastSourceAt={reportSourceAt ?? lastSourceAt}
       onRefresh={async () => { await refreshIndex(); await refreshReport(); }} />
     {indexError ? <ErrorNotice message={indexError} /> : null}
     {!index && indexLoading ? <LoadingSpinner /> : null}
@@ -119,7 +119,7 @@ export function TurnoverPage() {
       </div>
       <div className="turnoverLayout">
         <aside className="turnoverSidebar">
-          <div className="turnoverScope"><span className="eyebrow">조회 시장</span><strong>{market.label}</strong><p>{marketId === "korea" ? "정규장 15:30 마감 기준" : "장 마감 기준"} · {market.timezone}</p></div>
+          <div className="turnoverScope"><span className="eyebrow">조회 시장</span><strong>{market.label}</strong><p>{marketId === "korea" ? report?.source_metadata?.session === "daily" ? "KRX 일별 확정 기준" : "정규장 15:30 마감 기준" : "장 마감 기준"} · {market.timezone}</p></div>
           <TurnoverCalendar month={month || selectedDate.slice(0, 7)} selectedDate={selectedDate} today={today}
             days={days} closedDates={closedDates} onMonthChange={setMonth} onSelectDate={selectDate} />
           <div className="turnoverArchiveMeta"><label>달 바로 이동<input type="month" value={month || selectedDate.slice(0, 7)}
@@ -134,7 +134,7 @@ export function TurnoverPage() {
           {!hasReport ? <div className="turnoverEmpty"><strong>{isClosedDate ? `${market.label} 시장 휴장일입니다.` : "이 날짜의 거래대금 순위가 아직 없습니다."}</strong>
             <p>{isClosedDate ? `${closureReason ? `${closureReason}로 ` : ""}거래가 열리지 않아 거래대금 순위가 생성되지 않습니다.` : "순위가 수집된 거래일을 달력에서 선택해 주세요."}</p></div> : null}
           {report ? <>
-            {marketId === "korea" && <p className="semiFootnote" role="status">{report.source_metadata?.session === "regular" ? `${report.date} ${report.source_metadata.session_close ?? "15:30"} KST 정규장 마감 · 거래대금 내림차순. 장중 순위로 바뀌지 않습니다.` : "기존 수집 기록입니다. 15:30 기준 여부를 확인할 수 있는 메타데이터가 없어 수집 당시 순위를 표시합니다."}</p>}
+            {marketId === "korea" && <p className="semiFootnote" role="status">{report.source_metadata?.session === "regular" ? `${report.date} ${report.source_metadata.session_close ?? "15:30"} KST 정규장 마감 · 거래대금 내림차순. 장중 순위로 바뀌지 않습니다.` : report.source_metadata?.session === "daily" ? `${report.date} KRX 일별 확정 거래대금으로 재계산했습니다. 시간외가 포함될 수 있어 15:30 시점 순위와 구분합니다.` : "기존 수집 기록입니다. 15:30 기준 여부를 확인할 수 있는 메타데이터가 없어 수집 당시 순위를 표시합니다."}</p>}
             <div className="turnoverToolbar"><p>{report.summary}</p><input type="search" value={search} onChange={(event) => setSearch(event.target.value)} placeholder="종목명 · 티커 · 산업 검색" aria-label="순위표 검색" /></div>
             <div className="turnoverTableWrap"><table className="turnoverTable"><thead><tr>
               <th>순위</th><th>종목명</th><th>{sourceMetadata(report).source_fetched_at ? "제공처 최근가" : "당일 종가"}</th><th>등락률</th><th>거래대금</th><th>시가총액</th><th>산업</th>

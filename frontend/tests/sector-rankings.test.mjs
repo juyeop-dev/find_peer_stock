@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import test from "node:test";
 import ts from "typescript";
+import { gunzipSync } from "node:zlib";
 const source = await readFile(new URL("../src/dataClient/sectorRankings.ts", import.meta.url), "utf8");
 const js = ts.transpileModule(source, { compilerOptions: { module: ts.ModuleKind.ESNext, target: ts.ScriptTarget.ES2022 } }).outputText;
 const { sectorRankings, sortSectors, sectorMoney, sectorLabel, classifiedSectorStock } = await import(`data:text/javascript;base64,${Buffer.from(js).toString("base64")}`);
@@ -67,6 +68,19 @@ test("2026-10-22 saved source reproduces +1.85% and the corrected refinery view 
   assert.ok(row.value < -5);
   assert.ok(Math.abs(row.value - evidence.corrected.cap_return) < 1e-12);
   assert.equal(evidence.stocks.find(stock => stock.code === "060900").market_cap, 10769971803);
+});
+
+test("dated KRX capitalization enables historical weighting and supersedes the provider-cap estimate", async () => {
+  const historical = JSON.parse(gunzipSync(await readFile(new URL("../../data/sectors/daily/2024-07-01.json.gz", import.meta.url))));
+  const [refinery] = sectorRankings(historical, "industry", "day").filter(row => row.name === "정유·정유 지주");
+  assert.equal(refinery.members.length, 4);
+  assert.equal(refinery.returnCount, 4);
+  assert.ok(Math.abs(refinery.value - -0.04011752173661187) < 1e-12);
+  assert.equal(historical.reconstruction.market_cap_restored, true);
+  const october = JSON.parse(gunzipSync(await readFile(new URL("../../data/sectors/daily/2026-10-22.json.gz", import.meta.url))));
+  const row = sectorRankings(october, "industry", "day").find(row => row.name === "정유·정유 지주");
+  assert.ok(Math.abs(row.value - -5.933468885331321) < 1e-12);
+  assert.equal(row.members.find(stock => stock.code === "010950").market_cap, 15739074321600);
 });
 test("older sessions and other currencies never affect latest sector gains or totals", () => {
   const rows = sectorRankings(data(stock("A"), stock("OLD", { date: "2026-10-16" }), stock("USD", { currency: "USD" }), stock("KQ", { exchange: "KOSDAQ" })), "sector", "week", "KOSPI");

@@ -145,6 +145,14 @@ class TurnoverDataTests(unittest.TestCase):
         with self.assertRaisesRegex(turnover.TurnoverDataError, "KRW"):
             turnover.generate_turnover_data(self.source, self.output, self.frontend)
 
+    def test_daily_historical_totals_cannot_be_marked_as_1530(self) -> None:
+        report = self.report()
+        report["source_metadata"] = {"session": "daily", "session_close": "15:30"}
+        path = self.source / "reports/korea/2026_09/2026-09-17.json"
+        self.write(path, report)
+        with self.assertRaisesRegex(turnover.TurnoverDataError, "cutoff"):
+            turnover.generate_turnover_data(self.source, self.output, self.frontend)
+
     def test_accepts_period_returns_with_dated_close_basis(self) -> None:
         report = self.report()
         report["entries"][0]["period_returns"] = {

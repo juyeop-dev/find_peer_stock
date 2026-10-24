@@ -78,6 +78,10 @@ try {
   await evaluate(`document.querySelector('.sectorCalendarGrid button[data-date="${historic.date}"]').click()`);
   await until(()=>evaluate(`document.querySelector('.sectorSummary strong')?.innerText===${JSON.stringify(historic.date)}`),'Historical ranking did not load');
   const sourceSnapshot=await(await fetch(base+'/data/sectors/daily/'+historic.date+'.json')).json();
+  if (sourceSnapshot.historical_metrics) {
+    assert.ok(await evaluate("[...document.querySelectorAll('.sectorReturn')].filter(node=>Number.isFinite(parseFloat(node.innerText))).length>50"), "Restored dated caps must enable historical weighted returns");
+    assert.equal(await evaluate("document.body.innerText.includes('당시 시가총액이 없어')"), false);
+  }
   await evaluate("document.querySelector('.sectorNameButton').click()");
   await until(()=>evaluate("Boolean(document.querySelector('.sectorExpansionRow .sectorMemberTable'))"),'Inline sector members did not expand');
   const expanded=await evaluate("(()=>{const row=document.querySelector('.sectorRankingTable tr.selected');return {key:row.dataset.sector,inline:row.nextElementSibling.classList.contains('sectorExpansionRow'),count:document.querySelectorAll('.sectorMemberTable tbody tr').length,code:document.querySelector('.sectorMemberTable .semiStockLink span').innerText,price:document.querySelector('.sectorMemberTable tbody tr').children[2].innerText};})()");
