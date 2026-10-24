@@ -26,6 +26,17 @@ def row(symbol: str, turnover: int, **overrides: object) -> dict:
 
 
 class TradingViewTurnoverTests(unittest.TestCase):
+    def test_korean_close_ranks_native_won_and_declares_regular_session(self) -> None:
+        items = [row("KRX:005930", 200, currency="KRW"), row("KRX:000660", 300, currency="KRW")]
+        with patch.object(source, "_request_json", return_value={"totalCount": 2, "data": items}) as request, \
+             patch.object(source, "_korean_listing", return_value={"name": "한국 종목", "exchange": "KOSPI"}):
+            report = source.fetch_report("korea", DAY)
+        self.assertTrue(request.call_args.args[1]["options"]["price_conversion"]["to_symbol"])
+        self.assertEqual([entry["ticker"] for entry in report["entries"]], ["000660.KS", "005930.KS"])
+        self.assertEqual(report["entries"][0]["turnover"], 300)
+        self.assertEqual(report["source_metadata"]["session_close_at"], "2026-09-17T15:30:00+09:00")
+        self.assertEqual(report["source_metadata"]["session"], "regular")
+
     def test_ranks_top_30_and_maps_fields(self) -> None:
         rows = [row(f"TSE:{1000 + index}", index + 1) for index in range(35)]
         with patch.object(source, "_request_json", return_value={"totalCount": 35, "data": rows}):

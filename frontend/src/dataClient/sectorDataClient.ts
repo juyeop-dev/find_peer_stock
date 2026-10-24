@@ -1,5 +1,6 @@
 import { requestOriginal } from "./liveStockDataClient";
 import type { SectorCalendar, SectorSnapshot } from "./sectorRankings";
+import { classifiedSectorStock } from "./sectorRankings";
 
 let latest: SectorSnapshot | undefined;
 export function validSectorDate(value: string) {
@@ -65,5 +66,5 @@ export async function getSectorStock(ticker: string, signal: AbortSignal, date =
   const data = await getSectorSnapshot(date, signal);
   const stock = data.stocks.find(stock => stock.ticker === ticker.toUpperCase());
   if (!stock) throw new Error("국내 섹터 목록에서 이 종목을 찾을 수 없습니다.");
-  return { ...stock, market_cap_currency: "KRW", turnover_currency: "KRW", reconstruction_note: data.reconstruction?.note };
+  return { ...classifiedSectorStock(stock), market_cap_currency: "KRW", turnover_currency: "KRW", reconstruction_note: data.reconstruction?.note };
 }

@@ -5,8 +5,12 @@ import { mkdir, mkdtemp, readFile, rm, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join, resolve, sep } from "node:path";
 import { fileURLToPath } from "node:url";
+import ts from "typescript";
 
 const root = fileURLToPath(new URL("../../", import.meta.url));
+const rankingSource = await readFile(new URL("../src/dataClient/sectorRankings.ts", import.meta.url), "utf8");
+const rankingJs = ts.transpileModule(rankingSource, { compilerOptions: { module: ts.ModuleKind.ESNext, target: ts.ScriptTarget.ES2022 } }).outputText;
+const { classifiedSectorStock } = await import(`data:text/javascript;base64,${Buffer.from(rankingJs).toString("base64")}`);
 const base = process.env.STOCK_SITE_BASE_URL ?? "http://127.0.0.1:4173";
 const browserPath = process.env.BROWSER_PATH ?? ["C:/Program Files/Google/Chrome/Application/chrome.exe", "C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe", "/usr/bin/chromium", "/usr/bin/google-chrome"].find(existsSync);
 assert.ok(browserPath, "Set BROWSER_PATH to Chromium.");
@@ -55,6 +59,17 @@ try {
   await send("Page.navigate",{url:base+"/sectors"});
   await waitRows();
 
+  assert.equal(await evaluate("document.querySelector('[aria-label=\"등락률 계산 방식\"]').value"), "cap");
+  await evaluate("[...document.querySelectorAll('tr[data-sector]')].find(row=>row.dataset.sector.endsWith('Refining & Holdings')).querySelector('.sectorNameButton').click()");
+  await until(() => evaluate("document.querySelectorAll('.sectorMemberTable tbody tr').length === 4"), "Reviewed refinery members did not load");
+  const refineryCodes = await evaluate("[...document.querySelectorAll('.sectorMemberTable .semiStockLink span')].map(node=>node.innerText).sort()");
+  assert.deepEqual(refineryCodes, ["010950", "078930", "096770", "267250"]);
+  const refineryMean = await evaluate("[...document.querySelectorAll('.sectorMemberTable tbody tr')].reduce((sum,row)=>sum+parseFloat(row.children[3].innerText),0)/4");
+  await evaluate("(()=>{const select=document.querySelector('[aria-label=\"등락률 계산 방식\"]');select.value='equal';select.dispatchEvent(new Event('change',{bubbles:true}));})()");
+  await until(() => evaluate("new URL(location.href).searchParams.get('weight') === 'equal'"), "Weighting choice was not saved in the URL");
+  assert.ok(Math.abs(await evaluate("parseFloat(document.querySelector('.sectorSelectedReturn').innerText)") - refineryMean) < .02);
+  await evaluate("(()=>{const select=document.querySelector('[aria-label=\"등락률 계산 방식\"]');select.value='cap';select.dispatchEvent(new Event('change',{bubbles:true}));document.querySelector('tr.selected .sectorNameButton').click();})()");
+
   await until(()=>evaluate("document.querySelectorAll('.sectorCalendarGrid button:not(:disabled)').length>=2"),'Calendar records did not load');
   const calendar=await(await fetch(base+'/data/sectors/calendar.json')).json();
   const historic=calendar.records.find(record=>record.date!==calendar.latest_date);
@@ -67,7 +82,7 @@ try {
   await until(()=>evaluate("Boolean(document.querySelector('.sectorExpansionRow .sectorMemberTable'))"),'Inline sector members did not expand');
   const expanded=await evaluate("(()=>{const row=document.querySelector('.sectorRankingTable tr.selected');return {key:row.dataset.sector,inline:row.nextElementSibling.classList.contains('sectorExpansionRow'),count:document.querySelectorAll('.sectorMemberTable tbody tr').length,code:document.querySelector('.sectorMemberTable .semiStockLink span').innerText,price:document.querySelector('.sectorMemberTable tbody tr').children[2].innerText};})()");
   const [parent,industry]=expanded.key.split('\t');
-  const expectedMembers=sourceSnapshot.stocks.filter(stock=>stock.date===historic.date&&stock.sector===parent&&stock.industry===industry);
+  const expectedMembers=sourceSnapshot.stocks.map(classifiedSectorStock).filter(stock=>stock.date===historic.date&&stock.sector===parent&&stock.industry===industry);
   assert.equal(expanded.inline,true);assert.equal(expanded.count,expectedMembers.length);
   assert.equal(Number(expanded.price.replace(/[^0-9.]/g,'')),expectedMembers.find(stock=>stock.code===expanded.code).price);
   const sourceBefore=statuses.filter(item=>item.kind==='sectors').length;

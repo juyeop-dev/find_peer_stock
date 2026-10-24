@@ -5,6 +5,15 @@ import { naverFinancialRows, recentFinancials, scan, wonAmount, yahooData } from
 const json = value => new Response(JSON.stringify(value), { headers: { "Content-Type": "application/json" } });
 const request = (body, origin = "https://juyeop-dev.github.io") => new Request("https://api.example/refresh", { method: "POST", headers: { "Content-Type": "application/json", Origin: origin }, body: JSON.stringify(body) });
 
+test("Korean turnover cannot publish an intraday scanner list over the close calendar", async () => {
+  let calls = 0;
+  const fetcher = async () => { calls++; throw new Error("must not scan"); };
+  await assert.rejects(() => scan("korea", "turnover", fetcher), /15:30/);
+  const response = await handle(request({ kind: "scan", market: "korea", source: "turnover" }), {}, fetcher);
+  assert.equal(response.status, 502);
+  assert.equal(calls, 0);
+});
+
 test("requests reach the original provider on every click and are never served from a response cache", async () => {
   const calls = [];
   const fetcher = async (url, options) => {

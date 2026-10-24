@@ -1,6 +1,7 @@
 export type SectorPeriod = "day" | "week" | "month" | "quarter" | "year";
 export type SectorLevel = "sector" | "industry";
 export type SectorSort = "return" | "turnover" | "marketCap" | "count";
+export type SectorWeighting = "cap" | "equal";
 export const SECTOR_PERIODS: { key: SectorPeriod; label: string }[] = [
   { key: "day", label: "오늘" }, { key: "week", label: "1주" }, { key: "month", label: "1개월" }, { key: "quarter", label: "3개월" }, { key: "year", label: "1년" },
 ];
@@ -8,6 +9,7 @@ export interface SectorStock {
   ticker: string; code: string; name: string; exchange: "KOSPI" | "KOSDAQ"; sector: string; industry: string;
   currency: "KRW"; price: number; change_pct: number | null; turnover: number | null; market_cap: number | null; date: string;
   returns: Record<SectorPeriod, number | null>;
+  classificationNote?: string; classificationUrl?: string;
 }
 export interface SectorSnapshot {
   schema_version: 1; market: "korea"; currency: "KRW"; date: string; fetched_at: string; source: string; source_url: string;
@@ -20,7 +22,7 @@ export interface SectorCalendarRecord { date: string; fetched_at: string; count:
 export interface SectorCalendar { schema_version: 1; market: "korea"; latest_date: string; records: SectorCalendarRecord[] }
 export interface SectorRanking {
   key: string; name: string; sector: string; members: SectorStock[]; representative: SectorStock;
-  value: number | null; returnCount: number; turnover: number | null; turnoverCount: number; marketCap: number | null; capCount: number;
+  value: number | null; equalValue: number | null; returnCount: number; turnover: number | null; turnoverCount: number; marketCap: number | null; capCount: number;
 }
 
 const LABELS: Record<string, string> = {
@@ -49,7 +51,8 @@ const LABELS: Record<string, string> = {
   "Investment Trusts/Mutual Funds": "투자회사", "Life/Health Insurance": "생명·건강보험", "Major Banks": "대형 은행", "Major Telecommunications": "종합 통신",
   "Marine Shipping": "해운", "Medical Distributors": "의료 유통", "Medical Specialties": "의료 기기", "Medical/Nursing Services": "의료·간호 서비스",
   "Metal Fabrication": "금속 가공", "Miscellaneous Commercial Services": "기타 사업 서비스", "Miscellaneous Manufacturing": "기타 제조", "Motor Vehicles": "자동차",
-  "Movies/Entertainment": "영화·엔터테인먼트", "Multi-Line Insurance": "종합 보험", "Office Equipment/Supplies": "사무 기기·용품", "Oil Refining/Marketing": "정유",
+  "Movies/Entertainment": "영화·엔터테인먼트", "Multi-Line Insurance": "종합 보험", "Office Equipment/Supplies": "사무 기기·용품", "Oil Refining/Marketing": "석유제품·윤활유",
+  "Refining & Holdings": "정유·정유 지주", "Petrochemicals": "석유화학",
   "Other Consumer Services": "기타 소비자 서비스", "Other Consumer Specialties": "기타 소비재", "Other Metals/Minerals": "기타 금속·광물", "Other Transportation": "기타 운송",
   "Packaged Software": "소프트웨어", "Pharmaceuticals: Generic": "복제약", "Pharmaceuticals: Major": "주요 제약", "Pharmaceuticals: Other": "기타 제약",
   "Property/Casualty Insurance": "손해보험", "Publishing: Books/Magazines": "서적·잡지 출판", "Publishing: Newspapers": "신문", "Pulp & Paper": "펄프·제지",
@@ -61,9 +64,32 @@ const LABELS: Record<string, string> = {
 export const sectorLabel = (key: string) => LABELS[key] ?? key;
 export const sectorIcon = (key: string) => (({ "Electronic Technology": "💠", "Finance": "🏦", "Health Technology": "💊", "Technology Services": "💻", "Producer Manufacturing": "⚙️", "Utilities": "⚡", "Consumer Durables": "🚘", "Transportation": "🚢", "Process Industries": "🧪", "Communications": "📡" } as Record<string, string>)[key] ?? "◈");
 const finite = (value: unknown): value is number => typeof value === "number" && Number.isFinite(value);
-export function sectorRankings(snapshot: SectorSnapshot, level: SectorLevel, period: SectorPeriod, board = ""): SectorRanking[] {
+// Display classification reviewed on 2026-10-24. Keep provider snapshots intact;
+// applying this view to history is explicitly a current-business regrouping.
+const CLASSIFICATION: Record<string, [string, string, string, string]> = {
+  "010950.KS": ["Energy Minerals", "Refining & Holdings", "정유 사업", "https://www.s-oil.com/energy/OilRefining.aspx"],
+  "096770.KS": ["Energy Minerals", "Refining & Holdings", "SK에너지 등 정유 사업을 보유한 지주", "https://www.skinnovation.com/"],
+  "078930.KS": ["Energy Minerals", "Refining & Holdings", "GS에너지를 통한 GS칼텍스 정유 사업 보유", "https://www.gs.co.kr/ko/about-gs/subsidiaries"],
+  "267250.KS": ["Energy Minerals", "Refining & Holdings", "HD현대오일뱅크를 보유한 지주", "https://hd-hhi.com/kr/investors/governance/subsidiary"],
+  "060900.KQ": ["Utilities", "Alternative Power Generation", "KRX 주요제품: 풍력·태양광 발전 (정유 제외)", "https://kind.krx.co.kr/corpdetail/totalinfo.do?method=searchTotalInfo&isurCd=06090&repIsuCd=KR7060900008"],
+  "011780.KS": ["Process Industries", "Petrochemicals", "합성고무·합성수지 등 석유화학", "https://kkpc.com/"],
+  "011170.KS": ["Process Industries", "Petrochemicals", "기초화학·화학소재 사업", "https://product.lottechem.com/"],
+  "003240.KS": ["Process Industries", "Petrochemicals", "PTA·AN 등 석유화학 및 섬유 (정유 제외)", "https://kind.krx.co.kr/external/2025/05/29/000321/20250529000872/11013.htm"],
+  "006730.KQ": ["Consumer Services", "Hotels/Resorts/Cruise lines", "호텔·쇼핑몰·부동산 개발 (정유 제외)", "https://www.seobutnd.com/"],
+};
+// Naver's petrochemical constituent list, reviewed alongside the company
+// sources above. SK Innovation stays in the refinery group to avoid counting
+// one company's monetary totals twice in the sector overview.
+const PETROCHEMICALS = new Set(["006650.KS", "011790.KS", "009830.KS", "051910.KS", "161000.KS", "120110.KS", "102260.KS", "005950.KS", "285130.KS", "104480.KQ", "083420.KS", "145990.KS", "025000.KS", "298000.KS"]);
+export function classifiedSectorStock(stock: SectorStock): SectorStock {
+  const review = CLASSIFICATION[stock.ticker];
+  if (review) return { ...stock, sector: review[0], industry: review[1], classificationNote: review[2], classificationUrl: review[3] };
+  return PETROCHEMICALS.has(stock.ticker) ? { ...stock, sector: "Process Industries", industry: "Petrochemicals", classificationNote: "네이버 석유화학 테마 편입 · 정유와 구분", classificationUrl: "https://finance.naver.com/sise/sise_group_detail.naver?type=theme&no=180" } : stock;
+}
+export function sectorRankings(snapshot: SectorSnapshot, level: SectorLevel, period: SectorPeriod, board = "", weighting: SectorWeighting = "cap"): SectorRanking[] {
   const groups = new Map<string, SectorStock[]>();
-  for (const stock of snapshot.stocks) {
+  for (const original of snapshot.stocks) {
+    const stock = classifiedSectorStock(original);
     if (stock.date !== snapshot.date || stock.currency !== "KRW" || board && stock.exchange !== board) continue;
     // Include the parent to keep an identically named industry in different sectors separate.
     const key = level === "sector" ? stock.sector : `${stock.sector}\t${stock.industry}`;
@@ -72,11 +98,22 @@ export function sectorRankings(snapshot: SectorSnapshot, level: SectorLevel, per
   }
   return [...groups].map(([key, members]) => {
     const available = members.map(stock => stock.returns[period]).filter(finite);
+    // Recover an estimated starting cap, assuming unchanged share counts.
+    // Current-cap weights would overweight this period's winners. Never replace
+    // missing historical caps with today's cap or an equal-weight fallback.
+    const weighted = members.flatMap(stock => {
+      const r = stock.returns[period], cap = stock.market_cap;
+      const weight = finite(r) && r > -100 && finite(cap) && cap > 0 ? cap / (1 + r / 100) : null;
+      return weight !== null && Number.isFinite(weight) && weight > 0 ? [{ r: r as number, weight }] : [];
+    });
+    const totalWeight = weighted.reduce((sum, item) => sum + item.weight, 0);
+    const equalValue = available.length ? available.reduce((a, b) => a + b, 0) / available.length : null;
     const turnovers = members.map(stock => stock.turnover).filter(value => finite(value) && value >= 0) as number[];
     const caps = members.map(stock => stock.market_cap).filter(value => finite(value) && value > 0) as number[];
     const representative = [...members].sort((a, b) => (b.market_cap ?? -1) - (a.market_cap ?? -1) || (b.turnover ?? -1) - (a.turnover ?? -1) || a.ticker.localeCompare(b.ticker))[0];
     return { key, name: sectorLabel(level === "sector" ? members[0].sector : members[0].industry), sector: members[0].sector, members, representative,
-      value: available.length ? available.reduce((a, b) => a + b, 0) / available.length : null, returnCount: available.length,
+      value: weighting === "equal" ? equalValue : totalWeight > 0 ? weighted.reduce((sum, item) => sum + item.r * (item.weight / totalWeight), 0) : null,
+      equalValue, returnCount: weighting === "equal" ? available.length : weighted.length,
       turnover: turnovers.length ? turnovers.reduce((a, b) => a + b, 0) : null, turnoverCount: turnovers.length,
       marketCap: caps.length ? caps.reduce((a, b) => a + b, 0) : null, capCount: caps.length };
   });

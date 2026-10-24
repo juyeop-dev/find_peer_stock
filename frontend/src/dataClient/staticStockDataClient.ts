@@ -86,14 +86,18 @@ export async function getNewHighReport(market: string, date: string, signal?: Ab
 }
 
 export async function getTurnoverIndex(signal?: AbortSignal, fromSource = false, current?: TurnoverIndex | null, market?: string): Promise<TurnoverIndex> {
-  const base = fromSource && current ? current : await fetchJson<TurnoverIndex>("data/turnover/index.json", signal);
+  const base = fromSource && current && market !== "korea" ? current : await fetchJson<TurnoverIndex>("data/turnover/index.json", signal);
   const scope = base.markets.some(item => item.id === market) ? market! : "korea";
+  // The Korean calendar is a completed regular-session archive. A current
+  // scanner result would replace its close ranking with an intraday list.
+  if (scope === "korea") return base;
   if (fromSource) await refreshScan("turnover", scope, signal);
   return market ? applyTurnoverIndex(base, scope) : base;
 }
 
 export async function getTurnoverReport(market: string, date: string, signal?: AbortSignal, fromSource = false): Promise<TurnoverReport> {
   const month = date.slice(0, 7).replace("-", "_");
+  if (market === "korea") return fetchJson<TurnoverReport>(`data/turnover/korea/${month}/${encodeURIComponent(date)}.json`, signal);
   const base = liveReportFor("turnover", market, date) as TurnoverReport | null ?? await fetchJson<TurnoverReport>(
     `data/turnover/${encodeURIComponent(market)}/${month}/${encodeURIComponent(date)}.json`, signal
   );

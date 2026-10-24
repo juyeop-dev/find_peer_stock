@@ -44,4 +44,5 @@ export interface TurnoverReport {
   summary?: string;
   sources?: { label: string; url?: string }[];
   entries: TurnoverEntry[];
+  source_metadata?: { session?: string; session_close?: string; session_close_at?: string; fetched_at?: string };
 }

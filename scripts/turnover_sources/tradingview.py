@@ -170,6 +170,7 @@ def fetch_report(market_id: str, session_date: date, *, timeout: float = 30,
     while total is None or len(rows) < total:
         offset = len(rows)
         payload = {
+            **({"options": {"price_conversion": {"to_symbol": True}}} if market_id == "korea" else {}),
             "filter": [
                 {"left": "type", "operation": "equal", "right": "stock"},
                 {"left": "exchange", "operation": "in_range", "right": list(exchanges)},
@@ -250,6 +251,8 @@ def fetch_report(market_id: str, session_date: date, *, timeout: float = 30,
         currency = row["currency"].strip().upper() if _text(row["currency"]) else None
         if currency is None or len(currency) != 3:
             raise TurnoverSourceError(f"{row['symbol']}: invalid currency")
+        if market_id == "korea" and currency != "KRW":
+            raise TurnoverSourceError(f"{row['symbol']}: Korean turnover must be denominated in KRW")
         entries.append({
             "rank": rank,
             "ticker": _ticker(row["name"], exchange, market_id, row["symbol"]),
@@ -271,11 +274,14 @@ def fetch_report(market_id: str, session_date: date, *, timeout: float = 30,
         "schema_version": 1,
         "market": market_id,
         "date": session_date.isoformat(),
-        "summary": "장 마감 후 TradingView 주식 스크리너의 당일 Turnover 기준 상위 30개 종목입니다.",
+        "summary": ("한국 정규장 15:30 마감 거래대금 기준 상위 30개 종목입니다." if market_id == "korea"
+                    else "장 마감 후 TradingView 주식 스크리너의 당일 Turnover 기준 상위 30개 종목입니다."),
         "sources": [{"label": "TradingView Stock Screener", "url": "https://www.tradingview.com/screener/"}],
         "entries": entries,
         "source_metadata": {
             "provider": "TradingView public scanner",
+            **({"session": "regular", "session_close": "15:30", "session_close_at": f"{session_date.isoformat()}T15:30:00+09:00",
+                "timezone": "Asia/Seoul", "monetary_currency": "KRW"} if market_id == "korea" else {}),
             "fetched_at": datetime.now(timezone.utc).isoformat(),
             "ranking": "Value.Traded descending; stocks only; ETFs excluded",
             **({"turnover_currency": "USD", "market_cap_currency": "USD"} if market_id == "europe" else {}),

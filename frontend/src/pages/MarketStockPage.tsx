@@ -18,6 +18,7 @@ import { StockInformationPanel } from "../components/StockInformationPanel";
 import { getStockInformation } from "../dataClient/stockInformationClient";
 import { liveDetailFor, liveQuoteFor, refreshDetails } from "../dataClient/liveStockDataClient";
 import { getSectorStock } from "../dataClient/sectorDataClient";
+import { sectorLabel } from "../dataClient/sectorRankings";
 
 const MARKET_CURRENCIES: Record<string, string> = { korea: "KRW", us: "USD", japan: "JPY", taiwan: "TWD", china: "CNY", europe: "EUR" };
 
@@ -62,7 +63,7 @@ export function MarketStockPage() {
   const currency = currentQuote?.currency ?? stock?.currency ?? (stock?.exchange === "LSE" ? "GBP" : stock?.exchange === "SIX" ? "CHF" : MARKET_CURRENCIES[market]) ?? "";
   const recordedPrice = stock && "price" in stock ? stock.price : stock && "session_close" in stock ? stock.session_close : null;
   const price = currentQuote?.price ?? recordedPrice;
-  const category = stock && "category" in stock ? stock.category : stock && "industry" in stock ? stock.industry : "";
+  const category = stock && "category" in stock ? stock.category : stock && "industry" in stock ? sectorLabel(stock.industry) : "";
   const symbol = stock ? tradingViewSymbol(stock.ticker, stock.exchange) : null;
   const quote = getExternalQuoteLink(ticker);
   const recordDate = stock && "date" in stock ? stock.date : date;
@@ -83,6 +84,7 @@ export function MarketStockPage() {
       </header>
       <section className="semiPanel marketStockSnapshot"><div className="semiPanelHeading"><h2>종목 기본 정보</h2><p>{source === "sectors" ? "선택한 거래일의 섹터 목록에 저장된 종목 정보입니다." : "선택한 거래일에 저장된 캘린더 기록입니다."} 외부 일봉 차트·실적은 제공처의 최신 자료를 표시합니다.</p></div>
         {"reconstruction_note" in stock && stock.reconstruction_note ? <p className="semiFootnote" role="status">{stock.reconstruction_note}</p> : null}
+        {"classificationUrl" in stock && stock.classificationUrl ? <p className="semiFootnote">2026-10-24 사업 분류 보정 · <a href={stock.classificationUrl} target="_blank" rel="noreferrer">{stock.classificationNote} ↗</a></p> : null}
         <dl><div><dt>거래소</dt><dd>{stock.exchange}</dd></div><div><dt>업종</dt><dd>{category || "미등록"}</dd></div>
           <div><dt>통화</dt><dd>{currency}</dd></div><div><dt>{"market_cap_fetched_at" in stock ? "시가총액 · 수집 시점 기준" : "기록된 시가총액"}</dt><dd>{formatMarketCap({ ...stock, market_cap_currency: stock.market_cap_currency ?? currency })}</dd></div>
           {"rank" in stock ? <div><dt>거래대금 순위</dt><dd>{stock.rank}위</dd></div> : null}

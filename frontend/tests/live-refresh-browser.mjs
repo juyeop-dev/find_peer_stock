@@ -133,7 +133,6 @@ try {
     ["/semiconductors", ".semiStockPriceTable", "details"], ["/semiconductors/trends", ".semiTrendTable", "details"],
     ["/semiconductors/000660.KS", ".semiDetailHeader", "details"],
     [`/new-highs?market=korea&date=${koreaHigh}`, ".newHighStockDetailLink", "scan"],
-    [`/turnover?market=korea&date=${koreaTurnover}`, ".turnoverCompany", "scan"],
     ["/calendar-history?market=korea&view=year&year=2026", ".historyStocksTable tbody tr", "quotes"],
     [`/market-stocks/${general.ticker}?market=korea&date=${koreaTurnover}&source=turnover`, ".marketStockPage h1", "details"],
     ["/credit-balance", ".creditHeadline", "credit"],
@@ -162,6 +161,15 @@ try {
     }
     console.log(`PASS original refresh ${path}`);
   }
+  await navigate(`/turnover?market=korea&date=${koreaTurnover}`, ".turnoverCompany");
+  const savedTurnover = await evaluate("document.querySelector('.turnoverTable tbody').innerText");
+  const turnoverRequests = requests.length;
+  await evaluate("document.querySelector('.dataRefreshStatus button').click()");
+  await until(() => evaluate("document.querySelector('.dataRefreshStatus button').disabled === false"), "Korean close archive reload did not finish");
+  assert.equal(requests.length, turnoverRequests, "Korean archive must never query intraday scans or quotes");
+  assert.equal(await evaluate("document.querySelector('.turnoverTable tbody').innerText"), savedTurnover);
+  assert.ok(await evaluate("document.querySelector('.dataRefreshStatus').innerText.includes('15:30')"));
+  console.log("PASS Korean 15:30 close archive survives manual refresh without intraday replacement");
   await navigate("/semiconductors/000660.KS", ".semiDetailHeader");
   await refresh();
   const unchanged = await evaluate("document.querySelector('.semiQuoteHero strong').innerText");

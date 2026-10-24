@@ -201,6 +201,7 @@ export async function credit(fetcher = fetch) {
 }
 
 export async function scan(market, kind, fetcher = fetch) {
+  if (market === "korea" && kind === "turnover") throw new Error("한국 거래대금 캘린더는 저장된 정규장 15:30 마감 순위를 사용합니다.");
   const [scanner, exchanges] = MARKETS[market];
   const columns = ["name", "description", "exchange", "type", "sector", "industry", "open", "high", "close", "change",
     "price_52_week_high", "High.All", "time", "currency", "market_cap_basic", "Value.Traded", "indexes", "fundamental_currency_code"];

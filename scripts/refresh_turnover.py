@@ -37,7 +37,16 @@ def refresh_turnover(source_dir: Path = SOURCE_DIR, *, now: datetime | None = No
         if market_id not in SUPPORTED_MARKETS:
             state["markets"][market_id] = {"status": "unsupported", "message": "자동 거래대금 수집 미지원 시장입니다.", **previous_success(previous)}
             continue
-        target = target_date or collection_date(market, now)
+        # 15:30 regular close, plus 20 minutes for delayed scanner data. Keep
+        # new-high collection windows independent from turnover collection.
+        collection_market = {**market, "refresh_after": "15:50"} if market_id == "korea" else market
+        target = target_date or collection_date(collection_market, now)
+        if market_id == "korea" and target_date is not None:
+            local = now.astimezone(ZoneInfo("Asia/Seoul"))
+            if target_date > local.date() or target_date == local.date() and (local.hour, local.minute) < (15, 50):
+                state["markets"][market_id] = {"status": "pending", "target_date": target_date.isoformat(),
+                    "message": "정규장 15:30 마감 자료는 제공처 지연을 고려해 15:50부터 수집합니다.", **previous_success(previous)}
+                continue
         if target is None:
             local_day = now.astimezone(ZoneInfo(market["timezone"])).date().isoformat()
             closure = scheduled.get((market_id, local_day))
@@ -51,7 +60,7 @@ def refresh_turnover(source_dir: Path = SOURCE_DIR, *, now: datetime | None = No
         if path.exists() and not force:
             state["markets"][market_id] = {"status": "updated", "target_date": target.isoformat(), **previous_success(previous)}
             continue
-        closure = scheduled.get((market_id, target.isoformat())) if target_date is None else None
+        closure = scheduled.get((market_id, target.isoformat())) if target_date is None or market_id == "korea" else None
         if closure:
             state["markets"][market_id] = {
                 "status": "closed", "target_date": target.isoformat(),

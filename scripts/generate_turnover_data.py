@@ -60,6 +60,10 @@ def validate_report(payload: dict[str, Any], path: Path, reports_dir: Path,
         raise TurnoverDataError(f"{path}: market, month or date does not match report path")
 
     entries = payload.get("entries")
+    metadata = payload.get("source_metadata", {})
+    if market_id == "korea" and metadata.get("session") == "regular":
+        if metadata.get("session_close") != "15:30" or metadata.get("session_close_at") != f"{report_date}T15:30:00+09:00":
+            raise TurnoverDataError(f"{path}: regular-session close must match report date at 15:30 KST")
     if not isinstance(entries, list) or len(entries) > 30:
         raise TurnoverDataError(f"{path}: entries must be a list of at most 30 stocks")
     known_exchanges = {item["id"] for item in markets[market_id]["exchanges"]}
@@ -80,6 +84,10 @@ def validate_report(payload: dict[str, Any], path: Path, reports_dir: Path,
             raise TurnoverDataError(f"{prefix}: unknown exchange")
         if not re.fullmatch(r"[A-Z]{3}", entry["currency"]):
             raise TurnoverDataError(f"{prefix}: currency must be a three-letter uppercase code")
+        if market_id == "korea" and metadata.get("session") == "regular" and (
+            entry["currency"] != "KRW" or entry.get("turnover_currency", "KRW") != "KRW"
+        ):
+            raise TurnoverDataError(f"{prefix}: Korean regular-session amounts must use KRW")
         for field in ("turnover_currency", "market_cap_currency"):
             if field in entry and (not isinstance(entry[field], str) or
                                    re.fullmatch(r"[A-Z]{3}", entry[field]) is None):

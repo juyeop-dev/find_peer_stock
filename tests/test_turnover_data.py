@@ -103,6 +103,48 @@ class TurnoverDataTests(unittest.TestCase):
         self.assertEqual(calls, [("korea", date(2026, 9, 17))])
         self.assertTrue((self.source / "reports" / "korea" / "2026_09" / "2026-09-17.json").exists())
 
+    def test_korean_regular_close_waits_for_delayed_data_and_keeps_saved_ranking(self) -> None:
+        fetch = Mock(return_value=self.report())
+        for stamp in ("2026-09-17T15:29:59+09:00", "2026-09-17T15:30:00+09:00", "2026-09-17T15:49:59+09:00"):
+            state = refresh_turnover(self.source, now=datetime.fromisoformat(stamp), market_ids={"korea"}, fetch_report=fetch)
+            self.assertEqual(state["markets"]["korea"]["status"], "pending")
+        fetch.assert_not_called()
+        state = refresh_turnover(self.source, now=datetime.fromisoformat("2026-09-17T15:50:00+09:00"), market_ids={"korea"}, fetch_report=fetch)
+        self.assertEqual(state["markets"]["korea"]["status"], "updated")
+        fetch.assert_called_once_with("korea", date(2026, 9, 17))
+        refresh_turnover(self.source, now=datetime.fromisoformat("2026-09-17T19:00:00+09:00"), market_ids={"korea"}, fetch_report=fetch)
+        fetch.assert_called_once()
+
+    def test_explicit_korean_date_cannot_bypass_close_gate_or_holidays(self) -> None:
+        fetch = Mock()
+        state = refresh_turnover(self.source, now=datetime.fromisoformat("2026-09-17T15:00:00+09:00"),
+            target_date=date(2026, 9, 17), force=True, market_ids={"korea"}, fetch_report=fetch)
+        self.assertEqual(state["markets"]["korea"]["status"], "pending")
+        fetch.assert_not_called()
+        self.write(self.source.parent / "market-closures" / "2026.json", {
+            "schema_version": 1, "year": 2026, "markets": [{"market": "korea", "source_urls": ["https://example.com/krx"],
+                "dates": {"2026-10-05": "개천절 대체공휴일"}}]})
+        state = refresh_turnover(self.source, now=datetime.fromisoformat("2026-10-05T16:00:00+09:00"),
+            target_date=date(2026, 10, 5), force=True, market_ids={"korea"}, fetch_report=fetch)
+        self.assertEqual(state["markets"]["korea"]["status"], "closed")
+        fetch.assert_not_called()
+
+    def test_regular_close_metadata_must_match_the_session_and_currency(self) -> None:
+        report = self.report()
+        report["source_metadata"] = {"session": "regular", "session_close": "15:30", "session_close_at": "2026-09-17T15:30:00+09:00"}
+        path = self.source / "reports/korea/2026_09/2026-09-17.json"
+        self.write(path, report)
+        turnover.generate_turnover_data(self.source, self.output, self.frontend)
+        report["source_metadata"]["session_close_at"] = "2026-09-18T15:30:00+09:00"
+        self.write(path, report)
+        with self.assertRaisesRegex(turnover.TurnoverDataError, "15:30"):
+            turnover.generate_turnover_data(self.source, self.output, self.frontend)
+        report["source_metadata"]["session_close_at"] = "2026-09-17T15:30:00+09:00"
+        report["entries"][0]["turnover_currency"] = "USD"
+        self.write(path, report)
+        with self.assertRaisesRegex(turnover.TurnoverDataError, "KRW"):
+            turnover.generate_turnover_data(self.source, self.output, self.frontend)
+
     def test_accepts_period_returns_with_dated_close_basis(self) -> None:
         report = self.report()
         report["entries"][0]["period_returns"] = {
