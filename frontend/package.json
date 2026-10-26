@@ -4,9 +4,9 @@
   "version": "0.1.0",
   "type": "module",
   "scripts": {
-    "predev": "python ../scripts/generate_new_high_data.py && python ../scripts/generate_turnover_data.py && python ../scripts/generate_calendar_stock_data.py && python ../scripts/stock_chart_history.py publish && python ../scripts/stock_information.py publish && python ../scripts/generate_semiconductor_data.py publish && node ../scripts/refresh_sectors.mjs publish",
+    "predev": "python ../scripts/generate_new_high_data.py && python ../scripts/generate_turnover_data.py && python ../scripts/generate_calendar_stock_data.py && python ../scripts/stock_chart_history.py publish && python ../scripts/stock_information.py publish && python ../scripts/generate_semiconductor_data.py publish && node ../scripts/refresh_sectors.mjs publish && node ../scripts/refresh_investors.mjs publish",
     "dev": "vite",
-    "prebuild": "python ../scripts/generate_new_high_data.py && python ../scripts/generate_turnover_data.py && python ../scripts/generate_calendar_stock_data.py && python ../scripts/stock_chart_history.py publish && python ../scripts/stock_information.py publish && python ../scripts/generate_semiconductor_data.py publish && node ../scripts/refresh_sectors.mjs publish",
+    "prebuild": "python ../scripts/generate_new_high_data.py && python ../scripts/generate_turnover_data.py && python ../scripts/generate_calendar_stock_data.py && python ../scripts/stock_chart_history.py publish && python ../scripts/stock_information.py publish && python ../scripts/generate_semiconductor_data.py publish && node ../scripts/refresh_sectors.mjs publish && node ../scripts/refresh_investors.mjs publish",
     "build": "tsc -b && vite build",
     "preview": "vite preview",
     "test:browser": "node tests/polling-browser.mjs",
@@ -26,7 +26,9 @@
     "test:stock-information:2024-h2": "node tests/stock-information-2024-h2-browser.mjs",
     "test:stock-information:2024": "node tests/stock-information-2024-browser.mjs",
     "test:sector-explorer": "node --test tests/sector-explorer.test.mjs",
-    "test:sector-explorer:browser": "node tests/sector-explorer-browser.mjs"
+    "test:sector-explorer:browser": "node tests/sector-explorer-browser.mjs",
+    "test:investor-flows": "node --test tests/investor-flows.test.mjs",
+    "test:investor-flows:browser": "node tests/investor-flows-browser.mjs"
   },
   "dependencies": {
     "react": "^19.0.0",

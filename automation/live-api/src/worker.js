@@ -2,6 +2,7 @@ import { MARKETS, credit, detail, quote, scan } from "./providers.js";
 import { history } from "./history.js";
 import { information } from "./information.js";
 import { sectors } from "./sectors.js";
+import { investorSnapshot, investorDate, INVESTOR_START } from "./investors.js";
 
 const validTicker = value => typeof value === "string" && value.length <= 48 && /^(?:[A-Z]+:)?[A-Z0-9][A-Z0-9.\-]*(?:\/[A-Z0-9.\-]+)?$/.test(value);
 const validOrigin = (origin, env) => origin === (env.ALLOWED_ORIGIN ?? "https://juyeop-dev.github.io") || /^http:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/.test(origin);
@@ -25,6 +26,13 @@ export async function handle(request, env = {}, fetcher = fetch) {
   try {
     if (body.kind === "sectors") return response(await sectors(fetcher));
     if (body.kind === "credit") return response(await credit(fetcher));
+    if (body.kind === "investors") {
+      if (body.date !== undefined && body.date !== "") {
+        try { if (investorDate(body.date) < INVESTOR_START || body.date > new Date(Date.now()+9*3600000).toISOString().slice(0,10)) throw new Error(); }
+        catch { return response({error:"2024년 이후의 올바른 조회 날짜를 선택해 주세요."},400); }
+      }
+      return response(await investorSnapshot(body.date || "",fetcher));
+    }
     if (body.kind === "scan") {
       if (!Object.hasOwn(MARKETS, body.market) || !["new-highs", "turnover"].includes(body.source)) return response({ error: "지원하는 시장과 자료 종류를 선택해 주세요." }, 400);
       return response(await scan(body.market, body.source, fetcher));

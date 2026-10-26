@@ -1,0 +1,36 @@
+.investorPage { padding-bottom: 36px; }
+.investorToolbar,.investorDateHeading { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin-bottom: 18px; }
+.investorToolbar > span { color: #6a7f8b; font-size: 12px; }
+.investorDateHeading h2 { margin: 6px 0; font-size: 22px; }
+.investorStatus { padding: 5px 9px; border-radius: 6px; font-size: 12px; background: #e7f2ec; color: #246341; }
+.investorStatus.provisional,.investorProvisional { background: #fff7e6; color: #866316; }
+.investorProvisional { padding: 12px; border-radius: 8px; font-size: 13px; }
+.investorIndices { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 16px; margin-bottom: 18px; }
+.investorIndices > button { display: flex; flex-direction: column; align-items: start; gap: 9px; border: 1px solid #d8e4eb; border-radius: 12px; padding: 22px; background: white; text-align: left; font: inherit; color: #183b4d; cursor: pointer; min-width: 0; }
+.investorIndices > button.active { border-color: #267a90; box-shadow: inset 0 0 0 1px #267a90; }
+.investorIndices strong { font-size: clamp(23px,3vw,34px); font-variant-numeric: tabular-nums; }
+.investorIndices strong small { margin-left: 6px; font-size: 12px; font-weight: 400; }
+.investorIndices > button > small { color: #718794; font-size: 11px; }
+.investorSummary { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 16px; margin-bottom: 20px; }
+.investorSummary article { border: 1px solid #d8e4eb; border-radius: 12px; background: white; padding: 22px; min-width: 0; }
+.investorSummary h3 { margin: 0 0 18px; font-size: 18px; }
+.investorSummary article > span { font-size: 12px; color: #69818f; }
+.investorSummary article > strong { display: block; margin: 5px 0 20px; font-size: clamp(20px,2.5vw,28px); font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
+.investorSummary strong small { margin-left: 5px; font-size: 12px; }
+.investorSummary dl { display: flex; justify-content: space-between; gap: 10px; margin: 0; border-top: 1px solid #e5edf0; padding-top: 14px; }
+.investorSummary dt { margin-bottom: 5px; font-size: 12px; color: #6e8593; }
+.investorSummary dd { margin: 0; font-size: 14px; font-weight: 650; font-variant-numeric: tabular-nums; }
+.investorPage th[scope="row"] { background: transparent; color: inherit; }
+.investorPage .semiTableWrap { max-width: 100%; }
+.investorPage .semiTable { min-width: 760px; }
+.investorHistoryTable .selected { background: #edf7fa; }
+.investorDetails { margin-top: 20px; }
+.investorDetails summary { color: #25677c; cursor: pointer; margin-bottom: 12px; font-size: 14px; }
+@media(max-width:720px) {
+  .investorIndices > button { padding: 15px; }
+  .investorSummary { grid-template-columns: 1fr; }
+  .investorIndices { gap: 10px; }
+  .investorIndices strong { font-size: 23px; }
+  .investorIndices > button > b { font-size: 12px; }
+}
+@media(max-width:480px) { .investorIndices { grid-template-columns: 1fr; } }

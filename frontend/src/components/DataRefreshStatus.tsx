@@ -6,7 +6,7 @@ interface DataRefreshStatusProps {
   lastCheckedAt?: string | null;
   generatedAt?: string;
   lastSourceAt?: string | null;
-  cadence?: "quote" | "daily" | "turnover-korea" | "turnover-history" | "semiconductor" | "credit" | "sectors" | "sector-history";
+  cadence?: "quote" | "daily" | "turnover-korea" | "turnover-history" | "semiconductor" | "credit" | "sectors" | "sector-history" | "investors";
   onRefresh: () => void;
 }
 
@@ -19,13 +19,15 @@ export function DataRefreshStatus({ refreshing, lastCheckedAt, lastSourceAt, gen
   // The daily archive changes only after a market close, but its published
   // index should still be checked by the same site-wide deployment heartbeat.
   const freshnessTime = lastSourceAt ?? generatedAt;
-  const delayed = cadence !== "sector-history" && cadence !== "turnover-korea" && cadence !== "turnover-history" && Boolean(freshnessTime && now - new Date(freshnessTime).getTime() > 20 * 60_000);
+  const delayed = cadence !== "sector-history" && cadence !== "turnover-korea" && cadence !== "turnover-history" && cadence !== "investors" && Boolean(freshnessTime && now - new Date(freshnessTime).getTime() > 20 * 60_000);
 
   return (
     <>
       <div className="dataRefreshStatus">
         <p>
-          <span>{cadence === "credit"
+          <span>{cadence === "investors"
+            ? "새로고침하면 선택한 거래일의 매수·매도 금액과 시장 지수를 원본에서 다시 조회합니다."
+            : cadence === "credit"
             ? "새로고침하면 금융투자협회 원본에서 최신 발표값을 조회합니다."
             : cadence === "sector-history"
             ? "새로고침하면 선택한 날짜의 저장된 섹터 기록을 다시 불러옵니다. 최신 값은 '최신 기록'에서 조회하세요."

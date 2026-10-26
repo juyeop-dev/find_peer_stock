@@ -11,6 +11,7 @@ import { CalendarHistoryPage } from "../pages/CalendarHistoryPage";
 import { MarketStockPage } from "../pages/MarketStockPage";
 import { SectorRankingsPage } from "../pages/SectorRankingsPage";
 import { SectorExplorerPage } from "../pages/SectorExplorerPage";
+import { InvestorFlowsPage } from "../pages/InvestorFlowsPage";
 import "../styles/newHighs.css";
 import "../styles/semiconductor.css";
 
@@ -28,6 +29,7 @@ export function App() {
           <NavLink to="/sectors">섹터 상승률</NavLink>
           <NavLink to="/sector-trends">섹터별 추이</NavLink>
           <NavLink to="/credit-balance">신용 잔고</NavLink>
+          <NavLink to="/investor-flows">투자자 수급</NavLink>
         </div>
       </nav>
       <Routes>
@@ -44,6 +46,7 @@ export function App() {
         <Route path="/sector-trends" element={<SectorExplorerPage mode="trends" semiconductor={<SemiconductorTrendsPage />} />} />
         <Route path="/semiconductors/:ticker" element={<SemiconductorStockPage />} />
         <Route path="/credit-balance" element={<CreditBalancePage />} />
+        <Route path="/investor-flows" element={<InvestorFlowsPage />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </>
