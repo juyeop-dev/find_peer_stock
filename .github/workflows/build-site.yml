@@ -169,7 +169,9 @@ jobs:
 
       - name: Test domestic sector aggregation
         working-directory: frontend
-        run: npm run test:sectors
+        run: |
+          npm run test:sectors
+          npm run test:sector-explorer
 
       - name: Build frontend
         working-directory: frontend

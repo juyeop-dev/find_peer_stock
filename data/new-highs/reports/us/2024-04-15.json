@@ -1,0 +1,482 @@
+{
+  "schema_version": 1,
+  "market": "us",
+  "date": "2024-04-15",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "INDO",
+      "name": "Indonesia Energy Corporation Limited",
+      "exchange": "AMEX",
+      "category": "Energy Minerals",
+      "high_type": "52_week",
+      "reason": "업종: Energy Minerals · Integrated Oil",
+      "description": "Indonesia Energy Corporation Limited · Integrated Oil",
+      "change_pct": 23.076920106900324,
+      "session_open": 4.909999847412109,
+      "session_close": 6.079999923706055,
+      "session_volume": 33055800.0,
+      "currency": "USD",
+      "source_symbol": "AMEX:INDO",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/INDO/history/",
+        "date": "2024-04-15",
+        "daily_high": 6.650000095367432,
+        "prior_all_time_or_current_month_high": 86.99199676513672,
+        "passes_close_filter": true,
+        "yahoo_symbol": "INDO"
+      }
+    },
+    {
+      "ticker": "MXC",
+      "name": "Mexco Energy Corporation",
+      "exchange": "AMEX",
+      "category": "Energy Minerals",
+      "high_type": "52_week",
+      "reason": "업종: Energy Minerals · Oil & Gas Production",
+      "description": "Mexco Energy Corporation · Oil & Gas Production",
+      "change_pct": 16.17020367101023,
+      "session_open": 14.029999732971191,
+      "session_close": 16.3799991607666,
+      "session_volume": 44400.0,
+      "currency": "USD",
+      "source_symbol": "AMEX:MXC",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/MXC/history/",
+        "date": "2024-04-15",
+        "daily_high": 16.520000457763672,
+        "prior_all_time_or_current_month_high": 55.869998931884766,
+        "passes_close_filter": true,
+        "yahoo_symbol": "MXC"
+      }
+    },
+    {
+      "ticker": "AEC",
+      "name": "Anfield Energy Inc",
+      "exchange": "NASDAQ",
+      "category": "Non-Energy Minerals",
+      "high_type": "52_week",
+      "reason": "업종: Non-Energy Minerals · Other Metals/Minerals",
+      "description": "Anfield Energy Inc · Other Metals/Minerals",
+      "change_pct": 0.0,
+      "session_open": 5.25,
+      "session_close": 5.25,
+      "session_volume": 7549.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:AEC",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/AEC/history/",
+        "date": "2024-04-15",
+        "daily_high": 6.0,
+        "prior_all_time_or_current_month_high": 14062500.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "AEC"
+      }
+    },
+    {
+      "ticker": "CENX",
+      "name": "Century Aluminum Company",
+      "exchange": "NASDAQ",
+      "category": "Non-Energy Minerals",
+      "high_type": "52_week",
+      "reason": "업종: Non-Energy Minerals · Aluminum",
+      "description": "Century Aluminum Company · Aluminum",
+      "change_pct": 7.706313671361498,
+      "session_open": 17.200000762939453,
+      "session_close": 17.75,
+      "session_volume": 2518900.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:CENX",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/CENX/history/",
+        "date": "2024-04-15",
+        "daily_high": 18.639999389648438,
+        "prior_all_time_or_current_month_high": 80.5199966430664,
+        "passes_close_filter": true,
+        "yahoo_symbol": "CENX"
+      }
+    },
+    {
+      "ticker": "CHCI",
+      "name": "Comstock Holding Companies, Inc. Class A",
+      "exchange": "NASDAQ",
+      "category": "Consumer Durables",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Durables · Homebuilding",
+      "description": "Comstock Holding Companies, Inc. Class A · Homebuilding",
+      "change_pct": 3.5369819043358897,
+      "session_open": 6.300000190734863,
+      "session_close": 6.440000057220459,
+      "session_volume": 74500.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:CHCI",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/CHCI/history/",
+        "date": "2024-04-15",
+        "daily_high": 6.639999866485596,
+        "prior_all_time_or_current_month_high": 1519.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "CHCI"
+      }
+    },
+    {
+      "ticker": "CLYM",
+      "name": "Climb Bio, Inc.",
+      "exchange": "NASDAQ",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Biotechnology",
+      "description": "Climb Bio, Inc. · Biotechnology",
+      "change_pct": 10.208818168491685,
+      "session_open": 4.329999923706055,
+      "session_close": 4.75,
+      "session_volume": 912700.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:CLYM",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/CLYM/history/",
+        "date": "2024-04-15",
+        "daily_high": 5.190000057220459,
+        "prior_all_time_or_current_month_high": 29.690000534057617,
+        "passes_close_filter": true,
+        "yahoo_symbol": "CLYM"
+      }
+    },
+    {
+      "ticker": "FTLF",
+      "name": "FitLife Brands, Inc.",
+      "exchange": "NASDAQ",
+      "category": "Health Technology",
+      "high_type": "all_time",
+      "reason": "업종: Health Technology · Pharmaceuticals: Other",
+      "description": "FitLife Brands, Inc. · Pharmaceuticals: Other",
+      "change_pct": 2.977668131333777,
+      "session_open": 14.25,
+      "session_close": 14.524999618530273,
+      "session_volume": 42200.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:FTLF",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/FTLF/history/",
+        "date": "2024-04-15",
+        "daily_high": 14.875,
+        "prior_all_time_or_current_month_high": 14.875,
+        "passes_close_filter": true,
+        "yahoo_symbol": "FTLF"
+      }
+    },
+    {
+      "ticker": "IZM",
+      "name": "ICZOOM Group, Inc. Class A",
+      "exchange": "NASDAQ",
+      "category": "Retail Trade",
+      "high_type": "52_week",
+      "reason": "업종: Retail Trade · Internet Retail",
+      "description": "ICZOOM Group, Inc. Class A · Internet Retail",
+      "change_pct": 9.900109123206423,
+      "session_open": 46.540000915527344,
+      "session_close": 49.5099983215332,
+      "session_volume": 2037400.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:IZM",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/IZM/history/",
+        "date": "2024-04-15",
+        "daily_high": 51.25,
+        "prior_all_time_or_current_month_high": 67.95000076293945,
+        "passes_close_filter": true,
+        "yahoo_symbol": "IZM"
+      }
+    },
+    {
+      "ticker": "KARO",
+      "name": "Karooooo Ltd.",
+      "exchange": "NASDAQ",
+      "category": "Technology Services",
+      "high_type": "52_week",
+      "reason": "업종: Technology Services · Packaged Software",
+      "description": "Karooooo Ltd. · Packaged Software",
+      "change_pct": 3.4482743501002,
+      "session_open": 26.6299991607666,
+      "session_close": 27.0,
+      "session_volume": 5700.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:KARO",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/KARO/history/",
+        "date": "2024-04-15",
+        "daily_high": 27.0,
+        "prior_all_time_or_current_month_high": 42.5,
+        "passes_close_filter": true,
+        "yahoo_symbol": "KARO"
+      }
+    },
+    {
+      "ticker": "MNDR",
+      "name": "Mobile-health Network Solutions Class A",
+      "exchange": "NASDAQ",
+      "category": "Health Services",
+      "high_type": "all_time",
+      "reason": "업종: Health Services · Medical/Nursing Services",
+      "description": "Mobile-health Network Solutions Class A · Medical/Nursing Services",
+      "change_pct": 11.00000000000001,
+      "session_open": 3487.199951171875,
+      "session_close": 3996.0,
+      "session_volume": 45503.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:MNDR",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/MNDR/history/",
+        "date": "2024-04-15",
+        "daily_high": 5160.0,
+        "prior_all_time_or_current_month_high": 5160.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "MNDR"
+      }
+    },
+    {
+      "ticker": "NTIC",
+      "name": "Northern Technologies International Corporation",
+      "exchange": "NASDAQ",
+      "category": "Process Industries",
+      "high_type": "52_week",
+      "reason": "업종: Process Industries · Industrial Specialties",
+      "description": "Northern Technologies International Corporation · Industrial Specialties",
+      "change_pct": 7.3646171552026685,
+      "session_open": 14.15999984741211,
+      "session_close": 14.869999885559082,
+      "session_volume": 139900.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:NTIC",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/NTIC/history/",
+        "date": "2024-04-15",
+        "daily_high": 15.960000038146973,
+        "prior_all_time_or_current_month_high": 21.5,
+        "passes_close_filter": true,
+        "yahoo_symbol": "NTIC"
+      }
+    },
+    {
+      "ticker": "RANI",
+      "name": "Rani Therapeutics Holdings, Inc. Class A",
+      "exchange": "NASDAQ",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Biotechnology",
+      "description": "Rani Therapeutics Holdings, Inc. Class A · Biotechnology",
+      "change_pct": 6.666669021418015,
+      "session_open": 5.400000095367432,
+      "session_close": 5.760000228881836,
+      "session_volume": 220400.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:RANI",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/RANI/history/",
+        "date": "2024-04-15",
+        "daily_high": 5.795000076293945,
+        "prior_all_time_or_current_month_high": 36.27000045776367,
+        "passes_close_filter": true,
+        "yahoo_symbol": "RANI"
+      }
+    },
+    {
+      "ticker": "RZLT",
+      "name": "Rezolute, Inc.",
+      "exchange": "NASDAQ",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Pharmaceuticals: Major",
+      "description": "Rezolute, Inc. · Pharmaceuticals: Major",
+      "change_pct": 14.074069233751851,
+      "session_open": 2.799999952316284,
+      "session_close": 3.0799999237060547,
+      "session_volume": 782700.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:RZLT",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/RZLT/history/",
+        "date": "2024-04-15",
+        "daily_high": 3.490000009536743,
+        "prior_all_time_or_current_month_high": 225000.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "RZLT"
+      }
+    },
+    {
+      "ticker": "SMXT",
+      "name": "SolarMax Technology, Inc.",
+      "exchange": "NASDAQ",
+      "category": "Industrial Services",
+      "high_type": "all_time",
+      "reason": "업종: Industrial Services · Engineering & Construction",
+      "description": "SolarMax Technology, Inc. · Engineering & Construction",
+      "change_pct": 10.855021644980711,
+      "session_open": 160.32000732421875,
+      "session_close": 178.9199981689453,
+      "session_volume": 17267.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:SMXT",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/SMXT/history/",
+        "date": "2024-04-15",
+        "daily_high": 190.55999755859375,
+        "prior_all_time_or_current_month_high": 190.55999755859375,
+        "passes_close_filter": true,
+        "yahoo_symbol": "SMXT"
+      }
+    },
+    {
+      "ticker": "CPNG",
+      "name": "Coupang, Inc. Class A",
+      "exchange": "NYSE",
+      "category": "Retail Trade",
+      "high_type": "52_week",
+      "reason": "업종: Retail Trade · Internet Retail",
+      "description": "Coupang, Inc. Class A · Internet Retail",
+      "change_pct": 1.8823511460248188,
+      "session_open": 21.520000457763672,
+      "session_close": 21.649999618530273,
+      "session_volume": 29001000.0,
+      "currency": "USD",
+      "source_symbol": "NYSE:CPNG",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/CPNG/history/",
+        "date": "2024-04-15",
+        "daily_high": 22.489999771118164,
+        "prior_all_time_or_current_month_high": 69.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "CPNG"
+      }
+    },
+    {
+      "ticker": "GLAS",
+      "name": "Glass House Brands Inc",
+      "exchange": "NYSE",
+      "category": "Process Industries",
+      "high_type": "52_week",
+      "reason": "업종: Process Industries · Agricultural Commodities/Milling",
+      "description": "Glass House Brands Inc · Agricultural Commodities/Milling",
+      "change_pct": 5.7803470757257225,
+      "session_open": 8.699999809265137,
+      "session_close": 9.149999618530273,
+      "session_volume": 212000.0,
+      "currency": "USD",
+      "source_symbol": "NYSE:GLAS",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/GLAS/history/",
+        "date": "2024-04-15",
+        "daily_high": 9.149999618530273,
+        "prior_all_time_or_current_month_high": 13.989999771118164,
+        "passes_close_filter": true,
+        "yahoo_symbol": "GLAS"
+      }
+    },
+    {
+      "ticker": "SCHW",
+      "name": "Charles Schwab Corp",
+      "exchange": "NYSE",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "업종: Finance · Investment Banks/Brokers",
+      "description": "Charles Schwab Corp · Investment Banks/Brokers",
+      "change_pct": 1.713557901690943,
+      "session_open": 70.5,
+      "session_close": 71.2300033569336,
+      "session_volume": 14417600.0,
+      "currency": "USD",
+      "source_symbol": "NYSE:SCHW",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/SCHW/history/",
+        "date": "2024-04-15",
+        "daily_high": 73.6500015258789,
+        "prior_all_time_or_current_month_high": 96.23999786376953,
+        "passes_close_filter": true,
+        "yahoo_symbol": "SCHW"
+      }
+    },
+    {
+      "ticker": "VLTO",
+      "name": "Veralto Corporation",
+      "exchange": "NYSE",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Industrial Machinery",
+      "description": "Veralto Corporation · Industrial Machinery",
+      "change_pct": 2.8499459602763233,
+      "session_open": 88.47000122070312,
+      "session_close": 89.86000061035156,
+      "session_volume": 2158300.0,
+      "currency": "USD",
+      "source_symbol": "NYSE:VLTO",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/VLTO/history/",
+        "date": "2024-04-15",
+        "daily_high": 90.7699966430664,
+        "prior_all_time_or_current_month_high": 90.7699966430664,
+        "passes_close_filter": true,
+        "yahoo_symbol": "VLTO"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-10-26T12:36:04.699545+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 5714,
+    "history_symbols": 4743,
+    "inactive_symbols": 19,
+    "failed_symbols": 952,
+    "coverage_ratio": 0.8328358208955224,
+    "coverage_by_exchange": {
+      "NASDAQ": {
+        "covered": 2646,
+        "total": 3330
+      },
+      "NYSE": {
+        "covered": 1889,
+        "total": 2105
+      },
+      "AMEX": {
+        "covered": 208,
+        "total": 260
+      }
+    },
+    "session_symbols": 4687,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-10-26T12:36:04.699545+00:00"
+}

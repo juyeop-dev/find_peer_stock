@@ -26,7 +26,7 @@ class StockInformationTests(unittest.TestCase):
                  for day, period, currency, value in [("2025-03-31", "3M", "TWD", 0), ("2026-06-30", "3M", "TWD", -10), ("2026-12-31", "3M", "TWD", 100), ("2025-06-30", "6M", "TWD", 20), ("2024-12-31", "3M", "TWD", 40), ("2024-06-30", "3M", "TWD", 50)]]
         payload = {"timeseries": {"result": [{"meta": {"symbol": ["2330.TW"]}, "quarterlyTotalRevenue": items}]}}
         rows = info.parse_yahoo_financials(payload, "2330.TW", "2026-10-20")
-        self.assertEqual([(row["period_end"], row["currency"], row["revenue"]) for row in rows], [("2025-03-31", "TWD", 0), ("2026-06-30", "TWD", -10), ("2024-12-31", "TWD", 40)])
+        self.assertEqual([(row["period_end"], row["currency"], row["revenue"]) for row in rows], [("2025-03-31", "TWD", 0), ("2026-06-30", "TWD", -10), ("2024-12-31", "TWD", 40), ("2024-06-30", "TWD", 50)])
         with self.assertRaisesRegex(ValueError, "identity"):
             info.parse_yahoo_financials(payload, "TSM", "2026-10-20")
 

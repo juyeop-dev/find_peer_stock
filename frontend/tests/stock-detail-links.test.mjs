@@ -37,6 +37,8 @@ test("symbols retain the right exchange and listing code across all six markets"
 
 test("return links preserve the original calendar while excluding external and unexpected destinations", () => {
   assert.equal(calendarReturnLink("/sectors?level=sector&period=month"), "/sectors?level=sector&period=month");
+  assert.equal(calendarReturnLink("/sector-stocks?sector=Finance"), "/sector-stocks?sector=Finance");
+  assert.equal(calendarReturnLink("/sector-trends?sector=Finance&group=Major+Banks"), "/sector-trends?sector=Finance&group=Major+Banks");
   assert.equal(calendarReturnLink("/calendar-history?market=japan&view=year"), "/calendar-history?market=japan&view=year");
   for (const value of [null, "https://evil.example", "//evil.example", "javascript:alert(1)", "/new-highs-elsewhere", "/stocks/A"]) {
     assert.equal(calendarReturnLink(value, "/turnover"), "/turnover");

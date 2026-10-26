@@ -2,6 +2,7 @@ export type SectorPeriod = "day" | "week" | "month" | "quarter" | "year";
 export type SectorLevel = "sector" | "industry";
 export type SectorSort = "return" | "turnover" | "marketCap" | "count";
 export type SectorWeighting = "cap" | "equal";
+export type SectorMemberSort = "name" | "exchange" | "price" | "return" | "turnover" | "marketCap" | "basis";
 export const SECTOR_PERIODS: { key: SectorPeriod; label: string }[] = [
   { key: "day", label: "오늘" }, { key: "week", label: "1주" }, { key: "month", label: "1개월" }, { key: "quarter", label: "3개월" }, { key: "year", label: "1년" },
 ];
@@ -132,4 +133,15 @@ export function sectorMoney(value: number | null) {
   if (value === null) return "—";
   const unit = value >= 1e12 ? 1e12 : value >= 1e8 ? 1e8 : value >= 1e4 ? 1e4 : 1;
   return new Intl.NumberFormat("ko-KR", { maximumFractionDigits: unit === 1 ? 0 : 1 }).format(value / unit) + ({ [1e12]: "조원", [1e8]: "억원", [1e4]: "만원", 1: "원" }[unit]);
+}
+
+export function sortSectorMembers(rows: SectorStock[], key: SectorMemberSort, direction: "asc" | "desc", period: SectorPeriod) {
+  const value = (row: SectorStock) => key === "return" ? row.returns[period] : key === "marketCap" ? row.market_cap : key === "basis" ? row.classificationNote ?? "TradingView" : row[key];
+  return [...rows].sort((a, b) => {
+    const x = value(a), y = value(b);
+    if (x == null) return y == null ? a.ticker.localeCompare(b.ticker) : 1;
+    if (y == null) return -1;
+    const result = typeof x === "string" && typeof y === "string" ? x.localeCompare(y, "ko", { numeric: true }) : Number(x) - Number(y);
+    return result * (direction === "asc" ? 1 : -1) || a.name.localeCompare(b.name, "ko") || a.ticker.localeCompare(b.ticker);
+  });
 }

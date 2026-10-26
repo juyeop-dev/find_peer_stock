@@ -10,6 +10,7 @@ import { CreditBalancePage } from "../pages/CreditBalancePage";
 import { CalendarHistoryPage } from "../pages/CalendarHistoryPage";
 import { MarketStockPage } from "../pages/MarketStockPage";
 import { SectorRankingsPage } from "../pages/SectorRankingsPage";
+import { SectorExplorerPage } from "../pages/SectorExplorerPage";
 import "../styles/newHighs.css";
 import "../styles/semiconductor.css";
 
@@ -23,9 +24,9 @@ export function App() {
           <NavLink to="/new-highs">신고가 캘린더</NavLink>
           <NavLink to="/turnover">거래대금 캘린더</NavLink>
           <NavLink to="/calendar-history">누적 기록</NavLink>
-          <NavLink to="/semiconductors" end>반도체 종목</NavLink>
+          <NavLink to="/sector-stocks">섹터별 종목</NavLink>
           <NavLink to="/sectors">섹터 상승률</NavLink>
-          <NavLink to="/semiconductors/trends">반도체 섹터 추이</NavLink>
+          <NavLink to="/sector-trends">섹터별 추이</NavLink>
           <NavLink to="/credit-balance">신용 잔고</NavLink>
         </div>
       </nav>
@@ -37,8 +38,10 @@ export function App() {
         <Route path="/turnover" element={<TurnoverPage />} />
         <Route path="/calendar-history" element={<CalendarHistoryPage />} />
         <Route path="/sectors" element={<SectorRankingsPage />} />
-        <Route path="/semiconductors" element={<SemiconductorPage />} />
-        <Route path="/semiconductors/trends" element={<SemiconductorTrendsPage />} />
+        <Route path="/semiconductors" element={<SectorExplorerPage mode="stocks" semiconductor={<SemiconductorPage />} />} />
+        <Route path="/semiconductors/trends" element={<SectorExplorerPage mode="trends" semiconductor={<SemiconductorTrendsPage />} />} />
+        <Route path="/sector-stocks" element={<SectorExplorerPage mode="stocks" semiconductor={<SemiconductorPage />} />} />
+        <Route path="/sector-trends" element={<SectorExplorerPage mode="trends" semiconductor={<SemiconductorTrendsPage />} />} />
         <Route path="/semiconductors/:ticker" element={<SemiconductorStockPage />} />
         <Route path="/credit-balance" element={<CreditBalancePage />} />
         <Route path="*" element={<Navigate to="/" replace />} />

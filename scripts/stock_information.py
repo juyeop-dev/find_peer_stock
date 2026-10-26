@@ -23,7 +23,7 @@ import stock_chart_history as charts
 ROOT = Path(__file__).resolve().parents[1]
 AUDIT = ROOT / "data/information-audit"
 PACKS = ROOT / "data/stock-information"
-START = "2024-07-01"
+START = "2024-01-01"
 METRICS = {"revenue": "TotalRevenue", "operating_income": "OperatingIncome", "net_income": "NetIncome",
            "total_assets": "TotalAssets", "total_debt": "TotalDebt", "operating_cash_flow": "OperatingCashFlow", "free_cash_flow": "FreeCashFlow"}
 COLUMNS = ["name", "description", "exchange", "type", "currency", "fundamental_currency_code", "close", "change", "time",
@@ -207,7 +207,7 @@ def collect_one(row, raw, today):
             # Retain full FY2024 balance-sheet/cash-flow reporting during the
             # daily refresh too. Naver's summary has only three income fields.
             symbol = charts.yahoo_symbol(row["ticker"])
-            params = {"type": ",".join("annual" + field for field in METRICS.values()), "period1": 1719792000, "period2": 1735689600}
+            params = {"type": ",".join("annual" + field for field in METRICS.values()), "period1": 1704067200, "period2": 1735689600}
             historical = parse_yahoo_financials(fetch_json(f"https://query1.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/{quote(symbol, safe='')}?{urlencode(params)}"), symbol, "2024-12-31")
             for statement in historical:
                 old = next((item for item in fetched if item["type"] == statement["type"] and item["period_end"] == statement["period_end"]), None)
@@ -226,7 +226,7 @@ def collect_one(row, raw, today):
     info["financials"] = sorted([item for item in info["financials"] if (item["type"], item["period_end"]) not in preferred] + fetched, key=lambda item: (item["period_end"], item["type"]))
     info["financials_fetched_at"] = datetime.now(timezone.utc).isoformat()
     if not info["financials"]:
-        info["warnings"].append("2024년 하반기 이후 확정 실적이 제공되지 않습니다. 신규 상장·펀드·자료 미지원 여부를 원문에서 확인해 주세요.")
+        info["warnings"].append("2024년 이후 확정 실적이 제공되지 않습니다. 신규 상장·펀드·자료 미지원 여부를 원문에서 확인해 주세요.")
     info["financial_coverage"] = {"first_period": min((item["period_end"] for item in info["financials"]), default=None),
                                   "latest_period": max((item["period_end"] for item in info["financials"]), default=None),
                                   "note": "제공된 확정 회계기간만 표시합니다. 제공처가 제한한 과거 분기와 공시되지 않은 기간은 채우지 않습니다."}
@@ -264,12 +264,18 @@ def checkpoint(db, rows, history_db=None):
     tables = {row[0] for row in db.execute("SELECT name FROM sqlite_master WHERE type='table'")}
     stages = {"current_information": {"checked": len(rows) - len(pending), "next": pending[0] if pending else None}}
     financial_stage = ("financial_2024_h2", "financial_2024_h2_updates") if "financial_2024_h2_updates" in tables else ("financial_2025", "financial_2025_updates")
-    for name, table in [financial_stage, ("daily_history", "history_2024h2_updates")]:
+    if "financial_2024_updates" in tables:
+        financial_stage = ("financial_2024", "financial_2024_updates")
+    for name, table in [financial_stage, ("daily_history", "history_2024_updates")]:
         done = {row[0] for row in db.execute(f"SELECT ticker FROM {table}")} if table in tables else set()
         todo = [row for row in rows if row["ticker"] not in done]
         stages[name] = {"checked": len(rows) - len(todo), "next": todo[0] if todo else None}
     next_step = next((name for name, value in stages.items() if value["next"]), None)
-    commands = {"current_information": "python scripts/stock_information.py collect", "financial_2025": "python scripts/backfill_stock_information_2025.py", "financial_2024_h2": "python scripts/backfill_stock_information_2024_h2.py collect", "daily_history": "python scripts/refresh_stock_information_history.py"}
+    commands = {"current_information": "python scripts/stock_information.py collect", "financial_2025": "python scripts/backfill_stock_information_2025.py", "financial_2024": "python scripts/backfill_stock_information_2024.py collect", "financial_2024_h2": "python scripts/backfill_stock_information_2024_h2.py collect", "daily_history": "python scripts/refresh_stock_information_history.py"}
+    if financial_stage[0] == "financial_2024":
+        commands["daily_history"] += " --state-dir data/tmp_2024"
+    elif financial_stage[0] == "financial_2024_h2":
+        commands["daily_history"] += " --state-dir data/tmp_2024_h2"
     charts.write_json(AUDIT / "progress.json", {"requested_start": START, "as_of": datetime.now(ZoneInfo("Asia/Seoul")).date().isoformat(), "total": len(rows), "checked": len(rows) - len(pending),
         "quotes": sum(row["quote"] for row in results), "financials": sum(row["financial_periods"] > 0 for row in results), "history_counts": dict(Counter(row["history_status"] for row in results)),
         "phase": next_step or "audited_with_source_exceptions", "stages": stages,
@@ -299,7 +305,7 @@ def collect(db, rows, limit=None, force=False):
                     previous = json.loads(old[0])
                     keys = {(item["type"], item["period_end"]) for item in value["financials"]}
                     value["financials"] = sorted(value["financials"] + [item for item in previous.get("financials", []) if (item["type"], item["period_end"]) not in keys], key=lambda item: (item["period_end"], item["type"]))
-                    for key in ["historical_financials_fetched_at", "historical_financials_warning", "historical_2024_h2_fetched_at", "historical_2024_h2_coverage"]:
+                    for key in ["historical_financials_fetched_at", "historical_financials_warning", "historical_2024_h2_fetched_at", "historical_2024_h2_coverage", "historical_2024_coverage", "historical_2024_fetched_at"]:
                         if key in previous: value[key] = previous[key]
                     dates = sorted(item["period_end"] for item in value["financials"])
                     value["financial_coverage"].update(first_period=dates[0] if dates else None, latest_period=dates[-1] if dates else None)

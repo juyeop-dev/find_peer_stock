@@ -1,0 +1,354 @@
+{
+  "schema_version": 1,
+  "market": "japan",
+  "date": "2024-04-16",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "175A.T",
+      "name": "Will Smart Co. Ltd.",
+      "exchange": "TSE",
+      "category": "Technology Services",
+      "high_type": "all_time",
+      "reason": "업종: Technology Services · Packaged Software",
+      "description": "Will Smart Co. Ltd. · Packaged Software",
+      "change_pct": 0.0,
+      "session_open": 1580.0,
+      "session_close": 1722.0,
+      "session_volume": 1908400.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:175A",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/175A.T/history/",
+        "date": "2024-04-16",
+        "daily_high": 1780.0,
+        "prior_all_time_or_current_month_high": 1780.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "175A.T"
+      }
+    },
+    {
+      "ticker": "2349.T",
+      "name": "Nippon Information Development Co., Ltd.",
+      "exchange": "TSE",
+      "category": "Technology Services",
+      "high_type": "all_time",
+      "reason": "업종: Technology Services · Information Technology Services",
+      "description": "Nippon Information Development Co., Ltd. · Information Technology Services",
+      "change_pct": 7.357704766311901,
+      "session_open": 2161.0,
+      "session_close": 2320.0,
+      "session_volume": 31500.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:2349",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2349.T/history/",
+        "date": "2024-04-16",
+        "daily_high": 2661.0,
+        "prior_all_time_or_current_month_high": 2661.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "2349.T"
+      }
+    },
+    {
+      "ticker": "3648.T",
+      "name": "AGS Corporation",
+      "exchange": "TSE",
+      "category": "Technology Services",
+      "high_type": "all_time",
+      "reason": "업종: Technology Services · Information Technology Services",
+      "description": "AGS Corporation · Information Technology Services",
+      "change_pct": 15.07537688442211,
+      "session_open": 985.0,
+      "session_close": 1145.0,
+      "session_volume": 417100.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:3648",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3648.T/history/",
+        "date": "2024-04-16",
+        "daily_high": 1145.0,
+        "prior_all_time_or_current_month_high": 1145.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "3648.T"
+      }
+    },
+    {
+      "ticker": "3905.T",
+      "name": "Datasection, Inc.",
+      "exchange": "TSE",
+      "category": "Technology Services",
+      "high_type": "all_time",
+      "reason": "업종: Technology Services · Packaged Software",
+      "description": "Datasection, Inc. · Packaged Software",
+      "change_pct": 18.939393939393945,
+      "session_open": 3140.0,
+      "session_close": 3140.0,
+      "session_volume": 441300.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:3905",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3905.T/history/",
+        "date": "2024-04-16",
+        "daily_high": 3140.0,
+        "prior_all_time_or_current_month_high": 3140.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "3905.T"
+      }
+    },
+    {
+      "ticker": "3964.T",
+      "name": "Aucnet, Inc.",
+      "exchange": "TSE",
+      "category": "Retail Trade",
+      "high_type": "all_time",
+      "reason": "업종: Retail Trade · Internet Retail",
+      "description": "Aucnet, Inc. · Internet Retail",
+      "change_pct": 1.637426900584793,
+      "session_open": 642.25,
+      "session_close": 651.75,
+      "session_volume": 84000.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:3964",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3964.T/history/",
+        "date": "2024-04-16",
+        "daily_high": 656.5,
+        "prior_all_time_or_current_month_high": 656.5,
+        "passes_close_filter": true,
+        "yahoo_symbol": "3964.T"
+      }
+    },
+    {
+      "ticker": "4403.T",
+      "name": "NOF Corporation",
+      "exchange": "TSE",
+      "category": "Process Industries",
+      "high_type": "all_time",
+      "reason": "업종: Process Industries · Chemicals: Specialty",
+      "description": "NOF Corporation · Chemicals: Specialty",
+      "change_pct": 1.2962526514258776,
+      "session_open": 2121.0,
+      "session_close": 2149.0,
+      "session_volume": 600600.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:4403",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4403.T/history/",
+        "date": "2024-04-16",
+        "daily_high": 2156.5,
+        "prior_all_time_or_current_month_high": 2156.5,
+        "passes_close_filter": true,
+        "yahoo_symbol": "4403.T"
+      }
+    },
+    {
+      "ticker": "4761.T",
+      "name": "SAKURA KCS Corporation",
+      "exchange": "TSE",
+      "category": "Technology Services",
+      "high_type": "all_time",
+      "reason": "업종: Technology Services · Information Technology Services",
+      "description": "SAKURA KCS Corporation · Information Technology Services",
+      "change_pct": 20.491803278688515,
+      "session_open": 2590.0,
+      "session_close": 2940.0,
+      "session_volume": 1695000.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:4761",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4761.T/history/",
+        "date": "2024-04-16",
+        "daily_high": 2940.0,
+        "prior_all_time_or_current_month_high": 2940.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "4761.T"
+      }
+    },
+    {
+      "ticker": "5208.T",
+      "name": "Arisawa Mfg.Co., Ltd.",
+      "exchange": "TSE",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Electrical Products",
+      "description": "Arisawa Mfg.Co., Ltd. · Electrical Products",
+      "change_pct": 0.33200531208499307,
+      "session_open": 1500.0,
+      "session_close": 1511.0,
+      "session_volume": 629100.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:5208",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/5208.T/history/",
+        "date": "2024-04-16",
+        "daily_high": 1542.0,
+        "prior_all_time_or_current_month_high": 4079.639559659091,
+        "passes_close_filter": true,
+        "yahoo_symbol": "5208.T"
+      }
+    },
+    {
+      "ticker": "5602.T",
+      "name": "Kurimoto,Ltd.",
+      "exchange": "TSE",
+      "category": "Non-Energy Minerals",
+      "high_type": "52_week",
+      "reason": "업종: Non-Energy Minerals · Steel",
+      "description": "Kurimoto,Ltd. · Steel",
+      "change_pct": 0.4854368932038833,
+      "session_open": 818.0,
+      "session_close": 828.0,
+      "session_volume": 150000.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:5602",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/5602.T/history/",
+        "date": "2024-04-16",
+        "daily_high": 837.0,
+        "prior_all_time_or_current_month_high": 2112.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "5602.T"
+      }
+    },
+    {
+      "ticker": "5962.T",
+      "name": "Asaka Industrial Co., Ltd.",
+      "exchange": "TSE",
+      "category": "Consumer Durables",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Durables · Tools & Hardware",
+      "description": "Asaka Industrial Co., Ltd. · Tools & Hardware",
+      "change_pct": 1.3411078717201264,
+      "session_open": 1735.0,
+      "session_close": 1738.0,
+      "session_volume": 2900.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:5962",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/5962.T/history/",
+        "date": "2024-04-16",
+        "daily_high": 1738.0,
+        "prior_all_time_or_current_month_high": 56000.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "5962.T"
+      }
+    },
+    {
+      "ticker": "6151.T",
+      "name": "Nitto Kohki Co., Ltd.",
+      "exchange": "TSE",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Industrial Machinery",
+      "description": "Nitto Kohki Co., Ltd. · Industrial Machinery",
+      "change_pct": 0.40376850605652326,
+      "session_open": 2229.0,
+      "session_close": 2238.0,
+      "session_volume": 50100.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:6151",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6151.T/history/",
+        "date": "2024-04-16",
+        "daily_high": 2240.0,
+        "prior_all_time_or_current_month_high": 3390.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "6151.T"
+      }
+    },
+    {
+      "ticker": "6325.T",
+      "name": "Takakita Co., Ltd.",
+      "exchange": "TSE",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Trucks/Construction/Farm Machinery",
+      "description": "Takakita Co., Ltd. · Trucks/Construction/Farm Machinery",
+      "change_pct": 6.422018348623859,
+      "session_open": 543.0,
+      "session_close": 580.0,
+      "session_volume": 195000.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:6325",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6325.T/history/",
+        "date": "2024-04-16",
+        "daily_high": 607.0,
+        "prior_all_time_or_current_month_high": 1251.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "6325.T"
+      }
+    },
+    {
+      "ticker": "9948.T",
+      "name": "Arcs Company, Limited",
+      "exchange": "TSE",
+      "category": "Retail Trade",
+      "high_type": "all_time",
+      "reason": "업종: Retail Trade · Food Retail",
+      "description": "Arcs Company, Limited · Food Retail",
+      "change_pct": 5.815831987075937,
+      "session_open": 3200.0,
+      "session_close": 3275.0,
+      "session_volume": 383900.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:9948",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/9948.T/history/",
+        "date": "2024-04-16",
+        "daily_high": 3300.0,
+        "prior_all_time_or_current_month_high": 3300.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "9948.T"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-10-26T12:26:40.620751+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 3761,
+    "history_symbols": 3615,
+    "inactive_symbols": 3,
+    "failed_symbols": 143,
+    "coverage_ratio": 0.9619478445981905,
+    "coverage_by_exchange": {
+      "TSE": {
+        "covered": 3615,
+        "total": 3758
+      }
+    },
+    "session_symbols": 3601,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-10-26T12:26:40.620751+00:00"
+}

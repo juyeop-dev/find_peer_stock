@@ -5,9 +5,18 @@ import ts from "typescript";
 import { gunzipSync } from "node:zlib";
 const source = await readFile(new URL("../src/dataClient/sectorRankings.ts", import.meta.url), "utf8");
 const js = ts.transpileModule(source, { compilerOptions: { module: ts.ModuleKind.ESNext, target: ts.ScriptTarget.ES2022 } }).outputText;
-const { sectorRankings, sortSectors, sectorMoney, sectorLabel, classifiedSectorStock } = await import(`data:text/javascript;base64,${Buffer.from(js).toString("base64")}`);
+const { sectorRankings, sortSectors, sortSectorMembers, sectorMoney, sectorLabel, classifiedSectorStock } = await import(`data:text/javascript;base64,${Buffer.from(js).toString("base64")}`);
 const stock = (ticker, changes = {}) => ({ ticker, name: ticker, currency: "KRW", date: "2026-10-19", exchange: "KOSPI", sector: "Electronic Technology", industry: "Semiconductors", turnover: 100, market_cap: 1000, returns: { day: 10, week: 5, month: null, quarter: null, year: 30 }, ...changes });
 const data = (...stocks) => ({ date: "2026-10-19", stocks });
+
+test("constituent sorting switches direction, preserves zero and keeps missing values last without mutating membership", () => {
+  const rows = [stock("B", {name:"나",price:20,returns:{month:0}}),stock("C",{name:"다",price:30,returns:{month:null}}),stock("A",{name:"가",price:10,returns:{month:-3}})];
+  assert.deepEqual(sortSectorMembers(rows,"return","desc","month").map(row=>row.ticker),["B","A","C"]);
+  assert.deepEqual(sortSectorMembers(rows,"return","asc","month").map(row=>row.ticker),["A","B","C"]);
+  assert.deepEqual(sortSectorMembers(rows,"name","asc","month").map(row=>row.ticker),["A","B","C"]);
+  assert.deepEqual(sortSectorMembers(rows,"price","desc","month").map(row=>row.ticker),["C","B","A"]);
+  assert.deepEqual(rows.map(row=>row.ticker),["B","C","A"]);
+});
 test("equal-weighted average excludes unavailable returns while preserving zero and native-unit monetary totals", () => {
   const [row] = sectorRankings(data(stock("A"), stock("B", { returns: { day: 0 }, turnover: 0, market_cap: 3000 }), stock("C", { returns: { day: null }, turnover: null, market_cap: null })), "industry", "day", "", "equal");
   assert.equal(row.value, 5); assert.equal(row.returnCount, 2); assert.equal(row.members.length, 3);

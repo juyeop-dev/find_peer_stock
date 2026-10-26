@@ -1,0 +1,482 @@
+{
+  "schema_version": 1,
+  "market": "us",
+  "date": "2024-04-18",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "STRW",
+      "name": "Strawberry Fields REIT, Inc.",
+      "exchange": "AMEX",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "업종: Finance · Real Estate Investment Trusts",
+      "description": "Strawberry Fields REIT, Inc. · Real Estate Investment Trusts",
+      "change_pct": 6.227109340803749,
+      "session_open": 8.300000190734863,
+      "session_close": 8.699999809265137,
+      "session_volume": 4700.0,
+      "currency": "USD",
+      "source_symbol": "AMEX:STRW",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/STRW/history/",
+        "date": "2024-04-18",
+        "daily_high": 8.699999809265137,
+        "prior_all_time_or_current_month_high": 8.949999809265137,
+        "passes_close_filter": true,
+        "yahoo_symbol": "STRW"
+      }
+    },
+    {
+      "ticker": "APOG",
+      "name": "Apogee Enterprises, Inc.",
+      "exchange": "NASDAQ",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Building Products",
+      "description": "Apogee Enterprises, Inc. · Building Products",
+      "change_pct": 7.010018082975389,
+      "session_open": 59.5,
+      "session_close": 59.84000015258789,
+      "session_volume": 287800.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:APOG",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/APOG/history/",
+        "date": "2024-04-18",
+        "daily_high": 62.9900016784668,
+        "prior_all_time_or_current_month_high": 62.9900016784668,
+        "passes_close_filter": true,
+        "yahoo_symbol": "APOG"
+      }
+    },
+    {
+      "ticker": "AYA",
+      "name": "Aya Gold & Silver Inc.",
+      "exchange": "NASDAQ",
+      "category": "Non-Energy Minerals",
+      "high_type": "all_time",
+      "reason": "업종: Non-Energy Minerals · Precious Metals",
+      "description": "Aya Gold & Silver Inc. · Precious Metals",
+      "change_pct": 6.004140091797572,
+      "session_open": 9.819999694824219,
+      "session_close": 10.239999771118164,
+      "session_volume": 65200.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:AYA",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/AYA/history/",
+        "date": "2024-04-18",
+        "daily_high": 10.289999961853027,
+        "prior_all_time_or_current_month_high": 10.289999961853027,
+        "passes_close_filter": true,
+        "yahoo_symbol": "AYA"
+      }
+    },
+    {
+      "ticker": "CGBD",
+      "name": "Carlyle Secured Lending, Inc",
+      "exchange": "NASDAQ",
+      "category": "Miscellaneous",
+      "high_type": "52_week",
+      "reason": "업종: Miscellaneous · Investment Trusts/Mutual Funds",
+      "description": "Carlyle Secured Lending, Inc · Investment Trusts/Mutual Funds",
+      "change_pct": 1.5179114172596986,
+      "session_open": 16.469999313354492,
+      "session_close": 16.719999313354492,
+      "session_volume": 306000.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:CGBD",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/CGBD/history/",
+        "date": "2024-04-18",
+        "daily_high": 16.780000686645508,
+        "prior_all_time_or_current_month_high": 20.299999237060547,
+        "passes_close_filter": true,
+        "yahoo_symbol": "CGBD"
+      }
+    },
+    {
+      "ticker": "JVA",
+      "name": "Coffee Holding Co., Inc.",
+      "exchange": "NASDAQ",
+      "category": "Consumer Non-Durables",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Non-Durables · Food: Specialty/Candy",
+      "description": "Coffee Holding Co., Inc. · Food: Specialty/Candy",
+      "change_pct": 7.100584703910928,
+      "session_open": 1.7300000190734863,
+      "session_close": 1.809999942779541,
+      "session_volume": 138100.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:JVA",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/JVA/history/",
+        "date": "2024-04-18",
+        "daily_high": 1.850000023841858,
+        "prior_all_time_or_current_month_high": 30.979999542236328,
+        "passes_close_filter": true,
+        "yahoo_symbol": "JVA"
+      }
+    },
+    {
+      "ticker": "KARO",
+      "name": "Karooooo Ltd.",
+      "exchange": "NASDAQ",
+      "category": "Technology Services",
+      "high_type": "52_week",
+      "reason": "업종: Technology Services · Packaged Software",
+      "description": "Karooooo Ltd. · Packaged Software",
+      "change_pct": 3.200000581287199,
+      "session_open": 26.3700008392334,
+      "session_close": 27.09000015258789,
+      "session_volume": 6100.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:KARO",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/KARO/history/",
+        "date": "2024-04-18",
+        "daily_high": 27.100000381469727,
+        "prior_all_time_or_current_month_high": 42.5,
+        "passes_close_filter": true,
+        "yahoo_symbol": "KARO"
+      }
+    },
+    {
+      "ticker": "LIEN",
+      "name": "Chicago Atlantic BDC, Inc.",
+      "exchange": "NASDAQ",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "업종: Finance · Financial Conglomerates",
+      "description": "Chicago Atlantic BDC, Inc. · Financial Conglomerates",
+      "change_pct": 3.173076305869049,
+      "session_open": 10.600000381469727,
+      "session_close": 10.729999542236328,
+      "session_volume": 40700.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:LIEN",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/LIEN/history/",
+        "date": "2024-04-18",
+        "daily_high": 10.869999885559082,
+        "prior_all_time_or_current_month_high": 15.399999618530273,
+        "passes_close_filter": true,
+        "yahoo_symbol": "LIEN"
+      }
+    },
+    {
+      "ticker": "MNDR",
+      "name": "Mobile-health Network Solutions Class A",
+      "exchange": "NASDAQ",
+      "category": "Health Services",
+      "high_type": "all_time",
+      "reason": "업종: Health Services · Medical/Nursing Services",
+      "description": "Mobile-health Network Solutions Class A · Medical/Nursing Services",
+      "change_pct": 12.541431967944284,
+      "session_open": 4344.0,
+      "session_close": 4888.7998046875,
+      "session_volume": 21029.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:MNDR",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/MNDR/history/",
+        "date": "2024-04-18",
+        "daily_high": 5217.60009765625,
+        "prior_all_time_or_current_month_high": 5217.60009765625,
+        "passes_close_filter": true,
+        "yahoo_symbol": "MNDR"
+      }
+    },
+    {
+      "ticker": "RNTX",
+      "name": "Rein Therapeutics, Inc",
+      "exchange": "NASDAQ",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Pharmaceuticals: Major",
+      "description": "Rein Therapeutics, Inc · Pharmaceuticals: Major",
+      "change_pct": 17.647058823529417,
+      "session_open": 4.599999904632568,
+      "session_close": 5.0,
+      "session_volume": 1755000.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:RNTX",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/RNTX/history/",
+        "date": "2024-04-18",
+        "daily_high": 7.420000076293945,
+        "prior_all_time_or_current_month_high": 6192.0001220703125,
+        "passes_close_filter": true,
+        "yahoo_symbol": "RNTX"
+      }
+    },
+    {
+      "ticker": "SHIP",
+      "name": "Seanergy Maritime Holdings Corp.",
+      "exchange": "NASDAQ",
+      "category": "Transportation",
+      "high_type": "52_week",
+      "reason": "업종: Transportation · Marine Shipping",
+      "description": "Seanergy Maritime Holdings Corp. · Marine Shipping",
+      "change_pct": 2.9094877751383974,
+      "session_open": 9.25,
+      "session_close": 9.550000190734863,
+      "session_volume": 537800.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:SHIP",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/SHIP/history/",
+        "date": "2024-04-18",
+        "daily_high": 9.649999618530273,
+        "prior_all_time_or_current_month_high": 325620000000.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "SHIP"
+      }
+    },
+    {
+      "ticker": "SUPX",
+      "name": "SuperX AI Technology Limited",
+      "exchange": "NASDAQ",
+      "category": "Commercial Services",
+      "high_type": "all_time",
+      "reason": "업종: Commercial Services · Miscellaneous Commercial Services",
+      "description": "SuperX AI Technology Limited · Miscellaneous Commercial Services",
+      "change_pct": 0.9852207491816589,
+      "session_open": 3.940000057220459,
+      "session_close": 4.099999904632568,
+      "session_volume": 587200.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:SUPX",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/SUPX/history/",
+        "date": "2024-04-18",
+        "daily_high": 4.599999904632568,
+        "prior_all_time_or_current_month_high": 4.599999904632568,
+        "passes_close_filter": true,
+        "yahoo_symbol": "SUPX"
+      }
+    },
+    {
+      "ticker": "TOYO",
+      "name": "TOYO Co., Ltd",
+      "exchange": "NASDAQ",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Semiconductors",
+      "description": "TOYO Co., Ltd · Semiconductors",
+      "change_pct": 0.0,
+      "session_open": 11.270000457763672,
+      "session_close": 11.270000457763672,
+      "session_volume": 600.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:TOYO",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/TOYO/history/",
+        "date": "2024-04-18",
+        "daily_high": 11.270000457763672,
+        "prior_all_time_or_current_month_high": 11.270000457763672,
+        "passes_close_filter": true,
+        "yahoo_symbol": "TOYO"
+      }
+    },
+    {
+      "ticker": "TSSI",
+      "name": "TSS, Inc.",
+      "exchange": "NASDAQ",
+      "category": "Technology Services",
+      "high_type": "52_week",
+      "reason": "업종: Technology Services · Information Technology Services",
+      "description": "TSS, Inc. · Information Technology Services",
+      "change_pct": 10.144926534683552,
+      "session_open": 0.7300000190734863,
+      "session_close": 0.7599999904632568,
+      "session_volume": 152000.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:TSSI",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/TSSI/history/",
+        "date": "2024-04-18",
+        "daily_high": 0.8100000023841858,
+        "prior_all_time_or_current_month_high": 7.25,
+        "passes_close_filter": true,
+        "yahoo_symbol": "TSSI"
+      }
+    },
+    {
+      "ticker": "VCTR",
+      "name": "Victory Capital Holdings, Inc. Class A",
+      "exchange": "NASDAQ",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "업종: Finance · Investment Managers",
+      "description": "Victory Capital Holdings, Inc. Class A · Investment Managers",
+      "change_pct": 2.7765375788254776,
+      "session_open": 44.650001525878906,
+      "session_close": 45.900001525878906,
+      "session_volume": 764500.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:VCTR",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/VCTR/history/",
+        "date": "2024-04-18",
+        "daily_high": 45.90999984741211,
+        "prior_all_time_or_current_month_high": 45.90999984741211,
+        "passes_close_filter": true,
+        "yahoo_symbol": "VCTR"
+      }
+    },
+    {
+      "ticker": "BMI",
+      "name": "Badger Meter, Inc.",
+      "exchange": "NYSE",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Industrial Machinery",
+      "description": "Badger Meter, Inc. · Industrial Machinery",
+      "change_pct": 16.65359197878371,
+      "session_open": 164.4600067138672,
+      "session_close": 178.47999572753906,
+      "session_volume": 696400.0,
+      "currency": "USD",
+      "source_symbol": "NYSE:BMI",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/BMI/history/",
+        "date": "2024-04-18",
+        "daily_high": 179.50999450683594,
+        "prior_all_time_or_current_month_high": 179.50999450683594,
+        "passes_close_filter": true,
+        "yahoo_symbol": "BMI"
+      }
+    },
+    {
+      "ticker": "CHMI/PB",
+      "name": "Cherry Hill Mortgage Investment Corp. Cum Conv Red Pfd Registered Shs Series B",
+      "exchange": "NYSE",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "업종: Finance · Real Estate Investment Trusts",
+      "description": "Cherry Hill Mortgage Investment Corp. Cum Conv Red Pfd Registered Shs Series B · Real Estate Investment Trusts",
+      "change_pct": 1.1377438941594376,
+      "session_open": 24.600000381469727,
+      "session_close": 24.889999389648438,
+      "session_volume": 87815.0,
+      "currency": "USD",
+      "source_symbol": "NYSE:CHMI/PB",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/CHMI-PB/history/",
+        "date": "2024-04-18",
+        "daily_high": 24.979999542236328,
+        "prior_all_time_or_current_month_high": 26.950000762939453,
+        "passes_close_filter": true,
+        "yahoo_symbol": "CHMI-PB"
+      }
+    },
+    {
+      "ticker": "ELV",
+      "name": "Elevance Health, Inc.",
+      "exchange": "NYSE",
+      "category": "Health Services",
+      "high_type": "52_week",
+      "reason": "업종: Health Services · Managed Health Care",
+      "description": "Elevance Health, Inc. · Managed Health Care",
+      "change_pct": 3.1868285324874623,
+      "session_open": 520.5800170898438,
+      "session_close": 525.1900024414062,
+      "session_volume": 2595100.0,
+      "currency": "USD",
+      "source_symbol": "NYSE:ELV",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/ELV/history/",
+        "date": "2024-04-18",
+        "daily_high": 539.1099853515625,
+        "prior_all_time_or_current_month_high": 549.52001953125,
+        "passes_close_filter": true,
+        "yahoo_symbol": "ELV"
+      }
+    },
+    {
+      "ticker": "WFC",
+      "name": "Wells Fargo & Company",
+      "exchange": "NYSE",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "업종: Finance · Major Banks",
+      "description": "Wells Fargo & Company · Major Banks",
+      "change_pct": 2.7282290398130904,
+      "session_open": 57.630001068115234,
+      "session_close": 58.7400016784668,
+      "session_volume": 24468500.0,
+      "currency": "USD",
+      "source_symbol": "NYSE:WFC",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/WFC/history/",
+        "date": "2024-04-18",
+        "daily_high": 59.130001068115234,
+        "prior_all_time_or_current_month_high": 66.30999755859375,
+        "passes_close_filter": true,
+        "yahoo_symbol": "WFC"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-10-26T12:36:04.699545+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 5714,
+    "history_symbols": 4743,
+    "inactive_symbols": 19,
+    "failed_symbols": 952,
+    "coverage_ratio": 0.8328358208955224,
+    "coverage_by_exchange": {
+      "NASDAQ": {
+        "covered": 2646,
+        "total": 3330
+      },
+      "NYSE": {
+        "covered": 1889,
+        "total": 2105
+      },
+      "AMEX": {
+        "covered": 208,
+        "total": 260
+      }
+    },
+    "session_symbols": 4693,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-10-26T12:36:04.699545+00:00"
+}

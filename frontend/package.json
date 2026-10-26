@@ -23,7 +23,10 @@
     "test:sectors:browser": "node tests/sector-rankings-browser.mjs",
     "test:korea-history:browser": "node tests/korea-history-browser.mjs",
     "test:chart-tooltip:browser": "node tests/chart-tooltip-browser.mjs",
-    "test:stock-information:2024-h2": "node tests/stock-information-2024-h2-browser.mjs"
+    "test:stock-information:2024-h2": "node tests/stock-information-2024-h2-browser.mjs",
+    "test:stock-information:2024": "node tests/stock-information-2024-browser.mjs",
+    "test:sector-explorer": "node --test tests/sector-explorer.test.mjs",
+    "test:sector-explorer:browser": "node tests/sector-explorer-browser.mjs"
   },
   "dependencies": {
     "react": "^19.0.0",

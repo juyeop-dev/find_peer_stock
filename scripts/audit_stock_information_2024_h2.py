@@ -9,6 +9,9 @@ import stock_chart_history as charts
 import stock_information as information
 
 START, END = "2024-07-01", "2024-12-31"
+SCOPE = "2024-h2"
+COVERED_STATUS = "covers_h2_2024"
+PERIODS_KEY = "h2_financial_periods"
 
 
 def packs(folder):
@@ -45,24 +48,24 @@ def main():
             dates = [point[0] for point in prices]
             assert dates == sorted(set(dates)), ticker
             assert all(type(n) in {int, float} and math.isfinite(n) and n > 0 for point in prices for n in point[1:]), ticker
-        status = "missing_history" if len(prices) < 2 else "covers_h2_2024" if prices[0][0] <= START else "later_listing" if history[ticker].get("first_trade_date") and history[ticker]["first_trade_date"] > START else "source_limited"
+        status = "missing_history" if len(prices) < 2 else COVERED_STATUS if prices[0][0] <= START else "later_listing" if history[ticker].get("first_trade_date") and history[ticker]["first_trade_date"] > START else "source_limited"
         results.append({**row, "history_status": status, "first_price": prices[0][0] if prices else None,
             "last_price": prices[-1][0] if prices else None, "first_trade_date": history.get(ticker, {}).get("first_trade_date"),
-            "h2_financial_periods": len(old), "annual_periods": sum(s["type"] == "annual" for s in old),
+            PERIODS_KEY: len(old), "annual_periods": sum(s["type"] == "annual" for s in old),
             "quarterly_periods": sum(s["type"] == "quarterly" for s in old),
             "revenue_available": any(s.get("revenue") is not None for s in old),
             "operating_income_available": any(s.get("operating_income") is not None for s in old)})
-    audit = information.AUDIT / "2024-h2"
+    audit = information.AUDIT / SCOPE
     charts.write_json(audit / "coverage.json", {"start": START, "end": END, "total": len(roster), "checked": len(results),
         "histories": dict(Counter(row["history_status"] for row in results)),
-        "financials_available": sum(row["h2_financial_periods"] > 0 for row in results),
+        "financials_available": sum(row[PERIODS_KEY] > 0 for row in results),
         "revenue_available": sum(row["revenue_available"] for row in results),
         "operating_income_available": sum(row["operating_income_available"] for row in results),
-        "financials_unavailable": sum(row["h2_financial_periods"] == 0 for row in results),
+        "financials_unavailable": sum(row[PERIODS_KEY] == 0 for row in results),
         "quarterly_reports": sum(row["quarterly_periods"] for row in results),
         "by_market": dict(Counter(row["market"] for row in results)), "validated_at": datetime.now(timezone.utc).isoformat()})
     charts.write_json(audit / "coverage-results.json", results)
-    charts.write_json(audit / "coverage-exceptions.json", [row for row in results if row["history_status"] in {"missing_history", "source_limited"} or not row["h2_financial_periods"]])
+    charts.write_json(audit / "coverage-exceptions.json", [row for row in results if row["history_status"] in {"missing_history", "source_limited"} or not row[PERIODS_KEY]])
     print((audit / "coverage.json").read_text(encoding="utf-8"), flush=True)
 
 

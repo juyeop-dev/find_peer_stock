@@ -263,7 +263,7 @@ def confirmed_market_closures(reports: list[dict[str, Any]]) -> list[dict[str, s
 
 def write_json(path: Path, payload: dict[str, Any]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(payload, ensure_ascii=False, indent=2, allow_nan=False) + "\n", encoding="utf-8")
+    path.write_text(json.dumps(payload, ensure_ascii=False, separators=(",", ":"), allow_nan=False) + "\n", encoding="utf-8")
 
 
 def load_published_market_caps(output_dir: Path) -> dict[tuple[str, str, str], dict[str, Any]]:

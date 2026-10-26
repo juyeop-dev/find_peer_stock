@@ -175,8 +175,9 @@ def build_reports(sessions: list[date], *, workers: int = 4, timeout: float = 30
                 atomic_json(cache_dir / "daily-failures.json", failures)
                 print(f"europe: daily {completed}/{len(futures)}, verified={len(histories)}, unresolved={len(failures)}", flush=True)
     atomic_json(cache_dir / "daily-failures.json", failures)
-    if failures:
+    if failures and not partial_history:
         raise ChartHistoryError(f"{len(failures)} European histories unresolved; see {cache_dir / 'daily-failures.json'}")
+    unresolved_histories = dict(failures)
     eligible = [row for row in eligible if row["symbol"] in histories]
     atomic_json(cache_dir / "non-stock-exclusions.json", non_stock)
     evidence = {symbol: candidates(bars, set(sessions)) for symbol, (_, bars, _) in histories.items()}
@@ -265,7 +266,8 @@ def build_reports(sessions: list[date], *, workers: int = 4, timeout: float = 30
                 "universe": "Current TradingView-listed stocks on EURONEXT, XETR, LSE, SIX; ETFs and delisted historical listings excluded",
                 "scanned_symbols": len(rows), "history_symbols": len(histories),
                 "history_required_symbols": len(eligible),
-                "excluded_pre_range_or_no_history": len(excluded), "unresolved_symbols": 0,
+                "excluded_pre_range_or_no_history": len(excluded), "unresolved_symbols": len(unresolved_histories),
+                "unresolved_listings": unresolved_histories,
                 "non_stock_exclusions": non_stock,
                 "session_symbols": len(members), "session_symbols_by_exchange": by_exchange,
                 "scheduled_closed_exchanges": sorted(scheduled_closed),

@@ -5,10 +5,11 @@ export interface StockHistory {
   ticker: string; currency: string; source: string; fetched_at?: string; first_trade_date?: string | null;
   history: SemiconductorPrice[]; warning?: string;
 }
-export const CHART_PERIODS = [7, 30, 90, 180, "1y", "2y", "since2025", "since2024H2"] as const;
+export const CHART_PERIODS = [7, 30, 90, 180, "1y", "2y", "since2025", "since2024H2", "since2024"] as const;
 export type ChartPeriod = typeof CHART_PERIODS[number];
-export const chartPeriodLabel = (period: ChartPeriod) => typeof period === "number" ? `${period}일` : period === "since2024H2" ? "2024년 하반기~" : period === "since2025" ? "2025년~" : period === "1y" ? "1년" : "2년";
+export const chartPeriodLabel = (period: ChartPeriod) => typeof period === "number" ? `${period}일` : period === "since2024" ? "2024년~" : period === "since2024H2" ? "2024년 하반기~" : period === "since2025" ? "2025년~" : period === "1y" ? "1년" : "2년";
 export function chartStart(end: string, period: ChartPeriod): string {
+  if (period === "since2024") return "2024-01-01";
   if (period === "since2024H2") return "2024-07-01";
   if (period === "since2025") return "2025-01-01";
   const day = new Date(`${end}T12:00:00Z`);
@@ -41,6 +42,13 @@ function validate(value: StockHistory, ticker: string): StockHistory {
   }
   return value;
 }
+export async function getPublishedStockHistory(ticker: string, signal?: AbortSignal): Promise<StockHistory> {
+  const filename = encodeURIComponent(ticker.toUpperCase()).replaceAll("%", "~");
+  const response = await fetch(`${import.meta.env.BASE_URL}data/stock-history/${filename}.json?t=${Date.now()}`, { signal, cache: "no-store" });
+  if (!response.ok) throw new Error("저장된 일봉 없음");
+  const packed = await response.json();
+  return validate({ ...packed, history: packed.prices.map(([date, close, adjusted_close]: [string, number, number]) => ({ date, close, adjusted_close, volume: null })) }, ticker);
+}
 export async function refreshStockHistory(ticker: string, exchange?: string, signal?: AbortSignal): Promise<StockHistory> {
   const response = await requestOriginal<{ items: StockHistory[]; errors: { message: string }[] }>({ kind: "history", stocks: [{ ticker: ticker.toUpperCase(), ...(exchange ? { exchange } : {}) }] }, signal);
   const fresh = validate(response.items[0], ticker);
@@ -54,14 +62,10 @@ export async function getStockHistory(ticker: string, exchange?: string, signal?
     fetched_at: detail.fetched_at, history: detail.history } : histories.get(ticker.toUpperCase()) ?? initial;
   // Inline peer/quote snapshots may still contain a shorter window. Consult
   // the durable archive before treating a fresh one-year snapshot as enough.
-  const requestedStart = "2024-07-01";
+  const requestedStart = "2024-01-01";
   if (!base || base.history[0].date > requestedStart && !(base.first_trade_date && base.first_trade_date > requestedStart)) {
     try {
-      const filename = encodeURIComponent(ticker.toUpperCase()).replaceAll("%", "~");
-      const response = await fetch(`${import.meta.env.BASE_URL}data/stock-history/${filename}.json?t=${Date.now()}`, { signal, cache: "no-store" });
-      if (!response.ok) throw new Error("저장된 일봉 없음");
-      const packed = await response.json();
-      const archived = validate({ ...packed, history: packed.prices.map(([date, close, adjusted_close]: [string, number, number]) => ({ date, close, adjusted_close, volume: null })) }, ticker);
+      const archived = await getPublishedStockHistory(ticker, signal);
       if (!base || archived.history[0].date < base.history[0].date) base = archived;
     } catch (error) { if (signal?.aborted) throw error; }
   }

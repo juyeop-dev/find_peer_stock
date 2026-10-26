@@ -128,7 +128,7 @@ def validate_report(payload: dict[str, Any], path: Path, reports_dir: Path,
 
 def write_json(path: Path, payload: dict[str, Any]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(payload, ensure_ascii=False, indent=2, allow_nan=False) + "\n", encoding="utf-8")
+    path.write_text(json.dumps(payload, ensure_ascii=False, separators=(",", ":"), allow_nan=False) + "\n", encoding="utf-8")
 
 
 def generate_turnover_data(source_dir: Path = SOURCE_DIR, output_dir: Path = GENERATED_DIR,

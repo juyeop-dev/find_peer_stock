@@ -1,4 +1,4 @@
-"""Resume original daily price refreshes for the July-2024-to-present information update."""
+"""Resume original daily price refreshes for the 2024-to-present information update."""
 from concurrent.futures import ThreadPoolExecutor
 import argparse
 import hashlib
@@ -18,7 +18,7 @@ def tradingview(row):
     if len(candidates) != 1:
         raise ValueError("Exact trading venue unavailable")
     symbol = candidates[0]
-    days = (datetime.now(timezone.utc).date() - date(2024, 6, 20)).days
+    days = (datetime.now(timezone.utc).date() - date(2023, 12, 20)).days
     count = min(5000, max(550, (days * 5 + 6) // 7 + 60))
     payload = fetch_chart(symbol, "1D", count, timeout=15)
     value = charts.parse_tradingview(payload, symbol)
@@ -36,7 +36,7 @@ def fallback(row, mapped_symbol=None):
     symbol = charts.yahoo_symbol(row["ticker"]) or mapped_symbol
     if symbol:
         now = datetime.now(timezone.utc)
-        start = min(datetime(2024, 6, 20, tzinfo=timezone.utc), now - timedelta(days=732))
+        start = min(datetime(2023, 12, 20, tzinfo=timezone.utc), now - timedelta(days=732))
         params = {"period1": int(start.timestamp()), "period2": int(now.timestamp()), "interval": "1d"}
         try:
             payload = information.fetch_json(f"https://query1.finance.yahoo.com/v8/finance/chart/{quote(symbol, safe='')}?{urlencode(params)}")
@@ -58,15 +58,19 @@ def main():
     parser.add_argument("--refresh-tradingview", action="store_true")
     parser.add_argument("--state-dir", type=Path, help="Isolated resumable database directory, initially seeded from published packs.")
     parser.add_argument("--import-europe-cache", action="store_true", help="Reuse verified same-listing 1000-bar European charts collected by calendar recovery.")
-    parser.add_argument("--extend-to-start", action="store_true", help="Recheck histories starting after July 2024 without a confirmed later listing date.")
+    parser.add_argument("--extend-to-start", action="store_true", help="Recheck histories starting after January 2024 without a confirmed later listing date.")
     args = parser.parse_args()
+    resume = "python scripts/refresh_stock_information_history.py" + (f" --state-dir {args.state_dir.as_posix()}" if args.state_dir else "")
+    for flag in ["retry_errors", "refresh_tradingview", "import_europe_cache", "extend_to_start"]:
+        if getattr(args, flag):
+            resume += " --" + flag.replace("_", "-")
     sys.path.insert(0, str(information.ROOT / "data/tmp_info_update/deps"))
     rows = charts.roster()
     if args.state_dir:
         charts.DATABASE = args.state_dir / "history.sqlite"
     db = information.open_database(args.state_dir)
-    db.execute("CREATE TABLE IF NOT EXISTS history_2024h2_updates(ticker TEXT PRIMARY KEY,value TEXT NOT NULL)")
-    completed = {ticker for ticker, raw in db.execute("SELECT ticker,value FROM history_2024h2_updates") if information.fresh(json.loads(raw).get("queried_at"), hours=20)}
+    db.execute("CREATE TABLE IF NOT EXISTS history_2024_updates(ticker TEXT PRIMARY KEY,value TEXT NOT NULL)")
+    completed = {ticker for ticker, raw in db.execute("SELECT ticker,value FROM history_2024_updates") if information.fresh(json.loads(raw).get("queried_at"), hours=20)}
     pending = [row for row in rows if row["ticker"] not in completed]
     history = charts.database()
     mappings = {value["ticker"]: value["symbol"] for path in (args.state_dir / "mappings").glob("*.json") if (value := json.loads(path.read_text(encoding="utf-8"))).get("symbol")} if args.state_dir else {}
@@ -87,13 +91,13 @@ def main():
                 if len(value["prices"]) < 2:
                     continue
                 value["ticker"] = row["ticker"]
-                cutoff = min("2024-06-20", (datetime.now(timezone.utc).date() - timedelta(days=732)).isoformat())
+                cutoff = min("2023-12-20", (datetime.now(timezone.utc).date() - timedelta(days=732)).isoformat())
                 value["prices"] = [point for point in value["prices"] if point[0] >= cutoff]
                 if len(value["prices"]) < 2:
                     continue
                 charts.save_candidate(history, value)
                 result = {"ticker": row["ticker"], "order": row["order"], "queried_at": payload["fetched_at"], "error": None, "updated": True, "cache": str(path.relative_to(information.ROOT))}
-                db.execute("INSERT OR REPLACE INTO history_2024h2_updates VALUES (?,?)", (row["ticker"], json.dumps(result)))
+                db.execute("INSERT OR REPLACE INTO history_2024_updates VALUES (?,?)", (row["ticker"], json.dumps(result)))
                 completed.add(row["ticker"])
                 imported += 1
             except (ValueError, KeyError, TypeError):
@@ -102,7 +106,7 @@ def main():
         pending = [row for row in rows if row["ticker"] not in completed]
         print(f"Reused {imported} same-listing European histories", flush=True)
     if args.retry_errors:
-        retry = {ticker for ticker, raw in db.execute("SELECT ticker,value FROM history_2024h2_updates") if not json.loads(raw).get("updated")}
+        retry = {ticker for ticker, raw in db.execute("SELECT ticker,value FROM history_2024_updates") if not json.loads(raw).get("updated")}
         retry.update(ticker for ticker, raw in history.execute("SELECT ticker,value FROM history") if len(json.loads(raw)["prices"]) < 2)
         completed = {row["ticker"] for row in rows if row["ticker"] not in retry}
         pending = [row for row in rows if row["ticker"] in retry]
@@ -125,7 +129,7 @@ def main():
             if yahoo_batch:
                 try:
                     now = datetime.now(timezone.utc)
-                    years = (now.date() - date(2024, 6, 20)).days / 365.25
+                    years = (now.date() - date(2023, 12, 20)).days / 365.25
                     requested_range = next((f"{size}y" for size in [2, 5, 10] if years <= size), "max")
                     params = {"symbols": ",".join(charts.yahoo_symbol(row["ticker"]) for row in batch), "range": requested_range, "interval": "1d"}
                     payload = information.fetch_json("https://query1.finance.yahoo.com/v7/finance/spark?" + urlencode(params))
@@ -140,7 +144,7 @@ def main():
                                 raise ValueError("Spark omitted the requested historical start; checking dated chart")
                             if requested_range != "2y":
                                 # Bound storage while retaining both the requested July 2024 start and two years.
-                                cutoff = min("2024-06-20", (now.date() - timedelta(days=732)).isoformat())
+                                cutoff = min("2023-12-20", (now.date() - timedelta(days=732)).isoformat())
                                 value["prices"] = [point for point in value["prices"] if point[0] >= cutoff]
                             value.update(source="Yahoo Finance daily chart (spark)", requested_range=requested_range, fetched_at=datetime.now(timezone.utc).isoformat())
                             values[row["ticker"]] = value
@@ -174,10 +178,10 @@ def main():
                             history.execute("UPDATE history SET value=? WHERE ticker=?", (json.dumps(stored, ensure_ascii=False), ticker))
                             history.commit()
                 result = {"ticker": ticker, "order": row["order"], "queried_at": datetime.now(timezone.utc).isoformat(), "error": errors.get(ticker), "updated": ticker in values}
-                db.execute("INSERT OR REPLACE INTO history_2024h2_updates VALUES (?,?)", (ticker, json.dumps(result, ensure_ascii=False)))
+                db.execute("INSERT OR REPLACE INTO history_2024_updates VALUES (?,?)", (ticker, json.dumps(result, ensure_ascii=False)))
                 db.commit(); completed.add(ticker)
             charts.write_json(information.AUDIT / "history-progress.json", {"requested_start": information.START, "total": len(rows), "checked": len(completed), "last": batch[-1],
-                "resume": "python scripts/refresh_stock_information_history.py", "source_errors": db.execute("SELECT count(*) FROM history_2024h2_updates WHERE json_extract(value,'$.updated')=0").fetchone()[0]})
+                "resume": resume, "source_errors": db.execute("SELECT count(*) FROM history_2024_updates WHERE json_extract(value,'$.updated')=0").fetchone()[0]})
             print(f"Daily histories {len(completed)}/{len(rows)} {batch[-1]['ticker']} errors={len(errors)}", flush=True)
     information.checkpoint(db, rows, history)
     charts.export_packs(history)

@@ -8,9 +8,19 @@
         "https://global.krx.co.kr/contents/GLB/05/0501/0501110000/GLB0501110000.jsp",
         "https://english.samsungpop.com/ux/kor/customer/notice/notice/noticeViewContent.do?MenuSeqNo=21198",
         "https://samsungpop.com/ux/kor/customer/notice/notice/noticeViewContent.do?MenuSeqNo=21325",
-        "https://www.ssfutures.com/ssf/customer/notice/CUS_01102.cmd?_PATH=Ad202_4214.shtm"
+        "https://www.ssfutures.com/ssf/customer/notice/CUS_01102.cmd?_PATH=Ad202_4214.shtm",
+        "https://www.customs.go.th/data_files/330e5f806988281febbcc62dac973da0.pdf"
       ],
       "dates": {
+        "2024-01-01": "신정",
+        "2024-02-09": "설 연휴",
+        "2024-02-12": "설 대체공휴일",
+        "2024-03-01": "삼일절",
+        "2024-04-10": "국회의원 선거일",
+        "2024-05-01": "근로자의 날",
+        "2024-05-06": "어린이날 대체공휴일",
+        "2024-05-15": "부처님오신날",
+        "2024-06-06": "현충일",
         "2024-08-15": "광복절",
         "2024-09-16": "추석 연휴",
         "2024-09-17": "추석",
@@ -24,8 +34,121 @@
     },
     {
       "market": "europe",
-      "source_urls": ["https://www.euronext.com/en/trading/trading-hours-holidays"],
-      "dates": {"2024-12-25": "성탄절", "2024-12-26": "박싱 데이"}
+      "source_urls": [
+        "https://www.euronext.com/en/trading/trading-hours-holidays",
+        "https://docs.londonstockexchange.com/sites/default/files/documents/turquoise-calendar-2024_1.pdf"
+      ],
+      "dates": {
+        "2024-01-01": "신정",
+        "2024-03-29": "성금요일",
+        "2024-04-01": "부활절 월요일",
+        "2024-12-25": "성탄절",
+        "2024-12-26": "박싱 데이"
+      }
+    },
+    {
+      "market": "japan",
+      "source_urls": [
+        "https://www8.cao.go.jp/chosei/shukujitsu/syukujitsu.csv",
+        "https://www.jpx.co.jp/english/corporate/about-jpx/calendar/"
+      ],
+      "dates": {
+        "2024-01-01": "元日",
+        "2024-01-02": "연시 거래소 휴장",
+        "2024-01-03": "연시 거래소 휴장",
+        "2024-01-08": "成人の日",
+        "2024-02-12": "休日",
+        "2024-02-23": "天皇誕生日",
+        "2024-03-20": "春分の日",
+        "2024-04-29": "昭和の日",
+        "2024-05-03": "憲法記念日",
+        "2024-05-06": "休日",
+        "2024-07-15": "海の日",
+        "2024-08-12": "休日",
+        "2024-09-16": "敬老の日",
+        "2024-09-23": "休日",
+        "2024-10-14": "スポーツの日",
+        "2024-11-04": "休日",
+        "2024-12-31": "연말 거래소 휴장"
+      }
+    },
+    {
+      "market": "china",
+      "source_urls": [
+        "https://english.sse.com.cn/start/trading/schedule/"
+      ],
+      "dates": {
+        "2024-01-01": "신정",
+        "2024-02-09": "춘절",
+        "2024-02-12": "춘절",
+        "2024-02-13": "춘절",
+        "2024-02-14": "춘절",
+        "2024-02-15": "춘절",
+        "2024-02-16": "춘절",
+        "2024-04-04": "청명절",
+        "2024-04-05": "청명절",
+        "2024-05-01": "노동절",
+        "2024-05-02": "노동절",
+        "2024-05-03": "노동절",
+        "2024-06-10": "단오절",
+        "2024-09-16": "중추절",
+        "2024-09-17": "중추절",
+        "2024-10-01": "국경절",
+        "2024-10-02": "국경절",
+        "2024-10-03": "국경절",
+        "2024-10-04": "국경절",
+        "2024-10-07": "국경절"
+      }
+    },
+    {
+      "market": "us",
+      "source_urls": [
+        "https://www.nasdaqtrader.com/content/technicalsupport/2024tradingcalendar.pdf"
+      ],
+      "dates": {
+        "2024-01-01": "신정",
+        "2024-01-15": "마틴 루서 킹 데이",
+        "2024-02-19": "대통령의 날",
+        "2024-03-29": "성금요일",
+        "2024-05-27": "메모리얼 데이",
+        "2024-06-19": "준틴스",
+        "2024-07-04": "독립기념일",
+        "2024-09-02": "노동절",
+        "2024-11-28": "추수감사절",
+        "2024-12-25": "성탄절"
+      }
+    },
+    {
+      "market": "taiwan",
+      "source_urls": [
+        "https://www.twse.com.tw/rwd/en/holidaySchedule/holidaySchedule?date=20240101&response=json",
+        "https://www.twse.com.tw/staticFiles/news/news/tsecnews/8a8216d6906d4d340190df8417010172.pdf",
+        "https://index-website-frontend-prd.cf.mif0286.eas.morningstar.com/api/docs/66a250715c5264418326fb6c",
+        "https://www.taifex.com.tw/enl/eng11/newsDetail.do?idx=8925&thetype=2",
+        "https://wwwc.twse.com.tw/staticFiles/news/news/tsecnews/8a8216d69236c2e30192dd523eb10329.pdf"
+      ],
+      "dates": {
+        "2024-01-01": "New Year",
+        "2024-02-06": "No Trading. Market opens only for Clearing & Settlement",
+        "2024-02-07": "No Trading. Market opens only for Clearing & Settlement",
+        "2024-02-08": "Adjusted Holiday/ Chinese New Year’s Eve",
+        "2024-02-09": "Chinese New Year’s Eve",
+        "2024-02-12": "Chinese New Year",
+        "2024-02-13": "Adjusted Holiday",
+        "2024-02-14": "Adjusted Holiday",
+        "2024-02-28": "Peace Memorial Day",
+        "2024-04-04": "Children’s Day",
+        "2024-04-05": "Tomb-sweeping Day",
+        "2024-05-01": "Labor Day",
+        "2024-06-10": "Dragon Boat Festival",
+        "2024-07-24": "태풍 GAEMI에 따른 휴장",
+        "2024-07-25": "태풍 GAEMI에 따른 휴장",
+        "2024-09-17": "Mid-autumn / Moon Festival",
+        "2024-10-02": "태풍 KRATHON에 따른 휴장",
+        "2024-10-03": "태풍 KRATHON에 따른 휴장",
+        "2024-10-10": "National Day",
+        "2024-10-31": "태풍 KONG-REY에 따른 휴장"
+      }
     }
   ]
 }

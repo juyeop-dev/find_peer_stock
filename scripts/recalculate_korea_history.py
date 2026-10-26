@@ -167,12 +167,19 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--source-dir", type=Path, default=ROOT / "data/tmp_korea_recalculation/source")
     parser.add_argument("--apply", action="store_true", help="Write validated replacements after backing up originals")
+    parser.add_argument("--start", help="Limit the migration to ISO dates on or after this date")
+    parser.add_argument("--end", help="Limit the migration to ISO dates on or before this date")
+    parser.add_argument("--audit-tag", default="2026-10-25", help="Name for this migration's independent audit and backup")
     args = parser.parse_args()
     cache = ROOT / "data/tmp_korea_recalculation/metrics"
     sector_paths = sorted((ROOT / "data/sectors/daily").glob("*.json.gz"))
     turnover_paths = sorted((ROOT / "data/turnover/reports/korea").rglob("*.json"))
     sectors = [(path, json.loads(gzip.decompress(path.read_bytes()))) for path in sector_paths]
     turnover = [(path, json.loads(path.read_text(encoding="utf-8"))) for path in turnover_paths]
+    if args.start or args.end:
+        selected = lambda item: (not args.start or item[1]["date"] >= args.start) and (not args.end or item[1]["date"] <= args.end)
+        sectors = [item for item in sectors if selected(item)]
+        turnover = [item for item in turnover if selected(item)]
     dates = {data["date"] for _, data in sectors + turnover}
     source_infos, found = extract_metrics(args.source_dir, cache, dates)
     latest = json.loads((ROOT / "data/sectors/index.json").read_text(encoding="utf-8"))
@@ -205,9 +212,11 @@ def main():
         audit["turnover"].append({"date": report["date"], "replaced": True, "new_constituents": changed,
             "previous_total": sum(e["turnover"] for e in report["entries"]), "total": sum(e["turnover"] for e in result["entries"])})
         changes.append((path, (json.dumps(result, ensure_ascii=False, indent=2, allow_nan=False) + "\n").encode()))
-    target = ROOT / "data/korea-history-recalculation/2026-10-25.json"
+    if not args.audit_tag or any(char not in "0123456789abcdefghijklmnopqrstuvwxyz-" for char in args.audit_tag):
+        parser.error("Invalid audit tag")
+    target = ROOT / "data/korea-history-recalculation" / f"{args.audit_tag}.json"
     if args.apply:
-        backup = ROOT / "data/tmp_korea_recalculation/originals-before-recalculation.zip"
+        backup = ROOT / "data/tmp_korea_recalculation" / f"originals-before-{args.audit_tag}.zip"
         if not backup.exists():
             with zipfile.ZipFile(backup, "w", zipfile.ZIP_DEFLATED) as archive:
                 for path, _ in sectors + turnover:

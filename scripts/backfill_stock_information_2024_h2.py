@@ -22,6 +22,10 @@ STATE = info.ROOT / "data/tmp_2024_h2"
 AUDIT = info.ROOT / "data/information-audit/2024-h2"
 START = "2024-07-01"
 END = "2024-12-31"
+TABLE = "financial_2024_h2_updates"
+COVERAGE_KEY = "historical_2024_h2_coverage"
+FETCHED_KEY = "historical_2024_h2_fetched_at"
+RESUME = "python -u scripts/backfill_stock_information_2024_h2.py collect"
 
 
 @cache
@@ -64,7 +68,7 @@ def fetch(row):
     symbol = resolve_yahoo(row)
     if symbol:
         params = {"type": ",".join(prefix + field for prefix in ("annual", "quarterly") for field in info.METRICS.values()),
-                  "period1": 1719792000, "period2": 1735689600}
+                  "period1": int(datetime.fromisoformat(START).replace(tzinfo=timezone.utc).timestamp()), "period2": 1735689600}
         try:
             payload = info.fetch_json(f"https://query1.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/{quote(symbol, safe='')}?{urlencode(params)}")
             statements = info.parse_yahoo_financials(payload, symbol, END)
@@ -98,16 +102,18 @@ def merge(previous, statements, checked_at):
         old = merged.get(key)
         if old and old.get("source") == statement.get("source"):
             merged[key] = {**old, **{k: v for k, v in statement.items() if v is not None}}
+        elif old and all(old.get(metric) is None or statement.get(metric) is not None for metric in info.METRICS) and sum(statement.get(metric) is not None for metric in info.METRICS) > sum(old.get(metric) is not None for metric in info.METRICS):
+            merged[key] = statement
         elif not old:
             merged[key] = statement
     result["financials"] = sorted(merged.values(), key=lambda s: (s["period_end"], s["type"], s["currency"]))
     dates = [s["period_end"] for s in result["financials"]]
     historical = [s for s in result["financials"] if START <= s["period_end"] <= END]
-    result.update(requested_start=START, historical_2024_h2_fetched_at=checked_at,
-                  historical_2024_h2_coverage={"start": START, "end": END, "periods": len(historical),
+    result.update({"requested_start": START, FETCHED_KEY: checked_at,
+                  COVERAGE_KEY: {"start": START, "end": END, "periods": len(historical),
                     "annual_periods": sum(s["type"] == "annual" for s in historical),
                     "quarterly_periods": sum(s["type"] == "quarterly" for s in historical),
-                    "note": "확인된 확정 실적만 표시합니다. 연간 실적은 해당 회계연도 전체이며, 미제공 분기는 추정하지 않습니다."})
+                    "note": "확인된 확정 실적만 표시합니다. 연간 실적은 해당 회계연도 전체이며, 미제공 분기는 추정하지 않습니다."}})
     result["financial_coverage"] = {**previous.get("financial_coverage", {}), "first_period": min(dates, default=None), "latest_period": max(dates, default=None)}
     return result
 
@@ -121,7 +127,7 @@ def fetch_with_current(row, scanner):
 
 
 def checkpoint(db, rows):
-    values = {ticker: json.loads(raw) for ticker, raw in db.execute("SELECT ticker,value FROM financial_2024_h2_updates")}
+    values = {ticker: json.loads(raw) for ticker, raw in db.execute(f"SELECT ticker,value FROM {TABLE}")}
     results = [{**row, **values.get(row["ticker"], {"status": "pending"})} for row in rows]
     charts.write_json(AUDIT / "financial-results.json", results)
     charts.write_json(AUDIT / "financial-progress.json", {
@@ -129,7 +135,7 @@ def checkpoint(db, rows):
         "pending": sum(r["status"] == "pending" for r in results), "counts": dict(Counter(r["status"] for r in results)),
         "last_checked": max((r for r in results if r["status"] != "pending"), key=lambda r: r["queried_at"], default=None),
         "next": next((r for r in results if r["status"] == "pending"), None),
-        "resume": "python -u scripts/backfill_stock_information_2024_h2.py collect",
+        "resume": RESUME,
         "queried_at": datetime.now(timezone.utc).isoformat()})
 
 
@@ -145,17 +151,17 @@ def main():
     if not 1 <= args.workers <= 12:
         parser.error("workers must be 1-12")
     db = info.open_database(STATE)
-    db.execute("CREATE TABLE IF NOT EXISTS financial_2024_h2_updates(ticker TEXT PRIMARY KEY,value TEXT NOT NULL)")
+    db.execute(f"CREATE TABLE IF NOT EXISTS {TABLE}(ticker TEXT PRIMARY KEY,value TEXT NOT NULL)")
     rows = charts.roster()
     if args.mode == "export":
         info.export(db)
         mappings = [json.loads(path.read_text(encoding="utf-8")) for path in sorted((STATE / "mappings").glob("*.json"))]
         charts.write_json(AUDIT / "listing-mappings.json", {"schema_version": 1, "start": START, "end": END, "listings": mappings})
     elif args.mode == "collect":
-        complete = {ticker for ticker, raw in db.execute("SELECT ticker,value FROM financial_2024_h2_updates") if not args.retry_errors or not json.loads(raw).get("errors")}
+        complete = {ticker for ticker, raw in db.execute(f"SELECT ticker,value FROM {TABLE}") if not args.retry_errors or not json.loads(raw).get("errors")}
         pending = [row for row in rows if row["ticker"] not in complete]
         if args.only_unavailable:
-            unavailable = {ticker for ticker, raw in db.execute("SELECT ticker,value FROM financial_2024_h2_updates") if json.loads(raw)["status"] == "unavailable"}
+            unavailable = {ticker for ticker, raw in db.execute(f"SELECT ticker,value FROM {TABLE}") if json.loads(raw)["status"] == "unavailable"}
             pending = [row for row in rows if row["ticker"] in unavailable]
         if args.market:
             pending = [row for row in pending if row["market"] == args.market]
@@ -185,13 +191,13 @@ def main():
                     else:
                         previous = json.loads(stored[0])
                     value = merge(previous, statements, checked_at)
-                    coverage = value["historical_2024_h2_coverage"]
+                    coverage = value[COVERAGE_KEY]
                     result = {"queried_at": checked_at, "status": "available" if coverage["periods"] else "unavailable", **coverage, "errors": errors}
                     db.execute("INSERT OR REPLACE INTO information VALUES (?,?)", (row["ticker"], json.dumps(value, ensure_ascii=False, separators=(",", ":"), allow_nan=False)))
-                    db.execute("INSERT OR REPLACE INTO financial_2024_h2_updates VALUES (?,?)", (row["ticker"], json.dumps(result, ensure_ascii=False)))
+                    db.execute(f"INSERT OR REPLACE INTO {TABLE} VALUES (?,?)", (row["ticker"], json.dumps(result, ensure_ascii=False)))
                     db.commit()
                 checkpoint(db, rows)
-                print(f"H2-2024 financials order={batch[-1]['order']}/{len(rows)} {batch[-1]['ticker']}", flush=True)
+                print(f"{START}..{END} financials order={batch[-1]['order']}/{len(rows)} {batch[-1]['ticker']}", flush=True)
     checkpoint(db, rows)
     db.close()
 

@@ -29,18 +29,23 @@ review_path = f'data/turnover/reviews/europe/{START}_to_{END}.json'
 CACHE = ROOT / 'data/tmp_tradingview_chart'
 universe_path = CACHE / 'universe.json'
 universe = json.loads(universe_path.read_text(encoding='utf-8'))
-reference = json.loads((ROOT / f'data/new-highs/reports/europe/{START}.json').read_text(encoding='utf-8'))
+references = sorted(path for path in (ROOT / 'data/new-highs/reports/europe').glob('*.json') if str(START) <= path.stem <= str(END))
+if not references:
+    raise ValueError('Collect verified European new-high source histories for the requested range first')
+reference = json.loads(references[0].read_text(encoding='utf-8'))
 reference_meta = reference['source_metadata']
 rows = universe['rows']
 assert len(rows) == reference_meta['scanned_symbols']
 assert not universe['excluded'], 'This recovery requires the complete verified universe'
 excluded = {item['symbol']: item for item in reference_meta['non_stock_exclusions']}
 assert all(item['type'] != 'stock' for item in excluded.values())
+unresolved = reference_meta.get('unresolved_listings', {})
+assert not unresolved or args.partial_history, 'Unresolved listings require an explicitly partial recovery'
 histories = {}
 manifest = {}
 for row in rows:
     symbol = row['symbol']
-    if symbol in excluded:
+    if symbol in excluded or symbol in unresolved:
         continue
     digest = hashlib.sha256(f'{symbol}:1D:{args.daily_bars}'.encode()).hexdigest()
     path = CACHE / '1D' / f'{digest}.json'
@@ -144,7 +149,7 @@ for session in sessions:
             'universe_provider': 'TradingView public scanner',
             'fetched_at': fetched_at, 'universe_fetched_at': universe['fetched_at'],
             'universe': reference_meta['universe'], 'scanned_symbols': len(rows),
-            'history_symbols': len(histories), 'unresolved_symbols': 0, 'coverage_ratio': sum(by_exchange.values()) / len(histories),
+            'history_symbols': len(histories), 'unresolved_symbols': len(unresolved), 'unresolved_listings': unresolved, 'coverage_ratio': sum(by_exchange.values()) / len(histories),
             'coverage_status': 'partial' if args.partial_history else 'verified', 'coverage_warning': coverage_warning,
             'non_stock_exclusions': list(excluded.values()),
             'session_symbols': sum(by_exchange.values()), 'session_symbols_by_exchange': dict(by_exchange),

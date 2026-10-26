@@ -8,8 +8,8 @@ import { SectorCalendar } from "../components/SectorCalendar";
 import { usePollingData } from "../dataClient/usePollingData";
 import { formatDateTime } from "../dataClient/formatters";
 import { formatPercent } from "../dataClient/semiconductorMath";
-import { SECTOR_PERIODS, sectorIcon, sectorLabel, sectorMoney, sectorRankings, sortSectors } from "../dataClient/sectorRankings";
-import type { SectorLevel, SectorPeriod, SectorSort, SectorStock, SectorWeighting } from "../dataClient/sectorRankings";
+import { SECTOR_PERIODS, sectorIcon, sectorLabel, sectorMoney, sectorRankings, sortSectors, sortSectorMembers } from "../dataClient/sectorRankings";
+import type { SectorLevel, SectorPeriod, SectorSort, SectorStock, SectorWeighting, SectorMemberSort } from "../dataClient/sectorRankings";
 import "../styles/sectorRankings.css";
 
 const tone = (value: number | null) => value === null || value === 0 ? "" : value > 0 ? "semiUp" : "semiDown";
@@ -28,6 +28,7 @@ export function SectorRankingsPage() {
   const selected = params.get("selected") ?? "";
   const search = params.get("q") ?? "";
   const [sort, setSort] = useState<{ key: SectorSort; direction: "asc" | "desc" }>({ key: "turnover", direction: "desc" });
+  const [memberSort, setMemberSort] = useState<{key: SectorMemberSort; direction: "asc" | "desc"}>({key: "return", direction: "desc"});
   function change(key: string, value: string) {
     const next = new URLSearchParams(params);
     value ? next.set(key, value) : next.delete(key);
@@ -37,10 +38,7 @@ export function SectorRankingsPage() {
   const groups = useMemo(() => data ? sectorRankings(data, level, period, board, weighting) : [], [data, level, period, board, weighting]);
   const ranked = useMemo(() => sortSectors(groups.filter(group => !search.trim() || `${group.name} ${group.key} ${group.members.map(stock => `${stock.name} ${stock.code}`).join(" ")}`.toLocaleLowerCase().includes(search.trim().toLocaleLowerCase())), sort.key, sort.direction), [groups, search, sort]);
   const active = ranked.find(group => group.key === selected);
-  const members = useMemo(() => [...(active?.members ?? [])].sort((a, b) => {
-    const x = a.returns[period], y = b.returns[period];
-    return x === null ? y === null ? a.ticker.localeCompare(b.ticker) : 1 : y === null ? -1 : y - x || (b.turnover ?? -1) - (a.turnover ?? -1) || a.ticker.localeCompare(b.ticker);
-  }), [active, period]);
+  const members = useMemo(() => sortSectorMembers(active?.members ?? [], memberSort.key, memberSort.direction, period), [active, period, memberSort]);
   const periodLabel = SECTOR_PERIODS.find(item => item.key === period)!.label;
   const latestStocks = data?.stocks.filter(stock => stock.date === data.date && (!board || stock.exchange === board)) ?? [];
   const returnTo = `/sectors${params.size ? `?${params}` : ""}`;
@@ -56,9 +54,13 @@ export function SectorRankingsPage() {
         {label}<span aria-hidden="true">{active ? sort.direction === "desc" ? "↓" : "↑" : "↕"}</span>
       </button></th>;
   }
-  const memberSection = active ? <section id="sector-constituents" className="sectorConstituents" aria-label={`${active.name} 구성 종목`}><div className="semiPanelHeading semiHeadingSplit"><div><p className="eyebrow">{sectorLabel(active.sector)}</p><h2>{active.name} 구성 종목</h2><p>전체 {members.length}개 · {periodLabel} 등락률순 · 종목을 선택하면 주가·실적 상세 화면으로 이동합니다.</p></div><div className="sectorMemberActions"><strong className={`sectorSelectedReturn ${tone(active.value)}`}>{formatPercent(active.value)}</strong><button type="button" className="semiTextButton" onClick={() => change("selected", "")}>종목 목록 접기</button></div></div>
+  function memberHeading(key: SectorMemberSort, label: string) {
+    const active = memberSort.key === key;
+    return <th scope="col" className={["name", "exchange", "basis"].includes(key) ? "" : "semiNumber"} aria-sort={active ? memberSort.direction === "asc" ? "ascending" : "descending" : "none"}><button className={`semiSortButton ${active ? "active" : ""}`} onClick={() => setMemberSort({key, direction: active && memberSort.direction === "desc" ? "asc" : "desc"})}>{label}<span aria-hidden="true">{active ? memberSort.direction === "asc" ? "↑" : "↓" : "↕"}</span></button></th>;
+  }
+  const memberSection = active ? <section id="sector-constituents" className="sectorConstituents" aria-label={`${active.name} 구성 종목`}><div className="semiPanelHeading semiHeadingSplit"><div><p className="eyebrow">{sectorLabel(active.sector)}</p><h2>{active.name} 구성 종목</h2><p>전체 {members.length}개 · 열 제목을 클릭하면 오름차순·내림차순으로 정렬합니다. 종목을 선택하면 주가·실적 상세 화면으로 이동합니다.</p></div><div className="sectorMemberActions"><strong className={`sectorSelectedReturn ${tone(active.value)}`}>{formatPercent(active.value)}</strong><button type="button" className="semiTextButton" onClick={() => change("selected", "")}>종목 목록 접기</button></div></div>
         <p className="semiFootnote">{weightingLabel} · 단순 평균 {formatPercent(active.equalValue)}.{active.members.some(stock => stock.industry === "Refining & Holdings") ? " 정유 지주는 회사 전체 시가총액을 반영하며 정유 사업만의 가치가 아닙니다." : ""}</p>
-        <div className="semiTableWrap"><table className="semiTable sectorMemberTable"><thead><tr><th scope="col">종목</th><th scope="col">시장</th><th scope="col" className="semiNumber">최근 가격</th><th scope="col" className="semiNumber">{periodLabel} 등락률</th><th scope="col" className="semiNumber">거래대금</th><th scope="col" className="semiNumber">시가총액</th><th scope="col">분류 근거</th></tr></thead><tbody>{members.map(stock => <tr key={stock.ticker}><th scope="row"><Link className="semiStockLink" to={stockLink(stock)}><strong>{stock.name}</strong><span>{stock.code}</span></Link></th><td>{stock.exchange}</td><td className="semiNumber">{stock.price.toLocaleString("ko-KR")}원</td><td className={`semiNumber ${tone(stock.returns[period])}`}>{formatPercent(stock.returns[period])}</td><td className="semiNumber">{sectorMoney(stock.turnover)}</td><td className="semiNumber">{sectorMoney(stock.market_cap)}</td><td>{stock.classificationUrl ? <a href={stock.classificationUrl} target="_blank" rel="noreferrer">{stock.classificationNote} ↗</a> : "TradingView"}</td></tr>)}</tbody></table></div>
+        <div className="semiTableWrap"><table className="semiTable sectorMemberTable"><thead><tr>{memberHeading("name", "종목")}{memberHeading("exchange", "시장")}{memberHeading("price", "최근 가격")}{memberHeading("return", `${periodLabel} 등락률`)}{memberHeading("turnover", "거래대금")}{memberHeading("marketCap", "시가총액")}{memberHeading("basis", "분류 근거")}</tr></thead><tbody>{members.map(stock => <tr key={stock.ticker}><th scope="row"><Link className="semiStockLink" to={stockLink(stock)}><strong>{stock.name}</strong><span>{stock.code}</span></Link></th><td>{stock.exchange}</td><td className="semiNumber">{stock.price.toLocaleString("ko-KR")}원</td><td className={`semiNumber ${tone(stock.returns[period])}`}>{formatPercent(stock.returns[period])}</td><td className="semiNumber">{sectorMoney(stock.turnover)}</td><td className="semiNumber">{sectorMoney(stock.market_cap)}</td><td>{stock.classificationUrl ? <a href={stock.classificationUrl} target="_blank" rel="noreferrer">{stock.classificationNote} ↗</a> : "TradingView"}</td></tr>)}</tbody></table></div>
       </section> : null;
   return <main className="pageShell semiPage sectorRankingsPage">
     <header className="sectorHero"><div><p className="eyebrow">SECTOR RANKING</p><h1>국내 섹터 상승률</h1><p>어느 업종이 오르고, 어디에 거래가 모이는지 한눈에 비교하세요.</p></div><Link className="semiTextButton" to="/semiconductors/trends">반도체 세부 섹터 추이 ↗</Link></header>

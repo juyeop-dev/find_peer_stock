@@ -41,6 +41,10 @@ body:has(.semiPage) { min-width: 320px; background: #f3f6f8; }
 .semiTable .semiClass { display: block; white-space: nowrap; }
 .semiTable td small { display: block; color: #82929b; font-size: 11px; }
 .semiNumber { text-align: right !important; white-space: nowrap; font-variant-numeric: tabular-nums; font-weight: 680; }
+.stockMetricTable { table-layout: fixed; min-width: 720px; margin: 16px 0 24px; }
+.stockMetricTable :is(th, td) { width: calc(100% / 6); padding: 14px 16px; }
+.stockMetricTable th small { display: block; margin-top: 4px; font-size: 11px; font-weight: 500; color: #748994; }
+.stockMetricTable td { font-size: 18px; line-height: 1.5; color: #183e50; background: #fbfdfe; }
 .semiSortButton { display: inline-flex; align-items: center; justify-content: flex-end; gap: 5px; width: 100%; padding: 2px 0; border: 0; background: transparent; color: inherit; cursor: pointer; font-weight: inherit; white-space: nowrap; }
 .semiSortButton:hover, .semiSortButton.active { color: #145b72; }
 .semiSortButton span { width: 12px; color: #7d96a0; text-align: center; }

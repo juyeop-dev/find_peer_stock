@@ -1,0 +1,17 @@
+.sectorUniverseSelector { display: flex; align-items: end; gap: 18px; padding-top: 24px; }
+.sectorUniverseSelector label { display: flex; flex-direction: column; gap: 7px; font-size: 13px; font-weight: 700; color: #415e6f; }
+.sectorUniverseSelector select { min-width: 240px; max-width: 100%; padding: 11px; border: 1px solid #cbd7dc; border-radius: 8px; color: #183e50; background: white; font: inherit; }
+.sectorUniverseSelector p { flex: 1; color: #627c8b; font-size: 13px; }
+.sectorUniverseSelector > a { margin-bottom: 10px; white-space: nowrap; }
+.sectorExplorerGroups .selected { background: #edf7fa; }
+.sectorExplorerGroups th[scope="row"], .sectorExplorerMembers th[scope="row"] { color: #1b3d4e; background: transparent; }
+.domesticSectorExplorer .semiTableWrap { max-width: 100%; }
+.domesticSectorExplorer .semiTable { min-width: 900px; }
+.sectorExplorerChart .semiChart { min-width: 0; }
+@media (max-width: 720px) {
+  .sectorUniverseSelector { flex-wrap: wrap; align-items: start; gap: 10px; }
+  .sectorUniverseSelector label { width: 100%; }
+  .sectorUniverseSelector select { min-width: 0; width: 100%; }
+  .sectorUniverseSelector p { flex-basis: 100%; margin: 0; }
+  .sectorUniverseSelector > a { margin: 0; }
+}

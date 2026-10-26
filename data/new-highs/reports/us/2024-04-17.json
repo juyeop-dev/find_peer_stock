@@ -1,0 +1,314 @@
+{
+  "schema_version": 1,
+  "market": "us",
+  "date": "2024-04-17",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "AIRI",
+      "name": "Air Industries Group",
+      "exchange": "AMEX",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Aerospace & Defense",
+      "description": "Air Industries Group · Aerospace & Defense",
+      "change_pct": 8.365010669910845,
+      "session_open": 5.300000190734863,
+      "session_close": 5.699999809265137,
+      "session_volume": 38300.0,
+      "currency": "USD",
+      "source_symbol": "AMEX:AIRI",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/AIRI/history/",
+        "date": "2024-04-17",
+        "daily_high": 5.800000190734863,
+        "prior_all_time_or_current_month_high": 41250000.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "AIRI"
+      }
+    },
+    {
+      "ticker": "AMS",
+      "name": "American Shared Hospital Services",
+      "exchange": "AMEX",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "업종: Finance · Finance/Rental/Leasing",
+      "description": "American Shared Hospital Services · Finance/Rental/Leasing",
+      "change_pct": 1.3559308883548837,
+      "session_open": 2.9700000286102295,
+      "session_close": 2.990000009536743,
+      "session_volume": 22700.0,
+      "currency": "USD",
+      "source_symbol": "AMEX:AMS",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/AMS/history/",
+        "date": "2024-04-17",
+        "daily_high": 3.0,
+        "prior_all_time_or_current_month_high": 12.125,
+        "passes_close_filter": true,
+        "yahoo_symbol": "AMS"
+      }
+    },
+    {
+      "ticker": "FTLF",
+      "name": "FitLife Brands, Inc.",
+      "exchange": "NASDAQ",
+      "category": "Health Technology",
+      "high_type": "all_time",
+      "reason": "업종: Health Technology · Pharmaceuticals: Other",
+      "description": "FitLife Brands, Inc. · Pharmaceuticals: Other",
+      "change_pct": 3.4603276826214557,
+      "session_open": 14.34000015258789,
+      "session_close": 14.800000190734863,
+      "session_volume": 29400.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:FTLF",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/FTLF/history/",
+        "date": "2024-04-17",
+        "daily_high": 14.885000228881836,
+        "prior_all_time_or_current_month_high": 14.885000228881836,
+        "passes_close_filter": true,
+        "yahoo_symbol": "FTLF"
+      }
+    },
+    {
+      "ticker": "GMHS",
+      "name": "Gamehaus Holdings Inc. Class A",
+      "exchange": "NASDAQ",
+      "category": "Technology Services",
+      "high_type": "all_time",
+      "reason": "업종: Technology Services · Packaged Software",
+      "description": "Gamehaus Holdings Inc. Class A · Packaged Software",
+      "change_pct": 0.1872612688940123,
+      "session_open": 10.699999809265137,
+      "session_close": 10.699999809265137,
+      "session_volume": 500.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:GMHS",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/GMHS/history/",
+        "date": "2024-04-17",
+        "daily_high": 10.699999809265137,
+        "prior_all_time_or_current_month_high": 10.699999809265137,
+        "passes_close_filter": true,
+        "yahoo_symbol": "GMHS"
+      }
+    },
+    {
+      "ticker": "LE",
+      "name": "Lands' End, Inc.",
+      "exchange": "NASDAQ",
+      "category": "Retail Trade",
+      "high_type": "52_week",
+      "reason": "업종: Retail Trade · Apparel/Footwear Retail",
+      "description": "Lands' End, Inc. · Apparel/Footwear Retail",
+      "change_pct": 1.3017748273774332,
+      "session_open": 12.8100004196167,
+      "session_close": 12.84000015258789,
+      "session_volume": 123800.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:LE",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/LE/history/",
+        "date": "2024-04-17",
+        "daily_high": 13.109999656677246,
+        "prior_all_time_or_current_month_high": 56.25,
+        "passes_close_filter": true,
+        "yahoo_symbol": "LE"
+      }
+    },
+    {
+      "ticker": "RANI",
+      "name": "Rani Therapeutics Holdings, Inc. Class A",
+      "exchange": "NASDAQ",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Biotechnology",
+      "description": "Rani Therapeutics Holdings, Inc. Class A · Biotechnology",
+      "change_pct": 14.264920457036268,
+      "session_open": 7.599999904632568,
+      "session_close": 7.849999904632568,
+      "session_volume": 1403900.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:RANI",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/RANI/history/",
+        "date": "2024-04-17",
+        "daily_high": 8.75,
+        "prior_all_time_or_current_month_high": 36.27000045776367,
+        "passes_close_filter": true,
+        "yahoo_symbol": "RANI"
+      }
+    },
+    {
+      "ticker": "RCAT",
+      "name": "Red Cat Holdings Inc",
+      "exchange": "NASDAQ",
+      "category": "Technology Services",
+      "high_type": "52_week",
+      "reason": "업종: Technology Services · Packaged Software",
+      "description": "Red Cat Holdings Inc · Packaged Software",
+      "change_pct": 26.785709914200172,
+      "session_open": 1.149999976158142,
+      "session_close": 1.4199999570846558,
+      "session_volume": 3890100.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:RCAT",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/RCAT/history/",
+        "date": "2024-04-17",
+        "daily_high": 1.5,
+        "prior_all_time_or_current_month_high": 178200000000000.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "RCAT"
+      }
+    },
+    {
+      "ticker": "SUPX",
+      "name": "SuperX AI Technology Limited",
+      "exchange": "NASDAQ",
+      "category": "Commercial Services",
+      "high_type": "all_time",
+      "reason": "업종: Commercial Services · Miscellaneous Commercial Services",
+      "description": "SuperX AI Technology Limited · Miscellaneous Commercial Services",
+      "change_pct": 0.0,
+      "session_open": 4.0,
+      "session_close": 4.059999942779541,
+      "session_volume": 2234700.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:SUPX",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/SUPX/history/",
+        "date": "2024-04-17",
+        "daily_high": 4.199999809265137,
+        "prior_all_time_or_current_month_high": 4.199999809265137,
+        "passes_close_filter": true,
+        "yahoo_symbol": "SUPX"
+      }
+    },
+    {
+      "ticker": "TOYO",
+      "name": "TOYO Co., Ltd",
+      "exchange": "NASDAQ",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Semiconductors",
+      "description": "TOYO Co., Ltd · Semiconductors",
+      "change_pct": 0.1777818467882053,
+      "session_open": 11.270000457763672,
+      "session_close": 11.270000457763672,
+      "session_volume": 215300.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:TOYO",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/TOYO/history/",
+        "date": "2024-04-17",
+        "daily_high": 11.270000457763672,
+        "prior_all_time_or_current_month_high": 11.270000457763672,
+        "passes_close_filter": true,
+        "yahoo_symbol": "TOYO"
+      }
+    },
+    {
+      "ticker": "TSSI",
+      "name": "TSS, Inc.",
+      "exchange": "NASDAQ",
+      "category": "Technology Services",
+      "high_type": "52_week",
+      "reason": "업종: Technology Services · Information Technology Services",
+      "description": "TSS, Inc. · Information Technology Services",
+      "change_pct": 14.999995032946467,
+      "session_open": 0.6000000238418579,
+      "session_close": 0.6899999976158142,
+      "session_volume": 140700.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:TSSI",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/TSSI/history/",
+        "date": "2024-04-17",
+        "daily_high": 0.75,
+        "prior_all_time_or_current_month_high": 7.25,
+        "passes_close_filter": true,
+        "yahoo_symbol": "TSSI"
+      }
+    },
+    {
+      "ticker": "CHMI/PB",
+      "name": "Cherry Hill Mortgage Investment Corp. Cum Conv Red Pfd Registered Shs Series B",
+      "exchange": "NYSE",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "업종: Finance · Real Estate Investment Trusts",
+      "description": "Cherry Hill Mortgage Investment Corp. Cum Conv Red Pfd Registered Shs Series B · Real Estate Investment Trusts",
+      "change_pct": 0.12205324141019158,
+      "session_open": 24.579999923706055,
+      "session_close": 24.610000610351562,
+      "session_volume": 10481.0,
+      "currency": "USD",
+      "source_symbol": "NYSE:CHMI/PB",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/CHMI-PB/history/",
+        "date": "2024-04-17",
+        "daily_high": 24.75,
+        "prior_all_time_or_current_month_high": 26.950000762939453,
+        "passes_close_filter": true,
+        "yahoo_symbol": "CHMI-PB"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-10-26T12:36:04.699545+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 5714,
+    "history_symbols": 4743,
+    "inactive_symbols": 19,
+    "failed_symbols": 952,
+    "coverage_ratio": 0.8328358208955224,
+    "coverage_by_exchange": {
+      "NASDAQ": {
+        "covered": 2646,
+        "total": 3330
+      },
+      "NYSE": {
+        "covered": 1889,
+        "total": 2105
+      },
+      "AMEX": {
+        "covered": 208,
+        "total": 260
+      }
+    },
+    "session_symbols": 4689,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-10-26T12:36:04.699545+00:00"
+}

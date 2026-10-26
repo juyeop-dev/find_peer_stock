@@ -42,7 +42,7 @@ export function MarketStockPage() {
   const contextValid = validDate(date) && Object.hasOwn(MARKET_CURRENCIES, market) && (source !== "sectors" || market === "korea");
   const fallback = `/${source}?${new URLSearchParams({ market, date })}`;
   const back = calendarReturnLink(params.get("returnTo"), contextValid ? fallback : `/${source}`);
-  const sourceLabel = source === "sectors" ? "섹터 상승률" : source === "new-highs" ? "신고가 캘린더" : "거래대금 캘린더";
+  const sourceLabel = source === "sectors" ? back.startsWith("/sector-stocks") ? "섹터별 종목" : back.startsWith("/sector-trends") ? "섹터별 추이" : "섹터 상승률" : source === "new-highs" ? "신고가 캘린더" : "거래대금 캘린더";
   const loadStock = useCallback(async (signal: AbortSignal, fromSource = false) => {
     const report = source === "sectors" ? { market: "korea", date, entries: [await getSectorStock(ticker, signal, date)] } : source === "new-highs" ? await getNewHighReport(market, date, signal) : await getTurnoverReport(market, date, signal);
     if (report.market !== market || report.date !== date) throw new Error("선택한 날짜의 기록과 일치하지 않습니다.");
