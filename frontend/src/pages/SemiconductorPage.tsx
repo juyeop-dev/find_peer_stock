@@ -41,8 +41,8 @@ export function SemiconductorPage() {
   const [query, setQuery] = useState("");
   const [date, setDate] = useState("latest");
   const [period, setPeriod] = useState<Period>(30);
-  const [sortKey, setSortKey] = useState<SortKey>("name");
-  const [sortDirection, setSortDirection] = useState<SortDirection>("asc");
+  const [sortKey, setSortKey] = useState<SortKey>("marketCap");
+  const [sortDirection, setSortDirection] = useState<SortDirection>("desc");
   const stocks = data?.stocks ?? [];
   const categories = data?.categories ?? stocks.flatMap(stockClassifications);
   const majors = [...new Set(categories.map((item) => item.major))];

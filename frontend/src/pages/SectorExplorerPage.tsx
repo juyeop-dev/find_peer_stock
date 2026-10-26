@@ -58,7 +58,7 @@ function DomesticSectorExplorer({mode, sector, data, error, loading, refreshing,
   const level: SectorLevel = params.get("level") === "sector" ? "sector" : "industry";
   const period: SectorPeriod = SECTOR_PERIODS.some(value => value.key === params.get("period")) ? params.get("period") as SectorPeriod : "month";
   const label = SECTOR_PERIODS.find(value => value.key === period)!.label;
-  const [memberSort, setMemberSort] = useState<{key: SectorMemberSort; direction: "asc" | "desc"}>({key: "return", direction: "desc"});
+  const [memberSort, setMemberSort] = useState<{key: SectorMemberSort; direction: "asc" | "desc"}>({key: mode === "stocks" ? "marketCap" : "return", direction: "desc"});
   const [groupSort, setGroupSort] = useState<{key: SectorSort; direction: "asc" | "desc"}>({key: "return", direction: "desc"});
   const stocks = useMemo(() => (data?.stocks ?? []).map(classifiedSectorStock).filter(stock => stock.date === data?.date && (sector === "all" || stock.sector === sector) && (!board || stock.exchange === board)), [data, sector, board]);
   const industries = useMemo(() => [...new Set(stocks.map(stock => stock.industry))].sort((a,b) => sectorLabel(a).localeCompare(sectorLabel(b), "ko")), [stocks]);
