@@ -187,6 +187,22 @@ jobs:
       - name: Copy SPA fallback
         run: cp frontend/dist/index.html frontend/dist/404.html
 
+      - name: Test Korean IME search in Chromium
+        working-directory: frontend
+        env:
+          BROWSER_PATH: /usr/bin/google-chrome
+          VITE_BASE_PATH: /${{ github.event.repository.name }}/
+          STOCK_SITE_BASE_URL: http://127.0.0.1:4174/${{ github.event.repository.name }}
+        run: |
+          npm run preview -- --host 127.0.0.1 --port 4174 --strictPort > "$RUNNER_TEMP/ime-preview.log" 2>&1 &
+          preview_pid=$!
+          trap 'kill "$preview_pid" 2>/dev/null || true' EXIT
+          for attempt in $(seq 1 20); do
+            if curl --silent --fail "$STOCK_SITE_BASE_URL/" > /dev/null; then break; fi
+            sleep 1
+          done
+          npm run test:korean-search:browser
+
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v4
         with:
