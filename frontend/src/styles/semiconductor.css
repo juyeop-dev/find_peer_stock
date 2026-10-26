@@ -41,6 +41,11 @@ body:has(.semiPage) { min-width: 320px; background: #f3f6f8; }
 .semiTable .semiClass { display: block; white-space: nowrap; }
 .semiTable td small { display: block; color: #82929b; font-size: 11px; }
 .semiNumber { text-align: right !important; white-space: nowrap; font-variant-numeric: tabular-nums; font-weight: 680; }
+.priceWithChange { display: inline-flex; align-items: center; justify-content: flex-end; gap: 8px; white-space: nowrap; }
+.priceDayChange { display: inline-flex; align-items: center; gap: 5px; padding: 3px 6px; border-radius: 4px; background: #f0f4f6; color: #607681; font-size: 12px; }
+.priceDayChange.semiUp { background: #fff0ed; }
+.priceDayChange.semiDown { background: #edf4ff; }
+.priceDayLabel { font-size: 10px; font-weight: 500; }
 .stockMetricTable { table-layout: fixed; min-width: 720px; margin: 16px 0 24px; }
 .stockMetricTable :is(th, td) { width: calc(100% / 6); padding: 14px 16px; }
 .stockMetricTable th small { display: block; margin-top: 4px; font-size: 11px; font-weight: 500; color: #748994; }

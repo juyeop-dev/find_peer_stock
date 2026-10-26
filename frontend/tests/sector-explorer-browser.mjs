@@ -39,6 +39,15 @@ try {
   const navigate=route=>send("Page.navigate",{url:base+route});
   const click=selector=>evaluate(`document.querySelector(${JSON.stringify(selector)}).click()`);
   const codes=selector=>evaluate(`[...document.querySelectorAll('${selector} .semiStockLink span')].map(node=>node.innerText)`);
+  const checkPriceChanges = async selector => {
+    const rows=await evaluate(`[...document.querySelectorAll('${selector} tbody tr')].map(row=>({code:row.querySelector('.semiStockLink span').innerText,change:row.querySelector('.priceDayChange').innerText.replace(/\\s+/g,''),price:row.querySelector('.stockPriceValue').innerText}))`);
+    for(const row of rows) {
+      const stock=finance.find(stock=>stock.code===row.code);
+      const value=stock.change_pct;
+      assert.equal(row.change,`당일${value==null?'—':`${value>0?'+':''}${value.toFixed(2)}%`}`);
+      assert.equal(Number(row.price.replace(/[^0-9.]/g,'')),Math.round(stock.price));
+    }
+  };
   await send("Runtime.enable");await send("Network.enable");
   await navigate("/semiconductors");
   await until(()=>evaluate("document.querySelectorAll('[aria-label=\"탐색할 섹터\"] option').length>15 && document.querySelectorAll('.semiStockPriceTable tbody tr').length>100"),"Legacy semiconductor classifications missing");
@@ -47,6 +56,7 @@ try {
   assert.equal(await evaluate("new URL(location.href).searchParams.get('sector')"),"Finance");
   const expected=finance.map(stock=>stock.code).sort();
   assert.deepEqual((await codes(".sectorExplorerMembers")).sort(),expected);
+  await checkPriceChanges(".sectorExplorerMembers");
   for(const [column,key] of [[1,"name"],[3,"exchange"],[4,"price"],[5,"return"],[6,"turnover"],[7,"marketCap"]]) {
     for(let pass=0;pass<2;pass++) {
       await click(`.sectorExplorerMembers thead th:nth-child(${column}) button`);
@@ -73,6 +83,7 @@ try {
   await navigate(`/sector-trends?${new URLSearchParams({sector:"Finance",group:"Finance\tMajor Banks"})}`);
   await until(()=>evaluate("Boolean(document.querySelector('.sectorExplorerChart .semiChart .semiLine'))"),"Non-semiconductor daily trend missing");
   assert.ok(await evaluate("document.querySelector('.sectorExplorerChart h2').innerText.includes('은행')"));
+  await checkPriceChanges(".sectorExplorerMembers");
   await evaluate("[...document.querySelectorAll('.sectorExplorerChart .semiPeriodTabs button')].find(button=>button.innerText==='1년').click()");
   await until(()=>evaluate("document.querySelector('.sectorExplorerChart .semiPeriodTabs .active')?.innerText==='1년' && Boolean(document.querySelector('.sectorExplorerChart .semiLine'))"),"Year trend unavailable");
   const before=statuses.length;
@@ -87,6 +98,7 @@ try {
   await until(()=>evaluate("Boolean(document.querySelector('.semiTrendTable')) && document.querySelector('[aria-label=\"탐색할 섹터\"]')?.value==='semiconductors'"),"Original semiconductor trends unavailable");
   await navigate("/sectors?level=sector&selected=Finance");
   await until(()=>evaluate(`document.querySelectorAll('.sectorMemberTable tbody tr').length===${finance.length}`),"Sector ranking members unavailable");
+  await checkPriceChanges(".sectorMemberTable");
   for(const [index,key] of [[1,"name"],[2,"exchange"],[3,"price"],[4,"return"],[5,"turnover"],[6,"marketCap"],[7,"basis"]]) {
     for(let pass=0;pass<2;pass++) {
       await click(`.sectorMemberTable thead th:nth-child(${index}) button`);

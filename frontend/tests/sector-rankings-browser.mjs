@@ -84,7 +84,7 @@ try {
   }
   await evaluate("document.querySelector('.sectorNameButton').click()");
   await until(()=>evaluate("Boolean(document.querySelector('.sectorExpansionRow .sectorMemberTable'))"),'Inline sector members did not expand');
-  const expanded=await evaluate("(()=>{const row=document.querySelector('.sectorRankingTable tr.selected');return {key:row.dataset.sector,inline:row.nextElementSibling.classList.contains('sectorExpansionRow'),count:document.querySelectorAll('.sectorMemberTable tbody tr').length,code:document.querySelector('.sectorMemberTable .semiStockLink span').innerText,price:document.querySelector('.sectorMemberTable tbody tr').children[2].innerText};})()");
+  const expanded=await evaluate("(()=>{const row=document.querySelector('.sectorRankingTable tr.selected');return {key:row.dataset.sector,inline:row.nextElementSibling.classList.contains('sectorExpansionRow'),count:document.querySelectorAll('.sectorMemberTable tbody tr').length,code:document.querySelector('.sectorMemberTable .semiStockLink span').innerText,price:document.querySelector('.sectorMemberTable tbody tr .stockPriceValue').innerText};})()");
   const [parent,industry]=expanded.key.split('\t');
   const expectedMembers=sourceSnapshot.stocks.map(classifiedSectorStock).filter(stock=>stock.date===historic.date&&stock.sector===parent&&stock.industry===industry);
   assert.equal(expanded.inline,true);assert.equal(expanded.count,expectedMembers.length);

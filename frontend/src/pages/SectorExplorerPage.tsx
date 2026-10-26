@@ -5,9 +5,10 @@ import { DataRefreshStatus } from "../components/DataRefreshStatus";
 import { ErrorNotice } from "../components/ErrorNotice";
 import { LoadingSpinner } from "../components/LoadingSpinner";
 import { SemiconductorLineChart } from "../components/SemiconductorLineChart";
+import { PriceWithChange } from "../components/PriceWithChange";
 import { getSectorData } from "../dataClient/sectorDataClient";
 import { usePollingData } from "../dataClient/usePollingData";
-import { formatPercent, formatWon } from "../dataClient/semiconductorMath";
+import { formatPercent } from "../dataClient/semiconductorMath";
 import { SECTOR_PERIODS, classifiedSectorStock, sectorLabel, sectorMoney, sectorRankings, sortSectorMembers, sortSectors } from "../dataClient/sectorRankings";
 import type { SectorLevel, SectorMemberSort, SectorPeriod, SectorSnapshot, SectorSort, SectorStock } from "../dataClient/sectorRankings";
 import { loadSectorHistories, sectorHistorySeries } from "../dataClient/sectorExplorer";
@@ -112,7 +113,7 @@ function DomesticSectorExplorer({mode, sector, data, error, loading, refreshing,
         <p className="semiFootnote">현재 구성 종목 중 시작일 이전 가격과 {data.date} 종가가 모두 확인된 종목만 기간 전체에 동일 비중으로 반영합니다. 신규 상장·이력 부족 종목은 제외합니다. 차트 비교 기간은 1주 7일·1개월 30일·3개월 90일·1년 달력 기준이며, 제공처의 기간 수익률과 다를 수 있습니다.</p>
       </section>}
       <section className="semiPanel"><div className="semiPanelHeading semiHeadingSplit"><div><h2>{mode === "trends" ? `${active?.name ?? "선택 섹터"} 구성 종목` : "종목별 가격"}</h2><p>{members.length}개 종목 · {data.date} 기준 · 종목을 선택하면 주가·실적 상세 정보를 확인합니다.</p></div>{mode === "stocks" && periodTabs}</div>
-        <div className="semiTableWrap"><table className="semiTable sectorExplorerMembers"><thead><tr>{memberHeading("name", "종목")}<th scope="col">섹터 · 업종</th>{memberHeading("exchange", "시장")}{memberHeading("price", "최근 가격")}{memberHeading("return", `${label} 수익률`)}{memberHeading("turnover", "거래대금")}{memberHeading("marketCap", "시가총액")}</tr></thead><tbody>{members.map(stock => <tr key={stock.ticker}><th scope="row"><Link className="semiStockLink" to={stockLink(stock)}><strong>{stock.name}</strong><span>{stock.code}</span></Link></th><td>{sectorLabel(stock.sector)}<small>{sectorLabel(stock.industry)}</small></td><td>{stock.exchange}</td><td className="semiNumber">{formatWon(stock.price)}</td><td className={`semiNumber ${tone(stock.returns[period])}`}>{formatPercent(stock.returns[period])}</td><td className="semiNumber">{sectorMoney(stock.turnover)}</td><td className="semiNumber">{sectorMoney(stock.market_cap)}</td></tr>)}</tbody></table></div>
+        <div className="semiTableWrap"><table className="semiTable sectorExplorerMembers"><thead><tr>{memberHeading("name", "종목")}<th scope="col">섹터 · 업종</th>{memberHeading("exchange", "시장")}{memberHeading("price", "최근 가격")}{memberHeading("return", `${label} 수익률`)}{memberHeading("turnover", "거래대금")}{memberHeading("marketCap", "시가총액")}</tr></thead><tbody>{members.map(stock => <tr key={stock.ticker}><th scope="row"><Link className="semiStockLink" to={stockLink(stock)}><strong>{stock.name}</strong><span>{stock.code}</span></Link></th><td>{sectorLabel(stock.sector)}<small>{sectorLabel(stock.industry)}</small></td><td>{stock.exchange}</td><td className="semiNumber"><PriceWithChange price={stock.price} change={stock.change_pct} /></td><td className={`semiNumber ${tone(stock.returns[period])}`}>{formatPercent(stock.returns[period])}</td><td className="semiNumber">{sectorMoney(stock.turnover)}</td><td className="semiNumber">{sectorMoney(stock.market_cap)}</td></tr>)}</tbody></table></div>
         {!members.length && <p className="semiEmpty">조건에 맞는 종목이 없습니다.</p>}
       </section>
       <p className="semiFootnote">{data.universe}. 최근 거래일이 다른 종목은 제외합니다. 섹터·업종은 현재 사업 분류 보정 기준이며 과거 공식 편입 목록을 뜻하지 않습니다. 시가총액과 거래대금은 조회 시점 제공값입니다. 새로고침은 목록의 원본 시세를 다시 조회하며, 추이 화면에서는 선택 그룹의 일봉도 다시 가져옵니다.</p>
