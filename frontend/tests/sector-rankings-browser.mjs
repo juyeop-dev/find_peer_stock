@@ -77,7 +77,10 @@ try {
   await evaluate(`(()=>{const input=document.querySelector('.sectorCalendarNavigation input');Object.getOwnPropertyDescriptor(HTMLInputElement.prototype,'value').set.call(input,${JSON.stringify(historic.date.slice(0,7))});input.dispatchEvent(new Event('input',{bubbles:true}));})()`);
   await evaluate(`document.querySelector('.sectorCalendarGrid button[data-date="${historic.date}"]').click()`);
   await until(()=>evaluate(`document.querySelector('.sectorSummary strong')?.innerText===${JSON.stringify(historic.date)}`),'Historical ranking did not load');
-  const sourceSnapshot=await(await fetch(base+'/data/sectors/daily/'+historic.date+'.json')).json();
+  const sourceResponse=await fetch(base+'/data/sectors/daily/'+historic.date+'.json.gz');
+  const sourceBytes=await sourceResponse.arrayBuffer(),sourceMagic=new Uint8Array(sourceBytes,0,Math.min(2,sourceBytes.byteLength));
+  const sourceText=sourceMagic[0]===0x1f&&sourceMagic[1]===0x8b?await new Response(new Blob([sourceBytes]).stream().pipeThrough(new DecompressionStream('gzip'))).text():new TextDecoder().decode(sourceBytes);
+  const sourceSnapshot=JSON.parse(sourceText);
   if (sourceSnapshot.historical_metrics) {
     assert.ok(await evaluate("[...document.querySelectorAll('.sectorReturn')].filter(node=>Number.isFinite(parseFloat(node.innerText))).length>50"), "Restored dated caps must enable historical weighted returns");
     assert.equal(await evaluate("document.body.innerText.includes('당시 시가총액이 없어')"), false);
@@ -154,7 +157,7 @@ try {
       void send('Fetch.fulfillRequest',{requestId:item.params.requestId,responseCode:preflight?204:502,responseHeaders:[{name:'Content-Type',value:'application/json'},{name:'Access-Control-Allow-Origin',value:new URL(base).origin},{name:'Access-Control-Allow-Methods',value:'POST, OPTIONS'},{name:'Access-Control-Allow-Headers',value:'Content-Type'}],body:preflight?'':Buffer.from(JSON.stringify({error:'의도한 원본 조회 실패'})).toString('base64')});
     }
   });
-  await send('Fetch.enable',{patterns:[{urlPattern:'*workers.dev/refresh',requestStage:'Request'}]});
+  await send('Fetch.enable',{patterns:[{urlPattern:'*/refresh',requestStage:'Request'}]});
   await click("document.querySelector('.refreshButton')");
   await until(()=>evaluate("document.querySelector('.errorNotice')?.innerText.includes('의도한 원본 조회 실패')"),'Failure did not appear');
   assert.equal(await evaluate("document.querySelector('.sectorRankingTable tbody').innerText"),retained);

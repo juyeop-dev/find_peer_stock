@@ -1,0 +1,286 @@
+{
+  "schema_version": 1,
+  "market": "taiwan",
+  "date": "2023-01-06",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "2063.TWO",
+      "name": "Sheh Kai Precision Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Metal Fabrication",
+      "description": "Sheh Kai Precision Co., Ltd. · Metal Fabrication",
+      "change_pct": 0.5630630437124751,
+      "session_open": 44.5,
+      "session_close": 44.650001525878906,
+      "session_volume": 220000.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:2063",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2063.TWO/history/",
+        "date": "2023-01-06",
+        "daily_high": 44.70000076293945,
+        "prior_all_time_or_current_month_high": 49.92886854825933,
+        "passes_close_filter": true,
+        "yahoo_symbol": "2063.TWO"
+      }
+    },
+    {
+      "ticker": "2071.TWO",
+      "name": "Chen Nan Iron Wire Co. Ltd.",
+      "exchange": "TPEX",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Miscellaneous Manufacturing",
+      "description": "Chen Nan Iron Wire Co. Ltd. · Miscellaneous Manufacturing",
+      "change_pct": 3.571425169957876,
+      "session_open": 12.364676030666391,
+      "session_close": 12.364676030666391,
+      "session_volume": 21108.318000000003,
+      "currency": "TWD",
+      "source_symbol": "TPEX:2071",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2071.TWO/history/",
+        "date": "2023-01-06",
+        "daily_high": 12.41205133020256,
+        "prior_all_time_or_current_month_high": 13.59434714237298,
+        "passes_close_filter": true,
+        "yahoo_symbol": "2071.TWO"
+      }
+    },
+    {
+      "ticker": "2752.TWO",
+      "name": "Tofu Restaurant Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Consumer Services",
+      "high_type": "all_time",
+      "reason": "업종: Consumer Services · Restaurants",
+      "description": "Tofu Restaurant Co., Ltd. · Restaurants",
+      "change_pct": 0.5037783375314797,
+      "session_open": 197.0,
+      "session_close": 199.5,
+      "session_volume": 36000.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:2752",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2752.TWO/history/",
+        "date": "2023-01-06",
+        "daily_high": 199.5,
+        "prior_all_time_or_current_month_high": 199.5,
+        "passes_close_filter": true,
+        "yahoo_symbol": "2752.TWO"
+      }
+    },
+    {
+      "ticker": "3293.TWO",
+      "name": "International Games System Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Technology Services",
+      "high_type": "all_time",
+      "reason": "업종: Technology Services · Packaged Software",
+      "description": "International Games System Co., Ltd. · Packaged Software",
+      "change_pct": 1.7977528089887729,
+      "session_open": 225.0,
+      "session_close": 226.5,
+      "session_volume": 9024000.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:3293",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3293.TWO/history/",
+        "date": "2023-01-06",
+        "daily_high": 232.0,
+        "prior_all_time_or_current_month_high": 232.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "3293.TWO"
+      }
+    },
+    {
+      "ticker": "4974.TWO",
+      "name": "Asia Tech Image Inc.",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Semiconductors",
+      "description": "Asia Tech Image Inc. · Semiconductors",
+      "change_pct": 2.4350649953833514,
+      "session_open": 61.900001525878906,
+      "session_close": 63.099998474121094,
+      "session_volume": 2170000.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:4974",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4974.TWO/history/",
+        "date": "2023-01-06",
+        "daily_high": 64.0,
+        "prior_all_time_or_current_month_high": 69.5999984741211,
+        "passes_close_filter": true,
+        "yahoo_symbol": "4974.TWO"
+      }
+    },
+    {
+      "ticker": "5345.TWO",
+      "name": "Fullhome Development Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Electronic Components",
+      "description": "Fullhome Development Co., Ltd. · Electronic Components",
+      "change_pct": 2.0979020979021046,
+      "session_open": 68.359375,
+      "session_close": 71.2890625,
+      "session_volume": 2048.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:5345",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/5345.TWO/history/",
+        "date": "2023-01-06",
+        "daily_high": 71.2890625,
+        "prior_all_time_or_current_month_high": 629.3402910232545,
+        "passes_close_filter": true,
+        "yahoo_symbol": "5345.TWO"
+      }
+    },
+    {
+      "ticker": "5516.TWO",
+      "name": "Sun-Sea Construction Corporation",
+      "exchange": "TPEX",
+      "category": "Industrial Services",
+      "high_type": "all_time",
+      "reason": "업종: Industrial Services · Engineering & Construction",
+      "description": "Sun-Sea Construction Corporation · Engineering & Construction",
+      "change_pct": 2.570698885843825,
+      "session_open": 15.566075064919211,
+      "session_close": 16.007381785999645,
+      "session_volume": 366412.2,
+      "currency": "TWD",
+      "source_symbol": "TPEX:5516",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/5516.TWO/history/",
+        "date": "2023-01-06",
+        "daily_high": 16.36844981800426,
+        "prior_all_time_or_current_month_high": 16.36844981800426,
+        "passes_close_filter": true,
+        "yahoo_symbol": "5516.TWO"
+      }
+    },
+    {
+      "ticker": "1817.TW",
+      "name": "Sanitar Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Building Products",
+      "description": "Sanitar Co., Ltd. · Building Products",
+      "change_pct": 2.4967169040417625,
+      "session_open": 38.04999923706055,
+      "session_close": 39.0,
+      "session_volume": 328254.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:1817",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/1817.TW/history/",
+        "date": "2023-01-06",
+        "daily_high": 39.04999923706055,
+        "prior_all_time_or_current_month_high": 47.900001525878906,
+        "passes_close_filter": true,
+        "yahoo_symbol": "1817.TW"
+      }
+    },
+    {
+      "ticker": "6139.TW",
+      "name": "L&K Engineering Co. Ltd.",
+      "exchange": "TWSE",
+      "category": "Industrial Services",
+      "high_type": "52_week",
+      "reason": "업종: Industrial Services · Engineering & Construction",
+      "description": "L&K Engineering Co. Ltd. · Engineering & Construction",
+      "change_pct": 4.319368858757167,
+      "session_open": 38.088680267333984,
+      "session_close": 39.578460693359375,
+      "session_volume": 5294569.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:6139",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6139.TW/history/",
+        "date": "2023-01-06",
+        "daily_high": 39.578460693359375,
+        "prior_all_time_or_current_month_high": 58.693357817524365,
+        "passes_close_filter": true,
+        "yahoo_symbol": "6139.TW"
+      }
+    },
+    {
+      "ticker": "6914.TW",
+      "name": "PSS Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Technology Services",
+      "high_type": "all_time",
+      "reason": "업종: Technology Services · Information Technology Services",
+      "description": "PSS Co., Ltd. · Information Technology Services",
+      "change_pct": 0.0,
+      "session_open": 65.16666412353516,
+      "session_close": 68.41666412353516,
+      "session_volume": 117999.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:6914",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6914.TW/history/",
+        "date": "2023-01-06",
+        "daily_high": 77.5,
+        "prior_all_time_or_current_month_high": 77.5,
+        "passes_close_filter": true,
+        "yahoo_symbol": "6914.TW"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-10-27T10:38:28.567579+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 2356,
+    "history_symbols": 2079,
+    "inactive_symbols": 7,
+    "failed_symbols": 270,
+    "coverage_ratio": 0.8850574712643678,
+    "coverage_by_exchange": {
+      "TWSE": {
+        "covered": 1036,
+        "total": 1093
+      },
+      "TPEX": {
+        "covered": 1043,
+        "total": 1256
+      }
+    },
+    "session_symbols": 2007,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-10-27T10:38:28.567579+00:00"
+}

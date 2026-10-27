@@ -1,0 +1,434 @@
+{
+  "schema_version": 1,
+  "market": "us",
+  "date": "2023-09-21",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "GEOS",
+      "name": "Geospace Technologies Corporation",
+      "exchange": "NASDAQ",
+      "category": "Industrial Services",
+      "high_type": "52_week",
+      "reason": "업종: Industrial Services · Oilfield Services/Equipment",
+      "description": "Geospace Technologies Corporation · Oilfield Services/Equipment",
+      "change_pct": 7.204118040999163,
+      "session_open": 11.770000457763672,
+      "session_close": 12.5,
+      "session_volume": 73700.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:GEOS",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/GEOS/history/",
+        "date": "2023-09-21",
+        "daily_high": 12.59000015258789,
+        "prior_all_time_or_current_month_high": 113.7300033569336,
+        "passes_close_filter": true,
+        "yahoo_symbol": "GEOS"
+      }
+    },
+    {
+      "ticker": "HURN",
+      "name": "Huron Consulting Group Inc.",
+      "exchange": "NASDAQ",
+      "category": "Commercial Services",
+      "high_type": "all_time",
+      "reason": "업종: Commercial Services · Miscellaneous Commercial Services",
+      "description": "Huron Consulting Group Inc. · Miscellaneous Commercial Services",
+      "change_pct": 0.46432092242727485,
+      "session_open": 105.52999877929688,
+      "session_close": 106.0199966430664,
+      "session_volume": 217600.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:HURN",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/HURN/history/",
+        "date": "2023-09-21",
+        "daily_high": 107.44000244140625,
+        "prior_all_time_or_current_month_high": 107.44000244140625,
+        "passes_close_filter": true,
+        "yahoo_symbol": "HURN"
+      }
+    },
+    {
+      "ticker": "IMMX",
+      "name": "Immix Biopharma, Inc.",
+      "exchange": "NASDAQ",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Pharmaceuticals: Major",
+      "description": "Immix Biopharma, Inc. · Pharmaceuticals: Major",
+      "change_pct": 15.38461661136392,
+      "session_open": 3.009999990463257,
+      "session_close": 3.450000047683716,
+      "session_volume": 534100.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:IMMX",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/IMMX/history/",
+        "date": "2023-09-21",
+        "daily_high": 3.6500000953674316,
+        "prior_all_time_or_current_month_high": 8.680000305175781,
+        "passes_close_filter": true,
+        "yahoo_symbol": "IMMX"
+      }
+    },
+    {
+      "ticker": "KELYB",
+      "name": "Kelly Services, Inc. Class B",
+      "exchange": "NASDAQ",
+      "category": "Commercial Services",
+      "high_type": "52_week",
+      "reason": "업종: Commercial Services · Personnel Services",
+      "description": "Kelly Services, Inc. Class B · Personnel Services",
+      "change_pct": 0.0,
+      "session_open": 18.950000762939453,
+      "session_close": 18.950000762939453,
+      "session_volume": 100.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:KELYB",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/KELYB/history/",
+        "date": "2023-09-21",
+        "daily_high": 18.950000762939453,
+        "prior_all_time_or_current_month_high": 90.36000061035156,
+        "passes_close_filter": true,
+        "yahoo_symbol": "KELYB"
+      }
+    },
+    {
+      "ticker": "LNAI",
+      "name": "Lunai Bioworks, Inc.",
+      "exchange": "NASDAQ",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Biotechnology",
+      "description": "Lunai Bioworks, Inc. · Biotechnology",
+      "change_pct": 13.569316422034671,
+      "session_open": 272.0,
+      "session_close": 308.0,
+      "session_volume": 6793.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:LNAI",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/LNAI/history/",
+        "date": "2023-09-21",
+        "daily_high": 309.6000061035156,
+        "prior_all_time_or_current_month_high": 88192.001953125,
+        "passes_close_filter": true,
+        "yahoo_symbol": "LNAI"
+      }
+    },
+    {
+      "ticker": "MTRX",
+      "name": "Matrix Service Company",
+      "exchange": "NASDAQ",
+      "category": "Industrial Services",
+      "high_type": "52_week",
+      "reason": "업종: Industrial Services · Engineering & Construction",
+      "description": "Matrix Service Company · Engineering & Construction",
+      "change_pct": 4.119460524807672,
+      "session_open": 9.75,
+      "session_close": 10.109999656677246,
+      "session_volume": 238900.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:MTRX",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/MTRX/history/",
+        "date": "2023-09-21",
+        "daily_high": 10.300000190734863,
+        "prior_all_time_or_current_month_high": 38.709999084472656,
+        "passes_close_filter": true,
+        "yahoo_symbol": "MTRX"
+      }
+    },
+    {
+      "ticker": "OLOX",
+      "name": "Olenox Industries Inc.",
+      "exchange": "NASDAQ",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Building Products",
+      "description": "Olenox Industries Inc. · Building Products",
+      "change_pct": 14.55696378538882,
+      "session_open": 4642.075421940928,
+      "session_close": 5092.216252051102,
+      "session_volume": 2943.54,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:OLOX",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/OLOX/history/",
+        "date": "2023-09-21",
+        "daily_high": 6133.166406616268,
+        "prior_all_time_or_current_month_high": 100817102672.29256,
+        "passes_close_filter": true,
+        "yahoo_symbol": "OLOX"
+      }
+    },
+    {
+      "ticker": "OPXS",
+      "name": "Optex Systems Holdings, Inc.",
+      "exchange": "NASDAQ",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Electronic Components",
+      "description": "Optex Systems Holdings, Inc. · Electronic Components",
+      "change_pct": 1.92770896066623,
+      "session_open": 4.1529998779296875,
+      "session_close": 4.230000019073486,
+      "session_volume": 29300.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:OPXS",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/OPXS/history/",
+        "date": "2023-09-21",
+        "daily_high": 4.269999980926514,
+        "prior_all_time_or_current_month_high": 60000.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "OPXS"
+      }
+    },
+    {
+      "ticker": "PAA",
+      "name": "Plains All American Pipeline, L.P.",
+      "exchange": "NASDAQ",
+      "category": "Industrial Services",
+      "high_type": "52_week",
+      "reason": "업종: Industrial Services · Oil & Gas Pipelines",
+      "description": "Plains All American Pipeline, L.P. · Oil & Gas Pipelines",
+      "change_pct": 0.3843716908157324,
+      "session_open": 15.569999694824219,
+      "session_close": 15.670000076293945,
+      "session_volume": 4849000.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:PAA",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/PAA/history/",
+        "date": "2023-09-21",
+        "daily_high": 15.800000190734863,
+        "prior_all_time_or_current_month_high": 61.09000015258789,
+        "passes_close_filter": true,
+        "yahoo_symbol": "PAA"
+      }
+    },
+    {
+      "ticker": "PAGP",
+      "name": "Plains GP Holdings LP Class A",
+      "exchange": "NASDAQ",
+      "category": "Industrial Services",
+      "high_type": "52_week",
+      "reason": "업종: Industrial Services · Oil & Gas Pipelines",
+      "description": "Plains GP Holdings LP Class A · Oil & Gas Pipelines",
+      "change_pct": 0.12255182682396892,
+      "session_open": 16.299999237060547,
+      "session_close": 16.34000015258789,
+      "session_volume": 1524800.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:PAGP",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/PAGP/history/",
+        "date": "2023-09-21",
+        "daily_high": 16.459999084472656,
+        "prior_all_time_or_current_month_high": 231.67999267578125,
+        "passes_close_filter": true,
+        "yahoo_symbol": "PAGP"
+      }
+    },
+    {
+      "ticker": "SKWD",
+      "name": "Skyward Specialty Insurance Group, Inc.",
+      "exchange": "NASDAQ",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "업종: Finance · Multi-Line Insurance",
+      "description": "Skyward Specialty Insurance Group, Inc. · Multi-Line Insurance",
+      "change_pct": 0.7899436637023305,
+      "session_open": 27.93000030517578,
+      "session_close": 28.06999969482422,
+      "session_volume": 607200.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:SKWD",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/SKWD/history/",
+        "date": "2023-09-21",
+        "daily_high": 28.149999618530273,
+        "prior_all_time_or_current_month_high": 28.149999618530273,
+        "passes_close_filter": true,
+        "yahoo_symbol": "SKWD"
+      }
+    },
+    {
+      "ticker": "STI",
+      "name": "Solidion Technology, Inc.",
+      "exchange": "NASDAQ",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "업종: Finance · Financial Conglomerates",
+      "description": "Solidion Technology, Inc. · Financial Conglomerates",
+      "change_pct": 0.46210720887245316,
+      "session_open": 541.0,
+      "session_close": 543.5,
+      "session_volume": 362.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:STI",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/STI/history/",
+        "date": "2023-09-21",
+        "daily_high": 597.0,
+        "prior_all_time_or_current_month_high": 25500.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "STI"
+      }
+    },
+    {
+      "ticker": "TATT",
+      "name": "TAT Technologies Ltd.",
+      "exchange": "NASDAQ",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Aerospace & Defense",
+      "description": "TAT Technologies Ltd. · Aerospace & Defense",
+      "change_pct": 1.015803115974867,
+      "session_open": 8.90999984741211,
+      "session_close": 8.949999809265137,
+      "session_volume": 4000.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:TATT",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/TATT/history/",
+        "date": "2023-09-21",
+        "daily_high": 9.0,
+        "prior_all_time_or_current_month_high": 177.75,
+        "passes_close_filter": true,
+        "yahoo_symbol": "TATT"
+      }
+    },
+    {
+      "ticker": "TRT",
+      "name": "Trio-Tech International",
+      "exchange": "NASDAQ",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Industrial Machinery",
+      "description": "Trio-Tech International · Industrial Machinery",
+      "change_pct": 5.497769457807822,
+      "session_open": 3.440000057220459,
+      "session_close": 3.549999952316284,
+      "session_volume": 303600.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:TRT",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/TRT/history/",
+        "date": "2023-09-21",
+        "daily_high": 3.799999952316284,
+        "prior_all_time_or_current_month_high": 6.1875,
+        "passes_close_filter": true,
+        "yahoo_symbol": "TRT"
+      }
+    },
+    {
+      "ticker": "EPD",
+      "name": "Enterprise Products Partners L.P.",
+      "exchange": "NYSE",
+      "category": "Industrial Services",
+      "high_type": "52_week",
+      "reason": "업종: Industrial Services · Oil & Gas Pipelines",
+      "description": "Enterprise Products Partners L.P. · Oil & Gas Pipelines",
+      "change_pct": 0.14700814727395262,
+      "session_open": 27.209999084472656,
+      "session_close": 27.25,
+      "session_volume": 5305500.0,
+      "currency": "USD",
+      "source_symbol": "NYSE:EPD",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/EPD/history/",
+        "date": "2023-09-21",
+        "daily_high": 27.450000762939453,
+        "prior_all_time_or_current_month_high": 41.380001068115234,
+        "passes_close_filter": true,
+        "yahoo_symbol": "EPD"
+      }
+    },
+    {
+      "ticker": "R",
+      "name": "Ryder System, Inc.",
+      "exchange": "NYSE",
+      "category": "Transportation",
+      "high_type": "all_time",
+      "reason": "업종: Transportation · Air Freight/Couriers",
+      "description": "Ryder System, Inc. · Air Freight/Couriers",
+      "change_pct": 0.8737878892028261,
+      "session_open": 103.0199966430664,
+      "session_close": 103.9000015258789,
+      "session_volume": 603200.0,
+      "currency": "USD",
+      "source_symbol": "NYSE:R",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/R/history/",
+        "date": "2023-09-21",
+        "daily_high": 104.70999908447266,
+        "prior_all_time_or_current_month_high": 104.70999908447266,
+        "passes_close_filter": true,
+        "yahoo_symbol": "R"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-10-27T10:44:40.669957+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 5712,
+    "history_symbols": 4639,
+    "inactive_symbols": 7,
+    "failed_symbols": 1066,
+    "coverage_ratio": 0.8131463628396144,
+    "coverage_by_exchange": {
+      "NASDAQ": {
+        "covered": 2586,
+        "total": 3342
+      },
+      "NYSE": {
+        "covered": 1851,
+        "total": 2101
+      },
+      "AMEX": {
+        "covered": 202,
+        "total": 262
+      }
+    },
+    "session_symbols": 4599,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-10-27T10:44:40.669957+00:00"
+}

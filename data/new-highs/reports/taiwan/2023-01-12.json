@@ -1,0 +1,286 @@
+{
+  "schema_version": 1,
+  "market": "taiwan",
+  "date": "2023-01-12",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "2732.TWO",
+      "name": "La Kaffa International Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Consumer Services",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Services · Restaurants",
+      "description": "La Kaffa International Co., Ltd. · Restaurants",
+      "change_pct": 7.063197026022294,
+      "session_open": 136.5,
+      "session_close": 144.0,
+      "session_volume": 7245000.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:2732",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2732.TWO/history/",
+        "date": "2023-01-12",
+        "daily_high": 145.5,
+        "prior_all_time_or_current_month_high": 209.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "2732.TWO"
+      }
+    },
+    {
+      "ticker": "2752.TWO",
+      "name": "Tofu Restaurant Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Consumer Services",
+      "high_type": "all_time",
+      "reason": "업종: Consumer Services · Restaurants",
+      "description": "Tofu Restaurant Co., Ltd. · Restaurants",
+      "change_pct": 0.9569377990430672,
+      "session_open": 209.0,
+      "session_close": 211.0,
+      "session_volume": 41000.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:2752",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2752.TWO/history/",
+        "date": "2023-01-12",
+        "daily_high": 212.0,
+        "prior_all_time_or_current_month_high": 212.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "2752.TWO"
+      }
+    },
+    {
+      "ticker": "5263.TWO",
+      "name": "Brogent Technologies Inc.",
+      "exchange": "TPEX",
+      "category": "Consumer Durables",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Durables · Electronics/Appliances",
+      "description": "Brogent Technologies Inc. · Electronics/Appliances",
+      "change_pct": 6.513409961685834,
+      "session_open": 134.5,
+      "session_close": 139.0,
+      "session_volume": 5654000.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:5263",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/5263.TWO/history/",
+        "date": "2023-01-12",
+        "daily_high": 141.0,
+        "prior_all_time_or_current_month_high": 297.69795368065394,
+        "passes_close_filter": true,
+        "yahoo_symbol": "5263.TWO"
+      }
+    },
+    {
+      "ticker": "6650.TWO",
+      "name": "Art Emperor Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Technology Services",
+      "high_type": "52_week",
+      "reason": "업종: Technology Services · Internet Software/Services",
+      "description": "Art Emperor Co., Ltd. · Internet Software/Services",
+      "change_pct": 1.1904727928853331,
+      "session_open": 34.40150108890257,
+      "session_close": 35.28358901756397,
+      "session_volume": 42401.88,
+      "currency": "TWD",
+      "source_symbol": "TPEX:6650",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6650.TWO/history/",
+        "date": "2023-01-12",
+        "daily_high": 35.28358901756397,
+        "prior_all_time_or_current_month_high": 37.09965857906618,
+        "passes_close_filter": true,
+        "yahoo_symbol": "6650.TWO"
+      }
+    },
+    {
+      "ticker": "1468.TW",
+      "name": "Chang-Ho Fibre Corp.",
+      "exchange": "TWSE",
+      "category": "Process Industries",
+      "high_type": "52_week",
+      "reason": "업종: Process Industries · Textiles",
+      "description": "Chang-Ho Fibre Corp. · Textiles",
+      "change_pct": 9.854017520180825,
+      "session_open": 13.75,
+      "session_close": 15.050000190734863,
+      "session_volume": 215000.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:1468",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/1468.TW/history/",
+        "date": "2023-01-12",
+        "daily_high": 15.050000190734863,
+        "prior_all_time_or_current_month_high": 30.100000381469727,
+        "passes_close_filter": true,
+        "yahoo_symbol": "1468.TW"
+      }
+    },
+    {
+      "ticker": "2404.TW",
+      "name": "United Integrated Services Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Industrial Services",
+      "high_type": "52_week",
+      "reason": "업종: Industrial Services · Engineering & Construction",
+      "description": "United Integrated Services Co., Ltd. · Engineering & Construction",
+      "change_pct": 1.0152284263959421,
+      "session_open": 198.0,
+      "session_close": 199.0,
+      "session_volume": 2226021.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2404",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2404.TW/history/",
+        "date": "2023-01-12",
+        "daily_high": 201.0,
+        "prior_all_time_or_current_month_high": 275.5,
+        "passes_close_filter": true,
+        "yahoo_symbol": "2404.TW"
+      }
+    },
+    {
+      "ticker": "2753.TW",
+      "name": "Bafang Yunji International Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Consumer Services",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Services · Restaurants",
+      "description": "Bafang Yunji International Co., Ltd. · Restaurants",
+      "change_pct": 1.3245053724429523,
+      "session_open": 216.1904754638672,
+      "session_close": 218.57142639160156,
+      "session_volume": 2540139.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2753",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2753.TW/history/",
+        "date": "2023-01-12",
+        "daily_high": 224.2857208251953,
+        "prior_all_time_or_current_month_high": 226.7573765345982,
+        "passes_close_filter": true,
+        "yahoo_symbol": "2753.TW"
+      }
+    },
+    {
+      "ticker": "4763.TW",
+      "name": "Jinan Acetate Chemical Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Process Industries",
+      "high_type": "all_time",
+      "reason": "업종: Process Industries · Chemicals: Major Diversified",
+      "description": "Jinan Acetate Chemical Co., Ltd. · Chemicals: Major Diversified",
+      "change_pct": 8.366533824108945,
+      "session_open": 16.47122501419073,
+      "session_close": 17.84929562624809,
+      "session_volume": 275762926.346592,
+      "currency": "TWD",
+      "source_symbol": "TWSE:4763",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4763.TW/history/",
+        "date": "2023-01-12",
+        "daily_high": 17.84929562624809,
+        "prior_all_time_or_current_month_high": 17.84929562624809,
+        "passes_close_filter": true,
+        "yahoo_symbol": "4763.TW"
+      }
+    },
+    {
+      "ticker": "6657.TW",
+      "name": "Energenesis Biomedical Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Biotechnology",
+      "description": "Energenesis Biomedical Co., Ltd. · Biotechnology",
+      "change_pct": 3.2921858828253603,
+      "session_open": 48.650001525878906,
+      "session_close": 50.20000076293945,
+      "session_volume": 554666.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:6657",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6657.TW/history/",
+        "date": "2023-01-12",
+        "daily_high": 50.20000076293945,
+        "prior_all_time_or_current_month_high": 100.92176055908203,
+        "passes_close_filter": true,
+        "yahoo_symbol": "6657.TW"
+      }
+    },
+    {
+      "ticker": "6885.TW",
+      "name": "BRIM Biotechnology, Inc.",
+      "exchange": "TWSE",
+      "category": "Health Technology",
+      "high_type": "all_time",
+      "reason": "업종: Health Technology · Biotechnology",
+      "description": "BRIM Biotechnology, Inc. · Biotechnology",
+      "change_pct": 9.443104315918616,
+      "session_open": 40.610294342041016,
+      "session_close": 43.70441436767578,
+      "session_volume": 5548137.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:6885",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6885.TW/history/",
+        "date": "2023-01-12",
+        "daily_high": 44.1395263671875,
+        "prior_all_time_or_current_month_high": 44.1395263671875,
+        "passes_close_filter": true,
+        "yahoo_symbol": "6885.TW"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-10-27T10:38:28.567579+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 2356,
+    "history_symbols": 2079,
+    "inactive_symbols": 7,
+    "failed_symbols": 270,
+    "coverage_ratio": 0.8850574712643678,
+    "coverage_by_exchange": {
+      "TWSE": {
+        "covered": 1036,
+        "total": 1093
+      },
+      "TPEX": {
+        "covered": 1043,
+        "total": 1256
+      }
+    },
+    "session_symbols": 2010,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-10-27T10:38:28.567579+00:00"
+}

@@ -10,7 +10,7 @@ const root = fileURLToPath(new URL("../../", import.meta.url));
 const base = process.env.STOCK_SITE_BASE_URL ?? "https://juyeop-dev.github.io/find_peer_stock";
 const rows = (await readFile(join(root, "data/information-audit/results.jsonl"), "utf8")).trim().split("\n").map(JSON.parse);
 const routes = ["/semiconductors/000660.KS", "/stocks/2330.TW", ...["korea", "us", "japan", "taiwan", "china", "europe"].map(market => {
-  const row = rows.find(row => row.market === market && row.pages.includes("market") && row.history_status === "complete" && row.financial_first?.startsWith("2024"));
+  const row = rows.find(row => row.market === market && row.pages.includes("market") && row.history_status === "complete" && row.financial_first && row.financial_first <= "2024-12-31");
   assert.ok(row, `No representative complete stock for ${market}`);
   return `/market-stocks/${encodeURIComponent(row.ticker)}?${new URLSearchParams({market,date:row.date,source:row.source})}`;
 })];

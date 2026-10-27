@@ -16,6 +16,29 @@ from backfill_european_new_highs import Bar, candidates, chart_bars, classify_hi
 
 
 class TradingViewChartHistoryTests(unittest.TestCase):
+    def test_unverified_monthly_listing_is_disclosed_and_excluded_only_in_partial_mode(self):
+        session = date(2023, 1, 3)
+        rows = [{"symbol": f"{exchange}:TEST", "name": "TEST", "exchange": exchange,
+                 "currency": "EUR", "description": "Test Company", "time": 1777593600}
+                for exchange in ["EURONEXT", "XETR", "LSE", "SIX"]]
+        def cached(row, interval, count, **kwargs):
+            if row["exchange"] == "EURONEXT" and interval == "1M":
+                raise chart.ChartHistoryError("Monthly company name differs")
+            return {"symbol": row["symbol"], "info": {"pro_name": row["symbol"], "source_id": row["exchange"],
+                    "currency_code": "EUR", "timezone": "UTC", "description": "Test Company", "type": "stock"},
+                    "bars": [{"timestamp": datetime.combine(day, datetime.min.time(), timezone.utc).timestamp(),
+                              "open": 10, "high": price, "low": 9, "close": price, "volume": 100}
+                             for day, price in [(date(2022, 1, 3), 12), (session, 20)]]}
+        with tempfile.TemporaryDirectory() as temporary, patch.object(european, "_scan", return_value=rows), \
+             patch.object(european, "cached_chart", side_effect=cached):
+            cache = Path(temporary) / "cache"
+            with self.assertRaisesRegex(chart.ChartHistoryError, "monthly histories unresolved"):
+                european.build_reports([session], workers=1, cache_dir=cache)
+            report = european.build_reports([session], workers=1, cache_dir=cache, partial_history=True)[session]
+        self.assertNotIn("EURONEXT:TEST", [entry["ticker"] for entry in report["entries"]])
+        self.assertIn("Monthly", report["source_metadata"]["unresolved_listings"]["EURONEXT:TEST"])
+        self.assertEqual(report["source_metadata"]["coverage_status"], "partial")
+
     def test_early_backfill_uses_requested_depth_and_excludes_closed_exchange_quotes(self):
         session = date(2026, 5, 1)
         rows = [{"symbol": f"{exchange}:TEST", "name": "TEST", "exchange": exchange,

@@ -13,6 +13,24 @@ import stock_chart_history as charts
 
 
 class StockChartHistoryTests(unittest.TestCase):
+    def test_provider_omissions_preserve_original_observations_without_mixing_price_conventions(self):
+        db = sqlite3.connect(":memory:")
+        db.execute("CREATE TABLE history(ticker TEXT PRIMARY KEY,value TEXT NOT NULL)")
+        old = {"ticker":"TEST","currency":"USD","source":"original","fetched_at":"2026-10-26T00:00:00Z",
+               "prices":[["2025-01-01",10,9],["2025-01-02",11,10],["2026-10-26",20,19]]}
+        charts.save_candidate(db,old)
+        fresh = {**old,"source":"revised","requested_range":"5y","fetched_at":"2026-10-27T00:00:00Z",
+                 "prices":[["2025-01-01",10,10],["2026-10-26",20,20],["2026-10-27",21,21]]}
+        charts.save_candidate(db,fresh)
+        value=json.loads(db.execute("SELECT value FROM history").fetchone()[0])
+        self.assertEqual(value["prices"],fresh["prices"])
+        self.assertEqual(value["prior_snapshots"][0]["prices"],[["2025-01-02",11,10]])
+        self.assertEqual(value["prior_snapshots"][0]["source"],"original")
+        charts.save_candidate(db,fresh)
+        value=json.loads(db.execute("SELECT value FROM history").fetchone()[0])
+        self.assertEqual(len(value["prior_snapshots"]),1)
+        db.close()
+
     def test_history_without_currency_cannot_replace_verified_prices(self):
         db = sqlite3.connect(":memory:")
         db.execute("CREATE TABLE history(ticker TEXT PRIMARY KEY,value TEXT NOT NULL)")
@@ -90,7 +108,7 @@ class StockChartHistoryTests(unittest.TestCase):
             with patch.object(charts, "PACKS", root / "packs"):
                 charts.export_packs(db)
                 charts.publish(root / "public")
-            restored = json.loads((root / "public/EURONEXT~3AMC.json").read_text(encoding="utf-8"))
+            restored = json.loads(gzip.decompress((root / "public/EURONEXT~3AMC.json.gz").read_bytes()))
             self.assertEqual(restored, value)
             charts.save_candidate(db, {**value, "prices": [["2026-10-16", 110, 110], ["2026-10-19", 120, 120]]})
             self.assertEqual(json.loads(db.execute("SELECT value FROM history").fetchone()[0]), value)

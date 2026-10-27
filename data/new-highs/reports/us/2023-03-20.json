@@ -1,0 +1,386 @@
+{
+  "schema_version": 1,
+  "market": "us",
+  "date": "2023-03-20",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "INTT",
+      "name": "InTest Corporation",
+      "exchange": "AMEX",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Electronic Equipment/Instruments",
+      "description": "InTest Corporation · Electronic Equipment/Instruments",
+      "change_pct": 1.7401458723437235,
+      "session_open": 17.540000915527344,
+      "session_close": 17.540000915527344,
+      "session_volume": 227300.0,
+      "currency": "USD",
+      "source_symbol": "AMEX:INTT",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/INTT/history/",
+        "date": "2023-03-20",
+        "daily_high": 18.420000076293945,
+        "prior_all_time_or_current_month_high": 26.25,
+        "passes_close_filter": true,
+        "yahoo_symbol": "INTT"
+      }
+    },
+    {
+      "ticker": "MRT",
+      "name": "Marti Technologies Inc Class A",
+      "exchange": "AMEX",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "업종: Finance · Finance/Rental/Leasing",
+      "description": "Marti Technologies Inc Class A · Finance/Rental/Leasing",
+      "change_pct": 0.4821619217613593,
+      "session_open": 10.420000076293945,
+      "session_close": 10.420000076293945,
+      "session_volume": 200.0,
+      "currency": "USD",
+      "source_symbol": "AMEX:MRT",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/MRT/history/",
+        "date": "2023-03-20",
+        "daily_high": 10.420000076293945,
+        "prior_all_time_or_current_month_high": 10.420000076293945,
+        "passes_close_filter": true,
+        "yahoo_symbol": "MRT"
+      }
+    },
+    {
+      "ticker": "FTAIM",
+      "name": "FTAI Aviation Ltd. Cum Pfd Registered Shs Series D",
+      "exchange": "NASDAQ",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Aerospace & Defense",
+      "description": "FTAI Aviation Ltd. Cum Pfd Registered Shs Series D · Aerospace & Defense",
+      "change_pct": 0.928540726628202,
+      "session_open": 25.0,
+      "session_close": 25.0,
+      "session_volume": 91900.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:FTAIM",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/FTAIM/history/",
+        "date": "2023-03-20",
+        "daily_high": 25.09000015258789,
+        "prior_all_time_or_current_month_high": 25.09000015258789,
+        "passes_close_filter": true,
+        "yahoo_symbol": "FTAIM"
+      }
+    },
+    {
+      "ticker": "HSTM",
+      "name": "HealthStream, Inc.",
+      "exchange": "NASDAQ",
+      "category": "Technology Services",
+      "high_type": "52_week",
+      "reason": "업종: Technology Services · Packaged Software",
+      "description": "HealthStream, Inc. · Packaged Software",
+      "change_pct": 1.345120581522874,
+      "session_open": 26.09000015258789,
+      "session_close": 26.3700008392334,
+      "session_volume": 109800.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:HSTM",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/HSTM/history/",
+        "date": "2023-03-20",
+        "daily_high": 26.649999618530273,
+        "prior_all_time_or_current_month_high": 39.77000045776367,
+        "passes_close_filter": true,
+        "yahoo_symbol": "HSTM"
+      }
+    },
+    {
+      "ticker": "JBSS",
+      "name": "John B. Sanfilippo & Son, Inc.",
+      "exchange": "NASDAQ",
+      "category": "Consumer Non-Durables",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Non-Durables · Food: Specialty/Candy",
+      "description": "John B. Sanfilippo & Son, Inc. · Food: Specialty/Candy",
+      "change_pct": 1.9348805404084457,
+      "session_open": 95.91999816894531,
+      "session_close": 97.98999786376953,
+      "session_volume": 126900.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:JBSS",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/JBSS/history/",
+        "date": "2023-03-20",
+        "daily_high": 98.11000061035156,
+        "prior_all_time_or_current_month_high": 107.86000061035156,
+        "passes_close_filter": true,
+        "yahoo_symbol": "JBSS"
+      }
+    },
+    {
+      "ticker": "NSIT",
+      "name": "Insight Enterprises, Inc.",
+      "exchange": "NASDAQ",
+      "category": "Technology Services",
+      "high_type": "all_time",
+      "reason": "업종: Technology Services · Information Technology Services",
+      "description": "Insight Enterprises, Inc. · Information Technology Services",
+      "change_pct": 0.4999655596479746,
+      "session_open": 138.6999969482422,
+      "session_close": 138.6999969482422,
+      "session_volume": 283000.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:NSIT",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/NSIT/history/",
+        "date": "2023-03-20",
+        "daily_high": 140.89999389648438,
+        "prior_all_time_or_current_month_high": 140.89999389648438,
+        "passes_close_filter": true,
+        "yahoo_symbol": "NSIT"
+      }
+    },
+    {
+      "ticker": "OKUR",
+      "name": "OnKure Therapeutics, Inc. Class A",
+      "exchange": "NASDAQ",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Pharmaceuticals: Major",
+      "description": "OnKure Therapeutics, Inc. Class A · Pharmaceuticals: Major",
+      "change_pct": 2.6269702978710674,
+      "session_open": 57.0,
+      "session_close": 58.599998474121094,
+      "session_volume": 13860.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:OKUR",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/OKUR/history/",
+        "date": "2023-03-20",
+        "daily_high": 61.70000076293945,
+        "prior_all_time_or_current_month_high": 1718.0000305175781,
+        "passes_close_filter": true,
+        "yahoo_symbol": "OKUR"
+      }
+    },
+    {
+      "ticker": "PDFS",
+      "name": "PDF Solutions, Inc.",
+      "exchange": "NASDAQ",
+      "category": "Technology Services",
+      "high_type": "all_time",
+      "reason": "업종: Technology Services · Information Technology Services",
+      "description": "PDF Solutions, Inc. · Information Technology Services",
+      "change_pct": 2.320836186330011,
+      "session_open": 39.25,
+      "session_close": 40.119998931884766,
+      "session_volume": 217900.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:PDFS",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/PDFS/history/",
+        "date": "2023-03-20",
+        "daily_high": 40.15999984741211,
+        "prior_all_time_or_current_month_high": 40.15999984741211,
+        "passes_close_filter": true,
+        "yahoo_symbol": "PDFS"
+      }
+    },
+    {
+      "ticker": "TRI",
+      "name": "Thomson Reuters Corporation",
+      "exchange": "NASDAQ",
+      "category": "Technology Services",
+      "high_type": "all_time",
+      "reason": "업종: Technology Services · Internet Software/Services",
+      "description": "Thomson Reuters Corporation · Internet Software/Services",
+      "change_pct": 1.19036954060876,
+      "session_open": 134.03510453173675,
+      "session_close": 135.66335834570515,
+      "session_volume": 443004.075,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:TRI",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/TRI/history/",
+        "date": "2023-03-20",
+        "daily_high": 135.94373661409657,
+        "prior_all_time_or_current_month_high": 135.94373661409657,
+        "passes_close_filter": true,
+        "yahoo_symbol": "TRI"
+      }
+    },
+    {
+      "ticker": "TYRA",
+      "name": "Tyra Bioscience, Inc",
+      "exchange": "NASDAQ",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Biotechnology",
+      "description": "Tyra Bioscience, Inc · Biotechnology",
+      "change_pct": 3.66252727935803,
+      "session_open": 14.800000190734863,
+      "session_close": 15.850000381469727,
+      "session_volume": 53700.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:TYRA",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/TYRA/history/",
+        "date": "2023-03-20",
+        "daily_high": 16.0,
+        "prior_all_time_or_current_month_high": 31.360000610351562,
+        "passes_close_filter": true,
+        "yahoo_symbol": "TYRA"
+      }
+    },
+    {
+      "ticker": "VMD",
+      "name": "Viemed Healthcare, Inc.",
+      "exchange": "NASDAQ",
+      "category": "Health Services",
+      "high_type": "52_week",
+      "reason": "업종: Health Services · Hospital/Nursing Management",
+      "description": "Viemed Healthcare, Inc. · Hospital/Nursing Management",
+      "change_pct": 1.5243863435390637,
+      "session_open": 9.720000267028809,
+      "session_close": 9.989999771118164,
+      "session_volume": 135900.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:VMD",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/VMD/history/",
+        "date": "2023-03-20",
+        "daily_high": 10.0,
+        "prior_all_time_or_current_month_high": 11.979999542236328,
+        "passes_close_filter": true,
+        "yahoo_symbol": "VMD"
+      }
+    },
+    {
+      "ticker": "ANET",
+      "name": "Arista Networks Inc",
+      "exchange": "NYSE",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Computer Peripherals",
+      "description": "Arista Networks Inc · Computer Peripherals",
+      "change_pct": 0.5757702272658705,
+      "session_open": 40.564998626708984,
+      "session_close": 41.04999923706055,
+      "session_volume": 11242400.0,
+      "currency": "USD",
+      "source_symbol": "NYSE:ANET",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/ANET/history/",
+        "date": "2023-03-20",
+        "daily_high": 41.3125,
+        "prior_all_time_or_current_month_high": 41.3125,
+        "passes_close_filter": true,
+        "yahoo_symbol": "ANET"
+      }
+    },
+    {
+      "ticker": "ARL",
+      "name": "American Realty Investors, Inc.",
+      "exchange": "NYSE",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "업종: Finance · Real Estate Development",
+      "description": "American Realty Investors, Inc. · Real Estate Development",
+      "change_pct": 1.7344912131539214,
+      "session_open": 29.559999465942383,
+      "session_close": 30.5,
+      "session_volume": 30000.0,
+      "currency": "USD",
+      "source_symbol": "NYSE:ARL",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/ARL/history/",
+        "date": "2023-03-20",
+        "daily_high": 31.59000015258789,
+        "prior_all_time_or_current_month_high": 31.59000015258789,
+        "passes_close_filter": true,
+        "yahoo_symbol": "ARL"
+      }
+    },
+    {
+      "ticker": "TR",
+      "name": "Tootsie Roll Industries, Inc.",
+      "exchange": "NYSE",
+      "category": "Consumer Non-Durables",
+      "high_type": "all_time",
+      "reason": "업종: Consumer Non-Durables · Food: Specialty/Candy",
+      "description": "Tootsie Roll Industries, Inc. · Food: Specialty/Candy",
+      "change_pct": 1.0311543101265253,
+      "session_open": 40.88853073120117,
+      "session_close": 41.24543380737305,
+      "session_volume": 207727.0,
+      "currency": "USD",
+      "source_symbol": "NYSE:TR",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/TR/history/",
+        "date": "2023-03-20",
+        "daily_high": 42.005001068115234,
+        "prior_all_time_or_current_month_high": 42.005001068115234,
+        "passes_close_filter": true,
+        "yahoo_symbol": "TR"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-10-27T10:44:40.669957+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 5712,
+    "history_symbols": 4639,
+    "inactive_symbols": 7,
+    "failed_symbols": 1066,
+    "coverage_ratio": 0.8131463628396144,
+    "coverage_by_exchange": {
+      "NASDAQ": {
+        "covered": 2586,
+        "total": 3342
+      },
+      "NYSE": {
+        "covered": 1851,
+        "total": 2101
+      },
+      "AMEX": {
+        "covered": 202,
+        "total": 262
+      }
+    },
+    "session_symbols": 4507,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-10-27T10:44:40.669957+00:00"
+}

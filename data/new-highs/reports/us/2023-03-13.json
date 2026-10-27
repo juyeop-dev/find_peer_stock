@@ -1,0 +1,338 @@
+{
+  "schema_version": 1,
+  "market": "us",
+  "date": "2023-03-13",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "EONR",
+      "name": "EON Resources Inc",
+      "exchange": "AMEX",
+      "category": "Energy Minerals",
+      "high_type": "all_time",
+      "reason": "업종: Energy Minerals · Integrated Oil",
+      "description": "EON Resources Inc · Integrated Oil",
+      "change_pct": 0.0,
+      "session_open": 10.430000305175781,
+      "session_close": 10.449999809265137,
+      "session_volume": 1100.0,
+      "currency": "USD",
+      "source_symbol": "AMEX:EONR",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/EONR/history/",
+        "date": "2023-03-13",
+        "daily_high": 10.449999809265137,
+        "prior_all_time_or_current_month_high": 10.449999809265137,
+        "passes_close_filter": true,
+        "yahoo_symbol": "EONR"
+      }
+    },
+    {
+      "ticker": "SOAR",
+      "name": "SOAR AI, Inc. Class A",
+      "exchange": "AMEX",
+      "category": "Transportation",
+      "high_type": "52_week",
+      "reason": "업종: Transportation · Airlines",
+      "description": "SOAR AI, Inc. Class A · Airlines",
+      "change_pct": 0.0,
+      "session_open": 230.46180725097656,
+      "session_close": 230.683837890625,
+      "session_volume": 6779.0,
+      "currency": "USD",
+      "source_symbol": "AMEX:SOAR",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/SOAR/history/",
+        "date": "2023-03-13",
+        "daily_high": 230.683837890625,
+        "prior_all_time_or_current_month_high": 5018.235269278871,
+        "passes_close_filter": true,
+        "yahoo_symbol": "SOAR"
+      }
+    },
+    {
+      "ticker": "ALMU",
+      "name": "Aeluma, Inc.",
+      "exchange": "NASDAQ",
+      "category": "Commercial Services",
+      "high_type": "all_time",
+      "reason": "업종: Commercial Services · Miscellaneous Commercial Services",
+      "description": "Aeluma, Inc. · Miscellaneous Commercial Services",
+      "change_pct": 6.285715103149414,
+      "session_open": 3.5,
+      "session_close": 3.7200000286102295,
+      "session_volume": 1300.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:ALMU",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/ALMU/history/",
+        "date": "2023-03-13",
+        "daily_high": 3.7200000286102295,
+        "prior_all_time_or_current_month_high": 3.7200000286102295,
+        "passes_close_filter": true,
+        "yahoo_symbol": "ALMU"
+      }
+    },
+    {
+      "ticker": "APLM",
+      "name": "Apollomics Inc. Class A",
+      "exchange": "NASDAQ",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "업종: Finance · Financial Conglomerates",
+      "description": "Apollomics Inc. Class A · Financial Conglomerates",
+      "change_pct": 0.28571428571428914,
+      "session_open": 1050.0,
+      "session_close": 1053.0,
+      "session_volume": 504.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:APLM",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/APLM/history/",
+        "date": "2023-03-13",
+        "daily_high": 1053.0,
+        "prior_all_time_or_current_month_high": 105000.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "APLM"
+      }
+    },
+    {
+      "ticker": "GCL",
+      "name": "GCL Global Holdings Ltd",
+      "exchange": "NASDAQ",
+      "category": "Technology Services",
+      "high_type": "all_time",
+      "reason": "업종: Technology Services · Packaged Software",
+      "description": "GCL Global Holdings Ltd · Packaged Software",
+      "change_pct": 0.0,
+      "session_open": 10.279999732971191,
+      "session_close": 10.279999732971191,
+      "session_volume": 200.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:GCL",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/GCL/history/",
+        "date": "2023-03-13",
+        "daily_high": 10.279999732971191,
+        "prior_all_time_or_current_month_high": 10.279999732971191,
+        "passes_close_filter": true,
+        "yahoo_symbol": "GCL"
+      }
+    },
+    {
+      "ticker": "GEHC",
+      "name": "GE Healthcare Technologies Inc.",
+      "exchange": "NASDAQ",
+      "category": "Health Technology",
+      "high_type": "all_time",
+      "reason": "업종: Health Technology · Medical Specialties",
+      "description": "GE Healthcare Technologies Inc. · Medical Specialties",
+      "change_pct": 1.694006432423123,
+      "session_open": 74.94999694824219,
+      "session_close": 76.23999786376953,
+      "session_volume": 2272100.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:GEHC",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/GEHC/history/",
+        "date": "2023-03-13",
+        "daily_high": 77.4800033569336,
+        "prior_all_time_or_current_month_high": 77.4800033569336,
+        "passes_close_filter": true,
+        "yahoo_symbol": "GEHC"
+      }
+    },
+    {
+      "ticker": "LMB",
+      "name": "Limbach Holdings, Inc.",
+      "exchange": "NASDAQ",
+      "category": "Industrial Services",
+      "high_type": "all_time",
+      "reason": "업종: Industrial Services · Engineering & Construction",
+      "description": "Limbach Holdings, Inc. · Engineering & Construction",
+      "change_pct": 7.85375634028751,
+      "session_open": 14.569999694824219,
+      "session_close": 15.930000305175781,
+      "session_volume": 259100.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:LMB",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/LMB/history/",
+        "date": "2023-03-13",
+        "daily_high": 16.200000762939453,
+        "prior_all_time_or_current_month_high": 16.200000762939453,
+        "passes_close_filter": true,
+        "yahoo_symbol": "LMB"
+      }
+    },
+    {
+      "ticker": "LMNR",
+      "name": "Limoneira Company",
+      "exchange": "NASDAQ",
+      "category": "Process Industries",
+      "high_type": "52_week",
+      "reason": "업종: Process Industries · Agricultural Commodities/Milling",
+      "description": "Limoneira Company · Agricultural Commodities/Milling",
+      "change_pct": 0.4819272401665575,
+      "session_open": 16.299999237060547,
+      "session_close": 16.68000030517578,
+      "session_volume": 92900.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:LMNR",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/LMNR/history/",
+        "date": "2023-03-13",
+        "daily_high": 17.049999237060547,
+        "prior_all_time_or_current_month_high": 33.41999816894531,
+        "passes_close_filter": true,
+        "yahoo_symbol": "LMNR"
+      }
+    },
+    {
+      "ticker": "OIO",
+      "name": "OIO Group",
+      "exchange": "NASDAQ",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "업종: Finance · Financial Conglomerates",
+      "description": "OIO Group · Financial Conglomerates",
+      "change_pct": 0.6666637602306569,
+      "session_open": 31.709999084472656,
+      "session_close": 31.709999084472656,
+      "session_volume": 400.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:OIO",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/OIO/history/",
+        "date": "2023-03-13",
+        "daily_high": 31.709999084472656,
+        "prior_all_time_or_current_month_high": 91.43999862670898,
+        "passes_close_filter": true,
+        "yahoo_symbol": "OIO"
+      }
+    },
+    {
+      "ticker": "PESI",
+      "name": "Perma-Fix Environmental Services, Inc.",
+      "exchange": "NASDAQ",
+      "category": "Industrial Services",
+      "high_type": "52_week",
+      "reason": "업종: Industrial Services · Environmental Services",
+      "description": "Perma-Fix Environmental Services, Inc. · Environmental Services",
+      "change_pct": 5.644172511383827,
+      "session_open": 8.170000076293945,
+      "session_close": 8.609999656677246,
+      "session_volume": 227000.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:PESI",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/PESI/history/",
+        "date": "2023-03-13",
+        "daily_high": 8.960000038146973,
+        "prior_all_time_or_current_month_high": 206.25,
+        "passes_close_filter": true,
+        "yahoo_symbol": "PESI"
+      }
+    },
+    {
+      "ticker": "PROK",
+      "name": "ProKidney Corp. Class A",
+      "exchange": "NASDAQ",
+      "category": "Health Technology",
+      "high_type": "all_time",
+      "reason": "업종: Health Technology · Biotechnology",
+      "description": "ProKidney Corp. Class A · Biotechnology",
+      "change_pct": 15.121131374808726,
+      "session_open": 11.600000381469727,
+      "session_close": 13.779999732971191,
+      "session_volume": 293800.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:PROK",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/PROK/history/",
+        "date": "2023-03-13",
+        "daily_high": 14.1899995803833,
+        "prior_all_time_or_current_month_high": 14.1899995803833,
+        "passes_close_filter": true,
+        "yahoo_symbol": "PROK"
+      }
+    },
+    {
+      "ticker": "FCN",
+      "name": "FTI Consulting, Inc.",
+      "exchange": "NYSE",
+      "category": "Commercial Services",
+      "high_type": "all_time",
+      "reason": "업종: Commercial Services · Miscellaneous Commercial Services",
+      "description": "FTI Consulting, Inc. · Miscellaneous Commercial Services",
+      "change_pct": 4.641442586087474,
+      "session_open": 186.83999633789062,
+      "session_close": 195.24000549316406,
+      "session_volume": 799000.0,
+      "currency": "USD",
+      "source_symbol": "NYSE:FCN",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/FCN/history/",
+        "date": "2023-03-13",
+        "daily_high": 201.6300048828125,
+        "prior_all_time_or_current_month_high": 201.6300048828125,
+        "passes_close_filter": true,
+        "yahoo_symbol": "FCN"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-10-27T10:44:40.669957+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 5712,
+    "history_symbols": 4639,
+    "inactive_symbols": 7,
+    "failed_symbols": 1066,
+    "coverage_ratio": 0.8131463628396144,
+    "coverage_by_exchange": {
+      "NASDAQ": {
+        "covered": 2586,
+        "total": 3342
+      },
+      "NYSE": {
+        "covered": 1851,
+        "total": 2101
+      },
+      "AMEX": {
+        "covered": 202,
+        "total": 262
+      }
+    },
+    "session_symbols": 4507,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-10-27T10:44:40.669957+00:00"
+}

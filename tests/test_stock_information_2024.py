@@ -25,7 +25,7 @@ class WholeYearFinancialTests(unittest.TestCase):
     def test_january_actuals_are_accepted_but_previous_year_and_forecasts_are_not(self):
         items = [{"asOfDate": day, "periodType": "3M", "currencyCode": "USD", "reportedValue": {"raw": 0}} for day in ["2023-12-31", "2024-03-31", "2027-03-31"]]
         rows = info.parse_yahoo_financials({"timeseries": {"result": [{"meta": {"symbol": ["TEST"]}, "quarterlyOperatingIncome": items}]}}, "TEST", "2026-10-26")
-        self.assertEqual([row["period_end"] for row in rows], ["2024-03-31"])
+        self.assertEqual([row["period_end"] for row in rows], ["2023-12-31", "2024-03-31"])
 
 
 if __name__ == "__main__":

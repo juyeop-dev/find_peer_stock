@@ -1,0 +1,430 @@
+{
+  "schema_version": 1,
+  "market": "china",
+  "date": "2023-08-15",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "600272.SS",
+      "name": "Shanghai Kaikai Industrial Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Consumer Non-Durables",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Non-Durables · Apparel/Footwear",
+      "description": "Shanghai Kaikai Industrial Co., Ltd. Class A · Apparel/Footwear",
+      "change_pct": 10.023131564920696,
+      "session_open": 12.779999732971191,
+      "session_close": 14.270000457763672,
+      "session_volume": 33667142.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:600272",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/600272.SS/history/",
+        "date": "2023-08-15",
+        "daily_high": 14.270000457763672,
+        "prior_all_time_or_current_month_high": 28.65999984741211,
+        "passes_close_filter": true,
+        "yahoo_symbol": "600272.SS"
+      }
+    },
+    {
+      "ticker": "601136.SS",
+      "name": "Capital Securities Corp. Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "업종: Finance · Investment Managers",
+      "description": "Capital Securities Corp. Ltd. Class A · Investment Managers",
+      "change_pct": 9.999998410542798,
+      "session_open": 23.729999542236328,
+      "session_close": 26.399999618530273,
+      "session_volume": 157054493.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:601136",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/601136.SS/history/",
+        "date": "2023-08-15",
+        "daily_high": 26.399999618530273,
+        "prior_all_time_or_current_month_high": 26.399999618530273,
+        "passes_close_filter": true,
+        "yahoo_symbol": "601136.SS"
+      }
+    },
+    {
+      "ticker": "000752.SZ",
+      "name": "Tibet Development Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Consumer Non-Durables",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Non-Durables · Beverages: Alcoholic",
+      "description": "Tibet Development Co., Ltd. Class A · Beverages: Alcoholic",
+      "change_pct": 5.060241766774709,
+      "session_open": 8.720000267028809,
+      "session_close": 8.720000267028809,
+      "session_volume": 31360482.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:000752",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/000752.SZ/history/",
+        "date": "2023-08-15",
+        "daily_high": 8.720000267028809,
+        "prior_all_time_or_current_month_high": 38.59000015258789,
+        "passes_close_filter": true,
+        "yahoo_symbol": "000752.SZ"
+      }
+    },
+    {
+      "ticker": "002221.SZ",
+      "name": "Oriental Energy Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Energy Minerals",
+      "high_type": "52_week",
+      "reason": "업종: Energy Minerals · Oil & Gas Production",
+      "description": "Oriental Energy Co., Ltd. Class A · Oil & Gas Production",
+      "change_pct": 1.7892578925789326,
+      "session_open": 10.010000228881836,
+      "session_close": 10.239999771118164,
+      "session_volume": 42635094.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002221",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002221.SZ/history/",
+        "date": "2023-08-15",
+        "daily_high": 10.84000015258789,
+        "prior_all_time_or_current_month_high": 16.149999618530273,
+        "passes_close_filter": true,
+        "yahoo_symbol": "002221.SZ"
+      }
+    },
+    {
+      "ticker": "002485.SZ",
+      "name": "Cedar Development Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Transportation",
+      "high_type": "52_week",
+      "reason": "업종: Transportation · Air Freight/Couriers",
+      "description": "Cedar Development Co., Ltd. Class A · Air Freight/Couriers",
+      "change_pct": 0.6651825154924573,
+      "session_open": 4.510000228881836,
+      "session_close": 4.539999961853027,
+      "session_volume": 2032472.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002485",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002485.SZ/history/",
+        "date": "2023-08-15",
+        "daily_high": 4.570000171661377,
+        "prior_all_time_or_current_month_high": 14.217650413513184,
+        "passes_close_filter": true,
+        "yahoo_symbol": "002485.SZ"
+      }
+    },
+    {
+      "ticker": "002945.SZ",
+      "name": "ChinaLin Securities Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "업종: Finance · Investment Managers",
+      "description": "ChinaLin Securities Co., Ltd. Class A · Investment Managers",
+      "change_pct": 10.025059047438312,
+      "session_open": 15.489999771118164,
+      "session_close": 17.559999465942383,
+      "session_volume": 92658825.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002945",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002945.SZ/history/",
+        "date": "2023-08-15",
+        "daily_high": 17.559999465942383,
+        "prior_all_time_or_current_month_high": 21.450000762939453,
+        "passes_close_filter": true,
+        "yahoo_symbol": "002945.SZ"
+      }
+    },
+    {
+      "ticker": "300380.SZ",
+      "name": "Shanghai Amarsoft Information & Technology Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Technology Services",
+      "high_type": "52_week",
+      "reason": "업종: Technology Services · Packaged Software",
+      "description": "Shanghai Amarsoft Information & Technology Co., Ltd. Class A · Packaged Software",
+      "change_pct": 19.993258043435837,
+      "session_open": 28.0,
+      "session_close": 35.59000015258789,
+      "session_volume": 37392559.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:300380",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/300380.SZ/history/",
+        "date": "2023-08-15",
+        "daily_high": 35.59000015258789,
+        "prior_all_time_or_current_month_high": 181.60000610351562,
+        "passes_close_filter": true,
+        "yahoo_symbol": "300380.SZ"
+      }
+    },
+    {
+      "ticker": "300804.SZ",
+      "name": "Yingde Greatchem Chemicals Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Process Industries",
+      "high_type": "all_time",
+      "reason": "업종: Process Industries · Chemicals: Agricultural",
+      "description": "Yingde Greatchem Chemicals Co., Ltd. Class A · Chemicals: Agricultural",
+      "change_pct": 20.010754614419056,
+      "session_open": 37.189998626708984,
+      "session_close": 44.619998931884766,
+      "session_volume": 9605338.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:300804",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/300804.SZ/history/",
+        "date": "2023-08-15",
+        "daily_high": 44.619998931884766,
+        "prior_all_time_or_current_month_high": 44.619998931884766,
+        "passes_close_filter": true,
+        "yahoo_symbol": "300804.SZ"
+      }
+    },
+    {
+      "ticker": "300851.SZ",
+      "name": "Beijing Jiaoda Signal Technology Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Trucks/Construction/Farm Machinery",
+      "description": "Beijing Jiaoda Signal Technology Co., Ltd. Class A · Trucks/Construction/Farm Machinery",
+      "change_pct": 9.226645367454145,
+      "session_open": 26.049999237060547,
+      "session_close": 28.530000686645508,
+      "session_volume": 5471208.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:300851",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/300851.SZ/history/",
+        "date": "2023-08-15",
+        "daily_high": 31.34000015258789,
+        "prior_all_time_or_current_month_high": 66.52999877929688,
+        "passes_close_filter": true,
+        "yahoo_symbol": "300851.SZ"
+      }
+    },
+    {
+      "ticker": "300905.SZ",
+      "name": "Poly Plastic Masterbatch (SuZhou) Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Process Industries",
+      "high_type": "52_week",
+      "reason": "업종: Process Industries · Chemicals: Specialty",
+      "description": "Poly Plastic Masterbatch (SuZhou) Co., Ltd. Class A · Chemicals: Specialty",
+      "change_pct": 13.135346699007,
+      "session_open": 18.68000030517578,
+      "session_close": 19.809999465942383,
+      "session_volume": 12622657.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:300905",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/300905.SZ/history/",
+        "date": "2023-08-15",
+        "daily_high": 20.8799991607666,
+        "prior_all_time_or_current_month_high": 37.650001525878906,
+        "passes_close_filter": true,
+        "yahoo_symbol": "300905.SZ"
+      }
+    },
+    {
+      "ticker": "301017.SZ",
+      "name": "Shu Yu Civilian Pharmacy Corp., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Retail Trade",
+      "high_type": "52_week",
+      "reason": "업종: Retail Trade · Drugstore Chains",
+      "description": "Shu Yu Civilian Pharmacy Corp., Ltd. Class A · Drugstore Chains",
+      "change_pct": 7.625899872889175,
+      "session_open": 20.510000228881836,
+      "session_close": 22.440000534057617,
+      "session_volume": 17115959.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:301017",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/301017.SZ/history/",
+        "date": "2023-08-15",
+        "daily_high": 23.899999618530273,
+        "prior_all_time_or_current_month_high": 36.5,
+        "passes_close_filter": true,
+        "yahoo_symbol": "301017.SZ"
+      }
+    },
+    {
+      "ticker": "301076.SZ",
+      "name": "Sino-High (China) Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Process Industries",
+      "high_type": "all_time",
+      "reason": "업종: Process Industries · Chemicals: Specialty",
+      "description": "Sino-High (China) Co., Ltd. Class A · Chemicals: Specialty",
+      "change_pct": 2.457625011985387,
+      "session_open": 13.905324935913086,
+      "session_close": 14.30769157409668,
+      "session_volume": 6454306.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:301076",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/301076.SZ/history/",
+        "date": "2023-08-15",
+        "daily_high": 14.431952476501465,
+        "prior_all_time_or_current_month_high": 14.431952476501465,
+        "passes_close_filter": true,
+        "yahoo_symbol": "301076.SZ"
+      }
+    },
+    {
+      "ticker": "301218.SZ",
+      "name": "Zhejiang Whyis Technology Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Technology Services",
+      "high_type": "all_time",
+      "reason": "업종: Technology Services · Information Technology Services",
+      "description": "Zhejiang Whyis Technology Co., Ltd. Class A · Information Technology Services",
+      "change_pct": 19.999996524193953,
+      "session_open": 45.9900016784668,
+      "session_close": 52.68000030517578,
+      "session_volume": 26951802.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:301218",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/301218.SZ/history/",
+        "date": "2023-08-15",
+        "daily_high": 52.68000030517578,
+        "prior_all_time_or_current_month_high": 52.68000030517578,
+        "passes_close_filter": true,
+        "yahoo_symbol": "301218.SZ"
+      }
+    },
+    {
+      "ticker": "301234.SZ",
+      "name": "Anhui Hongyu Wuzhou Medical Manufacturer Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Health Technology",
+      "high_type": "all_time",
+      "reason": "업종: Health Technology · Medical Specialties",
+      "description": "Anhui Hongyu Wuzhou Medical Manufacturer Co., Ltd. Class A · Medical Specialties",
+      "change_pct": 4.9538216637012855,
+      "session_open": 44.0,
+      "session_close": 50.0,
+      "session_volume": 14622585.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:301234",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/301234.SZ/history/",
+        "date": "2023-08-15",
+        "daily_high": 54.79999923706055,
+        "prior_all_time_or_current_month_high": 54.79999923706055,
+        "passes_close_filter": true,
+        "yahoo_symbol": "301234.SZ"
+      }
+    },
+    {
+      "ticker": "301335.SZ",
+      "name": "Hangzhou Tianyuan Pet Products Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Industrial Conglomerates",
+      "description": "Hangzhou Tianyuan Pet Products Co., Ltd. Class A · Industrial Conglomerates",
+      "change_pct": 7.349943492167688,
+      "session_open": 24.530000686645508,
+      "session_close": 26.290000915527344,
+      "session_volume": 4847539.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:301335",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/301335.SZ/history/",
+        "date": "2023-08-15",
+        "daily_high": 26.6299991607666,
+        "prior_all_time_or_current_month_high": 26.6299991607666,
+        "passes_close_filter": true,
+        "yahoo_symbol": "301335.SZ"
+      }
+    },
+    {
+      "ticker": "301370.SZ",
+      "name": "GKHT Medical Technology Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Distribution Services",
+      "high_type": "all_time",
+      "reason": "업종: Distribution Services · Medical Distributors",
+      "description": "GKHT Medical Technology Co., Ltd. Class A · Medical Distributors",
+      "change_pct": 17.41767968393546,
+      "session_open": 21.729999542236328,
+      "session_close": 27.100000381469727,
+      "session_volume": 50763183.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:301370",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/301370.SZ/history/",
+        "date": "2023-08-15",
+        "daily_high": 27.700000762939453,
+        "prior_all_time_or_current_month_high": 27.700000762939453,
+        "passes_close_filter": true,
+        "yahoo_symbol": "301370.SZ"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-10-27T10:42:33.064935+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 5312,
+    "history_symbols": 5064,
+    "inactive_symbols": 0,
+    "failed_symbols": 248,
+    "coverage_ratio": 0.9533132530120482,
+    "coverage_by_exchange": {
+      "SSE": {
+        "covered": 2250,
+        "total": 2358
+      },
+      "SZSE": {
+        "covered": 2814,
+        "total": 2954
+      }
+    },
+    "session_symbols": 5004,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-10-27T10:42:33.064935+00:00"
+}

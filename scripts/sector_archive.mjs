@@ -1,4 +1,4 @@
-import { mkdir, readFile, readdir, rename, writeFile } from "node:fs/promises";
+import { mkdir, readFile, readdir, rename, unlink, writeFile } from "node:fs/promises";
 import { dirname, join } from "node:path";
 import { gzipSync, gunzipSync } from "node:zlib";
 
@@ -31,11 +31,13 @@ export async function publishSectorArchive(directory, output) {
   const records = [];
   for (const name of (await readdir(join(directory, "daily"))).sort()) {
     if (!/^\d{4}-\d{2}-\d{2}\.json\.gz$/.test(name)) continue;
-    const bytes = gunzipSync(await readFile(join(directory, "daily", name)));
+    const compressed = await readFile(join(directory, "daily", name));
+    const bytes = gunzipSync(compressed);
     const snapshot = JSON.parse(bytes);
     if (name !== snapshot.date + ".json.gz") throw new Error("Sector archive date mismatch");
     records.push(archiveMetadata(snapshot));
-    await saveSectorFile(join(output, "daily", snapshot.date + ".json"), bytes);
+    await saveSectorFile(join(output, "daily", snapshot.date + ".json.gz"), compressed);
+    await unlink(join(output, "daily", snapshot.date + ".json")).catch(error => { if (error.code !== "ENOENT") throw error; });
   }
   const current = JSON.parse(await readFile(join(directory, "index.json"), "utf8"));
   const latest = archiveMetadata(current);
@@ -44,6 +46,7 @@ export async function publishSectorArchive(directory, output) {
   await saveSectorFile(join(directory, "calendar.json"), text);
   await saveSectorFile(join(output, "calendar.json"), text);
   await saveSectorFile(join(output, "index.json"), JSON.stringify(current) + "\n");
-  await saveSectorFile(join(output, "daily", current.date + ".json"), JSON.stringify(current) + "\n");
+  await saveSectorFile(join(output, "daily", current.date + ".json.gz"), gzipSync(JSON.stringify(current) + "\n"));
+  await unlink(join(output, "daily", current.date + ".json")).catch(error => { if (error.code !== "ENOENT") throw error; });
   return calendar;
 }

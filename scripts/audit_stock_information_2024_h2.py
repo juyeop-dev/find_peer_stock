@@ -35,7 +35,7 @@ def main():
         statements = value["financials"]
         for statement in statements:
             assert statement["type"] in {"annual", "quarterly", "semiannual"} and statement["currency"] and statement["source"]
-            assert START <= statement["period_end"] <= datetime.now(timezone.utc).date().isoformat()
+            assert information.START <= statement["period_end"] <= datetime.now(timezone.utc).date().isoformat()
             for key in information.METRICS:
                 number = statement.get(key)
                 assert number is None or type(number) in {int, float} and math.isfinite(number), (ticker, key)
@@ -48,6 +48,11 @@ def main():
             dates = [point[0] for point in prices]
             assert dates == sorted(set(dates)), ticker
             assert all(type(n) in {int, float} and math.isfinite(n) and n > 0 for point in prices for n in point[1:]), ticker
+            for previous in history[ticker].get("prior_snapshots", []):
+                assert previous["ticker"] == ticker and previous["currency"] and previous["source"]
+                prior_dates = [point[0] for point in previous["prices"]]
+                assert prior_dates == sorted(set(prior_dates)), ticker
+                assert all(type(n) in {int, float} and math.isfinite(n) and n > 0 for point in previous["prices"] for n in point[1:]), ticker
         status = "missing_history" if len(prices) < 2 else COVERED_STATUS if prices[0][0] <= START else "later_listing" if history[ticker].get("first_trade_date") and history[ticker]["first_trade_date"] > START else "source_limited"
         results.append({**row, "history_status": status, "first_price": prices[0][0] if prices else None,
             "last_price": prices[-1][0] if prices else None, "first_trade_date": history.get(ticker, {}).get("first_trade_date"),

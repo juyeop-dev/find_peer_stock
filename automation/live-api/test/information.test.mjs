@@ -23,7 +23,12 @@ test("manual information refresh requests both current fundamentals and historic
       const values = {description:"Apple",close:100,change:0,currency:"USD",time:Date.now()/1000, fundamental_currency_code:"USD"};
       return Response.json({data:[{s:"NASDAQ:AAPL",d:body.columns.map(column => values[column] ?? null)}]});
     }
-    return Response.json({timeseries:{result:[{meta:{symbol:["AAPL"]},annualTotalRevenue:[{asOfDate:"2025-09-30",periodType:"12M",currencyCode:"USD",reportedValue:{raw:1000}}]}]}});
+    const end = new URL(url).searchParams.get("period2");
+    const day = end === "1704067200" ? "2023-12-31" : end === "1735689600" ? "2024-12-31" : "2025-09-30";
+    return Response.json({timeseries:{result:[{meta:{symbol:["AAPL"]},annualTotalRevenue:[{asOfDate:day,periodType:"12M",currencyCode:"USD",reportedValue:{raw:1000}}]}]}});
   });
-  assert.equal(calls.length,4); assert.ok(calls[1].includes("period1=1704067200")); assert.ok(calls.some(url=>url.includes("period2=1767225600"))); assert.ok(calls.some(url=>url.includes("period2=1735689600"))); assert.equal(result.financials[0].revenue,1000); assert.equal(result.quote.price,100);
+  assert.equal(calls.length,5); assert.ok(calls[1].includes("period1=1672531200")); assert.ok(calls.some(url=>url.includes("period2=1767225600"))); assert.ok(calls.some(url=>url.includes("period2=1735689600"))); assert.ok(calls.some(url=>url.includes("period2=1704067200"))); assert.equal(result.financials[0].revenue,1000); assert.equal(result.quote.price,100);
+  assert.equal(result.historical_2023_coverage.annual_periods,1);
+  assert.equal(result.historical_2024_coverage.annual_periods,1);
+  assert.deepEqual(result.financials.map(row=>row.period_end),["2023-12-31","2024-12-31","2025-09-30"]);
 });

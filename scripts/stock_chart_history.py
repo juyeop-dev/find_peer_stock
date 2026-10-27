@@ -183,6 +183,20 @@ def save_candidate(db: sqlite3.Connection, value: dict) -> None:
         newer_full_request = verified_full_request and value["prices"][-1][0] >= old["prices"][-1][0] and fetched_time(value) >= fetched_time(old)
         if old.get("currency") and not newer_full_request and quality(old) >= quality(value):
             return
+        snapshots = list(old.get("prior_snapshots", []))
+        fresh_dates = set(dates)
+        omitted = [point for point in old["prices"] if point[0] not in fresh_dates]
+        if omitted:
+            # Provider revisions can omit dates or use a different adjustment
+            # convention. Keep the original observations separately, never
+            # splice incompatible prices into the current source's curve.
+            snapshot = {key: old[key] for key in ["ticker", "currency", "source", "fetched_at"] if key in old}
+            snapshot.update(prices=omitted, preservation_reason="Original observations omitted by a later provider response")
+            fingerprint = lambda item: (item.get("currency"), item.get("source"), json.dumps(item["prices"], separators=(",", ":")))
+            if fingerprint(snapshot) not in {fingerprint(item) for item in snapshots}:
+                snapshots.append(snapshot)
+        if snapshots:
+            value = {**value, "prior_snapshots": snapshots}
     db.execute("INSERT OR REPLACE INTO history VALUES (?,?)", (value["ticker"], json.dumps(value, ensure_ascii=False, separators=(",", ":"), allow_nan=False)))
 
 
@@ -443,7 +457,13 @@ def publish(output: Path = ROOT / "frontend/public/data/stock-history") -> int:
     for path in sorted(PACKS.glob("*.json.gz")):
         for ticker, value in json.loads(gzip.decompress(path.read_bytes())).items():
             filename = quote(ticker, safe="").replace("%", "~")
-            write_json(output / f"{filename}.json", value)
+            output.mkdir(parents=True, exist_ok=True)
+            target = output / f"{filename}.json.gz"
+            temporary = target.with_suffix(".gz.tmp")
+            body = (json.dumps(value, ensure_ascii=False, separators=(",", ":"), allow_nan=False) + "\n").encode("utf-8")
+            temporary.write_bytes(gzip.compress(body, compresslevel=9, mtime=0))
+            temporary.replace(target)
+            (output / f"{filename}.json").unlink(missing_ok=True)
             count += 1
     print(f"Published {count} continuous daily stock histories")
     return count

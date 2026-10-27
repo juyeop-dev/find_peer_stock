@@ -135,10 +135,17 @@ def verify_series_end(row: dict, bars: list[Bar], requested_end: date) -> None:
 
 def build_reports(sessions: list[date], *, workers: int = 4, timeout: float = 30,
                   cache_dir: Path = CACHE_DIR, daily_bars: int = 400,
-                  partial_history: bool = False) -> dict[date, dict]:
+                  partial_history: bool = False, universe_path: Path | None = None) -> dict[date, dict]:
     if not sessions:
         return {}
-    rows = _scan("europe", timeout, 5000)
+    universe = json.loads(universe_path.read_text(encoding="utf-8")) if universe_path else None
+    rows = universe["rows"] if universe else _scan("europe", timeout, 5000)
+    if universe:
+        if universe.get("excluded") or len({row["symbol"] for row in rows}) != len(rows):
+            raise ChartHistoryError("Cached universe is incomplete or contains duplicate listings")
+        if set(row["exchange"] for row in rows) != set(_CONFIG["europe"][1]):
+            raise ChartHistoryError("Cached universe does not cover all configured exchanges")
+    universe_fetched_at = universe["fetched_at"] if universe else datetime.now(timezone.utc).isoformat()
     earliest, latest = min(sessions), max(sessions)
     eligible, excluded = [], []
     for row in rows:
@@ -149,7 +156,7 @@ def build_reports(sessions: list[date], *, workers: int = 4, timeout: float = 30
             excluded.append({"symbol": row["symbol"], "reason": "latest scanner bar predates requested range"})
         else:
             eligible.append(row)
-    atomic_json(cache_dir / "universe.json", {"fetched_at": datetime.now(timezone.utc).isoformat(),
+    atomic_json(cache_dir / "universe.json", {"fetched_at": universe_fetched_at,
                                              "rows": rows, "excluded": excluded})
     print(f"europe: {len(rows)} scanned, {len(eligible)} histories required, {len(excluded)} pre-range/no-history symbols", flush=True)
     histories, failures, non_stock = {}, {}, []
@@ -206,7 +213,15 @@ def build_reports(sessions: list[date], *, workers: int = 4, timeout: float = 30
                 print(f"europe: monthly {completed}/{len(futures)}, unresolved={len(failures)}", flush=True)
     atomic_json(cache_dir / "monthly-failures.json", failures)
     if failures:
-        raise ChartHistoryError(f"{len(failures)} European monthly histories unresolved; see {cache_dir / 'monthly-failures.json'}")
+        if not partial_history:
+            raise ChartHistoryError(f"{len(failures)} European monthly histories unresolved; see {cache_dir / 'monthly-failures.json'}")
+        # An unverified monthly listing cannot establish its all-time high.
+        # Exclude it completely from explicitly partial archives and disclose
+        # the reason, including in turnover's shared verified universe.
+        unresolved_histories.update({symbol: f"Monthly identity/history: {error}" for symbol, error in failures.items()})
+        histories = {symbol: value for symbol, value in histories.items() if symbol not in failures}
+        eligible = [row for row in eligible if row["symbol"] in histories]
+        candidate_symbols = [symbol for symbol in candidate_symbols if symbol in histories]
     reports = {}
     collected_at = datetime.now(timezone.utc).isoformat()
     gap_proofs = [{"symbol": symbol, "chart_last_session": str(bars[-1].day),
@@ -263,6 +278,7 @@ def build_reports(sessions: list[date], *, workers: int = 4, timeout: float = 30
             "entries": entries, "collected_at": collected_at,
             "source_metadata": {"provider": "TradingView public daily/monthly chart history",
                 "universe_provider": "TradingView public scanner", "fetched_at": collected_at,
+                "universe_fetched_at": universe_fetched_at,
                 "universe": "Current TradingView-listed stocks on EURONEXT, XETR, LSE, SIX; ETFs and delisted historical listings excluded",
                 "scanned_symbols": len(rows), "history_symbols": len(histories),
                 "history_required_symbols": len(eligible),
@@ -289,6 +305,7 @@ def main() -> None:
                         help="Daily history depth; increase for earlier backfills (maximum 5000).")
     parser.add_argument("--cache-dir", type=Path, default=CACHE_DIR)
     parser.add_argument("--partial-history", action="store_true", help="Publish explicitly labelled partial historical observations; never claim complete session coverage.")
+    parser.add_argument("--universe-cache", type=Path, help="Reuse a previously complete dated scanner universe, retaining its original fetch timestamp.")
     args = parser.parse_args()
     if args.end < args.start or not 1 <= args.workers <= 4 or not 1 <= args.daily_bars <= 5000:
         parser.error("Invalid date range, workers (1-4), or daily history depth (1-5000)")
@@ -304,7 +321,8 @@ def main() -> None:
     print(f"europe: recovering {len(sessions)} missing completed sessions", flush=True)
     try:
         reports = build_reports(sessions, workers=args.workers, timeout=args.timeout,
-                                cache_dir=args.cache_dir, daily_bars=args.daily_bars, partial_history=args.partial_history)
+                                cache_dir=args.cache_dir, daily_bars=args.daily_bars, partial_history=args.partial_history,
+                                universe_path=args.universe_cache)
         for session, report in reports.items():
             validate_report(report, SOURCE_DIR / "reports/europe" / f"{session}.json", SOURCE_DIR / "reports", markets)
         for session, report in reports.items():

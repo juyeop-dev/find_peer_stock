@@ -1,0 +1,382 @@
+{
+  "schema_version": 1,
+  "market": "taiwan",
+  "date": "2023-09-25",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "1815.TWO",
+      "name": "Fulltech Fiber Glass Corp.",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Electronic Components",
+      "description": "Fulltech Fiber Glass Corp. · Electronic Components",
+      "change_pct": 7.189540680477258,
+      "session_open": 14.126388549804688,
+      "session_close": 15.191657066345215,
+      "session_volume": 44935846.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:1815",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/1815.TWO/history/",
+        "date": "2023-09-25",
+        "daily_high": 15.562186241149902,
+        "prior_all_time_or_current_month_high": 32.147758493692294,
+        "passes_close_filter": true,
+        "yahoo_symbol": "1815.TWO"
+      }
+    },
+    {
+      "ticker": "2596.TWO",
+      "name": "Realy Development & Construction Corp.",
+      "exchange": "TPEX",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "업종: Finance · Real Estate Development",
+      "description": "Realy Development & Construction Corp. · Real Estate Development",
+      "change_pct": 0.42918620061869195,
+      "session_open": 23.299999237060547,
+      "session_close": 23.399999618530273,
+      "session_volume": 84000.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:2596",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2596.TWO/history/",
+        "date": "2023-09-25",
+        "daily_high": 23.5,
+        "prior_all_time_or_current_month_high": 26.25,
+        "passes_close_filter": true,
+        "yahoo_symbol": "2596.TWO"
+      }
+    },
+    {
+      "ticker": "3188.TWO",
+      "name": "Golden Long Teng Development Co. Ltd.",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Semiconductors",
+      "description": "Golden Long Teng Development Co. Ltd. · Semiconductors",
+      "change_pct": 3.986707110906118,
+      "session_open": 15.100000381469727,
+      "session_close": 15.649999618530273,
+      "session_volume": 415000.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:3188",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3188.TWO/history/",
+        "date": "2023-09-25",
+        "daily_high": 15.75,
+        "prior_all_time_or_current_month_high": 47.41551878647721,
+        "passes_close_filter": true,
+        "yahoo_symbol": "3188.TWO"
+      }
+    },
+    {
+      "ticker": "4113.TWO",
+      "name": "We&Win Diversification Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "업종: Finance · Real Estate Development",
+      "description": "We&Win Diversification Co., Ltd. · Real Estate Development",
+      "change_pct": 3.711338633114525,
+      "session_open": 24.200000762939453,
+      "session_close": 25.149999618530273,
+      "session_volume": 1456000.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:4113",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4113.TWO/history/",
+        "date": "2023-09-25",
+        "daily_high": 25.549999237060547,
+        "prior_all_time_or_current_month_high": 25.549999237060547,
+        "passes_close_filter": true,
+        "yahoo_symbol": "4113.TWO"
+      }
+    },
+    {
+      "ticker": "5213.TWO",
+      "name": "YeaShin International Development Co. Ltd.",
+      "exchange": "TPEX",
+      "category": "Consumer Durables",
+      "high_type": "all_time",
+      "reason": "업종: Consumer Durables · Homebuilding",
+      "description": "YeaShin International Development Co. Ltd. · Homebuilding",
+      "change_pct": 2.366860398804893,
+      "session_open": 23.54212188720703,
+      "session_close": 24.051891326904297,
+      "session_volume": 648429.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:5213",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/5213.TWO/history/",
+        "date": "2023-09-25",
+        "daily_high": 24.237262725830078,
+        "prior_all_time_or_current_month_high": 24.237262725830078,
+        "passes_close_filter": true,
+        "yahoo_symbol": "5213.TWO"
+      }
+    },
+    {
+      "ticker": "1339.TW",
+      "name": "Y.C.C. Parts Mfg. Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Auto Parts: OEM",
+      "description": "Y.C.C. Parts Mfg. Co., Ltd. · Auto Parts: OEM",
+      "change_pct": 9.892086602412341,
+      "session_open": 56.099998474121094,
+      "session_close": 61.099998474121094,
+      "session_volume": 2979123.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:1339",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/1339.TW/history/",
+        "date": "2023-09-25",
+        "daily_high": 61.099998474121094,
+        "prior_all_time_or_current_month_high": 115.5,
+        "passes_close_filter": true,
+        "yahoo_symbol": "1339.TW"
+      }
+    },
+    {
+      "ticker": "2543.TW",
+      "name": "Hwang Chang General Contractor Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Industrial Services",
+      "high_type": "all_time",
+      "reason": "업종: Industrial Services · Engineering & Construction",
+      "description": "Hwang Chang General Contractor Co., Ltd. · Engineering & Construction",
+      "change_pct": 9.92908549570586,
+      "session_open": 7.7204670906066895,
+      "session_close": 8.397700309753418,
+      "session_volume": 12179363.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2543",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2543.TW/history/",
+        "date": "2023-09-25",
+        "daily_high": 8.397700309753418,
+        "prior_all_time_or_current_month_high": 8.397700309753418,
+        "passes_close_filter": true,
+        "yahoo_symbol": "2543.TW"
+      }
+    },
+    {
+      "ticker": "3450.TW",
+      "name": "Elite Advanced Laser Corporation",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Semiconductors",
+      "description": "Elite Advanced Laser Corporation · Semiconductors",
+      "change_pct": 1.5384641468015436,
+      "session_open": 58.0,
+      "session_close": 59.400001525878906,
+      "session_volume": 34409001.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:3450",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3450.TW/history/",
+        "date": "2023-09-25",
+        "daily_high": 60.79999923706055,
+        "prior_all_time_or_current_month_high": 116.94215254350142,
+        "passes_close_filter": true,
+        "yahoo_symbol": "3450.TW"
+      }
+    },
+    {
+      "ticker": "3715.TW",
+      "name": "Dynamic Holding Co Ltd",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Electronic Components",
+      "description": "Dynamic Holding Co Ltd · Electronic Components",
+      "change_pct": 9.95541849097612,
+      "session_open": 69.0,
+      "session_close": 74.0,
+      "session_volume": 80463912.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:3715",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3715.TW/history/",
+        "date": "2023-09-25",
+        "daily_high": 74.0,
+        "prior_all_time_or_current_month_high": 74.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "3715.TW"
+      }
+    },
+    {
+      "ticker": "6139.TW",
+      "name": "L&K Engineering Co. Ltd.",
+      "exchange": "TWSE",
+      "category": "Industrial Services",
+      "high_type": "all_time",
+      "reason": "업종: Industrial Services · Engineering & Construction",
+      "description": "L&K Engineering Co. Ltd. · Engineering & Construction",
+      "change_pct": 9.967492016568592,
+      "session_open": 91.57174682617188,
+      "session_close": 100.8083724975586,
+      "session_volume": 13111443.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:6139",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6139.TW/history/",
+        "date": "2023-09-25",
+        "daily_high": 100.8083724975586,
+        "prior_all_time_or_current_month_high": 100.8083724975586,
+        "passes_close_filter": true,
+        "yahoo_symbol": "6139.TW"
+      }
+    },
+    {
+      "ticker": "6271.TW",
+      "name": "Tong Hsing Electronic Industries ,Ltd.",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Electronic Components",
+      "description": "Tong Hsing Electronic Industries ,Ltd. · Electronic Components",
+      "change_pct": 1.7421602787456525,
+      "session_open": 143.5,
+      "session_close": 146.0,
+      "session_volume": 11704177.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:6271",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6271.TW/history/",
+        "date": "2023-09-25",
+        "daily_high": 151.5,
+        "prior_all_time_or_current_month_high": 240.6017871623412,
+        "passes_close_filter": true,
+        "yahoo_symbol": "6271.TW"
+      }
+    },
+    {
+      "ticker": "6405.TW",
+      "name": "Onano Industrial Corp.",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Semiconductors",
+      "description": "Onano Industrial Corp. · Semiconductors",
+      "change_pct": 9.883725658201637,
+      "session_open": 26.850000381469727,
+      "session_close": 28.350000381469727,
+      "session_volume": 2220000.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:6405",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6405.TW/history/",
+        "date": "2023-09-25",
+        "daily_high": 28.350000381469727,
+        "prior_all_time_or_current_month_high": 87.79000091552734,
+        "passes_close_filter": true,
+        "yahoo_symbol": "6405.TW"
+      }
+    },
+    {
+      "ticker": "6531.TW",
+      "name": "AP Memory Technology Corp.",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Semiconductors",
+      "description": "AP Memory Technology Corp. · Semiconductors",
+      "change_pct": 2.4611398963730657,
+      "session_open": 387.5,
+      "session_close": 395.5,
+      "session_volume": 14763679.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:6531",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6531.TW/history/",
+        "date": "2023-09-25",
+        "daily_high": 401.0,
+        "prior_all_time_or_current_month_high": 625.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "6531.TW"
+      }
+    },
+    {
+      "ticker": "6805.TW",
+      "name": "Fositek Corp.",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Electronic Production Equipment",
+      "description": "Fositek Corp. · Electronic Production Equipment",
+      "change_pct": 6.41025641025641,
+      "session_open": 272.5,
+      "session_close": 290.5,
+      "session_volume": 1575899.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:6805",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6805.TW/history/",
+        "date": "2023-09-25",
+        "daily_high": 292.0,
+        "prior_all_time_or_current_month_high": 378.5,
+        "passes_close_filter": true,
+        "yahoo_symbol": "6805.TW"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-10-27T10:38:28.567579+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 2356,
+    "history_symbols": 2079,
+    "inactive_symbols": 7,
+    "failed_symbols": 270,
+    "coverage_ratio": 0.8850574712643678,
+    "coverage_by_exchange": {
+      "TWSE": {
+        "covered": 1036,
+        "total": 1093
+      },
+      "TPEX": {
+        "covered": 1043,
+        "total": 1256
+      }
+    },
+    "session_symbols": 2048,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-10-27T10:38:28.567579+00:00"
+}

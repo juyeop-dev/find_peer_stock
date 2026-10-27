@@ -9,7 +9,8 @@ const archive=JSON.parse(await readFile(new URL("../../data/investors/index.json
 test("every archived day pairs both exact-date indices and source flows, including all 244 Korean 2024 trading days",()=>{
   archive.history.forEach(validateInvestorDay);
   assert.equal(archive.history.filter(row=>row.date.startsWith("2024-")).length,244);
-  assert.equal(archive.history[0].date,"2024-01-02");
+  assert.equal(archive.history.filter(row=>row.date.startsWith("2023-")).length,245);
+  assert.equal(archive.history[0].date,"2023-01-02");
 });
 test("whole-market totals sum money, never indices or percentages, and invalid pairs fail",()=>{
   const row=archive.history[0],total=investorTotals(row,"all");
@@ -24,7 +25,7 @@ test("original refresh retains all past records and rejects a response for anoth
   globalThis.mockInvestorOriginal=async()=>({...structuredClone(archive.history[0]),fetched_at:new Date().toISOString(),source_fetched_at:new Date().toISOString()});
   const signal=new AbortController().signal;
   try {
-    const before=await getInvestorData(signal),after=await getInvestorData(signal,true,"2024-01-02");
+    const before=await getInvestorData(signal),after=await getInvestorData(signal,true,archive.history[0].date);
     assert.equal(after.history.length,before.history.length);assert.equal(after.latest_date,before.latest_date);assert.ok(after.source_fetched_at);
     await assert.rejects(()=>getInvestorData(signal,true,"2024-01-03"),/일치/);
   } finally {globalThis.fetch=originalFetch;delete globalThis.mockInvestorOriginal;}

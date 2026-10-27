@@ -1,0 +1,362 @@
+{
+  "schema_version": 1,
+  "market": "us",
+  "date": "2023-10-24",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "MPTI",
+      "name": "M-tron Industries Inc",
+      "exchange": "AMEX",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Electronic Production Equipment",
+      "description": "M-tron Industries Inc · Electronic Production Equipment",
+      "change_pct": 11.56716593179179,
+      "session_open": 26.989999771118164,
+      "session_close": 29.899999618530273,
+      "session_volume": 63100.0,
+      "currency": "USD",
+      "source_symbol": "AMEX:MPTI",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/MPTI/history/",
+        "date": "2023-10-24",
+        "daily_high": 29.93000030517578,
+        "prior_all_time_or_current_month_high": 29.93000030517578,
+        "passes_close_filter": true,
+        "yahoo_symbol": "MPTI"
+      }
+    },
+    {
+      "ticker": "UEC",
+      "name": "Uranium Energy Corp.",
+      "exchange": "AMEX",
+      "category": "Non-Energy Minerals",
+      "high_type": "52_week",
+      "reason": "업종: Non-Energy Minerals · Other Metals/Minerals",
+      "description": "Uranium Energy Corp. · Other Metals/Minerals",
+      "change_pct": 2.8520471230697897,
+      "session_open": 5.650000095367432,
+      "session_close": 5.769999980926514,
+      "session_volume": 9905200.0,
+      "currency": "USD",
+      "source_symbol": "AMEX:UEC",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/UEC/history/",
+        "date": "2023-10-24",
+        "daily_high": 5.829999923706055,
+        "prior_all_time_or_current_month_high": 7.480000019073486,
+        "passes_close_filter": true,
+        "yahoo_symbol": "UEC"
+      }
+    },
+    {
+      "ticker": "AVPT",
+      "name": "AvePoint, Inc. Class A",
+      "exchange": "NASDAQ",
+      "category": "Technology Services",
+      "high_type": "52_week",
+      "reason": "업종: Technology Services · Packaged Software",
+      "description": "AvePoint, Inc. Class A · Packaged Software",
+      "change_pct": 1.894456642112674,
+      "session_open": 7.429999828338623,
+      "session_close": 7.53000020980835,
+      "session_volume": 1291000.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:AVPT",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/AVPT/history/",
+        "date": "2023-10-24",
+        "daily_high": 7.650000095367432,
+        "prior_all_time_or_current_month_high": 17.899999618530273,
+        "passes_close_filter": true,
+        "yahoo_symbol": "AVPT"
+      }
+    },
+    {
+      "ticker": "ENGN",
+      "name": "enGene Therapeutics Inc.",
+      "exchange": "NASDAQ",
+      "category": "Commercial Services",
+      "high_type": "all_time",
+      "reason": "업종: Commercial Services · Miscellaneous Commercial Services",
+      "description": "enGene Therapeutics Inc. · Miscellaneous Commercial Services",
+      "change_pct": 72.83951780124175,
+      "session_open": 10.380000114440918,
+      "session_close": 18.200000762939453,
+      "session_volume": 197000.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:ENGN",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/ENGN/history/",
+        "date": "2023-10-24",
+        "daily_high": 29.0,
+        "prior_all_time_or_current_month_high": 29.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "ENGN"
+      }
+    },
+    {
+      "ticker": "FTLF",
+      "name": "FitLife Brands, Inc.",
+      "exchange": "NASDAQ",
+      "category": "Health Technology",
+      "high_type": "all_time",
+      "reason": "업종: Health Technology · Pharmaceuticals: Other",
+      "description": "FitLife Brands, Inc. · Pharmaceuticals: Other",
+      "change_pct": 1.1080321921001168,
+      "session_open": 10.875,
+      "session_close": 10.949999809265137,
+      "session_volume": 99200.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:FTLF",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/FTLF/history/",
+        "date": "2023-10-24",
+        "daily_high": 11.369999885559082,
+        "prior_all_time_or_current_month_high": 11.369999885559082,
+        "passes_close_filter": true,
+        "yahoo_symbol": "FTLF"
+      }
+    },
+    {
+      "ticker": "GMM",
+      "name": "Global Mofy AI Limited Class A",
+      "exchange": "NASDAQ",
+      "category": "Technology Services",
+      "high_type": "all_time",
+      "reason": "업종: Technology Services · Packaged Software",
+      "description": "Global Mofy AI Limited Class A · Packaged Software",
+      "change_pct": 14.263565891472862,
+      "session_open": 322.5,
+      "session_close": 368.5,
+      "session_volume": 1800.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:GMM",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/GMM/history/",
+        "date": "2023-10-24",
+        "daily_high": 402.5,
+        "prior_all_time_or_current_month_high": 402.5,
+        "passes_close_filter": true,
+        "yahoo_symbol": "GMM"
+      }
+    },
+    {
+      "ticker": "INTR",
+      "name": "Inter & Co., Inc. Class A",
+      "exchange": "NASDAQ",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "업종: Finance · Major Banks",
+      "description": "Inter & Co., Inc. Class A · Major Banks",
+      "change_pct": 7.373264598467966,
+      "session_open": 4.349999904632568,
+      "session_close": 4.659999847412109,
+      "session_volume": 354300.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:INTR",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/INTR/history/",
+        "date": "2023-10-24",
+        "daily_high": 4.679999828338623,
+        "prior_all_time_or_current_month_high": 4.679999828338623,
+        "passes_close_filter": true,
+        "yahoo_symbol": "INTR"
+      }
+    },
+    {
+      "ticker": "LFVN",
+      "name": "LifeVantage Corporation",
+      "exchange": "NASDAQ",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Pharmaceuticals: Other",
+      "description": "LifeVantage Corporation · Pharmaceuticals: Other",
+      "change_pct": 13.793103448275868,
+      "session_open": 7.309999942779541,
+      "session_close": 8.25,
+      "session_volume": 86800.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:LFVN",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/LFVN/history/",
+        "date": "2023-10-24",
+        "daily_high": 8.369999885559082,
+        "prior_all_time_or_current_month_high": 33986.40072631836,
+        "passes_close_filter": true,
+        "yahoo_symbol": "LFVN"
+      }
+    },
+    {
+      "ticker": "LOGI",
+      "name": "Logitech International S.A.",
+      "exchange": "NASDAQ",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Computer Peripherals",
+      "description": "Logitech International S.A. · Computer Peripherals",
+      "change_pct": 12.889547014875147,
+      "session_open": 75.45999908447266,
+      "session_close": 77.16000366210938,
+      "session_volume": 2301300.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:LOGI",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/LOGI/history/",
+        "date": "2023-10-24",
+        "daily_high": 77.31999969482422,
+        "prior_all_time_or_current_month_high": 140.1699981689453,
+        "passes_close_filter": true,
+        "yahoo_symbol": "LOGI"
+      }
+    },
+    {
+      "ticker": "MATH",
+      "name": "Metalpha Technology Holding Limited",
+      "exchange": "NASDAQ",
+      "category": "Transportation",
+      "high_type": "52_week",
+      "reason": "업종: Transportation · Air Freight/Couriers",
+      "description": "Metalpha Technology Holding Limited · Air Freight/Couriers",
+      "change_pct": 0.6451606948963517,
+      "session_open": 1.5,
+      "session_close": 1.559999942779541,
+      "session_volume": 57400.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:MATH",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/MATH/history/",
+        "date": "2023-10-24",
+        "daily_high": 1.6100000143051147,
+        "prior_all_time_or_current_month_high": 14.989999771118164,
+        "passes_close_filter": true,
+        "yahoo_symbol": "MATH"
+      }
+    },
+    {
+      "ticker": "NATR",
+      "name": "Nature's Sunshine Products, Inc.",
+      "exchange": "NASDAQ",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Pharmaceuticals: Other",
+      "description": "Nature's Sunshine Products, Inc. · Pharmaceuticals: Other",
+      "change_pct": 4.245811425018564,
+      "session_open": 18.100000381469727,
+      "session_close": 18.65999984741211,
+      "session_volume": 105800.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:NATR",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/NATR/history/",
+        "date": "2023-10-24",
+        "daily_high": 18.690000534057617,
+        "prior_all_time_or_current_month_high": 21.5,
+        "passes_close_filter": true,
+        "yahoo_symbol": "NATR"
+      }
+    },
+    {
+      "ticker": "USAR",
+      "name": "USA Rare Earth, Inc. Class A",
+      "exchange": "NASDAQ",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Metal Fabrication",
+      "description": "USA Rare Earth, Inc. Class A · Metal Fabrication",
+      "change_pct": 0.048805412364782974,
+      "session_open": 10.234999656677246,
+      "session_close": 10.25,
+      "session_volume": 119200.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:USAR",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/USAR/history/",
+        "date": "2023-10-24",
+        "daily_high": 10.25,
+        "prior_all_time_or_current_month_high": 10.25,
+        "passes_close_filter": true,
+        "yahoo_symbol": "USAR"
+      }
+    },
+    {
+      "ticker": "FRO",
+      "name": "Frontline Plc",
+      "exchange": "NYSE",
+      "category": "Transportation",
+      "high_type": "52_week",
+      "reason": "업종: Transportation · Marine Shipping",
+      "description": "Frontline Plc · Marine Shipping",
+      "change_pct": 2.386634757954287,
+      "session_open": 21.040000915527344,
+      "session_close": 21.450000762939453,
+      "session_volume": 3382200.0,
+      "currency": "USD",
+      "source_symbol": "NYSE:FRO",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/FRO/history/",
+        "date": "2023-10-24",
+        "daily_high": 21.5,
+        "prior_all_time_or_current_month_high": 1808.9999389648438,
+        "passes_close_filter": true,
+        "yahoo_symbol": "FRO"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-10-27T10:44:40.669957+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 5712,
+    "history_symbols": 4639,
+    "inactive_symbols": 7,
+    "failed_symbols": 1066,
+    "coverage_ratio": 0.8131463628396144,
+    "coverage_by_exchange": {
+      "NASDAQ": {
+        "covered": 2586,
+        "total": 3342
+      },
+      "NYSE": {
+        "covered": 1851,
+        "total": 2101
+      },
+      "AMEX": {
+        "covered": 202,
+        "total": 262
+      }
+    },
+    "session_symbols": 4612,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-10-27T10:44:40.669957+00:00"
+}

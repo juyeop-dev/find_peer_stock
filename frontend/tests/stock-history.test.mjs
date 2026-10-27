@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import test from "node:test";
 import ts from "typescript";
+import { gzipSync } from "node:zlib";
 
 let source = await readFile(new URL("../src/dataClient/stockHistoryClient.ts", import.meta.url), "utf8");
 source = source.replace('import { liveDetailFor, requestOriginal } from "./liveStockDataClient";', 'const liveDetailFor = () => undefined; const requestOriginal = () => { throw new Error("unit test should not request live data"); };');
@@ -10,6 +11,7 @@ const { chartStart, historyRange, yearCovered, getStockHistory } = await import(
 const point = date => ({ date, close: 100, adjusted_close: 100, volume: null });
 
 test("one year follows calendar dates including leap days instead of using 360 days", () => {
+  assert.equal(chartStart("2026-10-27", "since2023"), "2023-01-01");
   assert.equal(chartStart("2026-10-26", "since2024"), "2024-01-01");
   assert.equal(chartStart("2026-10-20", "since2024H2"), "2024-07-01");
   assert.equal(chartStart("2026-10-20", "since2025"), "2025-01-01");
@@ -28,16 +30,16 @@ test("a non-trading anniversary includes its previous close, and a recent IPO ke
   assert.deepEqual(historyRange([], "1y"), []);
 });
 
-test("a fresh H2 inline snapshot cannot hide the published full-2024 archive", async () => {
+test("a fresh inline snapshot cannot hide the losslessly compressed 2023 archive", async () => {
   const originalFetch = globalThis.fetch;
   const today = new Date().toISOString().slice(0, 10);
   // Resolve Vite's base path before transpiling this network path.
   const patched = javascript.replaceAll("import.meta.env.BASE_URL", '"/"');
   const client = await import(`data:text/javascript;base64,${Buffer.from(patched).toString("base64")}`);
-  globalThis.fetch = async () => Response.json({ticker:"TEST",currency:"USD",source:"verified",fetched_at:new Date().toISOString(),prices:[["2023-12-29",10,10],[today,20,20]]});
+  globalThis.fetch = async () => new Response(gzipSync(JSON.stringify({ticker:"TEST",currency:"USD",source:"verified",fetched_at:new Date().toISOString(),prices:[["2022-12-30",10,10],[today,20,20]]})));
   try {
     const result = await client.getStockHistory("TEST", undefined, undefined, false, {ticker:"TEST",currency:"USD",source:"short inline",fetched_at:new Date().toISOString(),history:[point("2024-06-28"),point(today)]});
-    assert.equal(result.history[0].date,"2023-12-29");
+    assert.equal(result.history[0].date,"2022-12-30");
     assert.equal(result.source,"verified");
   } finally { globalThis.fetch = originalFetch; }
 });

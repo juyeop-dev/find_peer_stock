@@ -12,7 +12,7 @@ test("history requests the exact Yahoo listing from at least January 2024 and tw
   assert.equal(result.ticker, "AAPL");
   assert.equal(result.history.length, 2);
   assert.ok(result.history[0].date < "2025-10-01");
-  assert.ok(Number(new URL(urls[0]).searchParams.get("period1")) <= Date.parse("2024-01-01T00:00:00Z") / 1000);
+  assert.ok(Number(new URL(urls[0]).searchParams.get("period1")) <= Date.parse("2023-01-01T00:00:00Z") / 1000);
   assert.equal(result.currency, "USD");
 });
 

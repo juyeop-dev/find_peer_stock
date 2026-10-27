@@ -16,7 +16,8 @@ const MARKETS: { key: Market; label: string }[] = [
 ];
 const trillion = (millions: number) => `${(millions / 1_000_000).toFixed(3)}조원`;
 
-function periodHistory(history: CreditPoint[], days: number): CreditPoint[] {
+function periodHistory(history: CreditPoint[], days: number | "since2023"): CreditPoint[] {
+  if (days === "since2023") return history.filter(point => point.date >= "2023-01-01");
   const last = history.at(-1);
   if (!last) return [];
   const start = new Date(`${last.date}T12:00:00Z`);
@@ -32,7 +33,8 @@ function periodHistory(history: CreditPoint[], days: number): CreditPoint[] {
 export function CreditBalancePage() {
   const { data, error, loading, refreshing, lastCheckedAt, lastSourceAt, refresh } = usePollingData(getCreditData, 300_000);
   const [market, setMarket] = useState<Market>("total");
-  const [period, setPeriod] = useState<Period>(90);
+  const [period, setPeriod] = useState<Period | "since2023">(90);
+  const periodLabel = period === "since2023" ? "2023년~" : `${period}일`;
   const history = data?.history ?? [];
   const latest = history.at(-1);
   const previous = history.at(-2);
@@ -45,7 +47,7 @@ export function CreditBalancePage() {
 
   return <main className="pageShell semiPage creditPage">
     <header className="semiHero"><div><p className="eyebrow">MARGIN BALANCE</p><h1>신용 잔고 추이</h1>
-      <p>신용거래융자 잔고를 전체·코스피·코스닥별로 살펴봅니다. 기준일은 금융투자협회 통계의 거래일입니다.</p></div></header>
+      <p>신용거래융자 잔고를 전체·코스피·코스닥별로 살펴봅니다. 금융투자협회 통계의 보고 기준일을 따릅니다.</p></div></header>
     <DataRefreshStatus refreshing={refreshing} lastCheckedAt={lastCheckedAt} lastSourceAt={lastSourceAt} cadence="credit" onRefresh={refresh} />
     {loading && <LoadingSpinner />}{error && <ErrorNotice message={error} />}
     {data && latest && <>
@@ -60,16 +62,16 @@ export function CreditBalancePage() {
         <small>{latest.date} 기준</small>
       </button>)}</div>
       <section className="semiPanel"><div className="semiPanelHeading semiHeadingSplit"><div><h2>{selectedLabel} 신용 잔고</h2>
-        <p>단위: 조원 · 최근 {period}일 · 거래일별 발표값</p></div>
+        <p>단위: 조원 · {period === "since2023" ? periodLabel : `최근 ${periodLabel}`} · 기준일별 발표값</p></div>
         <div className="semiPeriodTabs" aria-label="신용 잔고 차트 기간">{PERIODS.map((days) => <button key={days} type="button"
-          className={period === days ? "active" : ""} onClick={() => setPeriod(days)}>{days}일</button>)}</div></div>
+          className={period === days ? "active" : ""} onClick={() => setPeriod(days)}>{days}일</button>)}<button type="button" className={period === "since2023" ? "active" : ""} onClick={() => setPeriod("since2023")}>2023년~</button></div></div>
         <div className="creditHeadline"><strong>{trillion(latest[market])}</strong>
-          <span className={(dailyChange ?? 0) >= 0 ? "semiUp" : "semiDown"}>전 거래일 대비 {dailyChange === null ? "-" : `${dailyChange > 0 ? "+" : ""}${trillion(dailyChange)}`}</span>
-          <span>{period}일 변화 {formatPercent(change)}</span></div>
+          <span className={(dailyChange ?? 0) >= 0 ? "semiUp" : "semiDown"}>전 기준일 대비 {dailyChange === null ? "-" : `${dailyChange > 0 ? "+" : ""}${trillion(dailyChange)}`}</span>
+          <span>{periodLabel} 변화 {formatPercent(change)}</span></div>
         <SemiconductorLineChart points={chart} title={`${selectedLabel} 신용거래융자 잔고`} unit="조원" />
       </section>
       <section className="semiPanel"><div className="semiPanelHeading"><h2>최근 일별 잔고</h2>
-        <p>전체는 코스피와 코스닥의 합계입니다. 각 행은 해당 거래일의 잔고입니다.</p></div>
+        <p>전체는 코스피와 코스닥의 합계입니다. 각 행은 해당 보고 기준일의 잔고입니다.</p></div>
         <div className="semiTableWrap"><table className="semiTable creditTable"><thead><tr>
           <th>기준일</th><th className="semiNumber">전체</th><th className="semiNumber">코스피</th><th className="semiNumber">코스닥</th>
         </tr></thead><tbody>{[...history].reverse().slice(0, 30).map((point) => <tr key={point.date}>

@@ -8,8 +8,8 @@ import ts from "typescript";
 
 const base=process.env.STOCK_SITE_BASE_URL ?? "http://127.0.0.1:4173";
 const day="2024-07-01";
-const get=async path=>{const response=await fetch(base+path+"?t="+Date.now());assert.equal(response.status,200);return response.json();};
-const snapshot=await get(`/data/sectors/daily/${day}.json`);
+const get=async path=>{const response=await fetch(base+path+"?t="+Date.now());assert.equal(response.status,200);if(!path.endsWith('.gz'))return response.json();const bytes=await response.arrayBuffer(),magic=new Uint8Array(bytes,0,Math.min(2,bytes.byteLength));return JSON.parse(magic[0]===0x1f&&magic[1]===0x8b?await new Response(new Blob([bytes]).stream().pipeThrough(new DecompressionStream('gzip'))).text():new TextDecoder().decode(bytes));};
+const snapshot=await get(`/data/sectors/daily/${day}.json.gz`);
 const report=await get(`/data/turnover/korea/2024_07/${day}.json`);
 const index=await get("/data/turnover/index.json");
 const history=await get("/data/turnover/history/korea/2024.json");
@@ -37,7 +37,7 @@ try {
   socket.addEventListener("message",event=>{
     const item=JSON.parse(event.data);
     if(item.method==="Runtime.exceptionThrown")exceptions.push(item.params.exceptionDetails);
-    if(item.method==="Network.requestWillBeSent"&&item.params.request.url.includes("workers.dev/refresh"))sourceRequests.push(item.params.request.url);
+    if(item.method==="Network.requestWillBeSent"&&item.params.request.url.endsWith("/refresh"))sourceRequests.push(item.params.request.url);
     const task=pending.get(item.id);if(task){pending.delete(item.id);clearTimeout(task.timer);item.error?task.reject(new Error(item.error.message)):task.resolve(item.result);}
   });
   send=(method,params={})=>new Promise((resolve,reject)=>{const id=++sequence;const timer=setTimeout(()=>reject(new Error(method+" timeout")),10000);pending.set(id,{resolve,reject,timer});socket.send(JSON.stringify({id,method,params}));});

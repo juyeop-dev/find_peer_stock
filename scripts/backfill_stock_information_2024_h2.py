@@ -68,7 +68,8 @@ def fetch(row):
     symbol = resolve_yahoo(row)
     if symbol:
         params = {"type": ",".join(prefix + field for prefix in ("annual", "quarterly") for field in info.METRICS.values()),
-                  "period1": int(datetime.fromisoformat(START).replace(tzinfo=timezone.utc).timestamp()), "period2": 1735689600}
+                  "period1": int(datetime.fromisoformat(START).replace(tzinfo=timezone.utc).timestamp()),
+                  "period2": int(datetime.fromisoformat(END).replace(tzinfo=timezone.utc).timestamp()) + 86400}
         try:
             payload = info.fetch_json(f"https://query1.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/{quote(symbol, safe='')}?{urlencode(params)}")
             statements = info.parse_yahoo_financials(payload, symbol, END)
@@ -94,6 +95,7 @@ def fetch(row):
 
 def merge(previous, statements, checked_at):
     result = dict(previous)
+    result["requested_start"] = min(previous.get("requested_start", START), START)
     # Same provider's old period may contain more metrics; merge only within
     # an identical period, reporting currency and source. Never mix currencies.
     merged = {(s["type"], s["period_end"], s["currency"]): dict(s) for s in previous.get("financials", [])}
@@ -173,8 +175,8 @@ def main():
             info.scan(db, new, datetime.now(timezone.utc).date().isoformat())
         scanners = {ticker: json.loads(raw) for ticker, raw in db.execute("SELECT ticker,value FROM scanner") if ticker not in existing}
         with ThreadPoolExecutor(max_workers=args.workers) as pool:
-            for start in range(0, len(pending), 40):
-                batch = pending[start:start + 40]
+            for start in range(0, len(pending), 120):
+                batch = pending[start:start + 120]
                 futures = [pool.submit(fetch_with_current, row, scanners.get(row["ticker"])) for row in batch]
                 for row, future in zip(batch, futures):
                     try:

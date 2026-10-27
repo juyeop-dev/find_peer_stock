@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import test from "node:test";
 import ts from "typescript";
+import { gzipSync } from "node:zlib";
 const rankSource = await readFile(new URL("../src/dataClient/sectorRankings.ts", import.meta.url), "utf8");
 const rankJs = ts.transpileModule(rankSource, { compilerOptions: { module: ts.ModuleKind.ESNext, target: ts.ScriptTarget.ES2022 } }).outputText;
 const rankUrl = `data:text/javascript;base64,${Buffer.from(rankJs).toString("base64")}`;
@@ -18,7 +19,7 @@ test("history selection never replaces the latest cache, and detail membership a
   const paths = [];
   globalThis.fetch = async url => {
     const path = new URL(url, "https://example.test").pathname; paths.push(path);
-    return new Response(JSON.stringify(path.includes("daily/") ? old : current));
+    return new Response(path.includes("daily/") ? gzipSync(JSON.stringify(old)) : JSON.stringify(current));
   };
   try {
     const historical = await client.getSectorSnapshot("2026-10-19", undefined, true);

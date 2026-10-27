@@ -3,6 +3,7 @@ import test from "node:test";
 import { mkdtemp, readFile, rm } from "node:fs/promises";
 import { join, resolve, sep } from "node:path";
 import { tmpdir } from "node:os";
+import { gunzipSync } from "node:zlib";
 import { archiveMetadata, archiveSectorSnapshot, publishSectorArchive, saveSectorFile, validSectorDate } from "../scripts/sector_archive.mjs";
 const snapshot = (date, fetched_at, price) => ({ schema_version: 1, market: "korea", currency: "KRW", date, fetched_at, stocks: [{ ticker: "005930.KS", date, sector: "Electronic Technology", industry: "Semiconductors", price }] });
 test("daily archives retain the last real snapshot per trading date and publish distinct historical prices", async () => {
@@ -21,15 +22,15 @@ test("daily archives retain the last real snapshot per trading date and publish 
     assert.deepEqual(calendar.records.map(row => row.date), ["2026-10-19", "2026-10-21"]);
     assert.equal(calendar.latest_date, "2026-10-21");
     assert.equal(calendar.records[0].fetched_at, final.fetched_at);
-    assert.equal(JSON.parse(await readFile(join(published, "daily/2026-10-19.json"))).stocks[0].price, 120);
+    assert.deepEqual(JSON.parse(gunzipSync(await readFile(join(published, "daily/2026-10-19.json.gz")))), final);
     assert.equal(JSON.parse(await readFile(join(published, "index.json"))).stocks[0].price, 140);
     assert.deepEqual(JSON.parse(await readFile(join(published, "calendar.json"))), calendar);
     const intraday = snapshot("2026-10-21", "2026-10-21T07:00:00Z", 150);
     await saveSectorFile(join(directory, "index.json"), JSON.stringify(intraday));
     const updated = await publishSectorArchive(directory, published);
     assert.equal(updated.records.at(-1).fetched_at, intraday.fetched_at);
-    assert.equal(JSON.parse(await readFile(join(published, "daily/2026-10-21.json"))).stocks[0].price, 150);
-    assert.equal(JSON.parse(await readFile(join(published, "daily/2026-10-19.json"))).stocks[0].price, 120);
+    assert.equal(JSON.parse(gunzipSync(await readFile(join(published, "daily/2026-10-21.json.gz")))).stocks[0].price, 150);
+    assert.equal(JSON.parse(gunzipSync(await readFile(join(published, "daily/2026-10-19.json.gz")))).stocks[0].price, 120);
   } finally {
     assert.ok(resolve(directory).startsWith(resolve(tmpdir()) + sep));
     await rm(directory, { recursive: true, force: true });

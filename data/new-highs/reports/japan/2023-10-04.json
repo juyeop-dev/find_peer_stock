@@ -1,0 +1,306 @@
+{
+  "schema_version": 1,
+  "market": "japan",
+  "date": "2023-10-04",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "1826.T",
+      "name": "Sata Construction Co., Ltd.",
+      "exchange": "TSE",
+      "category": "Industrial Services",
+      "high_type": "52_week",
+      "reason": "업종: Industrial Services · Engineering & Construction",
+      "description": "Sata Construction Co., Ltd. · Engineering & Construction",
+      "change_pct": 4.805914972273562,
+      "session_open": 545.0,
+      "session_close": 567.0,
+      "session_volume": 185800.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:1826",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/1826.T/history/",
+        "date": "2023-10-04",
+        "daily_high": 611.0,
+        "prior_all_time_or_current_month_high": 6025.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "1826.T"
+      }
+    },
+    {
+      "ticker": "2267.T",
+      "name": "Yakult Honsha Co., Ltd.",
+      "exchange": "TSE",
+      "category": "Consumer Non-Durables",
+      "high_type": "all_time",
+      "reason": "업종: Consumer Non-Durables · Food: Meat/Fish/Dairy",
+      "description": "Yakult Honsha Co., Ltd. · Food: Meat/Fish/Dairy",
+      "change_pct": 2.1352313167259718,
+      "session_open": 3628.0,
+      "session_close": 3731.0,
+      "session_volume": 3554900.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:2267",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2267.T/history/",
+        "date": "2023-10-04",
+        "daily_high": 3761.0,
+        "prior_all_time_or_current_month_high": 3761.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "2267.T"
+      }
+    },
+    {
+      "ticker": "2375.T",
+      "name": "GiG Works, Inc.",
+      "exchange": "TSE",
+      "category": "Commercial Services",
+      "high_type": "52_week",
+      "reason": "업종: Commercial Services · Personnel Services",
+      "description": "GiG Works, Inc. · Personnel Services",
+      "change_pct": 11.538461538461542,
+      "session_open": 500.0,
+      "session_close": 580.0,
+      "session_volume": 22138500.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:2375",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2375.T/history/",
+        "date": "2023-10-04",
+        "daily_high": 615.0,
+        "prior_all_time_or_current_month_high": 1155.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "2375.T"
+      }
+    },
+    {
+      "ticker": "2501.T",
+      "name": "Sapporo Breweries Limited",
+      "exchange": "TSE",
+      "category": "Consumer Non-Durables",
+      "high_type": "all_time",
+      "reason": "업종: Consumer Non-Durables · Beverages: Alcoholic",
+      "description": "Sapporo Breweries Limited · Beverages: Alcoholic",
+      "change_pct": 0.2316289992952525,
+      "session_open": 943.4000244140625,
+      "session_close": 952.0,
+      "session_volume": 2980500.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:2501",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2501.T/history/",
+        "date": "2023-10-04",
+        "daily_high": 965.7999877929688,
+        "prior_all_time_or_current_month_high": 965.7999877929688,
+        "passes_close_filter": true,
+        "yahoo_symbol": "2501.T"
+      }
+    },
+    {
+      "ticker": "3042.T",
+      "name": "SecuAvail, Inc.",
+      "exchange": "TSE",
+      "category": "Technology Services",
+      "high_type": "all_time",
+      "reason": "업종: Technology Services · Internet Software/Services",
+      "description": "SecuAvail, Inc. · Internet Software/Services",
+      "change_pct": 14.804469273743015,
+      "session_open": 350.0,
+      "session_close": 411.0,
+      "session_volume": 12075700.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:3042",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3042.T/history/",
+        "date": "2023-10-04",
+        "daily_high": 438.0,
+        "prior_all_time_or_current_month_high": 438.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "3042.T"
+      }
+    },
+    {
+      "ticker": "3498.T",
+      "name": "Kasumigaseki Capital Co., Ltd.",
+      "exchange": "TSE",
+      "category": "Utilities",
+      "high_type": "all_time",
+      "reason": "업종: Utilities · Electric Utilities",
+      "description": "Kasumigaseki Capital Co., Ltd. · Electric Utilities",
+      "change_pct": 15.649452269170583,
+      "session_open": 3695.0,
+      "session_close": 3695.0,
+      "session_volume": 57400.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:3498",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3498.T/history/",
+        "date": "2023-10-04",
+        "daily_high": 3695.0,
+        "prior_all_time_or_current_month_high": 3695.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "3498.T"
+      }
+    },
+    {
+      "ticker": "3723.T",
+      "name": "Nihon Falcom Corporation",
+      "exchange": "TSE",
+      "category": "Consumer Durables",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Durables · Recreational Products",
+      "description": "Nihon Falcom Corporation · Recreational Products",
+      "change_pct": 9.512761020881676,
+      "session_open": 1300.0,
+      "session_close": 1416.0,
+      "session_volume": 78500.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:3723",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3723.T/history/",
+        "date": "2023-10-04",
+        "daily_high": 1441.0,
+        "prior_all_time_or_current_month_high": 2139.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "3723.T"
+      }
+    },
+    {
+      "ticker": "5592.T",
+      "name": "Kusurinomadoguchi, Inc.",
+      "exchange": "TSE",
+      "category": "Technology Services",
+      "high_type": "all_time",
+      "reason": "업종: Technology Services · Packaged Software",
+      "description": "Kusurinomadoguchi, Inc. · Packaged Software",
+      "change_pct": 0.0,
+      "session_open": 1580.0,
+      "session_close": 1610.0,
+      "session_volume": 5527400.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:5592",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/5592.T/history/",
+        "date": "2023-10-04",
+        "daily_high": 1789.0,
+        "prior_all_time_or_current_month_high": 1789.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "5592.T"
+      }
+    },
+    {
+      "ticker": "6223.T",
+      "name": "Seibu Giken Co., Ltd.",
+      "exchange": "TSE",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Industrial Machinery",
+      "description": "Seibu Giken Co., Ltd. · Industrial Machinery",
+      "change_pct": 7.3676416142169465,
+      "session_open": 2651.0,
+      "session_close": 2900.0,
+      "session_volume": 1169500.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:6223",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6223.T/history/",
+        "date": "2023-10-04",
+        "daily_high": 2928.0,
+        "prior_all_time_or_current_month_high": 2928.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "6223.T"
+      }
+    },
+    {
+      "ticker": "7769.T",
+      "name": "Rhythm Co., Ltd.",
+      "exchange": "TSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Electronic Components",
+      "description": "Rhythm Co., Ltd. · Electronic Components",
+      "change_pct": 3.4574468085106336,
+      "session_open": 2300.0,
+      "session_close": 2334.0,
+      "session_volume": 249300.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:7769",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/7769.T/history/",
+        "date": "2023-10-04",
+        "daily_high": 2523.0,
+        "prior_all_time_or_current_month_high": 29400.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "7769.T"
+      }
+    },
+    {
+      "ticker": "9846.T",
+      "name": "Tenmaya Store Co., Ltd.",
+      "exchange": "TSE",
+      "category": "Retail Trade",
+      "high_type": "52_week",
+      "reason": "업종: Retail Trade · Food Retail",
+      "description": "Tenmaya Store Co., Ltd. · Food Retail",
+      "change_pct": 11.213235294117641,
+      "session_open": 1090.0,
+      "session_close": 1210.0,
+      "session_volume": 16900.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:9846",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/9846.T/history/",
+        "date": "2023-10-04",
+        "daily_high": 1255.0,
+        "prior_all_time_or_current_month_high": 1490.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "9846.T"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-10-27T10:39:58.326560+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 3761,
+    "history_symbols": 3579,
+    "inactive_symbols": 0,
+    "failed_symbols": 182,
+    "coverage_ratio": 0.9516086147301249,
+    "coverage_by_exchange": {
+      "TSE": {
+        "covered": 3579,
+        "total": 3761
+      }
+    },
+    "session_symbols": 3551,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-10-27T10:39:58.326560+00:00"
+}

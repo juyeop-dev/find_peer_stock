@@ -127,6 +127,12 @@ def validate_report(payload: dict[str, Any], path: Path, reports_dir: Path,
 
 
 def write_json(path: Path, payload: dict[str, Any]) -> None:
+    if path.exists():
+        try:
+            if json.loads(path.read_text(encoding="utf-8-sig")) == payload:
+                return
+        except (OSError, ValueError):
+            pass
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, ensure_ascii=False, separators=(",", ":"), allow_nan=False) + "\n", encoding="utf-8")
 

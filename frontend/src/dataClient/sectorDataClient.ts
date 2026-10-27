@@ -8,7 +8,17 @@ export function validSectorDate(value: string) {
 }
 async function staticSectorJson<T>(path: string, signal?: AbortSignal): Promise<T> {
   const response = await fetch(`${import.meta.env.BASE_URL}data/sectors/${path}?t=${Date.now()}`, { cache: "no-store", signal });
+  if (response.status === 404 && path.endsWith(".gz")) return staticSectorJson<T>(path.slice(0, -3), signal);
   if (!response.ok) throw new Error("해당 날짜의 저장된 섹터 기록을 불러오지 못했습니다.");
+  if (path.endsWith(".gz")) {
+    const bytes = await response.arrayBuffer();
+    // Some hosts decode Content-Encoding themselves; inspect the gzip magic.
+    const magic = new Uint8Array(bytes, 0, Math.min(2, bytes.byteLength));
+    const body = magic[0] === 0x1f && magic[1] === 0x8b
+      ? await new Response(new Blob([bytes]).stream().pipeThrough(new DecompressionStream("gzip"))).text()
+      : new TextDecoder().decode(bytes);
+    return JSON.parse(body) as T;
+  }
   return response.json();
 }
 function validate(value: SectorSnapshot) {
@@ -58,7 +68,7 @@ export async function getSectorSnapshot(date: string, signal?: AbortSignal, from
     if (fresh.date === date) return fresh;
     // A new trading day must not move an explicitly selected historical date.
   }
-  const snapshot = validate(await staticSectorJson<SectorSnapshot>(`daily/${date}.json`, signal));
+  const snapshot = validate(await staticSectorJson<SectorSnapshot>(`daily/${date}.json.gz`, signal));
   if (snapshot.date !== date) throw new Error("선택한 날짜와 섹터 기록이 일치하지 않습니다.");
   return { ...snapshot, archived: true, source_fetched_at: undefined };
 }

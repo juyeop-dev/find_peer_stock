@@ -9,12 +9,12 @@ from backfill_sector_history_2024_h2 import reconstruct
 from stock_chart_history import ROOT, write_json
 
 
-def main():
+def main(year=2024, end_before="2024-07-01", audit_scope="2024"):
     directory = ROOT / "data/sectors"
     latest = json.loads((directory / "index.json").read_text(encoding="utf-8"))
-    sessions = sorted(date.fromisoformat(p.stem) for p in (ROOT / "data/new-highs/reports/korea").glob("2024-*.json") if p.stem < "2024-07-01")
+    sessions = sorted(date.fromisoformat(p.stem) for p in (ROOT / "data/new-highs/reports/korea").glob(f"{year}-*.json") if end_before is None or p.stem < end_before)
     if not sessions:
-        raise ValueError("Collect validated Korean H1-2024 calendar reports first")
+        raise ValueError(f"Collect validated Korean {year} calendar reports first")
     start, end = sessions[0] - timedelta(days=380), sessions[-1]
     def fetch(stock):
         raw = cached_request(history_url(stock["code"], start, end), 30, ROOT / "data/tmp_korean_history")
@@ -48,9 +48,9 @@ def main():
         temporary.write_bytes(gzip.compress(json.dumps(snapshot, ensure_ascii=False, separators=(",", ":"), allow_nan=False).encode(), mtime=0))
         temporary.replace(path)
         count += 1
-    write_json(ROOT / "data/information-audit/2024/sector-progress.json", {"start": str(sessions[0]), "end": str(end), "added": count,
+    write_json(ROOT / f"data/information-audit/{audit_scope}/sector-progress.json", {"start": str(sessions[0]), "end": str(end), "added": count,
         "source_start": str(start), "classification_date": latest["date"], "history_symbols": len(histories)})
-    print(f"Added {count} H1-2024 sector observations; H2 archives retained", flush=True)
+    print(f"Added {count} {year} sector observations; existing archives retained", flush=True)
 
 
 if __name__ == "__main__":
