@@ -1,0 +1,197 @@
+{
+  "schema_version": 1,
+  "market": "korea",
+  "date": "2026-10-27",
+  "summary": "장 마감 후 TradingView 주식 스냅샷 기준. 당일 장중 고가가 52주·전체기간 고가에 도달하고, 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다. 전체기간 신고가를 우선 표시하며 신고가 배경은 별도 확인 전입니다.",
+  "sources": [
+    {
+      "label": "TradingView stock screener",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    },
+    {
+      "label": "Naver Finance 종목명·상장 시장·일봉 검증",
+      "url": "https://stock.naver.com/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "070590.KQ",
+      "name": "인티큐브",
+      "exchange": "KOSDAQ",
+      "category": "Technology Services",
+      "high_type": "52_week",
+      "reason": "업종: Technology Services · Information Technology Services",
+      "description": "인티큐브 · Information Technology Services",
+      "change_pct": 11.5234375,
+      "session_open": 2680,
+      "session_close": 2850,
+      "session_volume": 129753,
+      "source_symbol": "KRX:070590",
+      "currency": "KRW",
+      "name_original": "Inticube Co., Ltd.",
+      "name_source_url": "https://m.stock.naver.com/api/stock/070590/basic",
+      "high_verification": {
+        "source": "Naver Finance adjusted daily history",
+        "source_url": "https://api.finance.naver.com/siseJson.naver?symbol=070590&requestType=1&startTime=20251028&endTime=20261027&timeframe=day",
+        "date": "2026-10-27",
+        "open": 2680,
+        "daily_high": 2945,
+        "low": 2560,
+        "close": 2850,
+        "previous_close": 2605,
+        "volume": 129753,
+        "prior_52_week_high": 2605,
+        "observed_bars": 244,
+        "first_observed_date": "2025-10-28",
+        "confirmed": true,
+        "matches_prior_high": false,
+        "bearish_candle": false,
+        "down_close": false,
+        "passes_close_filter": true
+      }
+    },
+    {
+      "ticker": "092870.KQ",
+      "name": "엑시콘",
+      "exchange": "KOSDAQ",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Electronic Equipment/Instruments",
+      "description": "엑시콘 · Electronic Equipment/Instruments",
+      "change_pct": 21.976866456361723,
+      "session_open": 50500,
+      "session_close": 58000,
+      "session_volume": 570860,
+      "source_symbol": "KRX:092870",
+      "currency": "KRW",
+      "name_original": "Exicon Co., Ltd.",
+      "name_source_url": "https://m.stock.naver.com/api/stock/092870/basic",
+      "high_verification": {
+        "source": "Naver Finance adjusted daily history",
+        "source_url": "https://api.finance.naver.com/siseJson.naver?symbol=092870&requestType=1&startTime=20251028&endTime=20261027&timeframe=day",
+        "date": "2026-10-27",
+        "open": 50500,
+        "daily_high": 59600,
+        "low": 50500,
+        "close": 58000,
+        "previous_close": 47550,
+        "volume": 570860,
+        "prior_52_week_high": 59100,
+        "observed_bars": 244,
+        "first_observed_date": "2025-10-28",
+        "confirmed": true,
+        "matches_prior_high": false,
+        "bearish_candle": false,
+        "down_close": false,
+        "passes_close_filter": true
+      }
+    },
+    {
+      "ticker": "148930.KQ",
+      "name": "에이치와이티씨",
+      "exchange": "KOSDAQ",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Industrial Machinery",
+      "description": "에이치와이티씨 · Industrial Machinery",
+      "change_pct": 4.033379694019471,
+      "session_open": 3605,
+      "session_close": 3710,
+      "session_volume": 97936,
+      "source_symbol": "KRX:148930",
+      "currency": "KRW",
+      "name_original": "HYTC CO., LTD",
+      "name_source_url": "https://m.stock.naver.com/api/stock/148930/basic",
+      "high_verification": {
+        "source": "Naver Finance adjusted daily history",
+        "source_url": "https://api.finance.naver.com/siseJson.naver?symbol=148930&requestType=1&startTime=20251028&endTime=20261027&timeframe=day",
+        "date": "2026-10-27",
+        "open": 3605,
+        "daily_high": 3770,
+        "low": 3605,
+        "close": 3710,
+        "previous_close": 3585,
+        "volume": 97936,
+        "prior_52_week_high": 3730,
+        "observed_bars": 244,
+        "first_observed_date": "2025-10-28",
+        "confirmed": true,
+        "matches_prior_high": false,
+        "bearish_candle": false,
+        "down_close": false,
+        "passes_close_filter": true
+      }
+    },
+    {
+      "ticker": "425420.KQ",
+      "name": "티에프이",
+      "exchange": "KOSDAQ",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Semiconductors",
+      "description": "티에프이 · Semiconductors",
+      "change_pct": 23.902439024390244,
+      "session_open": 66500,
+      "session_close": 75500,
+      "session_volume": 480382,
+      "source_symbol": "KRX:425420",
+      "currency": "KRW",
+      "name_original": "TFE Co., Ltd.",
+      "name_source_url": "https://m.stock.naver.com/api/stock/425420/basic",
+      "high_verification": {
+        "source": "Naver Finance adjusted daily history",
+        "source_url": "https://api.finance.naver.com/siseJson.naver?symbol=425420&requestType=1&startTime=20251028&endTime=20261027&timeframe=day",
+        "date": "2026-10-27",
+        "open": 66500,
+        "daily_high": 77900,
+        "low": 66400,
+        "close": 75500,
+        "previous_close": 62000,
+        "volume": 480382,
+        "prior_52_week_high": 77700,
+        "observed_bars": 244,
+        "first_observed_date": "2025-10-28",
+        "confirmed": true,
+        "matches_prior_high": false,
+        "bearish_candle": false,
+        "down_close": false,
+        "passes_close_filter": true
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "TradingView public scanner",
+    "scanner": "korea",
+    "fetched_at": "2026-10-27T07:31:24.354429+00:00",
+    "universe": "TradingView-listed stock instruments, including common and preferred shares; ETFs excluded",
+    "definition": "daily high >= period high; close >= open; close >= previous close when one exists; all-time takes precedence; ties included",
+    "scanner_exchanges": [
+      "KRX"
+    ],
+    "latest_session_by_exchange": {
+      "KRX": "2026-10-27"
+    },
+    "previous_session_by_exchange": {
+      "KRX": "2026-10-26"
+    },
+    "current_session_reference_symbols": {
+      "KRX": "KRX:000020",
+      "KOSPI": "KRX:000020",
+      "KOSDAQ": "KRX:0001A0"
+    },
+    "scanned_symbols": 2741,
+    "current_session_symbols": 2716,
+    "excluded_symbols": {
+      "other_session": 25,
+      "bearish_or_down_close": 1,
+      "unsupported_korean_board": 1,
+      "korean_daily_history_disagrees": 1
+    },
+    "pagination_complete": true
+  },
+  "collected_at": "2026-10-27T07:31:14.137575+00:00"
+}
