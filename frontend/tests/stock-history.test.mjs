@@ -11,6 +11,7 @@ const { chartStart, historyRange, yearCovered, getStockHistory } = await import(
 const point = date => ({ date, close: 100, adjusted_close: 100, volume: null });
 
 test("one year follows calendar dates including leap days instead of using 360 days", () => {
+  assert.equal(chartStart("2026-10-29", "since2021"), "2021-01-01");
   assert.equal(chartStart("2026-10-29", "since2022"), "2022-01-01");
   assert.equal(chartStart("2026-10-27", "since2023"), "2023-01-01");
   assert.equal(chartStart("2026-10-26", "since2024"), "2024-01-01");

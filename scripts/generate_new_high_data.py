@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import argparse
 import copy
+from archive_paths import publish_daily_report
 import json
 import math
 import re
@@ -402,7 +403,11 @@ def generate_new_high_data(source_dir: Path = SOURCE_DIR, output_dir: Path = GEN
     for destination in destinations:
         namespace = destination / "new-highs"
         for report in published_reports:
-            write_json(namespace / report["market"] / f"{report['date']}.json", report)
+            path = namespace / report["market"] / f"{report['date']}.json"
+            if frontend_data_dir is not None and destination.resolve() == frontend_data_dir.resolve():
+                publish_daily_report(path, report, frontend_data_dir)
+            else:
+                write_json(path, report)
         publish_history(namespace, history)
         # Publish the index after its referenced reports are present.
         write_json(namespace / "index.json", index)

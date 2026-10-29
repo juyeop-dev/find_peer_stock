@@ -8,6 +8,17 @@ source = source.replace('import { requestOriginal, rememberInformationQuote } fr
 const javascript = ts.transpileModule(source, {compilerOptions: {module: ts.ModuleKind.ESNext, target: ts.ScriptTarget.ES2022}}).outputText;
 const {mergeInformation} = await import(`data:text/javascript;base64,${Buffer.from(javascript).toString("base64")}`);
 const statement = (period_end, currency, revenue) => ({type:"quarterly",period_end,currency,revenue,source:"fixture"});
+
+test("an unavailable older provider period cannot reset coverage of retained reported financials to zero", () => {
+  const coverage={start:"2021-01-01",end:"2021-12-31",periods:1,annual_periods:1,quarterly_periods:0,note:"reported only"};
+  const older={...statement("2021-12-31","USD",100),type:"annual"};
+  const previous={metrics:{},financials:[older],historical_2021_coverage:coverage};
+  const fresh={metrics:{},financials:[statement("2025-03-31","USD",200)],historical_2021_coverage:{...coverage,periods:0,annual_periods:0}};
+  const result=mergeInformation(previous,fresh);
+  assert.deepEqual(result.financials[0],older);
+  assert.equal(result.historical_2021_coverage.periods,1);
+  assert.equal(result.historical_2021_coverage.annual_periods,1);
+});
 test("refresh preserves older reported periods while replacing a revised period and its reporting currency", () => {
   const old = {metrics:{eps:20},metrics_currency:"TWD",financials:[statement("2025-03-31","TWD",100),statement("2025-06-30","TWD",200)]};
   const result = mergeInformation(old,{metrics:{eps:null},metrics_currency:"USD",financials:[statement("2025-06-30","USD",7),statement("2025-09-30","USD",8)]});

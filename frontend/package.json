@@ -16,7 +16,7 @@
     "test:stock-details": "node --test tests/stock-detail-links.test.mjs",
     "test:stock-details:browser": "node tests/stock-details-browser.mjs",
     "test:live-refresh:browser": "node tests/live-refresh-browser.mjs",
-    "test:stock-history": "node --test tests/stock-history.test.mjs",
+    "test:stock-history": "node --test tests/stock-history.test.mjs tests/historical-report-client.test.mjs",
     "test:stock-information": "node --test tests/stock-information.test.mjs",
     "test:stock-information:production": "node tests/stock-information-production.mjs",
     "test:sectors": "node --test tests/sector-rankings.test.mjs tests/sector-history-client.test.mjs ../tests/sector-archive.test.mjs",
@@ -33,7 +33,10 @@
     "test:investor-flows:browser": "node tests/investor-flows-browser.mjs",
     "test:korean-search:browser": "node tests/korean-search-browser.mjs",
     "test:stock-information:2022": "node tests/stock-information-2022-browser.mjs",
-    "test:investor-flows:2022": "node tests/investor-flows-2022-browser.mjs"
+    "test:investor-flows:2022": "node tests/investor-flows-2022-browser.mjs",
+    "test:stock-information:2021": "node tests/stock-information-2021-browser.mjs",
+    "test:investor-flows:2021": "node tests/investor-flows-2021-browser.mjs",
+    "test:historical-reports": "node --test tests/historical-report-client.test.mjs"
   },
   "dependencies": {
     "react": "^19.0.0",

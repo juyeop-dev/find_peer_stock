@@ -62,7 +62,7 @@ def generate(now: datetime | None = None, source: Path = SOURCE, published: Path
     existing = json.loads(source.read_text(encoding="utf-8")) if source.exists() else {}
     previous_year, previous_month = (now.year - 1, 12) if now.month == 1 else (now.year, now.month - 1)
     rows = []
-    first_year = previous_year if existing.get("history") else min(2022, now.year - 2)
+    first_year = previous_year if existing.get("history") else min(2021, now.year - 2)
     for year in range(first_year, now.year + 1):
         for month in range(1, 13):
             if existing.get("history") and (year, month) < (previous_year, previous_month):

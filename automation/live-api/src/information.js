@@ -1,6 +1,6 @@
 import { jsonSource, numeric, tvSymbol, yahooSymbol } from "./providers.js";
 
-const START = "2022-01-01";
+const START = "2021-01-01";
 const fields = { revenue: "TotalRevenue", operating_income: "OperatingIncome", net_income: "NetIncome", total_assets: "TotalAssets", total_debt: "TotalDebt", operating_cash_flow: "OperatingCashFlow", free_cash_flow: "FreeCashFlow" };
 export function reportedFinancials(payload, symbol, today) {
   if (payload.timeseries?.error) throw new Error("확정 실적 조회 실패");
@@ -95,9 +95,10 @@ export async function information(stock, fetcher = fetch) {
     const historical = await safe("2024년 확정 실적", () => yahooStatements(1735689600)) ?? [];
     const year2023 = await safe("2023년 확정 실적", () => yahooStatements(1704067200)) ?? [];
     const year2022 = await safe("2022년 확정 실적", () => yahooStatements(1672531200)) ?? [];
+    const year2021 = await safe("2021년 확정 실적", () => yahooStatements(1640995200)) ?? [];
     const keys = new Set(latest.map(row => `${row.type}:${row.period_end}`));
     const merged = [...latest];
-    for (const row of [...older, ...historical, ...year2023, ...year2022]) {
+    for (const row of [...older, ...historical, ...year2023, ...year2022, ...year2021]) {
       const key = `${row.type}:${row.period_end}`;
       if (!keys.has(key)) { merged.push(row); keys.add(key); }
       else if (row.period_end < "2025-01-01") {
@@ -117,14 +118,16 @@ export async function information(stock, fetcher = fetch) {
   const result = snapshot ?? {ticker: stock.ticker, requested_start: START, fetched_at: new Date().toISOString(), quote: null, metrics: {}, financials: []};
   const keys = new Set((statements ?? []).map(row => `${row.type}:${row.period_end}`));
   result.financials = [...result.financials.filter(row => !keys.has(`${row.type}:${row.period_end}`)), ...(statements ?? [])].sort((a, b) => a.period_end.localeCompare(b.period_end) || a.type.localeCompare(b.type));
-  if (!result.financials.length) warnings.push("2022년 이후 확정 실적이 제공되지 않습니다.");
+  if (!result.financials.length) warnings.push("2021년 이후 확정 실적이 제공되지 않습니다.");
   if (result.quote?.status === "stale") warnings.push("제공처에 최근 7일 이내 거래 자료가 없어 이전 제공 가격을 표시합니다.");
   const dates = result.financials.map(row => row.period_end).sort();
   const historical = result.financials.filter(row => row.period_end >= "2024-01-01" && row.period_end <= "2024-12-31");
   const year2023 = result.financials.filter(row => row.period_end >= "2023-01-01" && row.period_end <= "2023-12-31");
-  const year2022 = result.financials.filter(row => row.period_end >= START && row.period_end <= "2022-12-31");
+  const year2022 = result.financials.filter(row => row.period_end >= "2022-01-01" && row.period_end <= "2022-12-31");
+  const year2021 = result.financials.filter(row => row.period_end >= START && row.period_end <= "2021-12-31");
   return { ...result, warnings, financials_fetched_at: new Date().toISOString(),
-    historical_2022_coverage: {start: START, end: "2022-12-31", periods: year2022.length, annual_periods: year2022.filter(row => row.type === "annual").length, quarterly_periods: year2022.filter(row => row.type === "quarterly").length, note: "확인된 확정 실적만 표시합니다. 연간 실적은 해당 회계연도 전체이며, 미제공 분기는 추정하지 않습니다."},
+    historical_2021_coverage: {start: START, end: "2021-12-31", periods: year2021.length, annual_periods: year2021.filter(row => row.type === "annual").length, quarterly_periods: year2021.filter(row => row.type === "quarterly").length, note: "확인된 확정 실적만 표시합니다. 연간 실적은 해당 회계연도 전체이며, 미제공 분기는 추정하지 않습니다."},
+    historical_2022_coverage: {start: "2022-01-01", end: "2022-12-31", periods: year2022.length, annual_periods: year2022.filter(row => row.type === "annual").length, quarterly_periods: year2022.filter(row => row.type === "quarterly").length, note: "확인된 확정 실적만 표시합니다. 연간 실적은 해당 회계연도 전체이며, 미제공 분기는 추정하지 않습니다."},
     historical_2023_coverage: {start: "2023-01-01", end: "2023-12-31", periods: year2023.length, annual_periods: year2023.filter(row => row.type === "annual").length, quarterly_periods: year2023.filter(row => row.type === "quarterly").length, note: "확인된 확정 실적만 표시합니다. 연간 실적은 해당 회계연도 전체이며, 미제공 분기는 추정하지 않습니다."},
     historical_2024_coverage: {start: "2024-01-01", end: "2024-12-31", periods: historical.length, annual_periods: historical.filter(row => row.type === "annual").length, quarterly_periods: historical.filter(row => row.type === "quarterly").length, note: "확인된 확정 실적만 표시합니다. 연간 실적은 해당 회계연도 전체이며, 미제공 분기는 추정하지 않습니다."},
     financial_coverage: { first_period: dates[0] ?? null, latest_period: dates.at(-1) ?? null, note: "제공된 확정 회계기간만 표시합니다. 제공처가 제한한 과거 분기와 공시되지 않은 기간은 채우지 않습니다." } };

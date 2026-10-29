@@ -208,7 +208,7 @@ def request_yahoo(symbol: str, *, period1: date | None, period2: date | None,
             return payload
         except (HTTPError, URLError, TimeoutError, OSError, ValueError, BackfillError) as exc:
             last_error = exc
-            if isinstance(exc, HTTPError) and exc.code == 404:
+            if isinstance(exc, HTTPError) and exc.code in {400, 404}:
                 break
             if attempt + 1 < retries:
                 time_module.sleep(0.5 * (attempt + 1))
@@ -233,17 +233,6 @@ def parse_bars(payload: dict[str, Any], symbol: str, timezone_name: str, *,
     columns = {field: quote_row.get(field) or [] for field in ("open", "high", "low", "close", "volume")}
     if any(len(values) != len(timestamps) for values in columns.values()):
         raise BackfillError(f"{symbol}: inconsistent Yahoo OHLCV lengths")
-    split_events = (result.get("events") or {}).get("splits") or {}
-    splits: list[tuple[int, float]] = []
-    if isinstance(split_events, dict):
-        for event in split_events.values():
-            if not isinstance(event, dict):
-                continue
-            stamp = _number(event.get("date"), positive=True)
-            numerator = _number(event.get("numerator"), positive=True)
-            denominator = _number(event.get("denominator"), positive=True)
-            if stamp and numerator and denominator:
-                splits.append((int(stamp), denominator / numerator))
     zone = ZoneInfo(timezone_name)
     bars: list[Bar] = []
     for index, stamp_value in enumerate(timestamps):
@@ -252,15 +241,13 @@ def parse_bars(payload: dict[str, Any], symbol: str, timezone_name: str, *,
                   for field in columns}
         if stamp is None or any(value is None for value in values.values()):
             continue
-        price_factor = math.prod(factor for split_stamp, factor in splits if int(stamp) < split_stamp)
-        volume_factor = 1 / price_factor if price_factor else 1
+        # Yahoo's OHLC and volume already reflect stock splits. Reapplying
+        # events introduces an artificial jump on the split date. Adj Close
+        # separately includes dividends and must not replace the OHLC bars.
         bars.append(Bar(
             day=datetime.fromtimestamp(stamp, timezone.utc).astimezone(zone).date(),
-            open=values["open"] * price_factor,
-            high=values["high"] * price_factor,
-            low=values["low"] * price_factor,
-            close=values["close"] * price_factor,
-            volume=values["volume"] * volume_factor,
+            open=values["open"], high=values["high"], low=values["low"],
+            close=values["close"], volume=values["volume"],
         ))
     bars.sort(key=lambda bar: bar.day)
     if len({bar.day for bar in bars}) != len(bars):
@@ -312,6 +299,25 @@ def fetch_listing_history(row: dict[str, Any], start: date, end: date, *, timeou
             raise
         except BackfillError as exc:
             errors.append(str(exc))
+            # A range entirely before a listing's first trade returns HTTP 400.
+            # Exclude it only after the current same-symbol metadata proves
+            # the company, currency and actual first trade date.
+            if "HTTP Error 400" in str(exc):
+                try:
+                    current = request_yahoo(candidate, period1=None, period2=None,
+                        range_name="5d", interval="1d", timeout=timeout, cache_dir=cache_dir)
+                    meta = _chart_result(current, candidate).get("meta") or {}
+                    first = meta.get("firstTradeDate")
+                    if (meta.get("symbol") == candidate and meta.get("instrumentType") == "EQUITY"
+                            and meta.get("currency", "").upper() == row["currency"].upper()
+                            and _company_name_matches(str(row.get("description") or row["name"]), meta)
+                            and type(first) in (int, float)
+                            and datetime.fromtimestamp(first, ZoneInfo(timezone_name)).date() > end):
+                        raise NoRequestedSession(f"{candidate}: verified first trade after requested range")
+                except NoRequestedSession:
+                    raise
+                except BackfillError:
+                    pass
     raise BackfillError(errors[-1] if errors else f"{row['symbol']}: no Yahoo candidates")
 
 
@@ -376,6 +382,9 @@ def build_reports(market_id: str, start: date, end: date, *, workers: int = 24,
                 failures.append(f"{futures[future]['symbol']}: {exc}")
             if completed % 500 == 0:
                 print(f"{market_id}: history {completed}/{len(universe)}; ok={len(histories)} inactive={len(inactive)} failed={len(failures)}", flush=True)
+    atomic_json(cache_dir / "coverage" / market_id / f"{start}_to_{end}.json", {
+        "market": market_id, "start": str(start), "end": str(end),
+        "failures": failures, "inactive": inactive})
     relevant = len(histories) + len(failures)
     ratio = len(histories) / relevant if relevant else 0
     if ratio < minimum_coverage_ratio:
@@ -460,7 +469,8 @@ def build_reports(market_id: str, start: date, end: date, *, workers: int = 24,
                     "source_url": f"https://finance.yahoo.com/quote/{quote(history.yahoo_symbol, safe='')}/history/",
                     "date": session.isoformat(), "daily_high": bar.high,
                     "prior_all_time_or_current_month_high": all_time_level,
-                    "passes_close_filter": passes_close, "yahoo_symbol": history.yahoo_symbol,
+                    "passes_close_filter": passes_close, "source_symbol": history.row["symbol"],
+                    "yahoo_symbol": history.yahoo_symbol,
                 },
             })
         new_entries.sort(key=lambda entry: (entry["exchange"], entry["ticker"]))

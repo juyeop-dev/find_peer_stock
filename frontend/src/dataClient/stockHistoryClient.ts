@@ -5,10 +5,11 @@ export interface StockHistory {
   ticker: string; currency: string; source: string; fetched_at?: string; first_trade_date?: string | null;
   history: SemiconductorPrice[]; warning?: string;
 }
-export const CHART_PERIODS = [7, 30, 90, 180, "1y", "2y", "since2025", "since2024H2", "since2024", "since2023", "since2022"] as const;
+export const CHART_PERIODS = [7, 30, 90, 180, "1y", "2y", "since2025", "since2024H2", "since2024", "since2023", "since2022", "since2021"] as const;
 export type ChartPeriod = typeof CHART_PERIODS[number];
-export const chartPeriodLabel = (period: ChartPeriod) => typeof period === "number" ? `${period}일` : period === "since2022" ? "2022년~" : period === "since2023" ? "2023년~" : period === "since2024" ? "2024년~" : period === "since2024H2" ? "2024년 하반기~" : period === "since2025" ? "2025년~" : period === "1y" ? "1년" : "2년";
+export const chartPeriodLabel = (period: ChartPeriod) => typeof period === "number" ? `${period}일` : period === "since2021" ? "2021년~" : period === "since2022" ? "2022년~" : period === "since2023" ? "2023년~" : period === "since2024" ? "2024년~" : period === "since2024H2" ? "2024년 하반기~" : period === "since2025" ? "2025년~" : period === "1y" ? "1년" : "2년";
 export function chartStart(end: string, period: ChartPeriod): string {
+  if (period === "since2021") return "2021-01-01";
   if (period === "since2022") return "2022-01-01";
   if (period === "since2023") return "2023-01-01";
   if (period === "since2024") return "2024-01-01";
@@ -70,7 +71,7 @@ export async function getStockHistory(ticker: string, exchange?: string, signal?
     fetched_at: detail.fetched_at, history: detail.history } : histories.get(ticker.toUpperCase()) ?? initial;
   // Inline peer/quote snapshots may still contain a shorter window. Consult
   // the durable archive before treating a fresh one-year snapshot as enough.
-  const requestedStart = "2022-01-01";
+  const requestedStart = "2021-01-01";
   if (!base || base.history[0].date > requestedStart && !(base.first_trade_date && base.first_trade_date > requestedStart)) {
     try {
       const archived = await getPublishedStockHistory(ticker, signal);

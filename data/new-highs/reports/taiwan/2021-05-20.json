@@ -1,0 +1,190 @@
+{
+  "schema_version": 1,
+  "market": "taiwan",
+  "date": "2021-05-20",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "5475.TWO",
+      "name": "Glotech Industrial Corp",
+      "exchange": "TPEX",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Industrial Machinery",
+      "description": "Glotech Industrial Corp · Industrial Machinery",
+      "change_pct": 9.731548993707161,
+      "session_open": 15.800000190734863,
+      "session_close": 16.350000381469727,
+      "session_volume": 7285000.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:5475",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/5475.TWO/history/",
+        "date": "2021-05-20",
+        "daily_high": 16.350000381469727,
+        "prior_all_time_or_current_month_high": 29.912599563598633,
+        "passes_close_filter": true,
+        "yahoo_symbol": "5475.TWO"
+      }
+    },
+    {
+      "ticker": "6242.TWO",
+      "name": "LI KANG BIOMEDICAL Co. Ltd.",
+      "exchange": "TPEX",
+      "category": "Consumer Services",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Services · Other Consumer Services",
+      "description": "LI KANG BIOMEDICAL Co. Ltd. · Other Consumer Services",
+      "change_pct": 9.960161139554646,
+      "session_open": 44.20088577270508,
+      "session_close": 44.20088577270508,
+      "session_volume": 121137.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:6242",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6242.TWO/history/",
+        "date": "2021-05-20",
+        "daily_high": 44.20088577270508,
+        "prior_all_time_or_current_month_high": 68.94377136230469,
+        "passes_close_filter": true,
+        "yahoo_symbol": "6242.TWO"
+      }
+    },
+    {
+      "ticker": "6763.TWO",
+      "name": "Green World Fintech Service Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Technology Services",
+      "high_type": "all_time",
+      "reason": "업종: Technology Services · Information Technology Services",
+      "description": "Green World Fintech Service Co., Ltd. · Information Technology Services",
+      "change_pct": 3.2552092942957467,
+      "session_open": 55.3065071105957,
+      "session_close": 57.106849670410156,
+      "session_volume": 2522492.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:6763",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6763.TWO/history/",
+        "date": "2021-05-20",
+        "daily_high": 58.90719223022461,
+        "prior_all_time_or_current_month_high": 58.90719223022461,
+        "passes_close_filter": true,
+        "yahoo_symbol": "6763.TWO"
+      }
+    },
+    {
+      "ticker": "2642.TW",
+      "name": "Taiwan Pelican Express Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Transportation",
+      "high_type": "52_week",
+      "reason": "업종: Transportation · Air Freight/Couriers",
+      "description": "Taiwan Pelican Express Co., Ltd. · Air Freight/Couriers",
+      "change_pct": 9.926468903905628,
+      "session_open": 42.099998474121094,
+      "session_close": 44.849998474121094,
+      "session_volume": 15995304.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2642",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2642.TW/history/",
+        "date": "2021-05-20",
+        "daily_high": 44.849998474121094,
+        "prior_all_time_or_current_month_high": 74.5999984741211,
+        "passes_close_filter": true,
+        "yahoo_symbol": "2642.TW"
+      }
+    },
+    {
+      "ticker": "4746.TW",
+      "name": "Formosa Laboratories, Inc.",
+      "exchange": "TWSE",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Pharmaceuticals: Major",
+      "description": "Formosa Laboratories, Inc. · Pharmaceuticals: Major",
+      "change_pct": 9.89660986655434,
+      "session_open": 71.5,
+      "session_close": 74.4000015258789,
+      "session_volume": 17089539.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:4746",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4746.TW/history/",
+        "date": "2021-05-20",
+        "daily_high": 74.4000015258789,
+        "prior_all_time_or_current_month_high": 137.78768920898438,
+        "passes_close_filter": true,
+        "yahoo_symbol": "4746.TW"
+      }
+    },
+    {
+      "ticker": "6472.TW",
+      "name": "Bora Pharmaceuticals Co Ltd",
+      "exchange": "TWSE",
+      "category": "Health Technology",
+      "high_type": "all_time",
+      "reason": "업종: Health Technology · Pharmaceuticals: Other",
+      "description": "Bora Pharmaceuticals Co Ltd · Pharmaceuticals: Other",
+      "change_pct": 9.886545241545353,
+      "session_open": 146.1881561279297,
+      "session_close": 158.58489990234375,
+      "session_volume": 6445033.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:6472",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6472.TW/history/",
+        "date": "2021-05-20",
+        "daily_high": 158.58489990234375,
+        "prior_all_time_or_current_month_high": 158.58489990234375,
+        "passes_close_filter": true,
+        "yahoo_symbol": "6472.TW"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-10-29T12:10:50.134280+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 2356,
+    "history_symbols": 1935,
+    "inactive_symbols": 5,
+    "failed_symbols": 416,
+    "coverage_ratio": 0.8230540195661421,
+    "coverage_by_exchange": {
+      "TWSE": {
+        "covered": 992,
+        "total": 1094
+      },
+      "TPEX": {
+        "covered": 943,
+        "total": 1257
+      }
+    },
+    "session_symbols": 1893,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-10-29T12:10:50.134280+00:00"
+}

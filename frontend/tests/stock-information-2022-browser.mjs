@@ -9,8 +9,9 @@ import { fileURLToPath } from "node:url";
 const root = fileURLToPath(new URL("../../", import.meta.url));
 const base = process.env.STOCK_SITE_BASE_URL ?? "http://127.0.0.1:4174";
 const rows = (await readFile(join(root, "data/information-audit/results.jsonl"), "utf8")).trim().split("\n").map(JSON.parse);
+const covered = new Set(JSON.parse(await readFile(join(root, "data/information-audit/2022/coverage-results.json"), "utf8")).filter(row => row.financial_2022_periods > 0).map(row => row.ticker));
 const routes = ["/semiconductors/000660.KS", "/stocks/2330.TW", ...["korea", "us", "japan", "taiwan", "china", "europe"].map(market => {
-  const row = rows.find(row => row.market === market && row.pages.includes("market") && row.history_status === "complete" && row.financial_first?.startsWith("2022"));
+  const row = rows.find(row => row.market === market && row.pages.includes("market") && row.history_status === "complete" && covered.has(row.ticker));
   assert.ok(row, `No representative complete stock for ${market}`);
   return `/market-stocks/${encodeURIComponent(row.ticker)}?${new URLSearchParams({market,date:row.date,source:row.source})}`;
 })];

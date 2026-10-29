@@ -1,0 +1,310 @@
+{
+  "schema_version": 1,
+  "market": "taiwan",
+  "date": "2021-01-20",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "4528.TWO",
+      "name": "Chian Hsing Forging Industrial Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Auto Parts: OEM",
+      "description": "Chian Hsing Forging Industrial Co., Ltd. · Auto Parts: OEM",
+      "change_pct": 9.872031480304933,
+      "session_open": 54.6363639831543,
+      "session_close": 54.6363639831543,
+      "session_volume": 3913800.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:4528",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4528.TWO/history/",
+        "date": "2021-01-20",
+        "daily_high": 54.6363639831543,
+        "prior_all_time_or_current_month_high": 85.63636016845703,
+        "passes_close_filter": true,
+        "yahoo_symbol": "4528.TWO"
+      }
+    },
+    {
+      "ticker": "6198.TWO",
+      "name": "Rich Circle Development Co Ltd",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Semiconductors",
+      "description": "Rich Circle Development Co Ltd · Semiconductors",
+      "change_pct": 7.246382605302104,
+      "session_open": 37.86507034301758,
+      "session_close": 37.86507034301758,
+      "session_volume": 2149.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:6198",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6198.TWO/history/",
+        "date": "2021-01-20",
+        "daily_high": 37.86507034301758,
+        "prior_all_time_or_current_month_high": 70.30207824707031,
+        "passes_close_filter": true,
+        "yahoo_symbol": "6198.TWO"
+      }
+    },
+    {
+      "ticker": "6485.TWO",
+      "name": "ASolid Technology Co Ltd",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Semiconductors",
+      "description": "ASolid Technology Co Ltd · Semiconductors",
+      "change_pct": 2.0779200962611544,
+      "session_open": 38.5,
+      "session_close": 39.29999923706055,
+      "session_volume": 1068000.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:6485",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6485.TWO/history/",
+        "date": "2021-01-20",
+        "daily_high": 40.5,
+        "prior_all_time_or_current_month_high": 63.84652328491211,
+        "passes_close_filter": true,
+        "yahoo_symbol": "6485.TWO"
+      }
+    },
+    {
+      "ticker": "6555.TWO",
+      "name": "Long Time Technology Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Process Industries",
+      "high_type": "52_week",
+      "reason": "업종: Process Industries · Chemicals: Specialty",
+      "description": "Long Time Technology Co., Ltd. · Chemicals: Specialty",
+      "change_pct": 4.733734689153524,
+      "session_open": 33.400001525878906,
+      "session_close": 35.400001525878906,
+      "session_volume": 1297160.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:6555",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6555.TWO/history/",
+        "date": "2021-01-20",
+        "daily_high": 37.599998474121094,
+        "prior_all_time_or_current_month_high": 66.4510726928711,
+        "passes_close_filter": true,
+        "yahoo_symbol": "6555.TWO"
+      }
+    },
+    {
+      "ticker": "8024.TWO",
+      "name": "Alpha Microelectronics Corp.",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Semiconductors",
+      "description": "Alpha Microelectronics Corp. · Semiconductors",
+      "change_pct": 4.310344922084264,
+      "session_open": 17.5,
+      "session_close": 18.149999618530273,
+      "session_volume": 6127000.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:8024",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/8024.TWO/history/",
+        "date": "2021-01-20",
+        "daily_high": 18.5,
+        "prior_all_time_or_current_month_high": 47.22222137451172,
+        "passes_close_filter": true,
+        "yahoo_symbol": "8024.TWO"
+      }
+    },
+    {
+      "ticker": "2330.TW",
+      "name": "Taiwan Semiconductor Manufacturing Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Semiconductors",
+      "description": "Taiwan Semiconductor Manufacturing Co., Ltd. · Semiconductors",
+      "change_pct": 3.189792663476876,
+      "session_open": 633.0,
+      "session_close": 647.0,
+      "session_volume": 82066422.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2330",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2330.TW/history/",
+        "date": "2021-01-20",
+        "daily_high": 650.0,
+        "prior_all_time_or_current_month_high": 650.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "2330.TW"
+      }
+    },
+    {
+      "ticker": "2379.TW",
+      "name": "Realtek Semiconductor Corp",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Semiconductors",
+      "description": "Realtek Semiconductor Corp · Semiconductors",
+      "change_pct": 0.9594882729211163,
+      "session_open": 466.5,
+      "session_close": 473.5,
+      "session_volume": 5637367.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2379",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2379.TW/history/",
+        "date": "2021-01-20",
+        "daily_high": 483.5,
+        "prior_all_time_or_current_month_high": 483.5,
+        "passes_close_filter": true,
+        "yahoo_symbol": "2379.TW"
+      }
+    },
+    {
+      "ticker": "2441.TW",
+      "name": "Greatek Electronics, Inc.",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Semiconductors",
+      "description": "Greatek Electronics, Inc. · Semiconductors",
+      "change_pct": 5.140191913744574,
+      "session_open": 65.0,
+      "session_close": 67.5,
+      "session_volume": 20417065.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2441",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2441.TW/history/",
+        "date": "2021-01-20",
+        "daily_high": 69.5,
+        "prior_all_time_or_current_month_high": 69.5,
+        "passes_close_filter": true,
+        "yahoo_symbol": "2441.TW"
+      }
+    },
+    {
+      "ticker": "2471.TW",
+      "name": "Ares International Corp.",
+      "exchange": "TWSE",
+      "category": "Technology Services",
+      "high_type": "52_week",
+      "reason": "업종: Technology Services · Information Technology Services",
+      "description": "Ares International Corp. · Information Technology Services",
+      "change_pct": 4.33275557529238,
+      "session_open": 30.0,
+      "session_close": 30.100000381469727,
+      "session_volume": 17058308.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2471",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2471.TW/history/",
+        "date": "2021-01-20",
+        "daily_high": 31.5,
+        "prior_all_time_or_current_month_high": 62.98516082763672,
+        "passes_close_filter": true,
+        "yahoo_symbol": "2471.TW"
+      }
+    },
+    {
+      "ticker": "6257.TW",
+      "name": "Sigurd Microelectronics Corp.",
+      "exchange": "TWSE",
+      "category": "Commercial Services",
+      "high_type": "all_time",
+      "reason": "업종: Commercial Services · Miscellaneous Commercial Services",
+      "description": "Sigurd Microelectronics Corp. · Miscellaneous Commercial Services",
+      "change_pct": 1.3655494678897817,
+      "session_open": 48.0,
+      "session_close": 48.25,
+      "session_volume": 27551924.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:6257",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6257.TW/history/",
+        "date": "2021-01-20",
+        "daily_high": 49.599998474121094,
+        "prior_all_time_or_current_month_high": 49.599998474121094,
+        "passes_close_filter": true,
+        "yahoo_symbol": "6257.TW"
+      }
+    },
+    {
+      "ticker": "8033.TW",
+      "name": "Thunder Tiger Corp.",
+      "exchange": "TWSE",
+      "category": "Consumer Durables",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Durables · Recreational Products",
+      "description": "Thunder Tiger Corp. · Recreational Products",
+      "change_pct": 1.1834306933625527,
+      "session_open": 16.22739601135254,
+      "session_close": 16.322851181030273,
+      "session_volume": 10720261.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:8033",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/8033.TW/history/",
+        "date": "2021-01-20",
+        "daily_high": 16.513761520385742,
+        "prior_all_time_or_current_month_high": 48.62421798706055,
+        "passes_close_filter": true,
+        "yahoo_symbol": "8033.TW"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-10-29T12:10:50.134280+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 2356,
+    "history_symbols": 1935,
+    "inactive_symbols": 5,
+    "failed_symbols": 416,
+    "coverage_ratio": 0.8230540195661421,
+    "coverage_by_exchange": {
+      "TWSE": {
+        "covered": 992,
+        "total": 1094
+      },
+      "TPEX": {
+        "covered": 943,
+        "total": 1257
+      }
+    },
+    "session_symbols": 1874,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-10-29T12:10:50.134280+00:00"
+}

@@ -1,0 +1,375 @@
+{
+  "schema_version": 1,
+  "market": "us",
+  "date": "2021-11-30",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "AIP",
+      "name": "Arteris, Inc.",
+      "exchange": "NASDAQ",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Semiconductors",
+      "description": "Arteris, Inc. · Semiconductors",
+      "change_pct": 4.101187001020712,
+      "session_open": 25.950000762939453,
+      "session_close": 27.15999984741211,
+      "session_volume": 128200.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:AIP",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/AIP/history/",
+        "date": "2021-11-30",
+        "daily_high": 27.565000534057617,
+        "prior_all_time_or_current_month_high": 27.565000534057617,
+        "passes_close_filter": true,
+        "source_symbol": "NASDAQ:AIP",
+        "yahoo_symbol": "AIP"
+      }
+    },
+    {
+      "ticker": "BHFAM",
+      "name": "Brighthouse Financial, Inc. Depositary Shs Repr 1/1000th 4.625 % Non-Cum Red Perp Pfd Rg Shs Series -D-",
+      "exchange": "NASDAQ",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "업종: Finance · Life/Health Insurance",
+      "description": "Brighthouse Financial, Inc. Depositary Shs Repr 1/1000th 4.625 % Non-Cum Red Perp Pfd Rg Shs Series -D- · Life/Health Insurance",
+      "change_pct": 0.39777400118354844,
+      "session_open": 25.059999465942383,
+      "session_close": 25.239999771118164,
+      "session_volume": 1858600.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:BHFAM",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/BHFAM/history/",
+        "date": "2021-11-30",
+        "daily_high": 26.239999771118164,
+        "prior_all_time_or_current_month_high": 26.239999771118164,
+        "passes_close_filter": true,
+        "source_symbol": "NASDAQ:BHFAM",
+        "yahoo_symbol": "BHFAM"
+      }
+    },
+    {
+      "ticker": "CCEC",
+      "name": "Capital Clean Energy Carriers Corp.",
+      "exchange": "NASDAQ",
+      "category": "Transportation",
+      "high_type": "52_week",
+      "reason": "업종: Transportation · Marine Shipping",
+      "description": "Capital Clean Energy Carriers Corp. · Marine Shipping",
+      "change_pct": 2.8284146276258415,
+      "session_open": 15.800000190734863,
+      "session_close": 16.360000610351562,
+      "session_volume": 483600.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:CCEC",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/CCEC/history/",
+        "date": "2021-11-30",
+        "daily_high": 17.0,
+        "prior_all_time_or_current_month_high": 227.5,
+        "passes_close_filter": true,
+        "source_symbol": "NASDAQ:CCEC",
+        "yahoo_symbol": "CCEC"
+      }
+    },
+    {
+      "ticker": "CPIX",
+      "name": "Cumberland Pharmaceuticals Inc.",
+      "exchange": "NASDAQ",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Pharmaceuticals: Major",
+      "description": "Cumberland Pharmaceuticals Inc. · Pharmaceuticals: Major",
+      "change_pct": 128.63636821754696,
+      "session_open": 4.130000114440918,
+      "session_close": 5.03000020980835,
+      "session_volume": 207688000.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:CPIX",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/CPIX/history/",
+        "date": "2021-11-30",
+        "daily_high": 5.480000019073486,
+        "prior_all_time_or_current_month_high": 17.239999771118164,
+        "passes_close_filter": true,
+        "source_symbol": "NASDAQ:CPIX",
+        "yahoo_symbol": "CPIX"
+      }
+    },
+    {
+      "ticker": "GRRR",
+      "name": "Gorilla Technology Group, Inc.",
+      "exchange": "NASDAQ",
+      "category": "Technology Services",
+      "high_type": "all_time",
+      "reason": "업종: Technology Services · Packaged Software",
+      "description": "Gorilla Technology Group, Inc. · Packaged Software",
+      "change_pct": 0.2003050382505034,
+      "session_open": 100.05000305175781,
+      "session_close": 100.05000305175781,
+      "session_volume": 390.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:GRRR",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/GRRR/history/",
+        "date": "2021-11-30",
+        "daily_high": 100.05000305175781,
+        "prior_all_time_or_current_month_high": 100.05000305175781,
+        "passes_close_filter": true,
+        "source_symbol": "NASDAQ:GRRR",
+        "yahoo_symbol": "GRRR"
+      }
+    },
+    {
+      "ticker": "MOBX",
+      "name": "Mobix Labs, Inc.",
+      "exchange": "NASDAQ",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Semiconductors",
+      "description": "Mobix Labs, Inc. · Semiconductors",
+      "change_pct": 1.7293966383165715,
+      "session_open": 98.80000305175781,
+      "session_close": 100.0,
+      "session_volume": 5650.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:MOBX",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/MOBX/history/",
+        "date": "2021-11-30",
+        "daily_high": 100.0,
+        "prior_all_time_or_current_month_high": 100.0,
+        "passes_close_filter": true,
+        "source_symbol": "NASDAQ:MOBX",
+        "yahoo_symbol": "MOBX"
+      }
+    },
+    {
+      "ticker": "SMID",
+      "name": "Smith-Midland Corporation",
+      "exchange": "NASDAQ",
+      "category": "Non-Energy Minerals",
+      "high_type": "all_time",
+      "reason": "업종: Non-Energy Minerals · Construction Materials",
+      "description": "Smith-Midland Corporation · Construction Materials",
+      "change_pct": 6.017187341851282,
+      "session_open": 35.310001373291016,
+      "session_close": 37.0,
+      "session_volume": 93200.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:SMID",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/SMID/history/",
+        "date": "2021-11-30",
+        "daily_high": 37.380001068115234,
+        "prior_all_time_or_current_month_high": 37.380001068115234,
+        "passes_close_filter": true,
+        "source_symbol": "NASDAQ:SMID",
+        "yahoo_symbol": "SMID"
+      }
+    },
+    {
+      "ticker": "SVRN",
+      "name": "SVRN, Inc.",
+      "exchange": "NASDAQ",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "업종: Finance · Financial Conglomerates",
+      "description": "SVRN, Inc. · Financial Conglomerates",
+      "change_pct": 0.0,
+      "session_open": 3560000.0,
+      "session_close": 5220000.0,
+      "session_volume": 5.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:SVRN",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/SVRN/history/",
+        "date": "2021-11-30",
+        "daily_high": 12090000.0,
+        "prior_all_time_or_current_month_high": 12090000.0,
+        "passes_close_filter": true,
+        "source_symbol": "NASDAQ:SVRN",
+        "yahoo_symbol": "SVRN"
+      }
+    },
+    {
+      "ticker": "VERA",
+      "name": "Vera Therapeutics, Inc. Class A",
+      "exchange": "NASDAQ",
+      "category": "Health Technology",
+      "high_type": "all_time",
+      "reason": "업종: Health Technology · Biotechnology",
+      "description": "Vera Therapeutics, Inc. Class A · Biotechnology",
+      "change_pct": 13.759135742556538,
+      "session_open": 31.84000015258789,
+      "session_close": 35.79999923706055,
+      "session_volume": 58300.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:VERA",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/VERA/history/",
+        "date": "2021-11-30",
+        "daily_high": 35.79999923706055,
+        "prior_all_time_or_current_month_high": 35.79999923706055,
+        "passes_close_filter": true,
+        "source_symbol": "NASDAQ:VERA",
+        "yahoo_symbol": "VERA"
+      }
+    },
+    {
+      "ticker": "VGAS",
+      "name": "Verde Clean Fuels, Inc. Class A",
+      "exchange": "NASDAQ",
+      "category": "Process Industries",
+      "high_type": "all_time",
+      "reason": "업종: Process Industries · Industrial Specialties",
+      "description": "Verde Clean Fuels, Inc. Class A · Industrial Specialties",
+      "change_pct": 0.10069763242914753,
+      "session_open": 9.930000305175781,
+      "session_close": 9.9399995803833,
+      "session_volume": 266000.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:VGAS",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/VGAS/history/",
+        "date": "2021-11-30",
+        "daily_high": 9.9399995803833,
+        "prior_all_time_or_current_month_high": 9.9399995803833,
+        "passes_close_filter": true,
+        "source_symbol": "NASDAQ:VGAS",
+        "yahoo_symbol": "VGAS"
+      }
+    },
+    {
+      "ticker": "BBAI",
+      "name": "BigBear.ai Holdings, Inc.",
+      "exchange": "NYSE",
+      "category": "Technology Services",
+      "high_type": "all_time",
+      "reason": "업종: Technology Services · Packaged Software",
+      "description": "BigBear.ai Holdings, Inc. · Packaged Software",
+      "change_pct": 0.5025144893802347,
+      "session_open": 9.949999809265137,
+      "session_close": 10.0,
+      "session_volume": 3535400.0,
+      "currency": "USD",
+      "source_symbol": "NYSE:BBAI",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/BBAI/history/",
+        "date": "2021-11-30",
+        "daily_high": 10.010000228881836,
+        "prior_all_time_or_current_month_high": 10.010000228881836,
+        "passes_close_filter": true,
+        "source_symbol": "NYSE:BBAI",
+        "yahoo_symbol": "BBAI"
+      }
+    },
+    {
+      "ticker": "GLOP/PA",
+      "name": "GasLog Partners LP Cum Red Perp Pfd Uts Series A",
+      "exchange": "NYSE",
+      "category": "Industrial Services",
+      "high_type": "52_week",
+      "reason": "업종: Industrial Services · Oil & Gas Pipelines",
+      "description": "GasLog Partners LP Cum Red Perp Pfd Uts Series A · Oil & Gas Pipelines",
+      "change_pct": 0.037750958732507556,
+      "session_open": 26.490100860595703,
+      "session_close": 26.5,
+      "session_volume": 4861.0,
+      "currency": "USD",
+      "source_symbol": "NYSE:GLOP/PA",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/GLOP-PA/history/",
+        "date": "2021-11-30",
+        "daily_high": 26.5,
+        "prior_all_time_or_current_month_high": 27.239999771118164,
+        "passes_close_filter": true,
+        "source_symbol": "NYSE:GLOP/PA",
+        "yahoo_symbol": "GLOP-PA"
+      }
+    },
+    {
+      "ticker": "GLOP/PC",
+      "name": "GasLog Partners LP Cum Red Perp Pref Units Series C",
+      "exchange": "NYSE",
+      "category": "Industrial Services",
+      "high_type": "all_time",
+      "reason": "업종: Industrial Services · Oil & Gas Pipelines",
+      "description": "GasLog Partners LP Cum Red Perp Pref Units Series C · Oil & Gas Pipelines",
+      "change_pct": 1.762627667402339,
+      "session_open": 25.510000228881836,
+      "session_close": 25.979999542236328,
+      "session_volume": 29739.0,
+      "currency": "USD",
+      "source_symbol": "NYSE:GLOP/PC",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/GLOP-PC/history/",
+        "date": "2021-11-30",
+        "daily_high": 25.979999542236328,
+        "prior_all_time_or_current_month_high": 25.979999542236328,
+        "passes_close_filter": true,
+        "source_symbol": "NYSE:GLOP/PC",
+        "yahoo_symbol": "GLOP-PC"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-10-29T12:33:16.120466+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 5711,
+    "history_symbols": 4322,
+    "inactive_symbols": 1388,
+    "failed_symbols": 1,
+    "coverage_ratio": 0.9997686791579922,
+    "coverage_by_exchange": {
+      "NASDAQ": {
+        "covered": 2358,
+        "total": 2359
+      },
+      "NYSE": {
+        "covered": 1784,
+        "total": 1784
+      },
+      "AMEX": {
+        "covered": 180,
+        "total": 180
+      }
+    },
+    "session_symbols": 4286,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-10-29T12:33:16.120466+00:00"
+}

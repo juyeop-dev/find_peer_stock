@@ -11,7 +11,7 @@ from pathlib import Path
 from typing import Any
 from urllib.parse import urlsplit
 
-from archive_paths import monthly_report_path
+from archive_paths import monthly_report_path, publish_daily_report
 from calendar_history import build_history, publish_history, turnover_by_currency
 from generate_new_high_data import load_markets, nonempty_text, require
 from market_closures import load_scheduled_closures, merge_closures
@@ -179,7 +179,11 @@ def generate_turnover_data(source_dir: Path = SOURCE_DIR, output_dir: Path = GEN
     for destination in destinations:
         namespace = destination / "turnover"
         for report in reports:
-            write_json(monthly_report_path(namespace, report["market"], report["date"]), report)
+            path = monthly_report_path(namespace, report["market"], report["date"])
+            if frontend_data_dir is not None and destination.resolve() == frontend_data_dir.resolve():
+                publish_daily_report(path, report, frontend_data_dir)
+            else:
+                write_json(path, report)
         publish_history(namespace, history)
         write_json(namespace / "index.json", index)
     return index

@@ -1,0 +1,190 @@
+{
+  "schema_version": 1,
+  "market": "taiwan",
+  "date": "2021-05-25",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "4966.TWO",
+      "name": "Parade Technologies, Ltd.",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Semiconductors",
+      "description": "Parade Technologies, Ltd. · Semiconductors",
+      "change_pct": 2.8169014084507005,
+      "session_open": 1410.0,
+      "session_close": 1460.0,
+      "session_volume": 1112000.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:4966",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4966.TWO/history/",
+        "date": "2021-05-25",
+        "daily_high": 1500.0,
+        "prior_all_time_or_current_month_high": 1500.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "4966.TWO"
+      }
+    },
+    {
+      "ticker": "6242.TWO",
+      "name": "LI KANG BIOMEDICAL Co. Ltd.",
+      "exchange": "TPEX",
+      "category": "Consumer Services",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Services · Other Consumer Services",
+      "description": "LI KANG BIOMEDICAL Co. Ltd. · Other Consumer Services",
+      "change_pct": 4.797601306482302,
+      "session_open": 53.489479064941406,
+      "session_close": 55.97177505493164,
+      "session_volume": 1302543.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:6242",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6242.TWO/history/",
+        "date": "2021-05-25",
+        "daily_high": 58.37399673461914,
+        "prior_all_time_or_current_month_high": 68.94377136230469,
+        "passes_close_filter": true,
+        "yahoo_symbol": "6242.TWO"
+      }
+    },
+    {
+      "ticker": "6679.TWO",
+      "name": "ZillTek Technology Corp.",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Semiconductors",
+      "description": "ZillTek Technology Corp. · Semiconductors",
+      "change_pct": 9.958506224066399,
+      "session_open": 372.5,
+      "session_close": 397.5,
+      "session_volume": 2645000.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:6679",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6679.TWO/history/",
+        "date": "2021-05-25",
+        "daily_high": 397.5,
+        "prior_all_time_or_current_month_high": 397.5,
+        "passes_close_filter": true,
+        "yahoo_symbol": "6679.TWO"
+      }
+    },
+    {
+      "ticker": "6741.TWO",
+      "name": "91APP, Inc.",
+      "exchange": "TPEX",
+      "category": "Technology Services",
+      "high_type": "all_time",
+      "reason": "업종: Technology Services · Packaged Software",
+      "description": "91APP, Inc. · Packaged Software",
+      "change_pct": 0.0,
+      "session_open": 145.0,
+      "session_close": 167.0,
+      "session_volume": 3453000.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:6741",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6741.TWO/history/",
+        "date": "2021-05-25",
+        "daily_high": 181.0,
+        "prior_all_time_or_current_month_high": 181.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "6741.TWO"
+      }
+    },
+    {
+      "ticker": "2491.TW",
+      "name": "FORTUNE ORIENTAL CO., LTD.",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Semiconductors",
+      "description": "FORTUNE ORIENTAL CO., LTD. · Semiconductors",
+      "change_pct": 7.763402738261704,
+      "session_open": 28.799999237060547,
+      "session_close": 29.149999618530273,
+      "session_volume": 6760305.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2491",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2491.TW/history/",
+        "date": "2021-05-25",
+        "daily_high": 29.75,
+        "prior_all_time_or_current_month_high": 4196.25390625,
+        "passes_close_filter": true,
+        "yahoo_symbol": "2491.TW"
+      }
+    },
+    {
+      "ticker": "9910.TW",
+      "name": "Feng Tay Enterprise Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Consumer Non-Durables",
+      "high_type": "all_time",
+      "reason": "업종: Consumer Non-Durables · Apparel/Footwear",
+      "description": "Feng Tay Enterprise Co., Ltd. · Apparel/Footwear",
+      "change_pct": 4.504505752849597,
+      "session_open": 198.6607208251953,
+      "session_close": 207.14285278320312,
+      "session_volume": 2365969.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:9910",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/9910.TW/history/",
+        "date": "2021-05-25",
+        "daily_high": 207.14285278320312,
+        "prior_all_time_or_current_month_high": 207.14285278320312,
+        "passes_close_filter": true,
+        "yahoo_symbol": "9910.TW"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-10-29T12:10:50.134280+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 2356,
+    "history_symbols": 1935,
+    "inactive_symbols": 5,
+    "failed_symbols": 416,
+    "coverage_ratio": 0.8230540195661421,
+    "coverage_by_exchange": {
+      "TWSE": {
+        "covered": 992,
+        "total": 1094
+      },
+      "TPEX": {
+        "covered": 943,
+        "total": 1257
+      }
+    },
+    "session_symbols": 1894,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-10-29T12:10:50.134280+00:00"
+}

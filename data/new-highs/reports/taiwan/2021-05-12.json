@@ -1,0 +1,142 @@
+{
+  "schema_version": 1,
+  "market": "taiwan",
+  "date": "2021-05-12",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "4406.TWO",
+      "name": "Hsin Sin Textile Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Process Industries",
+      "high_type": "52_week",
+      "reason": "업종: Process Industries · Textiles",
+      "description": "Hsin Sin Textile Co., Ltd. · Textiles",
+      "change_pct": 9.803921751955858,
+      "session_open": 11.0,
+      "session_close": 11.199999809265137,
+      "session_volume": 8848000.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:4406",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4406.TWO/history/",
+        "date": "2021-05-12",
+        "daily_high": 11.199999809265137,
+        "prior_all_time_or_current_month_high": 14.399999618530273,
+        "passes_close_filter": true,
+        "yahoo_symbol": "4406.TWO"
+      }
+    },
+    {
+      "ticker": "6547.TWO",
+      "name": "Medigen Vaccine Biologics Corp.",
+      "exchange": "TPEX",
+      "category": "Health Technology",
+      "high_type": "all_time",
+      "reason": "업종: Health Technology · Biotechnology",
+      "description": "Medigen Vaccine Biologics Corp. · Biotechnology",
+      "change_pct": 10.000000756947314,
+      "session_open": 204.9429473876953,
+      "session_close": 221.74156188964844,
+      "session_volume": 19821589.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:6547",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6547.TWO/history/",
+        "date": "2021-05-12",
+        "daily_high": 221.74156188964844,
+        "prior_all_time_or_current_month_high": 221.74156188964844,
+        "passes_close_filter": true,
+        "yahoo_symbol": "6547.TWO"
+      }
+    },
+    {
+      "ticker": "6709.TWO",
+      "name": "Advagene Biopharma Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Health Technology",
+      "high_type": "all_time",
+      "reason": "업종: Health Technology · Biotechnology",
+      "description": "Advagene Biopharma Co., Ltd. · Biotechnology",
+      "change_pct": 33.05647123591433,
+      "session_open": 63.921607971191406,
+      "session_close": 79.3817138671875,
+      "session_volume": 4221983.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:6709",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6709.TWO/history/",
+        "date": "2021-05-12",
+        "daily_high": 87.21087646484375,
+        "prior_all_time_or_current_month_high": 87.21087646484375,
+        "passes_close_filter": true,
+        "yahoo_symbol": "6709.TWO"
+      }
+    },
+    {
+      "ticker": "7584.TWO",
+      "name": "Happytuk Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Technology Services",
+      "high_type": "all_time",
+      "reason": "업종: Technology Services · Packaged Software",
+      "description": "Happytuk Co., Ltd. · Packaged Software",
+      "change_pct": 0.0,
+      "session_open": 53.773521423339844,
+      "session_close": 77.08025360107422,
+      "session_volume": 107295.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:7584",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/7584.TWO/history/",
+        "date": "2021-05-12",
+        "daily_high": 86.57829284667969,
+        "prior_all_time_or_current_month_high": 86.57829284667969,
+        "passes_close_filter": true,
+        "yahoo_symbol": "7584.TWO"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-10-29T12:10:50.134280+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 2356,
+    "history_symbols": 1935,
+    "inactive_symbols": 5,
+    "failed_symbols": 416,
+    "coverage_ratio": 0.8230540195661421,
+    "coverage_by_exchange": {
+      "TWSE": {
+        "covered": 992,
+        "total": 1094
+      },
+      "TPEX": {
+        "covered": 943,
+        "total": 1257
+      }
+    },
+    "session_symbols": 1893,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-10-29T12:10:50.134280+00:00"
+}

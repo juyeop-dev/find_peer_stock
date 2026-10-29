@@ -1,0 +1,282 @@
+{
+  "schema_version": 1,
+  "market": "japan",
+  "date": "2021-12-17",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "4100.T",
+      "name": "Toda Kogyo Corp.",
+      "exchange": "TSE",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Industrial Conglomerates",
+      "description": "Toda Kogyo Corp. · Industrial Conglomerates",
+      "change_pct": 1.0568031704095038,
+      "session_open": 3760.0,
+      "session_close": 3825.0,
+      "session_volume": 680500.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:4100",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4100.T/history/",
+        "date": "2021-12-17",
+        "daily_high": 4045.0,
+        "prior_all_time_or_current_month_high": 9720.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "4100.T"
+      }
+    },
+    {
+      "ticker": "4769.T",
+      "name": "IC CO.,LTD.",
+      "exchange": "TSE",
+      "category": "Technology Services",
+      "high_type": "52_week",
+      "reason": "업종: Technology Services · Information Technology Services",
+      "description": "IC CO.,LTD. · Information Technology Services",
+      "change_pct": 3.072033898305082,
+      "session_open": 950.0,
+      "session_close": 973.0,
+      "session_volume": 18300.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:4769",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4769.T/history/",
+        "date": "2021-12-17",
+        "daily_high": 973.0,
+        "prior_all_time_or_current_month_high": 1258.5,
+        "passes_close_filter": true,
+        "yahoo_symbol": "4769.T"
+      }
+    },
+    {
+      "ticker": "4832.T",
+      "name": "JFE Systems, Inc.",
+      "exchange": "TSE",
+      "category": "Technology Services",
+      "high_type": "52_week",
+      "reason": "업종: Technology Services · Information Technology Services",
+      "description": "JFE Systems, Inc. · Information Technology Services",
+      "change_pct": 3.4515366430259986,
+      "session_open": 1057.5,
+      "session_close": 1094.0,
+      "session_volume": 109400.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:4832",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4832.T/history/",
+        "date": "2021-12-17",
+        "daily_high": 1110.0,
+        "prior_all_time_or_current_month_high": 3450.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "4832.T"
+      }
+    },
+    {
+      "ticker": "6193.T",
+      "name": "Virtualex Holdings, Inc.",
+      "exchange": "TSE",
+      "category": "Technology Services",
+      "high_type": "52_week",
+      "reason": "업종: Technology Services · Information Technology Services",
+      "description": "Virtualex Holdings, Inc. · Information Technology Services",
+      "change_pct": 4.096045197740117,
+      "session_open": 1415.0,
+      "session_close": 1474.0,
+      "session_volume": 324200.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:6193",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6193.T/history/",
+        "date": "2021-12-17",
+        "daily_high": 1508.0,
+        "prior_all_time_or_current_month_high": 1970.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "6193.T"
+      }
+    },
+    {
+      "ticker": "7254.T",
+      "name": "UNIVANCE Corporation",
+      "exchange": "TSE",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Auto Parts: OEM",
+      "description": "UNIVANCE Corporation · Auto Parts: OEM",
+      "change_pct": 16.33986928104576,
+      "session_open": 604.0,
+      "session_close": 712.0,
+      "session_volume": 2178400.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:7254",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/7254.T/history/",
+        "date": "2021-12-17",
+        "daily_high": 712.0,
+        "prior_all_time_or_current_month_high": 910.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "7254.T"
+      }
+    },
+    {
+      "ticker": "7381.T",
+      "name": "CCI Group, Inc.",
+      "exchange": "TSE",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "업종: Finance · Regional Banks",
+      "description": "CCI Group, Inc. · Regional Banks",
+      "change_pct": 2.5263157894736876,
+      "session_open": 237.6999969482422,
+      "session_close": 243.5,
+      "session_volume": 981000.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:7381",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/7381.T/history/",
+        "date": "2021-12-17",
+        "daily_high": 243.60000610351562,
+        "prior_all_time_or_current_month_high": 243.60000610351562,
+        "passes_close_filter": true,
+        "yahoo_symbol": "7381.T"
+      }
+    },
+    {
+      "ticker": "7878.T",
+      "name": "Kohsai Co.Ltd.",
+      "exchange": "TSE",
+      "category": "Consumer Durables",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Durables · Other Consumer Specialties",
+      "description": "Kohsai Co.Ltd. · Other Consumer Specialties",
+      "change_pct": 0.3091190108191588,
+      "session_open": 811.25,
+      "session_close": 811.25,
+      "session_volume": 12000.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:7878",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/7878.T/history/",
+        "date": "2021-12-17",
+        "daily_high": 870.0,
+        "prior_all_time_or_current_month_high": 1502.5,
+        "passes_close_filter": true,
+        "yahoo_symbol": "7878.T"
+      }
+    },
+    {
+      "ticker": "8052.T",
+      "name": "Tsubakimoto Kogyo Co., Ltd.",
+      "exchange": "TSE",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Industrial Machinery",
+      "description": "Tsubakimoto Kogyo Co., Ltd. · Industrial Machinery",
+      "change_pct": 0.34843205574912606,
+      "session_open": 1435.0,
+      "session_close": 1440.0,
+      "session_volume": 6600.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:8052",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/8052.T/history/",
+        "date": "2021-12-17",
+        "daily_high": 1440.0,
+        "prior_all_time_or_current_month_high": 1541.6666259765625,
+        "passes_close_filter": true,
+        "yahoo_symbol": "8052.T"
+      }
+    },
+    {
+      "ticker": "8260.T",
+      "name": "Izutsuya Co., Ltd.",
+      "exchange": "TSE",
+      "category": "Retail Trade",
+      "high_type": "52_week",
+      "reason": "업종: Retail Trade · Department Stores",
+      "description": "Izutsuya Co., Ltd. · Department Stores",
+      "change_pct": 10.407239819004532,
+      "session_open": 439.0,
+      "session_close": 488.0,
+      "session_volume": 2299000.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:8260",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/8260.T/history/",
+        "date": "2021-12-17",
+        "daily_high": 492.0,
+        "prior_all_time_or_current_month_high": 4220.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "8260.T"
+      }
+    },
+    {
+      "ticker": "9986.T",
+      "name": "Zaoh Company, Ltd.",
+      "exchange": "TSE",
+      "category": "Distribution Services",
+      "high_type": "52_week",
+      "reason": "업종: Distribution Services · Wholesale Distributors",
+      "description": "Zaoh Company, Ltd. · Wholesale Distributors",
+      "change_pct": 0.36231884057971175,
+      "session_open": 1929.0,
+      "session_close": 1939.0,
+      "session_volume": 6500.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:9986",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/9986.T/history/",
+        "date": "2021-12-17",
+        "daily_high": 1939.0,
+        "prior_all_time_or_current_month_high": 2050.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "9986.T"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-10-29T12:10:40.031694+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 3759,
+    "history_symbols": 3391,
+    "inactive_symbols": 0,
+    "failed_symbols": 368,
+    "coverage_ratio": 0.9021016227720138,
+    "coverage_by_exchange": {
+      "TSE": {
+        "covered": 3391,
+        "total": 3759
+      }
+    },
+    "session_symbols": 3365,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-10-29T12:10:40.031694+00:00"
+}

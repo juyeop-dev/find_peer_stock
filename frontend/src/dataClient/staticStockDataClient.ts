@@ -27,13 +27,25 @@ async function fetchJson<T>(path: string, signal?: AbortSignal): Promise<T> {
   }, 20_000);
 
   try {
-    const response = await fetch(assetUrl(path), {
+    const day = path.match(/^data\/(?:new-highs|turnover)\/[^/]+\/(?:\d{4}_\d{2}\/)?(\d{4}-\d{2}-\d{2})\.json$/)?.[1];
+    const compressed = day !== undefined && day < "2026-01-01";
+    const options = {
       cache: "no-store",
       signal: controller.signal,
       headers: { Accept: "application/json" }
-    });
+    } satisfies RequestInit;
+    let response = await fetch(assetUrl(compressed ? `${path}.gz` : path), options);
+    if (compressed && response.status === 404) response = await fetch(assetUrl(path), options);
     if (!response.ok) {
       throw new Error(`데이터를 불러오지 못했습니다. (${response.status})`);
+    }
+    if (compressed) {
+      const bytes = await response.arrayBuffer();
+      const magic = new Uint8Array(bytes, 0, Math.min(2, bytes.byteLength));
+      const body = magic[0] === 0x1f && magic[1] === 0x8b
+        ? await new Response(new Blob([bytes]).stream().pipeThrough(new DecompressionStream("gzip"))).text()
+        : new TextDecoder().decode(bytes);
+      return JSON.parse(body) as T;
     }
     return await response.json() as T;
   } catch (error: unknown) {

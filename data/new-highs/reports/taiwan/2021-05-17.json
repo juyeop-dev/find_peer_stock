@@ -1,0 +1,310 @@
+{
+  "schema_version": 1,
+  "market": "taiwan",
+  "date": "2021-05-17",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "3709.TWO",
+      "name": "Trigold Holdings Ltd.",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Computer Peripherals",
+      "description": "Trigold Holdings Ltd. · Computer Peripherals",
+      "change_pct": 0.0,
+      "session_open": 25.006488800048828,
+      "session_close": 25.05402946472168,
+      "session_volume": 221914.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:3709",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3709.TWO/history/",
+        "date": "2021-05-17",
+        "daily_high": 26.432714462280273,
+        "prior_all_time_or_current_month_high": 26.717960357666016,
+        "passes_close_filter": true,
+        "yahoo_symbol": "3709.TWO"
+      }
+    },
+    {
+      "ticker": "6547.TWO",
+      "name": "Medigen Vaccine Biologics Corp.",
+      "exchange": "TPEX",
+      "category": "Health Technology",
+      "high_type": "all_time",
+      "reason": "업종: Health Technology · Biotechnology",
+      "description": "Medigen Vaccine Biologics Corp. · Biotechnology",
+      "change_pct": 9.881417768922596,
+      "session_open": 268.105712890625,
+      "session_close": 280.20068359375,
+      "session_volume": 16961232.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:6547",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6547.TWO/history/",
+        "date": "2021-05-17",
+        "daily_high": 280.20068359375,
+        "prior_all_time_or_current_month_high": 280.20068359375,
+        "passes_close_filter": true,
+        "yahoo_symbol": "6547.TWO"
+      }
+    },
+    {
+      "ticker": "6564.TWO",
+      "name": "Enimmune corporation",
+      "exchange": "TPEX",
+      "category": "Health Technology",
+      "high_type": "all_time",
+      "reason": "업종: Health Technology · Biotechnology",
+      "description": "Enimmune corporation · Biotechnology",
+      "change_pct": 26.438356336468516,
+      "session_open": 72.87953186035156,
+      "session_close": 92.1476821899414,
+      "session_volume": 9673795.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:6564",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6564.TWO/history/",
+        "date": "2021-05-17",
+        "daily_high": 92.84652709960938,
+        "prior_all_time_or_current_month_high": 92.84652709960938,
+        "passes_close_filter": true,
+        "yahoo_symbol": "6564.TWO"
+      }
+    },
+    {
+      "ticker": "6679.TWO",
+      "name": "ZillTek Technology Corp.",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Semiconductors",
+      "description": "ZillTek Technology Corp. · Semiconductors",
+      "change_pct": 4.46280991735537,
+      "session_open": 293.0,
+      "session_close": 316.0,
+      "session_volume": 3493000.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:6679",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6679.TWO/history/",
+        "date": "2021-05-17",
+        "daily_high": 332.0,
+        "prior_all_time_or_current_month_high": 332.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "6679.TWO"
+      }
+    },
+    {
+      "ticker": "6734.TWO",
+      "name": "iXensor Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Medical Specialties",
+      "description": "iXensor Co., Ltd. · Medical Specialties",
+      "change_pct": 8.383233532934131,
+      "session_open": 63.125,
+      "session_close": 67.875,
+      "session_volume": 1317241.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:6734",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6734.TWO/history/",
+        "date": "2021-05-17",
+        "daily_high": 76.375,
+        "prior_all_time_or_current_month_high": 102.5,
+        "passes_close_filter": true,
+        "yahoo_symbol": "6734.TWO"
+      }
+    },
+    {
+      "ticker": "6763.TWO",
+      "name": "Green World Fintech Service Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Technology Services",
+      "high_type": "all_time",
+      "reason": "업종: Technology Services · Information Technology Services",
+      "description": "Green World Fintech Service Co., Ltd. · Information Technology Services",
+      "change_pct": 11.46132311821706,
+      "session_open": 50.04950714111328,
+      "session_close": 56.02664566040039,
+      "session_volume": 2059414.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:6763",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6763.TWO/history/",
+        "date": "2021-05-17",
+        "daily_high": 58.25906753540039,
+        "prior_all_time_or_current_month_high": 58.25906753540039,
+        "passes_close_filter": true,
+        "yahoo_symbol": "6763.TWO"
+      }
+    },
+    {
+      "ticker": "1231.TW",
+      "name": "Lian Hwa Foods Corporation",
+      "exchange": "TWSE",
+      "category": "Consumer Non-Durables",
+      "high_type": "all_time",
+      "reason": "업종: Consumer Non-Durables · Food: Major Diversified",
+      "description": "Lian Hwa Foods Corporation · Food: Major Diversified",
+      "change_pct": 10.000010229108147,
+      "session_open": 35.80086898803711,
+      "session_close": 36.919647216796875,
+      "session_volume": 14054155.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:1231",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/1231.TW/history/",
+        "date": "2021-05-17",
+        "daily_high": 36.919647216796875,
+        "prior_all_time_or_current_month_high": 36.919647216796875,
+        "passes_close_filter": true,
+        "yahoo_symbol": "1231.TW"
+      }
+    },
+    {
+      "ticker": "1732.TW",
+      "name": "Mao Bao Inc.",
+      "exchange": "TWSE",
+      "category": "Process Industries",
+      "high_type": "all_time",
+      "reason": "업종: Process Industries · Chemicals: Specialty",
+      "description": "Mao Bao Inc. · Chemicals: Specialty",
+      "change_pct": 9.939390240293555,
+      "session_open": 45.349998474121094,
+      "session_close": 45.349998474121094,
+      "session_volume": 669354.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:1732",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/1732.TW/history/",
+        "date": "2021-05-17",
+        "daily_high": 45.349998474121094,
+        "prior_all_time_or_current_month_high": 45.349998474121094,
+        "passes_close_filter": true,
+        "yahoo_symbol": "1732.TW"
+      }
+    },
+    {
+      "ticker": "4746.TW",
+      "name": "Formosa Laboratories, Inc.",
+      "exchange": "TWSE",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Pharmaceuticals: Major",
+      "description": "Formosa Laboratories, Inc. · Pharmaceuticals: Major",
+      "change_pct": 9.984401994116677,
+      "session_open": 68.5999984741211,
+      "session_close": 70.5,
+      "session_volume": 24056236.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:4746",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4746.TW/history/",
+        "date": "2021-05-17",
+        "daily_high": 70.5,
+        "prior_all_time_or_current_month_high": 137.78768920898438,
+        "passes_close_filter": true,
+        "yahoo_symbol": "4746.TW"
+      }
+    },
+    {
+      "ticker": "6589.TW",
+      "name": "EirGenix, Inc.",
+      "exchange": "TWSE",
+      "category": "Health Technology",
+      "high_type": "all_time",
+      "reason": "업종: Health Technology · Biotechnology",
+      "description": "EirGenix, Inc. · Biotechnology",
+      "change_pct": 9.912536443148689,
+      "session_open": 177.0,
+      "session_close": 188.5,
+      "session_volume": 12247000.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:6589",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6589.TW/history/",
+        "date": "2021-05-17",
+        "daily_high": 188.5,
+        "prior_all_time_or_current_month_high": 188.5,
+        "passes_close_filter": true,
+        "yahoo_symbol": "6589.TW"
+      }
+    },
+    {
+      "ticker": "8454.TW",
+      "name": "momo.com Incorporated",
+      "exchange": "TWSE",
+      "category": "Retail Trade",
+      "high_type": "all_time",
+      "reason": "업종: Retail Trade · Catalog/Specialty Distribution",
+      "description": "momo.com Incorporated · Catalog/Specialty Distribution",
+      "change_pct": 9.767443009562559,
+      "session_open": 592.0006103515625,
+      "session_close": 623.7149047851562,
+      "session_volume": 692583.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:8454",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/8454.TW/history/",
+        "date": "2021-05-17",
+        "daily_high": 623.7149047851562,
+        "prior_all_time_or_current_month_high": 623.7149047851562,
+        "passes_close_filter": true,
+        "yahoo_symbol": "8454.TW"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-10-29T12:10:50.134280+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 2356,
+    "history_symbols": 1935,
+    "inactive_symbols": 5,
+    "failed_symbols": 416,
+    "coverage_ratio": 0.8230540195661421,
+    "coverage_by_exchange": {
+      "TWSE": {
+        "covered": 992,
+        "total": 1094
+      },
+      "TPEX": {
+        "covered": 943,
+        "total": 1257
+      }
+    },
+    "session_symbols": 1893,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-10-29T12:10:50.134280+00:00"
+}

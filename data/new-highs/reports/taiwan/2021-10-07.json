@@ -1,0 +1,358 @@
+{
+  "schema_version": 1,
+  "market": "taiwan",
+  "date": "2021-10-07",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "3529.TWO",
+      "name": "eMemory Technology, Inc.",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Semiconductors",
+      "description": "eMemory Technology, Inc. · Semiconductors",
+      "change_pct": 9.819121447028433,
+      "session_open": 1970.0,
+      "session_close": 2125.0,
+      "session_volume": 1268000.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:3529",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3529.TWO/history/",
+        "date": "2021-10-07",
+        "daily_high": 2125.0,
+        "prior_all_time_or_current_month_high": 2125.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "3529.TWO"
+      }
+    },
+    {
+      "ticker": "3564.TWO",
+      "name": "AEWIN Technologies Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Distribution Services",
+      "high_type": "52_week",
+      "reason": "업종: Distribution Services · Electronics Distributors",
+      "description": "AEWIN Technologies Co., Ltd. · Electronics Distributors",
+      "change_pct": 9.810672827260646,
+      "session_open": 30.350000381469727,
+      "session_close": 31.899999618530273,
+      "session_volume": 2544000.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:3564",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3564.TWO/history/",
+        "date": "2021-10-07",
+        "daily_high": 31.899999618530273,
+        "prior_all_time_or_current_month_high": 87.8787841796875,
+        "passes_close_filter": true,
+        "yahoo_symbol": "3564.TWO"
+      }
+    },
+    {
+      "ticker": "3709.TWO",
+      "name": "Trigold Holdings Ltd.",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Computer Peripherals",
+      "description": "Trigold Holdings Ltd. · Computer Peripherals",
+      "change_pct": 5.169343323987219,
+      "session_open": 29.0,
+      "session_close": 29.5,
+      "session_volume": 602000.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:3709",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3709.TWO/history/",
+        "date": "2021-10-07",
+        "daily_high": 29.5,
+        "prior_all_time_or_current_month_high": 29.5,
+        "passes_close_filter": true,
+        "yahoo_symbol": "3709.TWO"
+      }
+    },
+    {
+      "ticker": "5455.TWO",
+      "name": "Sheng Yi Development Co.,Ltd",
+      "exchange": "TPEX",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "업종: Finance · Real Estate Development",
+      "description": "Sheng Yi Development Co.,Ltd · Real Estate Development",
+      "change_pct": 3.7634450134967246,
+      "session_open": 28.0,
+      "session_close": 28.950000762939453,
+      "session_volume": 13000.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:5455",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/5455.TWO/history/",
+        "date": "2021-10-07",
+        "daily_high": 28.950000762939453,
+        "prior_all_time_or_current_month_high": 161.051513671875,
+        "passes_close_filter": true,
+        "yahoo_symbol": "5455.TWO"
+      }
+    },
+    {
+      "ticker": "5547.TWO",
+      "name": "Jioushun Construction Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Consumer Durables",
+      "high_type": "all_time",
+      "reason": "업종: Consumer Durables · Homebuilding",
+      "description": "Jioushun Construction Co., Ltd. · Homebuilding",
+      "change_pct": 0.0,
+      "session_open": 19.552995681762695,
+      "session_close": 19.552995681762695,
+      "session_volume": 26.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:5547",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/5547.TWO/history/",
+        "date": "2021-10-07",
+        "daily_high": 19.552995681762695,
+        "prior_all_time_or_current_month_high": 19.552995681762695,
+        "passes_close_filter": true,
+        "yahoo_symbol": "5547.TWO"
+      }
+    },
+    {
+      "ticker": "6419.TWO",
+      "name": "Nuuo, Inc.",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Telecommunications Equipment",
+      "description": "Nuuo, Inc. · Telecommunications Equipment",
+      "change_pct": 9.955258807576861,
+      "session_open": 44.54999923706055,
+      "session_close": 49.150001525878906,
+      "session_volume": 601000.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:6419",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6419.TWO/history/",
+        "date": "2021-10-07",
+        "daily_high": 49.150001525878906,
+        "prior_all_time_or_current_month_high": 362.84661865234375,
+        "passes_close_filter": true,
+        "yahoo_symbol": "6419.TWO"
+      }
+    },
+    {
+      "ticker": "6833.TWO",
+      "name": "T-Conn Precision Corporation",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Electronic Components",
+      "description": "T-Conn Precision Corporation · Electronic Components",
+      "change_pct": 5.714287159188514,
+      "session_open": 121.12162017822266,
+      "session_close": 127.58718872070312,
+      "session_volume": 314319.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:6833",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6833.TWO/history/",
+        "date": "2021-10-07",
+        "daily_high": 129.7423858642578,
+        "prior_all_time_or_current_month_high": 129.7423858642578,
+        "passes_close_filter": true,
+        "yahoo_symbol": "6833.TWO"
+      }
+    },
+    {
+      "ticker": "1235.TW",
+      "name": "Shin Tai Industry Co. Ltd.",
+      "exchange": "TWSE",
+      "category": "Consumer Non-Durables",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Non-Durables · Food: Major Diversified",
+      "description": "Shin Tai Industry Co. Ltd. · Food: Major Diversified",
+      "change_pct": 0.28653500063955395,
+      "session_open": 18.110851287841797,
+      "session_close": 18.453561782836914,
+      "session_volume": 117692.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:1235",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/1235.TW/history/",
+        "date": "2021-10-07",
+        "daily_high": 18.980806350708008,
+        "prior_all_time_or_current_month_high": 24.358993530273438,
+        "passes_close_filter": true,
+        "yahoo_symbol": "1235.TW"
+      }
+    },
+    {
+      "ticker": "3443.TW",
+      "name": "Global Unichip Corp.",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Semiconductors",
+      "description": "Global Unichip Corp. · Semiconductors",
+      "change_pct": 10.000000000000009,
+      "session_open": 490.5,
+      "session_close": 528.0,
+      "session_volume": 5788944.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:3443",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3443.TW/history/",
+        "date": "2021-10-07",
+        "daily_high": 528.0,
+        "prior_all_time_or_current_month_high": 528.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "3443.TW"
+      }
+    },
+    {
+      "ticker": "3701.TW",
+      "name": "FIC Global, Inc.",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Electronic Production Equipment",
+      "description": "FIC Global, Inc. · Electronic Production Equipment",
+      "change_pct": 9.89717416906557,
+      "session_open": 40.150978088378906,
+      "session_close": 42.381587982177734,
+      "session_volume": 9584913.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:3701",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3701.TW/history/",
+        "date": "2021-10-07",
+        "daily_high": 42.381587982177734,
+        "prior_all_time_or_current_month_high": 1397.58642578125,
+        "passes_close_filter": true,
+        "yahoo_symbol": "3701.TW"
+      }
+    },
+    {
+      "ticker": "5525.TW",
+      "name": "Sweeten Real Estate Development Co. Ltd.",
+      "exchange": "TWSE",
+      "category": "Consumer Durables",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Durables · Homebuilding",
+      "description": "Sweeten Real Estate Development Co. Ltd. · Homebuilding",
+      "change_pct": 3.717478488631687,
+      "session_open": 22.374675750732422,
+      "session_close": 23.206449508666992,
+      "session_volume": 421257.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:5525",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/5525.TW/history/",
+        "date": "2021-10-07",
+        "daily_high": 23.414392471313477,
+        "prior_all_time_or_current_month_high": 24.257932662963867,
+        "passes_close_filter": true,
+        "yahoo_symbol": "5525.TW"
+      }
+    },
+    {
+      "ticker": "6838.TW",
+      "name": "Formosa Pharmaceuticals, Inc.",
+      "exchange": "TWSE",
+      "category": "Health Technology",
+      "high_type": "all_time",
+      "reason": "업종: Health Technology · Pharmaceuticals: Major",
+      "description": "Formosa Pharmaceuticals, Inc. · Pharmaceuticals: Major",
+      "change_pct": 0.0,
+      "session_open": 36.60271072387695,
+      "session_close": 54.133480072021484,
+      "session_volume": 629341.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:6838",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6838.TW/history/",
+        "date": "2021-10-07",
+        "daily_high": 58.756980895996094,
+        "prior_all_time_or_current_month_high": 58.756980895996094,
+        "passes_close_filter": true,
+        "yahoo_symbol": "6838.TW"
+      }
+    },
+    {
+      "ticker": "8422.TW",
+      "name": "Cleanaway Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Industrial Services",
+      "high_type": "52_week",
+      "reason": "업종: Industrial Services · Environmental Services",
+      "description": "Cleanaway Co., Ltd. · Environmental Services",
+      "change_pct": 5.128205128205132,
+      "session_open": 19.799999237060547,
+      "session_close": 20.5,
+      "session_volume": 30170810.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:8422",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/8422.TW/history/",
+        "date": "2021-10-07",
+        "daily_high": 20.600000381469727,
+        "prior_all_time_or_current_month_high": 25.899999618530273,
+        "passes_close_filter": true,
+        "yahoo_symbol": "8422.TW"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-10-29T12:10:50.134280+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 2356,
+    "history_symbols": 1935,
+    "inactive_symbols": 5,
+    "failed_symbols": 416,
+    "coverage_ratio": 0.8230540195661421,
+    "coverage_by_exchange": {
+      "TWSE": {
+        "covered": 992,
+        "total": 1094
+      },
+      "TPEX": {
+        "covered": 943,
+        "total": 1257
+      }
+    },
+    "session_symbols": 1915,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-10-29T12:10:50.134280+00:00"
+}

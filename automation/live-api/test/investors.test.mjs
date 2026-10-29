@@ -37,7 +37,7 @@ test("manual refresh queries both original markets and pairs exact dates even wh
 test("invalid requests are rejected before source access and missing selected dates never fall back to latest",async()=>{
   let calls=0;
   const fetcher=async(url)=>{calls++;return json(url.includes('/trend/daily')?{content:[row()]}:[index("2024-01-02")]);};
-  for(const date of ["2024-02-30","2021-12-29","2099-01-01",123])assert.equal((await handle(request({kind:"investors",date}),{},fetcher)).status,400);
+  for(const date of ["2024-02-30","2020-12-29","2099-01-01",123])assert.equal((await handle(request({kind:"investors",date}),{},fetcher)).status,400);
   assert.equal(calls,0);
   const response=await handle(request({kind:"investors",date:"2024-01-03"}),{},fetcher);
   assert.equal(response.status,502);

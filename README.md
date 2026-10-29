@@ -1,5 +1,11 @@
 # Stock Peer Site
 
+2021년 전체 범위를 추가했습니다. 6개 시장의 신고가·거래대금 캘린더 각각 1,490일, 국내 섹터·투자자 수급·동일 날짜 지수 248일, 신용융자 잔고 249개 보고일과 개별 차트·확정 실적을 제공합니다. `2021년~`을 선택해 조회할 수 있습니다. 대만의 누락 거래일 4월 6일은 동일 상장 원본으로 복원하고, 애플·엔비디아·마이크론·AMD의 누락 연간 실적은 회사 공식 GAAP 발표로 보완했습니다. 그 밖의 미제공 실적·분기는 추정하지 않습니다. 기존 2022년 이후 자료는 보존합니다. [2021년 수집·검증 기록](docs/worklogs/stock-information-2021.md)을 확인하세요.
+
+과거(2025년까지) 신고가·거래대금 일별 공개 파일은 원본 숫자와 정밀도를 그대로 유지하는 `.json.gz`로 발행합니다. 화면은 자동 해제하며 기존 JSON 주소도 대체 경로로 지원합니다. 수집 원본 JSON은 그대로 보존하고, 2026년 이후 일별 공개 주소는 JSON을 유지합니다.
+
+2021년 전수 감사: `python scripts/audit_calendar_2021.py`, `python scripts/audit_stock_information_2021.py`. 수집 재개 명령과 제공처 예외는 위 작업 기록에 있습니다.
+
 2022년 전체 데이터를 확장했습니다. 6개 시장의 신고가·거래대금 캘린더 각각 1,486일, 국내 섹터·투자자 수급·동일 날짜 지수 246일, 신용융자 잔고 247개 보고일을 추가하고 개별 차트와 신용 잔고에 `2022년~` 선택을 제공합니다. 기존 2023년 이후 원본을 보존하며 원본에서 확인되는 2022년 확정 실적만 표시합니다. 한국 금액은 당시 KRX 확정 자료이고 해외 거래대금은 추정치이며, 유럽의 부분 복원 안내를 유지합니다. [2022년 수집·검증 기록](docs/worklogs/stock-information-2022.md)을 확인하세요.
 
 2022년 전수 감사: `python scripts/audit_calendar_2022.py`, `python scripts/audit_stock_information_2022.py`. 실적 재개: `python scripts/backfill_stock_information_2022.py collect`, 일봉 재개: `python scripts/refresh_stock_information_history.py --state-dir data/tmp_2022_history`.

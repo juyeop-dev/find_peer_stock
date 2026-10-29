@@ -3,6 +3,7 @@ from __future__ import annotations
 import sys
 import tempfile
 import unittest
+from unittest.mock import patch
 from datetime import date, datetime, timezone
 from pathlib import Path
 
@@ -12,6 +13,18 @@ import backfill_yahoo_calendars as backfill  # noqa: E402
 
 
 class YahooCalendarBackfillTests(unittest.TestCase):
+    def test_unavailable_old_range_requires_verified_later_listing_metadata(self):
+        row = {"exchange": "AMEX", "name": "NEW", "symbol": "AMEX:NEW", "currency": "USD", "description": "New Company"}
+        meta = {"symbol": "NEW", "instrumentType": "EQUITY", "currency": "USD", "longName": "New Company",
+                "firstTradeDate": int(datetime(2023, 1, 3, tzinfo=timezone.utc).timestamp())}
+        for changes, excluded in [({}, True), ({"symbol": "OTHER"}, False), ({"currency": "EUR"}, False),
+                                  ({"firstTradeDate": int(datetime(2020, 1, 3, tzinfo=timezone.utc).timestamp())}, False)]:
+            with self.subTest(changes=changes), patch.object(backfill, 'request_yahoo', side_effect=[
+                    backfill.BackfillError('HTTP Error 400: Bad Request'), {"chart": {"result": [{"meta": {**meta, **changes}}]}}]):
+                with self.assertRaises(backfill.BackfillError) as error:
+                    backfill.fetch_listing_history(row, date(2021, 1, 1), date(2021, 12, 31), timeout=1, cache_dir=Path('unused'))
+                self.assertEqual(isinstance(error.exception, backfill.NoRequestedSession), excluded)
+
     def test_yahoo_candidates_cover_configured_markets(self) -> None:
         cases = [
             ({"exchange": "TSE", "name": "7203", "symbol": "TSE:7203"}, ["7203.T"]),
@@ -26,14 +39,14 @@ class YahooCalendarBackfillTests(unittest.TestCase):
         for row, expected in cases:
             self.assertEqual(backfill.yahoo_candidates(row), expected)
 
-    def test_parse_bars_adjusts_pre_split_prices_and_volume(self) -> None:
+    def test_parse_bars_does_not_double_adjust_native_split_adjusted_quotes(self) -> None:
         stamp1 = int(datetime(2026, 9, 1, tzinfo=timezone.utc).timestamp())
         stamp2 = int(datetime(2026, 9, 2, tzinfo=timezone.utc).timestamp())
         payload = {"chart": {"result": [{
             "timestamp": [stamp1, stamp2],
             "indicators": {"quote": [{
-                "open": [100, 25], "high": [120, 30], "low": [90, 20],
-                "close": [110, 28], "volume": [1000, 5000],
+                "open": [25, 25], "high": [30, 30], "low": [22.5, 20],
+                "close": [27.5, 28], "volume": [4000, 5000],
             }]},
             "events": {"splits": {str(stamp2): {
                 "date": stamp2, "numerator": 4.0, "denominator": 1.0,
@@ -41,6 +54,7 @@ class YahooCalendarBackfillTests(unittest.TestCase):
         }], "error": None}}
         bars = backfill.parse_bars(payload, "TEST", "UTC")
         self.assertEqual(bars[0].high, 30)
+        self.assertEqual(bars[0].close, 27.5)
         self.assertEqual(bars[0].volume, 4000)
         self.assertEqual(bars[1].close, 28)
 

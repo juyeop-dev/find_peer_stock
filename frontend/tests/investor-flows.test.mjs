@@ -11,7 +11,8 @@ test("every archived day pairs both exact-date indices and source flows, includi
   assert.equal(archive.history.filter(row=>row.date.startsWith("2024-")).length,244);
   assert.equal(archive.history.filter(row=>row.date.startsWith("2023-")).length,245);
   assert.equal(archive.history.filter(row=>row.date.startsWith("2022-")).length,246);
-  assert.equal(archive.history[0].date,"2022-01-03");
+  assert.equal(archive.history.filter(row=>row.date.startsWith("2021-")).length,248);
+  assert.equal(archive.history[0].date,"2021-01-04");
 });
 test("whole-market totals sum money, never indices or percentages, and invalid pairs fail",()=>{
   const row=archive.history[0],total=investorTotals(row,"all");
