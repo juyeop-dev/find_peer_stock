@@ -6,7 +6,7 @@
   "mib": 883.51,
   "files": 82550,
   "index_sha256": "7462661d4967a8d7fa89d1af75fc1de8bcbf38ab32a64a556a27621a8c92aa11",
-  "deployment_status": "api_deployed_site_pending",
+  "deployment_status": "production_verified",
   "checks": {
     "python_tests": 214,
     "live_api_tests": 24,
@@ -19,7 +19,15 @@
     "typecheck": "passed",
     "production_build": "passed",
     "local_api_original_queries": "passed",
-    "production_path_korean_search_browser": "passed"
+    "production_path_korean_search_browser": "passed",
+    "production_browser_2022": "passed",
+    "production_browser_investors_2022": "passed",
+    "production_api": "passed"
   },
-  "api_version": "e7774ff0-4068-439b-8b39-89f9eb094250"
+  "api_version": "e7774ff0-4068-439b-8b39-89f9eb094250",
+  "verified_at": "2026-10-29T20:30:27.790228+09:00",
+  "deployment_commit": "55bf1c3118302f0b59523fabaa045e574191c6a4",
+  "deployment_run_id": 40864492887,
+  "deployment_run_url": "https://github.com/juyeop-dev/find_peer_stock/actions/runs/40864492887",
+  "site_url": "https://juyeop-dev.github.io/find_peer_stock"
 }
