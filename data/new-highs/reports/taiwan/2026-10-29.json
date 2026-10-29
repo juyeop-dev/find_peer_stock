@@ -1,0 +1,259 @@
+{
+  "schema_version": 1,
+  "market": "taiwan",
+  "date": "2026-10-29",
+  "summary": "장 마감 후 TradingView 주식 스냅샷 기준. 당일 장중 고가가 52주·전체기간 고가에 도달하고, 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다. 전체기간 신고가를 우선 표시하며 신고가 배경은 별도 확인 전입니다.",
+  "sources": [
+    {
+      "label": "TradingView stock screener",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "4568.TWO",
+      "name": "Koge Micro Tech Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Industrial Machinery",
+      "description": "Koge Micro Tech Co., Ltd. · Industrial Machinery",
+      "change_pct": 8.765859284890421,
+      "session_open": 43,
+      "session_close": 47.15,
+      "session_volume": 91798,
+      "source_symbol": "TPEX:4568",
+      "currency": "TWD"
+    },
+    {
+      "ticker": "4706.TWO",
+      "name": "Tah Kong Chemical Industrial Corp.",
+      "exchange": "TPEX",
+      "category": "Process Industries",
+      "high_type": "all_time",
+      "reason": "업종: Process Industries · Chemicals: Specialty",
+      "description": "Tah Kong Chemical Industrial Corp. · Chemicals: Specialty",
+      "change_pct": 9.898989898989896,
+      "session_open": 50.2,
+      "session_close": 54.4,
+      "session_volume": 325479,
+      "source_symbol": "TPEX:4706",
+      "currency": "TWD"
+    },
+    {
+      "ticker": "6021.TWO",
+      "name": "Good Finance Securities Co Ltd",
+      "exchange": "TPEX",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "업종: Finance · Investment Banks/Brokers",
+      "description": "Good Finance Securities Co Ltd · Investment Banks/Brokers",
+      "change_pct": 3.3868092691622076,
+      "session_open": 56.5,
+      "session_close": 58,
+      "session_volume": 276109,
+      "source_symbol": "TPEX:6021",
+      "currency": "TWD"
+    },
+    {
+      "ticker": "6199.TWO",
+      "name": "TienPin United Enterprise Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Computer Peripherals",
+      "description": "TienPin United Enterprise Co., Ltd. · Computer Peripherals",
+      "change_pct": 1.6025641025641024,
+      "session_open": 157.5,
+      "session_close": 158.5,
+      "session_volume": 8187088,
+      "source_symbol": "TPEX:6199",
+      "currency": "TWD"
+    },
+    {
+      "ticker": "6240.TWO",
+      "name": "Sung Gang Corp.Limited",
+      "exchange": "TPEX",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "업종: Finance · Real Estate Development",
+      "description": "Sung Gang Corp.Limited · Real Estate Development",
+      "change_pct": 9.955423476968802,
+      "session_open": 34.05,
+      "session_close": 37,
+      "session_volume": 484063,
+      "source_symbol": "TPEX:6240",
+      "currency": "TWD"
+    },
+    {
+      "ticker": "6870.TWO",
+      "name": "Turn Cloud Technology Service Inc.",
+      "exchange": "TPEX",
+      "category": "Technology Services",
+      "high_type": "all_time",
+      "reason": "업종: Technology Services · Information Technology Services",
+      "description": "Turn Cloud Technology Service Inc. · Information Technology Services",
+      "change_pct": 1.40485312899106,
+      "session_open": 391.5,
+      "session_close": 397,
+      "session_volume": 241800,
+      "source_symbol": "TPEX:6870",
+      "currency": "TWD"
+    },
+    {
+      "ticker": "6925.TWO",
+      "name": "Eland Information Co., Ltd",
+      "exchange": "TPEX",
+      "category": "Technology Services",
+      "high_type": "52_week",
+      "reason": "업종: Technology Services · Data Processing Services",
+      "description": "Eland Information Co., Ltd · Data Processing Services",
+      "change_pct": 3.6734693877551026,
+      "session_open": 122,
+      "session_close": 127,
+      "session_volume": 1211064,
+      "source_symbol": "TPEX:6925",
+      "currency": "TWD"
+    },
+    {
+      "ticker": "7963.TWO",
+      "name": "TECOBAR TECHNOLOGY CO., LTD.",
+      "exchange": "TPEX",
+      "category": "미분류",
+      "high_type": "all_time",
+      "reason": "업종: 미분류 · 업종 정보 미확인",
+      "description": "TECOBAR TECHNOLOGY CO., LTD. · 업종 정보 미확인",
+      "change_pct": null,
+      "session_open": 168,
+      "session_close": 214,
+      "session_volume": 114398,
+      "source_symbol": "TPEX:7963",
+      "currency": "TWD"
+    },
+    {
+      "ticker": "7965.TWO",
+      "name": "Kuen Tong Industrial Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "미분류",
+      "high_type": "all_time",
+      "reason": "업종: 미분류 · 업종 정보 미확인",
+      "description": "Kuen Tong Industrial Co., Ltd. · 업종 정보 미확인",
+      "change_pct": null,
+      "session_open": 546,
+      "session_close": 722,
+      "session_volume": 350721,
+      "source_symbol": "TPEX:7965",
+      "currency": "TWD"
+    },
+    {
+      "ticker": "8099.TWO",
+      "name": "Tatung System Technologies Inc.",
+      "exchange": "TPEX",
+      "category": "Commercial Services",
+      "high_type": "52_week",
+      "reason": "업종: Commercial Services · Miscellaneous Commercial Services",
+      "description": "Tatung System Technologies Inc. · Miscellaneous Commercial Services",
+      "change_pct": 9.508547008547016,
+      "session_open": 102.5,
+      "session_close": 102.5,
+      "session_volume": 7922309,
+      "source_symbol": "TPEX:8099",
+      "currency": "TWD"
+    },
+    {
+      "ticker": "2465.TW",
+      "name": "Leadtek Research Inc.",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Computer Processing Hardware",
+      "description": "Leadtek Research Inc. · Computer Processing Hardware",
+      "change_pct": 9.70873786407767,
+      "session_open": 105,
+      "session_close": 113,
+      "session_volume": 9427995,
+      "source_symbol": "TWSE:2465",
+      "currency": "TWD"
+    },
+    {
+      "ticker": "2801.TW",
+      "name": "Chang Hwa Commercial Bank, Ltd.",
+      "exchange": "TWSE",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "업종: Finance · Regional Banks",
+      "description": "Chang Hwa Commercial Bank, Ltd. · Regional Banks",
+      "change_pct": 1.836393989983308,
+      "session_open": 29.95,
+      "session_close": 30.5,
+      "session_volume": 17943056,
+      "source_symbol": "TWSE:2801",
+      "currency": "TWD"
+    },
+    {
+      "ticker": "2892.TW",
+      "name": "First Financial Holding Co. Ltd.",
+      "exchange": "TWSE",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "업종: Finance · Major Banks",
+      "description": "First Financial Holding Co. Ltd. · Major Banks",
+      "change_pct": 3.8551401869159014,
+      "session_open": 42.5,
+      "session_close": 44.45,
+      "session_volume": 37097837,
+      "source_symbol": "TWSE:2892",
+      "currency": "TWD"
+    },
+    {
+      "ticker": "4526.TW",
+      "name": "Tongtai Machine & Tool Co., Ltd",
+      "exchange": "TWSE",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Industrial Machinery",
+      "description": "Tongtai Machine & Tool Co., Ltd · Industrial Machinery",
+      "change_pct": 6.344410876132928,
+      "session_open": 51.5,
+      "session_close": 52.8,
+      "session_volume": 108933204,
+      "source_symbol": "TWSE:4526",
+      "currency": "TWD"
+    }
+  ],
+  "source_metadata": {
+    "provider": "TradingView public scanner",
+    "scanner": "taiwan",
+    "fetched_at": "2026-10-29T06:31:19.274244+00:00",
+    "universe": "TradingView-listed stock instruments, including common and preferred shares; ETFs excluded",
+    "definition": "daily high >= period high; close >= open; close >= previous close when one exists; all-time takes precedence; ties included",
+    "scanner_exchanges": [
+      "TWSE",
+      "TPEX"
+    ],
+    "latest_session_by_exchange": {
+      "TWSE": "2026-10-29",
+      "TPEX": "2026-10-29"
+    },
+    "previous_session_by_exchange": {
+      "TWSE": "2026-10-28",
+      "TPEX": "2026-10-28"
+    },
+    "current_session_reference_symbols": {
+      "TWSE": "TWSE:01001T",
+      "TPEX": "TPEX:1240"
+    },
+    "scanned_symbols": 2356,
+    "current_session_symbols": 2304,
+    "excluded_symbols": {
+      "other_session": 52,
+      "bearish_or_down_close": 9
+    },
+    "pagination_complete": true
+  },
+  "collected_at": "2026-10-29T06:31:18.677503+00:00"
+}
