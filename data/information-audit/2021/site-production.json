@@ -1,0 +1,105 @@
+{
+  "checked_at": "2026-10-29T12:57:22.515395+00:00",
+  "base": "https://juyeop-dev.github.io/find_peer_stock",
+  "markets": {
+    "new-highs": {
+      "korea": 248,
+      "us": 252,
+      "japan": 245,
+      "taiwan": 244,
+      "china": 243,
+      "europe": 258
+    },
+    "turnover": {
+      "korea": 248,
+      "us": 252,
+      "japan": 245,
+      "taiwan": 244,
+      "china": 243,
+      "europe": 258
+    }
+  },
+  "reports": [
+    {
+      "path": "data/new-highs/korea/2021-01-04.json.gz",
+      "entries": 121,
+      "historical_values_match_local": true,
+      "current_cap_refresh_excluded": true
+    },
+    {
+      "path": "data/new-highs/us/2021-01-04.json.gz",
+      "entries": 52,
+      "historical_values_match_local": true,
+      "current_cap_refresh_excluded": true
+    },
+    {
+      "path": "data/new-highs/japan/2021-01-04.json.gz",
+      "entries": 46,
+      "historical_values_match_local": true,
+      "current_cap_refresh_excluded": true
+    },
+    {
+      "path": "data/new-highs/taiwan/2021-01-04.json.gz",
+      "entries": 108,
+      "historical_values_match_local": true,
+      "current_cap_refresh_excluded": true
+    },
+    {
+      "path": "data/new-highs/china/2021-01-04.json.gz",
+      "entries": 172,
+      "historical_values_match_local": true,
+      "current_cap_refresh_excluded": true
+    },
+    {
+      "path": "data/new-highs/europe/2021-01-04.json.gz",
+      "entries": 270,
+      "historical_values_match_local": true,
+      "current_cap_refresh_excluded": true
+    },
+    {
+      "path": "data/turnover/korea/2021_01/2021-01-04.json.gz",
+      "entries": 30,
+      "historical_values_match_local": true,
+      "current_cap_refresh_excluded": false
+    },
+    {
+      "path": "data/turnover/us/2021_01/2021-01-04.json.gz",
+      "entries": 30,
+      "historical_values_match_local": true,
+      "current_cap_refresh_excluded": false
+    },
+    {
+      "path": "data/turnover/japan/2021_01/2021-01-04.json.gz",
+      "entries": 30,
+      "historical_values_match_local": true,
+      "current_cap_refresh_excluded": false
+    },
+    {
+      "path": "data/turnover/taiwan/2021_01/2021-01-04.json.gz",
+      "entries": 30,
+      "historical_values_match_local": true,
+      "current_cap_refresh_excluded": false
+    },
+    {
+      "path": "data/turnover/china/2021_01/2021-01-04.json.gz",
+      "entries": 30,
+      "historical_values_match_local": true,
+      "current_cap_refresh_excluded": false
+    },
+    {
+      "path": "data/turnover/europe/2021_01/2021-01-04.json.gz",
+      "entries": 30,
+      "historical_values_match_local": true,
+      "current_cap_refresh_excluded": false
+    }
+  ],
+  "investors_2021_days": 248,
+  "credit_2021_days": 249,
+  "taiwan_gap_in_published_history": true,
+  "issuer_statements_verified": [
+    "AAPL",
+    "NVDA",
+    "MU",
+    "AMD"
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "verified_at": "2026-10-29T12:58:19.803722+00:00",
+  "site": "https://juyeop-dev.github.io/find_peer_stock",
+  "api": "https://find-peer-stock-live-api.find-peer-stock-juyeop.workers.dev",
+  "api_version": "ce84f8b1-f58b-4544-aa4f-a9de8f1c5895",
+  "feature_commit": "ccf5c571d",
+  "deployment_commit": "93e2546b305331f5cb07ca5a2cf77bdbc3ea0cb8",
+  "workflow_run": 40875933958,
+  "workflow_url": "https://github.com/juyeop-dev/find_peer_stock/actions/runs/40875933958",
+  "jobs": [
+    {
+      "id": 123454611363,
+      "name": "build",
+      "conclusion": "success",
+      "completed_at": "2026-10-29T12:54:17Z"
+    },
+    {
+      "id": 123458812722,
+      "name": "deploy",
+      "conclusion": "success",
+      "completed_at": "2026-10-29T12:55:02Z"
+    }
+  ],
+  "browsers": {
+    "browser-production-2021.log": {
+      "passed": true,
+      "sha256": "86528811fe4289d5d59fcec1ec679fe7ed0bcd175f13aed1d2a086be54714f21"
+    },
+    "browser-production-investors-2021.log": {
+      "passed": true,
+      "sha256": "1e5dca4b0fdc4083bd4c1ec3ac070b297e92db1d561181c547cfb95882e2668a"
+    }
+  },
+  "public_values": "site-production.json",
+  "source_values": "preservation.json",
+  "current_cap_note": "New-high page labels current market caps separately. Five current market-cap enrichment fields may refresh during CI; historical source observations and dated turnover caps were compared exactly."
+}
