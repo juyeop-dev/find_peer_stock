@@ -1,0 +1,306 @@
+{
+  "schema_version": 1,
+  "market": "japan",
+  "date": "2022-05-11",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "1414.T",
+      "name": "SHO BOND Holdings Co., Ltd.",
+      "exchange": "TSE",
+      "category": "Industrial Services",
+      "high_type": "all_time",
+      "reason": "업종: Industrial Services · Engineering & Construction",
+      "description": "SHO BOND Holdings Co., Ltd. · Engineering & Construction",
+      "change_pct": 2.402957486136792,
+      "session_open": 1357.5,
+      "session_close": 1385.0,
+      "session_volume": 981200.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:1414",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/1414.T/history/",
+        "date": "2022-05-11",
+        "daily_high": 1390.0,
+        "prior_all_time_or_current_month_high": 1390.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "1414.T"
+      }
+    },
+    {
+      "ticker": "1820.T",
+      "name": "Nishimatsu Construction Co., Ltd.",
+      "exchange": "TSE",
+      "category": "Consumer Durables",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Durables · Homebuilding",
+      "description": "Nishimatsu Construction Co., Ltd. · Homebuilding",
+      "change_pct": 6.578947368421062,
+      "session_open": 3755.0,
+      "session_close": 4050.0,
+      "session_volume": 920900.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:1820",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/1820.T/history/",
+        "date": "2022-05-11",
+        "daily_high": 4135.0,
+        "prior_all_time_or_current_month_high": 16850.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "1820.T"
+      }
+    },
+    {
+      "ticker": "2674.T",
+      "name": "Hard Off Corporation Co., Ltd.",
+      "exchange": "TSE",
+      "category": "Retail Trade",
+      "high_type": "52_week",
+      "reason": "업종: Retail Trade · Specialty Stores",
+      "description": "Hard Off Corporation Co., Ltd. · Specialty Stores",
+      "change_pct": 3.9215686274509887,
+      "session_open": 816.0,
+      "session_close": 848.0,
+      "session_volume": 191100.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:2674",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2674.T/history/",
+        "date": "2022-05-11",
+        "daily_high": 884.0,
+        "prior_all_time_or_current_month_high": 1770.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "2674.T"
+      }
+    },
+    {
+      "ticker": "2730.T",
+      "name": "Edion Corporation",
+      "exchange": "TSE",
+      "category": "Retail Trade",
+      "high_type": "52_week",
+      "reason": "업종: Retail Trade · Electronics/Appliance Stores",
+      "description": "Edion Corporation · Electronics/Appliance Stores",
+      "change_pct": 0.8183306055646433,
+      "session_open": 1215.0,
+      "session_close": 1232.0,
+      "session_volume": 596600.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:2730",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2730.T/history/",
+        "date": "2022-05-11",
+        "daily_high": 1242.0,
+        "prior_all_time_or_current_month_high": 3000.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "2730.T"
+      }
+    },
+    {
+      "ticker": "4041.T",
+      "name": "Nippon Soda Co., Ltd.",
+      "exchange": "TSE",
+      "category": "Process Industries",
+      "high_type": "52_week",
+      "reason": "업종: Process Industries · Chemicals: Major Diversified",
+      "description": "Nippon Soda Co., Ltd. · Chemicals: Major Diversified",
+      "change_pct": 8.538350217076696,
+      "session_open": 1762.5,
+      "session_close": 1875.0,
+      "session_volume": 514200.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:4041",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4041.T/history/",
+        "date": "2022-05-11",
+        "daily_high": 1905.0,
+        "prior_all_time_or_current_month_high": 6037.5,
+        "passes_close_filter": true,
+        "yahoo_symbol": "4041.T"
+      }
+    },
+    {
+      "ticker": "4732.T",
+      "name": "USS Co., Ltd.",
+      "exchange": "TSE",
+      "category": "Retail Trade",
+      "high_type": "all_time",
+      "reason": "업종: Retail Trade · Internet Retail",
+      "description": "USS Co., Ltd. · Internet Retail",
+      "change_pct": 10.32906764168191,
+      "session_open": 1112.5,
+      "session_close": 1207.0,
+      "session_volume": 4424600.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:4732",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4732.T/history/",
+        "date": "2022-05-11",
+        "daily_high": 1219.5,
+        "prior_all_time_or_current_month_high": 1219.5,
+        "passes_close_filter": true,
+        "yahoo_symbol": "4732.T"
+      }
+    },
+    {
+      "ticker": "4746.T",
+      "name": "Toukei Computer Co., Ltd.",
+      "exchange": "TSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Computer Processing Hardware",
+      "description": "Toukei Computer Co., Ltd. · Computer Processing Hardware",
+      "change_pct": 1.2259194395796813,
+      "session_open": 721.25,
+      "session_close": 722.5,
+      "session_volume": 147200.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:4746",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4746.T/history/",
+        "date": "2022-05-11",
+        "daily_high": 752.5,
+        "prior_all_time_or_current_month_high": 1335.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "4746.T"
+      }
+    },
+    {
+      "ticker": "7751.T",
+      "name": "Canon Inc.",
+      "exchange": "TSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Computer Peripherals",
+      "description": "Canon Inc. · Computer Peripherals",
+      "change_pct": 1.3418530351437807,
+      "session_open": 3134.0,
+      "session_close": 3172.0,
+      "session_volume": 7118000.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:7751",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/7751.T/history/",
+        "date": "2022-05-11",
+        "daily_high": 3194.0,
+        "prior_all_time_or_current_month_high": 7480.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "7751.T"
+      }
+    },
+    {
+      "ticker": "8060.T",
+      "name": "Canon Marketing Japan Incorporated",
+      "exchange": "TSE",
+      "category": "Distribution Services",
+      "high_type": "all_time",
+      "reason": "업종: Distribution Services · Electronics Distributors",
+      "description": "Canon Marketing Japan Incorporated · Electronics Distributors",
+      "change_pct": 0.6568144499178974,
+      "session_open": 1517.5,
+      "session_close": 1532.5,
+      "session_volume": 480000.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:8060",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/8060.T/history/",
+        "date": "2022-05-11",
+        "daily_high": 1547.5,
+        "prior_all_time_or_current_month_high": 1547.5,
+        "passes_close_filter": true,
+        "yahoo_symbol": "8060.T"
+      }
+    },
+    {
+      "ticker": "9735.T",
+      "name": "Secom Co., Ltd.",
+      "exchange": "TSE",
+      "category": "Commercial Services",
+      "high_type": "all_time",
+      "reason": "업종: Commercial Services · Miscellaneous Commercial Services",
+      "description": "Secom Co., Ltd. · Miscellaneous Commercial Services",
+      "change_pct": 0.827245380317998,
+      "session_open": 4680.0,
+      "session_close": 4692.5,
+      "session_volume": 1734600.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:9735",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/9735.T/history/",
+        "date": "2022-05-11",
+        "daily_high": 4707.5,
+        "prior_all_time_or_current_month_high": 4707.5,
+        "passes_close_filter": true,
+        "yahoo_symbol": "9735.T"
+      }
+    },
+    {
+      "ticker": "9759.T",
+      "name": "NSD Co., Ltd.",
+      "exchange": "TSE",
+      "category": "Technology Services",
+      "high_type": "all_time",
+      "reason": "업종: Technology Services · Packaged Software",
+      "description": "NSD Co., Ltd. · Packaged Software",
+      "change_pct": 0.9519688446560037,
+      "session_open": 2309.0,
+      "session_close": 2333.0,
+      "session_volume": 169000.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:9759",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/9759.T/history/",
+        "date": "2022-05-11",
+        "daily_high": 2364.0,
+        "prior_all_time_or_current_month_high": 2364.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "9759.T"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-10-29T09:43:19.189722+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 3759,
+    "history_symbols": 3491,
+    "inactive_symbols": 0,
+    "failed_symbols": 268,
+    "coverage_ratio": 0.9287044426709231,
+    "coverage_by_exchange": {
+      "TSE": {
+        "covered": 3491,
+        "total": 3759
+      }
+    },
+    "session_symbols": 3418,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-10-29T09:43:19.189722+00:00"
+}

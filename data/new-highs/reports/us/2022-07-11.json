@@ -1,0 +1,362 @@
+{
+  "schema_version": 1,
+  "market": "us",
+  "date": "2022-07-11",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "ELA",
+      "name": "Envela Corporation",
+      "exchange": "AMEX",
+      "category": "Retail Trade",
+      "high_type": "52_week",
+      "reason": "업종: Retail Trade · Specialty Stores",
+      "description": "Envela Corporation · Specialty Stores",
+      "change_pct": 5.241380888840252,
+      "session_open": 7.239999771118164,
+      "session_close": 7.630000114440918,
+      "session_volume": 172700.0,
+      "currency": "USD",
+      "source_symbol": "AMEX:ELA",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/ELA/history/",
+        "date": "2022-07-11",
+        "daily_high": 7.710000038146973,
+        "prior_all_time_or_current_month_high": 10.529999732971191,
+        "passes_close_filter": true,
+        "yahoo_symbol": "ELA"
+      }
+    },
+    {
+      "ticker": "ATLX",
+      "name": "Atlas Lithium Corporation",
+      "exchange": "NASDAQ",
+      "category": "Non-Energy Minerals",
+      "high_type": "52_week",
+      "reason": "업종: Non-Energy Minerals · Other Metals/Minerals",
+      "description": "Atlas Lithium Corporation · Other Metals/Minerals",
+      "change_pct": 13.33333333333333,
+      "session_open": 11.25,
+      "session_close": 12.75,
+      "session_volume": 39.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:ATLX",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/ATLX/history/",
+        "date": "2022-07-11",
+        "daily_high": 12.75,
+        "prior_all_time_or_current_month_high": 412500.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "ATLX"
+      }
+    },
+    {
+      "ticker": "BRID",
+      "name": "Bridgford Foods Corporation",
+      "exchange": "NASDAQ",
+      "category": "Consumer Non-Durables",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Non-Durables · Food: Specialty/Candy",
+      "description": "Bridgford Foods Corporation · Food: Specialty/Candy",
+      "change_pct": 8.988762359368764,
+      "session_open": 13.59000015258789,
+      "session_close": 14.550000190734863,
+      "session_volume": 21000.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:BRID",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/BRID/history/",
+        "date": "2022-07-11",
+        "daily_high": 15.399999618530273,
+        "prior_all_time_or_current_month_high": 38.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "BRID"
+      }
+    },
+    {
+      "ticker": "GRRR",
+      "name": "Gorilla Technology Group, Inc.",
+      "exchange": "NASDAQ",
+      "category": "Technology Services",
+      "high_type": "52_week",
+      "reason": "업종: Technology Services · Packaged Software",
+      "description": "Gorilla Technology Group, Inc. · Packaged Software",
+      "change_pct": 0.09813392799185028,
+      "session_open": 98.69999694824219,
+      "session_close": 102.0,
+      "session_volume": 22360.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:GRRR",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/GRRR/history/",
+        "date": "2022-07-11",
+        "daily_high": 105.0,
+        "prior_all_time_or_current_month_high": 1000.9999847412109,
+        "passes_close_filter": true,
+        "yahoo_symbol": "GRRR"
+      }
+    },
+    {
+      "ticker": "LANDO",
+      "name": "Gladstone Land Corp 6 % Cum Red Pfd Registered Shs Series B",
+      "exchange": "NASDAQ",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "업종: Finance · Real Estate Investment Trusts",
+      "description": "Gladstone Land Corp 6 % Cum Red Pfd Registered Shs Series B · Real Estate Investment Trusts",
+      "change_pct": 1.1342125837701111,
+      "session_open": 26.450000762939453,
+      "session_close": 26.75,
+      "session_volume": 19000.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:LANDO",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/LANDO/history/",
+        "date": "2022-07-11",
+        "daily_high": 26.75,
+        "prior_all_time_or_current_month_high": 26.75,
+        "passes_close_filter": true,
+        "yahoo_symbol": "LANDO"
+      }
+    },
+    {
+      "ticker": "NSYS",
+      "name": "Nortech Systems Incorporated",
+      "exchange": "NASDAQ",
+      "category": "Health Technology",
+      "high_type": "all_time",
+      "reason": "업종: Health Technology · Medical Specialties",
+      "description": "Nortech Systems Incorporated · Medical Specialties",
+      "change_pct": 7.817808399374693,
+      "session_open": 15.15999984741211,
+      "session_close": 15.859999656677246,
+      "session_volume": 63000.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:NSYS",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/NSYS/history/",
+        "date": "2022-07-11",
+        "daily_high": 17.389999389648438,
+        "prior_all_time_or_current_month_high": 17.389999389648438,
+        "passes_close_filter": true,
+        "yahoo_symbol": "NSYS"
+      }
+    },
+    {
+      "ticker": "OIO",
+      "name": "OIO Group",
+      "exchange": "NASDAQ",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "업종: Finance · Financial Conglomerates",
+      "description": "OIO Group · Financial Conglomerates",
+      "change_pct": 0.10040390725611914,
+      "session_open": 29.90999984741211,
+      "session_close": 29.90999984741211,
+      "session_volume": 67.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:OIO",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/OIO/history/",
+        "date": "2022-07-11",
+        "daily_high": 29.90999984741211,
+        "prior_all_time_or_current_month_high": 29.90999984741211,
+        "passes_close_filter": true,
+        "yahoo_symbol": "OIO"
+      }
+    },
+    {
+      "ticker": "SVRA",
+      "name": "Savara, Inc.",
+      "exchange": "NASDAQ",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Pharmaceuticals: Major",
+      "description": "Savara, Inc. · Pharmaceuticals: Major",
+      "change_pct": 1.0752677834782398,
+      "session_open": 1.8799999952316284,
+      "session_close": 1.8799999952316284,
+      "session_volume": 496800.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:SVRA",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/SVRA/history/",
+        "date": "2022-07-11",
+        "daily_high": 1.909999966621399,
+        "prior_all_time_or_current_month_high": 17.187000274658203,
+        "passes_close_filter": true,
+        "yahoo_symbol": "SVRA"
+      }
+    },
+    {
+      "ticker": "TH",
+      "name": "Target Hospitality Corp.",
+      "exchange": "NASDAQ",
+      "category": "Consumer Services",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Services · Hotels/Resorts/Cruise lines",
+      "description": "Target Hospitality Corp. · Hotels/Resorts/Cruise lines",
+      "change_pct": 19.185276421743858,
+      "session_open": 7.639999866485596,
+      "session_close": 9.069999694824219,
+      "session_volume": 4930200.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:TH",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/TH/history/",
+        "date": "2022-07-11",
+        "daily_high": 9.40999984741211,
+        "prior_all_time_or_current_month_high": 12.109999656677246,
+        "passes_close_filter": true,
+        "yahoo_symbol": "TH"
+      }
+    },
+    {
+      "ticker": "CI",
+      "name": "Cigna Group",
+      "exchange": "NYSE",
+      "category": "Health Services",
+      "high_type": "all_time",
+      "reason": "업종: Health Services · Managed Health Care",
+      "description": "Cigna Group · Managed Health Care",
+      "change_pct": 0.2578893278437633,
+      "session_open": 277.19000244140625,
+      "session_close": 279.9100036621094,
+      "session_volume": 1550500.0,
+      "currency": "USD",
+      "source_symbol": "NYSE:CI",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/CI/history/",
+        "date": "2022-07-11",
+        "daily_high": 281.9100036621094,
+        "prior_all_time_or_current_month_high": 281.9100036621094,
+        "passes_close_filter": true,
+        "yahoo_symbol": "CI"
+      }
+    },
+    {
+      "ticker": "FCN",
+      "name": "FTI Consulting, Inc.",
+      "exchange": "NYSE",
+      "category": "Commercial Services",
+      "high_type": "all_time",
+      "reason": "업종: Commercial Services · Miscellaneous Commercial Services",
+      "description": "FTI Consulting, Inc. · Miscellaneous Commercial Services",
+      "change_pct": 0.021202196909864135,
+      "session_open": 188.25999450683594,
+      "session_close": 188.74000549316406,
+      "session_volume": 251200.0,
+      "currency": "USD",
+      "source_symbol": "NYSE:FCN",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/FCN/history/",
+        "date": "2022-07-11",
+        "daily_high": 190.42999267578125,
+        "prior_all_time_or_current_month_high": 190.42999267578125,
+        "passes_close_filter": true,
+        "yahoo_symbol": "FCN"
+      }
+    },
+    {
+      "ticker": "HUM",
+      "name": "Humana Inc.",
+      "exchange": "NYSE",
+      "category": "Health Services",
+      "high_type": "all_time",
+      "reason": "업종: Health Services · Managed Health Care",
+      "description": "Humana Inc. · Managed Health Care",
+      "change_pct": 0.755098237331775,
+      "session_open": 480.3999938964844,
+      "session_close": 487.0299987792969,
+      "session_volume": 805700.0,
+      "currency": "USD",
+      "source_symbol": "NYSE:HUM",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/HUM/history/",
+        "date": "2022-07-11",
+        "daily_high": 490.7699890136719,
+        "prior_all_time_or_current_month_high": 490.7699890136719,
+        "passes_close_filter": true,
+        "yahoo_symbol": "HUM"
+      }
+    },
+    {
+      "ticker": "MUSA",
+      "name": "Murphy USA, Inc.",
+      "exchange": "NYSE",
+      "category": "Retail Trade",
+      "high_type": "all_time",
+      "reason": "업종: Retail Trade · Specialty Stores",
+      "description": "Murphy USA, Inc. · Specialty Stores",
+      "change_pct": 4.570220451908469,
+      "session_open": 256.4200134277344,
+      "session_close": 266.7900085449219,
+      "session_volume": 514400.0,
+      "currency": "USD",
+      "source_symbol": "NYSE:MUSA",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/MUSA/history/",
+        "date": "2022-07-11",
+        "daily_high": 269.70001220703125,
+        "prior_all_time_or_current_month_high": 269.70001220703125,
+        "passes_close_filter": true,
+        "yahoo_symbol": "MUSA"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-10-29T09:50:57.622252+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 5711,
+    "history_symbols": 4481,
+    "inactive_symbols": 9,
+    "failed_symbols": 1221,
+    "coverage_ratio": 0.7858646089091547,
+    "coverage_by_exchange": {
+      "NASDAQ": {
+        "covered": 2472,
+        "total": 3336
+      },
+      "NYSE": {
+        "covered": 1816,
+        "total": 2104
+      },
+      "AMEX": {
+        "covered": 193,
+        "total": 262
+      }
+    },
+    "session_symbols": 4419,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-10-29T09:50:57.622252+00:00"
+}

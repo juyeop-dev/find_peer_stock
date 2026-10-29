@@ -1,5 +1,9 @@
 # Stock Peer Site
 
+2022년 전체 데이터를 확장했습니다. 6개 시장의 신고가·거래대금 캘린더 각각 1,486일, 국내 섹터·투자자 수급·동일 날짜 지수 246일, 신용융자 잔고 247개 보고일을 추가하고 개별 차트와 신용 잔고에 `2022년~` 선택을 제공합니다. 기존 2023년 이후 원본을 보존하며 원본에서 확인되는 2022년 확정 실적만 표시합니다. 한국 금액은 당시 KRX 확정 자료이고 해외 거래대금은 추정치이며, 유럽의 부분 복원 안내를 유지합니다. [2022년 수집·검증 기록](docs/worklogs/stock-information-2022.md)을 확인하세요.
+
+2022년 전수 감사: `python scripts/audit_calendar_2022.py`, `python scripts/audit_stock_information_2022.py`. 실적 재개: `python scripts/backfill_stock_information_2022.py collect`, 일봉 재개: `python scripts/refresh_stock_information_history.py --state-dir data/tmp_2022_history`.
+
 2023년 신고가·거래대금 캘린더, 국내 섹터, 개별 종목 차트·확정 실적, 투자자 수급·지수 및 신용융자 잔고를 추가했습니다. 기존 2024년 이후 원본을 보존하며 차트에서 `2023년~`을 선택할 수 있습니다. 당시 KRX 시가총액·실제 거래대금을 사용하고 해외 추정 거래대금과 유럽 부분 복원 범위를 구분합니다. [2023년 수집·검증 기록](docs/worklogs/stock-information-2023.md)을 확인하세요.
 
 과거 종목 차트와 섹터 일별 파일은 원본 정밀도를 유지하는 gzip으로 발행합니다. 화면에서 자동으로 해제하며, 자료원과 날짜 검증을 그대로 적용합니다. 2023년 전수 감사는 `python scripts/audit_calendar_2023.py`, `python scripts/audit_stock_information_2023.py`로 실행합니다.

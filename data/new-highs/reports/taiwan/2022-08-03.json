@@ -1,0 +1,286 @@
+{
+  "schema_version": 1,
+  "market": "taiwan",
+  "date": "2022-08-03",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "2740.TWO",
+      "name": "Hua Hsuan Real Estate Co Ltd.",
+      "exchange": "TPEX",
+      "category": "Consumer Services",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Services · Restaurants",
+      "description": "Hua Hsuan Real Estate Co Ltd. · Restaurants",
+      "change_pct": 0.13209333738501972,
+      "session_open": 68.81818389892578,
+      "session_close": 68.90908813476562,
+      "session_volume": 2750.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:2740",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2740.TWO/history/",
+        "date": "2022-08-03",
+        "daily_high": 68.90908813476562,
+        "prior_all_time_or_current_month_high": 1209.634981840944,
+        "passes_close_filter": true,
+        "yahoo_symbol": "2740.TWO"
+      }
+    },
+    {
+      "ticker": "3205.TWO",
+      "name": "Sagittarius Life Science Corp.",
+      "exchange": "TPEX",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Pharmaceuticals: Major",
+      "description": "Sagittarius Life Science Corp. · Pharmaceuticals: Major",
+      "change_pct": 1.4414400667757565,
+      "session_open": 55.5,
+      "session_close": 56.29999923706055,
+      "session_volume": 10880000.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:3205",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3205.TWO/history/",
+        "date": "2022-08-03",
+        "daily_high": 58.70000076293945,
+        "prior_all_time_or_current_month_high": 315.5802173597423,
+        "passes_close_filter": true,
+        "yahoo_symbol": "3205.TWO"
+      }
+    },
+    {
+      "ticker": "3564.TWO",
+      "name": "AEWIN Technologies Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Distribution Services",
+      "high_type": "52_week",
+      "reason": "업종: Distribution Services · Electronics Distributors",
+      "description": "AEWIN Technologies Co., Ltd. · Electronics Distributors",
+      "change_pct": 9.84615619365985,
+      "session_open": 31.850000381469727,
+      "session_close": 35.70000076293945,
+      "session_volume": 2683000.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:3564",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3564.TWO/history/",
+        "date": "2022-08-03",
+        "daily_high": 35.75,
+        "prior_all_time_or_current_month_high": 66.57483649976325,
+        "passes_close_filter": true,
+        "yahoo_symbol": "3564.TWO"
+      }
+    },
+    {
+      "ticker": "3664.TWO",
+      "name": "Array, Inc.",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Telecommunications Equipment",
+      "description": "Array, Inc. · Telecommunications Equipment",
+      "change_pct": 9.615384968074835,
+      "session_open": 10.699999809265137,
+      "session_close": 11.399999618530273,
+      "session_volume": 1219000.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:3664",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3664.TWO/history/",
+        "date": "2022-08-03",
+        "daily_high": 11.399999618530273,
+        "prior_all_time_or_current_month_high": 55.79999923706055,
+        "passes_close_filter": true,
+        "yahoo_symbol": "3664.TWO"
+      }
+    },
+    {
+      "ticker": "4413.TWO",
+      "name": "EST GLOBAL APPAREL Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Process Industries",
+      "high_type": "52_week",
+      "reason": "업종: Process Industries · Textiles",
+      "description": "EST GLOBAL APPAREL Co., Ltd. · Textiles",
+      "change_pct": 7.67326325999107,
+      "session_open": 20.799999237060547,
+      "session_close": 21.75,
+      "session_volume": 338000.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:4413",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4413.TWO/history/",
+        "date": "2022-08-03",
+        "daily_high": 21.75,
+        "prior_all_time_or_current_month_high": 2188.0525716145835,
+        "passes_close_filter": true,
+        "yahoo_symbol": "4413.TWO"
+      }
+    },
+    {
+      "ticker": "5348.TWO",
+      "name": "Empower Technology Corporation",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Telecommunications Equipment",
+      "description": "Empower Technology Corporation · Telecommunications Equipment",
+      "change_pct": 0.8849623849634725,
+      "session_open": 22.335908889770508,
+      "session_close": 22.335908889770508,
+      "session_volume": 3062.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:5348",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/5348.TWO/history/",
+        "date": "2022-08-03",
+        "daily_high": 22.82573127746582,
+        "prior_all_time_or_current_month_high": 116.31618732063708,
+        "passes_close_filter": true,
+        "yahoo_symbol": "5348.TWO"
+      }
+    },
+    {
+      "ticker": "6512.TWO",
+      "name": "GoMax Electronics, Inc.",
+      "exchange": "TPEX",
+      "category": "Consumer Durables",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Durables · Electronics/Appliances",
+      "description": "GoMax Electronics, Inc. · Electronics/Appliances",
+      "change_pct": 9.976805577707148,
+      "session_open": 23.700000762939453,
+      "session_close": 23.700000762939453,
+      "session_volume": 263000.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:6512",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6512.TWO/history/",
+        "date": "2022-08-03",
+        "daily_high": 23.700000762939453,
+        "prior_all_time_or_current_month_high": 79.98868279409098,
+        "passes_close_filter": true,
+        "yahoo_symbol": "6512.TWO"
+      }
+    },
+    {
+      "ticker": "2305.TW",
+      "name": "Microtek International, Inc.",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Computer Peripherals",
+      "description": "Microtek International, Inc. · Computer Peripherals",
+      "change_pct": 4.3993271674226175,
+      "session_open": 30.5,
+      "session_close": 30.850000381469727,
+      "session_volume": 1163340.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2305",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2305.TW/history/",
+        "date": "2022-08-03",
+        "daily_high": 30.850000381469727,
+        "prior_all_time_or_current_month_high": 112.56757808685303,
+        "passes_close_filter": true,
+        "yahoo_symbol": "2305.TW"
+      }
+    },
+    {
+      "ticker": "4557.TW",
+      "name": "Yusin Holding Corp.",
+      "exchange": "TWSE",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Auto Parts: OEM",
+      "description": "Yusin Holding Corp. · Auto Parts: OEM",
+      "change_pct": 4.622874930458343,
+      "session_open": 83.0,
+      "session_close": 86.0,
+      "session_volume": 590345.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:4557",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4557.TW/history/",
+        "date": "2022-08-03",
+        "daily_high": 87.0,
+        "prior_all_time_or_current_month_high": 97.61015319824219,
+        "passes_close_filter": true,
+        "yahoo_symbol": "4557.TW"
+      }
+    },
+    {
+      "ticker": "8114.TW",
+      "name": "Posiflex Technology Inc.",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Computer Processing Hardware",
+      "description": "Posiflex Technology Inc. · Computer Processing Hardware",
+      "change_pct": 4.575163398692816,
+      "session_open": 154.0,
+      "session_close": 160.0,
+      "session_volume": 14895129.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:8114",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/8114.TW/history/",
+        "date": "2022-08-03",
+        "daily_high": 160.0,
+        "prior_all_time_or_current_month_high": 200.66389795503395,
+        "passes_close_filter": true,
+        "yahoo_symbol": "8114.TW"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-10-29T09:42:16.113847+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 2356,
+    "history_symbols": 2003,
+    "inactive_symbols": 5,
+    "failed_symbols": 348,
+    "coverage_ratio": 0.8519778817524458,
+    "coverage_by_exchange": {
+      "TWSE": {
+        "covered": 1012,
+        "total": 1094
+      },
+      "TPEX": {
+        "covered": 991,
+        "total": 1257
+      }
+    },
+    "session_symbols": 1975,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-10-29T09:42:16.113847+00:00"
+}

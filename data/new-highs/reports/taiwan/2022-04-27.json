@@ -1,0 +1,214 @@
+{
+  "schema_version": 1,
+  "market": "taiwan",
+  "date": "2022-04-27",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "3265.TWO",
+      "name": "Winstek Semiconductor Co. Ltd.",
+      "exchange": "TPEX",
+      "category": "Commercial Services",
+      "high_type": "52_week",
+      "reason": "업종: Commercial Services · Miscellaneous Commercial Services",
+      "description": "Winstek Semiconductor Co. Ltd. · Miscellaneous Commercial Services",
+      "change_pct": 9.888576841707074,
+      "session_open": 39.349998474121094,
+      "session_close": 39.45000076293945,
+      "session_volume": 5183000.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:3265",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3265.TWO/history/",
+        "date": "2022-04-27",
+        "daily_high": 39.45000076293945,
+        "prior_all_time_or_current_month_high": 51.79999923706055,
+        "passes_close_filter": true,
+        "yahoo_symbol": "3265.TWO"
+      }
+    },
+    {
+      "ticker": "3434.TWO",
+      "name": "Acula Technology Corp.",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Telecommunications Equipment",
+      "description": "Acula Technology Corp. · Telecommunications Equipment",
+      "change_pct": 10.000007694745804,
+      "session_open": 25.61734937271982,
+      "session_close": 28.29536761877672,
+      "session_volume": 1298348.4200000002,
+      "currency": "TWD",
+      "source_symbol": "TPEX:3434",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3434.TWO/history/",
+        "date": "2022-04-27",
+        "daily_high": 28.29536761877672,
+        "prior_all_time_or_current_month_high": 28.29536761877672,
+        "passes_close_filter": true,
+        "yahoo_symbol": "3434.TWO"
+      }
+    },
+    {
+      "ticker": "6222.TWO",
+      "name": "Li Hsuan Development & Construction Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Electrical Products",
+      "description": "Li Hsuan Development & Construction Co., Ltd. · Electrical Products",
+      "change_pct": 3.809526231553817,
+      "session_open": 15.649999618530273,
+      "session_close": 16.350000381469727,
+      "session_volume": 91000.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:6222",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6222.TWO/history/",
+        "date": "2022-04-27",
+        "daily_high": 16.399999618530273,
+        "prior_all_time_or_current_month_high": 424.85531817607756,
+        "passes_close_filter": true,
+        "yahoo_symbol": "6222.TWO"
+      }
+    },
+    {
+      "ticker": "1453.TW",
+      "name": "Ta Jiang Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "업종: Finance · Real Estate Development",
+      "description": "Ta Jiang Co., Ltd. · Real Estate Development",
+      "change_pct": 2.330994954168597,
+      "session_open": 16.91718240386074,
+      "session_close": 18.382777982545132,
+      "session_volume": 20691177.66,
+      "currency": "TWD",
+      "source_symbol": "TWSE:1453",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/1453.TW/history/",
+        "date": "2022-04-27",
+        "daily_high": 19.1783886511349,
+        "prior_all_time_or_current_month_high": 1839.4897132190702,
+        "passes_close_filter": true,
+        "yahoo_symbol": "1453.TW"
+      }
+    },
+    {
+      "ticker": "2412.TW",
+      "name": "Chunghwa Telecom Co., Ltd",
+      "exchange": "TWSE",
+      "category": "Communications",
+      "high_type": "all_time",
+      "reason": "업종: Communications · Major Telecommunications",
+      "description": "Chunghwa Telecom Co., Ltd · Major Telecommunications",
+      "change_pct": 0.0,
+      "session_open": 131.5,
+      "session_close": 132.0,
+      "session_volume": 7334145.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2412",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2412.TW/history/",
+        "date": "2022-04-27",
+        "daily_high": 132.5,
+        "prior_all_time_or_current_month_high": 132.5,
+        "passes_close_filter": true,
+        "yahoo_symbol": "2412.TW"
+      }
+    },
+    {
+      "ticker": "4904.TW",
+      "name": "Far Eastone Telecommunications Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Communications",
+      "high_type": "52_week",
+      "reason": "업종: Communications · Wireless Telecommunications",
+      "description": "Far Eastone Telecommunications Co., Ltd. · Wireless Telecommunications",
+      "change_pct": 1.118014317862004,
+      "session_open": 80.5,
+      "session_close": 81.4000015258789,
+      "session_volume": 12210126.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:4904",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4904.TW/history/",
+        "date": "2022-04-27",
+        "daily_high": 82.19999694824219,
+        "prior_all_time_or_current_month_high": 83.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "4904.TW"
+      }
+    },
+    {
+      "ticker": "5388.TW",
+      "name": "Sercomm Corp.",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Telecommunications Equipment",
+      "description": "Sercomm Corp. · Telecommunications Equipment",
+      "change_pct": 0.807387084516975,
+      "session_open": 84.0,
+      "session_close": 87.4000015258789,
+      "session_volume": 16356848.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:5388",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/5388.TW/history/",
+        "date": "2022-04-27",
+        "daily_high": 89.0,
+        "prior_all_time_or_current_month_high": 89.80000305175781,
+        "passes_close_filter": true,
+        "yahoo_symbol": "5388.TW"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-10-29T09:42:16.113847+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 2356,
+    "history_symbols": 2003,
+    "inactive_symbols": 5,
+    "failed_symbols": 348,
+    "coverage_ratio": 0.8519778817524458,
+    "coverage_by_exchange": {
+      "TWSE": {
+        "covered": 1012,
+        "total": 1094
+      },
+      "TPEX": {
+        "covered": 991,
+        "total": 1257
+      }
+    },
+    "session_symbols": 1960,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-10-29T09:42:16.113847+00:00"
+}

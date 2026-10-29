@@ -1,0 +1,214 @@
+{
+  "schema_version": 1,
+  "market": "china",
+  "date": "2022-04-27",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "600785.SS",
+      "name": "Yinchuan Xinhua Commercial Group Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Retail Trade",
+      "high_type": "52_week",
+      "reason": "업종: Retail Trade · Food Retail",
+      "description": "Yinchuan Xinhua Commercial Group Co., Ltd. Class A · Food Retail",
+      "change_pct": 9.987349890188213,
+      "session_open": 12.428570747375488,
+      "session_close": 12.428570747375488,
+      "session_volume": 26616942.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:600785",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/600785.SS/history/",
+        "date": "2022-04-27",
+        "daily_high": 12.428570747375488,
+        "prior_all_time_or_current_month_high": 19.438774926321848,
+        "passes_close_filter": true,
+        "yahoo_symbol": "600785.SS"
+      }
+    },
+    {
+      "ticker": "603066.SS",
+      "name": "Nanjing Inform Storage Equipment (Group) Co., Ltd.",
+      "exchange": "SSE",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Industrial Machinery",
+      "description": "Nanjing Inform Storage Equipment (Group) Co., Ltd. · Industrial Machinery",
+      "change_pct": 9.989801226477613,
+      "session_open": 10.1899995803833,
+      "session_close": 10.789999961853027,
+      "session_volume": 45218702.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:603066",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/603066.SS/history/",
+        "date": "2022-04-27",
+        "daily_high": 10.789999961853027,
+        "prior_all_time_or_current_month_high": 19.75,
+        "passes_close_filter": true,
+        "yahoo_symbol": "603066.SS"
+      }
+    },
+    {
+      "ticker": "000498.SZ",
+      "name": "SHANDONG HI-SPEED ROAD&BRIDGE GROUP CO., LTD Class A",
+      "exchange": "SZSE",
+      "category": "Industrial Services",
+      "high_type": "52_week",
+      "reason": "업종: Industrial Services · Engineering & Construction",
+      "description": "SHANDONG HI-SPEED ROAD&BRIDGE GROUP CO., LTD Class A · Engineering & Construction",
+      "change_pct": 9.968181865989646,
+      "session_open": 10.0,
+      "session_close": 10.369999885559082,
+      "session_volume": 77545772.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:000498",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/000498.SZ/history/",
+        "date": "2022-04-27",
+        "daily_high": 10.369999885559082,
+        "prior_all_time_or_current_month_high": 13.680000305175781,
+        "passes_close_filter": true,
+        "yahoo_symbol": "000498.SZ"
+      }
+    },
+    {
+      "ticker": "000722.SZ",
+      "name": "Hunan Energy Group Development Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Utilities",
+      "high_type": "52_week",
+      "reason": "업종: Utilities · Electric Utilities",
+      "description": "Hunan Energy Group Development Co., Ltd. Class A · Electric Utilities",
+      "change_pct": 10.044047148312242,
+      "session_open": 12.489999771118164,
+      "session_close": 12.489999771118164,
+      "session_volume": 26008113.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:000722",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/000722.SZ/history/",
+        "date": "2022-04-27",
+        "daily_high": 12.489999771118164,
+        "prior_all_time_or_current_month_high": 33.849998474121094,
+        "passes_close_filter": true,
+        "yahoo_symbol": "000722.SZ"
+      }
+    },
+    {
+      "ticker": "002403.SZ",
+      "name": "Aishida Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Miscellaneous Manufacturing",
+      "description": "Aishida Co., Ltd. Class A · Miscellaneous Manufacturing",
+      "change_pct": 9.960684370678074,
+      "session_open": 7.880000114440918,
+      "session_close": 8.390000343322754,
+      "session_volume": 17936242.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002403",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002403.SZ/history/",
+        "date": "2022-04-27",
+        "daily_high": 8.390000343322754,
+        "prior_all_time_or_current_month_high": 19.349112877478966,
+        "passes_close_filter": true,
+        "yahoo_symbol": "002403.SZ"
+      }
+    },
+    {
+      "ticker": "300284.SZ",
+      "name": "JSTI Group Class A",
+      "exchange": "SZSE",
+      "category": "Industrial Services",
+      "high_type": "52_week",
+      "reason": "업종: Industrial Services · Engineering & Construction",
+      "description": "JSTI Group Class A · Engineering & Construction",
+      "change_pct": 4.324320144597649,
+      "session_open": 7.5,
+      "session_close": 7.71999979019165,
+      "session_volume": 115450307.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:300284",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/300284.SZ/history/",
+        "date": "2022-04-27",
+        "daily_high": 8.199999809265137,
+        "prior_all_time_or_current_month_high": 12.967686426071893,
+        "passes_close_filter": true,
+        "yahoo_symbol": "300284.SZ"
+      }
+    },
+    {
+      "ticker": "300824.SZ",
+      "name": "Shenzhen Crastal Technology Co. Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Consumer Durables",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Durables · Electronics/Appliances",
+      "description": "Shenzhen Crastal Technology Co. Ltd. Class A · Electronics/Appliances",
+      "change_pct": 44.69848026353658,
+      "session_open": 11.800000190734863,
+      "session_close": 13.010000228881836,
+      "session_volume": 10557556.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:300824",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/300824.SZ/history/",
+        "date": "2022-04-27",
+        "daily_high": 13.1899995803833,
+        "prior_all_time_or_current_month_high": 18.22222137451172,
+        "passes_close_filter": true,
+        "yahoo_symbol": "300824.SZ"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-10-29T09:46:43.953004+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 5312,
+    "history_symbols": 4828,
+    "inactive_symbols": 0,
+    "failed_symbols": 484,
+    "coverage_ratio": 0.9088855421686747,
+    "coverage_by_exchange": {
+      "SSE": {
+        "covered": 2148,
+        "total": 2358
+      },
+      "SZSE": {
+        "covered": 2680,
+        "total": 2954
+      }
+    },
+    "session_symbols": 4592,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-10-29T09:46:43.953004+00:00"
+}

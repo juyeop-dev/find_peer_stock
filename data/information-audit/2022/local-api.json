@@ -1,0 +1,54 @@
+{
+  "validated_at": "2026-10-29T09:50:55.259Z",
+  "results": [
+    {
+      "kind": "information",
+      "ticker": "2330.TW",
+      "coverage": {
+        "start": "2022-01-01",
+        "end": "2022-12-31",
+        "periods": 1,
+        "annual_periods": 1,
+        "quarterly_periods": 0,
+        "note": "확인된 확정 실적만 표시합니다. 연간 실적은 해당 회계연도 전체이며, 미제공 분기는 추정하지 않습니다."
+      },
+      "periods": [
+        {
+          "type": "annual",
+          "period_end": "2022-12-31",
+          "currency": "TWD",
+          "source": "Yahoo Finance reported financials",
+          "free_cash_flow": 520972800000,
+          "net_income": 992923400000,
+          "total_debt": 888174400000,
+          "operating_income": 1121226500000,
+          "operating_cash_flow": 1610599200000,
+          "revenue": 2263891300000,
+          "total_assets": 4964459100000
+        }
+      ]
+    },
+    {
+      "kind": "history",
+      "ticker": "2330.TW",
+      "first": "2021-12-20",
+      "last": "2026-10-29"
+    },
+    {
+      "kind": "investors",
+      "date": "2022-01-03",
+      "markets": [
+        {
+          "market": "KOSPI",
+          "date": "2022-01-03",
+          "close": 2988.77
+        },
+        {
+          "market": "KOSDAQ",
+          "date": "2022-01-03",
+          "close": 1037.83
+        }
+      ]
+    }
+  ]
+}

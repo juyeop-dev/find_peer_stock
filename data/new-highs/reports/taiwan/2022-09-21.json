@@ -1,0 +1,286 @@
+{
+  "schema_version": 1,
+  "market": "taiwan",
+  "date": "2022-09-21",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "2729.TWO",
+      "name": "TTFB Co. Ltd.",
+      "exchange": "TPEX",
+      "category": "Consumer Services",
+      "high_type": "all_time",
+      "reason": "업종: Consumer Services · Restaurants",
+      "description": "TTFB Co. Ltd. · Restaurants",
+      "change_pct": 4.761903316129623,
+      "session_open": 152.2081298828125,
+      "session_close": 157.9518280029297,
+      "session_volume": 591952.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:2729",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2729.TWO/history/",
+        "date": "2022-09-21",
+        "daily_high": 160.46470642089844,
+        "prior_all_time_or_current_month_high": 160.46470642089844,
+        "passes_close_filter": true,
+        "yahoo_symbol": "2729.TWO"
+      }
+    },
+    {
+      "ticker": "2732.TWO",
+      "name": "La Kaffa International Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Consumer Services",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Services · Restaurants",
+      "description": "La Kaffa International Co., Ltd. · Restaurants",
+      "change_pct": 9.704641350210963,
+      "session_open": 120.5,
+      "session_close": 130.0,
+      "session_volume": 4585000.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:2732",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2732.TWO/history/",
+        "date": "2022-09-21",
+        "daily_high": 130.0,
+        "prior_all_time_or_current_month_high": 209.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "2732.TWO"
+      }
+    },
+    {
+      "ticker": "2755.TWO",
+      "name": "YoungQin International Co. Ltd.",
+      "exchange": "TPEX",
+      "category": "Consumer Services",
+      "high_type": "all_time",
+      "reason": "업종: Consumer Services · Restaurants",
+      "description": "YoungQin International Co. Ltd. · Restaurants",
+      "change_pct": 3.4187982906437098,
+      "session_open": 40.34811782836914,
+      "session_close": 41.42406463623047,
+      "session_volume": 155397.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:2755",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2755.TWO/history/",
+        "date": "2022-09-21",
+        "daily_high": 42.94017791748047,
+        "prior_all_time_or_current_month_high": 42.94017791748047,
+        "passes_close_filter": true,
+        "yahoo_symbol": "2755.TWO"
+      }
+    },
+    {
+      "ticker": "3303.TWO",
+      "name": "Univacco Technology Inc.",
+      "exchange": "TPEX",
+      "category": "Process Industries",
+      "high_type": "52_week",
+      "reason": "업종: Process Industries · Containers/Packaging",
+      "description": "Univacco Technology Inc. · Containers/Packaging",
+      "change_pct": 1.0558022866088423,
+      "session_open": 32.95000076293945,
+      "session_close": 33.5,
+      "session_volume": 4335000.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:3303",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3303.TWO/history/",
+        "date": "2022-09-21",
+        "daily_high": 34.95000076293945,
+        "prior_all_time_or_current_month_high": 46.9006582329072,
+        "passes_close_filter": true,
+        "yahoo_symbol": "3303.TWO"
+      }
+    },
+    {
+      "ticker": "5251.TWO",
+      "name": "JSW Pacific Corporation",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Telecommunications Equipment",
+      "description": "JSW Pacific Corporation · Telecommunications Equipment",
+      "change_pct": 5.253281945853483,
+      "session_open": 26.799999237060547,
+      "session_close": 28.049999237060547,
+      "session_volume": 12688000.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:5251",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/5251.TWO/history/",
+        "date": "2022-09-21",
+        "daily_high": 28.75,
+        "prior_all_time_or_current_month_high": 62.14189529418945,
+        "passes_close_filter": true,
+        "yahoo_symbol": "5251.TWO"
+      }
+    },
+    {
+      "ticker": "6146.TWO",
+      "name": "Sporton International Inc.",
+      "exchange": "TPEX",
+      "category": "Commercial Services",
+      "high_type": "all_time",
+      "reason": "업종: Commercial Services · Miscellaneous Commercial Services",
+      "description": "Sporton International Inc. · Miscellaneous Commercial Services",
+      "change_pct": 4.069767550173942,
+      "session_open": 250.4761962890625,
+      "session_close": 255.7142791748047,
+      "session_volume": 1380750.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:6146",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6146.TWO/history/",
+        "date": "2022-09-21",
+        "daily_high": 256.19049072265625,
+        "prior_all_time_or_current_month_high": 256.19049072265625,
+        "passes_close_filter": true,
+        "yahoo_symbol": "6146.TWO"
+      }
+    },
+    {
+      "ticker": "8927.TWO",
+      "name": "North-Star International Co. Ltd.",
+      "exchange": "TPEX",
+      "category": "Retail Trade",
+      "high_type": "all_time",
+      "reason": "업종: Retail Trade · Specialty Stores",
+      "description": "North-Star International Co. Ltd. · Specialty Stores",
+      "change_pct": 2.4590212891138385,
+      "session_open": 25.228132247924805,
+      "session_close": 25.84849739074707,
+      "session_volume": 1170764.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:8927",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/8927.TWO/history/",
+        "date": "2022-09-21",
+        "daily_high": 26.193143844604492,
+        "prior_all_time_or_current_month_high": 26.193143844604492,
+        "passes_close_filter": true,
+        "yahoo_symbol": "8927.TWO"
+      }
+    },
+    {
+      "ticker": "1337.TW",
+      "name": "Asia Plastic Recycling Holding Limited",
+      "exchange": "TWSE",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Miscellaneous Manufacturing",
+      "description": "Asia Plastic Recycling Holding Limited · Miscellaneous Manufacturing",
+      "change_pct": 2.9336675734682016,
+      "session_open": 7.900000095367432,
+      "session_close": 8.069999694824219,
+      "session_volume": 3262193.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:1337",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/1337.TW/history/",
+        "date": "2022-09-21",
+        "daily_high": 8.119999885559082,
+        "prior_all_time_or_current_month_high": 57.09849979066628,
+        "passes_close_filter": true,
+        "yahoo_symbol": "1337.TW"
+      }
+    },
+    {
+      "ticker": "1519.TW",
+      "name": "Fortune Electric Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Electrical Products",
+      "description": "Fortune Electric Co., Ltd. · Electrical Products",
+      "change_pct": 1.149421396657413,
+      "session_open": 32.75732421875,
+      "session_close": 33.0578498840332,
+      "session_volume": 36634972.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:1519",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/1519.TW/history/",
+        "date": "2022-09-21",
+        "daily_high": 35.011268615722656,
+        "prior_all_time_or_current_month_high": 35.011268615722656,
+        "passes_close_filter": true,
+        "yahoo_symbol": "1519.TW"
+      }
+    },
+    {
+      "ticker": "2206.TW",
+      "name": "Sanyang Motor Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Consumer Durables",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Durables · Motor Vehicles",
+      "description": "Sanyang Motor Co., Ltd. · Motor Vehicles",
+      "change_pct": 4.464285627398468,
+      "session_open": 39.20000076293945,
+      "session_close": 40.95000076293945,
+      "session_volume": 16329892.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2206",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2206.TW/history/",
+        "date": "2022-09-21",
+        "daily_high": 42.04999923706055,
+        "prior_all_time_or_current_month_high": 63.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "2206.TW"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-10-29T09:42:16.113847+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 2356,
+    "history_symbols": 2003,
+    "inactive_symbols": 5,
+    "failed_symbols": 348,
+    "coverage_ratio": 0.8519778817524458,
+    "coverage_by_exchange": {
+      "TWSE": {
+        "covered": 1012,
+        "total": 1094
+      },
+      "TPEX": {
+        "covered": 991,
+        "total": 1257
+      }
+    },
+    "session_symbols": 1982,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-10-29T09:42:16.113847+00:00"
+}

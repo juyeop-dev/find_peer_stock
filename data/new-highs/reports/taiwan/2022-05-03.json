@@ -1,0 +1,310 @@
+{
+  "schema_version": 1,
+  "market": "taiwan",
+  "date": "2022-05-03",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "3434.TWO",
+      "name": "Acula Technology Corp.",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Telecommunications Equipment",
+      "description": "Acula Technology Corp. · Telecommunications Equipment",
+      "change_pct": 6.06796272939647,
+      "session_open": 29.775324407613503,
+      "session_close": 30.797199033341318,
+      "session_volume": 882593.1000000001,
+      "currency": "TWD",
+      "source_symbol": "TPEX:3434",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3434.TWO/history/",
+        "date": "2022-05-03",
+        "daily_high": 31.00861963236107,
+        "prior_all_time_or_current_month_high": 31.00861963236107,
+        "passes_close_filter": true,
+        "yahoo_symbol": "3434.TWO"
+      }
+    },
+    {
+      "ticker": "4116.TWO",
+      "name": "BenQ Medical Technology Corp.",
+      "exchange": "TPEX",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Medical Specialties",
+      "description": "BenQ Medical Technology Corp. · Medical Specialties",
+      "change_pct": 9.868421382851222,
+      "session_open": 46.0,
+      "session_close": 50.099998474121094,
+      "session_volume": 9853000.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:4116",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4116.TWO/history/",
+        "date": "2022-05-03",
+        "daily_high": 50.099998474121094,
+        "prior_all_time_or_current_month_high": 160.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "4116.TWO"
+      }
+    },
+    {
+      "ticker": "6242.TWO",
+      "name": "LI KANG BIOMEDICAL Co. Ltd.",
+      "exchange": "TPEX",
+      "category": "Consumer Services",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Services · Other Consumer Services",
+      "description": "LI KANG BIOMEDICAL Co. Ltd. · Other Consumer Services",
+      "change_pct": 9.956078095475917,
+      "session_open": 53.68775867280505,
+      "session_close": 57.27202642531622,
+      "session_volume": 806439.9,
+      "currency": "TWD",
+      "source_symbol": "TPEX:6242",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6242.TWO/history/",
+        "date": "2022-05-03",
+        "daily_high": 57.27202642531622,
+        "prior_all_time_or_current_month_high": 125.36624753349045,
+        "passes_close_filter": true,
+        "yahoo_symbol": "6242.TWO"
+      }
+    },
+    {
+      "ticker": "6291.TWO",
+      "name": "Analog Integrations Corporation",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Electronic Components",
+      "description": "Analog Integrations Corporation · Electronic Components",
+      "change_pct": 8.88252466363988,
+      "session_open": 163.79998723236392,
+      "session_close": 170.99999145000044,
+      "session_volume": 42222.002111099995,
+      "currency": "TWD",
+      "source_symbol": "TPEX:6291",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6291.TWO/history/",
+        "date": "2022-05-03",
+        "daily_high": 172.5749845047957,
+        "prior_all_time_or_current_month_high": 563.6701774143214,
+        "passes_close_filter": true,
+        "yahoo_symbol": "6291.TWO"
+      }
+    },
+    {
+      "ticker": "6518.TWO",
+      "name": "Concord Medical Co Ltd",
+      "exchange": "TPEX",
+      "category": "Distribution Services",
+      "high_type": "52_week",
+      "reason": "업종: Distribution Services · Medical Distributors",
+      "description": "Concord Medical Co Ltd · Medical Distributors",
+      "change_pct": 9.642859867640908,
+      "session_open": 28.100000381469727,
+      "session_close": 30.700000762939453,
+      "session_volume": 185253.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:6518",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6518.TWO/history/",
+        "date": "2022-05-03",
+        "daily_high": 31.899999618530273,
+        "prior_all_time_or_current_month_high": 36.9900016784668,
+        "passes_close_filter": true,
+        "yahoo_symbol": "6518.TWO"
+      }
+    },
+    {
+      "ticker": "6705.TWO",
+      "name": "Martas Precision Slide Co. Ltd.",
+      "exchange": "TPEX",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Metal Fabrication",
+      "description": "Martas Precision Slide Co. Ltd. · Metal Fabrication",
+      "change_pct": 11.301370311843728,
+      "session_open": 27.935606002807617,
+      "session_close": 30.776514053344727,
+      "session_volume": 101376.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:6705",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6705.TWO/history/",
+        "date": "2022-05-03",
+        "daily_high": 33.854164123535156,
+        "prior_all_time_or_current_month_high": 43.29605536027388,
+        "passes_close_filter": true,
+        "yahoo_symbol": "6705.TWO"
+      }
+    },
+    {
+      "ticker": "6850.TWO",
+      "name": "Bioptic Inc.",
+      "exchange": "TPEX",
+      "category": "Health Technology",
+      "high_type": "all_time",
+      "reason": "업종: Health Technology · Biotechnology",
+      "description": "Bioptic Inc. · Biotechnology",
+      "change_pct": 3.8514447055126855,
+      "session_open": 45.17981789328835,
+      "session_close": 45.48101945356889,
+      "session_volume": 2266525.8000000003,
+      "currency": "TWD",
+      "source_symbol": "TPEX:6850",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6850.TWO/history/",
+        "date": "2022-05-03",
+        "daily_high": 48.432766307484016,
+        "prior_all_time_or_current_month_high": 48.432766307484016,
+        "passes_close_filter": true,
+        "yahoo_symbol": "6850.TWO"
+      }
+    },
+    {
+      "ticker": "8047.TWO",
+      "name": "Great Computer Corp.",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Electronic Components",
+      "description": "Great Computer Corp. · Electronic Components",
+      "change_pct": 0.684936115460566,
+      "session_open": 17.57514190673828,
+      "session_close": 17.695520401000977,
+      "session_volume": 54827.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:8047",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/8047.TWO/history/",
+        "date": "2022-05-03",
+        "daily_high": 17.996463775634766,
+        "prior_all_time_or_current_month_high": 29.126484358866566,
+        "passes_close_filter": true,
+        "yahoo_symbol": "8047.TWO"
+      }
+    },
+    {
+      "ticker": "9949.TWO",
+      "name": "Tittot Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Consumer Durables",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Durables · Home Furnishings",
+      "description": "Tittot Co., Ltd. · Home Furnishings",
+      "change_pct": 8.92857142857142,
+      "session_open": 13.949999809265137,
+      "session_close": 15.25,
+      "session_volume": 297000.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:9949",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/9949.TWO/history/",
+        "date": "2022-05-03",
+        "daily_high": 15.25,
+        "prior_all_time_or_current_month_high": 42.84017701161272,
+        "passes_close_filter": true,
+        "yahoo_symbol": "9949.TWO"
+      }
+    },
+    {
+      "ticker": "1418.TW",
+      "name": "TongHwa Corporation",
+      "exchange": "TWSE",
+      "category": "Process Industries",
+      "high_type": "52_week",
+      "reason": "업종: Process Industries · Chemicals: Specialty",
+      "description": "TongHwa Corporation · Chemicals: Specialty",
+      "change_pct": 4.210522300318664,
+      "session_open": 18.899999618530273,
+      "session_close": 19.799999237060547,
+      "session_volume": 181441.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:1418",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/1418.TW/history/",
+        "date": "2022-05-03",
+        "daily_high": 19.899999618530273,
+        "prior_all_time_or_current_month_high": 63.599998474121094,
+        "passes_close_filter": true,
+        "yahoo_symbol": "1418.TW"
+      }
+    },
+    {
+      "ticker": "9945.TW",
+      "name": "Ruentex Development Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Consumer Durables",
+      "high_type": "all_time",
+      "reason": "업종: Consumer Durables · Homebuilding",
+      "description": "Ruentex Development Co., Ltd. · Homebuilding",
+      "change_pct": 1.6602812142207712,
+      "session_open": 38.51851908365885,
+      "session_close": 39.308642069498696,
+      "session_volume": 25990815.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:9945",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/9945.TW/history/",
+        "date": "2022-05-03",
+        "daily_high": 39.75308481852213,
+        "prior_all_time_or_current_month_high": 39.75308481852213,
+        "passes_close_filter": true,
+        "yahoo_symbol": "9945.TW"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-10-29T09:42:16.113847+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 2356,
+    "history_symbols": 2003,
+    "inactive_symbols": 5,
+    "failed_symbols": 348,
+    "coverage_ratio": 0.8519778817524458,
+    "coverage_by_exchange": {
+      "TWSE": {
+        "covered": 1012,
+        "total": 1094
+      },
+      "TPEX": {
+        "covered": 991,
+        "total": 1257
+      }
+    },
+    "session_symbols": 1960,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-10-29T09:42:16.113847+00:00"
+}

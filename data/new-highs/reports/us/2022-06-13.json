@@ -1,0 +1,170 @@
+{
+  "schema_version": 1,
+  "market": "us",
+  "date": "2022-06-13",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "MLGO",
+      "name": "MicroAlgo, Inc.",
+      "exchange": "NASDAQ",
+      "category": "Technology Services",
+      "high_type": "52_week",
+      "reason": "업종: Technology Services · Packaged Software",
+      "description": "MicroAlgo, Inc. · Packaged Software",
+      "change_pct": 0.0,
+      "session_open": 61380.0,
+      "session_close": 61440.0,
+      "session_volume": 5.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:MLGO",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/MLGO/history/",
+        "date": "2022-06-13",
+        "daily_high": 61500.0,
+        "prior_all_time_or_current_month_high": 383400000.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "MLGO"
+      }
+    },
+    {
+      "ticker": "RMSG",
+      "name": "Real Messenger Corporation Class A",
+      "exchange": "NASDAQ",
+      "category": "Technology Services",
+      "high_type": "all_time",
+      "reason": "업종: Technology Services · Packaged Software",
+      "description": "Real Messenger Corporation Class A · Packaged Software",
+      "change_pct": 0.8955238893513906,
+      "session_open": 10.039999961853027,
+      "session_close": 10.140000343322754,
+      "session_volume": 7900.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:RMSG",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/RMSG/history/",
+        "date": "2022-06-13",
+        "daily_high": 10.140000343322754,
+        "prior_all_time_or_current_month_high": 10.140000343322754,
+        "passes_close_filter": true,
+        "yahoo_symbol": "RMSG"
+      }
+    },
+    {
+      "ticker": "TOP",
+      "name": "TOP Financial Group Limited Class A",
+      "exchange": "NASDAQ",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "업종: Finance · Investment Banks/Brokers",
+      "description": "TOP Financial Group Limited Class A · Investment Banks/Brokers",
+      "change_pct": 19.993314151924423,
+      "session_open": 133.6999969482422,
+      "session_close": 143.5,
+      "session_volume": 65200.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:TOP",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/TOP/history/",
+        "date": "2022-06-13",
+        "daily_high": 149.1999969482422,
+        "prior_all_time_or_current_month_high": 149.1999969482422,
+        "passes_close_filter": true,
+        "yahoo_symbol": "TOP"
+      }
+    },
+    {
+      "ticker": "TOYO",
+      "name": "TOYO Co., Ltd",
+      "exchange": "NASDAQ",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Semiconductors",
+      "description": "TOYO Co., Ltd · Semiconductors",
+      "change_pct": 0.10080875811415702,
+      "session_open": 9.920000076293945,
+      "session_close": 9.930000305175781,
+      "session_volume": 4600.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:TOYO",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/TOYO/history/",
+        "date": "2022-06-13",
+        "daily_high": 9.930000305175781,
+        "prior_all_time_or_current_month_high": 9.930000305175781,
+        "passes_close_filter": true,
+        "yahoo_symbol": "TOYO"
+      }
+    },
+    {
+      "ticker": "BIP",
+      "name": "Brookfield Infrastructure Partners L.P.",
+      "exchange": "NYSE",
+      "category": "Utilities",
+      "high_type": "all_time",
+      "reason": "업종: Utilities · Alternative Power Generation",
+      "description": "Brookfield Infrastructure Partners L.P. · Alternative Power Generation",
+      "change_pct": 47.76118553197328,
+      "session_open": 39.41999816894531,
+      "session_close": 39.599998474121094,
+      "session_volume": 415900.0,
+      "currency": "USD",
+      "source_symbol": "NYSE:BIP",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/BIP/history/",
+        "date": "2022-06-13",
+        "daily_high": 39.689998626708984,
+        "prior_all_time_or_current_month_high": 39.689998626708984,
+        "passes_close_filter": true,
+        "yahoo_symbol": "BIP"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-10-29T09:50:57.622252+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 5711,
+    "history_symbols": 4481,
+    "inactive_symbols": 9,
+    "failed_symbols": 1221,
+    "coverage_ratio": 0.7858646089091547,
+    "coverage_by_exchange": {
+      "NASDAQ": {
+        "covered": 2472,
+        "total": 3336
+      },
+      "NYSE": {
+        "covered": 1816,
+        "total": 2104
+      },
+      "AMEX": {
+        "covered": 193,
+        "total": 262
+      }
+    },
+    "session_symbols": 4412,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-10-29T09:50:57.622252+00:00"
+}

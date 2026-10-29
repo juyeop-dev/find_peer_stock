@@ -1,0 +1,142 @@
+{
+  "schema_version": 1,
+  "market": "taiwan",
+  "date": "2022-07-12",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "4979.TWO",
+      "name": "Luxnet Corporation",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Semiconductors",
+      "description": "Luxnet Corporation · Semiconductors",
+      "change_pct": 7.407406087448831,
+      "session_open": 27.25492286682129,
+      "session_close": 28.741554260253906,
+      "session_volume": 7191086.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:4979",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4979.TWO/history/",
+        "date": "2022-07-12",
+        "daily_high": 28.89021873474121,
+        "prior_all_time_or_current_month_high": 93.90901184082031,
+        "passes_close_filter": true,
+        "yahoo_symbol": "4979.TWO"
+      }
+    },
+    {
+      "ticker": "6279.TWO",
+      "name": "Hu Lane Associate, Inc.",
+      "exchange": "TPEX",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Auto Parts: OEM",
+      "description": "Hu Lane Associate, Inc. · Auto Parts: OEM",
+      "change_pct": 0.6666676155090645,
+      "session_open": 137.51451110839844,
+      "session_close": 140.30197143554688,
+      "session_volume": 15789663.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:6279",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6279.TWO/history/",
+        "date": "2022-07-12",
+        "daily_high": 143.5540008544922,
+        "prior_all_time_or_current_month_high": 158.59271537102347,
+        "passes_close_filter": true,
+        "yahoo_symbol": "6279.TWO"
+      }
+    },
+    {
+      "ticker": "2748.TW",
+      "name": "FDC International Hotels Corp.",
+      "exchange": "TWSE",
+      "category": "Consumer Services",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Services · Hotels/Resorts/Cruise lines",
+      "description": "FDC International Hotels Corp. · Hotels/Resorts/Cruise lines",
+      "change_pct": 1.2101193131530685,
+      "session_open": 45.849998474121094,
+      "session_close": 46.0,
+      "session_volume": 811632.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2748",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2748.TW/history/",
+        "date": "2022-07-12",
+        "daily_high": 46.599998474121094,
+        "prior_all_time_or_current_month_high": 57.9612864618716,
+        "passes_close_filter": true,
+        "yahoo_symbol": "2748.TW"
+      }
+    },
+    {
+      "ticker": "6796.TW",
+      "name": "Medimaging Integrated Solution Inc.",
+      "exchange": "TWSE",
+      "category": "Health Technology",
+      "high_type": "all_time",
+      "reason": "업종: Health Technology · Medical Specialties",
+      "description": "Medimaging Integrated Solution Inc. · Medical Specialties",
+      "change_pct": 8.886103633720666,
+      "session_open": 69.46161651611328,
+      "session_close": 78.48260498046875,
+      "session_volume": 2370881.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:6796",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6796.TW/history/",
+        "date": "2022-07-12",
+        "daily_high": 79.02386474609375,
+        "prior_all_time_or_current_month_high": 79.02386474609375,
+        "passes_close_filter": true,
+        "yahoo_symbol": "6796.TW"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-10-29T09:42:16.113847+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 2356,
+    "history_symbols": 2003,
+    "inactive_symbols": 5,
+    "failed_symbols": 348,
+    "coverage_ratio": 0.8519778817524458,
+    "coverage_by_exchange": {
+      "TWSE": {
+        "covered": 1012,
+        "total": 1094
+      },
+      "TPEX": {
+        "covered": 991,
+        "total": 1257
+      }
+    },
+    "session_symbols": 1968,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-10-29T09:42:16.113847+00:00"
+}

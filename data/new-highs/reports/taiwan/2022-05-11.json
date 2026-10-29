@@ -1,0 +1,166 @@
+{
+  "schema_version": 1,
+  "market": "taiwan",
+  "date": "2022-05-11",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "2755.TWO",
+      "name": "YoungQin International Co. Ltd.",
+      "exchange": "TPEX",
+      "category": "Consumer Services",
+      "high_type": "all_time",
+      "reason": "업종: Consumer Services · Restaurants",
+      "description": "YoungQin International Co. Ltd. · Restaurants",
+      "change_pct": 1.1419206894507816,
+      "session_open": 25.01926768909801,
+      "session_close": 25.05968614058061,
+      "session_volume": 44533.5,
+      "currency": "TWD",
+      "source_symbol": "TPEX:2755",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2755.TWO/history/",
+        "date": "2022-05-11",
+        "daily_high": 25.22136168046431,
+        "prior_all_time_or_current_month_high": 25.22136168046431,
+        "passes_close_filter": true,
+        "yahoo_symbol": "2755.TWO"
+      }
+    },
+    {
+      "ticker": "3093.TWO",
+      "name": "Taiwan Kong King Co. Ltd.",
+      "exchange": "TPEX",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Industrial Machinery",
+      "description": "Taiwan Kong King Co. Ltd. · Industrial Machinery",
+      "change_pct": 9.966019386437729,
+      "session_open": 6.068749904632568,
+      "session_close": 6.068749904632568,
+      "session_volume": 26896000.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:3093",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3093.TWO/history/",
+        "date": "2022-05-11",
+        "daily_high": 6.068749904632568,
+        "prior_all_time_or_current_month_high": 6.068749904632568,
+        "passes_close_filter": true,
+        "yahoo_symbol": "3093.TWO"
+      }
+    },
+    {
+      "ticker": "6113.TWO",
+      "name": "Asec International Corporation",
+      "exchange": "TPEX",
+      "category": "Distribution Services",
+      "high_type": "52_week",
+      "reason": "업종: Distribution Services · Electronics Distributors",
+      "description": "Asec International Corporation · Electronics Distributors",
+      "change_pct": 9.855069536042095,
+      "session_open": 17.571428298950195,
+      "session_close": 18.047618865966797,
+      "session_volume": 3951150.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:6113",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6113.TWO/history/",
+        "date": "2022-05-11",
+        "daily_high": 18.047618865966797,
+        "prior_all_time_or_current_month_high": 28.027211143856956,
+        "passes_close_filter": true,
+        "yahoo_symbol": "6113.TWO"
+      }
+    },
+    {
+      "ticker": "6470.TWO",
+      "name": "U-MEDIA Communications Inc",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Telecommunications Equipment",
+      "description": "U-MEDIA Communications Inc · Telecommunications Equipment",
+      "change_pct": 9.899326610738758,
+      "session_open": 56.90522384643555,
+      "session_close": 63.82349395751953,
+      "session_volume": 11509593.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:6470",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6470.TWO/history/",
+        "date": "2022-05-11",
+        "daily_high": 63.82349395751953,
+        "prior_all_time_or_current_month_high": 74.6393814086914,
+        "passes_close_filter": true,
+        "yahoo_symbol": "6470.TWO"
+      }
+    },
+    {
+      "ticker": "1808.TW",
+      "name": "Run Long Construction Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Consumer Durables",
+      "high_type": "all_time",
+      "reason": "업종: Consumer Durables · Homebuilding",
+      "description": "Run Long Construction Co., Ltd. · Homebuilding",
+      "change_pct": 5.909091238108566,
+      "session_open": 25.204787876295008,
+      "session_close": 26.694161788277004,
+      "session_volume": 6110732.000000001,
+      "currency": "TWD",
+      "source_symbol": "TWSE:1808",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/1808.TW/history/",
+        "date": "2022-05-11",
+        "daily_high": 26.808728757111922,
+        "prior_all_time_or_current_month_high": 26.808728757111922,
+        "passes_close_filter": true,
+        "yahoo_symbol": "1808.TW"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-10-29T09:42:16.113847+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 2356,
+    "history_symbols": 2003,
+    "inactive_symbols": 5,
+    "failed_symbols": 348,
+    "coverage_ratio": 0.8519778817524458,
+    "coverage_by_exchange": {
+      "TWSE": {
+        "covered": 1012,
+        "total": 1094
+      },
+      "TPEX": {
+        "covered": 991,
+        "total": 1257
+      }
+    },
+    "session_symbols": 1961,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-10-29T09:42:16.113847+00:00"
+}

@@ -1,0 +1,286 @@
+{
+  "schema_version": 1,
+  "market": "china",
+  "date": "2022-09-30",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "600605.SS",
+      "name": "Shanghai Huitong Energy Co. Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Industrial Machinery",
+      "description": "Shanghai Huitong Energy Co. Ltd. Class A · Industrial Machinery",
+      "change_pct": 9.985097950595122,
+      "session_open": 14.760000228881836,
+      "session_close": 14.760000228881836,
+      "session_volume": 3411708.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:600605",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/600605.SS/history/",
+        "date": "2022-09-30",
+        "daily_high": 14.760000228881836,
+        "prior_all_time_or_current_month_high": 15.964285986764091,
+        "passes_close_filter": true,
+        "yahoo_symbol": "600605.SS"
+      }
+    },
+    {
+      "ticker": "603057.SS",
+      "name": "Shanghai Ziyan Foods Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Consumer Non-Durables",
+      "high_type": "all_time",
+      "reason": "업종: Consumer Non-Durables · Food: Major Diversified",
+      "description": "Shanghai Ziyan Foods Co., Ltd. Class A · Food: Major Diversified",
+      "change_pct": 9.986224266885891,
+      "session_open": 29.059999465942383,
+      "session_close": 31.940000534057617,
+      "session_volume": 25760790.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:603057",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/603057.SS/history/",
+        "date": "2022-09-30",
+        "daily_high": 31.940000534057617,
+        "prior_all_time_or_current_month_high": 31.940000534057617,
+        "passes_close_filter": true,
+        "yahoo_symbol": "603057.SS"
+      }
+    },
+    {
+      "ticker": "603309.SS",
+      "name": "WELL LEAD MEDICAL CO LTD Class A",
+      "exchange": "SSE",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Medical Specialties",
+      "description": "WELL LEAD MEDICAL CO LTD Class A · Medical Specialties",
+      "change_pct": 0.8453509255809788,
+      "session_open": 20.100000381469727,
+      "session_close": 20.280000686645508,
+      "session_volume": 5924223.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:603309",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/603309.SS/history/",
+        "date": "2022-09-30",
+        "daily_high": 20.59000015258789,
+        "prior_all_time_or_current_month_high": 28.284022991473854,
+        "passes_close_filter": true,
+        "yahoo_symbol": "603309.SS"
+      }
+    },
+    {
+      "ticker": "900915.SS",
+      "name": "Zhonglu Co., Ltd. Class B",
+      "exchange": "SSE",
+      "category": "Consumer Durables",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Durables · Recreational Products",
+      "description": "Zhonglu Co., Ltd. Class B · Recreational Products",
+      "change_pct": 6.907897295184351,
+      "session_open": 0.9079999923706055,
+      "session_close": 0.9750000238418579,
+      "session_volume": 2436311.0,
+      "currency": "USD",
+      "source_symbol": "SSE:900915",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/900915.SS/history/",
+        "date": "2022-09-30",
+        "daily_high": 0.9980000257492065,
+        "prior_all_time_or_current_month_high": 5.257999897003174,
+        "passes_close_filter": true,
+        "yahoo_symbol": "900915.SS"
+      }
+    },
+    {
+      "ticker": "001255.SZ",
+      "name": "Zhejiang Bofay Electric Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Process Industries",
+      "high_type": "all_time",
+      "reason": "업종: Process Industries · Industrial Specialties",
+      "description": "Zhejiang Bofay Electric Co., Ltd. Class A · Industrial Specialties",
+      "change_pct": 0.0,
+      "session_open": 23.719999313354492,
+      "session_close": 28.469999313354492,
+      "session_volume": 1266852.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:001255",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/001255.SZ/history/",
+        "date": "2022-09-30",
+        "daily_high": 28.469999313354492,
+        "prior_all_time_or_current_month_high": 28.469999313354492,
+        "passes_close_filter": true,
+        "yahoo_symbol": "001255.SZ"
+      }
+    },
+    {
+      "ticker": "001269.SZ",
+      "name": "Inner Mongolia OJing Science and Technology Co. Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Semiconductors",
+      "description": "Inner Mongolia OJing Science and Technology Co. Ltd. Class A · Semiconductors",
+      "change_pct": 0.0,
+      "session_open": 13.414284706115723,
+      "session_close": 16.100000381469727,
+      "session_volume": 2024892.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:001269",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/001269.SZ/history/",
+        "date": "2022-09-30",
+        "daily_high": 16.100000381469727,
+        "prior_all_time_or_current_month_high": 16.100000381469727,
+        "passes_close_filter": true,
+        "yahoo_symbol": "001269.SZ"
+      }
+    },
+    {
+      "ticker": "002084.SZ",
+      "name": "Guangzhou Seagull Kitchen and Bath Products Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Building Products",
+      "description": "Guangzhou Seagull Kitchen and Bath Products Co., Ltd. Class A · Building Products",
+      "change_pct": 9.951054572417096,
+      "session_open": 6.289999961853027,
+      "session_close": 6.739999771118164,
+      "session_volume": 220009738.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002084",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002084.SZ/history/",
+        "date": "2022-09-30",
+        "daily_high": 6.739999771118164,
+        "prior_all_time_or_current_month_high": 14.089269086349107,
+        "passes_close_filter": true,
+        "yahoo_symbol": "002084.SZ"
+      }
+    },
+    {
+      "ticker": "003023.SZ",
+      "name": "Chengdu Rainbow Appliance (Group) Shares Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Consumer Durables",
+      "high_type": "all_time",
+      "reason": "업종: Consumer Durables · Electronics/Appliances",
+      "description": "Chengdu Rainbow Appliance (Group) Shares Co., Ltd. Class A · Electronics/Appliances",
+      "change_pct": 9.987478023540163,
+      "session_open": 30.969999313354492,
+      "session_close": 35.130001068115234,
+      "session_volume": 29195933.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:003023",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/003023.SZ/history/",
+        "date": "2022-09-30",
+        "daily_high": 35.130001068115234,
+        "prior_all_time_or_current_month_high": 35.130001068115234,
+        "passes_close_filter": true,
+        "yahoo_symbol": "003023.SZ"
+      }
+    },
+    {
+      "ticker": "300525.SZ",
+      "name": "Fujian Boss Software Corp. Class A",
+      "exchange": "SZSE",
+      "category": "Technology Services",
+      "high_type": "all_time",
+      "reason": "업종: Technology Services · Packaged Software",
+      "description": "Fujian Boss Software Corp. Class A · Packaged Software",
+      "change_pct": 5.039272784847237,
+      "session_open": 12.758333206176758,
+      "session_close": 13.375,
+      "session_volume": 13752986.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:300525",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/300525.SZ/history/",
+        "date": "2022-09-30",
+        "daily_high": 13.958333015441895,
+        "prior_all_time_or_current_month_high": 13.958333015441895,
+        "passes_close_filter": true,
+        "yahoo_symbol": "300525.SZ"
+      }
+    },
+    {
+      "ticker": "301153.SZ",
+      "name": "Beijing CTJ Information Technology Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Technology Services",
+      "high_type": "all_time",
+      "reason": "업종: Technology Services · Packaged Software",
+      "description": "Beijing CTJ Information Technology Co., Ltd. Class A · Packaged Software",
+      "change_pct": 10.885236330611491,
+      "session_open": 17.533950805664062,
+      "session_close": 18.518518447875977,
+      "session_volume": 13907891.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:301153",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/301153.SZ/history/",
+        "date": "2022-09-30",
+        "daily_high": 19.75308609008789,
+        "prior_all_time_or_current_month_high": 19.75308609008789,
+        "passes_close_filter": true,
+        "yahoo_symbol": "301153.SZ"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-10-29T09:46:43.953004+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 5312,
+    "history_symbols": 4828,
+    "inactive_symbols": 0,
+    "failed_symbols": 484,
+    "coverage_ratio": 0.9088855421686747,
+    "coverage_by_exchange": {
+      "SSE": {
+        "covered": 2148,
+        "total": 2358
+      },
+      "SZSE": {
+        "covered": 2680,
+        "total": 2954
+      }
+    },
+    "session_symbols": 4752,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-10-29T09:46:43.953004+00:00"
+}

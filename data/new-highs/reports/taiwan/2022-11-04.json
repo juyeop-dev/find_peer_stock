@@ -1,0 +1,262 @@
+{
+  "schema_version": 1,
+  "market": "taiwan",
+  "date": "2022-11-04",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "3207.TWO",
+      "name": "Yao Sheng Electronic Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Electronic Components",
+      "description": "Yao Sheng Electronic Co., Ltd. · Electronic Components",
+      "change_pct": 8.499478060922904,
+      "session_open": 45.82209014892578,
+      "session_close": 50.457977294921875,
+      "session_volume": 25217824.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:3207",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3207.TWO/history/",
+        "date": "2022-11-04",
+        "daily_high": 50.750770568847656,
+        "prior_all_time_or_current_month_high": 50.750770568847656,
+        "passes_close_filter": true,
+        "yahoo_symbol": "3207.TWO"
+      }
+    },
+    {
+      "ticker": "4931.TWO",
+      "name": "STL Technology Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Electrical Products",
+      "description": "STL Technology Co., Ltd. · Electrical Products",
+      "change_pct": 9.999997008080586,
+      "session_open": 51.20000076293945,
+      "session_close": 56.099998474121094,
+      "session_volume": 65675000.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:4931",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4931.TWO/history/",
+        "date": "2022-11-04",
+        "daily_high": 56.099998474121094,
+        "prior_all_time_or_current_month_high": 56.099998474121094,
+        "passes_close_filter": true,
+        "yahoo_symbol": "4931.TWO"
+      }
+    },
+    {
+      "ticker": "6556.TWO",
+      "name": "Topview Optronics Corp.",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Telecommunications Equipment",
+      "description": "Topview Optronics Corp. · Telecommunications Equipment",
+      "change_pct": 9.93710883758352,
+      "session_open": 87.4000015258789,
+      "session_close": 87.4000015258789,
+      "session_volume": 78000.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:6556",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6556.TWO/history/",
+        "date": "2022-11-04",
+        "daily_high": 87.4000015258789,
+        "prior_all_time_or_current_month_high": 87.4000015258789,
+        "passes_close_filter": true,
+        "yahoo_symbol": "6556.TWO"
+      }
+    },
+    {
+      "ticker": "8342.TWO",
+      "name": "I JANG INDUSTRIAL CO., LTD.",
+      "exchange": "TPEX",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Office Equipment/Supplies",
+      "description": "I JANG INDUSTRIAL CO., LTD. · Office Equipment/Supplies",
+      "change_pct": 2.573525132192578,
+      "session_open": 55.5,
+      "session_close": 55.79999923706055,
+      "session_volume": 35000.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:8342",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/8342.TWO/history/",
+        "date": "2022-11-04",
+        "daily_high": 55.79999923706055,
+        "prior_all_time_or_current_month_high": 97.98999786376953,
+        "passes_close_filter": true,
+        "yahoo_symbol": "8342.TWO"
+      }
+    },
+    {
+      "ticker": "2913.TW",
+      "name": "Taiwan Tea Corporation",
+      "exchange": "TWSE",
+      "category": "Distribution Services",
+      "high_type": "52_week",
+      "reason": "업종: Distribution Services · Food Distributors",
+      "description": "Taiwan Tea Corporation · Food Distributors",
+      "change_pct": 4.629629547867431,
+      "session_open": 21.549999237060547,
+      "session_close": 22.600000381469727,
+      "session_volume": 6701574.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2913",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2913.TW/history/",
+        "date": "2022-11-04",
+        "daily_high": 22.700000762939453,
+        "prior_all_time_or_current_month_high": 421.25967558460604,
+        "passes_close_filter": true,
+        "yahoo_symbol": "2913.TW"
+      }
+    },
+    {
+      "ticker": "5225.TW",
+      "name": "Eastech Holding Limited",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Electronic Production Equipment",
+      "description": "Eastech Holding Limited · Electronic Production Equipment",
+      "change_pct": 1.1780124449003448,
+      "session_open": 37.849998474121094,
+      "session_close": 38.650001525878906,
+      "session_volume": 4648080.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:5225",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/5225.TW/history/",
+        "date": "2022-11-04",
+        "daily_high": 39.900001525878906,
+        "prior_all_time_or_current_month_high": 95.30000305175781,
+        "passes_close_filter": true,
+        "yahoo_symbol": "5225.TW"
+      }
+    },
+    {
+      "ticker": "6153.TW",
+      "name": "Career Technology (MFG.) Co., Ltd",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Electronic Components",
+      "description": "Career Technology (MFG.) Co., Ltd · Electronic Components",
+      "change_pct": 1.1844321704345129,
+      "session_open": 28.982946395874023,
+      "session_close": 29.576454162597656,
+      "session_volume": 51722032.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:6153",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6153.TW/history/",
+        "date": "2022-11-04",
+        "daily_high": 29.675371170043945,
+        "prior_all_time_or_current_month_high": 68.3793017643192,
+        "passes_close_filter": true,
+        "yahoo_symbol": "6153.TW"
+      }
+    },
+    {
+      "ticker": "8033.TW",
+      "name": "Thunder Tiger Corp.",
+      "exchange": "TWSE",
+      "category": "Consumer Durables",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Durables · Recreational Products",
+      "description": "Thunder Tiger Corp. · Recreational Products",
+      "change_pct": 9.854010888492294,
+      "session_open": 29.376951217651367,
+      "session_close": 29.47487449645996,
+      "session_volume": 9512848.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:8033",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/8033.TW/history/",
+        "date": "2022-11-04",
+        "daily_high": 29.47487449645996,
+        "prior_all_time_or_current_month_high": 44.95997964591821,
+        "passes_close_filter": true,
+        "yahoo_symbol": "8033.TW"
+      }
+    },
+    {
+      "ticker": "9942.TW",
+      "name": "Nak Sealing Technologies Corporation",
+      "exchange": "TWSE",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Industrial Machinery",
+      "description": "Nak Sealing Technologies Corporation · Industrial Machinery",
+      "change_pct": 0.8888888888888946,
+      "session_open": 112.5,
+      "session_close": 113.5,
+      "session_volume": 974255.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:9942",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/9942.TW/history/",
+        "date": "2022-11-04",
+        "daily_high": 115.0,
+        "prior_all_time_or_current_month_high": 152.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "9942.TW"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-10-29T09:42:16.113847+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 2356,
+    "history_symbols": 2003,
+    "inactive_symbols": 5,
+    "failed_symbols": 348,
+    "coverage_ratio": 0.8519778817524458,
+    "coverage_by_exchange": {
+      "TWSE": {
+        "covered": 1012,
+        "total": 1094
+      },
+      "TPEX": {
+        "covered": 991,
+        "total": 1257
+      }
+    },
+    "session_symbols": 1995,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-10-29T09:42:16.113847+00:00"
+}

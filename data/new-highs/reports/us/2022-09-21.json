@@ -1,0 +1,410 @@
+{
+  "schema_version": 1,
+  "market": "us",
+  "date": "2022-09-21",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "CALM",
+      "name": "Cal-Maine Foods, Inc.",
+      "exchange": "NASDAQ",
+      "category": "Process Industries",
+      "high_type": "52_week",
+      "reason": "업종: Process Industries · Agricultural Commodities/Milling",
+      "description": "Cal-Maine Foods, Inc. · Agricultural Commodities/Milling",
+      "change_pct": 4.55169641981954,
+      "session_open": 58.7400016784668,
+      "session_close": 60.869998931884766,
+      "session_volume": 1244500.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:CALM",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/CALM/history/",
+        "date": "2022-09-21",
+        "daily_high": 61.72999954223633,
+        "prior_all_time_or_current_month_high": 63.25,
+        "passes_close_filter": true,
+        "yahoo_symbol": "CALM"
+      }
+    },
+    {
+      "ticker": "ECX",
+      "name": "ECARX Holdings, Inc.",
+      "exchange": "NASDAQ",
+      "category": "Technology Services",
+      "high_type": "52_week",
+      "reason": "업종: Technology Services · Packaged Software",
+      "description": "ECARX Holdings, Inc. · Packaged Software",
+      "change_pct": 0.10080875811415702,
+      "session_open": 9.920000076293945,
+      "session_close": 9.930000305175781,
+      "session_volume": 25800.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:ECX",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/ECX/history/",
+        "date": "2022-09-21",
+        "daily_high": 9.930000305175781,
+        "prior_all_time_or_current_month_high": 10.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "ECX"
+      }
+    },
+    {
+      "ticker": "FSLR",
+      "name": "First Solar, Inc.",
+      "exchange": "NASDAQ",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Semiconductors",
+      "description": "First Solar, Inc. · Semiconductors",
+      "change_pct": 1.6953040334665603,
+      "session_open": 134.52999877929688,
+      "session_close": 135.57000732421875,
+      "session_volume": 3108100.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:FSLR",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/FSLR/history/",
+        "date": "2022-09-21",
+        "daily_high": 140.63999938964844,
+        "prior_all_time_or_current_month_high": 317.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "FSLR"
+      }
+    },
+    {
+      "ticker": "GCBC",
+      "name": "Greene County Bancorp, Inc.",
+      "exchange": "NASDAQ",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "업종: Finance · Savings Banks",
+      "description": "Greene County Bancorp, Inc. · Savings Banks",
+      "change_pct": 0.5301519078668493,
+      "session_open": 30.18000030517578,
+      "session_close": 30.34000015258789,
+      "session_volume": 8800.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:GCBC",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/GCBC/history/",
+        "date": "2022-09-21",
+        "daily_high": 30.485000610351562,
+        "prior_all_time_or_current_month_high": 30.485000610351562,
+        "passes_close_filter": true,
+        "yahoo_symbol": "GCBC"
+      }
+    },
+    {
+      "ticker": "HQY",
+      "name": "HealthEquity Inc",
+      "exchange": "NASDAQ",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "업종: Finance · Investment Managers",
+      "description": "HealthEquity Inc · Investment Managers",
+      "change_pct": 0.998030771105074,
+      "session_open": 70.8499984741211,
+      "session_close": 71.8499984741211,
+      "session_volume": 748200.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:HQY",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/HQY/history/",
+        "date": "2022-09-21",
+        "daily_high": 73.54000091552734,
+        "prior_all_time_or_current_month_high": 101.58000183105469,
+        "passes_close_filter": true,
+        "yahoo_symbol": "HQY"
+      }
+    },
+    {
+      "ticker": "QTI",
+      "name": "QT Imaging Holdings, Inc.",
+      "exchange": "NASDAQ",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "업종: Finance · Financial Conglomerates",
+      "description": "QT Imaging Holdings, Inc. · Financial Conglomerates",
+      "change_pct": 0.19802181634178684,
+      "session_open": 151.5,
+      "session_close": 151.8000030517578,
+      "session_volume": 2320.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:QTI",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/QTI/history/",
+        "date": "2022-09-21",
+        "daily_high": 152.25,
+        "prior_all_time_or_current_month_high": 2240.9999084472656,
+        "passes_close_filter": true,
+        "yahoo_symbol": "QTI"
+      }
+    },
+    {
+      "ticker": "SLNG",
+      "name": "Stabilis Solutions, Inc.",
+      "exchange": "NASDAQ",
+      "category": "Energy Minerals",
+      "high_type": "52_week",
+      "reason": "업종: Energy Minerals · Oil & Gas Production",
+      "description": "Stabilis Solutions, Inc. · Oil & Gas Production",
+      "change_pct": 73.67386812539488,
+      "session_open": 5.75,
+      "session_close": 8.84000015258789,
+      "session_volume": 21320400.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:SLNG",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/SLNG/history/",
+        "date": "2022-09-21",
+        "daily_high": 12.319999694824219,
+        "prior_all_time_or_current_month_high": 742.4000244140625,
+        "passes_close_filter": true,
+        "yahoo_symbol": "SLNG"
+      }
+    },
+    {
+      "ticker": "SLXN",
+      "name": "Silexion Therapeutics Corp",
+      "exchange": "NASDAQ",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Pharmaceuticals: Major",
+      "description": "Silexion Therapeutics Corp · Pharmaceuticals: Major",
+      "change_pct": 0.10090817356205317,
+      "session_open": 1488.0,
+      "session_close": 1488.0,
+      "session_volume": 236.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:SLXN",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/SLXN/history/",
+        "date": "2022-09-21",
+        "daily_high": 1488.0,
+        "prior_all_time_or_current_month_high": 229050.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "SLXN"
+      }
+    },
+    {
+      "ticker": "XBP",
+      "name": "XBP Global Holdings, Inc.",
+      "exchange": "NASDAQ",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "업종: Finance · Financial Conglomerates",
+      "description": "XBP Global Holdings, Inc. · Financial Conglomerates",
+      "change_pct": 0.14713244764004152,
+      "session_open": 102.0,
+      "session_close": 102.0999984741211,
+      "session_volume": 22800.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:XBP",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/XBP/history/",
+        "date": "2022-09-21",
+        "daily_high": 102.0999984741211,
+        "prior_all_time_or_current_month_high": 1139.1000366210938,
+        "passes_close_filter": true,
+        "yahoo_symbol": "XBP"
+      }
+    },
+    {
+      "ticker": "XMTR",
+      "name": "Xometry, Inc. Class A",
+      "exchange": "NASDAQ",
+      "category": "Technology Services",
+      "high_type": "52_week",
+      "reason": "업종: Technology Services · Information Technology Services",
+      "description": "Xometry, Inc. Class A · Information Technology Services",
+      "change_pct": 3.5452682897838983,
+      "session_open": 60.099998474121094,
+      "session_close": 62.209999084472656,
+      "session_volume": 552000.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:XMTR",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/XMTR/history/",
+        "date": "2022-09-21",
+        "daily_high": 64.3479995727539,
+        "prior_all_time_or_current_month_high": 97.56999969482422,
+        "passes_close_filter": true,
+        "yahoo_symbol": "XMTR"
+      }
+    },
+    {
+      "ticker": "EVEX",
+      "name": "Eve Holding, Inc.",
+      "exchange": "NYSE",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Aerospace & Defense",
+      "description": "Eve Holding, Inc. · Aerospace & Defense",
+      "change_pct": 5.541352067952987,
+      "session_open": 12.350000381469727,
+      "session_close": 12.380000114440918,
+      "session_volume": 242400.0,
+      "currency": "USD",
+      "source_symbol": "NYSE:EVEX",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/EVEX/history/",
+        "date": "2022-09-21",
+        "daily_high": 12.699999809265137,
+        "prior_all_time_or_current_month_high": 12.699999809265137,
+        "passes_close_filter": true,
+        "yahoo_symbol": "EVEX"
+      }
+    },
+    {
+      "ticker": "GIS",
+      "name": "General Mills, Inc.",
+      "exchange": "NYSE",
+      "category": "Consumer Non-Durables",
+      "high_type": "all_time",
+      "reason": "업종: Consumer Non-Durables · Food: Major Diversified",
+      "description": "General Mills, Inc. · Food: Major Diversified",
+      "change_pct": 5.71541884271165,
+      "session_open": 77.9800033569336,
+      "session_close": 79.72000122070312,
+      "session_volume": 14038700.0,
+      "currency": "USD",
+      "source_symbol": "NYSE:GIS",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/GIS/history/",
+        "date": "2022-09-21",
+        "daily_high": 81.04000091552734,
+        "prior_all_time_or_current_month_high": 81.04000091552734,
+        "passes_close_filter": true,
+        "yahoo_symbol": "GIS"
+      }
+    },
+    {
+      "ticker": "HUBB",
+      "name": "Hubbell Incorporated",
+      "exchange": "NYSE",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Electrical Products",
+      "description": "Hubbell Incorporated · Electrical Products",
+      "change_pct": 1.4470770797171184,
+      "session_open": 225.6300048828125,
+      "session_close": 227.13999938964844,
+      "session_volume": 933309.0,
+      "currency": "USD",
+      "source_symbol": "NYSE:HUBB",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/HUBB/history/",
+        "date": "2022-09-21",
+        "daily_high": 232.47000122070312,
+        "prior_all_time_or_current_month_high": 232.47000122070312,
+        "passes_close_filter": true,
+        "yahoo_symbol": "HUBB"
+      }
+    },
+    {
+      "ticker": "ORA",
+      "name": "Ormat Technologies, Inc.",
+      "exchange": "NYSE",
+      "category": "Utilities",
+      "high_type": "52_week",
+      "reason": "업종: Utilities · Electric Utilities",
+      "description": "Ormat Technologies, Inc. · Electric Utilities",
+      "change_pct": 0.47115164713360524,
+      "session_open": 95.12999725341797,
+      "session_close": 95.95999908447266,
+      "session_volume": 769500.0,
+      "currency": "USD",
+      "source_symbol": "NYSE:ORA",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/ORA/history/",
+        "date": "2022-09-21",
+        "daily_high": 98.47000122070312,
+        "prior_all_time_or_current_month_high": 128.8699951171875,
+        "passes_close_filter": true,
+        "yahoo_symbol": "ORA"
+      }
+    },
+    {
+      "ticker": "TE",
+      "name": "T1 Energy Inc.",
+      "exchange": "NYSE",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Electrical Products",
+      "description": "T1 Energy Inc. · Electrical Products",
+      "change_pct": 17.123287223834538,
+      "session_open": 14.25,
+      "session_close": 15.390000343322754,
+      "session_volume": 29851000.0,
+      "currency": "USD",
+      "source_symbol": "NYSE:TE",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/TE/history/",
+        "date": "2022-09-21",
+        "daily_high": 15.949999809265137,
+        "prior_all_time_or_current_month_high": 15.949999809265137,
+        "passes_close_filter": true,
+        "yahoo_symbol": "TE"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-10-29T09:50:57.622252+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 5711,
+    "history_symbols": 4481,
+    "inactive_symbols": 9,
+    "failed_symbols": 1221,
+    "coverage_ratio": 0.7858646089091547,
+    "coverage_by_exchange": {
+      "NASDAQ": {
+        "covered": 2472,
+        "total": 3336
+      },
+      "NYSE": {
+        "covered": 1816,
+        "total": 2104
+      },
+      "AMEX": {
+        "covered": 193,
+        "total": 262
+      }
+    },
+    "session_symbols": 4453,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-10-29T09:50:57.622252+00:00"
+}

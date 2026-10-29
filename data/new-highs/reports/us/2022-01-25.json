@@ -1,0 +1,434 @@
+{
+  "schema_version": 1,
+  "market": "us",
+  "date": "2022-01-25",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "ANGH",
+      "name": "Anghami Inc.",
+      "exchange": "NASDAQ",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "업종: Finance · Financial Conglomerates",
+      "description": "Anghami Inc. · Financial Conglomerates",
+      "change_pct": 27.640034942486345,
+      "session_open": 107.0,
+      "session_close": 139.0,
+      "session_volume": 3190.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:ANGH",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/ANGH/history/",
+        "date": "2022-01-25",
+        "daily_high": 140.89999389648438,
+        "prior_all_time_or_current_month_high": 1111.9999694824219,
+        "passes_close_filter": true,
+        "yahoo_symbol": "ANGH"
+      }
+    },
+    {
+      "ticker": "BKR",
+      "name": "Baker Hughes Company Class A",
+      "exchange": "NASDAQ",
+      "category": "Industrial Services",
+      "high_type": "52_week",
+      "reason": "업종: Industrial Services · Contract Drilling",
+      "description": "Baker Hughes Company Class A · Contract Drilling",
+      "change_pct": 3.1769509421752717,
+      "session_open": 26.950000762939453,
+      "session_close": 27.93000030517578,
+      "session_volume": 13512800.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:BKR",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/BKR/history/",
+        "date": "2022-01-25",
+        "daily_high": 28.15999984741211,
+        "prior_all_time_or_current_month_high": 100.29000091552734,
+        "passes_close_filter": true,
+        "yahoo_symbol": "BKR"
+      }
+    },
+    {
+      "ticker": "DMLP",
+      "name": "Dorchester Minerals, L.P.",
+      "exchange": "NASDAQ",
+      "category": "Miscellaneous",
+      "high_type": "52_week",
+      "reason": "업종: Miscellaneous · Investment Trusts/Mutual Funds",
+      "description": "Dorchester Minerals, L.P. · Investment Trusts/Mutual Funds",
+      "change_pct": 4.03628720086846,
+      "session_open": 22.0,
+      "session_close": 22.940000534057617,
+      "session_volume": 92600.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:DMLP",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/DMLP/history/",
+        "date": "2022-01-25",
+        "daily_high": 23.0,
+        "prior_all_time_or_current_month_high": 36.4900016784668,
+        "passes_close_filter": true,
+        "yahoo_symbol": "DMLP"
+      }
+    },
+    {
+      "ticker": "HOPE",
+      "name": "Hope Bancorp, Inc.",
+      "exchange": "NASDAQ",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "업종: Finance · Major Banks",
+      "description": "Hope Bancorp, Inc. · Major Banks",
+      "change_pct": 11.37380658168139,
+      "session_open": 17.0,
+      "session_close": 17.43000030517578,
+      "session_volume": 1756600.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:HOPE",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/HOPE/history/",
+        "date": "2022-01-25",
+        "daily_high": 17.639999389648438,
+        "prior_all_time_or_current_month_high": 22.989999771118164,
+        "passes_close_filter": true,
+        "yahoo_symbol": "HOPE"
+      }
+    },
+    {
+      "ticker": "PBAM",
+      "name": "Private Bancorp of America, Inc.",
+      "exchange": "NASDAQ",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "업종: Finance · Regional Banks",
+      "description": "Private Bancorp of America, Inc. · Regional Banks",
+      "change_pct": 0.0,
+      "session_open": 30.0,
+      "session_close": 30.0,
+      "session_volume": 27500.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:PBAM",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/PBAM/history/",
+        "date": "2022-01-25",
+        "daily_high": 31.0,
+        "prior_all_time_or_current_month_high": 31.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "PBAM"
+      }
+    },
+    {
+      "ticker": "RBB",
+      "name": "RBB Bancorp",
+      "exchange": "NASDAQ",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "업종: Finance · Regional Banks",
+      "description": "RBB Bancorp · Regional Banks",
+      "change_pct": 5.569901124625076,
+      "session_open": 27.399999618530273,
+      "session_close": 28.6200008392334,
+      "session_volume": 84300.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:RBB",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/RBB/history/",
+        "date": "2022-01-25",
+        "daily_high": 29.084999084472656,
+        "prior_all_time_or_current_month_high": 33.619998931884766,
+        "passes_close_filter": true,
+        "yahoo_symbol": "RBB"
+      }
+    },
+    {
+      "ticker": "CTO/PA",
+      "name": "CTO Realty Growth Inc 6.375 % Cum Conv Red Perp Pfd Registered Shs Series A",
+      "exchange": "NYSE",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "업종: Finance · Real Estate Investment Trusts",
+      "description": "CTO Realty Growth Inc 6.375 % Cum Conv Red Perp Pfd Registered Shs Series A · Real Estate Investment Trusts",
+      "change_pct": 6.807694068321823,
+      "session_open": 25.86669921875,
+      "session_close": 27.770000457763672,
+      "session_volume": 6426.0,
+      "currency": "USD",
+      "source_symbol": "NYSE:CTO/PA",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/CTO-PA/history/",
+        "date": "2022-01-25",
+        "daily_high": 27.770000457763672,
+        "prior_all_time_or_current_month_high": 27.770000457763672,
+        "passes_close_filter": true,
+        "yahoo_symbol": "CTO-PA"
+      }
+    },
+    {
+      "ticker": "CVX",
+      "name": "Chevron Corporation",
+      "exchange": "NYSE",
+      "category": "Energy Minerals",
+      "high_type": "52_week",
+      "reason": "업종: Energy Minerals · Integrated Oil",
+      "description": "Chevron Corporation · Integrated Oil",
+      "change_pct": 4.253810363054922,
+      "session_open": 127.12000274658203,
+      "session_close": 132.58999633789062,
+      "session_volume": 19984500.0,
+      "currency": "USD",
+      "source_symbol": "NYSE:CVX",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/CVX/history/",
+        "date": "2022-01-25",
+        "daily_high": 132.74000549316406,
+        "prior_all_time_or_current_month_high": 135.10000610351562,
+        "passes_close_filter": true,
+        "yahoo_symbol": "CVX"
+      }
+    },
+    {
+      "ticker": "HAL",
+      "name": "Halliburton Company",
+      "exchange": "NYSE",
+      "category": "Industrial Services",
+      "high_type": "52_week",
+      "reason": "업종: Industrial Services · Oilfield Services/Equipment",
+      "description": "Halliburton Company · Oilfield Services/Equipment",
+      "change_pct": 6.995452918243394,
+      "session_open": 28.43000030517578,
+      "session_close": 30.59000015258789,
+      "session_volume": 25380400.0,
+      "currency": "USD",
+      "source_symbol": "NYSE:HAL",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/HAL/history/",
+        "date": "2022-01-25",
+        "daily_high": 31.100000381469727,
+        "prior_all_time_or_current_month_high": 74.33000183105469,
+        "passes_close_filter": true,
+        "yahoo_symbol": "HAL"
+      }
+    },
+    {
+      "ticker": "NBHC",
+      "name": "National Bank Holdings Corporation Class A",
+      "exchange": "NYSE",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "업종: Finance · Regional Banks",
+      "description": "National Bank Holdings Corporation Class A · Regional Banks",
+      "change_pct": 0.2528502926610665,
+      "session_open": 47.189998626708984,
+      "session_close": 47.58000183105469,
+      "session_volume": 195900.0,
+      "currency": "USD",
+      "source_symbol": "NYSE:NBHC",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/NBHC/history/",
+        "date": "2022-01-25",
+        "daily_high": 48.2400016784668,
+        "prior_all_time_or_current_month_high": 48.2400016784668,
+        "passes_close_filter": true,
+        "yahoo_symbol": "NBHC"
+      }
+    },
+    {
+      "ticker": "NIC",
+      "name": "Nicolet Bankshares, Inc.",
+      "exchange": "NYSE",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "업종: Finance · Major Banks",
+      "description": "Nicolet Bankshares, Inc. · Major Banks",
+      "change_pct": 0.4288181079690201,
+      "session_open": 92.5,
+      "session_close": 93.68000030517578,
+      "session_volume": 115500.0,
+      "currency": "USD",
+      "source_symbol": "NYSE:NIC",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/NIC/history/",
+        "date": "2022-01-25",
+        "daily_high": 94.33000183105469,
+        "prior_all_time_or_current_month_high": 94.33000183105469,
+        "passes_close_filter": true,
+        "yahoo_symbol": "NIC"
+      }
+    },
+    {
+      "ticker": "OXY",
+      "name": "Occidental Petroleum Corporation",
+      "exchange": "NYSE",
+      "category": "Energy Minerals",
+      "high_type": "52_week",
+      "reason": "업종: Energy Minerals · Integrated Oil",
+      "description": "Occidental Petroleum Corporation · Integrated Oil",
+      "change_pct": 8.115266899272356,
+      "session_open": 33.75,
+      "session_close": 36.77000045776367,
+      "session_volume": 28095600.0,
+      "currency": "USD",
+      "source_symbol": "NYSE:OXY",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/OXY/history/",
+        "date": "2022-01-25",
+        "daily_high": 37.11000061035156,
+        "prior_all_time_or_current_month_high": 108.20907279397154,
+        "passes_close_filter": true,
+        "yahoo_symbol": "OXY"
+      }
+    },
+    {
+      "ticker": "PR",
+      "name": "Permian Resources Corporation Class A",
+      "exchange": "NYSE",
+      "category": "Energy Minerals",
+      "high_type": "52_week",
+      "reason": "업종: Energy Minerals · Integrated Oil",
+      "description": "Permian Resources Corporation Class A · Integrated Oil",
+      "change_pct": 9.163347118127385,
+      "session_open": 7.5,
+      "session_close": 8.220000267028809,
+      "session_volume": 14764800.0,
+      "currency": "USD",
+      "source_symbol": "NYSE:PR",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/PR/history/",
+        "date": "2022-01-25",
+        "daily_high": 8.380000114440918,
+        "prior_all_time_or_current_month_high": 23.1200008392334,
+        "passes_close_filter": true,
+        "yahoo_symbol": "PR"
+      }
+    },
+    {
+      "ticker": "SLB",
+      "name": "SLB Limited",
+      "exchange": "NYSE",
+      "category": "Industrial Services",
+      "high_type": "52_week",
+      "reason": "업종: Industrial Services · Contract Drilling",
+      "description": "SLB Limited · Contract Drilling",
+      "change_pct": 5.983613477346839,
+      "session_open": 36.5099983215332,
+      "session_close": 38.790000915527344,
+      "session_volume": 24167100.0,
+      "currency": "USD",
+      "source_symbol": "NYSE:SLB",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/SLB/history/",
+        "date": "2022-01-25",
+        "daily_high": 39.0,
+        "prior_all_time_or_current_month_high": 118.76000213623047,
+        "passes_close_filter": true,
+        "yahoo_symbol": "SLB"
+      }
+    },
+    {
+      "ticker": "WHD",
+      "name": "Cactus, Inc. Class A",
+      "exchange": "NYSE",
+      "category": "Industrial Services",
+      "high_type": "all_time",
+      "reason": "업종: Industrial Services · Oilfield Services/Equipment",
+      "description": "Cactus, Inc. Class A · Oilfield Services/Equipment",
+      "change_pct": 4.404423459701157,
+      "session_open": 45.560001373291016,
+      "session_close": 48.119998931884766,
+      "session_volume": 544200.0,
+      "currency": "USD",
+      "source_symbol": "NYSE:WHD",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/WHD/history/",
+        "date": "2022-01-25",
+        "daily_high": 48.83000183105469,
+        "prior_all_time_or_current_month_high": 48.83000183105469,
+        "passes_close_filter": true,
+        "yahoo_symbol": "WHD"
+      }
+    },
+    {
+      "ticker": "XOM",
+      "name": "Exxonmobil Holdings Corporation",
+      "exchange": "NYSE",
+      "category": "Energy Minerals",
+      "high_type": "52_week",
+      "reason": "업종: Energy Minerals · Integrated Oil",
+      "description": "Exxonmobil Holdings Corporation · Integrated Oil",
+      "change_pct": 2.93996340531979,
+      "session_open": 72.58999633789062,
+      "session_close": 74.93000030517578,
+      "session_volume": 39278400.0,
+      "currency": "USD",
+      "source_symbol": "NYSE:XOM",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/XOM/history/",
+        "date": "2022-01-25",
+        "daily_high": 75.23999786376953,
+        "prior_all_time_or_current_month_high": 104.76000213623047,
+        "passes_close_filter": true,
+        "yahoo_symbol": "XOM"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-10-29T09:50:57.622252+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 5711,
+    "history_symbols": 4481,
+    "inactive_symbols": 9,
+    "failed_symbols": 1221,
+    "coverage_ratio": 0.7858646089091547,
+    "coverage_by_exchange": {
+      "NASDAQ": {
+        "covered": 2472,
+        "total": 3336
+      },
+      "NYSE": {
+        "covered": 1816,
+        "total": 2104
+      },
+      "AMEX": {
+        "covered": 193,
+        "total": 262
+      }
+    },
+    "session_symbols": 4337,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-10-29T09:50:57.622252+00:00"
+}

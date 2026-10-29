@@ -1,0 +1,194 @@
+{
+  "schema_version": 1,
+  "market": "us",
+  "date": "2022-04-29",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "EUDA",
+      "name": "EUDA Health Holdings Limited",
+      "exchange": "NASDAQ",
+      "category": "Health Services",
+      "high_type": "52_week",
+      "reason": "업종: Health Services · Medical/Nursing Services",
+      "description": "EUDA Health Holdings Limited · Medical/Nursing Services",
+      "change_pct": 0.10132330963299463,
+      "session_open": 197.39999389648438,
+      "session_close": 197.60000610351562,
+      "session_volume": 20.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:EUDA",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/EUDA/history/",
+        "date": "2022-04-29",
+        "daily_high": 197.60000610351562,
+        "prior_all_time_or_current_month_high": 3903.9999389648438,
+        "passes_close_filter": true,
+        "yahoo_symbol": "EUDA"
+      }
+    },
+    {
+      "ticker": "GRML",
+      "name": "Greenland Mines Ltd.",
+      "exchange": "NASDAQ",
+      "category": "Commercial Services",
+      "high_type": "all_time",
+      "reason": "업종: Commercial Services · Miscellaneous Commercial Services",
+      "description": "Greenland Mines Ltd. · Miscellaneous Commercial Services",
+      "change_pct": 0.0,
+      "session_open": 494.5,
+      "session_close": 494.5,
+      "session_volume": 4.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:GRML",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/GRML/history/",
+        "date": "2022-04-29",
+        "daily_high": 494.5,
+        "prior_all_time_or_current_month_high": 494.5,
+        "passes_close_filter": true,
+        "yahoo_symbol": "GRML"
+      }
+    },
+    {
+      "ticker": "RCMT",
+      "name": "RCM Technologies, Inc.",
+      "exchange": "NASDAQ",
+      "category": "Commercial Services",
+      "high_type": "52_week",
+      "reason": "업종: Commercial Services · Personnel Services",
+      "description": "RCM Technologies, Inc. · Personnel Services",
+      "change_pct": 2.6423889456663296,
+      "session_open": 16.270000457763672,
+      "session_close": 17.479999542236328,
+      "session_volume": 304900.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:RCMT",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/RCMT/history/",
+        "date": "2022-04-29",
+        "daily_high": 17.8799991607666,
+        "prior_all_time_or_current_month_high": 179.6875,
+        "passes_close_filter": true,
+        "yahoo_symbol": "RCMT"
+      }
+    },
+    {
+      "ticker": "TOYO",
+      "name": "TOYO Co., Ltd",
+      "exchange": "NASDAQ",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Semiconductors",
+      "description": "TOYO Co., Ltd · Semiconductors",
+      "change_pct": 0.2018209694412354,
+      "session_open": 9.930000305175781,
+      "session_close": 9.930000305175781,
+      "session_volume": 17500.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:TOYO",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/TOYO/history/",
+        "date": "2022-04-29",
+        "daily_high": 9.930000305175781,
+        "prior_all_time_or_current_month_high": 9.930000305175781,
+        "passes_close_filter": true,
+        "yahoo_symbol": "TOYO"
+      }
+    },
+    {
+      "ticker": "NRT",
+      "name": "North European Oil Royalty Trust",
+      "exchange": "NYSE",
+      "category": "Miscellaneous",
+      "high_type": "52_week",
+      "reason": "업종: Miscellaneous · Investment Trusts/Mutual Funds",
+      "description": "North European Oil Royalty Trust · Investment Trusts/Mutual Funds",
+      "change_pct": 1.1122310703610028,
+      "session_open": 19.920000076293945,
+      "session_close": 20.0,
+      "session_volume": 42700.0,
+      "currency": "USD",
+      "source_symbol": "NYSE:NRT",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/NRT/history/",
+        "date": "2022-04-29",
+        "daily_high": 20.0,
+        "prior_all_time_or_current_month_high": 43.75,
+        "passes_close_filter": true,
+        "yahoo_symbol": "NRT"
+      }
+    },
+    {
+      "ticker": "SLVM",
+      "name": "Sylvamo Corporation",
+      "exchange": "NYSE",
+      "category": "Process Industries",
+      "high_type": "all_time",
+      "reason": "업종: Process Industries · Pulp & Paper",
+      "description": "Sylvamo Corporation · Pulp & Paper",
+      "change_pct": 2.033828241505553,
+      "session_open": 43.77000045776367,
+      "session_close": 44.650001525878906,
+      "session_volume": 308000.0,
+      "currency": "USD",
+      "source_symbol": "NYSE:SLVM",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/SLVM/history/",
+        "date": "2022-04-29",
+        "daily_high": 45.130001068115234,
+        "prior_all_time_or_current_month_high": 45.130001068115234,
+        "passes_close_filter": true,
+        "yahoo_symbol": "SLVM"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-10-29T09:50:57.622252+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 5711,
+    "history_symbols": 4481,
+    "inactive_symbols": 9,
+    "failed_symbols": 1221,
+    "coverage_ratio": 0.7858646089091547,
+    "coverage_by_exchange": {
+      "NASDAQ": {
+        "covered": 2472,
+        "total": 3336
+      },
+      "NYSE": {
+        "covered": 1816,
+        "total": 2104
+      },
+      "AMEX": {
+        "covered": 193,
+        "total": 262
+      }
+    },
+    "session_symbols": 4400,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-10-29T09:50:57.622252+00:00"
+}

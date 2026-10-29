@@ -1,0 +1,290 @@
+{
+  "schema_version": 1,
+  "market": "us",
+  "date": "2022-05-09",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "CPB",
+      "name": "Campbell's Company",
+      "exchange": "NASDAQ",
+      "category": "Consumer Non-Durables",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Non-Durables · Food: Specialty/Candy",
+      "description": "Campbell's Company · Food: Specialty/Candy",
+      "change_pct": 3.462857427239663,
+      "session_open": 49.5099983215332,
+      "session_close": 51.38999938964844,
+      "session_volume": 6194400.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:CPB",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/CPB/history/",
+        "date": "2022-05-09",
+        "daily_high": 51.939998626708984,
+        "prior_all_time_or_current_month_high": 67.88999938964844,
+        "passes_close_filter": true,
+        "yahoo_symbol": "CPB"
+      }
+    },
+    {
+      "ticker": "CPSS",
+      "name": "Consumer Portfolio Services, Inc.",
+      "exchange": "NASDAQ",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "업종: Finance · Finance/Rental/Leasing",
+      "description": "Consumer Portfolio Services, Inc. · Finance/Rental/Leasing",
+      "change_pct": 7.70877877274847,
+      "session_open": 14.010000228881836,
+      "session_close": 15.09000015258789,
+      "session_volume": 486900.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:CPSS",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/CPSS/history/",
+        "date": "2022-05-09",
+        "daily_high": 15.470000267028809,
+        "prior_all_time_or_current_month_high": 18.25,
+        "passes_close_filter": true,
+        "yahoo_symbol": "CPSS"
+      }
+    },
+    {
+      "ticker": "FGBI",
+      "name": "First Guaranty Bancshares, Inc.",
+      "exchange": "NASDAQ",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "업종: Finance · Regional Banks",
+      "description": "First Guaranty Bancshares, Inc. · Regional Banks",
+      "change_pct": 1.5045865960077398,
+      "session_open": 27.219999313354492,
+      "session_close": 27.65999984741211,
+      "session_volume": 72200.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:FGBI",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/FGBI/history/",
+        "date": "2022-05-09",
+        "daily_high": 27.989999771118164,
+        "prior_all_time_or_current_month_high": 27.989999771118164,
+        "passes_close_filter": true,
+        "yahoo_symbol": "FGBI"
+      }
+    },
+    {
+      "ticker": "MLGO",
+      "name": "MicroAlgo, Inc.",
+      "exchange": "NASDAQ",
+      "category": "Technology Services",
+      "high_type": "52_week",
+      "reason": "업종: Technology Services · Packaged Software",
+      "description": "MicroAlgo, Inc. · Packaged Software",
+      "change_pct": 0.009803921568618534,
+      "session_open": 61200.0,
+      "session_close": 61206.0,
+      "session_volume": 4.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:MLGO",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/MLGO/history/",
+        "date": "2022-05-09",
+        "daily_high": 61260.0,
+        "prior_all_time_or_current_month_high": 383400000.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "MLGO"
+      }
+    },
+    {
+      "ticker": "TNON",
+      "name": "Tenon Medical, Inc.",
+      "exchange": "NASDAQ",
+      "category": "Health Services",
+      "high_type": "all_time",
+      "reason": "업종: Health Services · Medical/Nursing Services",
+      "description": "Tenon Medical, Inc. · Medical/Nursing Services",
+      "change_pct": 25.34608608104707,
+      "session_open": 112672.0,
+      "session_close": 139440.0,
+      "session_volume": 79.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:TNON",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/TNON/history/",
+        "date": "2022-05-09",
+        "daily_high": 141764.0,
+        "prior_all_time_or_current_month_high": 141764.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "TNON"
+      }
+    },
+    {
+      "ticker": "TOYO",
+      "name": "TOYO Co., Ltd",
+      "exchange": "NASDAQ",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Semiconductors",
+      "description": "TOYO Co., Ltd · Semiconductors",
+      "change_pct": 0.0,
+      "session_open": 9.930000305175781,
+      "session_close": 9.930000305175781,
+      "session_volume": 2500.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:TOYO",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/TOYO/history/",
+        "date": "2022-05-09",
+        "daily_high": 9.930000305175781,
+        "prior_all_time_or_current_month_high": 9.930000305175781,
+        "passes_close_filter": true,
+        "yahoo_symbol": "TOYO"
+      }
+    },
+    {
+      "ticker": "CMTG",
+      "name": "Claros Mortgage Trust, Inc.",
+      "exchange": "NYSE",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "업종: Finance · Real Estate Investment Trusts",
+      "description": "Claros Mortgage Trust, Inc. · Real Estate Investment Trusts",
+      "change_pct": 0.7415323263784801,
+      "session_open": 18.959999084472656,
+      "session_close": 19.020000457763672,
+      "session_volume": 125400.0,
+      "currency": "USD",
+      "source_symbol": "NYSE:CMTG",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/CMTG/history/",
+        "date": "2022-05-09",
+        "daily_high": 19.600000381469727,
+        "prior_all_time_or_current_month_high": 19.600000381469727,
+        "passes_close_filter": true,
+        "yahoo_symbol": "CMTG"
+      }
+    },
+    {
+      "ticker": "SJM",
+      "name": "J.M. Smucker Company",
+      "exchange": "NYSE",
+      "category": "Consumer Non-Durables",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Non-Durables · Food: Specialty/Candy",
+      "description": "J.M. Smucker Company · Food: Specialty/Candy",
+      "change_pct": 2.9608053659281763,
+      "session_open": 139.16000366210938,
+      "session_close": 145.00999450683594,
+      "session_volume": 1346000.0,
+      "currency": "USD",
+      "source_symbol": "NYSE:SJM",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/SJM/history/",
+        "date": "2022-05-09",
+        "daily_high": 146.74000549316406,
+        "prior_all_time_or_current_month_high": 157.30999755859375,
+        "passes_close_filter": true,
+        "yahoo_symbol": "SJM"
+      }
+    },
+    {
+      "ticker": "SWX",
+      "name": "Southwest Gas Holdings, Inc.",
+      "exchange": "NYSE",
+      "category": "Utilities",
+      "high_type": "52_week",
+      "reason": "업종: Utilities · Gas Distributors",
+      "description": "Southwest Gas Holdings, Inc. · Gas Distributors",
+      "change_pct": 3.4793466745902446,
+      "session_open": 88.11000061035156,
+      "session_close": 90.70999908447266,
+      "session_volume": 839100.0,
+      "currency": "USD",
+      "source_symbol": "NYSE:SWX",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/SWX/history/",
+        "date": "2022-05-09",
+        "daily_high": 91.98999786376953,
+        "prior_all_time_or_current_month_high": 92.94000244140625,
+        "passes_close_filter": true,
+        "yahoo_symbol": "SWX"
+      }
+    },
+    {
+      "ticker": "VHI",
+      "name": "Valhi, Inc.",
+      "exchange": "NYSE",
+      "category": "Process Industries",
+      "high_type": "52_week",
+      "reason": "업종: Process Industries · Chemicals: Specialty",
+      "description": "Valhi, Inc. · Chemicals: Specialty",
+      "change_pct": 0.08014635066067033,
+      "session_open": 37.20000076293945,
+      "session_close": 37.459999084472656,
+      "session_volume": 58600.0,
+      "currency": "USD",
+      "source_symbol": "NYSE:VHI",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/VHI/history/",
+        "date": "2022-05-09",
+        "daily_high": 39.58000183105469,
+        "prior_all_time_or_current_month_high": 3035.5200805664062,
+        "passes_close_filter": true,
+        "yahoo_symbol": "VHI"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-10-29T09:50:57.622252+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 5711,
+    "history_symbols": 4481,
+    "inactive_symbols": 9,
+    "failed_symbols": 1221,
+    "coverage_ratio": 0.7858646089091547,
+    "coverage_by_exchange": {
+      "NASDAQ": {
+        "covered": 2472,
+        "total": 3336
+      },
+      "NYSE": {
+        "covered": 1816,
+        "total": 2104
+      },
+      "AMEX": {
+        "covered": 193,
+        "total": 262
+      }
+    },
+    "session_symbols": 4404,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-10-29T09:50:57.622252+00:00"
+}

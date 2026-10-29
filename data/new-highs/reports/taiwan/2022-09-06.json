@@ -1,0 +1,382 @@
+{
+  "schema_version": 1,
+  "market": "taiwan",
+  "date": "2022-09-06",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "2752.TWO",
+      "name": "Tofu Restaurant Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Consumer Services",
+      "high_type": "all_time",
+      "reason": "업종: Consumer Services · Restaurants",
+      "description": "Tofu Restaurant Co., Ltd. · Restaurants",
+      "change_pct": 15.936965408344971,
+      "session_open": 179.0,
+      "session_close": 183.0,
+      "session_volume": 71000.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:2752",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2752.TWO/history/",
+        "date": "2022-09-06",
+        "daily_high": 183.0,
+        "prior_all_time_or_current_month_high": 183.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "2752.TWO"
+      }
+    },
+    {
+      "ticker": "3362.TWO",
+      "name": "Ability Opto-Electronics Technology Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Electronic Components",
+      "description": "Ability Opto-Electronics Technology Co., Ltd. · Electronic Components",
+      "change_pct": 1.4302704724886706,
+      "session_open": 85.0,
+      "session_close": 85.0999984741211,
+      "session_volume": 27610000.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:3362",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3362.TWO/history/",
+        "date": "2022-09-06",
+        "daily_high": 90.5999984741211,
+        "prior_all_time_or_current_month_high": 140.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "3362.TWO"
+      }
+    },
+    {
+      "ticker": "3521.TWO",
+      "name": "TSG Development Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Computer Processing Hardware",
+      "description": "TSG Development Co., Ltd. · Computer Processing Hardware",
+      "change_pct": 9.821432144666264,
+      "session_open": 22.399999618530273,
+      "session_close": 24.600000381469727,
+      "session_volume": 6774000.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:3521",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3521.TWO/history/",
+        "date": "2022-09-06",
+        "daily_high": 24.600000381469727,
+        "prior_all_time_or_current_month_high": 43.70000076293945,
+        "passes_close_filter": true,
+        "yahoo_symbol": "3521.TWO"
+      }
+    },
+    {
+      "ticker": "4107.TWO",
+      "name": "Bioteque Corporation",
+      "exchange": "TPEX",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Medical Specialties",
+      "description": "Bioteque Corporation · Medical Specialties",
+      "change_pct": 4.621848739495804,
+      "session_open": 120.0,
+      "session_close": 124.5,
+      "session_volume": 1335000.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:4107",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4107.TWO/history/",
+        "date": "2022-09-06",
+        "daily_high": 124.5,
+        "prior_all_time_or_current_month_high": 173.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "4107.TWO"
+      }
+    },
+    {
+      "ticker": "4535.TWO",
+      "name": "Fine Blanking & Tool Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Consumer Durables",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Durables · Motor Vehicles",
+      "description": "Fine Blanking & Tool Co., Ltd. · Motor Vehicles",
+      "change_pct": 4.962779250280391,
+      "session_open": 40.29999923706055,
+      "session_close": 42.29999923706055,
+      "session_volume": 357000.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:4535",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4535.TWO/history/",
+        "date": "2022-09-06",
+        "daily_high": 42.79999923706055,
+        "prior_all_time_or_current_month_high": 54.400001525878906,
+        "passes_close_filter": true,
+        "yahoo_symbol": "4535.TWO"
+      }
+    },
+    {
+      "ticker": "4565.TWO",
+      "name": "Hong Wei Electrical Industry Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Building Products",
+      "description": "Hong Wei Electrical Industry Co., Ltd. · Building Products",
+      "change_pct": 1.5193348769860338,
+      "session_open": 51.71428680419922,
+      "session_close": 52.5,
+      "session_volume": 40028.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:4565",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4565.TWO/history/",
+        "date": "2022-09-06",
+        "daily_high": 52.57142639160156,
+        "prior_all_time_or_current_month_high": 52.57142639160156,
+        "passes_close_filter": true,
+        "yahoo_symbol": "4565.TWO"
+      }
+    },
+    {
+      "ticker": "6517.TWO",
+      "name": "Baso Precision Optics Ltd.",
+      "exchange": "TPEX",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Industrial Machinery",
+      "description": "Baso Precision Optics Ltd. · Industrial Machinery",
+      "change_pct": 3.444671521127618,
+      "session_open": 48.0,
+      "session_close": 49.54999923706055,
+      "session_volume": 1090542.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:6517",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6517.TWO/history/",
+        "date": "2022-09-06",
+        "daily_high": 50.29999923706055,
+        "prior_all_time_or_current_month_high": 50.29999923706055,
+        "passes_close_filter": true,
+        "yahoo_symbol": "6517.TWO"
+      }
+    },
+    {
+      "ticker": "6752.TWO",
+      "name": "Galaxy Software Services Corporation",
+      "exchange": "TPEX",
+      "category": "Technology Services",
+      "high_type": "all_time",
+      "reason": "업종: Technology Services · Packaged Software",
+      "description": "Galaxy Software Services Corporation · Packaged Software",
+      "change_pct": 2.2222257076825125,
+      "session_open": 53.110591888427734,
+      "session_close": 54.69598388671875,
+      "session_volume": 39107.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:6752",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6752.TWO/history/",
+        "date": "2022-09-06",
+        "daily_high": 54.69598388671875,
+        "prior_all_time_or_current_month_high": 54.69598388671875,
+        "passes_close_filter": true,
+        "yahoo_symbol": "6752.TWO"
+      }
+    },
+    {
+      "ticker": "8401.TWO",
+      "name": "Bai Sha Technology Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Commercial Services",
+      "high_type": "52_week",
+      "reason": "업종: Commercial Services · Commercial Printing/Forms",
+      "description": "Bai Sha Technology Co., Ltd. · Commercial Printing/Forms",
+      "change_pct": 5.060245786797957,
+      "session_open": 17.629566192626953,
+      "session_close": 18.521665573120117,
+      "session_volume": 4619725.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:8401",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/8401.TWO/history/",
+        "date": "2022-09-06",
+        "daily_high": 18.77655029296875,
+        "prior_all_time_or_current_month_high": 22.094840963298072,
+        "passes_close_filter": true,
+        "yahoo_symbol": "8401.TWO"
+      }
+    },
+    {
+      "ticker": "1442.TW",
+      "name": "Advancetek Enterprise Co. Ltd.",
+      "exchange": "TWSE",
+      "category": "Consumer Durables",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Durables · Homebuilding",
+      "description": "Advancetek Enterprise Co. Ltd. · Homebuilding",
+      "change_pct": 2.0370342113353646,
+      "session_open": 27.0,
+      "session_close": 27.549999237060547,
+      "session_volume": 2483374.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:1442",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/1442.TW/history/",
+        "date": "2022-09-06",
+        "daily_high": 28.0,
+        "prior_all_time_or_current_month_high": 108.72756697915457,
+        "passes_close_filter": true,
+        "yahoo_symbol": "1442.TW"
+      }
+    },
+    {
+      "ticker": "2850.TW",
+      "name": "Shinkong Insurance Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "업종: Finance · Property/Casualty Insurance",
+      "description": "Shinkong Insurance Co., Ltd. · Property/Casualty Insurance",
+      "change_pct": 1.3937268567839167,
+      "session_open": 57.400001525878906,
+      "session_close": 58.20000076293945,
+      "session_volume": 515583.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2850",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2850.TW/history/",
+        "date": "2022-09-06",
+        "daily_high": 58.400001525878906,
+        "prior_all_time_or_current_month_high": 58.400001525878906,
+        "passes_close_filter": true,
+        "yahoo_symbol": "2850.TW"
+      }
+    },
+    {
+      "ticker": "3004.TW",
+      "name": "National Aerospace Fasteners Corporation",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Aerospace & Defense",
+      "description": "National Aerospace Fasteners Corporation · Aerospace & Defense",
+      "change_pct": 3.9938533564707557,
+      "session_open": 67.69999694824219,
+      "session_close": 67.69999694824219,
+      "session_volume": 1292121.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:3004",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3004.TW/history/",
+        "date": "2022-09-06",
+        "daily_high": 71.4000015258789,
+        "prior_all_time_or_current_month_high": 4820.747774301756,
+        "passes_close_filter": true,
+        "yahoo_symbol": "3004.TW"
+      }
+    },
+    {
+      "ticker": "4763.TW",
+      "name": "Jinan Acetate Chemical Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Process Industries",
+      "high_type": "all_time",
+      "reason": "업종: Process Industries · Chemicals: Major Diversified",
+      "description": "Jinan Acetate Chemical Co., Ltd. · Chemicals: Major Diversified",
+      "change_pct": 2.5735262785803625,
+      "session_open": 10.3330078125,
+      "session_close": 10.445323944091797,
+      "session_volume": 38363793.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:4763",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4763.TW/history/",
+        "date": "2022-09-06",
+        "daily_high": 10.819707870483398,
+        "prior_all_time_or_current_month_high": 10.819707870483398,
+        "passes_close_filter": true,
+        "yahoo_symbol": "4763.TW"
+      }
+    },
+    {
+      "ticker": "8487.TW",
+      "name": "ELTA Technology Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Technology Services",
+      "high_type": "52_week",
+      "reason": "업종: Technology Services · Internet Software/Services",
+      "description": "ELTA Technology Co., Ltd. · Internet Software/Services",
+      "change_pct": 2.622958669181652,
+      "session_open": 26.151185989379883,
+      "session_close": 26.489713668823242,
+      "session_volume": 45777.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:8487",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/8487.TW/history/",
+        "date": "2022-09-06",
+        "daily_high": 27.209081649780273,
+        "prior_all_time_or_current_month_high": 50.097338562610695,
+        "passes_close_filter": true,
+        "yahoo_symbol": "8487.TW"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-10-29T09:42:16.113847+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 2356,
+    "history_symbols": 2003,
+    "inactive_symbols": 5,
+    "failed_symbols": 348,
+    "coverage_ratio": 0.8519778817524458,
+    "coverage_by_exchange": {
+      "TWSE": {
+        "covered": 1012,
+        "total": 1094
+      },
+      "TPEX": {
+        "covered": 991,
+        "total": 1257
+      }
+    },
+    "session_symbols": 1979,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-10-29T09:42:16.113847+00:00"
+}

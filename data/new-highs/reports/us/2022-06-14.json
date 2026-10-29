@@ -1,0 +1,122 @@
+{
+  "schema_version": 1,
+  "market": "us",
+  "date": "2022-06-14",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "CHRW",
+      "name": "C.H. Robinson Worldwide, Inc.",
+      "exchange": "NASDAQ",
+      "category": "Transportation",
+      "high_type": "all_time",
+      "reason": "업종: Transportation · Air Freight/Couriers",
+      "description": "C.H. Robinson Worldwide, Inc. · Air Freight/Couriers",
+      "change_pct": 6.010764351714792,
+      "session_open": 104.33999633789062,
+      "session_close": 106.3499984741211,
+      "session_volume": 4031200.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:CHRW",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/CHRW/history/",
+        "date": "2022-06-14",
+        "daily_high": 115.98999786376953,
+        "prior_all_time_or_current_month_high": 115.98999786376953,
+        "passes_close_filter": true,
+        "yahoo_symbol": "CHRW"
+      }
+    },
+    {
+      "ticker": "MLEC",
+      "name": "Moolec Science SA",
+      "exchange": "NASDAQ",
+      "category": "Commercial Services",
+      "high_type": "52_week",
+      "reason": "업종: Commercial Services · Miscellaneous Commercial Services",
+      "description": "Moolec Science SA · Miscellaneous Commercial Services",
+      "change_pct": 0.0,
+      "session_open": 1495.5,
+      "session_close": 1495.5,
+      "session_volume": 571.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:MLEC",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/MLEC/history/",
+        "date": "2022-06-14",
+        "daily_high": 1497.0,
+        "prior_all_time_or_current_month_high": 223425.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "MLEC"
+      }
+    },
+    {
+      "ticker": "PHVS",
+      "name": "Pharvaris N.V.",
+      "exchange": "NASDAQ",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Biotechnology",
+      "description": "Pharvaris N.V. · Biotechnology",
+      "change_pct": 1.8957327549697922,
+      "session_open": 21.100000381469727,
+      "session_close": 21.5,
+      "session_volume": 15500.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:PHVS",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/PHVS/history/",
+        "date": "2022-06-14",
+        "daily_high": 21.5,
+        "prior_all_time_or_current_month_high": 42.86000061035156,
+        "passes_close_filter": true,
+        "yahoo_symbol": "PHVS"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-10-29T09:50:57.622252+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 5711,
+    "history_symbols": 4481,
+    "inactive_symbols": 9,
+    "failed_symbols": 1221,
+    "coverage_ratio": 0.7858646089091547,
+    "coverage_by_exchange": {
+      "NASDAQ": {
+        "covered": 2472,
+        "total": 3336
+      },
+      "NYSE": {
+        "covered": 1816,
+        "total": 2104
+      },
+      "AMEX": {
+        "covered": 193,
+        "total": 262
+      }
+    },
+    "session_symbols": 4414,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-10-29T09:50:57.622252+00:00"
+}

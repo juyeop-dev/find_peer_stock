@@ -1,0 +1,282 @@
+{
+  "schema_version": 1,
+  "market": "japan",
+  "date": "2022-02-25",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "1711.T",
+      "name": "SDS HOLDINGS Co.Ltd.",
+      "exchange": "TSE",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Electrical Products",
+      "description": "SDS HOLDINGS Co.Ltd. · Electrical Products",
+      "change_pct": 6.633499170812596,
+      "session_open": 608.0,
+      "session_close": 643.0,
+      "session_volume": 225200.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:1711",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/1711.T/history/",
+        "date": "2022-02-25",
+        "daily_high": 643.0,
+        "prior_all_time_or_current_month_high": 4300.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "1711.T"
+      }
+    },
+    {
+      "ticker": "2734.T",
+      "name": "Sala Corporation",
+      "exchange": "TSE",
+      "category": "Utilities",
+      "high_type": "52_week",
+      "reason": "업종: Utilities · Gas Distributors",
+      "description": "Sala Corporation · Gas Distributors",
+      "change_pct": 0.1536098310291889,
+      "session_open": 651.0,
+      "session_close": 652.0,
+      "session_volume": 180000.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:2734",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2734.T/history/",
+        "date": "2022-02-25",
+        "daily_high": 659.0,
+        "prior_all_time_or_current_month_high": 1015.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "2734.T"
+      }
+    },
+    {
+      "ticker": "2767.T",
+      "name": "TSUBURAYA FIELDS HOLDINGS INC.",
+      "exchange": "TSE",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Industrial Conglomerates",
+      "description": "TSUBURAYA FIELDS HOLDINGS INC. · Industrial Conglomerates",
+      "change_pct": 2.8301886792452935,
+      "session_open": 322.0,
+      "session_close": 327.0,
+      "session_volume": 859200.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:2767",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2767.T/history/",
+        "date": "2022-02-25",
+        "daily_high": 340.5,
+        "prior_all_time_or_current_month_high": 561.25,
+        "passes_close_filter": true,
+        "yahoo_symbol": "2767.T"
+      }
+    },
+    {
+      "ticker": "3943.T",
+      "name": "Ohishi Sangyo Co., Ltd.",
+      "exchange": "TSE",
+      "category": "Process Industries",
+      "high_type": "all_time",
+      "reason": "업종: Process Industries · Containers/Packaging",
+      "description": "Ohishi Sangyo Co., Ltd. · Containers/Packaging",
+      "change_pct": 0.0,
+      "session_open": 880.5,
+      "session_close": 899.0,
+      "session_volume": 4600.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:3943",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3943.T/history/",
+        "date": "2022-02-25",
+        "daily_high": 910.0,
+        "prior_all_time_or_current_month_high": 910.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "3943.T"
+      }
+    },
+    {
+      "ticker": "4270.T",
+      "name": "BeeX Inc.",
+      "exchange": "TSE",
+      "category": "Technology Services",
+      "high_type": "all_time",
+      "reason": "업종: Technology Services · Packaged Software",
+      "description": "BeeX Inc. · Packaged Software",
+      "change_pct": 16.847172081829132,
+      "session_open": 4855.0,
+      "session_close": 4855.0,
+      "session_volume": 159800.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:4270",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4270.T/history/",
+        "date": "2022-02-25",
+        "daily_high": 4855.0,
+        "prior_all_time_or_current_month_high": 4855.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "4270.T"
+      }
+    },
+    {
+      "ticker": "5491.T",
+      "name": "Nippon Kinzoku Co., Ltd.",
+      "exchange": "TSE",
+      "category": "Non-Energy Minerals",
+      "high_type": "52_week",
+      "reason": "업종: Non-Energy Minerals · Steel",
+      "description": "Nippon Kinzoku Co., Ltd. · Steel",
+      "change_pct": 8.237822349570202,
+      "session_open": 1415.0,
+      "session_close": 1511.0,
+      "session_volume": 698500.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:5491",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/5491.T/history/",
+        "date": "2022-02-25",
+        "daily_high": 1519.0,
+        "prior_all_time_or_current_month_high": 65200.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "5491.T"
+      }
+    },
+    {
+      "ticker": "5726.T",
+      "name": "OSAKA Titanium Technologies Co., Ltd.",
+      "exchange": "TSE",
+      "category": "Non-Energy Minerals",
+      "high_type": "52_week",
+      "reason": "업종: Non-Energy Minerals · Other Metals/Minerals",
+      "description": "OSAKA Titanium Technologies Co., Ltd. · Other Metals/Minerals",
+      "change_pct": 1.724137931034475,
+      "session_open": 999.0,
+      "session_close": 1062.0,
+      "session_volume": 2810400.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:5726",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/5726.T/history/",
+        "date": "2022-02-25",
+        "daily_high": 1109.0,
+        "prior_all_time_or_current_month_high": 15060.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "5726.T"
+      }
+    },
+    {
+      "ticker": "5998.T",
+      "name": "Advanex Inc.",
+      "exchange": "TSE",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Metal Fabrication",
+      "description": "Advanex Inc. · Metal Fabrication",
+      "change_pct": 1.9512195121951237,
+      "session_open": 1640.0,
+      "session_close": 1672.0,
+      "session_volume": 9900.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:5998",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/5998.T/history/",
+        "date": "2022-02-25",
+        "daily_high": 1680.0,
+        "prior_all_time_or_current_month_high": 72300.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "5998.T"
+      }
+    },
+    {
+      "ticker": "8278.T",
+      "name": "Fuji Co., Ltd.",
+      "exchange": "TSE",
+      "category": "Retail Trade",
+      "high_type": "52_week",
+      "reason": "업종: Retail Trade · Food Retail",
+      "description": "Fuji Co., Ltd. · Food Retail",
+      "change_pct": 3.0444126074498534,
+      "session_open": 2730.0,
+      "session_close": 2877.0,
+      "session_volume": 1896500.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:8278",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/8278.T/history/",
+        "date": "2022-02-25",
+        "daily_high": 3035.0,
+        "prior_all_time_or_current_month_high": 3235.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "8278.T"
+      }
+    },
+    {
+      "ticker": "9850.T",
+      "name": "GOURMET KINEYA CO., LTD.",
+      "exchange": "TSE",
+      "category": "Consumer Services",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Services · Restaurants",
+      "description": "GOURMET KINEYA CO., LTD. · Restaurants",
+      "change_pct": 1.6472868217054293,
+      "session_open": 1039.0,
+      "session_close": 1049.0,
+      "session_volume": 54300.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:9850",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/9850.T/history/",
+        "date": "2022-02-25",
+        "daily_high": 1049.0,
+        "prior_all_time_or_current_month_high": 1350.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "9850.T"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-10-29T09:43:19.189722+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 3759,
+    "history_symbols": 3491,
+    "inactive_symbols": 0,
+    "failed_symbols": 268,
+    "coverage_ratio": 0.9287044426709231,
+    "coverage_by_exchange": {
+      "TSE": {
+        "covered": 3491,
+        "total": 3759
+      }
+    },
+    "session_symbols": 3400,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-10-29T09:43:19.189722+00:00"
+}

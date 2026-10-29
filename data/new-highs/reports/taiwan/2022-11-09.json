@@ -1,0 +1,262 @@
+{
+  "schema_version": 1,
+  "market": "taiwan",
+  "date": "2022-11-09",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "2071.TWO",
+      "name": "Chen Nan Iron Wire Co. Ltd.",
+      "exchange": "TPEX",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Miscellaneous Manufacturing",
+      "description": "Chen Nan Iron Wire Co. Ltd. · Miscellaneous Manufacturing",
+      "change_pct": 3.174602796661996,
+      "session_open": 16.021209716796875,
+      "session_close": 16.52981948852539,
+      "session_volume": 130094.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:2071",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2071.TWO/history/",
+        "date": "2022-11-09",
+        "daily_high": 16.52981948852539,
+        "prior_all_time_or_current_month_high": 16.52981948852539,
+        "passes_close_filter": true,
+        "yahoo_symbol": "2071.TWO"
+      }
+    },
+    {
+      "ticker": "3128.TWO",
+      "name": "Hi Sharp Electronics Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Computer Communications",
+      "description": "Hi Sharp Electronics Co., Ltd. · Computer Communications",
+      "change_pct": 4.334825176791868,
+      "session_open": 28.92750358581543,
+      "session_close": 30.002077102661133,
+      "session_volume": 29497763.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:3128",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3128.TWO/history/",
+        "date": "2022-11-09",
+        "daily_high": 31.592445373535156,
+        "prior_all_time_or_current_month_high": 31.592445373535156,
+        "passes_close_filter": true,
+        "yahoo_symbol": "3128.TWO"
+      }
+    },
+    {
+      "ticker": "5015.TWO",
+      "name": "Rodex Fasteners Corp.",
+      "exchange": "TPEX",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Metal Fabrication",
+      "description": "Rodex Fasteners Corp. · Metal Fabrication",
+      "change_pct": 3.3426097416100475,
+      "session_open": 73.69999694824219,
+      "session_close": 74.19999694824219,
+      "session_volume": 1126000.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:5015",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/5015.TWO/history/",
+        "date": "2022-11-09",
+        "daily_high": 74.80000305175781,
+        "prior_all_time_or_current_month_high": 74.80000305175781,
+        "passes_close_filter": true,
+        "yahoo_symbol": "5015.TWO"
+      }
+    },
+    {
+      "ticker": "5246.TWO",
+      "name": "ProbeLeader Co Ltd",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Semiconductors",
+      "description": "ProbeLeader Co Ltd · Semiconductors",
+      "change_pct": 9.982793810814394,
+      "session_open": 30.100000381469727,
+      "session_close": 31.950000762939453,
+      "session_volume": 232489.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:5246",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/5246.TWO/history/",
+        "date": "2022-11-09",
+        "daily_high": 34.099998474121094,
+        "prior_all_time_or_current_month_high": 34.099998474121094,
+        "passes_close_filter": true,
+        "yahoo_symbol": "5246.TWO"
+      }
+    },
+    {
+      "ticker": "2542.TW",
+      "name": "Highwealth Construction Corp.",
+      "exchange": "TWSE",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "업종: Finance · Real Estate Development",
+      "description": "Highwealth Construction Corp. · Real Estate Development",
+      "change_pct": 0.8353224717661201,
+      "session_open": 33.018497467041016,
+      "session_close": 33.25462341308594,
+      "session_volume": 6535083.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2542",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2542.TW/history/",
+        "date": "2022-11-09",
+        "daily_high": 33.33333206176758,
+        "prior_all_time_or_current_month_high": 33.33333206176758,
+        "passes_close_filter": true,
+        "yahoo_symbol": "2542.TW"
+      }
+    },
+    {
+      "ticker": "3356.TW",
+      "name": "GeoVision, Inc.",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Computer Communications",
+      "description": "GeoVision, Inc. · Computer Communications",
+      "change_pct": 9.988245288217268,
+      "session_open": 56.964107513427734,
+      "session_close": 61.782623291015625,
+      "session_volume": 11210385.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:3356",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3356.TW/history/",
+        "date": "2022-11-09",
+        "daily_high": 61.782623291015625,
+        "prior_all_time_or_current_month_high": 188.24883383964567,
+        "passes_close_filter": true,
+        "yahoo_symbol": "3356.TW"
+      }
+    },
+    {
+      "ticker": "3617.TW",
+      "name": "CyberPower Systems, Inc.",
+      "exchange": "TWSE",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Electrical Products",
+      "description": "CyberPower Systems, Inc. · Electrical Products",
+      "change_pct": 9.803915254797712,
+      "session_open": 99.04762268066406,
+      "session_close": 106.66666412353516,
+      "session_volume": 2085893.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:3617",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3617.TW/history/",
+        "date": "2022-11-09",
+        "daily_high": 106.66666412353516,
+        "prior_all_time_or_current_month_high": 141.95011683872767,
+        "passes_close_filter": true,
+        "yahoo_symbol": "3617.TW"
+      }
+    },
+    {
+      "ticker": "6464.TW",
+      "name": "Taiwan Optical Platform Co Ltd",
+      "exchange": "TWSE",
+      "category": "Consumer Services",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Services · Cable/Satellite TV",
+      "description": "Taiwan Optical Platform Co Ltd · Cable/Satellite TV",
+      "change_pct": 5.049394662478401,
+      "session_open": 88.20648956298828,
+      "session_close": 89.32656860351562,
+      "session_volume": 85311.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:6464",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6464.TW/history/",
+        "date": "2022-11-09",
+        "daily_high": 91.47339630126953,
+        "prior_all_time_or_current_month_high": 115.8939782356295,
+        "passes_close_filter": true,
+        "yahoo_symbol": "6464.TW"
+      }
+    },
+    {
+      "ticker": "9945.TW",
+      "name": "Ruentex Development Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Consumer Durables",
+      "high_type": "all_time",
+      "reason": "업종: Consumer Durables · Homebuilding",
+      "description": "Ruentex Development Co., Ltd. · Homebuilding",
+      "change_pct": 0.34521912208935746,
+      "session_open": 48.27777862548828,
+      "session_close": 48.44444274902344,
+      "session_volume": 10601105.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:9945",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/9945.TW/history/",
+        "date": "2022-11-09",
+        "daily_high": 49.77777862548828,
+        "prior_all_time_or_current_month_high": 49.77777862548828,
+        "passes_close_filter": true,
+        "yahoo_symbol": "9945.TW"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-10-29T09:42:16.113847+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 2356,
+    "history_symbols": 2003,
+    "inactive_symbols": 5,
+    "failed_symbols": 348,
+    "coverage_ratio": 0.8519778817524458,
+    "coverage_by_exchange": {
+      "TWSE": {
+        "covered": 1012,
+        "total": 1094
+      },
+      "TPEX": {
+        "covered": 991,
+        "total": 1257
+      }
+    },
+    "session_symbols": 1995,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-10-29T09:42:16.113847+00:00"
+}

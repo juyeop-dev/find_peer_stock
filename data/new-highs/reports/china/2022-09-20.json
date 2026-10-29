@@ -1,0 +1,286 @@
+{
+  "schema_version": 1,
+  "market": "china",
+  "date": "2022-09-20",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "603100.SS",
+      "name": "Chongqing Chuanyi Automation Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Electronic Equipment/Instruments",
+      "description": "Chongqing Chuanyi Automation Co., Ltd. Class A · Electronic Equipment/Instruments",
+      "change_pct": 9.986057839810503,
+      "session_open": 16.923076629638672,
+      "session_close": 18.215383529663086,
+      "session_volume": 13166944.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:603100",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/603100.SS/history/",
+        "date": "2022-09-20",
+        "daily_high": 18.215383529663086,
+        "prior_all_time_or_current_month_high": 22.633135868952824,
+        "passes_close_filter": true,
+        "yahoo_symbol": "603100.SS"
+      }
+    },
+    {
+      "ticker": "688335.SS",
+      "name": "Shanghai CEO Technology Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Industrial Machinery",
+      "description": "Shanghai CEO Technology Co., Ltd. Class A · Industrial Machinery",
+      "change_pct": 41.57121867010905,
+      "session_open": 13.793103218078613,
+      "session_close": 13.848275184631348,
+      "session_volume": 361451.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:688335",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/688335.SS/history/",
+        "date": "2022-09-20",
+        "daily_high": 13.958620071411133,
+        "prior_all_time_or_current_month_high": 19.01769027334129,
+        "passes_close_filter": true,
+        "yahoo_symbol": "688335.SS"
+      }
+    },
+    {
+      "ticker": "900943.SS",
+      "name": "Shanghai Kaikai Industrial Co., Ltd. Class B",
+      "exchange": "SSE",
+      "category": "Consumer Non-Durables",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Non-Durables · Apparel/Footwear",
+      "description": "Shanghai Kaikai Industrial Co., Ltd. Class B · Apparel/Footwear",
+      "change_pct": 6.713778909306578,
+      "session_open": 0.5820000171661377,
+      "session_close": 0.6039999723434448,
+      "session_volume": 2591621.0,
+      "currency": "USD",
+      "source_symbol": "SSE:900943",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/900943.SS/history/",
+        "date": "2022-09-20",
+        "daily_high": 0.6200000047683716,
+        "prior_all_time_or_current_month_high": 1.9589999914169312,
+        "passes_close_filter": true,
+        "yahoo_symbol": "900943.SS"
+      }
+    },
+    {
+      "ticker": "000929.SZ",
+      "name": "Lanzhou Huanghe Enterprise Co., Ltd Class A",
+      "exchange": "SZSE",
+      "category": "Consumer Non-Durables",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Non-Durables · Beverages: Alcoholic",
+      "description": "Lanzhou Huanghe Enterprise Co., Ltd Class A · Beverages: Alcoholic",
+      "change_pct": 3.0602118700912895,
+      "session_open": 10.130000114440918,
+      "session_close": 10.4399995803833,
+      "session_volume": 43694748.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:000929",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/000929.SZ/history/",
+        "date": "2022-09-20",
+        "daily_high": 11.119999885559082,
+        "prior_all_time_or_current_month_high": 26.649999618530273,
+        "passes_close_filter": true,
+        "yahoo_symbol": "000929.SZ"
+      }
+    },
+    {
+      "ticker": "001206.SZ",
+      "name": "Tianjin Yiyi Hygiene Products Co.,Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Consumer Non-Durables",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Non-Durables · Household/Personal Care",
+      "description": "Tianjin Yiyi Hygiene Products Co.,Ltd. Class A · Household/Personal Care",
+      "change_pct": 4.6153826591295966,
+      "session_open": 19.78571319580078,
+      "session_close": 20.399999618530273,
+      "session_volume": 3346812.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:001206",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/001206.SZ/history/",
+        "date": "2022-09-20",
+        "daily_high": 20.921428680419922,
+        "prior_all_time_or_current_month_high": 30.143689136115874,
+        "passes_close_filter": true,
+        "yahoo_symbol": "001206.SZ"
+      }
+    },
+    {
+      "ticker": "001238.SZ",
+      "name": "Zhejiang Zhengte Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Consumer Durables",
+      "high_type": "all_time",
+      "reason": "업종: Consumer Durables · Home Furnishings",
+      "description": "Zhejiang Zhengte Co., Ltd. Class A · Home Furnishings",
+      "change_pct": 9.995683168609704,
+      "session_open": 18.157142639160156,
+      "session_close": 18.157142639160156,
+      "session_volume": 294911.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:001238",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/001238.SZ/history/",
+        "date": "2022-09-20",
+        "daily_high": 18.157142639160156,
+        "prior_all_time_or_current_month_high": 18.157142639160156,
+        "passes_close_filter": true,
+        "yahoo_symbol": "001238.SZ"
+      }
+    },
+    {
+      "ticker": "001332.SZ",
+      "name": "Wuxi Chemical Equipment Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Industrial Machinery",
+      "description": "Wuxi Chemical Equipment Co., Ltd. Class A · Industrial Machinery",
+      "change_pct": 0.0,
+      "session_open": 38.03174591064453,
+      "session_close": 39.010581970214844,
+      "session_volume": 17024322.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:001332",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/001332.SZ/history/",
+        "date": "2022-09-20",
+        "daily_high": 45.64020919799805,
+        "prior_all_time_or_current_month_high": 45.64020919799805,
+        "passes_close_filter": true,
+        "yahoo_symbol": "001332.SZ"
+      }
+    },
+    {
+      "ticker": "002685.SZ",
+      "name": "Wuxi Huadong Heavy Machinery Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Metal Fabrication",
+      "description": "Wuxi Huadong Heavy Machinery Co., Ltd. Class A · Metal Fabrication",
+      "change_pct": 9.959344786987545,
+      "session_open": 5.0,
+      "session_close": 5.409999847412109,
+      "session_volume": 172371378.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002685",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002685.SZ/history/",
+        "date": "2022-09-20",
+        "daily_high": 5.409999847412109,
+        "prior_all_time_or_current_month_high": 24.200000762939453,
+        "passes_close_filter": true,
+        "yahoo_symbol": "002685.SZ"
+      }
+    },
+    {
+      "ticker": "002700.SZ",
+      "name": "Xinjiang Wanjing Energy Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Industrial Services",
+      "high_type": "52_week",
+      "reason": "업종: Industrial Services · Oil & Gas Pipelines",
+      "description": "Xinjiang Wanjing Energy Co., Ltd. Class A · Oil & Gas Pipelines",
+      "change_pct": 4.963234891296464,
+      "session_open": 5.449999809265137,
+      "session_close": 5.710000038146973,
+      "session_volume": 3921900.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002700",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002700.SZ/history/",
+        "date": "2022-09-20",
+        "daily_high": 5.710000038146973,
+        "prior_all_time_or_current_month_high": 21.899999618530273,
+        "passes_close_filter": true,
+        "yahoo_symbol": "002700.SZ"
+      }
+    },
+    {
+      "ticker": "002905.SZ",
+      "name": "Guangzhou Jinyi Media Corp. Class A",
+      "exchange": "SZSE",
+      "category": "Consumer Services",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Services · Movies/Entertainment",
+      "description": "Guangzhou Jinyi Media Corp. Class A · Movies/Entertainment",
+      "change_pct": 10.010999253427254,
+      "session_open": 9.359999656677246,
+      "session_close": 10.0,
+      "session_volume": 50143023.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002905",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002905.SZ/history/",
+        "date": "2022-09-20",
+        "daily_high": 10.0,
+        "prior_all_time_or_current_month_high": 21.214286259242467,
+        "passes_close_filter": true,
+        "yahoo_symbol": "002905.SZ"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-10-29T09:46:43.953004+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 5312,
+    "history_symbols": 4828,
+    "inactive_symbols": 0,
+    "failed_symbols": 484,
+    "coverage_ratio": 0.9088855421686747,
+    "coverage_by_exchange": {
+      "SSE": {
+        "covered": 2148,
+        "total": 2358
+      },
+      "SZSE": {
+        "covered": 2680,
+        "total": 2954
+      }
+    },
+    "session_symbols": 4732,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-10-29T09:46:43.953004+00:00"
+}

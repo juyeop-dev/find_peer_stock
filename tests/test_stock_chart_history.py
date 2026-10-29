@@ -13,7 +13,7 @@ import stock_chart_history as charts
 
 
 class StockChartHistoryTests(unittest.TestCase):
-    def test_provider_omissions_preserve_original_observations_without_mixing_price_conventions(self):
+    def test_provider_omissions_and_revisions_preserve_original_observations_without_mixing_price_conventions(self):
         db = sqlite3.connect(":memory:")
         db.execute("CREATE TABLE history(ticker TEXT PRIMARY KEY,value TEXT NOT NULL)")
         old = {"ticker":"TEST","currency":"USD","source":"original","fetched_at":"2026-10-26T00:00:00Z",
@@ -24,7 +24,7 @@ class StockChartHistoryTests(unittest.TestCase):
         charts.save_candidate(db,fresh)
         value=json.loads(db.execute("SELECT value FROM history").fetchone()[0])
         self.assertEqual(value["prices"],fresh["prices"])
-        self.assertEqual(value["prior_snapshots"][0]["prices"],[["2025-01-02",11,10]])
+        self.assertEqual(value["prior_snapshots"][0]["prices"],old["prices"])
         self.assertEqual(value["prior_snapshots"][0]["source"],"original")
         charts.save_candidate(db,fresh)
         value=json.loads(db.execute("SELECT value FROM history").fetchone()[0])

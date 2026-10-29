@@ -1,0 +1,314 @@
+{
+  "schema_version": 1,
+  "market": "us",
+  "date": "2022-09-16",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "ANIX",
+      "name": "Anixa Biosciences, Inc.",
+      "exchange": "NASDAQ",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Biotechnology",
+      "description": "Anixa Biosciences, Inc. · Biotechnology",
+      "change_pct": 27.455357451714125,
+      "session_open": 4.480000019073486,
+      "session_close": 5.710000038146973,
+      "session_volume": 598000.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:ANIX",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/ANIX/history/",
+        "date": "2022-09-16",
+        "daily_high": 5.710000038146973,
+        "prior_all_time_or_current_month_high": 5546.875,
+        "passes_close_filter": true,
+        "yahoo_symbol": "ANIX"
+      }
+    },
+    {
+      "ticker": "BSEM",
+      "name": "BioStem Technologies, Inc.",
+      "exchange": "NASDAQ",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Biotechnology",
+      "description": "BioStem Technologies, Inc. · Biotechnology",
+      "change_pct": 26.98412313963503,
+      "session_open": 3.1500000953674316,
+      "session_close": 4.0,
+      "session_volume": 2900.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:BSEM",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/BSEM/history/",
+        "date": "2022-09-16",
+        "daily_high": 4.340000152587891,
+        "prior_all_time_or_current_month_high": 23.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "BSEM"
+      }
+    },
+    {
+      "ticker": "ECBK",
+      "name": "ECB Bancorp, Inc.",
+      "exchange": "NASDAQ",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "업종: Finance · Regional Banks",
+      "description": "ECB Bancorp, Inc. · Regional Banks",
+      "change_pct": 0.8333391834189907,
+      "session_open": 14.279999732971191,
+      "session_close": 14.520000457763672,
+      "session_volume": 510400.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:ECBK",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/ECBK/history/",
+        "date": "2022-09-16",
+        "daily_high": 14.529999732971191,
+        "prior_all_time_or_current_month_high": 14.529999732971191,
+        "passes_close_filter": true,
+        "yahoo_symbol": "ECBK"
+      }
+    },
+    {
+      "ticker": "ENGN",
+      "name": "enGene Therapeutics Inc.",
+      "exchange": "NASDAQ",
+      "category": "Commercial Services",
+      "high_type": "all_time",
+      "reason": "업종: Commercial Services · Miscellaneous Commercial Services",
+      "description": "enGene Therapeutics Inc. · Miscellaneous Commercial Services",
+      "change_pct": 0.09920862061036928,
+      "session_open": 10.09000015258789,
+      "session_close": 10.09000015258789,
+      "session_volume": 3400.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:ENGN",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/ENGN/history/",
+        "date": "2022-09-16",
+        "daily_high": 10.09000015258789,
+        "prior_all_time_or_current_month_high": 10.09000015258789,
+        "passes_close_filter": true,
+        "yahoo_symbol": "ENGN"
+      }
+    },
+    {
+      "ticker": "MGYR",
+      "name": "Magyar Bancorp Inc",
+      "exchange": "NASDAQ",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "업종: Finance · Savings Banks",
+      "description": "Magyar Bancorp Inc · Savings Banks",
+      "change_pct": 0.5409632980564627,
+      "session_open": 12.75,
+      "session_close": 13.010000228881836,
+      "session_volume": 108300.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:MGYR",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/MGYR/history/",
+        "date": "2022-09-16",
+        "daily_high": 13.229999542236328,
+        "prior_all_time_or_current_month_high": 13.229999542236328,
+        "passes_close_filter": true,
+        "yahoo_symbol": "MGYR"
+      }
+    },
+    {
+      "ticker": "PBHC",
+      "name": "Pathfinder Bancorp, Inc.",
+      "exchange": "NASDAQ",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "업종: Finance · Regional Banks",
+      "description": "Pathfinder Bancorp, Inc. · Regional Banks",
+      "change_pct": 7.320644298465706,
+      "session_open": 20.25,
+      "session_close": 21.989999771118164,
+      "session_volume": 24100.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:PBHC",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/PBHC/history/",
+        "date": "2022-09-16",
+        "daily_high": 21.989999771118164,
+        "prior_all_time_or_current_month_high": 21.989999771118164,
+        "passes_close_filter": true,
+        "yahoo_symbol": "PBHC"
+      }
+    },
+    {
+      "ticker": "SCLX",
+      "name": "Scilex Holding Company",
+      "exchange": "NASDAQ",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Pharmaceuticals: Other",
+      "description": "Scilex Holding Company · Pharmaceuticals: Other",
+      "change_pct": 0.09670881262271447,
+      "session_open": 225.56039428710938,
+      "session_close": 225.56039428710938,
+      "session_volume": 473.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:SCLX",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/SCLX/history/",
+        "date": "2022-09-16",
+        "daily_high": 225.56039428710938,
+        "prior_all_time_or_current_month_high": 5086.680658133805,
+        "passes_close_filter": true,
+        "yahoo_symbol": "SCLX"
+      }
+    },
+    {
+      "ticker": "CRBG",
+      "name": "Corebridge Financial, Inc.",
+      "exchange": "NYSE",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "업종: Finance · Life/Health Insurance",
+      "description": "Corebridge Financial, Inc. · Life/Health Insurance",
+      "change_pct": 0.0,
+      "session_open": 20.559999465942383,
+      "session_close": 20.719999313354492,
+      "session_volume": 4981700.0,
+      "currency": "USD",
+      "source_symbol": "NYSE:CRBG",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/CRBG/history/",
+        "date": "2022-09-16",
+        "daily_high": 20.809999465942383,
+        "prior_all_time_or_current_month_high": 20.809999465942383,
+        "passes_close_filter": true,
+        "yahoo_symbol": "CRBG"
+      }
+    },
+    {
+      "ticker": "EVEX",
+      "name": "Eve Holding, Inc.",
+      "exchange": "NYSE",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Aerospace & Defense",
+      "description": "Eve Holding, Inc. · Aerospace & Defense",
+      "change_pct": 4.42145119443893,
+      "session_open": 10.210000038146973,
+      "session_close": 11.100000381469727,
+      "session_volume": 324900.0,
+      "currency": "USD",
+      "source_symbol": "NYSE:EVEX",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/EVEX/history/",
+        "date": "2022-09-16",
+        "daily_high": 12.0,
+        "prior_all_time_or_current_month_high": 12.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "EVEX"
+      }
+    },
+    {
+      "ticker": "LUCK",
+      "name": "Lucky Strike Entertainment Corporation Class A",
+      "exchange": "NYSE",
+      "category": "Consumer Services",
+      "high_type": "all_time",
+      "reason": "업종: Consumer Services · Movies/Entertainment",
+      "description": "Lucky Strike Entertainment Corporation Class A · Movies/Entertainment",
+      "change_pct": 7.526025230450939,
+      "session_open": 12.75,
+      "session_close": 13.430000305175781,
+      "session_volume": 3816200.0,
+      "currency": "USD",
+      "source_symbol": "NYSE:LUCK",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/LUCK/history/",
+        "date": "2022-09-16",
+        "daily_high": 13.800000190734863,
+        "prior_all_time_or_current_month_high": 13.800000190734863,
+        "passes_close_filter": true,
+        "yahoo_symbol": "LUCK"
+      }
+    },
+    {
+      "ticker": "LVWR",
+      "name": "LiveWire Group, Inc.",
+      "exchange": "NYSE",
+      "category": "Consumer Durables",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Durables · Recreational Products",
+      "description": "LiveWire Group, Inc. · Recreational Products",
+      "change_pct": 4.423861519428818,
+      "session_open": 9.779999732971191,
+      "session_close": 10.149999618530273,
+      "session_volume": 249900.0,
+      "currency": "USD",
+      "source_symbol": "NYSE:LVWR",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/LVWR/history/",
+        "date": "2022-09-16",
+        "daily_high": 10.390000343322754,
+        "prior_all_time_or_current_month_high": 11.420000076293945,
+        "passes_close_filter": true,
+        "yahoo_symbol": "LVWR"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-10-29T09:50:57.622252+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 5711,
+    "history_symbols": 4481,
+    "inactive_symbols": 9,
+    "failed_symbols": 1221,
+    "coverage_ratio": 0.7858646089091547,
+    "coverage_by_exchange": {
+      "NASDAQ": {
+        "covered": 2472,
+        "total": 3336
+      },
+      "NYSE": {
+        "covered": 1816,
+        "total": 2104
+      },
+      "AMEX": {
+        "covered": 193,
+        "total": 262
+      }
+    },
+    "session_symbols": 4450,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-10-29T09:50:57.622252+00:00"
+}

@@ -1,0 +1,358 @@
+{
+  "schema_version": 1,
+  "market": "taiwan",
+  "date": "2022-05-26",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "3466.TWO",
+      "name": "Skardin Industrial Corporation",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Telecommunications Equipment",
+      "description": "Skardin Industrial Corporation · Telecommunications Equipment",
+      "change_pct": 7.954547014446645,
+      "session_open": 27.0,
+      "session_close": 28.5,
+      "session_volume": 2583000.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:3466",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3466.TWO/history/",
+        "date": "2022-05-26",
+        "daily_high": 28.950000762939453,
+        "prior_all_time_or_current_month_high": 64.9000015258789,
+        "passes_close_filter": true,
+        "yahoo_symbol": "3466.TWO"
+      }
+    },
+    {
+      "ticker": "6616.TWO",
+      "name": "Techcential International Ltd.",
+      "exchange": "TPEX",
+      "category": "Consumer Durables",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Durables · Home Furnishings",
+      "description": "Techcential International Ltd. · Home Furnishings",
+      "change_pct": 9.999997609672784,
+      "session_open": 24.5015926361084,
+      "session_close": 26.332170486450195,
+      "session_volume": 5964261.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:6616",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6616.TWO/history/",
+        "date": "2022-05-26",
+        "daily_high": 26.332170486450195,
+        "prior_all_time_or_current_month_high": 36.24576023646763,
+        "passes_close_filter": true,
+        "yahoo_symbol": "6616.TWO"
+      }
+    },
+    {
+      "ticker": "6664.TWO",
+      "name": "Group Up Industrial Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Electronic Production Equipment",
+      "description": "Group Up Industrial Co., Ltd. · Electronic Production Equipment",
+      "change_pct": 3.147953729204689,
+      "session_open": 95.0,
+      "session_close": 98.30000305175781,
+      "session_volume": 1167000.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:6664",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6664.TWO/history/",
+        "date": "2022-05-26",
+        "daily_high": 103.5,
+        "prior_all_time_or_current_month_high": 103.5,
+        "passes_close_filter": true,
+        "yahoo_symbol": "6664.TWO"
+      }
+    },
+    {
+      "ticker": "8097.TWO",
+      "name": "ATW Technology Incorporated",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Telecommunications Equipment",
+      "description": "ATW Technology Incorporated · Telecommunications Equipment",
+      "change_pct": 9.247652262773066,
+      "session_open": 61.831844329833984,
+      "session_close": 66.09938049316406,
+      "session_volume": 2706831.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:8097",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/8097.TWO/history/",
+        "date": "2022-05-26",
+        "daily_high": 66.47871398925781,
+        "prior_all_time_or_current_month_high": 250.92678501547724,
+        "passes_close_filter": true,
+        "yahoo_symbol": "8097.TWO"
+      }
+    },
+    {
+      "ticker": "9949.TWO",
+      "name": "Tittot Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Consumer Durables",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Durables · Home Furnishings",
+      "description": "Tittot Co., Ltd. · Home Furnishings",
+      "change_pct": 0.8823506972369,
+      "session_open": 17.0,
+      "session_close": 17.149999618530273,
+      "session_volume": 38000.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:9949",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/9949.TWO/history/",
+        "date": "2022-05-26",
+        "daily_high": 17.5,
+        "prior_all_time_or_current_month_high": 42.84017701161272,
+        "passes_close_filter": true,
+        "yahoo_symbol": "9949.TWO"
+      }
+    },
+    {
+      "ticker": "1522.TW",
+      "name": "TYC Brother Industrial Co, Ltd.",
+      "exchange": "TWSE",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Auto Parts: OEM",
+      "description": "TYC Brother Industrial Co, Ltd. · Auto Parts: OEM",
+      "change_pct": 5.283017428416126,
+      "session_open": 26.5,
+      "session_close": 27.899999618530273,
+      "session_volume": 54252805.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:1522",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/1522.TW/history/",
+        "date": "2022-05-26",
+        "daily_high": 28.649999618530273,
+        "prior_all_time_or_current_month_high": 39.400001525878906,
+        "passes_close_filter": true,
+        "yahoo_symbol": "1522.TW"
+      }
+    },
+    {
+      "ticker": "1539.TW",
+      "name": "Chiu Ting Machinery Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Industrial Machinery",
+      "description": "Chiu Ting Machinery Co., Ltd. · Industrial Machinery",
+      "change_pct": 9.944754331033812,
+      "session_open": 26.850000381469727,
+      "session_close": 29.850000381469727,
+      "session_volume": 20653217.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:1539",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/1539.TW/history/",
+        "date": "2022-05-26",
+        "daily_high": 29.850000381469727,
+        "prior_all_time_or_current_month_high": 45.54999923706055,
+        "passes_close_filter": true,
+        "yahoo_symbol": "1539.TW"
+      }
+    },
+    {
+      "ticker": "1560.TW",
+      "name": "Kinik Co.",
+      "exchange": "TWSE",
+      "category": "Process Industries",
+      "high_type": "all_time",
+      "reason": "업종: Process Industries · Industrial Specialties",
+      "description": "Kinik Co. · Industrial Specialties",
+      "change_pct": 1.831501831501825,
+      "session_open": 139.0,
+      "session_close": 139.0,
+      "session_volume": 45119110.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:1560",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/1560.TW/history/",
+        "date": "2022-05-26",
+        "daily_high": 146.5,
+        "prior_all_time_or_current_month_high": 146.5,
+        "passes_close_filter": true,
+        "yahoo_symbol": "1560.TW"
+      }
+    },
+    {
+      "ticker": "2206.TW",
+      "name": "Sanyang Motor Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Consumer Durables",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Durables · Motor Vehicles",
+      "description": "Sanyang Motor Co., Ltd. · Motor Vehicles",
+      "change_pct": 3.0100322074001262,
+      "session_open": 30.0,
+      "session_close": 30.799999237060547,
+      "session_volume": 9184483.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2206",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2206.TW/history/",
+        "date": "2022-05-26",
+        "daily_high": 31.75,
+        "prior_all_time_or_current_month_high": 63.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "2206.TW"
+      }
+    },
+    {
+      "ticker": "3535.TW",
+      "name": "Favite, Inc.",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Semiconductors",
+      "description": "Favite, Inc. · Semiconductors",
+      "change_pct": 4.823144933287882,
+      "session_open": 31.5,
+      "session_close": 32.599998474121094,
+      "session_volume": 4657645.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:3535",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3535.TW/history/",
+        "date": "2022-05-26",
+        "daily_high": 32.900001525878906,
+        "prior_all_time_or_current_month_high": 46.613077598043006,
+        "passes_close_filter": true,
+        "yahoo_symbol": "3535.TW"
+      }
+    },
+    {
+      "ticker": "4958.TW",
+      "name": "Zhen Ding Technology Holding Limited",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Electronic Components",
+      "description": "Zhen Ding Technology Holding Limited · Electronic Components",
+      "change_pct": 2.212389380530966,
+      "session_open": 113.5,
+      "session_close": 115.5,
+      "session_volume": 15233071.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:4958",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4958.TW/history/",
+        "date": "2022-05-26",
+        "daily_high": 117.0,
+        "prior_all_time_or_current_month_high": 155.5,
+        "passes_close_filter": true,
+        "yahoo_symbol": "4958.TW"
+      }
+    },
+    {
+      "ticker": "6184.TW",
+      "name": "Dafeng TV Ltd.",
+      "exchange": "TWSE",
+      "category": "Consumer Services",
+      "high_type": "all_time",
+      "reason": "업종: Consumer Services · Cable/Satellite TV",
+      "description": "Dafeng TV Ltd. · Cable/Satellite TV",
+      "change_pct": 0.9473700272409458,
+      "session_open": 47.79999923706055,
+      "session_close": 47.95000076293945,
+      "session_volume": 140025.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:6184",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6184.TW/history/",
+        "date": "2022-05-26",
+        "daily_high": 48.099998474121094,
+        "prior_all_time_or_current_month_high": 48.099998474121094,
+        "passes_close_filter": true,
+        "yahoo_symbol": "6184.TW"
+      }
+    },
+    {
+      "ticker": "6605.TW",
+      "name": "Depo Auto Parts Industrial Co. Ltd.",
+      "exchange": "TWSE",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Auto Parts: OEM",
+      "description": "Depo Auto Parts Industrial Co. Ltd. · Auto Parts: OEM",
+      "change_pct": 0.8823506972369,
+      "session_open": 68.4000015258789,
+      "session_close": 68.5999984741211,
+      "session_volume": 5904500.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:6605",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6605.TW/history/",
+        "date": "2022-05-26",
+        "daily_high": 70.69999694824219,
+        "prior_all_time_or_current_month_high": 147.5,
+        "passes_close_filter": true,
+        "yahoo_symbol": "6605.TW"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-10-29T09:42:16.113847+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 2356,
+    "history_symbols": 2003,
+    "inactive_symbols": 5,
+    "failed_symbols": 348,
+    "coverage_ratio": 0.8519778817524458,
+    "coverage_by_exchange": {
+      "TWSE": {
+        "covered": 1012,
+        "total": 1094
+      },
+      "TPEX": {
+        "covered": 991,
+        "total": 1257
+      }
+    },
+    "session_symbols": 1962,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-10-29T09:42:16.113847+00:00"
+}

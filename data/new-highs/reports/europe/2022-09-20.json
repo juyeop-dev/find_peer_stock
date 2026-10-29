@@ -1,0 +1,181 @@
+{
+  "schema_version": 1,
+  "market": "europe",
+  "date": "2022-09-20",
+  "summary": "부분 복원: 당시 일봉을 제공하는 종목만 포함하며 시장 전체 신고가 수와 다를 수 있습니다. EURONEXT 688/855종목 확인 · XETR 744/1729종목 확인 · LSE 1806/2684종목 확인 · SIX 182/394종목 확인. TradingView 동일 거래소의 분할 조정 일봉·전체 월봉으로 복원했습니다. 거래량이 있는 신고가 종목 중 음봉 또는 전일 대비 하락 마감 종목은 제외합니다.",
+  "sources": [
+    {
+      "label": "TradingView historical charts",
+      "url": "https://www.tradingview.com/chart/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "EURONEXT:ALLHB",
+      "source_symbol": "EURONEXT:ALLHB",
+      "name": "Les Hotels Baverez SA",
+      "exchange": "EURONEXT",
+      "category": "Consumer Services",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Services · Hotels/Resorts/Cruise lines",
+      "description": "Les Hotels Baverez SA · Hotels/Resorts/Cruise lines",
+      "session_open": 65.0,
+      "session_close": 65.0,
+      "session_volume": 100.0,
+      "change_pct": 6.557377049180335,
+      "currency": "EUR",
+      "high_verification": {
+        "source": "TradingView split-adjusted regular-session daily/monthly charts",
+        "source_url": "https://www.tradingview.com/symbols/EURONEXT-ALLHB/",
+        "date": "2022-09-20",
+        "daily_high": 65.0,
+        "prior_52_week_high": 62.0,
+        "period_52_week_high": 65.0,
+        "prior_all_time_or_current_month_high": 73.0,
+        "previous_close": 61.0,
+        "passes_close_filter": true,
+        "instrument_type": "stock",
+        "symbol_identity": "EURONEXT:ALLHB",
+        "chart_source_id": "EURONEXT"
+      }
+    },
+    {
+      "ticker": "LSE:0EAQ",
+      "source_symbol": "LSE:0EAQ",
+      "name": "Teekay Tankers Ltd Class A",
+      "exchange": "LSE",
+      "category": "Transportation",
+      "high_type": "all_time",
+      "reason": "업종: Transportation · Marine Shipping",
+      "description": "Teekay Tankers Ltd Class A · Marine Shipping",
+      "session_open": 31.445,
+      "session_close": 31.445,
+      "session_volume": 50.0,
+      "change_pct": 15.776877761413854,
+      "currency": "USD",
+      "high_verification": {
+        "source": "TradingView split-adjusted regular-session daily/monthly charts",
+        "source_url": "https://www.tradingview.com/symbols/LSE-0EAQ/",
+        "date": "2022-09-20",
+        "daily_high": 31.445,
+        "prior_52_week_high": 28.68,
+        "period_52_week_high": 31.445,
+        "prior_all_time_or_current_month_high": 31.445,
+        "previous_close": 27.16,
+        "passes_close_filter": true,
+        "instrument_type": "stock",
+        "symbol_identity": "LSE:0EAQ",
+        "chart_source_id": "LSE"
+      }
+    },
+    {
+      "ticker": "LSE:0J78",
+      "source_symbol": "LSE:0J78",
+      "name": "Odfjell SE Class B",
+      "exchange": "LSE",
+      "category": "Transportation",
+      "high_type": "all_time",
+      "reason": "업종: Transportation · Marine Shipping",
+      "description": "Odfjell SE Class B · Marine Shipping",
+      "session_open": 55.5,
+      "session_close": 55.5,
+      "session_volume": 18.0,
+      "change_pct": 98.21428571428572,
+      "currency": "NOK",
+      "high_verification": {
+        "source": "TradingView split-adjusted regular-session daily/monthly charts",
+        "source_url": "https://www.tradingview.com/symbols/LSE-0J78/",
+        "date": "2022-09-20",
+        "daily_high": 55.5,
+        "prior_52_week_high": null,
+        "period_52_week_high": 55.5,
+        "prior_all_time_or_current_month_high": 55.5,
+        "previous_close": 28.0,
+        "passes_close_filter": true,
+        "instrument_type": "stock",
+        "symbol_identity": "LSE:0J78",
+        "chart_source_id": "LSE"
+      }
+    },
+    {
+      "ticker": "LSE:0UC0",
+      "source_symbol": "LSE:0UC0",
+      "name": "Nordic American Tankers Limited",
+      "exchange": "LSE",
+      "category": "Transportation",
+      "high_type": "52_week",
+      "reason": "업종: Transportation · Marine Shipping",
+      "description": "Nordic American Tankers Limited · Marine Shipping",
+      "session_open": 3.39,
+      "session_close": 3.495,
+      "session_volume": 750.0,
+      "change_pct": 12.19903691813804,
+      "currency": "USD",
+      "high_verification": {
+        "source": "TradingView split-adjusted regular-session daily/monthly charts",
+        "source_url": "https://www.tradingview.com/symbols/LSE-0UC0/",
+        "date": "2022-09-20",
+        "daily_high": 3.51,
+        "prior_52_week_high": 3.445,
+        "period_52_week_high": 3.51,
+        "prior_all_time_or_current_month_high": 4.025,
+        "previous_close": 3.115,
+        "passes_close_filter": true,
+        "instrument_type": "stock",
+        "symbol_identity": "LSE:0UC0",
+        "chart_source_id": "LSE"
+      }
+    }
+  ],
+  "collected_at": "2026-10-29T09:50:05.371475+00:00",
+  "source_metadata": {
+    "provider": "TradingView public daily/monthly chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-10-29T09:50:05.371475+00:00",
+    "universe_fetched_at": "2026-10-26T12:31:58.825881+00:00",
+    "universe": "Current TradingView-listed stocks on EURONEXT, XETR, LSE, SIX; ETFs and delisted historical listings excluded",
+    "scanned_symbols": 5669,
+    "history_symbols": 5662,
+    "history_required_symbols": 5662,
+    "excluded_pre_range_or_no_history": 0,
+    "unresolved_symbols": 6,
+    "unresolved_listings": {
+      "EURONEXT:EFG": "EURONEXT:EFG: symbol_error: ['cs_ffcd80df2da5', 'symbol_1', 'invalid symbol']",
+      "EURONEXT:MOP": "EURONEXT:MOP: symbol_error: ['cs_e0fdea11e0c5', 'symbol_1', 'invalid symbol']",
+      "XETR:AMI0": "XETR:AMI0: chart company name differs from scanner",
+      "XETR:MS8": "XETR:MS8: chart company name differs from scanner",
+      "LSE:0HX1": "LSE:0HX1: chart company name differs from scanner",
+      "LSE:SQZ": "LSE:SQZ: symbol_error: ['cs_b7ce6883fa1e', 'symbol_1', 'invalid symbol']"
+    },
+    "non_stock_exclusions": [
+      {
+        "symbol": "SIX:SMCI",
+        "type": "index",
+        "description": "SPI® Mid Total Return Index",
+        "source_id": "SIX",
+        "pro_name": "SIX:SMCI"
+      }
+    ],
+    "session_symbols": 3420,
+    "session_symbols_by_exchange": {
+      "EURONEXT": 688,
+      "XETR": 744,
+      "LSE": 1806,
+      "SIX": 182
+    },
+    "scheduled_closed_exchanges": [],
+    "scanner_confirmed_no_trade_gaps": [],
+    "coverage_ratio": 0.6040268456375839,
+    "coverage_status": "partial",
+    "coverage_warning": "2022-09-20: incomplete XETR session coverage (744/1729)",
+    "pagination_complete": true,
+    "split_adjusted": true,
+    "session": "regular",
+    "monthly_history_complete": true,
+    "definition": "daily high >= 52-week/all-time high; volume > 0; close >= open and prior close; ties included"
+  }
+}

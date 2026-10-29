@@ -1,0 +1,258 @@
+{
+  "schema_version": 1,
+  "market": "japan",
+  "date": "2022-02-24",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "1605.T",
+      "name": "Inpex Corporation",
+      "exchange": "TSE",
+      "category": "Energy Minerals",
+      "high_type": "52_week",
+      "reason": "업종: Energy Minerals · Integrated Oil",
+      "description": "Inpex Corporation · Integrated Oil",
+      "change_pct": 7.242582897033167,
+      "session_open": 1145.0,
+      "session_close": 1229.0,
+      "session_volume": 31552800.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:1605",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/1605.T/history/",
+        "date": "2022-02-24",
+        "daily_high": 1229.0,
+        "prior_all_time_or_current_month_high": 5794.270978655134,
+        "passes_close_filter": true,
+        "yahoo_symbol": "1605.T"
+      }
+    },
+    {
+      "ticker": "2211.T",
+      "name": "Fujiya Co., Ltd.",
+      "exchange": "TSE",
+      "category": "Consumer Non-Durables",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Non-Durables · Food: Specialty/Candy",
+      "description": "Fujiya Co., Ltd. · Food: Specialty/Candy",
+      "change_pct": 1.0370961308336701,
+      "session_open": 2484.0,
+      "session_close": 2533.0,
+      "session_volume": 78400.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:2211",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2211.T/history/",
+        "date": "2022-02-24",
+        "daily_high": 2541.0,
+        "prior_all_time_or_current_month_high": 34400.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "2211.T"
+      }
+    },
+    {
+      "ticker": "3177.T",
+      "name": "Arigatou Services Co., Ltd.",
+      "exchange": "TSE",
+      "category": "Retail Trade",
+      "high_type": "52_week",
+      "reason": "업종: Retail Trade · Specialty Stores",
+      "description": "Arigatou Services Co., Ltd. · Specialty Stores",
+      "change_pct": 0.29991431019709136,
+      "session_open": 2334.0,
+      "session_close": 2341.0,
+      "session_volume": 17100.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:3177",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3177.T/history/",
+        "date": "2022-02-24",
+        "daily_high": 2400.0,
+        "prior_all_time_or_current_month_high": 3500.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "3177.T"
+      }
+    },
+    {
+      "ticker": "4270.T",
+      "name": "BeeX Inc.",
+      "exchange": "TSE",
+      "category": "Technology Services",
+      "high_type": "all_time",
+      "reason": "업종: Technology Services · Packaged Software",
+      "description": "BeeX Inc. · Packaged Software",
+      "change_pct": 0.0,
+      "session_open": 3750.0,
+      "session_close": 4155.0,
+      "session_volume": 763500.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:4270",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4270.T/history/",
+        "date": "2022-02-24",
+        "daily_high": 4155.0,
+        "prior_all_time_or_current_month_high": 4155.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "4270.T"
+      }
+    },
+    {
+      "ticker": "4274.T",
+      "name": "HOSOYA PYRO-ENGINEERING CO LTD",
+      "exchange": "TSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Aerospace & Defense",
+      "description": "HOSOYA PYRO-ENGINEERING CO LTD · Aerospace & Defense",
+      "change_pct": 18.392469225199125,
+      "session_open": 1411.0,
+      "session_close": 1635.0,
+      "session_volume": 2707400.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:4274",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4274.T/history/",
+        "date": "2022-02-24",
+        "daily_high": 1679.0,
+        "prior_all_time_or_current_month_high": 2343.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "4274.T"
+      }
+    },
+    {
+      "ticker": "4527.T",
+      "name": "Rohto Pharmaceutical Co., Ltd.",
+      "exchange": "TSE",
+      "category": "Consumer Non-Durables",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Non-Durables · Household/Personal Care",
+      "description": "Rohto Pharmaceutical Co., Ltd. · Household/Personal Care",
+      "change_pct": 0.1322751322751392,
+      "session_open": 932.5,
+      "session_close": 946.25,
+      "session_volume": 1376800.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:4527",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4527.T/history/",
+        "date": "2022-02-24",
+        "daily_high": 950.0,
+        "prior_all_time_or_current_month_high": 1038.75,
+        "passes_close_filter": true,
+        "yahoo_symbol": "4527.T"
+      }
+    },
+    {
+      "ticker": "6208.T",
+      "name": "Ishikawa Seisakusho,Ltd.",
+      "exchange": "TSE",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Industrial Machinery",
+      "description": "Ishikawa Seisakusho,Ltd. · Industrial Machinery",
+      "change_pct": 22.186076772934292,
+      "session_open": 1581.0,
+      "session_close": 1878.0,
+      "session_volume": 3222100.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:6208",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6208.T/history/",
+        "date": "2022-02-24",
+        "daily_high": 1937.0,
+        "prior_all_time_or_current_month_high": 27200.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "6208.T"
+      }
+    },
+    {
+      "ticker": "8278.T",
+      "name": "Fuji Co., Ltd.",
+      "exchange": "TSE",
+      "category": "Retail Trade",
+      "high_type": "52_week",
+      "reason": "업종: Retail Trade · Food Retail",
+      "description": "Fuji Co., Ltd. · Food Retail",
+      "change_pct": 21.815008726003484,
+      "session_open": 2323.0,
+      "session_close": 2792.0,
+      "session_volume": 3548900.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:8278",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/8278.T/history/",
+        "date": "2022-02-24",
+        "daily_high": 2792.0,
+        "prior_all_time_or_current_month_high": 3235.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "8278.T"
+      }
+    },
+    {
+      "ticker": "9778.T",
+      "name": "Subaru Co., Ltd.",
+      "exchange": "TSE",
+      "category": "Commercial Services",
+      "high_type": "52_week",
+      "reason": "업종: Commercial Services · Miscellaneous Commercial Services",
+      "description": "Subaru Co., Ltd. · Miscellaneous Commercial Services",
+      "change_pct": 0.9230769230769154,
+      "session_open": 4860.0,
+      "session_close": 4920.0,
+      "session_volume": 2900.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:9778",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/9778.T/history/",
+        "date": "2022-02-24",
+        "daily_high": 4920.0,
+        "prior_all_time_or_current_month_high": 78000.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "9778.T"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-10-29T09:43:19.189722+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 3759,
+    "history_symbols": 3491,
+    "inactive_symbols": 0,
+    "failed_symbols": 268,
+    "coverage_ratio": 0.9287044426709231,
+    "coverage_by_exchange": {
+      "TSE": {
+        "covered": 3491,
+        "total": 3759
+      }
+    },
+    "session_symbols": 3398,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-10-29T09:43:19.189722+00:00"
+}

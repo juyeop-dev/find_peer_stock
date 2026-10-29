@@ -1,0 +1,190 @@
+{
+  "schema_version": 1,
+  "market": "taiwan",
+  "date": "2022-12-22",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "4163.TWO",
+      "name": "Intai Technology Corp.",
+      "exchange": "TPEX",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Miscellaneous Manufacturing",
+      "description": "Intai Technology Corp. · Miscellaneous Manufacturing",
+      "change_pct": 10.000000000000009,
+      "session_open": 108.5,
+      "session_close": 115.5,
+      "session_volume": 3145000.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:4163",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4163.TWO/history/",
+        "date": "2022-12-22",
+        "daily_high": 115.5,
+        "prior_all_time_or_current_month_high": 142.06680423957258,
+        "passes_close_filter": true,
+        "yahoo_symbol": "4163.TWO"
+      }
+    },
+    {
+      "ticker": "6517.TWO",
+      "name": "Baso Precision Optics Ltd.",
+      "exchange": "TPEX",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Industrial Machinery",
+      "description": "Baso Precision Optics Ltd. · Industrial Machinery",
+      "change_pct": 10.000002384185791,
+      "session_open": 69.9000015258789,
+      "session_close": 70.4000015258789,
+      "session_volume": 5168000.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:6517",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6517.TWO/history/",
+        "date": "2022-12-22",
+        "daily_high": 70.4000015258789,
+        "prior_all_time_or_current_month_high": 70.4000015258789,
+        "passes_close_filter": true,
+        "yahoo_symbol": "6517.TWO"
+      }
+    },
+    {
+      "ticker": "1783.TW",
+      "name": "Maxigen Biotech Inc.",
+      "exchange": "TWSE",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Biotechnology",
+      "description": "Maxigen Biotech Inc. · Biotechnology",
+      "change_pct": 4.574467586467268,
+      "session_open": 45.42856979370117,
+      "session_close": 46.80952453613281,
+      "session_volume": 2140742.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:1783",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/1783.TW/history/",
+        "date": "2022-12-22",
+        "daily_high": 46.85714340209961,
+        "prior_all_time_or_current_month_high": 59.744005079393254,
+        "passes_close_filter": true,
+        "yahoo_symbol": "1783.TW"
+      }
+    },
+    {
+      "ticker": "1808.TW",
+      "name": "Run Long Construction Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Consumer Durables",
+      "high_type": "all_time",
+      "reason": "업종: Consumer Durables · Homebuilding",
+      "description": "Run Long Construction Co., Ltd. · Homebuilding",
+      "change_pct": 1.8237064970670236,
+      "session_open": 33.838382720947266,
+      "session_close": 33.838382720947266,
+      "session_volume": 787176.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:1808",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/1808.TW/history/",
+        "date": "2022-12-22",
+        "daily_high": 34.54545211791992,
+        "prior_all_time_or_current_month_high": 34.54545211791992,
+        "passes_close_filter": true,
+        "yahoo_symbol": "1808.TW"
+      }
+    },
+    {
+      "ticker": "5284.TW",
+      "name": "JPP Holding Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Industrial Machinery",
+      "description": "JPP Holding Co., Ltd. · Industrial Machinery",
+      "change_pct": 2.0260514570101362,
+      "session_open": 70.0999984741211,
+      "session_close": 70.5,
+      "session_volume": 6850576.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:5284",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/5284.TW/history/",
+        "date": "2022-12-22",
+        "daily_high": 73.30000305175781,
+        "prior_all_time_or_current_month_high": 86.34361267089844,
+        "passes_close_filter": true,
+        "yahoo_symbol": "5284.TW"
+      }
+    },
+    {
+      "ticker": "9904.TW",
+      "name": "Pou Chen Corporation",
+      "exchange": "TWSE",
+      "category": "Consumer Non-Durables",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Non-Durables · Apparel/Footwear",
+      "description": "Pou Chen Corporation · Apparel/Footwear",
+      "change_pct": 1.497005919633243,
+      "session_open": 33.70000076293945,
+      "session_close": 33.900001525878906,
+      "session_volume": 14824439.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:9904",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/9904.TW/history/",
+        "date": "2022-12-22",
+        "daily_high": 34.25,
+        "prior_all_time_or_current_month_high": 53.599998474121094,
+        "passes_close_filter": true,
+        "yahoo_symbol": "9904.TW"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-10-29T09:42:16.113847+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 2356,
+    "history_symbols": 2003,
+    "inactive_symbols": 5,
+    "failed_symbols": 348,
+    "coverage_ratio": 0.8519778817524458,
+    "coverage_by_exchange": {
+      "TWSE": {
+        "covered": 1012,
+        "total": 1094
+      },
+      "TPEX": {
+        "covered": 991,
+        "total": 1257
+      }
+    },
+    "session_symbols": 1998,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-10-29T09:42:16.113847+00:00"
+}

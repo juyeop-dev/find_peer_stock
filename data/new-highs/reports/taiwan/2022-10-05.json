@@ -1,0 +1,214 @@
+{
+  "schema_version": 1,
+  "market": "taiwan",
+  "date": "2022-10-05",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "1294.TWO",
+      "name": "Hantech Bio-Technology Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Health Technology",
+      "high_type": "all_time",
+      "reason": "업종: Health Technology · Pharmaceuticals: Other",
+      "description": "Hantech Bio-Technology Co., Ltd. · Pharmaceuticals: Other",
+      "change_pct": 11.443657488460923,
+      "session_open": 28.60938262939453,
+      "session_close": 32.052635192871094,
+      "session_volume": 441181.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:1294",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/1294.TWO/history/",
+        "date": "2022-10-05",
+        "daily_high": 32.50836181640625,
+        "prior_all_time_or_current_month_high": 32.50836181640625,
+        "passes_close_filter": true,
+        "yahoo_symbol": "1294.TWO"
+      }
+    },
+    {
+      "ticker": "6101.TWO",
+      "name": "Kwan's International Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Electronic Components",
+      "description": "Kwan's International Co., Ltd. · Electronic Components",
+      "change_pct": 9.873951499168054,
+      "session_open": 24.0,
+      "session_close": 26.149999618530273,
+      "session_volume": 347000.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:6101",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6101.TWO/history/",
+        "date": "2022-10-05",
+        "daily_high": 26.149999618530273,
+        "prior_all_time_or_current_month_high": 96.80000305175781,
+        "passes_close_filter": true,
+        "yahoo_symbol": "6101.TWO"
+      }
+    },
+    {
+      "ticker": "6739.TWO",
+      "name": "Grade Upon Technology Corp.",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Electronic Equipment/Instruments",
+      "description": "Grade Upon Technology Corp. · Electronic Equipment/Instruments",
+      "change_pct": 2.4327756776620912,
+      "session_open": 37.14601135253906,
+      "session_close": 38.79479217529297,
+      "session_volume": 104.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:6739",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6739.TWO/history/",
+        "date": "2022-10-05",
+        "daily_high": 38.79479217529297,
+        "prior_all_time_or_current_month_high": 61.683719635009766,
+        "passes_close_filter": true,
+        "yahoo_symbol": "6739.TWO"
+      }
+    },
+    {
+      "ticker": "8932.TWO",
+      "name": "Wiselink Co Ltd.",
+      "exchange": "TPEX",
+      "category": "Consumer Durables",
+      "high_type": "all_time",
+      "reason": "업종: Consumer Durables · Other Consumer Specialties",
+      "description": "Wiselink Co Ltd. · Other Consumer Specialties",
+      "change_pct": 4.7041062435071,
+      "session_open": 6.288634777069092,
+      "session_close": 6.574481964111328,
+      "session_volume": 6386282.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:8932",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/8932.TWO/history/",
+        "date": "2022-10-05",
+        "daily_high": 6.5935378074646,
+        "prior_all_time_or_current_month_high": 6.5935378074646,
+        "passes_close_filter": true,
+        "yahoo_symbol": "8932.TWO"
+      }
+    },
+    {
+      "ticker": "4155.TW",
+      "name": "Ok Biotech Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Medical Specialties",
+      "description": "Ok Biotech Co., Ltd. · Medical Specialties",
+      "change_pct": 6.613226158685381,
+      "session_open": 25.029966354370117,
+      "session_close": 26.316091537475586,
+      "session_volume": 5589059.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:4155",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4155.TW/history/",
+        "date": "2022-10-05",
+        "daily_high": 26.711822509765625,
+        "prior_all_time_or_current_month_high": 40.39131596212153,
+        "passes_close_filter": true,
+        "yahoo_symbol": "4155.TW"
+      }
+    },
+    {
+      "ticker": "5225.TW",
+      "name": "Eastech Holding Limited",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Electronic Production Equipment",
+      "description": "Eastech Holding Limited · Electronic Production Equipment",
+      "change_pct": 6.05590284700801,
+      "session_open": 32.29999923706055,
+      "session_close": 34.150001525878906,
+      "session_volume": 3073127.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:5225",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/5225.TW/history/",
+        "date": "2022-10-05",
+        "daily_high": 34.79999923706055,
+        "prior_all_time_or_current_month_high": 95.30000305175781,
+        "passes_close_filter": true,
+        "yahoo_symbol": "5225.TW"
+      }
+    },
+    {
+      "ticker": "8996.TW",
+      "name": "Kaori Heat Treatment Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Industrial Machinery",
+      "description": "Kaori Heat Treatment Co., Ltd. · Industrial Machinery",
+      "change_pct": 9.913793103448265,
+      "session_open": 120.5,
+      "session_close": 127.5,
+      "session_volume": 11891820.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:8996",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/8996.TW/history/",
+        "date": "2022-10-05",
+        "daily_high": 127.5,
+        "prior_all_time_or_current_month_high": 127.5,
+        "passes_close_filter": true,
+        "yahoo_symbol": "8996.TW"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-10-29T09:42:16.113847+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 2356,
+    "history_symbols": 2003,
+    "inactive_symbols": 5,
+    "failed_symbols": 348,
+    "coverage_ratio": 0.8519778817524458,
+    "coverage_by_exchange": {
+      "TWSE": {
+        "covered": 1012,
+        "total": 1094
+      },
+      "TPEX": {
+        "covered": 991,
+        "total": 1257
+      }
+    },
+    "session_symbols": 1987,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-10-29T09:42:16.113847+00:00"
+}

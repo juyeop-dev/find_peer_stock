@@ -1,0 +1,190 @@
+{
+  "schema_version": 1,
+  "market": "taiwan",
+  "date": "2022-10-04",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "1294.TWO",
+      "name": "Hantech Bio-Technology Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Health Technology",
+      "high_type": "all_time",
+      "reason": "업종: Health Technology · Pharmaceuticals: Other",
+      "description": "Hantech Bio-Technology Co., Ltd. · Pharmaceuticals: Other",
+      "change_pct": 10.291261908687165,
+      "session_open": 25.925670623779297,
+      "session_close": 28.76129150390625,
+      "session_volume": 263598.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:1294",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/1294.TWO/history/",
+        "date": "2022-10-04",
+        "daily_high": 29.419559478759766,
+        "prior_all_time_or_current_month_high": 29.419559478759766,
+        "passes_close_filter": true,
+        "yahoo_symbol": "1294.TWO"
+      }
+    },
+    {
+      "ticker": "6101.TWO",
+      "name": "Kwan's International Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Electronic Components",
+      "description": "Kwan's International Co., Ltd. · Electronic Components",
+      "change_pct": 1.7094001070560472,
+      "session_open": 23.600000381469727,
+      "session_close": 23.799999237060547,
+      "session_volume": 287000.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:6101",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6101.TWO/history/",
+        "date": "2022-10-04",
+        "daily_high": 24.200000762939453,
+        "prior_all_time_or_current_month_high": 96.80000305175781,
+        "passes_close_filter": true,
+        "yahoo_symbol": "6101.TWO"
+      }
+    },
+    {
+      "ticker": "5225.TW",
+      "name": "Eastech Holding Limited",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Electronic Production Equipment",
+      "description": "Eastech Holding Limited · Electronic Production Equipment",
+      "change_pct": 4.545459612201341,
+      "session_open": 31.5,
+      "session_close": 32.20000076293945,
+      "session_volume": 4686130.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:5225",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/5225.TW/history/",
+        "date": "2022-10-04",
+        "daily_high": 33.849998474121094,
+        "prior_all_time_or_current_month_high": 95.30000305175781,
+        "passes_close_filter": true,
+        "yahoo_symbol": "5225.TW"
+      }
+    },
+    {
+      "ticker": "5288.TW",
+      "name": "Eurocharm Holdings Co Ltd",
+      "exchange": "TWSE",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Auto Parts: OEM",
+      "description": "Eurocharm Holdings Co Ltd · Auto Parts: OEM",
+      "change_pct": 4.545454545454541,
+      "session_open": 179.0,
+      "session_close": 184.0,
+      "session_volume": 596017.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:5288",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/5288.TW/history/",
+        "date": "2022-10-04",
+        "daily_high": 187.0,
+        "prior_all_time_or_current_month_high": 187.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "5288.TW"
+      }
+    },
+    {
+      "ticker": "6153.TW",
+      "name": "Career Technology (MFG.) Co., Ltd",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Electronic Components",
+      "description": "Career Technology (MFG.) Co., Ltd · Electronic Components",
+      "change_pct": 5.34070472058692,
+      "session_open": 27.449718475341797,
+      "session_close": 28.2905216217041,
+      "session_volume": 26268421.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:6153",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6153.TW/history/",
+        "date": "2022-10-04",
+        "daily_high": 29.180782318115234,
+        "prior_all_time_or_current_month_high": 68.3793017643192,
+        "passes_close_filter": true,
+        "yahoo_symbol": "6153.TW"
+      }
+    },
+    {
+      "ticker": "9939.TW",
+      "name": "Taiwan Hon Chuan Enterprise Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Process Industries",
+      "high_type": "52_week",
+      "reason": "업종: Process Industries · Containers/Packaging",
+      "description": "Taiwan Hon Chuan Enterprise Co., Ltd. · Containers/Packaging",
+      "change_pct": 4.37956963159305,
+      "session_open": 83.9000015258789,
+      "session_close": 85.80000305175781,
+      "session_volume": 3622269.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:9939",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/9939.TW/history/",
+        "date": "2022-10-04",
+        "daily_high": 85.9000015258789,
+        "prior_all_time_or_current_month_high": 87.93453979492188,
+        "passes_close_filter": true,
+        "yahoo_symbol": "9939.TW"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-10-29T09:42:16.113847+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 2356,
+    "history_symbols": 2003,
+    "inactive_symbols": 5,
+    "failed_symbols": 348,
+    "coverage_ratio": 0.8519778817524458,
+    "coverage_by_exchange": {
+      "TWSE": {
+        "covered": 1012,
+        "total": 1094
+      },
+      "TPEX": {
+        "covered": 991,
+        "total": 1257
+      }
+    },
+    "session_symbols": 1987,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-10-29T09:42:16.113847+00:00"
+}

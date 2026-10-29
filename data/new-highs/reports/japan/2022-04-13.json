@@ -1,0 +1,378 @@
+{
+  "schema_version": 1,
+  "market": "japan",
+  "date": "2022-04-13",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "2776.T",
+      "name": "SHINTO Holdings,Inc.",
+      "exchange": "TSE",
+      "category": "Distribution Services",
+      "high_type": "52_week",
+      "reason": "업종: Distribution Services · Wholesale Distributors",
+      "description": "SHINTO Holdings,Inc. · Wholesale Distributors",
+      "change_pct": 4.6052631578947345,
+      "session_open": 151.0,
+      "session_close": 159.0,
+      "session_volume": 987200.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:2776",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2776.T/history/",
+        "date": "2022-04-13",
+        "daily_high": 159.0,
+        "prior_all_time_or_current_month_high": 373.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "2776.T"
+      }
+    },
+    {
+      "ticker": "3632.T",
+      "name": "GREE Holdings.Inc.",
+      "exchange": "TSE",
+      "category": "Technology Services",
+      "high_type": "52_week",
+      "reason": "업종: Technology Services · Packaged Software",
+      "description": "GREE Holdings.Inc. · Packaged Software",
+      "change_pct": 2.6006711409396033,
+      "session_open": 1192.0,
+      "session_close": 1223.0,
+      "session_volume": 2946900.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:3632",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3632.T/history/",
+        "date": "2022-04-13",
+        "daily_high": 1223.0,
+        "prior_all_time_or_current_month_high": 2840.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "3632.T"
+      }
+    },
+    {
+      "ticker": "4174.T",
+      "name": "Appirits Inc.",
+      "exchange": "TSE",
+      "category": "Technology Services",
+      "high_type": "all_time",
+      "reason": "업종: Technology Services · Information Technology Services",
+      "description": "Appirits Inc. · Information Technology Services",
+      "change_pct": 5.985037406483795,
+      "session_open": 1200.0,
+      "session_close": 1275.0,
+      "session_volume": 69300.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:4174",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4174.T/history/",
+        "date": "2022-04-13",
+        "daily_high": 1331.0,
+        "prior_all_time_or_current_month_high": 1331.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "4174.T"
+      }
+    },
+    {
+      "ticker": "5704.T",
+      "name": "JMC Corporation",
+      "exchange": "TSE",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Metal Fabrication",
+      "description": "JMC Corporation · Metal Fabrication",
+      "change_pct": 12.35955056179776,
+      "session_open": 816.0,
+      "session_close": 900.0,
+      "session_volume": 212100.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:5704",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/5704.T/history/",
+        "date": "2022-04-13",
+        "daily_high": 907.0,
+        "prior_all_time_or_current_month_high": 2209.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "5704.T"
+      }
+    },
+    {
+      "ticker": "6363.T",
+      "name": "Torishima Pump Mfg.Co., Ltd.",
+      "exchange": "TSE",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Industrial Machinery",
+      "description": "Torishima Pump Mfg.Co., Ltd. · Industrial Machinery",
+      "change_pct": 2.5134649910233398,
+      "session_open": 1115.0,
+      "session_close": 1142.0,
+      "session_volume": 153500.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:6363",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6363.T/history/",
+        "date": "2022-04-13",
+        "daily_high": 1155.0,
+        "prior_all_time_or_current_month_high": 2437.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "6363.T"
+      }
+    },
+    {
+      "ticker": "7011.T",
+      "name": "Mitsubishi Heavy Industries, Ltd.",
+      "exchange": "TSE",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Electrical Products",
+      "description": "Mitsubishi Heavy Industries, Ltd. · Electrical Products",
+      "change_pct": 3.338244061675466,
+      "session_open": 408.0,
+      "session_close": 421.0,
+      "session_volume": 40244000.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:7011",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/7011.T/history/",
+        "date": "2022-04-13",
+        "daily_high": 421.20001220703125,
+        "prior_all_time_or_current_month_high": 905.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "7011.T"
+      }
+    },
+    {
+      "ticker": "7033.T",
+      "name": "Management Solutions Co., Ltd.",
+      "exchange": "TSE",
+      "category": "Commercial Services",
+      "high_type": "all_time",
+      "reason": "업종: Commercial Services · Miscellaneous Commercial Services",
+      "description": "Management Solutions Co., Ltd. · Miscellaneous Commercial Services",
+      "change_pct": 10.1010101010101,
+      "session_open": 4560.0,
+      "session_close": 4905.0,
+      "session_volume": 345300.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:7033",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/7033.T/history/",
+        "date": "2022-04-13",
+        "daily_high": 5000.0,
+        "prior_all_time_or_current_month_high": 5000.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "7033.T"
+      }
+    },
+    {
+      "ticker": "7133.T",
+      "name": "HYUGA PRIMARY CARE Co.,Ltd.",
+      "exchange": "TSE",
+      "category": "Health Services",
+      "high_type": "all_time",
+      "reason": "업종: Health Services · Hospital/Nursing Management",
+      "description": "HYUGA PRIMARY CARE Co.,Ltd. · Hospital/Nursing Management",
+      "change_pct": 8.227848101265822,
+      "session_open": 4250.0,
+      "session_close": 4275.0,
+      "session_volume": 273600.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:7133",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/7133.T/history/",
+        "date": "2022-04-13",
+        "daily_high": 4425.0,
+        "prior_all_time_or_current_month_high": 4425.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "7133.T"
+      }
+    },
+    {
+      "ticker": "8129.T",
+      "name": "TOHO HOLDINGS CO., LTD.",
+      "exchange": "TSE",
+      "category": "Distribution Services",
+      "high_type": "52_week",
+      "reason": "업종: Distribution Services · Medical Distributors",
+      "description": "TOHO HOLDINGS CO., LTD. · Medical Distributors",
+      "change_pct": 2.7221366204416952,
+      "session_open": 1985.0,
+      "session_close": 2000.0,
+      "session_volume": 241500.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:8129",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/8129.T/history/",
+        "date": "2022-04-13",
+        "daily_high": 2000.0,
+        "prior_all_time_or_current_month_high": 3225.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "8129.T"
+      }
+    },
+    {
+      "ticker": "9214.T",
+      "name": "Recovery International Co.,Ltd.",
+      "exchange": "TSE",
+      "category": "Health Services",
+      "high_type": "all_time",
+      "reason": "업종: Health Services · Hospital/Nursing Management",
+      "description": "Recovery International Co.,Ltd. · Hospital/Nursing Management",
+      "change_pct": 12.05540995881693,
+      "session_open": 2770.0,
+      "session_close": 2993.0,
+      "session_volume": 59300.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:9214",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/9214.T/history/",
+        "date": "2022-04-13",
+        "daily_high": 2993.0,
+        "prior_all_time_or_current_month_high": 2993.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "9214.T"
+      }
+    },
+    {
+      "ticker": "9247.T",
+      "name": "TRE HOLDINGS CORPORATION",
+      "exchange": "TSE",
+      "category": "Technology Services",
+      "high_type": "all_time",
+      "reason": "업종: Technology Services · Information Technology Services",
+      "description": "TRE HOLDINGS CORPORATION · Information Technology Services",
+      "change_pct": 1.4181349376880092,
+      "session_open": 2337.0,
+      "session_close": 2360.0,
+      "session_volume": 393700.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:9247",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/9247.T/history/",
+        "date": "2022-04-13",
+        "daily_high": 2364.0,
+        "prior_all_time_or_current_month_high": 2364.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "9247.T"
+      }
+    },
+    {
+      "ticker": "9286.T",
+      "name": "Enex Infrastructure Investment Corporation",
+      "exchange": "TSE",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "업종: Finance · Real Estate Investment Trusts",
+      "description": "Enex Infrastructure Investment Corporation · Real Estate Investment Trusts",
+      "change_pct": 0.6578947368421018,
+      "session_open": 91500.0,
+      "session_close": 91800.0,
+      "session_volume": 425.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:9286",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/9286.T/history/",
+        "date": "2022-04-13",
+        "daily_high": 91800.0,
+        "prior_all_time_or_current_month_high": 91800.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "9286.T"
+      }
+    },
+    {
+      "ticker": "9433.T",
+      "name": "KDDI Corporation",
+      "exchange": "TSE",
+      "category": "Communications",
+      "high_type": "all_time",
+      "reason": "업종: Communications · Wireless Telecommunications",
+      "description": "KDDI Corporation · Wireless Telecommunications",
+      "change_pct": 0.4571703561116358,
+      "session_open": 2074.0,
+      "session_close": 2087.5,
+      "session_volume": 9088600.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:9433",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/9433.T/history/",
+        "date": "2022-04-13",
+        "daily_high": 2087.5,
+        "prior_all_time_or_current_month_high": 2087.5,
+        "passes_close_filter": true,
+        "yahoo_symbol": "9433.T"
+      }
+    },
+    {
+      "ticker": "9766.T",
+      "name": "KONAMI Group Corporation",
+      "exchange": "TSE",
+      "category": "Technology Services",
+      "high_type": "52_week",
+      "reason": "업종: Technology Services · Packaged Software",
+      "description": "KONAMI Group Corporation · Packaged Software",
+      "change_pct": 2.1013597033374465,
+      "session_open": 8180.0,
+      "session_close": 8260.0,
+      "session_volume": 400800.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:9766",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/9766.T/history/",
+        "date": "2022-04-13",
+        "daily_high": 8300.0,
+        "prior_all_time_or_current_month_high": 11750.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "9766.T"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-10-29T09:43:19.189722+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 3759,
+    "history_symbols": 3491,
+    "inactive_symbols": 0,
+    "failed_symbols": 268,
+    "coverage_ratio": 0.9287044426709231,
+    "coverage_by_exchange": {
+      "TSE": {
+        "covered": 3491,
+        "total": 3759
+      }
+    },
+    "session_symbols": 3413,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-10-29T09:43:19.189722+00:00"
+}

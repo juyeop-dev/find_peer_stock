@@ -1,0 +1,434 @@
+{
+  "schema_version": 1,
+  "market": "us",
+  "date": "2022-03-09",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "BZAI",
+      "name": "Blaize Holdings, Inc.",
+      "exchange": "NASDAQ",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Semiconductors",
+      "description": "Blaize Holdings, Inc. · Semiconductors",
+      "change_pct": 0.20284440628888234,
+      "session_open": 9.880000114440918,
+      "session_close": 9.880000114440918,
+      "session_volume": 427200.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:BZAI",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/BZAI/history/",
+        "date": "2022-03-09",
+        "daily_high": 9.890000343322754,
+        "prior_all_time_or_current_month_high": 9.890000343322754,
+        "passes_close_filter": true,
+        "yahoo_symbol": "BZAI"
+      }
+    },
+    {
+      "ticker": "CHSCP",
+      "name": "CHS Inc 8 % Cum Red Pfd Registered",
+      "exchange": "NASDAQ",
+      "category": "Distribution Services",
+      "high_type": "52_week",
+      "reason": "업종: Distribution Services · Wholesale Distributors",
+      "description": "CHS Inc 8 % Cum Red Pfd Registered · Wholesale Distributors",
+      "change_pct": 0.15872773670015938,
+      "session_open": 31.5,
+      "session_close": 31.549999237060547,
+      "session_volume": 20400.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:CHSCP",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/CHSCP/history/",
+        "date": "2022-03-09",
+        "daily_high": 31.729999542236328,
+        "prior_all_time_or_current_month_high": 34.849998474121094,
+        "passes_close_filter": true,
+        "yahoo_symbol": "CHSCP"
+      }
+    },
+    {
+      "ticker": "HDSN",
+      "name": "Hudson Technologies, Inc.",
+      "exchange": "NASDAQ",
+      "category": "Distribution Services",
+      "high_type": "52_week",
+      "reason": "업종: Distribution Services · Wholesale Distributors",
+      "description": "Hudson Technologies, Inc. · Wholesale Distributors",
+      "change_pct": 34.9246195935742,
+      "session_open": 4.429999828338623,
+      "session_close": 5.369999885559082,
+      "session_volume": 4931700.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:HDSN",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/HDSN/history/",
+        "date": "2022-03-09",
+        "daily_high": 5.449999809265137,
+        "prior_all_time_or_current_month_high": 27.5,
+        "passes_close_filter": true,
+        "yahoo_symbol": "HDSN"
+      }
+    },
+    {
+      "ticker": "HRMY",
+      "name": "Harmony Biosciences Holdings, Inc.",
+      "exchange": "NASDAQ",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Pharmaceuticals: Major",
+      "description": "Harmony Biosciences Holdings, Inc. · Pharmaceuticals: Major",
+      "change_pct": 3.0343862063158644,
+      "session_open": 44.77000045776367,
+      "session_close": 45.84000015258789,
+      "session_volume": 720500.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:HRMY",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/HRMY/history/",
+        "date": "2022-03-09",
+        "daily_high": 46.31999969482422,
+        "prior_all_time_or_current_month_high": 52.7400016784668,
+        "passes_close_filter": true,
+        "yahoo_symbol": "HRMY"
+      }
+    },
+    {
+      "ticker": "JMSB",
+      "name": "John Marshall Bancorp, Inc.",
+      "exchange": "NASDAQ",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "업종: Finance · Regional Banks",
+      "description": "John Marshall Bancorp, Inc. · Regional Banks",
+      "change_pct": 1.0307372993908492,
+      "session_open": 22.030000686645508,
+      "session_close": 22.25,
+      "session_volume": 6300.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:JMSB",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/JMSB/history/",
+        "date": "2022-03-09",
+        "daily_high": 22.25,
+        "prior_all_time_or_current_month_high": 22.25,
+        "passes_close_filter": true,
+        "yahoo_symbol": "JMSB"
+      }
+    },
+    {
+      "ticker": "LQDA",
+      "name": "Liquidia Corporation",
+      "exchange": "NASDAQ",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Pharmaceuticals: Major",
+      "description": "Liquidia Corporation · Pharmaceuticals: Major",
+      "change_pct": 6.666667127378889,
+      "session_open": 6.989999771118164,
+      "session_close": 7.360000133514404,
+      "session_volume": 895200.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:LQDA",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/LQDA/history/",
+        "date": "2022-03-09",
+        "daily_high": 7.389999866485596,
+        "prior_all_time_or_current_month_high": 38.459999084472656,
+        "passes_close_filter": true,
+        "yahoo_symbol": "LQDA"
+      }
+    },
+    {
+      "ticker": "RMSG",
+      "name": "Real Messenger Corporation Class A",
+      "exchange": "NASDAQ",
+      "category": "Technology Services",
+      "high_type": "all_time",
+      "reason": "업종: Technology Services · Packaged Software",
+      "description": "Real Messenger Corporation Class A · Packaged Software",
+      "change_pct": 0.301202137111356,
+      "session_open": 9.979999542236328,
+      "session_close": 9.989999771118164,
+      "session_volume": 6000.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:RMSG",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/RMSG/history/",
+        "date": "2022-03-09",
+        "daily_high": 9.989999771118164,
+        "prior_all_time_or_current_month_high": 9.989999771118164,
+        "passes_close_filter": true,
+        "yahoo_symbol": "RMSG"
+      }
+    },
+    {
+      "ticker": "TNMG",
+      "name": "TNL Mediagene",
+      "exchange": "NASDAQ",
+      "category": "Technology Services",
+      "high_type": "all_time",
+      "reason": "업종: Technology Services · Internet Software/Services",
+      "description": "TNL Mediagene · Internet Software/Services",
+      "change_pct": 0.0,
+      "session_open": 1582.4000244140625,
+      "session_close": 1582.4000244140625,
+      "session_volume": 33.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:TNMG",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/TNMG/history/",
+        "date": "2022-03-09",
+        "daily_high": 1582.4000244140625,
+        "prior_all_time_or_current_month_high": 1582.4000244140625,
+        "passes_close_filter": true,
+        "yahoo_symbol": "TNMG"
+      }
+    },
+    {
+      "ticker": "VGAS",
+      "name": "Verde Clean Fuels, Inc. Class A",
+      "exchange": "NASDAQ",
+      "category": "Process Industries",
+      "high_type": "all_time",
+      "reason": "업종: Process Industries · Industrial Specialties",
+      "description": "Verde Clean Fuels, Inc. Class A · Industrial Specialties",
+      "change_pct": 0.20030504207675381,
+      "session_open": 9.989999771118164,
+      "session_close": 10.005000114440918,
+      "session_volume": 233200.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:VGAS",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/VGAS/history/",
+        "date": "2022-03-09",
+        "daily_high": 10.005000114440918,
+        "prior_all_time_or_current_month_high": 10.005000114440918,
+        "passes_close_filter": true,
+        "yahoo_symbol": "VGAS"
+      }
+    },
+    {
+      "ticker": "VYGR",
+      "name": "Voyager Therapeutics, Inc.",
+      "exchange": "NASDAQ",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Biotechnology",
+      "description": "Voyager Therapeutics, Inc. · Biotechnology",
+      "change_pct": 20.229016525138242,
+      "session_open": 5.139999866485596,
+      "session_close": 6.300000190734863,
+      "session_volume": 2723300.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:VYGR",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/VYGR/history/",
+        "date": "2022-03-09",
+        "daily_high": 6.5,
+        "prior_all_time_or_current_month_high": 31.90999984741211,
+        "passes_close_filter": true,
+        "yahoo_symbol": "VYGR"
+      }
+    },
+    {
+      "ticker": "ZSQR",
+      "name": "Z Squared Inc.",
+      "exchange": "NASDAQ",
+      "category": "Technology Services",
+      "high_type": "52_week",
+      "reason": "업종: Technology Services · Data Processing Services",
+      "description": "Z Squared Inc. · Data Processing Services",
+      "change_pct": 0.049754280356029135,
+      "session_open": 201.0,
+      "session_close": 201.10000610351562,
+      "session_volume": 105.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:ZSQR",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/ZSQR/history/",
+        "date": "2022-03-09",
+        "daily_high": 201.10000610351562,
+        "prior_all_time_or_current_month_high": 4476.000061035156,
+        "passes_close_filter": true,
+        "yahoo_symbol": "ZSQR"
+      }
+    },
+    {
+      "ticker": "BAP",
+      "name": "Credicorp Ltd.",
+      "exchange": "NYSE",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "업종: Finance · Major Banks",
+      "description": "Credicorp Ltd. · Major Banks",
+      "change_pct": 5.872366391153272,
+      "session_open": 156.4499969482422,
+      "session_close": 162.0800018310547,
+      "session_volume": 656900.0,
+      "currency": "USD",
+      "source_symbol": "NYSE:BAP",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/BAP/history/",
+        "date": "2022-03-09",
+        "daily_high": 163.4199981689453,
+        "prior_all_time_or_current_month_high": 252.49000549316406,
+        "passes_close_filter": true,
+        "yahoo_symbol": "BAP"
+      }
+    },
+    {
+      "ticker": "BSRT",
+      "name": "BSR Real Estate Investment Trust",
+      "exchange": "NYSE",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "업종: Finance · Real Estate Investment Trusts",
+      "description": "BSR Real Estate Investment Trust · Real Estate Investment Trusts",
+      "change_pct": 4.710528725071961,
+      "session_open": 19.75,
+      "session_close": 19.895000457763672,
+      "session_volume": 15000.0,
+      "currency": "USD",
+      "source_symbol": "NYSE:BSRT",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/BSRT/history/",
+        "date": "2022-03-09",
+        "daily_high": 19.959999084472656,
+        "prior_all_time_or_current_month_high": 19.959999084472656,
+        "passes_close_filter": true,
+        "yahoo_symbol": "BSRT"
+      }
+    },
+    {
+      "ticker": "SST",
+      "name": "System1, Inc. Class A",
+      "exchange": "NYSE",
+      "category": "Technology Services",
+      "high_type": "52_week",
+      "reason": "업종: Technology Services · Packaged Software",
+      "description": "System1, Inc. Class A · Packaged Software",
+      "change_pct": 2.5387034696691124,
+      "session_open": 156.1999969482422,
+      "session_close": 165.60000610351562,
+      "session_volume": 75330.0,
+      "currency": "USD",
+      "source_symbol": "NYSE:SST",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/SST/history/",
+        "date": "2022-03-09",
+        "daily_high": 178.0,
+        "prior_all_time_or_current_month_high": 1199.000015258789,
+        "passes_close_filter": true,
+        "yahoo_symbol": "SST"
+      }
+    },
+    {
+      "ticker": "WLK",
+      "name": "Westlake Corporation",
+      "exchange": "NYSE",
+      "category": "Process Industries",
+      "high_type": "52_week",
+      "reason": "업종: Process Industries · Chemicals: Specialty",
+      "description": "Westlake Corporation · Chemicals: Specialty",
+      "change_pct": 3.598690523014958,
+      "session_open": 112.01000213623047,
+      "session_close": 114.0,
+      "session_volume": 710100.0,
+      "currency": "USD",
+      "source_symbol": "NYSE:WLK",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/WLK/history/",
+        "date": "2022-03-09",
+        "daily_high": 116.6500015258789,
+        "prior_all_time_or_current_month_high": 124.30000305175781,
+        "passes_close_filter": true,
+        "yahoo_symbol": "WLK"
+      }
+    },
+    {
+      "ticker": "ZIM",
+      "name": "ZIM Integrated Shipping Services Ltd.",
+      "exchange": "NYSE",
+      "category": "Transportation",
+      "high_type": "all_time",
+      "reason": "업종: Transportation · Marine Shipping",
+      "description": "ZIM Integrated Shipping Services Ltd. · Marine Shipping",
+      "change_pct": 6.295086708945452,
+      "session_open": 75.05000305175781,
+      "session_close": 75.13999938964844,
+      "session_volume": 10140800.0,
+      "currency": "USD",
+      "source_symbol": "NYSE:ZIM",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/ZIM/history/",
+        "date": "2022-03-09",
+        "daily_high": 77.44999694824219,
+        "prior_all_time_or_current_month_high": 77.44999694824219,
+        "passes_close_filter": true,
+        "yahoo_symbol": "ZIM"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-10-29T09:50:57.622252+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 5711,
+    "history_symbols": 4481,
+    "inactive_symbols": 9,
+    "failed_symbols": 1221,
+    "coverage_ratio": 0.7858646089091547,
+    "coverage_by_exchange": {
+      "NASDAQ": {
+        "covered": 2472,
+        "total": 3336
+      },
+      "NYSE": {
+        "covered": 1816,
+        "total": 2104
+      },
+      "AMEX": {
+        "covered": 193,
+        "total": 262
+      }
+    },
+    "session_symbols": 4368,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-10-29T09:50:57.622252+00:00"
+}

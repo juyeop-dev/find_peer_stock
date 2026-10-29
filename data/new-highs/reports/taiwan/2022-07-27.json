@@ -1,0 +1,310 @@
+{
+  "schema_version": 1,
+  "market": "taiwan",
+  "date": "2022-07-27",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "4402.TWO",
+      "name": "J.D Development Co. Ltd.",
+      "exchange": "TPEX",
+      "category": "Process Industries",
+      "high_type": "52_week",
+      "reason": "업종: Process Industries · Textiles",
+      "description": "J.D Development Co. Ltd. · Textiles",
+      "change_pct": 9.868427450637164,
+      "session_open": 15.550000190734863,
+      "session_close": 16.700000762939453,
+      "session_volume": 2161000.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:4402",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4402.TWO/history/",
+        "date": "2022-07-27",
+        "daily_high": 16.700000762939453,
+        "prior_all_time_or_current_month_high": 65.79300868521781,
+        "passes_close_filter": true,
+        "yahoo_symbol": "4402.TWO"
+      }
+    },
+    {
+      "ticker": "5205.TWO",
+      "name": "Taiwan Green Environment Technology Inc.",
+      "exchange": "TPEX",
+      "category": "Technology Services",
+      "high_type": "52_week",
+      "reason": "업종: Technology Services · Packaged Software",
+      "description": "Taiwan Green Environment Technology Inc. · Packaged Software",
+      "change_pct": 4.838712902644771,
+      "session_open": 24.25,
+      "session_close": 26.0,
+      "session_volume": 22000.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:5205",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/5205.TWO/history/",
+        "date": "2022-07-27",
+        "daily_high": 26.549999237060547,
+        "prior_all_time_or_current_month_high": 3421.875,
+        "passes_close_filter": true,
+        "yahoo_symbol": "5205.TWO"
+      }
+    },
+    {
+      "ticker": "6220.TWO",
+      "name": "YFC-BonEagle Electric Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Electrical Products",
+      "description": "YFC-BonEagle Electric Co., Ltd. · Electrical Products",
+      "change_pct": 7.1428556063249715,
+      "session_open": 27.899999618530273,
+      "session_close": 28.5,
+      "session_volume": 13995000.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:6220",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6220.TWO/history/",
+        "date": "2022-07-27",
+        "daily_high": 29.149999618530273,
+        "prior_all_time_or_current_month_high": 74.77027130126953,
+        "passes_close_filter": true,
+        "yahoo_symbol": "6220.TWO"
+      }
+    },
+    {
+      "ticker": "6461.TWO",
+      "name": "Intech Biopharm Ltd",
+      "exchange": "TPEX",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Pharmaceuticals: Major",
+      "description": "Intech Biopharm Ltd · Pharmaceuticals: Major",
+      "change_pct": 0.5891032328553036,
+      "session_open": 52.909141540527344,
+      "session_close": 52.909141540527344,
+      "session_volume": 36669729.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:6461",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6461.TWO/history/",
+        "date": "2022-07-27",
+        "daily_high": 57.0922966003418,
+        "prior_all_time_or_current_month_high": 198.7184958234413,
+        "passes_close_filter": true,
+        "yahoo_symbol": "6461.TWO"
+      }
+    },
+    {
+      "ticker": "6785.TWO",
+      "name": "Alar Pharmaceuticals Inc",
+      "exchange": "TPEX",
+      "category": "Health Technology",
+      "high_type": "all_time",
+      "reason": "업종: Health Technology · Pharmaceuticals: Major",
+      "description": "Alar Pharmaceuticals Inc · Pharmaceuticals: Major",
+      "change_pct": 10.049626088667774,
+      "session_open": 80.9000015258789,
+      "session_close": 88.69999694824219,
+      "session_volume": 359881.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:6785",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6785.TWO/history/",
+        "date": "2022-07-27",
+        "daily_high": 89.80000305175781,
+        "prior_all_time_or_current_month_high": 89.80000305175781,
+        "passes_close_filter": true,
+        "yahoo_symbol": "6785.TWO"
+      }
+    },
+    {
+      "ticker": "8050.TWO",
+      "name": "iBASE Technology Inc.",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Electronic Components",
+      "description": "iBASE Technology Inc. · Electronic Components",
+      "change_pct": 4.3613756773464685,
+      "session_open": 64.19999694824219,
+      "session_close": 67.0,
+      "session_volume": 12963000.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:8050",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/8050.TWO/history/",
+        "date": "2022-07-27",
+        "daily_high": 68.4000015258789,
+        "prior_all_time_or_current_month_high": 70.0342411077526,
+        "passes_close_filter": true,
+        "yahoo_symbol": "8050.TWO"
+      }
+    },
+    {
+      "ticker": "8403.TWO",
+      "name": "ShareHope Medicine Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Distribution Services",
+      "high_type": "52_week",
+      "reason": "업종: Distribution Services · Medical Distributors",
+      "description": "ShareHope Medicine Co., Ltd. · Medical Distributors",
+      "change_pct": 0.14064683073096163,
+      "session_open": 28.082633245558963,
+      "session_close": 28.161737351190474,
+      "session_volume": 1296993.6,
+      "currency": "TWD",
+      "source_symbol": "TPEX:8403",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/8403.TWO/history/",
+        "date": "2022-07-27",
+        "daily_high": 28.31995101202102,
+        "prior_all_time_or_current_month_high": 31.311102026192202,
+        "passes_close_filter": true,
+        "yahoo_symbol": "8403.TWO"
+      }
+    },
+    {
+      "ticker": "3022.TW",
+      "name": "IEI Integration Corporation",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Computer Peripherals",
+      "description": "IEI Integration Corporation · Computer Peripherals",
+      "change_pct": 5.192309159498953,
+      "session_open": 52.0,
+      "session_close": 54.70000076293945,
+      "session_volume": 3329752.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:3022",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3022.TW/history/",
+        "date": "2022-07-27",
+        "daily_high": 54.70000076293945,
+        "prior_all_time_or_current_month_high": 208.7645993875841,
+        "passes_close_filter": true,
+        "yahoo_symbol": "3022.TW"
+      }
+    },
+    {
+      "ticker": "3038.TW",
+      "name": "Emerging Display Technologies Corp",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Computer Peripherals",
+      "description": "Emerging Display Technologies Corp · Computer Peripherals",
+      "change_pct": 1.187648499102334,
+      "session_open": 21.200000762939453,
+      "session_close": 21.299999237060547,
+      "session_volume": 2508241.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:3038",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3038.TW/history/",
+        "date": "2022-07-27",
+        "daily_high": 21.75,
+        "prior_all_time_or_current_month_high": 26.299999237060547,
+        "passes_close_filter": true,
+        "yahoo_symbol": "3038.TW"
+      }
+    },
+    {
+      "ticker": "3494.TW",
+      "name": "HiTi Digital Inc.",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Computer Peripherals",
+      "description": "HiTi Digital Inc. · Computer Peripherals",
+      "change_pct": 1.40845342846867,
+      "session_open": 23.0,
+      "session_close": 24.0,
+      "session_volume": 5671725.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:3494",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3494.TW/history/",
+        "date": "2022-07-27",
+        "daily_high": 25.55555534362793,
+        "prior_all_time_or_current_month_high": 610.5087288824147,
+        "passes_close_filter": true,
+        "yahoo_symbol": "3494.TW"
+      }
+    },
+    {
+      "ticker": "6133.TW",
+      "name": "Golden Bridge Electech Inc.",
+      "exchange": "TWSE",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Metal Fabrication",
+      "description": "Golden Bridge Electech Inc. · Metal Fabrication",
+      "change_pct": 9.947641783157234,
+      "session_open": 19.100000381469727,
+      "session_close": 21.0,
+      "session_volume": 8288040.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:6133",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6133.TW/history/",
+        "date": "2022-07-27",
+        "daily_high": 21.0,
+        "prior_all_time_or_current_month_high": 29.44611506857598,
+        "passes_close_filter": true,
+        "yahoo_symbol": "6133.TW"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-10-29T09:42:16.113847+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 2356,
+    "history_symbols": 2003,
+    "inactive_symbols": 5,
+    "failed_symbols": 348,
+    "coverage_ratio": 0.8519778817524458,
+    "coverage_by_exchange": {
+      "TWSE": {
+        "covered": 1012,
+        "total": 1094
+      },
+      "TPEX": {
+        "covered": 991,
+        "total": 1257
+      }
+    },
+    "session_symbols": 1973,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-10-29T09:42:16.113847+00:00"
+}

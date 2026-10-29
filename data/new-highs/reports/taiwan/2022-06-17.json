@@ -1,0 +1,310 @@
+{
+  "schema_version": 1,
+  "market": "taiwan",
+  "date": "2022-06-17",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "4116.TWO",
+      "name": "BenQ Medical Technology Corp.",
+      "exchange": "TPEX",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Medical Specialties",
+      "description": "BenQ Medical Technology Corp. · Medical Specialties",
+      "change_pct": 6.299216855636036,
+      "session_open": 76.0999984741211,
+      "session_close": 81.0,
+      "session_volume": 27264000.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:4116",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4116.TWO/history/",
+        "date": "2022-06-17",
+        "daily_high": 82.9000015258789,
+        "prior_all_time_or_current_month_high": 160.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "4116.TWO"
+      }
+    },
+    {
+      "ticker": "4911.TWO",
+      "name": "G&E Herbal Biotechnology Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Pharmaceuticals: Major",
+      "description": "G&E Herbal Biotechnology Co., Ltd. · Pharmaceuticals: Major",
+      "change_pct": 9.890106131090226,
+      "session_open": 40.44050979614258,
+      "session_close": 40.44050979614258,
+      "session_volume": 2371384.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:4911",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4911.TWO/history/",
+        "date": "2022-06-17",
+        "daily_high": 40.44050979614258,
+        "prior_all_time_or_current_month_high": 111.78158166901096,
+        "passes_close_filter": true,
+        "yahoo_symbol": "4911.TWO"
+      }
+    },
+    {
+      "ticker": "5205.TWO",
+      "name": "Taiwan Green Environment Technology Inc.",
+      "exchange": "TPEX",
+      "category": "Technology Services",
+      "high_type": "52_week",
+      "reason": "업종: Technology Services · Packaged Software",
+      "description": "Taiwan Green Environment Technology Inc. · Packaged Software",
+      "change_pct": 9.907831995112959,
+      "session_open": 21.850000381469727,
+      "session_close": 23.850000381469727,
+      "session_volume": 65000.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:5205",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/5205.TWO/history/",
+        "date": "2022-06-17",
+        "daily_high": 23.850000381469727,
+        "prior_all_time_or_current_month_high": 3421.875,
+        "passes_close_filter": true,
+        "yahoo_symbol": "5205.TWO"
+      }
+    },
+    {
+      "ticker": "6114.TWO",
+      "name": "JUIC INTERNATIONAL CORPORATION",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Electronic Components",
+      "description": "JUIC INTERNATIONAL CORPORATION · Electronic Components",
+      "change_pct": 9.930308008219013,
+      "session_open": 28.700000762939453,
+      "session_close": 31.549999237060547,
+      "session_volume": 9242000.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:6114",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6114.TWO/history/",
+        "date": "2022-06-17",
+        "daily_high": 31.549999237060547,
+        "prior_all_time_or_current_month_high": 74.64852469308035,
+        "passes_close_filter": true,
+        "yahoo_symbol": "6114.TWO"
+      }
+    },
+    {
+      "ticker": "8421.TWO",
+      "name": "Xu Yuan Packaging Technology Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Process Industries",
+      "high_type": "52_week",
+      "reason": "업종: Process Industries · Containers/Packaging",
+      "description": "Xu Yuan Packaging Technology Co., Ltd. · Containers/Packaging",
+      "change_pct": 9.890105283544127,
+      "session_open": 18.649999618530273,
+      "session_close": 20.0,
+      "session_volume": 20989000.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:8421",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/8421.TWO/history/",
+        "date": "2022-06-17",
+        "daily_high": 20.0,
+        "prior_all_time_or_current_month_high": 26.17768336252094,
+        "passes_close_filter": true,
+        "yahoo_symbol": "8421.TWO"
+      }
+    },
+    {
+      "ticker": "8937.TWO",
+      "name": "Her Chee Industrial Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Consumer Durables",
+      "high_type": "all_time",
+      "reason": "업종: Consumer Durables · Motor Vehicles",
+      "description": "Her Chee Industrial Co., Ltd. · Motor Vehicles",
+      "change_pct": 3.525636048790459,
+      "session_open": 3.924999952316284,
+      "session_close": 4.037499904632568,
+      "session_volume": 5868000.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:8937",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/8937.TWO/history/",
+        "date": "2022-06-17",
+        "daily_high": 4.050000190734863,
+        "prior_all_time_or_current_month_high": 4.050000190734863,
+        "passes_close_filter": true,
+        "yahoo_symbol": "8937.TWO"
+      }
+    },
+    {
+      "ticker": "2201.TW",
+      "name": "Yulon Motor Co.,Ltd",
+      "exchange": "TWSE",
+      "category": "Consumer Durables",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Durables · Motor Vehicles",
+      "description": "Yulon Motor Co.,Ltd · Motor Vehicles",
+      "change_pct": 0.655022847681086,
+      "session_open": 44.94744873046875,
+      "session_close": 45.49017333984375,
+      "session_volume": 14377705.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2201",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2201.TW/history/",
+        "date": "2022-06-17",
+        "daily_high": 46.23025131225586,
+        "prior_all_time_or_current_month_high": 192.1337394172717,
+        "passes_close_filter": true,
+        "yahoo_symbol": "2201.TW"
+      }
+    },
+    {
+      "ticker": "2634.TW",
+      "name": "Aerospace Industrial Development Corp.",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Aerospace & Defense",
+      "description": "Aerospace Industrial Development Corp. · Aerospace & Defense",
+      "change_pct": 9.928059749466044,
+      "session_open": 35.099998474121094,
+      "session_close": 38.20000076293945,
+      "session_volume": 69112780.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2634",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2634.TW/history/",
+        "date": "2022-06-17",
+        "daily_high": 38.20000076293945,
+        "prior_all_time_or_current_month_high": 44.124389913295936,
+        "passes_close_filter": true,
+        "yahoo_symbol": "2634.TW"
+      }
+    },
+    {
+      "ticker": "4572.TW",
+      "name": "Drewloong Precision, Inc.",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Aerospace & Defense",
+      "description": "Drewloong Precision, Inc. · Aerospace & Defense",
+      "change_pct": 6.0975624124120165,
+      "session_open": 111.42749786376953,
+      "session_close": 116.79750061035156,
+      "session_volume": 3551630.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:4572",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4572.TW/history/",
+        "date": "2022-06-17",
+        "daily_high": 119.48249816894531,
+        "prior_all_time_or_current_month_high": 136.73497180531032,
+        "passes_close_filter": true,
+        "yahoo_symbol": "4572.TW"
+      }
+    },
+    {
+      "ticker": "8222.TW",
+      "name": "Aero Win Technology Corp.",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Aerospace & Defense",
+      "description": "Aero Win Technology Corp. · Aerospace & Defense",
+      "change_pct": 9.935892302295679,
+      "session_open": 15.399999618530273,
+      "session_close": 17.149999618530273,
+      "session_volume": 8555479.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:8222",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/8222.TW/history/",
+        "date": "2022-06-17",
+        "daily_high": 17.149999618530273,
+        "prior_all_time_or_current_month_high": 41.150001525878906,
+        "passes_close_filter": true,
+        "yahoo_symbol": "8222.TW"
+      }
+    },
+    {
+      "ticker": "8467.TW",
+      "name": "Bonny Worldwide Ltd.",
+      "exchange": "TWSE",
+      "category": "Consumer Durables",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Durables · Recreational Products",
+      "description": "Bonny Worldwide Ltd. · Recreational Products",
+      "change_pct": 9.977580527321184,
+      "session_open": 43.849998474121094,
+      "session_close": 49.04999923706055,
+      "session_volume": 362000.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:8467",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/8467.TW/history/",
+        "date": "2022-06-17",
+        "daily_high": 49.04999923706055,
+        "prior_all_time_or_current_month_high": 74.5999984741211,
+        "passes_close_filter": true,
+        "yahoo_symbol": "8467.TW"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-10-29T09:42:16.113847+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 2356,
+    "history_symbols": 2003,
+    "inactive_symbols": 5,
+    "failed_symbols": 348,
+    "coverage_ratio": 0.8519778817524458,
+    "coverage_by_exchange": {
+      "TWSE": {
+        "covered": 1012,
+        "total": 1094
+      },
+      "TPEX": {
+        "covered": 991,
+        "total": 1257
+      }
+    },
+    "session_symbols": 1964,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-10-29T09:42:16.113847+00:00"
+}

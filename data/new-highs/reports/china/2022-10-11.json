@@ -1,0 +1,358 @@
+{
+  "schema_version": 1,
+  "market": "china",
+  "date": "2022-10-11",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "600230.SS",
+      "name": "Hebei Cangzhou Dahua Co. Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Process Industries",
+      "high_type": "52_week",
+      "reason": "업종: Process Industries · Chemicals: Specialty",
+      "description": "Hebei Cangzhou Dahua Co. Ltd. Class A · Chemicals: Specialty",
+      "change_pct": 10.00483151953917,
+      "session_open": 20.729999542236328,
+      "session_close": 22.760000228881836,
+      "session_volume": 35090796.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:600230",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/600230.SS/history/",
+        "date": "2022-10-11",
+        "daily_high": 22.760000228881836,
+        "prior_all_time_or_current_month_high": 32.86734717232841,
+        "passes_close_filter": true,
+        "yahoo_symbol": "600230.SS"
+      }
+    },
+    {
+      "ticker": "603052.SS",
+      "name": "Suzhou K-Hiragawa Electronic Technology Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Electronic Production Equipment",
+      "description": "Suzhou K-Hiragawa Electronic Technology Co., Ltd. Class A · Electronic Production Equipment",
+      "change_pct": 0.0,
+      "session_open": 15.167637825012207,
+      "session_close": 18.199708938598633,
+      "session_volume": 3490496.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:603052",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/603052.SS/history/",
+        "date": "2022-10-11",
+        "daily_high": 18.199708938598633,
+        "prior_all_time_or_current_month_high": 18.199708938598633,
+        "passes_close_filter": true,
+        "yahoo_symbol": "603052.SS"
+      }
+    },
+    {
+      "ticker": "603100.SS",
+      "name": "Chongqing Chuanyi Automation Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Electronic Equipment/Instruments",
+      "description": "Chongqing Chuanyi Automation Co., Ltd. Class A · Electronic Equipment/Instruments",
+      "change_pct": 1.4503062691300306,
+      "session_open": 21.16922950744629,
+      "session_close": 22.061538696289062,
+      "session_volume": 5999968.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:603100",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/603100.SS/history/",
+        "date": "2022-10-11",
+        "daily_high": 22.330768585205078,
+        "prior_all_time_or_current_month_high": 22.633135868952824,
+        "passes_close_filter": true,
+        "yahoo_symbol": "603100.SS"
+      }
+    },
+    {
+      "ticker": "603318.SS",
+      "name": "Shuifa Gas Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Industrial Machinery",
+      "description": "Shuifa Gas Co., Ltd. Class A · Industrial Machinery",
+      "change_pct": 10.009437683372923,
+      "session_open": 10.390000343322754,
+      "session_close": 11.649999618530273,
+      "session_volume": 57221618.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:603318",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/603318.SS/history/",
+        "date": "2022-10-11",
+        "daily_high": 11.649999618530273,
+        "prior_all_time_or_current_month_high": 33.5,
+        "passes_close_filter": true,
+        "yahoo_symbol": "603318.SS"
+      }
+    },
+    {
+      "ticker": "605198.SS",
+      "name": "Yantai North Andre Juice Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Consumer Non-Durables",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Non-Durables · Food: Specialty/Candy",
+      "description": "Yantai North Andre Juice Co., Ltd. Class A · Food: Specialty/Candy",
+      "change_pct": 0.33345740404266966,
+      "session_open": 27.0,
+      "session_close": 27.079999923706055,
+      "session_volume": 2526643.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:605198",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/605198.SS/history/",
+        "date": "2022-10-11",
+        "daily_high": 27.25,
+        "prior_all_time_or_current_month_high": 34.060001373291016,
+        "passes_close_filter": true,
+        "yahoo_symbol": "605198.SS"
+      }
+    },
+    {
+      "ticker": "688600.SS",
+      "name": "Anhui Wanyi Science And Technology Co. Ltd. Class 1",
+      "exchange": "SSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Electronic Equipment/Instruments",
+      "description": "Anhui Wanyi Science And Technology Co. Ltd. Class 1 · Electronic Equipment/Instruments",
+      "change_pct": 1.8181857932527468,
+      "session_open": 25.149999618530273,
+      "session_close": 25.760000228881836,
+      "session_volume": 5003099.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:688600",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/688600.SS/history/",
+        "date": "2022-10-11",
+        "daily_high": 28.09000015258789,
+        "prior_all_time_or_current_month_high": 40.599998474121094,
+        "passes_close_filter": true,
+        "yahoo_symbol": "688600.SS"
+      }
+    },
+    {
+      "ticker": "900915.SS",
+      "name": "Zhonglu Co., Ltd. Class B",
+      "exchange": "SSE",
+      "category": "Consumer Durables",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Durables · Recreational Products",
+      "description": "Zhonglu Co., Ltd. Class B · Recreational Products",
+      "change_pct": 10.054053357432945,
+      "session_open": 0.9010000228881836,
+      "session_close": 1.0180000066757202,
+      "session_volume": 2920531.0,
+      "currency": "USD",
+      "source_symbol": "SSE:900915",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/900915.SS/history/",
+        "date": "2022-10-11",
+        "daily_high": 1.0180000066757202,
+        "prior_all_time_or_current_month_high": 5.257999897003174,
+        "passes_close_filter": true,
+        "yahoo_symbol": "900915.SS"
+      }
+    },
+    {
+      "ticker": "001255.SZ",
+      "name": "Zhejiang Bofay Electric Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Process Industries",
+      "high_type": "all_time",
+      "reason": "업종: Process Industries · Industrial Specialties",
+      "description": "Zhejiang Bofay Electric Co., Ltd. Class A · Industrial Specialties",
+      "change_pct": 9.993617811664546,
+      "session_open": 34.45000076293945,
+      "session_close": 34.45000076293945,
+      "session_volume": 126047.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:001255",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/001255.SZ/history/",
+        "date": "2022-10-11",
+        "daily_high": 34.45000076293945,
+        "prior_all_time_or_current_month_high": 34.45000076293945,
+        "passes_close_filter": true,
+        "yahoo_symbol": "001255.SZ"
+      }
+    },
+    {
+      "ticker": "001269.SZ",
+      "name": "Inner Mongolia OJing Science and Technology Co. Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Semiconductors",
+      "description": "Inner Mongolia OJing Science and Technology Co. Ltd. Class A · Semiconductors",
+      "change_pct": 10.004037208673067,
+      "session_open": 19.47857093811035,
+      "session_close": 19.47857093811035,
+      "session_volume": 217324.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:001269",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/001269.SZ/history/",
+        "date": "2022-10-11",
+        "daily_high": 19.47857093811035,
+        "prior_all_time_or_current_month_high": 19.47857093811035,
+        "passes_close_filter": true,
+        "yahoo_symbol": "001269.SZ"
+      }
+    },
+    {
+      "ticker": "002966.SZ",
+      "name": "Bank of Suzhou Co Ltd Class A",
+      "exchange": "SZSE",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "업종: Finance · Regional Banks",
+      "description": "Bank of Suzhou Co Ltd Class A · Regional Banks",
+      "change_pct": 2.616276531170536,
+      "session_open": 6.849999904632568,
+      "session_close": 7.059999942779541,
+      "session_volume": 50004402.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002966",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002966.SZ/history/",
+        "date": "2022-10-11",
+        "daily_high": 7.099999904632568,
+        "prior_all_time_or_current_month_high": 12.454545281150123,
+        "passes_close_filter": true,
+        "yahoo_symbol": "002966.SZ"
+      }
+    },
+    {
+      "ticker": "300884.SZ",
+      "name": "Dnake (Xiamen) Intelligent Technology Co. Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Computer Communications",
+      "description": "Dnake (Xiamen) Intelligent Technology Co. Ltd. Class A · Computer Communications",
+      "change_pct": 3.6395154045260947,
+      "session_open": 11.300000190734863,
+      "session_close": 11.960000038146973,
+      "session_volume": 15583835.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:300884",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/300884.SZ/history/",
+        "date": "2022-10-11",
+        "daily_high": 11.970000267028809,
+        "prior_all_time_or_current_month_high": 18.95691644577753,
+        "passes_close_filter": true,
+        "yahoo_symbol": "300884.SZ"
+      }
+    },
+    {
+      "ticker": "300910.SZ",
+      "name": "Xinxiang Richful Lube Additive Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Process Industries",
+      "high_type": "all_time",
+      "reason": "업종: Process Industries · Chemicals: Major Diversified",
+      "description": "Xinxiang Richful Lube Additive Co., Ltd. Class A · Chemicals: Major Diversified",
+      "change_pct": 7.16940468264442,
+      "session_open": 45.761131286621094,
+      "session_close": 47.870445251464844,
+      "session_volume": 5939483.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:300910",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/300910.SZ/history/",
+        "date": "2022-10-11",
+        "daily_high": 48.37651824951172,
+        "prior_all_time_or_current_month_high": 48.37651824951172,
+        "passes_close_filter": true,
+        "yahoo_symbol": "300910.SZ"
+      }
+    },
+    {
+      "ticker": "301153.SZ",
+      "name": "Beijing CTJ Information Technology Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Technology Services",
+      "high_type": "all_time",
+      "reason": "업종: Technology Services · Packaged Software",
+      "description": "Beijing CTJ Information Technology Co., Ltd. Class A · Packaged Software",
+      "change_pct": 6.227040433391395,
+      "session_open": 18.490739822387695,
+      "session_close": 19.638887405395508,
+      "session_volume": 13695658.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:301153",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/301153.SZ/history/",
+        "date": "2022-10-11",
+        "daily_high": 19.879629135131836,
+        "prior_all_time_or_current_month_high": 19.879629135131836,
+        "passes_close_filter": true,
+        "yahoo_symbol": "301153.SZ"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-10-29T09:46:43.953004+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 5312,
+    "history_symbols": 4828,
+    "inactive_symbols": 0,
+    "failed_symbols": 484,
+    "coverage_ratio": 0.9088855421686747,
+    "coverage_by_exchange": {
+      "SSE": {
+        "covered": 2148,
+        "total": 2358
+      },
+      "SZSE": {
+        "covered": 2680,
+        "total": 2954
+      }
+    },
+    "session_symbols": 4755,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-10-29T09:46:43.953004+00:00"
+}

@@ -1,0 +1,266 @@
+{
+  "schema_version": 1,
+  "market": "us",
+  "date": "2022-09-20",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "ANIX",
+      "name": "Anixa Biosciences, Inc.",
+      "exchange": "NASDAQ",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Biotechnology",
+      "description": "Anixa Biosciences, Inc. · Biotechnology",
+      "change_pct": 4.770020703018818,
+      "session_open": 5.989999771118164,
+      "session_close": 6.150000095367432,
+      "session_volume": 322600.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:ANIX",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/ANIX/history/",
+        "date": "2022-09-20",
+        "daily_high": 6.199999809265137,
+        "prior_all_time_or_current_month_high": 5546.875,
+        "passes_close_filter": true,
+        "yahoo_symbol": "ANIX"
+      }
+    },
+    {
+      "ticker": "BWEN",
+      "name": "Broadwind, Inc.",
+      "exchange": "NASDAQ",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Electrical Products",
+      "description": "Broadwind, Inc. · Electrical Products",
+      "change_pct": 5.654763784301853,
+      "session_open": 3.299999952316284,
+      "session_close": 3.549999952316284,
+      "session_volume": 463600.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:BWEN",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/BWEN/history/",
+        "date": "2022-09-20",
+        "daily_high": 3.799999952316284,
+        "prior_all_time_or_current_month_high": 2900.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "BWEN"
+      }
+    },
+    {
+      "ticker": "ECBK",
+      "name": "ECB Bancorp, Inc.",
+      "exchange": "NASDAQ",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "업종: Finance · Regional Banks",
+      "description": "ECB Bancorp, Inc. · Regional Banks",
+      "change_pct": 0.5505844815985705,
+      "session_open": 14.399999618530273,
+      "session_close": 14.609999656677246,
+      "session_volume": 96600.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:ECBK",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/ECBK/history/",
+        "date": "2022-09-20",
+        "daily_high": 14.619999885559082,
+        "prior_all_time_or_current_month_high": 14.619999885559082,
+        "passes_close_filter": true,
+        "yahoo_symbol": "ECBK"
+      }
+    },
+    {
+      "ticker": "HFWA",
+      "name": "Heritage Financial Corporation",
+      "exchange": "NASDAQ",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "업종: Finance · Regional Banks",
+      "description": "Heritage Financial Corporation · Regional Banks",
+      "change_pct": 1.8411491244994638,
+      "session_open": 27.510000228881836,
+      "session_close": 28.209999084472656,
+      "session_volume": 178400.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:HFWA",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/HFWA/history/",
+        "date": "2022-09-20",
+        "daily_high": 28.299999237060547,
+        "prior_all_time_or_current_month_high": 37.400001525878906,
+        "passes_close_filter": true,
+        "yahoo_symbol": "HFWA"
+      }
+    },
+    {
+      "ticker": "MIST",
+      "name": "Milestone Pharmaceuticals, Inc.",
+      "exchange": "NASDAQ",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Pharmaceuticals: Major",
+      "description": "Milestone Pharmaceuticals, Inc. · Pharmaceuticals: Major",
+      "change_pct": 1.0752626424140876,
+      "session_open": 9.319999694824219,
+      "session_close": 9.399999618530273,
+      "session_volume": 857400.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:MIST",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/MIST/history/",
+        "date": "2022-09-20",
+        "daily_high": 9.847000122070312,
+        "prior_all_time_or_current_month_high": 27.950000762939453,
+        "passes_close_filter": true,
+        "yahoo_symbol": "MIST"
+      }
+    },
+    {
+      "ticker": "SCLX",
+      "name": "Scilex Holding Company",
+      "exchange": "NASDAQ",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Pharmaceuticals: Other",
+      "description": "Scilex Holding Company · Pharmaceuticals: Other",
+      "change_pct": 0.0,
+      "session_open": 225.56039428710938,
+      "session_close": 225.56039428710938,
+      "session_volume": 14.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:SCLX",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/SCLX/history/",
+        "date": "2022-09-20",
+        "daily_high": 225.56039428710938,
+        "prior_all_time_or_current_month_high": 5086.680658133805,
+        "passes_close_filter": true,
+        "yahoo_symbol": "SCLX"
+      }
+    },
+    {
+      "ticker": "EVEX",
+      "name": "Eve Holding, Inc.",
+      "exchange": "NYSE",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Aerospace & Defense",
+      "description": "Eve Holding, Inc. · Aerospace & Defense",
+      "change_pct": 4.45235993215749,
+      "session_open": 10.989999771118164,
+      "session_close": 11.729999542236328,
+      "session_volume": 161000.0,
+      "currency": "USD",
+      "source_symbol": "NYSE:EVEX",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/EVEX/history/",
+        "date": "2022-09-20",
+        "daily_high": 12.300000190734863,
+        "prior_all_time_or_current_month_high": 12.300000190734863,
+        "passes_close_filter": true,
+        "yahoo_symbol": "EVEX"
+      }
+    },
+    {
+      "ticker": "TNK",
+      "name": "Teekay Tankers Ltd Class A",
+      "exchange": "NYSE",
+      "category": "Transportation",
+      "high_type": "52_week",
+      "reason": "업종: Transportation · Marine Shipping",
+      "description": "Teekay Tankers Ltd Class A · Marine Shipping",
+      "change_pct": 1.8381157388490887,
+      "session_open": 31.040000915527344,
+      "session_close": 31.579999923706055,
+      "session_volume": 862000.0,
+      "currency": "USD",
+      "source_symbol": "NYSE:TNK",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/TNK/history/",
+        "date": "2022-09-20",
+        "daily_high": 31.899999618530273,
+        "prior_all_time_or_current_month_high": 1672.9599609375,
+        "passes_close_filter": true,
+        "yahoo_symbol": "TNK"
+      }
+    },
+    {
+      "ticker": "XPER",
+      "name": "Xperi Inc",
+      "exchange": "NYSE",
+      "category": "Technology Services",
+      "high_type": "all_time",
+      "reason": "업종: Technology Services · Packaged Software",
+      "description": "Xperi Inc · Packaged Software",
+      "change_pct": 0.0,
+      "session_open": 23.0,
+      "session_close": 23.0,
+      "session_volume": 100.0,
+      "currency": "USD",
+      "source_symbol": "NYSE:XPER",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/XPER/history/",
+        "date": "2022-09-20",
+        "daily_high": 23.0,
+        "prior_all_time_or_current_month_high": 23.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "XPER"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-10-29T09:50:57.622252+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 5711,
+    "history_symbols": 4481,
+    "inactive_symbols": 9,
+    "failed_symbols": 1221,
+    "coverage_ratio": 0.7858646089091547,
+    "coverage_by_exchange": {
+      "NASDAQ": {
+        "covered": 2472,
+        "total": 3336
+      },
+      "NYSE": {
+        "covered": 1816,
+        "total": 2104
+      },
+      "AMEX": {
+        "covered": 193,
+        "total": 262
+      }
+    },
+    "session_symbols": 4448,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-10-29T09:50:57.622252+00:00"
+}

@@ -1,0 +1,410 @@
+{
+  "schema_version": 1,
+  "market": "us",
+  "date": "2022-04-22",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "ASBP",
+      "name": "Aspire-Lakewood Holdings, Inc.",
+      "exchange": "NASDAQ",
+      "category": "Health Technology",
+      "high_type": "all_time",
+      "reason": "업종: Health Technology · Pharmaceuticals: Other",
+      "description": "Aspire-Lakewood Holdings, Inc. · Pharmaceuticals: Other",
+      "change_pct": 0.17996431835338722,
+      "session_open": 400.3999938964844,
+      "session_close": 400.79998779296875,
+      "session_volume": 108.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:ASBP",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/ASBP/history/",
+        "date": "2022-04-22",
+        "daily_high": 420.0,
+        "prior_all_time_or_current_month_high": 420.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "ASBP"
+      }
+    },
+    {
+      "ticker": "BCBP",
+      "name": "BCB Bancorp, Inc.",
+      "exchange": "NASDAQ",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "업종: Finance · Regional Banks",
+      "description": "BCB Bancorp, Inc. · Regional Banks",
+      "change_pct": 7.65143760578082,
+      "session_open": 18.760000228881836,
+      "session_close": 20.260000228881836,
+      "session_volume": 183200.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:BCBP",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/BCBP/history/",
+        "date": "2022-04-22",
+        "daily_high": 20.389999389648438,
+        "prior_all_time_or_current_month_high": 20.389999389648438,
+        "passes_close_filter": true,
+        "yahoo_symbol": "BCBP"
+      }
+    },
+    {
+      "ticker": "CMTV",
+      "name": "Community Bancorp.",
+      "exchange": "NASDAQ",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "업종: Finance · Major Banks",
+      "description": "Community Bancorp. · Major Banks",
+      "change_pct": 8.695652173913038,
+      "session_open": 24.950000762939453,
+      "session_close": 25.0,
+      "session_volume": 1000.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:CMTV",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/CMTV/history/",
+        "date": "2022-04-22",
+        "daily_high": 25.0,
+        "prior_all_time_or_current_month_high": 25.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "CMTV"
+      }
+    },
+    {
+      "ticker": "ESQ",
+      "name": "Esquire Financial Holdings, Inc.",
+      "exchange": "NASDAQ",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "업종: Finance · Major Banks",
+      "description": "Esquire Financial Holdings, Inc. · Major Banks",
+      "change_pct": 2.099810461446272,
+      "session_open": 36.290000915527344,
+      "session_close": 37.439998626708984,
+      "session_volume": 61500.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:ESQ",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/ESQ/history/",
+        "date": "2022-04-22",
+        "daily_high": 38.18000030517578,
+        "prior_all_time_or_current_month_high": 38.18000030517578,
+        "passes_close_filter": true,
+        "yahoo_symbol": "ESQ"
+      }
+    },
+    {
+      "ticker": "ESTA",
+      "name": "Establishment Labs Holdings, Inc.",
+      "exchange": "NASDAQ",
+      "category": "Health Technology",
+      "high_type": "all_time",
+      "reason": "업종: Health Technology · Medical Specialties",
+      "description": "Establishment Labs Holdings, Inc. · Medical Specialties",
+      "change_pct": 3.3051631859898567,
+      "session_open": 80.4000015258789,
+      "session_close": 81.88999938964844,
+      "session_volume": 833200.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:ESTA",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/ESTA/history/",
+        "date": "2022-04-22",
+        "daily_high": 93.80000305175781,
+        "prior_all_time_or_current_month_high": 93.80000305175781,
+        "passes_close_filter": true,
+        "yahoo_symbol": "ESTA"
+      }
+    },
+    {
+      "ticker": "FUSE",
+      "name": "Fusemachines Inc.",
+      "exchange": "NASDAQ",
+      "category": "Technology Services",
+      "high_type": "all_time",
+      "reason": "업종: Technology Services · Packaged Software",
+      "description": "Fusemachines Inc. · Packaged Software",
+      "change_pct": 0.32553959242500596,
+      "session_open": 9.829999923706055,
+      "session_close": 9.862000465393066,
+      "session_volume": 5500.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:FUSE",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/FUSE/history/",
+        "date": "2022-04-22",
+        "daily_high": 10.503999710083008,
+        "prior_all_time_or_current_month_high": 10.503999710083008,
+        "passes_close_filter": true,
+        "yahoo_symbol": "FUSE"
+      }
+    },
+    {
+      "ticker": "GCL",
+      "name": "GCL Global Holdings Ltd",
+      "exchange": "NASDAQ",
+      "category": "Technology Services",
+      "high_type": "all_time",
+      "reason": "업종: Technology Services · Packaged Software",
+      "description": "GCL Global Holdings Ltd · Packaged Software",
+      "change_pct": 0.10142220314444117,
+      "session_open": 9.869999885559082,
+      "session_close": 9.869999885559082,
+      "session_volume": 250000.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:GCL",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/GCL/history/",
+        "date": "2022-04-22",
+        "daily_high": 9.869999885559082,
+        "prior_all_time_or_current_month_high": 9.869999885559082,
+        "passes_close_filter": true,
+        "yahoo_symbol": "GCL"
+      }
+    },
+    {
+      "ticker": "HPK",
+      "name": "HighPeak Energy Inc",
+      "exchange": "NASDAQ",
+      "category": "Energy Minerals",
+      "high_type": "all_time",
+      "reason": "업종: Energy Minerals · Oil & Gas Production",
+      "description": "HighPeak Energy Inc · Oil & Gas Production",
+      "change_pct": 11.674070005063664,
+      "session_open": 34.59000015258789,
+      "session_close": 37.689998626708984,
+      "session_volume": 1305700.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:HPK",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/HPK/history/",
+        "date": "2022-04-22",
+        "daily_high": 38.209999084472656,
+        "prior_all_time_or_current_month_high": 38.209999084472656,
+        "passes_close_filter": true,
+        "yahoo_symbol": "HPK"
+      }
+    },
+    {
+      "ticker": "JCSE",
+      "name": "JE Cleantech Holdings Limited Class A",
+      "exchange": "NASDAQ",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Industrial Machinery",
+      "description": "JE Cleantech Holdings Limited Class A · Industrial Machinery",
+      "change_pct": 0.0,
+      "session_open": 42.599998474121094,
+      "session_close": 57.0,
+      "session_volume": 399900.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:JCSE",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/JCSE/history/",
+        "date": "2022-04-22",
+        "daily_high": 71.97000122070312,
+        "prior_all_time_or_current_month_high": 71.97000122070312,
+        "passes_close_filter": true,
+        "yahoo_symbol": "JCSE"
+      }
+    },
+    {
+      "ticker": "ONMD",
+      "name": "OneMedNet Corp Class A",
+      "exchange": "NASDAQ",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "업종: Finance · Financial Conglomerates",
+      "description": "OneMedNet Corp Class A · Financial Conglomerates",
+      "change_pct": 0.0,
+      "session_open": 102.0,
+      "session_close": 102.0,
+      "session_volume": 270.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:ONMD",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/ONMD/history/",
+        "date": "2022-04-22",
+        "daily_high": 102.0,
+        "prior_all_time_or_current_month_high": 1020.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "ONMD"
+      }
+    },
+    {
+      "ticker": "SDA",
+      "name": "SunCar Technology Group Inc. Class A",
+      "exchange": "NASDAQ",
+      "category": "Consumer Services",
+      "high_type": "all_time",
+      "reason": "업종: Consumer Services · Other Consumer Services",
+      "description": "SunCar Technology Group Inc. Class A · Other Consumer Services",
+      "change_pct": 0.39761391833570414,
+      "session_open": 10.09000015258789,
+      "session_close": 10.100000381469727,
+      "session_volume": 300.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:SDA",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/SDA/history/",
+        "date": "2022-04-22",
+        "daily_high": 10.5,
+        "prior_all_time_or_current_month_high": 10.5,
+        "passes_close_filter": true,
+        "yahoo_symbol": "SDA"
+      }
+    },
+    {
+      "ticker": "ASC",
+      "name": "Ardmore Shipping Corp.",
+      "exchange": "NYSE",
+      "category": "Transportation",
+      "high_type": "52_week",
+      "reason": "업종: Transportation · Marine Shipping",
+      "description": "Ardmore Shipping Corp. · Marine Shipping",
+      "change_pct": 2.903808362356064,
+      "session_open": 5.590000152587891,
+      "session_close": 5.670000076293945,
+      "session_volume": 714400.0,
+      "currency": "USD",
+      "source_symbol": "NYSE:ASC",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/ASC/history/",
+        "date": "2022-04-22",
+        "daily_high": 6.079999923706055,
+        "prior_all_time_or_current_month_high": 15.84000015258789,
+        "passes_close_filter": true,
+        "yahoo_symbol": "ASC"
+      }
+    },
+    {
+      "ticker": "DKL",
+      "name": "Delek Logistics Partners LP",
+      "exchange": "NYSE",
+      "category": "Industrial Services",
+      "high_type": "all_time",
+      "reason": "업종: Industrial Services · Oil & Gas Pipelines",
+      "description": "Delek Logistics Partners LP · Oil & Gas Pipelines",
+      "change_pct": 0.18772005493106203,
+      "session_open": 53.20000076293945,
+      "session_close": 53.369998931884766,
+      "session_volume": 138600.0,
+      "currency": "USD",
+      "source_symbol": "NYSE:DKL",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/DKL/history/",
+        "date": "2022-04-22",
+        "daily_high": 54.58000183105469,
+        "prior_all_time_or_current_month_high": 54.58000183105469,
+        "passes_close_filter": true,
+        "yahoo_symbol": "DKL"
+      }
+    },
+    {
+      "ticker": "EPR",
+      "name": "EPR Properties",
+      "exchange": "NYSE",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "업종: Finance · Real Estate Investment Trusts",
+      "description": "EPR Properties · Real Estate Investment Trusts",
+      "change_pct": 0.8298738624212154,
+      "session_open": 55.369998931884766,
+      "session_close": 55.88999938964844,
+      "session_volume": 759600.0,
+      "currency": "USD",
+      "source_symbol": "NYSE:EPR",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/EPR/history/",
+        "date": "2022-04-22",
+        "daily_high": 56.380001068115234,
+        "prior_all_time_or_current_month_high": 84.66999816894531,
+        "passes_close_filter": true,
+        "yahoo_symbol": "EPR"
+      }
+    },
+    {
+      "ticker": "SLVM",
+      "name": "Sylvamo Corporation",
+      "exchange": "NYSE",
+      "category": "Process Industries",
+      "high_type": "all_time",
+      "reason": "업종: Process Industries · Pulp & Paper",
+      "description": "Sylvamo Corporation · Pulp & Paper",
+      "change_pct": 6.866615957920108,
+      "session_open": 37.939998626708984,
+      "session_close": 40.619998931884766,
+      "session_volume": 376300.0,
+      "currency": "USD",
+      "source_symbol": "NYSE:SLVM",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/SLVM/history/",
+        "date": "2022-04-22",
+        "daily_high": 41.09000015258789,
+        "prior_all_time_or_current_month_high": 41.09000015258789,
+        "passes_close_filter": true,
+        "yahoo_symbol": "SLVM"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-10-29T09:50:57.622252+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 5711,
+    "history_symbols": 4481,
+    "inactive_symbols": 9,
+    "failed_symbols": 1221,
+    "coverage_ratio": 0.7858646089091547,
+    "coverage_by_exchange": {
+      "NASDAQ": {
+        "covered": 2472,
+        "total": 3336
+      },
+      "NYSE": {
+        "covered": 1816,
+        "total": 2104
+      },
+      "AMEX": {
+        "covered": 193,
+        "total": 262
+      }
+    },
+    "session_symbols": 4398,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-10-29T09:50:57.622252+00:00"
+}

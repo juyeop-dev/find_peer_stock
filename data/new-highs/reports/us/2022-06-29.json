@@ -1,0 +1,194 @@
+{
+  "schema_version": 1,
+  "market": "us",
+  "date": "2022-06-29",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "CIIT",
+      "name": "Tianci International Inc",
+      "exchange": "NASDAQ",
+      "category": "Transportation",
+      "high_type": "52_week",
+      "reason": "업종: Transportation · Air Freight/Couriers",
+      "description": "Tianci International Inc · Air Freight/Couriers",
+      "change_pct": 82.09876298182839,
+      "session_open": 126.69999694824219,
+      "session_close": 206.5,
+      "session_volume": 236.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:CIIT",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/CIIT/history/",
+        "date": "2022-06-29",
+        "daily_high": 208.60000610351562,
+        "prior_all_time_or_current_month_high": 36750000.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "CIIT"
+      }
+    },
+    {
+      "ticker": "DFNS",
+      "name": "T3 Defense Inc.",
+      "exchange": "NASDAQ",
+      "category": "Commercial Services",
+      "high_type": "52_week",
+      "reason": "업종: Commercial Services · Advertising/Marketing Services",
+      "description": "T3 Defense Inc. · Advertising/Marketing Services",
+      "change_pct": 0.4798473998277597,
+      "session_open": 7478.5712890625,
+      "session_close": 7478.5712890625,
+      "session_volume": 2.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:DFNS",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/DFNS/history/",
+        "date": "2022-06-29",
+        "daily_high": 7478.5712890625,
+        "prior_all_time_or_current_month_high": 5397959.333147322,
+        "passes_close_filter": true,
+        "yahoo_symbol": "DFNS"
+      }
+    },
+    {
+      "ticker": "HHS",
+      "name": "Harte-Hanks, Inc.",
+      "exchange": "NASDAQ",
+      "category": "Commercial Services",
+      "high_type": "52_week",
+      "reason": "업종: Commercial Services · Miscellaneous Commercial Services",
+      "description": "Harte-Hanks, Inc. · Miscellaneous Commercial Services",
+      "change_pct": 5.350882725996131,
+      "session_open": 11.65999984741211,
+      "session_close": 12.010000228881836,
+      "session_volume": 242300.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:HHS",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/HHS/history/",
+        "date": "2022-06-29",
+        "daily_high": 12.079999923706055,
+        "prior_all_time_or_current_month_high": 3147.0001220703125,
+        "passes_close_filter": true,
+        "yahoo_symbol": "HHS"
+      }
+    },
+    {
+      "ticker": "GIS",
+      "name": "General Mills, Inc.",
+      "exchange": "NYSE",
+      "category": "Consumer Non-Durables",
+      "high_type": "all_time",
+      "reason": "업종: Consumer Non-Durables · Food: Major Diversified",
+      "description": "General Mills, Inc. · Food: Major Diversified",
+      "change_pct": 6.347849343677714,
+      "session_open": 71.52999877929688,
+      "session_close": 74.72000122070312,
+      "session_volume": 10605400.0,
+      "currency": "USD",
+      "source_symbol": "NYSE:GIS",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/GIS/history/",
+        "date": "2022-06-29",
+        "daily_high": 75.0,
+        "prior_all_time_or_current_month_high": 75.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "GIS"
+      }
+    },
+    {
+      "ticker": "LRN",
+      "name": "Stride, Inc.",
+      "exchange": "NYSE",
+      "category": "Consumer Services",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Services · Other Consumer Services",
+      "description": "Stride, Inc. · Other Consumer Services",
+      "change_pct": 9.37252018168746,
+      "session_open": 41.220001220703125,
+      "session_close": 41.310001373291016,
+      "session_volume": 4101500.0,
+      "currency": "USD",
+      "source_symbol": "NYSE:LRN",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/LRN/history/",
+        "date": "2022-06-29",
+        "daily_high": 42.52000045776367,
+        "prior_all_time_or_current_month_high": 52.84000015258789,
+        "passes_close_filter": true,
+        "yahoo_symbol": "LRN"
+      }
+    },
+    {
+      "ticker": "NXDT",
+      "name": "NexPoint Diversified Real Estate Trust",
+      "exchange": "NYSE",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "업종: Finance · Real Estate Investment Trusts",
+      "description": "NexPoint Diversified Real Estate Trust · Real Estate Investment Trusts",
+      "change_pct": 2.8142637234571,
+      "session_open": 16.0,
+      "session_close": 16.440000534057617,
+      "session_volume": 231200.0,
+      "currency": "USD",
+      "source_symbol": "NYSE:NXDT",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/NXDT/history/",
+        "date": "2022-06-29",
+        "daily_high": 16.5,
+        "prior_all_time_or_current_month_high": 216.52281188964844,
+        "passes_close_filter": true,
+        "yahoo_symbol": "NXDT"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-10-29T09:50:57.622252+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 5711,
+    "history_symbols": 4481,
+    "inactive_symbols": 9,
+    "failed_symbols": 1221,
+    "coverage_ratio": 0.7858646089091547,
+    "coverage_by_exchange": {
+      "NASDAQ": {
+        "covered": 2472,
+        "total": 3336
+      },
+      "NYSE": {
+        "covered": 1816,
+        "total": 2104
+      },
+      "AMEX": {
+        "covered": 193,
+        "total": 262
+      }
+    },
+    "session_symbols": 4418,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-10-29T09:50:57.622252+00:00"
+}

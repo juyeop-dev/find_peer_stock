@@ -1,0 +1,430 @@
+{
+  "schema_version": 1,
+  "market": "china",
+  "date": "2022-05-24",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "600026.SS",
+      "name": "COSCO SHIPPING Energy Transportation Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Transportation",
+      "high_type": "52_week",
+      "reason": "업종: Transportation · Marine Shipping",
+      "description": "COSCO SHIPPING Energy Transportation Co., Ltd. Class A · Marine Shipping",
+      "change_pct": 6.250008434620002,
+      "session_open": 8.470000267028809,
+      "session_close": 9.010000228881836,
+      "session_volume": 104366160.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:600026",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/600026.SS/history/",
+        "date": "2022-05-24",
+        "daily_high": 9.329999923706055,
+        "prior_all_time_or_current_month_high": 44.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "600026.SS"
+      }
+    },
+    {
+      "ticker": "600313.SS",
+      "name": "China Agricultural Development Seed Group Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Distribution Services",
+      "high_type": "all_time",
+      "reason": "업종: Distribution Services · Wholesale Distributors",
+      "description": "China Agricultural Development Seed Group Co., Ltd. Class A · Wholesale Distributors",
+      "change_pct": 2.192976830176252,
+      "session_open": 13.800000190734863,
+      "session_close": 13.979999542236328,
+      "session_volume": 287159472.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:600313",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/600313.SS/history/",
+        "date": "2022-05-24",
+        "daily_high": 14.619999885559082,
+        "prior_all_time_or_current_month_high": 14.619999885559082,
+        "passes_close_filter": true,
+        "yahoo_symbol": "600313.SS"
+      }
+    },
+    {
+      "ticker": "601088.SS",
+      "name": "China Shenhua Energy Co. Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Energy Minerals",
+      "high_type": "52_week",
+      "reason": "업종: Energy Minerals · Coal",
+      "description": "China Shenhua Energy Co. Ltd. Class A · Coal",
+      "change_pct": 0.09236077499898965,
+      "session_open": 32.439998626708984,
+      "session_close": 32.5099983215332,
+      "session_volume": 32679661.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:601088",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/601088.SS/history/",
+        "date": "2022-05-24",
+        "daily_high": 33.13999938964844,
+        "prior_all_time_or_current_month_high": 83.37999725341797,
+        "passes_close_filter": true,
+        "yahoo_symbol": "601088.SS"
+      }
+    },
+    {
+      "ticker": "601872.SS",
+      "name": "China Merchants Energy Shipping Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Transportation",
+      "high_type": "52_week",
+      "reason": "업종: Transportation · Marine Shipping",
+      "description": "China Merchants Energy Shipping Co., Ltd. Class A · Marine Shipping",
+      "change_pct": 4.121864197459124,
+      "session_open": 5.599999904632568,
+      "session_close": 5.809999942779541,
+      "session_volume": 124437313.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:601872",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/601872.SS/history/",
+        "date": "2022-05-24",
+        "daily_high": 6.050000190734863,
+        "prior_all_time_or_current_month_high": 11.472222010294598,
+        "passes_close_filter": true,
+        "yahoo_symbol": "601872.SS"
+      }
+    },
+    {
+      "ticker": "603097.SS",
+      "name": "Jiangsu Huachen Transformer Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Electrical Products",
+      "description": "Jiangsu Huachen Transformer Co., Ltd. Class A · Electrical Products",
+      "change_pct": 10.020883995875153,
+      "session_open": 18.821428298950195,
+      "session_close": 18.821428298950195,
+      "session_volume": 19602851.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:603097",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/603097.SS/history/",
+        "date": "2022-05-24",
+        "daily_high": 18.821428298950195,
+        "prior_all_time_or_current_month_high": 18.821428298950195,
+        "passes_close_filter": true,
+        "yahoo_symbol": "603097.SS"
+      }
+    },
+    {
+      "ticker": "603272.SS",
+      "name": "Zhejiang Lianxiang Smart Home Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Industrial Services",
+      "high_type": "all_time",
+      "reason": "업종: Industrial Services · Engineering & Construction",
+      "description": "Zhejiang Lianxiang Smart Home Co., Ltd. Class A · Engineering & Construction",
+      "change_pct": 9.999999116968251,
+      "session_open": 23.760000228881836,
+      "session_close": 23.760000228881836,
+      "session_volume": 398398.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:603272",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/603272.SS/history/",
+        "date": "2022-05-24",
+        "daily_high": 23.760000228881836,
+        "prior_all_time_or_current_month_high": 23.760000228881836,
+        "passes_close_filter": true,
+        "yahoo_symbol": "603272.SS"
+      }
+    },
+    {
+      "ticker": "605366.SS",
+      "name": "Jiangxi Hungpai New Material Co. Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Process Industries",
+      "high_type": "all_time",
+      "reason": "업종: Process Industries · Chemicals: Major Diversified",
+      "description": "Jiangxi Hungpai New Material Co. Ltd. Class A · Chemicals: Major Diversified",
+      "change_pct": 9.397456474449605,
+      "session_open": 7.666948025043194,
+      "session_close": 8.36432750408466,
+      "session_volume": 57019316.9,
+      "currency": "CNY",
+      "source_symbol": "SSE:605366",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/605366.SS/history/",
+        "date": "2022-05-24",
+        "daily_high": 8.410819127009464,
+        "prior_all_time_or_current_month_high": 8.410819127009464,
+        "passes_close_filter": true,
+        "yahoo_symbol": "605366.SS"
+      }
+    },
+    {
+      "ticker": "000151.SZ",
+      "name": "China National Complete Plant Import & Export Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Distribution Services",
+      "high_type": "52_week",
+      "reason": "업종: Distribution Services · Wholesale Distributors",
+      "description": "China National Complete Plant Import & Export Co., Ltd. Class A · Wholesale Distributors",
+      "change_pct": 10.017731748148462,
+      "session_open": 10.859999656677246,
+      "session_close": 12.40999984741211,
+      "session_volume": 63946722.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:000151",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/000151.SZ/history/",
+        "date": "2022-05-24",
+        "daily_high": 12.40999984741211,
+        "prior_all_time_or_current_month_high": 39.7400016784668,
+        "passes_close_filter": true,
+        "yahoo_symbol": "000151.SZ"
+      }
+    },
+    {
+      "ticker": "000756.SZ",
+      "name": "Shandong Xinhua Pharmaceutical Company Limited Class A",
+      "exchange": "SZSE",
+      "category": "Health Technology",
+      "high_type": "all_time",
+      "reason": "업종: Health Technology · Pharmaceuticals: Other",
+      "description": "Shandong Xinhua Pharmaceutical Company Limited Class A · Pharmaceuticals: Other",
+      "change_pct": 10.003546085134873,
+      "session_open": 28.610000610351562,
+      "session_close": 31.010000228881836,
+      "session_volume": 125654121.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:000756",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/000756.SZ/history/",
+        "date": "2022-05-24",
+        "daily_high": 31.010000228881836,
+        "prior_all_time_or_current_month_high": 31.010000228881836,
+        "passes_close_filter": true,
+        "yahoo_symbol": "000756.SZ"
+      }
+    },
+    {
+      "ticker": "000957.SZ",
+      "name": "Zhongtong Bus Holding Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Consumer Durables",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Durables · Motor Vehicles",
+      "description": "Zhongtong Bus Holding Co., Ltd. Class A · Motor Vehicles",
+      "change_pct": 10.035412054285352,
+      "session_open": 9.319999694824219,
+      "session_close": 9.319999694824219,
+      "session_volume": 76423771.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:000957",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/000957.SZ/history/",
+        "date": "2022-05-24",
+        "daily_high": 9.319999694824219,
+        "prior_all_time_or_current_month_high": 22.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "000957.SZ"
+      }
+    },
+    {
+      "ticker": "001318.SZ",
+      "name": "Jiangxi Sunshine Dairy Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Consumer Non-Durables",
+      "high_type": "all_time",
+      "reason": "업종: Consumer Non-Durables · Food: Meat/Fish/Dairy",
+      "description": "Jiangxi Sunshine Dairy Co., Ltd. Class A · Food: Meat/Fish/Dairy",
+      "change_pct": 10.013351440837681,
+      "session_open": 16.479999542236328,
+      "session_close": 16.479999542236328,
+      "session_volume": 988705.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:001318",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/001318.SZ/history/",
+        "date": "2022-05-24",
+        "daily_high": 16.479999542236328,
+        "prior_all_time_or_current_month_high": 16.479999542236328,
+        "passes_close_filter": true,
+        "yahoo_symbol": "001318.SZ"
+      }
+    },
+    {
+      "ticker": "002476.SZ",
+      "name": "Shandong Newleaf Chemical Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Process Industries",
+      "high_type": "52_week",
+      "reason": "업종: Process Industries · Chemicals: Major Diversified",
+      "description": "Shandong Newleaf Chemical Co., Ltd. Class A · Chemicals: Major Diversified",
+      "change_pct": 2.0442911055977397,
+      "session_open": 5.889999866485596,
+      "session_close": 5.989999771118164,
+      "session_volume": 57290864.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002476",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002476.SZ/history/",
+        "date": "2022-05-24",
+        "daily_high": 6.440000057220459,
+        "prior_all_time_or_current_month_high": 20.739999771118164,
+        "passes_close_filter": true,
+        "yahoo_symbol": "002476.SZ"
+      }
+    },
+    {
+      "ticker": "002496.SZ",
+      "name": "Jiangsu Huifeng Bio Agriculture Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Process Industries",
+      "high_type": "52_week",
+      "reason": "업종: Process Industries · Chemicals: Agricultural",
+      "description": "Jiangsu Huifeng Bio Agriculture Co., Ltd. Class A · Chemicals: Agricultural",
+      "change_pct": 9.941517736389915,
+      "session_open": 3.759999990463257,
+      "session_close": 3.759999990463257,
+      "session_volume": 207885205.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002496",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002496.SZ/history/",
+        "date": "2022-05-24",
+        "daily_high": 3.759999990463257,
+        "prior_all_time_or_current_month_high": 7.400000095367432,
+        "passes_close_filter": true,
+        "yahoo_symbol": "002496.SZ"
+      }
+    },
+    {
+      "ticker": "002578.SZ",
+      "name": "Fujian Minfa Aluminium Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Non-Energy Minerals",
+      "high_type": "52_week",
+      "reason": "업종: Non-Energy Minerals · Aluminum",
+      "description": "Fujian Minfa Aluminium Co., Ltd. Class A · Aluminum",
+      "change_pct": 9.939153448620885,
+      "session_open": 5.28000020980835,
+      "session_close": 5.420000076293945,
+      "session_volume": 172120633.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002578",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002578.SZ/history/",
+        "date": "2022-05-24",
+        "daily_high": 5.420000076293945,
+        "prior_all_time_or_current_month_high": 5.929999828338623,
+        "passes_close_filter": true,
+        "yahoo_symbol": "002578.SZ"
+      }
+    },
+    {
+      "ticker": "300848.SZ",
+      "name": "Miracll Chemicals Co. Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Process Industries",
+      "high_type": "all_time",
+      "reason": "업종: Process Industries · Chemicals: Specialty",
+      "description": "Miracll Chemicals Co. Ltd. Class A · Chemicals: Specialty",
+      "change_pct": 14.254265638559517,
+      "session_open": 9.225641250610352,
+      "session_close": 10.646153450012207,
+      "session_volume": 27506971.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:300848",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/300848.SZ/history/",
+        "date": "2022-05-24",
+        "daily_high": 11.179487228393555,
+        "prior_all_time_or_current_month_high": 11.179487228393555,
+        "passes_close_filter": true,
+        "yahoo_symbol": "300848.SZ"
+      }
+    },
+    {
+      "ticker": "301107.SZ",
+      "name": "Chongqing Yuxin Pingrui Electronic Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Commercial Services",
+      "high_type": "all_time",
+      "reason": "업종: Commercial Services · Miscellaneous Commercial Services",
+      "description": "Chongqing Yuxin Pingrui Electronic Co., Ltd. Class A · Miscellaneous Commercial Services",
+      "change_pct": 0.0,
+      "session_open": 27.806121826171875,
+      "session_close": 28.107141494750977,
+      "session_volume": 25265250.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:301107",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/301107.SZ/history/",
+        "date": "2022-05-24",
+        "daily_high": 30.62755012512207,
+        "prior_all_time_or_current_month_high": 30.62755012512207,
+        "passes_close_filter": true,
+        "yahoo_symbol": "301107.SZ"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-10-29T09:46:43.953004+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 5312,
+    "history_symbols": 4828,
+    "inactive_symbols": 0,
+    "failed_symbols": 484,
+    "coverage_ratio": 0.9088855421686747,
+    "coverage_by_exchange": {
+      "SSE": {
+        "covered": 2148,
+        "total": 2358
+      },
+      "SZSE": {
+        "covered": 2680,
+        "total": 2954
+      }
+    },
+    "session_symbols": 4608,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-10-29T09:46:43.953004+00:00"
+}

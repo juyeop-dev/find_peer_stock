@@ -31,7 +31,9 @@
     "test:sector-explorer:browser": "node tests/sector-explorer-browser.mjs",
     "test:investor-flows": "node --test tests/investor-flows.test.mjs",
     "test:investor-flows:browser": "node tests/investor-flows-browser.mjs",
-    "test:korean-search:browser": "node tests/korean-search-browser.mjs"
+    "test:korean-search:browser": "node tests/korean-search-browser.mjs",
+    "test:stock-information:2022": "node tests/stock-information-2022-browser.mjs",
+    "test:investor-flows:2022": "node tests/investor-flows-2022-browser.mjs"
   },
   "dependencies": {
     "react": "^19.0.0",

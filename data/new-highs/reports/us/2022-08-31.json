@@ -1,0 +1,434 @@
+{
+  "schema_version": 1,
+  "market": "us",
+  "date": "2022-08-31",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "BURU",
+      "name": "Nuburu, Inc.",
+      "exchange": "AMEX",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Electronic Components",
+      "description": "Nuburu, Inc. · Electronic Components",
+      "change_pct": 0.19980019980019303,
+      "session_open": 2002.0,
+      "session_close": 2006.0,
+      "session_volume": 969.0,
+      "currency": "USD",
+      "source_symbol": "AMEX:BURU",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/BURU/history/",
+        "date": "2022-08-31",
+        "daily_high": 2006.0,
+        "prior_all_time_or_current_month_high": 18640000.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "BURU"
+      }
+    },
+    {
+      "ticker": "ALT",
+      "name": "Altimmune, Inc.",
+      "exchange": "NASDAQ",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Biotechnology",
+      "description": "Altimmune, Inc. · Biotechnology",
+      "change_pct": 16.578665792549163,
+      "session_open": 19.200000762939453,
+      "session_close": 22.079999923706055,
+      "session_volume": 3593100.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:ALT",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/ALT/history/",
+        "date": "2022-08-31",
+        "daily_high": 22.31999969482422,
+        "prior_all_time_or_current_month_high": 4013.100128173828,
+        "passes_close_filter": true,
+        "yahoo_symbol": "ALT"
+      }
+    },
+    {
+      "ticker": "ARQT",
+      "name": "Arcutis Biotherapeutics Inc",
+      "exchange": "NASDAQ",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Pharmaceuticals: Major",
+      "description": "Arcutis Biotherapeutics Inc · Pharmaceuticals: Major",
+      "change_pct": 4.4168977938235265,
+      "session_open": 25.950000762939453,
+      "session_close": 26.950000762939453,
+      "session_volume": 986700.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:ARQT",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/ARQT/history/",
+        "date": "2022-08-31",
+        "daily_high": 27.399999618530273,
+        "prior_all_time_or_current_month_high": 40.880001068115234,
+        "passes_close_filter": true,
+        "yahoo_symbol": "ARQT"
+      }
+    },
+    {
+      "ticker": "ATXG",
+      "name": "Addentax Group Corp.",
+      "exchange": "NASDAQ",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Metal Fabrication",
+      "description": "Addentax Group Corp. · Metal Fabrication",
+      "change_pct": 8653.866666666667,
+      "session_open": 4050.0,
+      "session_close": 98481.0,
+      "session_volume": 3441.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:ATXG",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/ATXG/history/",
+        "date": "2022-08-31",
+        "daily_high": 98481.0,
+        "prior_all_time_or_current_month_high": 3690000.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "ATXG"
+      }
+    },
+    {
+      "ticker": "BELFB",
+      "name": "Bel Fuse Inc. Class B",
+      "exchange": "NASDAQ",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Electronic Components",
+      "description": "Bel Fuse Inc. Class B · Electronic Components",
+      "change_pct": 5.9656987310797716,
+      "session_open": 26.860000610351562,
+      "session_close": 28.420000076293945,
+      "session_volume": 224100.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:BELFB",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/BELFB/history/",
+        "date": "2022-08-31",
+        "daily_high": 28.56999969482422,
+        "prior_all_time_or_current_month_high": 44.9375,
+        "passes_close_filter": true,
+        "yahoo_symbol": "BELFB"
+      }
+    },
+    {
+      "ticker": "FLD",
+      "name": "Fold Holdings, Inc. Class A",
+      "exchange": "NASDAQ",
+      "category": "Technology Services",
+      "high_type": "all_time",
+      "reason": "업종: Technology Services · Packaged Software",
+      "description": "Fold Holdings, Inc. Class A · Packaged Software",
+      "change_pct": 0.4069172142775246,
+      "session_open": 9.869999885559082,
+      "session_close": 9.869999885559082,
+      "session_volume": 300.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:FLD",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/FLD/history/",
+        "date": "2022-08-31",
+        "daily_high": 9.869999885559082,
+        "prior_all_time_or_current_month_high": 9.869999885559082,
+        "passes_close_filter": true,
+        "yahoo_symbol": "FLD"
+      }
+    },
+    {
+      "ticker": "INTR",
+      "name": "Inter & Co., Inc. Class A",
+      "exchange": "NASDAQ",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "업종: Finance · Major Banks",
+      "description": "Inter & Co., Inc. Class A · Major Banks",
+      "change_pct": 4.26309841465875,
+      "session_open": 4.079999923706055,
+      "session_close": 4.28000020980835,
+      "session_volume": 163800.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:INTR",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/INTR/history/",
+        "date": "2022-08-31",
+        "daily_high": 4.630000114440918,
+        "prior_all_time_or_current_month_high": 4.630000114440918,
+        "passes_close_filter": true,
+        "yahoo_symbol": "INTR"
+      }
+    },
+    {
+      "ticker": "KITT",
+      "name": "Nauticus Robotics, Inc.",
+      "exchange": "NASDAQ",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Industrial Machinery",
+      "description": "Nauticus Robotics, Inc. · Industrial Machinery",
+      "change_pct": 2.4390243902439046,
+      "session_open": 157697.28125,
+      "session_close": 163296.0,
+      "session_volume": 5.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:KITT",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/KITT/history/",
+        "date": "2022-08-31",
+        "daily_high": 174384.578125,
+        "prior_all_time_or_current_month_high": 2643581205.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "KITT"
+      }
+    },
+    {
+      "ticker": "MIST",
+      "name": "Milestone Pharmaceuticals, Inc.",
+      "exchange": "NASDAQ",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Pharmaceuticals: Major",
+      "description": "Milestone Pharmaceuticals, Inc. · Pharmaceuticals: Major",
+      "change_pct": 1.762627667402339,
+      "session_open": 8.5,
+      "session_close": 8.65999984741211,
+      "session_volume": 227100.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:MIST",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/MIST/history/",
+        "date": "2022-08-31",
+        "daily_high": 8.744999885559082,
+        "prior_all_time_or_current_month_high": 27.950000762939453,
+        "passes_close_filter": true,
+        "yahoo_symbol": "MIST"
+      }
+    },
+    {
+      "ticker": "MSBIP",
+      "name": "Midland States Bancorp, Inc. Depositary Shs Repr 1/40th Non-Cum Red Perp Pfd Rg Shs Series A",
+      "exchange": "NASDAQ",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "업종: Finance · Regional Banks",
+      "description": "Midland States Bancorp, Inc. Depositary Shs Repr 1/40th Non-Cum Red Perp Pfd Rg Shs Series A · Regional Banks",
+      "change_pct": 0.07788340158096929,
+      "session_open": 25.670000076293945,
+      "session_close": 25.700000762939453,
+      "session_volume": 58700.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:MSBIP",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/MSBIP/history/",
+        "date": "2022-08-31",
+        "daily_high": 25.700000762939453,
+        "prior_all_time_or_current_month_high": 25.700000762939453,
+        "passes_close_filter": true,
+        "yahoo_symbol": "MSBIP"
+      }
+    },
+    {
+      "ticker": "ONMD",
+      "name": "OneMedNet Corp Class A",
+      "exchange": "NASDAQ",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "업종: Finance · Financial Conglomerates",
+      "description": "OneMedNet Corp Class A · Financial Conglomerates",
+      "change_pct": 0.0,
+      "session_open": 103.4000015258789,
+      "session_close": 103.4000015258789,
+      "session_volume": 40.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:ONMD",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/ONMD/history/",
+        "date": "2022-08-31",
+        "daily_high": 103.4000015258789,
+        "prior_all_time_or_current_month_high": 1020.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "ONMD"
+      }
+    },
+    {
+      "ticker": "OPXS",
+      "name": "Optex Systems Holdings, Inc.",
+      "exchange": "NASDAQ",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Electronic Components",
+      "description": "Optex Systems Holdings, Inc. · Electronic Components",
+      "change_pct": 0.3731339632150332,
+      "session_open": 2.6500000953674316,
+      "session_close": 2.690000057220459,
+      "session_volume": 36700.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:OPXS",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/OPXS/history/",
+        "date": "2022-08-31",
+        "daily_high": 2.740000009536743,
+        "prior_all_time_or_current_month_high": 60000.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "OPXS"
+      }
+    },
+    {
+      "ticker": "SHPH",
+      "name": "Shuttle Pharmaceuticals Holdings, Inc.",
+      "exchange": "NASDAQ",
+      "category": "Health Technology",
+      "high_type": "all_time",
+      "reason": "업종: Health Technology · Pharmaceuticals: Major",
+      "description": "Shuttle Pharmaceuticals Holdings, Inc. · Pharmaceuticals: Major",
+      "change_pct": 0.0,
+      "session_open": 48100.0,
+      "session_close": 76960.0,
+      "session_volume": 544.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:SHPH",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/SHPH/history/",
+        "date": "2022-08-31",
+        "daily_high": 169400.0,
+        "prior_all_time_or_current_month_high": 169400.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "SHPH"
+      }
+    },
+    {
+      "ticker": "SLXN",
+      "name": "Silexion Therapeutics Corp",
+      "exchange": "NASDAQ",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Pharmaceuticals: Major",
+      "description": "Silexion Therapeutics Corp · Pharmaceuticals: Major",
+      "change_pct": 0.0,
+      "session_open": 1483.5,
+      "session_close": 1483.5,
+      "session_volume": 3.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:SLXN",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/SLXN/history/",
+        "date": "2022-08-31",
+        "daily_high": 1483.5,
+        "prior_all_time_or_current_month_high": 229050.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "SLXN"
+      }
+    },
+    {
+      "ticker": "TE",
+      "name": "T1 Energy Inc.",
+      "exchange": "NYSE",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Electrical Products",
+      "description": "T1 Energy Inc. · Electrical Products",
+      "change_pct": 3.714495600039669,
+      "session_open": 13.930000305175781,
+      "session_close": 14.239999771118164,
+      "session_volume": 3342500.0,
+      "currency": "USD",
+      "source_symbol": "NYSE:TE",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/TE/history/",
+        "date": "2022-08-31",
+        "daily_high": 14.399999618530273,
+        "prior_all_time_or_current_month_high": 15.279999732971191,
+        "passes_close_filter": true,
+        "yahoo_symbol": "TE"
+      }
+    },
+    {
+      "ticker": "TFPM",
+      "name": "Triple Flag Precious Metals Corp.",
+      "exchange": "NYSE",
+      "category": "Non-Energy Minerals",
+      "high_type": "all_time",
+      "reason": "업종: Non-Energy Minerals · Precious Metals",
+      "description": "Triple Flag Precious Metals Corp. · Precious Metals",
+      "change_pct": 6.578947588567496,
+      "session_open": 11.369999885559082,
+      "session_close": 12.149999618530273,
+      "session_volume": 87500.0,
+      "currency": "USD",
+      "source_symbol": "NYSE:TFPM",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/TFPM/history/",
+        "date": "2022-08-31",
+        "daily_high": 13.210000038146973,
+        "prior_all_time_or_current_month_high": 13.210000038146973,
+        "passes_close_filter": true,
+        "yahoo_symbol": "TFPM"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-10-29T09:50:57.622252+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 5711,
+    "history_symbols": 4481,
+    "inactive_symbols": 9,
+    "failed_symbols": 1221,
+    "coverage_ratio": 0.7858646089091547,
+    "coverage_by_exchange": {
+      "NASDAQ": {
+        "covered": 2472,
+        "total": 3336
+      },
+      "NYSE": {
+        "covered": 1816,
+        "total": 2104
+      },
+      "AMEX": {
+        "covered": 193,
+        "total": 262
+      }
+    },
+    "session_symbols": 4444,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-10-29T09:50:57.622252+00:00"
+}

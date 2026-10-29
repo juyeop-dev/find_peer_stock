@@ -1,0 +1,238 @@
+{
+  "schema_version": 1,
+  "market": "taiwan",
+  "date": "2022-03-07",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "4166.TWO",
+      "name": "Orient Pharma Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Pharmaceuticals: Major",
+      "description": "Orient Pharma Co., Ltd. · Pharmaceuticals: Major",
+      "change_pct": 6.976744186046502,
+      "session_open": 21.600000381469727,
+      "session_close": 23.0,
+      "session_volume": 1292695.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:4166",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4166.TWO/history/",
+        "date": "2022-03-07",
+        "daily_high": 24.899999618530273,
+        "prior_all_time_or_current_month_high": 64.75567626953125,
+        "passes_close_filter": true,
+        "yahoo_symbol": "4166.TWO"
+      }
+    },
+    {
+      "ticker": "5209.TWO",
+      "name": "CTCI Advanced Systems Inc.",
+      "exchange": "TPEX",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Electrical Products",
+      "description": "CTCI Advanced Systems Inc. · Electrical Products",
+      "change_pct": 9.985530648691764,
+      "session_open": 76.0,
+      "session_close": 76.0,
+      "session_volume": 198000.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:5209",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/5209.TWO/history/",
+        "date": "2022-03-07",
+        "daily_high": 76.0,
+        "prior_all_time_or_current_month_high": 83.60980224609375,
+        "passes_close_filter": true,
+        "yahoo_symbol": "5209.TWO"
+      }
+    },
+    {
+      "ticker": "6241.TWO",
+      "name": "Amigo Technology, Inc.",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Computer Processing Hardware",
+      "description": "Amigo Technology, Inc. · Computer Processing Hardware",
+      "change_pct": 6.809339912054124,
+      "session_open": 37.14139175415039,
+      "session_close": 37.62107849121094,
+      "session_volume": 2681442.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:6241",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6241.TWO/history/",
+        "date": "2022-03-07",
+        "daily_high": 38.37487030029297,
+        "prior_all_time_or_current_month_high": 183.76080745091772,
+        "passes_close_filter": true,
+        "yahoo_symbol": "6241.TWO"
+      }
+    },
+    {
+      "ticker": "6738.TWO",
+      "name": "MAYO Human Capital, Inc.",
+      "exchange": "TPEX",
+      "category": "Technology Services",
+      "high_type": "52_week",
+      "reason": "업종: Technology Services · Packaged Software",
+      "description": "MAYO Human Capital, Inc. · Packaged Software",
+      "change_pct": 5.540538478542012,
+      "session_open": 72.5,
+      "session_close": 78.0999984741211,
+      "session_volume": 381387.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:6738",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6738.TWO/history/",
+        "date": "2022-03-07",
+        "daily_high": 78.80000305175781,
+        "prior_all_time_or_current_month_high": 86.6119384765625,
+        "passes_close_filter": true,
+        "yahoo_symbol": "6738.TWO"
+      }
+    },
+    {
+      "ticker": "8435.TWO",
+      "name": "Zimmite Taiwan Ltd.",
+      "exchange": "TPEX",
+      "category": "Utilities",
+      "high_type": "all_time",
+      "reason": "업종: Utilities · Water Utilities",
+      "description": "Zimmite Taiwan Ltd. · Water Utilities",
+      "change_pct": 0.4830967135737163,
+      "session_open": 62.0,
+      "session_close": 62.400001525878906,
+      "session_volume": 133000.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:8435",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/8435.TWO/history/",
+        "date": "2022-03-07",
+        "daily_high": 62.400001525878906,
+        "prior_all_time_or_current_month_high": 62.400001525878906,
+        "passes_close_filter": true,
+        "yahoo_symbol": "8435.TWO"
+      }
+    },
+    {
+      "ticker": "5203.TW",
+      "name": "Cyberlink Corp.",
+      "exchange": "TWSE",
+      "category": "Technology Services",
+      "high_type": "52_week",
+      "reason": "업종: Technology Services · Packaged Software",
+      "description": "Cyberlink Corp. · Packaged Software",
+      "change_pct": 9.708737864077666,
+      "session_open": 113.0,
+      "session_close": 113.0,
+      "session_volume": 1989792.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:5203",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/5203.TW/history/",
+        "date": "2022-03-07",
+        "daily_high": 113.0,
+        "prior_all_time_or_current_month_high": 241.71765450311267,
+        "passes_close_filter": true,
+        "yahoo_symbol": "5203.TW"
+      }
+    },
+    {
+      "ticker": "6550.TW",
+      "name": "Polaris Group",
+      "exchange": "TWSE",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Biotechnology",
+      "description": "Polaris Group · Biotechnology",
+      "change_pct": 0.8771884043872191,
+      "session_open": 221.20101928710938,
+      "session_close": 221.20101928710938,
+      "session_volume": 1883610.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:6550",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6550.TW/history/",
+        "date": "2022-03-07",
+        "daily_high": 235.62718200683594,
+        "prior_all_time_or_current_month_high": 381.00331434302507,
+        "passes_close_filter": true,
+        "yahoo_symbol": "6550.TW"
+      }
+    },
+    {
+      "ticker": "6753.TW",
+      "name": "Lungteh Shipbuilding Co. Ltd.",
+      "exchange": "TWSE",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Trucks/Construction/Farm Machinery",
+      "description": "Lungteh Shipbuilding Co. Ltd. · Trucks/Construction/Farm Machinery",
+      "change_pct": 5.093162129088169,
+      "session_open": 25.576643651845504,
+      "session_close": 26.84595536212532,
+      "session_volume": 1282966.9999999998,
+      "currency": "TWD",
+      "source_symbol": "TWSE:6753",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6753.TW/history/",
+        "date": "2022-03-07",
+        "daily_high": 27.385415836256378,
+        "prior_all_time_or_current_month_high": 27.385415836256378,
+        "passes_close_filter": true,
+        "yahoo_symbol": "6753.TW"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-10-29T09:42:16.113847+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 2356,
+    "history_symbols": 2003,
+    "inactive_symbols": 5,
+    "failed_symbols": 348,
+    "coverage_ratio": 0.8519778817524458,
+    "coverage_by_exchange": {
+      "TWSE": {
+        "covered": 1012,
+        "total": 1094
+      },
+      "TPEX": {
+        "covered": 991,
+        "total": 1257
+      }
+    },
+    "session_symbols": 1955,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-10-29T09:42:16.113847+00:00"
+}

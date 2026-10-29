@@ -1,0 +1,358 @@
+{
+  "schema_version": 1,
+  "market": "taiwan",
+  "date": "2022-05-06",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "1584.TWO",
+      "name": "S-Tech Corp",
+      "exchange": "TPEX",
+      "category": "Non-Energy Minerals",
+      "high_type": "52_week",
+      "reason": "업종: Non-Energy Minerals · Other Metals/Minerals",
+      "description": "S-Tech Corp · Other Metals/Minerals",
+      "change_pct": 4.032255089868553,
+      "session_open": 22.424955368041992,
+      "session_close": 24.207693099975586,
+      "session_volume": 52679219.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:1584",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/1584.TWO/history/",
+        "date": "2022-05-06",
+        "daily_high": 25.56820297241211,
+        "prior_all_time_or_current_month_high": 35.26990581853264,
+        "passes_close_filter": true,
+        "yahoo_symbol": "1584.TWO"
+      }
+    },
+    {
+      "ticker": "1788.TWO",
+      "name": "Hi-Clearance Inc.",
+      "exchange": "TPEX",
+      "category": "Health Technology",
+      "high_type": "all_time",
+      "reason": "업종: Health Technology · Medical Specialties",
+      "description": "Hi-Clearance Inc. · Medical Specialties",
+      "change_pct": 3.2894730170217157,
+      "session_open": 150.46231079101562,
+      "session_close": 155.41172790527344,
+      "session_volume": 107083.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:1788",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/1788.TWO/history/",
+        "date": "2022-05-06",
+        "daily_high": 156.401611328125,
+        "prior_all_time_or_current_month_high": 156.401611328125,
+        "passes_close_filter": true,
+        "yahoo_symbol": "1788.TWO"
+      }
+    },
+    {
+      "ticker": "3207.TWO",
+      "name": "Yao Sheng Electronic Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Electronic Components",
+      "description": "Yao Sheng Electronic Co., Ltd. · Electronic Components",
+      "change_pct": 0.859106637217244,
+      "session_open": 26.557588577270508,
+      "session_close": 27.542940139770508,
+      "session_volume": 2882471.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:3207",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3207.TWO/history/",
+        "date": "2022-05-06",
+        "daily_high": 27.589862823486328,
+        "prior_all_time_or_current_month_high": 27.589862823486328,
+        "passes_close_filter": true,
+        "yahoo_symbol": "3207.TWO"
+      }
+    },
+    {
+      "ticker": "3265.TWO",
+      "name": "Winstek Semiconductor Co. Ltd.",
+      "exchange": "TPEX",
+      "category": "Commercial Services",
+      "high_type": "52_week",
+      "reason": "업종: Commercial Services · Miscellaneous Commercial Services",
+      "description": "Winstek Semiconductor Co. Ltd. · Miscellaneous Commercial Services",
+      "change_pct": 2.189779395941316,
+      "session_open": 45.79999923706055,
+      "session_close": 49.0,
+      "session_volume": 18149000.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:3265",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3265.TWO/history/",
+        "date": "2022-05-06",
+        "daily_high": 49.0,
+        "prior_all_time_or_current_month_high": 51.79999923706055,
+        "passes_close_filter": true,
+        "yahoo_symbol": "3265.TWO"
+      }
+    },
+    {
+      "ticker": "4116.TWO",
+      "name": "BenQ Medical Technology Corp.",
+      "exchange": "TPEX",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Medical Specialties",
+      "description": "BenQ Medical Technology Corp. · Medical Specialties",
+      "change_pct": 9.925091920628581,
+      "session_open": 54.20000076293945,
+      "session_close": 58.70000076293945,
+      "session_volume": 27890000.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:4116",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4116.TWO/history/",
+        "date": "2022-05-06",
+        "daily_high": 58.70000076293945,
+        "prior_all_time_or_current_month_high": 160.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "4116.TWO"
+      }
+    },
+    {
+      "ticker": "5468.TWO",
+      "name": "TM Technology Inc.",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Semiconductors",
+      "description": "TM Technology Inc. · Semiconductors",
+      "change_pct": 9.859152313118337,
+      "session_open": 27.33135986328125,
+      "session_close": 30.45494270324707,
+      "session_volume": 1123837.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:5468",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/5468.TWO/history/",
+        "date": "2022-05-06",
+        "daily_high": 30.45494270324707,
+        "prior_all_time_or_current_month_high": 252.0512187640701,
+        "passes_close_filter": true,
+        "yahoo_symbol": "5468.TWO"
+      }
+    },
+    {
+      "ticker": "8087.TWO",
+      "name": "Leadsun Greentech Corporation",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Computer Peripherals",
+      "description": "Leadsun Greentech Corporation · Computer Peripherals",
+      "change_pct": 6.874996805409972,
+      "session_open": 45.307830810546875,
+      "session_close": 49.4530143737793,
+      "session_volume": 1143157.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:8087",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/8087.TWO/history/",
+        "date": "2022-05-06",
+        "daily_high": 50.60980987548828,
+        "prior_all_time_or_current_month_high": 50.60980987548828,
+        "passes_close_filter": true,
+        "yahoo_symbol": "8087.TWO"
+      }
+    },
+    {
+      "ticker": "8097.TWO",
+      "name": "ATW Technology Incorporated",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Telecommunications Equipment",
+      "description": "ATW Technology Incorporated · Telecommunications Equipment",
+      "change_pct": 2.577315868242991,
+      "session_open": 44.95137023925781,
+      "session_close": 47.17997360229492,
+      "session_volume": 1253768.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:8097",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/8097.TWO/history/",
+        "date": "2022-05-06",
+        "daily_high": 47.89122772216797,
+        "prior_all_time_or_current_month_high": 250.92678501547724,
+        "passes_close_filter": true,
+        "yahoo_symbol": "8097.TWO"
+      }
+    },
+    {
+      "ticker": "8928.TWO",
+      "name": "Dynamic Precision Industry Corp.",
+      "exchange": "TPEX",
+      "category": "Consumer Durables",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Durables · Recreational Products",
+      "description": "Dynamic Precision Industry Corp. · Recreational Products",
+      "change_pct": 3.266329803971524,
+      "session_open": 40.0,
+      "session_close": 41.099998474121094,
+      "session_volume": 2219000.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:8928",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/8928.TWO/history/",
+        "date": "2022-05-06",
+        "daily_high": 42.0,
+        "prior_all_time_or_current_month_high": 57.70000076293945,
+        "passes_close_filter": true,
+        "yahoo_symbol": "8928.TWO"
+      }
+    },
+    {
+      "ticker": "1524.TW",
+      "name": "Gordon Auto Body Parts Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Consumer Durables",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Durables · Automotive Aftermarket",
+      "description": "Gordon Auto Body Parts Co., Ltd. · Automotive Aftermarket",
+      "change_pct": 7.751938213730991,
+      "session_open": 12.300000190734863,
+      "session_close": 13.899999618530273,
+      "session_volume": 34637216.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:1524",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/1524.TW/history/",
+        "date": "2022-05-06",
+        "daily_high": 14.149999618530273,
+        "prior_all_time_or_current_month_high": 21.177712236936724,
+        "passes_close_filter": true,
+        "yahoo_symbol": "1524.TW"
+      }
+    },
+    {
+      "ticker": "3703.TW",
+      "name": "Continental Holdings Corp.",
+      "exchange": "TWSE",
+      "category": "Industrial Services",
+      "high_type": "all_time",
+      "reason": "업종: Industrial Services · Engineering & Construction",
+      "description": "Continental Holdings Corp. · Engineering & Construction",
+      "change_pct": 1.298706285023532,
+      "session_open": 30.100000381469727,
+      "session_close": 31.200000762939453,
+      "session_volume": 16628909.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:3703",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3703.TW/history/",
+        "date": "2022-05-06",
+        "daily_high": 31.399999618530273,
+        "prior_all_time_or_current_month_high": 31.399999618530273,
+        "passes_close_filter": true,
+        "yahoo_symbol": "3703.TW"
+      }
+    },
+    {
+      "ticker": "8442.TW",
+      "name": "WW Holding, Inc.",
+      "exchange": "TWSE",
+      "category": "Consumer Non-Durables",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Non-Durables · Consumer Sundries",
+      "description": "WW Holding, Inc. · Consumer Sundries",
+      "change_pct": 2.0754732025262568,
+      "session_open": 51.73347854614258,
+      "session_close": 53.71940612792969,
+      "session_volume": 181275.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:8442",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/8442.TW/history/",
+        "date": "2022-05-06",
+        "daily_high": 56.301116943359375,
+        "prior_all_time_or_current_month_high": 72.85043334960938,
+        "passes_close_filter": true,
+        "yahoo_symbol": "8442.TW"
+      }
+    },
+    {
+      "ticker": "9933.TW",
+      "name": "CTCI Corporation",
+      "exchange": "TWSE",
+      "category": "Industrial Services",
+      "high_type": "52_week",
+      "reason": "업종: Industrial Services · Engineering & Construction",
+      "description": "CTCI Corporation · Engineering & Construction",
+      "change_pct": 2.8242701877928544,
+      "session_open": 42.54461669921875,
+      "session_close": 43.8379020690918,
+      "session_volume": 9093362.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:9933",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/9933.TW/history/",
+        "date": "2022-05-06",
+        "daily_high": 44.37305450439453,
+        "prior_all_time_or_current_month_high": 55.288818733975376,
+        "passes_close_filter": true,
+        "yahoo_symbol": "9933.TW"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-10-29T09:42:16.113847+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 2356,
+    "history_symbols": 2003,
+    "inactive_symbols": 5,
+    "failed_symbols": 348,
+    "coverage_ratio": 0.8519778817524458,
+    "coverage_by_exchange": {
+      "TWSE": {
+        "covered": 1012,
+        "total": 1094
+      },
+      "TPEX": {
+        "covered": 991,
+        "total": 1257
+      }
+    },
+    "session_symbols": 1961,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-10-29T09:42:16.113847+00:00"
+}

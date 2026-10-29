@@ -1,0 +1,138 @@
+{
+  "schema_version": 1,
+  "market": "japan",
+  "date": "2022-04-26",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "1383.T",
+      "name": "Berg Earth Co., Ltd.",
+      "exchange": "TSE",
+      "category": "Process Industries",
+      "high_type": "52_week",
+      "reason": "업종: Process Industries · Agricultural Commodities/Milling",
+      "description": "Berg Earth Co., Ltd. · Agricultural Commodities/Milling",
+      "change_pct": 0.6676036542515806,
+      "session_open": 2849.0,
+      "session_close": 2865.0,
+      "session_volume": 16500.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:1383",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/1383.T/history/",
+        "date": "2022-04-26",
+        "daily_high": 2870.0,
+        "prior_all_time_or_current_month_high": 3225.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "1383.T"
+      }
+    },
+    {
+      "ticker": "2437.T",
+      "name": "SHINWA WISE HOLDINGS CO. LTD.",
+      "exchange": "TSE",
+      "category": "Retail Trade",
+      "high_type": "52_week",
+      "reason": "업종: Retail Trade · Specialty Stores",
+      "description": "SHINWA WISE HOLDINGS CO. LTD. · Specialty Stores",
+      "change_pct": 0.5905511811023612,
+      "session_open": 510.0,
+      "session_close": 511.0,
+      "session_volume": 440500.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:2437",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2437.T/history/",
+        "date": "2022-04-26",
+        "daily_high": 524.0,
+        "prior_all_time_or_current_month_high": 888.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "2437.T"
+      }
+    },
+    {
+      "ticker": "7769.T",
+      "name": "Rhythm Co., Ltd.",
+      "exchange": "TSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Electronic Components",
+      "description": "Rhythm Co., Ltd. · Electronic Components",
+      "change_pct": 2.241594022415949,
+      "session_open": 1606.0,
+      "session_close": 1642.0,
+      "session_volume": 56400.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:7769",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/7769.T/history/",
+        "date": "2022-04-26",
+        "daily_high": 1657.0,
+        "prior_all_time_or_current_month_high": 29400.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "7769.T"
+      }
+    },
+    {
+      "ticker": "8060.T",
+      "name": "Canon Marketing Japan Incorporated",
+      "exchange": "TSE",
+      "category": "Distribution Services",
+      "high_type": "all_time",
+      "reason": "업종: Distribution Services · Electronics Distributors",
+      "description": "Canon Marketing Japan Incorporated · Electronics Distributors",
+      "change_pct": 6.1604029445951225,
+      "session_open": 1340.5,
+      "session_close": 1370.0,
+      "session_volume": 2013000.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:8060",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/8060.T/history/",
+        "date": "2022-04-26",
+        "daily_high": 1404.0,
+        "prior_all_time_or_current_month_high": 1404.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "8060.T"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-10-29T09:43:19.189722+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 3759,
+    "history_symbols": 3491,
+    "inactive_symbols": 0,
+    "failed_symbols": 268,
+    "coverage_ratio": 0.9287044426709231,
+    "coverage_by_exchange": {
+      "TSE": {
+        "covered": 3491,
+        "total": 3759
+      }
+    },
+    "session_symbols": 3414,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-10-29T09:43:19.189722+00:00"
+}

@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "market": "korea",
+  "date": "2022-01-25",
+  "summary": "과거 일봉 전체 대조 기준. 당일 장중 고가가 52주·전체기간 고가에 도달하고, 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다. 전체기간 신고가를 우선 표시하며 신고가 배경은 별도 확인 전입니다.",
+  "sources": [
+    {
+      "label": "Naver Finance 조정 일봉·한국 종목명",
+      "url": "https://stock.naver.com/"
+    },
+    {
+      "label": "TradingView 한국 주식 종목군·업종",
+      "url": "https://www.tradingview.com/screener/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "353590.KQ",
+      "name": "오토앤",
+      "exchange": "KOSDAQ",
+      "category": "Consumer Non-Durables",
+      "high_type": "all_time",
+      "reason": "업종: Consumer Non-Durables · Household/Personal Care",
+      "description": "오토앤 · Household/Personal Care",
+      "change_pct": 29.681978798586574,
+      "session_open": 16100,
+      "session_close": 18350,
+      "currency": "KRW",
+      "source_symbol": "KRX:353590",
+      "name_original": "AUTO& Inc.",
+      "name_source_url": "https://m.stock.naver.com/api/stock/353590/basic",
+      "high_verification": {
+        "source": "Naver Finance adjusted daily history",
+        "source_url": "https://api.finance.naver.com/siseJson.naver?symbol=353590&requestType=1&startTime=20210126&endTime=20220125&timeframe=day",
+        "date": "2022-01-25",
+        "open": 16100,
+        "daily_high": 18350,
+        "low": 16050,
+        "close": 18350,
+        "previous_close": 14150,
+        "volume": 5894624,
+        "prior_52_week_high": 17650,
+        "observed_bars": 4,
+        "first_observed_date": "2022-01-20",
+        "confirmed": true,
+        "matches_prior_high": false,
+        "bearish_candle": false,
+        "down_close": false,
+        "passes_close_filter": true
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Naver Finance adjusted daily history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-10-29T09:44:54.509377+00:00",
+    "definition": "daily high >= prior 52-week high; close >= open; close >= previous close; all-time takes precedence; ties included",
+    "scanned_symbols": 2741,
+    "session_symbols": 2255,
+    "raw_new_high_candidates": 4,
+    "excluded_unsupported_korean_board": 0,
+    "excluded_bearish_or_down_close": 3,
+    "pagination_complete": true
+  },
+  "collected_at": "2026-10-29T09:44:54.509377+00:00"
+}

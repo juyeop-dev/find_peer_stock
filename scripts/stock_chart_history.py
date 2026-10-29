@@ -184,14 +184,15 @@ def save_candidate(db: sqlite3.Connection, value: dict) -> None:
         if old.get("currency") and not newer_full_request and quality(old) >= quality(value):
             return
         snapshots = list(old.get("prior_snapshots", []))
-        fresh_dates = set(dates)
-        omitted = [point for point in old["prices"] if point[0] not in fresh_dates]
-        if omitted:
+        fresh_points = {point[0]: point for point in value["prices"]}
+        retained = [point for point in old["prices"]
+                    if old["currency"] != value["currency"] or fresh_points.get(point[0]) != point]
+        if retained:
             # Provider revisions can omit dates or use a different adjustment
             # convention. Keep the original observations separately, never
             # splice incompatible prices into the current source's curve.
             snapshot = {key: old[key] for key in ["ticker", "currency", "source", "fetched_at"] if key in old}
-            snapshot.update(prices=omitted, preservation_reason="Original observations omitted by a later provider response")
+            snapshot.update(prices=retained, preservation_reason="Original observations omitted or revised by a later provider response")
             fingerprint = lambda item: (item.get("currency"), item.get("source"), json.dumps(item["prices"], separators=(",", ":")))
             if fingerprint(snapshot) not in {fingerprint(item) for item in snapshots}:
                 snapshots.append(snapshot)

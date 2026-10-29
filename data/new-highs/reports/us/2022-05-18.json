@@ -1,0 +1,266 @@
+{
+  "schema_version": 1,
+  "market": "us",
+  "date": "2022-05-18",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "MLGO",
+      "name": "MicroAlgo, Inc.",
+      "exchange": "NASDAQ",
+      "category": "Technology Services",
+      "high_type": "52_week",
+      "reason": "업종: Technology Services · Packaged Software",
+      "description": "MicroAlgo, Inc. · Packaged Software",
+      "change_pct": 0.09784735812132794,
+      "session_open": 61200.0,
+      "session_close": 61380.0,
+      "session_volume": 1.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:MLGO",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/MLGO/history/",
+        "date": "2022-05-18",
+        "daily_high": 61380.0,
+        "prior_all_time_or_current_month_high": 383400000.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "MLGO"
+      }
+    },
+    {
+      "ticker": "NTCT",
+      "name": "NetScout Systems, Inc.",
+      "exchange": "NASDAQ",
+      "category": "Technology Services",
+      "high_type": "52_week",
+      "reason": "업종: Technology Services · Packaged Software",
+      "description": "NetScout Systems, Inc. · Packaged Software",
+      "change_pct": 0.5430083383674456,
+      "session_open": 34.83000183105469,
+      "session_close": 35.18000030517578,
+      "session_volume": 780000.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:NTCT",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/NTCT/history/",
+        "date": "2022-05-18",
+        "daily_high": 35.349998474121094,
+        "prior_all_time_or_current_month_high": 48.130001068115234,
+        "passes_close_filter": true,
+        "yahoo_symbol": "NTCT"
+      }
+    },
+    {
+      "ticker": "ORBS",
+      "name": "Eightco Holdings Inc.",
+      "exchange": "NASDAQ",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "업종: Finance · Finance/Rental/Leasing",
+      "description": "Eightco Holdings Inc. · Finance/Rental/Leasing",
+      "change_pct": 0.0,
+      "session_open": 3372.5,
+      "session_close": 3801.0,
+      "session_volume": 22.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:ORBS",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/ORBS/history/",
+        "date": "2022-05-18",
+        "daily_high": 4537.5,
+        "prior_all_time_or_current_month_high": 4537.5,
+        "passes_close_filter": true,
+        "yahoo_symbol": "ORBS"
+      }
+    },
+    {
+      "ticker": "INSW",
+      "name": "International Seaways, Inc.",
+      "exchange": "NYSE",
+      "category": "Transportation",
+      "high_type": "52_week",
+      "reason": "업종: Transportation · Marine Shipping",
+      "description": "International Seaways, Inc. · Marine Shipping",
+      "change_pct": 1.0629251493806002,
+      "session_open": 23.739999771118164,
+      "session_close": 23.770000457763672,
+      "session_volume": 562000.0,
+      "currency": "USD",
+      "source_symbol": "NYSE:INSW",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/INSW/history/",
+        "date": "2022-05-18",
+        "daily_high": 24.110000610351562,
+        "prior_all_time_or_current_month_high": 31.389999389648438,
+        "passes_close_filter": true,
+        "yahoo_symbol": "INSW"
+      }
+    },
+    {
+      "ticker": "TCI",
+      "name": "Transcontinental Realty Investors, Inc.",
+      "exchange": "NYSE",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "업종: Finance · Real Estate Development",
+      "description": "Transcontinental Realty Investors, Inc. · Real Estate Development",
+      "change_pct": 4.565366822687822,
+      "session_open": 43.540000915527344,
+      "session_close": 45.349998474121094,
+      "session_volume": 6300.0,
+      "currency": "USD",
+      "source_symbol": "NYSE:TCI",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/TCI/history/",
+        "date": "2022-05-18",
+        "daily_high": 45.869998931884766,
+        "prior_all_time_or_current_month_high": 52.0,
+        "passes_close_filter": true,
+        "yahoo_symbol": "TCI"
+      }
+    },
+    {
+      "ticker": "TNK",
+      "name": "Teekay Tankers Ltd Class A",
+      "exchange": "NYSE",
+      "category": "Transportation",
+      "high_type": "52_week",
+      "reason": "업종: Transportation · Marine Shipping",
+      "description": "Teekay Tankers Ltd Class A · Marine Shipping",
+      "change_pct": 2.2580648800005987,
+      "session_open": 18.600000381469727,
+      "session_close": 19.020000457763672,
+      "session_volume": 556900.0,
+      "currency": "USD",
+      "source_symbol": "NYSE:TNK",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/TNK/history/",
+        "date": "2022-05-18",
+        "daily_high": 19.440000534057617,
+        "prior_all_time_or_current_month_high": 1672.9599609375,
+        "passes_close_filter": true,
+        "yahoo_symbol": "TNK"
+      }
+    },
+    {
+      "ticker": "UTL",
+      "name": "Unitil Corporation",
+      "exchange": "NYSE",
+      "category": "Utilities",
+      "high_type": "52_week",
+      "reason": "업종: Utilities · Electric Utilities",
+      "description": "Unitil Corporation · Electric Utilities",
+      "change_pct": 2.634449016752094,
+      "session_open": 55.650001525878906,
+      "session_close": 56.4900016784668,
+      "session_volume": 127600.0,
+      "currency": "USD",
+      "source_symbol": "NYSE:UTL",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/UTL/history/",
+        "date": "2022-05-18",
+        "daily_high": 57.9900016784668,
+        "prior_all_time_or_current_month_high": 65.76000213623047,
+        "passes_close_filter": true,
+        "yahoo_symbol": "UTL"
+      }
+    },
+    {
+      "ticker": "UVV",
+      "name": "Universal Corp",
+      "exchange": "NYSE",
+      "category": "Distribution Services",
+      "high_type": "52_week",
+      "reason": "업종: Distribution Services · Wholesale Distributors",
+      "description": "Universal Corp · Wholesale Distributors",
+      "change_pct": 0.8529108215362458,
+      "session_open": 61.91999816894531,
+      "session_close": 62.66999816894531,
+      "session_volume": 155300.0,
+      "currency": "USD",
+      "source_symbol": "NYSE:UVV",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/UVV/history/",
+        "date": "2022-05-18",
+        "daily_high": 63.459999084472656,
+        "prior_all_time_or_current_month_high": 83.3499984741211,
+        "passes_close_filter": true,
+        "yahoo_symbol": "UVV"
+      }
+    },
+    {
+      "ticker": "VHI",
+      "name": "Valhi, Inc.",
+      "exchange": "NYSE",
+      "category": "Process Industries",
+      "high_type": "52_week",
+      "reason": "업종: Process Industries · Chemicals: Specialty",
+      "description": "Valhi, Inc. · Chemicals: Specialty",
+      "change_pct": 8.916123600223402,
+      "session_open": 41.529998779296875,
+      "session_close": 45.31999969482422,
+      "session_volume": 79900.0,
+      "currency": "USD",
+      "source_symbol": "NYSE:VHI",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/VHI/history/",
+        "date": "2022-05-18",
+        "daily_high": 45.459999084472656,
+        "prior_all_time_or_current_month_high": 3035.5200805664062,
+        "passes_close_filter": true,
+        "yahoo_symbol": "VHI"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-10-29T09:50:57.622252+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 5711,
+    "history_symbols": 4481,
+    "inactive_symbols": 9,
+    "failed_symbols": 1221,
+    "coverage_ratio": 0.7858646089091547,
+    "coverage_by_exchange": {
+      "NASDAQ": {
+        "covered": 2472,
+        "total": 3336
+      },
+      "NYSE": {
+        "covered": 1816,
+        "total": 2104
+      },
+      "AMEX": {
+        "covered": 193,
+        "total": 262
+      }
+    },
+    "session_symbols": 4411,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-10-29T09:50:57.622252+00:00"
+}

@@ -1,0 +1,358 @@
+{
+  "schema_version": 1,
+  "market": "china",
+  "date": "2022-12-19",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "600185.SS",
+      "name": "Zhuhai Zhumian Group Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "업종: Finance · Real Estate Development",
+      "description": "Zhuhai Zhumian Group Co., Ltd. Class A · Real Estate Development",
+      "change_pct": 9.965334682250848,
+      "session_open": 12.6899995803833,
+      "session_close": 12.6899995803833,
+      "session_volume": 44516063.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:600185",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/600185.SS/history/",
+        "date": "2022-12-19",
+        "daily_high": 12.6899995803833,
+        "prior_all_time_or_current_month_high": 18.100000381469727,
+        "passes_close_filter": true,
+        "yahoo_symbol": "600185.SS"
+      }
+    },
+    {
+      "ticker": "600846.SS",
+      "name": "Shanghai Tongji Science & Technology Industrial Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Consumer Durables",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Durables · Homebuilding",
+      "description": "Shanghai Tongji Science & Technology Industrial Co., Ltd. Class A · Homebuilding",
+      "change_pct": 0.20555456017088414,
+      "session_open": 9.699999809265137,
+      "session_close": 9.75,
+      "session_volume": 9818819.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:600846",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/600846.SS/history/",
+        "date": "2022-12-19",
+        "daily_high": 9.789999961853027,
+        "prior_all_time_or_current_month_high": 18.959999084472656,
+        "passes_close_filter": true,
+        "yahoo_symbol": "600846.SS"
+      }
+    },
+    {
+      "ticker": "600892.SS",
+      "name": "Dasheng Times Cultural Investment Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Electrical Products",
+      "description": "Dasheng Times Cultural Investment Co., Ltd. Class A · Electrical Products",
+      "change_pct": 3.4274208666630557,
+      "session_open": 4.920000076293945,
+      "session_close": 5.130000114440918,
+      "session_volume": 27376700.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:600892",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/600892.SS/history/",
+        "date": "2022-12-19",
+        "daily_high": 5.449999809265137,
+        "prior_all_time_or_current_month_high": 12.510000228881836,
+        "passes_close_filter": true,
+        "yahoo_symbol": "600892.SS"
+      }
+    },
+    {
+      "ticker": "603043.SS",
+      "name": "Guangzhou Restaurant Group Co. Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Consumer Services",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Services · Restaurants",
+      "description": "Guangzhou Restaurant Group Co. Ltd. Class A · Restaurants",
+      "change_pct": 2.525251065695855,
+      "session_open": 25.760000228881836,
+      "session_close": 26.389999389648438,
+      "session_volume": 11349740.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:603043",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/603043.SS/history/",
+        "date": "2022-12-19",
+        "daily_high": 27.200000762939453,
+        "prior_all_time_or_current_month_high": 27.299999237060547,
+        "passes_close_filter": true,
+        "yahoo_symbol": "603043.SS"
+      }
+    },
+    {
+      "ticker": "603508.SS",
+      "name": "Henan Thinker Automatic Equipment Co Ltd Class A",
+      "exchange": "SSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Electronic Equipment/Instruments",
+      "description": "Henan Thinker Automatic Equipment Co Ltd Class A · Electronic Equipment/Instruments",
+      "change_pct": 5.061557981605036,
+      "session_open": 14.710000038146973,
+      "session_close": 15.359999656677246,
+      "session_volume": 10071932.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:603508",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/603508.SS/history/",
+        "date": "2022-12-19",
+        "daily_high": 16.049999237060547,
+        "prior_all_time_or_current_month_high": 35.896499789490996,
+        "passes_close_filter": true,
+        "yahoo_symbol": "603508.SS"
+      }
+    },
+    {
+      "ticker": "000597.SZ",
+      "name": "Northeast Pharmaceutical Group Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Health Technology",
+      "high_type": "all_time",
+      "reason": "업종: Health Technology · Pharmaceuticals: Major",
+      "description": "Northeast Pharmaceutical Group Co., Ltd. Class A · Pharmaceuticals: Major",
+      "change_pct": 10.070922254442728,
+      "session_open": 7.760000228881836,
+      "session_close": 7.760000228881836,
+      "session_volume": 26202274.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:000597",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/000597.SZ/history/",
+        "date": "2022-12-19",
+        "daily_high": 7.760000228881836,
+        "prior_all_time_or_current_month_high": 7.760000228881836,
+        "passes_close_filter": true,
+        "yahoo_symbol": "000597.SZ"
+      }
+    },
+    {
+      "ticker": "000716.SZ",
+      "name": "Nanfang Black Sesame Group Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Consumer Non-Durables",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Non-Durables · Beverages: Non-Alcoholic",
+      "description": "Nanfang Black Sesame Group Co., Ltd. Class A · Beverages: Non-Alcoholic",
+      "change_pct": 10.000001423394544,
+      "session_open": 6.860000133514404,
+      "session_close": 7.369999885559082,
+      "session_volume": 254576340.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:000716",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/000716.SZ/history/",
+        "date": "2022-12-19",
+        "daily_high": 7.369999885559082,
+        "prior_all_time_or_current_month_high": 8.829999923706055,
+        "passes_close_filter": true,
+        "yahoo_symbol": "000716.SZ"
+      }
+    },
+    {
+      "ticker": "000721.SZ",
+      "name": "Xi'an Catering Co. Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Consumer Services",
+      "high_type": "all_time",
+      "reason": "업종: Consumer Services · Restaurants",
+      "description": "Xi'an Catering Co. Ltd. Class A · Restaurants",
+      "change_pct": 6.266157941778561,
+      "session_open": 15.300000190734863,
+      "session_close": 16.450000762939453,
+      "session_volume": 173069581.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:000721",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/000721.SZ/history/",
+        "date": "2022-12-19",
+        "daily_high": 16.950000762939453,
+        "prior_all_time_or_current_month_high": 16.950000762939453,
+        "passes_close_filter": true,
+        "yahoo_symbol": "000721.SZ"
+      }
+    },
+    {
+      "ticker": "002095.SZ",
+      "name": "Zhejiang NetSun Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Technology Services",
+      "high_type": "52_week",
+      "reason": "업종: Technology Services · Internet Software/Services",
+      "description": "Zhejiang NetSun Co., Ltd. Class A · Internet Software/Services",
+      "change_pct": 9.983262563927564,
+      "session_open": 19.719999313354492,
+      "session_close": 19.719999313354492,
+      "session_volume": 15559494.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002095",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002095.SZ/history/",
+        "date": "2022-12-19",
+        "daily_high": 19.719999313354492,
+        "prior_all_time_or_current_month_high": 104.29861068725586,
+        "passes_close_filter": true,
+        "yahoo_symbol": "002095.SZ"
+      }
+    },
+    {
+      "ticker": "002098.SZ",
+      "name": "Fujian SBS Zipper Science & Technology Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Miscellaneous Manufacturing",
+      "description": "Fujian SBS Zipper Science & Technology Co., Ltd. Class A · Miscellaneous Manufacturing",
+      "change_pct": 1.7060382728782741,
+      "session_open": 7.570000171661377,
+      "session_close": 7.75,
+      "session_volume": 52259094.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002098",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002098.SZ/history/",
+        "date": "2022-12-19",
+        "daily_high": 8.380000114440918,
+        "prior_all_time_or_current_month_high": 22.479999542236328,
+        "passes_close_filter": true,
+        "yahoo_symbol": "002098.SZ"
+      }
+    },
+    {
+      "ticker": "002186.SZ",
+      "name": "China Quanjude (Group) Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Consumer Services",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Services · Restaurants",
+      "description": "China Quanjude (Group) Co., Ltd. Class A · Restaurants",
+      "change_pct": 10.016414472798196,
+      "session_open": 13.239999771118164,
+      "session_close": 13.399999618530273,
+      "session_volume": 12491903.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002186",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002186.SZ/history/",
+        "date": "2022-12-19",
+        "daily_high": 13.399999618530273,
+        "prior_all_time_or_current_month_high": 33.869998931884766,
+        "passes_close_filter": true,
+        "yahoo_symbol": "002186.SZ"
+      }
+    },
+    {
+      "ticker": "300986.SZ",
+      "name": "GETO New Materials Group Corporation Limited Class A",
+      "exchange": "SZSE",
+      "category": "Non-Energy Minerals",
+      "high_type": "all_time",
+      "reason": "업종: Non-Energy Minerals · Aluminum",
+      "description": "GETO New Materials Group Corporation Limited Class A · Aluminum",
+      "change_pct": 1.449269969786715,
+      "session_open": 13.950395584106445,
+      "session_close": 14.301114082336426,
+      "session_volume": 4518568.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:300986",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/300986.SZ/history/",
+        "date": "2022-12-19",
+        "daily_high": 14.808463096618652,
+        "prior_all_time_or_current_month_high": 14.808463096618652,
+        "passes_close_filter": true,
+        "yahoo_symbol": "300986.SZ"
+      }
+    },
+    {
+      "ticker": "301227.SZ",
+      "name": "Harbin Sayyas Windows Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Non-Energy Minerals",
+      "high_type": "all_time",
+      "reason": "업종: Non-Energy Minerals · Forest Products",
+      "description": "Harbin Sayyas Windows Co., Ltd. Class A · Forest Products",
+      "change_pct": 2.712263306155216,
+      "session_open": 24.0,
+      "session_close": 24.885713577270508,
+      "session_volume": 1796496.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:301227",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/301227.SZ/history/",
+        "date": "2022-12-19",
+        "daily_high": 25.457141876220703,
+        "prior_all_time_or_current_month_high": 25.457141876220703,
+        "passes_close_filter": true,
+        "yahoo_symbol": "301227.SZ"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-10-29T09:46:43.953004+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 5312,
+    "history_symbols": 4828,
+    "inactive_symbols": 0,
+    "failed_symbols": 484,
+    "coverage_ratio": 0.9088855421686747,
+    "coverage_by_exchange": {
+      "SSE": {
+        "covered": 2148,
+        "total": 2358
+      },
+      "SZSE": {
+        "covered": 2680,
+        "total": 2954
+      }
+    },
+    "session_symbols": 4814,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-10-29T09:46:43.953004+00:00"
+}
