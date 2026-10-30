@@ -1,4 +1,5 @@
 import { jsonSource, localDay, numeric } from "./providers.js";
+import koreanCompanyNames from "../../../data/seed/korean_company_names.json" with { type: "json" };
 
 export const SECTOR_COLUMNS = ["name", "description", "exchange", "type", "subtype", "sector", "industry", "close", "change", "Value.Traded", "market_cap_basic", "currency", "time", "indexes", "Perf.W", "Perf.1M", "Perf.3M", "Perf.Y"];
 export const sectorScanBody = () => ({
@@ -35,7 +36,8 @@ export function sectorSnapshot(payload, now = new Date()) {
     const change = numeric(row.change);
     stocks.push({
       ticker: `${row.name}.${boards[0] === "KOSPI" ? "KS" : "KQ"}`, code: row.name,
-      name: typeof row.description === "string" && row.description.trim() ? row.description.replace(/보통주$/, "").trim() : row.name,
+      name: koreanCompanyNames.names[`${row.name}.${boards[0] === "KOSPI" ? "KS" : "KQ"}`]
+        ?? (typeof row.description === "string" && row.description.trim() ? row.description.replace(/보통주$/, "").trim() : row.name),
       exchange: boards[0], sector: typeof row.sector === "string" && row.sector.trim() ? row.sector : "Unclassified",
       industry: typeof row.industry === "string" && row.industry.trim() ? row.industry : "Unclassified",
       currency: "KRW", price, change_pct: change, turnover: nonnegative(row["Value.Traded"]), market_cap: nonnegative(row.market_cap_basic), date,

@@ -13,6 +13,24 @@ import stock_chart_history as charts
 
 
 class StockChartHistoryTests(unittest.TestCase):
+    def test_publication_retains_complete_sector_curves_and_keeps_sparse_originals_durable(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            sparse = {"ticker": "A", "currency": "KRW", "source": "original", "prices": [["2020-01-02", 10, 10]], "complete_history": False}
+            complete = {**sparse, "prices": [["2025-01-02", 20, 20], ["2026-01-02", 30, 30]], "complete_history": True}
+            value = {"ticker": "A", "currency": "KRW", "source": "current", "prices": [["2020-01-02", 11, 11], ["2026-01-02", 31, 31]], "prior_snapshots": [sparse, complete]}
+            packs = root / "packs"
+            packs.mkdir()
+            source = packs / "0.json.gz"
+            original = gzip.compress(json.dumps({"A": value}).encode())
+            source.write_bytes(original)
+            with patch.object(charts, "PACKS", packs):
+                charts.publish(root / "public")
+            published = json.loads(gzip.decompress((root / "public/A.json.gz").read_bytes()))
+            self.assertEqual(published["prices"], value["prices"])
+            self.assertEqual(published["prior_snapshots"], [complete])
+            self.assertEqual(source.read_bytes(), original)
+
     def test_provider_omissions_and_revisions_preserve_original_observations_without_mixing_price_conventions(self):
         db = sqlite3.connect(":memory:")
         db.execute("CREATE TABLE history(ticker TEXT PRIMARY KEY,value TEXT NOT NULL)")

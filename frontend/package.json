@@ -36,7 +36,9 @@
     "test:investor-flows:2022": "node tests/investor-flows-2022-browser.mjs",
     "test:stock-information:2021": "node tests/stock-information-2021-browser.mjs",
     "test:investor-flows:2021": "node tests/investor-flows-2021-browser.mjs",
-    "test:historical-reports": "node --test tests/historical-report-client.test.mjs"
+    "test:historical-reports": "node --test tests/historical-report-client.test.mjs",
+    "test:stock-information:2020": "node tests/stock-information-2020-browser.mjs",
+    "test:investor-flows:2020": "node tests/investor-flows-2020-browser.mjs"
   },
   "dependencies": {
     "react": "^19.0.0",

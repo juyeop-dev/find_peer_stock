@@ -71,15 +71,16 @@ def main():
             continue
         result = {"ticker": row["ticker"], "order": row["order"], "updated": True, "error": None,
                   "queried_at": datetime.now(timezone.utc).isoformat()}
-        if prices[0][0] <= f"{YEAR}-01-01" or previous.get("first_trade_date", "") and previous["first_trade_date"] > f"{YEAR}-01-01":
+        if prices[0][0] <= f"{YEAR}-01-01" or previous.get("first_trade_date", "") and previous["first_trade_date"] > f"{YEAR}-12-31":
             result["cache_status"] = "already_covered" if prices[0][0] <= f"{YEAR}-01-01" else "later_listing"
         else:
             candidates = []
             if symbol := charts.yahoo_symbol(row["ticker"]):
                 candidates.extend((cached_yahoo_path(symbol, year), "yahoo") for year in range(YEAR, 2024))
             if ":" in row["ticker"]:
-                digest = hashlib.sha256(f"{row['ticker']}:1D:1500".encode()).hexdigest()
-                candidates.append((info.ROOT / "data/tmp_tradingview_chart/1D" / f"{digest}.json", "tradingview"))
+                for count in [2500, 2000, 1500]:
+                    digest = hashlib.sha256(f"{row['ticker']}:1D:{count}".encode()).hexdigest()
+                    candidates.append((info.ROOT / "data/tmp_tradingview_chart/1D" / f"{digest}.json", "tradingview"))
             value = None
             for path, provider in candidates:
                 if not path.exists():

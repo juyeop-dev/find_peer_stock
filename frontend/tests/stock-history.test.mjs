@@ -7,10 +7,21 @@ import { gzipSync } from "node:zlib";
 let source = await readFile(new URL("../src/dataClient/stockHistoryClient.ts", import.meta.url), "utf8");
 source = source.replace('import { liveDetailFor, requestOriginal } from "./liveStockDataClient";', 'const liveDetailFor = () => undefined; const requestOriginal = () => { throw new Error("unit test should not request live data"); };');
 const javascript = ts.transpileModule(source, { compilerOptions: { module: ts.ModuleKind.ESNext, target: ts.ScriptTarget.ES2022 } }).outputText;
-const { chartStart, historyRange, yearCovered, getStockHistory } = await import(`data:text/javascript;base64,${Buffer.from(javascript).toString("base64")}`);
+const { chartStart, historyRange, yearCovered, getStockHistory, retainHistoricalPrices } = await import(`data:text/javascript;base64,${Buffer.from(javascript).toString("base64")}`);
 const point = date => ({ date, close: 100, adjusted_close: 100, volume: null });
+test("a shorter refresh keeps verified historical prices and never splices incompatible adjustments or currencies", () => {
+  const old = {ticker:"TEST",currency:"USD",source:"Stored original",history:["2020-01-02","2021-01-04","2021-01-05","2021-01-06"].map(point)};
+  const fresh = {...old,source:"Current original",history:["2021-01-04","2021-01-05","2021-01-06","2026-10-29"].map(point)};
+  const merged = retainHistoricalPrices(old,fresh);
+  assert.equal(merged.history[0].date,"2020-01-02");
+  assert.equal(merged.history.at(-1).date,"2026-10-29");
+  const revised = retainHistoricalPrices(old,{...fresh,history:fresh.history.map(row=>({...row,adjusted_close:90}))});
+  assert.deepEqual(revised.history,old.history);assert.ok(revised.warning);
+  assert.equal(retainHistoricalPrices(old,{...fresh,currency:"EUR"}).history[0].date,"2021-01-04");
+});
 
 test("one year follows calendar dates including leap days instead of using 360 days", () => {
+  assert.equal(chartStart("2026-10-30", "since2020"), "2020-01-01");
   assert.equal(chartStart("2026-10-29", "since2021"), "2021-01-01");
   assert.equal(chartStart("2026-10-29", "since2022"), "2022-01-01");
   assert.equal(chartStart("2026-10-27", "since2023"), "2023-01-01");

@@ -1,5 +1,7 @@
 # 화면에서 원본 자료 조회
 
+2020년 확장: 일봉은 2019-12-20부터 요청해 2020년 첫 거래일의 이전 종가를 확보합니다. 2020년 확정 실적과 투자자 수급 날짜를 지원하며, 저장된 SEC 원본 실적은 브라우저에서 이후 조회와 병합해 보존합니다. 미제공 분기·연간 실적은 추정하지 않습니다.
+
 `https://find-peer-stock-live-api.find-peer-stock-juyeop.workers.dev`는 각 페이지의 새로고침 버튼이 호출하는 Cloudflare Worker입니다. 기존 예약 실행 Worker와 별도로 동작하며, GitHub Actions나 Pages 재배포를 기다리지 않고 조회 결과를 브라우저에 반영합니다. API 키나 Cloudflare 인증 정보는 프론트엔드에 포함하지 않습니다.
 
 ## 조회 범위

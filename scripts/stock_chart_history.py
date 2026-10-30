@@ -162,7 +162,7 @@ def quality(value: dict) -> tuple:
     return (span >= 365, prices[-1][0], len(prices))
 
 
-def save_candidate(db: sqlite3.Connection, value: dict) -> None:
+def save_candidate(db: sqlite3.Connection, value: dict, *, historical_start: str | None = None) -> None:
     if not value["prices"]:
         return
     if not isinstance(value.get("currency"), str) or not value["currency"].strip():
@@ -174,6 +174,8 @@ def save_candidate(db: sqlite3.Connection, value: dict) -> None:
     if previous:
         old = json.loads(previous[0])
         verified_full_request = value.get("requested_range") in {"2y", "5y", "10y", "max"} or (value.get("requested_bars") or 0) >= 366
+        if historical_start and value.get("requested_range") == "dated" and value.get("requested_start", "9999-12-31") <= historical_start:
+            verified_full_request = True
         def fetched_time(item):
             try:
                 timestamp = datetime.fromisoformat(item.get("fetched_at") or "")
@@ -181,6 +183,12 @@ def save_candidate(db: sqlite3.Connection, value: dict) -> None:
             except (TypeError, ValueError):
                 return 0
         newer_full_request = verified_full_request and value["prices"][-1][0] >= old["prices"][-1][0] and fetched_time(value) >= fetched_time(old)
+        historical_extension = (historical_start is not None and verified_full_request
+            and value["currency"] == old.get("currency")
+            and value["prices"][0][0] <= historical_start < old["prices"][0][0]
+            and (date.fromisoformat(old["prices"][-1][0]) - date.fromisoformat(value["prices"][-1][0])).days <= 7
+            and fetched_time(value) >= fetched_time(old))
+        newer_full_request = newer_full_request or historical_extension
         if old.get("currency") and not newer_full_request and quality(old) >= quality(value):
             return
         snapshots = list(old.get("prior_snapshots", []))
@@ -192,7 +200,7 @@ def save_candidate(db: sqlite3.Connection, value: dict) -> None:
             # convention. Keep the original observations separately, never
             # splice incompatible prices into the current source's curve.
             snapshot = {key: old[key] for key in ["ticker", "currency", "source", "fetched_at"] if key in old}
-            snapshot.update(prices=retained, preservation_reason="Original observations omitted or revised by a later provider response")
+            snapshot.update(prices=retained, complete_history=len(retained) == len(old["prices"]), preservation_reason="Original observations omitted or revised by a later provider response")
             fingerprint = lambda item: (item.get("currency"), item.get("source"), json.dumps(item["prices"], separators=(",", ":")))
             if fingerprint(snapshot) not in {fingerprint(item) for item in snapshots}:
                 snapshots.append(snapshot)
@@ -457,6 +465,10 @@ def publish(output: Path = ROOT / "frontend/public/data/stock-history") -> int:
     count = 0
     for path in sorted(PACKS.glob("*.json.gz")):
         for ticker, value in json.loads(gzip.decompress(path.read_bytes())).items():
+            # Sparse preservation records remain in the durable packs. The UI
+            # consumes only continuous primary prices and complete prior curves.
+            if "prior_snapshots" in value:
+                value = {**value, "prior_snapshots": [curve for curve in value["prior_snapshots"] if curve.get("complete_history")]}
             filename = quote(ticker, safe="").replace("%", "~")
             output.mkdir(parents=True, exist_ok=True)
             target = output / f"{filename}.json.gz"

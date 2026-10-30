@@ -12,7 +12,7 @@ const metricText = (key: string, value: number | null | undefined) => value == n
 const labels = {annual: "연간", quarterly: "분기", semiannual: "반기"};
 function StatementTable({rows}: {rows: StockStatement[]}) {
   return <div className="semiTableWrap"><table className="semiTable"><thead><tr><th>회계기간 종료일</th><th>구분</th><th>통화</th><th className="semiNumber">매출</th><th className="semiNumber">영업이익</th><th className="semiNumber">순이익</th><th>자료원</th></tr></thead><tbody>
-    {[...rows].reverse().map(row => <tr key={`${row.type}:${row.period_end}:${row.currency}`}><td>{row.period_end}</td><td>{labels[row.type]}</td><td>{row.currency}</td><td className="semiNumber">{amount(row.revenue)}</td><td className="semiNumber">{amount(row.operating_income)}</td><td className="semiNumber">{amount(row.net_income)}</td><td>{row.source}</td></tr>)}
+    {[...rows].reverse().map(row => <tr key={`${row.type}:${row.period_end}:${row.currency}`}><td>{row.period_end}</td><td>{labels[row.type]}</td><td>{row.currency}</td><td className="semiNumber">{amount(row.revenue)}</td><td className="semiNumber">{amount(row.operating_income)}</td><td className="semiNumber">{amount(row.net_income)}</td><td>{row.source_url ? <a href={row.source_url} target="_blank" rel="noreferrer">{row.source}</a> : row.source}</td></tr>)}
   </tbody></table></div>;
 }
 export function StockInformationPanel({ticker, exchange, refreshKey}: {ticker: string; exchange?: string; refreshKey?: string}) {
@@ -20,17 +20,23 @@ export function StockInformationPanel({ticker, exchange, refreshKey}: {ticker: s
   const {data, error, loading, refreshing, refresh} = usePollingData(load, 300000);
   const groups = data?.financials ?? [];
   return <section className="semiPanel stockInformationPanel">
-    <div className="semiPanelHeading semiHeadingSplit"><div><h2>실적 · 투자 지표</h2><p>2021년 1월 1일 이후 회계기간의 확정 실적 · 현재 제공 지표</p></div><button type="button" className="semiTextButton" disabled={refreshing} onClick={refresh}>{refreshing ? "정보 조회 중…" : "정보 다시 조회"}</button></div>
+    <div className="semiPanelHeading semiHeadingSplit"><div><h2>실적 · 투자 지표</h2><p>2020년 1월 1일 이후 회계기간의 확정 실적 · 현재 제공 지표</p></div><button type="button" className="semiTextButton" disabled={refreshing} onClick={refresh}>{refreshing ? "정보 조회 중…" : "정보 다시 조회"}</button></div>
     {error ? <ErrorNotice message={error} /> : null}{loading ? <p>종목 정보를 확인하고 있습니다.</p> : null}
     {data ? <>
       <p className="semiFootnote">시세·지표 조회 {formatDateTime(data.fetched_at)} · 실적 조회 {formatDateTime(data.financials_fetched_at ?? data.fetched_at)}{data.quote?.provider_time ? ` · 시세 기준 봉 시각 ${formatDateTime(data.quote.provider_time)}` : ""}</p>
-      {data.company?.sector || data.company?.industry ? <p>{[data.company.sector, data.company.industry].filter(Boolean).join(" / ")}{data.company.number_of_employees ? ` · 임직원 ${data.company.number_of_employees.toLocaleString("ko-KR")}명` : ""}</p> : null}
+      {data.company?.sector || data.company?.industry ? <p>{[data.company.sector, data.company.industry].filter(Boolean).join(" / ")}</p> : null}
+      <p className="stockEmployeeCount">임직원 {data.company?.number_of_employees != null ? `${data.company.number_of_employees.toLocaleString("ko-KR")}명` : "미제공"}
+        {data.company?.employees_as_of ? ` · ${data.company.employees_as_of} 기준` : ""}
+        {data.company?.employees_scope ? ` · ${data.company.employees_scope}` : ""}
+        {data.company?.employees_source_url && <>{" · "}<a href={data.company.employees_source_url} target="_blank" rel="noreferrer">{data.company.employees_source ?? "공시 원문"}</a></>}
+      </p>
       {data.quote ? <p>최근 제공 가격 {priceText(data.quote.price)} {data.quote.currency} · 시가총액 {formatMarketCap(data.quote)}</p> : null}
       {data.quote?.provider_date ? <p className="semiFootnote">일봉 제공일 {data.quote.provider_date} · 현재 시세가 제공되지 않아 마지막 확인 가격을 표시합니다.</p> : null}
       <div className="semiTableWrap"><table className="semiTable stockMetricTable" aria-label="투자 지표"><thead><tr><th className="semiNumber" scope="col">PER</th><th className="semiNumber" scope="col">PBR</th><th className="semiNumber" scope="col">EPS<small>{data.metrics_currency ?? "통화 미확인"}</small></th><th className="semiNumber" scope="col">배당수익률</th><th className="semiNumber" scope="col">52주 최고<small>{data.quote?.currency ?? "통화 미확인"}</small></th><th className="semiNumber" scope="col">52주 최저<small>{data.quote?.currency ?? "통화 미확인"}</small></th></tr></thead><tbody><tr>
         {["per", "pbr", "eps", "dividend_yield", "high_52_week", "low_52_week"].map(key => <td key={key} className="semiNumber">{metricText(key, data.metrics[key])}</td>)}
       </tr></tbody></table></div>
-      {groups.length ? <StatementTable rows={groups} /> : <p className="semiEmpty">2021년 이후 확정 실적이 제공되지 않습니다.</p>}
+      {groups.length ? <StatementTable rows={groups} /> : <p className="semiEmpty">2020년 이후 확정 실적이 제공되지 않습니다.</p>}
+      {data.historical_2020_coverage ? <p className="semiFootnote" role="status">2020년 종료 회계기간: 연간 {data.historical_2020_coverage.annual_periods}건 · 분기 {data.historical_2020_coverage.quarterly_periods}건 확인. {data.historical_2020_coverage.note}</p> : null}
       {data.historical_2021_coverage ? <p className="semiFootnote" role="status">2021년 종료 회계기간: 연간 {data.historical_2021_coverage.annual_periods}건 · 분기 {data.historical_2021_coverage.quarterly_periods}건 확인. {data.historical_2021_coverage.note}</p> : null}
       {data.historical_2022_coverage ? <p className="semiFootnote" role="status">2022년 종료 회계기간: 연간 {data.historical_2022_coverage.annual_periods}건 · 분기 {data.historical_2022_coverage.quarterly_periods}건 확인. {data.historical_2022_coverage.note}</p> : null}
       {data.historical_2023_coverage ? <p className="semiFootnote" role="status">2023년 종료 회계기간: 연간 {data.historical_2023_coverage.annual_periods}건 · 분기 {data.historical_2023_coverage.quarterly_periods}건 확인. {data.historical_2023_coverage.note}</p> : null}

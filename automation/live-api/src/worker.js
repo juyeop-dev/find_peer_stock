@@ -29,7 +29,7 @@ export async function handle(request, env = {}, fetcher = fetch) {
     if (body.kind === "investors") {
       if (body.date !== undefined && body.date !== "") {
         try { if (investorDate(body.date) < INVESTOR_START || body.date > new Date(Date.now()+9*3600000).toISOString().slice(0,10)) throw new Error(); }
-        catch { return response({error:"2021년 이후의 올바른 조회 날짜를 선택해 주세요."},400); }
+        catch { return response({error:"2020년 이후의 올바른 조회 날짜를 선택해 주세요."},400); }
       }
       return response(await investorSnapshot(body.date || "",fetcher));
     }

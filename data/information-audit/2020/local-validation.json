@@ -1,0 +1,60 @@
+{
+  "stock_browser_2020": true,
+  "investor_browser_2020": true,
+  "widths": [
+    1440,
+    390,
+    320
+  ],
+  "local_api": {
+    "checked_at": "2026-10-29T16:44:32.010Z",
+    "history_first": "2019-12-20",
+    "history_points": 1723,
+    "coverage": {
+      "start": "2020-01-01",
+      "end": "2020-12-31",
+      "periods": 0,
+      "annual_periods": 0,
+      "quarterly_periods": 0,
+      "note": "확인된 확정 실적만 표시합니다. 연간 실적은 해당 회계연도 전체이며, 미제공 분기는 추정하지 않습니다."
+    },
+    "investor_date": "2020-01-02",
+    "investor_markets": [
+      {
+        "market": "KOSPI",
+        "date": "2020-01-02",
+        "close": 2175.17
+      },
+      {
+        "market": "KOSDAQ",
+        "date": "2020-01-02",
+        "close": 674.02
+      }
+    ]
+  },
+  "python_tests_passed": 227,
+  "node_tests_passed": 63,
+  "sector_browser_regression": true,
+  "original_workspace_preservation": {
+    "original_source_files": 12016,
+    "reported_statements_preserved": 201364,
+    "original_price_points_preserved": 23979876,
+    "credit_original_dates": 1179,
+    "investors_original_dates": 1176,
+    "semiconductor_original_histories": 102
+  },
+  "production_artifact": {
+    "files": 96078,
+    "bytes": 1044388143,
+    "MiB": 996.01,
+    "below_1_GiB": true,
+    "production_api": true,
+    "no_local_api": true,
+    "404_matches": true,
+    "production_base": true
+  },
+  "deployed": false,
+  "workspace_production_path": "/find_peer_stock/",
+  "workspace_sector_browser": true,
+  "workspace_stock_browser_2020": true
+}

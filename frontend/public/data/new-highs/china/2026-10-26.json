@@ -1,1 +1,109 @@
-{"schema_version":1,"market":"china","date":"2026-10-26","summary":"장 마감 후 TradingView 주식 스냅샷 기준. 당일 장중 고가가 52주·전체기간 고가에 도달하고, 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다. 전체기간 신고가를 우선 표시하며 신고가 배경은 별도 확인 전입니다.","sources":[{"label":"TradingView stock screener","url":"https://www.tradingview.com/screener/"},{"label":"TradingView 신고가 산정 기준","url":"https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"}],"entries":[{"ticker":"688071.SS","name":"Shanghai W-Ibeda High Tech.Group Co. Ltd. Class A","exchange":"SSE","category":"Electronic Technology","high_type":"52_week","reason":"업종: Electronic Technology · Electronic Equipment/Instruments","description":"Shanghai W-Ibeda High Tech.Group Co. Ltd. Class A · Electronic Equipment/Instruments","change_pct":11.82659932659932,"session_open":52.8,"session_close":53.14,"session_volume":25646126,"source_symbol":"SSE:688071","currency":"CNY"},{"ticker":"300307.SZ","name":"Ningbo Cixing Co., Ltd. Class A","exchange":"SZSE","category":"Producer Manufacturing","high_type":"52_week","reason":"업종: Producer Manufacturing · Industrial Machinery","description":"Ningbo Cixing Co., Ltd. Class A · Industrial Machinery","change_pct":4.809843400447424,"session_open":9,"session_close":9.37,"session_volume":186601421,"source_symbol":"SZSE:300307","currency":"CNY"},{"ticker":"300369.SZ","name":"NSFOCUS Technologies Group Co., Ltd. Class A","exchange":"SZSE","category":"Electronic Technology","high_type":"52_week","reason":"업종: Electronic Technology · Computer Peripherals","description":"NSFOCUS Technologies Group Co., Ltd. Class A · Computer Peripherals","change_pct":1.1955593509820561,"session_open":11.48,"session_close":11.85,"session_volume":171444269,"source_symbol":"SZSE:300369","currency":"CNY"},{"ticker":"300473.SZ","name":"Fuxin Dare Automotive Parts Co Ltd Class A","exchange":"SZSE","category":"Producer Manufacturing","high_type":"52_week","reason":"업종: Producer Manufacturing · Auto Parts: OEM","description":"Fuxin Dare Automotive Parts Co Ltd Class A · Auto Parts: OEM","change_pct":12.543453070683656,"session_open":34.42,"session_close":38.85,"session_volume":16913792,"source_symbol":"SZSE:300473","currency":"CNY"}],"source_metadata":{"provider":"TradingView public scanner","scanner":"china","fetched_at":"2026-10-26T08:01:11.302080+00:00","universe":"TradingView-listed stock instruments, including common and preferred shares; ETFs excluded","definition":"daily high >= period high; close >= open; close >= previous close when one exists; all-time takes precedence; ties included","scanner_exchanges":["SSE","SZSE"],"latest_session_by_exchange":{"SZSE":"2026-10-26","SSE":"2026-10-26"},"previous_session_by_exchange":{"SZSE":"2026-10-23","SSE":"2026-10-23"},"current_session_reference_symbols":{"SZSE":"SZSE:000001","SSE":"SSE:508060"},"scanned_symbols":5312,"current_session_symbols":5307,"excluded_symbols":{"other_session":5,"bearish_or_down_close":6},"pagination_complete":true},"collected_at":"2026-10-26T08:01:09.614924+00:00"}
+{
+  "schema_version": 1,
+  "market": "china",
+  "date": "2026-10-26",
+  "summary": "장 마감 후 TradingView 주식 스냅샷 기준. 당일 장중 고가가 52주·전체기간 고가에 도달하고, 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다. 전체기간 신고가를 우선 표시하며 신고가 배경은 별도 확인 전입니다.",
+  "sources": [
+    {
+      "label": "TradingView stock screener",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "688071.SS",
+      "name": "Shanghai W-Ibeda High Tech.Group Co. Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Electronic Equipment/Instruments",
+      "description": "Shanghai W-Ibeda High Tech.Group Co. Ltd. Class A · Electronic Equipment/Instruments",
+      "change_pct": 11.82659932659932,
+      "session_open": 52.8,
+      "session_close": 53.14,
+      "session_volume": 25646126,
+      "source_symbol": "SSE:688071",
+      "currency": "CNY"
+    },
+    {
+      "ticker": "300307.SZ",
+      "name": "Ningbo Cixing Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Industrial Machinery",
+      "description": "Ningbo Cixing Co., Ltd. Class A · Industrial Machinery",
+      "change_pct": 4.809843400447424,
+      "session_open": 9,
+      "session_close": 9.37,
+      "session_volume": 186601421,
+      "source_symbol": "SZSE:300307",
+      "currency": "CNY"
+    },
+    {
+      "ticker": "300369.SZ",
+      "name": "NSFOCUS Technologies Group Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Computer Peripherals",
+      "description": "NSFOCUS Technologies Group Co., Ltd. Class A · Computer Peripherals",
+      "change_pct": 1.1955593509820561,
+      "session_open": 11.48,
+      "session_close": 11.85,
+      "session_volume": 171444269,
+      "source_symbol": "SZSE:300369",
+      "currency": "CNY"
+    },
+    {
+      "ticker": "300473.SZ",
+      "name": "Fuxin Dare Automotive Parts Co Ltd Class A",
+      "exchange": "SZSE",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Auto Parts: OEM",
+      "description": "Fuxin Dare Automotive Parts Co Ltd Class A · Auto Parts: OEM",
+      "change_pct": 12.543453070683656,
+      "session_open": 34.42,
+      "session_close": 38.85,
+      "session_volume": 16913792,
+      "source_symbol": "SZSE:300473",
+      "currency": "CNY"
+    }
+  ],
+  "source_metadata": {
+    "provider": "TradingView public scanner",
+    "scanner": "china",
+    "fetched_at": "2026-10-26T08:01:11.302080+00:00",
+    "universe": "TradingView-listed stock instruments, including common and preferred shares; ETFs excluded",
+    "definition": "daily high >= period high; close >= open; close >= previous close when one exists; all-time takes precedence; ties included",
+    "scanner_exchanges": [
+      "SSE",
+      "SZSE"
+    ],
+    "latest_session_by_exchange": {
+      "SZSE": "2026-10-26",
+      "SSE": "2026-10-26"
+    },
+    "previous_session_by_exchange": {
+      "SZSE": "2026-10-23",
+      "SSE": "2026-10-23"
+    },
+    "current_session_reference_symbols": {
+      "SZSE": "SZSE:000001",
+      "SSE": "SSE:508060"
+    },
+    "scanned_symbols": 5312,
+    "current_session_symbols": 5307,
+    "excluded_symbols": {
+      "other_session": 5,
+      "bearish_or_down_close": 6
+    },
+    "pagination_complete": true
+  },
+  "collected_at": "2026-10-26T08:01:09.614924+00:00"
+}

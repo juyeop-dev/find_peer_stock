@@ -5,6 +5,15 @@ import type { SemiconductorPrice } from "./semiconductorTypes";
 
 const cache = new Map<string, StockHistory>();
 export interface SectorHistoryProgress { checked: number; total: number; errors: number }
+export function sectorHistoryForDate(value: StockHistory, end: string): StockHistory {
+  if (value.history.some(point => point.date === end)) return value;
+  const baseline = chartStart(end, "1y");
+  const prior = value.prior_snapshots?.find(curve => curve.complete_history && curve.ticker === value.ticker && curve.currency === value.currency
+    && curve.prices[0]?.[0] <= baseline && curve.prices.some(point => point[0] === end));
+  if (!prior) return value;
+  return {ticker: prior.ticker, currency: prior.currency, source: prior.source, fetched_at: prior.fetched_at,
+    history: prior.prices.map(([date, close, adjusted_close]) => ({date, close, adjusted_close, volume: null}))};
+}
 export async function loadSectorHistories(stocks: SectorStock[], signal: AbortSignal, fromSource = false, onProgress?: (value: SectorHistoryProgress) => void) {
   const values: StockHistory[] = [];
   let cursor = 0, checked = 0, errors = 0;
@@ -13,7 +22,10 @@ export async function loadSectorHistories(stocks: SectorStock[], signal: AbortSi
       signal.throwIfAborted();
       const stock = stocks[cursor++];
       try {
-        const history = fromSource ? await refreshStockHistory(stock.ticker, stock.exchange, signal) : cache.get(stock.ticker) ?? await getPublishedStockHistory(stock.ticker, signal);
+        const loaded = fromSource ? await refreshStockHistory(stock.ticker, stock.exchange, signal) : cache.get(stock.ticker) ?? await getPublishedStockHistory(stock.ticker, signal);
+        const candidate = sectorHistoryForDate(loaded, stock.date);
+        const previous = cache.get(stock.ticker);
+        const history = !candidate.history.some(point => point.date === stock.date) && previous?.history.some(point => point.date === stock.date) ? previous : candidate;
         if (history.currency !== "KRW") throw new Error("이력 통화가 일치하지 않습니다.");
         cache.set(stock.ticker, history); values.push(history);
       } catch (error) {

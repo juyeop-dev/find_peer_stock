@@ -1,0 +1,325 @@
+{
+  "schema_version": 1,
+  "market": "us",
+  "date": "2020-03-17",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "ATNI",
+      "name": "ATN International, Inc.",
+      "exchange": "NASDAQ",
+      "category": "Communications",
+      "high_type": "52_week",
+      "reason": "업종: Communications · Major Telecommunications",
+      "description": "ATN International, Inc. · Major Telecommunications",
+      "change_pct": 16.440899444607247,
+      "session_open": 53.31999969482422,
+      "session_close": 62.75,
+      "session_volume": 124300.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:ATNI",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/ATNI/history/",
+        "date": "2020-03-17",
+        "daily_high": 70.0,
+        "prior_all_time_or_current_month_high": 88.77999877929688,
+        "passes_close_filter": true,
+        "source_symbol": "NASDAQ:ATNI",
+        "yahoo_symbol": "ATNI"
+      }
+    },
+    {
+      "ticker": "CPB",
+      "name": "Campbell's Company",
+      "exchange": "NASDAQ",
+      "category": "Consumer Non-Durables",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Non-Durables · Food: Specialty/Candy",
+      "description": "Campbell's Company · Food: Specialty/Candy",
+      "change_pct": 9.208926948855733,
+      "session_open": 50.290000915527344,
+      "session_close": 53.84000015258789,
+      "session_volume": 10354800.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:CPB",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/CPB/history/",
+        "date": "2020-03-17",
+        "daily_high": 57.540000915527344,
+        "prior_all_time_or_current_month_high": 67.88999938964844,
+        "passes_close_filter": true,
+        "source_symbol": "NASDAQ:CPB",
+        "yahoo_symbol": "CPB"
+      }
+    },
+    {
+      "ticker": "LFMD",
+      "name": "LifeMD, Inc.",
+      "exchange": "NASDAQ",
+      "category": "Health Services",
+      "high_type": "52_week",
+      "reason": "업종: Health Services · Medical/Nursing Services",
+      "description": "LifeMD, Inc. · Medical/Nursing Services",
+      "change_pct": 28.571427355007238,
+      "session_open": 0.75,
+      "session_close": 0.8999999761581421,
+      "session_volume": 211640.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:LFMD",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/LFMD/history/",
+        "date": "2020-03-17",
+        "daily_high": 1.149999976158142,
+        "prior_all_time_or_current_month_high": 4.75,
+        "passes_close_filter": true,
+        "source_symbol": "NASDAQ:LFMD",
+        "yahoo_symbol": "LFMD"
+      }
+    },
+    {
+      "ticker": "QDEL",
+      "name": "QuidelOrtho Corporation",
+      "exchange": "NASDAQ",
+      "category": "Health Technology",
+      "high_type": "all_time",
+      "reason": "업종: Health Technology · Medical Specialties",
+      "description": "QuidelOrtho Corporation · Medical Specialties",
+      "change_pct": 26.19946528429984,
+      "session_open": 77.45999908447266,
+      "session_close": 93.63999938964844,
+      "session_volume": 1242000.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:QDEL",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/QDEL/history/",
+        "date": "2020-03-17",
+        "daily_high": 97.88999938964844,
+        "prior_all_time_or_current_month_high": 97.88999938964844,
+        "passes_close_filter": true,
+        "source_symbol": "NASDAQ:QDEL",
+        "yahoo_symbol": "QDEL"
+      }
+    },
+    {
+      "ticker": "SHEN",
+      "name": "Shenandoah Telecommunications Company",
+      "exchange": "NASDAQ",
+      "category": "Communications",
+      "high_type": "52_week",
+      "reason": "업종: Communications · Major Telecommunications",
+      "description": "Shenandoah Telecommunications Company · Major Telecommunications",
+      "change_pct": 14.309092509663168,
+      "session_open": 43.56999969482422,
+      "session_close": 48.88999938964844,
+      "session_volume": 678000.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:SHEN",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/SHEN/history/",
+        "date": "2020-03-17",
+        "daily_high": 50.099998474121094,
+        "prior_all_time_or_current_month_high": 51.40999984741211,
+        "passes_close_filter": true,
+        "source_symbol": "NASDAQ:SHEN",
+        "yahoo_symbol": "SHEN"
+      }
+    },
+    {
+      "ticker": "AMN",
+      "name": "AMN Healthcare Services, Inc.",
+      "exchange": "NYSE",
+      "category": "Commercial Services",
+      "high_type": "all_time",
+      "reason": "업종: Commercial Services · Personnel Services",
+      "description": "AMN Healthcare Services, Inc. · Personnel Services",
+      "change_pct": 14.034086703515335,
+      "session_open": 71.62000274658203,
+      "session_close": 80.27999877929688,
+      "session_volume": 1097600.0,
+      "currency": "USD",
+      "source_symbol": "NYSE:AMN",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/AMN/history/",
+        "date": "2020-03-17",
+        "daily_high": 80.55000305175781,
+        "prior_all_time_or_current_month_high": 80.55000305175781,
+        "passes_close_filter": true,
+        "source_symbol": "NYSE:AMN",
+        "yahoo_symbol": "AMN"
+      }
+    },
+    {
+      "ticker": "CLX",
+      "name": "Clorox Company",
+      "exchange": "NYSE",
+      "category": "Consumer Non-Durables",
+      "high_type": "all_time",
+      "reason": "업종: Consumer Non-Durables · Household/Personal Care",
+      "description": "Clorox Company · Household/Personal Care",
+      "change_pct": 13.274945398884253,
+      "session_open": 178.91000366210938,
+      "session_close": 197.8800048828125,
+      "session_volume": 7478700.0,
+      "currency": "USD",
+      "source_symbol": "NYSE:CLX",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/CLX/history/",
+        "date": "2020-03-17",
+        "daily_high": 205.0,
+        "prior_all_time_or_current_month_high": 205.0,
+        "passes_close_filter": true,
+        "source_symbol": "NYSE:CLX",
+        "yahoo_symbol": "CLX"
+      }
+    },
+    {
+      "ticker": "GIS",
+      "name": "General Mills, Inc.",
+      "exchange": "NYSE",
+      "category": "Consumer Non-Durables",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Non-Durables · Food: Major Diversified",
+      "description": "General Mills, Inc. · Food: Major Diversified",
+      "change_pct": 11.783433823472134,
+      "session_open": 53.959999084472656,
+      "session_close": 59.66999816894531,
+      "session_volume": 17279000.0,
+      "currency": "USD",
+      "source_symbol": "NYSE:GIS",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/GIS/history/",
+        "date": "2020-03-17",
+        "daily_high": 60.0,
+        "prior_all_time_or_current_month_high": 72.94999694824219,
+        "passes_close_filter": true,
+        "source_symbol": "NYSE:GIS",
+        "yahoo_symbol": "GIS"
+      }
+    },
+    {
+      "ticker": "HE",
+      "name": "Hawaiian Electric Industries, Inc.",
+      "exchange": "NYSE",
+      "category": "Utilities",
+      "high_type": "all_time",
+      "reason": "업종: Utilities · Electric Utilities",
+      "description": "Hawaiian Electric Industries, Inc. · Electric Utilities",
+      "change_pct": 12.349059145626008,
+      "session_open": 44.4900016784668,
+      "session_close": 49.310001373291016,
+      "session_volume": 2541200.0,
+      "currency": "USD",
+      "source_symbol": "NYSE:HE",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/HE/history/",
+        "date": "2020-03-17",
+        "daily_high": 52.959999084472656,
+        "prior_all_time_or_current_month_high": 52.959999084472656,
+        "passes_close_filter": true,
+        "source_symbol": "NYSE:HE",
+        "yahoo_symbol": "HE"
+      }
+    },
+    {
+      "ticker": "KR",
+      "name": "Kroger Co.",
+      "exchange": "NYSE",
+      "category": "Retail Trade",
+      "high_type": "52_week",
+      "reason": "업종: Retail Trade · Food Retail",
+      "description": "Kroger Co. · Food Retail",
+      "change_pct": 6.109323457315297,
+      "session_open": 31.809999465942383,
+      "session_close": 33.0,
+      "session_volume": 25167900.0,
+      "currency": "USD",
+      "source_symbol": "NYSE:KR",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/KR/history/",
+        "date": "2020-03-17",
+        "daily_high": 34.939998626708984,
+        "prior_all_time_or_current_month_high": 42.75,
+        "passes_close_filter": true,
+        "source_symbol": "NYSE:KR",
+        "yahoo_symbol": "KR"
+      }
+    },
+    {
+      "ticker": "WEC",
+      "name": "WEC Energy Group Inc",
+      "exchange": "NYSE",
+      "category": "Utilities",
+      "high_type": "all_time",
+      "reason": "업종: Utilities · Electric Utilities",
+      "description": "WEC Energy Group Inc · Electric Utilities",
+      "change_pct": 10.552437146194848,
+      "session_open": 95.25,
+      "session_close": 102.45999908447266,
+      "session_volume": 5748600.0,
+      "currency": "USD",
+      "source_symbol": "NYSE:WEC",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/WEC/history/",
+        "date": "2020-03-17",
+        "daily_high": 109.52999877929688,
+        "prior_all_time_or_current_month_high": 109.52999877929688,
+        "passes_close_filter": true,
+        "source_symbol": "NYSE:WEC",
+        "yahoo_symbol": "WEC"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-10-29T16:37:17.877402+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 5713,
+    "history_symbols": 3761,
+    "inactive_symbols": 1951,
+    "failed_symbols": 1,
+    "coverage_ratio": 0.9997341839447103,
+    "coverage_by_exchange": {
+      "NASDAQ": {
+        "covered": 1979,
+        "total": 1980
+      },
+      "NYSE": {
+        "covered": 1614,
+        "total": 1614
+      },
+      "AMEX": {
+        "covered": 168,
+        "total": 168
+      }
+    },
+    "session_symbols": 3504,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-10-29T16:37:17.877402+00:00"
+}

@@ -6,6 +6,10 @@ const now = new Date("2026-10-20T00:00:00Z");
 const row = (fields = {}) => ({ s: `KRX:${fields.name ?? "005930"}`, d: SECTOR_COLUMNS.map(key => ({ name: "005930", description: "삼성전자보통주", exchange: "KRX", type: "stock", subtype: "common", sector: "Electronic Technology", industry: "Semiconductors", close: 100, change: 0, "Value.Traded": 2e12, market_cap_basic: 5e14, currency: "KRW", time: Date.parse("2026-10-19T00:00:00Z") / 1000, indexes: [{ proname: "KRX:KOSPI" }], "Perf.W": 2, "Perf.1M": -3, "Perf.3M": 4, "Perf.Y": 50, ...fields })[key] ?? null) });
 const payload = (...data) => ({ totalCount: data.length, data });
 const json = body => new Response(JSON.stringify(body), { headers: { "Content-Type": "application/json" } });
+test("listing names preserve official Latin initials instead of translated descriptions", () => {
+  const data = sectorSnapshot(payload(row({name:"024110",description:"중소기업은행"}), row({name:"011200",description:"에이치엠엠"}), row({name:"267250",description:"에이치디현대"}), row({name:"055550",description:"신한금융지주회사"})), now);
+  assert.deepEqual(Object.fromEntries(data.stocks.map(stock => [stock.code,stock.name])), {"011200":"HMM","024110":"기업은행","055550":"신한지주","267250":"HD현대"});
+});
 
 test("KRW native units, listing identity and zero returns survive sector collection", () => {
   const data = sectorSnapshot(payload(row(), row({ name: "000660", indexes: [{ proname: "KRX:KOSDAQ" }], "Value.Traded": null, "Perf.W": null })), now);

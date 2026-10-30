@@ -1,0 +1,246 @@
+{
+  "schema_version": 1,
+  "market": "taiwan",
+  "date": "2020-04-20",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "3465.TWO",
+      "name": "New Advanced Electronics Technologies Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Electronic Equipment/Instruments",
+      "description": "New Advanced Electronics Technologies Co., Ltd. · Electronic Equipment/Instruments",
+      "change_pct": 5.000000964247819,
+      "session_open": 39.561378479003906,
+      "session_close": 41.53944778442383,
+      "session_volume": 8088.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:3465",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3465.TWO/history/",
+        "date": "2020-04-20",
+        "daily_high": 41.53944778442383,
+        "prior_all_time_or_current_month_high": 41.53944778442383,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:3465",
+        "yahoo_symbol": "3465.TWO"
+      }
+    },
+    {
+      "ticker": "4128.TWO",
+      "name": "Microbio Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Pharmaceuticals: Other",
+      "description": "Microbio Co., Ltd. · Pharmaceuticals: Other",
+      "change_pct": 9.836060357028353,
+      "session_open": 14.483332633972168,
+      "session_close": 14.483332633972168,
+      "session_volume": 27678324.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:4128",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4128.TWO/history/",
+        "date": "2020-04-20",
+        "daily_high": 14.483332633972168,
+        "prior_all_time_or_current_month_high": 27.300525665283203,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:4128",
+        "yahoo_symbol": "4128.TWO"
+      }
+    },
+    {
+      "ticker": "4743.TWO",
+      "name": "Oneness Biotech Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Pharmaceuticals: Major",
+      "description": "Oneness Biotech Co., Ltd. · Pharmaceuticals: Major",
+      "change_pct": 9.960683123826453,
+      "session_open": 34.970428466796875,
+      "session_close": 34.970428466796875,
+      "session_volume": 1825768.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:4743",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4743.TWO/history/",
+        "date": "2020-04-20",
+        "daily_high": 34.970428466796875,
+        "prior_all_time_or_current_month_high": 54.00492477416992,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:4743",
+        "yahoo_symbol": "4743.TWO"
+      }
+    },
+    {
+      "ticker": "6716.TWO",
+      "name": "PADAUK Technology Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Semiconductors",
+      "description": "PADAUK Technology Co., Ltd. · Semiconductors",
+      "change_pct": 0.0,
+      "session_open": 54.09466552734375,
+      "session_close": 55.97295379638672,
+      "session_volume": 1092751.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:6716",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6716.TWO/history/",
+        "date": "2020-04-20",
+        "daily_high": 58.151763916015625,
+        "prior_all_time_or_current_month_high": 58.151763916015625,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:6716",
+        "yahoo_symbol": "6716.TWO"
+      }
+    },
+    {
+      "ticker": "8917.TWO",
+      "name": "Hsin Tai Gas Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Utilities",
+      "high_type": "52_week",
+      "reason": "업종: Utilities · Gas Distributors",
+      "description": "Hsin Tai Gas Co., Ltd. · Gas Distributors",
+      "change_pct": 1.904755457318008,
+      "session_open": 39.81968307495117,
+      "session_close": 40.19533920288086,
+      "session_volume": 39930.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:8917",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/8917.TWO/history/",
+        "date": "2020-04-20",
+        "daily_high": 40.57099914550781,
+        "prior_all_time_or_current_month_high": 43.35086441040039,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:8917",
+        "yahoo_symbol": "8917.TWO"
+      }
+    },
+    {
+      "ticker": "1903.TW",
+      "name": "Shihlin Paper Corporation",
+      "exchange": "TWSE",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "업종: Finance · Real Estate Development",
+      "description": "Shihlin Paper Corporation · Real Estate Development",
+      "change_pct": 9.931030273437491,
+      "session_open": 38.099998474121094,
+      "session_close": 39.849998474121094,
+      "session_volume": 588316.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:1903",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/1903.TW/history/",
+        "date": "2020-04-20",
+        "daily_high": 39.849998474121094,
+        "prior_all_time_or_current_month_high": 95.19999694824219,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:1903",
+        "yahoo_symbol": "1903.TW"
+      }
+    },
+    {
+      "ticker": "3042.TW",
+      "name": "TXC Corporation",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Electronic Production Equipment",
+      "description": "TXC Corporation · Electronic Production Equipment",
+      "change_pct": 7.827478666640175,
+      "session_open": 64.4000015258789,
+      "session_close": 67.5,
+      "session_volume": 29465451.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:3042",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3042.TW/history/",
+        "date": "2020-04-20",
+        "daily_high": 67.80000305175781,
+        "prior_all_time_or_current_month_high": 67.80000305175781,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:3042",
+        "yahoo_symbol": "3042.TW"
+      }
+    },
+    {
+      "ticker": "6598.TW",
+      "name": "Applied BioCode Corp.",
+      "exchange": "TWSE",
+      "category": "Health Technology",
+      "high_type": "all_time",
+      "reason": "업종: Health Technology · Medical Specialties",
+      "description": "Applied BioCode Corp. · Medical Specialties",
+      "change_pct": 18.556701030927837,
+      "session_open": 49.20000076293945,
+      "session_close": 57.5,
+      "session_volume": 1032510.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:6598",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6598.TW/history/",
+        "date": "2020-04-20",
+        "daily_high": 60.900001525878906,
+        "prior_all_time_or_current_month_high": 60.900001525878906,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:6598",
+        "yahoo_symbol": "6598.TW"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-10-29T16:30:33.176417+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 2356,
+    "history_symbols": 1869,
+    "inactive_symbols": 477,
+    "failed_symbols": 10,
+    "coverage_ratio": 0.9946780202235231,
+    "coverage_by_exchange": {
+      "TWSE": {
+        "covered": 973,
+        "total": 980
+      },
+      "TPEX": {
+        "covered": 896,
+        "total": 899
+      }
+    },
+    "session_symbols": 1839,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-10-29T16:30:33.176417+00:00"
+}

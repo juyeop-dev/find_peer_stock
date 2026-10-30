@@ -13,6 +13,13 @@ import refresh_stock_information_history as history_refresh
 
 
 class StockInformationTests(unittest.TestCase):
+    def test_company_profile_fills_missing_count_without_replacing_new_provider_data(self):
+        profile = info.company_profile("055550.KS", {"sector": "Finance", "number_of_employees": None})
+        self.assertEqual(profile["number_of_employees"], 184)
+        self.assertEqual(profile["employees_as_of"], "2026-06-30")
+        self.assertEqual(info.company_profile("055550.KS", {"number_of_employees": 200}), {"number_of_employees": 200})
+        self.assertEqual(info.company_profile("UNKNOWN", {}), {})
+
     def test_live_chart_adapter_without_a_fetch_time_gets_its_actual_receipt_time(self):
         payload = {"symbol":"EURONEXT:MC","info":{"pro_name":"EURONEXT:MC","source_id":"EURONEXT","type":"stock","currency_code":"EUR","timezone":"Europe/Paris"},
                    "requested_bars":550,"bars":[{"timestamp":1735641000,"close":100},{"timestamp":1792393200,"close":120}]}

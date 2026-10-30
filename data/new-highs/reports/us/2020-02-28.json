@@ -1,0 +1,225 @@
+{
+  "schema_version": 1,
+  "market": "us",
+  "date": "2020-02-28",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "ELA",
+      "name": "Envela Corporation",
+      "exchange": "AMEX",
+      "category": "Retail Trade",
+      "high_type": "52_week",
+      "reason": "업종: Retail Trade · Specialty Stores",
+      "description": "Envela Corporation · Specialty Stores",
+      "change_pct": 0.757575004991895,
+      "session_open": 2.5899999141693115,
+      "session_close": 2.6600000858306885,
+      "session_volume": 302700.0,
+      "currency": "USD",
+      "source_symbol": "AMEX:ELA",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/ELA/history/",
+        "date": "2020-02-28",
+        "daily_high": 2.950000047683716,
+        "prior_all_time_or_current_month_high": 10.529999732971191,
+        "passes_close_filter": true,
+        "source_symbol": "AMEX:ELA",
+        "yahoo_symbol": "ELA"
+      }
+    },
+    {
+      "ticker": "PCG/PH",
+      "name": "PG&E Corporation 4.5 % Cum Pref Registered Shs",
+      "exchange": "AMEX",
+      "category": "Utilities",
+      "high_type": "52_week",
+      "reason": "업종: Utilities · Electric Utilities",
+      "description": "PG&E Corporation 4.5 % Cum Pref Registered Shs · Electric Utilities",
+      "change_pct": 0.09091117165305196,
+      "session_open": 22.020000457763672,
+      "session_close": 22.020000457763672,
+      "session_volume": 131.0,
+      "currency": "USD",
+      "source_symbol": "AMEX:PCG/PH",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/PCG-PH/history/",
+        "date": "2020-02-28",
+        "daily_high": 22.020000457763672,
+        "prior_all_time_or_current_month_high": 29.539899826049805,
+        "passes_close_filter": true,
+        "source_symbol": "AMEX:PCG/PH",
+        "yahoo_symbol": "PCG-PH"
+      }
+    },
+    {
+      "ticker": "IBIO",
+      "name": "iBio, Inc.",
+      "exchange": "NASDAQ",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Pharmaceuticals: Other",
+      "description": "iBio, Inc. · Pharmaceuticals: Other",
+      "change_pct": 181.60919540229884,
+      "session_open": 930.0,
+      "session_close": 1225.0,
+      "session_volume": 526211.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:IBIO",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/IBIO/history/",
+        "date": "2020-02-28",
+        "daily_high": 1700.0,
+        "prior_all_time_or_current_month_high": 30300.0,
+        "passes_close_filter": true,
+        "source_symbol": "NASDAQ:IBIO",
+        "yahoo_symbol": "IBIO"
+      }
+    },
+    {
+      "ticker": "NVAX",
+      "name": "Novavax, Inc.",
+      "exchange": "NASDAQ",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Biotechnology",
+      "description": "Novavax, Inc. · Biotechnology",
+      "change_pct": 35.593218147258135,
+      "session_open": 14.9399995803833,
+      "session_close": 16.0,
+      "session_volume": 36295500.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:NVAX",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/NVAX/history/",
+        "date": "2020-02-28",
+        "daily_high": 17.709999084472656,
+        "prior_all_time_or_current_month_high": 311.0,
+        "passes_close_filter": true,
+        "source_symbol": "NASDAQ:NVAX",
+        "yahoo_symbol": "NVAX"
+      }
+    },
+    {
+      "ticker": "PRAA",
+      "name": "PRA Group, Inc.",
+      "exchange": "NASDAQ",
+      "category": "Commercial Services",
+      "high_type": "52_week",
+      "reason": "업종: Commercial Services · Miscellaneous Commercial Services",
+      "description": "PRA Group, Inc. · Miscellaneous Commercial Services",
+      "change_pct": 11.808750950378165,
+      "session_open": 38.09000015258789,
+      "session_close": 38.81999969482422,
+      "session_volume": 569900.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:PRAA",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/PRAA/history/",
+        "date": "2020-02-28",
+        "daily_high": 38.81999969482422,
+        "prior_all_time_or_current_month_high": 65.0,
+        "passes_close_filter": true,
+        "source_symbol": "NASDAQ:PRAA",
+        "yahoo_symbol": "PRAA"
+      }
+    },
+    {
+      "ticker": "TOMZ",
+      "name": "TOMI Environmental Solutions, Inc.",
+      "exchange": "NASDAQ",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Industrial Machinery",
+      "description": "TOMI Environmental Solutions, Inc. · Industrial Machinery",
+      "change_pct": 61.42858375497471,
+      "session_open": 18.0,
+      "session_close": 27.1200008392334,
+      "session_volume": 409408.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:TOMZ",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/TOMZ/history/",
+        "date": "2020-02-28",
+        "daily_high": 28.559999465942383,
+        "prior_all_time_or_current_month_high": 216.0,
+        "passes_close_filter": true,
+        "source_symbol": "NASDAQ:TOMZ",
+        "yahoo_symbol": "TOMZ"
+      }
+    },
+    {
+      "ticker": "XAIR",
+      "name": "Beyond Air, Inc.",
+      "exchange": "NASDAQ",
+      "category": "Health Technology",
+      "high_type": "all_time",
+      "reason": "업종: Health Technology · Medical Specialties",
+      "description": "Beyond Air, Inc. · Medical Specialties",
+      "change_pct": 13.26949384404925,
+      "session_open": 3200.0,
+      "session_close": 3312.0,
+      "session_volume": 2741.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:XAIR",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/XAIR/history/",
+        "date": "2020-02-28",
+        "daily_high": 3496.0,
+        "prior_all_time_or_current_month_high": 3496.0,
+        "passes_close_filter": true,
+        "source_symbol": "NASDAQ:XAIR",
+        "yahoo_symbol": "XAIR"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-10-29T16:37:17.877402+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 5713,
+    "history_symbols": 3761,
+    "inactive_symbols": 1951,
+    "failed_symbols": 1,
+    "coverage_ratio": 0.9997341839447103,
+    "coverage_by_exchange": {
+      "NASDAQ": {
+        "covered": 1979,
+        "total": 1980
+      },
+      "NYSE": {
+        "covered": 1614,
+        "total": 1614
+      },
+      "AMEX": {
+        "covered": 168,
+        "total": 168
+      }
+    },
+    "session_symbols": 3502,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-10-29T16:37:17.877402+00:00"
+}

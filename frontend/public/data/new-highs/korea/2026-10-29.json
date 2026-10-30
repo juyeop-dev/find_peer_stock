@@ -1,0 +1,124 @@
+{
+  "schema_version": 1,
+  "market": "korea",
+  "date": "2026-10-29",
+  "summary": "장 마감 후 TradingView 주식 스냅샷 기준. 당일 장중 고가가 52주·전체기간 고가에 도달하고, 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다. 전체기간 신고가를 우선 표시하며 신고가 배경은 별도 확인 전입니다.",
+  "sources": [
+    {
+      "label": "TradingView stock screener",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    },
+    {
+      "label": "Naver Finance 종목명·상장 시장·일봉 검증",
+      "url": "https://stock.naver.com/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "070590.KQ",
+      "name": "인티큐브",
+      "exchange": "KOSDAQ",
+      "category": "Technology Services",
+      "high_type": "52_week",
+      "reason": "업종: Technology Services · Information Technology Services",
+      "description": "인티큐브 · Information Technology Services",
+      "change_pct": 0.6993006993006993,
+      "session_open": 2805,
+      "session_close": 2880,
+      "session_volume": 52246,
+      "source_symbol": "KRX:070590",
+      "currency": "KRW",
+      "name_original": "Inticube Co., Ltd.",
+      "name_source_url": "https://m.stock.naver.com/api/stock/070590/basic",
+      "high_verification": {
+        "source": "Naver Finance adjusted daily history",
+        "source_url": "https://api.finance.naver.com/siseJson.naver?symbol=070590&requestType=1&startTime=20251030&endTime=20261029&timeframe=day",
+        "date": "2026-10-29",
+        "open": 2805,
+        "daily_high": 2980,
+        "low": 2805,
+        "close": 2880,
+        "previous_close": 2855,
+        "volume": 52246,
+        "prior_52_week_high": 2980,
+        "observed_bars": 244,
+        "first_observed_date": "2025-10-30",
+        "confirmed": true,
+        "matches_prior_high": true,
+        "bearish_candle": false,
+        "down_close": false,
+        "passes_close_filter": true
+      }
+    },
+    {
+      "ticker": "159010.KQ",
+      "name": "아스플로",
+      "exchange": "KOSDAQ",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Industrial Machinery",
+      "description": "아스플로 · Industrial Machinery",
+      "change_pct": 12.46056782334385,
+      "session_open": 31700,
+      "session_close": 35200,
+      "session_volume": 440548,
+      "source_symbol": "KRX:159010",
+      "currency": "KRW",
+      "name_original": "ASFLOW CO.,LTD",
+      "name_source_url": "https://m.stock.naver.com/api/stock/159010/basic",
+      "high_verification": {
+        "source": "Naver Finance adjusted daily history",
+        "source_url": "https://api.finance.naver.com/siseJson.naver?symbol=159010&requestType=1&startTime=20251030&endTime=20261029&timeframe=day",
+        "date": "2026-10-29",
+        "open": 31700,
+        "daily_high": 36250,
+        "low": 30750,
+        "close": 35200,
+        "previous_close": 31700,
+        "volume": 440548,
+        "prior_52_week_high": 35550,
+        "observed_bars": 244,
+        "first_observed_date": "2025-10-30",
+        "confirmed": true,
+        "matches_prior_high": false,
+        "bearish_candle": false,
+        "down_close": false,
+        "passes_close_filter": true
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "TradingView public scanner",
+    "scanner": "korea",
+    "fetched_at": "2026-10-29T07:31:30.802907+00:00",
+    "universe": "TradingView-listed stock instruments, including common and preferred shares; ETFs excluded",
+    "definition": "daily high >= period high; close >= open; close >= previous close when one exists; all-time takes precedence; ties included",
+    "scanner_exchanges": [
+      "KRX"
+    ],
+    "latest_session_by_exchange": {
+      "KRX": "2026-10-29"
+    },
+    "previous_session_by_exchange": {
+      "KRX": "2026-10-28"
+    },
+    "current_session_reference_symbols": {
+      "KRX": "KRX:000020",
+      "KOSPI": "KRX:000020",
+      "KOSDAQ": "KRX:0001A0"
+    },
+    "scanned_symbols": 2741,
+    "current_session_symbols": 2708,
+    "excluded_symbols": {
+      "other_session": 33,
+      "bearish_or_down_close": 5,
+      "korean_daily_history_disagrees": 4
+    },
+    "pagination_complete": true
+  },
+  "collected_at": "2026-10-29T07:31:14.937052+00:00"
+}

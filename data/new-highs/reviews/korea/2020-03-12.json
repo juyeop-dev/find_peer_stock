@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "market": "korea",
+  "date": "2020-03-12",
+  "reviewed_at": "2026-10-29T16:34:28.781236+00:00",
+  "scanned_symbols": 2741,
+  "session_symbols": 2083,
+  "excluded_unsupported_korean_board": 0,
+  "checks": [
+    {
+      "ticker": "038290",
+      "date": "2020-03-12",
+      "open": 38750,
+      "daily_high": 41700,
+      "low": 36200,
+      "close": 37900,
+      "previous_close": 40150,
+      "volume": 5095881,
+      "prior_52_week_high": 40150,
+      "observed_bars": 248,
+      "first_observed_date": "2019-03-14",
+      "confirmed": true,
+      "matches_prior_high": false,
+      "bearish_candle": true,
+      "down_close": true,
+      "passes_close_filter": false,
+      "prior_all_time_high": 102859,
+      "high_type": "52_week",
+      "included": false
+    },
+    {
+      "ticker": "067010",
+      "date": "2020-03-12",
+      "open": 3750,
+      "daily_high": 4240,
+      "low": 3260,
+      "close": 4240,
+      "previous_close": 3265,
+      "volume": 20665814,
+      "prior_52_week_high": 3380,
+      "observed_bars": 248,
+      "first_observed_date": "2019-03-14",
+      "confirmed": true,
+      "matches_prior_high": false,
+      "bearish_candle": false,
+      "down_close": false,
+      "passes_close_filter": true,
+      "prior_all_time_high": 4000,
+      "high_type": "all_time",
+      "included": true
+    }
+  ]
+}

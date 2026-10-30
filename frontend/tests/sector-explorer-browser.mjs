@@ -8,6 +8,8 @@ import ts from "typescript";
 
 const base=process.env.STOCK_SITE_BASE_URL ?? "http://127.0.0.1:4174";
 const source=await (await fetch(base+"/data/sectors/index.json")).json();
+const {names}=JSON.parse(await readFile(new URL("../../data/seed/korean_company_names.json",import.meta.url),"utf8"));
+source.stocks=source.stocks.map(stock=>({...stock,name:names[stock.ticker]??stock.name}));
 const finance=source.stocks.filter(stock=>stock.sector==="Finance"&&stock.date===source.date);
 assert.ok(finance.length>50);
 const moduleSource=await readFile(new URL("../src/dataClient/sectorRankings.ts",import.meta.url),"utf8");
@@ -57,6 +59,7 @@ try {
   const expected=finance.map(stock=>stock.code).sort();
   assert.deepEqual((await codes(".sectorExplorerMembers")).sort(),expected);
   await checkPriceChanges(".sectorExplorerMembers");
+  assert.equal(await evaluate("[...document.querySelectorAll('.sectorExplorerMembers .semiStockLink')].find(link=>link.querySelector('span').innerText==='024110')?.querySelector('strong').innerText"), "기업은행");
   for(const [column,key] of [[1,"name"],[3,"exchange"],[4,"price"],[5,"return"],[6,"turnover"],[7,"marketCap"]]) {
     for(let pass=0;pass<2;pass++) {
       await click(`.sectorExplorerMembers thead th:nth-child(${column}) button`);
@@ -83,6 +86,7 @@ try {
   await navigate(`/sector-trends?${new URLSearchParams({sector:"Finance",group:"Finance\tMajor Banks"})}`);
   await until(()=>evaluate("Boolean(document.querySelector('.sectorExplorerChart .semiChart .semiLine'))"),"Non-semiconductor daily trend missing");
   assert.ok(await evaluate("document.querySelector('.sectorExplorerChart h2').innerText.includes('은행')"));
+  assert.deepEqual(await evaluate("[...document.querySelectorAll('.domesticSectorExplorer .semiPanel h2')].map(node=>node.innerText)"), ["대형 은행 구성 종목", "대형 은행 주가 추이", "섹터별 수익률"]);
   await checkPriceChanges(".sectorExplorerMembers");
   await evaluate("[...document.querySelectorAll('.sectorExplorerChart .semiPeriodTabs button')].find(button=>button.innerText==='1년').click()");
   await until(()=>evaluate("document.querySelector('.sectorExplorerChart .semiPeriodTabs .active')?.innerText==='1년' && Boolean(document.querySelector('.sectorExplorerChart .semiLine'))"),"Year trend unavailable");
@@ -106,6 +110,10 @@ try {
       assert.deepEqual(await codes(".sectorMemberTable"),sortSectorMembers(finance,key,direction==="ascending"?"asc":"desc","day").map(stock=>stock.code));
     }
   }
+  await navigate(`/market-stocks/055550.KS?${new URLSearchParams({source:"sectors",market:"korea",date:source.date})}`);
+  await until(()=>evaluate("document.querySelector('.stockEmployeeCount')?.innerText.includes('184명')"),"Shinhan employees missing");
+  assert.ok(await evaluate("document.querySelector('.stockEmployeeCount').innerText.includes('2026-06-30')"));
+  assert.ok(await evaluate("document.querySelector('.stockEmployeeCount a').href.startsWith('https://www.sec.gov/')"));
   assert.deepEqual(exceptions,[]);
   console.log(JSON.stringify({result:"PASS",financeStocks:finance.length,checks:"Other sector stocks and real daily trends, legacy semiconductor views, 26 column sort toggles, detail/return, metric header and number alignment, source refresh, 1440/320px"}));
 } finally {

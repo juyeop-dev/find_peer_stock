@@ -16,7 +16,8 @@ const MARKETS: { key: Market; label: string }[] = [
 ];
 const trillion = (millions: number) => `${(millions / 1_000_000).toFixed(3)}조원`;
 
-function periodHistory(history: CreditPoint[], days: number | "since2023" | "since2022" | "since2021"): CreditPoint[] {
+function periodHistory(history: CreditPoint[], days: number | "since2023" | "since2022" | "since2021" | "since2020"): CreditPoint[] {
+  if (days === "since2020") return history.filter(point => point.date >= "2020-01-01");
   if (days === "since2021") return history.filter(point => point.date >= "2021-01-01");
   if (days === "since2022") return history.filter(point => point.date >= "2022-01-01");
   if (days === "since2023") return history.filter(point => point.date >= "2023-01-01");
@@ -35,8 +36,8 @@ function periodHistory(history: CreditPoint[], days: number | "since2023" | "sin
 export function CreditBalancePage() {
   const { data, error, loading, refreshing, lastCheckedAt, lastSourceAt, refresh } = usePollingData(getCreditData, 300_000);
   const [market, setMarket] = useState<Market>("total");
-  const [period, setPeriod] = useState<Period | "since2023" | "since2022" | "since2021">(90);
-  const periodLabel = period === "since2021" ? "2021년~" : period === "since2022" ? "2022년~" : period === "since2023" ? "2023년~" : `${period}일`;
+  const [period, setPeriod] = useState<Period | "since2023" | "since2022" | "since2021" | "since2020">(90);
+  const periodLabel = period === "since2020" ? "2020년~" : period === "since2021" ? "2021년~" : period === "since2022" ? "2022년~" : period === "since2023" ? "2023년~" : `${period}일`;
   const history = data?.history ?? [];
   const latest = history.at(-1);
   const previous = history.at(-2);
@@ -66,7 +67,7 @@ export function CreditBalancePage() {
       <section className="semiPanel"><div className="semiPanelHeading semiHeadingSplit"><div><h2>{selectedLabel} 신용 잔고</h2>
         <p>단위: 조원 · {typeof period === "string" ? periodLabel : `최근 ${periodLabel}`} · 기준일별 발표값</p></div>
         <div className="semiPeriodTabs" aria-label="신용 잔고 차트 기간">{PERIODS.map((days) => <button key={days} type="button"
-          className={period === days ? "active" : ""} onClick={() => setPeriod(days)}>{days}일</button>)}<button type="button" className={period === "since2023" ? "active" : ""} onClick={() => setPeriod("since2023")}>2023년~</button><button type="button" className={period === "since2022" ? "active" : ""} onClick={() => setPeriod("since2022")}>2022년~</button><button type="button" className={period === "since2021" ? "active" : ""} onClick={() => setPeriod("since2021")}>2021년~</button></div></div>
+          className={period === days ? "active" : ""} onClick={() => setPeriod(days)}>{days}일</button>)}<button type="button" className={period === "since2023" ? "active" : ""} onClick={() => setPeriod("since2023")}>2023년~</button><button type="button" className={period === "since2022" ? "active" : ""} onClick={() => setPeriod("since2022")}>2022년~</button><button type="button" className={period === "since2021" ? "active" : ""} onClick={() => setPeriod("since2021")}>2021년~</button><button type="button" className={period === "since2020" ? "active" : ""} onClick={() => setPeriod("since2020")}>2020년~</button></div></div>
         <div className="creditHeadline"><strong>{trillion(latest[market])}</strong>
           <span className={(dailyChange ?? 0) >= 0 ? "semiUp" : "semiDown"}>전 기준일 대비 {dailyChange === null ? "-" : `${dailyChange > 0 ? "+" : ""}${trillion(dailyChange)}`}</span>
           <span>{periodLabel} 변화 {formatPercent(change)}</span></div>

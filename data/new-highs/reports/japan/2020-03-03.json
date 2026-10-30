@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "market": "japan",
+  "date": "2020-03-03",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "4475.T",
+      "name": "HENNGE K.K.",
+      "exchange": "TSE",
+      "category": "Technology Services",
+      "high_type": "all_time",
+      "reason": "업종: Technology Services · Packaged Software",
+      "description": "HENNGE K.K. · Packaged Software",
+      "change_pct": 13.698630136986312,
+      "session_open": 1545.0,
+      "session_close": 1660.0,
+      "session_volume": 904000.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:4475",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4475.T/history/",
+        "date": "2020-03-03",
+        "daily_high": 1710.0,
+        "prior_all_time_or_current_month_high": 1710.0,
+        "passes_close_filter": true,
+        "source_symbol": "TSE:4475",
+        "yahoo_symbol": "4475.T"
+      }
+    },
+    {
+      "ticker": "4488.T",
+      "name": "AI inside, Inc.",
+      "exchange": "TSE",
+      "category": "Technology Services",
+      "high_type": "all_time",
+      "reason": "업종: Technology Services · Packaged Software",
+      "description": "AI inside, Inc. · Packaged Software",
+      "change_pct": 9.405940594059414,
+      "session_open": 21200.0,
+      "session_close": 22100.0,
+      "session_volume": 83100.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:4488",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4488.T/history/",
+        "date": "2020-03-03",
+        "daily_high": 22600.0,
+        "prior_all_time_or_current_month_high": 22600.0,
+        "passes_close_filter": true,
+        "source_symbol": "TSE:4488",
+        "yahoo_symbol": "4488.T"
+      }
+    },
+    {
+      "ticker": "7085.T",
+      "name": "Curves Holdings Co., Ltd.",
+      "exchange": "TSE",
+      "category": "Consumer Services",
+      "high_type": "all_time",
+      "reason": "업종: Consumer Services · Other Consumer Services",
+      "description": "Curves Holdings Co., Ltd. · Other Consumer Services",
+      "change_pct": 14.705882352941169,
+      "session_open": 775.0,
+      "session_close": 780.0,
+      "session_volume": 3060600.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:7085",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/7085.T/history/",
+        "date": "2020-03-03",
+        "daily_high": 780.0,
+        "prior_all_time_or_current_month_high": 780.0,
+        "passes_close_filter": true,
+        "source_symbol": "TSE:7085",
+        "yahoo_symbol": "7085.T"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-10-29T16:33:35.946663+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 3759,
+    "history_symbols": 3250,
+    "inactive_symbols": 508,
+    "failed_symbols": 1,
+    "coverage_ratio": 0.9996924023377423,
+    "coverage_by_exchange": {
+      "TSE": {
+        "covered": 3250,
+        "total": 3251
+      }
+    },
+    "session_symbols": 3172,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-10-29T16:33:35.946663+00:00"
+}

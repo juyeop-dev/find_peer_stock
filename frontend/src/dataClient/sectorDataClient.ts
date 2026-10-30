@@ -1,6 +1,7 @@
 import { requestOriginal } from "./liveStockDataClient";
 import type { SectorCalendar, SectorSnapshot } from "./sectorRankings";
 import { classifiedSectorStock } from "./sectorRankings";
+import koreanCompanyNames from "../../../data/seed/korean_company_names.json";
 
 let latest: SectorSnapshot | undefined;
 export function validSectorDate(value: string) {
@@ -29,7 +30,8 @@ function validate(value: SectorSnapshot) {
     tickers.add(stock.ticker);
     for (const number of [stock.turnover, stock.market_cap, ...Object.values(stock.returns)]) if (number !== null && (typeof number !== "number" || !Number.isFinite(number))) throw new Error("섹터 수치가 올바르지 않습니다.");
   }
-  return value;
+  const names: Record<string, string> = koreanCompanyNames.names;
+  return { ...value, stocks: value.stocks.map(stock => ({ ...stock, name: names[stock.ticker] ?? stock.name })) };
 }
 export async function getSectorData(signal?: AbortSignal, fromSource = false): Promise<SectorSnapshot> {
   let data: SectorSnapshot;

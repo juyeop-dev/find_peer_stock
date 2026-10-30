@@ -1,0 +1,142 @@
+{
+  "schema_version": 1,
+  "market": "japan",
+  "date": "2020-04-01",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "4480.T",
+      "name": "Medley, Inc.",
+      "exchange": "TSE",
+      "category": "Commercial Services",
+      "high_type": "all_time",
+      "reason": "업종: Commercial Services · Miscellaneous Commercial Services",
+      "description": "Medley, Inc. · Miscellaneous Commercial Services",
+      "change_pct": 20.1816347124117,
+      "session_open": 2160.0,
+      "session_close": 2382.0,
+      "session_volume": 2719600.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:4480",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4480.T/history/",
+        "date": "2020-04-01",
+        "daily_high": 2382.0,
+        "prior_all_time_or_current_month_high": 2382.0,
+        "passes_close_filter": true,
+        "source_symbol": "TSE:4480",
+        "yahoo_symbol": "4480.T"
+      }
+    },
+    {
+      "ticker": "6034.T",
+      "name": "MRT Inc.",
+      "exchange": "TSE",
+      "category": "Commercial Services",
+      "high_type": "52_week",
+      "reason": "업종: Commercial Services · Miscellaneous Commercial Services",
+      "description": "MRT Inc. · Miscellaneous Commercial Services",
+      "change_pct": 20.30548068283917,
+      "session_open": 1233.0,
+      "session_close": 1339.0,
+      "session_volume": 4017900.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:6034",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6034.T/history/",
+        "date": "2020-04-01",
+        "daily_high": 1413.0,
+        "prior_all_time_or_current_month_high": 5780.0,
+        "passes_close_filter": true,
+        "source_symbol": "TSE:6034",
+        "yahoo_symbol": "6034.T"
+      }
+    },
+    {
+      "ticker": "8771.T",
+      "name": "eGuarantee, Inc.",
+      "exchange": "TSE",
+      "category": "Commercial Services",
+      "high_type": "all_time",
+      "reason": "업종: Commercial Services · Miscellaneous Commercial Services",
+      "description": "eGuarantee, Inc. · Miscellaneous Commercial Services",
+      "change_pct": 6.7046173308032975,
+      "session_open": 1582.0,
+      "session_close": 1687.0,
+      "session_volume": 565900.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:8771",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/8771.T/history/",
+        "date": "2020-04-01",
+        "daily_high": 1735.0,
+        "prior_all_time_or_current_month_high": 1735.0,
+        "passes_close_filter": true,
+        "source_symbol": "TSE:8771",
+        "yahoo_symbol": "8771.T"
+      }
+    },
+    {
+      "ticker": "9326.T",
+      "name": "KANTSU HD CO. LTD.",
+      "exchange": "TSE",
+      "category": "Transportation",
+      "high_type": "all_time",
+      "reason": "업종: Transportation · Air Freight/Couriers",
+      "description": "KANTSU HD CO. LTD. · Air Freight/Couriers",
+      "change_pct": 5.728086230670937,
+      "session_open": 475.0,
+      "session_close": 510.6666564941406,
+      "session_volume": 3985500.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:9326",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/9326.T/history/",
+        "date": "2020-04-01",
+        "daily_high": 541.6666870117188,
+        "prior_all_time_or_current_month_high": 541.6666870117188,
+        "passes_close_filter": true,
+        "source_symbol": "TSE:9326",
+        "yahoo_symbol": "9326.T"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-10-29T16:33:35.946663+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 3759,
+    "history_symbols": 3250,
+    "inactive_symbols": 508,
+    "failed_symbols": 1,
+    "coverage_ratio": 0.9996924023377423,
+    "coverage_by_exchange": {
+      "TSE": {
+        "covered": 3250,
+        "total": 3251
+      }
+    },
+    "session_symbols": 3190,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-10-29T16:33:35.946663+00:00"
+}

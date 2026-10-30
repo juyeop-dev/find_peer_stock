@@ -1,18 +1,21 @@
 import { requestOriginal, rememberInformationQuote } from "./liveStockDataClient";
 import type { LiveQuote } from "./liveStockDataClient";
+import companyProfiles from "../../../data/seed/company_profiles.json";
 
 export interface StockStatement {
   type: "annual" | "quarterly" | "semiannual";
-  period_end: string; currency: string; source: string;
+  period_end: string; currency: string; source: string; source_url?: string;
   revenue?: number | null; operating_income?: number | null; net_income?: number | null;
   total_assets?: number | null; total_debt?: number | null; operating_cash_flow?: number | null; free_cash_flow?: number | null;
 }
 export interface StockInformation {
   ticker: string; requested_start: string; fetched_at: string; financials_fetched_at?: string;
-  source_symbol?: string; company?: { description?: string; sector?: string; industry?: string; number_of_employees?: number };
+  source_symbol?: string; company?: { description?: string; sector?: string; industry?: string; number_of_employees?: number | null;
+    employees_as_of?: string; employees_scope?: string; employees_source?: string; employees_source_url?: string };
   quote: LiveQuote | null; metrics: Record<string, number | null>; metrics_currency?: string;
   financials: StockStatement[]; warnings: string[];
   historical_financials_warning?: string;
+  historical_2020_coverage?: {start: string; end: string; periods: number; annual_periods: number; quarterly_periods: number; note: string};
   historical_2021_coverage?: {start: string; end: string; periods: number; annual_periods: number; quarterly_periods: number; note: string};
   historical_2022_coverage?: {start: string; end: string; periods: number; annual_periods: number; quarterly_periods: number; note: string};
   historical_2023_coverage?: {start: string; end: string; periods: number; annual_periods: number; quarterly_periods: number; note: string};
@@ -34,6 +37,7 @@ export function mergeInformation(previous: StockInformation | undefined, fresh: 
   const retained = previous?.financials.filter(row => !keys.has(`${row.type}:${row.period_end}`)) ?? [];
   const financials = [...retained, ...fresh.financials].sort((a, b) => a.period_end.localeCompare(b.period_end) || a.type.localeCompare(b.type));
   return { ...fresh,
+    historical_2020_coverage: retainedCoverage(fresh.historical_2020_coverage ?? previous?.historical_2020_coverage, financials),
     historical_2021_coverage: retainedCoverage(fresh.historical_2021_coverage ?? previous?.historical_2021_coverage, financials),
     historical_2022_coverage: retainedCoverage(fresh.historical_2022_coverage ?? previous?.historical_2022_coverage, financials),
     historical_2023_coverage: retainedCoverage(fresh.historical_2023_coverage ?? previous?.historical_2023_coverage, financials),
@@ -47,9 +51,11 @@ function validate(value: StockInformation, ticker: string) {
   if (!value || value.ticker?.toUpperCase() !== ticker.toUpperCase() || !Array.isArray(value.financials) || !Array.isArray(value.warnings)) throw new Error("종목 정보가 일치하지 않습니다.");
   if (value.quote && (value.quote.ticker?.toUpperCase() !== ticker.toUpperCase() || !Number.isFinite(value.quote.price) || value.quote.price <= 0 || !value.quote.currency)) throw new Error("종목 시세 또는 통화가 일치하지 않습니다.");
   for (const row of value.financials) {
-    if (!["annual", "quarterly", "semiannual"].includes(row.type) || !/^\d{4}-\d{2}-\d{2}$/.test(row.period_end) || row.period_end < "2021-01-01" || !row.currency) throw new Error("실적 기간 또는 통화를 확인할 수 없습니다.");
+    if (!["annual", "quarterly", "semiannual"].includes(row.type) || !/^\d{4}-\d{2}-\d{2}$/.test(row.period_end) || row.period_end < "2020-01-01" || !row.currency) throw new Error("실적 기간 또는 통화를 확인할 수 없습니다.");
     for (const key of ["revenue", "operating_income", "net_income", "total_assets", "total_debt", "operating_cash_flow", "free_cash_flow"] as const) if (row[key] != null && !Number.isFinite(row[key])) throw new Error("재무 수치를 확인할 수 없습니다.");
   }
+  const profile = (companyProfiles as Record<string, NonNullable<StockInformation["company"]>>)[ticker.toUpperCase()];
+  if (value.company?.number_of_employees == null && profile) return { ...value, company: { ...value.company, ...profile } };
   return value;
 }
 export async function getStockInformation(ticker: string, exchange?: string, signal?: AbortSignal, fromSource = false): Promise<StockInformation> {

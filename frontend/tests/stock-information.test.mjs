@@ -4,6 +4,8 @@ import test from "node:test";
 import ts from "typescript";
 
 let source = await readFile(new URL("../src/dataClient/stockInformationClient.ts", import.meta.url), "utf8");
+const profiles = JSON.parse(await readFile(new URL("../../data/seed/company_profiles.json", import.meta.url), "utf8"));
+source = source.replace('import companyProfiles from "../../../data/seed/company_profiles.json";', `const companyProfiles = ${JSON.stringify(profiles)};`);
 source = source.replace('import { requestOriginal, rememberInformationQuote } from "./liveStockDataClient";', 'const requestOriginal = () => { throw new Error("unexpected network"); }; const rememberInformationQuote = () => {};');
 const javascript = ts.transpileModule(source, {compilerOptions: {module: ts.ModuleKind.ESNext, target: ts.ScriptTarget.ES2022}}).outputText;
 const {mergeInformation} = await import(`data:text/javascript;base64,${Buffer.from(javascript).toString("base64")}`);
