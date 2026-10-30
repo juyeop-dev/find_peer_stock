@@ -1,0 +1,36 @@
+.marketWidget { position: relative; width: 100%; min-width: 0; }
+.marketWidgetHost { width: 100%; height: 560px; overflow: hidden; }
+.marketWidget-financials .marketWidgetHost { height: 650px; }
+.marketWidgetHost > .tradingview-widget-container, .marketWidgetHost .tradingview-widget-container__widget { width: 100%; height: 100%; }
+.marketWidgetLoading { color: #718590; font-size: 12px; }
+.marketWidgetError { padding: 45px 20px; background: #f6f9fa; text-align: center; color: #657d87; font-size: 13px; }
+.marketWidgetError button, .marketWidgetError a { display: inline-block; margin: 6px; padding: 8px 14px; border: 1px solid #c7dce1; border-radius: 6px; background: #fff; color: #17647a; cursor: pointer; }
+.marketWidget .tradingview-widget-copyright { margin-top: 8px; font-size: 11px; color: #82949b; }
+.marketWidget .tradingview-widget-copyright a { color: #17647a; text-decoration: underline; }
+.stockChartTabs { min-width: 0; }
+.stockChartViewNavigation { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px 12px; margin-bottom: 9px; }
+.stockChartViewNavigation .stockChartViewTabs { margin-bottom: 0; }
+.fullTradingViewLink { padding: 8px 10px; border: 1px solid #c4d9e0; border-radius: 6px; background: #fff; color: #17647a; font-size: 12px; text-decoration: none; }
+.stockChartViewTabs { display: flex; gap: 4px; flex-wrap: wrap; margin-bottom: 9px; }
+.stockChartViewTabs button { padding: 10px 15px; border: 1px solid #d4e1e6; border-radius: 7px; background: #f4f8f9; color: #5f7a86; font-size: 13px; font-weight: 700; cursor: pointer; }
+.stockChartViewTabs button[aria-selected="true"] { background: #176d7a; border-color: #176d7a; color: #fff; }
+.stockChartViewTabs button:focus-visible, .officialChartActions :is(button,a):focus-visible { outline: 3px solid #91cdd5; outline-offset: 2px; }
+.officialChartHeading { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+.officialChartHeading h2 { margin: 0 0 5px; font-size: 21px; }
+.officialChartHeading p { margin: 0; color: #718994; font-size: 12px; }
+.officialChartActions { display: flex; align-items: center; flex-wrap: wrap; gap: 7px; }
+.officialChartActions :is(a,button) { padding: 8px 10px; border: 1px solid #c9dce2; border-radius: 6px; background: #fff; color: #276b79; font-size: 12px; text-decoration: none; cursor: pointer; }
+.officialChartGuide, .officialChartNote { margin: 12px 0; color: #708792; font-size: 11px; line-height: 1.7; }
+.officialStockChart .marketWidget-chart .marketWidgetHost { height: 720px; border: 1px solid #e2e8ec; border-radius: 7px; }
+.officialChartUnavailable { min-height: 230px; display: grid; place-content: center; padding: 20px; border: 1px solid #dce6ea; border-radius: 7px; background: #f7fafb; color: #718893; line-height: 1.8; font-size: 13px; }
+.officialChartUnavailable a { justify-self: start; padding: 8px 12px; border-radius: 6px; background: #176d7a; color: white; text-decoration: none; }
+.officialStockChart.tvExpanded { position: fixed; z-index: 100; inset: 12px; display: flex; flex-direction: column; overflow: auto; margin: 0; padding: 18px; background: #fff; box-shadow: 0 0 0 40px #173542b3; }
+.officialStockChart.tvExpanded .marketWidget { flex: 1; display: flex; flex-direction: column; min-height: 300px; }
+.officialStockChart.tvExpanded .marketWidget-chart .marketWidgetHost { flex: 1; height: calc(100dvh - 220px); min-height: 300px; }
+@media (max-width: 720px) {
+  .officialStockChart.semiPanel { padding: 12px; }
+  .officialStockChart .marketWidget-chart .marketWidgetHost { height: 620px; }
+  .officialStockChart.tvExpanded { inset: 4px; }
+  .officialChartActions :is(a,button) { font-size: 11px; }
+  .stockChartViewTabs button { flex: 1; padding: 10px 7px; font-size: 12px; }
+}

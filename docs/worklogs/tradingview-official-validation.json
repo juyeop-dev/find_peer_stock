@@ -1,0 +1,66 @@
+{
+  "checked_at": "2026-10-30T12:46:30.933087+00:00",
+  "frontend_tests": 51,
+  "typecheck": "passed",
+  "artifact_bytes": 1004464262,
+  "artifact_MiB": 957.93,
+  "files": 99667,
+  "production_base_api_and_404": true,
+  "actual_official_widget": {
+    "result": "PASS",
+    "site": "http://127.0.0.1:4194/find_peer_stock",
+    "actual_provider_tools": [
+      "심볼 비교",
+      "차트 간격",
+      "봉스타일",
+      "인디케이터, 메트릭 및 스트래티지",
+      "추세 도구",
+      "갠 및 피보나치 도구",
+      "패턴",
+      "예측 및 측정 도구",
+      "기하학적 도형",
+      "주석 도구",
+      "재기",
+      "확대",
+      "마그넷",
+      "로그 스케일 전환",
+      "스냅샷 찍기",
+      "팝업창으로 차트열기"
+    ],
+    "trend_menu": [
+      "추세선",
+      "레이",
+      "수평 레이",
+      "채널",
+      "평행 채널",
+      "평행하지 않은 채널",
+      "피치포크",
+      "피치포크",
+      "쉬프 피치포크",
+      "수정 쉬프 피치포크",
+      "피치포크 안"
+    ],
+    "indicator_search": [
+      "심볼, ISIN 또는 CUSIP",
+      "찾기"
+    ],
+    "checks": "Actual official candle chart and live tool menus; source-preserving tabs, fullscreen, 1440/390/320px; correct KRX restriction and full-chart listing link; provider script failure/retry with working archive fallback"
+  },
+  "stored_analysis_regression": {
+    "result": "PASS",
+    "site": "http://127.0.0.1:4194/find_peer_stock",
+    "checks": "Parallel/middle channel geometry, draggable spacing, flip and persistence; pinned-click reference price returns and percentage-axis return conversion for all series; mouse and touch reference inspection; real Korean/global comparisons, provider failure retention; drawing editing/undo/storage, zoom/pan, MA, 2019 range, 1440/390/320px"
+  },
+  "tooltip": {
+    "result": "PASS",
+    "checks": 36,
+    "routes": 4,
+    "widths": [
+      1440,
+      900,
+      390
+    ],
+    "gap": "12px below active point, clamped to visible scrolled chart"
+  },
+  "limitations": "KRX external-widget restriction uses exact-listing full TradingView link and working stored chart; Pine/alerts/account features remain on TradingView.com."
+}

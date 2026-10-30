@@ -32,6 +32,13 @@ test("symbols retain the right exchange and listing code across all six markets"
   assert.equal(tradingViewSymbol("AAPL", "UNKNOWN"), null);
   assert.equal(tradingViewSymbol("NASDAQ:AAPL", "NYSE"), null);
   assert.equal(tradingViewSymbol("<script>", "NASDAQ"), null);
+  assert.equal(tradingViewSymbol("005930.KS"), "KRX:005930");
+  assert.equal(tradingViewSymbol("2330.TW"), "TWSE:2330");
+  assert.equal(tradingViewSymbol("EURONEXT:MC"), "EURONEXT:MC");
+  assert.equal(tradingViewSymbol("FCX"), null); // An unqualified ticker must not guess NASDAQ.
+  assert.equal(tradingViewSymbol("0981.HK"), "HKEX:981");
+  assert.equal(tradingViewSymbol("0700.HK", "HKEX"), "HKEX:700");
+  assert.equal(tradingViewSymbol("AAPL", "NYSE"), "NYSE:AAPL");
   assert.equal(tradingViewUrl("NYSE:BRK.B"), "https://www.tradingview.com/symbols/NYSE-BRK.B/");
 });
 

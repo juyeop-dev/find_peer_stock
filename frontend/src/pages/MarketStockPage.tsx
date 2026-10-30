@@ -1,4 +1,4 @@
-import { useCallback, useState } from "react";
+import { useCallback } from "react";
 import { Link, useParams, useSearchParams } from "react-router-dom";
 import { ErrorNotice } from "../components/ErrorNotice";
 import { LoadingSpinner } from "../components/LoadingSpinner";
@@ -35,7 +35,6 @@ function priceLabel(price: number | null | undefined, currency: string): string 
 export function MarketStockPage() {
   const { ticker = "" } = useParams();
   const [params] = useSearchParams();
-  const [showFullChart, setShowFullChart] = useState(false);
   const source = params.get("source") === "sectors" ? "sectors" : params.get("source") === "turnover" ? "turnover" : "new-highs";
   const market = params.get("market") ?? "";
   const date = params.get("date") ?? "";
@@ -95,10 +94,7 @@ export function MarketStockPage() {
         <PeriodReturns values={"period_returns" in stock ? stock.period_returns : undefined} />
         {"description" in stock && stock.description ? <p className="marketStockDescription">{stock.description}</p> : null}
       </section>
-      <div className="marketStockChart"><StockHistoryChart ticker={stock.ticker} name={stock.name} exchange={stock.exchange} currency={currency} refreshKey={sourceDetail?.fetched_at} />
-        {symbol ? <><button className="semiTextButton marketFullChartButton" aria-expanded={showFullChart} onClick={() => setShowFullChart((value) => !value)}>{showFullChart ? "전체 일봉 차트 접기" : "TradingView 전체 일봉 차트 보기"}</button>
-          {showFullChart ? <><p className="semiFootnote">제공처가 외부 표시를 지원하는 종목에 한해 표시됩니다.</p><TradingViewWidget key={currentQuote?.fetched_at} symbol={symbol} kind="chart" /></> : null}</> : null}
-      </div>
+      <div className="marketStockChart"><StockHistoryChart ticker={stock.ticker} name={stock.name} exchange={stock.exchange} currency={currency} refreshKey={sourceDetail?.fetched_at} /></div>
       <div className="marketStockFinancials"><StockInformationPanel ticker={ticker} exchange={stock.exchange} refreshKey={data?.information?.financials_fetched_at ?? sourceDetail?.fetched_at} /><div className="semiPanelHeading">
         <a className="semiTextButton" href={stock.exchange === "KOSPI" || stock.exchange === "KOSDAQ"
           ? `https://m.stock.naver.com/domestic/stock/${stock.ticker.split(".")[0]}/total` : symbol ? `${tradingViewUrl(symbol)}financials-overview/` : quote.href}

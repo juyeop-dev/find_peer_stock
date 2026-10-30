@@ -13,7 +13,7 @@
     "test:semiconductor": "node --test tests/semiconductor-math.test.mjs",
     "test:calendar-history": "node --test tests/calendar-history.test.mjs",
     "test:calendar-history:browser": "node tests/calendar-history-browser.mjs",
-    "test:stock-details": "node --test tests/stock-detail-links.test.mjs",
+    "test:stock-details": "node --test tests/stock-detail-links.test.mjs tests/tradingview-chart.test.mjs",
     "test:stock-details:browser": "node tests/stock-details-browser.mjs",
     "test:live-refresh:browser": "node tests/live-refresh-browser.mjs",
     "test:stock-history": "node --test tests/stock-history.test.mjs tests/historical-report-client.test.mjs tests/chart-workspace.test.mjs",
@@ -41,7 +41,8 @@
     "test:investor-flows:2020": "node tests/investor-flows-2020-browser.mjs",
     "test:stock-information:2019": "node tests/stock-information-2019-browser.mjs",
     "test:investor-flows:2019": "node tests/investor-flows-2019-browser.mjs",
-    "test:chart-workspace:browser": "node tests/chart-workspace-browser.mjs"
+    "test:chart-workspace:browser": "node tests/chart-workspace-browser.mjs",
+    "test:tradingview:browser": "node tests/tradingview-chart-browser.mjs"
   },
   "dependencies": {
     "react": "^19.0.0",

@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { StockChartWorkspace } from "./StockChartWorkspace";
+import { StockChartTabs } from "./StockChartTabs";
 import { ErrorNotice } from "./ErrorNotice";
 import { LoadingSpinner } from "./LoadingSpinner";
 import { usePollingData } from "../dataClient/usePollingData";
@@ -12,7 +13,10 @@ interface Props {
   ticker: string; name: string; exchange?: string; currency?: string; history?: SemiconductorPrice[];
   source?: string; generatedAt?: string; refreshKey?: string;
 }
-export function StockHistoryChart({ ticker, name, exchange, currency, history, source, generatedAt, refreshKey }: Props) {
+export function StockHistoryChart(props: Props) {
+  return <StockChartTabs key={props.ticker} ticker={props.ticker} name={props.name} exchange={props.exchange}><ArchivedStockHistoryChart {...props} /></StockChartTabs>;
+}
+function ArchivedStockHistoryChart({ ticker, name, exchange, currency, history, source, generatedAt, refreshKey }: Props) {
   const [period, setPeriod] = useState<ChartPeriod>("1y");
   const [cached, setCached] = useState<StockHistory>();
   useEffect(() => { setPeriod("1y"); }, [ticker]);

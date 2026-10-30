@@ -31,7 +31,7 @@ try {
   const evaluate=async expression=>{const result=await send('Runtime.evaluate',{expression,returnByValue:true,awaitPromise:true});if(result.exceptionDetails)throw new Error(JSON.stringify(result.exceptionDetails));return result.result.value;};
   const clickText=(text,scope='.stockChartWorkspace')=>evaluate(`(()=>{const button=[...document.querySelectorAll(${JSON.stringify(scope)}+' button')].find(node=>node.textContent.trim()===${JSON.stringify(text)} || node.textContent.replace(node.querySelector('span')?.textContent??'','').trim()===${JSON.stringify(text)});if(!button)throw new Error('Missing button: '+${JSON.stringify(text)});button.click();})()`);
   const navigate=route=>send('Page.navigate',{url:base+route});
-  const chartReady=()=>until(()=>evaluate("Boolean(document.querySelector('.stockChartCanvas .semiLine')?.getAttribute('d'))"),'Stock chart did not render');
+  const chartReady=async()=>{await until(()=>evaluate("Boolean(document.querySelector('.stockChartCanvas .semiLine')?.getAttribute('d'))"),'Stock chart did not render');await evaluate("document.querySelector('[data-chart-view=archive]')?.click()");};
   const drawingCount=()=>evaluate("document.querySelectorAll('.chartDrawing:not([data-drawing=draft])').length");
   const mouse=async(type,point,buttons=0)=>send('Input.dispatchMouseEvent',{type,x:point.x,y:point.y,...(type==='mouseMoved'?{buttons}:{button:'left',clickCount:1,buttons})});
   const tap=async point=>{await mouse('mouseMoved',point);await mouse('mousePressed',point,1);await mouse('mouseReleased',point);};

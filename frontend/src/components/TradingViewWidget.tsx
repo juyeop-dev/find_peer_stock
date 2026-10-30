@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { tradingViewUrl } from "../dataClient/stockDetailLinks";
+import { tradingViewChartOptions, tradingViewChartUrl } from "../dataClient/tradingViewChart";
+import "../styles/tradingView.css";
 
 interface Props { symbol: string; kind: "chart" | "financials" }
 
@@ -24,11 +26,8 @@ export function TradingViewWidget({ symbol, kind }: Props) {
     const script = document.createElement("script");
     script.src = `https://s3.tradingview.com/external-embedding/embed-widget-${kind === "chart" ? "advanced-chart" : "financials"}.js`;
     script.async = true;
-    script.textContent = JSON.stringify(kind === "chart" ? {
-      autosize: true, symbol, interval: "D", range: "12M", timezone: "exchange", theme: "light", style: "1",
-      locale: "kr", allow_symbol_change: false, withdateranges: true, hide_side_toolbar: true,
-      hide_top_toolbar: false, save_image: false, calendar: false, support_host: "https://www.tradingview.com",
-    } : { symbol, colorTheme: "light", displayMode: "regular", isTransparent: false, locale: "kr", width: "100%", height: "100%" });
+    script.textContent = JSON.stringify(kind === "chart" ? tradingViewChartOptions(symbol)
+      : { symbol, colorTheme: "light", displayMode: "regular", isTransparent: false, locale: "kr", width: "100%", height: "100%" });
     const fail = () => {
       if (alive) { setStatus("error"); host.replaceChildren(); }
     };
@@ -39,6 +38,7 @@ export function TradingViewWidget({ symbol, kind }: Props) {
         if (iframe.dataset.observed) continue;
         iframe.dataset.observed = "true";
         iframe.loading = "eager";
+        iframe.allowFullscreen = true;
         iframe.title = `${symbol} ${kind === "chart" ? "주가 차트" : "기업 실적 및 투자 지표"}`;
         iframe.addEventListener("load", () => {
           if (alive) { window.clearTimeout(timeout); setStatus("ready"); }
@@ -62,7 +62,7 @@ export function TradingViewWidget({ symbol, kind }: Props) {
     {status === "loading" ? <p className="marketWidgetLoading" role="status">{kind === "chart" ? "주가 차트" : "기업 실적"}를 불러오고 있습니다.</p> : null}
     <div ref={container} className="marketWidgetHost" aria-busy={status === "loading"} hidden={status === "error"} />
     {status === "error" ? <div className="marketWidgetError" role="status"><strong>외부 자료를 불러오지 못했습니다.</strong>
-      <p>아래 외부 시세 링크에서도 종목 정보를 확인할 수 있습니다.</p><button type="button" onClick={() => setAttempt((value) => value + 1)}>다시 불러오기</button></div> : null}
+      <p>TradingView에서 직접 열거나 저장 일봉·분석 탭을 이용해 주세요.</p><button type="button" onClick={() => setAttempt((value) => value + 1)}>다시 불러오기</button>{kind === "chart" ? <a href={tradingViewChartUrl(symbol)} target="_blank" rel="noopener noreferrer">TradingView에서 열기 ↗</a> : null}</div> : null}
     <div className="tradingview-widget-copyright"><a href={`${tradingViewUrl(symbol)}${kind === "financials" ? "financials-overview/" : ""}`}
       target="_blank" rel="noopener nofollow noreferrer">{symbol} {kind === "chart" ? "chart" : "fundamentals"}</a><span> by TradingView</span></div>
   </div>;

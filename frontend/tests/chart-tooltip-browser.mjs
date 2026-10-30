@@ -56,6 +56,7 @@ try {
   for (const route of ['/semiconductors/000660.KS','/stocks/2330.TW','/semiconductors/trends','/credit-balance']) {
     await send('Page.navigate',{url:base+route});
     await until(()=>evaluate("Boolean(document.querySelector('.semiChart .semiLine'))"),route+' chart did not load');
+    await evaluate("document.querySelector('[data-chart-view=archive]')?.click()");
     for (const width of [1440,900,390]) {
       await send('Emulation.setDeviceMetricsOverride',{width,height:1000,deviceScaleFactor:1,mobile:false});
       await until(()=>evaluate("(()=>{const chart=document.querySelector('.stockChartCanvas');return !chart || Math.abs(chart.querySelector('svg').viewBox.baseVal.width-chart.clientWidth)<1;})()"),'Responsive chart did not finish resizing');
