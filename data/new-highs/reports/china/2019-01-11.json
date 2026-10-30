@@ -1,0 +1,271 @@
+{
+  "schema_version": 1,
+  "market": "china",
+  "date": "2019-01-11",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "601860.SS",
+      "name": "Jiangsu Zijin Rural Commercial Bank Co. Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "업종: Finance · Regional Banks",
+      "description": "Jiangsu Zijin Rural Commercial Bank Co. Ltd. Class A · Regional Banks",
+      "change_pct": 0.5494500096186128,
+      "session_open": 6.949999809265137,
+      "session_close": 7.320000171661377,
+      "session_volume": 223882583.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:601860",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/601860.SS/history/",
+        "date": "2019-01-11",
+        "daily_high": 7.550000190734863,
+        "prior_all_time_or_current_month_high": 7.550000190734863,
+        "passes_close_filter": true,
+        "source_symbol": "SSE:601860",
+        "yahoo_symbol": "601860.SS"
+      }
+    },
+    {
+      "ticker": "603185.SS",
+      "name": "Hongyuan Green Energy Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Industrial Machinery",
+      "description": "Hongyuan Green Energy Co., Ltd. Class A · Industrial Machinery",
+      "change_pct": 4.730951962552932,
+      "session_open": 15.699822425842285,
+      "session_close": 16.28961944580078,
+      "session_volume": 45081006.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:603185",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/603185.SS/history/",
+        "date": "2019-01-11",
+        "daily_high": 16.96086311340332,
+        "prior_all_time_or_current_month_high": 16.96086311340332,
+        "passes_close_filter": true,
+        "source_symbol": "SSE:603185",
+        "yahoo_symbol": "603185.SS"
+      }
+    },
+    {
+      "ticker": "603629.SS",
+      "name": "Jiangsu Lettall Electronic Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Industrial Machinery",
+      "description": "Jiangsu Lettall Electronic Co., Ltd. Class A · Industrial Machinery",
+      "change_pct": 9.999998585469005,
+      "session_open": 13.330903053283691,
+      "session_close": 14.832361221313477,
+      "session_volume": 43164662.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:603629",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/603629.SS/history/",
+        "date": "2019-01-11",
+        "daily_high": 14.832361221313477,
+        "prior_all_time_or_current_month_high": 14.832361221313477,
+        "passes_close_filter": true,
+        "source_symbol": "SSE:603629",
+        "yahoo_symbol": "603629.SS"
+      }
+    },
+    {
+      "ticker": "002679.SZ",
+      "name": "Fujian Jinsen Forestry Co. Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Non-Energy Minerals",
+      "high_type": "52_week",
+      "reason": "업종: Non-Energy Minerals · Forest Products",
+      "description": "Fujian Jinsen Forestry Co. Ltd. Class A · Forest Products",
+      "change_pct": 0.7584035966438973,
+      "session_open": 18.600000381469727,
+      "session_close": 18.600000381469727,
+      "session_volume": 3085481.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002679",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002679.SZ/history/",
+        "date": "2019-01-11",
+        "daily_high": 18.829999923706055,
+        "prior_all_time_or_current_month_high": 36.98823547363281,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:002679",
+        "yahoo_symbol": "002679.SZ"
+      }
+    },
+    {
+      "ticker": "002796.SZ",
+      "name": "Suzhou Shijia Science & Technology, Inc. Class A",
+      "exchange": "SZSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Telecommunications Equipment",
+      "description": "Suzhou Shijia Science & Technology, Inc. Class A · Telecommunications Equipment",
+      "change_pct": 4.752367823220727,
+      "session_open": 15.577776908874512,
+      "session_close": 16.262222290039062,
+      "session_volume": 10831531.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002796",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002796.SZ/history/",
+        "date": "2019-01-11",
+        "daily_high": 17.040000915527344,
+        "prior_all_time_or_current_month_high": 44.391109466552734,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:002796",
+        "yahoo_symbol": "002796.SZ"
+      }
+    },
+    {
+      "ticker": "002941.SZ",
+      "name": "Xinjiang Communications Construction Group Co. Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Industrial Services",
+      "high_type": "all_time",
+      "reason": "업종: Industrial Services · Engineering & Construction",
+      "description": "Xinjiang Communications Construction Group Co. Ltd. Class A · Engineering & Construction",
+      "change_pct": 10.005418980042236,
+      "session_open": 40.56999969482422,
+      "session_close": 40.56999969482422,
+      "session_volume": 9423139.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002941",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002941.SZ/history/",
+        "date": "2019-01-11",
+        "daily_high": 40.56999969482422,
+        "prior_all_time_or_current_month_high": 40.56999969482422,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:002941",
+        "yahoo_symbol": "002941.SZ"
+      }
+    },
+    {
+      "ticker": "300753.SZ",
+      "name": "Jiangsu Apon Medical Technology Co. Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Health Technology",
+      "high_type": "all_time",
+      "reason": "업종: Health Technology · Medical Specialties",
+      "description": "Jiangsu Apon Medical Technology Co. Ltd. Class A · Medical Specialties",
+      "change_pct": 10.004647344890106,
+      "session_open": 27.679487228393555,
+      "session_close": 30.30769157409668,
+      "session_volume": 18980359.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:300753",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/300753.SZ/history/",
+        "date": "2019-01-11",
+        "daily_high": 30.30769157409668,
+        "prior_all_time_or_current_month_high": 30.30769157409668,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:300753",
+        "yahoo_symbol": "300753.SZ"
+      }
+    },
+    {
+      "ticker": "300756.SZ",
+      "name": "Guangdong Jinma Entertainment Corporation Limited Class A",
+      "exchange": "SZSE",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Industrial Machinery",
+      "description": "Guangdong Jinma Entertainment Corporation Limited Class A · Industrial Machinery",
+      "change_pct": 9.99887728919775,
+      "session_open": 17.978620529174805,
+      "session_close": 19.733964920043945,
+      "session_volume": 17699089.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:300756",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/300756.SZ/history/",
+        "date": "2019-01-11",
+        "daily_high": 19.733964920043945,
+        "prior_all_time_or_current_month_high": 19.733964920043945,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:300756",
+        "yahoo_symbol": "300756.SZ"
+      }
+    },
+    {
+      "ticker": "300757.SZ",
+      "name": "Robotechnik Intelligent Technology Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Industrial Machinery",
+      "description": "Robotechnik Intelligent Technology Co., Ltd. Class A · Industrial Machinery",
+      "change_pct": 10.00531790927186,
+      "session_open": 22.714284896850586,
+      "session_close": 22.714284896850586,
+      "session_volume": 92366.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:300757",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/300757.SZ/history/",
+        "date": "2019-01-11",
+        "daily_high": 22.714284896850586,
+        "prior_all_time_or_current_month_high": 22.714284896850586,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:300757",
+        "yahoo_symbol": "300757.SZ"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-10-30T08:08:08.692211+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 5312,
+    "history_symbols": 3607,
+    "inactive_symbols": 1697,
+    "failed_symbols": 8,
+    "coverage_ratio": 0.9977869986168741,
+    "coverage_by_exchange": {
+      "SSE": {
+        "covered": 1513,
+        "total": 1515
+      },
+      "SZSE": {
+        "covered": 2094,
+        "total": 2100
+      }
+    },
+    "session_symbols": 3409,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-10-30T08:08:08.692211+00:00"
+}

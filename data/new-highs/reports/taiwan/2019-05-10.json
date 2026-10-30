@@ -1,0 +1,346 @@
+{
+  "schema_version": 1,
+  "market": "taiwan",
+  "date": "2019-05-10",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "3191.TWO",
+      "name": "YJN CO.,LTD.",
+      "exchange": "TPEX",
+      "category": "Consumer Durables",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Durables · Electronics/Appliances",
+      "description": "YJN CO.,LTD. · Electronics/Appliances",
+      "change_pct": 2.1377709227997643,
+      "session_open": 42.20000076293945,
+      "session_close": 43.0,
+      "session_volume": 80532.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:3191",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3191.TWO/history/",
+        "date": "2019-05-10",
+        "daily_high": 43.900001525878906,
+        "prior_all_time_or_current_month_high": 53.29999923706055,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:3191",
+        "yahoo_symbol": "3191.TWO"
+      }
+    },
+    {
+      "ticker": "6423.TWO",
+      "name": "Yield Microelectronics Corporation",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Semiconductors",
+      "description": "Yield Microelectronics Corporation · Semiconductors",
+      "change_pct": 2.910879874395955,
+      "session_open": 67.5705337524414,
+      "session_close": 67.5705337524414,
+      "session_volume": 388365.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:6423",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6423.TWO/history/",
+        "date": "2019-05-10",
+        "daily_high": 68.59967041015625,
+        "prior_all_time_or_current_month_high": 68.59967041015625,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:6423",
+        "yahoo_symbol": "6423.TWO"
+      }
+    },
+    {
+      "ticker": "6692.TWO",
+      "name": "Acmepoint Energy Services Co., Ltd",
+      "exchange": "TPEX",
+      "category": "Industrial Services",
+      "high_type": "all_time",
+      "reason": "업종: Industrial Services · Engineering & Construction",
+      "description": "Acmepoint Energy Services Co., Ltd · Engineering & Construction",
+      "change_pct": 0.0,
+      "session_open": 29.28589630126953,
+      "session_close": 29.28589630126953,
+      "session_volume": 164476.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:6692",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6692.TWO/history/",
+        "date": "2019-05-10",
+        "daily_high": 29.87287139892578,
+        "prior_all_time_or_current_month_high": 29.87287139892578,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:6692",
+        "yahoo_symbol": "6692.TWO"
+      }
+    },
+    {
+      "ticker": "6720.TWO",
+      "name": "Major Power Technology Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Semiconductors",
+      "description": "Major Power Technology Co., Ltd. · Semiconductors",
+      "change_pct": 0.0,
+      "session_open": 21.28158950805664,
+      "session_close": 21.28158950805664,
+      "session_volume": 62789.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:6720",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6720.TWO/history/",
+        "date": "2019-05-10",
+        "daily_high": 23.290571212768555,
+        "prior_all_time_or_current_month_high": 23.290571212768555,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:6720",
+        "yahoo_symbol": "6720.TWO"
+      }
+    },
+    {
+      "ticker": "8437.TWO",
+      "name": "Dadi Early-Childhood Education Group Ltd.",
+      "exchange": "TPEX",
+      "category": "Consumer Services",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Services · Other Consumer Services",
+      "description": "Dadi Early-Childhood Education Group Ltd. · Other Consumer Services",
+      "change_pct": 2.4000015258789142,
+      "session_open": 200.8000030517578,
+      "session_close": 204.8000030517578,
+      "session_volume": 145872.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:8437",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/8437.TWO/history/",
+        "date": "2019-05-10",
+        "daily_high": 208.0,
+        "prior_all_time_or_current_month_high": 231.26034545898438,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:8437",
+        "yahoo_symbol": "8437.TWO"
+      }
+    },
+    {
+      "ticker": "1109.TW",
+      "name": "Hsing Ta Cement Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Non-Energy Minerals",
+      "high_type": "52_week",
+      "reason": "업종: Non-Energy Minerals · Construction Materials",
+      "description": "Hsing Ta Cement Co., Ltd. · Construction Materials",
+      "change_pct": 3.8673969107064776,
+      "session_open": 18.25,
+      "session_close": 18.799999237060547,
+      "session_volume": 8093483.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:1109",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/1109.TW/history/",
+        "date": "2019-05-10",
+        "daily_high": 19.25,
+        "prior_all_time_or_current_month_high": 19.4174747467041,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:1109",
+        "yahoo_symbol": "1109.TW"
+      }
+    },
+    {
+      "ticker": "1540.TW",
+      "name": "Roundtop Machinery Industries Co., Ltd",
+      "exchange": "TWSE",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Industrial Machinery",
+      "description": "Roundtop Machinery Industries Co., Ltd · Industrial Machinery",
+      "change_pct": 4.70296445401015,
+      "session_open": 21.049999237060547,
+      "session_close": 21.149999618530273,
+      "session_volume": 3352459.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:1540",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/1540.TW/history/",
+        "date": "2019-05-10",
+        "daily_high": 21.649999618530273,
+        "prior_all_time_or_current_month_high": 41.04347610473633,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:1540",
+        "yahoo_symbol": "1540.TW"
+      }
+    },
+    {
+      "ticker": "1598.TW",
+      "name": "Dyaco International Inc.",
+      "exchange": "TWSE",
+      "category": "Consumer Durables",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Durables · Recreational Products",
+      "description": "Dyaco International Inc. · Recreational Products",
+      "change_pct": 3.1872512671733633,
+      "session_open": 33.62916564941406,
+      "session_close": 34.701011657714844,
+      "session_volume": 1151159.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:1598",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/1598.TW/history/",
+        "date": "2019-05-10",
+        "daily_high": 35.013633728027344,
+        "prior_all_time_or_current_month_high": 54.03889846801758,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:1598",
+        "yahoo_symbol": "1598.TW"
+      }
+    },
+    {
+      "ticker": "2845.TW",
+      "name": "Far Eastern International Bank",
+      "exchange": "TWSE",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "업종: Finance · Major Banks",
+      "description": "Far Eastern International Bank · Major Banks",
+      "change_pct": 1.2930976225852486,
+      "session_open": 9.384612083435059,
+      "session_close": 9.505964279174805,
+      "session_volume": 8424344.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2845",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2845.TW/history/",
+        "date": "2019-05-10",
+        "daily_high": 9.667767524719238,
+        "prior_all_time_or_current_month_high": 13.802470207214355,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:2845",
+        "yahoo_symbol": "2845.TW"
+      }
+    },
+    {
+      "ticker": "2904.TW",
+      "name": "Prime Oil Chemical Service Corporation",
+      "exchange": "TWSE",
+      "category": "Energy Minerals",
+      "high_type": "52_week",
+      "reason": "업종: Energy Minerals · Oil & Gas Production",
+      "description": "Prime Oil Chemical Service Corporation · Oil & Gas Production",
+      "change_pct": 0.6578948490108649,
+      "session_open": 22.37405014038086,
+      "session_close": 22.52124786376953,
+      "session_volume": 153907.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2904",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2904.TW/history/",
+        "date": "2019-05-10",
+        "daily_high": 22.717512130737305,
+        "prior_all_time_or_current_month_high": 66.84745025634766,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:2904",
+        "yahoo_symbol": "2904.TW"
+      }
+    },
+    {
+      "ticker": "3047.TW",
+      "name": "Edimax Technology Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Computer Communications",
+      "description": "Edimax Technology Co., Ltd. · Computer Communications",
+      "change_pct": 9.606990391210534,
+      "session_open": 11.800000190734863,
+      "session_close": 12.550000190734863,
+      "session_volume": 17374333.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:3047",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3047.TW/history/",
+        "date": "2019-05-10",
+        "daily_high": 12.550000190734863,
+        "prior_all_time_or_current_month_high": 27.902124404907227,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:3047",
+        "yahoo_symbol": "3047.TW"
+      }
+    },
+    {
+      "ticker": "9924.TW",
+      "name": "Taiwan Fu Hsing Industrial Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Metal Fabrication",
+      "description": "Taiwan Fu Hsing Industrial Co., Ltd. · Metal Fabrication",
+      "change_pct": 1.2468827930174564,
+      "session_open": 50.3125,
+      "session_close": 50.75,
+      "session_volume": 462168.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:9924",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/9924.TW/history/",
+        "date": "2019-05-10",
+        "daily_high": 52.125,
+        "prior_all_time_or_current_month_high": 74.75,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:9924",
+        "yahoo_symbol": "9924.TW"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-10-30T08:01:50.093256+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 2359,
+    "history_symbols": 1828,
+    "inactive_symbols": 521,
+    "failed_symbols": 10,
+    "coverage_ratio": 0.9945593035908596,
+    "coverage_by_exchange": {
+      "TWSE": {
+        "covered": 956,
+        "total": 963
+      },
+      "TPEX": {
+        "covered": 872,
+        "total": 875
+      }
+    },
+    "session_symbols": 1792,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-10-30T08:01:50.093256+00:00"
+}

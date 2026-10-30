@@ -78,7 +78,7 @@ def main():
             if symbol := charts.yahoo_symbol(row["ticker"]):
                 candidates.extend((cached_yahoo_path(symbol, year), "yahoo") for year in range(YEAR, 2024))
             if ":" in row["ticker"]:
-                for count in [2500, 2000, 1500]:
+                for count in [2800, 2500, 2000, 1500]:
                     digest = hashlib.sha256(f"{row['ticker']}:1D:{count}".encode()).hexdigest()
                     candidates.append((info.ROOT / "data/tmp_tradingview_chart/1D" / f"{digest}.json", "tradingview"))
             value = None

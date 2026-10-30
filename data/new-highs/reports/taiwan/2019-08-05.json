@@ -1,0 +1,296 @@
+{
+  "schema_version": 1,
+  "market": "taiwan",
+  "date": "2019-08-05",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "2754.TWO",
+      "name": "Kura Sushi Asia Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Retail Trade",
+      "high_type": "all_time",
+      "reason": "업종: Retail Trade · Food Retail",
+      "description": "Kura Sushi Asia Co., Ltd. · Food Retail",
+      "change_pct": 11.077770049976365,
+      "session_open": 129.99000549316406,
+      "session_close": 144.38999938964844,
+      "session_volume": 155206.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:2754",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2754.TWO/history/",
+        "date": "2019-08-05",
+        "daily_high": 145.99000549316406,
+        "prior_all_time_or_current_month_high": 145.99000549316406,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:2754",
+        "yahoo_symbol": "2754.TWO"
+      }
+    },
+    {
+      "ticker": "6417.TWO",
+      "name": "Securitag Assembly Group Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Electronic Production Equipment",
+      "description": "Securitag Assembly Group Co., Ltd. · Electronic Production Equipment",
+      "change_pct": 3.036055665324211,
+      "session_open": 51.41001892089844,
+      "session_close": 52.970855712890625,
+      "session_volume": 97384.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:6417",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6417.TWO/history/",
+        "date": "2019-08-05",
+        "daily_high": 52.970855712890625,
+        "prior_all_time_or_current_month_high": 58.23867416381836,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:6417",
+        "yahoo_symbol": "6417.TWO"
+      }
+    },
+    {
+      "ticker": "6561.TWO",
+      "name": "Chief Telecom Inc.",
+      "exchange": "TPEX",
+      "category": "Communications",
+      "high_type": "52_week",
+      "reason": "업종: Communications · Specialty Telecommunications",
+      "description": "Chief Telecom Inc. · Specialty Telecommunications",
+      "change_pct": 2.94117513031662,
+      "session_open": 200.0,
+      "session_close": 206.81817626953125,
+      "session_volume": 251095.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:6561",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6561.TWO/history/",
+        "date": "2019-08-05",
+        "daily_high": 209.09091186523438,
+        "prior_all_time_or_current_month_high": 216.25454711914062,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:6561",
+        "yahoo_symbol": "6561.TWO"
+      }
+    },
+    {
+      "ticker": "6596.TWO",
+      "name": "Kuang Hong Arts Management, Inc.",
+      "exchange": "TPEX",
+      "category": "Consumer Services",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Services · Movies/Entertainment",
+      "description": "Kuang Hong Arts Management, Inc. · Movies/Entertainment",
+      "change_pct": 1.5649470108727526,
+      "session_open": 56.88844680786133,
+      "session_close": 57.77872085571289,
+      "session_volume": 84451.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:6596",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6596.TWO/history/",
+        "date": "2019-08-05",
+        "daily_high": 58.223854064941406,
+        "prior_all_time_or_current_month_high": 72.03118133544922,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:6596",
+        "yahoo_symbol": "6596.TWO"
+      }
+    },
+    {
+      "ticker": "8390.TWO",
+      "name": "Jiin Yeeh Ding Enterprise Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Industrial Services",
+      "high_type": "52_week",
+      "reason": "업종: Industrial Services · Environmental Services",
+      "description": "Jiin Yeeh Ding Enterprise Co., Ltd. · Environmental Services",
+      "change_pct": 5.02958579881656,
+      "session_open": 21.1875,
+      "session_close": 22.1875,
+      "session_volume": 2895680.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:8390",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/8390.TWO/history/",
+        "date": "2019-08-05",
+        "daily_high": 22.3125,
+        "prior_all_time_or_current_month_high": 66.46778106689453,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:8390",
+        "yahoo_symbol": "8390.TWO"
+      }
+    },
+    {
+      "ticker": "1626.TW",
+      "name": "Airmate (Cayman) International Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Consumer Durables",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Durables · Electronics/Appliances",
+      "description": "Airmate (Cayman) International Co., Ltd. · Electronics/Appliances",
+      "change_pct": 1.9607839019211148,
+      "session_open": 27.556842803955078,
+      "session_close": 27.77943229675293,
+      "session_volume": 1613075.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:1626",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/1626.TW/history/",
+        "date": "2019-08-05",
+        "daily_high": 27.912988662719727,
+        "prior_all_time_or_current_month_high": 87.8791732788086,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:1626",
+        "yahoo_symbol": "1626.TW"
+      }
+    },
+    {
+      "ticker": "2228.TW",
+      "name": "Iron Force Industrial Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Auto Parts: OEM",
+      "description": "Iron Force Industrial Co., Ltd. · Auto Parts: OEM",
+      "change_pct": 9.633027522935777,
+      "session_open": 114.0,
+      "session_close": 119.5,
+      "session_volume": 3938414.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2228",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2228.TW/history/",
+        "date": "2019-08-05",
+        "daily_high": 119.5,
+        "prior_all_time_or_current_month_high": 262.0,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:2228",
+        "yahoo_symbol": "2228.TW"
+      }
+    },
+    {
+      "ticker": "2316.TW",
+      "name": "WUS Printed Circuit Co. Ltd.",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Electronic Components",
+      "description": "WUS Printed Circuit Co. Ltd. · Electronic Components",
+      "change_pct": 4.33333398564657,
+      "session_open": 37.03703689575195,
+      "session_close": 38.64197540283203,
+      "session_volume": 12558010.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2316",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2316.TW/history/",
+        "date": "2019-08-05",
+        "daily_high": 39.50617218017578,
+        "prior_all_time_or_current_month_high": 64.94300842285156,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:2316",
+        "yahoo_symbol": "2316.TW"
+      }
+    },
+    {
+      "ticker": "3138.TW",
+      "name": "Auden Techno Corp.",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Telecommunications Equipment",
+      "description": "Auden Techno Corp. · Telecommunications Equipment",
+      "change_pct": 10.207299123593728,
+      "session_open": 37.57199478149414,
+      "session_close": 41.396217346191406,
+      "session_volume": 682240.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:3138",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3138.TW/history/",
+        "date": "2019-08-05",
+        "daily_high": 42.00730514526367,
+        "prior_all_time_or_current_month_high": 42.00730514526367,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:3138",
+        "yahoo_symbol": "3138.TW"
+      }
+    },
+    {
+      "ticker": "9946.TW",
+      "name": "San Far Property Limited",
+      "exchange": "TWSE",
+      "category": "Consumer Durables",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Durables · Other Consumer Specialties",
+      "description": "San Far Property Limited · Other Consumer Specialties",
+      "change_pct": 2.6785651139678457,
+      "session_open": 18.109609603881836,
+      "session_close": 18.553274154663086,
+      "session_volume": 3359136.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:9946",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/9946.TW/history/",
+        "date": "2019-08-05",
+        "daily_high": 18.875940322875977,
+        "prior_all_time_or_current_month_high": 23.21959686279297,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:9946",
+        "yahoo_symbol": "9946.TW"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-10-30T08:01:50.093256+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 2359,
+    "history_symbols": 1828,
+    "inactive_symbols": 521,
+    "failed_symbols": 10,
+    "coverage_ratio": 0.9945593035908596,
+    "coverage_by_exchange": {
+      "TWSE": {
+        "covered": 956,
+        "total": 963
+      },
+      "TPEX": {
+        "covered": 872,
+        "total": 875
+      }
+    },
+    "session_symbols": 1800,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-10-30T08:01:50.093256+00:00"
+}

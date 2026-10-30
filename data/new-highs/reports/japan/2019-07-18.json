@@ -1,0 +1,242 @@
+{
+  "schema_version": 1,
+  "market": "japan",
+  "date": "2019-07-18",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "2334.T",
+      "name": "Eole, Inc.",
+      "exchange": "TSE",
+      "category": "Commercial Services",
+      "high_type": "52_week",
+      "reason": "업종: Commercial Services · Advertising/Marketing Services",
+      "description": "Eole, Inc. · Advertising/Marketing Services",
+      "change_pct": 2.3047375160051287,
+      "session_open": 385.0,
+      "session_close": 399.5,
+      "session_volume": 847000.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:2334",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2334.T/history/",
+        "date": "2019-07-18",
+        "daily_high": 406.5,
+        "prior_all_time_or_current_month_high": 532.0,
+        "passes_close_filter": true,
+        "source_symbol": "TSE:2334",
+        "yahoo_symbol": "2334.T"
+      }
+    },
+    {
+      "ticker": "3492.T",
+      "name": "MIRARTH Real Estate Investment Corporation",
+      "exchange": "TSE",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "업종: Finance · Real Estate Investment Trusts",
+      "description": "MIRARTH Real Estate Investment Corporation · Real Estate Investment Trusts",
+      "change_pct": 6.8480300187617305,
+      "session_open": 112400.0,
+      "session_close": 113900.0,
+      "session_volume": 21199.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:3492",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3492.T/history/",
+        "date": "2019-07-18",
+        "daily_high": 115500.0,
+        "prior_all_time_or_current_month_high": 115500.0,
+        "passes_close_filter": true,
+        "source_symbol": "TSE:3492",
+        "yahoo_symbol": "3492.T"
+      }
+    },
+    {
+      "ticker": "3695.T",
+      "name": "GMO Product Platform INC.",
+      "exchange": "TSE",
+      "category": "Commercial Services",
+      "high_type": "52_week",
+      "reason": "업종: Commercial Services · Miscellaneous Commercial Services",
+      "description": "GMO Product Platform INC. · Miscellaneous Commercial Services",
+      "change_pct": 4.960835509138373,
+      "session_open": 1930.0,
+      "session_close": 2010.0,
+      "session_volume": 26200.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:3695",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3695.T/history/",
+        "date": "2019-07-18",
+        "daily_high": 2130.0,
+        "prior_all_time_or_current_month_high": 5360.0,
+        "passes_close_filter": true,
+        "source_symbol": "TSE:3695",
+        "yahoo_symbol": "3695.T"
+      }
+    },
+    {
+      "ticker": "4446.T",
+      "name": "Link-U Group Inc.",
+      "exchange": "TSE",
+      "category": "Technology Services",
+      "high_type": "all_time",
+      "reason": "업종: Technology Services · Internet Software/Services",
+      "description": "Link-U Group Inc. · Internet Software/Services",
+      "change_pct": 0.0,
+      "session_open": 1920.0,
+      "session_close": 1920.0,
+      "session_volume": 3338100.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:4446",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4446.T/history/",
+        "date": "2019-07-18",
+        "daily_high": 2000.0,
+        "prior_all_time_or_current_month_high": 2000.0,
+        "passes_close_filter": true,
+        "source_symbol": "TSE:4446",
+        "yahoo_symbol": "4446.T"
+      }
+    },
+    {
+      "ticker": "4616.T",
+      "name": "Kawakami Paint Manufacturing Co., Ltd.",
+      "exchange": "TSE",
+      "category": "Process Industries",
+      "high_type": "52_week",
+      "reason": "업종: Process Industries · Industrial Specialties",
+      "description": "Kawakami Paint Manufacturing Co., Ltd. · Industrial Specialties",
+      "change_pct": 0.6940063091482651,
+      "session_open": 1585.0,
+      "session_close": 1596.0,
+      "session_volume": 5500.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:4616",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4616.T/history/",
+        "date": "2019-07-18",
+        "daily_high": 1597.0,
+        "prior_all_time_or_current_month_high": 9300.0,
+        "passes_close_filter": true,
+        "source_symbol": "TSE:4616",
+        "yahoo_symbol": "4616.T"
+      }
+    },
+    {
+      "ticker": "7065.T",
+      "name": "UPR Corporation",
+      "exchange": "TSE",
+      "category": "Non-Energy Minerals",
+      "high_type": "all_time",
+      "reason": "업종: Non-Energy Minerals · Forest Products",
+      "description": "UPR Corporation · Forest Products",
+      "change_pct": 3.597122302158273,
+      "session_open": 952.0,
+      "session_close": 1008.0,
+      "session_volume": 1854000.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:7065",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/7065.T/history/",
+        "date": "2019-07-18",
+        "daily_high": 1100.0,
+        "prior_all_time_or_current_month_high": 1100.0,
+        "passes_close_filter": true,
+        "source_symbol": "TSE:7065",
+        "yahoo_symbol": "7065.T"
+      }
+    },
+    {
+      "ticker": "8966.T",
+      "name": "HEIWA REAL ESTATE REIT Inc.",
+      "exchange": "TSE",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "업종: Finance · Real Estate Investment Trusts",
+      "description": "HEIWA REAL ESTATE REIT Inc. · Real Estate Investment Trusts",
+      "change_pct": 0.0,
+      "session_open": 132400.0,
+      "session_close": 133000.0,
+      "session_volume": 2143.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:8966",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/8966.T/history/",
+        "date": "2019-07-18",
+        "daily_high": 134800.0,
+        "prior_all_time_or_current_month_high": 188750.0,
+        "passes_close_filter": true,
+        "source_symbol": "TSE:8966",
+        "yahoo_symbol": "8966.T"
+      }
+    },
+    {
+      "ticker": "9733.T",
+      "name": "Nagase Brothers, Inc.",
+      "exchange": "TSE",
+      "category": "Consumer Services",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Services · Other Consumer Services",
+      "description": "Nagase Brothers, Inc. · Other Consumer Services",
+      "change_pct": 1.6666666666666607,
+      "session_open": 1800.0,
+      "session_close": 1830.0,
+      "session_volume": 8100.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:9733",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/9733.T/history/",
+        "date": "2019-07-18",
+        "daily_high": 1830.0,
+        "prior_all_time_or_current_month_high": 2036.6666259765625,
+        "passes_close_filter": true,
+        "source_symbol": "TSE:9733",
+        "yahoo_symbol": "9733.T"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-10-30T08:04:28.745477+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 3761,
+    "history_symbols": 3170,
+    "inactive_symbols": 590,
+    "failed_symbols": 1,
+    "coverage_ratio": 0.9996846420687481,
+    "coverage_by_exchange": {
+      "TSE": {
+        "covered": 3170,
+        "total": 3171
+      }
+    },
+    "session_symbols": 3125,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-10-30T08:04:28.745477+00:00"
+}

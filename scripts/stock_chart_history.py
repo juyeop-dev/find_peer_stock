@@ -465,10 +465,14 @@ def publish(output: Path = ROOT / "frontend/public/data/stock-history") -> int:
     count = 0
     for path in sorted(PACKS.glob("*.json.gz")):
         for ticker, value in json.loads(gzip.decompress(path.read_bytes())).items():
-            # Sparse preservation records remain in the durable packs. The UI
-            # consumes only continuous primary prices and complete prior curves.
+            # Preserve every observation in the durable packs. Only domestic
+            # sector charts consume alternate curves, and only when the primary
+            # curve lacks their selected session.
             if "prior_snapshots" in value:
-                value = {**value, "prior_snapshots": [curve for curve in value["prior_snapshots"] if curve.get("complete_history")]}
+                dates = {point[0] for point in value["prices"]}
+                value = {**value, "prior_snapshots": [curve for curve in value["prior_snapshots"]
+                    if value["currency"] == curve["currency"] == "KRW" and curve.get("complete_history")
+                    and any(point[0] not in dates for point in curve["prices"])]}
             filename = quote(ticker, safe="").replace("%", "~")
             output.mkdir(parents=True, exist_ok=True)
             target = output / f"{filename}.json.gz"

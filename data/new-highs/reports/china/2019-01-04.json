@@ -1,0 +1,246 @@
+{
+  "schema_version": 1,
+  "market": "china",
+  "date": "2019-01-04",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "600548.SS",
+      "name": "Shenzhen Expressway Corporation Limited Class A",
+      "exchange": "SSE",
+      "category": "Transportation",
+      "high_type": "52_week",
+      "reason": "업종: Transportation · Other Transportation",
+      "description": "Shenzhen Expressway Corporation Limited Class A · Other Transportation",
+      "change_pct": 1.3377913264971397,
+      "session_open": 9.029999732971191,
+      "session_close": 9.09000015258789,
+      "session_volume": 6708849.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:600548",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/600548.SS/history/",
+        "date": "2019-01-04",
+        "daily_high": 9.4399995803833,
+        "prior_all_time_or_current_month_high": 15.15999984741211,
+        "passes_close_filter": true,
+        "source_symbol": "SSE:600548",
+        "yahoo_symbol": "600548.SS"
+      }
+    },
+    {
+      "ticker": "603185.SS",
+      "name": "Hongyuan Green Energy Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Industrial Machinery",
+      "description": "Hongyuan Green Energy Co., Ltd. Class A · Industrial Machinery",
+      "change_pct": 10.009992101572074,
+      "session_open": 14.354524612426758,
+      "session_close": 15.46390438079834,
+      "session_volume": 43049396.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:603185",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/603185.SS/history/",
+        "date": "2019-01-04",
+        "daily_high": 15.46390438079834,
+        "prior_all_time_or_current_month_high": 15.46390438079834,
+        "passes_close_filter": true,
+        "source_symbol": "SSE:603185",
+        "yahoo_symbol": "603185.SS"
+      }
+    },
+    {
+      "ticker": "002124.SZ",
+      "name": "Tech-bank Food Co., Ltd.",
+      "exchange": "SZSE",
+      "category": "Process Industries",
+      "high_type": "52_week",
+      "reason": "업종: Process Industries · Agricultural Commodities/Milling",
+      "description": "Tech-bank Food Co., Ltd. · Agricultural Commodities/Milling",
+      "change_pct": 8.59154975927443,
+      "session_open": 5.0,
+      "session_close": 5.507142066955566,
+      "session_volume": 27920142.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002124",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002124.SZ/history/",
+        "date": "2019-01-04",
+        "daily_high": 5.507142066955566,
+        "prior_all_time_or_current_month_high": 7.461904048919678,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:002124",
+        "yahoo_symbol": "002124.SZ"
+      }
+    },
+    {
+      "ticker": "002414.SZ",
+      "name": "Wuhan Guide Infrared Co. Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Electronic Equipment/Instruments",
+      "description": "Wuhan Guide Infrared Co. Ltd. Class A · Electronic Equipment/Instruments",
+      "change_pct": 9.798153099102503,
+      "session_open": 3.0981619358062744,
+      "session_close": 3.4321420192718506,
+      "session_volume": 92662878.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002414",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002414.SZ/history/",
+        "date": "2019-01-04",
+        "daily_high": 3.438297986984253,
+        "prior_all_time_or_current_month_high": 6.156308174133301,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:002414",
+        "yahoo_symbol": "002414.SZ"
+      }
+    },
+    {
+      "ticker": "002941.SZ",
+      "name": "Xinjiang Communications Construction Group Co. Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Industrial Services",
+      "high_type": "all_time",
+      "reason": "업종: Industrial Services · Engineering & Construction",
+      "description": "Xinjiang Communications Construction Group Co. Ltd. Class A · Engineering & Construction",
+      "change_pct": 10.00000416451674,
+      "session_open": 22.0,
+      "session_close": 25.190000534057617,
+      "session_volume": 27896654.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002941",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002941.SZ/history/",
+        "date": "2019-01-04",
+        "daily_high": 25.190000534057617,
+        "prior_all_time_or_current_month_high": 25.190000534057617,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:002941",
+        "yahoo_symbol": "002941.SZ"
+      }
+    },
+    {
+      "ticker": "300087.SZ",
+      "name": "Winall Hi-Tech Seed Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Process Industries",
+      "high_type": "52_week",
+      "reason": "업종: Process Industries · Agricultural Commodities/Milling",
+      "description": "Winall Hi-Tech Seed Co., Ltd. Class A · Agricultural Commodities/Milling",
+      "change_pct": 9.972053426427617,
+      "session_open": 5.061903953552246,
+      "session_close": 5.619047164916992,
+      "session_volume": 22447922.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:300087",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/300087.SZ/history/",
+        "date": "2019-01-04",
+        "daily_high": 5.619047164916992,
+        "prior_all_time_or_current_month_high": 6.1619038581848145,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:300087",
+        "yahoo_symbol": "300087.SZ"
+      }
+    },
+    {
+      "ticker": "300265.SZ",
+      "name": "Jiangsu Tongguang Electronic Wire and Cable Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Electrical Products",
+      "description": "Jiangsu Tongguang Electronic Wire and Cable Co., Ltd. Class A · Electrical Products",
+      "change_pct": 9.989251445595038,
+      "session_open": 9.539999961853027,
+      "session_close": 10.239999771118164,
+      "session_volume": 35142809.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:300265",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/300265.SZ/history/",
+        "date": "2019-01-04",
+        "daily_high": 10.239999771118164,
+        "prior_all_time_or_current_month_high": 24.84000015258789,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:300265",
+        "yahoo_symbol": "300265.SZ"
+      }
+    },
+    {
+      "ticker": "300751.SZ",
+      "name": "Suzhou Maxwell Technologies Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Semiconductors",
+      "description": "Suzhou Maxwell Technologies Co., Ltd. Class A · Semiconductors",
+      "change_pct": 6.91098979244178,
+      "session_open": 27.34592056274414,
+      "session_close": 29.375,
+      "session_volume": 6063229.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:300751",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/300751.SZ/history/",
+        "date": "2019-01-04",
+        "daily_high": 29.44010353088379,
+        "prior_all_time_or_current_month_high": 29.44010353088379,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:300751",
+        "yahoo_symbol": "300751.SZ"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-10-30T08:08:08.692211+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 5312,
+    "history_symbols": 3607,
+    "inactive_symbols": 1697,
+    "failed_symbols": 8,
+    "coverage_ratio": 0.9977869986168741,
+    "coverage_by_exchange": {
+      "SSE": {
+        "covered": 1513,
+        "total": 1515
+      },
+      "SZSE": {
+        "covered": 2094,
+        "total": 2100
+      }
+    },
+    "session_symbols": 3406,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-10-30T08:08:08.692211+00:00"
+}

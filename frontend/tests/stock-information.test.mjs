@@ -1,15 +1,32 @@
 import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import test from "node:test";
+import {gzipSync} from "node:zlib";
 import ts from "typescript";
 
 let source = await readFile(new URL("../src/dataClient/stockInformationClient.ts", import.meta.url), "utf8");
 const profiles = JSON.parse(await readFile(new URL("../../data/seed/company_profiles.json", import.meta.url), "utf8"));
 source = source.replace('import companyProfiles from "../../../data/seed/company_profiles.json";', `const companyProfiles = ${JSON.stringify(profiles)};`);
 source = source.replace('import { requestOriginal, rememberInformationQuote } from "./liveStockDataClient";', 'const requestOriginal = () => { throw new Error("unexpected network"); }; const rememberInformationQuote = () => {};');
+source = source.replaceAll('import.meta.env.BASE_URL','"/"');
 const javascript = ts.transpileModule(source, {compilerOptions: {module: ts.ModuleKind.ESNext, target: ts.ScriptTarget.ES2022}}).outputText;
-const {mergeInformation} = await import(`data:text/javascript;base64,${Buffer.from(javascript).toString("base64")}`);
+const {mergeInformation,decodePublishedInformation,getStockInformation} = await import(`data:text/javascript;base64,${Buffer.from(javascript).toString("base64")}`);
 const statement = (period_end, currency, revenue) => ({type:"quarterly",period_end,currency,revenue,source:"fixture"});
+
+test("compressed and host-decoded financial archives retain Unicode, zero, losses and original precision", async () => {
+  const value={ticker:"LEGACY",fetched_at:"2026-10-30T00:00:00Z",quote:null,metrics:{per:0},financials:[statement("2019-03-31","TWD",-123.123456789)],warnings:["확인된 원본만 표시"]};
+  const body=JSON.stringify(value);
+  assert.deepEqual(await decodePublishedInformation(new Response(gzipSync(body))),value);
+  assert.deepEqual(await decodePublishedInformation(new Response(body)),value);
+  const original=globalThis.fetch,requests=[];
+  globalThis.fetch=async url=>{requests.push(url);return String(url).includes('.json.gz')?new Response('',{status:404}):Response.json(value);};
+  try {
+    assert.deepEqual(JSON.parse(JSON.stringify(await getStockInformation("LEGACY"))),value);
+    assert.equal(requests.length,2);
+    assert.ok(requests[0].includes('.json.gz')&&requests[1].includes('.json?'));
+  } finally {globalThis.fetch=original;}
+  await assert.rejects(decodePublishedInformation(new Response(Buffer.from([0x1f,0x8b,1,2]))));
+});
 
 test("an unavailable older provider period cannot reset coverage of retained reported financials to zero", () => {
   const coverage={start:"2021-01-01",end:"2021-12-31",periods:1,annual_periods:1,quarterly_periods:0,note:"reported only"};

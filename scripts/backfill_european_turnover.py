@@ -16,6 +16,7 @@ from backfill_yahoo_calendars import request_yahoo, published_exchange, parse_ba
 from generate_turnover_data import SOURCE_DIR, load_markets, validate_report
 from refresh_new_highs import atomic_json
 from quote_sources.tradingview_chart import ChartHistoryError
+from dated_fx import usd_rates_for_dates
 
 parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument('--start', required=True, type=date.fromisoformat)
@@ -75,18 +76,7 @@ fx_currencies = {('GBP' if c == 'GBX' else c) for c in currencies} - {'USD'}
 fx = {'USD': {session: 1.0 for session in sessions}}
 fx_sources = {}
 for currency in sorted(fx_currencies):
-    symbol = f'{currency}USD=X'
-    payload = request_yahoo(symbol, period1=START, period2=END + timedelta(days=2),
-                            range_name=None, interval='1d', timeout=30,
-                            cache_dir=ROOT / 'data/tmp_calendar_history')
-    result = payload['chart']['result'][0]
-    assert result['meta']['symbol'] == symbol
-    assert result['meta']['currency'] == 'USD'
-    bars = parse_bars(payload, symbol, result['meta']['exchangeTimezoneName'])
-    fx[currency] = {bar.day: bar.close for bar in bars if bar.day in sessions}
-    assert all(session in fx[currency] for session in sessions), (currency, 'missing dated FX rate')
-    fx_sources[currency] = {'symbol': symbol, 'url': f'https://finance.yahoo.com/quote/{symbol}/history/',
-                            'usd_per_currency_by_date': {str(day): value for day, value in sorted(fx[currency].items())}}
+    fx[currency], fx_sources[currency] = usd_rates_for_dates(currency, sessions, ROOT / 'data/tmp_calendar_history')
     print(f'europe: {currency}/USD verified for {len(sessions)} sessions', flush=True)
 
 markets = {item['id']: item for item in load_markets(SOURCE_DIR)}
@@ -142,7 +132,9 @@ for session in sessions:
         'schema_version': 1, 'market': 'europe', 'date': str(session),
         'summary': ('부분 복원: 당시 일봉이 확인된 종목 안에서의 순위이며 시장 전체 순위와 다를 수 있습니다. ' + ' · '.join(f"{exchange} {by_exchange[exchange]}/{sum(row['exchange'] == exchange for row, _bars in histories.values())}종목 확인" for exchange in by_exchange) + '. ' if args.partial_history else '') + 'TradingView 동일 거래소 과거 일봉의 종가×거래량을 당일 환율로 미달러 환산한 추정 거래대금 상위 30개 종목입니다. GBX는 GBP의 1/100로 환산하며 휴장 거래소는 제외합니다.',
         'sources': [{'label': 'TradingView same-exchange daily charts', 'url': 'https://www.tradingview.com/'},
-                    {'label': 'Yahoo Finance dated currency/USD exchange rates', 'url': 'https://finance.yahoo.com/currencies/'}],
+                    {'label': 'Yahoo Finance dated currency/USD exchange rates', 'url': 'https://finance.yahoo.com/currencies/'},
+                    {'label': 'Bank of Canada exact-date published reference rates for missing Yahoo observations', 'url': 'https://www.bankofcanada.ca/rates/exchange/daily-exchange-rates/'},
+                    {'label': 'ECB exact-date published euro reference rates', 'url': 'https://www.ecb.europa.eu/stats/eurofxref/eurofxref-hist.xml'}],
         'entries': entries,
         'source_metadata': {
             'provider': 'TradingView public daily chart history',
@@ -157,7 +149,7 @@ for session in sessions:
             'split_adjusted': True, 'session': 'regular', 'pagination_complete': True,
             'ranking': 'split-adjusted close × volume × dated currency/USD rate descending',
             'turnover_currency': 'USD', 'turnover_is_estimate': True,
-            'fx_provider': 'Yahoo Finance daily chart close', 'fx_date': str(session),
+            'fx_provider': 'Yahoo Finance daily chart close; missing observations use Bank of Canada same-day published averages or ECB reference rates', 'fx_date': str(session),
             'usd_per_price_currency': rates, 'gbx_per_gbp': 100,
             'review_path': review_path,
         },

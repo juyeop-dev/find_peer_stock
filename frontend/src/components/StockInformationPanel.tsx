@@ -20,7 +20,7 @@ export function StockInformationPanel({ticker, exchange, refreshKey}: {ticker: s
   const {data, error, loading, refreshing, refresh} = usePollingData(load, 300000);
   const groups = data?.financials ?? [];
   return <section className="semiPanel stockInformationPanel">
-    <div className="semiPanelHeading semiHeadingSplit"><div><h2>실적 · 투자 지표</h2><p>2020년 1월 1일 이후 회계기간의 확정 실적 · 현재 제공 지표</p></div><button type="button" className="semiTextButton" disabled={refreshing} onClick={refresh}>{refreshing ? "정보 조회 중…" : "정보 다시 조회"}</button></div>
+    <div className="semiPanelHeading semiHeadingSplit"><div><h2>실적 · 투자 지표</h2><p>2019년 1월 1일 이후 회계기간의 확정 실적 · 현재 제공 지표</p></div><button type="button" className="semiTextButton" disabled={refreshing} onClick={refresh}>{refreshing ? "정보 조회 중…" : "정보 다시 조회"}</button></div>
     {error ? <ErrorNotice message={error} /> : null}{loading ? <p>종목 정보를 확인하고 있습니다.</p> : null}
     {data ? <>
       <p className="semiFootnote">시세·지표 조회 {formatDateTime(data.fetched_at)} · 실적 조회 {formatDateTime(data.financials_fetched_at ?? data.fetched_at)}{data.quote?.provider_time ? ` · 시세 기준 봉 시각 ${formatDateTime(data.quote.provider_time)}` : ""}</p>
@@ -35,7 +35,8 @@ export function StockInformationPanel({ticker, exchange, refreshKey}: {ticker: s
       <div className="semiTableWrap"><table className="semiTable stockMetricTable" aria-label="투자 지표"><thead><tr><th className="semiNumber" scope="col">PER</th><th className="semiNumber" scope="col">PBR</th><th className="semiNumber" scope="col">EPS<small>{data.metrics_currency ?? "통화 미확인"}</small></th><th className="semiNumber" scope="col">배당수익률</th><th className="semiNumber" scope="col">52주 최고<small>{data.quote?.currency ?? "통화 미확인"}</small></th><th className="semiNumber" scope="col">52주 최저<small>{data.quote?.currency ?? "통화 미확인"}</small></th></tr></thead><tbody><tr>
         {["per", "pbr", "eps", "dividend_yield", "high_52_week", "low_52_week"].map(key => <td key={key} className="semiNumber">{metricText(key, data.metrics[key])}</td>)}
       </tr></tbody></table></div>
-      {groups.length ? <StatementTable rows={groups} /> : <p className="semiEmpty">2020년 이후 확정 실적이 제공되지 않습니다.</p>}
+      {groups.length ? <StatementTable rows={groups} /> : <p className="semiEmpty">2019년 이후 확정 실적이 제공되지 않습니다.</p>}
+      {data.historical_2019_coverage ? <p className="semiFootnote" role="status">2019년 종료 회계기간: 연간 {data.historical_2019_coverage.annual_periods}건 · 분기 {data.historical_2019_coverage.quarterly_periods}건 확인. {data.historical_2019_coverage.note}</p> : null}
       {data.historical_2020_coverage ? <p className="semiFootnote" role="status">2020년 종료 회계기간: 연간 {data.historical_2020_coverage.annual_periods}건 · 분기 {data.historical_2020_coverage.quarterly_periods}건 확인. {data.historical_2020_coverage.note}</p> : null}
       {data.historical_2021_coverage ? <p className="semiFootnote" role="status">2021년 종료 회계기간: 연간 {data.historical_2021_coverage.annual_periods}건 · 분기 {data.historical_2021_coverage.quarterly_periods}건 확인. {data.historical_2021_coverage.note}</p> : null}
       {data.historical_2022_coverage ? <p className="semiFootnote" role="status">2022년 종료 회계기간: 연간 {data.historical_2022_coverage.annual_periods}건 · 분기 {data.historical_2022_coverage.quarterly_periods}건 확인. {data.historical_2022_coverage.note}</p> : null}

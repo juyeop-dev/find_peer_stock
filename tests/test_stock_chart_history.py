@@ -18,7 +18,9 @@ class StockChartHistoryTests(unittest.TestCase):
             root = Path(folder)
             sparse = {"ticker": "A", "currency": "KRW", "source": "original", "prices": [["2020-01-02", 10, 10]], "complete_history": False}
             complete = {**sparse, "prices": [["2025-01-02", 20, 20], ["2026-01-02", 30, 30]], "complete_history": True}
-            value = {"ticker": "A", "currency": "KRW", "source": "current", "prices": [["2020-01-02", 11, 11], ["2026-01-02", 31, 31]], "prior_snapshots": [sparse, complete]}
+            redundant = {**complete, "prices": [["2020-01-02", 10, 10], ["2026-01-02", 30, 30]]}
+            foreign = {**complete, "currency": "USD"}
+            value = {"ticker": "A", "currency": "KRW", "source": "current", "prices": [["2020-01-02", 11, 11], ["2026-01-02", 31, 31]], "prior_snapshots": [sparse, complete, redundant, foreign]}
             packs = root / "packs"
             packs.mkdir()
             source = packs / "0.json.gz"

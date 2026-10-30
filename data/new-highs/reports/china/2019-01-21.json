@@ -1,0 +1,271 @@
+{
+  "schema_version": 1,
+  "market": "china",
+  "date": "2019-01-21",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "600132.SS",
+      "name": "Chongqing Brewery Co.Ltd Class A",
+      "exchange": "SSE",
+      "category": "Consumer Non-Durables",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Non-Durables · Beverages: Alcoholic",
+      "description": "Chongqing Brewery Co.Ltd Class A · Beverages: Alcoholic",
+      "change_pct": 3.536978675167912,
+      "session_open": 31.100000381469727,
+      "session_close": 32.20000076293945,
+      "session_volume": 3563360.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:600132",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/600132.SS/history/",
+        "date": "2019-01-21",
+        "daily_high": 34.20000076293945,
+        "prior_all_time_or_current_month_high": 83.12000274658203,
+        "passes_close_filter": true,
+        "source_symbol": "SSE:600132",
+        "yahoo_symbol": "600132.SS"
+      }
+    },
+    {
+      "ticker": "600556.SS",
+      "name": "InMyShow Digital Technology (Group) Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Commercial Services",
+      "high_type": "52_week",
+      "reason": "업종: Commercial Services · Advertising/Marketing Services",
+      "description": "InMyShow Digital Technology (Group) Co., Ltd. Class A · Advertising/Marketing Services",
+      "change_pct": 4.984893193516804,
+      "session_open": 6.599999904632568,
+      "session_close": 6.949999809265137,
+      "session_volume": 12492584.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:600556",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/600556.SS/history/",
+        "date": "2019-01-21",
+        "daily_high": 6.949999809265137,
+        "prior_all_time_or_current_month_high": 36.97999954223633,
+        "passes_close_filter": true,
+        "source_symbol": "SSE:600556",
+        "yahoo_symbol": "600556.SS"
+      }
+    },
+    {
+      "ticker": "601177.SS",
+      "name": "Hangzhou Advance Gearbox Group Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Trucks/Construction/Farm Machinery",
+      "description": "Hangzhou Advance Gearbox Group Co., Ltd. Class A · Trucks/Construction/Farm Machinery",
+      "change_pct": 7.303966926453276,
+      "session_open": 9.350000381469727,
+      "session_close": 9.989999771118164,
+      "session_volume": 6015622.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:601177",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/601177.SS/history/",
+        "date": "2019-01-21",
+        "daily_high": 10.119999885559082,
+        "prior_all_time_or_current_month_high": 19.34000015258789,
+        "passes_close_filter": true,
+        "source_symbol": "SSE:601177",
+        "yahoo_symbol": "601177.SS"
+      }
+    },
+    {
+      "ticker": "603421.SS",
+      "name": "Qingdao Topscomm Communication Co. Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Electrical Products",
+      "description": "Qingdao Topscomm Communication Co. Ltd. Class A · Electrical Products",
+      "change_pct": 2.3968484515529465,
+      "session_open": 18.207141876220703,
+      "session_close": 18.61428451538086,
+      "session_volume": 26264418.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:603421",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/603421.SS/history/",
+        "date": "2019-01-21",
+        "daily_high": 19.64285659790039,
+        "prior_all_time_or_current_month_high": 44.43571472167969,
+        "passes_close_filter": true,
+        "source_symbol": "SSE:603421",
+        "yahoo_symbol": "603421.SS"
+      }
+    },
+    {
+      "ticker": "002299.SZ",
+      "name": "Fujian Sunner Development Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Process Industries",
+      "high_type": "52_week",
+      "reason": "업종: Process Industries · Agricultural Commodities/Milling",
+      "description": "Fujian Sunner Development Co., Ltd. Class A · Agricultural Commodities/Milling",
+      "change_pct": 1.3586956803424588,
+      "session_open": 18.3799991607666,
+      "session_close": 18.649999618530273,
+      "session_volume": 20599519.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002299",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002299.SZ/history/",
+        "date": "2019-01-21",
+        "daily_high": 18.850000381469727,
+        "prior_all_time_or_current_month_high": 31.5,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:002299",
+        "yahoo_symbol": "002299.SZ"
+      }
+    },
+    {
+      "ticker": "002916.SZ",
+      "name": "Shennan Circuit Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Electronic Components",
+      "description": "Shennan Circuit Co., Ltd. Class A · Electronic Components",
+      "change_pct": 1.2380837191894978,
+      "session_open": 41.666664123535156,
+      "session_close": 42.30769348144531,
+      "session_volume": 11484173.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002916",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002916.SZ/history/",
+        "date": "2019-01-21",
+        "daily_high": 43.489009857177734,
+        "prior_all_time_or_current_month_high": 47.39011001586914,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:002916",
+        "yahoo_symbol": "002916.SZ"
+      }
+    },
+    {
+      "ticker": "002945.SZ",
+      "name": "ChinaLin Securities Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "업종: Finance · Investment Managers",
+      "description": "ChinaLin Securities Co., Ltd. Class A · Investment Managers",
+      "change_pct": 9.947646941780341,
+      "session_open": 6.300000190734863,
+      "session_close": 6.300000190734863,
+      "session_volume": 576554.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002945",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002945.SZ/history/",
+        "date": "2019-01-21",
+        "daily_high": 6.300000190734863,
+        "prior_all_time_or_current_month_high": 6.300000190734863,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:002945",
+        "yahoo_symbol": "002945.SZ"
+      }
+    },
+    {
+      "ticker": "300080.SZ",
+      "name": "Henan Yicheng New Energy Co Ltd Class A",
+      "exchange": "SZSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Electronic Equipment/Instruments",
+      "description": "Henan Yicheng New Energy Co Ltd Class A · Electronic Equipment/Instruments",
+      "change_pct": 10.055089796447024,
+      "session_open": 7.550000190734863,
+      "session_close": 7.989999771118164,
+      "session_volume": 25729461.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:300080",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/300080.SZ/history/",
+        "date": "2019-01-21",
+        "daily_high": 7.989999771118164,
+        "prior_all_time_or_current_month_high": 24.538461685180664,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:300080",
+        "yahoo_symbol": "300080.SZ"
+      }
+    },
+    {
+      "ticker": "300575.SZ",
+      "name": "Jiangsu Flag Chemical Industry Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Process Industries",
+      "high_type": "52_week",
+      "reason": "업종: Process Industries · Chemicals: Agricultural",
+      "description": "Jiangsu Flag Chemical Industry Co., Ltd. Class A · Chemicals: Agricultural",
+      "change_pct": 10.00436096352355,
+      "session_open": 7.899588108062744,
+      "session_close": 8.307818412780762,
+      "session_volume": 19783225.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:300575",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/300575.SZ/history/",
+        "date": "2019-01-21",
+        "daily_high": 8.307818412780762,
+        "prior_all_time_or_current_month_high": 11.766255378723145,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:300575",
+        "yahoo_symbol": "300575.SZ"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-10-30T08:08:08.692211+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 5312,
+    "history_symbols": 3607,
+    "inactive_symbols": 1697,
+    "failed_symbols": 8,
+    "coverage_ratio": 0.9977869986168741,
+    "coverage_by_exchange": {
+      "SSE": {
+        "covered": 1513,
+        "total": 1515
+      },
+      "SZSE": {
+        "covered": 2094,
+        "total": 2100
+      }
+    },
+    "session_symbols": 3412,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-10-30T08:08:08.692211+00:00"
+}

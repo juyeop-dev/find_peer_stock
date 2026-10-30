@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import {fetchPublishedInformation} from './published-information.mjs';
 import { spawn } from "node:child_process";
 import { existsSync } from "node:fs";
 import { mkdtemp, readFile, rm } from "node:fs/promises";
@@ -88,7 +89,7 @@ try {
     const dates = info.range.match(/\d{4}-\d{2}-\d{2}/g);
     assert.equal(dates.length,2);assert.ok(dates[0] <= "2020-01-01",JSON.stringify(info));
     const ticker=decodeURIComponent(route.split('?')[0].split('/').at(-1));
-    const stored=await(await fetch(base+`/data/stock-information/${encodeURIComponent(ticker).replaceAll('%','~')}.json`)).json();
+    const stored=await fetchPublishedInformation(base,ticker);
     const expectedPeriods=stored.financials.filter(row=>row.period_end.startsWith('2020-')).length;
     const displayedPeriods=await evaluate("[...document.querySelectorAll('.stockInformationPanel table:not(.stockMetricTable) tbody tr')].filter(row=>row.cells[0].innerText.startsWith('2020-')).length");
     assert.equal(displayedPeriods,expectedPeriods,`${ticker}: reported 2020 periods must match original; no inferred quarters`);

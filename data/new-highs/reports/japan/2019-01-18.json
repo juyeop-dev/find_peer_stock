@@ -1,0 +1,292 @@
+{
+  "schema_version": 1,
+  "market": "japan",
+  "date": "2019-01-18",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "3269.T",
+      "name": "Advance Residence Investment Corporation",
+      "exchange": "TSE",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "업종: Finance · Real Estate Investment Trusts",
+      "description": "Advance Residence Investment Corporation · Real Estate Investment Trusts",
+      "change_pct": 0.47095761381474865,
+      "session_open": 159500.0,
+      "session_close": 160000.0,
+      "session_volume": 5588.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:3269",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3269.T/history/",
+        "date": "2019-01-18",
+        "daily_high": 160500.0,
+        "prior_all_time_or_current_month_high": 163000.0,
+        "passes_close_filter": true,
+        "source_symbol": "TSE:3269",
+        "yahoo_symbol": "3269.T"
+      }
+    },
+    {
+      "ticker": "3911.T",
+      "name": "Aiming, Inc.",
+      "exchange": "TSE",
+      "category": "Technology Services",
+      "high_type": "52_week",
+      "reason": "업종: Technology Services · Internet Software/Services",
+      "description": "Aiming, Inc. · Internet Software/Services",
+      "change_pct": 4.705882352941182,
+      "session_open": 529.0,
+      "session_close": 534.0,
+      "session_volume": 11097500.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:3911",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3911.T/history/",
+        "date": "2019-01-18",
+        "daily_high": 585.0,
+        "prior_all_time_or_current_month_high": 1965.0,
+        "passes_close_filter": true,
+        "source_symbol": "TSE:3911",
+        "yahoo_symbol": "3911.T"
+      }
+    },
+    {
+      "ticker": "4391.T",
+      "name": "Logizard Co., Ltd.",
+      "exchange": "TSE",
+      "category": "Technology Services",
+      "high_type": "all_time",
+      "reason": "업종: Technology Services · Packaged Software",
+      "description": "Logizard Co., Ltd. · Packaged Software",
+      "change_pct": 14.535666218034994,
+      "session_open": 3840.0,
+      "session_close": 4255.0,
+      "session_volume": 399500.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:4391",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4391.T/history/",
+        "date": "2019-01-18",
+        "daily_high": 4320.0,
+        "prior_all_time_or_current_month_high": 4320.0,
+        "passes_close_filter": true,
+        "source_symbol": "TSE:4391",
+        "yahoo_symbol": "4391.T"
+      }
+    },
+    {
+      "ticker": "4592.T",
+      "name": "SanBio Co., Ltd.",
+      "exchange": "TSE",
+      "category": "Health Technology",
+      "high_type": "all_time",
+      "reason": "업종: Health Technology · Pharmaceuticals: Major",
+      "description": "SanBio Co., Ltd. · Pharmaceuticals: Major",
+      "change_pct": 0.8612440191387627,
+      "session_open": 10470.0,
+      "session_close": 10540.0,
+      "session_volume": 1809700.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:4592",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4592.T/history/",
+        "date": "2019-01-18",
+        "daily_high": 10920.0,
+        "prior_all_time_or_current_month_high": 10920.0,
+        "passes_close_filter": true,
+        "source_symbol": "TSE:4592",
+        "yahoo_symbol": "4592.T"
+      }
+    },
+    {
+      "ticker": "4816.T",
+      "name": "Toei Animation Co., Ltd.",
+      "exchange": "TSE",
+      "category": "Consumer Services",
+      "high_type": "all_time",
+      "reason": "업종: Consumer Services · Movies/Entertainment",
+      "description": "Toei Animation Co., Ltd. · Movies/Entertainment",
+      "change_pct": 2.9002320185614883,
+      "session_open": 875.0,
+      "session_close": 887.0,
+      "session_volume": 225500.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:4816",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4816.T/history/",
+        "date": "2019-01-18",
+        "daily_high": 899.0,
+        "prior_all_time_or_current_month_high": 899.0,
+        "passes_close_filter": true,
+        "source_symbol": "TSE:4816",
+        "yahoo_symbol": "4816.T"
+      }
+    },
+    {
+      "ticker": "6342.T",
+      "name": "Taihei Machinery Works, Ltd.",
+      "exchange": "TSE",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Industrial Machinery",
+      "description": "Taihei Machinery Works, Ltd. · Industrial Machinery",
+      "change_pct": 7.580952380952377,
+      "session_open": 2775.0,
+      "session_close": 2824.0,
+      "session_volume": 10600.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:6342",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6342.T/history/",
+        "date": "2019-01-18",
+        "daily_high": 2824.0,
+        "prior_all_time_or_current_month_high": 3790.0,
+        "passes_close_filter": true,
+        "source_symbol": "TSE:6342",
+        "yahoo_symbol": "6342.T"
+      }
+    },
+    {
+      "ticker": "8958.T",
+      "name": "Global One Real Estate Investment Corporation",
+      "exchange": "TSE",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "업종: Finance · Real Estate Investment Trusts",
+      "description": "Global One Real Estate Investment Corporation · Real Estate Investment Trusts",
+      "change_pct": 0.48661800486617945,
+      "session_open": 123400.0,
+      "session_close": 123900.0,
+      "session_volume": 2241.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:8958",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/8958.T/history/",
+        "date": "2019-01-18",
+        "daily_high": 124700.0,
+        "prior_all_time_or_current_month_high": 207500.0,
+        "passes_close_filter": true,
+        "source_symbol": "TSE:8958",
+        "yahoo_symbol": "8958.T"
+      }
+    },
+    {
+      "ticker": "9506.T",
+      "name": "Tohoku Electric Power Company, Incorporated",
+      "exchange": "TSE",
+      "category": "Utilities",
+      "high_type": "52_week",
+      "reason": "업종: Utilities · Electric Utilities",
+      "description": "Tohoku Electric Power Company, Incorporated · Electric Utilities",
+      "change_pct": 1.045068582625741,
+      "session_open": 1534.0,
+      "session_close": 1547.0,
+      "session_volume": 957000.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:9506",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/9506.T/history/",
+        "date": "2019-01-18",
+        "daily_high": 1559.0,
+        "prior_all_time_or_current_month_high": 3500.0,
+        "passes_close_filter": true,
+        "source_symbol": "TSE:9506",
+        "yahoo_symbol": "9506.T"
+      }
+    },
+    {
+      "ticker": "9533.T",
+      "name": "TOHO GAS Co., Ltd.",
+      "exchange": "TSE",
+      "category": "Utilities",
+      "high_type": "all_time",
+      "reason": "업종: Utilities · Gas Distributors",
+      "description": "TOHO GAS Co., Ltd. · Gas Distributors",
+      "change_pct": 1.4198782961460488,
+      "session_open": 1236.25,
+      "session_close": 1250.0,
+      "session_volume": 889600.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:9533",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/9533.T/history/",
+        "date": "2019-01-18",
+        "daily_high": 1260.0,
+        "prior_all_time_or_current_month_high": 1260.0,
+        "passes_close_filter": true,
+        "source_symbol": "TSE:9533",
+        "yahoo_symbol": "9533.T"
+      }
+    },
+    {
+      "ticker": "9903.T",
+      "name": "Kanseki Co., Ltd.",
+      "exchange": "TSE",
+      "category": "Retail Trade",
+      "high_type": "52_week",
+      "reason": "업종: Retail Trade · Discount Stores",
+      "description": "Kanseki Co., Ltd. · Discount Stores",
+      "change_pct": 1.7532029669588667,
+      "session_open": 1470.0,
+      "session_close": 1509.0,
+      "session_volume": 4600.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:9903",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/9903.T/history/",
+        "date": "2019-01-18",
+        "daily_high": 1509.0,
+        "prior_all_time_or_current_month_high": 1598.0,
+        "passes_close_filter": true,
+        "source_symbol": "TSE:9903",
+        "yahoo_symbol": "9903.T"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-10-30T08:04:28.745477+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 3761,
+    "history_symbols": 3170,
+    "inactive_symbols": 590,
+    "failed_symbols": 1,
+    "coverage_ratio": 0.9996846420687481,
+    "coverage_by_exchange": {
+      "TSE": {
+        "covered": 3170,
+        "total": 3171
+      }
+    },
+    "session_symbols": 3084,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-10-30T08:04:28.745477+00:00"
+}

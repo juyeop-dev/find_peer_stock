@@ -21,6 +21,7 @@ test("a shorter refresh keeps verified historical prices and never splices incom
 });
 
 test("one year follows calendar dates including leap days instead of using 360 days", () => {
+  assert.equal(chartStart("2026-10-30", "since2019"), "2019-01-01");
   assert.equal(chartStart("2026-10-30", "since2020"), "2020-01-01");
   assert.equal(chartStart("2026-10-29", "since2021"), "2021-01-01");
   assert.equal(chartStart("2026-10-29", "since2022"), "2022-01-01");
@@ -32,6 +33,16 @@ test("one year follows calendar dates including leap days instead of using 360 d
   assert.equal(chartStart("2024-02-29", "1y"), "2023-02-28");
   assert.equal(chartStart("2025-02-28", "1y"), "2024-02-28");
   assert.equal(chartStart("2026-10-19", "2y"), "2024-10-19");
+});
+
+test("refresh cannot discard a recovered 2019 session even when both curves start on the same day", () => {
+  const old={ticker:"RECOVERED",currency:"TWD",source:"Observed original",history:["2019-09-06","2019-09-09","2019-09-10","2019-09-11"].map(point)};
+  const fresh={...old,source:"Yahoo original",history:["2019-09-06","2019-09-10","2019-09-11","2026-10-30"].map(point)};
+  const merged=retainHistoricalPrices(old,fresh);
+  assert.deepEqual(merged.history.map(row=>row.date),["2019-09-06","2019-09-09","2019-09-10","2019-09-11","2026-10-30"]);
+  assert.deepEqual(merged.history[1],old.history[1]);
+  const revised=retainHistoricalPrices(old,{...fresh,history:fresh.history.map(row=>({...row,adjusted_close:90}))});
+  assert.deepEqual(revised.history,old.history);assert.ok(revised.warning);
 });
 test("a non-trading anniversary includes its previous close, and a recent IPO keeps its actual data", () => {
   const full = ["2025-10-01", "2025-10-17", "2025-10-20", "2026-10-19"].map(point);

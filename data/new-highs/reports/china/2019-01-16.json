@@ -1,0 +1,221 @@
+{
+  "schema_version": 1,
+  "market": "china",
+  "date": "2019-01-16",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "603823.SS",
+      "name": "Lily Group Co. Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Process Industries",
+      "high_type": "52_week",
+      "reason": "업종: Process Industries · Chemicals: Specialty",
+      "description": "Lily Group Co. Ltd. Class A · Chemicals: Specialty",
+      "change_pct": 0.8741350516503488,
+      "session_open": 9.340659141540527,
+      "session_close": 9.51098918914795,
+      "session_volume": 5021631.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:603823",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/603823.SS/history/",
+        "date": "2019-01-16",
+        "daily_high": 10.186813354492188,
+        "prior_all_time_or_current_month_high": 23.351648330688477,
+        "passes_close_filter": true,
+        "source_symbol": "SSE:603823",
+        "yahoo_symbol": "603823.SS"
+      }
+    },
+    {
+      "ticker": "002463.SZ",
+      "name": "Wus Printed Circuit (Kunshan) Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Electronic Components",
+      "description": "Wus Printed Circuit (Kunshan) Co., Ltd. Class A · Electronic Components",
+      "change_pct": 5.2362795912193505,
+      "session_open": 7.099999904632568,
+      "session_close": 7.490909099578857,
+      "session_volume": 113545230.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002463",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002463.SZ/history/",
+        "date": "2019-01-16",
+        "daily_high": 7.718181133270264,
+        "prior_all_time_or_current_month_high": 12.272727012634277,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:002463",
+        "yahoo_symbol": "002463.SZ"
+      }
+    },
+    {
+      "ticker": "002557.SZ",
+      "name": "Chacha Food Co Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Consumer Non-Durables",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Non-Durables · Food: Specialty/Candy",
+      "description": "Chacha Food Co Ltd. Class A · Food: Specialty/Candy",
+      "change_pct": 5.416661285692004,
+      "session_open": 19.1299991607666,
+      "session_close": 20.239999771118164,
+      "session_volume": 9248968.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002557",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002557.SZ/history/",
+        "date": "2019-01-16",
+        "daily_high": 20.3799991607666,
+        "prior_all_time_or_current_month_high": 23.309999465942383,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:002557",
+        "yahoo_symbol": "002557.SZ"
+      }
+    },
+    {
+      "ticker": "002948.SZ",
+      "name": "Bank of Qingdao Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "업종: Finance · Regional Banks",
+      "description": "Bank of Qingdao Co., Ltd. Class A · Regional Banks",
+      "change_pct": 0.0,
+      "session_open": 5.020819187164307,
+      "session_close": 6.030540943145752,
+      "session_volume": 1417421.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002948",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002948.SZ/history/",
+        "date": "2019-01-16",
+        "daily_high": 6.030540943145752,
+        "prior_all_time_or_current_month_high": 6.030540943145752,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:002948",
+        "yahoo_symbol": "002948.SZ"
+      }
+    },
+    {
+      "ticker": "300080.SZ",
+      "name": "Henan Yicheng New Energy Co Ltd Class A",
+      "exchange": "SZSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Electronic Equipment/Instruments",
+      "description": "Henan Yicheng New Energy Co Ltd Class A · Electronic Equipment/Instruments",
+      "change_pct": 10.031345689743443,
+      "session_open": 7.019999980926514,
+      "session_close": 7.019999980926514,
+      "session_volume": 38288556.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:300080",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/300080.SZ/history/",
+        "date": "2019-01-16",
+        "daily_high": 7.019999980926514,
+        "prior_all_time_or_current_month_high": 24.538461685180664,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:300080",
+        "yahoo_symbol": "300080.SZ"
+      }
+    },
+    {
+      "ticker": "300751.SZ",
+      "name": "Suzhou Maxwell Technologies Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Semiconductors",
+      "description": "Suzhou Maxwell Technologies Co., Ltd. Class A · Semiconductors",
+      "change_pct": 0.8117671601522325,
+      "session_open": 31.03949546813965,
+      "session_close": 31.53211784362793,
+      "session_volume": 5401234.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:300751",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/300751.SZ/history/",
+        "date": "2019-01-16",
+        "daily_high": 33.854164123535156,
+        "prior_all_time_or_current_month_high": 33.854164123535156,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:300751",
+        "yahoo_symbol": "300751.SZ"
+      }
+    },
+    {
+      "ticker": "300757.SZ",
+      "name": "Robotechnik Intelligent Technology Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Industrial Machinery",
+      "description": "Robotechnik Intelligent Technology Co., Ltd. Class A · Industrial Machinery",
+      "change_pct": 9.99599702358438,
+      "session_open": 30.23076820373535,
+      "session_close": 30.23076820373535,
+      "session_volume": 444889.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:300757",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/300757.SZ/history/",
+        "date": "2019-01-16",
+        "daily_high": 30.23076820373535,
+        "prior_all_time_or_current_month_high": 30.23076820373535,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:300757",
+        "yahoo_symbol": "300757.SZ"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-10-30T08:08:08.692211+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 5312,
+    "history_symbols": 3607,
+    "inactive_symbols": 1697,
+    "failed_symbols": 8,
+    "coverage_ratio": 0.9977869986168741,
+    "coverage_by_exchange": {
+      "SSE": {
+        "covered": 1513,
+        "total": 1515
+      },
+      "SZSE": {
+        "covered": 2094,
+        "total": 2100
+      }
+    },
+    "session_symbols": 3410,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-10-30T08:08:08.692211+00:00"
+}

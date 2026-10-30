@@ -1,0 +1,19 @@
+{
+  "checked_at": "2026-10-30T09:15:37.236219+00:00",
+  "python_tests": 235,
+  "api_tests": 26,
+  "frontend_tests": 39,
+  "typecheck": "passed",
+  "browser_2019": "PASS 2019: eight detail routes, January 2019 start, reported financials, mobile widths, original information/history refresh.",
+  "browser_2020": "PASS 2020: eight detail routes, January 2020 start, reported financials, mobile widths, original information/history refresh.",
+  "browser_investors": {
+    "result": "PASS",
+    "dates": 1921,
+    "checks": "Exact-date gross buys/sells/net flows and both indices, market totals, 2019 calendar/closures, URL selection, original historical refresh, failure retention, 1440/390/320px"
+  },
+  "browser_sectors": {
+    "result": "PASS",
+    "financeStocks": 184,
+    "checks": "Other sector stocks and real daily trends, legacy semiconductor views, 26 column sort toggles, detail/return, metric header and number alignment, source refresh, 1440/320px"
+  }
+}

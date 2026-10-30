@@ -1,0 +1,321 @@
+{
+  "schema_version": 1,
+  "market": "taiwan",
+  "date": "2019-01-18",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "3064.TWO",
+      "name": "Astro Corp.",
+      "exchange": "TPEX",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Industrial Machinery",
+      "description": "Astro Corp. · Industrial Machinery",
+      "change_pct": 1.8237094974142831,
+      "session_open": 344.9537658691406,
+      "session_close": 351.2447204589844,
+      "session_volume": 17419.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:3064",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3064.TWO/history/",
+        "date": "2019-01-18",
+        "daily_high": 376.40850830078125,
+        "prior_all_time_or_current_month_high": 1800.71923828125,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:3064",
+        "yahoo_symbol": "3064.TWO"
+      }
+    },
+    {
+      "ticker": "4953.TWO",
+      "name": "WITS Corp.",
+      "exchange": "TPEX",
+      "category": "Technology Services",
+      "high_type": "all_time",
+      "reason": "업종: Technology Services · Information Technology Services",
+      "description": "WITS Corp. · Information Technology Services",
+      "change_pct": 0.24509918799175967,
+      "session_open": 73.2499008178711,
+      "session_close": 73.42943572998047,
+      "session_volume": 10853572.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:4953",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4953.TWO/history/",
+        "date": "2019-01-18",
+        "daily_high": 77.64849090576172,
+        "prior_all_time_or_current_month_high": 77.64849090576172,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:4953",
+        "yahoo_symbol": "4953.TWO"
+      }
+    },
+    {
+      "ticker": "5455.TWO",
+      "name": "Sheng Yi Development Co.,Ltd",
+      "exchange": "TPEX",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "업종: Finance · Real Estate Development",
+      "description": "Sheng Yi Development Co.,Ltd · Real Estate Development",
+      "change_pct": 0.0,
+      "session_open": 25.0,
+      "session_close": 26.950000762939453,
+      "session_volume": 8016.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:5455",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/5455.TWO/history/",
+        "date": "2019-01-18",
+        "daily_high": 26.950000762939453,
+        "prior_all_time_or_current_month_high": 161.051513671875,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:5455",
+        "yahoo_symbol": "5455.TWO"
+      }
+    },
+    {
+      "ticker": "6245.TWO",
+      "name": "Lanner Electronics Inc.",
+      "exchange": "TPEX",
+      "category": "Distribution Services",
+      "high_type": "all_time",
+      "reason": "업종: Distribution Services · Electronics Distributors",
+      "description": "Lanner Electronics Inc. · Electronics Distributors",
+      "change_pct": 1.8148842909914586,
+      "session_open": 48.13067626953125,
+      "session_close": 49.00419235229492,
+      "session_volume": 4209287.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:6245",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6245.TWO/history/",
+        "date": "2019-01-18",
+        "daily_high": 49.00419235229492,
+        "prior_all_time_or_current_month_high": 49.00419235229492,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:6245",
+        "yahoo_symbol": "6245.TWO"
+      }
+    },
+    {
+      "ticker": "6527.TWO",
+      "name": "Crystalvue Medical Co Ltd",
+      "exchange": "TPEX",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Medical Specialties",
+      "description": "Crystalvue Medical Co Ltd · Medical Specialties",
+      "change_pct": 1.1650441036966663,
+      "session_open": 49.61904525756836,
+      "session_close": 49.61904525756836,
+      "session_volume": 56700.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:6527",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6527.TWO/history/",
+        "date": "2019-01-18",
+        "daily_high": 50.46666717529297,
+        "prior_all_time_or_current_month_high": 76.19047546386719,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:6527",
+        "yahoo_symbol": "6527.TWO"
+      }
+    },
+    {
+      "ticker": "8049.TWO",
+      "name": "Ampire Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Electronic Production Equipment",
+      "description": "Ampire Co., Ltd. · Electronic Production Equipment",
+      "change_pct": 0.0,
+      "session_open": 20.049999237060547,
+      "session_close": 20.049999237060547,
+      "session_volume": 872004.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:8049",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/8049.TWO/history/",
+        "date": "2019-01-18",
+        "daily_high": 20.549999237060547,
+        "prior_all_time_or_current_month_high": 27.600000381469727,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:8049",
+        "yahoo_symbol": "8049.TWO"
+      }
+    },
+    {
+      "ticker": "2002A.TW",
+      "name": "China Steel Corp Pfd Registered Shs A",
+      "exchange": "TWSE",
+      "category": "Non-Energy Minerals",
+      "high_type": "52_week",
+      "reason": "업종: Non-Energy Minerals · Steel",
+      "description": "China Steel Corp Pfd Registered Shs A · Steel",
+      "change_pct": 0.11338560881619664,
+      "session_open": 44.099998474121094,
+      "session_close": 44.150001525878906,
+      "session_volume": 39400.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2002A",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2002A.TW/history/",
+        "date": "2019-01-18",
+        "daily_high": 44.150001525878906,
+        "prior_all_time_or_current_month_high": 45.48003005981445,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:2002A",
+        "yahoo_symbol": "2002A.TW"
+      }
+    },
+    {
+      "ticker": "2423.TW",
+      "name": "Good Will Instrument Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Electronic Equipment/Instruments",
+      "description": "Good Will Instrument Co., Ltd. · Electronic Equipment/Instruments",
+      "change_pct": 9.90099009900991,
+      "session_open": 25.899999618530273,
+      "session_close": 27.75,
+      "session_volume": 6280904.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2423",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2423.TW/history/",
+        "date": "2019-01-18",
+        "daily_high": 27.75,
+        "prior_all_time_or_current_month_high": 28.520065307617188,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:2423",
+        "yahoo_symbol": "2423.TW"
+      }
+    },
+    {
+      "ticker": "2458.TW",
+      "name": "ELAN Microelectronics Corp.",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Semiconductors",
+      "description": "ELAN Microelectronics Corp. · Semiconductors",
+      "change_pct": 5.844155844155852,
+      "session_open": 77.80000305175781,
+      "session_close": 81.5,
+      "session_volume": 13031236.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2458",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2458.TW/history/",
+        "date": "2019-01-18",
+        "daily_high": 82.9000015258789,
+        "prior_all_time_or_current_month_high": 138.048095703125,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:2458",
+        "yahoo_symbol": "2458.TW"
+      }
+    },
+    {
+      "ticker": "6431.TW",
+      "name": "Kuangli Bio-Tech Holdings Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Electronic Components",
+      "description": "Kuangli Bio-Tech Holdings Co., Ltd. · Electronic Components",
+      "change_pct": 0.9374994211398979,
+      "session_open": 15.910319328308105,
+      "session_close": 16.109821319580078,
+      "session_volume": 351878.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:6431",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6431.TW/history/",
+        "date": "2019-01-18",
+        "daily_high": 16.109821319580078,
+        "prior_all_time_or_current_month_high": 29.376733779907227,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:6431",
+        "yahoo_symbol": "6431.TW"
+      }
+    },
+    {
+      "ticker": "8482.TW",
+      "name": "Shane Global Holding, Inc.",
+      "exchange": "TWSE",
+      "category": "Consumer Durables",
+      "high_type": "all_time",
+      "reason": "업종: Consumer Durables · Home Furnishings",
+      "description": "Shane Global Holding, Inc. · Home Furnishings",
+      "change_pct": 2.0000000000000018,
+      "session_open": 124.0,
+      "session_close": 127.5,
+      "session_volume": 588001.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:8482",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/8482.TW/history/",
+        "date": "2019-01-18",
+        "daily_high": 127.5,
+        "prior_all_time_or_current_month_high": 127.5,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:8482",
+        "yahoo_symbol": "8482.TW"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-10-30T08:01:50.093256+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 2359,
+    "history_symbols": 1828,
+    "inactive_symbols": 521,
+    "failed_symbols": 10,
+    "coverage_ratio": 0.9945593035908596,
+    "coverage_by_exchange": {
+      "TWSE": {
+        "covered": 956,
+        "total": 963
+      },
+      "TPEX": {
+        "covered": 872,
+        "total": 875
+      }
+    },
+    "session_symbols": 1786,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-10-30T08:01:50.093256+00:00"
+}

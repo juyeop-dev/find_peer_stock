@@ -1,0 +1,317 @@
+{
+  "schema_version": 1,
+  "market": "japan",
+  "date": "2019-04-11",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "2449.T",
+      "name": "PRAP Japan, Inc.",
+      "exchange": "TSE",
+      "category": "Commercial Services",
+      "high_type": "52_week",
+      "reason": "업종: Commercial Services · Miscellaneous Commercial Services",
+      "description": "PRAP Japan, Inc. · Miscellaneous Commercial Services",
+      "change_pct": 3.529411764705892,
+      "session_open": 1697.0,
+      "session_close": 1760.0,
+      "session_volume": 6000.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:2449",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2449.T/history/",
+        "date": "2019-04-11",
+        "daily_high": 1760.0,
+        "prior_all_time_or_current_month_high": 2589.0,
+        "passes_close_filter": true,
+        "source_symbol": "TSE:2449",
+        "yahoo_symbol": "2449.T"
+      }
+    },
+    {
+      "ticker": "3038.T",
+      "name": "Kobe Bussan Co., Ltd.",
+      "exchange": "TSE",
+      "category": "Retail Trade",
+      "high_type": "all_time",
+      "reason": "업종: Retail Trade · Food Retail",
+      "description": "Kobe Bussan Co., Ltd. · Food Retail",
+      "change_pct": 3.2258064516129004,
+      "session_open": 1082.5,
+      "session_close": 1120.0,
+      "session_volume": 2601600.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:3038",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3038.T/history/",
+        "date": "2019-04-11",
+        "daily_high": 1130.0,
+        "prior_all_time_or_current_month_high": 1130.0,
+        "passes_close_filter": true,
+        "source_symbol": "TSE:3038",
+        "yahoo_symbol": "3038.T"
+      }
+    },
+    {
+      "ticker": "3075.T",
+      "name": "Choushimaru Co., Ltd.",
+      "exchange": "TSE",
+      "category": "Consumer Services",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Services · Restaurants",
+      "description": "Choushimaru Co., Ltd. · Restaurants",
+      "change_pct": 0.5106382978723456,
+      "session_open": 1180.0,
+      "session_close": 1181.0,
+      "session_volume": 15600.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:3075",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3075.T/history/",
+        "date": "2019-04-11",
+        "daily_high": 1186.0,
+        "prior_all_time_or_current_month_high": 51300.0,
+        "passes_close_filter": true,
+        "source_symbol": "TSE:3075",
+        "yahoo_symbol": "3075.T"
+      }
+    },
+    {
+      "ticker": "4346.T",
+      "name": "NEXYZ.Group Corporation",
+      "exchange": "TSE",
+      "category": "Distribution Services",
+      "high_type": "52_week",
+      "reason": "업종: Distribution Services · Wholesale Distributors",
+      "description": "NEXYZ.Group Corporation · Wholesale Distributors",
+      "change_pct": 1.4421096003296219,
+      "session_open": 2416.0,
+      "session_close": 2462.0,
+      "session_volume": 52500.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:4346",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4346.T/history/",
+        "date": "2019-04-11",
+        "daily_high": 2484.0,
+        "prior_all_time_or_current_month_high": 5400.0,
+        "passes_close_filter": true,
+        "source_symbol": "TSE:4346",
+        "yahoo_symbol": "4346.T"
+      }
+    },
+    {
+      "ticker": "4575.T",
+      "name": "CanBas Co., Ltd.",
+      "exchange": "TSE",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Pharmaceuticals: Major",
+      "description": "CanBas Co., Ltd. · Pharmaceuticals: Major",
+      "change_pct": 0.0,
+      "session_open": 949.0,
+      "session_close": 1024.0,
+      "session_volume": 3087800.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:4575",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4575.T/history/",
+        "date": "2019-04-11",
+        "daily_high": 1024.0,
+        "prior_all_time_or_current_month_high": 3820.0,
+        "passes_close_filter": true,
+        "source_symbol": "TSE:4575",
+        "yahoo_symbol": "4575.T"
+      }
+    },
+    {
+      "ticker": "4725.T",
+      "name": "CAC Holdings Corporation",
+      "exchange": "TSE",
+      "category": "Technology Services",
+      "high_type": "52_week",
+      "reason": "업종: Technology Services · Packaged Software",
+      "description": "CAC Holdings Corporation · Packaged Software",
+      "change_pct": 3.890306122448983,
+      "session_open": 1567.0,
+      "session_close": 1629.0,
+      "session_volume": 236300.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:4725",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4725.T/history/",
+        "date": "2019-04-11",
+        "daily_high": 1649.0,
+        "prior_all_time_or_current_month_high": 2905.0,
+        "passes_close_filter": true,
+        "source_symbol": "TSE:4725",
+        "yahoo_symbol": "4725.T"
+      }
+    },
+    {
+      "ticker": "6572.T",
+      "name": "OPEN Group, Inc.",
+      "exchange": "TSE",
+      "category": "Technology Services",
+      "high_type": "52_week",
+      "reason": "업종: Technology Services · Packaged Software",
+      "description": "OPEN Group, Inc. · Packaged Software",
+      "change_pct": 0.8962868117797784,
+      "session_open": 1967.5,
+      "session_close": 1970.0,
+      "session_volume": 421200.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:6572",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6572.T/history/",
+        "date": "2019-04-11",
+        "daily_high": 1990.0,
+        "prior_all_time_or_current_month_high": 1999.0,
+        "passes_close_filter": true,
+        "source_symbol": "TSE:6572",
+        "yahoo_symbol": "6572.T"
+      }
+    },
+    {
+      "ticker": "6894.T",
+      "name": "PULSTEC INDUSTRIAL CO., LTD.",
+      "exchange": "TSE",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Medical Specialties",
+      "description": "PULSTEC INDUSTRIAL CO., LTD. · Medical Specialties",
+      "change_pct": 11.094224924012153,
+      "session_open": 3435.0,
+      "session_close": 3655.0,
+      "session_volume": 46200.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:6894",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6894.T/history/",
+        "date": "2019-04-11",
+        "daily_high": 3720.0,
+        "prior_all_time_or_current_month_high": 15300.0,
+        "passes_close_filter": true,
+        "source_symbol": "TSE:6894",
+        "yahoo_symbol": "6894.T"
+      }
+    },
+    {
+      "ticker": "7554.T",
+      "name": "KOURAKUEN CORPORATION",
+      "exchange": "TSE",
+      "category": "Consumer Services",
+      "high_type": "all_time",
+      "reason": "업종: Consumer Services · Restaurants",
+      "description": "KOURAKUEN CORPORATION · Restaurants",
+      "change_pct": 6.30449362843728,
+      "session_open": 3005.0,
+      "session_close": 3170.0,
+      "session_volume": 525900.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:7554",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/7554.T/history/",
+        "date": "2019-04-11",
+        "daily_high": 3185.0,
+        "prior_all_time_or_current_month_high": 3185.0,
+        "passes_close_filter": true,
+        "source_symbol": "TSE:7554",
+        "yahoo_symbol": "7554.T"
+      }
+    },
+    {
+      "ticker": "8111.T",
+      "name": "Goldwin Inc.",
+      "exchange": "TSE",
+      "category": "Consumer Non-Durables",
+      "high_type": "all_time",
+      "reason": "업종: Consumer Non-Durables · Apparel/Footwear",
+      "description": "Goldwin Inc. · Apparel/Footwear",
+      "change_pct": 1.403508771929829,
+      "session_open": 2856.666748046875,
+      "session_close": 2890.0,
+      "session_volume": 838200.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:8111",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/8111.T/history/",
+        "date": "2019-04-11",
+        "daily_high": 2913.333251953125,
+        "prior_all_time_or_current_month_high": 2913.333251953125,
+        "passes_close_filter": true,
+        "source_symbol": "TSE:8111",
+        "yahoo_symbol": "8111.T"
+      }
+    },
+    {
+      "ticker": "9450.T",
+      "name": "Fibergate, Inc.",
+      "exchange": "TSE",
+      "category": "Communications",
+      "high_type": "all_time",
+      "reason": "업종: Communications · Specialty Telecommunications",
+      "description": "Fibergate, Inc. · Specialty Telecommunications",
+      "change_pct": 3.220858895705514,
+      "session_open": 1645.0,
+      "session_close": 1682.5,
+      "session_volume": 227600.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:9450",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/9450.T/history/",
+        "date": "2019-04-11",
+        "daily_high": 1710.0,
+        "prior_all_time_or_current_month_high": 1710.0,
+        "passes_close_filter": true,
+        "source_symbol": "TSE:9450",
+        "yahoo_symbol": "9450.T"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-10-30T08:04:28.745477+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 3761,
+    "history_symbols": 3170,
+    "inactive_symbols": 590,
+    "failed_symbols": 1,
+    "coverage_ratio": 0.9996846420687481,
+    "coverage_by_exchange": {
+      "TSE": {
+        "covered": 3170,
+        "total": 3171
+      }
+    },
+    "session_symbols": 3107,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-10-30T08:04:28.745477+00:00"
+}

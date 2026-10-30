@@ -1,5 +1,6 @@
 from datetime import datetime, timedelta, timezone
 import json
+import gzip
 from pathlib import Path
 import sqlite3
 import sys
@@ -72,7 +73,7 @@ class StockInformationTests(unittest.TestCase):
             rows = [{"ticker": "EURONEXT:MC", "order": 1}, {"ticker": "A", "order": 2}]
             with patch.object(info, "ROOT", root), patch.object(info, "PACKS", root / "packs"), patch.object(info, "AUDIT", root / "audit"), patch.object(info, "sync_primary_snapshots"):
                 info.export(db); info.publish(); info.checkpoint(db, rows)
-                saved = json.loads((root / "frontend/public/data/stock-information/EURONEXT~3AMC.json").read_text(encoding="utf-8"))
+                saved = json.loads(gzip.decompress((root / "frontend/public/data/stock-information/EURONEXT~3AMC.json.gz").read_bytes()))
                 self.assertEqual(saved, value)
                 progress = json.loads((root / "audit/progress.json").read_text(encoding="utf-8"))
                 self.assertEqual(progress["checked"], 1)
