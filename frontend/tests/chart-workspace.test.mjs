@@ -7,7 +7,7 @@ async function load(path) {
   const js=ts.transpileModule(source,{compilerOptions:{module:ts.ModuleKind.ESNext,target:ts.ScriptTarget.ES2022}}).outputText;
   return import(`data:text/javascript;base64,${Buffer.from(js).toString('base64')}`);
 }
-const {compareHistories,movingAverage,clampWindow,zoomWindow,parseDrawings,drawingStorageKey,nearestDate}=await load('../src/dataClient/chartWorkspace.ts');
+const {compareHistories,movingAverage,clampWindow,zoomWindow,parseDrawings,drawingStorageKey,nearestDate,channelSegments,measureChange}=await load('../src/dataClient/chartWorkspace.ts');
 const {searchChartSymbols}=await load('../src/dataClient/chartComparisonClient.ts');
 const point=(date,close,adjusted_close=close)=>({date,close,adjusted_close,volume:null});
 const base={ticker:'BASE',name:'Base',currency:'KRW',color:'#000000',history:[point('2026-01-02',100),point('2026-01-05',50,100),point('2026-01-06',55,110),point('2026-01-07',60,120)]};
@@ -60,4 +60,30 @@ test('date anchoring and symbol search preserve listing identity, Korean names, 
   assert.equal(searchChartSymbols(rows,'하이닉스',[])[0].ticker,'000660.KS');
   assert.deepEqual(searchChartSymbols(rows,'AAPL',['AAPL2']).map(row=>row.ticker),['AAPL']);
   assert.equal(searchChartSymbols(rows,'aapl',[])[0].ticker,'AAPL');
+});
+
+test('parallel channels preserve the trend slope and put the middle line exactly halfway, including negative offsets',()=>{
+  const trend={id:'trend',type:'trend',scale:'price',start:{date:'2026-01-02',value:100},end:{date:'2026-01-07',value:160},color:'#123456',channel:{offset:40,visible:true,middle:true}};
+  const channel=channelSegments(trend);
+  assert.deepEqual(channel.parallel,{start:{date:'2026-01-02',value:140},end:{date:'2026-01-07',value:200}});
+  assert.deepEqual(channel.middle,{start:{date:'2026-01-02',value:120},end:{date:'2026-01-07',value:180}});
+  assert.equal(channel.parallel.end.value-channel.parallel.start.value,trend.end.value-trend.start.value);
+  assert.equal(channelSegments({...trend,channel:{...trend.channel,offset:-20}}).middle.start.value,90);
+  assert.equal(channelSegments({...trend,channel:{...trend.channel,visible:false}}),null);
+  assert.equal(channelSegments({...trend,type:'horizontal'}),null);
+  assert.equal(trend.start.value,100);
+});
+test('legacy drawings and channel preferences restore without accepting malformed channel settings',()=>{
+  const old={id:'one',type:'trend',scale:'price',start:{date:'2026-01-02',value:100},end:{date:'2026-01-07',value:120},color:'#123456'};
+  const current={...old,channel:{offset:-25.25,visible:true,middle:false}};
+  assert.deepEqual(parseDrawings(JSON.stringify([old,current,{...old,channel:{offset:'bad',visible:true,middle:true}}])),[old,current,old]);
+});
+test('reference measurement reports signed price returns and handles a zero or negative percentage-axis baseline correctly',()=>{
+  assert.deepEqual(measureChange(100,120,'price'),{delta:20,percent:20});
+  assert.deepEqual(measureChange(100,80,'price'),{delta:-20,percent:-20});
+  assert.deepEqual(measureChange(0,10,'price'),{delta:10,percent:null});
+  assert.deepEqual(measureChange(0,10,'percent'),{delta:10,percent:10});
+  assert.deepEqual(measureChange(-50,-40,'percent'),{delta:10,percent:20});
+  assert.deepEqual(measureChange(100,120,'percent'),{delta:20,percent:10});
+  assert.equal(measureChange(-100,-90,'percent').percent,null);
 });

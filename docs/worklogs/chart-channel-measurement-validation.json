@@ -1,0 +1,25 @@
+{
+  "checked_at": "2026-10-30T11:20:02.168541+00:00",
+  "typecheck": "passed",
+  "frontend_tests": 48,
+  "artifact_bytes": 1004457046,
+  "artifact_MiB": 957.92,
+  "artifact_files": 99667,
+  "production_base_api_and_404": "passed",
+  "browser": {
+    "result": "PASS",
+    "site": "http://127.0.0.1:4193/find_peer_stock",
+    "checks": "Parallel/middle channel geometry, draggable spacing, flip and persistence; pinned-click reference price returns and percentage-axis return conversion for all series; mouse and touch reference inspection; real Korean/global comparisons, provider failure retention; drawing editing/undo/storage, zoom/pan, MA, 2019 range, 1440/390/320px"
+  },
+  "tooltip": {
+    "result": "PASS",
+    "checks": 36,
+    "routes": 4,
+    "widths": [
+      1440,
+      900,
+      390
+    ],
+    "gap": "12px below active point, clamped to visible scrolled chart"
+  }
+}

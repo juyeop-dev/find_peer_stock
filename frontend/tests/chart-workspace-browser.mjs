@@ -52,6 +52,28 @@ try {
   await navigate('/semiconductors/000660.KS');await chartReady();
   await clickText('추세선');await tap(await plotPoint(.2,.7));await tap(await plotPoint(.8,.3));
   await until(async()=>await drawingCount()===1,'Two-click trend line was not drawn');
+  assert.equal(await evaluate("document.querySelector('[aria-label=\"평행선 표시\"]').disabled"),false,'A completed trend must immediately expose channel controls');
+  await evaluate("document.querySelector('[aria-label=\"평행선 표시\"]').click();document.querySelector('[aria-label=\"중간선 표시\"]').click()");
+  await until(()=>evaluate("document.querySelectorAll('.chartParallelLine').length===1&&document.querySelectorAll('.chartMiddleLine').length===1"),'Parallel and middle lines did not render');
+  const assertChannel=async()=>{
+    const lines=await evaluate("(()=>{const drawing=document.querySelector('.chartDrawing:has(.chartParallelLine)'),base=drawing.querySelector('line'),parallel=drawing.querySelector('.chartParallelLine'),middle=drawing.querySelector('.chartMiddleLine');return [base,parallel,middle].map(line=>['x1','x2','y1','y2'].map(key=>Number(line.getAttribute(key))));})()");
+    assert.deepEqual(lines[0].slice(0,2),lines[1].slice(0,2));
+    assert.ok(Math.abs((lines[0][3]-lines[0][2])-(lines[1][3]-lines[1][2]))<1e-8);
+    for(const index of [2,3])assert.ok(Math.abs(lines[2][index]-(lines[0][index]+lines[1][index])/2)<1e-8);
+  };
+  await assertChannel();
+  const originalOffset=await evaluate("Number(document.querySelector('[aria-label=\"평행선 간격\"]').value)");
+  const channelHandle=await evaluate("(()=>{const node=document.querySelector('.chartChannelHandle');node.scrollIntoView({block:'center'});const p=new DOMPoint(+node.getAttribute('cx'),+node.getAttribute('cy')).matrixTransform(node.ownerSVGElement.getScreenCTM());return{x:p.x,y:p.y};})()");
+  await mouse('mousePressed',channelHandle,1);await mouse('mouseMoved',{x:channelHandle.x,y:channelHandle.y-18},1);await mouse('mouseReleased',{x:channelHandle.x,y:channelHandle.y-18});
+  assert.notEqual(await evaluate("Number(document.querySelector('[aria-label=\"평행선 간격\"]').value)"),originalOffset,'Channel handle did not adjust spacing');
+  await assertChannel();
+  const beforeFlip=await evaluate("Number(document.querySelector('[aria-label=\"평행선 간격\"]').value)");
+  await clickText('위·아래 반전');
+  assert.ok(Math.abs(await evaluate("Number(document.querySelector('[aria-label=\"평행선 간격\"]').value)")+beforeFlip)<.1);
+  await assertChannel();await clickText('위·아래 반전');
+  await evaluate("(()=>{const input=document.querySelector('[aria-label=\"평행선 간격\"]');input.focus();Object.getOwnPropertyDescriptor(HTMLInputElement.prototype,'value').set.call(input,'125.5');input.blur();})()");
+  assert.equal(await evaluate("Number(document.querySelector('[aria-label=\"평행선 간격\"]').value)"),125.5,'Numeric channel spacing was not committed');
+  await assertChannel();await clickText('실행 취소');
   await clickText('수평선');await tap(await plotPoint(.5,.65));
   await clickText('수직선');await tap(await plotPoint(.4,.4));
   assert.equal(await drawingCount(),3);
@@ -60,7 +82,7 @@ try {
   await clickText('＋ 확대');
   await until(()=>evaluate(`document.querySelector('.chartRangeControls').innerText!==${JSON.stringify(oldRange)}`),'Zoom did not change the visible session count');
   const zoomed=await evaluate("document.querySelector('.chartRangeControls input').value");
-  const panStart=await plotPoint(.65,.2),panEnd=await plotPoint(.3,.2);
+  const panStart=await plotPoint(.65,.97),panEnd=await plotPoint(.3,.97);
   await mouse('mousePressed',panStart,1);await mouse('mouseMoved',panEnd,1);await mouse('mouseReleased',panEnd);
   assert.notEqual(await evaluate("document.querySelector('.chartRangeControls input').value"),zoomed,'Drag did not pan the zoomed timeline');
   await clickText('범위 초기화');
@@ -81,8 +103,39 @@ try {
   await clickText('2019년~','.stockHistoryChart .semiPeriodTabs');await chartReady();assert.equal(await drawingCount(),3);
   assert.ok((await evaluate("document.querySelector('.stockChartCanvas').getAttribute('aria-label')")).includes('2018-12'));
   await send('Page.reload',{ignoreCache:true});await chartReady();assert.equal(await drawingCount(),3,'Drawings were not restored after refresh');
+  assert.equal(await evaluate("document.querySelectorAll('.chartParallelLine').length+document.querySelectorAll('.chartMiddleLine').length"),2,'Saved channel settings did not restore');
   await navigate('/semiconductors/005930.KS');await chartReady();assert.equal(await drawingCount(),0,'Another ticker inherited drawings');
   await navigate('/semiconductors/000660.KS');await chartReady();assert.equal(await drawingCount(),3);
+  const verifyMeasurement=async(scale)=>{
+    const values=await evaluate("[...document.querySelectorAll('[data-measure-series]')].map(node=>({from:Number(node.dataset.from),to:Number(node.dataset.to),percent:Number(node.dataset.percent),text:node.querySelector('strong').innerText}))");
+    assert.ok(values.length>0,'Reference measurement did not appear');
+    for(const value of values) {
+      const expected=(value.to-value.from)/(scale==='percent'?100+value.from:value.from)*100;
+      assert.ok(Math.abs(value.percent-expected)<1e-8,JSON.stringify(value));
+      assert.equal(value.text,`${expected>=0?'+':''}${expected.toFixed(2)}%`);
+    }
+  };
+  await clickText('기준점 선택');await tap(await plotPoint(.25,.5));
+  await mouse('mouseMoved',await plotPoint(.75,.4));await verifyMeasurement('price');
+  const referenceText=await evaluate("document.querySelector('.chartMeasurementDates').innerText.split('→')[0]");
+  await tap(await plotPoint(.6,.4));
+  assert.equal(await evaluate("document.querySelector('.chartMeasurementDates').innerText.split('→')[0]"),referenceText,'Inspecting a second point replaced the reference');
+  await verifyMeasurement('price');
+  await clickText('＋ 확대');await mouse('mouseMoved',await plotPoint(.7,.4));await verifyMeasurement('price');
+  assert.equal(await evaluate("document.querySelector('.chartMeasurementDates').innerText.split('→')[0]"),referenceText,'Zoom changed the pinned reference date');
+  await clickText('범위 초기화');
+  await clickText('기준점 다시 선택');await tap(await plotPoint(.4,.5));await mouse('mouseMoved',await plotPoint(.8,.3));await verifyMeasurement('price');
+  assert.notEqual(await evaluate("document.querySelector('.chartMeasurementDates').innerText.split('→')[0]"),referenceText);
+  await evaluate("(()=>{const select=document.querySelector('[aria-label=\"채널을 설정할 추세선\"]');select.value=select.options[1].value;select.dispatchEvent(new Event('change',{bubbles:true}));})()");
+  for(const width of [1440,320]) {
+    await send('Emulation.setDeviceMetricsOverride',{width,height:1100,deviceScaleFactor:1,mobile:false});await delay(150);
+    assert.equal(await evaluate('document.documentElement.scrollWidth>innerWidth'),false,'Channel UI overflows at '+width);
+    await evaluate("document.querySelector('.chartChannelSettings').scrollIntoView({block:'start'})");
+    const shot=await send('Page.captureScreenshot',{format:'png'}),folder=new URL('../../data/tmp_chart_channels/ui/',import.meta.url);await mkdir(folder,{recursive:true});await writeFile(new URL(`channel-${width}.png`,folder),Buffer.from(shot.data,'base64'));
+  }
+  await send('Emulation.setDeviceMetricsOverride',{width:1440,height:1100,deviceScaleFactor:1,mobile:false});
+  await clickText('기준점 해제');assert.equal(await evaluate("document.querySelectorAll('[data-measure-series]').length"),0);
+  console.log('PASS parallel/middle channel geometry, draggable/numeric spacing, flip, persistence, pinned-reference returns and mobile layout');
   console.log('PASS persistence, ticker isolation, moving average and 2019 range');
   await add('005930.KS','삼성전자');
   await until(()=>evaluate("document.querySelectorAll('.stockChartCanvas .semiLine').length===2"),'Comparison series failed to load');
@@ -92,6 +145,8 @@ try {
   assert.equal(starts[0],starts[1],'Comparison lines must begin at the same date and 0%');
   assert.equal(await drawingCount(),0,'Price drawings leaked into return coordinates');
   await add('AAPL');await until(()=>evaluate("document.querySelectorAll('.stockChartCanvas .semiLine').length===3"),'Cross-currency comparison failed to load');
+  await clickText('기준점 선택');await tap(await plotPoint(.3,.5));await mouse('mouseMoved',await plotPoint(.7,.3));await verifyMeasurement('percent');
+  assert.equal(await evaluate("document.querySelectorAll('[data-measure-series]').length"),3,'Every comparison series needs its own reference return');
   console.log('PASS Korean-name search and cross-currency common-date comparisons');
   for(const width of [1440,390,320]) {
     await send('Emulation.setDeviceMetricsOverride',{width,height:1100,deviceScaleFactor:1,mobile:false});await delay(150);
@@ -132,8 +187,14 @@ try {
   await send('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[]});
   await until(async()=>await drawingCount()===4,'Touch drawing did not create a horizontal line');
   await clickText('실행 취소');assert.equal(await drawingCount(),3);
+  await clickText('기준점 선택');
+  const referenceTouch=await plotPoint(.2,.5);
+  await send('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[{...referenceTouch,radiusX:1,radiusY:1,force:1}]});await send('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[]});
+  const inspectTouch=await plotPoint(.75,.4);
+  await send('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[{...inspectTouch,radiusX:1,radiusY:1,force:1}]});await send('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[]});
+  await verifyMeasurement('price');
   assert.deepEqual(exceptions,[]);
-  console.log(JSON.stringify({result:'PASS',site:base,checks:'Real Korean-name and global ticker search; adjusted common-date cross-currency comparisons; missing overlap and provider failure; trend/horizontal/vertical drawing, endpoint editing, delete/undo/clear, per-ticker persistence and coordinate modes; zoom, drag pan, moving average, 2019 range, expanded view, touch drawing, 1440/390/320px'}));
+  console.log(JSON.stringify({result:'PASS',site:base,checks:'Parallel/middle channel geometry, draggable spacing, flip and persistence; pinned-click reference price returns and percentage-axis return conversion for all series; mouse and touch reference inspection; real Korean/global comparisons, provider failure retention; drawing editing/undo/storage, zoom/pan, MA, 2019 range, 1440/390/320px'}));
 } finally {
   if(send&&socket?.readyState===WebSocket.OPEN)await send('Browser.close').catch(()=>{});socket?.close();browser.kill();
   assert.ok(resolve(profile).startsWith(resolve(tmpdir())+sep));await rm(profile,{recursive:true,force:true,maxRetries:10,retryDelay:100});

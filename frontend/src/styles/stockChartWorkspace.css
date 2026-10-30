@@ -39,9 +39,33 @@
 .stockChartWorkspace .chartNavigation button { min-height: 31px; padding: 5px 8px; border: 1px solid #dce6e9; border-radius: 5px; background: #fff; color: #56717f; font-size: 11px; }
 .chartNavigation button:hover:not(:disabled) { background: #edf7f7; border-color: #7ab9bf; }
 .chartToolbarDivider { width: 1px; height: 18px; margin: 0 4px; background: #dce6e9; }
+.chartChannelSettings { display: flex; align-items: end; flex-wrap: wrap; gap: 10px 16px; padding: 12px; margin: 10px 0; border: 1px solid #dce9ec; border-radius: 8px; background: #f7fafb; }
+.chartChannelSettings > label { display: inline-flex; align-items: center; gap: 5px; min-height: 32px; color: #567480; font-size: 11px; }
+.chartChannelSettings .chartTrendSelect, .chartChannelSettings .chartChannelOffset { display: flex; flex-direction: column; align-items: stretch; gap: 5px; }
+.chartTrendSelect { flex: 1 1 200px; min-width: 0; }
+.stockChartWorkspace .chartTrendSelect select { box-sizing: border-box; width: 100%; max-width: 100%; min-height: 33px; padding: 6px 8px; border: 1px solid #cbdce1; border-radius: 5px; background: #fff; color: #345965; font-size: 11px; }
+.chartChannelSettings input[type="checkbox"] { accent-color: #137d87; }
+.stockChartWorkspace .chartChannelOffset input { box-sizing: border-box; width: 120px; min-height: 33px; padding: 6px 8px; border: 1px solid #cbdce1; border-radius: 5px; background: #fff; color: #345965; font-size: 12px; }
+.stockChartWorkspace .chartChannelSettings button, .stockChartWorkspace .chartMeasurementHeading button { min-height: 33px; padding: 6px 9px; border: 1px solid #b9d2d8; border-radius: 5px; background: #fff; color: #276c78; font-size: 11px; }
+.chartMeasurementPanel { margin: 10px 0; padding: 12px; border: 1px solid #cddfe4; border-radius: 8px; background: #f1f8f9; }
+.chartMeasurementHeading { display: flex; align-items: center; flex-wrap: wrap; gap: 7px; }
+.chartMeasurementHeading > strong { margin-right: auto; color: #355f6c; font-size: 12px; }
+.chartMeasurementPanel > p { margin: 9px 0 0; color: #6c858e; font-size: 11px; line-height: 1.7; }
+.chartMeasurementHeading button[aria-pressed="true"] { background: #137d87; color: white; }
+.chartMeasurementValues { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(180px, 100%), 1fr)); gap: 9px; margin-top: 9px; }
+.chartMeasurementValues > div { display: flex; flex-wrap: wrap; align-items: baseline; gap: 7px; padding: 10px; border: 1px solid #dbe8ec; border-radius: 6px; background: #fff; min-width: 0; }
+.chartMeasurementValues span { flex: 1; min-width: 80px; color: #52717d; font-size: 11px; overflow-wrap: anywhere; }
+.chartMeasurementValues i { display: inline-block; width: 7px; height: 7px; margin-right: 5px; border-radius: 50%; }
+.chartMeasurementValues strong { font-size: 17px; font-variant-numeric: tabular-nums; }
+.chartMeasurementValues small { flex-basis: 100%; color: #83959d; font-size: 10px; line-height: 1.6; overflow-wrap: anywhere; }
+.chartChannelHit, .chartChannelHandle { cursor: ns-resize; }
+.chartReferenceLine { stroke: #557c8d; stroke-width: 1.5; stroke-dasharray: 5 4; }
+.chartReferenceDot { fill: #fff; stroke: #137d87; stroke-width: 2; }
+.chartMeasurementShade { fill: #248d9a; opacity: .05; }
 .stockChartCanvas.semiChart { position: relative; overflow: hidden; padding-bottom: 58px; border: 1px solid #e3ecef; border-radius: 8px; background: #fcfefe; }
 .stockChartCanvas.semiChart svg { width: 100%; min-width: 0; height: auto; touch-action: pan-y; user-select: none; }
 .stockChartCanvas:has(.chartDrawingHandle) svg { touch-action: none; }
+.stockChartCanvas:has(.chartChannelHandle) svg { touch-action: none; }
 .stockChartCanvas svg[data-tool]:not([data-tool="move"]) { touch-action: none; }
 .stockChartCanvas .semiAxisText { fill: #82949e; font-size: 10px; }
 .chartPriceLine { stroke-width: 2; }

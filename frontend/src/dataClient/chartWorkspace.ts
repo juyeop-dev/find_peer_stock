@@ -6,6 +6,7 @@ export interface Anchor { date: string; value: number }
 export interface ChartDrawing {
   id: string; type: Exclude<DrawingTool, "move">; scale: ChartScale;
   start: Anchor; end: Anchor; color: string;
+  channel?: { offset: number; visible: boolean; middle: boolean };
 }
 export interface PlotPoint { date: string; value: number }
 export interface ComparisonInput { ticker: string; name: string; currency: string; history: SemiconductorPrice[]; color: string }
@@ -56,10 +57,25 @@ export function parseDrawings(raw: string | null): ChartDrawing[] {
     if (!Array.isArray(value)) return [];
     const anchor = (p: Anchor) => p && /^\d{4}-\d{2}-\d{2}$/.test(p.date) && Number.isFinite(p.value);
     return value.filter((d: ChartDrawing) => d && typeof d.id === "string" && ["trend", "horizontal", "vertical"].includes(d.type)
-      && ["price", "percent"].includes(d.scale) && anchor(d.start) && anchor(d.end) && /^#[\da-f]{6}$/i.test(d.color)).slice(-100);
+      && ["price", "percent"].includes(d.scale) && anchor(d.start) && anchor(d.end) && /^#[\da-f]{6}$/i.test(d.color)).slice(-100).map((d: ChartDrawing) => {
+        const { channel, ...base } = d;
+        return d.type === "trend" && channel && Number.isFinite(channel.offset) && typeof channel.visible === "boolean" && typeof channel.middle === "boolean"
+          ? { ...base, channel: { offset: channel.offset, visible: channel.visible, middle: channel.middle } } : base;
+      });
   } catch { return []; }
 }
 export const drawingStorageKey = (ticker: string, basis = "") => `stock-peer:drawings:v1:${ticker.toUpperCase()}:${basis}`;
+
+export function channelSegments(drawing: ChartDrawing): { parallel: { start: Anchor; end: Anchor }; middle?: { start: Anchor; end: Anchor } } | null {
+  if (drawing.type !== "trend" || !drawing.channel?.visible) return null;
+  const shift = (offset: number) => ({ start: { ...drawing.start, value: drawing.start.value + offset }, end: { ...drawing.end, value: drawing.end.value + offset } });
+  return { parallel: shift(drawing.channel.offset), ...(drawing.channel.middle ? { middle: shift(drawing.channel.offset / 2) } : {}) };
+}
+
+export function measureChange(from: number, to: number, scale: ChartScale): { delta: number; percent: number | null } {
+  const denominator = scale === "percent" ? 100 + from : from;
+  return { delta: to - from, percent: Number.isFinite(from) && Number.isFinite(to) && denominator > 0 ? (to - from) / denominator * 100 : null };
+}
 
 export function nearestDate(dates: string[], date: string): number {
   let left = 0, right = dates.length;
