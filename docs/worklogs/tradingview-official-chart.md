@@ -29,4 +29,8 @@
 - [전체 사이트와 라이브러리의 기능 차이](https://www.tradingview.com/charting-library-docs/latest/resources/Frequently-Asked-Questions/)
 - [라이브러리 공식 배포·접근 범위](https://www.tradingview.com/charting-library-docs/latest/quick-start/)
 
-타입 검사와 프런트엔드 51개 테스트, 공식 위젯의 실제 메뉴·모바일·KRX 제한·스크립트 실패/재시도, 기존 저장 차트의 채널·기준점·비교 회귀 검사 및 툴팁 36건을 통과했다. 운영 배포 결과는 완료 후 기록한다.
+타입 검사와 프런트엔드 51개 테스트, 공식 위젯의 실제 메뉴·모바일·KRX 제한·스크립트 실패/재시도, 기존 저장 차트의 채널·기준점·비교 회귀 검사 및 툴팁 36건을 통과했다. [운영 배포 실행 41057938523](https://github.com/juyeop-dev/find_peer_stock/actions/runs/41057938523)의 빌드·공개와 공개 후 공식 메뉴·저장 분석·모바일 검증까지 통과했다.
+
+운영 사이트: https://juyeop-dev.github.io/find_peer_stock/
+
+배포 소스: `147772679f45f72e2b968526bbc0fb02e3e88753`. 실제 제공 도구 목록과 공개 검증은 `tradingview-official-validation.json`에 기록했다. KRX 외부 표시 제한과 원본 사이트에서만 제공되는 계정 기능의 구분도 유지한다.
