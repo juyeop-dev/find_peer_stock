@@ -1,0 +1,112 @@
+{
+  "checked_at": "2026-10-30T09:37:23.766305+00:00",
+  "base": "https://juyeop-dev.github.io/find_peer_stock",
+  "markets": {
+    "new-highs": {
+      "korea": 246,
+      "us": 252,
+      "japan": 241,
+      "china": 244,
+      "taiwan": 242,
+      "europe": 256
+    },
+    "turnover": {
+      "korea": 246,
+      "us": 252,
+      "japan": 241,
+      "china": 244,
+      "taiwan": 242,
+      "europe": 256
+    }
+  },
+  "reports": [
+    {
+      "path": "data/new-highs/korea/2019-01-02.json.gz",
+      "entries": 9,
+      "historical_values_match_local": true
+    },
+    {
+      "path": "data/new-highs/us/2019-01-02.json.gz",
+      "entries": 11,
+      "historical_values_match_local": true
+    },
+    {
+      "path": "data/new-highs/japan/2019-01-04.json.gz",
+      "entries": 7,
+      "historical_values_match_local": true
+    },
+    {
+      "path": "data/new-highs/china/2019-01-02.json.gz",
+      "entries": 8,
+      "historical_values_match_local": true
+    },
+    {
+      "path": "data/new-highs/taiwan/2019-01-02.json.gz",
+      "entries": 12,
+      "historical_values_match_local": true
+    },
+    {
+      "path": "data/new-highs/europe/2019-01-02.json.gz",
+      "entries": 7,
+      "historical_values_match_local": true
+    },
+    {
+      "path": "data/turnover/korea/2019_01/2019-01-02.json.gz",
+      "entries": 30,
+      "historical_values_match_local": true
+    },
+    {
+      "path": "data/turnover/us/2019_01/2019-01-02.json.gz",
+      "entries": 30,
+      "historical_values_match_local": true
+    },
+    {
+      "path": "data/turnover/japan/2019_01/2019-01-04.json.gz",
+      "entries": 30,
+      "historical_values_match_local": true
+    },
+    {
+      "path": "data/turnover/china/2019_01/2019-01-02.json.gz",
+      "entries": 30,
+      "historical_values_match_local": true
+    },
+    {
+      "path": "data/turnover/taiwan/2019_01/2019-01-02.json.gz",
+      "entries": 30,
+      "historical_values_match_local": true
+    },
+    {
+      "path": "data/turnover/europe/2019_01/2019-01-02.json.gz",
+      "entries": 30,
+      "historical_values_match_local": true
+    }
+  ],
+  "investors_2019_days": 246,
+  "credit_2019_days": 247,
+  "sector_2019_days": 246,
+  "AAPL": {
+    "reported_2019_periods": 5,
+    "first_price": "2018-12-20"
+  },
+  "NVDA": {
+    "reported_2019_periods": 5,
+    "first_price": "2018-12-27"
+  },
+  "MU": {
+    "reported_2019_periods": 5,
+    "first_price": "2018-12-27"
+  },
+  "AMD": {
+    "reported_2019_periods": 5,
+    "first_price": "2018-12-20"
+  },
+  "recovered_dates": {
+    "2330.TW": [
+      "2019-09-09"
+    ],
+    "600000.SS": [
+      "2019-04-29",
+      "2019-04-30"
+    ]
+  }
+}
