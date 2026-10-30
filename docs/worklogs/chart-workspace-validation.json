@@ -25,5 +25,27 @@
     ],
     "gap": "12px below active point, clamped to visible scrolled chart"
   },
-  "historical_2019_browser": "PASS 2019: eight detail routes, January 2019 start, reported financials, mobile widths, original information/history refresh."
+  "historical_2019_browser": "PASS 2019: eight detail routes, January 2019 start, reported financials, mobile widths, original information/history refresh.",
+  "production": {
+    "checked_at": "2026-10-30T10:43:35.462258+00:00",
+    "source_commit": "d60c3010d4433e028e5478b7e5ee5351830bdeb6",
+    "workflow_url": "https://github.com/juyeop-dev/find_peer_stock/actions/runs/41041600372",
+    "workflow_result": "success",
+    "browser": {
+      "result": "PASS",
+      "site": "https://juyeop-dev.github.io/find_peer_stock",
+      "checks": "Real Korean-name and global ticker search; adjusted common-date cross-currency comparisons; missing overlap and provider failure; trend/horizontal/vertical drawing, endpoint editing, delete/undo/clear, per-ticker persistence and coordinate modes; zoom, drag pan, moving average, 2019 range, expanded view, touch drawing, 1440/390/320px"
+    },
+    "tooltip": {
+      "result": "PASS",
+      "checks": 36,
+      "routes": 4,
+      "widths": [
+        1440,
+        900,
+        390
+      ],
+      "gap": "12px below active point, clamped to visible scrolled chart"
+    }
+  }
 }
