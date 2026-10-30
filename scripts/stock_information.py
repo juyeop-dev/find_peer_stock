@@ -392,8 +392,30 @@ def publish():
             (target / filename).unlink(missing_ok=True)
             all_information[ticker] = value
             count += 1
+    publish_chart_catalog(all_information)
     sync_primary_snapshots(all_information)
     print(f"Published {count} stock information snapshots", flush=True)
+
+
+def publish_chart_catalog(information):
+    """Searchable listings for chart comparisons; no quotes or financial data."""
+    roster_path = ROOT / "data/information-audit/results.jsonl"
+    roster = {}
+    if roster_path.exists():
+        for line in roster_path.read_text(encoding="utf-8").splitlines():
+            if line.strip():
+                row = json.loads(line)
+                roster[row["ticker"]] = row
+    entries = []
+    for ticker in sorted(set(information) | set(roster)):
+        company = information.get(ticker, {}).get("company") or {}
+        row = roster.get(ticker, {})
+        entries.append({"ticker": ticker, "name": row.get("name") or company.get("name") or ticker,
+                        "exchange": row.get("exchange") or company.get("exchange") or "", "market": row.get("market") or ""})
+    path = ROOT / "frontend/public/data/chart-catalog.json.gz"
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_bytes(gzip.compress(json.dumps(entries, ensure_ascii=False, separators=(",", ":"), allow_nan=False).encode("utf-8"), compresslevel=9, mtime=0))
+    return entries
 
 
 def sync_primary_snapshots(information):

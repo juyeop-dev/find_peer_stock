@@ -16,7 +16,7 @@
     "test:stock-details": "node --test tests/stock-detail-links.test.mjs",
     "test:stock-details:browser": "node tests/stock-details-browser.mjs",
     "test:live-refresh:browser": "node tests/live-refresh-browser.mjs",
-    "test:stock-history": "node --test tests/stock-history.test.mjs tests/historical-report-client.test.mjs",
+    "test:stock-history": "node --test tests/stock-history.test.mjs tests/historical-report-client.test.mjs tests/chart-workspace.test.mjs",
     "test:stock-information": "node --test tests/stock-information.test.mjs",
     "test:stock-information:production": "node tests/stock-information-production.mjs",
     "test:sectors": "node --test tests/sector-rankings.test.mjs tests/sector-history-client.test.mjs ../tests/sector-archive.test.mjs",
@@ -40,7 +40,8 @@
     "test:stock-information:2020": "node tests/stock-information-2020-browser.mjs",
     "test:investor-flows:2020": "node tests/investor-flows-2020-browser.mjs",
     "test:stock-information:2019": "node tests/stock-information-2019-browser.mjs",
-    "test:investor-flows:2019": "node tests/investor-flows-2019-browser.mjs"
+    "test:investor-flows:2019": "node tests/investor-flows-2019-browser.mjs",
+    "test:chart-workspace:browser": "node tests/chart-workspace-browser.mjs"
   },
   "dependencies": {
     "react": "^19.0.0",

@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
-import { SemiconductorLineChart } from "./SemiconductorLineChart";
+import { StockChartWorkspace } from "./StockChartWorkspace";
 import { ErrorNotice } from "./ErrorNotice";
 import { LoadingSpinner } from "./LoadingSpinner";
 import { usePollingData } from "../dataClient/usePollingData";
@@ -40,9 +40,9 @@ export function StockHistoryChart({ ticker, name, exchange, currency, history, s
     {oldHistory ? <p className="semiFootnote" role="status">제공처의 최근 일봉은 {latest!.date}입니다. 이후 제공되지 않은 가격은 채우지 않습니다.</p> : null}
     {daily.length > 0 && !covered ? <p className="semiFootnote" role="status">{shortListing ? `제공 이력은 1년 미만입니다. 최초 거래일: ${shown?.first_trade_date}` : "최근 1년 전체 이력이 부족합니다. 제공처에서 확인된 날짜만 표시합니다."}</p> : null}
     {(period === "since2025" || period === "since2024H2" || period === "since2024" || period === "since2023" || period === "since2022" || period === "since2021" || period === "since2020" || period === "since2019") && latest && points.length > 0 && points[0].date > chartStart(latest.date, period) ? <p className="semiFootnote" role="status">선택한 시작일까지의 일봉을 확인하지 못했습니다. 실제 제공 시작일 {points[0].date}부터 표시합니다.</p> : null}
-    <SemiconductorLineChart points={points.map(point => ({ date: point.date, value: point.close }))} title={`${name} 주가`} unit={(shown?.currency ?? currency) === "KRW" ? "원" : shown?.currency ?? currency ?? ""} />
-    <div className="semiReturnSummary"><span>{chartPeriodLabel(period)} 수익률</span><strong className={(gain ?? 0) >= 0 ? "semiUp" : "semiDown"}>{formatPercent(gain)}</strong></div>
-    {points.length ? <p className="semiFootnote">{points[0].date} ~ {points.at(-1)!.date} · {points.length}개 거래일 · {shown?.source ?? source} · 실제 제공된 일봉 기준. 수익률은 조정 종가가 제공되면 이를 사용하고, 없으면 제공 종가 기준입니다.</p> : null}
+    <StockChartWorkspace key={ticker} ticker={ticker} name={name} currency={shown?.currency ?? currency ?? ""} history={daily} points={points} period={period} />
+    <div className="semiReturnSummary"><span>기본 종목 · {chartPeriodLabel(period)} 수익률</span><strong className={(gain ?? 0) >= 0 ? "semiUp" : "semiDown"}>{formatPercent(gain)}</strong></div>
+    {points.length ? <p className="semiFootnote">기본 종목 단독 이력: {points[0].date} ~ {points.at(-1)!.date} · {points.length}개 거래일 · {shown?.source ?? source} · 실제 제공된 일봉 기준. 수익률은 조정 종가가 제공되면 이를 사용하고, 없으면 제공 종가 기준입니다.</p> : null}
     <button type="button" className="semiTextButton" disabled={refreshing} onClick={refresh}>{refreshing ? "일봉 조회 중…" : "일봉 다시 조회"}</button>
   </section>;
 }

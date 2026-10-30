@@ -14,6 +14,21 @@ import refresh_stock_information_history as history_refresh
 
 
 class StockInformationTests(unittest.TestCase):
+    def test_chart_catalog_preserves_listing_identity_and_non_latin_names_without_publishing_quotes(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            roster = root / "data/information-audit/results.jsonl"
+            roster.parent.mkdir(parents=True)
+            roster.write_text(json.dumps({"ticker": "000660.KS", "name": "SK하이닉스", "exchange": "KOSPI", "market": "korea"}, ensure_ascii=False) + "\n", encoding="utf-8")
+            with patch.object(info, "ROOT", root):
+                rows = info.publish_chart_catalog({"EURONEXT:MC": {"company": {"name": "LVMH", "exchange": "EURONEXT"}, "quote": {"price": 123}}})
+            saved = json.loads(gzip.decompress((root / "frontend/public/data/chart-catalog.json.gz").read_bytes()))
+            self.assertEqual(rows, saved)
+            self.assertEqual(saved[0], {"ticker": "000660.KS", "name": "SK하이닉스", "exchange": "KOSPI", "market": "korea"})
+            self.assertEqual(saved[1]["ticker"], "EURONEXT:MC")
+            self.assertEqual(saved[1]["name"], "LVMH")
+            self.assertNotIn("quote", saved[1])
+
     def test_company_profile_fills_missing_count_without_replacing_new_provider_data(self):
         profile = info.company_profile("055550.KS", {"sector": "Finance", "number_of_employees": None})
         self.assertEqual(profile["number_of_employees"], 184)

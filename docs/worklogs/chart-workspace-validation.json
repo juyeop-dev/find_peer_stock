@@ -1,0 +1,29 @@
+{
+  "checked_at": "2026-10-30T10:32:48.532139+00:00",
+  "frontend_tests": 45,
+  "python_information_tests": 10,
+  "typecheck": "passed",
+  "artifact_bytes": 1004447496,
+  "artifact_MiB": 957.92,
+  "files": 99667,
+  "api_and_base_path": "production",
+  "404_matches": true,
+  "catalog_preserved": true,
+  "browser": {
+    "result": "PASS",
+    "site": "http://127.0.0.1:4192/find_peer_stock",
+    "checks": "Real Korean-name and global ticker search; adjusted common-date cross-currency comparisons; missing overlap and provider failure; trend/horizontal/vertical drawing, endpoint editing, delete/undo/clear, per-ticker persistence and coordinate modes; zoom, drag pan, moving average, 2019 range, expanded view, touch drawing, 1440/390/320px"
+  },
+  "tooltip": {
+    "result": "PASS",
+    "checks": 36,
+    "routes": 4,
+    "widths": [
+      1440,
+      900,
+      390
+    ],
+    "gap": "12px below active point, clamped to visible scrolled chart"
+  },
+  "historical_2019_browser": "PASS 2019: eight detail routes, January 2019 start, reported financials, mobile widths, original information/history refresh."
+}

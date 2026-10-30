@@ -58,6 +58,7 @@ try {
     await until(()=>evaluate("Boolean(document.querySelector('.semiChart .semiLine'))"),route+' chart did not load');
     for (const width of [1440,900,390]) {
       await send('Emulation.setDeviceMetricsOverride',{width,height:1000,deviceScaleFactor:1,mobile:false});
+      await until(()=>evaluate("(()=>{const chart=document.querySelector('.stockChartCanvas');return !chart || Math.abs(chart.querySelector('svg').viewBox.baseVal.width-chart.clientWidth)<1;})()"),'Responsive chart did not finish resizing');
       for (const fraction of [.1,.5,.9]) {
         const target=await evaluate(`(()=>{
           const svg=document.querySelector('.semiChart svg');svg.scrollIntoView({block:'center'});

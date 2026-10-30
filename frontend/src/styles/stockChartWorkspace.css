@@ -1,0 +1,83 @@
+.stockChartWorkspace { position: relative; min-width: 0; margin-top: 8px; color: #243f4c; font-size: 13px; }
+.stockChartWorkspace button, .stockChartWorkspace input { font: inherit; }
+.stockChartWorkspace button { cursor: pointer; }
+.stockChartWorkspace button:disabled { cursor: default; opacity: .42; }
+.stockChartWorkspace button:focus-visible, .stockChartWorkspace input:focus-visible, .stockChartCanvas svg:focus-visible { outline: 3px solid #84cdd1; outline-offset: 2px; }
+.chartWorkspaceToolbar { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; padding: 12px 0; border-top: 1px solid #e5edf0; border-bottom: 1px solid #e5edf0; }
+.chartToolGroup { display: inline-flex; gap: 2px; padding: 3px; border: 1px solid #e1e9ec; border-radius: 7px; background: #f6f9fa; }
+.stockChartWorkspace .chartToolGroup button { display: inline-flex; align-items: center; justify-content: center; gap: 5px; min-height: 34px; padding: 6px 10px; border: 0; border-radius: 5px; background: transparent; color: #526c79; font-size: 12px; font-weight: 650; white-space: nowrap; }
+.chartToolGroup button > span { font-size: 19px; line-height: 1; }
+.chartToolGroup button[aria-pressed="true"] { background: #137d87; color: white; box-shadow: 0 1px 3px #254e5120; }
+.chartExpandButton { margin-left: auto; padding: 9px 11px; border: 1px solid #cbdde1; border-radius: 6px; background: white; color: #176471; font-size: 12px !important; font-weight: 700 !important; }
+.chartCompareBar { display: flex; align-items: end; flex-wrap: wrap; gap: 14px 22px; padding: 16px 0 12px; }
+.chartSymbolSearch { position: relative; flex: 1 1 240px; min-width: 0; max-width: 480px; }
+.chartSymbolSearch > label { display: block; margin: 0 0 6px; font-size: 12px; font-weight: 750; }
+.chartSymbolSearch label small { margin-left: 5px; color: #7d9099; font-size: 10px; font-weight: 500; }
+.chartSearchInput { position: relative; }
+.chartSearchInput input { box-sizing: border-box; width: 100%; min-height: 40px; padding: 9px 36px 9px 12px; border: 1px solid #ccdade; border-radius: 7px; background: #fff; color: #244553; font-size: 13px; }
+.chartSearchInput > span { position: absolute; top: 7px; right: 12px; color: #4d828d; font-size: 20px; pointer-events: none; }
+.chartSearchResults { position: absolute; top: calc(100% + 5px); right: 0; left: 0; z-index: 12; max-height: 330px; overflow: auto; padding: 5px; border: 1px solid #cfdee2; border-radius: 8px; background: #fff; box-shadow: 0 10px 30px #193e4b22; }
+.chartSearchResults button { display: flex; flex-direction: column; gap: 4px; width: 100%; padding: 10px; border: 0; border-radius: 5px; background: white; color: #244553; text-align: left; }
+.chartSearchResults button:hover, .chartSearchResults button:focus-visible { background: #eef7f7; }
+.chartSearchResults strong { font-size: 13px; overflow-wrap: anywhere; }
+.chartSearchResults span, .chartSearchResults p { color: #748b96; font-size: 11px; }
+.chartIndicators { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; min-height: 40px; }
+.chartIndicators label { display: flex; align-items: center; gap: 4px; color: #617985; font-size: 11px; white-space: nowrap; }
+.chartIndicators input { accent-color: #137d87; }
+.chartComparisonChips { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 8px; }
+.chartComparisonChips > div { display: flex; align-items: center; flex-wrap: wrap; gap: 6px; max-width: 100%; padding: 7px 9px; border: 1px solid #dce6ea; border-left: 3px solid; border-radius: 6px; background: #fbfcfd; }
+.chartComparisonChips > div > span { min-width: 0; overflow-wrap: anywhere; }
+.chartComparisonChips strong { font-size: 12px; }
+.chartComparisonChips small { color: #778b96; font-size: 10px; }
+.chartComparisonChips button { flex: none; padding: 0 4px; border: 0; background: transparent; color: #607d89; font-size: 20px; line-height: 1; }
+.chartComparisonChips small[role="status"] { flex: 1 0 100%; max-width: 420px; color: #a56b27; line-height: 1.5; }
+.chartComparisonChips .hasError { background: #fff9f3; }
+.chartBasis, .chartStatus, .chartToolHint { margin: 8px 0; color: #738892; font-size: 11px; line-height: 1.7; }
+.chartBasis { padding: 9px 11px; border-radius: 6px; background: #f0f7f8; color: #507681; }
+.chartStatus { color: #ad732d; }
+.chartNavigation { display: flex; align-items: center; flex-wrap: wrap; gap: 5px; margin: 12px 0 8px; }
+.stockChartWorkspace .chartNavigation button { min-height: 31px; padding: 5px 8px; border: 1px solid #dce6e9; border-radius: 5px; background: #fff; color: #56717f; font-size: 11px; }
+.chartNavigation button:hover:not(:disabled) { background: #edf7f7; border-color: #7ab9bf; }
+.chartToolbarDivider { width: 1px; height: 18px; margin: 0 4px; background: #dce6e9; }
+.stockChartCanvas.semiChart { position: relative; overflow: hidden; padding-bottom: 58px; border: 1px solid #e3ecef; border-radius: 8px; background: #fcfefe; }
+.stockChartCanvas.semiChart svg { width: 100%; min-width: 0; height: auto; touch-action: pan-y; user-select: none; }
+.stockChartCanvas:has(.chartDrawingHandle) svg { touch-action: none; }
+.stockChartCanvas svg[data-tool]:not([data-tool="move"]) { touch-action: none; }
+.stockChartCanvas .semiAxisText { fill: #82949e; font-size: 10px; }
+.chartPriceLine { stroke-width: 2; }
+.chartAverageLine { fill: none; stroke-width: 1.3; vector-effect: non-scaling-stroke; }
+.chartZeroLine { stroke: #9fb8c0; stroke-width: 1; stroke-dasharray: 4 4; }
+.chartSeriesLegend { display: flex; flex-wrap: wrap; gap: 7px 15px; padding: 12px 14px 0; min-height: 28px; }
+.chartSeriesLegend > span { display: inline-flex; align-items: baseline; flex-wrap: wrap; gap: 5px; max-width: 100%; color: #4d6c78; font-size: 11px; }
+.chartSeriesLegend i { display: inline-block; width: 7px; height: 7px; flex: none; border-radius: 50%; }
+.chartSeriesLegend strong { font-weight: 650; overflow-wrap: anywhere; }
+.chartSeriesLegend small { font-size: 11px; font-variant-numeric: tabular-nums; }
+.chartDrawingHit { cursor: pointer; }
+.chartDrawingHandle { cursor: move; }
+.chartWorkspaceReadout.semiChartReadout { z-index: 3; max-width: calc(100% - 12px); padding: 7px 10px; font-size: 10px; }
+.chartWorkspaceReadout span { font-size: 10px; overflow-wrap: anywhere; }
+.chartRangeControls { display: flex; align-items: center; flex-wrap: wrap; gap: 8px 14px; padding: 11px 0; }
+.chartRangeControls label { display: inline-flex; align-items: center; gap: 6px; font-size: 11px; color: #738994; }
+.chartRangeControls input { max-width: 132px; min-width: 0; padding: 5px 6px; border: 1px solid #d6e3e7; border-radius: 5px; background: #fff; color: #3d6170; font-size: 11px; }
+.chartRangeControls > span { margin-left: auto; color: #8497a0; font-size: 10px; }
+.chartWorkspaceFooter { display: flex; align-items: center; flex-wrap: wrap; gap: 10px 16px; padding: 10px 0 4px; border-top: 1px solid #edf1f3; }
+.chartWorkspaceFooter > span { color: #81959f; font-size: 10px; line-height: 1.7; }
+.chartDrawingColors { display: flex; gap: 8px; padding: 3px; }
+.chartDrawingColors button { width: 16px; height: 16px; border: 2px solid white; border-radius: 50%; box-shadow: 0 0 0 1px #c8d9df; }
+.chartDrawingColors button[aria-pressed="true"] { outline: 2px solid #74949f; outline-offset: 2px; }
+.stockChartWorkspace.isExpanded { position: fixed; inset: 14px; z-index: 100; overflow: auto; margin: 0; padding: 22px 28px; border: 1px solid #b9cfd5; border-radius: 12px; background: #fff; box-shadow: 0 0 0 40px #173542b3; }
+@media (max-width: 600px) {
+  .chartWorkspaceToolbar { gap: 7px; }
+  .stockChartWorkspace .chartToolGroup button { min-height: 36px; padding: 6px 8px; font-size: 11px; }
+  .chartWorkspaceToolbar .chartToolGroup:first-child { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); width: 100%; }
+  .chartToolGroup button > span { font-size: 16px; }
+  .chartCompareBar { gap: 7px; }
+  .chartSymbolSearch { flex-basis: 100%; max-width: none; }
+  .chartIndicators { min-height: 32px; }
+  .chartNavigation { gap: 5px; }
+  .stockChartWorkspace .chartNavigation button { min-height: 34px; }
+  .chartToolbarDivider { display: none; }
+  .chartSeriesLegend { padding: 10px 9px 0; gap: 6px; }
+  .chartSeriesLegend > span { flex-basis: 100%; }
+  .stockChartWorkspace.isExpanded { inset: 5px; padding: 12px; border-radius: 8px; }
+}
