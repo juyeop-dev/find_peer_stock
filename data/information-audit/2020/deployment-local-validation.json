@@ -1,0 +1,22 @@
+{
+  "checked_at": "2026-10-30T07:33:10.396695+00:00",
+  "base": "http://127.0.0.1:4180/find_peer_stock",
+  "api_version": "1e7bd3c4-ec8c-4269-b5fa-876fbd1682d2",
+  "frontend_unit_tests": 37,
+  "api_unit_tests": 26,
+  "history_publication_tests": 10,
+  "typecheck": "passed",
+  "browser_2020": "PASS 2020: eight detail routes, January 2020 start, reported financials, mobile widths, original information/history refresh.",
+  "browser_investors": {
+    "result": "PASS",
+    "dates": 1675,
+    "checks": "Exact-date gross buys/sells/net flows and both indices, market totals, 2020 calendar/closures, URL selection, original historical refresh, failure retention, 1440/390/320px"
+  },
+  "browser_sectors": {
+    "result": "PASS",
+    "financeStocks": 184,
+    "checks": "Other sector stocks and real daily trends, legacy semiconductor views, 26 column sort toggles, detail/return, metric header and number alignment, source refresh, 1440/320px"
+  },
+  "post_merge_production_investor_days_preserved": 1427,
+  "post_merge_2020_days_preserved": 248
+}
