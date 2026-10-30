@@ -21,5 +21,27 @@
       390
     ],
     "gap": "12px below active point, clamped to visible scrolled chart"
+  },
+  "production": {
+    "checked_at": "2026-10-30T12:19:29.754653+00:00",
+    "commit": "e09ef2579150e5680c1349addf089042a5e8fa0e",
+    "workflow_url": "https://github.com/juyeop-dev/find_peer_stock/actions/runs/41047369337",
+    "workflow_result": "success",
+    "browser": {
+      "result": "PASS",
+      "site": "https://juyeop-dev.github.io/find_peer_stock",
+      "checks": "Parallel/middle channel geometry, draggable spacing, flip and persistence; pinned-click reference price returns and percentage-axis return conversion for all series; mouse and touch reference inspection; real Korean/global comparisons, provider failure retention; drawing editing/undo/storage, zoom/pan, MA, 2019 range, 1440/390/320px"
+    },
+    "tooltip": {
+      "result": "PASS",
+      "checks": 36,
+      "routes": 4,
+      "widths": [
+        1440,
+        900,
+        390
+      ],
+      "gap": "12px below active point, clamped to visible scrolled chart"
+    }
   }
 }
