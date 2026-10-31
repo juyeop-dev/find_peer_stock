@@ -42,12 +42,15 @@
     "test:stock-information:2019": "node tests/stock-information-2019-browser.mjs",
     "test:investor-flows:2019": "node tests/investor-flows-2019-browser.mjs",
     "test:chart-workspace:browser": "node tests/chart-workspace-browser.mjs",
-    "test:tradingview:browser": "node tests/tradingview-chart-browser.mjs"
+    "test:tradingview:browser": "node tests/tradingview-chart-browser.mjs",
+    "test:chart-replay": "node --test tests/chart-replay.test.mjs",
+    "test:chart-replay:browser": "node tests/chart-replay-browser.mjs"
   },
   "dependencies": {
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-router-dom": "^7.0.0"
+    "react-router-dom": "^7.0.0",
+    "lightweight-charts": "^5.2.1"
   },
   "devDependencies": {
     "@types/node": "^22.0.0",

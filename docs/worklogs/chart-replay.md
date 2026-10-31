@@ -1,0 +1,55 @@
+# 홈페이지 차트와 서로 다른 기간 리플레이
+
+홈페이지 `/charts`의 **차트 리플레이** 메뉴와 모든 종목 상세의 기본 **차트·리플레이** 탭에서 직접 차트를 조작합니다. 외부 전체 기능 링크를 기본 작업 흐름에서 제거했습니다. 기존 추세선·평행 채널·수평/수직선·기준점 측정·비교 기능은 **그리기·분석** 탭에 보존했습니다. 공식 외부 위젯은 별도 탭에서 처음 선택할 때만 로드하고 이후 탭 전환 시 인스턴스를 보존합니다.
+
+## 이번에 구현한 기능
+
+- TradingView 공식 오픈소스 Lightweight Charts 5.2.1을 앱 번들에 포함해 사이트 안에서 렌더링합니다. 사이트 내 비교·리플레이 UI는 자체 구현입니다.
+- 코스피 2022년 ↔ 금 2024년을 바로 열며 각 패널의 종목·시작일·종료일을 따로 설정합니다. 한글 종목명 검색과 티커 직접 입력, 기존 저장 종목 이력을 재사용합니다.
+- 나란히 보기, 첫 수정종가를 0%로 정규화한 수익률 겹쳐 보기를 제공합니다. 겹쳐 보기의 가로축은 실제 날짜 대신 **경과 거래일 수**입니다. 휴장일 가격을 채우지 않고 각 기간의 n번째 실제 관측값끼리 비교합니다.
+- 재생·일시정지, 이전/다음 일봉, 처음/끝, 1·2·5·10봉/초, 슬라이더 탐색, 끝에서 재시작을 지원합니다. 짧은 기간이 끝나면 두 패널이 함께 정지합니다.
+- 일·주·월봉, 선·실제 OHLC 캔들, MA 20, 거래량, 로그 축, 확대/이동과 패널 간 논리 범위·십자선 동기화, 화면 맞춤, 크게 보기, PNG 저장을 제공합니다. 봉 간격은 표시 집계 단위이며 재생은 매번 일봉 한 개씩 공개합니다. MA 20은 선택한 표시 간격의 20개 봉입니다.
+- 설정 저장은 현재 브라우저의 localStorage에 종목·기간·표시 설정·재생 위치를 기록합니다. 페이지를 다시 열면 복원합니다. 재생 상태는 저장하지 않습니다. 종목 상세에서 다른 탭으로 이동하면 재생이 일시정지됩니다.
+- 캔들·주/월봉·거래량·MA와 수익률은 공개된 일봉 부분만 받아 계산합니다. 숨겨진 미래 거래일의 고가·저가·종가가 현재 봉/지표에 섞이지 않습니다. 기존 저장 종목은 종가 자료이므로 캔들을 임의 생성하지 않습니다.
+
+## 실제 자료와 제약
+
+`data/chart-replay/markets.json`은 수집 원본의 정밀도를 유지한 스냅샷이며 공개 사본은 `frontend/public/data/chart-replay/markets.json`입니다.
+
+- 코스피: Naver Finance `KOSPI` 실제 OHLC, 2019-01-02 ~ 2026-10-30, 1,921개 관측값. Yahoo 자료에 2022-01-03 첫 거래일 등이 없는 것을 확인해 Naver의 단일 연속 이력을 사용했습니다. 데이터 통화는 KRW를 보존하며 화면의 지수 단위는 pt로 표시합니다.
+- 금: Yahoo Finance `GC=F` 연속선물 실제 OHLC, 같은 범위 1,972개 관측값. 현물 금이나 고정 만기 계약이 아니며 계약 교체가 수익률에 영향을 줍니다. 통화 USD. 거래량은 각 제공처 단위입니다.
+- 기타 종목: 기존 저장 일봉부터 조회하며 없는 종목은 기존 원본 조회 경로를 사용합니다. 종목·통화·날짜·가격 검증에 실패하거나 선택 기간에 자료가 부족하면 오류와 재시도를 표시합니다. 실제 관측값만 사용하며 미제공 날짜나 OHLC를 추정하지 않습니다.
+- 각 통화 기준 수익률이며 환율·거래 비용은 반영하지 않습니다. 선택한 날짜 범위를 넘어선 자료는 사용하지 않습니다. 제공 범위를 화면에 표시합니다.
+
+갱신: `python scripts/refresh_chart_replay.py`. 저장 자료만 재발행: `python scripts/refresh_chart_replay.py --publish`. 코스피/금 원본 네트워크 갱신은 자동 예약되어 있지 않습니다. 기존 주식 자료 생성 명령과 원본은 변경하지 않았습니다.
+
+## 기능 확장 경계
+
+[TradingView 공식 FAQ](https://www.tradingview.com/charting-library-docs/latest/resources/Frequently-Asked-Questions/)에서 Advanced Charts/Trading Platform에도 Pine Script, Alerts, Strategy Tester, Bar Replay 및 TradingView 데이터가 포함되지 않는다고 명시합니다. 따라서 TradingView.com의 모든 기능을 외부 위젯이나 공개 차트 엔진으로 그대로 가져온 것으로 표시하지 않습니다.
+
+기능은 다음 파일로 분리했습니다.
+
+| 위치 | 역할 |
+|---|---|
+| `frontend/src/dataClient/chartReplay.ts` | 날짜 검증, 기간 절단, 공개된 봉 집계, 수정종가 수익률·MA 계산 |
+| `frontend/src/dataClient/chartReplayClient.ts` | 시장 스냅샷과 기존 종목 저장/원본 데이터 연결 |
+| `frontend/src/components/ChartReplayWorkspace.tsx` | 종목·기간 선택, 재생 상태, 설정 저장, 오류 UI |
+| `frontend/src/components/ReplayCharts.tsx` | 차트 엔진, 캔들/선/지표/거래량, 패널 동기화, PNG |
+
+다음 확장에서는 기존 그리기 도구를 이 엔진의 가격/시간 좌표에 연결하고 피보나치·지표를 단계적으로 추가할 수 있습니다. TradingView의 완성형 Advanced Charts UI를 도입하려면 공식 사용 승인과 제공 라이브러리가 별도로 필요합니다. 승인되지 않은 비공개 배포 파일은 저장소에 포함하지 않았습니다. 서버 알림·전략 테스트·Pine 호환 실행은 각각 별도 구현 범위입니다.
+
+## 검증
+
+프런트엔드에서:
+
+```powershell
+node node_modules/typescript/bin/tsc -b
+npm.cmd run test:chart-replay
+npm.cmd run test:stock-history
+npm.cmd run test:stock-details
+node node_modules/vite/bin/vite.js build
+# 별도 터미널에서 preview --host 127.0.0.1 --port 4196 --strictPort
+npm.cmd run test:chart-replay:browser
+```
+
+브라우저 검증은 실제 저장 자료로 재생·탐색·속도·짧은 기간의 자동 정지·캔들·주봉·겹쳐 보기·저장/복원·전체 보기·잘못된 날짜를 확인합니다. 1440/390/320px에서 가로 넘침과 런타임 예외를 검사하고 `data/tmp_chart_replay/ui/`에 화면을 저장합니다. 운영 배포 결과는 공개 후 검증하여 기록합니다.

@@ -163,6 +163,10 @@ jobs:
         working-directory: frontend
         run: npm run test:stock-details
 
+      - name: Test chart replay and hidden-future aggregation
+        working-directory: frontend
+        run: npm run test:chart-replay
+
       - name: Test one-year chart coverage
         working-directory: frontend
         run: npm run test:stock-history

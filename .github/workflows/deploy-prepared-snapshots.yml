@@ -41,6 +41,7 @@ jobs:
         working-directory: frontend
         run: |
           npm run test:stock-history
+          npm run test:chart-replay
           npm run test:stock-information
           npm run test:stock-details
       - name: Build from committed stock snapshots

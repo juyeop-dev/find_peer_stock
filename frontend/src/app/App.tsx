@@ -12,6 +12,7 @@ import { MarketStockPage } from "../pages/MarketStockPage";
 import { SectorRankingsPage } from "../pages/SectorRankingsPage";
 import { SectorExplorerPage } from "../pages/SectorExplorerPage";
 import { InvestorFlowsPage } from "../pages/InvestorFlowsPage";
+import { ChartReplayPage } from "../pages/ChartReplayPage";
 import "../styles/newHighs.css";
 import "../styles/semiconductor.css";
 
@@ -22,6 +23,7 @@ export function App() {
         <NavLink className="siteBrand" to="/">STOCK PEER<span>마켓 노트</span></NavLink>
         <div className="siteNavLinks">
           <NavLink to="/" end>Peer 비교</NavLink>
+          <NavLink to="/charts">차트 리플레이</NavLink>
           <NavLink to="/new-highs">신고가 캘린더</NavLink>
           <NavLink to="/turnover">거래대금 캘린더</NavLink>
           <NavLink to="/calendar-history">누적 기록</NavLink>
@@ -34,6 +36,7 @@ export function App() {
       </nav>
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/charts" element={<ChartReplayPage />} />
         <Route path="/stocks/:ticker" element={<StockPage />} />
         <Route path="/market-stocks/:ticker" element={<MarketStockPage />} />
         <Route path="/new-highs" element={<NewHighPage />} />

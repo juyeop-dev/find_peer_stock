@@ -1,0 +1,153 @@
+import { useEffect, useId, useMemo, useRef, useState } from "react";
+import { getChartSymbols, searchChartSymbols } from "../dataClient/chartComparisonClient";
+import type { ChartSymbol } from "../dataClient/chartComparisonClient";
+import { getReplayMarket } from "../dataClient/chartReplayClient";
+import { hasOHLC, REPLAY_PRESET, replayRange, replayReturns, validReplayDate } from "../dataClient/chartReplay";
+import type { ReplayInterval, ReplayMarket, ReplaySelection } from "../dataClient/chartReplay";
+import { ImeSearchInput } from "./ImeSearchInput";
+import { ReplayCharts } from "./ReplayCharts";
+import "../styles/chartReplay.css";
+
+interface Settings { selections: ReplaySelection[]; overlay: boolean; kind: "line" | "candles"; interval: ReplayInterval; average: boolean; volume: boolean; logarithmic: boolean; count: number; speed: number }
+const BUILTINS: ChartSymbol[] = REPLAY_PRESET.map(row => ({ ticker: row.ticker, name: row.name }));
+function initialSettings(ticker?: string, name?: string, exchange?: string): Settings {
+  const selections = REPLAY_PRESET.map(row => ({ ...row }));
+  if (ticker) selections[0] = { ticker, name: name ?? ticker, exchange, start: `${new Date().getFullYear() - 1}-01-01`, end: `${new Date().getFullYear()}-12-31` };
+  return { selections, overlay: false, kind: ticker ? "line" : "candles", interval: "day", average: false, volume: false, logarithmic: false, count: 25, speed: 2 };
+}
+function restoreSettings(key: string, fallback: Settings): Settings {
+  try {
+    const saved = JSON.parse(localStorage.getItem(key) ?? "null");
+    if (!saved || saved.version !== 1 || saved.selections?.length !== 2 || !saved.selections.every((row: ReplaySelection) => typeof row.ticker === "string" && /^[A-Z0-9^][A-Z0-9.^:_=\-]{0,39}$/.test(row.ticker) && typeof row.name === "string" && row.name.length < 150 && (row.exchange === undefined || typeof row.exchange === "string") && validReplayDate(row.start) && validReplayDate(row.end) && row.start <= row.end)) return fallback;
+    return { ...fallback, selections: saved.selections, overlay: saved.overlay === true, kind: saved.kind === "candles" ? "candles" : "line", interval: ["day", "week", "month"].includes(saved.interval) ? saved.interval : "day", average: saved.average === true, volume: saved.volume === true, logarithmic: saved.logarithmic === true, count: Number.isInteger(saved.count) && saved.count > 0 && saved.count < 100000 ? saved.count : 25, speed: [1, 2, 5, 10].includes(saved.speed) ? saved.speed : 2 };
+  } catch { return fallback; }
+}
+function useMarket(selection: ReplaySelection, retry: number) {
+  const [result, setResult] = useState<{ market?: ReplayMarket; error?: string; loading: boolean }>({ loading: true });
+  useEffect(() => {
+    const controller = new AbortController(); setResult({ loading: true });
+    void getReplayMarket(selection.ticker, selection.name, selection.exchange, controller.signal).then(market => {
+      if (!controller.signal.aborted) setResult({ market, loading: false });
+    }).catch(error => { if (!controller.signal.aborted) setResult({ error: (error as Error).message, loading: false }); });
+    return () => controller.abort();
+  }, [selection.ticker, selection.name, selection.exchange, retry]);
+  // Do not flash a previously selected symbol while the next effect loads.
+  return result.market && result.market.ticker !== selection.ticker ? { loading: true } : result;
+}
+
+export function ChartReplayWorkspace({ ticker, name, exchange, active = true }: { ticker?: string; name?: string; exchange?: string; active?: boolean }) {
+  const storageKey = `stock-peer:replay:v1:${ticker ?? "markets"}`;
+  const [settings, setSettings] = useState(() => restoreSettings(storageKey, initialSettings(ticker, name, exchange)));
+  const [playing, setPlaying] = useState(false), [expanded, setExpanded] = useState(false), [fit, setFit] = useState(0);
+  const [retry, setRetry] = useState([0, 0]), [notice, setNotice] = useState("");
+  const root = useRef<HTMLElement>(null);
+  const first = useMarket(settings.selections[0], retry[0]), second = useMarket(settings.selections[1], retry[1]);
+  const markets = useMemo(() => [first.market, second.market], [first.market, second.market]);
+  const ranges = useMemo(() => settings.selections.map((selection, i) => replayRange(markets[i]?.bars ?? [], selection.start, selection.end)), [markets, settings.selections]);
+  const errors = [first, second].map((row, i) => row.error ?? (!row.loading && ranges[i].length < 2 ? "선택 기간에 거래일이 2개 이상 필요합니다. 제공 범위를 확인해 주세요." : ""));
+  const ready = !first.loading && !second.loading && errors.every(error => !error);
+  // Stop at the shorter history: both panels advance one actual daily session
+  // per tick. Different market holidays do not create artificial bars.
+  const maximum = ready ? Math.min(...ranges.map(rows => rows.length)) : 1;
+  const count = Math.min(settings.count, maximum);
+  const candleAvailable = ranges.every(rows => rows.length > 0 && rows.every(hasOHLC));
+  const patch = (value: Partial<Settings>) => { setSettings(previous => ({ ...previous, ...value })); setNotice(""); };
+  useEffect(() => { if (!active) { setPlaying(false); setExpanded(false); } }, [active]);
+  useEffect(() => {
+    if (!playing || !ready || count >= maximum) { if (playing) setPlaying(false); return; }
+    const timer = window.setInterval(() => setSettings(previous => ({ ...previous, count: Math.min(previous.count + 1, maximum) })), 1000 / settings.speed);
+    return () => window.clearInterval(timer);
+  }, [playing, ready, maximum, count, settings.speed]);
+  useEffect(() => {
+    if (!expanded) return;
+    const previous = document.activeElement as HTMLElement | null, overflow = document.body.style.overflow;
+    const keydown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setExpanded(false);
+      if (event.key === "Tab") {
+        const nodes = root.current?.querySelectorAll<HTMLElement>('button:not([disabled]),input:not([disabled]),select:not([disabled]),a[href]');
+        const start = nodes?.[0], end = nodes?.[nodes.length - 1];
+        if (event.shiftKey && (document.activeElement === start || document.activeElement === root.current)) { event.preventDefault(); end?.focus(); }
+        else if (!event.shiftKey && document.activeElement === end) { event.preventDefault(); start?.focus(); }
+      }
+    };
+    document.body.style.overflow = "hidden"; document.addEventListener("keydown", keydown); root.current?.focus();
+    return () => { document.body.style.overflow = overflow; document.removeEventListener("keydown", keydown); if (previous?.isConnected) previous.focus(); };
+  }, [expanded]);
+
+  function select(index: number, selection: ReplaySelection) {
+    setPlaying(false);
+    patch({ selections: settings.selections.map((row, i) => i === index ? selection : row), count: 1 });
+    setFit(value => value + 1);
+  }
+  function save() {
+    try { localStorage.setItem(storageKey, JSON.stringify({ ...settings, count, version: 1 })); setNotice("종목·기간·차트 설정과 재생 위치를 이 브라우저에 저장했습니다."); }
+    catch { setNotice("브라우저 저장 공간에 접근할 수 없습니다. 현재 화면은 계속 사용할 수 있습니다."); }
+  }
+  return <section ref={root} tabIndex={-1} className={`semiPanel chartReplayWorkspace${expanded ? " replayExpanded" : ""}`} role={expanded ? "dialog" : undefined} aria-modal={expanded ? true : undefined} aria-label="차트 리플레이 작업 공간">
+    <div className="replayHeading"><div><p className="eyebrow">CHART WORKSPACE</p><h2>차트 비교 · 리플레이</h2><p>다른 시기의 시장을 같은 속도로 살펴보세요.</p></div><div className="replayHeadingActions"><button type="button" onClick={save}>설정 저장</button><button type="button" aria-pressed={expanded} onClick={() => setExpanded(value => !value)}>{expanded ? "크게 보기 닫기" : "크게 보기"}</button></div></div>
+    <div className="replayToolbar">
+      <div className="replaySegment" role="group" aria-label="비교 레이아웃"><button type="button" aria-pressed={!settings.overlay} onClick={() => patch({ overlay: false })}>나란히 보기</button><button type="button" aria-pressed={settings.overlay} onClick={() => patch({ overlay: true })}>수익률 겹쳐 보기</button></div>
+      <label>봉 간격<select aria-label="리플레이 봉 간격" value={settings.interval} disabled={settings.overlay} onChange={event => patch({ interval: event.target.value as ReplayInterval })}><option value="day">일</option><option value="week">주</option><option value="month">월</option></select></label>
+      <label>차트 종류<select aria-label="리플레이 차트 종류" value={settings.overlay || !candleAvailable ? "line" : settings.kind} disabled={settings.overlay} onChange={event => patch({ kind: event.target.value as Settings["kind"] })}><option value="line">선</option><option value="candles" disabled={!candleAvailable}>캔들 (OHLC 제공 종목)</option></select></label>
+      <label><input type="checkbox" checked={settings.average} disabled={settings.overlay} onChange={event => patch({ average: event.target.checked })} />MA 20</label>
+      <label><input type="checkbox" checked={settings.volume} disabled={settings.overlay} onChange={event => patch({ volume: event.target.checked })} />거래량</label>
+      <label><input type="checkbox" checked={settings.logarithmic} disabled={settings.overlay} onChange={event => patch({ logarithmic: event.target.checked })} />로그 축</label>
+      <button type="button" onClick={() => setFit(value => value + 1)}>화면 맞춤</button>
+    </div>
+    <div className="replaySelections">{settings.selections.map((selection, index) => <SelectionEditor key={index} selection={selection} index={index} onApply={value => select(index, value)} />)}</div>
+    <div className="replayPreset"><button type="button" onClick={() => { setPlaying(false); patch({ selections: REPLAY_PRESET.map(row => ({ ...row })), count: 25 }); setFit(value => value + 1); }}>예시: 코스피 2022 ↔ 금 2024</button><span>각 시장의 첫 거래일부터 경과 거래일 수를 맞춥니다.</span></div>
+    <div className="replayTransport" role="group" aria-label="리플레이 재생 제어">
+      <button type="button" disabled={!ready} onClick={() => { setPlaying(false); patch({ count: 1 }); }} aria-label="리플레이 처음으로">↤ 처음</button>
+      <button type="button" disabled={!ready || count <= 1} onClick={() => { setPlaying(false); patch({ count: count - 1 }); }} aria-label="리플레이 이전 봉">이전 봉</button>
+      <button type="button" className="replayPlay" disabled={!ready} aria-pressed={playing} onClick={() => { if (count >= maximum) patch({ count: 1 }); setPlaying(value => !value); }}>{playing ? "일시정지" : "재생"}</button>
+      <button type="button" disabled={!ready || count >= maximum} onClick={() => { setPlaying(false); patch({ count: count + 1 }); }} aria-label="리플레이 다음 봉">다음 봉</button>
+      <label>속도<select aria-label="리플레이 속도" value={settings.speed} onChange={event => patch({ speed: Number(event.target.value) })}>{[1, 2, 5, 10].map(speed => <option value={speed} key={speed}>{speed}봉/초</option>)}</select></label>
+      <output aria-label="리플레이 진행" data-replay-count={count} data-replay-max={maximum}>{ready ? `${count} / ${maximum} 거래일` : "자료 확인 중"}</output>
+      <input type="range" min={1} max={maximum} value={count} disabled={!ready} aria-label="리플레이 위치" onChange={event => { setPlaying(false); patch({ count: Number(event.target.value) }); }} />
+      <button type="button" disabled={!ready || count >= maximum} onClick={() => { setPlaying(false); patch({ count: maximum }); }}>끝으로</button>
+    </div>
+    {notice && <p className="replayNotice" role="status">{notice}</p>}
+    <div className="replayReadouts">{[first, second].map((row, index) => {
+      const visible = ranges[index].slice(0, ready ? count : 0), bar = visible.at(-1), change = replayReturns(visible).at(-1)?.value;
+      return <div key={index} className={`replayReadout replayReadout${index}`} data-replay-series={index} data-visible-bars={visible.length} data-visible-date={bar?.date ?? ""}>
+        <div><strong>{index === 0 ? "A" : "B"} · {settings.selections[index].name}</strong><span>{settings.selections[index].ticker}</span></div>
+        {row.loading ? <p role="status">저장된 가격을 불러오는 중…</p> : errors[index] ? <p role="alert">{errors[index]} <button type="button" onClick={() => setRetry(values => values.map((v, i) => i === index ? v + 1 : v))}>다시 조회</button></p> : <>
+          <div className="replayReadoutValue"><time>{bar?.date ?? "—"}</time><strong>{bar?.close.toLocaleString("ko-KR", { maximumFractionDigits: 2 }) ?? "—"} <small>{row.market?.ticker === "^KS11" ? "pt" : row.market?.currency}</small></strong><span className={change !== undefined && change < 0 ? "negative" : "positive"}>{change === undefined ? "—" : `${change >= 0 ? "+" : ""}${change.toFixed(2)}%`}</span></div>
+          {bar && hasOHLC(bar) && <p className="replayOHLC">시 {bar.open!.toFixed(2)} · 고 {bar.high!.toFixed(2)} · 저 {bar.low!.toFixed(2)} · 종 {bar.close.toFixed(2)}</p>}
+        </>}
+        {row.market && <p className="replaySource">제공 범위 {row.market.bars[0].date} ~ {row.market.bars.at(-1)!.date} · {row.market.source}{row.market.bars.every(hasOHLC) ? " · 실제 OHLC" : " · 종가 자료"}</p>}
+      </div>;
+    })}</div>
+    <ReplayCharts markets={markets} ranges={ready ? ranges : [[], []]} count={ready ? count : 0} overlay={settings.overlay} kind={candleAvailable ? settings.kind : "line"} interval={settings.interval} average={settings.average} volume={settings.volume} logarithmic={settings.logarithmic} fit={fit} />
+    <p className="replayFootnote">하루에 한 거래일씩 공개합니다. 주·월봉과 MA 20은 공개된 일봉으로만 계산하며, 두 기간 중 짧은 쪽의 마지막 거래일에서 함께 멈춥니다. 수익률은 각 기간 첫 수정종가 기준이며 환율은 반영하지 않습니다. 금은 현물이 아닌 GC=F 연속선물로 계약 교체의 영향을 받습니다.</p>
+    {settings.overlay && <p className="replayFootnote">수익률 겹쳐 보기는 일봉 기준입니다. 가로축의 1봉은 각 기간의 첫 거래일입니다.</p>}
+  </section>;
+}
+
+function SelectionEditor({ selection, index, onApply }: { selection: ReplaySelection; index: number; onApply: (value: ReplaySelection) => void }) {
+  const [query, setQuery] = useState(selection.ticker), [start, setStart] = useState(selection.start), [end, setEnd] = useState(selection.end);
+  const [symbols, setSymbols] = useState<ChartSymbol[]>([]), [error, setError] = useState("");
+  const id = useId(), alive = useRef(true), requested = useRef(false);
+  useEffect(() => { alive.current = true; return () => { alive.current = false; }; }, []);
+  useEffect(() => { setQuery(selection.ticker); setStart(selection.start); setEnd(selection.end); setError(""); }, [selection]);
+  const matches = searchChartSymbols([...BUILTINS, ...symbols], query, []);
+  function loadCatalog() {
+    if (requested.current) return;
+    requested.current = true;
+    void getChartSymbols().then(rows => { if (alive.current) setSymbols(rows); }).catch(() => { requested.current = false; if (alive.current) setError("종목 목록을 불러오지 못했습니다. 티커를 직접 입력하거나 다시 선택해 주세요."); });
+  }
+  function apply() {
+    if (!validReplayDate(start) || !validReplayDate(end) || start > end) { setError("시작일은 종료일보다 늦을 수 없습니다. 날짜를 확인해 주세요."); return; }
+    const text = query.trim(), exact = [...BUILTINS, ...symbols].find(row => row.ticker.toUpperCase() === text.toUpperCase() || row.name === text);
+    const symbol = exact ?? (text.toUpperCase() === selection.ticker ? selection : undefined);
+    if (!symbol && !/^[A-Z0-9^][A-Z0-9.^:_=\-]{0,39}$/.test(text.toUpperCase())) { setError("검색 목록에서 종목을 선택하거나 올바른 티커를 입력해 주세요."); return; }
+    setError(""); onApply({ ticker: symbol?.ticker ?? text.toUpperCase(), name: symbol?.name ?? text.toUpperCase(), exchange: symbol?.exchange, start, end });
+  }
+  return <form className="replaySelection" aria-label={`차트 ${index === 0 ? "A" : "B"} 기간 설정`} onSubmit={event => { event.preventDefault(); apply(); }}>
+    <span className={`replayBadge replayBadge${index}`}>{index === 0 ? "A" : "B"}</span>
+    <label className="replaySymbolInput">종목 <ImeSearchInput aria-label={`차트 ${index === 0 ? "A" : "B"} 종목`} value={query} onValueChange={setQuery} onFocus={loadCatalog} list={`${id}-symbols`} placeholder="코스피, 금 또는 종목명·티커" autoComplete="off" /><datalist id={`${id}-symbols`}>{matches.map(row => <option key={row.ticker} value={row.ticker}>{row.name}</option>)}</datalist></label>
+    <label>시작일<input aria-label={`차트 ${index === 0 ? "A" : "B"} 시작일`} type="date" value={start} required onChange={event => setStart(event.target.value)} /></label>
+    <label>종료일<input aria-label={`차트 ${index === 0 ? "A" : "B"} 종료일`} type="date" value={end} required onChange={event => setEnd(event.target.value)} /></label>
+    <button type="submit">적용</button>{error && <p className="replaySelectionError" role="alert">{error}</p>}
+  </form>;
+}
