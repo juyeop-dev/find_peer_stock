@@ -6,7 +6,11 @@ on:
   workflow_dispatch:
   push:
     branches: [main]
-    paths: [.github/workflows/deploy-prepared-snapshots.yml]
+    paths:
+      - .github/workflows/deploy-prepared-snapshots.yml
+      - frontend/src/**
+      - frontend/package.json
+      - frontend/package-lock.json
 
 permissions:
   contents: read
