@@ -8,7 +8,7 @@ import { ImeSearchInput } from "./ImeSearchInput";
 import { ReplayCharts } from "./ReplayCharts";
 import "../styles/chartReplay.css";
 
-interface Settings { selections: ReplaySelection[]; overlay: boolean; kind: "line" | "candles"; interval: ReplayInterval; average: boolean; volume: boolean; logarithmic: boolean; count: number; speed: number }
+interface Settings { selections: ReplaySelection[]; overlay: boolean; kind: "line" | "candles"; interval: ReplayInterval; average: boolean; volume: boolean; logarithmic: boolean; count: number | null; speed: number }
 const BUILTINS: ChartSymbol[] = REPLAY_PRESET.map(row => ({ ticker: row.ticker, name: row.name }));
 function initialSettings(ticker?: string, name?: string, exchange?: string): Settings {
   const selections = REPLAY_PRESET.map(row => ({ ...row }));
@@ -49,13 +49,15 @@ export function ChartReplayWorkspace({ ticker, name, exchange, active = true }: 
   // Stop at the shorter history: both panels advance one actual daily session
   // per tick. Different market holidays do not create artificial bars.
   const maximum = ready ? Math.min(...ranges.map(rows => rows.length)) : 1;
-  const count = Math.min(settings.count, maximum);
+  // A newly applied selection opens its whole available comparison period.
+  // Keep that intent while either market is still loading.
+  const count = Math.min(settings.count ?? maximum, maximum);
   const candleAvailable = ranges.every(rows => rows.length > 0 && rows.every(hasOHLC));
   const patch = (value: Partial<Settings>) => { setSettings(previous => ({ ...previous, ...value })); setNotice(""); };
   useEffect(() => { if (!active) { setPlaying(false); setExpanded(false); } }, [active]);
   useEffect(() => {
     if (!playing || !ready || count >= maximum) { if (playing) setPlaying(false); return; }
-    const timer = window.setInterval(() => setSettings(previous => ({ ...previous, count: Math.min(previous.count + 1, maximum) })), 1000 / settings.speed);
+    const timer = window.setInterval(() => setSettings(previous => ({ ...previous, count: Math.min((previous.count ?? maximum) + 1, maximum) })), 1000 / settings.speed);
     return () => window.clearInterval(timer);
   }, [playing, ready, maximum, count, settings.speed]);
   useEffect(() => {
@@ -76,7 +78,7 @@ export function ChartReplayWorkspace({ ticker, name, exchange, active = true }: 
 
   function select(index: number, selection: ReplaySelection) {
     setPlaying(false);
-    patch({ selections: settings.selections.map((row, i) => i === index ? selection : row), count: 1 });
+    patch({ selections: settings.selections.map((row, i) => i === index ? selection : row), count: null });
     setFit(value => value + 1);
   }
   function save() {
@@ -127,27 +129,52 @@ export function ChartReplayWorkspace({ ticker, name, exchange, active = true }: 
 function SelectionEditor({ selection, index, onApply }: { selection: ReplaySelection; index: number; onApply: (value: ReplaySelection) => void }) {
   const [query, setQuery] = useState(selection.ticker), [start, setStart] = useState(selection.start), [end, setEnd] = useState(selection.end);
   const [symbols, setSymbols] = useState<ChartSymbol[]>([]), [error, setError] = useState("");
+  const [open, setOpen] = useState(false), [highlighted, setHighlighted] = useState(0), [applying, setApplying] = useState(false);
   const id = useId(), alive = useRef(true), requested = useRef(false);
   useEffect(() => { alive.current = true; return () => { alive.current = false; }; }, []);
-  useEffect(() => { setQuery(selection.ticker); setStart(selection.start); setEnd(selection.end); setError(""); }, [selection]);
-  const matches = searchChartSymbols([...BUILTINS, ...symbols], query, []);
+  useEffect(() => { setQuery(selection.ticker); setStart(selection.start); setEnd(selection.end); setError(""); setOpen(false); }, [selection]);
+  const catalog = [...new Map([...BUILTINS, selection, ...symbols].map(row => [row.ticker, row])).values()];
+  const matches = searchChartSymbols(catalog, query, []);
+  function choose(symbol: ChartSymbol) { setQuery(symbol.ticker); setError(""); setOpen(false); }
   function loadCatalog() {
     if (requested.current) return;
     requested.current = true;
     void getChartSymbols().then(rows => { if (alive.current) setSymbols(rows); }).catch(() => { requested.current = false; if (alive.current) setError("종목 목록을 불러오지 못했습니다. 티커를 직접 입력하거나 다시 선택해 주세요."); });
   }
-  function apply() {
+  async function apply() {
     if (!validReplayDate(start) || !validReplayDate(end) || start > end) { setError("시작일은 종료일보다 늦을 수 없습니다. 날짜를 확인해 주세요."); return; }
-    const text = query.trim(), exact = [...BUILTINS, ...symbols].find(row => row.ticker.toUpperCase() === text.toUpperCase() || row.name === text);
-    const symbol = exact ?? (text.toUpperCase() === selection.ticker ? selection : undefined);
-    if (!symbol && !/^[A-Z0-9^][A-Z0-9.^:_=\-]{0,39}$/.test(text.toUpperCase())) { setError("검색 목록에서 종목을 선택하거나 올바른 티커를 입력해 주세요."); return; }
-    setError(""); onApply({ ticker: symbol?.ticker ?? text.toUpperCase(), name: symbol?.name ?? text.toUpperCase(), exchange: symbol?.exchange, start, end });
+    const text = query.trim(), validTicker = /^[A-Z0-9^][A-Z0-9.^:_=\-]{0,39}$/.test(text.toUpperCase());
+    const exactMatch = (row: ChartSymbol) => row.ticker.toUpperCase() === text.toUpperCase() || row.name.toLocaleLowerCase() === text.toLocaleLowerCase() || (row.ticker === "GC=F" && text === "금");
+    let rows = catalog;
+    // Submitting a name immediately after focus must also wait for the catalog.
+    if (!validTicker && !rows.some(exactMatch)) {
+      setApplying(true);
+      try { const loaded = await getChartSymbols(); rows = [...new Map([...catalog, ...loaded].map(row => [row.ticker, row])).values()]; if (alive.current) setSymbols(loaded); }
+      catch { /* Built-in market names remain available without the catalog. */ }
+      finally { if (alive.current) setApplying(false); }
+      if (!alive.current) return;
+    }
+    const exact = rows.find(exactMatch);
+    const candidates = searchChartSymbols(rows, text, []);
+    const symbol = exact ?? (!validTicker && candidates.length === 1 ? candidates[0] : undefined);
+    if (!symbol && !validTicker) { setError("검색 목록에서 종목을 선택하거나 올바른 티커를 입력해 주세요."); setOpen(true); return; }
+    setError(""); setOpen(false); onApply({ ticker: symbol?.ticker ?? text.toUpperCase(), name: symbol?.name ?? text.toUpperCase(), exchange: symbol?.exchange, start, end });
   }
   return <form className="replaySelection" aria-label={`차트 ${index === 0 ? "A" : "B"} 기간 설정`} onSubmit={event => { event.preventDefault(); apply(); }}>
     <span className={`replayBadge replayBadge${index}`}>{index === 0 ? "A" : "B"}</span>
-    <label className="replaySymbolInput">종목 <ImeSearchInput aria-label={`차트 ${index === 0 ? "A" : "B"} 종목`} value={query} onValueChange={setQuery} onFocus={loadCatalog} list={`${id}-symbols`} placeholder="코스피, 금 또는 종목명·티커" autoComplete="off" /><datalist id={`${id}-symbols`}>{matches.map(row => <option key={row.ticker} value={row.ticker}>{row.name}</option>)}</datalist></label>
+    <div className="replaySymbolInput" onBlur={event => { if (!event.currentTarget.contains(event.relatedTarget)) setOpen(false); }}>
+      <label>종목 <ImeSearchInput aria-label={`차트 ${index === 0 ? "A" : "B"} 종목`} role="combobox" aria-expanded={open && matches.length > 0} aria-controls={`${id}-symbols`} aria-autocomplete="list" aria-activedescendant={open && matches[highlighted] ? `${id}-symbol-${highlighted}` : undefined} value={query} onValueChange={value => { setQuery(value); setHighlighted(0); setOpen(true); setError(""); }} onFocus={() => { loadCatalog(); setOpen(true); }} onKeyDown={event => {
+        if (event.nativeEvent.isComposing || event.keyCode === 229) { if (event.key === "Enter") event.preventDefault(); return; }
+        if (event.key === "Escape") { event.preventDefault(); setOpen(false); }
+        if (open && matches.length) {
+          if (event.key === "ArrowDown" || event.key === "ArrowUp") { event.preventDefault(); setHighlighted(value => (value + (event.key === "ArrowDown" ? 1 : -1) + matches.length) % matches.length); }
+          if (event.key === "Enter") { event.preventDefault(); choose(matches[Math.min(highlighted, matches.length - 1)]); }
+        }
+      }} placeholder="코스피, 금 또는 종목명·티커" autoComplete="off" /></label>
+      {open && matches.length > 0 && <div id={`${id}-symbols`} className="replaySearchResults" role="listbox" aria-label={`차트 ${index === 0 ? "A" : "B"} 종목 검색 결과`}>{matches.map((row, i) => <button type="button" role="option" aria-selected={highlighted === i} id={`${id}-symbol-${i}`} key={row.ticker} onMouseDown={event => event.preventDefault()} onClick={() => choose(row)}><strong>{row.name}</strong><span>{row.ticker}{row.exchange ? ` · ${row.exchange}` : ""}</span></button>)}</div>}
+    </div>
     <label>시작일<input aria-label={`차트 ${index === 0 ? "A" : "B"} 시작일`} type="date" value={start} required onChange={event => setStart(event.target.value)} /></label>
     <label>종료일<input aria-label={`차트 ${index === 0 ? "A" : "B"} 종료일`} type="date" value={end} required onChange={event => setEnd(event.target.value)} /></label>
-    <button type="submit">적용</button>{error && <p className="replaySelectionError" role="alert">{error}</p>}
+    <button type="submit" disabled={applying}>{applying ? "확인 중…" : "적용"}</button>{error && <p className="replaySelectionError" role="alert">{error}</p>}
   </form>;
 }
