@@ -1,11 +1,12 @@
 import type { SemiconductorPrice } from "./semiconductorTypes";
 
 export type ChartScale = "price" | "percent";
-export type DrawingTool = "move" | "trend" | "horizontal" | "vertical";
+export type DrawingTool = "move" | "trend" | "horizontal" | "vertical" | "ray" | "arrow" | "rectangle" | "fibonacci" | "channel" | "measure";
 export interface Anchor { date: string; value: number }
 export interface ChartDrawing {
-  id: string; type: Exclude<DrawingTool, "move">; scale: ChartScale;
+  id: string; type: Exclude<DrawingTool, "move" | "channel">; scale: ChartScale;
   start: Anchor; end: Anchor; color: string;
+  width?: number; dashed?: boolean; hidden?: boolean; locked?: boolean;
   channel?: { offset: number; visible: boolean; middle: boolean };
 }
 export interface PlotPoint { date: string; value: number }
@@ -56,11 +57,12 @@ export function parseDrawings(raw: string | null): ChartDrawing[] {
     const value: unknown = JSON.parse(raw ?? "[]");
     if (!Array.isArray(value)) return [];
     const anchor = (p: Anchor) => p && /^\d{4}-\d{2}-\d{2}$/.test(p.date) && Number.isFinite(p.value);
-    return value.filter((d: ChartDrawing) => d && typeof d.id === "string" && ["trend", "horizontal", "vertical"].includes(d.type)
+    return value.filter((d: ChartDrawing) => d && typeof d.id === "string" && ["trend", "horizontal", "vertical", "ray", "arrow", "rectangle", "fibonacci", "measure"].includes(d.type)
       && ["price", "percent"].includes(d.scale) && anchor(d.start) && anchor(d.end) && /^#[\da-f]{6}$/i.test(d.color)).slice(-100).map((d: ChartDrawing) => {
-        const { channel, ...base } = d;
+        const { channel, width, dashed, hidden, locked, ...base } = d;
+        const styling = { ...([1, 2, 3, 4].includes(width!) ? { width } : {}), ...(typeof dashed === "boolean" ? { dashed } : {}), ...(typeof hidden === "boolean" ? { hidden } : {}), ...(typeof locked === "boolean" ? { locked } : {}) };
         return d.type === "trend" && channel && Number.isFinite(channel.offset) && typeof channel.visible === "boolean" && typeof channel.middle === "boolean"
-          ? { ...base, channel: { offset: channel.offset, visible: channel.visible, middle: channel.middle } } : base;
+          ? { ...base, ...styling, channel: { offset: channel.offset, visible: channel.visible, middle: channel.middle } } : { ...base, ...styling };
       });
   } catch { return []; }
 }

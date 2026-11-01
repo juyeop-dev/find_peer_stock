@@ -16,7 +16,7 @@
     "test:stock-details": "node --test tests/stock-detail-links.test.mjs tests/tradingview-chart.test.mjs",
     "test:stock-details:browser": "node tests/stock-details-browser.mjs",
     "test:live-refresh:browser": "node tests/live-refresh-browser.mjs",
-    "test:stock-history": "node --test tests/stock-history.test.mjs tests/historical-report-client.test.mjs tests/chart-workspace.test.mjs",
+    "test:stock-history": "node --test tests/stock-history.test.mjs tests/historical-report-client.test.mjs tests/chart-workspace.test.mjs tests/chart-analysis.test.mjs",
     "test:stock-information": "node --test tests/stock-information.test.mjs",
     "test:stock-information:production": "node tests/stock-information-production.mjs",
     "test:sectors": "node --test tests/sector-rankings.test.mjs tests/sector-history-client.test.mjs ../tests/sector-archive.test.mjs",
@@ -44,7 +44,9 @@
     "test:chart-workspace:browser": "node tests/chart-workspace-browser.mjs",
     "test:tradingview:browser": "node tests/tradingview-chart-browser.mjs",
     "test:chart-replay": "node --test tests/chart-replay.test.mjs",
-    "test:chart-replay:browser": "node tests/chart-replay-browser.mjs"
+    "test:chart-replay:browser": "node tests/chart-replay-browser.mjs",
+    "test:chart-analysis": "node --test tests/chart-analysis.test.mjs",
+    "test:chart-analysis:browser": "node tests/chart-analysis-browser.mjs"
   },
   "dependencies": {
     "react": "^19.0.0",
