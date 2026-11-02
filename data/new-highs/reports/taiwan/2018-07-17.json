@@ -1,0 +1,271 @@
+{
+  "schema_version": 1,
+  "market": "taiwan",
+  "date": "2018-07-17",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "2221.TWO",
+      "name": "Tachia Yung Ho Machine Industry Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Non-Energy Minerals",
+      "high_type": "all_time",
+      "reason": "업종: Non-Energy Minerals · Steel",
+      "description": "Tachia Yung Ho Machine Industry Co., Ltd. · Steel",
+      "change_pct": 9.963979733837647,
+      "session_open": 42.0,
+      "session_close": 45.79999923706055,
+      "session_volume": 9973478.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:2221",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2221.TWO/history/",
+        "date": "2018-07-17",
+        "daily_high": 45.79999923706055,
+        "prior_all_time_or_current_month_high": 45.79999923706055,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:2221",
+        "yahoo_symbol": "2221.TWO"
+      }
+    },
+    {
+      "ticker": "8942.TWO",
+      "name": "Xxentria Technology Materials Co.,Ltd",
+      "exchange": "TPEX",
+      "category": "Non-Energy Minerals",
+      "high_type": "52_week",
+      "reason": "업종: Non-Energy Minerals · Aluminum",
+      "description": "Xxentria Technology Materials Co.,Ltd · Aluminum",
+      "change_pct": 1.513386655898219,
+      "session_open": 71.7264404296875,
+      "session_close": 72.7272720336914,
+      "session_volume": 1420210.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:8942",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/8942.TWO/history/",
+        "date": "2018-07-17",
+        "daily_high": 72.7272720336914,
+        "prior_all_time_or_current_month_high": 93.41117858886719,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:8942",
+        "yahoo_symbol": "8942.TWO"
+      }
+    },
+    {
+      "ticker": "2108.TW",
+      "name": "NANTEX INDUSTRY CO LTD",
+      "exchange": "TWSE",
+      "category": "Process Industries",
+      "high_type": "all_time",
+      "reason": "업종: Process Industries · Chemicals: Specialty",
+      "description": "NANTEX INDUSTRY CO LTD · Chemicals: Specialty",
+      "change_pct": 1.0033406509496912,
+      "session_open": 28.571428298950195,
+      "session_close": 28.761903762817383,
+      "session_volume": 2081825.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2108",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2108.TW/history/",
+        "date": "2018-07-17",
+        "daily_high": 29.047618865966797,
+        "prior_all_time_or_current_month_high": 29.047618865966797,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:2108",
+        "yahoo_symbol": "2108.TW"
+      }
+    },
+    {
+      "ticker": "2371.TW",
+      "name": "Tatung Co.",
+      "exchange": "TWSE",
+      "category": "Consumer Durables",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Durables · Electronics/Appliances",
+      "description": "Tatung Co. · Electronics/Appliances",
+      "change_pct": 4.336036573538693,
+      "session_open": 38.842105865478516,
+      "session_close": 40.52631378173828,
+      "session_volume": 79777380.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2371",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2371.TW/history/",
+        "date": "2018-07-17",
+        "daily_high": 40.52631378173828,
+        "prior_all_time_or_current_month_high": 88.78949737548828,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:2371",
+        "yahoo_symbol": "2371.TW"
+      }
+    },
+    {
+      "ticker": "2702.TW",
+      "name": "Hotel Holiday Garden",
+      "exchange": "TWSE",
+      "category": "Consumer Services",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Services · Hotels/Resorts/Cruise lines",
+      "description": "Hotel Holiday Garden · Hotels/Resorts/Cruise lines",
+      "change_pct": 0.38167892139790993,
+      "session_open": 17.08145523071289,
+      "session_close": 17.17943572998047,
+      "session_volume": 2707070.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2702",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2702.TW/history/",
+        "date": "2018-07-17",
+        "daily_high": 17.963289260864258,
+        "prior_all_time_or_current_month_high": 18.16289520263672,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:2702",
+        "yahoo_symbol": "2702.TW"
+      }
+    },
+    {
+      "ticker": "4927.TW",
+      "name": "Apex International Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Electronic Components",
+      "description": "Apex International Co., Ltd. · Electronic Components",
+      "change_pct": 1.957292632007368,
+      "session_open": 28.299999237060547,
+      "session_close": 28.649999618530273,
+      "session_volume": 22580752.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:4927",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4927.TW/history/",
+        "date": "2018-07-17",
+        "daily_high": 29.950000762939453,
+        "prior_all_time_or_current_month_high": 51.802581787109375,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:4927",
+        "yahoo_symbol": "4927.TW"
+      }
+    },
+    {
+      "ticker": "4942.TW",
+      "name": "Chia Chang Co., Ltd",
+      "exchange": "TWSE",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Metal Fabrication",
+      "description": "Chia Chang Co., Ltd · Metal Fabrication",
+      "change_pct": 1.5151500920837613,
+      "session_open": 26.450000762939453,
+      "session_close": 26.799999237060547,
+      "session_volume": 2013973.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:4942",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4942.TW/history/",
+        "date": "2018-07-17",
+        "daily_high": 27.549999237060547,
+        "prior_all_time_or_current_month_high": 52.719200134277344,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:4942",
+        "yahoo_symbol": "4942.TW"
+      }
+    },
+    {
+      "ticker": "5269.TW",
+      "name": "Asmedia Technology Inc.",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Semiconductors",
+      "description": "Asmedia Technology Inc. · Semiconductors",
+      "change_pct": 3.168316831683171,
+      "session_open": 499.0,
+      "session_close": 521.0,
+      "session_volume": 1122521.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:5269",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/5269.TW/history/",
+        "date": "2018-07-17",
+        "daily_high": 527.0,
+        "prior_all_time_or_current_month_high": 527.0,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:5269",
+        "yahoo_symbol": "5269.TW"
+      }
+    },
+    {
+      "ticker": "6689.TW",
+      "name": "eCloudvalley Digital Technology Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Technology Services",
+      "high_type": "all_time",
+      "reason": "업종: Technology Services · Packaged Software",
+      "description": "eCloudvalley Digital Technology Co., Ltd. · Packaged Software",
+      "change_pct": 0.0,
+      "session_open": 78.39815521240234,
+      "session_close": 78.39815521240234,
+      "session_volume": 328087.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:6689",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6689.TW/history/",
+        "date": "2018-07-17",
+        "daily_high": 81.41346740722656,
+        "prior_all_time_or_current_month_high": 81.41346740722656,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:6689",
+        "yahoo_symbol": "6689.TW"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-11-02T11:32:42.659942+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 2357,
+    "history_symbols": 1785,
+    "inactive_symbols": 562,
+    "failed_symbols": 10,
+    "coverage_ratio": 0.9944289693593314,
+    "coverage_by_exchange": {
+      "TWSE": {
+        "covered": 946,
+        "total": 953
+      },
+      "TPEX": {
+        "covered": 839,
+        "total": 842
+      }
+    },
+    "session_symbols": 1750,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-11-02T11:32:42.659942+00:00"
+}

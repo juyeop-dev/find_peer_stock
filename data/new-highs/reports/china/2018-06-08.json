@@ -1,0 +1,296 @@
+{
+  "schema_version": 1,
+  "market": "china",
+  "date": "2018-06-08",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "600009.SS",
+      "name": "Shanghai International Airport Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Transportation",
+      "high_type": "all_time",
+      "reason": "업종: Transportation · Other Transportation",
+      "description": "Shanghai International Airport Co., Ltd. Class A · Other Transportation",
+      "change_pct": 0.6500399832828796,
+      "session_open": 56.5,
+      "session_close": 57.290000915527344,
+      "session_volume": 6148609.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:600009",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/600009.SS/history/",
+        "date": "2018-06-08",
+        "daily_high": 58.380001068115234,
+        "prior_all_time_or_current_month_high": 58.380001068115234,
+        "passes_close_filter": true,
+        "source_symbol": "SSE:600009",
+        "yahoo_symbol": "600009.SS"
+      }
+    },
+    {
+      "ticker": "603486.SS",
+      "name": "Ecovacs Robotics Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Consumer Durables",
+      "high_type": "all_time",
+      "reason": "업종: Consumer Durables · Electronics/Appliances",
+      "description": "Ecovacs Robotics Co., Ltd. Class A · Electronics/Appliances",
+      "change_pct": 9.999995679145446,
+      "session_open": 48.5571403503418,
+      "session_close": 48.5571403503418,
+      "session_volume": 635798.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:603486",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/603486.SS/history/",
+        "date": "2018-06-08",
+        "daily_high": 48.5571403503418,
+        "prior_all_time_or_current_month_high": 48.5571403503418,
+        "passes_close_filter": true,
+        "source_symbol": "SSE:603486",
+        "yahoo_symbol": "603486.SS"
+      }
+    },
+    {
+      "ticker": "002607.SZ",
+      "name": "Offcn Education Technology Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Commercial Services",
+      "high_type": "all_time",
+      "reason": "업종: Commercial Services · Miscellaneous Commercial Services",
+      "description": "Offcn Education Technology Co., Ltd. Class A · Miscellaneous Commercial Services",
+      "change_pct": 9.980627103720586,
+      "session_open": 11.300000190734863,
+      "session_close": 11.350000381469727,
+      "session_volume": 61032600.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002607",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002607.SZ/history/",
+        "date": "2018-06-08",
+        "daily_high": 11.350000381469727,
+        "prior_all_time_or_current_month_high": 11.350000381469727,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:002607",
+        "yahoo_symbol": "002607.SZ"
+      }
+    },
+    {
+      "ticker": "002727.SZ",
+      "name": "Yixintang Pharmaceutical Group Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Retail Trade",
+      "high_type": "52_week",
+      "reason": "업종: Retail Trade · Drugstore Chains",
+      "description": "Yixintang Pharmaceutical Group Co., Ltd. Class A · Drugstore Chains",
+      "change_pct": 1.802069831163866,
+      "session_open": 33.689998626708984,
+      "session_close": 34.459999084472656,
+      "session_volume": 4177836.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002727",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002727.SZ/history/",
+        "date": "2018-06-08",
+        "daily_high": 35.45000076293945,
+        "prior_all_time_or_current_month_high": 39.119998931884766,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:002727",
+        "yahoo_symbol": "002727.SZ"
+      }
+    },
+    {
+      "ticker": "002798.SZ",
+      "name": "DO & SHUIHUA Group Co., LTD. Class A",
+      "exchange": "SZSE",
+      "category": "Consumer Durables",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Durables · Home Furnishings",
+      "description": "DO & SHUIHUA Group Co., LTD. Class A · Home Furnishings",
+      "change_pct": 4.858300809948091,
+      "session_open": 20.399999618530273,
+      "session_close": 21.329410552978516,
+      "session_volume": 3234882.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002798",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002798.SZ/history/",
+        "date": "2018-06-08",
+        "daily_high": 22.3764705657959,
+        "prior_all_time_or_current_month_high": 33.86851119995117,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:002798",
+        "yahoo_symbol": "002798.SZ"
+      }
+    },
+    {
+      "ticker": "300012.SZ",
+      "name": "Centre Testing International Group Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Commercial Services",
+      "high_type": "52_week",
+      "reason": "업종: Commercial Services · Miscellaneous Commercial Services",
+      "description": "Centre Testing International Group Co., Ltd. Class A · Miscellaneous Commercial Services",
+      "change_pct": 1.964288131923131,
+      "session_open": 5.610000133514404,
+      "session_close": 5.710000038146973,
+      "session_volume": 39727573.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:300012",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/300012.SZ/history/",
+        "date": "2018-06-08",
+        "daily_high": 5.949999809265137,
+        "prior_all_time_or_current_month_high": 11.734999656677246,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:300012",
+        "yahoo_symbol": "300012.SZ"
+      }
+    },
+    {
+      "ticker": "300270.SZ",
+      "name": "Joyware Electronics Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Telecommunications Equipment",
+      "description": "Joyware Electronics Co., Ltd. Class A · Telecommunications Equipment",
+      "change_pct": 1.0107790902152747,
+      "session_open": 14.84000015258789,
+      "session_close": 14.989999771118164,
+      "session_volume": 3325441.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:300270",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/300270.SZ/history/",
+        "date": "2018-06-08",
+        "daily_high": 15.350000381469727,
+        "prior_all_time_or_current_month_high": 34.79999923706055,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:300270",
+        "yahoo_symbol": "300270.SZ"
+      }
+    },
+    {
+      "ticker": "300647.SZ",
+      "name": "Shenzhen Fluence Technology Plc Class A",
+      "exchange": "SZSE",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Computer Peripherals",
+      "description": "Shenzhen Fluence Technology Plc Class A · Computer Peripherals",
+      "change_pct": 10.021670776997894,
+      "session_open": 11.893333435058594,
+      "session_close": 13.539999961853027,
+      "session_volume": 50214211.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:300647",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/300647.SZ/history/",
+        "date": "2018-06-08",
+        "daily_high": 13.539999961853027,
+        "prior_all_time_or_current_month_high": 13.539999961853027,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:300647",
+        "yahoo_symbol": "300647.SZ"
+      }
+    },
+    {
+      "ticker": "300745.SZ",
+      "name": "Shinry Technologies Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Auto Parts: OEM",
+      "description": "Shinry Technologies Co., Ltd. Class A · Auto Parts: OEM",
+      "change_pct": 10.004170831190496,
+      "session_open": 52.66999816894531,
+      "session_close": 52.66999816894531,
+      "session_volume": 1346424.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:300745",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/300745.SZ/history/",
+        "date": "2018-06-08",
+        "daily_high": 52.66999816894531,
+        "prior_all_time_or_current_month_high": 52.66999816894531,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:300745",
+        "yahoo_symbol": "300745.SZ"
+      }
+    },
+    {
+      "ticker": "300746.SZ",
+      "name": "Hanjia Digital Intelligence Science and Technology Group Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Industrial Services",
+      "high_type": "all_time",
+      "reason": "업종: Industrial Services · Engineering & Construction",
+      "description": "Hanjia Digital Intelligence Science and Technology Group Co., Ltd. Class A · Engineering & Construction",
+      "change_pct": 10.00523746540245,
+      "session_open": 21.0,
+      "session_close": 21.0,
+      "session_volume": 634996.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:300746",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/300746.SZ/history/",
+        "date": "2018-06-08",
+        "daily_high": 21.0,
+        "prior_all_time_or_current_month_high": 21.0,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:300746",
+        "yahoo_symbol": "300746.SZ"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-11-02T11:40:39.351428+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 5312,
+    "history_symbols": 3405,
+    "inactive_symbols": 1899,
+    "failed_symbols": 8,
+    "coverage_ratio": 0.9976560210958101,
+    "coverage_by_exchange": {
+      "SSE": {
+        "covered": 1388,
+        "total": 1390
+      },
+      "SZSE": {
+        "covered": 2017,
+        "total": 2023
+      }
+    },
+    "session_symbols": 3355,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-11-02T11:40:39.351428+00:00"
+}

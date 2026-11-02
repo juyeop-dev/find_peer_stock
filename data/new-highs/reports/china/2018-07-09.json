@@ -1,0 +1,196 @@
+{
+  "schema_version": 1,
+  "market": "china",
+  "date": "2018-07-09",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "600763.SS",
+      "name": "Topchoice Medical Corp. Class A",
+      "exchange": "SSE",
+      "category": "Health Services",
+      "high_type": "52_week",
+      "reason": "업종: Health Services · Hospital/Nursing Management",
+      "description": "Topchoice Medical Corp. Class A · Hospital/Nursing Management",
+      "change_pct": 9.99165695763593,
+      "session_open": 34.556739807128906,
+      "session_close": 37.648284912109375,
+      "session_volume": 7833053.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:600763",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/600763.SS/history/",
+        "date": "2018-07-09",
+        "daily_high": 37.648284912109375,
+        "prior_all_time_or_current_month_high": 39.39754104614258,
+        "passes_close_filter": true,
+        "source_symbol": "SSE:600763",
+        "yahoo_symbol": "600763.SS"
+      }
+    },
+    {
+      "ticker": "603605.SS",
+      "name": "Proya Cosmetics Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Consumer Non-Durables",
+      "high_type": "all_time",
+      "reason": "업종: Consumer Non-Durables · Household/Personal Care",
+      "description": "Proya Cosmetics Co., Ltd. Class A · Household/Personal Care",
+      "change_pct": 10.004849575112939,
+      "session_open": 21.224489212036133,
+      "session_close": 23.11224365234375,
+      "session_volume": 9892010.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:603605",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/603605.SS/history/",
+        "date": "2018-07-09",
+        "daily_high": 23.11224365234375,
+        "prior_all_time_or_current_month_high": 23.11224365234375,
+        "passes_close_filter": true,
+        "source_symbol": "SSE:603605",
+        "yahoo_symbol": "603605.SS"
+      }
+    },
+    {
+      "ticker": "603960.SS",
+      "name": "Shanghai Kelai Mechatronics Engineering Co. Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Auto Parts: OEM",
+      "description": "Shanghai Kelai Mechatronics Engineering Co. Ltd. Class A · Auto Parts: OEM",
+      "change_pct": 8.393688176849512,
+      "session_open": 16.78571319580078,
+      "session_close": 18.093406677246094,
+      "session_volume": 2890665.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:603960",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/603960.SS/history/",
+        "date": "2018-07-09",
+        "daily_high": 18.351648330688477,
+        "prior_all_time_or_current_month_high": 18.43097686767578,
+        "passes_close_filter": true,
+        "source_symbol": "SSE:603960",
+        "yahoo_symbol": "603960.SS"
+      }
+    },
+    {
+      "ticker": "002493.SZ",
+      "name": "Rongsheng Petrochemical Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Distribution Services",
+      "high_type": "all_time",
+      "reason": "업종: Distribution Services · Wholesale Distributors",
+      "description": "Rongsheng Petrochemical Co., Ltd. Class A · Wholesale Distributors",
+      "change_pct": 5.342736927565572,
+      "session_open": 6.626666069030762,
+      "session_close": 6.966666221618652,
+      "session_volume": 16365313.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002493",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002493.SZ/history/",
+        "date": "2018-07-09",
+        "daily_high": 6.993332862854004,
+        "prior_all_time_or_current_month_high": 6.993332862854004,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:002493",
+        "yahoo_symbol": "002493.SZ"
+      }
+    },
+    {
+      "ticker": "200596.SZ",
+      "name": "Anhui Gujing Distillery Co., Ltd. Class B",
+      "exchange": "SZSE",
+      "category": "Consumer Non-Durables",
+      "high_type": "all_time",
+      "reason": "업종: Consumer Non-Durables · Beverages: Alcoholic",
+      "description": "Anhui Gujing Distillery Co., Ltd. Class B · Beverages: Alcoholic",
+      "change_pct": 4.725608925054203,
+      "session_open": 53.25,
+      "session_close": 54.959999084472656,
+      "session_volume": 308391.0,
+      "currency": "HKD",
+      "source_symbol": "SZSE:200596",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/200596.SZ/history/",
+        "date": "2018-07-09",
+        "daily_high": 54.959999084472656,
+        "prior_all_time_or_current_month_high": 54.959999084472656,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:200596",
+        "yahoo_symbol": "200596.SZ"
+      }
+    },
+    {
+      "ticker": "300747.SZ",
+      "name": "Wuhan Raycus Fiber Laser Technologies Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Electrical Products",
+      "description": "Wuhan Raycus Fiber Laser Technologies Co., Ltd. Class A · Electrical Products",
+      "change_pct": 9.997674305380588,
+      "session_open": 32.44900131225586,
+      "session_close": 32.44900131225586,
+      "session_volume": 1180610.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:300747",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/300747.SZ/history/",
+        "date": "2018-07-09",
+        "daily_high": 32.44900131225586,
+        "prior_all_time_or_current_month_high": 32.44900131225586,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:300747",
+        "yahoo_symbol": "300747.SZ"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-11-02T11:40:39.351428+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 5312,
+    "history_symbols": 3405,
+    "inactive_symbols": 1899,
+    "failed_symbols": 8,
+    "coverage_ratio": 0.9976560210958101,
+    "coverage_by_exchange": {
+      "SSE": {
+        "covered": 1388,
+        "total": 1390
+      },
+      "SZSE": {
+        "covered": 2017,
+        "total": 2023
+      }
+    },
+    "session_symbols": 3363,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-11-02T11:40:39.351428+00:00"
+}

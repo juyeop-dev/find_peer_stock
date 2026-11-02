@@ -1,0 +1,296 @@
+{
+  "schema_version": 1,
+  "market": "taiwan",
+  "date": "2018-04-17",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "3521.TWO",
+      "name": "TSG Development Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Computer Processing Hardware",
+      "description": "TSG Development Co., Ltd. · Computer Processing Hardware",
+      "change_pct": 9.611224272679175,
+      "session_open": 9.300000190734863,
+      "session_close": 10.149999618530273,
+      "session_volume": 367605.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:3521",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3521.TWO/history/",
+        "date": "2018-04-17",
+        "daily_high": 10.149999618530273,
+        "prior_all_time_or_current_month_high": 43.70000076293945,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:3521",
+        "yahoo_symbol": "3521.TWO"
+      }
+    },
+    {
+      "ticker": "4707.TWO",
+      "name": "Pan Asia Chemical Corp.",
+      "exchange": "TPEX",
+      "category": "Process Industries",
+      "high_type": "52_week",
+      "reason": "업종: Process Industries · Chemicals: Major Diversified",
+      "description": "Pan Asia Chemical Corp. · Chemicals: Major Diversified",
+      "change_pct": 9.704627081431694,
+      "session_open": 7.125220775604248,
+      "session_close": 7.71898889541626,
+      "session_volume": 13825266.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:4707",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4707.TWO/history/",
+        "date": "2018-04-17",
+        "daily_high": 7.71898889541626,
+        "prior_all_time_or_current_month_high": 12.944100379943848,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:4707",
+        "yahoo_symbol": "4707.TWO"
+      }
+    },
+    {
+      "ticker": "5468.TWO",
+      "name": "TM Technology Inc.",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Semiconductors",
+      "description": "TM Technology Inc. · Semiconductors",
+      "change_pct": 9.09091371483206,
+      "session_open": 17.07744026184082,
+      "session_close": 20.454336166381836,
+      "session_volume": 3815.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:5468",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/5468.TWO/history/",
+        "date": "2018-04-17",
+        "daily_high": 20.454336166381836,
+        "prior_all_time_or_current_month_high": 71.55802154541016,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:5468",
+        "yahoo_symbol": "5468.TWO"
+      }
+    },
+    {
+      "ticker": "6624.TWO",
+      "name": "Ever-Clear Environmental Eng. Corp.",
+      "exchange": "TPEX",
+      "category": "Industrial Services",
+      "high_type": "all_time",
+      "reason": "업종: Industrial Services · Environmental Services",
+      "description": "Ever-Clear Environmental Eng. Corp. · Environmental Services",
+      "change_pct": 0.0,
+      "session_open": 59.353973388671875,
+      "session_close": 59.353973388671875,
+      "session_volume": 1025.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:6624",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6624.TWO/history/",
+        "date": "2018-04-17",
+        "daily_high": 59.353973388671875,
+        "prior_all_time_or_current_month_high": 59.353973388671875,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:6624",
+        "yahoo_symbol": "6624.TWO"
+      }
+    },
+    {
+      "ticker": "8092.TWO",
+      "name": "Chien Wei Precise Technology Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Electronic Components",
+      "description": "Chien Wei Precise Technology Co., Ltd. · Electronic Components",
+      "change_pct": 9.795916810327654,
+      "session_open": 13.449999809265137,
+      "session_close": 13.449999809265137,
+      "session_volume": 276800.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:8092",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/8092.TWO/history/",
+        "date": "2018-04-17",
+        "daily_high": 13.449999809265137,
+        "prior_all_time_or_current_month_high": 27.450000762939453,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:8092",
+        "yahoo_symbol": "8092.TWO"
+      }
+    },
+    {
+      "ticker": "1590.TW",
+      "name": "Airtac International Group",
+      "exchange": "TWSE",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Industrial Machinery",
+      "description": "Airtac International Group · Industrial Machinery",
+      "change_pct": 0.3389828734578382,
+      "session_open": 575.268798828125,
+      "session_close": 585.1531372070312,
+      "session_volume": 1100191.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:1590",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/1590.TW/history/",
+        "date": "2018-04-17",
+        "daily_high": 613.8176879882812,
+        "prior_all_time_or_current_month_high": 613.8176879882812,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:1590",
+        "yahoo_symbol": "1590.TW"
+      }
+    },
+    {
+      "ticker": "2049.TW",
+      "name": "HIWIN Technologies Corp.",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Electronic Components",
+      "description": "HIWIN Technologies Corp. · Electronic Components",
+      "change_pct": 2.59481095348737,
+      "session_open": 439.2493591308594,
+      "session_close": 446.1940002441406,
+      "session_volume": 6539344.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2049",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2049.TW/history/",
+        "date": "2018-04-17",
+        "daily_high": 456.6109924316406,
+        "prior_all_time_or_current_month_high": 456.6109924316406,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:2049",
+        "yahoo_symbol": "2049.TW"
+      }
+    },
+    {
+      "ticker": "2492.TW",
+      "name": "Walsin Technology Corporation",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Electronic Components",
+      "description": "Walsin Technology Corporation · Electronic Components",
+      "change_pct": 8.247422680412363,
+      "session_open": 150.0,
+      "session_close": 157.5,
+      "session_volume": 43419581.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2492",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2492.TW/history/",
+        "date": "2018-04-17",
+        "daily_high": 160.0,
+        "prior_all_time_or_current_month_high": 160.0,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:2492",
+        "yahoo_symbol": "2492.TW"
+      }
+    },
+    {
+      "ticker": "3596.TW",
+      "name": "Arcadyan Technology Corporation",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Telecommunications Equipment",
+      "description": "Arcadyan Technology Corporation · Telecommunications Equipment",
+      "change_pct": 4.736839854268005,
+      "session_open": 57.473304748535156,
+      "session_close": 58.853450775146484,
+      "session_volume": 14628567.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:3596",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3596.TW/history/",
+        "date": "2018-04-17",
+        "daily_high": 58.95203399658203,
+        "prior_all_time_or_current_month_high": 82.32987976074219,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:3596",
+        "yahoo_symbol": "3596.TW"
+      }
+    },
+    {
+      "ticker": "6669.TW",
+      "name": "Wiwynn Corporation",
+      "exchange": "TWSE",
+      "category": "Technology Services",
+      "high_type": "all_time",
+      "reason": "업종: Technology Services · Data Processing Services",
+      "description": "Wiwynn Corporation · Data Processing Services",
+      "change_pct": 2.663675516147279,
+      "session_open": 61.28563690185547,
+      "session_close": 61.28563690185547,
+      "session_volume": 3156365.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:6669",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6669.TW/history/",
+        "date": "2018-04-17",
+        "daily_high": 64.08644104003906,
+        "prior_all_time_or_current_month_high": 64.08644104003906,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:6669",
+        "yahoo_symbol": "6669.TW"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-11-02T11:32:42.659942+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 2357,
+    "history_symbols": 1785,
+    "inactive_symbols": 562,
+    "failed_symbols": 10,
+    "coverage_ratio": 0.9944289693593314,
+    "coverage_by_exchange": {
+      "TWSE": {
+        "covered": 946,
+        "total": 953
+      },
+      "TPEX": {
+        "covered": 839,
+        "total": 842
+      }
+    },
+    "session_symbols": 1741,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-11-02T11:32:42.659942+00:00"
+}

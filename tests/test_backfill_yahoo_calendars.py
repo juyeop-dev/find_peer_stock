@@ -12,6 +12,14 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 import backfill_yahoo_calendars as backfill  # noqa: E402
 
 
+class TaiwanSaturdaySessionTests(unittest.TestCase):
+    def test_official_2018_makeup_sessions_are_included_only_for_taiwan(self):
+        for day in [date(2018, 3, 31), date(2018, 12, 22)]:
+            self.assertEqual(backfill.requested_dates(day, day, 'taiwan'), [day])
+            self.assertEqual(backfill.requested_dates(day, day, 'japan'), [])
+            self.assertEqual(backfill.requested_dates(day, day), [])
+
+
 class YahooCalendarBackfillTests(unittest.TestCase):
     def test_unavailable_old_range_requires_verified_later_listing_metadata(self):
         row = {"exchange": "AMEX", "name": "NEW", "symbol": "AMEX:NEW", "currency": "USD", "description": "New Company"}

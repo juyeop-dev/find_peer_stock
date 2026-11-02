@@ -1,0 +1,2949 @@
+{
+  "schema_version": 1,
+  "version": "korea-history-2026-10-25",
+  "sources": [
+    {
+      "year": 2018,
+      "url": "https://raw.githubusercontent.com/FinanceData/marcap/eeed0817d1478597b738a3a6149c170ec7e3f4cb/data/marcap-2018.parquet",
+      "revision": "eeed0817d1478597b738a3a6149c170ec7e3f4cb",
+      "bytes": 20271735,
+      "sha256": "a03348ab0747972c6a353f52c636494abf216392d401cde823b6388e23f1c443",
+      "fetched_at": "2026-11-02T11:29:22.637476+00:00"
+    }
+  ],
+  "calculated_at": "2026-11-02T11:42:39.776557+00:00",
+  "source_dates": 244,
+  "missing_source_dates": [],
+  "sectors": [
+    {
+      "date": "2018-01-02",
+      "matched": 1688,
+      "unmatched": 21
+    },
+    {
+      "date": "2018-01-03",
+      "matched": 1687,
+      "unmatched": 23
+    },
+    {
+      "date": "2018-01-04",
+      "matched": 1686,
+      "unmatched": 24
+    },
+    {
+      "date": "2018-01-05",
+      "matched": 1689,
+      "unmatched": 23
+    },
+    {
+      "date": "2018-01-08",
+      "matched": 1688,
+      "unmatched": 25
+    },
+    {
+      "date": "2018-01-09",
+      "matched": 1689,
+      "unmatched": 24
+    },
+    {
+      "date": "2018-01-10",
+      "matched": 1689,
+      "unmatched": 25
+    },
+    {
+      "date": "2018-01-11",
+      "matched": 1690,
+      "unmatched": 21
+    },
+    {
+      "date": "2018-01-12",
+      "matched": 1691,
+      "unmatched": 23
+    },
+    {
+      "date": "2018-01-15",
+      "matched": 1691,
+      "unmatched": 25
+    },
+    {
+      "date": "2018-01-16",
+      "matched": 1691,
+      "unmatched": 24
+    },
+    {
+      "date": "2018-01-17",
+      "matched": 1690,
+      "unmatched": 19
+    },
+    {
+      "date": "2018-01-18",
+      "matched": 1691,
+      "unmatched": 24
+    },
+    {
+      "date": "2018-01-19",
+      "matched": 1691,
+      "unmatched": 24
+    },
+    {
+      "date": "2018-01-22",
+      "matched": 1691,
+      "unmatched": 24
+    },
+    {
+      "date": "2018-01-23",
+      "matched": 1691,
+      "unmatched": 22
+    },
+    {
+      "date": "2018-01-24",
+      "matched": 1692,
+      "unmatched": 23
+    },
+    {
+      "date": "2018-01-25",
+      "matched": 1693,
+      "unmatched": 24
+    },
+    {
+      "date": "2018-01-26",
+      "matched": 1694,
+      "unmatched": 24
+    },
+    {
+      "date": "2018-01-29",
+      "matched": 1694,
+      "unmatched": 22
+    },
+    {
+      "date": "2018-01-30",
+      "matched": 1694,
+      "unmatched": 21
+    },
+    {
+      "date": "2018-01-31",
+      "matched": 1693,
+      "unmatched": 25
+    },
+    {
+      "date": "2018-02-01",
+      "matched": 1693,
+      "unmatched": 24
+    },
+    {
+      "date": "2018-02-02",
+      "matched": 1695,
+      "unmatched": 27
+    },
+    {
+      "date": "2018-02-05",
+      "matched": 1692,
+      "unmatched": 25
+    },
+    {
+      "date": "2018-02-06",
+      "matched": 1694,
+      "unmatched": 22
+    },
+    {
+      "date": "2018-02-07",
+      "matched": 1692,
+      "unmatched": 22
+    },
+    {
+      "date": "2018-02-08",
+      "matched": 1690,
+      "unmatched": 24
+    },
+    {
+      "date": "2018-02-09",
+      "matched": 1694,
+      "unmatched": 23
+    },
+    {
+      "date": "2018-02-12",
+      "matched": 1694,
+      "unmatched": 22
+    },
+    {
+      "date": "2018-02-13",
+      "matched": 1697,
+      "unmatched": 24
+    },
+    {
+      "date": "2018-02-14",
+      "matched": 1697,
+      "unmatched": 19
+    },
+    {
+      "date": "2018-02-19",
+      "matched": 1696,
+      "unmatched": 20
+    },
+    {
+      "date": "2018-02-20",
+      "matched": 1698,
+      "unmatched": 22
+    },
+    {
+      "date": "2018-02-21",
+      "matched": 1696,
+      "unmatched": 23
+    },
+    {
+      "date": "2018-02-22",
+      "matched": 1699,
+      "unmatched": 22
+    },
+    {
+      "date": "2018-02-23",
+      "matched": 1697,
+      "unmatched": 20
+    },
+    {
+      "date": "2018-02-26",
+      "matched": 1699,
+      "unmatched": 16
+    },
+    {
+      "date": "2018-02-27",
+      "matched": 1700,
+      "unmatched": 20
+    },
+    {
+      "date": "2018-02-28",
+      "matched": 1701,
+      "unmatched": 22
+    },
+    {
+      "date": "2018-03-02",
+      "matched": 1697,
+      "unmatched": 21
+    },
+    {
+      "date": "2018-03-05",
+      "matched": 1700,
+      "unmatched": 19
+    },
+    {
+      "date": "2018-03-06",
+      "matched": 1701,
+      "unmatched": 17
+    },
+    {
+      "date": "2018-03-07",
+      "matched": 1701,
+      "unmatched": 23
+    },
+    {
+      "date": "2018-03-08",
+      "matched": 1698,
+      "unmatched": 20
+    },
+    {
+      "date": "2018-03-09",
+      "matched": 1701,
+      "unmatched": 19
+    },
+    {
+      "date": "2018-03-12",
+      "matched": 1702,
+      "unmatched": 23
+    },
+    {
+      "date": "2018-03-13",
+      "matched": 1702,
+      "unmatched": 21
+    },
+    {
+      "date": "2018-03-14",
+      "matched": 1703,
+      "unmatched": 18
+    },
+    {
+      "date": "2018-03-15",
+      "matched": 1702,
+      "unmatched": 20
+    },
+    {
+      "date": "2018-03-16",
+      "matched": 1703,
+      "unmatched": 21
+    },
+    {
+      "date": "2018-03-19",
+      "matched": 1702,
+      "unmatched": 21
+    },
+    {
+      "date": "2018-03-20",
+      "matched": 1702,
+      "unmatched": 19
+    },
+    {
+      "date": "2018-03-21",
+      "matched": 1703,
+      "unmatched": 19
+    },
+    {
+      "date": "2018-03-22",
+      "matched": 1703,
+      "unmatched": 20
+    },
+    {
+      "date": "2018-03-23",
+      "matched": 1702,
+      "unmatched": 19
+    },
+    {
+      "date": "2018-03-26",
+      "matched": 1701,
+      "unmatched": 19
+    },
+    {
+      "date": "2018-03-27",
+      "matched": 1699,
+      "unmatched": 22
+    },
+    {
+      "date": "2018-03-28",
+      "matched": 1701,
+      "unmatched": 22
+    },
+    {
+      "date": "2018-03-29",
+      "matched": 1696,
+      "unmatched": 21
+    },
+    {
+      "date": "2018-03-30",
+      "matched": 1697,
+      "unmatched": 21
+    },
+    {
+      "date": "2018-04-02",
+      "matched": 1699,
+      "unmatched": 17
+    },
+    {
+      "date": "2018-04-03",
+      "matched": 1699,
+      "unmatched": 19
+    },
+    {
+      "date": "2018-04-04",
+      "matched": 1700,
+      "unmatched": 22
+    },
+    {
+      "date": "2018-04-05",
+      "matched": 1699,
+      "unmatched": 21
+    },
+    {
+      "date": "2018-04-06",
+      "matched": 1699,
+      "unmatched": 21
+    },
+    {
+      "date": "2018-04-09",
+      "matched": 1699,
+      "unmatched": 23
+    },
+    {
+      "date": "2018-04-10",
+      "matched": 1699,
+      "unmatched": 24
+    },
+    {
+      "date": "2018-04-11",
+      "matched": 1698,
+      "unmatched": 21
+    },
+    {
+      "date": "2018-04-12",
+      "matched": 1698,
+      "unmatched": 26
+    },
+    {
+      "date": "2018-04-13",
+      "matched": 1696,
+      "unmatched": 25
+    },
+    {
+      "date": "2018-04-16",
+      "matched": 1697,
+      "unmatched": 22
+    },
+    {
+      "date": "2018-04-17",
+      "matched": 1695,
+      "unmatched": 21
+    },
+    {
+      "date": "2018-04-18",
+      "matched": 1696,
+      "unmatched": 23
+    },
+    {
+      "date": "2018-04-19",
+      "matched": 1696,
+      "unmatched": 24
+    },
+    {
+      "date": "2018-04-20",
+      "matched": 1693,
+      "unmatched": 21
+    },
+    {
+      "date": "2018-04-23",
+      "matched": 1691,
+      "unmatched": 22
+    },
+    {
+      "date": "2018-04-24",
+      "matched": 1692,
+      "unmatched": 23
+    },
+    {
+      "date": "2018-04-25",
+      "matched": 1690,
+      "unmatched": 21
+    },
+    {
+      "date": "2018-04-26",
+      "matched": 1690,
+      "unmatched": 21
+    },
+    {
+      "date": "2018-04-27",
+      "matched": 1689,
+      "unmatched": 22
+    },
+    {
+      "date": "2018-04-30",
+      "matched": 1686,
+      "unmatched": 20
+    },
+    {
+      "date": "2018-05-02",
+      "matched": 1682,
+      "unmatched": 23
+    },
+    {
+      "date": "2018-05-03",
+      "matched": 1682,
+      "unmatched": 17
+    },
+    {
+      "date": "2018-05-04",
+      "matched": 1685,
+      "unmatched": 20
+    },
+    {
+      "date": "2018-05-08",
+      "matched": 1688,
+      "unmatched": 23
+    },
+    {
+      "date": "2018-05-09",
+      "matched": 1689,
+      "unmatched": 23
+    },
+    {
+      "date": "2018-05-10",
+      "matched": 1691,
+      "unmatched": 21
+    },
+    {
+      "date": "2018-05-11",
+      "matched": 1691,
+      "unmatched": 22
+    },
+    {
+      "date": "2018-05-14",
+      "matched": 1691,
+      "unmatched": 21
+    },
+    {
+      "date": "2018-05-15",
+      "matched": 1691,
+      "unmatched": 22
+    },
+    {
+      "date": "2018-05-16",
+      "matched": 1692,
+      "unmatched": 22
+    },
+    {
+      "date": "2018-05-17",
+      "matched": 1692,
+      "unmatched": 22
+    },
+    {
+      "date": "2018-05-18",
+      "matched": 1694,
+      "unmatched": 24
+    },
+    {
+      "date": "2018-05-21",
+      "matched": 1695,
+      "unmatched": 22
+    },
+    {
+      "date": "2018-05-23",
+      "matched": 1694,
+      "unmatched": 22
+    },
+    {
+      "date": "2018-05-24",
+      "matched": 1695,
+      "unmatched": 23
+    },
+    {
+      "date": "2018-05-25",
+      "matched": 1696,
+      "unmatched": 23
+    },
+    {
+      "date": "2018-05-28",
+      "matched": 1697,
+      "unmatched": 24
+    },
+    {
+      "date": "2018-05-29",
+      "matched": 1697,
+      "unmatched": 25
+    },
+    {
+      "date": "2018-05-30",
+      "matched": 1695,
+      "unmatched": 22
+    },
+    {
+      "date": "2018-05-31",
+      "matched": 1695,
+      "unmatched": 26
+    },
+    {
+      "date": "2018-06-01",
+      "matched": 1694,
+      "unmatched": 22
+    },
+    {
+      "date": "2018-06-04",
+      "matched": 1693,
+      "unmatched": 22
+    },
+    {
+      "date": "2018-06-05",
+      "matched": 1695,
+      "unmatched": 24
+    },
+    {
+      "date": "2018-06-07",
+      "matched": 1695,
+      "unmatched": 21
+    },
+    {
+      "date": "2018-06-08",
+      "matched": 1696,
+      "unmatched": 21
+    },
+    {
+      "date": "2018-06-11",
+      "matched": 1695,
+      "unmatched": 26
+    },
+    {
+      "date": "2018-06-12",
+      "matched": 1698,
+      "unmatched": 25
+    },
+    {
+      "date": "2018-06-14",
+      "matched": 1698,
+      "unmatched": 23
+    },
+    {
+      "date": "2018-06-15",
+      "matched": 1698,
+      "unmatched": 21
+    },
+    {
+      "date": "2018-06-18",
+      "matched": 1698,
+      "unmatched": 23
+    },
+    {
+      "date": "2018-06-19",
+      "matched": 1698,
+      "unmatched": 25
+    },
+    {
+      "date": "2018-06-20",
+      "matched": 1697,
+      "unmatched": 25
+    },
+    {
+      "date": "2018-06-21",
+      "matched": 1699,
+      "unmatched": 23
+    },
+    {
+      "date": "2018-06-22",
+      "matched": 1699,
+      "unmatched": 25
+    },
+    {
+      "date": "2018-06-25",
+      "matched": 1698,
+      "unmatched": 24
+    },
+    {
+      "date": "2018-06-26",
+      "matched": 1697,
+      "unmatched": 25
+    },
+    {
+      "date": "2018-06-27",
+      "matched": 1700,
+      "unmatched": 22
+    },
+    {
+      "date": "2018-06-28",
+      "matched": 1694,
+      "unmatched": 21
+    },
+    {
+      "date": "2018-06-29",
+      "matched": 1696,
+      "unmatched": 22
+    },
+    {
+      "date": "2018-07-02",
+      "matched": 1697,
+      "unmatched": 24
+    },
+    {
+      "date": "2018-07-03",
+      "matched": 1695,
+      "unmatched": 24
+    },
+    {
+      "date": "2018-07-04",
+      "matched": 1694,
+      "unmatched": 24
+    },
+    {
+      "date": "2018-07-05",
+      "matched": 1697,
+      "unmatched": 24
+    },
+    {
+      "date": "2018-07-06",
+      "matched": 1695,
+      "unmatched": 23
+    },
+    {
+      "date": "2018-07-09",
+      "matched": 1697,
+      "unmatched": 26
+    },
+    {
+      "date": "2018-07-10",
+      "matched": 1698,
+      "unmatched": 22
+    },
+    {
+      "date": "2018-07-11",
+      "matched": 1698,
+      "unmatched": 23
+    },
+    {
+      "date": "2018-07-12",
+      "matched": 1699,
+      "unmatched": 22
+    },
+    {
+      "date": "2018-07-13",
+      "matched": 1704,
+      "unmatched": 23
+    },
+    {
+      "date": "2018-07-16",
+      "matched": 1703,
+      "unmatched": 20
+    },
+    {
+      "date": "2018-07-17",
+      "matched": 1705,
+      "unmatched": 20
+    },
+    {
+      "date": "2018-07-18",
+      "matched": 1707,
+      "unmatched": 22
+    },
+    {
+      "date": "2018-07-19",
+      "matched": 1707,
+      "unmatched": 22
+    },
+    {
+      "date": "2018-07-20",
+      "matched": 1707,
+      "unmatched": 22
+    },
+    {
+      "date": "2018-07-23",
+      "matched": 1708,
+      "unmatched": 20
+    },
+    {
+      "date": "2018-07-24",
+      "matched": 1709,
+      "unmatched": 22
+    },
+    {
+      "date": "2018-07-25",
+      "matched": 1709,
+      "unmatched": 20
+    },
+    {
+      "date": "2018-07-26",
+      "matched": 1708,
+      "unmatched": 23
+    },
+    {
+      "date": "2018-07-27",
+      "matched": 1710,
+      "unmatched": 20
+    },
+    {
+      "date": "2018-07-30",
+      "matched": 1710,
+      "unmatched": 24
+    },
+    {
+      "date": "2018-07-31",
+      "matched": 1712,
+      "unmatched": 22
+    },
+    {
+      "date": "2018-08-01",
+      "matched": 1710,
+      "unmatched": 24
+    },
+    {
+      "date": "2018-08-02",
+      "matched": 1711,
+      "unmatched": 19
+    },
+    {
+      "date": "2018-08-03",
+      "matched": 1711,
+      "unmatched": 22
+    },
+    {
+      "date": "2018-08-06",
+      "matched": 1713,
+      "unmatched": 24
+    },
+    {
+      "date": "2018-08-07",
+      "matched": 1716,
+      "unmatched": 22
+    },
+    {
+      "date": "2018-08-08",
+      "matched": 1713,
+      "unmatched": 20
+    },
+    {
+      "date": "2018-08-09",
+      "matched": 1717,
+      "unmatched": 21
+    },
+    {
+      "date": "2018-08-10",
+      "matched": 1716,
+      "unmatched": 24
+    },
+    {
+      "date": "2018-08-13",
+      "matched": 1718,
+      "unmatched": 22
+    },
+    {
+      "date": "2018-08-14",
+      "matched": 1714,
+      "unmatched": 25
+    },
+    {
+      "date": "2018-08-16",
+      "matched": 1715,
+      "unmatched": 22
+    },
+    {
+      "date": "2018-08-17",
+      "matched": 1713,
+      "unmatched": 24
+    },
+    {
+      "date": "2018-08-20",
+      "matched": 1715,
+      "unmatched": 23
+    },
+    {
+      "date": "2018-08-21",
+      "matched": 1717,
+      "unmatched": 25
+    },
+    {
+      "date": "2018-08-22",
+      "matched": 1716,
+      "unmatched": 24
+    },
+    {
+      "date": "2018-08-23",
+      "matched": 1718,
+      "unmatched": 25
+    },
+    {
+      "date": "2018-08-24",
+      "matched": 1721,
+      "unmatched": 22
+    },
+    {
+      "date": "2018-08-27",
+      "matched": 1722,
+      "unmatched": 23
+    },
+    {
+      "date": "2018-08-28",
+      "matched": 1723,
+      "unmatched": 24
+    },
+    {
+      "date": "2018-08-29",
+      "matched": 1722,
+      "unmatched": 24
+    },
+    {
+      "date": "2018-08-30",
+      "matched": 1723,
+      "unmatched": 25
+    },
+    {
+      "date": "2018-08-31",
+      "matched": 1722,
+      "unmatched": 24
+    },
+    {
+      "date": "2018-09-03",
+      "matched": 1721,
+      "unmatched": 25
+    },
+    {
+      "date": "2018-09-04",
+      "matched": 1722,
+      "unmatched": 24
+    },
+    {
+      "date": "2018-09-05",
+      "matched": 1722,
+      "unmatched": 24
+    },
+    {
+      "date": "2018-09-06",
+      "matched": 1722,
+      "unmatched": 24
+    },
+    {
+      "date": "2018-09-07",
+      "matched": 1723,
+      "unmatched": 22
+    },
+    {
+      "date": "2018-09-10",
+      "matched": 1723,
+      "unmatched": 22
+    },
+    {
+      "date": "2018-09-11",
+      "matched": 1721,
+      "unmatched": 24
+    },
+    {
+      "date": "2018-09-12",
+      "matched": 1721,
+      "unmatched": 23
+    },
+    {
+      "date": "2018-09-13",
+      "matched": 1724,
+      "unmatched": 22
+    },
+    {
+      "date": "2018-09-14",
+      "matched": 1726,
+      "unmatched": 24
+    },
+    {
+      "date": "2018-09-17",
+      "matched": 1726,
+      "unmatched": 24
+    },
+    {
+      "date": "2018-09-18",
+      "matched": 1726,
+      "unmatched": 26
+    },
+    {
+      "date": "2018-09-19",
+      "matched": 1724,
+      "unmatched": 25
+    },
+    {
+      "date": "2018-09-20",
+      "matched": 1726,
+      "unmatched": 24
+    },
+    {
+      "date": "2018-09-21",
+      "matched": 1729,
+      "unmatched": 22
+    },
+    {
+      "date": "2018-09-27",
+      "matched": 1729,
+      "unmatched": 23
+    },
+    {
+      "date": "2018-09-28",
+      "matched": 1730,
+      "unmatched": 24
+    },
+    {
+      "date": "2018-10-01",
+      "matched": 1731,
+      "unmatched": 21
+    },
+    {
+      "date": "2018-10-02",
+      "matched": 1732,
+      "unmatched": 21
+    },
+    {
+      "date": "2018-10-04",
+      "matched": 1734,
+      "unmatched": 22
+    },
+    {
+      "date": "2018-10-05",
+      "matched": 1736,
+      "unmatched": 23
+    },
+    {
+      "date": "2018-10-08",
+      "matched": 1732,
+      "unmatched": 24
+    },
+    {
+      "date": "2018-10-10",
+      "matched": 1735,
+      "unmatched": 23
+    },
+    {
+      "date": "2018-10-11",
+      "matched": 1735,
+      "unmatched": 23
+    },
+    {
+      "date": "2018-10-12",
+      "matched": 1736,
+      "unmatched": 24
+    },
+    {
+      "date": "2018-10-15",
+      "matched": 1737,
+      "unmatched": 24
+    },
+    {
+      "date": "2018-10-16",
+      "matched": 1736,
+      "unmatched": 24
+    },
+    {
+      "date": "2018-10-17",
+      "matched": 1737,
+      "unmatched": 20
+    },
+    {
+      "date": "2018-10-18",
+      "matched": 1733,
+      "unmatched": 22
+    },
+    {
+      "date": "2018-10-19",
+      "matched": 1734,
+      "unmatched": 22
+    },
+    {
+      "date": "2018-10-22",
+      "matched": 1736,
+      "unmatched": 21
+    },
+    {
+      "date": "2018-10-23",
+      "matched": 1736,
+      "unmatched": 22
+    },
+    {
+      "date": "2018-10-24",
+      "matched": 1734,
+      "unmatched": 20
+    },
+    {
+      "date": "2018-10-25",
+      "matched": 1737,
+      "unmatched": 20
+    },
+    {
+      "date": "2018-10-26",
+      "matched": 1739,
+      "unmatched": 23
+    },
+    {
+      "date": "2018-10-29",
+      "matched": 1738,
+      "unmatched": 23
+    },
+    {
+      "date": "2018-10-30",
+      "matched": 1739,
+      "unmatched": 24
+    },
+    {
+      "date": "2018-10-31",
+      "matched": 1740,
+      "unmatched": 19
+    },
+    {
+      "date": "2018-11-01",
+      "matched": 1739,
+      "unmatched": 22
+    },
+    {
+      "date": "2018-11-02",
+      "matched": 1740,
+      "unmatched": 23
+    },
+    {
+      "date": "2018-11-05",
+      "matched": 1742,
+      "unmatched": 20
+    },
+    {
+      "date": "2018-11-06",
+      "matched": 1742,
+      "unmatched": 21
+    },
+    {
+      "date": "2018-11-07",
+      "matched": 1740,
+      "unmatched": 22
+    },
+    {
+      "date": "2018-11-08",
+      "matched": 1741,
+      "unmatched": 21
+    },
+    {
+      "date": "2018-11-09",
+      "matched": 1742,
+      "unmatched": 22
+    },
+    {
+      "date": "2018-11-12",
+      "matched": 1742,
+      "unmatched": 22
+    },
+    {
+      "date": "2018-11-13",
+      "matched": 1742,
+      "unmatched": 22
+    },
+    {
+      "date": "2018-11-14",
+      "matched": 1745,
+      "unmatched": 22
+    },
+    {
+      "date": "2018-11-15",
+      "matched": 1743,
+      "unmatched": 22
+    },
+    {
+      "date": "2018-11-16",
+      "matched": 1741,
+      "unmatched": 23
+    },
+    {
+      "date": "2018-11-19",
+      "matched": 1742,
+      "unmatched": 22
+    },
+    {
+      "date": "2018-11-20",
+      "matched": 1740,
+      "unmatched": 23
+    },
+    {
+      "date": "2018-11-21",
+      "matched": 1743,
+      "unmatched": 22
+    },
+    {
+      "date": "2018-11-22",
+      "matched": 1743,
+      "unmatched": 22
+    },
+    {
+      "date": "2018-11-23",
+      "matched": 1745,
+      "unmatched": 25
+    },
+    {
+      "date": "2018-11-26",
+      "matched": 1744,
+      "unmatched": 22
+    },
+    {
+      "date": "2018-11-27",
+      "matched": 1746,
+      "unmatched": 23
+    },
+    {
+      "date": "2018-11-28",
+      "matched": 1747,
+      "unmatched": 25
+    },
+    {
+      "date": "2018-11-29",
+      "matched": 1749,
+      "unmatched": 23
+    },
+    {
+      "date": "2018-11-30",
+      "matched": 1750,
+      "unmatched": 24
+    },
+    {
+      "date": "2018-12-03",
+      "matched": 1751,
+      "unmatched": 23
+    },
+    {
+      "date": "2018-12-04",
+      "matched": 1751,
+      "unmatched": 20
+    },
+    {
+      "date": "2018-12-05",
+      "matched": 1752,
+      "unmatched": 20
+    },
+    {
+      "date": "2018-12-06",
+      "matched": 1751,
+      "unmatched": 23
+    },
+    {
+      "date": "2018-12-07",
+      "matched": 1754,
+      "unmatched": 22
+    },
+    {
+      "date": "2018-12-10",
+      "matched": 1754,
+      "unmatched": 21
+    },
+    {
+      "date": "2018-12-11",
+      "matched": 1753,
+      "unmatched": 22
+    },
+    {
+      "date": "2018-12-12",
+      "matched": 1757,
+      "unmatched": 23
+    },
+    {
+      "date": "2018-12-13",
+      "matched": 1756,
+      "unmatched": 22
+    },
+    {
+      "date": "2018-12-14",
+      "matched": 1756,
+      "unmatched": 23
+    },
+    {
+      "date": "2018-12-17",
+      "matched": 1754,
+      "unmatched": 21
+    },
+    {
+      "date": "2018-12-18",
+      "matched": 1752,
+      "unmatched": 24
+    },
+    {
+      "date": "2018-12-19",
+      "matched": 1759,
+      "unmatched": 22
+    },
+    {
+      "date": "2018-12-20",
+      "matched": 1764,
+      "unmatched": 21
+    },
+    {
+      "date": "2018-12-21",
+      "matched": 1762,
+      "unmatched": 22
+    },
+    {
+      "date": "2018-12-24",
+      "matched": 1765,
+      "unmatched": 19
+    },
+    {
+      "date": "2018-12-26",
+      "matched": 1764,
+      "unmatched": 26
+    },
+    {
+      "date": "2018-12-27",
+      "matched": 1767,
+      "unmatched": 24
+    },
+    {
+      "date": "2018-12-28",
+      "matched": 1768,
+      "unmatched": 22
+    }
+  ],
+  "turnover": [
+    {
+      "date": "2018-01-02",
+      "replaced": true,
+      "new_constituents": 8,
+      "previous_total": 4006502378088,
+      "total": 4796851416189.0
+    },
+    {
+      "date": "2018-01-03",
+      "replaced": true,
+      "new_constituents": 8,
+      "previous_total": 4921251968960,
+      "total": 5878728822056.0
+    },
+    {
+      "date": "2018-01-04",
+      "replaced": true,
+      "new_constituents": 7,
+      "previous_total": 5633070803662,
+      "total": 6149126688443.0
+    },
+    {
+      "date": "2018-01-05",
+      "replaced": true,
+      "new_constituents": 7,
+      "previous_total": 4959742603039,
+      "total": 5931273934863.0
+    },
+    {
+      "date": "2018-01-08",
+      "replaced": true,
+      "new_constituents": 9,
+      "previous_total": 5522592806618,
+      "total": 6367902160596.0
+    },
+    {
+      "date": "2018-01-09",
+      "replaced": true,
+      "new_constituents": 9,
+      "previous_total": 6132974913184,
+      "total": 8059768610075.0
+    },
+    {
+      "date": "2018-01-10",
+      "replaced": true,
+      "new_constituents": 9,
+      "previous_total": 6106590637008,
+      "total": 7026226187157.0
+    },
+    {
+      "date": "2018-01-11",
+      "replaced": true,
+      "new_constituents": 8,
+      "previous_total": 5898958747811,
+      "total": 6879497331437.0
+    },
+    {
+      "date": "2018-01-12",
+      "replaced": true,
+      "new_constituents": 8,
+      "previous_total": 8377530855477,
+      "total": 11201526818649.0
+    },
+    {
+      "date": "2018-01-15",
+      "replaced": true,
+      "new_constituents": 7,
+      "previous_total": 6940232922841,
+      "total": 8038357803267.0
+    },
+    {
+      "date": "2018-01-16",
+      "replaced": true,
+      "new_constituents": 8,
+      "previous_total": 5791562203765,
+      "total": 7304333278320.0
+    },
+    {
+      "date": "2018-01-17",
+      "replaced": true,
+      "new_constituents": 10,
+      "previous_total": 6265225615109,
+      "total": 7510321320758.0
+    },
+    {
+      "date": "2018-01-18",
+      "replaced": true,
+      "new_constituents": 9,
+      "previous_total": 5426021318261,
+      "total": 6512375634348.0
+    },
+    {
+      "date": "2018-01-19",
+      "replaced": true,
+      "new_constituents": 8,
+      "previous_total": 5181674057804,
+      "total": 6236135497825.0
+    },
+    {
+      "date": "2018-01-22",
+      "replaced": true,
+      "new_constituents": 8,
+      "previous_total": 5044927736850,
+      "total": 5085416040584.0
+    },
+    {
+      "date": "2018-01-23",
+      "replaced": true,
+      "new_constituents": 6,
+      "previous_total": 5200977906347,
+      "total": 6041144692865.0
+    },
+    {
+      "date": "2018-01-24",
+      "replaced": true,
+      "new_constituents": 8,
+      "previous_total": 5609373844576,
+      "total": 6026595092147.0
+    },
+    {
+      "date": "2018-01-25",
+      "replaced": true,
+      "new_constituents": 8,
+      "previous_total": 5562438756805,
+      "total": 5419751118280.0
+    },
+    {
+      "date": "2018-01-26",
+      "replaced": true,
+      "new_constituents": 6,
+      "previous_total": 7169011320398,
+      "total": 5018510127195.0
+    },
+    {
+      "date": "2018-01-29",
+      "replaced": true,
+      "new_constituents": 8,
+      "previous_total": 7466807548200,
+      "total": 5808966877687.0
+    },
+    {
+      "date": "2018-01-30",
+      "replaced": true,
+      "new_constituents": 7,
+      "previous_total": 5470963567300,
+      "total": 5858316779487.0
+    },
+    {
+      "date": "2018-01-31",
+      "replaced": true,
+      "new_constituents": 7,
+      "previous_total": 5204763870660,
+      "total": 8176139051410.0
+    },
+    {
+      "date": "2018-02-01",
+      "replaced": true,
+      "new_constituents": 8,
+      "previous_total": 5869114823255,
+      "total": 6679297207707.0
+    },
+    {
+      "date": "2018-02-02",
+      "replaced": true,
+      "new_constituents": 9,
+      "previous_total": 5430996722136,
+      "total": 6589237346664.0
+    },
+    {
+      "date": "2018-02-05",
+      "replaced": true,
+      "new_constituents": 7,
+      "previous_total": 4382376733874,
+      "total": 5888341259804.0
+    },
+    {
+      "date": "2018-02-06",
+      "replaced": true,
+      "new_constituents": 7,
+      "previous_total": 6199708600856,
+      "total": 6954149674805.0
+    },
+    {
+      "date": "2018-02-07",
+      "replaced": true,
+      "new_constituents": 7,
+      "previous_total": 5216807589867,
+      "total": 6536056099588.0
+    },
+    {
+      "date": "2018-02-08",
+      "replaced": true,
+      "new_constituents": 7,
+      "previous_total": 5761848618295,
+      "total": 7110827558391.0
+    },
+    {
+      "date": "2018-02-09",
+      "replaced": true,
+      "new_constituents": 5,
+      "previous_total": 4826560912793,
+      "total": 6011951228543.0
+    },
+    {
+      "date": "2018-02-12",
+      "replaced": true,
+      "new_constituents": 6,
+      "previous_total": 3687034891133,
+      "total": 4538484158667.0
+    },
+    {
+      "date": "2018-02-13",
+      "replaced": true,
+      "new_constituents": 6,
+      "previous_total": 4198950515412,
+      "total": 5137886954385.0
+    },
+    {
+      "date": "2018-02-14",
+      "replaced": true,
+      "new_constituents": 7,
+      "previous_total": 4031963700398,
+      "total": 4903974436140.0
+    },
+    {
+      "date": "2018-02-19",
+      "replaced": true,
+      "new_constituents": 6,
+      "previous_total": 3652751204348,
+      "total": 4281289690716.0
+    },
+    {
+      "date": "2018-02-20",
+      "replaced": true,
+      "new_constituents": 10,
+      "previous_total": 4162927998501,
+      "total": 4214530816855.0
+    },
+    {
+      "date": "2018-02-21",
+      "replaced": true,
+      "new_constituents": 6,
+      "previous_total": 4001049465497,
+      "total": 4377280904499.0
+    },
+    {
+      "date": "2018-02-22",
+      "replaced": true,
+      "new_constituents": 8,
+      "previous_total": 3340911112232,
+      "total": 3232554154301.0
+    },
+    {
+      "date": "2018-02-23",
+      "replaced": true,
+      "new_constituents": 10,
+      "previous_total": 3088440155632,
+      "total": 3584312973916.0
+    },
+    {
+      "date": "2018-02-26",
+      "replaced": true,
+      "new_constituents": 6,
+      "previous_total": 3525857416700,
+      "total": 3320272652826.0
+    },
+    {
+      "date": "2018-02-27",
+      "replaced": true,
+      "new_constituents": 8,
+      "previous_total": 4299845899828,
+      "total": 4192105375738.0
+    },
+    {
+      "date": "2018-02-28",
+      "replaced": true,
+      "new_constituents": 8,
+      "previous_total": 4538499700850,
+      "total": 5028785862644.0
+    },
+    {
+      "date": "2018-03-02",
+      "replaced": true,
+      "new_constituents": 7,
+      "previous_total": 3871328500495,
+      "total": 4222131731385.0
+    },
+    {
+      "date": "2018-03-05",
+      "replaced": true,
+      "new_constituents": 9,
+      "previous_total": 4409226863955,
+      "total": 4482771904807.0
+    },
+    {
+      "date": "2018-03-06",
+      "replaced": true,
+      "new_constituents": 7,
+      "previous_total": 3725277181777,
+      "total": 4592505667104.0
+    },
+    {
+      "date": "2018-03-07",
+      "replaced": true,
+      "new_constituents": 7,
+      "previous_total": 5421159297837,
+      "total": 7196742492859.0
+    },
+    {
+      "date": "2018-03-08",
+      "replaced": true,
+      "new_constituents": 7,
+      "previous_total": 5880061019383,
+      "total": 6763285078016.0
+    },
+    {
+      "date": "2018-03-09",
+      "replaced": true,
+      "new_constituents": 7,
+      "previous_total": 4946654932934,
+      "total": 5469204105629.0
+    },
+    {
+      "date": "2018-03-12",
+      "replaced": true,
+      "new_constituents": 7,
+      "previous_total": 4117176781966,
+      "total": 4296578128588.0
+    },
+    {
+      "date": "2018-03-13",
+      "replaced": true,
+      "new_constituents": 10,
+      "previous_total": 5779325001168,
+      "total": 6112249636043.0
+    },
+    {
+      "date": "2018-03-14",
+      "replaced": true,
+      "new_constituents": 8,
+      "previous_total": 4503096726350,
+      "total": 4616185097228.0
+    },
+    {
+      "date": "2018-03-15",
+      "replaced": true,
+      "new_constituents": 7,
+      "previous_total": 4998108063484,
+      "total": 4558973433616.0
+    },
+    {
+      "date": "2018-03-16",
+      "replaced": true,
+      "new_constituents": 7,
+      "previous_total": 5347878197591,
+      "total": 4820672493299.0
+    },
+    {
+      "date": "2018-03-19",
+      "replaced": true,
+      "new_constituents": 9,
+      "previous_total": 4308927939419,
+      "total": 4374980467230.0
+    },
+    {
+      "date": "2018-03-20",
+      "replaced": true,
+      "new_constituents": 7,
+      "previous_total": 5017711467300,
+      "total": 4866784609140.0
+    },
+    {
+      "date": "2018-03-21",
+      "replaced": true,
+      "new_constituents": 7,
+      "previous_total": 4380122395966,
+      "total": 5209318925374.0
+    },
+    {
+      "date": "2018-03-22",
+      "replaced": true,
+      "new_constituents": 7,
+      "previous_total": 4625051479663,
+      "total": 5273598940475.0
+    },
+    {
+      "date": "2018-03-23",
+      "replaced": true,
+      "new_constituents": 8,
+      "previous_total": 5513427833371,
+      "total": 6168454138549.0
+    },
+    {
+      "date": "2018-03-26",
+      "replaced": true,
+      "new_constituents": 4,
+      "previous_total": 4992327237761,
+      "total": 5198107342115.0
+    },
+    {
+      "date": "2018-03-27",
+      "replaced": true,
+      "new_constituents": 6,
+      "previous_total": 4843017599091,
+      "total": 5179300228725.0
+    },
+    {
+      "date": "2018-03-28",
+      "replaced": true,
+      "new_constituents": 6,
+      "previous_total": 5703928197675,
+      "total": 5946301187930.0
+    },
+    {
+      "date": "2018-03-29",
+      "replaced": true,
+      "new_constituents": 7,
+      "previous_total": 4520923248493,
+      "total": 5516280892905.0
+    },
+    {
+      "date": "2018-03-30",
+      "replaced": true,
+      "new_constituents": 7,
+      "previous_total": 4380670403661,
+      "total": 4704434632638.0
+    },
+    {
+      "date": "2018-04-02",
+      "replaced": true,
+      "new_constituents": 8,
+      "previous_total": 6587652491271,
+      "total": 4551793974536.0
+    },
+    {
+      "date": "2018-04-03",
+      "replaced": true,
+      "new_constituents": 7,
+      "previous_total": 5048301397526,
+      "total": 4732867083860.0
+    },
+    {
+      "date": "2018-04-04",
+      "replaced": true,
+      "new_constituents": 6,
+      "previous_total": 6976908266388,
+      "total": 5005110567595.0
+    },
+    {
+      "date": "2018-04-05",
+      "replaced": true,
+      "new_constituents": 8,
+      "previous_total": 6332408156523,
+      "total": 5213238073234.0
+    },
+    {
+      "date": "2018-04-06",
+      "replaced": true,
+      "new_constituents": 9,
+      "previous_total": 6699598372539,
+      "total": 5792215812066.0
+    },
+    {
+      "date": "2018-04-09",
+      "replaced": true,
+      "new_constituents": 7,
+      "previous_total": 5851813573648,
+      "total": 4747427749940.0
+    },
+    {
+      "date": "2018-04-10",
+      "replaced": true,
+      "new_constituents": 8,
+      "previous_total": 6835548670379,
+      "total": 5209898786091.0
+    },
+    {
+      "date": "2018-04-11",
+      "replaced": true,
+      "new_constituents": 7,
+      "previous_total": 5507962591711,
+      "total": 5386198526655.0
+    },
+    {
+      "date": "2018-04-12",
+      "replaced": true,
+      "new_constituents": 9,
+      "previous_total": 6408111080068,
+      "total": 6414329603567.0
+    },
+    {
+      "date": "2018-04-13",
+      "replaced": true,
+      "new_constituents": 7,
+      "previous_total": 5462939086498,
+      "total": 5380356885423.0
+    },
+    {
+      "date": "2018-04-16",
+      "replaced": true,
+      "new_constituents": 8,
+      "previous_total": 6493084921557,
+      "total": 4648222066988.0
+    },
+    {
+      "date": "2018-04-17",
+      "replaced": true,
+      "new_constituents": 8,
+      "previous_total": 7464563599869,
+      "total": 4273194310501.0
+    },
+    {
+      "date": "2018-04-18",
+      "replaced": true,
+      "new_constituents": 10,
+      "previous_total": 9017940031856,
+      "total": 5751553851572.0
+    },
+    {
+      "date": "2018-04-19",
+      "replaced": true,
+      "new_constituents": 9,
+      "previous_total": 7710401802093,
+      "total": 6331459073758.0
+    },
+    {
+      "date": "2018-04-20",
+      "replaced": true,
+      "new_constituents": 6,
+      "previous_total": 5682111577173,
+      "total": 5260993414840.0
+    },
+    {
+      "date": "2018-04-23",
+      "replaced": true,
+      "new_constituents": 6,
+      "previous_total": 5873001450636,
+      "total": 5811382452847.0
+    },
+    {
+      "date": "2018-04-24",
+      "replaced": true,
+      "new_constituents": 6,
+      "previous_total": 8271089830425,
+      "total": 5449098064040.0
+    },
+    {
+      "date": "2018-04-25",
+      "replaced": true,
+      "new_constituents": 6,
+      "previous_total": 8450569260399,
+      "total": 5196765661930.0
+    },
+    {
+      "date": "2018-04-26",
+      "replaced": true,
+      "new_constituents": 8,
+      "previous_total": 5325976838660,
+      "total": 5141020579737.0
+    },
+    {
+      "date": "2018-04-27",
+      "replaced": true,
+      "new_constituents": 8,
+      "previous_total": 7596477394468,
+      "total": 5839160281141.0
+    },
+    {
+      "date": "2018-04-30",
+      "replaced": true,
+      "new_constituents": 6,
+      "previous_total": 7422347988009,
+      "total": 5368832249081.0
+    },
+    {
+      "date": "2018-05-02",
+      "replaced": true,
+      "new_constituents": 6,
+      "previous_total": 9274150577892,
+      "total": 6972918871417.0
+    },
+    {
+      "date": "2018-05-03",
+      "replaced": true,
+      "new_constituents": 7,
+      "previous_total": 6106347555539,
+      "total": 5086004037558.0
+    },
+    {
+      "date": "2018-05-04",
+      "replaced": true,
+      "new_constituents": 4,
+      "previous_total": 7315894238550,
+      "total": 6646016164823.0
+    },
+    {
+      "date": "2018-05-08",
+      "replaced": true,
+      "new_constituents": 7,
+      "previous_total": 7387197858860,
+      "total": 5934483558625.0
+    },
+    {
+      "date": "2018-05-09",
+      "replaced": true,
+      "new_constituents": 5,
+      "previous_total": 6951061927190,
+      "total": 6475937065280.0
+    },
+    {
+      "date": "2018-05-10",
+      "replaced": true,
+      "new_constituents": 7,
+      "previous_total": 5398159907455,
+      "total": 5367534981366.0
+    },
+    {
+      "date": "2018-05-11",
+      "replaced": true,
+      "new_constituents": 5,
+      "previous_total": 4588176725862,
+      "total": 4338557281608.0
+    },
+    {
+      "date": "2018-05-14",
+      "replaced": true,
+      "new_constituents": 5,
+      "previous_total": 5481739849857,
+      "total": 5002928813150.0
+    },
+    {
+      "date": "2018-05-15",
+      "replaced": true,
+      "new_constituents": 8,
+      "previous_total": 6052341181393,
+      "total": 5315528170483.0
+    },
+    {
+      "date": "2018-05-16",
+      "replaced": true,
+      "new_constituents": 6,
+      "previous_total": 6428040325698,
+      "total": 6497839205795.0
+    },
+    {
+      "date": "2018-05-17",
+      "replaced": true,
+      "new_constituents": 5,
+      "previous_total": 5274699327164,
+      "total": 5138916543040.0
+    },
+    {
+      "date": "2018-05-18",
+      "replaced": true,
+      "new_constituents": 6,
+      "previous_total": 3962680311248,
+      "total": 4019306088428.0
+    },
+    {
+      "date": "2018-05-21",
+      "replaced": true,
+      "new_constituents": 5,
+      "previous_total": 4059624479296,
+      "total": 4059537203038.0
+    },
+    {
+      "date": "2018-05-23",
+      "replaced": true,
+      "new_constituents": 5,
+      "previous_total": 6106294862921,
+      "total": 6139897347777.0
+    },
+    {
+      "date": "2018-05-24",
+      "replaced": true,
+      "new_constituents": 6,
+      "previous_total": 4794909856210,
+      "total": 4892992227608.0
+    },
+    {
+      "date": "2018-05-25",
+      "replaced": true,
+      "new_constituents": 8,
+      "previous_total": 6237715976904,
+      "total": 5971817777080.0
+    },
+    {
+      "date": "2018-05-28",
+      "replaced": true,
+      "new_constituents": 8,
+      "previous_total": 6084581911264,
+      "total": 5825865360645.0
+    },
+    {
+      "date": "2018-05-29",
+      "replaced": true,
+      "new_constituents": 6,
+      "previous_total": 8861086186816,
+      "total": 7019003200410.0
+    },
+    {
+      "date": "2018-05-30",
+      "replaced": true,
+      "new_constituents": 6,
+      "previous_total": 9149478248510,
+      "total": 6764586575869.0
+    },
+    {
+      "date": "2018-05-31",
+      "replaced": true,
+      "new_constituents": 5,
+      "previous_total": 12078778476711,
+      "total": 9682649398318.0
+    },
+    {
+      "date": "2018-06-01",
+      "replaced": true,
+      "new_constituents": 7,
+      "previous_total": 7202626672217,
+      "total": 6288298633602.0
+    },
+    {
+      "date": "2018-06-04",
+      "replaced": true,
+      "new_constituents": 6,
+      "previous_total": 5714062384851,
+      "total": 5253733084748.0
+    },
+    {
+      "date": "2018-06-05",
+      "replaced": true,
+      "new_constituents": 9,
+      "previous_total": 5367917985507,
+      "total": 4872119045813.0
+    },
+    {
+      "date": "2018-06-07",
+      "replaced": true,
+      "new_constituents": 9,
+      "previous_total": 5124201414671,
+      "total": 4817857757663.0
+    },
+    {
+      "date": "2018-06-08",
+      "replaced": true,
+      "new_constituents": 7,
+      "previous_total": 5750370398185,
+      "total": 5209864921057.0
+    },
+    {
+      "date": "2018-06-11",
+      "replaced": true,
+      "new_constituents": 6,
+      "previous_total": 4406243624110,
+      "total": 4000953843502.0
+    },
+    {
+      "date": "2018-06-12",
+      "replaced": true,
+      "new_constituents": 5,
+      "previous_total": 6872823622568,
+      "total": 6718255638345.0
+    },
+    {
+      "date": "2018-06-14",
+      "replaced": true,
+      "new_constituents": 5,
+      "previous_total": 6241424504299,
+      "total": 6135097303500.0
+    },
+    {
+      "date": "2018-06-15",
+      "replaced": true,
+      "new_constituents": 7,
+      "previous_total": 5794289085718,
+      "total": 5654042126898.0
+    },
+    {
+      "date": "2018-06-18",
+      "replaced": true,
+      "new_constituents": 7,
+      "previous_total": 6943791018967,
+      "total": 4935203117761.0
+    },
+    {
+      "date": "2018-06-19",
+      "replaced": true,
+      "new_constituents": 6,
+      "previous_total": 7965794314686,
+      "total": 4903948722155.0
+    },
+    {
+      "date": "2018-06-20",
+      "replaced": true,
+      "new_constituents": 7,
+      "previous_total": 5039511965852,
+      "total": 4331109624595.0
+    },
+    {
+      "date": "2018-06-21",
+      "replaced": true,
+      "new_constituents": 7,
+      "previous_total": 5272384000076,
+      "total": 3491609662830.0
+    },
+    {
+      "date": "2018-06-22",
+      "replaced": true,
+      "new_constituents": 6,
+      "previous_total": 5542629511967,
+      "total": 3662839118370.0
+    },
+    {
+      "date": "2018-06-25",
+      "replaced": true,
+      "new_constituents": 6,
+      "previous_total": 4093253901405,
+      "total": 3403942756644.0
+    },
+    {
+      "date": "2018-06-26",
+      "replaced": true,
+      "new_constituents": 6,
+      "previous_total": 6321305667952,
+      "total": 4084826584885.0
+    },
+    {
+      "date": "2018-06-27",
+      "replaced": true,
+      "new_constituents": 5,
+      "previous_total": 5414932031998,
+      "total": 4178756703712.0
+    },
+    {
+      "date": "2018-06-28",
+      "replaced": true,
+      "new_constituents": 6,
+      "previous_total": 3737746199891,
+      "total": 3253488392544.0
+    },
+    {
+      "date": "2018-06-29",
+      "replaced": true,
+      "new_constituents": 7,
+      "previous_total": 3580732251925,
+      "total": 3718599166821.0
+    },
+    {
+      "date": "2018-07-02",
+      "replaced": true,
+      "new_constituents": 6,
+      "previous_total": 4009665751080,
+      "total": 3185722884328.0
+    },
+    {
+      "date": "2018-07-03",
+      "replaced": true,
+      "new_constituents": 9,
+      "previous_total": 5226444797778,
+      "total": 3331135814435.0
+    },
+    {
+      "date": "2018-07-04",
+      "replaced": true,
+      "new_constituents": 9,
+      "previous_total": 4219582323703,
+      "total": 2841712115014.0
+    },
+    {
+      "date": "2018-07-05",
+      "replaced": true,
+      "new_constituents": 7,
+      "previous_total": 3650882159858,
+      "total": 3009892256805.0
+    },
+    {
+      "date": "2018-07-06",
+      "replaced": true,
+      "new_constituents": 7,
+      "previous_total": 4221662192687,
+      "total": 3803473092301.0
+    },
+    {
+      "date": "2018-07-09",
+      "replaced": true,
+      "new_constituents": 6,
+      "previous_total": 3429443664861,
+      "total": 3163183080425.0
+    },
+    {
+      "date": "2018-07-10",
+      "replaced": true,
+      "new_constituents": 5,
+      "previous_total": 2858765792219,
+      "total": 2478055446269.0
+    },
+    {
+      "date": "2018-07-11",
+      "replaced": true,
+      "new_constituents": 6,
+      "previous_total": 3323173743712,
+      "total": 3031247949132.0
+    },
+    {
+      "date": "2018-07-12",
+      "replaced": true,
+      "new_constituents": 5,
+      "previous_total": 4331809106678,
+      "total": 3273403454515.0
+    },
+    {
+      "date": "2018-07-13",
+      "replaced": true,
+      "new_constituents": 5,
+      "previous_total": 4450626167819,
+      "total": 3919302701228.0
+    },
+    {
+      "date": "2018-07-16",
+      "replaced": true,
+      "new_constituents": 4,
+      "previous_total": 3178777745417,
+      "total": 2640657527396.0
+    },
+    {
+      "date": "2018-07-17",
+      "replaced": true,
+      "new_constituents": 7,
+      "previous_total": 2884224474196,
+      "total": 2629353596812.0
+    },
+    {
+      "date": "2018-07-18",
+      "replaced": true,
+      "new_constituents": 6,
+      "previous_total": 3576697418364,
+      "total": 3377622873109.0
+    },
+    {
+      "date": "2018-07-19",
+      "replaced": true,
+      "new_constituents": 5,
+      "previous_total": 3805725543147,
+      "total": 3742096042590.0
+    },
+    {
+      "date": "2018-07-20",
+      "replaced": true,
+      "new_constituents": 4,
+      "previous_total": 3168081178692,
+      "total": 3154523616283.0
+    },
+    {
+      "date": "2018-07-23",
+      "replaced": true,
+      "new_constituents": 6,
+      "previous_total": 3490078074104,
+      "total": 3717247871650.0
+    },
+    {
+      "date": "2018-07-24",
+      "replaced": true,
+      "new_constituents": 5,
+      "previous_total": 3652297175432,
+      "total": 3788062501918.0
+    },
+    {
+      "date": "2018-07-25",
+      "replaced": true,
+      "new_constituents": 4,
+      "previous_total": 5121394700786,
+      "total": 4815570941855.0
+    },
+    {
+      "date": "2018-07-26",
+      "replaced": true,
+      "new_constituents": 5,
+      "previous_total": 3895565953290,
+      "total": 4089905824233.0
+    },
+    {
+      "date": "2018-07-27",
+      "replaced": true,
+      "new_constituents": 7,
+      "previous_total": 2955103866394,
+      "total": 3093324194086.0
+    },
+    {
+      "date": "2018-07-30",
+      "replaced": true,
+      "new_constituents": 5,
+      "previous_total": 2961575384544,
+      "total": 2853766165029.0
+    },
+    {
+      "date": "2018-07-31",
+      "replaced": true,
+      "new_constituents": 7,
+      "previous_total": 3430940640807,
+      "total": 3127217501125.0
+    },
+    {
+      "date": "2018-08-01",
+      "replaced": true,
+      "new_constituents": 6,
+      "previous_total": 5271887618140,
+      "total": 3118822101935.0
+    },
+    {
+      "date": "2018-08-02",
+      "replaced": true,
+      "new_constituents": 6,
+      "previous_total": 3280691292130,
+      "total": 3206504789874.0
+    },
+    {
+      "date": "2018-08-03",
+      "replaced": true,
+      "new_constituents": 6,
+      "previous_total": 3277042231778,
+      "total": 2648114146744.0
+    },
+    {
+      "date": "2018-08-06",
+      "replaced": true,
+      "new_constituents": 7,
+      "previous_total": 3172857137286,
+      "total": 2827177404990.0
+    },
+    {
+      "date": "2018-08-07",
+      "replaced": true,
+      "new_constituents": 6,
+      "previous_total": 3157719931619,
+      "total": 3197144851442.0
+    },
+    {
+      "date": "2018-08-08",
+      "replaced": true,
+      "new_constituents": 5,
+      "previous_total": 3632120092974,
+      "total": 3769957350342.0
+    },
+    {
+      "date": "2018-08-09",
+      "replaced": true,
+      "new_constituents": 6,
+      "previous_total": 3848623259816,
+      "total": 4141934914200.0
+    },
+    {
+      "date": "2018-08-10",
+      "replaced": true,
+      "new_constituents": 8,
+      "previous_total": 4501552384877,
+      "total": 4716877687420.0
+    },
+    {
+      "date": "2018-08-13",
+      "replaced": true,
+      "new_constituents": 8,
+      "previous_total": 4261375782295,
+      "total": 3883259053925.0
+    },
+    {
+      "date": "2018-08-14",
+      "replaced": true,
+      "new_constituents": 5,
+      "previous_total": 3056165665916,
+      "total": 3220844832370.0
+    },
+    {
+      "date": "2018-08-16",
+      "replaced": true,
+      "new_constituents": 5,
+      "previous_total": 3637427664980,
+      "total": 3704644076465.0
+    },
+    {
+      "date": "2018-08-17",
+      "replaced": true,
+      "new_constituents": 6,
+      "previous_total": 2714351147038,
+      "total": 2820201109572.0
+    },
+    {
+      "date": "2018-08-20",
+      "replaced": true,
+      "new_constituents": 5,
+      "previous_total": 3996186884871,
+      "total": 2681794491645.0
+    },
+    {
+      "date": "2018-08-21",
+      "replaced": true,
+      "new_constituents": 5,
+      "previous_total": 3615643525414,
+      "total": 3166625516997.0
+    },
+    {
+      "date": "2018-08-22",
+      "replaced": true,
+      "new_constituents": 6,
+      "previous_total": 4136940556988,
+      "total": 3506140408930.0
+    },
+    {
+      "date": "2018-08-23",
+      "replaced": true,
+      "new_constituents": 7,
+      "previous_total": 3265928548827,
+      "total": 2722884748272.0
+    },
+    {
+      "date": "2018-08-24",
+      "replaced": true,
+      "new_constituents": 5,
+      "previous_total": 5051777884922,
+      "total": 3361500284540.0
+    },
+    {
+      "date": "2018-08-27",
+      "replaced": true,
+      "new_constituents": 7,
+      "previous_total": 6090791397450,
+      "total": 3700065327687.0
+    },
+    {
+      "date": "2018-08-28",
+      "replaced": true,
+      "new_constituents": 6,
+      "previous_total": 5336262836836,
+      "total": 3398395625749.0
+    },
+    {
+      "date": "2018-08-29",
+      "replaced": true,
+      "new_constituents": 7,
+      "previous_total": 4321599955669,
+      "total": 2884549321802.0
+    },
+    {
+      "date": "2018-08-30",
+      "replaced": true,
+      "new_constituents": 8,
+      "previous_total": 4985470125407,
+      "total": 3168783678831.0
+    },
+    {
+      "date": "2018-08-31",
+      "replaced": true,
+      "new_constituents": 5,
+      "previous_total": 4214551646709,
+      "total": 3770653895617.0
+    },
+    {
+      "date": "2018-09-03",
+      "replaced": true,
+      "new_constituents": 6,
+      "previous_total": 3294612362532,
+      "total": 2813880994840.0
+    },
+    {
+      "date": "2018-09-04",
+      "replaced": true,
+      "new_constituents": 8,
+      "previous_total": 3585285055940,
+      "total": 3271385208975.0
+    },
+    {
+      "date": "2018-09-05",
+      "replaced": true,
+      "new_constituents": 8,
+      "previous_total": 3964309992680,
+      "total": 3595139194691.0
+    },
+    {
+      "date": "2018-09-06",
+      "replaced": true,
+      "new_constituents": 7,
+      "previous_total": 4124834210859,
+      "total": 3933929644157.0
+    },
+    {
+      "date": "2018-09-07",
+      "replaced": true,
+      "new_constituents": 6,
+      "previous_total": 4946032734066,
+      "total": 4440805468194.0
+    },
+    {
+      "date": "2018-09-10",
+      "replaced": true,
+      "new_constituents": 5,
+      "previous_total": 4195022905311,
+      "total": 3250723066813.0
+    },
+    {
+      "date": "2018-09-11",
+      "replaced": true,
+      "new_constituents": 5,
+      "previous_total": 4392127902361,
+      "total": 3990119527828.0
+    },
+    {
+      "date": "2018-09-12",
+      "replaced": true,
+      "new_constituents": 6,
+      "previous_total": 5174873163482,
+      "total": 5291433657025.0
+    },
+    {
+      "date": "2018-09-13",
+      "replaced": true,
+      "new_constituents": 7,
+      "previous_total": 4404760213856,
+      "total": 4579950522484.0
+    },
+    {
+      "date": "2018-09-14",
+      "replaced": true,
+      "new_constituents": 6,
+      "previous_total": 4471442200526,
+      "total": 4768454922933.0
+    },
+    {
+      "date": "2018-09-17",
+      "replaced": true,
+      "new_constituents": 5,
+      "previous_total": 3921464799645,
+      "total": 4021247753943.0
+    },
+    {
+      "date": "2018-09-18",
+      "replaced": true,
+      "new_constituents": 5,
+      "previous_total": 7766917692134,
+      "total": 4239732257100.0
+    },
+    {
+      "date": "2018-09-19",
+      "replaced": true,
+      "new_constituents": 5,
+      "previous_total": 10804112977168,
+      "total": 5422390300041.0
+    },
+    {
+      "date": "2018-09-20",
+      "replaced": true,
+      "new_constituents": 6,
+      "previous_total": 9707217314926,
+      "total": 5529096767572.0
+    },
+    {
+      "date": "2018-09-21",
+      "replaced": true,
+      "new_constituents": 4,
+      "previous_total": 8487372321740,
+      "total": 5617664458882.0
+    },
+    {
+      "date": "2018-09-27",
+      "replaced": true,
+      "new_constituents": 4,
+      "previous_total": 7294208937976,
+      "total": 4307233084797.0
+    },
+    {
+      "date": "2018-09-28",
+      "replaced": true,
+      "new_constituents": 5,
+      "previous_total": 5442393801597,
+      "total": 4641396114387.0
+    },
+    {
+      "date": "2018-10-01",
+      "replaced": true,
+      "new_constituents": 5,
+      "previous_total": 4530488446540,
+      "total": 3303462953501.0
+    },
+    {
+      "date": "2018-10-02",
+      "replaced": true,
+      "new_constituents": 6,
+      "previous_total": 4426425255399,
+      "total": 4174492235812.0
+    },
+    {
+      "date": "2018-10-04",
+      "replaced": true,
+      "new_constituents": 4,
+      "previous_total": 5532980999612,
+      "total": 4916188929918.0
+    },
+    {
+      "date": "2018-10-05",
+      "replaced": true,
+      "new_constituents": 6,
+      "previous_total": 4357898125345,
+      "total": 4091431236362.0
+    },
+    {
+      "date": "2018-10-08",
+      "replaced": true,
+      "new_constituents": 4,
+      "previous_total": 3254905132243,
+      "total": 2829043492353.0
+    },
+    {
+      "date": "2018-10-10",
+      "replaced": true,
+      "new_constituents": 5,
+      "previous_total": 9850937361714,
+      "total": 6136664725970.0
+    },
+    {
+      "date": "2018-10-11",
+      "replaced": true,
+      "new_constituents": 4,
+      "previous_total": 7048830059287,
+      "total": 4813123105083.0
+    },
+    {
+      "date": "2018-10-12",
+      "replaced": true,
+      "new_constituents": 3,
+      "previous_total": 4807817775262,
+      "total": 3940064318173.0
+    },
+    {
+      "date": "2018-10-15",
+      "replaced": true,
+      "new_constituents": 5,
+      "previous_total": 3650622994757,
+      "total": 3264663959372.0
+    },
+    {
+      "date": "2018-10-16",
+      "replaced": true,
+      "new_constituents": 6,
+      "previous_total": 2677806363705,
+      "total": 2458334033494.0
+    },
+    {
+      "date": "2018-10-17",
+      "replaced": true,
+      "new_constituents": 5,
+      "previous_total": 6026655819065,
+      "total": 3646313779530.0
+    },
+    {
+      "date": "2018-10-18",
+      "replaced": true,
+      "new_constituents": 4,
+      "previous_total": 3876596156167,
+      "total": 2506425323755.0
+    },
+    {
+      "date": "2018-10-19",
+      "replaced": true,
+      "new_constituents": 5,
+      "previous_total": 4810720921099,
+      "total": 3064988618354.0
+    },
+    {
+      "date": "2018-10-22",
+      "replaced": true,
+      "new_constituents": 6,
+      "previous_total": 5328226066777,
+      "total": 2205810870907.0
+    },
+    {
+      "date": "2018-10-23",
+      "replaced": true,
+      "new_constituents": 5,
+      "previous_total": 6748480829351,
+      "total": 5043289298377.0
+    },
+    {
+      "date": "2018-10-24",
+      "replaced": true,
+      "new_constituents": 6,
+      "previous_total": 6044787001074,
+      "total": 4654718397817.0
+    },
+    {
+      "date": "2018-10-25",
+      "replaced": true,
+      "new_constituents": 6,
+      "previous_total": 6123894690883,
+      "total": 5360304857121.0
+    },
+    {
+      "date": "2018-10-26",
+      "replaced": true,
+      "new_constituents": 5,
+      "previous_total": 5106252474880,
+      "total": 4345608074923.0
+    },
+    {
+      "date": "2018-10-29",
+      "replaced": true,
+      "new_constituents": 6,
+      "previous_total": 4730823421012,
+      "total": 4082979029864.0
+    },
+    {
+      "date": "2018-10-30",
+      "replaced": true,
+      "new_constituents": 6,
+      "previous_total": 5539770529201,
+      "total": 4581072253587.0
+    },
+    {
+      "date": "2018-10-31",
+      "replaced": true,
+      "new_constituents": 4,
+      "previous_total": 4642760406877,
+      "total": 3997040042955.0
+    },
+    {
+      "date": "2018-11-01",
+      "replaced": true,
+      "new_constituents": 5,
+      "previous_total": 4939018787745,
+      "total": 4008607875823.0
+    },
+    {
+      "date": "2018-11-02",
+      "replaced": true,
+      "new_constituents": 5,
+      "previous_total": 5122640495569,
+      "total": 4470949407355.0
+    },
+    {
+      "date": "2018-11-05",
+      "replaced": true,
+      "new_constituents": 4,
+      "previous_total": 3310696457094,
+      "total": 3031501311755.0
+    },
+    {
+      "date": "2018-11-06",
+      "replaced": true,
+      "new_constituents": 4,
+      "previous_total": 8678105818468,
+      "total": 3485501549585.0
+    },
+    {
+      "date": "2018-11-07",
+      "replaced": true,
+      "new_constituents": 6,
+      "previous_total": 8682710911566,
+      "total": 3606573089285.0
+    },
+    {
+      "date": "2018-11-08",
+      "replaced": true,
+      "new_constituents": 7,
+      "previous_total": 20290769679143,
+      "total": 3648744217389.0
+    },
+    {
+      "date": "2018-11-09",
+      "replaced": true,
+      "new_constituents": 4,
+      "previous_total": 13517866489920,
+      "total": 3499844908170.0
+    },
+    {
+      "date": "2018-11-12",
+      "replaced": true,
+      "new_constituents": 5,
+      "previous_total": 6760824257293,
+      "total": 3832546072819.0
+    },
+    {
+      "date": "2018-11-13",
+      "replaced": true,
+      "new_constituents": 5,
+      "previous_total": 7727011050920,
+      "total": 4008207030317.0
+    },
+    {
+      "date": "2018-11-14",
+      "replaced": true,
+      "new_constituents": 5,
+      "previous_total": 6016334740162,
+      "total": 3597232857991.0
+    },
+    {
+      "date": "2018-11-15",
+      "replaced": true,
+      "new_constituents": 6,
+      "previous_total": 5832484239771,
+      "total": 2936561464771.0
+    },
+    {
+      "date": "2018-11-16",
+      "replaced": true,
+      "new_constituents": 5,
+      "previous_total": 7035343822985,
+      "total": 3042762759987.0
+    },
+    {
+      "date": "2018-11-19",
+      "replaced": true,
+      "new_constituents": 4,
+      "previous_total": 4473007978015,
+      "total": 3196404066450.0
+    },
+    {
+      "date": "2018-11-20",
+      "replaced": true,
+      "new_constituents": 4,
+      "previous_total": 4214172808124,
+      "total": 3368839376044.0
+    },
+    {
+      "date": "2018-11-21",
+      "replaced": true,
+      "new_constituents": 4,
+      "previous_total": 5738809180591,
+      "total": 3389253609263.0
+    },
+    {
+      "date": "2018-11-22",
+      "replaced": true,
+      "new_constituents": 4,
+      "previous_total": 3677799854354,
+      "total": 2575950329290.0
+    },
+    {
+      "date": "2018-11-23",
+      "replaced": true,
+      "new_constituents": 5,
+      "previous_total": 4549102636976,
+      "total": 2495138358120.0
+    },
+    {
+      "date": "2018-11-26",
+      "replaced": true,
+      "new_constituents": 5,
+      "previous_total": 4790733369174,
+      "total": 2670997495121.0
+    },
+    {
+      "date": "2018-11-27",
+      "replaced": true,
+      "new_constituents": 5,
+      "previous_total": 3751661194218,
+      "total": 2710835518184.0
+    },
+    {
+      "date": "2018-11-28",
+      "replaced": true,
+      "new_constituents": 5,
+      "previous_total": 3929530612027,
+      "total": 2779913879445.0
+    },
+    {
+      "date": "2018-11-29",
+      "replaced": true,
+      "new_constituents": 8,
+      "previous_total": 4527231936880,
+      "total": 3357408780073.0
+    },
+    {
+      "date": "2018-11-30",
+      "replaced": true,
+      "new_constituents": 2,
+      "previous_total": 5868740190002,
+      "total": 4647992662493.0
+    },
+    {
+      "date": "2018-12-03",
+      "replaced": true,
+      "new_constituents": 4,
+      "previous_total": 4667777399177,
+      "total": 3344679860113.0
+    },
+    {
+      "date": "2018-12-04",
+      "replaced": true,
+      "new_constituents": 3,
+      "previous_total": 4177118779424,
+      "total": 3251438499374.0
+    },
+    {
+      "date": "2018-12-05",
+      "replaced": true,
+      "new_constituents": 3,
+      "previous_total": 3233839373722,
+      "total": 2767578590551.0
+    },
+    {
+      "date": "2018-12-06",
+      "replaced": true,
+      "new_constituents": 4,
+      "previous_total": 4180796087639,
+      "total": 3207024256001.0
+    },
+    {
+      "date": "2018-12-07",
+      "replaced": true,
+      "new_constituents": 4,
+      "previous_total": 3553281099352,
+      "total": 2750476451552.0
+    },
+    {
+      "date": "2018-12-10",
+      "replaced": true,
+      "new_constituents": 4,
+      "previous_total": 3152738165529,
+      "total": 2974248703796.0
+    },
+    {
+      "date": "2018-12-11",
+      "replaced": true,
+      "new_constituents": 4,
+      "previous_total": 4065389873373,
+      "total": 4049213989836.0
+    },
+    {
+      "date": "2018-12-12",
+      "replaced": true,
+      "new_constituents": 3,
+      "previous_total": 3921769125883,
+      "total": 3441642697696.0
+    },
+    {
+      "date": "2018-12-13",
+      "replaced": true,
+      "new_constituents": 2,
+      "previous_total": 5373084933461,
+      "total": 5095478050903.0
+    },
+    {
+      "date": "2018-12-14",
+      "replaced": true,
+      "new_constituents": 5,
+      "previous_total": 4551769513147,
+      "total": 4406698246934.0
+    },
+    {
+      "date": "2018-12-17",
+      "replaced": true,
+      "new_constituents": 4,
+      "previous_total": 3840911818324,
+      "total": 3617509894690.0
+    },
+    {
+      "date": "2018-12-18",
+      "replaced": true,
+      "new_constituents": 2,
+      "previous_total": 3822884819758,
+      "total": 3545195452171.0
+    },
+    {
+      "date": "2018-12-19",
+      "replaced": true,
+      "new_constituents": 4,
+      "previous_total": 3126620513939,
+      "total": 3063020882894.0
+    },
+    {
+      "date": "2018-12-20",
+      "replaced": true,
+      "new_constituents": 5,
+      "previous_total": 3445556053554,
+      "total": 3391945777388.0
+    },
+    {
+      "date": "2018-12-21",
+      "replaced": true,
+      "new_constituents": 5,
+      "previous_total": 3646035942958,
+      "total": 3405067381153.0
+    },
+    {
+      "date": "2018-12-24",
+      "replaced": true,
+      "new_constituents": 5,
+      "previous_total": 3201908321578,
+      "total": 2882498763910.0
+    },
+    {
+      "date": "2018-12-26",
+      "replaced": true,
+      "new_constituents": 5,
+      "previous_total": 4080077460369,
+      "total": 4015362774750.0
+    },
+    {
+      "date": "2018-12-27",
+      "replaced": true,
+      "new_constituents": 6,
+      "previous_total": 3818353133288,
+      "total": 3787756734430.0
+    },
+    {
+      "date": "2018-12-28",
+      "replaced": true,
+      "new_constituents": 4,
+      "previous_total": 2989816100048,
+      "total": 2774992603290.0
+    }
+  ]
+}

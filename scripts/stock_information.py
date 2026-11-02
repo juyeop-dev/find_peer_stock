@@ -1,4 +1,4 @@
-"""Collect resumable, dated stock information and reported financials from 2019 onward."""
+"""Collect resumable, dated stock information and reported financials from 2018 onward."""
 from __future__ import annotations
 
 import argparse
@@ -23,7 +23,7 @@ import stock_chart_history as charts
 ROOT = Path(__file__).resolve().parents[1]
 AUDIT = ROOT / "data/information-audit"
 PACKS = ROOT / "data/stock-information"
-START = "2019-01-01"
+START = "2018-01-01"
 COMPANY_PROFILES = json.loads((ROOT / "data/seed/company_profiles.json").read_text(encoding="utf-8"))
 METRICS = {"revenue": "TotalRevenue", "operating_income": "OperatingIncome", "net_income": "NetIncome",
            "total_assets": "TotalAssets", "total_debt": "TotalDebt", "operating_cash_flow": "OperatingCashFlow", "free_cash_flow": "FreeCashFlow"}
@@ -227,7 +227,7 @@ def collect_one(row, raw, today):
     info["financials"] = sorted([item for item in info["financials"] if (item["type"], item["period_end"]) not in preferred] + fetched, key=lambda item: (item["period_end"], item["type"]))
     info["financials_fetched_at"] = datetime.now(timezone.utc).isoformat()
     if not info["financials"]:
-        info["warnings"].append("2019년 이후 확정 실적이 제공되지 않습니다. 신규 상장·펀드·자료 미지원 여부를 원문에서 확인해 주세요.")
+        info["warnings"].append("2018년 이후 확정 실적이 제공되지 않습니다. 신규 상장·펀드·자료 미지원 여부를 원문에서 확인해 주세요.")
     info["financial_coverage"] = {"first_period": min((item["period_end"] for item in info["financials"]), default=None),
                                   "latest_period": max((item["period_end"] for item in info["financials"]), default=None),
                                   "note": "제공된 확정 회계기간만 표시합니다. 제공처가 제한한 과거 분기와 공시되지 않은 기간은 채우지 않습니다."}
@@ -277,7 +277,9 @@ def checkpoint(db, rows, history_db=None):
         financial_stage = ("financial_2020", "financial_2020_updates")
     if "financial_2019_updates" in tables:
         financial_stage = ("financial_2019", "financial_2019_updates")
-    history_table = "history_2019_updates" if "history_2019_updates" in tables else "history_2020_updates" if "history_2020_updates" in tables else "history_2021_updates" if "history_2021_updates" in tables else "history_2022_updates" if "history_2022_updates" in tables else "history_2023_updates" if "history_2023_updates" in tables else "history_2024_updates"
+    if "financial_2018_updates" in tables:
+        financial_stage = ("financial_2018", "financial_2018_updates")
+    history_table = "history_2018_updates" if "history_2018_updates" in tables else "history_2019_updates" if "history_2019_updates" in tables else "history_2020_updates" if "history_2020_updates" in tables else "history_2021_updates" if "history_2021_updates" in tables else "history_2022_updates" if "history_2022_updates" in tables else "history_2023_updates" if "history_2023_updates" in tables else "history_2024_updates"
     for name, table in [financial_stage, ("daily_history", history_table)]:
         done = {row[0] for row in db.execute(f"SELECT ticker FROM {table}")} if table in tables else set()
         todo = [row for row in rows if row["ticker"] not in done]
@@ -289,7 +291,10 @@ def checkpoint(db, rows, history_db=None):
     commands["financial_2021"] = "python scripts/backfill_stock_information_2021.py collect"
     commands["financial_2020"] = "python scripts/backfill_stock_information_2020.py collect"
     commands["financial_2019"] = "python scripts/backfill_stock_information_2019.py collect"
-    if financial_stage[0] == "financial_2019":
+    commands["financial_2018"] = "python scripts/backfill_stock_information_2018.py collect"
+    if financial_stage[0] == "financial_2018":
+        commands["daily_history"] += " --state-dir data/tmp_2018_history"
+    elif financial_stage[0] == "financial_2019":
         commands["daily_history"] += " --state-dir data/tmp_2019_history"
     elif financial_stage[0] == "financial_2020":
         commands["daily_history"] += " --state-dir data/tmp_2020_history"
@@ -332,7 +337,7 @@ def collect(db, rows, limit=None, force=False):
                     previous = json.loads(old[0])
                     keys = {(item["type"], item["period_end"]) for item in value["financials"]}
                     value["financials"] = sorted(value["financials"] + [item for item in previous.get("financials", []) if (item["type"], item["period_end"]) not in keys], key=lambda item: (item["period_end"], item["type"]))
-                    for key in ["historical_financials_fetched_at", "historical_financials_warning", "historical_2024_h2_fetched_at", "historical_2024_h2_coverage", "historical_2024_coverage", "historical_2024_fetched_at", "historical_2023_coverage", "historical_2023_fetched_at", "historical_2022_coverage", "historical_2022_fetched_at", "historical_2021_coverage", "historical_2021_fetched_at", "historical_2020_coverage", "historical_2020_fetched_at", "historical_2019_coverage", "historical_2019_fetched_at", "prior_financial_snapshots"]:
+                    for key in ["historical_financials_fetched_at", "historical_financials_warning", "historical_2024_h2_fetched_at", "historical_2024_h2_coverage", "historical_2024_coverage", "historical_2024_fetched_at", "historical_2023_coverage", "historical_2023_fetched_at", "historical_2022_coverage", "historical_2022_fetched_at", "historical_2021_coverage", "historical_2021_fetched_at", "historical_2020_coverage", "historical_2020_fetched_at", "historical_2019_coverage", "historical_2019_fetched_at", "historical_2018_coverage", "historical_2018_fetched_at", "prior_financial_snapshots"]:
                         if key in previous: value[key] = previous[key]
                     dates = sorted(item["period_end"] for item in value["financials"])
                     value["financial_coverage"].update(first_period=dates[0] if dates else None, latest_period=dates[-1] if dates else None)

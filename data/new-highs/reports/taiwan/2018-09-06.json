@@ -1,0 +1,246 @@
+{
+  "schema_version": 1,
+  "market": "taiwan",
+  "date": "2018-09-06",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "2729.TWO",
+      "name": "TTFB Co. Ltd.",
+      "exchange": "TPEX",
+      "category": "Consumer Services",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Services · Restaurants",
+      "description": "TTFB Co. Ltd. · Restaurants",
+      "change_pct": 2.3554643067518866,
+      "session_open": 128.03216552734375,
+      "session_close": 130.48907470703125,
+      "session_volume": 659795.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:2729",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2729.TWO/history/",
+        "date": "2018-09-06",
+        "daily_high": 132.39999389648438,
+        "prior_all_time_or_current_month_high": 203.1043243408203,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:2729",
+        "yahoo_symbol": "2729.TWO"
+      }
+    },
+    {
+      "ticker": "6527.TWO",
+      "name": "Crystalvue Medical Co Ltd",
+      "exchange": "TPEX",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Medical Specialties",
+      "description": "Crystalvue Medical Co Ltd · Medical Specialties",
+      "change_pct": 1.085856435201915,
+      "session_open": 38.123809814453125,
+      "session_close": 38.123809814453125,
+      "session_volume": 55650.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:6527",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6527.TWO/history/",
+        "date": "2018-09-06",
+        "daily_high": 39.238094329833984,
+        "prior_all_time_or_current_month_high": 76.19047546386719,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:6527",
+        "yahoo_symbol": "6527.TWO"
+      }
+    },
+    {
+      "ticker": "8477.TWO",
+      "name": "Xxtechec Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Retail Trade",
+      "high_type": "52_week",
+      "reason": "업종: Retail Trade · Internet Retail",
+      "description": "Xxtechec Co., Ltd. · Internet Retail",
+      "change_pct": 1.3972062909459515,
+      "session_open": 45.91046905517578,
+      "session_close": 46.183204650878906,
+      "session_volume": 9899.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:8477",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/8477.TWO/history/",
+        "date": "2018-09-06",
+        "daily_high": 48.092350006103516,
+        "prior_all_time_or_current_month_high": 86.58268737792969,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:8477",
+        "yahoo_symbol": "8477.TWO"
+      }
+    },
+    {
+      "ticker": "2356.TW",
+      "name": "Inventec Corporation",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Computer Processing Hardware",
+      "description": "Inventec Corporation · Computer Processing Hardware",
+      "change_pct": 1.277373672782911,
+      "session_open": 27.350000381469727,
+      "session_close": 27.75,
+      "session_volume": 15592725.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2356",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2356.TW/history/",
+        "date": "2018-09-06",
+        "daily_high": 28.149999618530273,
+        "prior_all_time_or_current_month_high": 32.349998474121094,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:2356",
+        "yahoo_symbol": "2356.TW"
+      }
+    },
+    {
+      "ticker": "2442.TW",
+      "name": "Jean Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "업종: Finance · Real Estate Development",
+      "description": "Jean Co., Ltd. · Real Estate Development",
+      "change_pct": 9.722222671560509,
+      "session_open": 11.832036972045898,
+      "session_close": 12.93745231628418,
+      "session_volume": 27098344.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2442",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2442.TW/history/",
+        "date": "2018-09-06",
+        "daily_high": 12.93745231628418,
+        "prior_all_time_or_current_month_high": 64.03736877441406,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:2442",
+        "yahoo_symbol": "2442.TW"
+      }
+    },
+    {
+      "ticker": "3150.TW",
+      "name": "Syncomm Technology Corp.",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Semiconductors",
+      "description": "Syncomm Technology Corp. · Semiconductors",
+      "change_pct": 5.633812452222231,
+      "session_open": 10.897082328796387,
+      "session_close": 10.897082328796387,
+      "session_volume": 27259.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:3150",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3150.TW/history/",
+        "date": "2018-09-06",
+        "daily_high": 11.21188735961914,
+        "prior_all_time_or_current_month_high": 28.211334228515625,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:3150",
+        "yahoo_symbol": "3150.TW"
+      }
+    },
+    {
+      "ticker": "3653.TW",
+      "name": "Jentech Precision Industrial Co., Ltd",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Computer Peripherals",
+      "description": "Jentech Precision Industrial Co., Ltd · Computer Peripherals",
+      "change_pct": 9.999990191108798,
+      "session_open": 71.36603546142578,
+      "session_close": 77.0025863647461,
+      "session_volume": 23240014.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:3653",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3653.TW/history/",
+        "date": "2018-09-06",
+        "daily_high": 77.0025863647461,
+        "prior_all_time_or_current_month_high": 193.9489288330078,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:3653",
+        "yahoo_symbol": "3653.TW"
+      }
+    },
+    {
+      "ticker": "4119.TW",
+      "name": "SCI Pharmtech Corp.",
+      "exchange": "TWSE",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Pharmaceuticals: Major",
+      "description": "SCI Pharmtech Corp. · Pharmaceuticals: Major",
+      "change_pct": 0.2506267471371171,
+      "session_open": 58.1201171875,
+      "session_close": 58.33888626098633,
+      "session_volume": 4294009.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:4119",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4119.TW/history/",
+        "date": "2018-09-06",
+        "daily_high": 58.77642822265625,
+        "prior_all_time_or_current_month_high": 84.95600128173828,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:4119",
+        "yahoo_symbol": "4119.TW"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-11-02T11:32:42.659942+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 2357,
+    "history_symbols": 1785,
+    "inactive_symbols": 562,
+    "failed_symbols": 10,
+    "coverage_ratio": 0.9944289693593314,
+    "coverage_by_exchange": {
+      "TWSE": {
+        "covered": 946,
+        "total": 953
+      },
+      "TPEX": {
+        "covered": 839,
+        "total": 842
+      }
+    },
+    "session_symbols": 1757,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-11-02T11:32:42.659942+00:00"
+}

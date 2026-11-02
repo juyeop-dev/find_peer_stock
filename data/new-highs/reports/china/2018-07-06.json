@@ -1,0 +1,146 @@
+{
+  "schema_version": 1,
+  "market": "china",
+  "date": "2018-07-06",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "603336.SS",
+      "name": "Great-Sun Foods Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Process Industries",
+      "high_type": "52_week",
+      "reason": "업종: Process Industries · Agricultural Commodities/Milling",
+      "description": "Great-Sun Foods Co., Ltd. Class A · Agricultural Commodities/Milling",
+      "change_pct": 4.504820039572599,
+      "session_open": 10.914392471313477,
+      "session_close": 11.846013069152832,
+      "session_volume": 66925081.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:603336",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/603336.SS/history/",
+        "date": "2018-07-06",
+        "daily_high": 12.434611320495605,
+        "prior_all_time_or_current_month_high": 18.200647354125977,
+        "passes_close_filter": true,
+        "source_symbol": "SSE:603336",
+        "yahoo_symbol": "603336.SS"
+      }
+    },
+    {
+      "ticker": "603666.SS",
+      "name": "Yijiahe Technology Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Industrial Machinery",
+      "description": "Yijiahe Technology Co., Ltd. Class A · Industrial Machinery",
+      "change_pct": 5.000450620509667,
+      "session_open": 40.08746337890625,
+      "session_close": 42.088191986083984,
+      "session_volume": 23541846.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:603666",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/603666.SS/history/",
+        "date": "2018-07-06",
+        "daily_high": 44.09256362915039,
+        "prior_all_time_or_current_month_high": 44.09256362915039,
+        "passes_close_filter": true,
+        "source_symbol": "SSE:603666",
+        "yahoo_symbol": "603666.SS"
+      }
+    },
+    {
+      "ticker": "900926.SS",
+      "name": "Shanghai Baosight Software Co., Ltd. Class B",
+      "exchange": "SSE",
+      "category": "Technology Services",
+      "high_type": "52_week",
+      "reason": "업종: Technology Services · Packaged Software",
+      "description": "Shanghai Baosight Software Co., Ltd. Class B · Packaged Software",
+      "change_pct": 0.6353052530685188,
+      "session_open": 0.7149900197982788,
+      "session_close": 0.7210590243339539,
+      "session_volume": 5546584.0,
+      "currency": "USD",
+      "source_symbol": "SSE:900926",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/900926.SS/history/",
+        "date": "2018-07-06",
+        "daily_high": 0.7312999963760376,
+        "prior_all_time_or_current_month_high": 1.204103946685791,
+        "passes_close_filter": true,
+        "source_symbol": "SSE:900926",
+        "yahoo_symbol": "900926.SS"
+      }
+    },
+    {
+      "ticker": "300747.SZ",
+      "name": "Wuhan Raycus Fiber Laser Technologies Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Electrical Products",
+      "description": "Wuhan Raycus Fiber Laser Technologies Co., Ltd. Class A · Electrical Products",
+      "change_pct": 10.003399033035908,
+      "session_open": 29.49971580505371,
+      "session_close": 29.49971580505371,
+      "session_volume": 1903187.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:300747",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/300747.SZ/history/",
+        "date": "2018-07-06",
+        "daily_high": 29.49971580505371,
+        "prior_all_time_or_current_month_high": 29.49971580505371,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:300747",
+        "yahoo_symbol": "300747.SZ"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-11-02T11:40:39.351428+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 5312,
+    "history_symbols": 3405,
+    "inactive_symbols": 1899,
+    "failed_symbols": 8,
+    "coverage_ratio": 0.9976560210958101,
+    "coverage_by_exchange": {
+      "SSE": {
+        "covered": 1388,
+        "total": 1390
+      },
+      "SZSE": {
+        "covered": 2017,
+        "total": 2023
+      }
+    },
+    "session_symbols": 3363,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-11-02T11:40:39.351428+00:00"
+}

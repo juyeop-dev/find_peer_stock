@@ -1,0 +1,246 @@
+{
+  "schema_version": 1,
+  "market": "china",
+  "date": "2018-08-27",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "600131.SS",
+      "name": "State Grid Information & Communication Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Utilities",
+      "high_type": "52_week",
+      "reason": "업종: Utilities · Electric Utilities",
+      "description": "State Grid Information & Communication Co., Ltd. Class A · Electric Utilities",
+      "change_pct": 2.0202054798919233,
+      "session_open": 8.930000305175781,
+      "session_close": 9.09000015258789,
+      "session_volume": 12906800.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:600131",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/600131.SS/history/",
+        "date": "2018-08-27",
+        "daily_high": 9.369999885559082,
+        "prior_all_time_or_current_month_high": 16.190000534057617,
+        "passes_close_filter": true,
+        "source_symbol": "SSE:600131",
+        "yahoo_symbol": "600131.SS"
+      }
+    },
+    {
+      "ticker": "002153.SZ",
+      "name": "Beijing Shiji Information Technology Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Technology Services",
+      "high_type": "52_week",
+      "reason": "업종: Technology Services · Packaged Software",
+      "description": "Beijing Shiji Information Technology Co., Ltd. Class A · Packaged Software",
+      "change_pct": 1.5406096019442872,
+      "session_open": 14.089481353759766,
+      "session_close": 14.22684383392334,
+      "session_volume": 31322989.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002153",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002153.SZ/history/",
+        "date": "2018-08-27",
+        "daily_high": 14.866561889648438,
+        "prior_all_time_or_current_month_high": 29.173206329345703,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:002153",
+        "yahoo_symbol": "002153.SZ"
+      }
+    },
+    {
+      "ticker": "002463.SZ",
+      "name": "Wus Printed Circuit (Kunshan) Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Electronic Components",
+      "description": "Wus Printed Circuit (Kunshan) Co., Ltd. Class A · Electronic Components",
+      "change_pct": 10.068269176633681,
+      "session_open": 5.581818103790283,
+      "session_close": 5.863636016845703,
+      "session_volume": 130921342.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002463",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002463.SZ/history/",
+        "date": "2018-08-27",
+        "daily_high": 5.863636016845703,
+        "prior_all_time_or_current_month_high": 12.272727012634277,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:002463",
+        "yahoo_symbol": "002463.SZ"
+      }
+    },
+    {
+      "ticker": "002912.SZ",
+      "name": "Shenzhen Sinovatio Technology Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Technology Services",
+      "high_type": "all_time",
+      "reason": "업종: Technology Services · Packaged Software",
+      "description": "Shenzhen Sinovatio Technology Co., Ltd. Class A · Packaged Software",
+      "change_pct": 4.545454545454541,
+      "session_open": 62.3125,
+      "session_close": 64.6875,
+      "session_volume": 3547340.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002912",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002912.SZ/history/",
+        "date": "2018-08-27",
+        "daily_high": 66.19999694824219,
+        "prior_all_time_or_current_month_high": 66.19999694824219,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:002912",
+        "yahoo_symbol": "002912.SZ"
+      }
+    },
+    {
+      "ticker": "300523.SZ",
+      "name": "Beijing Global Safety Technology Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Technology Services",
+      "high_type": "52_week",
+      "reason": "업종: Technology Services · Packaged Software",
+      "description": "Beijing Global Safety Technology Co., Ltd. Class A · Packaged Software",
+      "change_pct": 5.1817998340244475,
+      "session_open": 45.52000045776367,
+      "session_close": 47.633331298828125,
+      "session_volume": 3689680.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:300523",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/300523.SZ/history/",
+        "date": "2018-08-27",
+        "daily_high": 48.2400016784668,
+        "prior_all_time_or_current_month_high": 71.50740814208984,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:300523",
+        "yahoo_symbol": "300523.SZ"
+      }
+    },
+    {
+      "ticker": "300602.SZ",
+      "name": "Shenzhen FRD Science & Technology Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Electrical Products",
+      "description": "Shenzhen FRD Science & Technology Co., Ltd. Class A · Electrical Products",
+      "change_pct": 1.5144292900357792,
+      "session_open": 17.967092514038086,
+      "session_close": 18.226253509521484,
+      "session_volume": 9487544.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:300602",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/300602.SZ/history/",
+        "date": "2018-08-27",
+        "daily_high": 18.969749450683594,
+        "prior_all_time_or_current_month_high": 18.969749450683594,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:300602",
+        "yahoo_symbol": "300602.SZ"
+      }
+    },
+    {
+      "ticker": "300604.SZ",
+      "name": "Hangzhou Changchuan Technology Co. Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Electronic Equipment/Instruments",
+      "description": "Hangzhou Changchuan Technology Co. Ltd. Class A · Electronic Equipment/Instruments",
+      "change_pct": 5.296761816805806,
+      "session_open": 11.716926574707031,
+      "session_close": 12.334628105163574,
+      "session_volume": 17044525.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:300604",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/300604.SZ/history/",
+        "date": "2018-08-27",
+        "daily_high": 12.464816093444824,
+        "prior_all_time_or_current_month_high": 12.464816093444824,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:300604",
+        "yahoo_symbol": "300604.SZ"
+      }
+    },
+    {
+      "ticker": "300684.SZ",
+      "name": "Jones Tech PLC Class A",
+      "exchange": "SZSE",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Electronic Production Equipment",
+      "description": "Jones Tech PLC Class A · Electronic Production Equipment",
+      "change_pct": 2.8854268019672613,
+      "session_open": 32.98611068725586,
+      "session_close": 33.92361068725586,
+      "session_volume": 10146752.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:300684",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/300684.SZ/history/",
+        "date": "2018-08-27",
+        "daily_high": 34.15972137451172,
+        "prior_all_time_or_current_month_high": 34.15972137451172,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:300684",
+        "yahoo_symbol": "300684.SZ"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-11-02T11:40:39.351428+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 5312,
+    "history_symbols": 3405,
+    "inactive_symbols": 1899,
+    "failed_symbols": 8,
+    "coverage_ratio": 0.9976560210958101,
+    "coverage_by_exchange": {
+      "SSE": {
+        "covered": 1388,
+        "total": 1390
+      },
+      "SZSE": {
+        "covered": 2017,
+        "total": 2023
+      }
+    },
+    "session_symbols": 3372,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-11-02T11:40:39.351428+00:00"
+}

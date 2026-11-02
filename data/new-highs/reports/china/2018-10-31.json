@@ -1,0 +1,146 @@
+{
+  "schema_version": 1,
+  "market": "china",
+  "date": "2018-10-31",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "600131.SS",
+      "name": "State Grid Information & Communication Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Utilities",
+      "high_type": "52_week",
+      "reason": "업종: Utilities · Electric Utilities",
+      "description": "State Grid Information & Communication Co., Ltd. Class A · Electric Utilities",
+      "change_pct": 0.0,
+      "session_open": 10.4399995803833,
+      "session_close": 10.4399995803833,
+      "session_volume": 3947845.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:600131",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/600131.SS/history/",
+        "date": "2018-10-31",
+        "daily_high": 10.489999771118164,
+        "prior_all_time_or_current_month_high": 16.190000534057617,
+        "passes_close_filter": true,
+        "source_symbol": "SSE:600131",
+        "yahoo_symbol": "600131.SS"
+      }
+    },
+    {
+      "ticker": "002939.SZ",
+      "name": "China Great Wall Securities Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "업종: Finance · Investment Banks/Brokers",
+      "description": "China Great Wall Securities Co., Ltd. Class A · Investment Banks/Brokers",
+      "change_pct": 10.000003467906616,
+      "session_open": 12.100000381469727,
+      "session_close": 12.100000381469727,
+      "session_volume": 1840101.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002939",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002939.SZ/history/",
+        "date": "2018-10-31",
+        "daily_high": 12.100000381469727,
+        "prior_all_time_or_current_month_high": 12.100000381469727,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:002939",
+        "yahoo_symbol": "002939.SZ"
+      }
+    },
+    {
+      "ticker": "002940.SZ",
+      "name": "Zhejiang Anglikang Pharmaceutical Co. Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Health Technology",
+      "high_type": "all_time",
+      "reason": "업종: Health Technology · Pharmaceuticals: Major",
+      "description": "Zhejiang Anglikang Pharmaceutical Co. Ltd. Class A · Pharmaceuticals: Major",
+      "change_pct": 3.301604526969748,
+      "session_open": 22.497026443481445,
+      "session_close": 24.256837844848633,
+      "session_volume": 28711901.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002940",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002940.SZ/history/",
+        "date": "2018-10-31",
+        "daily_high": 25.831153869628906,
+        "prior_all_time_or_current_month_high": 25.831153869628906,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:002940",
+        "yahoo_symbol": "002940.SZ"
+      }
+    },
+    {
+      "ticker": "300694.SZ",
+      "name": "Wuxi Lihu Corp. Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Auto Parts: OEM",
+      "description": "Wuxi Lihu Corp. Ltd. Class A · Auto Parts: OEM",
+      "change_pct": 10.011783326088096,
+      "session_open": 25.469999313354492,
+      "session_close": 28.020000457763672,
+      "session_volume": 38589697.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:300694",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/300694.SZ/history/",
+        "date": "2018-10-31",
+        "daily_high": 28.020000457763672,
+        "prior_all_time_or_current_month_high": 28.020000457763672,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:300694",
+        "yahoo_symbol": "300694.SZ"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-11-02T11:40:39.351428+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 5312,
+    "history_symbols": 3405,
+    "inactive_symbols": 1899,
+    "failed_symbols": 8,
+    "coverage_ratio": 0.9976560210958101,
+    "coverage_by_exchange": {
+      "SSE": {
+        "covered": 1388,
+        "total": 1390
+      },
+      "SZSE": {
+        "covered": 2017,
+        "total": 2023
+      }
+    },
+    "session_symbols": 3392,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-11-02T11:40:39.351428+00:00"
+}

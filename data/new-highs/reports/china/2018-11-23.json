@@ -1,0 +1,121 @@
+{
+  "schema_version": 1,
+  "market": "china",
+  "date": "2018-11-23",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "600593.SS",
+      "name": "Dalian Sunasia Tourism Holding Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Consumer Services",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Services · Other Consumer Services",
+      "description": "Dalian Sunasia Tourism Holding Co., Ltd. Class A · Other Consumer Services",
+      "change_pct": 2.599327321419609,
+      "session_open": 27.079999923706055,
+      "session_close": 27.6299991607666,
+      "session_volume": 1909041.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:600593",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/600593.SS/history/",
+        "date": "2018-11-23",
+        "daily_high": 28.139999389648438,
+        "prior_all_time_or_current_month_high": 37.5,
+        "passes_close_filter": true,
+        "source_symbol": "SSE:600593",
+        "yahoo_symbol": "600593.SS"
+      }
+    },
+    {
+      "ticker": "601319.SS",
+      "name": "People's Insurance Co. (Group) of China Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "업종: Finance · Multi-Line Insurance",
+      "description": "People's Insurance Co. (Group) of China Ltd. Class A · Multi-Line Insurance",
+      "change_pct": 0.0,
+      "session_open": 7.739999771118164,
+      "session_close": 7.739999771118164,
+      "session_volume": 648012972.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:601319",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/601319.SS/history/",
+        "date": "2018-11-23",
+        "daily_high": 7.739999771118164,
+        "prior_all_time_or_current_month_high": 7.739999771118164,
+        "passes_close_filter": true,
+        "source_symbol": "SSE:601319",
+        "yahoo_symbol": "601319.SS"
+      }
+    },
+    {
+      "ticker": "002761.SZ",
+      "name": "Zhejiang Construction Investment Group Co., Ltd Class A",
+      "exchange": "SZSE",
+      "category": "Industrial Services",
+      "high_type": "52_week",
+      "reason": "업종: Industrial Services · Engineering & Construction",
+      "description": "Zhejiang Construction Investment Group Co., Ltd Class A · Engineering & Construction",
+      "change_pct": 2.2348471254880486,
+      "session_open": 16.44117546081543,
+      "session_close": 16.95294189453125,
+      "session_volume": 4093866.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002761",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002761.SZ/history/",
+        "date": "2018-11-23",
+        "daily_high": 17.582351684570312,
+        "prior_all_time_or_current_month_high": 22.491348266601562,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:002761",
+        "yahoo_symbol": "002761.SZ"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-11-02T11:40:39.351428+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 5312,
+    "history_symbols": 3405,
+    "inactive_symbols": 1899,
+    "failed_symbols": 8,
+    "coverage_ratio": 0.9976560210958101,
+    "coverage_by_exchange": {
+      "SSE": {
+        "covered": 1388,
+        "total": 1390
+      },
+      "SZSE": {
+        "covered": 2017,
+        "total": 2023
+      }
+    },
+    "session_symbols": 3396,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-11-02T11:40:39.351428+00:00"
+}

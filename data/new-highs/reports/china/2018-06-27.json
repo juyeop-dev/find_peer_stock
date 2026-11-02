@@ -1,0 +1,196 @@
+{
+  "schema_version": 1,
+  "market": "china",
+  "date": "2018-06-27",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "601330.SS",
+      "name": "Dynagreen Environmental Protection Group Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Utilities",
+      "high_type": "all_time",
+      "reason": "업종: Utilities · Electric Utilities",
+      "description": "Dynagreen Environmental Protection Group Co., Ltd. Class A · Electric Utilities",
+      "change_pct": 10.024445773007805,
+      "session_open": 13.5,
+      "session_close": 13.5,
+      "session_volume": 793028.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:601330",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/601330.SS/history/",
+        "date": "2018-06-27",
+        "daily_high": 13.5,
+        "prior_all_time_or_current_month_high": 13.5,
+        "passes_close_filter": true,
+        "source_symbol": "SSE:601330",
+        "yahoo_symbol": "601330.SS"
+      }
+    },
+    {
+      "ticker": "002492.SZ",
+      "name": "Zhuhai Winbase International Chemical Tank Terminal Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Transportation",
+      "high_type": "all_time",
+      "reason": "업종: Transportation · Other Transportation",
+      "description": "Zhuhai Winbase International Chemical Tank Terminal Co., Ltd. Class A · Other Transportation",
+      "change_pct": 1.9117593229024843,
+      "session_open": 6.909999847412109,
+      "session_close": 6.929999828338623,
+      "session_volume": 10790798.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002492",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002492.SZ/history/",
+        "date": "2018-06-27",
+        "daily_high": 7.099999904632568,
+        "prior_all_time_or_current_month_high": 7.099999904632568,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:002492",
+        "yahoo_symbol": "002492.SZ"
+      }
+    },
+    {
+      "ticker": "002725.SZ",
+      "name": "Zhejiang Yueling Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Auto Parts: OEM",
+      "description": "Zhejiang Yueling Co., Ltd. Class A · Auto Parts: OEM",
+      "change_pct": 9.991526753389923,
+      "session_open": 11.84000015258789,
+      "session_close": 12.989999771118164,
+      "session_volume": 35248794.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002725",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002725.SZ/history/",
+        "date": "2018-06-27",
+        "daily_high": 12.989999771118164,
+        "prior_all_time_or_current_month_high": 23.15625,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:002725",
+        "yahoo_symbol": "002725.SZ"
+      }
+    },
+    {
+      "ticker": "300139.SZ",
+      "name": "Beijing Xiaocheng Technology Stock Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Non-Energy Minerals",
+      "high_type": "52_week",
+      "reason": "업종: Non-Energy Minerals · Precious Metals",
+      "description": "Beijing Xiaocheng Technology Stock Co., Ltd. Class A · Precious Metals",
+      "change_pct": 10.03009000217423,
+      "session_open": 10.970000267028809,
+      "session_close": 10.970000267028809,
+      "session_volume": 35209861.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:300139",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/300139.SZ/history/",
+        "date": "2018-06-27",
+        "daily_high": 10.970000267028809,
+        "prior_all_time_or_current_month_high": 37.97999954223633,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:300139",
+        "yahoo_symbol": "300139.SZ"
+      }
+    },
+    {
+      "ticker": "300647.SZ",
+      "name": "Shenzhen Fluence Technology Plc Class A",
+      "exchange": "SZSE",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Computer Peripherals",
+      "description": "Shenzhen Fluence Technology Plc Class A · Computer Peripherals",
+      "change_pct": 10.000001021793947,
+      "session_open": 20.206666946411133,
+      "session_close": 20.53333282470703,
+      "session_volume": 48880155.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:300647",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/300647.SZ/history/",
+        "date": "2018-06-27",
+        "daily_high": 20.53333282470703,
+        "prior_all_time_or_current_month_high": 20.53333282470703,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:300647",
+        "yahoo_symbol": "300647.SZ"
+      }
+    },
+    {
+      "ticker": "300747.SZ",
+      "name": "Wuhan Raycus Fiber Laser Technologies Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Electrical Products",
+      "description": "Wuhan Raycus Fiber Laser Technologies Co., Ltd. Class A · Electrical Products",
+      "change_pct": 10.004963983740423,
+      "session_open": 15.136181831359863,
+      "session_close": 15.136181831359863,
+      "session_volume": 95862.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:300747",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/300747.SZ/history/",
+        "date": "2018-06-27",
+        "daily_high": 15.136181831359863,
+        "prior_all_time_or_current_month_high": 15.136181831359863,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:300747",
+        "yahoo_symbol": "300747.SZ"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-11-02T11:40:39.351428+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 5312,
+    "history_symbols": 3405,
+    "inactive_symbols": 1899,
+    "failed_symbols": 8,
+    "coverage_ratio": 0.9976560210958101,
+    "coverage_by_exchange": {
+      "SSE": {
+        "covered": 1388,
+        "total": 1390
+      },
+      "SZSE": {
+        "covered": 2017,
+        "total": 2023
+      }
+    },
+    "session_symbols": 3363,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-11-02T11:40:39.351428+00:00"
+}

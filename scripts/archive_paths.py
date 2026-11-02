@@ -9,7 +9,7 @@ import json
 from pathlib import Path
 
 # Keep recent public JSON endpoints unchanged; historical reports are lossless.
-COMPRESSED_BEFORE = "2026-01-01"
+COMPRESSED_BEFORE = "2026-07-01"
 
 
 def monthly_report_path(root: Path, market: str, session: date | str) -> Path:

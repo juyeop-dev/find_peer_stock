@@ -14,7 +14,7 @@ def main(year=2023):
     european_closures = json.loads((ROOT / "data/new-highs/europe-exchange-closures.json").read_bytes())["closures"]
     for market in config["markets"]:
         key = market["market"]
-        expected = weekdays - set(market["dates"])
+        expected = (weekdays | set(market.get("additional_open_dates", {}))) - set(market["dates"])
         counts = {}
         for kind in ["new-highs", "turnover"]:
             reports = [json.loads(path.read_bytes()) for path in (ROOT / "data" / kind / "reports" / key).rglob(f"{year}-*.json")]

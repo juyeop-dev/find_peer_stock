@@ -1,0 +1,221 @@
+{
+  "schema_version": 1,
+  "market": "china",
+  "date": "2018-07-25",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "600536.SS",
+      "name": "China National Software & Service Company Limited Class A",
+      "exchange": "SSE",
+      "category": "Technology Services",
+      "high_type": "52_week",
+      "reason": "업종: Technology Services · Packaged Software",
+      "description": "China National Software & Service Company Limited Class A · Packaged Software",
+      "change_pct": 1.9805814960834223,
+      "session_open": 15.378698348999023,
+      "session_close": 15.538460731506348,
+      "session_volume": 101105958.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:600536",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/600536.SS/history/",
+        "date": "2018-07-25",
+        "daily_high": 16.46745491027832,
+        "prior_all_time_or_current_month_high": 38.62721633911133,
+        "passes_close_filter": true,
+        "source_symbol": "SSE:600536",
+        "yahoo_symbol": "600536.SS"
+      }
+    },
+    {
+      "ticker": "000528.SZ",
+      "name": "Guangxi Liugong Machinery Co., Ltd Class A",
+      "exchange": "SZSE",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Trucks/Construction/Farm Machinery",
+      "description": "Guangxi Liugong Machinery Co., Ltd Class A · Trucks/Construction/Farm Machinery",
+      "change_pct": 5.801104657016798,
+      "session_open": 8.36153793334961,
+      "session_close": 8.838460922241211,
+      "session_volume": 105611465.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:000528",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/000528.SZ/history/",
+        "date": "2018-07-25",
+        "daily_high": 9.05384635925293,
+        "prior_all_time_or_current_month_high": 22.682050704956055,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:000528",
+        "yahoo_symbol": "000528.SZ"
+      }
+    },
+    {
+      "ticker": "000650.SZ",
+      "name": "Renhe Pharmacy Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Pharmaceuticals: Major",
+      "description": "Renhe Pharmacy Co., Ltd. Class A · Pharmaceuticals: Major",
+      "change_pct": 6.524630575026236,
+      "session_open": 7.5,
+      "session_close": 8.0,
+      "session_volume": 59172622.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:000650",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/000650.SZ/history/",
+        "date": "2018-07-25",
+        "daily_high": 8.140000343322754,
+        "prior_all_time_or_current_month_high": 17.280000686645508,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:000650",
+        "yahoo_symbol": "000650.SZ"
+      }
+    },
+    {
+      "ticker": "002932.SZ",
+      "name": "Wuhan Easy Diagnosis Biomedicine Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Health Technology",
+      "high_type": "all_time",
+      "reason": "업종: Health Technology · Medical Specialties",
+      "description": "Wuhan Easy Diagnosis Biomedicine Co., Ltd. Class A · Medical Specialties",
+      "change_pct": 10.00261643382785,
+      "session_open": 27.032243728637695,
+      "session_close": 27.032243728637695,
+      "session_volume": 216637.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002932",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002932.SZ/history/",
+        "date": "2018-07-25",
+        "daily_high": 27.032243728637695,
+        "prior_all_time_or_current_month_high": 27.032243728637695,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:002932",
+        "yahoo_symbol": "002932.SZ"
+      }
+    },
+    {
+      "ticker": "300260.SZ",
+      "name": "Kunshan Kinglai Hygienic Materials Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Industrial Machinery",
+      "description": "Kunshan Kinglai Hygienic Materials Co., Ltd. Class A · Industrial Machinery",
+      "change_pct": 0.0,
+      "session_open": 11.066665649414062,
+      "session_close": 11.088888168334961,
+      "session_volume": 2267820.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:300260",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/300260.SZ/history/",
+        "date": "2018-07-25",
+        "daily_high": 11.25,
+        "prior_all_time_or_current_month_high": 14.205554962158203,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:300260",
+        "yahoo_symbol": "300260.SZ"
+      }
+    },
+    {
+      "ticker": "300596.SZ",
+      "name": "Rianlon Corp. Class A",
+      "exchange": "SZSE",
+      "category": "Process Industries",
+      "high_type": "52_week",
+      "reason": "업종: Process Industries · Chemicals: Major Diversified",
+      "description": "Rianlon Corp. Class A · Chemicals: Major Diversified",
+      "change_pct": 3.927928477794196,
+      "session_open": 27.899999618530273,
+      "session_close": 28.84000015258789,
+      "session_volume": 2151934.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:300596",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/300596.SZ/history/",
+        "date": "2018-07-25",
+        "daily_high": 28.850000381469727,
+        "prior_all_time_or_current_month_high": 33.313331604003906,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:300596",
+        "yahoo_symbol": "300596.SZ"
+      }
+    },
+    {
+      "ticker": "300661.SZ",
+      "name": "SG Micro Corp. Class A",
+      "exchange": "SZSE",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Semiconductors",
+      "description": "SG Micro Corp. Class A · Semiconductors",
+      "change_pct": 4.528480181692762,
+      "session_open": 14.458772659301758,
+      "session_close": 15.098029136657715,
+      "session_volume": 5504343.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:300661",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/300661.SZ/history/",
+        "date": "2018-07-25",
+        "daily_high": 15.371803283691406,
+        "prior_all_time_or_current_month_high": 15.371803283691406,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:300661",
+        "yahoo_symbol": "300661.SZ"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-11-02T11:40:39.351428+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 5312,
+    "history_symbols": 3405,
+    "inactive_symbols": 1899,
+    "failed_symbols": 8,
+    "coverage_ratio": 0.9976560210958101,
+    "coverage_by_exchange": {
+      "SSE": {
+        "covered": 1388,
+        "total": 1390
+      },
+      "SZSE": {
+        "covered": 2017,
+        "total": 2023
+      }
+    },
+    "session_symbols": 3367,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-11-02T11:40:39.351428+00:00"
+}

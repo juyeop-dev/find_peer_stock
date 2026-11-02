@@ -1,0 +1,221 @@
+{
+  "schema_version": 1,
+  "market": "china",
+  "date": "2018-06-21",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "600810.SS",
+      "name": "Shenma Industry Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Process Industries",
+      "high_type": "52_week",
+      "reason": "업종: Process Industries · Industrial Specialties",
+      "description": "Shenma Industry Co., Ltd. Class A · Industrial Specialties",
+      "change_pct": 2.73785298844742,
+      "session_open": 11.323076248168945,
+      "session_close": 11.54615306854248,
+      "session_volume": 42871549.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:600810",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/600810.SS/history/",
+        "date": "2018-06-21",
+        "daily_high": 12.176922798156738,
+        "prior_all_time_or_current_month_high": 14.276923179626465,
+        "passes_close_filter": true,
+        "source_symbol": "SSE:600810",
+        "yahoo_symbol": "600810.SS"
+      }
+    },
+    {
+      "ticker": "601330.SS",
+      "name": "Dynagreen Environmental Protection Group Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Utilities",
+      "high_type": "all_time",
+      "reason": "업종: Utilities · Electric Utilities",
+      "description": "Dynagreen Environmental Protection Group Co., Ltd. Class A · Electric Utilities",
+      "change_pct": 10.023868032416283,
+      "session_open": 9.220000267028809,
+      "session_close": 9.220000267028809,
+      "session_volume": 190967.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:601330",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/601330.SS/history/",
+        "date": "2018-06-21",
+        "daily_high": 9.220000267028809,
+        "prior_all_time_or_current_month_high": 9.220000267028809,
+        "passes_close_filter": true,
+        "source_symbol": "SSE:601330",
+        "yahoo_symbol": "601330.SS"
+      }
+    },
+    {
+      "ticker": "601888.SS",
+      "name": "China Tourism Group Duty Free Corporation Limited Class A",
+      "exchange": "SSE",
+      "category": "Retail Trade",
+      "high_type": "all_time",
+      "reason": "업종: Retail Trade · Discount Stores",
+      "description": "China Tourism Group Duty Free Corporation Limited Class A · Discount Stores",
+      "change_pct": 3.4835852024476477,
+      "session_open": 65.77999877929688,
+      "session_close": 67.7300033569336,
+      "session_volume": 16064881.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:601888",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/601888.SS/history/",
+        "date": "2018-06-21",
+        "daily_high": 69.55000305175781,
+        "prior_all_time_or_current_month_high": 69.55000305175781,
+        "passes_close_filter": true,
+        "source_symbol": "SSE:601888",
+        "yahoo_symbol": "601888.SS"
+      }
+    },
+    {
+      "ticker": "603658.SS",
+      "name": "Autobio Diagnostics Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Health Technology",
+      "high_type": "all_time",
+      "reason": "업종: Health Technology · Medical Specialties",
+      "description": "Autobio Diagnostics Co., Ltd. Class A · Medical Specialties",
+      "change_pct": 2.684227856189181,
+      "session_open": 62.06922912597656,
+      "session_close": 62.38461685180664,
+      "session_volume": 3932285.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:603658",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/603658.SS/history/",
+        "date": "2018-06-21",
+        "daily_high": 65.29230499267578,
+        "prior_all_time_or_current_month_high": 65.29230499267578,
+        "passes_close_filter": true,
+        "source_symbol": "SSE:603658",
+        "yahoo_symbol": "603658.SS"
+      }
+    },
+    {
+      "ticker": "300347.SZ",
+      "name": "Hangzhou Tigermed Consulting Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Health Technology",
+      "high_type": "all_time",
+      "reason": "업종: Health Technology · Biotechnology",
+      "description": "Hangzhou Tigermed Consulting Co., Ltd. Class A · Biotechnology",
+      "change_pct": 1.6543267485777724,
+      "session_open": 42.0,
+      "session_close": 43.01333236694336,
+      "session_volume": 12668022.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:300347",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/300347.SZ/history/",
+        "date": "2018-06-21",
+        "daily_high": 45.32666778564453,
+        "prior_all_time_or_current_month_high": 45.32666778564453,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:300347",
+        "yahoo_symbol": "300347.SZ"
+      }
+    },
+    {
+      "ticker": "300647.SZ",
+      "name": "Shenzhen Fluence Technology Plc Class A",
+      "exchange": "SZSE",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Computer Peripherals",
+      "description": "Shenzhen Fluence Technology Plc Class A · Computer Peripherals",
+      "change_pct": 9.995029132357391,
+      "session_open": 12.806666374206543,
+      "session_close": 14.746665954589844,
+      "session_volume": 48299541.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:300647",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/300647.SZ/history/",
+        "date": "2018-06-21",
+        "daily_high": 14.746665954589844,
+        "prior_all_time_or_current_month_high": 14.746665954589844,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:300647",
+        "yahoo_symbol": "300647.SZ"
+      }
+    },
+    {
+      "ticker": "300750.SZ",
+      "name": "Contemporary Amperex Technology Co., Limited Class A",
+      "exchange": "SZSE",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Electrical Products",
+      "description": "Contemporary Amperex Technology Co., Limited Class A · Electrical Products",
+      "change_pct": 9.995323144183343,
+      "session_open": 39.18888854980469,
+      "session_close": 39.18888854980469,
+      "session_volume": 2216988.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:300750",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/300750.SZ/history/",
+        "date": "2018-06-21",
+        "daily_high": 39.18888854980469,
+        "prior_all_time_or_current_month_high": 39.18888854980469,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:300750",
+        "yahoo_symbol": "300750.SZ"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-11-02T11:40:39.351428+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 5312,
+    "history_symbols": 3405,
+    "inactive_symbols": 1899,
+    "failed_symbols": 8,
+    "coverage_ratio": 0.9976560210958101,
+    "coverage_by_exchange": {
+      "SSE": {
+        "covered": 1388,
+        "total": 1390
+      },
+      "SZSE": {
+        "covered": 2017,
+        "total": 2023
+      }
+    },
+    "session_symbols": 3358,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-11-02T11:40:39.351428+00:00"
+}

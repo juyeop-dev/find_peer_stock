@@ -1,0 +1,96 @@
+{
+  "schema_version": 1,
+  "market": "china",
+  "date": "2018-08-02",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "600810.SS",
+      "name": "Shenma Industry Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Process Industries",
+      "high_type": "all_time",
+      "reason": "업종: Process Industries · Industrial Specialties",
+      "description": "Shenma Industry Co., Ltd. Class A · Industrial Specialties",
+      "change_pct": 6.784187602577951,
+      "session_open": 14.276923179626465,
+      "session_close": 15.376922607421875,
+      "session_volume": 53536676.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:600810",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/600810.SS/history/",
+        "date": "2018-08-02",
+        "daily_high": 15.715383529663086,
+        "prior_all_time_or_current_month_high": 15.715383529663086,
+        "passes_close_filter": true,
+        "source_symbol": "SSE:600810",
+        "yahoo_symbol": "600810.SS"
+      }
+    },
+    {
+      "ticker": "300517.SZ",
+      "name": "Haibo Heavy Engineering Science & Technology Co. Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Industrial Services",
+      "high_type": "52_week",
+      "reason": "업종: Industrial Services · Engineering & Construction",
+      "description": "Haibo Heavy Engineering Science & Technology Co. Ltd. Class A · Engineering & Construction",
+      "change_pct": 2.0037783676929877,
+      "session_open": 14.694443702697754,
+      "session_close": 14.988887786865234,
+      "session_volume": 4877483.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:300517",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/300517.SZ/history/",
+        "date": "2018-08-02",
+        "daily_high": 14.994443893432617,
+        "prior_all_time_or_current_month_high": 44.11111068725586,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:300517",
+        "yahoo_symbol": "300517.SZ"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-11-02T11:40:39.351428+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 5312,
+    "history_symbols": 3405,
+    "inactive_symbols": 1899,
+    "failed_symbols": 8,
+    "coverage_ratio": 0.9976560210958101,
+    "coverage_by_exchange": {
+      "SSE": {
+        "covered": 1388,
+        "total": 1390
+      },
+      "SZSE": {
+        "covered": 2017,
+        "total": 2023
+      }
+    },
+    "session_symbols": 3370,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-11-02T11:40:39.351428+00:00"
+}

@@ -67,3 +67,10 @@ test("a fresh inline snapshot cannot hide the losslessly compressed 2023 archive
     assert.equal(result.source,"verified");
   } finally { globalThis.fetch = originalFetch; }
 });
+
+test("2018 range includes the prior close and retains later year controls", () => {
+  assert.equal(chartStart("2026-11-02", "since2018"), "2018-01-01");
+  assert.equal(chartStart("2026-11-02", "since2019"), "2019-01-01");
+  const rows=["2017-12-29", "2018-01-02", "2019-01-02", "2026-10-30"].map(point);
+  assert.deepEqual(historyRange(rows,"since2018"), rows);
+});

@@ -1,0 +1,246 @@
+{
+  "schema_version": 1,
+  "market": "taiwan",
+  "date": "2018-12-10",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "4171.TWO",
+      "name": "GeneReach Biotechnology Corp.",
+      "exchange": "TPEX",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Medical Specialties",
+      "description": "GeneReach Biotechnology Corp. · Medical Specialties",
+      "change_pct": 7.692312920849309,
+      "session_open": 24.654605865478516,
+      "session_close": 27.19777488708496,
+      "session_volume": 737015.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:4171",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4171.TWO/history/",
+        "date": "2018-12-10",
+        "daily_high": 27.268417358398438,
+        "prior_all_time_or_current_month_high": 53.68911361694336,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:4171",
+        "yahoo_symbol": "4171.TWO"
+      }
+    },
+    {
+      "ticker": "6716.TWO",
+      "name": "PADAUK Technology Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Semiconductors",
+      "description": "PADAUK Technology Co., Ltd. · Semiconductors",
+      "change_pct": 0.0,
+      "session_open": 32.682193756103516,
+      "session_close": 32.682193756103516,
+      "session_volume": 64220.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:6716",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6716.TWO/history/",
+        "date": "2018-12-10",
+        "daily_high": 34.177310943603516,
+        "prior_all_time_or_current_month_high": 34.177310943603516,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:6716",
+        "yahoo_symbol": "6716.TWO"
+      }
+    },
+    {
+      "ticker": "8038.TWO",
+      "name": "Changs Ascending Enterprise Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Electrical Products",
+      "description": "Changs Ascending Enterprise Co., Ltd. · Electrical Products",
+      "change_pct": 6.607143611524724,
+      "session_open": 54.885398864746094,
+      "session_close": 58.721473693847656,
+      "session_volume": 2292870.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:8038",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/8038.TWO/history/",
+        "date": "2018-12-10",
+        "daily_high": 59.01655578613281,
+        "prior_all_time_or_current_month_high": 102.29536437988281,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:8038",
+        "yahoo_symbol": "8038.TWO"
+      }
+    },
+    {
+      "ticker": "1515.TW",
+      "name": "Rexon Industrial Corp. Ltd.",
+      "exchange": "TWSE",
+      "category": "Consumer Durables",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Durables · Recreational Products",
+      "description": "Rexon Industrial Corp. Ltd. · Recreational Products",
+      "change_pct": 1.01448833078579,
+      "session_open": 67.9000015258789,
+      "session_close": 69.69999694824219,
+      "session_volume": 10418989.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:1515",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/1515.TW/history/",
+        "date": "2018-12-10",
+        "daily_high": 70.0999984741211,
+        "prior_all_time_or_current_month_high": 75.0,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:1515",
+        "yahoo_symbol": "1515.TW"
+      }
+    },
+    {
+      "ticker": "3037.TW",
+      "name": "Unimicron Technology Corp.",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Electronic Components",
+      "description": "Unimicron Technology Corp. · Electronic Components",
+      "change_pct": 4.710922327618783,
+      "session_open": 23.399999618530273,
+      "session_close": 24.450000762939453,
+      "session_volume": 150635094.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:3037",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3037.TW/history/",
+        "date": "2018-12-10",
+        "daily_high": 25.100000381469727,
+        "prior_all_time_or_current_month_high": 69.30693054199219,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:3037",
+        "yahoo_symbol": "3037.TW"
+      }
+    },
+    {
+      "ticker": "6552.TW",
+      "name": "JMC Electronics Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Semiconductors",
+      "description": "JMC Electronics Co., Ltd. · Semiconductors",
+      "change_pct": 4.854372990885469,
+      "session_open": 123.49397277832031,
+      "session_close": 130.1204833984375,
+      "session_volume": 3035391.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:6552",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6552.TW/history/",
+        "date": "2018-12-10",
+        "daily_high": 130.1204833984375,
+        "prior_all_time_or_current_month_high": 130.1204833984375,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:6552",
+        "yahoo_symbol": "6552.TW"
+      }
+    },
+    {
+      "ticker": "8046.TW",
+      "name": "Nan Ya Printed Circuit Board Corporation",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Electronic Components",
+      "description": "Nan Ya Printed Circuit Board Corporation · Electronic Components",
+      "change_pct": 1.8181860863745625,
+      "session_open": 35.400001525878906,
+      "session_close": 36.400001525878906,
+      "session_volume": 39052579.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:8046",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/8046.TW/history/",
+        "date": "2018-12-10",
+        "daily_high": 39.150001525878906,
+        "prior_all_time_or_current_month_high": 441.7799377441406,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:8046",
+        "yahoo_symbol": "8046.TW"
+      }
+    },
+    {
+      "ticker": "9908.TW",
+      "name": "Great Taipei Gas Corporation",
+      "exchange": "TWSE",
+      "category": "Utilities",
+      "high_type": "all_time",
+      "reason": "업종: Utilities · Gas Distributors",
+      "description": "Great Taipei Gas Corporation · Gas Distributors",
+      "change_pct": 0.0,
+      "session_open": 28.950000762939453,
+      "session_close": 29.049999237060547,
+      "session_volume": 87156.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:9908",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/9908.TW/history/",
+        "date": "2018-12-10",
+        "daily_high": 29.350000381469727,
+        "prior_all_time_or_current_month_high": 29.350000381469727,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:9908",
+        "yahoo_symbol": "9908.TW"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-11-02T11:32:42.659942+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 2357,
+    "history_symbols": 1785,
+    "inactive_symbols": 562,
+    "failed_symbols": 10,
+    "coverage_ratio": 0.9944289693593314,
+    "coverage_by_exchange": {
+      "TWSE": {
+        "covered": 946,
+        "total": 953
+      },
+      "TPEX": {
+        "covered": 839,
+        "total": 842
+      }
+    },
+    "session_symbols": 1776,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-11-02T11:32:42.659942+00:00"
+}

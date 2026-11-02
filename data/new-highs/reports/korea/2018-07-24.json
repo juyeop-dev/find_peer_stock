@@ -1,0 +1,101 @@
+{
+  "schema_version": 1,
+  "market": "korea",
+  "date": "2018-07-24",
+  "summary": "과거 일봉 전체 대조 기준. 당일 장중 고가가 52주·전체기간 고가에 도달하고, 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다. 전체기간 신고가를 우선 표시하며 신고가 배경은 별도 확인 전입니다.",
+  "sources": [
+    {
+      "label": "Naver Finance 조정 일봉·한국 종목명",
+      "url": "https://stock.naver.com/"
+    },
+    {
+      "label": "TradingView 한국 주식 종목군·업종",
+      "url": "https://www.tradingview.com/screener/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "103230.KQ",
+      "name": "에스앤더블류",
+      "exchange": "KOSDAQ",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Trucks/Construction/Farm Machinery",
+      "description": "에스앤더블류 · Trucks/Construction/Farm Machinery",
+      "change_pct": 21.338912133891213,
+      "session_open": 12050,
+      "session_close": 14500,
+      "currency": "KRW",
+      "source_symbol": "KRX:103230",
+      "name_original": "S & W Corporation",
+      "name_source_url": "https://m.stock.naver.com/api/stock/103230/basic",
+      "high_verification": {
+        "source": "Naver Finance adjusted daily history",
+        "source_url": "https://api.finance.naver.com/siseJson.naver?symbol=103230&requestType=1&startTime=20170725&endTime=20180724&timeframe=day",
+        "date": "2018-07-24",
+        "open": 12050,
+        "daily_high": 15500,
+        "low": 12000,
+        "close": 14500,
+        "previous_close": 11950,
+        "volume": 505777,
+        "prior_52_week_high": 14700,
+        "observed_bars": 243,
+        "first_observed_date": "2017-07-25",
+        "confirmed": true,
+        "matches_prior_high": false,
+        "bearish_candle": false,
+        "down_close": false,
+        "passes_close_filter": true
+      }
+    },
+    {
+      "ticker": "143160.KQ",
+      "name": "아이디스",
+      "exchange": "KOSDAQ",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Telecommunications Equipment",
+      "description": "아이디스 · Telecommunications Equipment",
+      "change_pct": 4.270462633451958,
+      "session_open": 8430,
+      "session_close": 8790,
+      "currency": "KRW",
+      "source_symbol": "KRX:143160",
+      "name_original": "Intelligent Digital Integrated Security Co., Ltd.",
+      "name_source_url": "https://m.stock.naver.com/api/stock/143160/basic",
+      "high_verification": {
+        "source": "Naver Finance adjusted daily history",
+        "source_url": "https://api.finance.naver.com/siseJson.naver?symbol=143160&requestType=1&startTime=20170725&endTime=20180724&timeframe=day",
+        "date": "2018-07-24",
+        "open": 8430,
+        "daily_high": 8890,
+        "low": 8390,
+        "close": 8790,
+        "previous_close": 8430,
+        "volume": 81180,
+        "prior_52_week_high": 8860,
+        "observed_bars": 243,
+        "first_observed_date": "2017-07-25",
+        "confirmed": true,
+        "matches_prior_high": false,
+        "bearish_candle": false,
+        "down_close": false,
+        "passes_close_filter": true
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Naver Finance adjusted daily history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-11-02T11:37:21.490360+00:00",
+    "definition": "daily high >= prior 52-week high; close >= open; close >= previous close; all-time takes precedence; ties included",
+    "scanned_symbols": 2740,
+    "session_symbols": 1911,
+    "raw_new_high_candidates": 5,
+    "excluded_unsupported_korean_board": 1,
+    "excluded_bearish_or_down_close": 2,
+    "pagination_complete": true
+  },
+  "collected_at": "2026-11-02T11:37:21.490360+00:00"
+}

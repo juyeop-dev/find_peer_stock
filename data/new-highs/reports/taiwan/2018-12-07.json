@@ -1,0 +1,271 @@
+{
+  "schema_version": 1,
+  "market": "taiwan",
+  "date": "2018-12-07",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "1594.TWO",
+      "name": "Ju-Kao Engineering Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Consumer Services",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Services · Other Consumer Services",
+      "description": "Ju-Kao Engineering Co., Ltd. · Other Consumer Services",
+      "change_pct": 6.206898868166433,
+      "session_open": 12.665216445922852,
+      "session_close": 12.665216445922852,
+      "session_volume": 122147.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:1594",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/1594.TWO/history/",
+        "date": "2018-12-07",
+        "daily_high": 12.994181632995605,
+        "prior_all_time_or_current_month_high": 14.066314697265625,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:1594",
+        "yahoo_symbol": "1594.TWO"
+      }
+    },
+    {
+      "ticker": "3206.TWO",
+      "name": "Kingstate Electronics Corp.",
+      "exchange": "TPEX",
+      "category": "Consumer Durables",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Durables · Electronics/Appliances",
+      "description": "Kingstate Electronics Corp. · Electronics/Appliances",
+      "change_pct": 4.098363402941474,
+      "session_open": 23.52385711669922,
+      "session_close": 24.288860321044922,
+      "session_volume": 806747.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:3206",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3206.TWO/history/",
+        "date": "2018-12-07",
+        "daily_high": 24.43229866027832,
+        "prior_all_time_or_current_month_high": 46.71468734741211,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:3206",
+        "yahoo_symbol": "3206.TWO"
+      }
+    },
+    {
+      "ticker": "4419.TWO",
+      "name": "King House Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Consumer Services",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Services · Restaurants",
+      "description": "King House Co., Ltd. · Restaurants",
+      "change_pct": 9.71943552267389,
+      "session_open": 13.6875,
+      "session_close": 13.6875,
+      "session_volume": 935.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:4419",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4419.TWO/history/",
+        "date": "2018-12-07",
+        "daily_high": 13.6875,
+        "prior_all_time_or_current_month_high": 177.0833282470703,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:4419",
+        "yahoo_symbol": "4419.TWO"
+      }
+    },
+    {
+      "ticker": "5278.TWO",
+      "name": "Sunfun Info Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Technology Services",
+      "high_type": "52_week",
+      "reason": "업종: Technology Services · Internet Software/Services",
+      "description": "Sunfun Info Co., Ltd. · Internet Software/Services",
+      "change_pct": 7.565780266770861,
+      "session_open": 7.649425029754639,
+      "session_close": 8.228163719177246,
+      "session_volume": 4141585.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:5278",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/5278.TWO/history/",
+        "date": "2018-12-07",
+        "daily_high": 8.328815460205078,
+        "prior_all_time_or_current_month_high": 10.366984367370605,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:5278",
+        "yahoo_symbol": "5278.TWO"
+      }
+    },
+    {
+      "ticker": "8038.TWO",
+      "name": "Changs Ascending Enterprise Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Electrical Products",
+      "description": "Changs Ascending Enterprise Co., Ltd. · Electrical Products",
+      "change_pct": 3.7037071616903283,
+      "session_open": 53.01654052734375,
+      "session_close": 55.08211898803711,
+      "session_volume": 1426006.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:8038",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/8038.TWO/history/",
+        "date": "2018-12-07",
+        "daily_high": 55.57392501831055,
+        "prior_all_time_or_current_month_high": 102.29536437988281,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:8038",
+        "yahoo_symbol": "8038.TWO"
+      }
+    },
+    {
+      "ticker": "8477.TWO",
+      "name": "Xxtechec Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Retail Trade",
+      "high_type": "52_week",
+      "reason": "업종: Retail Trade · Internet Retail",
+      "description": "Xxtechec Co., Ltd. · Internet Retail",
+      "change_pct": 5.799994528362462,
+      "session_open": 45.36499786376953,
+      "session_close": 48.092350006103516,
+      "session_volume": 694861.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:8477",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/8477.TWO/history/",
+        "date": "2018-12-07",
+        "daily_high": 49.910587310791016,
+        "prior_all_time_or_current_month_high": 86.58268737792969,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:8477",
+        "yahoo_symbol": "8477.TWO"
+      }
+    },
+    {
+      "ticker": "1310.TW",
+      "name": "Taiwan Styrene Monomer Corporation",
+      "exchange": "TWSE",
+      "category": "Process Industries",
+      "high_type": "52_week",
+      "reason": "업종: Process Industries · Chemicals: Specialty",
+      "description": "Taiwan Styrene Monomer Corporation · Chemicals: Specialty",
+      "change_pct": 2.851711109341548,
+      "session_open": 26.450000762939453,
+      "session_close": 27.049999237060547,
+      "session_volume": 24581480.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:1310",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/1310.TW/history/",
+        "date": "2018-12-07",
+        "daily_high": 28.5,
+        "prior_all_time_or_current_month_high": 39.218692779541016,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:1310",
+        "yahoo_symbol": "1310.TW"
+      }
+    },
+    {
+      "ticker": "1515.TW",
+      "name": "Rexon Industrial Corp. Ltd.",
+      "exchange": "TWSE",
+      "category": "Consumer Durables",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Durables · Recreational Products",
+      "description": "Rexon Industrial Corp. Ltd. · Recreational Products",
+      "change_pct": 6.153846153846154,
+      "session_open": 65.69999694824219,
+      "session_close": 69.0,
+      "session_volume": 16607567.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:1515",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/1515.TW/history/",
+        "date": "2018-12-07",
+        "daily_high": 69.5,
+        "prior_all_time_or_current_month_high": 75.0,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:1515",
+        "yahoo_symbol": "1515.TW"
+      }
+    },
+    {
+      "ticker": "2514.TW",
+      "name": "Long Bon International Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Industrial Services",
+      "high_type": "52_week",
+      "reason": "업종: Industrial Services · Engineering & Construction",
+      "description": "Long Bon International Co., Ltd. · Engineering & Construction",
+      "change_pct": 5.0561797752809,
+      "session_open": 22.3125,
+      "session_close": 23.375,
+      "session_volume": 3983150.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2514",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2514.TW/history/",
+        "date": "2018-12-07",
+        "daily_high": 23.375,
+        "prior_all_time_or_current_month_high": 45.30487823486328,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:2514",
+        "yahoo_symbol": "2514.TW"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-11-02T11:32:42.659942+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 2357,
+    "history_symbols": 1785,
+    "inactive_symbols": 562,
+    "failed_symbols": 10,
+    "coverage_ratio": 0.9944289693593314,
+    "coverage_by_exchange": {
+      "TWSE": {
+        "covered": 946,
+        "total": 953
+      },
+      "TPEX": {
+        "covered": 839,
+        "total": 842
+      }
+    },
+    "session_symbols": 1775,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-11-02T11:32:42.659942+00:00"
+}

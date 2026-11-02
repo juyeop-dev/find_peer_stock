@@ -1,0 +1,221 @@
+{
+  "schema_version": 1,
+  "market": "taiwan",
+  "date": "2018-02-07",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "1269.TWO",
+      "name": "Kanpai Co. Ltd.",
+      "exchange": "TPEX",
+      "category": "Consumer Services",
+      "high_type": "all_time",
+      "reason": "업종: Consumer Services · Restaurants",
+      "description": "Kanpai Co. Ltd. · Restaurants",
+      "change_pct": 8.759745476355963,
+      "session_open": 151.95689392089844,
+      "session_close": 151.95689392089844,
+      "session_volume": 59112.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:1269",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/1269.TWO/history/",
+        "date": "2018-02-07",
+        "daily_high": 152.9548797607422,
+        "prior_all_time_or_current_month_high": 152.9548797607422,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:1269",
+        "yahoo_symbol": "1269.TWO"
+      }
+    },
+    {
+      "ticker": "1591.TWO",
+      "name": "Inmax Holding Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Metal Fabrication",
+      "description": "Inmax Holding Co., Ltd. · Metal Fabrication",
+      "change_pct": 7.617896290785664,
+      "session_open": 40.19047546386719,
+      "session_close": 42.380950927734375,
+      "session_volume": 1077579.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:1591",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/1591.TWO/history/",
+        "date": "2018-02-07",
+        "daily_high": 42.666664123535156,
+        "prior_all_time_or_current_month_high": 42.666664123535156,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:1591",
+        "yahoo_symbol": "1591.TWO"
+      }
+    },
+    {
+      "ticker": "4506.TWO",
+      "name": "GFC, LTD.",
+      "exchange": "TPEX",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Industrial Machinery",
+      "description": "GFC, LTD. · Industrial Machinery",
+      "change_pct": 3.3216742759427875,
+      "session_open": 57.5,
+      "session_close": 59.099998474121094,
+      "session_volume": 283976.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:4506",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4506.TWO/history/",
+        "date": "2018-02-07",
+        "daily_high": 60.599998474121094,
+        "prior_all_time_or_current_month_high": 60.599998474121094,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:4506",
+        "yahoo_symbol": "4506.TWO"
+      }
+    },
+    {
+      "ticker": "2033.TW",
+      "name": "Chia Ta World Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Metal Fabrication",
+      "description": "Chia Ta World Co., Ltd. · Metal Fabrication",
+      "change_pct": 9.785934826540355,
+      "session_open": 17.0,
+      "session_close": 17.950000762939453,
+      "session_volume": 10169002.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2033",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2033.TW/history/",
+        "date": "2018-02-07",
+        "daily_high": 17.950000762939453,
+        "prior_all_time_or_current_month_high": 63.486236572265625,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:2033",
+        "yahoo_symbol": "2033.TW"
+      }
+    },
+    {
+      "ticker": "3168.TW",
+      "name": "Data Image Corporation",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Electronic Production Equipment",
+      "description": "Data Image Corporation · Electronic Production Equipment",
+      "change_pct": 10.007944508426725,
+      "session_open": 13.850000381469727,
+      "session_close": 13.850000381469727,
+      "session_volume": 132000.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:3168",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3168.TW/history/",
+        "date": "2018-02-07",
+        "daily_high": 14.430000305175781,
+        "prior_all_time_or_current_month_high": 31.99385643005371,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:3168",
+        "yahoo_symbol": "3168.TW"
+      }
+    },
+    {
+      "ticker": "6669.TW",
+      "name": "Wiwynn Corporation",
+      "exchange": "TWSE",
+      "category": "Technology Services",
+      "high_type": "all_time",
+      "reason": "업종: Technology Services · Data Processing Services",
+      "description": "Wiwynn Corporation · Data Processing Services",
+      "change_pct": 6.0497831602743135,
+      "session_open": 51.03122329711914,
+      "session_close": 51.03122329711914,
+      "session_volume": 1447930.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:6669",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6669.TW/history/",
+        "date": "2018-02-07",
+        "daily_high": 51.15020751953125,
+        "prior_all_time_or_current_month_high": 51.15020751953125,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:6669",
+        "yahoo_symbol": "6669.TW"
+      }
+    },
+    {
+      "ticker": "8454.TW",
+      "name": "momo.com Incorporated",
+      "exchange": "TWSE",
+      "category": "Retail Trade",
+      "high_type": "52_week",
+      "reason": "업종: Retail Trade · Catalog/Specialty Distribution",
+      "description": "momo.com Incorporated · Catalog/Specialty Distribution",
+      "change_pct": 2.5925878010673253,
+      "session_open": 146.150146484375,
+      "session_close": 146.4144287109375,
+      "session_volume": 1023813.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:8454",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/8454.TW/history/",
+        "date": "2018-02-07",
+        "daily_high": 152.75729370117188,
+        "prior_all_time_or_current_month_high": 182.09303283691406,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:8454",
+        "yahoo_symbol": "8454.TW"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-11-02T11:32:42.659942+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 2357,
+    "history_symbols": 1785,
+    "inactive_symbols": 562,
+    "failed_symbols": 10,
+    "coverage_ratio": 0.9944289693593314,
+    "coverage_by_exchange": {
+      "TWSE": {
+        "covered": 946,
+        "total": 953
+      },
+      "TPEX": {
+        "covered": 839,
+        "total": 842
+      }
+    },
+    "session_symbols": 1738,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-11-02T11:32:42.659942+00:00"
+}

@@ -1,0 +1,96 @@
+{
+  "schema_version": 1,
+  "market": "china",
+  "date": "2018-08-23",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "300602.SZ",
+      "name": "Shenzhen FRD Science & Technology Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Electrical Products",
+      "description": "Shenzhen FRD Science & Technology Co., Ltd. Class A · Electrical Products",
+      "change_pct": 4.466679801435602,
+      "session_open": 17.453018188476562,
+      "session_close": 18.183767318725586,
+      "session_volume": 13028131.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:300602",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/300602.SZ/history/",
+        "date": "2018-08-23",
+        "daily_high": 18.935760498046875,
+        "prior_all_time_or_current_month_high": 18.935760498046875,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:300602",
+        "yahoo_symbol": "300602.SZ"
+      }
+    },
+    {
+      "ticker": "300684.SZ",
+      "name": "Jones Tech PLC Class A",
+      "exchange": "SZSE",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Electronic Production Equipment",
+      "description": "Jones Tech PLC Class A · Electronic Production Equipment",
+      "change_pct": 7.649598617395936,
+      "session_open": 30.55555534362793,
+      "session_close": 32.98263931274414,
+      "session_volume": 15022874.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:300684",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/300684.SZ/history/",
+        "date": "2018-08-23",
+        "daily_high": 33.70138931274414,
+        "prior_all_time_or_current_month_high": 33.70138931274414,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:300684",
+        "yahoo_symbol": "300684.SZ"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-11-02T11:40:39.351428+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 5312,
+    "history_symbols": 3405,
+    "inactive_symbols": 1899,
+    "failed_symbols": 8,
+    "coverage_ratio": 0.9976560210958101,
+    "coverage_by_exchange": {
+      "SSE": {
+        "covered": 1388,
+        "total": 1390
+      },
+      "SZSE": {
+        "covered": 2017,
+        "total": 2023
+      }
+    },
+    "session_symbols": 3372,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-11-02T11:40:39.351428+00:00"
+}

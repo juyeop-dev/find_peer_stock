@@ -1,0 +1,246 @@
+{
+  "schema_version": 1,
+  "market": "china",
+  "date": "2018-02-23",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "600789.SS",
+      "name": "Shandong Lukang Pharmaceutical Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Pharmaceuticals: Major",
+      "description": "Shandong Lukang Pharmaceutical Co., Ltd. Class A · Pharmaceuticals: Major",
+      "change_pct": 2.2202462134787604,
+      "session_open": 8.5,
+      "session_close": 8.853845596313477,
+      "session_volume": 92962903.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:600789",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/600789.SS/history/",
+        "date": "2018-02-23",
+        "daily_high": 9.30769157409668,
+        "prior_all_time_or_current_month_high": 19.80769157409668,
+        "passes_close_filter": true,
+        "source_symbol": "SSE:600789",
+        "yahoo_symbol": "600789.SS"
+      }
+    },
+    {
+      "ticker": "603709.SS",
+      "name": "Zoy Home Furnishing Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Consumer Durables",
+      "high_type": "all_time",
+      "reason": "업종: Consumer Durables · Home Furnishings",
+      "description": "Zoy Home Furnishing Co., Ltd. Class A · Home Furnishings",
+      "change_pct": 8.090984735749963,
+      "session_open": 16.66666603088379,
+      "session_close": 18.510847091674805,
+      "session_volume": 20903125.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:603709",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/603709.SS/history/",
+        "date": "2018-02-23",
+        "daily_high": 18.83629035949707,
+        "prior_all_time_or_current_month_high": 18.83629035949707,
+        "passes_close_filter": true,
+        "source_symbol": "SSE:603709",
+        "yahoo_symbol": "603709.SS"
+      }
+    },
+    {
+      "ticker": "000681.SZ",
+      "name": "Visual China Group Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Commercial Services",
+      "high_type": "52_week",
+      "reason": "업종: Commercial Services · Miscellaneous Commercial Services",
+      "description": "Visual China Group Co., Ltd. Class A · Miscellaneous Commercial Services",
+      "change_pct": 3.0196959410870416,
+      "session_open": 22.700000762939453,
+      "session_close": 23.540000915527344,
+      "session_volume": 14859830.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:000681",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/000681.SZ/history/",
+        "date": "2018-02-23",
+        "daily_high": 24.3700008392334,
+        "prior_all_time_or_current_month_high": 73.75,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:000681",
+        "yahoo_symbol": "000681.SZ"
+      }
+    },
+    {
+      "ticker": "000825.SZ",
+      "name": "Shanxi Taigang Stainless Steel Co. Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Non-Energy Minerals",
+      "high_type": "52_week",
+      "reason": "업종: Non-Energy Minerals · Steel",
+      "description": "Shanxi Taigang Stainless Steel Co. Ltd. Class A · Steel",
+      "change_pct": 4.069763492931933,
+      "session_open": 6.869999885559082,
+      "session_close": 7.159999847412109,
+      "session_volume": 236628064.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:000825",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/000825.SZ/history/",
+        "date": "2018-02-23",
+        "daily_high": 7.179999828338623,
+        "prior_all_time_or_current_month_high": 22.38666534423828,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:000825",
+        "yahoo_symbol": "000825.SZ"
+      }
+    },
+    {
+      "ticker": "002440.SZ",
+      "name": "Zhejiang Runtu Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Process Industries",
+      "high_type": "52_week",
+      "reason": "업종: Process Industries · Industrial Specialties",
+      "description": "Zhejiang Runtu Co., Ltd. Class A · Industrial Specialties",
+      "change_pct": 1.4674196207779877,
+      "session_open": 15.399999618530273,
+      "session_close": 15.673333168029785,
+      "session_volume": 39242947.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002440",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002440.SZ/history/",
+        "date": "2018-02-23",
+        "daily_high": 15.720000267028809,
+        "prior_all_time_or_current_month_high": 23.5,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:002440",
+        "yahoo_symbol": "002440.SZ"
+      }
+    },
+    {
+      "ticker": "002727.SZ",
+      "name": "Yixintang Pharmaceutical Group Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Retail Trade",
+      "high_type": "52_week",
+      "reason": "업종: Retail Trade · Drugstore Chains",
+      "description": "Yixintang Pharmaceutical Group Co., Ltd. Class A · Drugstore Chains",
+      "change_pct": 1.1800719740700627,
+      "session_open": 22.799999237060547,
+      "session_close": 23.149999618530273,
+      "session_volume": 4976698.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002727",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002727.SZ/history/",
+        "date": "2018-02-23",
+        "daily_high": 23.450000762939453,
+        "prior_all_time_or_current_month_high": 39.119998931884766,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:002727",
+        "yahoo_symbol": "002727.SZ"
+      }
+    },
+    {
+      "ticker": "002927.SZ",
+      "name": "Guizhou Taiyong-Changzheng Technology Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Electrical Products",
+      "description": "Guizhou Taiyong-Changzheng Technology Co., Ltd. Class A · Electrical Products",
+      "change_pct": 0.0,
+      "session_open": 7.4978861808776855,
+      "session_close": 8.9940824508667,
+      "session_volume": 49887.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002927",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002927.SZ/history/",
+        "date": "2018-02-23",
+        "daily_high": 8.9940824508667,
+        "prior_all_time_or_current_month_high": 8.9940824508667,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:002927",
+        "yahoo_symbol": "002927.SZ"
+      }
+    },
+    {
+      "ticker": "300308.SZ",
+      "name": "Zhongji Innolight Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Semiconductors",
+      "description": "Zhongji Innolight Co., Ltd. Class A · Semiconductors",
+      "change_pct": 2.382062272029062,
+      "session_open": 45.86428451538086,
+      "session_close": 47.27857208251953,
+      "session_volume": 2074532.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:300308",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/300308.SZ/history/",
+        "date": "2018-02-23",
+        "daily_high": 47.27857208251953,
+        "prior_all_time_or_current_month_high": 47.27857208251953,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:300308",
+        "yahoo_symbol": "300308.SZ"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-11-02T11:40:39.351428+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 5312,
+    "history_symbols": 3405,
+    "inactive_symbols": 1899,
+    "failed_symbols": 8,
+    "coverage_ratio": 0.9976560210958101,
+    "coverage_by_exchange": {
+      "SSE": {
+        "covered": 1388,
+        "total": 1390
+      },
+      "SZSE": {
+        "covered": 2017,
+        "total": 2023
+      }
+    },
+    "session_symbols": 3326,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-11-02T11:40:39.351428+00:00"
+}

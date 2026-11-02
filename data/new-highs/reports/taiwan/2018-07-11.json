@@ -1,0 +1,296 @@
+{
+  "schema_version": 1,
+  "market": "taiwan",
+  "date": "2018-07-11",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "3114.TWO",
+      "name": "Howteh Technology Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Distribution Services",
+      "high_type": "all_time",
+      "reason": "업종: Distribution Services · Electronics Distributors",
+      "description": "Howteh Technology Co., Ltd. · Electronics Distributors",
+      "change_pct": 1.4957255050275897,
+      "session_open": 33.22679901123047,
+      "session_close": 35.072731018066406,
+      "session_volume": 5463652.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:3114",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3114.TWO/history/",
+        "date": "2018-07-11",
+        "daily_high": 35.88494110107422,
+        "prior_all_time_or_current_month_high": 35.88494110107422,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:3114",
+        "yahoo_symbol": "3114.TWO"
+      }
+    },
+    {
+      "ticker": "4123.TWO",
+      "name": "Center Laboratories, Inc.",
+      "exchange": "TPEX",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Pharmaceuticals: Major",
+      "description": "Center Laboratories, Inc. · Pharmaceuticals: Major",
+      "change_pct": 5.978262285926106,
+      "session_open": 38.26445770263672,
+      "session_close": 40.33280944824219,
+      "session_volume": 38000470.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:4123",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4123.TWO/history/",
+        "date": "2018-07-11",
+        "daily_high": 40.69477081298828,
+        "prior_all_time_or_current_month_high": 49.019737243652344,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:4123",
+        "yahoo_symbol": "4123.TWO"
+      }
+    },
+    {
+      "ticker": "6274.TWO",
+      "name": "Taiwan Union Technology Corporation",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Electronic Components",
+      "description": "Taiwan Union Technology Corporation · Electronic Components",
+      "change_pct": 2.127659574468077,
+      "session_open": 115.5,
+      "session_close": 120.0,
+      "session_volume": 4947033.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:6274",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6274.TWO/history/",
+        "date": "2018-07-11",
+        "daily_high": 123.0,
+        "prior_all_time_or_current_month_high": 123.0,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:6274",
+        "yahoo_symbol": "6274.TWO"
+      }
+    },
+    {
+      "ticker": "6624.TWO",
+      "name": "Ever-Clear Environmental Eng. Corp.",
+      "exchange": "TPEX",
+      "category": "Industrial Services",
+      "high_type": "all_time",
+      "reason": "업종: Industrial Services · Environmental Services",
+      "description": "Ever-Clear Environmental Eng. Corp. · Environmental Services",
+      "change_pct": 2.866773396128708,
+      "session_open": 59.51006317138672,
+      "session_close": 59.51006317138672,
+      "session_volume": 10459.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:6624",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6624.TWO/history/",
+        "date": "2018-07-11",
+        "daily_high": 60.36857223510742,
+        "prior_all_time_or_current_month_high": 60.36857223510742,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:6624",
+        "yahoo_symbol": "6624.TWO"
+      }
+    },
+    {
+      "ticker": "1216.TW",
+      "name": "Uni-President Enterprises Corp.",
+      "exchange": "TWSE",
+      "category": "Retail Trade",
+      "high_type": "all_time",
+      "reason": "업종: Retail Trade · Food Retail",
+      "description": "Uni-President Enterprises Corp. · Food Retail",
+      "change_pct": 0.5018839914619599,
+      "session_open": 79.5999984741211,
+      "session_close": 80.0999984741211,
+      "session_volume": 6963302.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:1216",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/1216.TW/history/",
+        "date": "2018-07-11",
+        "daily_high": 80.4000015258789,
+        "prior_all_time_or_current_month_high": 80.4000015258789,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:1216",
+        "yahoo_symbol": "1216.TW"
+      }
+    },
+    {
+      "ticker": "1225.TW",
+      "name": "Formosa Oilseed Processing Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Process Industries",
+      "high_type": "all_time",
+      "reason": "업종: Process Industries · Agricultural Commodities/Milling",
+      "description": "Formosa Oilseed Processing Co., Ltd. · Agricultural Commodities/Milling",
+      "change_pct": 1.340779559058447,
+      "session_open": 81.87767791748047,
+      "session_close": 81.87767791748047,
+      "session_volume": 69609.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:1225",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/1225.TW/history/",
+        "date": "2018-07-11",
+        "daily_high": 81.96795654296875,
+        "prior_all_time_or_current_month_high": 81.96795654296875,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:1225",
+        "yahoo_symbol": "1225.TW"
+      }
+    },
+    {
+      "ticker": "1443.TW",
+      "name": "Lily Textile Co. Ltd.",
+      "exchange": "TWSE",
+      "category": "Transportation",
+      "high_type": "52_week",
+      "reason": "업종: Transportation · Air Freight/Couriers",
+      "description": "Lily Textile Co. Ltd. · Air Freight/Couriers",
+      "change_pct": 10.00000234510081,
+      "session_open": 6.099999904632568,
+      "session_close": 6.710000038146973,
+      "session_volume": 115490.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:1443",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/1443.TW/history/",
+        "date": "2018-07-11",
+        "daily_high": 6.710000038146973,
+        "prior_all_time_or_current_month_high": 26.255022048950195,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:1443",
+        "yahoo_symbol": "1443.TW"
+      }
+    },
+    {
+      "ticker": "1474.TW",
+      "name": "Honmyue Enterprise Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Process Industries",
+      "high_type": "52_week",
+      "reason": "업종: Process Industries · Textiles",
+      "description": "Honmyue Enterprise Co., Ltd. · Textiles",
+      "change_pct": 4.602512129819747,
+      "session_open": 12.149999618530273,
+      "session_close": 12.5,
+      "session_volume": 1095046.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:1474",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/1474.TW/history/",
+        "date": "2018-07-11",
+        "daily_high": 12.75,
+        "prior_all_time_or_current_month_high": 13.785385131835938,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:1474",
+        "yahoo_symbol": "1474.TW"
+      }
+    },
+    {
+      "ticker": "2702.TW",
+      "name": "Hotel Holiday Garden",
+      "exchange": "TWSE",
+      "category": "Consumer Services",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Services · Hotels/Resorts/Cruise lines",
+      "description": "Hotel Holiday Garden · Hotels/Resorts/Cruise lines",
+      "change_pct": 9.809267730502814,
+      "session_open": 13.162192344665527,
+      "session_close": 13.162192344665527,
+      "session_volume": 353321.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2702",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2702.TW/history/",
+        "date": "2018-07-11",
+        "daily_high": 13.162192344665527,
+        "prior_all_time_or_current_month_high": 18.16289520263672,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:2702",
+        "yahoo_symbol": "2702.TW"
+      }
+    },
+    {
+      "ticker": "8028.TW",
+      "name": "Phoenix Silicon International Corp.",
+      "exchange": "TWSE",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Industrial Machinery",
+      "description": "Phoenix Silicon International Corp. · Industrial Machinery",
+      "change_pct": 19.904074988106867,
+      "session_open": 36.581321716308594,
+      "session_close": 43.86249542236328,
+      "session_volume": 16213231.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:8028",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/8028.TW/history/",
+        "date": "2018-07-11",
+        "daily_high": 44.739742279052734,
+        "prior_all_time_or_current_month_high": 52.63499450683594,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:8028",
+        "yahoo_symbol": "8028.TW"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-11-02T11:32:42.659942+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 2357,
+    "history_symbols": 1785,
+    "inactive_symbols": 562,
+    "failed_symbols": 10,
+    "coverage_ratio": 0.9944289693593314,
+    "coverage_by_exchange": {
+      "TWSE": {
+        "covered": 946,
+        "total": 953
+      },
+      "TPEX": {
+        "covered": 839,
+        "total": 842
+      }
+    },
+    "session_symbols": 1749,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-11-02T11:32:42.659942+00:00"
+}

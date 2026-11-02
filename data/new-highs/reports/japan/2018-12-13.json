@@ -1,0 +1,342 @@
+{
+  "schema_version": 1,
+  "market": "japan",
+  "date": "2018-12-13",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "3698.T",
+      "name": "CRI Middleware Co., Ltd.",
+      "exchange": "TSE",
+      "category": "Technology Services",
+      "high_type": "52_week",
+      "reason": "업종: Technology Services · Packaged Software",
+      "description": "CRI Middleware Co., Ltd. · Packaged Software",
+      "change_pct": 2.0926756352765308,
+      "session_open": 3345.0,
+      "session_close": 3415.0,
+      "session_volume": 74600.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:3698",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3698.T/history/",
+        "date": "2018-12-13",
+        "daily_high": 3450.0,
+        "prior_all_time_or_current_month_high": 6773.33349609375,
+        "passes_close_filter": true,
+        "source_symbol": "TSE:3698",
+        "yahoo_symbol": "3698.T"
+      }
+    },
+    {
+      "ticker": "3930.T",
+      "name": "Hatena Co., Ltd.",
+      "exchange": "TSE",
+      "category": "Technology Services",
+      "high_type": "all_time",
+      "reason": "업종: Technology Services · Packaged Software",
+      "description": "Hatena Co., Ltd. · Packaged Software",
+      "change_pct": 5.754276827371685,
+      "session_open": 3265.0,
+      "session_close": 3400.0,
+      "session_volume": 108800.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:3930",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3930.T/history/",
+        "date": "2018-12-13",
+        "daily_high": 3475.0,
+        "prior_all_time_or_current_month_high": 3475.0,
+        "passes_close_filter": true,
+        "source_symbol": "TSE:3930",
+        "yahoo_symbol": "3930.T"
+      }
+    },
+    {
+      "ticker": "4735.T",
+      "name": "Kyoshin Co., Ltd.",
+      "exchange": "TSE",
+      "category": "Consumer Services",
+      "high_type": "all_time",
+      "reason": "업종: Consumer Services · Other Consumer Services",
+      "description": "Kyoshin Co., Ltd. · Other Consumer Services",
+      "change_pct": 4.87062404870624,
+      "session_open": 1339.0,
+      "session_close": 1378.0,
+      "session_volume": 58300.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:4735",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4735.T/history/",
+        "date": "2018-12-13",
+        "daily_high": 1379.0,
+        "prior_all_time_or_current_month_high": 1379.0,
+        "passes_close_filter": true,
+        "source_symbol": "TSE:4735",
+        "yahoo_symbol": "4735.T"
+      }
+    },
+    {
+      "ticker": "6046.T",
+      "name": "Linkbal, Inc.",
+      "exchange": "TSE",
+      "category": "Commercial Services",
+      "high_type": "all_time",
+      "reason": "업종: Commercial Services · Commercial Printing/Forms",
+      "description": "Linkbal, Inc. · Commercial Printing/Forms",
+      "change_pct": 6.4713064713064705,
+      "session_open": 1682.0,
+      "session_close": 1744.0,
+      "session_volume": 335600.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:6046",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6046.T/history/",
+        "date": "2018-12-13",
+        "daily_high": 1746.0,
+        "prior_all_time_or_current_month_high": 1746.0,
+        "passes_close_filter": true,
+        "source_symbol": "TSE:6046",
+        "yahoo_symbol": "6046.T"
+      }
+    },
+    {
+      "ticker": "7044.T",
+      "name": "PIALA INC.",
+      "exchange": "TSE",
+      "category": "Technology Services",
+      "high_type": "all_time",
+      "reason": "업종: Technology Services · Packaged Software",
+      "description": "PIALA INC. · Packaged Software",
+      "change_pct": 14.314928425357865,
+      "session_open": 2615.0,
+      "session_close": 2795.0,
+      "session_volume": 708600.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:7044",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/7044.T/history/",
+        "date": "2018-12-13",
+        "daily_high": 2795.0,
+        "prior_all_time_or_current_month_high": 2795.0,
+        "passes_close_filter": true,
+        "source_symbol": "TSE:7044",
+        "yahoo_symbol": "7044.T"
+      }
+    },
+    {
+      "ticker": "7821.T",
+      "name": "Maeda Kosen Co., Ltd.",
+      "exchange": "TSE",
+      "category": "Non-Energy Minerals",
+      "high_type": "all_time",
+      "reason": "업종: Non-Energy Minerals · Construction Materials",
+      "description": "Maeda Kosen Co., Ltd. · Construction Materials",
+      "change_pct": 3.878521770947674,
+      "session_open": 1380.0,
+      "session_close": 1419.5,
+      "session_volume": 253800.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:7821",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/7821.T/history/",
+        "date": "2018-12-13",
+        "daily_high": 1422.5,
+        "prior_all_time_or_current_month_high": 1422.5,
+        "passes_close_filter": true,
+        "source_symbol": "TSE:7821",
+        "yahoo_symbol": "7821.T"
+      }
+    },
+    {
+      "ticker": "7857.T",
+      "name": "Seki Co., Ltd.",
+      "exchange": "TSE",
+      "category": "Consumer Services",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Services · Publishing: Books/Magazines",
+      "description": "Seki Co., Ltd. · Publishing: Books/Magazines",
+      "change_pct": 6.589147286821695,
+      "session_open": 1650.0,
+      "session_close": 1650.0,
+      "session_volume": 2100.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:7857",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/7857.T/history/",
+        "date": "2018-12-13",
+        "daily_high": 1700.0,
+        "prior_all_time_or_current_month_high": 2480.0,
+        "passes_close_filter": true,
+        "source_symbol": "TSE:7857",
+        "yahoo_symbol": "7857.T"
+      }
+    },
+    {
+      "ticker": "8111.T",
+      "name": "Goldwin Inc.",
+      "exchange": "TSE",
+      "category": "Consumer Non-Durables",
+      "high_type": "all_time",
+      "reason": "업종: Consumer Non-Durables · Apparel/Footwear",
+      "description": "Goldwin Inc. · Apparel/Footwear",
+      "change_pct": 4.0630222908893066,
+      "session_open": 2041.6666259765625,
+      "session_close": 2091.666748046875,
+      "session_volume": 1192800.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:8111",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/8111.T/history/",
+        "date": "2018-12-13",
+        "daily_high": 2100.0,
+        "prior_all_time_or_current_month_high": 2100.0,
+        "passes_close_filter": true,
+        "source_symbol": "TSE:8111",
+        "yahoo_symbol": "8111.T"
+      }
+    },
+    {
+      "ticker": "8944.T",
+      "name": "Land Business Co., Ltd.",
+      "exchange": "TSE",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "업종: Finance · Real Estate Development",
+      "description": "Land Business Co., Ltd. · Real Estate Development",
+      "change_pct": 3.51999999999999,
+      "session_open": 628.0,
+      "session_close": 647.0,
+      "session_volume": 52800.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:8944",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/8944.T/history/",
+        "date": "2018-12-13",
+        "daily_high": 647.0,
+        "prior_all_time_or_current_month_high": 1725.0,
+        "passes_close_filter": true,
+        "source_symbol": "TSE:8944",
+        "yahoo_symbol": "8944.T"
+      }
+    },
+    {
+      "ticker": "8955.T",
+      "name": "Japan Prime Realty Investment Corporation",
+      "exchange": "TSE",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "업종: Finance · Real Estate Investment Trusts",
+      "description": "Japan Prime Realty Investment Corporation · Real Estate Investment Trusts",
+      "change_pct": 1.832760595647187,
+      "session_open": 110875.0,
+      "session_close": 111125.0,
+      "session_volume": 14064.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:8955",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/8955.T/history/",
+        "date": "2018-12-13",
+        "daily_high": 111500.0,
+        "prior_all_time_or_current_month_high": 141000.0,
+        "passes_close_filter": true,
+        "source_symbol": "TSE:8955",
+        "yahoo_symbol": "8955.T"
+      }
+    },
+    {
+      "ticker": "9008.T",
+      "name": "Keio Corporation",
+      "exchange": "TSE",
+      "category": "Transportation",
+      "high_type": "all_time",
+      "reason": "업종: Transportation · Railroads",
+      "description": "Keio Corporation · Railroads",
+      "change_pct": 0.9508716323296307,
+      "session_open": 1274.0,
+      "session_close": 1274.0,
+      "session_volume": 1843500.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:9008",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/9008.T/history/",
+        "date": "2018-12-13",
+        "daily_high": 1290.0,
+        "prior_all_time_or_current_month_high": 1290.0,
+        "passes_close_filter": true,
+        "source_symbol": "TSE:9008",
+        "yahoo_symbol": "9008.T"
+      }
+    },
+    {
+      "ticker": "9639.T",
+      "name": "Sankyo Frontier Co., Ltd.",
+      "exchange": "TSE",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "업종: Finance · Finance/Rental/Leasing",
+      "description": "Sankyo Frontier Co., Ltd. · Finance/Rental/Leasing",
+      "change_pct": 0.5025125628140614,
+      "session_open": 1977.5,
+      "session_close": 2000.0,
+      "session_volume": 14400.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:9639",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/9639.T/history/",
+        "date": "2018-12-13",
+        "daily_high": 2000.0,
+        "prior_all_time_or_current_month_high": 2000.0,
+        "passes_close_filter": true,
+        "source_symbol": "TSE:9639",
+        "yahoo_symbol": "9639.T"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-11-02T11:36:46.763579+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 3761,
+    "history_symbols": 3084,
+    "inactive_symbols": 676,
+    "failed_symbols": 1,
+    "coverage_ratio": 0.9996758508914101,
+    "coverage_by_exchange": {
+      "TSE": {
+        "covered": 3084,
+        "total": 3085
+      }
+    },
+    "session_symbols": 3071,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-11-02T11:36:46.763579+00:00"
+}

@@ -1,0 +1,271 @@
+{
+  "schema_version": 1,
+  "market": "china",
+  "date": "2018-11-21",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "600604.SS",
+      "name": "Shanghai Shibei Hi-Tech Co. Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Industrial Machinery",
+      "description": "Shanghai Shibei Hi-Tech Co. Ltd. Class A · Industrial Machinery",
+      "change_pct": 1.5329132006754342,
+      "session_open": 11.050000190734863,
+      "session_close": 11.260000228881836,
+      "session_volume": 281657750.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:600604",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/600604.SS/history/",
+        "date": "2018-11-21",
+        "daily_high": 11.350000381469727,
+        "prior_all_time_or_current_month_high": 21.5,
+        "passes_close_filter": true,
+        "source_symbol": "SSE:600604",
+        "yahoo_symbol": "600604.SS"
+      }
+    },
+    {
+      "ticker": "600635.SS",
+      "name": "Shanghai Dazhong Public Utilities (Group) Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Utilities",
+      "high_type": "52_week",
+      "reason": "업종: Utilities · Gas Distributors",
+      "description": "Shanghai Dazhong Public Utilities (Group) Co., Ltd. Class A · Gas Distributors",
+      "change_pct": 2.5000015894572014,
+      "session_open": 5.949999809265137,
+      "session_close": 6.150000095367432,
+      "session_volume": 386233903.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:600635",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/600635.SS/history/",
+        "date": "2018-11-21",
+        "daily_high": 6.599999904632568,
+        "prior_all_time_or_current_month_high": 16.8799991607666,
+        "passes_close_filter": true,
+        "source_symbol": "SSE:600635",
+        "yahoo_symbol": "600635.SS"
+      }
+    },
+    {
+      "ticker": "603826.SS",
+      "name": "Fujian Kuncai Material Technology Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Process Industries",
+      "high_type": "52_week",
+      "reason": "업종: Process Industries · Chemicals: Specialty",
+      "description": "Fujian Kuncai Material Technology Co., Ltd. Class A · Chemicals: Specialty",
+      "change_pct": 2.627946032363737,
+      "session_open": 7.8461527824401855,
+      "session_close": 8.15384578704834,
+      "session_volume": 13834411.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:603826",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/603826.SS/history/",
+        "date": "2018-11-21",
+        "daily_high": 8.186813354492188,
+        "prior_all_time_or_current_month_high": 12.037193298339844,
+        "passes_close_filter": true,
+        "source_symbol": "SSE:603826",
+        "yahoo_symbol": "603826.SS"
+      }
+    },
+    {
+      "ticker": "002007.SZ",
+      "name": "Hualan Biological Engineering Inc. Class A",
+      "exchange": "SZSE",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Biotechnology",
+      "description": "Hualan Biological Engineering Inc. Class A · Biotechnology",
+      "change_pct": 4.646192905802726,
+      "session_open": 18.846153259277344,
+      "session_close": 20.097434997558594,
+      "session_volume": 56810190.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002007",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002007.SZ/history/",
+        "date": "2018-11-21",
+        "daily_high": 20.33846092224121,
+        "prior_all_time_or_current_month_high": 21.951923370361328,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:002007",
+        "yahoo_symbol": "002007.SZ"
+      }
+    },
+    {
+      "ticker": "002557.SZ",
+      "name": "Chacha Food Co Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Consumer Non-Durables",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Non-Durables · Food: Specialty/Candy",
+      "description": "Chacha Food Co Ltd. Class A · Food: Specialty/Candy",
+      "change_pct": 0.25188532040141265,
+      "session_open": 19.700000762939453,
+      "session_close": 19.899999618530273,
+      "session_volume": 5027806.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002557",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002557.SZ/history/",
+        "date": "2018-11-21",
+        "daily_high": 20.200000762939453,
+        "prior_all_time_or_current_month_high": 23.309999465942383,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:002557",
+        "yahoo_symbol": "002557.SZ"
+      }
+    },
+    {
+      "ticker": "002679.SZ",
+      "name": "Fujian Jinsen Forestry Co. Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Non-Energy Minerals",
+      "high_type": "52_week",
+      "reason": "업종: Non-Energy Minerals · Forest Products",
+      "description": "Fujian Jinsen Forestry Co. Ltd. Class A · Forest Products",
+      "change_pct": 2.397659872899194,
+      "session_open": 16.959999084472656,
+      "session_close": 17.510000228881836,
+      "session_volume": 5031820.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002679",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002679.SZ/history/",
+        "date": "2018-11-21",
+        "daily_high": 17.829999923706055,
+        "prior_all_time_or_current_month_high": 36.98823547363281,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:002679",
+        "yahoo_symbol": "002679.SZ"
+      }
+    },
+    {
+      "ticker": "002761.SZ",
+      "name": "Zhejiang Construction Investment Group Co., Ltd Class A",
+      "exchange": "SZSE",
+      "category": "Industrial Services",
+      "high_type": "52_week",
+      "reason": "업종: Industrial Services · Engineering & Construction",
+      "description": "Zhejiang Construction Investment Group Co., Ltd Class A · Engineering & Construction",
+      "change_pct": 7.51939117546776,
+      "session_open": 15.111763954162598,
+      "session_close": 16.31764793395996,
+      "session_volume": 4096105.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002761",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002761.SZ/history/",
+        "date": "2018-11-21",
+        "daily_high": 16.335294723510742,
+        "prior_all_time_or_current_month_high": 22.491348266601562,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:002761",
+        "yahoo_symbol": "002761.SZ"
+      }
+    },
+    {
+      "ticker": "002796.SZ",
+      "name": "Suzhou Shijia Science & Technology, Inc. Class A",
+      "exchange": "SZSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Telecommunications Equipment",
+      "description": "Suzhou Shijia Science & Technology, Inc. Class A · Telecommunications Equipment",
+      "change_pct": 9.4727207652193,
+      "session_open": 14.177777290344238,
+      "session_close": 15.871110916137695,
+      "session_volume": 18072027.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002796",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002796.SZ/history/",
+        "date": "2018-11-21",
+        "daily_high": 15.94666576385498,
+        "prior_all_time_or_current_month_high": 44.391109466552734,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:002796",
+        "yahoo_symbol": "002796.SZ"
+      }
+    },
+    {
+      "ticker": "300674.SZ",
+      "name": "Yusys Technologies Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Technology Services",
+      "high_type": "all_time",
+      "reason": "업종: Technology Services · Packaged Software",
+      "description": "Yusys Technologies Co., Ltd. Class A · Packaged Software",
+      "change_pct": 10.007056249340017,
+      "session_open": 19.512500762939453,
+      "session_close": 19.512500762939453,
+      "session_volume": 19357246.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:300674",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/300674.SZ/history/",
+        "date": "2018-11-21",
+        "daily_high": 19.512500762939453,
+        "prior_all_time_or_current_month_high": 19.512500762939453,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:300674",
+        "yahoo_symbol": "300674.SZ"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-11-02T11:40:39.351428+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 5312,
+    "history_symbols": 3405,
+    "inactive_symbols": 1899,
+    "failed_symbols": 8,
+    "coverage_ratio": 0.9976560210958101,
+    "coverage_by_exchange": {
+      "SSE": {
+        "covered": 1388,
+        "total": 1390
+      },
+      "SZSE": {
+        "covered": 2017,
+        "total": 2023
+      }
+    },
+    "session_symbols": 3395,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-11-02T11:40:39.351428+00:00"
+}

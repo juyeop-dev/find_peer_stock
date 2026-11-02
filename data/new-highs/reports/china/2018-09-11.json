@@ -1,0 +1,96 @@
+{
+  "schema_version": 1,
+  "market": "china",
+  "date": "2018-09-11",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "002353.SZ",
+      "name": "Yantai Jereh Oilfield Services Group Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Industrial Services",
+      "high_type": "52_week",
+      "reason": "업종: Industrial Services · Oilfield Services/Equipment",
+      "description": "Yantai Jereh Oilfield Services Group Co., Ltd. Class A · Oilfield Services/Equipment",
+      "change_pct": 6.184019544138875,
+      "session_open": 19.8799991607666,
+      "session_close": 21.1200008392334,
+      "session_volume": 25482735.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002353",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002353.SZ/history/",
+        "date": "2018-09-11",
+        "daily_high": 21.280000686645508,
+        "prior_all_time_or_current_month_high": 56.86000061035156,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:002353",
+        "yahoo_symbol": "002353.SZ"
+      }
+    },
+    {
+      "ticker": "002935.SZ",
+      "name": "Chengdu Spaceon Electronics Co. Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Telecommunications Equipment",
+      "description": "Chengdu Spaceon Electronics Co. Ltd. Class A · Telecommunications Equipment",
+      "change_pct": 10.008900036069889,
+      "session_open": 12.506953239440918,
+      "session_close": 12.506953239440918,
+      "session_volume": 325906.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002935",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002935.SZ/history/",
+        "date": "2018-09-11",
+        "daily_high": 12.506953239440918,
+        "prior_all_time_or_current_month_high": 12.506953239440918,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:002935",
+        "yahoo_symbol": "002935.SZ"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-11-02T11:40:39.351428+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 5312,
+    "history_symbols": 3405,
+    "inactive_symbols": 1899,
+    "failed_symbols": 8,
+    "coverage_ratio": 0.9976560210958101,
+    "coverage_by_exchange": {
+      "SSE": {
+        "covered": 1388,
+        "total": 1390
+      },
+      "SZSE": {
+        "covered": 2017,
+        "total": 2023
+      }
+    },
+    "session_symbols": 3377,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-11-02T11:40:39.351428+00:00"
+}

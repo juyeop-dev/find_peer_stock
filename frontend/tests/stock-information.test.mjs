@@ -14,7 +14,7 @@ const {mergeInformation,decodePublishedInformation,getStockInformation} = await 
 const statement = (period_end, currency, revenue) => ({type:"quarterly",period_end,currency,revenue,source:"fixture"});
 
 test("compressed and host-decoded financial archives retain Unicode, zero, losses and original precision", async () => {
-  const value={ticker:"LEGACY",fetched_at:"2026-10-30T00:00:00Z",quote:null,metrics:{per:0},financials:[statement("2019-03-31","TWD",-123.123456789)],warnings:["확인된 원본만 표시"]};
+  const value={ticker:"LEGACY",fetched_at:"2026-10-30T00:00:00Z",quote:null,metrics:{per:0},financials:[statement("2018-03-31","TWD",-123.123456789)],warnings:["확인된 원본만 표시"]};
   const body=JSON.stringify(value);
   assert.deepEqual(await decodePublishedInformation(new Response(gzipSync(body))),value);
   assert.deepEqual(await decodePublishedInformation(new Response(body)),value);
@@ -29,14 +29,16 @@ test("compressed and host-decoded financial archives retain Unicode, zero, losse
 });
 
 test("an unavailable older provider period cannot reset coverage of retained reported financials to zero", () => {
-  const coverage={start:"2021-01-01",end:"2021-12-31",periods:1,annual_periods:1,quarterly_periods:0,note:"reported only"};
-  const older={...statement("2021-12-31","USD",100),type:"annual"};
-  const previous={metrics:{},financials:[older],historical_2021_coverage:coverage};
-  const fresh={metrics:{},financials:[statement("2025-03-31","USD",200)],historical_2021_coverage:{...coverage,periods:0,annual_periods:0}};
+  for (const year of [2018, 2019, 2021]) {
+  const coverage={start:`${year}-01-01`,end:`${year}-12-31`,periods:1,annual_periods:1,quarterly_periods:0,note:"reported only"};
+  const older={...statement(`${year}-12-31`,"USD",100),type:"annual"};
+  const previous={metrics:{},financials:[older],[`historical_${year}_coverage`]:coverage};
+  const fresh={metrics:{},financials:[statement("2025-03-31","USD",200)],[`historical_${year}_coverage`]:{...coverage,periods:0,annual_periods:0}};
   const result=mergeInformation(previous,fresh);
   assert.deepEqual(result.financials[0],older);
-  assert.equal(result.historical_2021_coverage.periods,1);
-  assert.equal(result.historical_2021_coverage.annual_periods,1);
+  assert.equal(result[`historical_${year}_coverage`].periods,1);
+  assert.equal(result[`historical_${year}_coverage`].annual_periods,1);
+  }
 });
 test("refresh preserves older reported periods while replacing a revised period and its reporting currency", () => {
   const old = {metrics:{eps:20},metrics_currency:"TWD",financials:[statement("2025-03-31","TWD",100),statement("2025-06-30","TWD",200)]};

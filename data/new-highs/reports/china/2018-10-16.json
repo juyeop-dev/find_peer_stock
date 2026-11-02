@@ -1,0 +1,146 @@
+{
+  "schema_version": 1,
+  "market": "china",
+  "date": "2018-10-16",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "300670.SZ",
+      "name": "Jiangsu Daybright Intelligent Electric Co. Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Industrial Machinery",
+      "description": "Jiangsu Daybright Intelligent Electric Co. Ltd. Class A · Industrial Machinery",
+      "change_pct": 0.4859012253394024,
+      "session_open": 13.720000267028809,
+      "session_close": 13.786665916442871,
+      "session_volume": 42409689.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:300670",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/300670.SZ/history/",
+        "date": "2018-10-16",
+        "daily_high": 14.273332595825195,
+        "prior_all_time_or_current_month_high": 14.273332595825195,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:300670",
+        "yahoo_symbol": "300670.SZ"
+      }
+    },
+    {
+      "ticker": "300694.SZ",
+      "name": "Wuxi Lihu Corp. Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Auto Parts: OEM",
+      "description": "Wuxi Lihu Corp. Ltd. Class A · Auto Parts: OEM",
+      "change_pct": 9.971910808411778,
+      "session_open": 15.65999984741211,
+      "session_close": 15.65999984741211,
+      "session_volume": 71886.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:300694",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/300694.SZ/history/",
+        "date": "2018-10-16",
+        "daily_high": 15.65999984741211,
+        "prior_all_time_or_current_month_high": 15.65999984741211,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:300694",
+        "yahoo_symbol": "300694.SZ"
+      }
+    },
+    {
+      "ticker": "300748.SZ",
+      "name": "JL Mag Rare-Earth Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Metal Fabrication",
+      "description": "JL Mag Rare-Earth Co., Ltd. Class A · Metal Fabrication",
+      "change_pct": 9.985091411749615,
+      "session_open": 8.648436546325684,
+      "session_close": 8.648436546325684,
+      "session_volume": 556730.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:300748",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/300748.SZ/history/",
+        "date": "2018-10-16",
+        "daily_high": 8.648436546325684,
+        "prior_all_time_or_current_month_high": 8.648436546325684,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:300748",
+        "yahoo_symbol": "300748.SZ"
+      }
+    },
+    {
+      "ticker": "300760.SZ",
+      "name": "Shenzhen Mindray Bio-Medical Electronics Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Health Technology",
+      "high_type": "all_time",
+      "reason": "업종: Health Technology · Medical Specialties",
+      "description": "Shenzhen Mindray Bio-Medical Electronics Co., Ltd. Class A · Medical Specialties",
+      "change_pct": 0.0,
+      "session_open": 58.560001373291016,
+      "session_close": 70.2699966430664,
+      "session_volume": 419948.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:300760",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/300760.SZ/history/",
+        "date": "2018-10-16",
+        "daily_high": 70.2699966430664,
+        "prior_all_time_or_current_month_high": 70.2699966430664,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:300760",
+        "yahoo_symbol": "300760.SZ"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-11-02T11:40:39.351428+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 5312,
+    "history_symbols": 3405,
+    "inactive_symbols": 1899,
+    "failed_symbols": 8,
+    "coverage_ratio": 0.9976560210958101,
+    "coverage_by_exchange": {
+      "SSE": {
+        "covered": 1388,
+        "total": 1390
+      },
+      "SZSE": {
+        "covered": 2017,
+        "total": 2023
+      }
+    },
+    "session_symbols": 3390,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-11-02T11:40:39.351428+00:00"
+}

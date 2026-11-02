@@ -1,0 +1,325 @@
+{
+  "schema_version": 1,
+  "market": "us",
+  "date": "2018-10-18",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "AEHL",
+      "name": "Antelope Enterprise Holdings Limited Class A",
+      "exchange": "NASDAQ",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Building Products",
+      "description": "Antelope Enterprise Holdings Limited Class A · Building Products",
+      "change_pct": 105.02793296089385,
+      "session_open": 271872.0,
+      "session_close": 422784.0,
+      "session_volume": 144.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:AEHL",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/AEHL/history/",
+        "date": "2018-10-18",
+        "daily_high": 743040.0,
+        "prior_all_time_or_current_month_high": 9308160.0,
+        "passes_close_filter": true,
+        "source_symbol": "NASDAQ:AEHL",
+        "yahoo_symbol": "AEHL"
+      }
+    },
+    {
+      "ticker": "AMAL",
+      "name": "Amalgamated Financial Corp",
+      "exchange": "NASDAQ",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "업종: Finance · Regional Banks",
+      "description": "Amalgamated Financial Corp · Regional Banks",
+      "change_pct": 0.2471633491873737,
+      "session_open": 20.040000915527344,
+      "session_close": 20.280000686645508,
+      "session_volume": 34100.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:AMAL",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/AMAL/history/",
+        "date": "2018-10-18",
+        "daily_high": 20.479999542236328,
+        "prior_all_time_or_current_month_high": 20.479999542236328,
+        "passes_close_filter": true,
+        "source_symbol": "NASDAQ:AMAL",
+        "yahoo_symbol": "AMAL"
+      }
+    },
+    {
+      "ticker": "CME",
+      "name": "CME Group Inc. Class A",
+      "exchange": "NASDAQ",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "업종: Finance · Investment Banks/Brokers",
+      "description": "CME Group Inc. Class A · Investment Banks/Brokers",
+      "change_pct": 0.3309016217133198,
+      "session_open": 181.27999877929688,
+      "session_close": 181.9199981689453,
+      "session_volume": 1497100.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:CME",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/CME/history/",
+        "date": "2018-10-18",
+        "daily_high": 183.1999969482422,
+        "prior_all_time_or_current_month_high": 183.1999969482422,
+        "passes_close_filter": true,
+        "source_symbol": "NASDAQ:CME",
+        "yahoo_symbol": "CME"
+      }
+    },
+    {
+      "ticker": "INTZ",
+      "name": "Intrusion Inc.",
+      "exchange": "NASDAQ",
+      "category": "Technology Services",
+      "high_type": "52_week",
+      "reason": "업종: Technology Services · Information Technology Services",
+      "description": "Intrusion Inc. · Information Technology Services",
+      "change_pct": 0.3875983892514201,
+      "session_open": 51.79999923706055,
+      "session_close": 51.79999923706055,
+      "session_volume": 35.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:INTZ",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/INTZ/history/",
+        "date": "2018-10-18",
+        "daily_high": 51.79999923706055,
+        "prior_all_time_or_current_month_high": 3460.0,
+        "passes_close_filter": true,
+        "source_symbol": "NASDAQ:INTZ",
+        "yahoo_symbol": "INTZ"
+      }
+    },
+    {
+      "ticker": "RDGT",
+      "name": "Ridgetech, Inc.",
+      "exchange": "NASDAQ",
+      "category": "Distribution Services",
+      "high_type": "52_week",
+      "reason": "업종: Distribution Services · Medical Distributors",
+      "description": "Ridgetech, Inc. · Medical Distributors",
+      "change_pct": 6.989247311827951,
+      "session_open": 66960.0,
+      "session_close": 71640.0,
+      "session_volume": 7.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:RDGT",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/RDGT/history/",
+        "date": "2018-10-18",
+        "daily_high": 72000.0,
+        "prior_all_time_or_current_month_high": 396000.0,
+        "passes_close_filter": true,
+        "source_symbol": "NASDAQ:RDGT",
+        "yahoo_symbol": "RDGT"
+      }
+    },
+    {
+      "ticker": "SIBN",
+      "name": "SI-BONE, Inc.",
+      "exchange": "NASDAQ",
+      "category": "Health Technology",
+      "high_type": "all_time",
+      "reason": "업종: Health Technology · Medical Specialties",
+      "description": "SI-BONE, Inc. · Medical Specialties",
+      "change_pct": 4.685944960534716,
+      "session_open": 20.0,
+      "session_close": 21.0,
+      "session_volume": 362400.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:SIBN",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/SIBN/history/",
+        "date": "2018-10-18",
+        "daily_high": 21.959999084472656,
+        "prior_all_time_or_current_month_high": 21.959999084472656,
+        "passes_close_filter": true,
+        "source_symbol": "NASDAQ:SIBN",
+        "yahoo_symbol": "SIBN"
+      }
+    },
+    {
+      "ticker": "AMTB",
+      "name": "Amerant Bancorp Inc. Class A",
+      "exchange": "NYSE",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "업종: Finance · Major Banks",
+      "description": "Amerant Bancorp Inc. Class A · Major Banks",
+      "change_pct": 0.0,
+      "session_open": 30.0,
+      "session_close": 30.0,
+      "session_volume": 267.0,
+      "currency": "USD",
+      "source_symbol": "NYSE:AMTB",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/AMTB/history/",
+        "date": "2018-10-18",
+        "daily_high": 30.0,
+        "prior_all_time_or_current_month_high": 30.0,
+        "passes_close_filter": true,
+        "source_symbol": "NYSE:AMTB",
+        "yahoo_symbol": "AMTB"
+      }
+    },
+    {
+      "ticker": "BALL",
+      "name": "Ball Corporation",
+      "exchange": "NYSE",
+      "category": "Process Industries",
+      "high_type": "all_time",
+      "reason": "업종: Process Industries · Containers/Packaging",
+      "description": "Ball Corporation · Containers/Packaging",
+      "change_pct": 0.0,
+      "session_open": 45.689998626708984,
+      "session_close": 46.20000076293945,
+      "session_volume": 4392700.0,
+      "currency": "USD",
+      "source_symbol": "NYSE:BALL",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/BALL/history/",
+        "date": "2018-10-18",
+        "daily_high": 46.88999938964844,
+        "prior_all_time_or_current_month_high": 46.88999938964844,
+        "passes_close_filter": true,
+        "source_symbol": "NYSE:BALL",
+        "yahoo_symbol": "BALL"
+      }
+    },
+    {
+      "ticker": "ELV",
+      "name": "Elevance Health, Inc.",
+      "exchange": "NYSE",
+      "category": "Health Services",
+      "high_type": "all_time",
+      "reason": "업종: Health Services · Managed Health Care",
+      "description": "Elevance Health, Inc. · Managed Health Care",
+      "change_pct": 0.5758694994158597,
+      "session_open": 279.67999267578125,
+      "session_close": 281.19000244140625,
+      "session_volume": 903800.0,
+      "currency": "USD",
+      "source_symbol": "NYSE:ELV",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/ELV/history/",
+        "date": "2018-10-18",
+        "daily_high": 282.54998779296875,
+        "prior_all_time_or_current_month_high": 282.54998779296875,
+        "passes_close_filter": true,
+        "source_symbol": "NYSE:ELV",
+        "yahoo_symbol": "ELV"
+      }
+    },
+    {
+      "ticker": "MKC.V",
+      "name": "McCormick & Company, Incorporated",
+      "exchange": "NYSE",
+      "category": "Consumer Non-Durables",
+      "high_type": "all_time",
+      "reason": "업종: Consumer Non-Durables · Food: Specialty/Candy",
+      "description": "McCormick & Company, Incorporated · Food: Specialty/Candy",
+      "change_pct": 0.13814341332050173,
+      "session_open": 68.86499786376953,
+      "session_close": 68.86499786376953,
+      "session_volume": 200.0,
+      "currency": "USD",
+      "source_symbol": "NYSE:MKC.V",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/MKC-V/history/",
+        "date": "2018-10-18",
+        "daily_high": 68.86499786376953,
+        "prior_all_time_or_current_month_high": 68.86499786376953,
+        "passes_close_filter": true,
+        "source_symbol": "NYSE:MKC.V",
+        "yahoo_symbol": "MKC-V"
+      }
+    },
+    {
+      "ticker": "PGR",
+      "name": "Progressive Corporation",
+      "exchange": "NYSE",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "업종: Finance · Multi-Line Insurance",
+      "description": "Progressive Corporation · Multi-Line Insurance",
+      "change_pct": 1.6565281662717757,
+      "session_open": 70.43000030517578,
+      "session_close": 71.80000305175781,
+      "session_volume": 4935000.0,
+      "currency": "USD",
+      "source_symbol": "NYSE:PGR",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/PGR/history/",
+        "date": "2018-10-18",
+        "daily_high": 72.72000122070312,
+        "prior_all_time_or_current_month_high": 72.72000122070312,
+        "passes_close_filter": true,
+        "source_symbol": "NYSE:PGR",
+        "yahoo_symbol": "PGR"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-11-02T11:41:23.420978+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 5714,
+    "history_symbols": 3261,
+    "inactive_symbols": 2452,
+    "failed_symbols": 1,
+    "coverage_ratio": 0.9996934396076027,
+    "coverage_by_exchange": {
+      "NASDAQ": {
+        "covered": 1676,
+        "total": 1677
+      },
+      "NYSE": {
+        "covered": 1426,
+        "total": 1426
+      },
+      "AMEX": {
+        "covered": 159,
+        "total": 159
+      }
+    },
+    "session_symbols": 3233,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-11-02T11:41:23.420978+00:00"
+}

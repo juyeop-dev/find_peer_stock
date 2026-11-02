@@ -1,0 +1,400 @@
+{
+  "schema_version": 1,
+  "market": "us",
+  "date": "2018-02-05",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "COFS",
+      "name": "ChoiceOne Financial Services, Inc.",
+      "exchange": "NASDAQ",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "업종: Finance · Regional Banks",
+      "description": "ChoiceOne Financial Services, Inc. · Regional Banks",
+      "change_pct": 0.806456627508445,
+      "session_open": 23.809524536132812,
+      "session_close": 23.809524536132812,
+      "session_volume": 1260.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:COFS",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/COFS/history/",
+        "date": "2018-02-05",
+        "daily_high": 24.27618980407715,
+        "prior_all_time_or_current_month_high": 24.27618980407715,
+        "passes_close_filter": true,
+        "source_symbol": "NASDAQ:COFS",
+        "yahoo_symbol": "COFS"
+      }
+    },
+    {
+      "ticker": "ENTA",
+      "name": "Enanta Pharmaceuticals, Inc.",
+      "exchange": "NASDAQ",
+      "category": "Health Technology",
+      "high_type": "all_time",
+      "reason": "업종: Health Technology · Pharmaceuticals: Major",
+      "description": "Enanta Pharmaceuticals, Inc. · Pharmaceuticals: Major",
+      "change_pct": 2.4060477812692493,
+      "session_open": 86.29000091552734,
+      "session_close": 89.37999725341797,
+      "session_volume": 354100.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:ENTA",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/ENTA/history/",
+        "date": "2018-02-05",
+        "daily_high": 93.95999908447266,
+        "prior_all_time_or_current_month_high": 93.95999908447266,
+        "passes_close_filter": true,
+        "source_symbol": "NASDAQ:ENTA",
+        "yahoo_symbol": "ENTA"
+      }
+    },
+    {
+      "ticker": "GYRE",
+      "name": "Gyre Therapeutics Inc",
+      "exchange": "NASDAQ",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Pharmaceuticals: Major",
+      "description": "Gyre Therapeutics Inc · Pharmaceuticals: Major",
+      "change_pct": 4.9070061212281635,
+      "session_open": 384.45001220703125,
+      "session_close": 397.6499938964844,
+      "session_volume": 34787.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:GYRE",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/GYRE/history/",
+        "date": "2018-02-05",
+        "daily_high": 419.25,
+        "prior_all_time_or_current_month_high": 47990.25,
+        "passes_close_filter": true,
+        "source_symbol": "NASDAQ:GYRE",
+        "yahoo_symbol": "GYRE"
+      }
+    },
+    {
+      "ticker": "IOVA",
+      "name": "Iovance Biotherapeutics Inc",
+      "exchange": "NASDAQ",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Biotechnology",
+      "description": "Iovance Biotherapeutics Inc · Biotechnology",
+      "change_pct": 2.8037432045502575,
+      "session_open": 15.699999809265137,
+      "session_close": 16.5,
+      "session_volume": 1529500.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:IOVA",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/IOVA/history/",
+        "date": "2018-02-05",
+        "daily_high": 17.149999618530273,
+        "prior_all_time_or_current_month_high": 165.0,
+        "passes_close_filter": true,
+        "source_symbol": "NASDAQ:IOVA",
+        "yahoo_symbol": "IOVA"
+      }
+    },
+    {
+      "ticker": "KXIN",
+      "name": "Kaixin Holdings",
+      "exchange": "NASDAQ",
+      "category": "Retail Trade",
+      "high_type": "all_time",
+      "reason": "업종: Retail Trade · Specialty Stores",
+      "description": "Kaixin Holdings · Specialty Stores",
+      "change_pct": 0.20639834881321928,
+      "session_open": 3924450.0,
+      "session_close": 3932550.0,
+      "session_volume": 1.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:KXIN",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/KXIN/history/",
+        "date": "2018-02-05",
+        "daily_high": 3932550.0,
+        "prior_all_time_or_current_month_high": 3932550.0,
+        "passes_close_filter": true,
+        "source_symbol": "NASDAQ:KXIN",
+        "yahoo_symbol": "KXIN"
+      }
+    },
+    {
+      "ticker": "NEGG",
+      "name": "Newegg Commerce, Inc.",
+      "exchange": "NASDAQ",
+      "category": "Retail Trade",
+      "high_type": "52_week",
+      "reason": "업종: Retail Trade · Internet Retail",
+      "description": "Newegg Commerce, Inc. · Internet Retail",
+      "change_pct": 13.043472251579825,
+      "session_open": 332.79998779296875,
+      "session_close": 374.3999938964844,
+      "session_volume": 1931.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:NEGG",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/NEGG/history/",
+        "date": "2018-02-05",
+        "daily_high": 380.79998779296875,
+        "prior_all_time_or_current_month_high": 2062.39990234375,
+        "passes_close_filter": true,
+        "source_symbol": "NASDAQ:NEGG",
+        "yahoo_symbol": "NEGG"
+      }
+    },
+    {
+      "ticker": "OPBK",
+      "name": "OP Bancorp",
+      "exchange": "NASDAQ",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "업종: Finance · Regional Banks",
+      "description": "OP Bancorp · Regional Banks",
+      "change_pct": 0.49504193239715555,
+      "session_open": 10.149999618530273,
+      "session_close": 10.149999618530273,
+      "session_volume": 200.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:OPBK",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/OPBK/history/",
+        "date": "2018-02-05",
+        "daily_high": 10.149999618530273,
+        "prior_all_time_or_current_month_high": 14.75,
+        "passes_close_filter": true,
+        "source_symbol": "NASDAQ:OPBK",
+        "yahoo_symbol": "OPBK"
+      }
+    },
+    {
+      "ticker": "PNBK",
+      "name": "Patriot National Bancorp, Inc.",
+      "exchange": "NASDAQ",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "업종: Finance · Regional Banks",
+      "description": "Patriot National Bancorp, Inc. · Regional Banks",
+      "change_pct": 2.0601384080987106,
+      "session_open": 17.899999618530273,
+      "session_close": 18.329999923706055,
+      "session_volume": 1300.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:PNBK",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/PNBK/history/",
+        "date": "2018-02-05",
+        "daily_high": 18.360000610351562,
+        "prior_all_time_or_current_month_high": 305.0,
+        "passes_close_filter": true,
+        "source_symbol": "NASDAQ:PNBK",
+        "yahoo_symbol": "PNBK"
+      }
+    },
+    {
+      "ticker": "QUBT",
+      "name": "Quantum Computing Inc.",
+      "exchange": "NASDAQ",
+      "category": "Technology Services",
+      "high_type": "52_week",
+      "reason": "업종: Technology Services · Information Technology Services",
+      "description": "Quantum Computing Inc. · Information Technology Services",
+      "change_pct": 66.66666666666667,
+      "session_open": 6.599999904632568,
+      "session_close": 15.0,
+      "session_volume": 2367.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:QUBT",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/QUBT/history/",
+        "date": "2018-02-05",
+        "daily_high": 17.0,
+        "prior_all_time_or_current_month_high": 5000.0,
+        "passes_close_filter": true,
+        "source_symbol": "NASDAQ:QUBT",
+        "yahoo_symbol": "QUBT"
+      }
+    },
+    {
+      "ticker": "VKTX",
+      "name": "Viking Therapeutics, Inc.",
+      "exchange": "NASDAQ",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Pharmaceuticals: Major",
+      "description": "Viking Therapeutics, Inc. · Pharmaceuticals: Major",
+      "change_pct": 3.9538676166540387,
+      "session_open": 6.050000190734863,
+      "session_close": 6.309999942779541,
+      "session_volume": 5210400.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:VKTX",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/VKTX/history/",
+        "date": "2018-02-05",
+        "daily_high": 6.639999866485596,
+        "prior_all_time_or_current_month_high": 10.229999542236328,
+        "passes_close_filter": true,
+        "source_symbol": "NASDAQ:VKTX",
+        "yahoo_symbol": "VKTX"
+      }
+    },
+    {
+      "ticker": "AXR",
+      "name": "AMREP Corporation",
+      "exchange": "NYSE",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "업종: Finance · Real Estate Development",
+      "description": "AMREP Corporation · Real Estate Development",
+      "change_pct": 0.0,
+      "session_open": 7.650000095367432,
+      "session_close": 7.650000095367432,
+      "session_volume": 300.0,
+      "currency": "USD",
+      "source_symbol": "NYSE:AXR",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/AXR/history/",
+        "date": "2018-02-05",
+        "daily_high": 7.650000095367432,
+        "prior_all_time_or_current_month_high": 149.99000549316406,
+        "passes_close_filter": true,
+        "source_symbol": "NYSE:AXR",
+        "yahoo_symbol": "AXR"
+      }
+    },
+    {
+      "ticker": "ENVA",
+      "name": "Enova International Inc",
+      "exchange": "NYSE",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "업종: Finance · Finance/Rental/Leasing",
+      "description": "Enova International Inc · Finance/Rental/Leasing",
+      "change_pct": 0.7407388569396156,
+      "session_open": 20.299999237060547,
+      "session_close": 20.399999618530273,
+      "session_volume": 1005800.0,
+      "currency": "USD",
+      "source_symbol": "NYSE:ENVA",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/ENVA/history/",
+        "date": "2018-02-05",
+        "daily_high": 21.299999237060547,
+        "prior_all_time_or_current_month_high": 24.649999618530273,
+        "passes_close_filter": true,
+        "source_symbol": "NYSE:ENVA",
+        "yahoo_symbol": "ENVA"
+      }
+    },
+    {
+      "ticker": "KEX",
+      "name": "Kirby Corporation",
+      "exchange": "NYSE",
+      "category": "Transportation",
+      "high_type": "52_week",
+      "reason": "업종: Transportation · Marine Shipping",
+      "description": "Kirby Corporation · Marine Shipping",
+      "change_pct": 2.708062264730926,
+      "session_open": 75.25,
+      "session_close": 77.75,
+      "session_volume": 1507000.0,
+      "currency": "USD",
+      "source_symbol": "NYSE:KEX",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/KEX/history/",
+        "date": "2018-02-05",
+        "daily_high": 80.9000015258789,
+        "prior_all_time_or_current_month_high": 124.12000274658203,
+        "passes_close_filter": true,
+        "source_symbol": "NYSE:KEX",
+        "yahoo_symbol": "KEX"
+      }
+    },
+    {
+      "ticker": "OPY",
+      "name": "Oppenheimer Holdings Inc. Class A",
+      "exchange": "NYSE",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "업종: Finance · Investment Banks/Brokers",
+      "description": "Oppenheimer Holdings Inc. Class A · Investment Banks/Brokers",
+      "change_pct": 0.3565076085193075,
+      "session_open": 27.799999237060547,
+      "session_close": 28.149999618530273,
+      "session_volume": 152000.0,
+      "currency": "USD",
+      "source_symbol": "NYSE:OPY",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/OPY/history/",
+        "date": "2018-02-05",
+        "daily_high": 29.049999237060547,
+        "prior_all_time_or_current_month_high": 57.5,
+        "passes_close_filter": true,
+        "source_symbol": "NYSE:OPY",
+        "yahoo_symbol": "OPY"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-11-02T11:41:23.420978+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 5714,
+    "history_symbols": 3261,
+    "inactive_symbols": 2452,
+    "failed_symbols": 1,
+    "coverage_ratio": 0.9996934396076027,
+    "coverage_by_exchange": {
+      "NASDAQ": {
+        "covered": 1676,
+        "total": 1677
+      },
+      "NYSE": {
+        "covered": 1426,
+        "total": 1426
+      },
+      "AMEX": {
+        "covered": 159,
+        "total": 159
+      }
+    },
+    "session_symbols": 3072,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-11-02T11:41:23.420978+00:00"
+}

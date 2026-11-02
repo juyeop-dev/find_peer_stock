@@ -1,0 +1,271 @@
+{
+  "schema_version": 1,
+  "market": "taiwan",
+  "date": "2018-09-10",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "1784.TWO",
+      "name": "Bionet Corp.",
+      "exchange": "TPEX",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Biotechnology",
+      "description": "Bionet Corp. · Biotechnology",
+      "change_pct": 9.89932933712705,
+      "session_open": 27.675140380859375,
+      "session_close": 29.42729949951172,
+      "session_volume": 8173350.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:1784",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/1784.TWO/history/",
+        "date": "2018-09-10",
+        "daily_high": 29.42729949951172,
+        "prior_all_time_or_current_month_high": 84.0471420288086,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:1784",
+        "yahoo_symbol": "1784.TWO"
+      }
+    },
+    {
+      "ticker": "5601.TWO",
+      "name": "Taiwan Allied Container Terminal Corp.",
+      "exchange": "TPEX",
+      "category": "Transportation",
+      "high_type": "52_week",
+      "reason": "업종: Transportation · Other Transportation",
+      "description": "Taiwan Allied Container Terminal Corp. · Other Transportation",
+      "change_pct": 2.9629601372612946,
+      "session_open": 27.0,
+      "session_close": 27.799999237060547,
+      "session_volume": 31000.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:5601",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/5601.TWO/history/",
+        "date": "2018-09-10",
+        "daily_high": 27.950000762939453,
+        "prior_all_time_or_current_month_high": 33.0,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:5601",
+        "yahoo_symbol": "5601.TWO"
+      }
+    },
+    {
+      "ticker": "8906.TWO",
+      "name": "Forward Graphic Enterprise Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Commercial Services",
+      "high_type": "all_time",
+      "reason": "업종: Commercial Services · Commercial Printing/Forms",
+      "description": "Forward Graphic Enterprise Co., Ltd. · Commercial Printing/Forms",
+      "change_pct": 3.8348093048850007,
+      "session_open": 24.150148391723633,
+      "session_close": 25.150449752807617,
+      "session_volume": 147551.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:8906",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/8906.TWO/history/",
+        "date": "2018-09-10",
+        "daily_high": 25.150449752807617,
+        "prior_all_time_or_current_month_high": 25.150449752807617,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:8906",
+        "yahoo_symbol": "8906.TWO"
+      }
+    },
+    {
+      "ticker": "1539.TW",
+      "name": "Chiu Ting Machinery Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Industrial Machinery",
+      "description": "Chiu Ting Machinery Co., Ltd. · Industrial Machinery",
+      "change_pct": 9.259259259259256,
+      "session_open": 27.549999237060547,
+      "session_close": 29.5,
+      "session_volume": 7395221.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:1539",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/1539.TW/history/",
+        "date": "2018-09-10",
+        "daily_high": 29.700000762939453,
+        "prior_all_time_or_current_month_high": 45.54999923706055,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:1539",
+        "yahoo_symbol": "1539.TW"
+      }
+    },
+    {
+      "ticker": "1722.TW",
+      "name": "Taiwan Fertilizer Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Process Industries",
+      "high_type": "52_week",
+      "reason": "업종: Process Industries · Chemicals: Agricultural",
+      "description": "Taiwan Fertilizer Co., Ltd. · Chemicals: Agricultural",
+      "change_pct": 0.7847585219570075,
+      "session_open": 44.79999923706055,
+      "session_close": 44.95000076293945,
+      "session_volume": 6444258.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:1722",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/1722.TW/history/",
+        "date": "2018-09-10",
+        "daily_high": 45.400001525878906,
+        "prior_all_time_or_current_month_high": 161.5,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:1722",
+        "yahoo_symbol": "1722.TW"
+      }
+    },
+    {
+      "ticker": "2002A.TW",
+      "name": "China Steel Corp Pfd Registered Shs A",
+      "exchange": "TWSE",
+      "category": "Non-Energy Minerals",
+      "high_type": "52_week",
+      "reason": "업종: Non-Energy Minerals · Steel",
+      "description": "China Steel Corp Pfd Registered Shs A · Steel",
+      "change_pct": 0.0,
+      "session_open": 43.25,
+      "session_close": 43.25,
+      "session_volume": 88000.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2002A",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2002A.TW/history/",
+        "date": "2018-09-10",
+        "daily_high": 43.29999923706055,
+        "prior_all_time_or_current_month_high": 45.48003005981445,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:2002A",
+        "yahoo_symbol": "2002A.TW"
+      }
+    },
+    {
+      "ticker": "2812.TW",
+      "name": "Taichung Commercial Bank Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "업종: Finance · Regional Banks",
+      "description": "Taichung Commercial Bank Co., Ltd. · Regional Banks",
+      "change_pct": 0.0,
+      "session_open": 6.762539863586426,
+      "session_close": 6.762539863586426,
+      "session_volume": 11154186.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2812",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2812.TW/history/",
+        "date": "2018-09-10",
+        "daily_high": 6.827253818511963,
+        "prior_all_time_or_current_month_high": 12.5,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:2812",
+        "yahoo_symbol": "2812.TW"
+      }
+    },
+    {
+      "ticker": "3150.TW",
+      "name": "Syncomm Technology Corp.",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Semiconductors",
+      "description": "Syncomm Technology Corp. · Semiconductors",
+      "change_pct": 12.771082713803604,
+      "session_open": 11.332964897155762,
+      "session_close": 11.332964897155762,
+      "session_volume": 325912.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:3150",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3150.TW/history/",
+        "date": "2018-09-10",
+        "daily_high": 12.035222053527832,
+        "prior_all_time_or_current_month_high": 28.211334228515625,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:3150",
+        "yahoo_symbol": "3150.TW"
+      }
+    },
+    {
+      "ticker": "4119.TW",
+      "name": "SCI Pharmtech Corp.",
+      "exchange": "TWSE",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Pharmaceuticals: Major",
+      "description": "SCI Pharmtech Corp. · Pharmaceuticals: Major",
+      "change_pct": 5.044133088872926,
+      "session_open": 58.26596450805664,
+      "session_close": 60.745365142822266,
+      "session_volume": 7862095.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:4119",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4119.TW/history/",
+        "date": "2018-09-10",
+        "daily_high": 60.891212463378906,
+        "prior_all_time_or_current_month_high": 84.95600128173828,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:4119",
+        "yahoo_symbol": "4119.TW"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-11-02T11:32:42.659942+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 2357,
+    "history_symbols": 1785,
+    "inactive_symbols": 562,
+    "failed_symbols": 10,
+    "coverage_ratio": 0.9944289693593314,
+    "coverage_by_exchange": {
+      "TWSE": {
+        "covered": 946,
+        "total": 953
+      },
+      "TPEX": {
+        "covered": 839,
+        "total": 842
+      }
+    },
+    "session_symbols": 1757,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-11-02T11:32:42.659942+00:00"
+}

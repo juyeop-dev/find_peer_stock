@@ -1,0 +1,183 @@
+{
+  "schema_version": 1,
+  "market": "europe",
+  "date": "2018-11-22",
+  "summary": "부분 복원: 당시 일봉을 제공하는 종목만 포함하며 시장 전체 신고가 수와 다를 수 있습니다. EURONEXT 583/854종목 확인 · XETR 471/1728종목 확인 · LSE 843/2684종목 확인 · SIX 176/394종목 확인. TradingView 동일 거래소의 분할 조정 일봉·전체 월봉으로 복원했습니다. 거래량이 있는 신고가 종목 중 음봉 또는 전일 대비 하락 마감 종목은 제외합니다.",
+  "sources": [
+    {
+      "label": "TradingView historical charts",
+      "url": "https://www.tradingview.com/chart/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "LSE:AAZ",
+      "source_symbol": "LSE:AAZ",
+      "name": "Anglo Asian Mining PLC",
+      "exchange": "LSE",
+      "category": "Non-Energy Minerals",
+      "high_type": "52_week",
+      "reason": "업종: Non-Energy Minerals · Precious Metals",
+      "description": "Anglo Asian Mining PLC · Precious Metals",
+      "session_open": 82.5,
+      "session_close": 90.5,
+      "session_volume": 543522.0,
+      "change_pct": 9.036144578313255,
+      "currency": "GBX",
+      "high_verification": {
+        "source": "TradingView split-adjusted regular-session daily/monthly charts",
+        "source_url": "https://www.tradingview.com/symbols/LSE-AAZ/",
+        "date": "2018-11-22",
+        "daily_high": 92.75,
+        "prior_52_week_high": 84.0,
+        "period_52_week_high": 92.75,
+        "prior_all_time_or_current_month_high": 127.5,
+        "previous_close": 83.0,
+        "passes_close_filter": true,
+        "instrument_type": "stock",
+        "symbol_identity": "LSE:AAZ",
+        "chart_source_id": "LSE"
+      }
+    },
+    {
+      "ticker": "LSE:BVC",
+      "source_symbol": "LSE:BVC",
+      "name": "BATM Advanced Communications Ltd.",
+      "exchange": "LSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Telecommunications Equipment",
+      "description": "BATM Advanced Communications Ltd. · Telecommunications Equipment",
+      "session_open": 47.299999,
+      "session_close": 48.0,
+      "session_volume": 416316.0,
+      "change_pct": 2.5641047556432595,
+      "currency": "GBX",
+      "high_verification": {
+        "source": "TradingView split-adjusted regular-session daily/monthly charts",
+        "source_url": "https://www.tradingview.com/symbols/LSE-BVC/",
+        "date": "2018-11-22",
+        "daily_high": 48.0,
+        "prior_52_week_high": 47.450001,
+        "period_52_week_high": 48.0,
+        "prior_all_time_or_current_month_high": 786.99999,
+        "previous_close": 46.799999,
+        "passes_close_filter": true,
+        "instrument_type": "stock",
+        "symbol_identity": "LSE:BVC",
+        "chart_source_id": "LSE"
+      }
+    },
+    {
+      "ticker": "LSE:ZTF",
+      "source_symbol": "LSE:ZTF",
+      "name": "Zotefoams plc",
+      "exchange": "LSE",
+      "category": "Process Industries",
+      "high_type": "all_time",
+      "reason": "업종: Process Industries · Chemicals: Specialty",
+      "description": "Zotefoams plc · Chemicals: Specialty",
+      "session_open": 585.03998,
+      "session_close": 590.0,
+      "session_volume": 5478.0,
+      "change_pct": 0.340136054421758,
+      "currency": "GBX",
+      "high_verification": {
+        "source": "TradingView split-adjusted regular-session daily/monthly charts",
+        "source_url": "https://www.tradingview.com/symbols/LSE-ZTF/",
+        "date": "2018-11-22",
+        "daily_high": 600.0,
+        "prior_52_week_high": 599.81989,
+        "period_52_week_high": 600.0,
+        "prior_all_time_or_current_month_high": 600.0,
+        "previous_close": 588.0,
+        "passes_close_filter": true,
+        "instrument_type": "stock",
+        "symbol_identity": "LSE:ZTF",
+        "chart_source_id": "LSE"
+      }
+    },
+    {
+      "ticker": "XETR:690D",
+      "source_symbol": "XETR:690D",
+      "name": "Haier Smart Home Co., Ltd. Class D",
+      "exchange": "XETRA",
+      "category": "Consumer Durables",
+      "high_type": "all_time",
+      "reason": "업종: Consumer Durables · Electronics/Appliances",
+      "description": "Haier Smart Home Co., Ltd. Class D · Electronics/Appliances",
+      "session_open": 1.06,
+      "session_close": 1.08,
+      "session_volume": 70242.0,
+      "change_pct": 1.8867924528301883,
+      "currency": "EUR",
+      "high_verification": {
+        "source": "TradingView split-adjusted regular-session daily/monthly charts",
+        "source_url": "https://www.tradingview.com/symbols/XETR-690D/",
+        "date": "2018-11-22",
+        "daily_high": 1.08,
+        "prior_52_week_high": 1.06,
+        "period_52_week_high": 1.08,
+        "prior_all_time_or_current_month_high": 1.08,
+        "previous_close": 1.06,
+        "passes_close_filter": true,
+        "instrument_type": "stock",
+        "symbol_identity": "XETR:690D",
+        "chart_source_id": "XETR"
+      }
+    }
+  ],
+  "collected_at": "2026-11-02T11:36:39.014651+00:00",
+  "source_metadata": {
+    "provider": "TradingView public daily/monthly chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-11-02T11:36:39.014651+00:00",
+    "universe_fetched_at": "2026-10-26T12:31:58.825881+00:00",
+    "universe": "Current TradingView-listed stocks on EURONEXT, XETR, LSE, SIX; ETFs and delisted historical listings excluded",
+    "scanned_symbols": 5669,
+    "history_symbols": 5660,
+    "history_required_symbols": 5660,
+    "excluded_pre_range_or_no_history": 0,
+    "unresolved_symbols": 8,
+    "unresolved_listings": {
+      "EURONEXT:EFG": "EURONEXT:EFG: symbol_error: ['cs_c1f3677e2dd3', 'symbol_1', 'invalid symbol']",
+      "EURONEXT:MOP": "EURONEXT:MOP: symbol_error: ['cs_7a3b4710ca23', 'symbol_1', 'invalid symbol']",
+      "EURONEXT:ALHEX": "Missing or invalid chart volume",
+      "XETR:669": "XETR:669: symbol_error: ['cs_00bdd05ccd5d', 'symbol_1', 'invalid symbol']",
+      "XETR:AMI0": "XETR:AMI0: chart company name differs from scanner",
+      "XETR:MS8": "XETR:MS8: chart company name differs from scanner",
+      "LSE:0HX1": "LSE:0HX1: chart company name differs from scanner",
+      "LSE:SQZ": "LSE:SQZ: resolved to unexpected symbol LSE:SER"
+    },
+    "non_stock_exclusions": [
+      {
+        "symbol": "SIX:SMCI",
+        "type": "index",
+        "description": "SPI® Mid Total Return Index",
+        "source_id": "SIX",
+        "pro_name": "SIX:SMCI"
+      }
+    ],
+    "session_symbols": 2073,
+    "session_symbols_by_exchange": {
+      "EURONEXT": 583,
+      "XETR": 471,
+      "LSE": 843,
+      "SIX": 176
+    },
+    "scheduled_closed_exchanges": [],
+    "scanner_confirmed_no_trade_gaps": [],
+    "coverage_ratio": 0.36625441696113076,
+    "coverage_status": "partial",
+    "coverage_warning": "2018-11-22: incomplete XETR session coverage (471/1728)",
+    "pagination_complete": true,
+    "split_adjusted": true,
+    "session": "regular",
+    "monthly_history_complete": true,
+    "definition": "daily high >= 52-week/all-time high; volume > 0; close >= open and prior close; ties included"
+  }
+}

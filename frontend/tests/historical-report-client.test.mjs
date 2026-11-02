@@ -14,11 +14,12 @@ const sample={market:'taiwan',date:'2021-04-06',entries:[{ticker:'2330.TW',name:
 test('historical reports decode gzip and already decoded host responses without changing precision or Unicode',async()=>{
   const oldFetch=globalThis.fetch,oldWindow=globalThis.window;globalThis.window=globalThis;
   try {
-    for(const encoded of [true,false]) {
+    for(const day of ["2021-04-06","2026-06-30"]) for(const encoded of [true,false]) {
+      const value={...sample,date:day};
       const requests=[];
-      globalThis.fetch=async url=>{requests.push(url);return new Response(encoded?gzipSync(JSON.stringify(sample)):JSON.stringify(sample));};
-      assert.deepEqual(await client.getNewHighReport('taiwan','2021-04-06'),sample);
-      assert.equal(requests.length,1);assert.match(requests[0],/2021-04-06\.json\.gz\?/);
+      globalThis.fetch=async url=>{requests.push(url);return new Response(encoded?gzipSync(JSON.stringify(value)):JSON.stringify(value));};
+      assert.deepEqual(await client.getNewHighReport('taiwan',day),value);
+      assert.equal(requests.length,1);assert.ok(requests[0].includes(day+'.json.gz?'));
     }
   } finally {globalThis.fetch=oldFetch;globalThis.window=oldWindow;}
 });

@@ -1,0 +1,371 @@
+{
+  "schema_version": 1,
+  "market": "china",
+  "date": "2018-09-04",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "600271.SS",
+      "name": "Aisino Corp. Class A",
+      "exchange": "SSE",
+      "category": "Technology Services",
+      "high_type": "52_week",
+      "reason": "업종: Technology Services · Packaged Software",
+      "description": "Aisino Corp. Class A · Packaged Software",
+      "change_pct": 3.2753995312078787,
+      "session_open": 29.979999542236328,
+      "session_close": 30.899999618530273,
+      "session_volume": 30139835.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:600271",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/600271.SS/history/",
+        "date": "2018-09-04",
+        "daily_high": 31.170000076293945,
+        "prior_all_time_or_current_month_high": 51.70000076293945,
+        "passes_close_filter": true,
+        "source_symbol": "SSE:600271",
+        "yahoo_symbol": "600271.SS"
+      }
+    },
+    {
+      "ticker": "600536.SS",
+      "name": "China National Software & Service Company Limited Class A",
+      "exchange": "SSE",
+      "category": "Technology Services",
+      "high_type": "52_week",
+      "reason": "업종: Technology Services · Packaged Software",
+      "description": "China National Software & Service Company Limited Class A · Packaged Software",
+      "change_pct": 3.96402183077329,
+      "session_open": 17.585798263549805,
+      "session_close": 18.46745491027832,
+      "session_volume": 101178871.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:600536",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/600536.SS/history/",
+        "date": "2018-09-04",
+        "daily_high": 19.26035499572754,
+        "prior_all_time_or_current_month_high": 38.62721633911133,
+        "passes_close_filter": true,
+        "source_symbol": "SSE:600536",
+        "yahoo_symbol": "600536.SS"
+      }
+    },
+    {
+      "ticker": "900910.SS",
+      "name": "Shanghai Highly (Group) Co., Ltd. Class B",
+      "exchange": "SSE",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Industrial Machinery",
+      "description": "Shanghai Highly (Group) Co., Ltd. Class B · Industrial Machinery",
+      "change_pct": 0.7268981402422492,
+      "session_open": 0.9679999947547913,
+      "session_close": 0.9700000286102295,
+      "session_volume": 2175139.0,
+      "currency": "USD",
+      "source_symbol": "SSE:900910",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/900910.SS/history/",
+        "date": "2018-09-04",
+        "daily_high": 0.9800000190734863,
+        "prior_all_time_or_current_month_high": 1.1390000581741333,
+        "passes_close_filter": true,
+        "source_symbol": "SSE:900910",
+        "yahoo_symbol": "900910.SS"
+      }
+    },
+    {
+      "ticker": "000681.SZ",
+      "name": "Visual China Group Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Commercial Services",
+      "high_type": "52_week",
+      "reason": "업종: Commercial Services · Miscellaneous Commercial Services",
+      "description": "Visual China Group Co., Ltd. Class A · Miscellaneous Commercial Services",
+      "change_pct": 9.993124506173888,
+      "session_open": 28.90999984741211,
+      "session_close": 32.029998779296875,
+      "session_volume": 15322602.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:000681",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/000681.SZ/history/",
+        "date": "2018-09-04",
+        "daily_high": 32.029998779296875,
+        "prior_all_time_or_current_month_high": 73.75,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:000681",
+        "yahoo_symbol": "000681.SZ"
+      }
+    },
+    {
+      "ticker": "002153.SZ",
+      "name": "Beijing Shiji Information Technology Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Technology Services",
+      "high_type": "52_week",
+      "reason": "업종: Technology Services · Packaged Software",
+      "description": "Beijing Shiji Information Technology Co., Ltd. Class A · Packaged Software",
+      "change_pct": 3.3571248671084186,
+      "session_open": 14.69780158996582,
+      "session_close": 15.345368385314941,
+      "session_volume": 36388808.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002153",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002153.SZ/history/",
+        "date": "2018-09-04",
+        "daily_high": 15.647565841674805,
+        "prior_all_time_or_current_month_high": 29.173206329345703,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:002153",
+        "yahoo_symbol": "002153.SZ"
+      }
+    },
+    {
+      "ticker": "002410.SZ",
+      "name": "Glodon Company Limited Class A",
+      "exchange": "SZSE",
+      "category": "Technology Services",
+      "high_type": "52_week",
+      "reason": "업종: Technology Services · Information Technology Services",
+      "description": "Glodon Company Limited Class A · Information Technology Services",
+      "change_pct": 1.284104250790019,
+      "session_open": 22.128570556640625,
+      "session_close": 22.53571319580078,
+      "session_volume": 19823983.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002410",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002410.SZ/history/",
+        "date": "2018-09-04",
+        "daily_high": 22.899999618530273,
+        "prior_all_time_or_current_month_high": 27.492856979370117,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:002410",
+        "yahoo_symbol": "002410.SZ"
+      }
+    },
+    {
+      "ticker": "002912.SZ",
+      "name": "Shenzhen Sinovatio Technology Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Technology Services",
+      "high_type": "all_time",
+      "reason": "업종: Technology Services · Packaged Software",
+      "description": "Shenzhen Sinovatio Technology Co., Ltd. Class A · Packaged Software",
+      "change_pct": 4.238541153277486,
+      "session_open": 62.88750076293945,
+      "session_close": 66.09375,
+      "session_volume": 3179228.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002912",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002912.SZ/history/",
+        "date": "2018-09-04",
+        "daily_high": 66.8687515258789,
+        "prior_all_time_or_current_month_high": 66.8687515258789,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:002912",
+        "yahoo_symbol": "002912.SZ"
+      }
+    },
+    {
+      "ticker": "002933.SZ",
+      "name": "Beijing Emerging Eastern Aviation Equipment Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Aerospace & Defense",
+      "description": "Beijing Emerging Eastern Aviation Equipment Co., Ltd. Class A · Aerospace & Defense",
+      "change_pct": 9.993660171660569,
+      "session_open": 52.060001373291016,
+      "session_close": 52.060001373291016,
+      "session_volume": 62415.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002933",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002933.SZ/history/",
+        "date": "2018-09-04",
+        "daily_high": 52.060001373291016,
+        "prior_all_time_or_current_month_high": 52.060001373291016,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:002933",
+        "yahoo_symbol": "002933.SZ"
+      }
+    },
+    {
+      "ticker": "002935.SZ",
+      "name": "Chengdu Spaceon Electronics Co. Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Telecommunications Equipment",
+      "description": "Chengdu Spaceon Electronics Co. Ltd. Class A · Telecommunications Equipment",
+      "change_pct": 9.996428587354277,
+      "session_open": 7.763111114501953,
+      "session_close": 7.763111114501953,
+      "session_volume": 13726.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002935",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002935.SZ/history/",
+        "date": "2018-09-04",
+        "daily_high": 7.763111114501953,
+        "prior_all_time_or_current_month_high": 7.763111114501953,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:002935",
+        "yahoo_symbol": "002935.SZ"
+      }
+    },
+    {
+      "ticker": "300188.SZ",
+      "name": "SDIC Intelligence Information Technology Co.,Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Computer Processing Hardware",
+      "description": "SDIC Intelligence Information Technology Co.,Ltd. Class A · Computer Processing Hardware",
+      "change_pct": 6.243555439728032,
+      "session_open": 19.139999389648438,
+      "session_close": 20.59000015258789,
+      "session_volume": 34831658.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:300188",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/300188.SZ/history/",
+        "date": "2018-09-04",
+        "daily_high": 21.31999969482422,
+        "prior_all_time_or_current_month_high": 32.6875,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:300188",
+        "yahoo_symbol": "300188.SZ"
+      }
+    },
+    {
+      "ticker": "300253.SZ",
+      "name": "Winning Health Technology Group Co.,Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Technology Services",
+      "high_type": "52_week",
+      "reason": "업종: Technology Services · Internet Software/Services",
+      "description": "Winning Health Technology Group Co.,Ltd. Class A · Internet Software/Services",
+      "change_pct": 10.014208122580094,
+      "session_open": 11.069230079650879,
+      "session_close": 11.915384292602539,
+      "session_volume": 122695370.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:300253",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/300253.SZ/history/",
+        "date": "2018-09-04",
+        "daily_high": 11.915384292602539,
+        "prior_all_time_or_current_month_high": 29.20185089111328,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:300253",
+        "yahoo_symbol": "300253.SZ"
+      }
+    },
+    {
+      "ticker": "300365.SZ",
+      "name": "Beijing Forever Technology Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Technology Services",
+      "high_type": "52_week",
+      "reason": "업종: Technology Services · Packaged Software",
+      "description": "Beijing Forever Technology Co., Ltd. Class A · Packaged Software",
+      "change_pct": 6.823925721380952,
+      "session_open": 15.586666107177734,
+      "session_close": 16.906665802001953,
+      "session_volume": 10686984.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:300365",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/300365.SZ/history/",
+        "date": "2018-09-04",
+        "daily_high": 17.406665802001953,
+        "prior_all_time_or_current_month_high": 18.799999237060547,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:300365",
+        "yahoo_symbol": "300365.SZ"
+      }
+    },
+    {
+      "ticker": "300604.SZ",
+      "name": "Hangzhou Changchuan Technology Co. Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Electronic Equipment/Instruments",
+      "description": "Hangzhou Changchuan Technology Co. Ltd. Class A · Electronic Equipment/Instruments",
+      "change_pct": 4.910209016219902,
+      "session_open": 12.099181175231934,
+      "session_close": 12.783361434936523,
+      "session_volume": 18008153.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:300604",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/300604.SZ/history/",
+        "date": "2018-09-04",
+        "daily_high": 13.074207305908203,
+        "prior_all_time_or_current_month_high": 13.074207305908203,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:300604",
+        "yahoo_symbol": "300604.SZ"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-11-02T11:40:39.351428+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 5312,
+    "history_symbols": 3405,
+    "inactive_symbols": 1899,
+    "failed_symbols": 8,
+    "coverage_ratio": 0.9976560210958101,
+    "coverage_by_exchange": {
+      "SSE": {
+        "covered": 1388,
+        "total": 1390
+      },
+      "SZSE": {
+        "covered": 2017,
+        "total": 2023
+      }
+    },
+    "session_symbols": 3376,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-11-02T11:40:39.351428+00:00"
+}

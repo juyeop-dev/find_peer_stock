@@ -1,0 +1,271 @@
+{
+  "schema_version": 1,
+  "market": "china",
+  "date": "2018-11-14",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "600483.SS",
+      "name": "Fujian Funeng Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Utilities",
+      "high_type": "52_week",
+      "reason": "업종: Utilities · Alternative Power Generation",
+      "description": "Fujian Funeng Co., Ltd. Class A · Alternative Power Generation",
+      "change_pct": 1.0297523737328396,
+      "session_open": 6.715384006500244,
+      "session_close": 6.792306900024414,
+      "session_volume": 5552183.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:600483",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/600483.SS/history/",
+        "date": "2018-11-14",
+        "daily_high": 6.923076152801514,
+        "prior_all_time_or_current_month_high": 19.076923370361328,
+        "passes_close_filter": true,
+        "source_symbol": "SSE:600483",
+        "yahoo_symbol": "600483.SS"
+      }
+    },
+    {
+      "ticker": "000628.SZ",
+      "name": "Chengdu Hi-Tech Development Group Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Consumer Durables",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Durables · Homebuilding",
+      "description": "Chengdu Hi-Tech Development Group Co., Ltd. Class A · Homebuilding",
+      "change_pct": 9.96884762968362,
+      "session_open": 9.520000457763672,
+      "session_close": 10.59000015258789,
+      "session_volume": 26025555.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:000628",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/000628.SZ/history/",
+        "date": "2018-11-14",
+        "daily_high": 10.59000015258789,
+        "prior_all_time_or_current_month_high": 24.200000762939453,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:000628",
+        "yahoo_symbol": "000628.SZ"
+      }
+    },
+    {
+      "ticker": "000739.SZ",
+      "name": "Apeloa Pharmaceutical Co. Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Pharmaceuticals: Major",
+      "description": "Apeloa Pharmaceutical Co. Ltd. Class A · Pharmaceuticals: Major",
+      "change_pct": 4.756101858467043,
+      "session_open": 8.180000305175781,
+      "session_close": 8.59000015258789,
+      "session_volume": 19663155.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:000739",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/000739.SZ/history/",
+        "date": "2018-11-14",
+        "daily_high": 8.880000114440918,
+        "prior_all_time_or_current_month_high": 14.649999618530273,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:000739",
+        "yahoo_symbol": "000739.SZ"
+      }
+    },
+    {
+      "ticker": "002708.SZ",
+      "name": "Changzhou Nrb Corporation Class A",
+      "exchange": "SZSE",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Metal Fabrication",
+      "description": "Changzhou Nrb Corporation Class A · Metal Fabrication",
+      "change_pct": 10.000003221872644,
+      "session_open": 8.140000343322754,
+      "session_close": 8.140000343322754,
+      "session_volume": 947062.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002708",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002708.SZ/history/",
+        "date": "2018-11-14",
+        "daily_high": 8.140000343322754,
+        "prior_all_time_or_current_month_high": 21.479999542236328,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:002708",
+        "yahoo_symbol": "002708.SZ"
+      }
+    },
+    {
+      "ticker": "002761.SZ",
+      "name": "Zhejiang Construction Investment Group Co., Ltd Class A",
+      "exchange": "SZSE",
+      "category": "Industrial Services",
+      "high_type": "52_week",
+      "reason": "업종: Industrial Services · Engineering & Construction",
+      "description": "Zhejiang Construction Investment Group Co., Ltd Class A · Engineering & Construction",
+      "change_pct": 0.7367944077818711,
+      "session_open": 14.39411735534668,
+      "session_close": 14.476469993591309,
+      "session_volume": 5699270.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002761",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002761.SZ/history/",
+        "date": "2018-11-14",
+        "daily_high": 14.576470375061035,
+        "prior_all_time_or_current_month_high": 22.491348266601562,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:002761",
+        "yahoo_symbol": "002761.SZ"
+      }
+    },
+    {
+      "ticker": "300001.SZ",
+      "name": "Qingdao TGOOD Electric Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Electrical Products",
+      "description": "Qingdao TGOOD Electric Co., Ltd. Class A · Electrical Products",
+      "change_pct": 4.839769304373487,
+      "session_open": 15.199999809265137,
+      "session_close": 16.030000686645508,
+      "session_volume": 14069700.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:300001",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/300001.SZ/history/",
+        "date": "2018-11-14",
+        "daily_high": 16.450000762939453,
+        "prior_all_time_or_current_month_high": 34.990909576416016,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:300001",
+        "yahoo_symbol": "300001.SZ"
+      }
+    },
+    {
+      "ticker": "300670.SZ",
+      "name": "Jiangsu Daybright Intelligent Electric Co. Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Industrial Machinery",
+      "description": "Jiangsu Daybright Intelligent Electric Co. Ltd. Class A · Industrial Machinery",
+      "change_pct": 10.02558091207366,
+      "session_open": 12.806666374206543,
+      "session_close": 14.34000015258789,
+      "session_volume": 30693321.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:300670",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/300670.SZ/history/",
+        "date": "2018-11-14",
+        "daily_high": 14.34000015258789,
+        "prior_all_time_or_current_month_high": 14.34000015258789,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:300670",
+        "yahoo_symbol": "300670.SZ"
+      }
+    },
+    {
+      "ticker": "300674.SZ",
+      "name": "Yusys Technologies Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Technology Services",
+      "high_type": "all_time",
+      "reason": "업종: Technology Services · Packaged Software",
+      "description": "Yusys Technologies Co., Ltd. Class A · Packaged Software",
+      "change_pct": 9.9886528991743,
+      "session_open": 12.112500190734863,
+      "session_close": 12.112500190734863,
+      "session_volume": 163904.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:300674",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/300674.SZ/history/",
+        "date": "2018-11-14",
+        "daily_high": 12.112500190734863,
+        "prior_all_time_or_current_month_high": 12.112500190734863,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:300674",
+        "yahoo_symbol": "300674.SZ"
+      }
+    },
+    {
+      "ticker": "300751.SZ",
+      "name": "Suzhou Maxwell Technologies Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Semiconductors",
+      "description": "Suzhou Maxwell Technologies Co., Ltd. Class A · Semiconductors",
+      "change_pct": 10.004046564233793,
+      "session_open": 23.576387405395508,
+      "session_close": 23.576387405395508,
+      "session_volume": 217741.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:300751",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/300751.SZ/history/",
+        "date": "2018-11-14",
+        "daily_high": 23.576387405395508,
+        "prior_all_time_or_current_month_high": 23.576387405395508,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:300751",
+        "yahoo_symbol": "300751.SZ"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-11-02T11:40:39.351428+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 5312,
+    "history_symbols": 3405,
+    "inactive_symbols": 1899,
+    "failed_symbols": 8,
+    "coverage_ratio": 0.9976560210958101,
+    "coverage_by_exchange": {
+      "SSE": {
+        "covered": 1388,
+        "total": 1390
+      },
+      "SZSE": {
+        "covered": 2017,
+        "total": 2023
+      }
+    },
+    "session_symbols": 3395,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-11-02T11:40:39.351428+00:00"
+}

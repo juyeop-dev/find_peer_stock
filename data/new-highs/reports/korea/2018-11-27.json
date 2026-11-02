@@ -1,0 +1,101 @@
+{
+  "schema_version": 1,
+  "market": "korea",
+  "date": "2018-11-27",
+  "summary": "과거 일봉 전체 대조 기준. 당일 장중 고가가 52주·전체기간 고가에 도달하고, 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다. 전체기간 신고가를 우선 표시하며 신고가 배경은 별도 확인 전입니다.",
+  "sources": [
+    {
+      "label": "Naver Finance 조정 일봉·한국 종목명",
+      "url": "https://stock.naver.com/"
+    },
+    {
+      "label": "TradingView 한국 주식 종목군·업종",
+      "url": "https://www.tradingview.com/screener/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "092130.KQ",
+      "name": "이크레더블",
+      "exchange": "KOSDAQ",
+      "category": "Commercial Services",
+      "high_type": "all_time",
+      "reason": "업종: Commercial Services · Financial Publishing/Services",
+      "description": "이크레더블 · Financial Publishing/Services",
+      "change_pct": 1.8518518518518516,
+      "session_open": 16150,
+      "session_close": 16500,
+      "currency": "KRW",
+      "source_symbol": "KRX:092130",
+      "name_original": "e-Credible Co., Ltd.",
+      "name_source_url": "https://m.stock.naver.com/api/stock/092130/basic",
+      "high_verification": {
+        "source": "Naver Finance adjusted daily history",
+        "source_url": "https://api.finance.naver.com/siseJson.naver?symbol=092130&requestType=1&startTime=20171128&endTime=20181127&timeframe=day",
+        "date": "2018-11-27",
+        "open": 16150,
+        "daily_high": 16550,
+        "low": 16050,
+        "close": 16500,
+        "previous_close": 16200,
+        "volume": 23421,
+        "prior_52_week_high": 16250,
+        "observed_bars": 244,
+        "first_observed_date": "2017-11-28",
+        "confirmed": true,
+        "matches_prior_high": false,
+        "bearish_candle": false,
+        "down_close": false,
+        "passes_close_filter": true
+      }
+    },
+    {
+      "ticker": "081660.KS",
+      "name": "미스토홀딩스",
+      "exchange": "KOSPI",
+      "category": "Consumer Non-Durables",
+      "high_type": "all_time",
+      "reason": "업종: Consumer Non-Durables · Apparel/Footwear",
+      "description": "미스토홀딩스 · Apparel/Footwear",
+      "change_pct": 0.17825311942959002,
+      "session_open": 56200,
+      "session_close": 56200,
+      "currency": "KRW",
+      "source_symbol": "KRX:081660",
+      "name_original": "Misto Holdings Corporation",
+      "name_source_url": "https://m.stock.naver.com/api/stock/081660/basic",
+      "high_verification": {
+        "source": "Naver Finance adjusted daily history",
+        "source_url": "https://api.finance.naver.com/siseJson.naver?symbol=081660&requestType=1&startTime=20171128&endTime=20181127&timeframe=day",
+        "date": "2018-11-27",
+        "open": 56200,
+        "daily_high": 58000,
+        "low": 55600,
+        "close": 56200,
+        "previous_close": 56100,
+        "volume": 602232,
+        "prior_52_week_high": 57800,
+        "observed_bars": 244,
+        "first_observed_date": "2017-11-28",
+        "confirmed": true,
+        "matches_prior_high": false,
+        "bearish_candle": false,
+        "down_close": false,
+        "passes_close_filter": true
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Naver Finance adjusted daily history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-11-02T11:37:21.490360+00:00",
+    "definition": "daily high >= prior 52-week high; close >= open; close >= previous close; all-time takes precedence; ties included",
+    "scanned_symbols": 2740,
+    "session_symbols": 1947,
+    "raw_new_high_candidates": 5,
+    "excluded_unsupported_korean_board": 2,
+    "excluded_bearish_or_down_close": 1,
+    "pagination_complete": true
+  },
+  "collected_at": "2026-11-02T11:37:21.490360+00:00"
+}

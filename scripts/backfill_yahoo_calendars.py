@@ -88,14 +88,29 @@ def _number(value: Any, *, positive: bool = False, nonnegative: bool = False) ->
     return number
 
 
-def requested_dates(start: date, end: date) -> list[date]:
+def requested_dates(start: date, end: date, market_id: str | None = None) -> list[date]:
     if end < start:
         raise BackfillError("end date must not precede start date")
-    return [
+    sessions = {
         start + timedelta(days=offset)
         for offset in range((end - start).days + 1)
         if (start + timedelta(days=offset)).weekday() < 5
-    ]
+    }
+    if market_id:
+        # Taiwan held exceptional Saturday sessions before its 2019 reform.
+        # Only explicitly documented dates may extend the weekday candidates.
+        for year in range(start.year, end.year + 1):
+            path = Path(__file__).resolve().parents[1] / f'data/market-closures/{year}.json'
+            if not path.exists():
+                continue
+            for market in json.loads(path.read_bytes())['markets']:
+                if market['market'] == market_id:
+                    sessions.difference_update(date.fromisoformat(stamp) for stamp in market['dates'])
+                    for stamp in market.get('additional_open_dates', {}):
+                        day = date.fromisoformat(stamp)
+                        if start <= day <= end:
+                            sessions.add(day)
+    return sorted(sessions)
 
 
 def scan_universe(market_id: str, *, timeout: float = 30, page_size: int = 1000) -> list[dict[str, Any]]:
@@ -365,7 +380,7 @@ def build_reports(market_id: str, start: date, end: date, *, workers: int = 24,
                   cache_dir: Path) -> tuple[dict[date, dict], dict[date, dict]]:
     if market_id not in SUPPORTED_MARKETS:
         raise BackfillError(f"unsupported market: {market_id}")
-    sessions = set(requested_dates(start, end))
+    sessions = set(requested_dates(start, end, market_id))
     universe = scan_universe(market_id, timeout=timeout)
     histories: list[ListingHistory] = []
     failures: list[str] = []

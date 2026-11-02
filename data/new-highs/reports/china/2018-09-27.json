@@ -1,0 +1,171 @@
+{
+  "schema_version": 1,
+  "market": "china",
+  "date": "2018-09-27",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "600131.SS",
+      "name": "State Grid Information & Communication Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Utilities",
+      "high_type": "52_week",
+      "reason": "업종: Utilities · Electric Utilities",
+      "description": "State Grid Information & Communication Co., Ltd. Class A · Electric Utilities",
+      "change_pct": 0.31578666285465573,
+      "session_open": 9.5,
+      "session_close": 9.529999732971191,
+      "session_volume": 4224888.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:600131",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/600131.SS/history/",
+        "date": "2018-09-27",
+        "daily_high": 9.649999618530273,
+        "prior_all_time_or_current_month_high": 16.190000534057617,
+        "passes_close_filter": true,
+        "source_symbol": "SSE:600131",
+        "yahoo_symbol": "600131.SS"
+      }
+    },
+    {
+      "ticker": "002007.SZ",
+      "name": "Hualan Biological Engineering Inc. Class A",
+      "exchange": "SZSE",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Biotechnology",
+      "description": "Hualan Biological Engineering Inc. Class A · Biotechnology",
+      "change_pct": 7.352518603274483,
+      "session_open": 18.0,
+      "session_close": 19.317947387695312,
+      "session_volume": 54138148.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002007",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002007.SZ/history/",
+        "date": "2018-09-27",
+        "daily_high": 19.58974266052246,
+        "prior_all_time_or_current_month_high": 21.951923370361328,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:002007",
+        "yahoo_symbol": "002007.SZ"
+      }
+    },
+    {
+      "ticker": "002937.SZ",
+      "name": "Ningbo Sunrise Elc Technology Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Metal Fabrication",
+      "description": "Ningbo Sunrise Elc Technology Co., Ltd. Class A · Metal Fabrication",
+      "change_pct": 9.993002923161608,
+      "session_open": 9.837499618530273,
+      "session_close": 9.837499618530273,
+      "session_volume": 49884.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002937",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002937.SZ/history/",
+        "date": "2018-09-27",
+        "daily_high": 9.837499618530273,
+        "prior_all_time_or_current_month_high": 9.837499618530273,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:002937",
+        "yahoo_symbol": "002937.SZ"
+      }
+    },
+    {
+      "ticker": "300748.SZ",
+      "name": "JL Mag Rare-Earth Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Metal Fabrication",
+      "description": "JL Mag Rare-Earth Co., Ltd. Class A · Metal Fabrication",
+      "change_pct": 10.010658079363012,
+      "session_open": 4.035155773162842,
+      "session_close": 4.035155773162842,
+      "session_volume": 121856.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:300748",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/300748.SZ/history/",
+        "date": "2018-09-27",
+        "daily_high": 4.035155773162842,
+        "prior_all_time_or_current_month_high": 4.035155773162842,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:300748",
+        "yahoo_symbol": "300748.SZ"
+      }
+    },
+    {
+      "ticker": "300749.SZ",
+      "name": "GuangDong Topstrong Living Innovation & Integration Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Consumer Durables",
+      "high_type": "all_time",
+      "reason": "업종: Consumer Durables · Home Furnishings",
+      "description": "GuangDong Topstrong Living Innovation & Integration Co., Ltd. Class A · Home Furnishings",
+      "change_pct": 10.020662320335205,
+      "session_open": 11.833333015441895,
+      "session_close": 11.833333015441895,
+      "session_volume": 142380.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:300749",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/300749.SZ/history/",
+        "date": "2018-09-27",
+        "daily_high": 11.833333015441895,
+        "prior_all_time_or_current_month_high": 11.833333015441895,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:300749",
+        "yahoo_symbol": "300749.SZ"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-11-02T11:40:39.351428+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 5312,
+    "history_symbols": 3405,
+    "inactive_symbols": 1899,
+    "failed_symbols": 8,
+    "coverage_ratio": 0.9976560210958101,
+    "coverage_by_exchange": {
+      "SSE": {
+        "covered": 1388,
+        "total": 1390
+      },
+      "SZSE": {
+        "covered": 2017,
+        "total": 2023
+      }
+    },
+    "session_symbols": 3388,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-11-02T11:40:39.351428+00:00"
+}

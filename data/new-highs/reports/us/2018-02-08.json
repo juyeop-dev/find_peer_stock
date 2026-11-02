@@ -1,0 +1,300 @@
+{
+  "schema_version": 1,
+  "market": "us",
+  "date": "2018-02-08",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "AVBH",
+      "name": "Avidbank Holdings, Inc.",
+      "exchange": "NASDAQ",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "업종: Finance · Regional Banks",
+      "description": "Avidbank Holdings, Inc. · Regional Banks",
+      "change_pct": 1.037344381920513,
+      "session_open": 24.100000381469727,
+      "session_close": 24.350000381469727,
+      "session_volume": 500.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:AVBH",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/AVBH/history/",
+        "date": "2018-02-08",
+        "daily_high": 24.350000381469727,
+        "prior_all_time_or_current_month_high": 24.350000381469727,
+        "passes_close_filter": true,
+        "source_symbol": "NASDAQ:AVBH",
+        "yahoo_symbol": "AVBH"
+      }
+    },
+    {
+      "ticker": "BCAL",
+      "name": "California BanCorp",
+      "exchange": "NASDAQ",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "업종: Finance · Regional Banks",
+      "description": "California BanCorp · Regional Banks",
+      "change_pct": 2.1671850757701616,
+      "session_open": 16.5,
+      "session_close": 16.5,
+      "session_volume": 300.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:BCAL",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/BCAL/history/",
+        "date": "2018-02-08",
+        "daily_high": 16.5,
+        "prior_all_time_or_current_month_high": 16.5,
+        "passes_close_filter": true,
+        "source_symbol": "NASDAQ:BCAL",
+        "yahoo_symbol": "BCAL"
+      }
+    },
+    {
+      "ticker": "BLBD",
+      "name": "Blue Bird Corporation",
+      "exchange": "NASDAQ",
+      "category": "Consumer Durables",
+      "high_type": "all_time",
+      "reason": "업종: Consumer Durables · Motor Vehicles",
+      "description": "Blue Bird Corporation · Motor Vehicles",
+      "change_pct": 3.8374735715960506,
+      "session_open": 22.100000381469727,
+      "session_close": 23.0,
+      "session_volume": 218300.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:BLBD",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/BLBD/history/",
+        "date": "2018-02-08",
+        "daily_high": 23.100000381469727,
+        "prior_all_time_or_current_month_high": 23.100000381469727,
+        "passes_close_filter": true,
+        "source_symbol": "NASDAQ:BLBD",
+        "yahoo_symbol": "BLBD"
+      }
+    },
+    {
+      "ticker": "DOO",
+      "name": "BRP, Inc.",
+      "exchange": "NASDAQ",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Trucks/Construction/Farm Machinery",
+      "description": "BRP, Inc. · Trucks/Construction/Farm Machinery",
+      "change_pct": 0.6864397475173645,
+      "session_open": 41.0099983215332,
+      "session_close": 41.06999969482422,
+      "session_volume": 400.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:DOO",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/DOO/history/",
+        "date": "2018-02-08",
+        "daily_high": 41.06999969482422,
+        "prior_all_time_or_current_month_high": 41.06999969482422,
+        "passes_close_filter": true,
+        "source_symbol": "NASDAQ:DOO",
+        "yahoo_symbol": "DOO"
+      }
+    },
+    {
+      "ticker": "EOLS",
+      "name": "Evolus, Inc.",
+      "exchange": "NASDAQ",
+      "category": "Health Technology",
+      "high_type": "all_time",
+      "reason": "업종: Health Technology · Pharmaceuticals: Major",
+      "description": "Evolus, Inc. · Pharmaceuticals: Major",
+      "change_pct": 0.0,
+      "session_open": 11.25,
+      "session_close": 11.5,
+      "session_volume": 1309300.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:EOLS",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/EOLS/history/",
+        "date": "2018-02-08",
+        "daily_high": 11.899999618530273,
+        "prior_all_time_or_current_month_high": 11.899999618530273,
+        "passes_close_filter": true,
+        "source_symbol": "NASDAQ:EOLS",
+        "yahoo_symbol": "EOLS"
+      }
+    },
+    {
+      "ticker": "PAYS",
+      "name": "Paysign, Inc.",
+      "exchange": "NASDAQ",
+      "category": "Commercial Services",
+      "high_type": "52_week",
+      "reason": "업종: Commercial Services · Miscellaneous Commercial Services",
+      "description": "Paysign, Inc. · Miscellaneous Commercial Services",
+      "change_pct": 2.5641078544558438,
+      "session_open": 0.7799999713897705,
+      "session_close": 0.800000011920929,
+      "session_volume": 23100.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:PAYS",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/PAYS/history/",
+        "date": "2018-02-08",
+        "daily_high": 0.800000011920929,
+        "prior_all_time_or_current_month_high": 0.9800000190734863,
+        "passes_close_filter": true,
+        "source_symbol": "NASDAQ:PAYS",
+        "yahoo_symbol": "PAYS"
+      }
+    },
+    {
+      "ticker": "PBAM",
+      "name": "Private Bancorp of America, Inc.",
+      "exchange": "NASDAQ",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "업종: Finance · Regional Banks",
+      "description": "Private Bancorp of America, Inc. · Regional Banks",
+      "change_pct": 0.3529417748544761,
+      "session_open": 25.59000015258789,
+      "session_close": 25.59000015258789,
+      "session_volume": 2700.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:PBAM",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/PBAM/history/",
+        "date": "2018-02-08",
+        "daily_high": 25.68000030517578,
+        "prior_all_time_or_current_month_high": 25.68000030517578,
+        "passes_close_filter": true,
+        "source_symbol": "NASDAQ:PBAM",
+        "yahoo_symbol": "PBAM"
+      }
+    },
+    {
+      "ticker": "WWD",
+      "name": "Woodward, Inc.",
+      "exchange": "NASDAQ",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Industrial Machinery",
+      "description": "Woodward, Inc. · Industrial Machinery",
+      "change_pct": 7.464043375536078,
+      "session_open": 77.5,
+      "session_close": 82.93000030517578,
+      "session_volume": 6412900.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:WWD",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/WWD/history/",
+        "date": "2018-02-08",
+        "daily_high": 89.30000305175781,
+        "prior_all_time_or_current_month_high": 89.30000305175781,
+        "passes_close_filter": true,
+        "source_symbol": "NASDAQ:WWD",
+        "yahoo_symbol": "WWD"
+      }
+    },
+    {
+      "ticker": "NYT",
+      "name": "New York Times Company Class A",
+      "exchange": "NYSE",
+      "category": "Consumer Services",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Services · Publishing: Newspapers",
+      "description": "New York Times Company Class A · Publishing: Newspapers",
+      "change_pct": 10.158013718960479,
+      "session_open": 22.649999618530273,
+      "session_close": 24.399999618530273,
+      "session_volume": 7695700.0,
+      "currency": "USD",
+      "source_symbol": "NYSE:NYT",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/NYT/history/",
+        "date": "2018-02-08",
+        "daily_high": 25.700000762939453,
+        "prior_all_time_or_current_month_high": 53.0,
+        "passes_close_filter": true,
+        "source_symbol": "NYSE:NYT",
+        "yahoo_symbol": "NYT"
+      }
+    },
+    {
+      "ticker": "VIRT",
+      "name": "Virtu Financial, Inc. Class A",
+      "exchange": "NYSE",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "업종: Finance · Investment Banks/Brokers",
+      "description": "Virtu Financial, Inc. Class A · Investment Banks/Brokers",
+      "change_pct": 32.16958108914654,
+      "session_open": 21.649999618530273,
+      "session_close": 26.5,
+      "session_volume": 5019400.0,
+      "currency": "USD",
+      "source_symbol": "NYSE:VIRT",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/VIRT/history/",
+        "date": "2018-02-08",
+        "daily_high": 26.75,
+        "prior_all_time_or_current_month_high": 26.75,
+        "passes_close_filter": true,
+        "source_symbol": "NYSE:VIRT",
+        "yahoo_symbol": "VIRT"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-11-02T11:41:23.420978+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 5714,
+    "history_symbols": 3261,
+    "inactive_symbols": 2452,
+    "failed_symbols": 1,
+    "coverage_ratio": 0.9996934396076027,
+    "coverage_by_exchange": {
+      "NASDAQ": {
+        "covered": 1676,
+        "total": 1677
+      },
+      "NYSE": {
+        "covered": 1426,
+        "total": 1426
+      },
+      "AMEX": {
+        "covered": 159,
+        "total": 159
+      }
+    },
+    "session_symbols": 3086,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-11-02T11:41:23.420978+00:00"
+}

@@ -1,0 +1,400 @@
+{
+  "schema_version": 1,
+  "market": "us",
+  "date": "2018-10-17",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "AMAL",
+      "name": "Amalgamated Financial Corp",
+      "exchange": "NASDAQ",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "업종: Finance · Regional Banks",
+      "description": "Amalgamated Financial Corp · Regional Banks",
+      "change_pct": 0.8474580300092738,
+      "session_open": 20.020000457763672,
+      "session_close": 20.229999542236328,
+      "session_volume": 38100.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:AMAL",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/AMAL/history/",
+        "date": "2018-10-17",
+        "daily_high": 20.229999542236328,
+        "prior_all_time_or_current_month_high": 20.229999542236328,
+        "passes_close_filter": true,
+        "source_symbol": "NASDAQ:AMAL",
+        "yahoo_symbol": "AMAL"
+      }
+    },
+    {
+      "ticker": "ANIX",
+      "name": "Anixa Biosciences, Inc.",
+      "exchange": "NASDAQ",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Biotechnology",
+      "description": "Anixa Biosciences, Inc. · Biotechnology",
+      "change_pct": 3.7795315206262003,
+      "session_open": 6.28000020980835,
+      "session_close": 6.590000152587891,
+      "session_volume": 267200.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:ANIX",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/ANIX/history/",
+        "date": "2018-10-17",
+        "daily_high": 6.860000133514404,
+        "prior_all_time_or_current_month_high": 259.375,
+        "passes_close_filter": true,
+        "source_symbol": "NASDAQ:ANIX",
+        "yahoo_symbol": "ANIX"
+      }
+    },
+    {
+      "ticker": "BTCT",
+      "name": "BTC Digital Ltd.",
+      "exchange": "NASDAQ",
+      "category": "Technology Services",
+      "high_type": "all_time",
+      "reason": "업종: Technology Services · Data Processing Services",
+      "description": "BTC Digital Ltd. · Data Processing Services",
+      "change_pct": 0.0,
+      "session_open": 5730.0,
+      "session_close": 5730.0,
+      "session_volume": 254.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:BTCT",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/BTCT/history/",
+        "date": "2018-10-17",
+        "daily_high": 5754.0,
+        "prior_all_time_or_current_month_high": 5754.0,
+        "passes_close_filter": true,
+        "source_symbol": "NASDAQ:BTCT",
+        "yahoo_symbol": "BTCT"
+      }
+    },
+    {
+      "ticker": "FRHC",
+      "name": "Freedom Holding Corp.",
+      "exchange": "NASDAQ",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "업종: Finance · Investment Banks/Brokers",
+      "description": "Freedom Holding Corp. · Investment Banks/Brokers",
+      "change_pct": 0.22779565343908903,
+      "session_open": 8.779999732971191,
+      "session_close": 8.800000190734863,
+      "session_volume": 6500.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:FRHC",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/FRHC/history/",
+        "date": "2018-10-17",
+        "daily_high": 8.800000190734863,
+        "prior_all_time_or_current_month_high": 8.800000190734863,
+        "passes_close_filter": true,
+        "source_symbol": "NASDAQ:FRHC",
+        "yahoo_symbol": "FRHC"
+      }
+    },
+    {
+      "ticker": "FTLF",
+      "name": "FitLife Brands, Inc.",
+      "exchange": "NASDAQ",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Pharmaceuticals: Other",
+      "description": "FitLife Brands, Inc. · Pharmaceuticals: Other",
+      "change_pct": 8.333331781129004,
+      "session_open": 0.05999999865889549,
+      "session_close": 0.06499999761581421,
+      "session_volume": 288000.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:FTLF",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/FTLF/history/",
+        "date": "2018-10-17",
+        "daily_high": 0.06499999761581421,
+        "prior_all_time_or_current_month_high": 4.0625,
+        "passes_close_filter": true,
+        "source_symbol": "NASDAQ:FTLF",
+        "yahoo_symbol": "FTLF"
+      }
+    },
+    {
+      "ticker": "GH",
+      "name": "Guardant Health, Inc.",
+      "exchange": "NASDAQ",
+      "category": "Health Technology",
+      "high_type": "all_time",
+      "reason": "업종: Health Technology · Medical Specialties",
+      "description": "Guardant Health, Inc. · Medical Specialties",
+      "change_pct": 7.979846829594273,
+      "session_open": 38.4900016784668,
+      "session_close": 40.72999954223633,
+      "session_volume": 935900.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:GH",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/GH/history/",
+        "date": "2018-10-17",
+        "daily_high": 43.79999923706055,
+        "prior_all_time_or_current_month_high": 43.79999923706055,
+        "passes_close_filter": true,
+        "source_symbol": "NASDAQ:GH",
+        "yahoo_symbol": "GH"
+      }
+    },
+    {
+      "ticker": "JCTC",
+      "name": "Jewett-Cameron Trading Company Ltd.",
+      "exchange": "NASDAQ",
+      "category": "Distribution Services",
+      "high_type": "all_time",
+      "reason": "업종: Distribution Services · Wholesale Distributors",
+      "description": "Jewett-Cameron Trading Company Ltd. · Wholesale Distributors",
+      "change_pct": 2.564102564102555,
+      "session_open": 9.460000038146973,
+      "session_close": 10.0,
+      "session_volume": 3200.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:JCTC",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/JCTC/history/",
+        "date": "2018-10-17",
+        "daily_high": 10.0,
+        "prior_all_time_or_current_month_high": 10.0,
+        "passes_close_filter": true,
+        "source_symbol": "NASDAQ:JCTC",
+        "yahoo_symbol": "JCTC"
+      }
+    },
+    {
+      "ticker": "RDGT",
+      "name": "Ridgetech, Inc.",
+      "exchange": "NASDAQ",
+      "category": "Distribution Services",
+      "high_type": "52_week",
+      "reason": "업종: Distribution Services · Medical Distributors",
+      "description": "Ridgetech, Inc. · Medical Distributors",
+      "change_pct": 5.681818181818188,
+      "session_open": 63720.0,
+      "session_close": 66960.0,
+      "session_volume": 11.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:RDGT",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/RDGT/history/",
+        "date": "2018-10-17",
+        "daily_high": 68400.0,
+        "prior_all_time_or_current_month_high": 396000.0,
+        "passes_close_filter": true,
+        "source_symbol": "NASDAQ:RDGT",
+        "yahoo_symbol": "RDGT"
+      }
+    },
+    {
+      "ticker": "AD",
+      "name": "Array Digital Infrastructure, Inc.",
+      "exchange": "NYSE",
+      "category": "Communications",
+      "high_type": "52_week",
+      "reason": "업종: Communications · Wireless Telecommunications",
+      "description": "Array Digital Infrastructure, Inc. · Wireless Telecommunications",
+      "change_pct": 0.699013480374866,
+      "session_open": 48.63999938964844,
+      "session_close": 48.97999954223633,
+      "session_volume": 173200.0,
+      "currency": "USD",
+      "source_symbol": "NYSE:AD",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/AD/history/",
+        "date": "2018-10-17",
+        "daily_high": 49.4900016784668,
+        "prior_all_time_or_current_month_high": 125.75,
+        "passes_close_filter": true,
+        "source_symbol": "NYSE:AD",
+        "yahoo_symbol": "AD"
+      }
+    },
+    {
+      "ticker": "ELV",
+      "name": "Elevance Health, Inc.",
+      "exchange": "NYSE",
+      "category": "Health Services",
+      "high_type": "all_time",
+      "reason": "업종: Health Services · Managed Health Care",
+      "description": "Elevance Health, Inc. · Managed Health Care",
+      "change_pct": 0.4166270701054797,
+      "session_open": 276.9200134277344,
+      "session_close": 279.5799865722656,
+      "session_volume": 1067900.0,
+      "currency": "USD",
+      "source_symbol": "NYSE:ELV",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/ELV/history/",
+        "date": "2018-10-17",
+        "daily_high": 281.3999938964844,
+        "prior_all_time_or_current_month_high": 281.3999938964844,
+        "passes_close_filter": true,
+        "source_symbol": "NYSE:ELV",
+        "yahoo_symbol": "ELV"
+      }
+    },
+    {
+      "ticker": "LADR",
+      "name": "Ladder Capital Corp. Class A",
+      "exchange": "NYSE",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "업종: Finance · Real Estate Investment Trusts",
+      "description": "Ladder Capital Corp. Class A · Real Estate Investment Trusts",
+      "change_pct": 0.6857190813337022,
+      "session_open": 17.489999771118164,
+      "session_close": 17.6200008392334,
+      "session_volume": 684100.0,
+      "currency": "USD",
+      "source_symbol": "NYSE:LADR",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/LADR/history/",
+        "date": "2018-10-17",
+        "daily_high": 17.709999084472656,
+        "prior_all_time_or_current_month_high": 20.780000686645508,
+        "passes_close_filter": true,
+        "source_symbol": "NYSE:LADR",
+        "yahoo_symbol": "LADR"
+      }
+    },
+    {
+      "ticker": "LW",
+      "name": "Lamb Weston Holdings, Inc.",
+      "exchange": "NYSE",
+      "category": "Consumer Non-Durables",
+      "high_type": "all_time",
+      "reason": "업종: Consumer Non-Durables · Food: Specialty/Candy",
+      "description": "Lamb Weston Holdings, Inc. · Food: Specialty/Candy",
+      "change_pct": 1.1159877836430576,
+      "session_open": 75.12000274658203,
+      "session_close": 76.11000061035156,
+      "session_volume": 893200.0,
+      "currency": "USD",
+      "source_symbol": "NYSE:LW",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/LW/history/",
+        "date": "2018-10-17",
+        "daily_high": 76.25499725341797,
+        "prior_all_time_or_current_month_high": 76.25499725341797,
+        "passes_close_filter": true,
+        "source_symbol": "NYSE:LW",
+        "yahoo_symbol": "LW"
+      }
+    },
+    {
+      "ticker": "MKC",
+      "name": "McCormick & Company, Incorporated",
+      "exchange": "NYSE",
+      "category": "Consumer Non-Durables",
+      "high_type": "all_time",
+      "reason": "업종: Consumer Non-Durables · Food: Specialty/Candy",
+      "description": "McCormick & Company, Incorporated · Food: Specialty/Candy",
+      "change_pct": 0.474320772853698,
+      "session_open": 68.46499633789062,
+      "session_close": 68.84500122070312,
+      "session_volume": 1916000.0,
+      "currency": "USD",
+      "source_symbol": "NYSE:MKC",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/MKC/history/",
+        "date": "2018-10-17",
+        "daily_high": 68.90499877929688,
+        "prior_all_time_or_current_month_high": 68.90499877929688,
+        "passes_close_filter": true,
+        "source_symbol": "NYSE:MKC",
+        "yahoo_symbol": "MKC"
+      }
+    },
+    {
+      "ticker": "MKC.V",
+      "name": "McCormick & Company, Incorporated",
+      "exchange": "NYSE",
+      "category": "Consumer Non-Durables",
+      "high_type": "all_time",
+      "reason": "업종: Consumer Non-Durables · Food: Specialty/Candy",
+      "description": "McCormick & Company, Incorporated · Food: Specialty/Candy",
+      "change_pct": 0.5115441150069344,
+      "session_open": 67.45999908447266,
+      "session_close": 68.7699966430664,
+      "session_volume": 400.0,
+      "currency": "USD",
+      "source_symbol": "NYSE:MKC.V",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/MKC-V/history/",
+        "date": "2018-10-17",
+        "daily_high": 68.7699966430664,
+        "prior_all_time_or_current_month_high": 68.7699966430664,
+        "passes_close_filter": true,
+        "source_symbol": "NYSE:MKC.V",
+        "yahoo_symbol": "MKC-V"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-11-02T11:41:23.420978+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 5714,
+    "history_symbols": 3261,
+    "inactive_symbols": 2452,
+    "failed_symbols": 1,
+    "coverage_ratio": 0.9996934396076027,
+    "coverage_by_exchange": {
+      "NASDAQ": {
+        "covered": 1676,
+        "total": 1677
+      },
+      "NYSE": {
+        "covered": 1426,
+        "total": 1426
+      },
+      "AMEX": {
+        "covered": 159,
+        "total": 159
+      }
+    },
+    "session_symbols": 3231,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-11-02T11:41:23.420978+00:00"
+}

@@ -1,0 +1,196 @@
+{
+  "schema_version": 1,
+  "market": "china",
+  "date": "2018-11-12",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "600131.SS",
+      "name": "State Grid Information & Communication Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Utilities",
+      "high_type": "52_week",
+      "reason": "업종: Utilities · Electric Utilities",
+      "description": "State Grid Information & Communication Co., Ltd. Class A · Electric Utilities",
+      "change_pct": 2.5460926524294214,
+      "session_open": 11.390000343322754,
+      "session_close": 11.680000305175781,
+      "session_volume": 8628620.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:600131",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/600131.SS/history/",
+        "date": "2018-11-12",
+        "daily_high": 11.850000381469727,
+        "prior_all_time_or_current_month_high": 16.190000534057617,
+        "passes_close_filter": true,
+        "source_symbol": "SSE:600131",
+        "yahoo_symbol": "600131.SS"
+      }
+    },
+    {
+      "ticker": "600483.SS",
+      "name": "Fujian Funeng Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Utilities",
+      "high_type": "52_week",
+      "reason": "업종: Utilities · Alternative Power Generation",
+      "description": "Fujian Funeng Co., Ltd. Class A · Alternative Power Generation",
+      "change_pct": 6.748470130658779,
+      "session_open": 6.269229888916016,
+      "session_close": 6.692306995391846,
+      "session_volume": 8458723.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:600483",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/600483.SS/history/",
+        "date": "2018-11-12",
+        "daily_high": 6.730769157409668,
+        "prior_all_time_or_current_month_high": 19.076923370361328,
+        "passes_close_filter": true,
+        "source_symbol": "SSE:600483",
+        "yahoo_symbol": "600483.SS"
+      }
+    },
+    {
+      "ticker": "002841.SZ",
+      "name": "Guangzhou Shiyuan Electronic Technology Co. Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Computer Processing Hardware",
+      "description": "Guangzhou Shiyuan Electronic Technology Co. Ltd. Class A · Computer Processing Hardware",
+      "change_pct": 5.887099235288562,
+      "session_open": 62.27000045776367,
+      "session_close": 65.6500015258789,
+      "session_volume": 1719932.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002841",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002841.SZ/history/",
+        "date": "2018-11-12",
+        "daily_high": 66.30000305175781,
+        "prior_all_time_or_current_month_high": 66.30000305175781,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:002841",
+        "yahoo_symbol": "002841.SZ"
+      }
+    },
+    {
+      "ticker": "300451.SZ",
+      "name": "B-Soft Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Technology Services",
+      "high_type": "52_week",
+      "reason": "업종: Technology Services · Packaged Software",
+      "description": "B-Soft Co., Ltd. Class A · Packaged Software",
+      "change_pct": 4.979882148326964,
+      "session_open": 6.752159118652344,
+      "session_close": 7.135066032409668,
+      "session_volume": 75987625.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:300451",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/300451.SZ/history/",
+        "date": "2018-11-12",
+        "daily_high": 7.213698863983154,
+        "prior_all_time_or_current_month_high": 14.011442184448242,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:300451",
+        "yahoo_symbol": "300451.SZ"
+      }
+    },
+    {
+      "ticker": "300674.SZ",
+      "name": "Yusys Technologies Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Technology Services",
+      "high_type": "all_time",
+      "reason": "업종: Technology Services · Packaged Software",
+      "description": "Yusys Technologies Co., Ltd. Class A · Packaged Software",
+      "change_pct": 10.02746581916114,
+      "session_open": 10.012499809265137,
+      "session_close": 10.012499809265137,
+      "session_volume": 42403.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:300674",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/300674.SZ/history/",
+        "date": "2018-11-12",
+        "daily_high": 10.012499809265137,
+        "prior_all_time_or_current_month_high": 10.012499809265137,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:300674",
+        "yahoo_symbol": "300674.SZ"
+      }
+    },
+    {
+      "ticker": "300751.SZ",
+      "name": "Suzhou Maxwell Technologies Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Semiconductors",
+      "description": "Suzhou Maxwell Technologies Co., Ltd. Class A · Semiconductors",
+      "change_pct": 9.997542680580128,
+      "session_open": 19.483505249023438,
+      "session_close": 19.483505249023438,
+      "session_volume": 89395.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:300751",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/300751.SZ/history/",
+        "date": "2018-11-12",
+        "daily_high": 19.483505249023438,
+        "prior_all_time_or_current_month_high": 19.483505249023438,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:300751",
+        "yahoo_symbol": "300751.SZ"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-11-02T11:40:39.351428+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 5312,
+    "history_symbols": 3405,
+    "inactive_symbols": 1899,
+    "failed_symbols": 8,
+    "coverage_ratio": 0.9976560210958101,
+    "coverage_by_exchange": {
+      "SSE": {
+        "covered": 1388,
+        "total": 1390
+      },
+      "SZSE": {
+        "covered": 2017,
+        "total": 2023
+      }
+    },
+    "session_symbols": 3395,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-11-02T11:40:39.351428+00:00"
+}

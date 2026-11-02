@@ -1,0 +1,371 @@
+{
+  "schema_version": 1,
+  "market": "taiwan",
+  "date": "2018-07-06",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "3114.TWO",
+      "name": "Howteh Technology Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Distribution Services",
+      "high_type": "all_time",
+      "reason": "업종: Distribution Services · Electronics Distributors",
+      "description": "Howteh Technology Co., Ltd. · Electronics Distributors",
+      "change_pct": 8.418368389192988,
+      "session_open": 29.313419342041016,
+      "session_close": 31.3808650970459,
+      "session_volume": 7656770.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:3114",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3114.TWO/history/",
+        "date": "2018-07-06",
+        "daily_high": 31.60237693786621,
+        "prior_all_time_or_current_month_high": 31.60237693786621,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:3114",
+        "yahoo_symbol": "3114.TWO"
+      }
+    },
+    {
+      "ticker": "3430.TWO",
+      "name": "Chitec Technology Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Process Industries",
+      "high_type": "52_week",
+      "reason": "업종: Process Industries · Chemicals: Major Diversified",
+      "description": "Chitec Technology Co., Ltd. · Chemicals: Major Diversified",
+      "change_pct": 10.544219582380032,
+      "session_open": 29.89280891418457,
+      "session_close": 29.89280891418457,
+      "session_volume": 70169.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:3430",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3430.TWO/history/",
+        "date": "2018-07-06",
+        "daily_high": 29.984785079956055,
+        "prior_all_time_or_current_month_high": 39.470115661621094,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:3430",
+        "yahoo_symbol": "3430.TWO"
+      }
+    },
+    {
+      "ticker": "4538.TWO",
+      "name": "WINSON Machinery Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Non-Energy Minerals",
+      "high_type": "all_time",
+      "reason": "업종: Non-Energy Minerals · Steel",
+      "description": "WINSON Machinery Co., Ltd. · Steel",
+      "change_pct": 1.7719219315559753,
+      "session_open": 20.390811920166016,
+      "session_close": 20.390811920166016,
+      "session_volume": 19773.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:4538",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4538.TWO/history/",
+        "date": "2018-07-06",
+        "daily_high": 21.028024673461914,
+        "prior_all_time_or_current_month_high": 21.028024673461914,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:4538",
+        "yahoo_symbol": "4538.TWO"
+      }
+    },
+    {
+      "ticker": "5464.TWO",
+      "name": "Lin Horn Technology Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Electronic Components",
+      "description": "Lin Horn Technology Co., Ltd. · Electronic Components",
+      "change_pct": 9.97304828872263,
+      "session_open": 20.299999237060547,
+      "session_close": 20.399999618530273,
+      "session_volume": 6697486.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:5464",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/5464.TWO/history/",
+        "date": "2018-07-06",
+        "daily_high": 20.399999618530273,
+        "prior_all_time_or_current_month_high": 48.0,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:5464",
+        "yahoo_symbol": "5464.TWO"
+      }
+    },
+    {
+      "ticker": "1216.TW",
+      "name": "Uni-President Enterprises Corp.",
+      "exchange": "TWSE",
+      "category": "Retail Trade",
+      "high_type": "all_time",
+      "reason": "업종: Retail Trade · Food Retail",
+      "description": "Uni-President Enterprises Corp. · Food Retail",
+      "change_pct": 1.298701298701288,
+      "session_open": 77.5,
+      "session_close": 78.0,
+      "session_volume": 10114157.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:1216",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/1216.TW/history/",
+        "date": "2018-07-06",
+        "daily_high": 78.30000305175781,
+        "prior_all_time_or_current_month_high": 78.30000305175781,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:1216",
+        "yahoo_symbol": "1216.TW"
+      }
+    },
+    {
+      "ticker": "1225.TW",
+      "name": "Formosa Oilseed Processing Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Process Industries",
+      "high_type": "all_time",
+      "reason": "업종: Process Industries · Agricultural Commodities/Milling",
+      "description": "Formosa Oilseed Processing Co., Ltd. · Agricultural Commodities/Milling",
+      "change_pct": 4.807693186750583,
+      "session_open": 76.37102508544922,
+      "session_close": 78.71812438964844,
+      "session_volume": 72280.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:1225",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/1225.TW/history/",
+        "date": "2018-07-06",
+        "daily_high": 78.71812438964844,
+        "prior_all_time_or_current_month_high": 78.71812438964844,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:1225",
+        "yahoo_symbol": "1225.TW"
+      }
+    },
+    {
+      "ticker": "1402.TW",
+      "name": "Far Eastern New Century Corporation",
+      "exchange": "TWSE",
+      "category": "Process Industries",
+      "high_type": "52_week",
+      "reason": "업종: Process Industries · Chemicals: Specialty",
+      "description": "Far Eastern New Century Corporation · Chemicals: Specialty",
+      "change_pct": 1.9417488313168585,
+      "session_open": 31.149999618530273,
+      "session_close": 31.5,
+      "session_volume": 20919530.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:1402",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/1402.TW/history/",
+        "date": "2018-07-06",
+        "daily_high": 31.75,
+        "prior_all_time_or_current_month_high": 48.462196350097656,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:1402",
+        "yahoo_symbol": "1402.TW"
+      }
+    },
+    {
+      "ticker": "1468.TW",
+      "name": "Chang-Ho Fibre Corp.",
+      "exchange": "TWSE",
+      "category": "Process Industries",
+      "high_type": "52_week",
+      "reason": "업종: Process Industries · Textiles",
+      "description": "Chang-Ho Fibre Corp. · Textiles",
+      "change_pct": 2.777779494783972,
+      "session_open": 10.800000190734863,
+      "session_close": 11.100000381469727,
+      "session_volume": 58011.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:1468",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/1468.TW/history/",
+        "date": "2018-07-06",
+        "daily_high": 11.850000381469727,
+        "prior_all_time_or_current_month_high": 30.100000381469727,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:1468",
+        "yahoo_symbol": "1468.TW"
+      }
+    },
+    {
+      "ticker": "2371.TW",
+      "name": "Tatung Co.",
+      "exchange": "TWSE",
+      "category": "Consumer Durables",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Durables · Electronics/Appliances",
+      "description": "Tatung Co. · Electronics/Appliances",
+      "change_pct": 1.0791391290053687,
+      "session_open": 29.526315689086914,
+      "session_close": 29.578947067260742,
+      "session_volume": 32145107.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2371",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2371.TW/history/",
+        "date": "2018-07-06",
+        "daily_high": 30.31578826904297,
+        "prior_all_time_or_current_month_high": 88.78949737548828,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:2371",
+        "yahoo_symbol": "2371.TW"
+      }
+    },
+    {
+      "ticker": "2923.TW",
+      "name": "Sino Horizon Holdings Ltd.",
+      "exchange": "TWSE",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "업종: Finance · Real Estate Development",
+      "description": "Sino Horizon Holdings Ltd. · Real Estate Development",
+      "change_pct": 6.250005731216057,
+      "session_open": 21.100000381469727,
+      "session_close": 22.100000381469727,
+      "session_volume": 211263.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2923",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2923.TW/history/",
+        "date": "2018-07-06",
+        "daily_high": 22.450000762939453,
+        "prior_all_time_or_current_month_high": 47.79999923706055,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:2923",
+        "yahoo_symbol": "2923.TW"
+      }
+    },
+    {
+      "ticker": "3432.TW",
+      "name": "Tai Twun Enterprise Co. Ltd.",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Computer Peripherals",
+      "description": "Tai Twun Enterprise Co. Ltd. · Computer Peripherals",
+      "change_pct": 9.792280653309948,
+      "session_open": 30.980985641479492,
+      "session_close": 34.217803955078125,
+      "session_volume": 3777245.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:3432",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3432.TW/history/",
+        "date": "2018-07-06",
+        "daily_high": 34.217803955078125,
+        "prior_all_time_or_current_month_high": 85.82195281982422,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:3432",
+        "yahoo_symbol": "3432.TW"
+      }
+    },
+    {
+      "ticker": "4942.TW",
+      "name": "Chia Chang Co., Ltd",
+      "exchange": "TWSE",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Metal Fabrication",
+      "description": "Chia Chang Co., Ltd · Metal Fabrication",
+      "change_pct": 1.8442654507162537,
+      "session_open": 24.5,
+      "session_close": 24.850000381469727,
+      "session_volume": 1157985.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:4942",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4942.TW/history/",
+        "date": "2018-07-06",
+        "daily_high": 25.0,
+        "prior_all_time_or_current_month_high": 52.719200134277344,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:4942",
+        "yahoo_symbol": "4942.TW"
+      }
+    },
+    {
+      "ticker": "6655.TW",
+      "name": "Keding Enterprises Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Non-Energy Minerals",
+      "high_type": "all_time",
+      "reason": "업종: Non-Energy Minerals · Forest Products",
+      "description": "Keding Enterprises Co., Ltd. · Forest Products",
+      "change_pct": 4.012430938507983,
+      "session_open": 76.26970672607422,
+      "session_close": 76.26970672607422,
+      "session_volume": 47342.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:6655",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6655.TW/history/",
+        "date": "2018-07-06",
+        "daily_high": 76.26970672607422,
+        "prior_all_time_or_current_month_high": 76.26970672607422,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:6655",
+        "yahoo_symbol": "6655.TW"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-11-02T11:32:42.659942+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 2357,
+    "history_symbols": 1785,
+    "inactive_symbols": 562,
+    "failed_symbols": 10,
+    "coverage_ratio": 0.9944289693593314,
+    "coverage_by_exchange": {
+      "TWSE": {
+        "covered": 946,
+        "total": 953
+      },
+      "TPEX": {
+        "covered": 839,
+        "total": 842
+      }
+    },
+    "session_symbols": 1749,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-11-02T11:32:42.659942+00:00"
+}

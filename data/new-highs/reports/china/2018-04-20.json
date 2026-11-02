@@ -1,0 +1,271 @@
+{
+  "schema_version": 1,
+  "market": "china",
+  "date": "2018-04-20",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "603019.SS",
+      "name": "Dawning Information Industry Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Computer Processing Hardware",
+      "description": "Dawning Information Industry Co., Ltd. Class A · Computer Processing Hardware",
+      "change_pct": 0.8977300896459983,
+      "session_open": 28.8010196685791,
+      "session_close": 29.244897842407227,
+      "session_volume": 71855295.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:603019",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/603019.SS/history/",
+        "date": "2018-04-20",
+        "daily_high": 30.229591369628906,
+        "prior_all_time_or_current_month_high": 43.36479568481445,
+        "passes_close_filter": true,
+        "source_symbol": "SSE:603019",
+        "yahoo_symbol": "603019.SS"
+      }
+    },
+    {
+      "ticker": "603773.SS",
+      "name": "WG Tech (JiangXi) Group Co., LTD. Class A",
+      "exchange": "SSE",
+      "category": "Consumer Durables",
+      "high_type": "all_time",
+      "reason": "업종: Consumer Durables · Home Furnishings",
+      "description": "WG Tech (JiangXi) Group Co., LTD. Class A · Home Furnishings",
+      "change_pct": 10.008598519198353,
+      "session_open": 29.11697769165039,
+      "session_close": 29.11697769165039,
+      "session_volume": 585247.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:603773",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/603773.SS/history/",
+        "date": "2018-04-20",
+        "daily_high": 29.11697769165039,
+        "prior_all_time_or_current_month_high": 29.11697769165039,
+        "passes_close_filter": true,
+        "source_symbol": "SSE:603773",
+        "yahoo_symbol": "603773.SS"
+      }
+    },
+    {
+      "ticker": "603883.SS",
+      "name": "LBX Pharmacy Chain Joint Stock Company Class A",
+      "exchange": "SSE",
+      "category": "Retail Trade",
+      "high_type": "52_week",
+      "reason": "업종: Retail Trade · Drugstore Chains",
+      "description": "LBX Pharmacy Chain Joint Stock Company Class A · Drugstore Chains",
+      "change_pct": 0.17461363694499799,
+      "session_open": 31.191884994506836,
+      "session_close": 31.521554946899414,
+      "session_volume": 3852917.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:603883",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/603883.SS/history/",
+        "date": "2018-04-20",
+        "daily_high": 32.468299865722656,
+        "prior_all_time_or_current_month_high": 51.05241012573242,
+        "passes_close_filter": true,
+        "source_symbol": "SSE:603883",
+        "yahoo_symbol": "603883.SS"
+      }
+    },
+    {
+      "ticker": "002049.SZ",
+      "name": "Unigroup Guoxin Microelectronics Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Semiconductors",
+      "description": "Unigroup Guoxin Microelectronics Co., Ltd. Class A · Semiconductors",
+      "change_pct": 6.932700505252232,
+      "session_open": 38.221492767333984,
+      "session_close": 41.53578567504883,
+      "session_volume": 137277712.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002049",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002049.SZ/history/",
+        "date": "2018-04-20",
+        "daily_high": 42.67864227294922,
+        "prior_all_time_or_current_month_high": 52.35009002685547,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:002049",
+        "yahoo_symbol": "002049.SZ"
+      }
+    },
+    {
+      "ticker": "002815.SZ",
+      "name": "Suntak Technology Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Electronic Components",
+      "description": "Suntak Technology Co., Ltd. Class A · Electronic Components",
+      "change_pct": 4.986064135790458,
+      "session_open": 18.049999237060547,
+      "session_close": 18.844999313354492,
+      "session_volume": 17621826.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002815",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002815.SZ/history/",
+        "date": "2018-04-20",
+        "daily_high": 19.665000915527344,
+        "prior_all_time_or_current_month_high": 35.900001525878906,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:002815",
+        "yahoo_symbol": "002815.SZ"
+      }
+    },
+    {
+      "ticker": "002931.SZ",
+      "name": "Zhejiang Fenglong Electric Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Auto Parts: OEM",
+      "description": "Zhejiang Fenglong Electric Co., Ltd. Class A · Auto Parts: OEM",
+      "change_pct": 10.010490818015105,
+      "session_open": 18.741071701049805,
+      "session_close": 18.741071701049805,
+      "session_volume": 657139.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002931",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002931.SZ/history/",
+        "date": "2018-04-20",
+        "daily_high": 18.741071701049805,
+        "prior_all_time_or_current_month_high": 18.741071701049805,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:002931",
+        "yahoo_symbol": "002931.SZ"
+      }
+    },
+    {
+      "ticker": "300253.SZ",
+      "name": "Winning Health Technology Group Co.,Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Technology Services",
+      "high_type": "52_week",
+      "reason": "업종: Technology Services · Internet Software/Services",
+      "description": "Winning Health Technology Group Co.,Ltd. Class A · Internet Software/Services",
+      "change_pct": 0.9167338883252052,
+      "session_open": 10.038460731506348,
+      "session_close": 10.161538124084473,
+      "session_volume": 82054147.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:300253",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/300253.SZ/history/",
+        "date": "2018-04-20",
+        "daily_high": 10.523076057434082,
+        "prior_all_time_or_current_month_high": 29.20185089111328,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:300253",
+        "yahoo_symbol": "300253.SZ"
+      }
+    },
+    {
+      "ticker": "300326.SZ",
+      "name": "Shanghai Kinetic Medical Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Medical Specialties",
+      "description": "Shanghai Kinetic Medical Co., Ltd. Class A · Medical Specialties",
+      "change_pct": 0.7976064390418092,
+      "session_open": 10.0600004196167,
+      "session_close": 10.109999656677246,
+      "session_volume": 14787137.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:300326",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/300326.SZ/history/",
+        "date": "2018-04-20",
+        "daily_high": 10.399999618530273,
+        "prior_all_time_or_current_month_high": 27.378711700439453,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:300326",
+        "yahoo_symbol": "300326.SZ"
+      }
+    },
+    {
+      "ticker": "300634.SZ",
+      "name": "Richinfo Technology Co. Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Technology Services",
+      "high_type": "all_time",
+      "reason": "업종: Technology Services · Packaged Software",
+      "description": "Richinfo Technology Co. Ltd. Class A · Packaged Software",
+      "change_pct": 3.5474562224184325,
+      "session_open": 50.900001525878906,
+      "session_close": 54.0,
+      "session_volume": 28605952.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:300634",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/300634.SZ/history/",
+        "date": "2018-04-20",
+        "daily_high": 57.369998931884766,
+        "prior_all_time_or_current_month_high": 57.369998931884766,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:300634",
+        "yahoo_symbol": "300634.SZ"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-11-02T11:40:39.351428+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 5312,
+    "history_symbols": 3405,
+    "inactive_symbols": 1899,
+    "failed_symbols": 8,
+    "coverage_ratio": 0.9976560210958101,
+    "coverage_by_exchange": {
+      "SSE": {
+        "covered": 1388,
+        "total": 1390
+      },
+      "SZSE": {
+        "covered": 2017,
+        "total": 2023
+      }
+    },
+    "session_symbols": 3342,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-11-02T11:40:39.351428+00:00"
+}

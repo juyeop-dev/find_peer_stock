@@ -28,7 +28,7 @@ async function fetchJson<T>(path: string, signal?: AbortSignal): Promise<T> {
 
   try {
     const day = path.match(/^data\/(?:new-highs|turnover)\/[^/]+\/(?:\d{4}_\d{2}\/)?(\d{4}-\d{2}-\d{2})\.json$/)?.[1];
-    const compressed = day !== undefined && day < "2026-01-01";
+    const compressed = day !== undefined && day < "2026-07-01";
     const options = {
       cache: "no-store",
       signal: controller.signal,

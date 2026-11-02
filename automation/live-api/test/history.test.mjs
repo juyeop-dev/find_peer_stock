@@ -6,7 +6,7 @@ const frame = (m, p) => { const body = JSON.stringify({ m, p }); return `~m~${bo
 const yahoo = symbol => ({ chart: { result: [{ meta: { symbol, instrumentType: "EQUITY", currency: "USD", exchangeTimezoneName: "America/New_York", regularMarketPrice: 120,
   regularMarketTime: 1792177200, firstTradeDate: 345479400 }, timestamp: [1758211200, 1792177200], indicators: { quote: [{ close: [100, 120], volume: [10, 20] }] } }] } });
 
-test("history requests the exact Yahoo listing from at least January 2019 and two calendar years", async () => {
+test("history requests the exact Yahoo listing from at least January 2018 and two calendar years", async () => {
   const urls = [];
   const result = await history({ ticker: "AAPL" }, async url => { urls.push(url); return Response.json(yahoo("AAPL")); });
   assert.equal(result.ticker, "AAPL");

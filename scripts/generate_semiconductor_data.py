@@ -332,7 +332,10 @@ def publish(source_path: Path = SOURCE, output_path: Path = PUBLISHED,
     if not source.get("stocks"):
         raise RuntimeError(f"No semiconductor source data at {source_path}")
     now = now or datetime.now(tz=KST)
-    rows = [{**row} for row in source["stocks"]]
+    # Preservation curves remain in the durable source. The public view reads
+    # each stock's continuous primary history and never consumes these copies.
+    rows = [{key: value for key, value in row.items() if key != "prior_history_snapshots"}
+            for row in source["stocks"]]
     for row in rows:
         row["recent_financials"] = build_recent_financials(row.get("quarterly_financials", []), row.get("annual_financials", []))
     with ThreadPoolExecutor(max_workers=8) as pool:

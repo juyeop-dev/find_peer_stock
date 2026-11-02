@@ -1,0 +1,296 @@
+{
+  "schema_version": 1,
+  "market": "china",
+  "date": "2018-12-05",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "600027.SS",
+      "name": "Huadian Power International Corp. Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Utilities",
+      "high_type": "52_week",
+      "reason": "업종: Utilities · Electric Utilities",
+      "description": "Huadian Power International Corp. Ltd. Class A · Electric Utilities",
+      "change_pct": 0.42195060610632495,
+      "session_open": 4.699999809265137,
+      "session_close": 4.760000228881836,
+      "session_volume": 21642484.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:600027",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/600027.SS/history/",
+        "date": "2018-12-05",
+        "daily_high": 4.769999980926514,
+        "prior_all_time_or_current_month_high": 12.279999732971191,
+        "passes_close_filter": true,
+        "source_symbol": "SSE:600027",
+        "yahoo_symbol": "600027.SS"
+      }
+    },
+    {
+      "ticker": "603826.SS",
+      "name": "Fujian Kuncai Material Technology Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Process Industries",
+      "high_type": "52_week",
+      "reason": "업종: Process Industries · Chemicals: Specialty",
+      "description": "Fujian Kuncai Material Technology Co., Ltd. Class A · Chemicals: Specialty",
+      "change_pct": 2.110817911743723,
+      "session_open": 8.230769157409668,
+      "session_close": 8.505494117736816,
+      "session_volume": 11189911.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:603826",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/603826.SS/history/",
+        "date": "2018-12-05",
+        "daily_high": 8.549449920654297,
+        "prior_all_time_or_current_month_high": 12.037193298339844,
+        "passes_close_filter": true,
+        "source_symbol": "SSE:603826",
+        "yahoo_symbol": "603826.SS"
+      }
+    },
+    {
+      "ticker": "000739.SZ",
+      "name": "Apeloa Pharmaceutical Co. Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Pharmaceuticals: Major",
+      "description": "Apeloa Pharmaceutical Co. Ltd. Class A · Pharmaceuticals: Major",
+      "change_pct": 3.0405349167763385,
+      "session_open": 8.729999542236328,
+      "session_close": 9.149999618530273,
+      "session_volume": 17120243.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:000739",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/000739.SZ/history/",
+        "date": "2018-12-05",
+        "daily_high": 9.180000305175781,
+        "prior_all_time_or_current_month_high": 14.649999618530273,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:000739",
+        "yahoo_symbol": "000739.SZ"
+      }
+    },
+    {
+      "ticker": "002007.SZ",
+      "name": "Hualan Biological Engineering Inc. Class A",
+      "exchange": "SZSE",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Biotechnology",
+      "description": "Hualan Biological Engineering Inc. Class A · Biotechnology",
+      "change_pct": 1.765003055833736,
+      "session_open": 20.11281967163086,
+      "session_close": 20.69743537902832,
+      "session_volume": 30817827.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002007",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002007.SZ/history/",
+        "date": "2018-12-05",
+        "daily_high": 20.769229888916016,
+        "prior_all_time_or_current_month_high": 21.951923370361328,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:002007",
+        "yahoo_symbol": "002007.SZ"
+      }
+    },
+    {
+      "ticker": "002124.SZ",
+      "name": "Tech-bank Food Co., Ltd.",
+      "exchange": "SZSE",
+      "category": "Process Industries",
+      "high_type": "52_week",
+      "reason": "업종: Process Industries · Agricultural Commodities/Milling",
+      "description": "Tech-bank Food Co., Ltd. · Agricultural Commodities/Milling",
+      "change_pct": 4.294475072785331,
+      "session_open": 4.5428571701049805,
+      "session_close": 4.857141971588135,
+      "session_volume": 30678607.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002124",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002124.SZ/history/",
+        "date": "2018-12-05",
+        "daily_high": 4.921428203582764,
+        "prior_all_time_or_current_month_high": 7.461904048919678,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:002124",
+        "yahoo_symbol": "002124.SZ"
+      }
+    },
+    {
+      "ticker": "002941.SZ",
+      "name": "Xinjiang Communications Construction Group Co. Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Industrial Services",
+      "high_type": "all_time",
+      "reason": "업종: Industrial Services · Engineering & Construction",
+      "description": "Xinjiang Communications Construction Group Co. Ltd. Class A · Engineering & Construction",
+      "change_pct": 9.973574907304927,
+      "session_open": 16.649999618530273,
+      "session_close": 16.649999618530273,
+      "session_volume": 461077.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002941",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002941.SZ/history/",
+        "date": "2018-12-05",
+        "daily_high": 16.649999618530273,
+        "prior_all_time_or_current_month_high": 16.649999618530273,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:002941",
+        "yahoo_symbol": "002941.SZ"
+      }
+    },
+    {
+      "ticker": "002942.SZ",
+      "name": "Zhejiang XinNong Chemical Co. Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Process Industries",
+      "high_type": "all_time",
+      "reason": "업종: Process Industries · Chemicals: Agricultural",
+      "description": "Zhejiang XinNong Chemical Co. Ltd. Class A · Chemicals: Agricultural",
+      "change_pct": 0.0,
+      "session_open": 13.230769157409668,
+      "session_close": 15.876922607421875,
+      "session_volume": 59009.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002942",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002942.SZ/history/",
+        "date": "2018-12-05",
+        "daily_high": 15.876922607421875,
+        "prior_all_time_or_current_month_high": 15.876922607421875,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:002942",
+        "yahoo_symbol": "002942.SZ"
+      }
+    },
+    {
+      "ticker": "002943.SZ",
+      "name": "Hunan Yujing Machinery Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Industrial Machinery",
+      "description": "Hunan Yujing Machinery Co., Ltd. Class A · Industrial Machinery",
+      "change_pct": 10.011843344630522,
+      "session_open": 16.904869079589844,
+      "session_close": 16.904869079589844,
+      "session_volume": 271626.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002943",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002943.SZ/history/",
+        "date": "2018-12-05",
+        "daily_high": 16.904869079589844,
+        "prior_all_time_or_current_month_high": 16.904869079589844,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:002943",
+        "yahoo_symbol": "002943.SZ"
+      }
+    },
+    {
+      "ticker": "300001.SZ",
+      "name": "Qingdao TGOOD Electric Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Electrical Products",
+      "description": "Qingdao TGOOD Electric Co., Ltd. Class A · Electrical Products",
+      "change_pct": 1.8923695902527848,
+      "session_open": 16.75,
+      "session_close": 17.229999542236328,
+      "session_volume": 9465935.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:300001",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/300001.SZ/history/",
+        "date": "2018-12-05",
+        "daily_high": 17.25,
+        "prior_all_time_or_current_month_high": 34.990909576416016,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:300001",
+        "yahoo_symbol": "300001.SZ"
+      }
+    },
+    {
+      "ticker": "300752.SZ",
+      "name": "Shenzhen Longli Technology Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Electronic Production Equipment",
+      "description": "Shenzhen Longli Technology Co., Ltd. Class A · Electronic Production Equipment",
+      "change_pct": 10.008252176592624,
+      "session_open": 11.163511276245117,
+      "session_close": 11.163511276245117,
+      "session_volume": 52684.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:300752",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/300752.SZ/history/",
+        "date": "2018-12-05",
+        "daily_high": 11.163511276245117,
+        "prior_all_time_or_current_month_high": 11.163511276245117,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:300752",
+        "yahoo_symbol": "300752.SZ"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-11-02T11:40:39.351428+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 5312,
+    "history_symbols": 3405,
+    "inactive_symbols": 1899,
+    "failed_symbols": 8,
+    "coverage_ratio": 0.9976560210958101,
+    "coverage_by_exchange": {
+      "SSE": {
+        "covered": 1388,
+        "total": 1390
+      },
+      "SZSE": {
+        "covered": 2017,
+        "total": 2023
+      }
+    },
+    "session_symbols": 3402,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-11-02T11:40:39.351428+00:00"
+}

@@ -1,0 +1,121 @@
+{
+  "schema_version": 1,
+  "market": "china",
+  "date": "2018-09-12",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "601068.SS",
+      "name": "China Aluminum International Engineering Corporation Limited Class A",
+      "exchange": "SSE",
+      "category": "Industrial Services",
+      "high_type": "all_time",
+      "reason": "업종: Industrial Services · Engineering & Construction",
+      "description": "China Aluminum International Engineering Corporation Limited Class A · Engineering & Construction",
+      "change_pct": 0.0,
+      "session_open": 10.149999618530273,
+      "session_close": 10.65999984741211,
+      "session_volume": 216338746.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:601068",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/601068.SS/history/",
+        "date": "2018-09-12",
+        "daily_high": 10.65999984741211,
+        "prior_all_time_or_current_month_high": 10.65999984741211,
+        "passes_close_filter": true,
+        "source_symbol": "SSE:601068",
+        "yahoo_symbol": "601068.SS"
+      }
+    },
+    {
+      "ticker": "900910.SS",
+      "name": "Shanghai Highly (Group) Co., Ltd. Class B",
+      "exchange": "SSE",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Industrial Machinery",
+      "description": "Shanghai Highly (Group) Co., Ltd. Class B · Industrial Machinery",
+      "change_pct": 1.4432987790265361,
+      "session_open": 0.9679999947547913,
+      "session_close": 0.984000027179718,
+      "session_volume": 1769397.0,
+      "currency": "USD",
+      "source_symbol": "SSE:900910",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/900910.SS/history/",
+        "date": "2018-09-12",
+        "daily_high": 0.9879999756813049,
+        "prior_all_time_or_current_month_high": 1.1390000581741333,
+        "passes_close_filter": true,
+        "source_symbol": "SSE:900910",
+        "yahoo_symbol": "900910.SS"
+      }
+    },
+    {
+      "ticker": "002935.SZ",
+      "name": "Chengdu Spaceon Electronics Co. Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Telecommunications Equipment",
+      "description": "Chengdu Spaceon Electronics Co. Ltd. Class A · Telecommunications Equipment",
+      "change_pct": 10.00808952478598,
+      "session_open": 13.758660316467285,
+      "session_close": 13.758660316467285,
+      "session_volume": 670747.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002935",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002935.SZ/history/",
+        "date": "2018-09-12",
+        "daily_high": 13.758660316467285,
+        "prior_all_time_or_current_month_high": 13.758660316467285,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:002935",
+        "yahoo_symbol": "002935.SZ"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-11-02T11:40:39.351428+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 5312,
+    "history_symbols": 3405,
+    "inactive_symbols": 1899,
+    "failed_symbols": 8,
+    "coverage_ratio": 0.9976560210958101,
+    "coverage_by_exchange": {
+      "SSE": {
+        "covered": 1388,
+        "total": 1390
+      },
+      "SZSE": {
+        "covered": 2017,
+        "total": 2023
+      }
+    },
+    "session_symbols": 3378,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-11-02T11:40:39.351428+00:00"
+}
