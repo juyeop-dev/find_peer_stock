@@ -85,6 +85,7 @@ try {
     await until(() => evaluate("Boolean(document.querySelector('.stockHistoryChart .semiChart')) && document.querySelectorAll('.stockInformationPanel table').length >= 2"), `${route} did not load both daily prices and reported financials`);
     assert.equal(await evaluate("document.querySelector('.stockHistoryChart .semiPeriodTabs .active').innerText"),"1년");
     await evaluate("[...document.querySelectorAll('.stockHistoryChart .semiPeriodTabs button')].find(button=>button.innerText==='2018년~').click()");
+    await until(() => evaluate("(() => {const label=document.querySelector('.stockHistoryChart .semiChart')?.getAttribute('aria-label') ?? '';const dates=label.match(/\\d{4}-\\d{2}-\\d{2}/g);return dates?.length === 2 && dates[0] <= '2018-01-01';})()"), `${route} historical chart did not finish loading`);
     const info = await evaluate("({title:document.querySelector('h1').innerText,range:document.querySelector('.stockHistoryChart .semiChart').getAttribute('aria-label'),financials:document.querySelector('.stockInformationPanel').innerText.includes('2018-')})");
     const dates = info.range.match(/\d{4}-\d{2}-\d{2}/g);
     assert.equal(dates.length,2);assert.ok(dates[0] <= "2018-01-01",JSON.stringify(info));
