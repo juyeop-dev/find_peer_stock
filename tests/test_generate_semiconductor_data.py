@@ -100,7 +100,7 @@ class SemiconductorDataTests(unittest.TestCase):
         seeds = semis.classified_seeds()
         groups = json.loads(semis.CATEGORIES.read_text(encoding="utf-8"))
         image_tickers = {ticker for group in groups for ticker in group["image"]}
-        self.assertEqual((len(seeds), len(groups), len(image_tickers)), (102, 28, 65))
+        self.assertEqual((len(seeds), len(groups), len(image_tickers)), (114, 66, 65))
         self.assertEqual(sum(bool(group["image"]) for group in groups), 19)
         by_ticker = {seed["ticker"]: seed for seed in seeds}
         self.assertEqual({item["minor"] for item in by_ticker["005930.KS"]["classifications"]},
@@ -127,6 +127,51 @@ class SemiconductorDataTests(unittest.TestCase):
             self.assertTrue(all(review["window"]["start"] <= date <= review["window"]["end"]
                                 for date in row["new_high_dates"]))
             self.assertTrue(row["new_high_dates"])
+
+    def test_process_review_resolves_old_names_and_business_transfers(self) -> None:
+        seeds = {row["ticker"]: row for row in semis.classified_seeds()}
+        review = json.loads((semis.ROOT / "data/semiconductor/reviews/2026-11-02-process-image.json").read_text(encoding="utf-8"))
+        for row in review["additions"]:
+            self.assertTrue(seeds[row["ticker"]]["business_summary"])
+            self.assertTrue(seeds[row["ticker"]]["business_sources"])
+        for row in review["name_changes"]:
+            self.assertIn(row["original"], seeds[row["ticker"]]["aliases"])
+        groups = {row["minor"]: set(row["members"]) for row in review["processes"]}
+        self.assertEqual(groups["감광액 · PR"], {"005290.KQ"})
+        self.assertIn("200470.KQ", groups["OSAT 패키징"])
+        self.assertNotIn("089530.KQ", seeds)  # Delisted AT Semicon, not ITEK.
+        self.assertNotIn("119830.KQ", seeds)
+        self.assertNotIn("011780.KS", seeds)  # Kumho's PR business was sold.
+        self.assertNotIn("011790.KS", groups["CMP 슬러리"])
+        self.assertIn("317330.KQ", groups["증착 전구체 · Precursor"])
+        self.assertNotIn("317330.KQ", groups["증착용 특수가스"])
+
+    def test_process_migration_preserves_observations_and_prior_snapshots(self) -> None:
+        from update_semiconductor_process_image import reclassify
+        original = {"ticker": "A", "name": "Old", "history": [{"date": "2018-01-02", "close": 123}],
+                    "quote": {"price": 456, "fetched_at": "2026-10-29"},
+                    "annual_financials": [{"period": "2018", "revenue": 789}],
+                    "prior_history_snapshots": [{"history": [{"date": "2017-12-20", "close": 100}]}]}
+        payload = {"generated_at": "2026-10-29", "stocks": [original]}
+        seeds = [{"ticker": "A", "name": "New", "aliases": ["Old"], "classifications": [{"minor": "ALD"}]},
+                 {"ticker": "B", "name": "Added"}]
+        result = reclassify(payload, seeds, {"B": {"ticker": "B", "history": [{"date": "2018-01-02", "close": 10}]}})
+        for key in ("history", "quote", "annual_financials", "prior_history_snapshots"):
+            self.assertEqual(result["stocks"][0][key], original[key])
+        self.assertEqual(result["generated_at"], payload["generated_at"])
+        self.assertEqual(result["stocks"][0]["aliases"], ["Old"])
+        self.assertEqual(original["name"], "Old")
+
+    def test_history_request_starts_before_2018(self) -> None:
+        import urllib.parse
+        def check_request(url):
+            query = urllib.parse.parse_qs(urllib.parse.urlsplit(url).query)
+            start = datetime.fromtimestamp(int(query["period1"][0]), tz=semis.KST)
+            self.assertLess(start, datetime(2018, 1, 1, tzinfo=semis.KST))
+            return {"chart": {"result": [{"timestamp": [1514851200, 1514937600], "indicators": {
+                "quote": [{"close": [100, 101], "volume": [10, 20]}]}}]}}
+        with patch.object(semis, "fetch_json", side_effect=check_request):
+            self.assertEqual(len(semis.fetch_history("265520.KQ")), 2)
 
     def test_publish_preserves_last_close_when_live_quote_fails(self) -> None:
         with tempfile.TemporaryDirectory() as temp:

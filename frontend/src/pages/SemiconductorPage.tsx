@@ -5,6 +5,7 @@ import { ErrorNotice } from "../components/ErrorNotice";
 import { LoadingSpinner } from "../components/LoadingSpinner";
 import { RecentFinancialCells } from "../components/RecentFinancials";
 import { SemiconductorSummaryStrip } from "../components/SemiconductorSummaryStrip";
+import { SemiconductorClassificationReview } from "../components/SemiconductorClassificationReview";
 import { effectiveHistory, formatPercent, formatWon, parseMarketCapWon, PERIODS, priceOnDate, stockReturn } from "../dataClient/semiconductorMath";
 import type { Period } from "../dataClient/semiconductorMath";
 import { stockClassifications } from "../dataClient/semiconductorTypes";
@@ -52,7 +53,7 @@ export function SemiconductorPage() {
   const visible = useMemo(() => stocks.filter((stock) =>
     stockClassifications(stock).some((item) => matchesClassification(item, major, middle, minor)) &&
     (!market || stock.market === market) &&
-    (!query || `${stock.name} ${stock.code} ${stockClassifications(stock).map((item) => item.minor).join(" ")}`.toLowerCase().includes(query.toLowerCase()))
+    (!query || `${stock.name} ${(stock.aliases ?? []).join(" ")} ${stock.code} ${stockClassifications(stock).map((item) => item.minor).join(" ")}`.toLowerCase().includes(query.toLowerCase()))
   ), [stocks, major, middle, minor, market, query]);
   const rows = useMemo(() => visible.map((stock) => {
     const point = date === "latest" ? effectiveHistory(stock).at(-1) : priceOnDate(stock, date);
@@ -96,6 +97,7 @@ export function SemiconductorPage() {
     {loading && <LoadingSpinner />}{error && <ErrorNotice message={error} />}
     {data && <>
       <SemiconductorSummaryStrip data={data} />
+      <SemiconductorClassificationReview review={data.classification_review} />
       <section className="semiPanel semiFilterPanel" aria-label="종목 필터">
         <div className="semiPanelHeading"><h2>섹터 탐색</h2><p>이미지의 산업 구조에 기업 사업 자료로 확인한 종목과 연관 사업을 추가했습니다. 한 종목이 여러 분류에 포함될 수 있습니다.</p></div>
         <div className="semiFilters">
@@ -114,7 +116,7 @@ export function SemiconductorPage() {
           <label>날짜<select value={date} onChange={(event) => setDate(event.target.value)}>
             <option value="latest">현재가</option>{dates.map((item) => <option key={item} value={item}>{item}</option>)}
           </select></label>
-          <label className="semiSearch">종목 검색<input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="종목명 또는 코드" /></label>
+          <label className="semiSearch">종목 검색<input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="현재·과거 종목명 또는 코드" /></label>
         </div>
       </section>
       <section className="semiPanel">

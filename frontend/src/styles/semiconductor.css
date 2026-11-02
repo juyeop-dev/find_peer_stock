@@ -117,6 +117,10 @@ body:has(.semiPage) { min-width: 320px; background: #f3f6f8; }
 .semiBusinessPanel > p { margin: 0; line-height: 1.75; font-size: 14px; color: #415c6a; }
 .semiBusinessSources { display: flex; flex-wrap: wrap; gap: 8px 18px; margin-top: 12px; font-size: 12px; }
 .semiBusinessSources a { color: #17667b; text-decoration: underline; }
+.semiClassificationReview { color: #415c6a; font-size: 13px; line-height: 1.75; overflow-wrap: anywhere; }
+.semiClassificationReview summary { color: #244f60; font-weight: 700; cursor: pointer; }
+.semiClassificationReview a { color: #17667b; text-decoration: underline; }
+.semiClassificationReview li { margin-bottom: 10px; }
 .creditSummaryStrip > button { min-height: 102px; padding: 17px 20px; border: 1px solid #dce5e9; border-radius: 10px; background: #fff; color: inherit; text-align: left; cursor: pointer; }
 .creditSummaryStrip > button.active { border-color: #69a7b3; background: #f1fafb; box-shadow: 0 0 0 2px #a4d4d742; }
 .creditSummaryStrip > button:hover { border-color: #69a7b3; }

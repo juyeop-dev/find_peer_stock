@@ -69,7 +69,14 @@
       "160980.KQ",
       "083310.KQ",
       "029460.KS",
-      "348210.KQ"
+      "348210.KQ",
+      "265520.KQ",
+      "187870.KQ",
+      "036200.KQ",
+      "083450.KQ",
+      "241790.KQ",
+      "045100.KQ",
+      "030530.KQ"
     ]
   },
   {
@@ -87,7 +94,10 @@
     ],
     "additional": [
       "102710.KQ",
-      "017890.KQ"
+      "017890.KQ",
+      "241790.KQ",
+      "092070.KQ",
+      "101490.KQ"
     ]
   },
   {
@@ -106,7 +116,10 @@
       "036810.KQ",
       "144960.KQ",
       "159010.KQ",
-      "105740.KQ"
+      "105740.KQ",
+      "059090.KQ",
+      "114810.KQ",
+      "256630.KQ"
     ]
   },
   {
@@ -174,7 +187,9 @@
     "middle": "부품·소재",
     "minor": "패키징 소재",
     "image": [],
-    "additional": ["077360.KQ"]
+    "additional": [
+      "077360.KQ"
+    ]
   },
   {
     "major": "PCB·패키지 기판",
@@ -189,7 +204,9 @@
       "356860.KQ",
       "007660.KS"
     ],
-    "additional": ["219130.KQ"]
+    "additional": [
+      "219130.KQ"
+    ]
   },
   {
     "major": "핵심 연관 테마",
@@ -201,7 +218,10 @@
       "042700.KS",
       "089030.KQ"
     ],
-    "additional": ["031980.KQ", "217190.KQ"]
+    "additional": [
+      "031980.KQ",
+      "217190.KQ"
+    ]
   },
   {
     "major": "핵심 연관 테마",
@@ -213,7 +233,10 @@
       "353200.KS",
       "222800.KQ"
     ],
-    "additional": ["031980.KQ", "217190.KQ"]
+    "additional": [
+      "031980.KQ",
+      "217190.KQ"
+    ]
   },
   {
     "major": "핵심 연관 테마",
@@ -292,55 +315,500 @@
     "middle": "유통",
     "minor": "반도체 유통·솔루션",
     "image": [],
-    "additional": ["077500.KS"]
+    "additional": [
+      "077500.KS"
+    ]
   },
   {
     "major": "핵심 연관 테마",
     "middle": "모듈",
     "minor": "메모리 모듈",
     "image": [],
-    "additional": ["192650.KS"]
+    "additional": [
+      "192650.KS"
+    ]
   },
   {
     "major": "핵심 연관 테마",
     "middle": "장비개발",
     "minor": "반도체 장비 개발",
     "image": [],
-    "additional": ["141000.KQ"]
+    "additional": [
+      "141000.KQ"
+    ]
   },
   {
     "major": "핵심 연관 테마",
     "middle": "검사·계측",
     "minor": "검사·계측 장비",
     "image": [],
-    "additional": ["348210.KQ", "168360.KQ", "064290.KQ", "098460.KQ"]
+    "additional": [
+      "348210.KQ",
+      "168360.KQ",
+      "064290.KQ",
+      "098460.KQ"
+    ]
   },
   {
     "major": "핵심 연관 테마",
     "middle": "테스트",
     "minor": "테스트 장비",
     "image": [],
-    "additional": ["003160.KS", "086390.KQ", "253590.KQ", "232140.KQ"]
+    "additional": [
+      "003160.KS",
+      "086390.KQ",
+      "253590.KQ",
+      "232140.KQ"
+    ]
   },
   {
     "major": "핵심 연관 테마",
     "middle": "테스트",
     "minor": "테스트 부품",
     "image": [],
-    "additional": ["425420.KQ", "095340.KQ"]
+    "additional": [
+      "425420.KQ",
+      "095340.KQ"
+    ]
   },
   {
     "major": "핵심 연관 테마",
     "middle": "패키징",
     "minor": "OSAT",
     "image": [],
-    "additional": ["200470.KQ", "036540.KQ"]
+    "additional": [
+      "200470.KQ",
+      "036540.KQ"
+    ]
   },
   {
     "major": "핵심 연관 테마",
     "middle": "패키징",
     "minor": "패키징 장비",
     "image": [],
-    "additional": ["039440.KQ", "039030.KQ"]
+    "additional": [
+      "039440.KQ",
+      "039030.KQ"
+    ]
+  },
+  {
+    "major": "전공정 소부장",
+    "middle": "장비",
+    "minor": "산화·열처리 · RTP·확산",
+    "image": [],
+    "additional": [
+      "265520.KQ",
+      "240810.KQ"
+    ],
+    "source": "2026-11-02-process-image"
+  },
+  {
+    "major": "전공정 소부장",
+    "middle": "장비",
+    "minor": "건식 세정 · Dry Cleaning",
+    "image": [],
+    "additional": [
+      "319660.KQ"
+    ],
+    "source": "2026-11-02-process-image"
+  },
+  {
+    "major": "전공정 소부장",
+    "middle": "장비",
+    "minor": "증착 · LPCVD",
+    "image": [],
+    "additional": [
+      "084370.KQ"
+    ],
+    "source": "2026-11-02-process-image"
+  },
+  {
+    "major": "전공정 소부장",
+    "middle": "장비",
+    "minor": "증착 · PECVD",
+    "image": [],
+    "additional": [
+      "240810.KQ",
+      "095610.KQ",
+      "036930.KQ"
+    ],
+    "source": "2026-11-02-process-image"
+  },
+  {
+    "major": "전공정 소부장",
+    "middle": "장비",
+    "minor": "증착 · ALD",
+    "image": [],
+    "additional": [
+      "240810.KQ",
+      "084370.KQ",
+      "036930.KQ"
+    ],
+    "source": "2026-11-02-process-image"
+  },
+  {
+    "major": "전공정 소부장",
+    "middle": "장비",
+    "minor": "연마 · CMP 장비",
+    "image": [],
+    "additional": [
+      "281820.KS"
+    ],
+    "source": "2026-11-02-process-image"
+  },
+  {
+    "major": "전공정 소부장",
+    "middle": "장비",
+    "minor": "웨이퍼 에지 세정",
+    "image": [],
+    "additional": [
+      "319660.KQ"
+    ],
+    "source": "2026-11-02-process-image"
+  },
+  {
+    "major": "전공정 소부장",
+    "middle": "장비",
+    "minor": "FOUP 세정",
+    "image": [],
+    "additional": [
+      "187870.KQ"
+    ],
+    "source": "2026-11-02-process-image"
+  },
+  {
+    "major": "전공정 소부장",
+    "middle": "장비",
+    "minor": "PR Strip · 감광액 제거",
+    "image": [],
+    "additional": [
+      "319660.KQ"
+    ],
+    "source": "2026-11-02-process-image"
+  },
+  {
+    "major": "전공정 소부장",
+    "middle": "장비",
+    "minor": "건식 식각 · Dry Etcher",
+    "image": [],
+    "additional": [
+      "089970.KQ"
+    ],
+    "source": "2026-11-02-process-image"
+  },
+  {
+    "major": "전공정 소부장",
+    "middle": "장비",
+    "minor": "진공펌프",
+    "image": [],
+    "additional": [
+      "083310.KQ"
+    ],
+    "source": "2026-11-02-process-image"
+  },
+  {
+    "major": "전공정 소부장",
+    "middle": "장비",
+    "minor": "칠러·스크러버",
+    "image": [],
+    "additional": [
+      "036200.KQ",
+      "083450.KQ",
+      "036810.KQ"
+    ],
+    "source": "2026-11-02-process-image"
+  },
+  {
+    "major": "전공정 소부장",
+    "middle": "장비",
+    "minor": "웨이퍼 이송",
+    "image": [],
+    "additional": [
+      "160980.KQ"
+    ],
+    "source": "2026-11-02-process-image"
+  },
+  {
+    "major": "전공정 소부장",
+    "middle": "장비",
+    "minor": "약액 공급 · CCSS",
+    "image": [],
+    "additional": [
+      "039440.KQ",
+      "241790.KQ",
+      "045100.KQ"
+    ],
+    "source": "2026-11-02-process-image"
+  },
+  {
+    "major": "전공정 소부장",
+    "middle": "장비",
+    "minor": "가스 공급·배관 설비",
+    "image": [],
+    "additional": [
+      "030530.KQ"
+    ],
+    "source": "2026-11-02-process-image"
+  },
+  {
+    "major": "전공정 소부장",
+    "middle": "장비",
+    "minor": "원격 플라즈마 · RPS",
+    "image": [],
+    "additional": [
+      "144960.KQ"
+    ],
+    "source": "2026-11-02-process-image"
+  },
+  {
+    "major": "전공정 소부장",
+    "middle": "소재",
+    "minor": "증착 전구체 · Precursor",
+    "image": [],
+    "additional": [
+      "092070.KQ",
+      "104830.KQ",
+      "014680.KS",
+      "317330.KQ",
+      "241790.KQ"
+    ],
+    "source": "2026-11-02-process-image"
+  },
+  {
+    "major": "전공정 소부장",
+    "middle": "소재",
+    "minor": "증착용 특수가스",
+    "image": [],
+    "additional": [
+      "241790.KQ",
+      "104830.KQ"
+    ],
+    "source": "2026-11-02-process-image"
+  },
+  {
+    "major": "전공정 소부장",
+    "middle": "부품·세정·코팅",
+    "minor": "실리콘·쿼츠 부품",
+    "image": [],
+    "additional": [
+      "074600.KQ",
+      "101160.KQ",
+      "166090.KQ"
+    ],
+    "source": "2026-11-02-process-image"
+  },
+  {
+    "major": "전공정 소부장",
+    "middle": "부품·세정·코팅",
+    "minor": "세라믹 히터·ESC (계열사 포함)",
+    "image": [],
+    "additional": [
+      "059090.KQ"
+    ],
+    "source": "2026-11-02-process-image"
+  },
+  {
+    "major": "전공정 소부장",
+    "middle": "소재",
+    "minor": "CMP 슬러리",
+    "image": [],
+    "additional": [
+      "281820.KS",
+      "357780.KQ"
+    ],
+    "source": "2026-11-02-process-image"
+  },
+  {
+    "major": "전공정 소부장",
+    "middle": "소재",
+    "minor": "세정용 화학소재",
+    "image": [],
+    "additional": [
+      "014680.KS",
+      "104830.KQ"
+    ],
+    "source": "2026-11-02-process-image"
+  },
+  {
+    "major": "전공정 소부장",
+    "middle": "부품·세정·코팅",
+    "minor": "부품 세정·코팅·표면처리",
+    "image": [],
+    "additional": [
+      "183300.KQ",
+      "114810.KQ",
+      "074600.KQ",
+      "256630.KQ"
+    ],
+    "source": "2026-11-02-process-image"
+  },
+  {
+    "major": "전공정 소부장",
+    "middle": "소재",
+    "minor": "감광액 · PR",
+    "image": [],
+    "additional": [
+      "005290.KQ"
+    ],
+    "source": "2026-11-02-process-image"
+  },
+  {
+    "major": "전공정 소부장",
+    "middle": "소재",
+    "minor": "PR 원재료",
+    "image": [],
+    "additional": [
+      "102710.KQ"
+    ],
+    "source": "2026-11-02-process-image"
+  },
+  {
+    "major": "전공정 소부장",
+    "middle": "소재",
+    "minor": "블랭크 마스크",
+    "image": [],
+    "additional": [
+      "101490.KQ"
+    ],
+    "source": "2026-11-02-process-image"
+  },
+  {
+    "major": "전공정 소부장",
+    "middle": "소재",
+    "minor": "펠리클",
+    "image": [],
+    "additional": [
+      "036810.KQ",
+      "101490.KQ"
+    ],
+    "source": "2026-11-02-process-image"
+  },
+  {
+    "major": "전공정 소부장",
+    "middle": "부품·세정·코팅",
+    "minor": "SiC 링",
+    "image": [],
+    "additional": [
+      "064760.KQ",
+      "166090.KQ",
+      "272110.KQ"
+    ],
+    "source": "2026-11-02-process-image"
+  },
+  {
+    "major": "전공정 소부장",
+    "middle": "소재",
+    "minor": "식각용 특수가스",
+    "image": [],
+    "additional": [
+      "104830.KQ",
+      "093370.KS"
+    ],
+    "source": "2026-11-02-process-image"
+  },
+  {
+    "major": "전공정 소부장",
+    "middle": "소재",
+    "minor": "습식 식각액 · Etchant",
+    "image": [],
+    "additional": [
+      "357780.KQ",
+      "102710.KQ"
+    ],
+    "source": "2026-11-02-process-image"
+  },
+  {
+    "major": "전공정 소부장",
+    "middle": "장비",
+    "minor": "레이저 어닐링",
+    "image": [],
+    "additional": [
+      "039030.KQ"
+    ],
+    "source": "2026-11-02-process-image"
+  },
+  {
+    "major": "후공정 소부장",
+    "middle": "장비·검사",
+    "minor": "웨이퍼 테스트",
+    "image": [],
+    "additional": [
+      "232140.KQ"
+    ],
+    "source": "2026-11-02-process-image"
+  },
+  {
+    "major": "후공정 소부장",
+    "middle": "장비·검사",
+    "minor": "레이저 다이싱",
+    "image": [],
+    "additional": [
+      "039030.KQ"
+    ],
+    "source": "2026-11-02-process-image"
+  },
+  {
+    "major": "후공정 소부장",
+    "middle": "장비·검사",
+    "minor": "비전·플레이스먼트·본더",
+    "image": [],
+    "additional": [
+      "042700.KS"
+    ],
+    "source": "2026-11-02-process-image"
+  },
+  {
+    "major": "후공정 소부장",
+    "middle": "서비스",
+    "minor": "OSAT 패키징",
+    "image": [],
+    "additional": [
+      "033640.KQ",
+      "067310.KQ",
+      "036540.KQ",
+      "097800.KQ",
+      "200470.KQ"
+    ],
+    "source": "2026-11-02-process-image"
+  },
+  {
+    "major": "후공정 소부장",
+    "middle": "부품·소재",
+    "minor": "검사 핀·소켓",
+    "image": [],
+    "additional": [
+      "058470.KQ",
+      "095340.KQ",
+      "131290.KQ"
+    ],
+    "source": "2026-11-02-process-image"
+  },
+  {
+    "major": "후공정 소부장",
+    "middle": "장비·검사",
+    "minor": "테스터·핸들러·프로버",
+    "image": [],
+    "additional": [
+      "086390.KQ",
+      "089030.KQ",
+      "092870.KQ"
+    ],
+    "source": "2026-11-02-process-image"
+  },
+  {
+    "major": "후공정 소부장",
+    "middle": "서비스",
+    "minor": "OSAT 테스트",
+    "image": [],
+    "additional": [
+      "033640.KQ",
+      "131970.KQ",
+      "061970.KQ",
+      "036540.KQ",
+      "067310.KQ",
+      "200470.KQ",
+      "097800.KQ"
+    ],
+    "source": "2026-11-02-process-image"
   }
 ]

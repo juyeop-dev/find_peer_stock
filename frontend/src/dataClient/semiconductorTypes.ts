@@ -45,6 +45,7 @@ export interface SemiconductorStock {
   ticker: string;
   code: string;
   name: string;
+  aliases?: string[];
   business_summary?: string;
   business_sources?: { label: string; url: string }[];
   market: "KOSPI" | "KOSDAQ";
@@ -74,5 +75,12 @@ export interface SemiconductorData {
   financial_unit: string;
   coverage: "curated";
   categories?: SemiconductorClassification[];
+  classification_review?: {
+    reviewed_at: string;
+    summary: string;
+    name_changes: { original: string; current: string; ticker: string }[];
+    exceptions: { original: string; image_role: string; note: string; sources?: { label: string; url: string }[] }[];
+    notes: string[];
+  } | null;
   stocks: SemiconductorStock[];
 }

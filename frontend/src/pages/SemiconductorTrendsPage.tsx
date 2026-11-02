@@ -2,6 +2,7 @@ import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { SemiconductorLineChart } from "../components/SemiconductorLineChart";
 import { SemiconductorSummaryStrip } from "../components/SemiconductorSummaryStrip";
+import { SemiconductorClassificationReview } from "../components/SemiconductorClassificationReview";
 import { DataRefreshStatus } from "../components/DataRefreshStatus";
 import { ErrorNotice } from "../components/ErrorNotice";
 import { LoadingSpinner } from "../components/LoadingSpinner";
@@ -105,6 +106,7 @@ export function SemiconductorTrendsPage() {
     {loading && <LoadingSpinner />}{error && <ErrorNotice message={error} />}
     {data && <>
       <SemiconductorSummaryStrip data={data} />
+      <SemiconductorClassificationReview review={data.classification_review} />
       <section className="semiPanel semiFilterPanel" aria-label="섹터 필터"><div className="semiPanelHeading"><h2>섹터 탐색</h2><p>산업 분류와 연관 테마를 함께 비교합니다. 여러 섹터에 속한 종목은 각 섹터에 한 번씩 포함됩니다.</p></div>
         <div className="semiFilters semiTrendFilters"><label>분류 단계<select value={level} onChange={(event) => { setLevel(event.target.value as Level); setSelected(""); }}>
           <option value="major">대분류</option><option value="middle">중분류</option><option value="minor">소분류</option></select></label>

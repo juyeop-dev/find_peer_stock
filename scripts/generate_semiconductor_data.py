@@ -46,7 +46,7 @@ def numeric(value: object) -> float | None:
 
 def fetch_history(ticker: str) -> list[dict]:
     now = datetime.now(tz=KST)
-    start = min(now - timedelta(days=732), datetime(2018, 12, 20, tzinfo=KST))
+    start = min(now - timedelta(days=732), datetime(2017, 12, 20, tzinfo=KST))
     url = (f"https://query1.finance.yahoo.com/v8/finance/chart/"
            f"{urllib.parse.quote(ticker)}?period1={int(start.timestamp())}&period2={int(now.timestamp()) + 60}&interval=1d")
     chart = fetch_json(url).get("chart") or {}
@@ -209,6 +209,18 @@ def seed_fingerprint(seed_path: Path = SEED, categories_path: Path = CATEGORIES)
     return digest.hexdigest()
 
 
+def process_review_summary() -> dict | None:
+    path = ROOT / "data/semiconductor/reviews/2026-11-02-process-image.json"
+    if not path.exists():
+        return None
+    review = json.loads(path.read_text(encoding="utf-8"))
+    if review.get("status") != "reviewed":
+        return None
+    return {"reviewed_at": review["reviewed_at"], "summary": review["summary"],
+            "name_changes": review["name_changes"], "exceptions": review["exceptions"],
+            "notes": review["notes"]}
+
+
 def classified_seeds(seed_path: Path = SEED, categories_path: Path = CATEGORIES) -> list[dict]:
     seeds = json.loads(seed_path.read_text(encoding="utf-8"))
     categories = json.loads(categories_path.read_text(encoding="utf-8"))
@@ -240,7 +252,7 @@ def classified_seeds(seed_path: Path = SEED, categories_path: Path = CATEGORIES)
 def collect_full_entry(seed: dict, previous: dict | None) -> dict:
     ticker = seed["ticker"]
     code = ticker.split(".", 1)[0]
-    entry = {**seed, "code": code, "market": "KOSPI" if ticker.endswith(".KS") else "KOSDAQ"}
+    entry = {**(previous or {}), **seed, "code": code, "market": "KOSPI" if ticker.endswith(".KS") else "KOSDAQ"}
     errors = []
     try:
         entry["history"] = fetch_history(ticker)
@@ -307,7 +319,7 @@ def generate_full(seed_path: Path = SEED, output_path: Path = SOURCE, *, force: 
                "financial_unit": "억원", "coverage": "curated",
                "categories": [{key: group[key] for key in ("major", "middle", "minor")}
                               for group in json.loads(categories_path.read_text(encoding="utf-8"))],
-               "stocks": rows}
+               "classification_review": process_review_summary(), "stocks": rows}
     write_json(output_path, payload)
     print(f"Semiconductor history: {usable}/{len(rows)} stocks with daily prices")
     return payload
