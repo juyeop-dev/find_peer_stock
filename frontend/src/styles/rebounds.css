@@ -1,0 +1,31 @@
+body:has(.reboundPage) { min-width: 0; }
+.reboundRules { padding: 16px; border: 1px solid #dce5f0; border-radius: 9px; background: #f7faff; }
+.reboundRules > div { display: flex; flex-wrap: wrap; gap: 6px 14px; margin-bottom: 8px; font-size: 13px; color: #50647f; }
+.reboundRules strong { min-width: 65px; color: #263c5c; }
+.reboundRules p { margin: 10px 0 0; font-size: 12px; color: #687990; }
+.reboundToolbar { display: flex; flex-wrap: wrap; gap: 10px; justify-content: space-between; margin: 20px 0 4px; }
+.reboundToolbar input { width: 260px; min-width: 0; max-width: 100%; padding: 9px 12px; border: 1px solid #dce2e8; border-radius: 7px; background: #fafbfd; }
+.reboundToolbar button { padding: 8px 12px; border: 1px solid #cbd9e9; border-radius: 7px; background: #fff; color: #315d91; cursor: pointer; }
+.reboundBoard { margin-top: 26px; }
+.reboundBoard h3 { display: flex; align-items: center; gap: 8px; font-size: 17px; color: #233b5b; }
+.reboundBoard h3 i { width: 10px; height: 10px; border-radius: 50%; background: #367bd4; }
+.reboundBoard.kosdaq h3 i { background: #e25d69; }
+.reboundBoard h3 span { color: #6f829a; font-size: 14px; }
+.reboundBoard ul { list-style: none; margin: 0; padding: 0; border-top: 1px solid #e1e8f0; }
+.reboundBoard li { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 5px 16px; padding: 15px 0; border-bottom: 1px solid #e8edf4; }
+.reboundStock { display: grid; gap: 4px; min-width: 0; }
+.reboundStock a { color: #243e60; font-size: 15px; font-weight: 750; overflow-wrap: anywhere; }
+.reboundStock a:hover { text-decoration: underline; color: #2564b0; }
+.reboundStock small { color: #7c8b9f; font-size: 10px; }
+.reboundReturn { display: grid; gap: 4px; text-align: right; font-variant-numeric: tabular-nums; }
+.reboundReturn > strong { color: #177f75; font-size: 21px; }
+.reboundReturn > span { font-size: 12px; color: #526580; }
+.reboundReturn b { font-weight: 600; }
+.reboundContext { grid-column: 1 / -1; margin: 2px 0 0; font-size: 11px; color: #718399; }
+.reboundEmpty { padding: 22px 15px; border: 1px dashed #dce4ef; border-radius: 7px; color: #6b7e96; font-size: 13px; }
+@media (max-width: 480px) {
+  .reboundBoard li { grid-template-columns: minmax(0, 1fr); gap: 8px; }
+  .reboundReturn { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 5px 10px; text-align: left; }
+  .reboundReturn > strong { font-size: 19px; }
+  .reboundToolbar input { width: 100%; }
+}

@@ -1,0 +1,146 @@
+{
+  "schema_version": 1,
+  "market": "korea",
+  "date": "2025-03-18",
+  "rules": {
+    "KOSPI": {
+      "market_cap_min": 5000000000000,
+      "rebound_min": 8
+    },
+    "KOSDAQ": {
+      "market_cap_min": 1000000000000,
+      "rebound_min": 5
+    }
+  },
+  "entries": [
+    {
+      "ticker": "950160.KQ",
+      "name": "코오롱티슈진",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 56600.0,
+      "low": 49250.0,
+      "change_pct": 14.46,
+      "rebound_pct": 14.923857868020306,
+      "market_cap": 4614245948000.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2025-03-18",
+      "sector": "미분류",
+      "industry": "미분류"
+    },
+    {
+      "ticker": "328130.KQ",
+      "name": "루닛",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 59600.0,
+      "low": 54200.0,
+      "change_pct": 9.16,
+      "rebound_pct": 9.963099630996307,
+      "market_cap": 1728116304000.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2025-03-18",
+      "sector": "미분류",
+      "industry": "미분류"
+    },
+    {
+      "ticker": "087010.KQ",
+      "name": "펩트론",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 95900.0,
+      "low": 89800.0,
+      "change_pct": 4.35,
+      "rebound_pct": 6.792873051224935,
+      "market_cap": 2234215865000.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2025-03-18",
+      "sector": "미분류",
+      "industry": "미분류"
+    },
+    {
+      "ticker": "042000.KQ",
+      "name": "카페24",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 60000.0,
+      "low": 57000.0,
+      "change_pct": 5.45,
+      "rebound_pct": 5.263157894736836,
+      "market_cap": 1455183240000.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2025-03-18",
+      "sector": "미분류",
+      "industry": "미분류"
+    },
+    {
+      "ticker": "310210.KQ",
+      "name": "보로노이",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 137000.0,
+      "low": 130300.0,
+      "change_pct": 4.5,
+      "rebound_pct": 5.141980046047578,
+      "market_cap": 2516663559000.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2025-03-18",
+      "sector": "미분류",
+      "industry": "미분류"
+    },
+    {
+      "ticker": "298380.KQ",
+      "name": "에이비엘바이오",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 41150.0,
+      "low": 39150.0,
+      "change_pct": 3.52,
+      "rebound_pct": 5.108556832694755,
+      "market_cap": 1986801913300.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2025-03-18",
+      "sector": "미분류",
+      "industry": "미분류"
+    }
+  ],
+  "source_metadata": {
+    "provider": "KRX daily data via FinanceData/marcap",
+    "fetched_at": "2026-11-05T11:50:19.731573+00:00",
+    "reconstructed_at": "2026-11-05T11:52:05.251941+00:00",
+    "session": "daily",
+    "timezone": "Asia/Seoul",
+    "scanned_symbols": 2875,
+    "common_symbols_by_board": {
+      "KOSPI": 850,
+      "KOSDAQ": 1788
+    },
+    "excluded": {
+      "below_rebound": 69,
+      "declining": 50,
+      "unsupported_listing": 237,
+      "below_market_cap": 2421,
+      "no_trading": 92
+    },
+    "latest_session_by_board": {
+      "KOSPI": "2025-03-18",
+      "KOSDAQ": "2025-03-18"
+    },
+    "source_revision": "468b948c971b567376d41659e0bffd1ad3d3cd1f",
+    "source_sha256": "2bfd93c217eb74263bc5020b23fa6debb6b02531c11eaccc2826639bc191559e",
+    "price_basis": "Unadjusted KRX Low and Close from the same daily source row",
+    "market_cap_basis": "Dated KRX Marcap in KRW; verified against Close * Stocks",
+    "listing_basis": "Dated KOSPI/KOSDAQ common share codes ending in 0; includes historical delistings",
+    "note": "KRX 당시 상장 종목의 당일 저가·종가·시가총액으로 복원한 기록입니다. 현재 시총이나 분할 조정 가격을 소급 적용하지 않습니다."
+  },
+  "sources": [
+    {
+      "label": "KRX daily data via FinanceData/marcap",
+      "url": "https://github.com/FinanceData/marcap"
+    },
+    {
+      "label": "2025년 고정 버전 원본",
+      "url": "https://raw.githubusercontent.com/FinanceData/marcap/468b948c971b567376d41659e0bffd1ad3d3cd1f/data/marcap-2025.parquet"
+    }
+  ]
+}

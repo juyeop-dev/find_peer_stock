@@ -1,0 +1,161 @@
+{
+  "schema_version": 1,
+  "market": "korea",
+  "date": "2023-05-22",
+  "rules": {
+    "KOSPI": {
+      "market_cap_min": 5000000000000,
+      "rebound_min": 8
+    },
+    "KOSDAQ": {
+      "market_cap_min": 1000000000000,
+      "rebound_min": 5
+    }
+  },
+  "entries": [
+    {
+      "ticker": "064550.KQ",
+      "name": "바이오니아",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 56800.0,
+      "low": 50800.0,
+      "change_pct": 10.08,
+      "rebound_pct": 11.811023622047244,
+      "market_cap": 1466024528800.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2023-05-22",
+      "sector": "미분류",
+      "industry": "미분류"
+    },
+    {
+      "ticker": "086520.KQ",
+      "name": "에코프로",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 567000.0,
+      "low": 514000.0,
+      "change_pct": 6.58,
+      "rebound_pct": 10.311284046692615,
+      "market_cap": 15097887756000.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2023-05-22",
+      "sector": "미분류",
+      "industry": "미분류"
+    },
+    {
+      "ticker": "066970.KQ",
+      "name": "엘앤에프",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 251000.0,
+      "low": 234000.0,
+      "change_pct": 5.91,
+      "rebound_pct": 7.264957264957261,
+      "market_cap": 9040597316000.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2023-05-22",
+      "sector": "미분류",
+      "industry": "미분류"
+    },
+    {
+      "ticker": "247540.KQ",
+      "name": "에코프로비엠",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 236500.0,
+      "low": 221000.0,
+      "change_pct": 4.42,
+      "rebound_pct": 7.0135746606334815,
+      "market_cap": 23130017856000.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2023-05-22",
+      "sector": "미분류",
+      "industry": "미분류"
+    },
+    {
+      "ticker": "393890.KQ",
+      "name": "더블유씨피",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 49750.0,
+      "low": 46800.0,
+      "change_pct": 6.08,
+      "rebound_pct": 6.303418803418803,
+      "market_cap": 1676401770500.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2023-05-22",
+      "sector": "미분류",
+      "industry": "미분류"
+    },
+    {
+      "ticker": "005290.KQ",
+      "name": "동진쎄미켐",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 36900.0,
+      "low": 35000.0,
+      "change_pct": 4.83,
+      "rebound_pct": 5.428571428571427,
+      "market_cap": 1897194828600.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2023-05-22",
+      "sector": "미분류",
+      "industry": "미분류"
+    },
+    {
+      "ticker": "121600.KQ",
+      "name": "나노신소재",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 132500.0,
+      "low": 125800.0,
+      "change_pct": 3.11,
+      "rebound_pct": 5.325914149443567,
+      "market_cap": 1437404122500.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2023-05-22",
+      "sector": "미분류",
+      "industry": "미분류"
+    }
+  ],
+  "source_metadata": {
+    "provider": "KRX daily data via FinanceData/marcap",
+    "fetched_at": "2026-10-27T10:38:01.125298+00:00",
+    "reconstructed_at": "2026-11-05T11:52:00.523085+00:00",
+    "session": "daily",
+    "timezone": "Asia/Seoul",
+    "scanned_symbols": 2716,
+    "common_symbols_by_board": {
+      "KOSPI": 829,
+      "KOSDAQ": 1635
+    },
+    "excluded": {
+      "below_rebound": 78,
+      "unsupported_listing": 252,
+      "declining": 38,
+      "below_market_cap": 2248,
+      "no_trading": 93
+    },
+    "latest_session_by_board": {
+      "KOSPI": "2023-05-22",
+      "KOSDAQ": "2023-05-22"
+    },
+    "source_revision": "eeed0817d1478597b738a3a6149c170ec7e3f4cb",
+    "source_sha256": "08f96990358f5afc4e17321613cef7126e2f0bd4290b82db952b7808d87f9c22",
+    "price_basis": "Unadjusted KRX Low and Close from the same daily source row",
+    "market_cap_basis": "Dated KRX Marcap in KRW; verified against Close * Stocks",
+    "listing_basis": "Dated KOSPI/KOSDAQ common share codes ending in 0; includes historical delistings",
+    "note": "KRX 당시 상장 종목의 당일 저가·종가·시가총액으로 복원한 기록입니다. 현재 시총이나 분할 조정 가격을 소급 적용하지 않습니다."
+  },
+  "sources": [
+    {
+      "label": "KRX daily data via FinanceData/marcap",
+      "url": "https://github.com/FinanceData/marcap"
+    },
+    {
+      "label": "2023년 고정 버전 원본",
+      "url": "https://raw.githubusercontent.com/FinanceData/marcap/eeed0817d1478597b738a3a6149c170ec7e3f4cb/data/marcap-2023.parquet"
+    }
+  ]
+}

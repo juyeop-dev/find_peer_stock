@@ -3,6 +3,7 @@ import { HomePage } from "../pages/HomePage";
 import { StockPage } from "../pages/StockPage";
 import { NewHighPage } from "../pages/NewHighPage";
 import { TurnoverPage } from "../pages/TurnoverPage";
+import { ReboundPage } from "../pages/ReboundPage";
 import { SemiconductorPage } from "../pages/SemiconductorPage";
 import { SemiconductorTrendsPage } from "../pages/SemiconductorTrendsPage";
 import { SemiconductorStockPage } from "../pages/SemiconductorStockPage";
@@ -26,6 +27,7 @@ export function App() {
           <NavLink to="/charts">차트 리플레이</NavLink>
           <NavLink to="/new-highs">신고가 캘린더</NavLink>
           <NavLink to="/turnover">거래대금 캘린더</NavLink>
+          <NavLink to="/rebounds">일일 반등</NavLink>
           <NavLink to="/calendar-history">누적 기록</NavLink>
           <NavLink to="/sector-stocks">섹터별 종목</NavLink>
           <NavLink to="/sectors">섹터 상승률</NavLink>
@@ -41,6 +43,7 @@ export function App() {
         <Route path="/market-stocks/:ticker" element={<MarketStockPage />} />
         <Route path="/new-highs" element={<NewHighPage />} />
         <Route path="/turnover" element={<TurnoverPage />} />
+        <Route path="/rebounds" element={<ReboundPage />} />
         <Route path="/calendar-history" element={<CalendarHistoryPage />} />
         <Route path="/sectors" element={<SectorRankingsPage />} />
         <Route path="/semiconductors" element={<SectorExplorerPage mode="stocks" semiconductor={<SemiconductorPage />} />} />

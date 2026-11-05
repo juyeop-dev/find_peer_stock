@@ -1,0 +1,101 @@
+{
+  "schema_version": 1,
+  "market": "korea",
+  "date": "2023-01-12",
+  "rules": {
+    "KOSPI": {
+      "market_cap_min": 5000000000000,
+      "rebound_min": 8
+    },
+    "KOSDAQ": {
+      "market_cap_min": 1000000000000,
+      "rebound_min": 5
+    }
+  },
+  "entries": [
+    {
+      "ticker": "138040.KS",
+      "name": "메리츠금융지주",
+      "exchange": "KOSPI",
+      "currency": "KRW",
+      "price": 42200.0,
+      "low": 38900.0,
+      "change_pct": 9.18,
+      "rebound_pct": 8.483290488431884,
+      "market_cap": 5383530888400.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2023-01-12",
+      "sector": "미분류",
+      "industry": "미분류"
+    },
+    {
+      "ticker": "237690.KQ",
+      "name": "에스티팜",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 85700.0,
+      "low": 81100.0,
+      "change_pct": 5.54,
+      "rebound_pct": 5.67200986436498,
+      "market_cap": 1611912017500.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2023-01-12",
+      "sector": "미분류",
+      "industry": "미분류"
+    },
+    {
+      "ticker": "298380.KQ",
+      "name": "에이비엘바이오",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 21750.0,
+      "low": 20700.0,
+      "change_pct": 1.64,
+      "rebound_pct": 5.072463768115942,
+      "market_cap": 1039393654500.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2023-01-12",
+      "sector": "미분류",
+      "industry": "미분류"
+    }
+  ],
+  "source_metadata": {
+    "provider": "KRX daily data via FinanceData/marcap",
+    "fetched_at": "2026-10-27T10:38:01.125298+00:00",
+    "reconstructed_at": "2026-11-05T11:51:59.649238+00:00",
+    "session": "daily",
+    "timezone": "Asia/Seoul",
+    "scanned_symbols": 2690,
+    "common_symbols_by_board": {
+      "KOSPI": 826,
+      "KOSDAQ": 1611
+    },
+    "excluded": {
+      "below_rebound": 57,
+      "declining": 38,
+      "unsupported_listing": 253,
+      "below_market_cap": 2277,
+      "no_trading": 62
+    },
+    "latest_session_by_board": {
+      "KOSPI": "2023-01-12",
+      "KOSDAQ": "2023-01-12"
+    },
+    "source_revision": "eeed0817d1478597b738a3a6149c170ec7e3f4cb",
+    "source_sha256": "08f96990358f5afc4e17321613cef7126e2f0bd4290b82db952b7808d87f9c22",
+    "price_basis": "Unadjusted KRX Low and Close from the same daily source row",
+    "market_cap_basis": "Dated KRX Marcap in KRW; verified against Close * Stocks",
+    "listing_basis": "Dated KOSPI/KOSDAQ common share codes ending in 0; includes historical delistings",
+    "note": "KRX 당시 상장 종목의 당일 저가·종가·시가총액으로 복원한 기록입니다. 현재 시총이나 분할 조정 가격을 소급 적용하지 않습니다."
+  },
+  "sources": [
+    {
+      "label": "KRX daily data via FinanceData/marcap",
+      "url": "https://github.com/FinanceData/marcap"
+    },
+    {
+      "label": "2023년 고정 버전 원본",
+      "url": "https://raw.githubusercontent.com/FinanceData/marcap/eeed0817d1478597b738a3a6149c170ec7e3f4cb/data/marcap-2023.parquet"
+    }
+  ]
+}

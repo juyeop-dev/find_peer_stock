@@ -1,0 +1,146 @@
+{
+  "schema_version": 1,
+  "market": "korea",
+  "date": "2020-03-26",
+  "rules": {
+    "KOSPI": {
+      "market_cap_min": 5000000000000,
+      "rebound_min": 8
+    },
+    "KOSDAQ": {
+      "market_cap_min": 1000000000000,
+      "rebound_min": 5
+    }
+  },
+  "entries": [
+    {
+      "ticker": "034730.KS",
+      "name": "SK",
+      "exchange": "KOSPI",
+      "currency": "KRW",
+      "price": 154500.0,
+      "low": 143000.0,
+      "change_pct": 2.66,
+      "rebound_pct": 8.041958041958042,
+      "market_cap": 10870665886500.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2020-03-26",
+      "sector": "미분류",
+      "industry": "미분류"
+    },
+    {
+      "ticker": "041960.KQ",
+      "name": "코미팜",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 25400.0,
+      "low": 21600.0,
+      "change_pct": 19.25,
+      "rebound_pct": 17.59259259259258,
+      "market_cap": 1624797131400.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2020-03-26",
+      "sector": "미분류",
+      "industry": "미분류"
+    },
+    {
+      "ticker": "068760.KQ",
+      "name": "셀트리온제약",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 64400.0,
+      "low": 56700.0,
+      "change_pct": 6.8,
+      "rebound_pct": 13.58024691358024,
+      "market_cap": 2195552105600.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2020-03-26",
+      "sector": "미분류",
+      "industry": "미분류"
+    },
+    {
+      "ticker": "096530.KQ",
+      "name": "씨젠",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 114500.0,
+      "low": 103100.0,
+      "change_pct": 29.97,
+      "rebound_pct": 11.057225994180397,
+      "market_cap": 3003795290000.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2020-03-26",
+      "sector": "미분류",
+      "industry": "미분류"
+    },
+    {
+      "ticker": "034230.KQ",
+      "name": "파라다이스",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 12800.0,
+      "low": 11750.0,
+      "change_pct": 3.64,
+      "rebound_pct": 8.936170212765958,
+      "market_cap": 1164066201600.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2020-03-26",
+      "sector": "미분류",
+      "industry": "미분류"
+    },
+    {
+      "ticker": "084990.KQ",
+      "name": "헬릭스미스",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 65800.0,
+      "low": 61900.0,
+      "change_pct": 4.78,
+      "rebound_pct": 6.300484652665594,
+      "market_cap": 1409112790400.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2020-03-26",
+      "sector": "미분류",
+      "industry": "미분류"
+    }
+  ],
+  "source_metadata": {
+    "provider": "KRX daily data via FinanceData/marcap",
+    "fetched_at": "2026-10-29T16:23:31.183684+00:00",
+    "reconstructed_at": "2026-11-05T11:51:52.874766+00:00",
+    "session": "daily",
+    "timezone": "Asia/Seoul",
+    "scanned_symbols": 2479,
+    "common_symbols_by_board": {
+      "KOSPI": 798,
+      "KOSDAQ": 1413
+    },
+    "excluded": {
+      "declining": 41,
+      "unsupported_listing": 268,
+      "below_rebound": 12,
+      "below_market_cap": 2058,
+      "no_trading": 94
+    },
+    "latest_session_by_board": {
+      "KOSPI": "2020-03-26",
+      "KOSDAQ": "2020-03-26"
+    },
+    "source_revision": "eeed0817d1478597b738a3a6149c170ec7e3f4cb",
+    "source_sha256": "565f55ef141f58b3ec74c7ccb733fc551b7c6e30fbc7a1da59a78c23e7230806",
+    "price_basis": "Unadjusted KRX Low and Close from the same daily source row",
+    "market_cap_basis": "Dated KRX Marcap in KRW; verified against Close * Stocks",
+    "listing_basis": "Dated KOSPI/KOSDAQ common share codes ending in 0; includes historical delistings",
+    "note": "KRX 당시 상장 종목의 당일 저가·종가·시가총액으로 복원한 기록입니다. 현재 시총이나 분할 조정 가격을 소급 적용하지 않습니다."
+  },
+  "sources": [
+    {
+      "label": "KRX daily data via FinanceData/marcap",
+      "url": "https://github.com/FinanceData/marcap"
+    },
+    {
+      "label": "2020년 고정 버전 원본",
+      "url": "https://raw.githubusercontent.com/FinanceData/marcap/eeed0817d1478597b738a3a6149c170ec7e3f4cb/data/marcap-2020.parquet"
+    }
+  ]
+}

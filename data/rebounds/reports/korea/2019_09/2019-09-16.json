@@ -1,0 +1,116 @@
+{
+  "schema_version": 1,
+  "market": "korea",
+  "date": "2019-09-16",
+  "rules": {
+    "KOSPI": {
+      "market_cap_min": 5000000000000,
+      "rebound_min": 8
+    },
+    "KOSDAQ": {
+      "market_cap_min": 1000000000000,
+      "rebound_min": 5
+    }
+  },
+  "entries": [
+    {
+      "ticker": "091990.KQ",
+      "name": "셀트리온헬스케어",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 50900.0,
+      "low": 47550.0,
+      "change_pct": 6.6,
+      "rebound_pct": 7.045215562565721,
+      "market_cap": 7325428643200.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2019-09-16",
+      "sector": "미분류",
+      "industry": "미분류"
+    },
+    {
+      "ticker": "025980.KQ",
+      "name": "아난티",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 14050.0,
+      "low": 13250.0,
+      "change_pct": 9.77,
+      "rebound_pct": 6.037735849056602,
+      "market_cap": 1184780454550.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2019-09-16",
+      "sector": "미분류",
+      "industry": "미분류"
+    },
+    {
+      "ticker": "084990.KQ",
+      "name": "헬릭스미스",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 199200.0,
+      "low": 188100.0,
+      "change_pct": 8.32,
+      "rebound_pct": 5.901116427432207,
+      "market_cap": 4247008740000.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2019-09-16",
+      "sector": "미분류",
+      "industry": "미분류"
+    },
+    {
+      "ticker": "068760.KQ",
+      "name": "셀트리온제약",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 35150.0,
+      "low": 33200.0,
+      "change_pct": 4.15,
+      "rebound_pct": 5.873493975903621,
+      "market_cap": 1198232040750.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2019-09-16",
+      "sector": "미분류",
+      "industry": "미분류"
+    }
+  ],
+  "source_metadata": {
+    "provider": "KRX daily data via FinanceData/marcap",
+    "fetched_at": "2026-10-30T07:56:11.670569+00:00",
+    "reconstructed_at": "2026-11-05T11:51:51.698686+00:00",
+    "session": "daily",
+    "timezone": "Asia/Seoul",
+    "scanned_symbols": 2419,
+    "common_symbols_by_board": {
+      "KOSPI": 789,
+      "KOSDAQ": 1364
+    },
+    "excluded": {
+      "declining": 18,
+      "unsupported_listing": 266,
+      "below_rebound": 51,
+      "below_market_cap": 2012,
+      "no_trading": 68
+    },
+    "latest_session_by_board": {
+      "KOSPI": "2019-09-16",
+      "KOSDAQ": "2019-09-16"
+    },
+    "source_revision": "eeed0817d1478597b738a3a6149c170ec7e3f4cb",
+    "source_sha256": "7d2f4018558b9409485da83c7f539692ecbb2be206f7a800cc0f3f84cbdbe503",
+    "price_basis": "Unadjusted KRX Low and Close from the same daily source row",
+    "market_cap_basis": "Dated KRX Marcap in KRW; verified against Close * Stocks",
+    "listing_basis": "Dated KOSPI/KOSDAQ common share codes ending in 0; includes historical delistings",
+    "note": "KRX 당시 상장 종목의 당일 저가·종가·시가총액으로 복원한 기록입니다. 현재 시총이나 분할 조정 가격을 소급 적용하지 않습니다."
+  },
+  "sources": [
+    {
+      "label": "KRX daily data via FinanceData/marcap",
+      "url": "https://github.com/FinanceData/marcap"
+    },
+    {
+      "label": "2019년 고정 버전 원본",
+      "url": "https://raw.githubusercontent.com/FinanceData/marcap/eeed0817d1478597b738a3a6149c170ec7e3f4cb/data/marcap-2019.parquet"
+    }
+  ]
+}

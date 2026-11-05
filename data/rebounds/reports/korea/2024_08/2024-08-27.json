@@ -1,0 +1,146 @@
+{
+  "schema_version": 1,
+  "market": "korea",
+  "date": "2024-08-27",
+  "rules": {
+    "KOSPI": {
+      "market_cap_min": 5000000000000,
+      "rebound_min": 8
+    },
+    "KOSDAQ": {
+      "market_cap_min": 1000000000000,
+      "rebound_min": 5
+    }
+  },
+  "entries": [
+    {
+      "ticker": "352480.KQ",
+      "name": "씨앤씨인터내셔널",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 107700.0,
+      "low": 97600.0,
+      "change_pct": 6.95,
+      "rebound_pct": 10.348360655737698,
+      "market_cap": 1078501445700.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2024-08-27",
+      "sector": "미분류",
+      "industry": "미분류"
+    },
+    {
+      "ticker": "051980.KQ",
+      "name": "중앙첨단소재",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 11280.0,
+      "low": 10460.0,
+      "change_pct": 4.54,
+      "rebound_pct": 7.839388145315485,
+      "market_cap": 1127009852880.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2024-08-27",
+      "sector": "미분류",
+      "industry": "미분류"
+    },
+    {
+      "ticker": "018290.KQ",
+      "name": "브이티",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 30000.0,
+      "low": 27900.0,
+      "change_pct": 3.81,
+      "rebound_pct": 7.526881720430101,
+      "market_cap": 1073940210000.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2024-08-27",
+      "sector": "미분류",
+      "industry": "미분류"
+    },
+    {
+      "ticker": "000250.KQ",
+      "name": "삼천당제약",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 155100.0,
+      "low": 145500.0,
+      "change_pct": 5.73,
+      "rebound_pct": 6.597938144329896,
+      "market_cap": 3638253907200.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2024-08-27",
+      "sector": "미분류",
+      "industry": "미분류"
+    },
+    {
+      "ticker": "031980.KQ",
+      "name": "피에스케이홀딩스",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 50400.0,
+      "low": 47350.0,
+      "change_pct": 0.9,
+      "rebound_pct": 6.441393875395995,
+      "market_cap": 1086744708000.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2024-08-27",
+      "sector": "미분류",
+      "industry": "미분류"
+    },
+    {
+      "ticker": "310210.KQ",
+      "name": "보로노이",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 88000.0,
+      "low": 82700.0,
+      "change_pct": 5.39,
+      "rebound_pct": 6.408706166868194,
+      "market_cap": 1592257040000.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2024-08-27",
+      "sector": "미분류",
+      "industry": "미분류"
+    }
+  ],
+  "source_metadata": {
+    "provider": "KRX daily data via FinanceData/marcap",
+    "fetched_at": "2026-10-24T14:57:02.974015+00:00",
+    "reconstructed_at": "2026-11-05T11:52:03.805324+00:00",
+    "session": "daily",
+    "timezone": "Asia/Seoul",
+    "scanned_symbols": 2832,
+    "common_symbols_by_board": {
+      "KOSPI": 845,
+      "KOSDAQ": 1749
+    },
+    "excluded": {
+      "declining": 76,
+      "below_rebound": 46,
+      "unsupported_listing": 238,
+      "below_market_cap": 2364,
+      "no_trading": 102
+    },
+    "latest_session_by_board": {
+      "KOSPI": "2024-08-27",
+      "KOSDAQ": "2024-08-27"
+    },
+    "source_revision": "eeed0817d1478597b738a3a6149c170ec7e3f4cb",
+    "source_sha256": "b0c38943e67637d5faf88429880092cf0f46a394be39860dd3bcd0b04231bccb",
+    "price_basis": "Unadjusted KRX Low and Close from the same daily source row",
+    "market_cap_basis": "Dated KRX Marcap in KRW; verified against Close * Stocks",
+    "listing_basis": "Dated KOSPI/KOSDAQ common share codes ending in 0; includes historical delistings",
+    "note": "KRX 당시 상장 종목의 당일 저가·종가·시가총액으로 복원한 기록입니다. 현재 시총이나 분할 조정 가격을 소급 적용하지 않습니다."
+  },
+  "sources": [
+    {
+      "label": "KRX daily data via FinanceData/marcap",
+      "url": "https://github.com/FinanceData/marcap"
+    },
+    {
+      "label": "2024년 고정 버전 원본",
+      "url": "https://raw.githubusercontent.com/FinanceData/marcap/eeed0817d1478597b738a3a6149c170ec7e3f4cb/data/marcap-2024.parquet"
+    }
+  ]
+}

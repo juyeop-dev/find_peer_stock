@@ -1,0 +1,191 @@
+{
+  "schema_version": 1,
+  "market": "korea",
+  "date": "2023-12-08",
+  "rules": {
+    "KOSPI": {
+      "market_cap_min": 5000000000000,
+      "rebound_min": 8
+    },
+    "KOSDAQ": {
+      "market_cap_min": 1000000000000,
+      "rebound_min": 5
+    }
+  },
+  "entries": [
+    {
+      "ticker": "450080.KS",
+      "name": "에코프로머티",
+      "exchange": "KOSPI",
+      "currency": "KRW",
+      "price": 134400.0,
+      "low": 121000.0,
+      "change_pct": 5.83,
+      "rebound_pct": 11.074380165289256,
+      "market_cap": 9169703155200.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2023-12-08",
+      "sector": "미분류",
+      "industry": "미분류"
+    },
+    {
+      "ticker": "140410.KQ",
+      "name": "메지온",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 35300.0,
+      "low": 33150.0,
+      "change_pct": 5.22,
+      "rebound_pct": 6.485671191553544,
+      "market_cap": 1044434831700.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2023-12-08",
+      "sector": "미분류",
+      "industry": "미분류"
+    },
+    {
+      "ticker": "068760.KQ",
+      "name": "셀트리온제약",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 82800.0,
+      "low": 78100.0,
+      "change_pct": 6.15,
+      "rebound_pct": 6.017925736235585,
+      "market_cap": 3279728120400.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2023-12-08",
+      "sector": "미분류",
+      "industry": "미분류"
+    },
+    {
+      "ticker": "328130.KQ",
+      "name": "루닛",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 79600.0,
+      "low": 75100.0,
+      "change_pct": 6.28,
+      "rebound_pct": 5.992010652463375,
+      "market_cap": 2266714116800.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2023-12-08",
+      "sector": "미분류",
+      "industry": "미분류"
+    },
+    {
+      "ticker": "277810.KQ",
+      "name": "레인보우로보틱스",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 163900.0,
+      "low": 154900.0,
+      "change_pct": 5.81,
+      "rebound_pct": 5.81020012911555,
+      "market_cap": 3179308926200.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2023-12-08",
+      "sector": "미분류",
+      "industry": "미분류"
+    },
+    {
+      "ticker": "091990.KQ",
+      "name": "셀트리온헬스케어",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 73900.0,
+      "low": 70000.0,
+      "change_pct": 5.72,
+      "rebound_pct": 5.5714285714285605,
+      "market_cap": 12153943103600.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2023-12-08",
+      "sector": "미분류",
+      "industry": "미분류"
+    },
+    {
+      "ticker": "028300.KQ",
+      "name": "HLB",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 33350.0,
+      "low": 31650.0,
+      "change_pct": 5.04,
+      "rebound_pct": 5.371248025276465,
+      "market_cap": 4302902776200.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2023-12-08",
+      "sector": "미분류",
+      "industry": "미분류"
+    },
+    {
+      "ticker": "064760.KQ",
+      "name": "티씨케이",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 106600.0,
+      "low": 101300.0,
+      "change_pct": 5.86,
+      "rebound_pct": 5.231984205330709,
+      "market_cap": 1244555000000.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2023-12-08",
+      "sector": "미분류",
+      "industry": "미분류"
+    },
+    {
+      "ticker": "086520.KQ",
+      "name": "에코프로",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 667000.0,
+      "low": 634000.0,
+      "change_pct": 5.54,
+      "rebound_pct": 5.205047318611977,
+      "market_cap": 17760654556000.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2023-12-08",
+      "sector": "미분류",
+      "industry": "미분류"
+    }
+  ],
+  "source_metadata": {
+    "provider": "KRX daily data via FinanceData/marcap",
+    "fetched_at": "2026-10-27T10:38:01.125298+00:00",
+    "reconstructed_at": "2026-11-05T11:52:01.977753+00:00",
+    "session": "daily",
+    "timezone": "Asia/Seoul",
+    "scanned_symbols": 2785,
+    "common_symbols_by_board": {
+      "KOSPI": 838,
+      "KOSDAQ": 1701
+    },
+    "excluded": {
+      "below_rebound": 91,
+      "unsupported_listing": 246,
+      "declining": 27,
+      "below_market_cap": 2329,
+      "no_trading": 83
+    },
+    "latest_session_by_board": {
+      "KOSPI": "2023-12-08",
+      "KOSDAQ": "2023-12-08"
+    },
+    "source_revision": "eeed0817d1478597b738a3a6149c170ec7e3f4cb",
+    "source_sha256": "08f96990358f5afc4e17321613cef7126e2f0bd4290b82db952b7808d87f9c22",
+    "price_basis": "Unadjusted KRX Low and Close from the same daily source row",
+    "market_cap_basis": "Dated KRX Marcap in KRW; verified against Close * Stocks",
+    "listing_basis": "Dated KOSPI/KOSDAQ common share codes ending in 0; includes historical delistings",
+    "note": "KRX 당시 상장 종목의 당일 저가·종가·시가총액으로 복원한 기록입니다. 현재 시총이나 분할 조정 가격을 소급 적용하지 않습니다."
+  },
+  "sources": [
+    {
+      "label": "KRX daily data via FinanceData/marcap",
+      "url": "https://github.com/FinanceData/marcap"
+    },
+    {
+      "label": "2023년 고정 버전 원본",
+      "url": "https://raw.githubusercontent.com/FinanceData/marcap/eeed0817d1478597b738a3a6149c170ec7e3f4cb/data/marcap-2023.parquet"
+    }
+  ]
+}

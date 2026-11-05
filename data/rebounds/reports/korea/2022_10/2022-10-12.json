@@ -1,0 +1,146 @@
+{
+  "schema_version": 1,
+  "market": "korea",
+  "date": "2022-10-12",
+  "rules": {
+    "KOSPI": {
+      "market_cap_min": 5000000000000,
+      "rebound_min": 8
+    },
+    "KOSDAQ": {
+      "market_cap_min": 1000000000000,
+      "rebound_min": 5
+    }
+  },
+  "entries": [
+    {
+      "ticker": "052020.KQ",
+      "name": "에스티큐브",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 25850.0,
+      "low": 23300.0,
+      "change_pct": 2.99,
+      "rebound_pct": 10.944206008583702,
+      "market_cap": 1116356807500.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2022-10-12",
+      "sector": "미분류",
+      "industry": "미분류"
+    },
+    {
+      "ticker": "035900.KQ",
+      "name": "JYP Ent.",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 56500.0,
+      "low": 52800.0,
+      "change_pct": 6.0,
+      "rebound_pct": 7.007575757575757,
+      "market_cap": 2005608298000.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2022-10-12",
+      "sector": "미분류",
+      "industry": "미분류"
+    },
+    {
+      "ticker": "393890.KQ",
+      "name": "더블유씨피",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 42250.0,
+      "low": 39700.0,
+      "change_pct": 4.84,
+      "rebound_pct": 6.4231738035264385,
+      "market_cap": 1423677885500.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2022-10-12",
+      "sector": "미분류",
+      "industry": "미분류"
+    },
+    {
+      "ticker": "263750.KQ",
+      "name": "펄어비스",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 42100.0,
+      "low": 39750.0,
+      "change_pct": 0.48,
+      "rebound_pct": 5.91194968553459,
+      "market_cap": 2704329495500.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2022-10-12",
+      "sector": "미분류",
+      "industry": "미분류"
+    },
+    {
+      "ticker": "240810.KQ",
+      "name": "원익IPS",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 24350.0,
+      "low": 23100.0,
+      "change_pct": 5.41,
+      "rebound_pct": 5.411255411255422,
+      "market_cap": 1195192989350.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2022-10-12",
+      "sector": "미분류",
+      "industry": "미분류"
+    },
+    {
+      "ticker": "214370.KQ",
+      "name": "케어젠",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 109400.0,
+      "low": 104000.0,
+      "change_pct": 4.19,
+      "rebound_pct": 5.192307692307696,
+      "market_cap": 1175284200000.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2022-10-12",
+      "sector": "미분류",
+      "industry": "미분류"
+    }
+  ],
+  "source_metadata": {
+    "provider": "KRX daily data via FinanceData/marcap",
+    "fetched_at": "2026-10-29T09:39:59.513221+00:00",
+    "reconstructed_at": "2026-11-05T11:51:58.981535+00:00",
+    "session": "daily",
+    "timezone": "Asia/Seoul",
+    "scanned_symbols": 2656,
+    "common_symbols_by_board": {
+      "KOSPI": 823,
+      "KOSDAQ": 1587
+    },
+    "excluded": {
+      "below_rebound": 58,
+      "declining": 27,
+      "unsupported_listing": 246,
+      "below_market_cap": 2243,
+      "no_trading": 76
+    },
+    "latest_session_by_board": {
+      "KOSPI": "2022-10-12",
+      "KOSDAQ": "2022-10-12"
+    },
+    "source_revision": "eeed0817d1478597b738a3a6149c170ec7e3f4cb",
+    "source_sha256": "179650f5d1bd6abecb03d1b8eddf5f59c5ca6a0402e7bf2578635790b9ca811c",
+    "price_basis": "Unadjusted KRX Low and Close from the same daily source row",
+    "market_cap_basis": "Dated KRX Marcap in KRW; verified against Close * Stocks",
+    "listing_basis": "Dated KOSPI/KOSDAQ common share codes ending in 0; includes historical delistings",
+    "note": "KRX 당시 상장 종목의 당일 저가·종가·시가총액으로 복원한 기록입니다. 현재 시총이나 분할 조정 가격을 소급 적용하지 않습니다."
+  },
+  "sources": [
+    {
+      "label": "KRX daily data via FinanceData/marcap",
+      "url": "https://github.com/FinanceData/marcap"
+    },
+    {
+      "label": "2022년 고정 버전 원본",
+      "url": "https://raw.githubusercontent.com/FinanceData/marcap/eeed0817d1478597b738a3a6149c170ec7e3f4cb/data/marcap-2022.parquet"
+    }
+  ]
+}

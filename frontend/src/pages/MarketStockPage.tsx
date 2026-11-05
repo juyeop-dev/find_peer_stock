@@ -19,6 +19,7 @@ import { getStockInformation } from "../dataClient/stockInformationClient";
 import { liveDetailFor, liveQuoteFor, refreshDetails } from "../dataClient/liveStockDataClient";
 import { getSectorStock } from "../dataClient/sectorDataClient";
 import { sectorLabel } from "../dataClient/sectorRankings";
+import { getReboundReport } from "../dataClient/reboundClient";
 
 const MARKET_CURRENCIES: Record<string, string> = { korea: "KRW", us: "USD", japan: "JPY", taiwan: "TWD", china: "CNY", europe: "EUR" };
 
@@ -35,15 +36,15 @@ function priceLabel(price: number | null | undefined, currency: string): string 
 export function MarketStockPage() {
   const { ticker = "" } = useParams();
   const [params] = useSearchParams();
-  const source = params.get("source") === "sectors" ? "sectors" : params.get("source") === "turnover" ? "turnover" : "new-highs";
+  const source = params.get("source") === "rebounds" ? "rebounds" : params.get("source") === "sectors" ? "sectors" : params.get("source") === "turnover" ? "turnover" : "new-highs";
   const market = params.get("market") ?? "";
   const date = params.get("date") ?? "";
-  const contextValid = validDate(date) && Object.hasOwn(MARKET_CURRENCIES, market) && (source !== "sectors" || market === "korea");
+  const contextValid = validDate(date) && Object.hasOwn(MARKET_CURRENCIES, market) && (!["sectors", "rebounds"].includes(source) || market === "korea");
   const fallback = `/${source}?${new URLSearchParams({ market, date })}`;
   const back = calendarReturnLink(params.get("returnTo"), contextValid ? fallback : `/${source}`);
-  const sourceLabel = source === "sectors" ? back.startsWith("/sector-stocks") ? "섹터별 종목" : back.startsWith("/sector-trends") ? "섹터별 추이" : "섹터 상승률" : source === "new-highs" ? "신고가 캘린더" : "거래대금 캘린더";
+  const sourceLabel = source === "rebounds" ? "일일 반등" : source === "sectors" ? back.startsWith("/sector-stocks") ? "섹터별 종목" : back.startsWith("/sector-trends") ? "섹터별 추이" : "섹터 상승률" : source === "new-highs" ? "신고가 캘린더" : "거래대금 캘린더";
   const loadStock = useCallback(async (signal: AbortSignal, fromSource = false) => {
-    const report = source === "sectors" ? { market: "korea", date, entries: [await getSectorStock(ticker, signal, date)] } : source === "new-highs" ? await getNewHighReport(market, date, signal) : await getTurnoverReport(market, date, signal);
+    const report = source === "rebounds" ? await getReboundReport(date, signal) : source === "sectors" ? { market: "korea", date, entries: [await getSectorStock(ticker, signal, date)] } : source === "new-highs" ? await getNewHighReport(market, date, signal) : await getTurnoverReport(market, date, signal);
     if (report.market !== market || report.date !== date) throw new Error("선택한 날짜의 기록과 일치하지 않습니다.");
     const stock = report.entries.find((item) => item.ticker.toUpperCase() === ticker.toUpperCase());
     if (!stock) throw new Error("선택한 목록에서 이 종목을 찾을 수 없습니다.");
@@ -89,6 +90,8 @@ export function MarketStockPage() {
           {"rank" in stock ? <div><dt>거래대금 순위</dt><dd>{stock.rank}위</dd></div> : null}
           {"turnover" in stock ? <div><dt>당일 거래대금</dt><dd>{stock.turnover === null ? "미제공" : formatHistoryMoney({ [stock.turnover_currency ?? currency]: stock.turnover })}</dd></div> : null}
           {"high_type" in stock ? <div><dt>신고가 유형</dt><dd>{stock.high_type === "all_time" ? "역대 신고가" : "52주 신고가"}</dd></div> : null}
+          {"rebound_pct" in stock ? <div><dt>당일 저가 대비 반등률</dt><dd>{formatPercent(stock.rebound_pct)}</dd></div> : null}
+          {"low" in stock ? <div><dt>당일 저가</dt><dd>{priceLabel(stock.low, "KRW")}</dd></div> : null}
           <div><dt>기록일</dt><dd>{recordDate}</dd></div></dl>
         {currentQuote ? <p className="semiFootnote">선택한 날의 기록 종가: {priceLabel(recordedPrice, stock.currency ?? currency)} · 상단 현재가와 구분됩니다.</p> : null}
         <PeriodReturns values={"period_returns" in stock ? stock.period_returns : undefined} />

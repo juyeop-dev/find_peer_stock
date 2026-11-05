@@ -1,0 +1,191 @@
+{
+  "schema_version": 1,
+  "market": "korea",
+  "date": "2020-06-12",
+  "rules": {
+    "KOSPI": {
+      "market_cap_min": 5000000000000,
+      "rebound_min": 8
+    },
+    "KOSDAQ": {
+      "market_cap_min": 1000000000000,
+      "rebound_min": 5
+    }
+  },
+  "entries": [
+    {
+      "ticker": "034730.KS",
+      "name": "SK",
+      "exchange": "KOSPI",
+      "currency": "KRW",
+      "price": 279000.0,
+      "low": 245000.0,
+      "change_pct": 8.56,
+      "rebound_pct": 13.877551020408173,
+      "market_cap": 19630522863000.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2020-06-12",
+      "sector": "미분류",
+      "industry": "미분류"
+    },
+    {
+      "ticker": "207940.KS",
+      "name": "삼성바이오로직스",
+      "exchange": "KOSPI",
+      "currency": "KRW",
+      "price": 805000.0,
+      "low": 718000.0,
+      "change_pct": 7.76,
+      "rebound_pct": 12.116991643454034,
+      "market_cap": 53262825000000.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2020-06-12",
+      "sector": "미분류",
+      "industry": "미분류"
+    },
+    {
+      "ticker": "086450.KQ",
+      "name": "동국제약",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 122400.0,
+      "low": 108600.0,
+      "change_pct": 7.37,
+      "rebound_pct": 12.70718232044199,
+      "market_cap": 1088380800000.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2020-06-12",
+      "sector": "미분류",
+      "industry": "미분류"
+    },
+    {
+      "ticker": "196170.KQ",
+      "name": "알테오젠",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 236500.0,
+      "low": 210000.0,
+      "change_pct": 3.28,
+      "rebound_pct": 12.619047619047619,
+      "market_cap": 3310042175000.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2020-06-12",
+      "sector": "미분류",
+      "industry": "미분류"
+    },
+    {
+      "ticker": "060250.KQ",
+      "name": "NHN한국사이버결제",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 50600.0,
+      "low": 45650.0,
+      "change_pct": 3.69,
+      "rebound_pct": 10.843373493975905,
+      "market_cap": 1162352485800.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2020-06-12",
+      "sector": "미분류",
+      "industry": "미분류"
+    },
+    {
+      "ticker": "235980.KQ",
+      "name": "메드팩토",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 56600.0,
+      "low": 51800.0,
+      "change_pct": 0.71,
+      "rebound_pct": 9.26640926640927,
+      "market_cap": 1149820057200.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2020-06-12",
+      "sector": "미분류",
+      "industry": "미분류"
+    },
+    {
+      "ticker": "068760.KQ",
+      "name": "셀트리온제약",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 135000.0,
+      "low": 125500.0,
+      "change_pct": 0.97,
+      "rebound_pct": 7.569721115537842,
+      "market_cap": 4833916920000.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2020-06-12",
+      "sector": "미분류",
+      "industry": "미분류"
+    },
+    {
+      "ticker": "091990.KQ",
+      "name": "셀트리온헬스케어",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 107100.0,
+      "low": 100300.0,
+      "change_pct": 2.0,
+      "rebound_pct": 6.779661016949157,
+      "market_cap": 16215618157200.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2020-06-12",
+      "sector": "미분류",
+      "industry": "미분류"
+    },
+    {
+      "ticker": "247540.KQ",
+      "name": "에코프로비엠",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 124200.0,
+      "low": 117900.0,
+      "change_pct": 0.16,
+      "rebound_pct": 5.343511450381677,
+      "market_cap": 2603749417200.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2020-06-12",
+      "sector": "미분류",
+      "industry": "미분류"
+    }
+  ],
+  "source_metadata": {
+    "provider": "KRX daily data via FinanceData/marcap",
+    "fetched_at": "2026-10-29T16:23:31.183684+00:00",
+    "reconstructed_at": "2026-11-05T11:51:53.353058+00:00",
+    "session": "daily",
+    "timezone": "Asia/Seoul",
+    "scanned_symbols": 2472,
+    "common_symbols_by_board": {
+      "KOSPI": 795,
+      "KOSDAQ": 1410
+    },
+    "excluded": {
+      "declining": 67,
+      "below_rebound": 5,
+      "unsupported_listing": 267,
+      "below_market_cap": 2026,
+      "no_trading": 98
+    },
+    "latest_session_by_board": {
+      "KOSPI": "2020-06-12",
+      "KOSDAQ": "2020-06-12"
+    },
+    "source_revision": "eeed0817d1478597b738a3a6149c170ec7e3f4cb",
+    "source_sha256": "565f55ef141f58b3ec74c7ccb733fc551b7c6e30fbc7a1da59a78c23e7230806",
+    "price_basis": "Unadjusted KRX Low and Close from the same daily source row",
+    "market_cap_basis": "Dated KRX Marcap in KRW; verified against Close * Stocks",
+    "listing_basis": "Dated KOSPI/KOSDAQ common share codes ending in 0; includes historical delistings",
+    "note": "KRX 당시 상장 종목의 당일 저가·종가·시가총액으로 복원한 기록입니다. 현재 시총이나 분할 조정 가격을 소급 적용하지 않습니다."
+  },
+  "sources": [
+    {
+      "label": "KRX daily data via FinanceData/marcap",
+      "url": "https://github.com/FinanceData/marcap"
+    },
+    {
+      "label": "2020년 고정 버전 원본",
+      "url": "https://raw.githubusercontent.com/FinanceData/marcap/eeed0817d1478597b738a3a6149c170ec7e3f4cb/data/marcap-2020.parquet"
+    }
+  ]
+}

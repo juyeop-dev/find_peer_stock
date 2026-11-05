@@ -61,6 +61,10 @@ jobs:
         continue-on-error: true
         run: python scripts/refresh_turnover.py
 
+      - name: Collect Korean daily low-to-close rebounds after the close
+        continue-on-error: true
+        run: python scripts/rebound_data.py collect
+
       - name: Validate collected daily archive
         # Validate every source report and refresh state before any source push.
         # Keep validation output outside the checkout so a concurrent push can
@@ -76,13 +80,16 @@ jobs:
           --output-dir "$RUNNER_TEMP/turnover-validation"
           --no-copy-to-frontend
 
+      - name: Validate collected rebound archive
+        run: python scripts/rebound_data.py publish --output-dir "$RUNNER_TEMP/rebound-validation"
+
       - name: Save daily archive before building
         # Persist successes/retry state even when quote collection or a later build fails.
         # Do not publish an archive whose durable source could not be saved.
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/new-highs data/turnover
+          git add data/new-highs data/turnover data/rebounds
           if ! git diff --cached --quiet; then
             git commit -m "Save daily market archives [skip ci]"
             for attempt in 1 2 3; do
@@ -181,6 +188,10 @@ jobs:
           npm run test:sectors
           npm run test:sector-explorer
           npm run test:investor-flows
+
+      - name: Test daily rebound readers
+        working-directory: frontend
+        run: npm run test:rebounds
 
       - name: Build frontend
         working-directory: frontend

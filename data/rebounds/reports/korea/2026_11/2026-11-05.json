@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "market": "korea",
+  "date": "2026-11-05",
+  "rules": {
+    "KOSPI": {
+      "market_cap_min": 5000000000000,
+      "rebound_min": 8
+    },
+    "KOSDAQ": {
+      "market_cap_min": 1000000000000,
+      "rebound_min": 5
+    }
+  },
+  "entries": [
+    {
+      "ticker": "161390.KS",
+      "name": "한국타이어앤테크놀로지",
+      "exchange": "KOSPI",
+      "currency": "KRW",
+      "price": 64400,
+      "low": 57700,
+      "change_pct": 12.982456140350877,
+      "rebound_pct": 11.611785095320615,
+      "market_cap": 6953358993530,
+      "market_cap_currency": "KRW",
+      "sector": "Consumer Durables",
+      "industry": "Automotive Aftermarket"
+    },
+    {
+      "ticker": "140410.KQ",
+      "name": "메지온",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 63200,
+      "low": 56800,
+      "change_pct": 12.056737588652481,
+      "rebound_pct": 11.267605633802823,
+      "market_cap": 1741419385529,
+      "market_cap_currency": "KRW",
+      "sector": "Health Technology",
+      "industry": "Pharmaceuticals: Major"
+    },
+    {
+      "ticker": "041510.KQ",
+      "name": "에스엠",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 79100,
+      "low": 72600,
+      "change_pct": 11.72316384180791,
+      "rebound_pct": 8.953168044077131,
+      "market_cap": 1620944020844,
+      "market_cap_currency": "KRW",
+      "sector": "Consumer Services",
+      "industry": "Movies/Entertainment"
+    }
+  ],
+  "source_metadata": {
+    "provider": "TradingView public scanner",
+    "fetched_at": "2026-11-05T11:49:57.825484+00:00",
+    "session": "daily",
+    "timezone": "Asia/Seoul",
+    "scanned_symbols": 2633,
+    "excluded": {
+      "below_market_cap": 2354,
+      "unsupported_listing": 104,
+      "declining": 98,
+      "missing_market_cap": 7,
+      "below_rebound": 60,
+      "stale_session": 7
+    },
+    "latest_session_by_board": {
+      "KOSDAQ": "2026-11-05",
+      "KOSPI": "2026-11-05"
+    }
+  },
+  "sources": [
+    {
+      "label": "TradingView 국내 주식 스크리너",
+      "url": "https://kr.tradingview.com/markets/stocks-korea/market-movers-all-stocks/"
+    }
+  ]
+}

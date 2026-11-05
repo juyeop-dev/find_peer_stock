@@ -10,6 +10,7 @@ interface Props {
   closedDates: ReadonlyMap<string, string>;
   onMonthChange: (month: string) => void;
   onSelectDate: (date: string) => void;
+  recordLabel?: string;
 }
 
 const WEEKDAYS = ["일", "월", "화", "수", "목", "금", "토"];
@@ -22,7 +23,7 @@ function utcDate(year: number, monthIndex: number, day: number): Date {
 
 function dateKey(value: Date): string { return value.toISOString().slice(0, 10); }
 
-export function TurnoverCalendar({ month, selectedDate, today, days, closedDates, onMonthChange, onSelectDate }: Props) {
+export function TurnoverCalendar({ month, selectedDate, today, days, closedDates, onMonthChange, onSelectDate, recordLabel = "거래대금 순위" }: Props) {
   const [year, monthNumber] = month.split("-").map(Number);
   const firstWeekday = utcDate(year, monthNumber - 1, 1).getUTCDay();
   const dayCount = utcDate(year, monthNumber, 0).getUTCDate();
@@ -54,7 +55,7 @@ export function TurnoverCalendar({ month, selectedDate, today, days, closedDates
     buttons.current.get(key)?.focus();
   }
 
-  return <section className="newHighCalendar turnoverCalendar" aria-label="거래대금 조회 날짜 선택">
+  return <section className="newHighCalendar turnoverCalendar" aria-label={`${recordLabel === "거래대금 순위" ? "거래대금" : recordLabel} 조회 날짜 선택`}>
     <div className="newHighCalendarTop">
       <span className="newHighCalendarTitle">날짜 선택</span>
       <button className="newHighCalendarTodayButton" type="button" onClick={() => {
@@ -79,7 +80,7 @@ export function TurnoverCalendar({ month, selectedDate, today, days, closedDates
         const closed = count === undefined && (value.getUTCDay() === 0 || value.getUTCDay() === 6 || closedDates.has(key));
         const selected = key === selectedDate;
         const label = `${year}년 ${monthNumber}월 ${day}일, ${count !== undefined
-          ? `거래대금 순위 ${count}종목` : closed
+          ? `${recordLabel} ${count}종목` : closed
           ? `휴장${closedDates.get(key) ? ` (${closedDates.get(key)})` : ""}` : "등록된 데이터 없음"}`;
         return <button key={key} ref={(button) => {
           if (button) buttons.current.set(key, button);
@@ -95,7 +96,7 @@ export function TurnoverCalendar({ month, selectedDate, today, days, closedDates
         </button>;
       })}
     </div>
-    <div className="newHighCalendarLegend"><span><i className="turnoverCalendarDot" />거래대금 순위 등록</span><span><i className="newHighCalendarClosedMark" />휴장</span></div>
-    <p className="newHighCalendarHint">숫자는 등록된 상위 종목 수입니다. 평일 휴장은 공식 거래소 일정으로 확인합니다.</p>
+    <div className="newHighCalendarLegend"><span><i className="turnoverCalendarDot" />{recordLabel} 등록</span><span><i className="newHighCalendarClosedMark" />휴장</span></div>
+    <p className="newHighCalendarHint">숫자는 등록된 종목 수입니다. 평일 휴장은 공식 거래소 일정으로 확인합니다.</p>
   </section>;
 }

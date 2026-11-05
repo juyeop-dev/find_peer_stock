@@ -1,0 +1,101 @@
+{
+  "schema_version": 1,
+  "market": "korea",
+  "date": "2021-03-18",
+  "rules": {
+    "KOSPI": {
+      "market_cap_min": 5000000000000,
+      "rebound_min": 8
+    },
+    "KOSDAQ": {
+      "market_cap_min": 1000000000000,
+      "rebound_min": 5
+    }
+  },
+  "entries": [
+    {
+      "ticker": "302440.KS",
+      "name": "SK바이오사이언스",
+      "exchange": "KOSPI",
+      "currency": "KRW",
+      "price": 169000.0,
+      "low": 130000.0,
+      "change_pct": 30.0,
+      "rebound_pct": 30.000000000000004,
+      "market_cap": 12928500000000.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2021-03-18",
+      "sector": "미분류",
+      "industry": "미분류"
+    },
+    {
+      "ticker": "060250.KQ",
+      "name": "NHN한국사이버결제",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 52700.0,
+      "low": 48200.0,
+      "change_pct": 10.02,
+      "rebound_pct": 9.336099585062229,
+      "market_cap": 1210592411100.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2021-03-18",
+      "sector": "미분류",
+      "industry": "미분류"
+    },
+    {
+      "ticker": "028300.KQ",
+      "name": "에이치엘비",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 45400.0,
+      "low": 42450.0,
+      "change_pct": 7.46,
+      "rebound_pct": 6.949352179034163,
+      "market_cap": 2410865848800.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2021-03-18",
+      "sector": "미분류",
+      "industry": "미분류"
+    }
+  ],
+  "source_metadata": {
+    "provider": "KRX daily data via FinanceData/marcap",
+    "fetched_at": "2026-10-29T11:48:37.316017+00:00",
+    "reconstructed_at": "2026-11-05T11:51:55.107985+00:00",
+    "session": "daily",
+    "timezone": "Asia/Seoul",
+    "scanned_symbols": 2555,
+    "common_symbols_by_board": {
+      "KOSPI": 805,
+      "KOSDAQ": 1490
+    },
+    "excluded": {
+      "below_rebound": 60,
+      "unsupported_listing": 260,
+      "declining": 54,
+      "below_market_cap": 2085,
+      "no_trading": 93
+    },
+    "latest_session_by_board": {
+      "KOSPI": "2021-03-18",
+      "KOSDAQ": "2021-03-18"
+    },
+    "source_revision": "eeed0817d1478597b738a3a6149c170ec7e3f4cb",
+    "source_sha256": "ede65acaaa9ee61f56564f6a66840133ff4bbab9d2dbc21437f41b4c8d20199e",
+    "price_basis": "Unadjusted KRX Low and Close from the same daily source row",
+    "market_cap_basis": "Dated KRX Marcap in KRW; verified against Close * Stocks",
+    "listing_basis": "Dated KOSPI/KOSDAQ common share codes ending in 0; includes historical delistings",
+    "note": "KRX 당시 상장 종목의 당일 저가·종가·시가총액으로 복원한 기록입니다. 현재 시총이나 분할 조정 가격을 소급 적용하지 않습니다."
+  },
+  "sources": [
+    {
+      "label": "KRX daily data via FinanceData/marcap",
+      "url": "https://github.com/FinanceData/marcap"
+    },
+    {
+      "label": "2021년 고정 버전 원본",
+      "url": "https://raw.githubusercontent.com/FinanceData/marcap/eeed0817d1478597b738a3a6149c170ec7e3f4cb/data/marcap-2021.parquet"
+    }
+  ]
+}

@@ -1,0 +1,101 @@
+{
+  "schema_version": 1,
+  "market": "korea",
+  "date": "2024-02-07",
+  "rules": {
+    "KOSPI": {
+      "market_cap_min": 5000000000000,
+      "rebound_min": 8
+    },
+    "KOSDAQ": {
+      "market_cap_min": 1000000000000,
+      "rebound_min": 5
+    }
+  },
+  "entries": [
+    {
+      "ticker": "065350.KQ",
+      "name": "신성델타테크",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 117300.0,
+      "low": 100700.0,
+      "change_pct": 16.6,
+      "rebound_pct": 16.484607745779535,
+      "market_cap": 3223867100400.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2024-02-07",
+      "sector": "미분류",
+      "industry": "미분류"
+    },
+    {
+      "ticker": "035760.KQ",
+      "name": "CJ ENM",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 83400.0,
+      "low": 73600.0,
+      "change_pct": 11.95,
+      "rebound_pct": 13.315217391304346,
+      "market_cap": 1828891443600.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2024-02-07",
+      "sector": "미분류",
+      "industry": "미분류"
+    },
+    {
+      "ticker": "086520.KQ",
+      "name": "에코프로",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 579000.0,
+      "low": 525000.0,
+      "change_pct": 13.75,
+      "rebound_pct": 10.285714285714276,
+      "market_cap": 15417419772000.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2024-02-07",
+      "sector": "미분류",
+      "industry": "미분류"
+    }
+  ],
+  "source_metadata": {
+    "provider": "KRX daily data via FinanceData/marcap",
+    "fetched_at": "2026-10-24T14:57:02.974015+00:00",
+    "reconstructed_at": "2026-11-05T11:52:02.410174+00:00",
+    "session": "daily",
+    "timezone": "Asia/Seoul",
+    "scanned_symbols": 2793,
+    "common_symbols_by_board": {
+      "KOSPI": 839,
+      "KOSDAQ": 1707
+    },
+    "excluded": {
+      "below_rebound": 67,
+      "declining": 47,
+      "unsupported_listing": 247,
+      "below_market_cap": 2342,
+      "no_trading": 87
+    },
+    "latest_session_by_board": {
+      "KOSPI": "2024-02-07",
+      "KOSDAQ": "2024-02-07"
+    },
+    "source_revision": "eeed0817d1478597b738a3a6149c170ec7e3f4cb",
+    "source_sha256": "b0c38943e67637d5faf88429880092cf0f46a394be39860dd3bcd0b04231bccb",
+    "price_basis": "Unadjusted KRX Low and Close from the same daily source row",
+    "market_cap_basis": "Dated KRX Marcap in KRW; verified against Close * Stocks",
+    "listing_basis": "Dated KOSPI/KOSDAQ common share codes ending in 0; includes historical delistings",
+    "note": "KRX 당시 상장 종목의 당일 저가·종가·시가총액으로 복원한 기록입니다. 현재 시총이나 분할 조정 가격을 소급 적용하지 않습니다."
+  },
+  "sources": [
+    {
+      "label": "KRX daily data via FinanceData/marcap",
+      "url": "https://github.com/FinanceData/marcap"
+    },
+    {
+      "label": "2024년 고정 버전 원본",
+      "url": "https://raw.githubusercontent.com/FinanceData/marcap/eeed0817d1478597b738a3a6149c170ec7e3f4cb/data/marcap-2024.parquet"
+    }
+  ]
+}

@@ -1,0 +1,101 @@
+{
+  "schema_version": 1,
+  "market": "korea",
+  "date": "2018-05-16",
+  "rules": {
+    "KOSPI": {
+      "market_cap_min": 5000000000000,
+      "rebound_min": 8
+    },
+    "KOSDAQ": {
+      "market_cap_min": 1000000000000,
+      "rebound_min": 5
+    }
+  },
+  "entries": [
+    {
+      "ticker": "086900.KQ",
+      "name": "메디톡스",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 667000.0,
+      "low": 613400.0,
+      "change_pct": 9.52,
+      "rebound_pct": 8.73818063253995,
+      "market_cap": 3772908845000.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2018-05-16",
+      "sector": "미분류",
+      "industry": "미분류"
+    },
+    {
+      "ticker": "016170.KQ",
+      "name": "카카오M",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 95900.0,
+      "low": 90100.0,
+      "change_pct": 5.04,
+      "rebound_pct": 6.43729189789124,
+      "market_cap": 2425474509500.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2018-05-16",
+      "sector": "미분류",
+      "industry": "미분류"
+    },
+    {
+      "ticker": "084990.KQ",
+      "name": "바이로메드",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 205500.0,
+      "low": 194200.0,
+      "change_pct": 4.37,
+      "rebound_pct": 5.818743563336759,
+      "market_cap": 3279011430000.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2018-05-16",
+      "sector": "미분류",
+      "industry": "미분류"
+    }
+  ],
+  "source_metadata": {
+    "provider": "KRX daily data via FinanceData/marcap",
+    "fetched_at": "2026-11-02T11:29:22.642793+00:00",
+    "reconstructed_at": "2026-11-05T11:51:48.882935+00:00",
+    "session": "daily",
+    "timezone": "Asia/Seoul",
+    "scanned_symbols": 2311,
+    "common_symbols_by_board": {
+      "KOSPI": 777,
+      "KOSDAQ": 1269
+    },
+    "excluded": {
+      "below_rebound": 54,
+      "unsupported_listing": 265,
+      "declining": 39,
+      "below_market_cap": 1903,
+      "no_trading": 47
+    },
+    "latest_session_by_board": {
+      "KOSPI": "2018-05-16",
+      "KOSDAQ": "2018-05-16"
+    },
+    "source_revision": "eeed0817d1478597b738a3a6149c170ec7e3f4cb",
+    "source_sha256": "a03348ab0747972c6a353f52c636494abf216392d401cde823b6388e23f1c443",
+    "price_basis": "Unadjusted KRX Low and Close from the same daily source row",
+    "market_cap_basis": "Dated KRX Marcap in KRW; verified against Close * Stocks",
+    "listing_basis": "Dated KOSPI/KOSDAQ common share codes ending in 0; includes historical delistings",
+    "note": "KRX 당시 상장 종목의 당일 저가·종가·시가총액으로 복원한 기록입니다. 현재 시총이나 분할 조정 가격을 소급 적용하지 않습니다."
+  },
+  "sources": [
+    {
+      "label": "KRX daily data via FinanceData/marcap",
+      "url": "https://github.com/FinanceData/marcap"
+    },
+    {
+      "label": "2018년 고정 버전 원본",
+      "url": "https://raw.githubusercontent.com/FinanceData/marcap/eeed0817d1478597b738a3a6149c170ec7e3f4cb/data/marcap-2018.parquet"
+    }
+  ]
+}

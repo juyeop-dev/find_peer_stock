@@ -1,0 +1,131 @@
+{
+  "schema_version": 1,
+  "market": "korea",
+  "date": "2021-03-03",
+  "rules": {
+    "KOSPI": {
+      "market_cap_min": 5000000000000,
+      "rebound_min": 8
+    },
+    "KOSDAQ": {
+      "market_cap_min": 1000000000000,
+      "rebound_min": 5
+    }
+  },
+  "entries": [
+    {
+      "ticker": "011780.KS",
+      "name": "금호석유",
+      "exchange": "KOSPI",
+      "currency": "KRW",
+      "price": 226500.0,
+      "low": 205500.0,
+      "change_pct": 8.37,
+      "rebound_pct": 10.21897810218979,
+      "market_cap": 6900932011500.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2021-03-03",
+      "sector": "미분류",
+      "industry": "미분류"
+    },
+    {
+      "ticker": "011200.KS",
+      "name": "HMM",
+      "exchange": "KOSPI",
+      "currency": "KRW",
+      "price": 20400.0,
+      "low": 18700.0,
+      "change_pct": 8.51,
+      "rebound_pct": 9.090909090909083,
+      "market_cap": 6692448276000.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2021-03-03",
+      "sector": "미분류",
+      "industry": "미분류"
+    },
+    {
+      "ticker": "139480.KS",
+      "name": "이마트",
+      "exchange": "KOSPI",
+      "currency": "KRW",
+      "price": 185000.0,
+      "low": 170000.0,
+      "change_pct": 8.5,
+      "rebound_pct": 8.823529411764696,
+      "market_cap": 5157026515000.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2021-03-03",
+      "sector": "미분류",
+      "industry": "미분류"
+    },
+    {
+      "ticker": "151910.KQ",
+      "name": "나노스",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 8140.0,
+      "low": 7500.0,
+      "change_pct": 0.12,
+      "rebound_pct": 8.533333333333326,
+      "market_cap": 1209810324580.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2021-03-03",
+      "sector": "미분류",
+      "industry": "미분류"
+    },
+    {
+      "ticker": "098460.KQ",
+      "name": "고영",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 114100.0,
+      "low": 107300.0,
+      "change_pct": 4.97,
+      "rebound_pct": 6.337371854613227,
+      "market_cap": 1566701509100.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2021-03-03",
+      "sector": "미분류",
+      "industry": "미분류"
+    }
+  ],
+  "source_metadata": {
+    "provider": "KRX daily data via FinanceData/marcap",
+    "fetched_at": "2026-10-29T11:48:37.316017+00:00",
+    "reconstructed_at": "2026-11-05T11:51:55.007167+00:00",
+    "session": "daily",
+    "timezone": "Asia/Seoul",
+    "scanned_symbols": 2546,
+    "common_symbols_by_board": {
+      "KOSPI": 803,
+      "KOSDAQ": 1483
+    },
+    "excluded": {
+      "below_rebound": 79,
+      "declining": 26,
+      "unsupported_listing": 260,
+      "below_market_cap": 2081,
+      "no_trading": 95
+    },
+    "latest_session_by_board": {
+      "KOSPI": "2021-03-03",
+      "KOSDAQ": "2021-03-03"
+    },
+    "source_revision": "eeed0817d1478597b738a3a6149c170ec7e3f4cb",
+    "source_sha256": "ede65acaaa9ee61f56564f6a66840133ff4bbab9d2dbc21437f41b4c8d20199e",
+    "price_basis": "Unadjusted KRX Low and Close from the same daily source row",
+    "market_cap_basis": "Dated KRX Marcap in KRW; verified against Close * Stocks",
+    "listing_basis": "Dated KOSPI/KOSDAQ common share codes ending in 0; includes historical delistings",
+    "note": "KRX 당시 상장 종목의 당일 저가·종가·시가총액으로 복원한 기록입니다. 현재 시총이나 분할 조정 가격을 소급 적용하지 않습니다."
+  },
+  "sources": [
+    {
+      "label": "KRX daily data via FinanceData/marcap",
+      "url": "https://github.com/FinanceData/marcap"
+    },
+    {
+      "label": "2021년 고정 버전 원본",
+      "url": "https://raw.githubusercontent.com/FinanceData/marcap/eeed0817d1478597b738a3a6149c170ec7e3f4cb/data/marcap-2021.parquet"
+    }
+  ]
+}

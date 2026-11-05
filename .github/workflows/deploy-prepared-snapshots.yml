@@ -48,6 +48,7 @@ jobs:
           npm run test:chart-replay
           npm run test:stock-information
           npm run test:stock-details
+          npm run test:rebounds
       - name: Build from committed stock snapshots
         working-directory: frontend
         env:

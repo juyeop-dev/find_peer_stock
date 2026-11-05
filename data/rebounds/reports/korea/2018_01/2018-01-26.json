@@ -1,0 +1,161 @@
+{
+  "schema_version": 1,
+  "market": "korea",
+  "date": "2018-01-26",
+  "rules": {
+    "KOSPI": {
+      "market_cap_min": 5000000000000,
+      "rebound_min": 8
+    },
+    "KOSDAQ": {
+      "market_cap_min": 1000000000000,
+      "rebound_min": 5
+    }
+  },
+  "entries": [
+    {
+      "ticker": "139480.KS",
+      "name": "이마트",
+      "exchange": "KOSPI",
+      "currency": "KRW",
+      "price": 294500.0,
+      "low": 255000.0,
+      "change_pct": 15.04,
+      "rebound_pct": 15.490196078431362,
+      "market_cap": 8209428695500.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2018-01-26",
+      "sector": "미분류",
+      "industry": "미분류"
+    },
+    {
+      "ticker": "038540.KQ",
+      "name": "텍셀네트컴",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 25450.0,
+      "low": 22700.0,
+      "change_pct": 13.62,
+      "rebound_pct": 12.114537444933916,
+      "market_cap": 1215196703650.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2018-01-26",
+      "sector": "미분류",
+      "industry": "미분류"
+    },
+    {
+      "ticker": "091990.KQ",
+      "name": "셀트리온헬스케어",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 122100.0,
+      "low": 114100.0,
+      "change_pct": 4.54,
+      "rebound_pct": 7.011393514461006,
+      "market_cap": 16769021448300.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2018-01-26",
+      "sector": "미분류",
+      "industry": "미분류"
+    },
+    {
+      "ticker": "068270.KQ",
+      "name": "셀트리온",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 300000.0,
+      "low": 282300.0,
+      "change_pct": 3.56,
+      "rebound_pct": 6.269925611052063,
+      "market_cap": 36799927200000.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2018-01-26",
+      "sector": "미분류",
+      "industry": "미분류"
+    },
+    {
+      "ticker": "263750.KQ",
+      "name": "펄어비스",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 269600.0,
+      "low": 255000.0,
+      "change_pct": 6.94,
+      "rebound_pct": 5.725490196078442,
+      "market_cap": 3253074480000.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2018-01-26",
+      "sector": "미분류",
+      "industry": "미분류"
+    },
+    {
+      "ticker": "085660.KQ",
+      "name": "차바이오텍",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 40950.0,
+      "low": 38800.0,
+      "change_pct": 2.63,
+      "rebound_pct": 5.541237113402064,
+      "market_cap": 2100517596450.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2018-01-26",
+      "sector": "미분류",
+      "industry": "미분류"
+    },
+    {
+      "ticker": "253450.KQ",
+      "name": "스튜디오드래곤",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 85200.0,
+      "low": 80800.0,
+      "change_pct": 2.04,
+      "rebound_pct": 5.44554455445545,
+      "market_cap": 2388772848000.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2018-01-26",
+      "sector": "미분류",
+      "industry": "미분류"
+    }
+  ],
+  "source_metadata": {
+    "provider": "KRX daily data via FinanceData/marcap",
+    "fetched_at": "2026-11-02T11:29:22.642793+00:00",
+    "reconstructed_at": "2026-11-05T11:51:48.272395+00:00",
+    "session": "daily",
+    "timezone": "Asia/Seoul",
+    "scanned_symbols": 2314,
+    "common_symbols_by_board": {
+      "KOSPI": 776,
+      "KOSDAQ": 1267
+    },
+    "excluded": {
+      "below_rebound": 56,
+      "declining": 38,
+      "unsupported_listing": 271,
+      "below_market_cap": 1919,
+      "no_trading": 23
+    },
+    "latest_session_by_board": {
+      "KOSPI": "2018-01-26",
+      "KOSDAQ": "2018-01-26"
+    },
+    "source_revision": "eeed0817d1478597b738a3a6149c170ec7e3f4cb",
+    "source_sha256": "a03348ab0747972c6a353f52c636494abf216392d401cde823b6388e23f1c443",
+    "price_basis": "Unadjusted KRX Low and Close from the same daily source row",
+    "market_cap_basis": "Dated KRX Marcap in KRW; verified against Close * Stocks",
+    "listing_basis": "Dated KOSPI/KOSDAQ common share codes ending in 0; includes historical delistings",
+    "note": "KRX 당시 상장 종목의 당일 저가·종가·시가총액으로 복원한 기록입니다. 현재 시총이나 분할 조정 가격을 소급 적용하지 않습니다."
+  },
+  "sources": [
+    {
+      "label": "KRX daily data via FinanceData/marcap",
+      "url": "https://github.com/FinanceData/marcap"
+    },
+    {
+      "label": "2018년 고정 버전 원본",
+      "url": "https://raw.githubusercontent.com/FinanceData/marcap/eeed0817d1478597b738a3a6149c170ec7e3f4cb/data/marcap-2018.parquet"
+    }
+  ]
+}

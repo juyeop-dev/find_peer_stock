@@ -6,7 +6,7 @@ interface DataRefreshStatusProps {
   lastCheckedAt?: string | null;
   generatedAt?: string;
   lastSourceAt?: string | null;
-  cadence?: "quote" | "daily" | "turnover-korea" | "turnover-history" | "semiconductor" | "credit" | "sectors" | "sector-history" | "investors";
+  cadence?: "quote" | "daily" | "turnover-korea" | "turnover-history" | "semiconductor" | "credit" | "sectors" | "sector-history" | "investors" | "rebounds";
   onRefresh: () => void;
 }
 
@@ -19,13 +19,15 @@ export function DataRefreshStatus({ refreshing, lastCheckedAt, lastSourceAt, gen
   // The daily archive changes only after a market close, but its published
   // index should still be checked by the same site-wide deployment heartbeat.
   const freshnessTime = lastSourceAt ?? generatedAt;
-  const delayed = cadence !== "sector-history" && cadence !== "turnover-korea" && cadence !== "turnover-history" && cadence !== "investors" && Boolean(freshnessTime && now - new Date(freshnessTime).getTime() > 20 * 60_000);
+  const delayed = cadence !== "rebounds" && cadence !== "sector-history" && cadence !== "turnover-korea" && cadence !== "turnover-history" && cadence !== "investors" && Boolean(freshnessTime && now - new Date(freshnessTime).getTime() > 20 * 60_000);
 
   return (
     <>
       <div className="dataRefreshStatus">
         <p>
-          <span>{cadence === "investors"
+          <span>{cadence === "rebounds"
+            ? "국내 반등 종목은 장 마감 후 일봉으로 계산합니다. 15:50부터 수집하며, 새로고침하면 저장된 반등 기록을 다시 불러옵니다."
+            : cadence === "investors"
             ? "새로고침하면 선택한 거래일의 매수·매도 금액과 시장 지수를 원본에서 다시 조회합니다."
             : cadence === "credit"
             ? "새로고침하면 금융투자협회 원본에서 최신 발표값을 조회합니다."

@@ -1,0 +1,116 @@
+{
+  "schema_version": 1,
+  "market": "korea",
+  "date": "2021-06-15",
+  "rules": {
+    "KOSPI": {
+      "market_cap_min": 5000000000000,
+      "rebound_min": 8
+    },
+    "KOSDAQ": {
+      "market_cap_min": 1000000000000,
+      "rebound_min": 5
+    }
+  },
+  "entries": [
+    {
+      "ticker": "007390.KQ",
+      "name": "네이처셀",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 17500.0,
+      "low": 15050.0,
+      "change_pct": 14.75,
+      "rebound_pct": 16.279069767441868,
+      "market_cap": 1072862962500.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2021-06-15",
+      "sector": "미분류",
+      "industry": "미분류"
+    },
+    {
+      "ticker": "214150.KQ",
+      "name": "클래시스",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 18050.0,
+      "low": 16800.0,
+      "change_pct": 6.8,
+      "rebound_pct": 7.440476190476186,
+      "market_cap": 1168139395200.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2021-06-15",
+      "sector": "미분류",
+      "industry": "미분류"
+    },
+    {
+      "ticker": "145020.KQ",
+      "name": "휴젤",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 248000.0,
+      "low": 233000.0,
+      "change_pct": 5.31,
+      "rebound_pct": 6.4377682403433445,
+      "market_cap": 3096392840000.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2021-06-15",
+      "sector": "미분류",
+      "industry": "미분류"
+    },
+    {
+      "ticker": "041510.KQ",
+      "name": "에스엠",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 51000.0,
+      "low": 48250.0,
+      "change_pct": 8.28,
+      "rebound_pct": 5.699481865284972,
+      "market_cap": 1196077551000.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2021-06-15",
+      "sector": "미분류",
+      "industry": "미분류"
+    }
+  ],
+  "source_metadata": {
+    "provider": "KRX daily data via FinanceData/marcap",
+    "fetched_at": "2026-10-29T11:48:37.316017+00:00",
+    "reconstructed_at": "2026-11-05T11:51:55.693389+00:00",
+    "session": "daily",
+    "timezone": "Asia/Seoul",
+    "scanned_symbols": 2569,
+    "common_symbols_by_board": {
+      "KOSPI": 808,
+      "KOSDAQ": 1502
+    },
+    "excluded": {
+      "below_rebound": 68,
+      "unsupported_listing": 259,
+      "declining": 57,
+      "below_market_cap": 2072,
+      "no_trading": 109
+    },
+    "latest_session_by_board": {
+      "KOSPI": "2021-06-15",
+      "KOSDAQ": "2021-06-15"
+    },
+    "source_revision": "eeed0817d1478597b738a3a6149c170ec7e3f4cb",
+    "source_sha256": "ede65acaaa9ee61f56564f6a66840133ff4bbab9d2dbc21437f41b4c8d20199e",
+    "price_basis": "Unadjusted KRX Low and Close from the same daily source row",
+    "market_cap_basis": "Dated KRX Marcap in KRW; verified against Close * Stocks",
+    "listing_basis": "Dated KOSPI/KOSDAQ common share codes ending in 0; includes historical delistings",
+    "note": "KRX 당시 상장 종목의 당일 저가·종가·시가총액으로 복원한 기록입니다. 현재 시총이나 분할 조정 가격을 소급 적용하지 않습니다."
+  },
+  "sources": [
+    {
+      "label": "KRX daily data via FinanceData/marcap",
+      "url": "https://github.com/FinanceData/marcap"
+    },
+    {
+      "label": "2021년 고정 버전 원본",
+      "url": "https://raw.githubusercontent.com/FinanceData/marcap/eeed0817d1478597b738a3a6149c170ec7e3f4cb/data/marcap-2021.parquet"
+    }
+  ]
+}

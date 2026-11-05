@@ -1,6 +1,6 @@
 import semiconductorSeeds from "../../../data/seed/semiconductor_stocks.json";
 
-export type CalendarSource = "new-highs" | "turnover";
+export type CalendarSource = "new-highs" | "turnover" | "rebounds";
 const semiconductorTickers = new Set(semiconductorSeeds.map((stock) => stock.ticker));
 
 export function calendarStockLink(ticker: string, source: CalendarSource, market: string, date: string, returnTo: string): string {
@@ -11,7 +11,7 @@ export function calendarStockLink(ticker: string, source: CalendarSource, market
 }
 
 export function calendarReturnLink(value: string | null, fallback = "/new-highs"): string {
-  return value && /^\/(new-highs|turnover|calendar-history|sectors|sector-stocks|sector-trends)(?:\?|$)/.test(value) ? value : fallback;
+  return value && /^\/(new-highs|turnover|rebounds|calendar-history|sectors|sector-stocks|sector-trends)(?:\?|$)/.test(value) ? value : fallback;
 }
 
 export function tradingViewSymbol(ticker: string, exchange = ""): string | null {

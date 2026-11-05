@@ -20,6 +20,15 @@ test("calendar links reuse registered semiconductor detail and support every oth
   assert.equal(other.searchParams.get("date"), "2026-10-19");
 });
 
+test("rebound stock links preserve the report date and safe return route", () => {
+  const back = "/rebounds?date=2026-11-02";
+  const link = new URL(calendarStockLink("009830.KS", "rebounds", "korea", "2026-11-02", back), "https://example.com");
+  assert.equal(link.pathname, "/market-stocks/009830.KS");
+  assert.equal(link.searchParams.get("source"), "rebounds");
+  assert.equal(calendarReturnLink(back), back);
+  assert.equal(calendarReturnLink("/rebounds-evil"), "/new-highs");
+});
+
 test("symbols retain the right exchange and listing code across all six markets", () => {
   for (const [ticker, exchange, expected] of [
     ["035420.KS", "KOSPI", "KRX:035420"], ["080220.KQ", "KOSDAQ", "KRX:080220"],

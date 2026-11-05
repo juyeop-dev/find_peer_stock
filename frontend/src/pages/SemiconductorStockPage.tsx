@@ -33,7 +33,7 @@ export function SemiconductorStockPage() {
   const currentPrice = quote?.price ?? latest?.close ?? null;
 
   return <main className="pageShell semiPage">
-    {returnTo ? <div className="semiBreadcrumb"><Link to={returnTo}>← {returnTo.startsWith("/turnover") ? "거래대금 캘린더" : returnTo.startsWith("/calendar-history") ? "누적 기록" : "신고가 캘린더"}로 돌아가기</Link></div> : null}
+    {returnTo ? <div className="semiBreadcrumb"><Link to={returnTo}>← {returnTo.startsWith("/rebounds") ? "일일 반등" : returnTo.startsWith("/turnover") ? "거래대금 캘린더" : returnTo.startsWith("/calendar-history") ? "누적 기록" : "신고가 캘린더"}로 돌아가기</Link></div> : null}
     <div className="semiBreadcrumb"><Link to="/semiconductors">반도체 종목</Link><span>/</span><span>{stock?.name ?? ticker}</span></div>
     <DataRefreshStatus refreshing={refreshing} lastCheckedAt={lastCheckedAt} lastSourceAt={lastSourceAt} generatedAt={data?.quoted_at} cadence="semiconductor" onRefresh={refresh} />
     {loading && <LoadingSpinner />}{error && <ErrorNotice message={error} />}

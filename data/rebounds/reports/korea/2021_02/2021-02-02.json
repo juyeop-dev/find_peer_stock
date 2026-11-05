@@ -1,0 +1,146 @@
+{
+  "schema_version": 1,
+  "market": "korea",
+  "date": "2021-02-02",
+  "rules": {
+    "KOSPI": {
+      "market_cap_min": 5000000000000,
+      "rebound_min": 8
+    },
+    "KOSDAQ": {
+      "market_cap_min": 1000000000000,
+      "rebound_min": 5
+    }
+  },
+  "entries": [
+    {
+      "ticker": "352820.KS",
+      "name": "빅히트",
+      "exchange": "KOSPI",
+      "currency": "KRW",
+      "price": 232500.0,
+      "low": 213500.0,
+      "change_pct": 6.9,
+      "rebound_pct": 8.899297423887598,
+      "market_cap": 8282524200000.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2021-02-02",
+      "sector": "미분류",
+      "industry": "미분류"
+    },
+    {
+      "ticker": "011790.KS",
+      "name": "SKC",
+      "exchange": "KOSPI",
+      "currency": "KRW",
+      "price": 135000.0,
+      "low": 124000.0,
+      "change_pct": 8.43,
+      "rebound_pct": 8.870967741935477,
+      "market_cap": 5112220230000.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2021-02-02",
+      "sector": "미분류",
+      "industry": "미분류"
+    },
+    {
+      "ticker": "048410.KQ",
+      "name": "현대바이오",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 30400.0,
+      "low": 23150.0,
+      "change_pct": 29.91,
+      "rebound_pct": 31.31749460043196,
+      "market_cap": 1091842660800.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2021-02-02",
+      "sector": "미분류",
+      "industry": "미분류"
+    },
+    {
+      "ticker": "084990.KQ",
+      "name": "헬릭스미스",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 31400.0,
+      "low": 28950.0,
+      "change_pct": 3.63,
+      "rebound_pct": 8.462867012089802,
+      "market_cap": 1075943419600.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2021-02-02",
+      "sector": "미분류",
+      "industry": "미분류"
+    },
+    {
+      "ticker": "033640.KQ",
+      "name": "네패스",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 46750.0,
+      "low": 44150.0,
+      "change_pct": 5.53,
+      "rebound_pct": 5.889014722536801,
+      "market_cap": 1078017693500.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2021-02-02",
+      "sector": "미분류",
+      "industry": "미분류"
+    },
+    {
+      "ticker": "293490.KQ",
+      "name": "카카오게임즈",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 52700.0,
+      "low": 49900.0,
+      "change_pct": 3.74,
+      "rebound_pct": 5.611222444889785,
+      "market_cap": 3905946348300.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2021-02-02",
+      "sector": "미분류",
+      "industry": "미분류"
+    }
+  ],
+  "source_metadata": {
+    "provider": "KRX daily data via FinanceData/marcap",
+    "fetched_at": "2026-10-29T11:48:37.316017+00:00",
+    "reconstructed_at": "2026-11-05T11:51:54.837767+00:00",
+    "session": "daily",
+    "timezone": "Asia/Seoul",
+    "scanned_symbols": 2538,
+    "common_symbols_by_board": {
+      "KOSPI": 802,
+      "KOSDAQ": 1473
+    },
+    "excluded": {
+      "below_rebound": 74,
+      "unsupported_listing": 263,
+      "declining": 36,
+      "below_market_cap": 2071,
+      "no_trading": 88
+    },
+    "latest_session_by_board": {
+      "KOSPI": "2021-02-02",
+      "KOSDAQ": "2021-02-02"
+    },
+    "source_revision": "eeed0817d1478597b738a3a6149c170ec7e3f4cb",
+    "source_sha256": "ede65acaaa9ee61f56564f6a66840133ff4bbab9d2dbc21437f41b4c8d20199e",
+    "price_basis": "Unadjusted KRX Low and Close from the same daily source row",
+    "market_cap_basis": "Dated KRX Marcap in KRW; verified against Close * Stocks",
+    "listing_basis": "Dated KOSPI/KOSDAQ common share codes ending in 0; includes historical delistings",
+    "note": "KRX 당시 상장 종목의 당일 저가·종가·시가총액으로 복원한 기록입니다. 현재 시총이나 분할 조정 가격을 소급 적용하지 않습니다."
+  },
+  "sources": [
+    {
+      "label": "KRX daily data via FinanceData/marcap",
+      "url": "https://github.com/FinanceData/marcap"
+    },
+    {
+      "label": "2021년 고정 버전 원본",
+      "url": "https://raw.githubusercontent.com/FinanceData/marcap/eeed0817d1478597b738a3a6149c170ec7e3f4cb/data/marcap-2021.parquet"
+    }
+  ]
+}

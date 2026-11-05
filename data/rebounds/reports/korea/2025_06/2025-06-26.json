@@ -1,0 +1,131 @@
+{
+  "schema_version": 1,
+  "market": "korea",
+  "date": "2025-06-26",
+  "rules": {
+    "KOSPI": {
+      "market_cap_min": 5000000000000,
+      "rebound_min": 8
+    },
+    "KOSDAQ": {
+      "market_cap_min": 1000000000000,
+      "rebound_min": 5
+    }
+  },
+  "entries": [
+    {
+      "ticker": "015760.KS",
+      "name": "한국전력",
+      "exchange": "KOSPI",
+      "currency": "KRW",
+      "price": 40600.0,
+      "low": 36350.0,
+      "change_pct": 7.27,
+      "rebound_pct": 11.691884456671243,
+      "market_cap": 26063741526200.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2025-06-26",
+      "sector": "미분류",
+      "industry": "미분류"
+    },
+    {
+      "ticker": "214450.KQ",
+      "name": "파마리서치",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 499500.0,
+      "low": 469000.0,
+      "change_pct": 3.95,
+      "rebound_pct": 6.503198294243062,
+      "market_cap": 5249545200000.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2025-06-26",
+      "sector": "미분류",
+      "industry": "미분류"
+    },
+    {
+      "ticker": "310210.KQ",
+      "name": "보로노이",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 109500.0,
+      "low": 103600.0,
+      "change_pct": 1.39,
+      "rebound_pct": 5.694980694980689,
+      "market_cap": 2013535165500.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2025-06-26",
+      "sector": "미분류",
+      "industry": "미분류"
+    },
+    {
+      "ticker": "060370.KQ",
+      "name": "LS마린솔루션",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 32700.0,
+      "low": 31050.0,
+      "change_pct": 1.55,
+      "rebound_pct": 5.31400966183575,
+      "market_cap": 1068271525800.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2025-06-26",
+      "sector": "미분류",
+      "industry": "미분류"
+    },
+    {
+      "ticker": "214370.KQ",
+      "name": "케어젠",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 32950.0,
+      "low": 31300.0,
+      "change_pct": 0.0,
+      "rebound_pct": 5.271565495207664,
+      "market_cap": 1769909250000.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2025-06-26",
+      "sector": "미분류",
+      "industry": "미분류"
+    }
+  ],
+  "source_metadata": {
+    "provider": "KRX daily data via FinanceData/marcap",
+    "fetched_at": "2026-11-05T11:50:19.731573+00:00",
+    "reconstructed_at": "2026-11-05T11:52:05.966754+00:00",
+    "session": "daily",
+    "timezone": "Asia/Seoul",
+    "scanned_symbols": 2875,
+    "common_symbols_by_board": {
+      "KOSPI": 849,
+      "KOSDAQ": 1792
+    },
+    "excluded": {
+      "declining": 101,
+      "below_rebound": 41,
+      "unsupported_listing": 234,
+      "no_trading": 105,
+      "below_market_cap": 2389
+    },
+    "latest_session_by_board": {
+      "KOSPI": "2025-06-26",
+      "KOSDAQ": "2025-06-26"
+    },
+    "source_revision": "468b948c971b567376d41659e0bffd1ad3d3cd1f",
+    "source_sha256": "2bfd93c217eb74263bc5020b23fa6debb6b02531c11eaccc2826639bc191559e",
+    "price_basis": "Unadjusted KRX Low and Close from the same daily source row",
+    "market_cap_basis": "Dated KRX Marcap in KRW; verified against Close * Stocks",
+    "listing_basis": "Dated KOSPI/KOSDAQ common share codes ending in 0; includes historical delistings",
+    "note": "KRX 당시 상장 종목의 당일 저가·종가·시가총액으로 복원한 기록입니다. 현재 시총이나 분할 조정 가격을 소급 적용하지 않습니다."
+  },
+  "sources": [
+    {
+      "label": "KRX daily data via FinanceData/marcap",
+      "url": "https://github.com/FinanceData/marcap"
+    },
+    {
+      "label": "2025년 고정 버전 원본",
+      "url": "https://raw.githubusercontent.com/FinanceData/marcap/468b948c971b567376d41659e0bffd1ad3d3cd1f/data/marcap-2025.parquet"
+    }
+  ]
+}

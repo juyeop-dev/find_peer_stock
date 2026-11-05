@@ -1,0 +1,146 @@
+{
+  "schema_version": 1,
+  "market": "korea",
+  "date": "2021-03-04",
+  "rules": {
+    "KOSPI": {
+      "market_cap_min": 5000000000000,
+      "rebound_min": 8
+    },
+    "KOSDAQ": {
+      "market_cap_min": 1000000000000,
+      "rebound_min": 5
+    }
+  },
+  "entries": [
+    {
+      "ticker": "268600.KQ",
+      "name": "셀리버리",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 131700.0,
+      "low": 120800.0,
+      "change_pct": 3.54,
+      "rebound_pct": 9.02317880794703,
+      "market_cap": 2155957183800.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2021-03-04",
+      "sector": "미분류",
+      "industry": "미분류"
+    },
+    {
+      "ticker": "069080.KQ",
+      "name": "웹젠",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 37350.0,
+      "low": 34550.0,
+      "change_pct": 5.36,
+      "rebound_pct": 8.104196816208397,
+      "market_cap": 1318861517400.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2021-03-04",
+      "sector": "미분류",
+      "industry": "미분류"
+    },
+    {
+      "ticker": "144510.KQ",
+      "name": "녹십자랩셀",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 96000.0,
+      "low": 90100.0,
+      "change_pct": 0.52,
+      "rebound_pct": 6.548279689234193,
+      "market_cap": 1013189184000.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2021-03-04",
+      "sector": "미분류",
+      "industry": "미분류"
+    },
+    {
+      "ticker": "028300.KQ",
+      "name": "에이치엘비",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 75000.0,
+      "low": 70800.0,
+      "change_pct": 4.9,
+      "rebound_pct": 5.932203389830515,
+      "market_cap": 3982707900000.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2021-03-04",
+      "sector": "미분류",
+      "industry": "미분류"
+    },
+    {
+      "ticker": "034230.KQ",
+      "name": "파라다이스",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 18600.0,
+      "low": 17650.0,
+      "change_pct": 3.33,
+      "rebound_pct": 5.3824362606232246,
+      "market_cap": 1691533699200.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2021-03-04",
+      "sector": "미분류",
+      "industry": "미분류"
+    },
+    {
+      "ticker": "098460.KQ",
+      "name": "고영",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 117200.0,
+      "low": 111400.0,
+      "change_pct": 2.72,
+      "rebound_pct": 5.206463195691202,
+      "market_cap": 1609267457200.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2021-03-04",
+      "sector": "미분류",
+      "industry": "미분류"
+    }
+  ],
+  "source_metadata": {
+    "provider": "KRX daily data via FinanceData/marcap",
+    "fetched_at": "2026-10-29T11:48:37.316017+00:00",
+    "reconstructed_at": "2026-11-05T11:51:55.011832+00:00",
+    "session": "daily",
+    "timezone": "Asia/Seoul",
+    "scanned_symbols": 2546,
+    "common_symbols_by_board": {
+      "KOSPI": 803,
+      "KOSDAQ": 1483
+    },
+    "excluded": {
+      "declining": 77,
+      "unsupported_listing": 260,
+      "below_rebound": 26,
+      "below_market_cap": 2081,
+      "no_trading": 96
+    },
+    "latest_session_by_board": {
+      "KOSPI": "2021-03-04",
+      "KOSDAQ": "2021-03-04"
+    },
+    "source_revision": "eeed0817d1478597b738a3a6149c170ec7e3f4cb",
+    "source_sha256": "ede65acaaa9ee61f56564f6a66840133ff4bbab9d2dbc21437f41b4c8d20199e",
+    "price_basis": "Unadjusted KRX Low and Close from the same daily source row",
+    "market_cap_basis": "Dated KRX Marcap in KRW; verified against Close * Stocks",
+    "listing_basis": "Dated KOSPI/KOSDAQ common share codes ending in 0; includes historical delistings",
+    "note": "KRX 당시 상장 종목의 당일 저가·종가·시가총액으로 복원한 기록입니다. 현재 시총이나 분할 조정 가격을 소급 적용하지 않습니다."
+  },
+  "sources": [
+    {
+      "label": "KRX daily data via FinanceData/marcap",
+      "url": "https://github.com/FinanceData/marcap"
+    },
+    {
+      "label": "2021년 고정 버전 원본",
+      "url": "https://raw.githubusercontent.com/FinanceData/marcap/eeed0817d1478597b738a3a6149c170ec7e3f4cb/data/marcap-2021.parquet"
+    }
+  ]
+}

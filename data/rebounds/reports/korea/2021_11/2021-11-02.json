@@ -1,0 +1,176 @@
+{
+  "schema_version": 1,
+  "market": "korea",
+  "date": "2021-11-02",
+  "rules": {
+    "KOSPI": {
+      "market_cap_min": 5000000000000,
+      "rebound_min": 8
+    },
+    "KOSDAQ": {
+      "market_cap_min": 1000000000000,
+      "rebound_min": 5
+    }
+  },
+  "entries": [
+    {
+      "ticker": "215000.KQ",
+      "name": "골프존",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 166900.0,
+      "low": 148000.0,
+      "change_pct": 11.49,
+      "rebound_pct": 12.770270270270267,
+      "market_cap": 1047366763500.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2021-11-02",
+      "sector": "미분류",
+      "industry": "미분류"
+    },
+    {
+      "ticker": "068240.KQ",
+      "name": "다원시스",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 34200.0,
+      "low": 31050.0,
+      "change_pct": 9.27,
+      "rebound_pct": 10.144927536231885,
+      "market_cap": 1079502719400.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2021-11-02",
+      "sector": "미분류",
+      "industry": "미분류"
+    },
+    {
+      "ticker": "196170.KQ",
+      "name": "알테오젠",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 80700.0,
+      "low": 74000.0,
+      "change_pct": 9.05,
+      "rebound_pct": 9.054054054054061,
+      "market_cap": 3410724975000.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2021-11-02",
+      "sector": "미분류",
+      "industry": "미분류"
+    },
+    {
+      "ticker": "298380.KQ",
+      "name": "에이비엘바이오",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 23600.0,
+      "low": 21850.0,
+      "change_pct": 7.03,
+      "rebound_pct": 8.00915331807781,
+      "market_cap": 1112109290000.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2021-11-02",
+      "sector": "미분류",
+      "industry": "미분류"
+    },
+    {
+      "ticker": "950220.KQ",
+      "name": "네오이뮨텍(Reg.S)",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 10600.0,
+      "low": 9900.0,
+      "change_pct": 7.18,
+      "rebound_pct": 7.070707070707072,
+      "market_cap": 1044439306000.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2021-11-02",
+      "sector": "미분류",
+      "industry": "미분류"
+    },
+    {
+      "ticker": "235980.KQ",
+      "name": "메드팩토",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 64300.0,
+      "low": 60600.0,
+      "change_pct": 5.24,
+      "rebound_pct": 6.105610561056096,
+      "market_cap": 1318814990600.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2021-11-02",
+      "sector": "미분류",
+      "industry": "미분류"
+    },
+    {
+      "ticker": "036540.KQ",
+      "name": "SFA반도체",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 6680.0,
+      "low": 6310.0,
+      "change_pct": 6.54,
+      "rebound_pct": 5.863708399366097,
+      "market_cap": 1098594824040.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2021-11-02",
+      "sector": "미분류",
+      "industry": "미분류"
+    },
+    {
+      "ticker": "067160.KQ",
+      "name": "아프리카TV",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 213700.0,
+      "low": 203000.0,
+      "change_pct": 3.29,
+      "rebound_pct": 5.270935960591139,
+      "market_cap": 2456431707900.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2021-11-02",
+      "sector": "미분류",
+      "industry": "미분류"
+    }
+  ],
+  "source_metadata": {
+    "provider": "KRX daily data via FinanceData/marcap",
+    "fetched_at": "2026-10-29T11:48:37.316017+00:00",
+    "reconstructed_at": "2026-11-05T11:51:56.628911+00:00",
+    "session": "daily",
+    "timezone": "Asia/Seoul",
+    "scanned_symbols": 2595,
+    "common_symbols_by_board": {
+      "KOSPI": 820,
+      "KOSDAQ": 1520
+    },
+    "excluded": {
+      "below_rebound": 93,
+      "declining": 37,
+      "unsupported_listing": 255,
+      "no_trading": 92,
+      "below_market_cap": 2110
+    },
+    "latest_session_by_board": {
+      "KOSPI": "2021-11-02",
+      "KOSDAQ": "2021-11-02"
+    },
+    "source_revision": "eeed0817d1478597b738a3a6149c170ec7e3f4cb",
+    "source_sha256": "ede65acaaa9ee61f56564f6a66840133ff4bbab9d2dbc21437f41b4c8d20199e",
+    "price_basis": "Unadjusted KRX Low and Close from the same daily source row",
+    "market_cap_basis": "Dated KRX Marcap in KRW; verified against Close * Stocks",
+    "listing_basis": "Dated KOSPI/KOSDAQ common share codes ending in 0; includes historical delistings",
+    "note": "KRX 당시 상장 종목의 당일 저가·종가·시가총액으로 복원한 기록입니다. 현재 시총이나 분할 조정 가격을 소급 적용하지 않습니다."
+  },
+  "sources": [
+    {
+      "label": "KRX daily data via FinanceData/marcap",
+      "url": "https://github.com/FinanceData/marcap"
+    },
+    {
+      "label": "2021년 고정 버전 원본",
+      "url": "https://raw.githubusercontent.com/FinanceData/marcap/eeed0817d1478597b738a3a6149c170ec7e3f4cb/data/marcap-2021.parquet"
+    }
+  ]
+}

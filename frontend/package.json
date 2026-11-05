@@ -4,9 +4,9 @@
   "version": "0.1.0",
   "type": "module",
   "scripts": {
-    "predev": "python ../scripts/generate_new_high_data.py && python ../scripts/generate_turnover_data.py && python ../scripts/generate_calendar_stock_data.py && python ../scripts/stock_chart_history.py publish && python ../scripts/stock_information.py publish && python ../scripts/generate_semiconductor_data.py publish && node ../scripts/refresh_sectors.mjs publish && node ../scripts/refresh_investors.mjs publish",
+    "predev": "python ../scripts/generate_new_high_data.py && python ../scripts/generate_turnover_data.py && python ../scripts/rebound_data.py publish && python ../scripts/generate_calendar_stock_data.py && python ../scripts/stock_chart_history.py publish && python ../scripts/stock_information.py publish && python ../scripts/generate_semiconductor_data.py publish && node ../scripts/refresh_sectors.mjs publish && node ../scripts/refresh_investors.mjs publish",
     "dev": "vite",
-    "prebuild": "python ../scripts/generate_new_high_data.py && python ../scripts/generate_turnover_data.py && python ../scripts/generate_calendar_stock_data.py && python ../scripts/stock_chart_history.py publish && python ../scripts/stock_information.py publish && python ../scripts/generate_semiconductor_data.py publish && node ../scripts/refresh_sectors.mjs publish && node ../scripts/refresh_investors.mjs publish",
+    "prebuild": "python ../scripts/generate_new_high_data.py && python ../scripts/generate_turnover_data.py && python ../scripts/rebound_data.py publish && python ../scripts/generate_calendar_stock_data.py && python ../scripts/stock_chart_history.py publish && python ../scripts/stock_information.py publish && python ../scripts/generate_semiconductor_data.py publish && node ../scripts/refresh_sectors.mjs publish && node ../scripts/refresh_investors.mjs publish",
     "build": "tsc -b && vite build",
     "preview": "vite preview",
     "test:browser": "node tests/polling-browser.mjs",
@@ -46,7 +46,9 @@
     "test:chart-replay": "node --test tests/chart-replay.test.mjs",
     "test:chart-replay:browser": "node tests/chart-replay-browser.mjs",
     "test:chart-analysis": "node --test tests/chart-analysis.test.mjs",
-    "test:chart-analysis:browser": "node tests/chart-analysis-browser.mjs"
+    "test:chart-analysis:browser": "node tests/chart-analysis-browser.mjs",
+    "test:rebounds": "node --test tests/rebounds.test.mjs",
+    "test:rebounds:browser": "node tests/rebounds-browser.mjs"
   },
   "dependencies": {
     "react": "^19.0.0",

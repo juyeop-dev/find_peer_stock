@@ -1,0 +1,146 @@
+{
+  "schema_version": 1,
+  "market": "korea",
+  "date": "2018-03-09",
+  "rules": {
+    "KOSPI": {
+      "market_cap_min": 5000000000000,
+      "rebound_min": 8
+    },
+    "KOSDAQ": {
+      "market_cap_min": 1000000000000,
+      "rebound_min": 5
+    }
+  },
+  "entries": [
+    {
+      "ticker": "034230.KQ",
+      "name": "파라다이스",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 21850.0,
+      "low": 19650.0,
+      "change_pct": 11.48,
+      "rebound_pct": 11.19592875318065,
+      "market_cap": 1987097383200.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2018-03-09",
+      "sector": "미분류",
+      "industry": "미분류"
+    },
+    {
+      "ticker": "151910.KQ",
+      "name": "나노스",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 2300.0,
+      "low": 2130.0,
+      "change_pct": 6.98,
+      "rebound_pct": 7.9812206572769995,
+      "market_cap": 1128927354000.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2018-03-09",
+      "sector": "미분류",
+      "industry": "미분류"
+    },
+    {
+      "ticker": "095700.KQ",
+      "name": "제넥신",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 93900.0,
+      "low": 87900.0,
+      "change_pct": 6.83,
+      "rebound_pct": 6.8259385665528916,
+      "market_cap": 1889510637600.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2018-03-09",
+      "sector": "미분류",
+      "industry": "미분류"
+    },
+    {
+      "ticker": "078340.KQ",
+      "name": "컴투스",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 177900.0,
+      "low": 168000.0,
+      "change_pct": 4.71,
+      "rebound_pct": 5.892857142857144,
+      "market_cap": 2288936118000.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2018-03-09",
+      "sector": "미분류",
+      "industry": "미분류"
+    },
+    {
+      "ticker": "022100.KQ",
+      "name": "포스코 ICT",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 8350.0,
+      "low": 7910.0,
+      "change_pct": 4.77,
+      "rebound_pct": 5.5625790139064435,
+      "market_cap": 1269489987150.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2018-03-09",
+      "sector": "미분류",
+      "industry": "미분류"
+    },
+    {
+      "ticker": "253450.KQ",
+      "name": "스튜디오드래곤",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 91000.0,
+      "low": 86600.0,
+      "change_pct": 4.36,
+      "rebound_pct": 5.0808314087759765,
+      "market_cap": 2551388840000.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2018-03-09",
+      "sector": "미분류",
+      "industry": "미분류"
+    }
+  ],
+  "source_metadata": {
+    "provider": "KRX daily data via FinanceData/marcap",
+    "fetched_at": "2026-11-02T11:29:22.642793+00:00",
+    "reconstructed_at": "2026-11-05T11:51:48.493826+00:00",
+    "session": "daily",
+    "timezone": "Asia/Seoul",
+    "scanned_symbols": 2312,
+    "common_symbols_by_board": {
+      "KOSPI": 777,
+      "KOSDAQ": 1269
+    },
+    "excluded": {
+      "below_rebound": 69,
+      "declining": 18,
+      "unsupported_listing": 266,
+      "below_market_cap": 1927,
+      "no_trading": 26
+    },
+    "latest_session_by_board": {
+      "KOSPI": "2018-03-09",
+      "KOSDAQ": "2018-03-09"
+    },
+    "source_revision": "eeed0817d1478597b738a3a6149c170ec7e3f4cb",
+    "source_sha256": "a03348ab0747972c6a353f52c636494abf216392d401cde823b6388e23f1c443",
+    "price_basis": "Unadjusted KRX Low and Close from the same daily source row",
+    "market_cap_basis": "Dated KRX Marcap in KRW; verified against Close * Stocks",
+    "listing_basis": "Dated KOSPI/KOSDAQ common share codes ending in 0; includes historical delistings",
+    "note": "KRX 당시 상장 종목의 당일 저가·종가·시가총액으로 복원한 기록입니다. 현재 시총이나 분할 조정 가격을 소급 적용하지 않습니다."
+  },
+  "sources": [
+    {
+      "label": "KRX daily data via FinanceData/marcap",
+      "url": "https://github.com/FinanceData/marcap"
+    },
+    {
+      "label": "2018년 고정 버전 원본",
+      "url": "https://raw.githubusercontent.com/FinanceData/marcap/eeed0817d1478597b738a3a6149c170ec7e3f4cb/data/marcap-2018.parquet"
+    }
+  ]
+}
