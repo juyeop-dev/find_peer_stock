@@ -57,3 +57,9 @@ python scripts/rebound_data.py publish
 원본 경로는 `--source-dir`을 여러 번 지정해 우선순위를 줄 수 있다. 연도별 `marcap-YYYY.parquet` 옆에 기존 수집기 형식의 `.source.json`(year/url/revision/sha256/fetched_at)을 둔다. 기본값은 `data/tmp_rebounds/source`, `data/tmp_korea_recalculation/source` 순이다.
 
 화면에 실제 저장 범위와 과거 복원 기준을 표시했다. Python 14개·프런트엔드 8개 테스트와 TypeScript 검사를 통과했다. Vite production build는 임시 디렉터리에서 공개 대용량 파일 재복사 없이 통과했다. 실제 Chromium으로 2018/2020/2025/2026년 실데이터와 실제 0건 날짜, 최신 기록, 1440/390/320px 화면, 검색·복사·상세 이동·실패 시 보존을 검증했다. 브라우저 테스트는 `node tests/rebounds-browser.mjs`, Python 검증은 `python -m unittest discover -s tests -p 'test*rebound*.py' -v`로 실행한다. 운영 배포는 수행하지 않았다.
+
+## 2026-11-05 운영 배포 완료
+
+사용자 배포 요청에 따라 최신 운영 버전에 반등 기능·원본·자동 수집을 통합했다. 운영 커밋은 `463bdef003c42113da86c7d717ae4e8548f682e8`이며 [GitHub Pages 배포 실행](https://github.com/juyeop-dev/find_peer_stock/actions/runs/42026352155)의 build/deploy가 모두 성공했다. 운영 주소는 <https://juyeop-dev.github.io/find_peer_stock/rebounds>다.
+
+배포용 체크아웃에서 Python 전체 258개, 원본 API 26개, 예약 실행 42개 테스트와 관련 프런트엔드 검사·TypeScript·전체 production build를 통과했다. 전체 산출물은 약 1.01GB이며 기존 종목 이력과 반등 2,169일을 포함한다. 운영 공개 index의 날짜·건수 전체를 검증한 목록과 대조했고, 2018-01-02·2020-03-19·2025-01-02·2026-11-02~05의 게시 원본이 수집 원본과 정확히 일치함을 확인했다. 운영 Chromium 검사도 1440/390/320px, 과거/최신/0건 기록, 검색·전체 복사·상세/복귀·실패 시 보존을 통과했다.
