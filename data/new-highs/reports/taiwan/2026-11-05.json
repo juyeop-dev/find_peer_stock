@@ -1,0 +1,184 @@
+{
+  "schema_version": 1,
+  "market": "taiwan",
+  "date": "2026-11-05",
+  "summary": "장 마감 후 TradingView 주식 스냅샷 기준. 당일 장중 고가가 52주·전체기간 고가에 도달하고, 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다. 전체기간 신고가를 우선 표시하며 신고가 배경은 별도 확인 전입니다.",
+  "sources": [
+    {
+      "label": "TradingView stock screener",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "6199.TWO",
+      "name": "TienPin United Enterprise Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Computer Peripherals",
+      "description": "TienPin United Enterprise Co., Ltd. · Computer Peripherals",
+      "change_pct": 0.906344410876133,
+      "session_open": 166,
+      "session_close": 167,
+      "session_volume": 7684665,
+      "source_symbol": "TPEX:6199",
+      "currency": "TWD"
+    },
+    {
+      "ticker": "6590.TWO",
+      "name": "Provision Information Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Technology Services",
+      "high_type": "all_time",
+      "reason": "업종: Technology Services · Packaged Software",
+      "description": "Provision Information Co., Ltd. · Packaged Software",
+      "change_pct": 9.975369458128071,
+      "session_open": 83.3,
+      "session_close": 89.3,
+      "session_volume": 747592,
+      "source_symbol": "TPEX:6590",
+      "currency": "TWD"
+    },
+    {
+      "ticker": "8099.TWO",
+      "name": "Tatung System Technologies Inc.",
+      "exchange": "TPEX",
+      "category": "Commercial Services",
+      "high_type": "all_time",
+      "reason": "업종: Commercial Services · Miscellaneous Commercial Services",
+      "description": "Tatung System Technologies Inc. · Miscellaneous Commercial Services",
+      "change_pct": 5.923344947735192,
+      "session_open": 140,
+      "session_close": 152,
+      "session_volume": 877328,
+      "source_symbol": "TPEX:8099",
+      "currency": "TWD"
+    },
+    {
+      "ticker": "1416.TW",
+      "name": "Kwong Fong Industries Corporation",
+      "exchange": "TWSE",
+      "category": "Technology Services",
+      "high_type": "52_week",
+      "reason": "업종: Technology Services · Information Technology Services",
+      "description": "Kwong Fong Industries Corporation · Information Technology Services",
+      "change_pct": 5.30035335689046,
+      "session_open": 14.45,
+      "session_close": 14.9,
+      "session_volume": 13308596,
+      "source_symbol": "TWSE:1416",
+      "currency": "TWD"
+    },
+    {
+      "ticker": "2254.TW",
+      "name": "Coplus Inc.",
+      "exchange": "TWSE",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Auto Parts: OEM",
+      "description": "Coplus Inc. · Auto Parts: OEM",
+      "change_pct": 1.3953488372093024,
+      "session_open": 107.5,
+      "session_close": 109,
+      "session_volume": 3065111,
+      "source_symbol": "TWSE:2254",
+      "currency": "TWD"
+    },
+    {
+      "ticker": "2471.TW",
+      "name": "Ares International Corp.",
+      "exchange": "TWSE",
+      "category": "Technology Services",
+      "high_type": "52_week",
+      "reason": "업종: Technology Services · Information Technology Services",
+      "description": "Ares International Corp. · Information Technology Services",
+      "change_pct": 4.000000000000003,
+      "session_open": 53.3,
+      "session_close": 54.6,
+      "session_volume": 11268626,
+      "source_symbol": "TWSE:2471",
+      "currency": "TWD"
+    },
+    {
+      "ticker": "2516.TW",
+      "name": "New Asia Construction & Development Corp.",
+      "exchange": "TWSE",
+      "category": "Industrial Services",
+      "high_type": "52_week",
+      "reason": "업종: Industrial Services · Engineering & Construction",
+      "description": "New Asia Construction & Development Corp. · Engineering & Construction",
+      "change_pct": 2.839116719242909,
+      "session_open": 16.1,
+      "session_close": 16.3,
+      "session_volume": 1271976,
+      "source_symbol": "TWSE:2516",
+      "currency": "TWD"
+    },
+    {
+      "ticker": "2618.TW",
+      "name": "Eva Airways Corporation",
+      "exchange": "TWSE",
+      "category": "Transportation",
+      "high_type": "52_week",
+      "reason": "업종: Transportation · Airlines",
+      "description": "Eva Airways Corporation · Airlines",
+      "change_pct": 3.085714285714289,
+      "session_open": 45,
+      "session_close": 45.1,
+      "session_volume": 62500266,
+      "source_symbol": "TWSE:2618",
+      "currency": "TWD"
+    },
+    {
+      "ticker": "7710.TW",
+      "name": "ASRock Industrial Computer Corporation",
+      "exchange": "TWSE",
+      "category": "Retail Trade",
+      "high_type": "all_time",
+      "reason": "업종: Retail Trade · Electronics/Appliance Stores",
+      "description": "ASRock Industrial Computer Corporation · Electronics/Appliance Stores",
+      "change_pct": 2.681992337164751,
+      "session_open": 130.5,
+      "session_close": 134,
+      "session_volume": 1308134,
+      "source_symbol": "TWSE:7710",
+      "currency": "TWD"
+    }
+  ],
+  "source_metadata": {
+    "provider": "TradingView public scanner",
+    "scanner": "taiwan",
+    "fetched_at": "2026-11-05T06:31:51.869669+00:00",
+    "universe": "TradingView-listed stock instruments, including common and preferred shares; ETFs excluded",
+    "definition": "daily high >= period high; close >= open; close >= previous close when one exists; all-time takes precedence; ties included",
+    "scanner_exchanges": [
+      "TWSE",
+      "TPEX"
+    ],
+    "latest_session_by_exchange": {
+      "TWSE": "2026-11-05",
+      "TPEX": "2026-11-05"
+    },
+    "previous_session_by_exchange": {
+      "TWSE": "2026-11-04",
+      "TPEX": "2026-11-04"
+    },
+    "current_session_reference_symbols": {
+      "TWSE": "TWSE:01001T",
+      "TPEX": "TPEX:1240"
+    },
+    "scanned_symbols": 2357,
+    "current_session_symbols": 2321,
+    "excluded_symbols": {
+      "other_session": 36,
+      "bearish_or_down_close": 16
+    },
+    "pagination_complete": true
+  },
+  "collected_at": "2026-11-05T06:31:51.178709+00:00"
+}
