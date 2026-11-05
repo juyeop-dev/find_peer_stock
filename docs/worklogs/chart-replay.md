@@ -12,6 +12,8 @@
 
 검증은 `python -m unittest discover -s tests -p test_stock_information.py`, 프런트엔드 `npm run test:chart-replay`, `npm run test:stock-history`, `npm run test:sectors`, TypeScript 및 Vite build로 수행한다. `node tests/chart-replay-browser.mjs`는 세 상세 유형의 기본 탭·동일 기간 피어·기존 설정 전환·수동 선택 보존·지연 조회·1440/390/320px 화면과 기존 재생 기능을 확인한다.
 
+운영 반영: `3c2696bf102876607f73daa63bd25b033cf0f222`, [배포 실행 42032565892](https://github.com/juyeop-dev/find_peer_stock/actions/runs/42032565892)의 build/deploy가 성공했다. Python 전체 259개·원본 API 26개·관련 프런트엔드 48개 검사와 TypeScript/build를 통과했다. [운영 삼성전자 상세](https://juyeop-dev.github.io/find_peer_stock/semiconductors/005930.KS)에서 분석 우선 화면을 확인했으며, 운영 브라우저 검사도 위의 모든 항목을 통과했다. 24,879종목 공개 목록에 사업·피어 정보가 게시됐고 기존 목록 캐시는 `?v=2`로 전환한다.
+
 ## 이번에 구현한 기능
 
 - TradingView 공식 오픈소스 Lightweight Charts 5.2.1을 앱 번들에 포함해 사이트 안에서 렌더링합니다. 사이트 내 비교·리플레이 UI는 자체 구현입니다.
