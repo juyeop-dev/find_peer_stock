@@ -83,7 +83,7 @@ const CLASSIFICATION: Record<string, [string, string, string, string]> = {
 // sources above. SK Innovation stays in the refinery group to avoid counting
 // one company's monetary totals twice in the sector overview.
 const PETROCHEMICALS = new Set(["006650.KS", "011790.KS", "009830.KS", "051910.KS", "161000.KS", "120110.KS", "102260.KS", "005950.KS", "285130.KS", "104480.KQ", "083420.KS", "145990.KS", "025000.KS", "298000.KS"]);
-export function classifiedSectorStock(stock: SectorStock): SectorStock {
+export function classifiedSectorStock<T extends { ticker: string; sector: string; industry: string }>(stock: T): T & { classificationNote?: string; classificationUrl?: string } {
   const review = CLASSIFICATION[stock.ticker];
   if (review) return { ...stock, sector: review[0], industry: review[1], classificationNote: review[2], classificationUrl: review[3] };
   return PETROCHEMICALS.has(stock.ticker) ? { ...stock, sector: "Process Industries", industry: "Petrochemicals", classificationNote: "네이버 석유화학 테마 편입 · 정유와 구분", classificationUrl: "https://finance.naver.com/sise/sise_group_detail.naver?type=theme&no=180" } : stock;

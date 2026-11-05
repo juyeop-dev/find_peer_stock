@@ -1,31 +1,20 @@
 import { useEffect, useId, useMemo, useRef, useState } from "react";
-import { getChartSymbols, searchChartSymbols } from "../dataClient/chartComparisonClient";
+import { getChartSymbols, searchChartSymbols, similarChartSymbols } from "../dataClient/chartComparisonClient";
 import type { ChartSymbol } from "../dataClient/chartComparisonClient";
 import { getReplayMarket } from "../dataClient/chartReplayClient";
-import { hasOHLC, REPLAY_PRESET, replayRange, replayReturns, validReplayDate } from "../dataClient/chartReplay";
-import type { ReplayInterval, ReplayMarket, ReplaySelection } from "../dataClient/chartReplay";
+import { hasOHLC, initialReplaySettings, restoreReplaySettings, REPLAY_PRESET, replayRange, replayReturns, validReplayDate } from "../dataClient/chartReplay";
+import type { ReplayInterval, ReplayMarket, ReplaySelection, ReplaySettings as Settings } from "../dataClient/chartReplay";
 import { ImeSearchInput } from "./ImeSearchInput";
 import { ReplayCharts } from "./ReplayCharts";
+import { classifiedSectorStock } from "../dataClient/sectorRankings";
 import "../styles/chartReplay.css";
 
-interface Settings { selections: ReplaySelection[]; overlay: boolean; kind: "line" | "candles"; interval: ReplayInterval; average: boolean; volume: boolean; logarithmic: boolean; count: number | null; speed: number }
 const BUILTINS: ChartSymbol[] = REPLAY_PRESET.map(row => ({ ticker: row.ticker, name: row.name }));
-function initialSettings(ticker?: string, name?: string, exchange?: string): Settings {
-  const selections = REPLAY_PRESET.map(row => ({ ...row }));
-  if (ticker) selections[0] = { ticker, name: name ?? ticker, exchange, start: `${new Date().getFullYear() - 1}-01-01`, end: `${new Date().getFullYear()}-12-31` };
-  return { selections, overlay: false, kind: ticker ? "line" : "candles", interval: "day", average: false, volume: false, logarithmic: false, count: 25, speed: 2 };
-}
-function restoreSettings(key: string, fallback: Settings): Settings {
-  try {
-    const saved = JSON.parse(localStorage.getItem(key) ?? "null");
-    if (!saved || saved.version !== 1 || saved.selections?.length !== 2 || !saved.selections.every((row: ReplaySelection) => typeof row.ticker === "string" && /^[A-Z0-9^][A-Z0-9.^:_=\-]{0,39}$/.test(row.ticker) && typeof row.name === "string" && row.name.length < 150 && (row.exchange === undefined || typeof row.exchange === "string") && validReplayDate(row.start) && validReplayDate(row.end) && row.start <= row.end)) return fallback;
-    return { ...fallback, selections: saved.selections, overlay: saved.overlay === true, kind: saved.kind === "candles" ? "candles" : "line", interval: ["day", "week", "month"].includes(saved.interval) ? saved.interval : "day", average: saved.average === true, volume: saved.volume === true, logarithmic: saved.logarithmic === true, count: Number.isInteger(saved.count) && saved.count > 0 && saved.count < 100000 ? saved.count : 25, speed: [1, 2, 5, 10].includes(saved.speed) ? saved.speed : 2 };
-  } catch { return fallback; }
-}
 function useMarket(selection: ReplaySelection, retry: number) {
   const [result, setResult] = useState<{ market?: ReplayMarket; error?: string; loading: boolean }>({ loading: true });
   useEffect(() => {
     const controller = new AbortController(); setResult({ loading: true });
+    if (!selection.ticker) { setResult({ loading: false }); return () => controller.abort(); }
     void getReplayMarket(selection.ticker, selection.name, selection.exchange, controller.signal).then(market => {
       if (!controller.signal.aborted) setResult({ market, loading: false });
     }).catch(error => { if (!controller.signal.aborted) setResult({ error: (error as Error).message, loading: false }); });
@@ -37,14 +26,44 @@ function useMarket(selection: ReplaySelection, retry: number) {
 
 export function ChartReplayWorkspace({ ticker, name, exchange, active = true }: { ticker?: string; name?: string; exchange?: string; active?: boolean }) {
   const storageKey = `stock-peer:replay:v1:${ticker ?? "markets"}`;
-  const [settings, setSettings] = useState(() => restoreSettings(storageKey, initialSettings(ticker, name, exchange)));
+  const [settings, setSettings] = useState(() => {
+    const fallback = initialReplaySettings(ticker, name, exchange);
+    try { return restoreReplaySettings(localStorage.getItem(storageKey), fallback, Boolean(ticker)); }
+    catch { return fallback; }
+  });
   const [playing, setPlaying] = useState(false), [expanded, setExpanded] = useState(false), [fit, setFit] = useState(0);
   const [retry, setRetry] = useState([0, 0]), [notice, setNotice] = useState("");
+  const [peerStatus, setPeerStatus] = useState("");
   const root = useRef<HTMLElement>(null);
+  const comparisonBase = settings.selections[0], comparisonTicker = settings.selections[1].ticker;
+  const peerPending = Boolean(ticker && settings.autoPeer && !comparisonTicker && (!peerStatus || peerStatus.startsWith("사업")));
+  useEffect(() => {
+    if (!ticker || !active || !settings.autoPeer || comparisonTicker) return;
+    const controller = new AbortController();
+    setPeerStatus("사업·업종이 비슷한 종목의 가격 이력을 확인하고 있습니다…");
+    void (async () => {
+      const rows = (await getChartSymbols()).map(row => classifiedSectorStock({ ...row, sector: row.sector ?? "Unclassified", industry: row.industry ?? "Unclassified" }));
+      for (const { symbol, reason } of similarChartSymbols(rows, comparisonBase.ticker)) {
+        if (controller.signal.aborted) return;
+        try {
+          const market = await getReplayMarket(symbol.ticker, symbol.name, symbol.exchange, controller.signal);
+          if (replayRange(market.bars, comparisonBase.start, comparisonBase.end).length < 2) continue;
+          if (controller.signal.aborted) return;
+          setPeerStatus("");
+          setSettings(previous => previous.selections[1].ticker ? previous : { ...previous,
+            selections: [previous.selections[0], { ticker: symbol.ticker, name: symbol.name, exchange: symbol.exchange,
+              start: previous.selections[0].start, end: previous.selections[0].end }], peerReason: reason });
+          return;
+        } catch { if (controller.signal.aborted) return; }
+      }
+      if (!controller.signal.aborted) setPeerStatus("비교 기간의 이력이 있는 유사 종목을 찾지 못했습니다. B에서 비교할 종목을 직접 선택해 주세요.");
+    })().catch(() => { if (!controller.signal.aborted) setPeerStatus("유사 종목 목록을 불러오지 못했습니다. B에서 티커를 직접 입력해 비교할 수 있습니다."); });
+    return () => controller.abort();
+  }, [ticker, active, settings.autoPeer, comparisonBase, comparisonTicker]);
   const first = useMarket(settings.selections[0], retry[0]), second = useMarket(settings.selections[1], retry[1]);
   const markets = useMemo(() => [first.market, second.market], [first.market, second.market]);
   const ranges = useMemo(() => settings.selections.map((selection, i) => replayRange(markets[i]?.bars ?? [], selection.start, selection.end)), [markets, settings.selections]);
-  const errors = [first, second].map((row, i) => row.error ?? (!row.loading && ranges[i].length < 2 ? "선택 기간에 거래일이 2개 이상 필요합니다. 제공 범위를 확인해 주세요." : ""));
+  const errors = [first, second].map((row, i) => !settings.selections[i].ticker ? "비교할 종목을 선택해 주세요." : row.error ?? (!row.loading && ranges[i].length < 2 ? "선택 기간에 거래일이 2개 이상 필요합니다. 제공 범위를 확인해 주세요." : ""));
   const ready = !first.loading && !second.loading && errors.every(error => !error);
   // Stop at the shorter history: both panels advance one actual daily session
   // per tick. Different market holidays do not create artificial bars.
@@ -78,15 +97,18 @@ export function ChartReplayWorkspace({ ticker, name, exchange, active = true }: 
 
   function select(index: number, selection: ReplaySelection) {
     setPlaying(false);
-    patch({ selections: settings.selections.map((row, i) => i === index ? selection : row), count: null });
+    const selections = settings.selections.map((row, i) => i === index ? selection : row);
+    if (index === 0 && settings.autoPeer) selections[1] = { ticker: "", name: "비교 종목 선택", start: selection.start, end: selection.end };
+    patch({ selections, count: null, autoPeer: index === 1 ? false : settings.autoPeer, peerReason: undefined });
+    setPeerStatus("");
     setFit(value => value + 1);
   }
   function save() {
-    try { localStorage.setItem(storageKey, JSON.stringify({ ...settings, count, version: 1 })); setNotice("종목·기간·차트 설정과 재생 위치를 이 브라우저에 저장했습니다."); }
+    try { localStorage.setItem(storageKey, JSON.stringify({ ...settings, count, version: 2 })); setNotice("종목·기간·차트 설정과 재생 위치를 이 브라우저에 저장했습니다."); }
     catch { setNotice("브라우저 저장 공간에 접근할 수 없습니다. 현재 화면은 계속 사용할 수 있습니다."); }
   }
   return <section ref={root} tabIndex={-1} className={`semiPanel chartReplayWorkspace${expanded ? " replayExpanded" : ""}`} role={expanded ? "dialog" : undefined} aria-modal={expanded ? true : undefined} aria-label="차트 리플레이 작업 공간">
-    <div className="replayHeading"><div><p className="eyebrow">CHART WORKSPACE</p><h2>차트 비교 · 리플레이</h2><p>다른 시기의 시장을 같은 속도로 살펴보세요.</p></div><div className="replayHeadingActions"><button type="button" onClick={save}>설정 저장</button><button type="button" aria-pressed={expanded} onClick={() => setExpanded(value => !value)}>{expanded ? "크게 보기 닫기" : "크게 보기"}</button></div></div>
+    <div className="replayHeading"><div><p className="eyebrow">CHART WORKSPACE</p><h2>차트 비교 · 리플레이</h2><p>{ticker ? "비슷한 종목의 같은 기간 수익률을 겹쳐 비교하세요." : "다른 시기의 시장을 같은 속도로 살펴보세요."}</p></div><div className="replayHeadingActions"><button type="button" disabled={!ready} onClick={save}>설정 저장</button><button type="button" aria-pressed={expanded} onClick={() => setExpanded(value => !value)}>{expanded ? "크게 보기 닫기" : "크게 보기"}</button></div></div>
     <div className="replayToolbar">
       <div className="replaySegment" role="group" aria-label="비교 레이아웃"><button type="button" aria-pressed={!settings.overlay} onClick={() => patch({ overlay: false })}>나란히 보기</button><button type="button" aria-pressed={settings.overlay} onClick={() => patch({ overlay: true })}>수익률 겹쳐 보기</button></div>
       <label>봉 간격<select aria-label="리플레이 봉 간격" value={settings.interval} disabled={settings.overlay} onChange={event => patch({ interval: event.target.value as ReplayInterval })}><option value="day">일</option><option value="week">주</option><option value="month">월</option></select></label>
@@ -97,7 +119,8 @@ export function ChartReplayWorkspace({ ticker, name, exchange, active = true }: 
       <button type="button" onClick={() => setFit(value => value + 1)}>화면 맞춤</button>
     </div>
     <div className="replaySelections">{settings.selections.map((selection, index) => <SelectionEditor key={index} selection={selection} index={index} onApply={value => select(index, value)} />)}</div>
-    <div className="replayPreset"><button type="button" onClick={() => { setPlaying(false); patch({ selections: REPLAY_PRESET.map(row => ({ ...row })), count: 25 }); setFit(value => value + 1); }}>예시: 코스피 2022 ↔ 금 2024</button><span>각 시장의 첫 거래일부터 경과 거래일 수를 맞춥니다.</span></div>
+    {(peerStatus || settings.peerReason) && <p className="replayNotice" role="status" data-peer-reason>{peerStatus || `비교 종목 선정: ${settings.peerReason}`}</p>}
+    <div className="replayPreset"><button type="button" onClick={() => { setPlaying(false); patch({ selections: REPLAY_PRESET.map(row => ({ ...row })), count: 25, autoPeer: false, peerReason: undefined }); setPeerStatus(""); setFit(value => value + 1); }}>예시: 코스피 2022 ↔ 금 2024</button><span>각 시장의 첫 거래일부터 경과 거래일 수를 맞춥니다.</span></div>
     <div className="replayTransport" role="group" aria-label="리플레이 재생 제어">
       <button type="button" disabled={!ready} onClick={() => { setPlaying(false); patch({ count: 1 }); }} aria-label="리플레이 처음으로">↤ 처음</button>
       <button type="button" disabled={!ready || count <= 1} onClick={() => { setPlaying(false); patch({ count: count - 1 }); }} aria-label="리플레이 이전 봉">이전 봉</button>
@@ -113,7 +136,7 @@ export function ChartReplayWorkspace({ ticker, name, exchange, active = true }: 
       const visible = ranges[index].slice(0, ready ? count : 0), bar = visible.at(-1), change = replayReturns(visible).at(-1)?.value;
       return <div key={index} className={`replayReadout replayReadout${index}`} data-replay-series={index} data-visible-bars={visible.length} data-visible-date={bar?.date ?? ""}>
         <div><strong>{index === 0 ? "A" : "B"} · {settings.selections[index].name}</strong><span>{settings.selections[index].ticker}</span></div>
-        {row.loading ? <p role="status">저장된 가격을 불러오는 중…</p> : errors[index] ? <p role="alert">{errors[index]} <button type="button" onClick={() => setRetry(values => values.map((v, i) => i === index ? v + 1 : v))}>다시 조회</button></p> : <>
+        {row.loading || index === 1 && peerPending ? <p role="status">{index === 1 && peerPending ? "비슷한 종목을 확인하고 있습니다…" : "저장된 가격을 불러오는 중…"}</p> : errors[index] ? <p role="alert">{errors[index]} {settings.selections[index].ticker && <button type="button" onClick={() => setRetry(values => values.map((v, i) => i === index ? v + 1 : v))}>다시 조회</button>}</p> : <>
           <div className="replayReadoutValue"><time>{bar?.date ?? "—"}</time><strong>{bar?.close.toLocaleString("ko-KR", { maximumFractionDigits: 2 }) ?? "—"} <small>{row.market?.ticker === "^KS11" ? "pt" : row.market?.currency}</small></strong><span className={change !== undefined && change < 0 ? "negative" : "positive"}>{change === undefined ? "—" : `${change >= 0 ? "+" : ""}${change.toFixed(2)}%`}</span></div>
           {bar && hasOHLC(bar) && <p className="replayOHLC">시 {bar.open!.toFixed(2)} · 고 {bar.high!.toFixed(2)} · 저 {bar.low!.toFixed(2)} · 종 {bar.close.toFixed(2)}</p>}
         </>}
@@ -121,7 +144,7 @@ export function ChartReplayWorkspace({ ticker, name, exchange, active = true }: 
       </div>;
     })}</div>
     <ReplayCharts markets={markets} ranges={ready ? ranges : [[], []]} count={ready ? count : 0} overlay={settings.overlay} kind={candleAvailable ? settings.kind : "line"} interval={settings.interval} average={settings.average} volume={settings.volume} logarithmic={settings.logarithmic} fit={fit} />
-    <p className="replayFootnote">하루에 한 거래일씩 공개합니다. 주·월봉과 MA 20은 공개된 일봉으로만 계산하며, 두 기간 중 짧은 쪽의 마지막 거래일에서 함께 멈춥니다. 수익률은 각 기간 첫 수정종가 기준이며 환율은 반영하지 않습니다. 금은 현물이 아닌 GC=F 연속선물로 계약 교체의 영향을 받습니다.</p>
+    <p className="replayFootnote">하루에 한 거래일씩 공개합니다. 주·월봉과 MA 20은 공개된 일봉으로만 계산하며, 두 기간 중 짧은 쪽의 마지막 거래일에서 함께 멈춥니다. 수익률은 각 기간 첫 수정종가 기준이며 환율은 반영하지 않습니다.{settings.selections.some(row => row.ticker === "GC=F") && " 금은 현물이 아닌 GC=F 연속선물로 계약 교체의 영향을 받습니다."}</p>
     {settings.overlay && <p className="replayFootnote">수익률 겹쳐 보기는 일봉 기준입니다. 가로축의 1봉은 각 기간의 첫 거래일입니다.</p>}
   </section>;
 }

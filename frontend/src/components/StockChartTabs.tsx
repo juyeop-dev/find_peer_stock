@@ -7,9 +7,11 @@ import { getStockInformation } from "../dataClient/stockInformationClient";
 const ChartReplayWorkspace = lazy(() => import("./ChartReplayWorkspace").then(module => ({ default: module.ChartReplayWorkspace })));
 
 export function StockChartTabs({ ticker, name, exchange, children }: { ticker: string; name: string; exchange?: string; children: ReactNode }) {
-  const [view, setView] = useState<"workspace" | "tradingview" | "archive">("workspace");
+  const [view, setView] = useState<"workspace" | "tradingview" | "archive">("archive");
   const [providerOpened, setProviderOpened] = useState(false);
+  const [workspaceOpened, setWorkspaceOpened] = useState(false);
   useEffect(() => { if (view === "tradingview") setProviderOpened(true); }, [view]);
+  useEffect(() => { if (view === "workspace") setWorkspaceOpened(true); }, [view]);
   const [symbol, setSymbol] = useState<string | null>(() => tradingViewSymbol(ticker, exchange));
   const [resolving, setResolving] = useState(!symbol), [expanded, setExpanded] = useState(false);
   const panel = useRef<HTMLElement>(null), id = useId();
@@ -38,8 +40,8 @@ export function StockChartTabs({ ticker, name, exchange, children }: { ticker: s
     return () => { document.body.style.overflow = overflow; document.removeEventListener("keydown", keydown); if (previous?.isConnected) previous.focus(); };
   }, [expanded]);
   return <div className="stockChartTabs">
-    <div className="stockChartViewNavigation"><div className="stockChartViewTabs" role="tablist" aria-label="종목 차트 선택">{([["workspace", "차트·리플레이"], ["archive", "그리기·분석"], ["tradingview", "TradingView 위젯"]] as const).map(([value, label]) => <button key={value} type="button" role="tab" id={`${id}-${value}-tab`} aria-selected={view === value} aria-controls={`${id}-${value}`} data-chart-view={value} onClick={() => setView(value)}>{label}</button>)}</div></div>
-    <div id={`${id}-workspace`} role="tabpanel" aria-labelledby={`${id}-workspace-tab`} hidden={view !== "workspace"}><Suspense fallback={<p role="status">차트 작업 공간을 불러오는 중…</p>}><ChartReplayWorkspace ticker={ticker} name={name} exchange={exchange} active={view === "workspace"} /></Suspense></div>
+    <div className="stockChartViewNavigation"><div className="stockChartViewTabs" role="tablist" aria-label="종목 차트 선택">{([["archive", "그리기·분석"], ["workspace", "차트·리플레이"], ["tradingview", "TradingView 위젯"]] as const).map(([value, label]) => <button key={value} type="button" role="tab" id={`${id}-${value}-tab`} aria-selected={view === value} aria-controls={`${id}-${value}`} data-chart-view={value} onClick={() => setView(value)}>{label}</button>)}</div></div>
+    <div id={`${id}-workspace`} role="tabpanel" aria-labelledby={`${id}-workspace-tab`} hidden={view !== "workspace"}>{(view === "workspace" || workspaceOpened) && <Suspense fallback={<p role="status">차트 작업 공간을 불러오는 중…</p>}><ChartReplayWorkspace ticker={ticker} name={name} exchange={exchange} active={view === "workspace"} /></Suspense>}</div>
     <div id={`${id}-tradingview`} role="tabpanel" aria-labelledby={`${id}-tradingview-tab`} hidden={view !== "tradingview"}>
       {(view === "tradingview" || providerOpened) && <section ref={panel} tabIndex={-1} className={`semiPanel officialStockChart${expanded ? " tvExpanded" : ""}`} role={expanded ? "dialog" : undefined} aria-modal={expanded ? true : undefined} aria-label={expanded ? `${name} TradingView 차트` : undefined}>
         <div className="officialChartHeading"><div><h2>TradingView</h2><p>{name} · {symbol ?? ticker}</p></div><div className="officialChartActions"><button type="button" aria-pressed={expanded} onClick={() => setExpanded(value => !value)}>{expanded ? "크게 보기 닫기" : "크게 보기"}</button><a href={tradingViewChartUrl(symbol ?? ticker)} target="_blank" rel="noopener noreferrer">TradingView 전체 화면 ↗</a></div></div>

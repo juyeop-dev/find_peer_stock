@@ -24,7 +24,7 @@ try {
   await send('Emulation.setDeviceMetricsOverride',{width:1440,height:1100,deviceScaleFactor:1,mobile:false});
   await navigate('/stocks/MU');
   await until(()=>evaluate("Boolean(document.querySelector('[data-chart-view=workspace]'))"),'Native chart tab missing');
-  assert.equal(await evaluate("document.querySelector('[data-chart-view=workspace]').getAttribute('aria-selected')"),'true');
+  assert.equal(await evaluate("document.querySelector('[data-chart-view=archive]').getAttribute('aria-selected')"),'true');
   await evaluate("document.querySelector('[data-chart-view=tradingview]').click()");
   await until(()=>evaluate("Boolean(document.querySelector('.marketWidget-chart iframe'))"),'Official chart iframe did not load');
   assert.equal(await evaluate("document.querySelector('[data-chart-view=tradingview]').getAttribute('aria-selected')"),'true');
@@ -70,7 +70,7 @@ try {
   console.log('PASS responsive official chart, enlarged view and preserved provider instance across tabs');
   await navigate('/semiconductors/000660.KS');
   await until(()=>evaluate("Boolean(document.querySelector('[data-chart-view=archive]'))"),'KRX chart tabs missing');
-  assert.equal(await evaluate("document.querySelector('[data-chart-view=workspace]').getAttribute('aria-selected')"),'true');
+  assert.equal(await evaluate("document.querySelector('[data-chart-view=archive]').getAttribute('aria-selected')"),'true');
   await evaluate("document.querySelector('[data-chart-view=tradingview]').click()");
   assert.equal(await evaluate("new URL(document.querySelector('.officialChartActions a').href).searchParams.get('symbol')"),'KRX:000660');
   assert.ok(await evaluate("document.querySelector('.officialChartUnavailable').innerText.includes('KRX')"));

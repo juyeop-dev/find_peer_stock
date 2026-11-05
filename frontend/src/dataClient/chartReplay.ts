@@ -12,6 +12,39 @@ export const REPLAY_PRESET: ReplaySelection[] = [
   { ticker: "GC=F", name: "금 선물 (연속)", start: "2024-01-01", end: "2024-12-31" },
 ];
 
+export interface ReplaySettings {
+  selections: ReplaySelection[]; overlay: boolean; kind: "line" | "candles"; interval: ReplayInterval;
+  average: boolean; volume: boolean; logarithmic: boolean; count: number | null; speed: number;
+  autoPeer: boolean; peerReason?: string;
+}
+export function initialReplaySettings(ticker?: string, name?: string, exchange?: string, now = new Date()): ReplaySettings {
+  const selections = REPLAY_PRESET.map(row => ({ ...row }));
+  if (ticker) {
+    const end = new Intl.DateTimeFormat("sv-SE", { timeZone: "Asia/Seoul" }).format(now);
+    const [year, month, day] = end.split("-").map(Number);
+    const start = new Date(Date.UTC(year - 1, month - 1, Math.min(day, new Date(Date.UTC(year - 1, month, 0)).getUTCDate()))).toISOString().slice(0, 10);
+    selections[0] = { ticker, name: name ?? ticker, exchange, start, end };
+    selections[1] = { ticker: "", name: "비교 종목 선택", start, end };
+  }
+  return { selections, overlay: Boolean(ticker), kind: ticker ? "line" : "candles", interval: "day", average: false, volume: false, logarithmic: false, count: ticker ? null : 25, speed: 2, autoPeer: Boolean(ticker) };
+}
+export function restoreReplaySettings(raw: string | null, fallback: ReplaySettings, stockContext = false): ReplaySettings {
+  try {
+    const saved = JSON.parse(raw ?? "null");
+    if (!saved || ![1, 2].includes(saved.version) || saved.selections?.length !== 2 || !saved.selections.every((row: ReplaySelection) => typeof row.ticker === "string" && /^[A-Z0-9^][A-Z0-9.^:_=\-]{0,39}$/.test(row.ticker) && typeof row.name === "string" && row.name.length < 150 && (row.exchange === undefined || typeof row.exchange === "string") && validReplayDate(row.start) && validReplayDate(row.end) && row.start <= row.end)) return fallback;
+    const oldDefault = stockContext && saved.version === 1 && saved.selections[1].ticker === REPLAY_PRESET[1].ticker
+      && saved.selections[1].start === REPLAY_PRESET[1].start && saved.selections[1].end === REPLAY_PRESET[1].end;
+    const selections = saved.selections.map((row: ReplaySelection, i: number) => oldDefault && i === 1
+      ? { ...fallback.selections[1], start: saved.selections[0].start, end: saved.selections[0].end } : row);
+    return { ...fallback, selections, overlay: stockContext && saved.version === 1 ? true : saved.overlay === true,
+      kind: saved.kind === "candles" ? "candles" : "line", interval: ["day", "week", "month"].includes(saved.interval) ? saved.interval : "day",
+      average: saved.average === true, volume: saved.volume === true, logarithmic: saved.logarithmic === true,
+      count: oldDefault || saved.count === null ? null : Number.isInteger(saved.count) && saved.count > 0 && saved.count < 100000 ? saved.count : fallback.count,
+      speed: [1, 2, 5, 10].includes(saved.speed) ? saved.speed : 2, autoPeer: oldDefault || saved.version === 2 && saved.autoPeer === true,
+      peerReason: typeof saved.peerReason === "string" ? saved.peerReason.slice(0, 250) : undefined };
+  } catch { return fallback; }
+}
+
 export function validReplayDate(value: string): boolean {
   return /^\d{4}-\d{2}-\d{2}$/.test(value) && Number.isFinite(Date.parse(value)) && new Date(value).toISOString().slice(0, 10) === value;
 }

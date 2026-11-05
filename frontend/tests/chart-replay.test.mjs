@@ -7,6 +7,41 @@ const source = await readFile(new URL('../src/dataClient/chartReplay.ts', import
 const javascript = ts.transpileModule(source, { compilerOptions: { module: ts.ModuleKind.ESNext, target: ts.ScriptTarget.ES2022 } }).outputText;
 const { aggregateReplay, hasOHLC, replayAverage, replayRange, replayReturns, validateReplayMarket, validReplayDate } = await import(`data:text/javascript;base64,${Buffer.from(javascript).toString('base64')}`);
 const bar = (date, close, extra = {}) => ({ date, close, adjusted_close: close, volume: null, ...extra });
+const { initialReplaySettings, restoreReplaySettings } = await import(`data:text/javascript;base64,${Buffer.from(javascript).toString('base64')}`);
+
+test('stock replay defaults to a full one-year return overlay with matching dates and no unrelated gold preset', () => {
+  const value = initialReplaySettings('MU', 'Micron', 'NASDAQ', new Date('2024-02-29T16:00:00Z'));
+  assert.equal(value.overlay, true);
+  assert.equal(value.count, null);
+  assert.equal(value.autoPeer, true);
+  assert.equal(value.selections[0].start, '2023-03-01');
+  assert.equal(value.selections[0].end, '2024-03-01');
+  assert.equal(value.selections[1].ticker, '');
+  assert.equal(value.selections[1].start, value.selections[0].start);
+  assert.equal(initialReplaySettings(undefined).overlay, false);
+  assert.equal(initialReplaySettings(undefined).selections[1].ticker, 'GC=F');
+  assert.equal(initialReplaySettings('MU', '', '', new Date('2024-02-29T00:00:00Z')).selections[0].start, '2023-02-28');
+});
+
+test('legacy gold defaults migrate to peer selection while intentional saved comparisons and new layout preferences survive', () => {
+  const fallback = initialReplaySettings('MU', 'Micron');
+  const stock = { ticker: 'MU', name: 'Micron', start: '2025-01-01', end: '2026-12-31' };
+  const legacy = { version: 1, selections: [stock, { ticker: 'GC=F', name: 'Gold', start: '2024-01-01', end: '2024-12-31' }], overlay: false, count: 25 };
+  const restored = restoreReplaySettings(JSON.stringify(legacy), fallback, true);
+  assert.equal(restored.selections[1].ticker, '');
+  assert.equal(restored.selections[1].start, stock.start);
+  assert.equal(restored.overlay, true);
+  assert.equal(restored.count, null);
+  assert.equal(restored.autoPeer, true);
+  const manual = { ...legacy, selections: [stock, { ...stock, ticker: 'AMD', name: 'AMD' }], count: 40 };
+  assert.equal(restoreReplaySettings(JSON.stringify(manual), fallback, true).selections[1].ticker, 'AMD');
+  assert.equal(restoreReplaySettings(JSON.stringify(manual), fallback, true).autoPeer, false);
+  const saved = restoreReplaySettings(JSON.stringify({ ...manual, version: 2 }), fallback, true);
+  assert.equal(saved.overlay, false);
+  assert.equal(saved.count, 40);
+  assert.equal(restoreReplaySettings('{broken', fallback, true), fallback);
+  assert.equal(restoreReplaySettings(JSON.stringify({ ...manual, selections: [null, null] }), fallback, true), fallback);
+});
 const market = bars => ({ ticker: 'TEST', name: 'Test', currency: 'USD', source: 'Test provider', bars });
 
 test('date ranges reject impossible/reversed dates and do not invent holiday observations', () => {

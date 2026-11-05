@@ -403,7 +403,8 @@ def publish():
 
 
 def publish_chart_catalog(information):
-    """Searchable listings for chart comparisons; no quotes or financial data."""
+    """Searchable listings with company/peer metadata; no prices or statements."""
+    from chart_comparison_catalog import enrich_chart_catalog
     roster_path = ROOT / "data/information-audit/results.jsonl"
     roster = {}
     if roster_path.exists():
@@ -417,6 +418,10 @@ def publish_chart_catalog(information):
         row = roster.get(ticker, {})
         entries.append({"ticker": ticker, "name": row.get("name") or company.get("name") or ticker,
                         "exchange": row.get("exchange") or company.get("exchange") or "", "market": row.get("market") or ""})
+        for field in ("history_start", "history_end"):
+            if isinstance(row.get(field), str):
+                entries[-1][field] = row[field]
+    enrich_chart_catalog(entries, information, ROOT)
     path = ROOT / "frontend/public/data/chart-catalog.json.gz"
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_bytes(gzip.compress(json.dumps(entries, ensure_ascii=False, separators=(",", ":"), allow_nan=False).encode("utf-8"), compresslevel=9, mtime=0))

@@ -8,7 +8,31 @@ async function load(path) {
   return import(`data:text/javascript;base64,${Buffer.from(js).toString('base64')}`);
 }
 const {compareHistories,movingAverage,clampWindow,zoomWindow,parseDrawings,drawingStorageKey,nearestDate,channelSegments,measureChange}=await load('../src/dataClient/chartWorkspace.ts');
-const {searchChartSymbols}=await load('../src/dataClient/chartComparisonClient.ts');
+const {searchChartSymbols,similarChartSymbols}=await load('../src/dataClient/chartComparisonClient.ts');
+test('similar companies prioritize registered same-industry peers and business groups, excluding self, stale listings, duplicate issuers and generic sectors',()=>{
+  const symbol=(ticker,extra={})=>({ticker,name:ticker,industry:'Semiconductors',sector:'Electronic Technology',market:'korea',history_end:'2026-11-02',...extra});
+  const rows=[symbol('BASE',{peer_tickers:['PEER'],company_id:'base',business_groups:['chips/memory/HBM']}),
+    symbol('SECTOR',{industry:'Other electronics'}),symbol('STALE',{history_end:'2020-01-01'}),
+    symbol('DUPLICATE',{company_id:'base'}),symbol('FOREIGN',{market:'us'}),symbol('BUSINESS',{business_groups:['chips/memory/HBM']}),symbol('PEER')];
+  assert.deepEqual(similarChartSymbols(rows,'BASE').map(r=>r.symbol.ticker),['BUSINESS','PEER','FOREIGN']);
+  assert.ok(similarChartSymbols(rows,'BASE')[0].reason.includes('사업'));
+  assert.deepEqual(similarChartSymbols([symbol('UNKNOWN',{industry:'미분류'}),symbol('OTHER',{industry:'미분류'})],'UNKNOWN'),[]);
+  assert.deepEqual(similarChartSymbols(rows,'MISSING'),[]);
+});
+
+test('peer ranking uses comparable USD size only after business similarity and remains deterministic without caps',()=>{
+  const rows=[{ticker:'A',name:'A',industry:'Banks',market_cap_usd:100},
+    {ticker:'BIG',name:'BIG',industry:'Banks',market_cap_usd:10000},
+    {ticker:'CLOSE',name:'CLOSE',industry:'Banks',market_cap_usd:120},
+    {ticker:'UNKNOWN',name:'UNKNOWN',industry:'Banks'},
+    {ticker:'OTHER',name:'OTHER',industry:'Chemicals',market_cap_usd:100}];
+  assert.deepEqual(similarChartSymbols(rows,'a').map(r=>r.symbol.ticker),['CLOSE','BIG','UNKNOWN']);
+});
+
+test('automatic Korean comparisons use another company instead of preferred shares of the same issuer',()=>{
+  const rows=['005930.KS','005935.KS','000660.KS','000665.KS'].map(ticker=>({ticker,name:ticker,industry:'Semiconductors'}));
+  assert.deepEqual(similarChartSymbols(rows,'005930.KS').map(row=>row.symbol.ticker),['000660.KS']);
+});
 const point=(date,close,adjusted_close=close)=>({date,close,adjusted_close,volume:null});
 const base={ticker:'BASE',name:'Base',currency:'KRW',color:'#000000',history:[point('2026-01-02',100),point('2026-01-05',50,100),point('2026-01-06',55,110),point('2026-01-07',60,120)]};
 

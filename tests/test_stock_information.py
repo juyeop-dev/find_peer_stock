@@ -14,6 +14,26 @@ import refresh_stock_information_history as history_refresh
 
 
 class StockInformationTests(unittest.TestCase):
+    def test_chart_catalog_includes_business_peers_and_dated_history_without_prices(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            path = root / "data/generated/stocks/BASE.json"
+            path.parent.mkdir(parents=True)
+            path.write_text(json.dumps({"company": {"ticker": "BASE", "id": "base"},
+                "peer_groups": [{"group": {"name": "Memory"}, "peers": [{"company": {"ticker": "PEER", "id": "peer"}}]}]}), encoding="utf-8")
+            categories = root / "data/seed/semiconductor_categories.json"
+            categories.parent.mkdir(parents=True)
+            categories.write_text(json.dumps([{"major": "Chips", "middle": "Memory", "minor": "DRAM", "image": ["BASE"], "additional": ["PEER"]}]), encoding="utf-8")
+            with patch.object(info, "ROOT", root):
+                rows = info.publish_chart_catalog({"BASE": {"company": {"industry": "Semiconductors", "sector": "Technology"}, "quote": {"price": 100, "market_cap_usd": 123}}, "PEER": {"company": {"industry": "Semiconductors"}}})
+            self.assertEqual(rows[0]["peer_tickers"], ["PEER"])
+            self.assertIn("Chips/Memory/DRAM", rows[1]["business_groups"])
+            self.assertIn("피어 사업/Memory", rows[1]["business_groups"])
+            self.assertEqual(rows[0]["market_cap_usd"], 123)
+            self.assertEqual(rows[0]["industry"], "Semiconductors")
+            self.assertNotIn("price", rows[0])
+            self.assertNotIn("quote", rows[0])
+
     def test_chart_catalog_preserves_listing_identity_and_non_latin_names_without_publishing_quotes(self):
         with tempfile.TemporaryDirectory() as folder:
             root = Path(folder)

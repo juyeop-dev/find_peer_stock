@@ -160,11 +160,17 @@ try {
     const shot = await send('Page.captureScreenshot', { format: 'png' }); await writeFile(new URL(`replay-${width}.png`, artifact), Buffer.from(shot.data, 'base64'));
   }
   await send('Emulation.setDeviceMetricsOverride', { width: 1440, height: 1100, deviceScaleFactor: 1, mobile: false });
-  await loadPage('Page.navigate', { url: `${base}/semiconductors/000660.KS` }); await ready();
-  assert.equal(await evaluate(`document.querySelector('[data-chart-view="workspace"]').getAttribute('aria-selected')`), 'true');
+  await loadPage('Page.navigate', { url: `${base}/semiconductors/000660.KS` });
+  await until(() => evaluate('Boolean(document.querySelector("[data-chart-view=archive]"))'), 'Stock chart tabs are missing');
+  assert.equal(await evaluate(`document.querySelector('[data-chart-view="archive"]').getAttribute('aria-selected')`), 'true');
+  assert.equal(await evaluate('document.querySelectorAll(".chartReplayWorkspace").length'), 0, 'Replay must load only when opened');
+  await evaluate(`document.querySelector('[data-chart-view="workspace"]').click()`); await ready();
+  assert.equal(await evaluate('document.querySelectorAll(".replayCanvas").length'), 1, 'Stock replay must default to return overlay');
+  assert.notEqual(await evaluate(`document.querySelector('[aria-label="차트 B 종목"]').value`), 'GC=F');
+  assert.ok(await evaluate('Boolean(document.querySelector("[data-peer-reason]").textContent.includes("선정"))'));
   assert.equal(await evaluate(`document.querySelector('[aria-label="차트 A 종목"]').value`), '000660.KS');
   assert.equal(await evaluate(`document.querySelector('[aria-label="리플레이 차트 종류"] option[value="candles"]').disabled`), true, 'Close-only archives cannot fabricate candles');
-  await click('다음 봉'); const retained = await count();
+  await click('↤ 처음'); await click('다음 봉'); const retained = await count();
   await click('재생');
   await evaluate(`document.querySelector('[data-chart-view="archive"]').click()`);
   await until(() => evaluate('document.querySelector(".stockChartCanvas")?.getBoundingClientRect().width>0'), 'Existing drawing chart is unavailable');
@@ -172,8 +178,54 @@ try {
   await evaluate(`document.querySelector('[data-chart-view="workspace"]').click()`);
   assert.equal(await count(), retained, 'Tab switches must preserve unsaved replay position');
   assert.equal(await evaluate('document.querySelectorAll(".marketWidget-chart iframe").length'), 0, 'Default stock chart must render in our site');
+  const assertAnalysisFirst = async route => {
+    await loadPage('Page.navigate', { url: base + route });
+    await until(() => evaluate('Boolean(document.querySelector("[data-chart-view=archive]"))'), 'Analysis tab missing');
+    assert.equal(await evaluate('document.querySelector("[data-chart-view=archive]").getAttribute("aria-selected")'), 'true');
+    assert.equal(await evaluate('document.querySelectorAll(".chartReplayWorkspace").length'), 0);
+    await evaluate('document.querySelector("[data-chart-view=workspace]").click()'); await ready();
+    assert.equal(await evaluate('document.querySelectorAll(".replayCanvas").length'), 1);
+  };
+  await assertAnalysisFirst('/stocks/MU');
+  const muPeer = await evaluate(`document.querySelector('[aria-label="차트 B 종목"]').value`);
+  assert.ok(['005930.KS', '000660.KS', '2408.TW', '2344.TW'].includes(muPeer), 'Micron should compare against a memory-business peer');
+  assert.deepEqual(await evaluate('[...document.querySelectorAll(".replaySelection input[type=date]")].map(n=>n.value)'),
+    await evaluate('(()=>{const n=document.querySelectorAll(".replaySelection input[type=date]");return[n[0].value,n[1].value,n[0].value,n[1].value]})()'));
+  const latestRebounds = await (await fetch(base + '/data/rebounds/index.json')).json();
+  const reboundDate = latestRebounds.reports.find(row => row.count > 0).date;
+  const reboundReport = await (await fetch(`${base}/data/rebounds/korea/${reboundDate.slice(0,7).replace('-','_')}/${reboundDate}.json`)).json();
+  await assertAnalysisFirst(`/market-stocks/${encodeURIComponent(reboundReport.entries[0].ticker)}?source=rebounds&market=korea&date=${reboundDate}`);
+  // Legacy automatic gold defaults migrate, while an explicitly saved peer survives.
+  const legacy = { version: 1, overlay: false, count: 25, selections: [
+    { ticker: 'MU', name: 'Micron', exchange: 'NASDAQ', start: '2025-01-01', end: '2026-12-31' },
+    { ticker: 'GC=F', name: 'Gold', start: '2024-01-01', end: '2024-12-31' },
+  ] };
+  await evaluate(`localStorage.setItem('stock-peer:replay:v1:MU',${JSON.stringify(JSON.stringify(legacy))})`);
+  await assertAnalysisFirst('/stocks/MU');
+  assert.notEqual(await evaluate(`document.querySelector('[aria-label="차트 B 종목"]').value`), 'GC=F');
+  assert.equal(await count(), await evaluate('Number(document.querySelector("[data-replay-max]").dataset.replayMax)'));
+  const manual = { ...legacy, count: 40, selections: [legacy.selections[0], { ...legacy.selections[0], ticker: '000660.KS', name: 'SK하이닉스', exchange: 'KOSPI' }] };
+  await evaluate(`localStorage.setItem('stock-peer:replay:v1:MU',${JSON.stringify(JSON.stringify(manual))})`);
+  await assertAnalysisFirst('/stocks/MU');
+  assert.equal(await evaluate(`document.querySelector('[aria-label="차트 B 종목"]').value`), '000660.KS');
+  assert.equal(await count(), 40);
+  // A delayed automatic suggestion must never overwrite a manual selection.
+  let peerCatalogRequest;
+  const holdPeerCatalog = event => { const message = JSON.parse(event.data); if (message.method === 'Fetch.requestPaused') peerCatalogRequest = message.params.requestId; };
+  socket.addEventListener('message', holdPeerCatalog);
+  await send('Fetch.enable', { patterns: [{ urlPattern: '*data/chart-catalog.json.gz*', requestStage: 'Request' }] });
+  await loadPage('Page.navigate', { url: `${base}/semiconductors/005930.KS` });
+  await until(() => evaluate('Boolean(document.querySelector("[data-chart-view=archive]"))'), 'Samsung analysis tab missing');
+  assert.equal(peerCatalogRequest, undefined, 'Hidden replay must not start the catalog request');
+  await evaluate('document.querySelector("[data-chart-view=workspace]").click()');
+  await until(() => peerCatalogRequest, 'Automatic peer lookup did not start');
+  await setInput('차트 B 종목', 'MU'); await applySelection(1); await ready();
+  await send('Fetch.continueRequest', { requestId: peerCatalogRequest }); await send('Fetch.disable');
+  socket.removeEventListener('message', holdPeerCatalog);
+  await delay(250);
+  assert.equal(await evaluate(`document.querySelector('[aria-label="차트 B 종목"]').value`), 'MU');
   assert.deepEqual(exceptions, [], 'Browser runtime errors');
-  console.log('PASS Korean symbol search/IME, delayed catalog, mouse/keyboard selection, gold alias, direct tickers, invalid/ambiguous names, full periods after A/B updates, replay transport, shorter history, candles, weekly aggregation, overlay, save/restore, fullscreen, PNG, invalid dates, 1440/390/320px search/layouts and native stock tabs');
+  console.log('PASS Korean search/IME, replay/aggregation/overlay/save/PNG, 1440/390/320px, analysis-first tabs on all three detail types, same-period business peers, legacy default migration, manual saved peers and delayed automatic suggestions preserving manual choices');
 } finally {
   if (socket?.readyState === WebSocket.OPEN) socket.close();
   browser.kill(); await delay(500);
