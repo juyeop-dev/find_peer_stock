@@ -35,7 +35,7 @@ export function similarChartSymbols(rows: ChartSymbol[], ticker: string): { symb
 let catalog: Promise<ChartSymbol[]> | undefined;
 export function getChartSymbols(): Promise<ChartSymbol[]> {
   if (!catalog) catalog = (async () => {
-    const response = await fetch(`${import.meta.env.BASE_URL}data/chart-catalog.json.gz`);
+    const response = await fetch(`${import.meta.env.BASE_URL}data/chart-catalog.json.gz?v=2`);
     if (!response.ok) throw new Error("종목 목록을 불러오지 못했습니다. 티커를 직접 입력할 수 있습니다.");
     const bytes = await response.arrayBuffer(), magic = new Uint8Array(bytes, 0, Math.min(2, bytes.byteLength));
     const text = magic[0] === 0x1f && magic[1] === 0x8b
