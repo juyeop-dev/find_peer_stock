@@ -1,0 +1,229 @@
+{
+  "schema_version": 1,
+  "market": "taiwan",
+  "date": "2026-11-09",
+  "summary": "장 마감 후 TradingView 주식 스냅샷 기준. 당일 장중 고가가 52주·전체기간 고가에 도달하고, 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다. 전체기간 신고가를 우선 표시하며 신고가 배경은 별도 확인 전입니다.",
+  "sources": [
+    {
+      "label": "TradingView stock screener",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "1742.TWO",
+      "name": "Taiwan Wax Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Energy Minerals",
+      "high_type": "52_week",
+      "reason": "업종: Energy Minerals · Oil Refining/Marketing",
+      "description": "Taiwan Wax Co., Ltd. · Oil Refining/Marketing",
+      "change_pct": 2.784222737819016,
+      "session_open": 20.9,
+      "session_close": 22.15,
+      "session_volume": 621081,
+      "source_symbol": "TPEX:1742",
+      "currency": "TWD"
+    },
+    {
+      "ticker": "3287.TWO",
+      "name": "KWorld Computer Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Technology Services",
+      "high_type": "all_time",
+      "reason": "업종: Technology Services · Information Technology Services",
+      "description": "KWorld Computer Co., Ltd. · Information Technology Services",
+      "change_pct": 9.959072305593448,
+      "session_open": 80.6,
+      "session_close": 80.6,
+      "session_volume": 939583,
+      "source_symbol": "TPEX:3287",
+      "currency": "TWD"
+    },
+    {
+      "ticker": "5202.TWO",
+      "name": "NewSoft Technology Corporation",
+      "exchange": "TPEX",
+      "category": "Technology Services",
+      "high_type": "52_week",
+      "reason": "업종: Technology Services · Packaged Software",
+      "description": "NewSoft Technology Corporation · Packaged Software",
+      "change_pct": 9.836065573770496,
+      "session_open": 19.2,
+      "session_close": 20.1,
+      "session_volume": 2870832,
+      "source_symbol": "TPEX:5202",
+      "currency": "TWD"
+    },
+    {
+      "ticker": "6148.TWO",
+      "name": "Azion Corporation",
+      "exchange": "TPEX",
+      "category": "Technology Services",
+      "high_type": "52_week",
+      "reason": "업종: Technology Services · Information Technology Services",
+      "description": "Azion Corporation · Information Technology Services",
+      "change_pct": 2.4475524475524577,
+      "session_open": 43,
+      "session_close": 43.95,
+      "session_volume": 23729402,
+      "source_symbol": "TPEX:6148",
+      "currency": "TWD"
+    },
+    {
+      "ticker": "7779.TWO",
+      "name": "Carry International Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Consumer Services",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Services · Movies/Entertainment",
+      "description": "Carry International Co., Ltd. · Movies/Entertainment",
+      "change_pct": 6.896551724137924,
+      "session_open": 20.45,
+      "session_close": 21.7,
+      "session_volume": 24587,
+      "source_symbol": "TPEX:7779",
+      "currency": "TWD"
+    },
+    {
+      "ticker": "7863.TWO",
+      "name": "Central Taiwan Science Park Logistics Co. Ltd.",
+      "exchange": "TPEX",
+      "category": "Transportation",
+      "high_type": "52_week",
+      "reason": "업종: Transportation · Air Freight/Couriers",
+      "description": "Central Taiwan Science Park Logistics Co. Ltd. · Air Freight/Couriers",
+      "change_pct": 4.000000000000005,
+      "session_open": 55,
+      "session_close": 57.2,
+      "session_volume": 6416,
+      "source_symbol": "TPEX:7863",
+      "currency": "TWD"
+    },
+    {
+      "ticker": "8432.TWO",
+      "name": "TSH Biopharm Corp. Ltd.",
+      "exchange": "TPEX",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Pharmaceuticals: Major",
+      "description": "TSH Biopharm Corp. Ltd. · Pharmaceuticals: Major",
+      "change_pct": 4.599659284497437,
+      "session_open": 59.3,
+      "session_close": 61.4,
+      "session_volume": 209272,
+      "source_symbol": "TPEX:8432",
+      "currency": "TWD"
+    },
+    {
+      "ticker": "1416.TW",
+      "name": "Kwong Fong Industries Corporation",
+      "exchange": "TWSE",
+      "category": "Technology Services",
+      "high_type": "52_week",
+      "reason": "업종: Technology Services · Information Technology Services",
+      "description": "Kwong Fong Industries Corporation · Information Technology Services",
+      "change_pct": 9.785932721712525,
+      "session_open": 17,
+      "session_close": 17.95,
+      "session_volume": 20502730,
+      "source_symbol": "TWSE:1416",
+      "currency": "TWD"
+    },
+    {
+      "ticker": "2254.TW",
+      "name": "Coplus Inc.",
+      "exchange": "TWSE",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Auto Parts: OEM",
+      "description": "Coplus Inc. · Auto Parts: OEM",
+      "change_pct": 0.45454545454545453,
+      "session_open": 110,
+      "session_close": 110.5,
+      "session_volume": 3630529,
+      "source_symbol": "TWSE:2254",
+      "currency": "TWD"
+    },
+    {
+      "ticker": "2516.TW",
+      "name": "New Asia Construction & Development Corp.",
+      "exchange": "TWSE",
+      "category": "Industrial Services",
+      "high_type": "52_week",
+      "reason": "업종: Industrial Services · Engineering & Construction",
+      "description": "New Asia Construction & Development Corp. · Engineering & Construction",
+      "change_pct": 1.54320987654321,
+      "session_open": 16.15,
+      "session_close": 16.45,
+      "session_volume": 679644,
+      "source_symbol": "TWSE:2516",
+      "currency": "TWD"
+    },
+    {
+      "ticker": "4155.TW",
+      "name": "Ok Biotech Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Medical Specialties",
+      "description": "Ok Biotech Co., Ltd. · Medical Specialties",
+      "change_pct": 3.3519553072625783,
+      "session_open": 18.5,
+      "session_close": 18.5,
+      "session_volume": 2752445,
+      "source_symbol": "TWSE:4155",
+      "currency": "TWD"
+    },
+    {
+      "ticker": "6112.TW",
+      "name": "Metaage Corporation",
+      "exchange": "TWSE",
+      "category": "Technology Services",
+      "high_type": "52_week",
+      "reason": "업종: Technology Services · Information Technology Services",
+      "description": "Metaage Corporation · Information Technology Services",
+      "change_pct": 1.9455252918287937,
+      "session_open": 51.4,
+      "session_close": 52.4,
+      "session_volume": 16294456,
+      "source_symbol": "TWSE:6112",
+      "currency": "TWD"
+    }
+  ],
+  "source_metadata": {
+    "provider": "TradingView public scanner",
+    "scanner": "taiwan",
+    "fetched_at": "2026-11-09T06:41:44.385397+00:00",
+    "universe": "TradingView-listed stock instruments, including common and preferred shares; ETFs excluded",
+    "definition": "daily high >= period high; close >= open; close >= previous close when one exists; all-time takes precedence; ties included",
+    "scanner_exchanges": [
+      "TWSE",
+      "TPEX"
+    ],
+    "latest_session_by_exchange": {
+      "TWSE": "2026-11-09",
+      "TPEX": "2026-11-09"
+    },
+    "previous_session_by_exchange": {
+      "TWSE": "2026-11-06",
+      "TPEX": "2026-11-06"
+    },
+    "current_session_reference_symbols": {
+      "TWSE": "TWSE:01001T",
+      "TPEX": "TPEX:1240"
+    },
+    "scanned_symbols": 2358,
+    "current_session_symbols": 2333,
+    "excluded_symbols": {
+      "other_session": 25,
+      "bearish_or_down_close": 3
+    },
+    "pagination_complete": true
+  },
+  "collected_at": "2026-11-09T06:41:43.342210+00:00"
+}
