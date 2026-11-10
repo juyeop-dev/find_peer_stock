@@ -1,0 +1,229 @@
+{
+  "schema_version": 1,
+  "market": "taiwan",
+  "date": "2026-11-10",
+  "summary": "장 마감 후 TradingView 주식 스냅샷 기준. 당일 장중 고가가 52주·전체기간 고가에 도달하고, 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다. 전체기간 신고가를 우선 표시하며 신고가 배경은 별도 확인 전입니다.",
+  "sources": [
+    {
+      "label": "TradingView stock screener",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "5230.TWO",
+      "name": "Ledlink Optics, Inc.",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Electronic Components",
+      "description": "Ledlink Optics, Inc. · Electronic Components",
+      "change_pct": 9.982174688057043,
+      "session_open": 29.3,
+      "session_close": 30.85,
+      "session_volume": 8029747,
+      "source_symbol": "TPEX:5230",
+      "currency": "TWD"
+    },
+    {
+      "ticker": "6148.TWO",
+      "name": "Azion Corporation",
+      "exchange": "TPEX",
+      "category": "Technology Services",
+      "high_type": "52_week",
+      "reason": "업종: Technology Services · Information Technology Services",
+      "description": "Azion Corporation · Information Technology Services",
+      "change_pct": 9.897610921501693,
+      "session_open": 45.95,
+      "session_close": 48.3,
+      "session_volume": 10593390,
+      "source_symbol": "TPEX:6148",
+      "currency": "TWD"
+    },
+    {
+      "ticker": "6609.TWO",
+      "name": "Taiwan Takisawa Technology Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Technology Services",
+      "high_type": "52_week",
+      "reason": "업종: Technology Services · Information Technology Services",
+      "description": "Taiwan Takisawa Technology Co., Ltd. · Information Technology Services",
+      "change_pct": 7.7850877192982395,
+      "session_open": 46,
+      "session_close": 49.15,
+      "session_volume": 5424958,
+      "source_symbol": "TPEX:6609",
+      "currency": "TWD"
+    },
+    {
+      "ticker": "6708.TWO",
+      "name": "Mars Semiconductor Corp.",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Semiconductors",
+      "description": "Mars Semiconductor Corp. · Semiconductors",
+      "change_pct": 10,
+      "session_open": 82.5,
+      "session_close": 82.5,
+      "session_volume": 1042946,
+      "source_symbol": "TPEX:6708",
+      "currency": "TWD"
+    },
+    {
+      "ticker": "6870.TWO",
+      "name": "Turn Cloud Technology Service Inc.",
+      "exchange": "TPEX",
+      "category": "Technology Services",
+      "high_type": "all_time",
+      "reason": "업종: Technology Services · Information Technology Services",
+      "description": "Turn Cloud Technology Service Inc. · Information Technology Services",
+      "change_pct": 9.914320685434516,
+      "session_open": 432,
+      "session_close": 449,
+      "session_volume": 580250,
+      "source_symbol": "TPEX:6870",
+      "currency": "TWD"
+    },
+    {
+      "ticker": "7863.TWO",
+      "name": "Central Taiwan Science Park Logistics Co. Ltd.",
+      "exchange": "TPEX",
+      "category": "Transportation",
+      "high_type": "52_week",
+      "reason": "업종: Transportation · Air Freight/Couriers",
+      "description": "Central Taiwan Science Park Logistics Co. Ltd. · Air Freight/Couriers",
+      "change_pct": 0.17482517482516488,
+      "session_open": 57.3,
+      "session_close": 57.3,
+      "session_volume": 3204,
+      "source_symbol": "TPEX:7863",
+      "currency": "TWD"
+    },
+    {
+      "ticker": "7953.TWO",
+      "name": "Jun Jia Interior Design Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "미분류",
+      "high_type": "all_time",
+      "reason": "업종: 미분류 · 업종 정보 미확인",
+      "description": "Jun Jia Interior Design Co., Ltd. · 업종 정보 미확인",
+      "change_pct": null,
+      "session_open": 108,
+      "session_close": 142,
+      "session_volume": 48212,
+      "source_symbol": "TPEX:7953",
+      "currency": "TWD"
+    },
+    {
+      "ticker": "2254.TW",
+      "name": "Coplus Inc.",
+      "exchange": "TWSE",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Auto Parts: OEM",
+      "description": "Coplus Inc. · Auto Parts: OEM",
+      "change_pct": 0.4524886877828055,
+      "session_open": 110.5,
+      "session_close": 111,
+      "session_volume": 3085634,
+      "source_symbol": "TWSE:2254",
+      "currency": "TWD"
+    },
+    {
+      "ticker": "2465.TW",
+      "name": "Leadtek Research Inc.",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Computer Processing Hardware",
+      "description": "Leadtek Research Inc. · Computer Processing Hardware",
+      "change_pct": 9.67741935483871,
+      "session_open": 136,
+      "session_close": 136,
+      "session_volume": 4544772,
+      "source_symbol": "TWSE:2465",
+      "currency": "TWD"
+    },
+    {
+      "ticker": "2468.TW",
+      "name": "Fortune Information System Corp.",
+      "exchange": "TWSE",
+      "category": "Commercial Services",
+      "high_type": "52_week",
+      "reason": "업종: Commercial Services · Miscellaneous Commercial Services",
+      "description": "Fortune Information System Corp. · Miscellaneous Commercial Services",
+      "change_pct": 4.2654028436019,
+      "session_open": 63.7,
+      "session_close": 66,
+      "session_volume": 51561470,
+      "source_symbol": "TWSE:2468",
+      "currency": "TWD"
+    },
+    {
+      "ticker": "6112.TW",
+      "name": "Metaage Corporation",
+      "exchange": "TWSE",
+      "category": "Technology Services",
+      "high_type": "52_week",
+      "reason": "업종: Technology Services · Information Technology Services",
+      "description": "Metaage Corporation · Information Technology Services",
+      "change_pct": 8.778625954198477,
+      "session_open": 52.4,
+      "session_close": 57,
+      "session_volume": 17306250,
+      "source_symbol": "TWSE:6112",
+      "currency": "TWD"
+    },
+    {
+      "ticker": "6782.TW",
+      "name": "Visco Vision Inc.",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Electronic Components",
+      "description": "Visco Vision Inc. · Electronic Components",
+      "change_pct": 8.47457627118644,
+      "session_open": 270.5,
+      "session_close": 288,
+      "session_volume": 1219212,
+      "source_symbol": "TWSE:6782",
+      "currency": "TWD"
+    }
+  ],
+  "source_metadata": {
+    "provider": "TradingView public scanner",
+    "scanner": "taiwan",
+    "fetched_at": "2026-11-10T06:36:39.550271+00:00",
+    "universe": "TradingView-listed stock instruments, including common and preferred shares; ETFs excluded",
+    "definition": "daily high >= period high; close >= open; close >= previous close when one exists; all-time takes precedence; ties included",
+    "scanner_exchanges": [
+      "TWSE",
+      "TPEX"
+    ],
+    "latest_session_by_exchange": {
+      "TWSE": "2026-11-10",
+      "TPEX": "2026-11-10"
+    },
+    "previous_session_by_exchange": {
+      "TWSE": "2026-11-09",
+      "TPEX": "2026-11-09"
+    },
+    "current_session_reference_symbols": {
+      "TWSE": "TWSE:01001T",
+      "TPEX": "TPEX:1240"
+    },
+    "scanned_symbols": 2360,
+    "current_session_symbols": 2317,
+    "excluded_symbols": {
+      "other_session": 43,
+      "bearish_or_down_close": 8
+    },
+    "pagination_complete": true
+  },
+  "collected_at": "2026-11-10T06:36:38.741463+00:00"
+}
