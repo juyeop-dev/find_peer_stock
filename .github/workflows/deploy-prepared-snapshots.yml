@@ -56,6 +56,8 @@ jobs:
         run: npm run build
       - name: Copy SPA fallback
         run: cp frontend/dist/index.html frontend/dist/404.html
+      - name: Verify published 2017 histories against committed sources
+        run: python scripts/audit_publication_2017.py --artifact frontend/dist
       - uses: actions/upload-pages-artifact@v4
         with:
           path: frontend/dist
