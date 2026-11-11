@@ -17,7 +17,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--artifact", type=Path)
     args = parser.parse_args()
-    public = ROOT / "frontend/public/data"
+    public = (args.artifact.resolve() / "data") if args.artifact else ROOT / "frontend/public/data"
     counts = {}
     config = load(ROOT / "data/market-closures/2017.json")
     weekdays = {(date(2017, 1, 1) + timedelta(days=i)).isoformat() for i in range(365)
