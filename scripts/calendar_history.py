@@ -5,6 +5,7 @@ from __future__ import annotations
 import json
 from pathlib import Path
 from typing import Any
+from archive_paths import publish_compressed_bytes
 
 
 def turnover_by_currency(entries: list[dict[str, Any]]) -> dict[str, float]:
@@ -49,5 +50,9 @@ def publish_history(namespace: Path, history: list[dict[str, Any]]) -> None:
     for payload in history:
         path = namespace / "history" / payload["market"] / f"{payload['year']}.json"
         path.parent.mkdir(parents=True, exist_ok=True)
-        path.write_text(json.dumps(payload, ensure_ascii=False, separators=(",", ":"), allow_nan=False) + "\n",
-                        encoding="utf-8")
+        raw = (json.dumps(payload, ensure_ascii=False, separators=(",", ":"), allow_nan=False) + "\n").encode("utf-8")
+        public = Path(__file__).resolve().parents[1] / "frontend/public/data"
+        if namespace.resolve().is_relative_to(public.resolve()):
+            publish_compressed_bytes(path, raw, public)
+        else:
+            path.write_bytes(raw)

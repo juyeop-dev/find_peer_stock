@@ -344,7 +344,8 @@ def export_packs(db: sqlite3.Connection) -> None:
         writers = {}
         for shard in "0123456789abcdef":
             handle = stack.enter_context((PACKS / f"{shard}.json.gz.tmp").open("wb"))
-            writer = stack.enter_context(gzip.GzipFile(fileobj=handle, mode="wb", filename="", mtime=0, compresslevel=9))
+            # Multi-year source shards are re-exported during recovery.
+            writer = stack.enter_context(gzip.GzipFile(fileobj=handle, mode="wb", filename="", mtime=0, compresslevel=6))
             writer.write(b"{"); writers[shard] = writer
         for ticker, raw in db.execute("SELECT ticker,value FROM history ORDER BY ticker"):
             shard = hashlib.sha256(ticker.encode()).hexdigest()[0]

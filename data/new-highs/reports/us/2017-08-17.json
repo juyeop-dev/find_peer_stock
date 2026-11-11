@@ -1,0 +1,375 @@
+{
+  "schema_version": 1,
+  "market": "us",
+  "date": "2017-08-17",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "AGNCN",
+      "name": "AGNC Investment Corp. Deposit Shs Repr 1/1000th Cum Conv Red Pfd Registered Shs Series C",
+      "exchange": "NASDAQ",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "업종: Finance · Real Estate Investment Trusts",
+      "description": "AGNC Investment Corp. Deposit Shs Repr 1/1000th Cum Conv Red Pfd Registered Shs Series C · Real Estate Investment Trusts",
+      "change_pct": 0.4024160158335288,
+      "session_open": 24.940000534057617,
+      "session_close": 24.950000762939453,
+      "session_volume": 1797500.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:AGNCN",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/AGNCN/history/",
+        "date": "2017-08-17",
+        "daily_high": 25.049999237060547,
+        "prior_all_time_or_current_month_high": 25.049999237060547,
+        "passes_close_filter": true,
+        "source_symbol": "NASDAQ:AGNCN",
+        "yahoo_symbol": "AGNCN"
+      }
+    },
+    {
+      "ticker": "APPF",
+      "name": "AppFolio Inc Class A",
+      "exchange": "NASDAQ",
+      "category": "Technology Services",
+      "high_type": "all_time",
+      "reason": "업종: Technology Services · Information Technology Services",
+      "description": "AppFolio Inc Class A · Information Technology Services",
+      "change_pct": 2.6923057360526803,
+      "session_open": 38.75,
+      "session_close": 40.04999923706055,
+      "session_volume": 312400.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:APPF",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/APPF/history/",
+        "date": "2017-08-17",
+        "daily_high": 40.54999923706055,
+        "prior_all_time_or_current_month_high": 40.54999923706055,
+        "passes_close_filter": true,
+        "source_symbol": "NASDAQ:APPF",
+        "yahoo_symbol": "APPF"
+      }
+    },
+    {
+      "ticker": "CRVL",
+      "name": "CorVel Corporation",
+      "exchange": "NASDAQ",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "업종: Finance · Insurance Brokers/Services",
+      "description": "CorVel Corporation · Insurance Brokers/Services",
+      "change_pct": 1.2883959750825014,
+      "session_open": 16.700000762939453,
+      "session_close": 17.03333282470703,
+      "session_volume": 162900.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:CRVL",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/CRVL/history/",
+        "date": "2017-08-17",
+        "daily_high": 17.093332290649414,
+        "prior_all_time_or_current_month_high": 17.78333282470703,
+        "passes_close_filter": true,
+        "source_symbol": "NASDAQ:CRVL",
+        "yahoo_symbol": "CRVL"
+      }
+    },
+    {
+      "ticker": "CYRX",
+      "name": "CryoPort, Inc.",
+      "exchange": "NASDAQ",
+      "category": "Transportation",
+      "high_type": "52_week",
+      "reason": "업종: Transportation · Air Freight/Couriers",
+      "description": "CryoPort, Inc. · Air Freight/Couriers",
+      "change_pct": 2.182285970814135,
+      "session_open": 7.849999904632568,
+      "session_close": 7.960000038146973,
+      "session_volume": 365900.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:CYRX",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/CYRX/history/",
+        "date": "2017-08-17",
+        "daily_high": 8.229999542236328,
+        "prior_all_time_or_current_month_high": 768.0,
+        "passes_close_filter": true,
+        "source_symbol": "NASDAQ:CYRX",
+        "yahoo_symbol": "CYRX"
+      }
+    },
+    {
+      "ticker": "DRS",
+      "name": "Leonardo DRS, Inc.",
+      "exchange": "NASDAQ",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Aerospace & Defense",
+      "description": "Leonardo DRS, Inc. · Aerospace & Defense",
+      "change_pct": 13.080177053468134,
+      "session_open": 2.390000104904175,
+      "session_close": 2.680000066757202,
+      "session_volume": 1821000.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:DRS",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/DRS/history/",
+        "date": "2017-08-17",
+        "daily_high": 2.7300000190734863,
+        "prior_all_time_or_current_month_high": 151.875,
+        "passes_close_filter": true,
+        "source_symbol": "NASDAQ:DRS",
+        "yahoo_symbol": "DRS"
+      }
+    },
+    {
+      "ticker": "IMTE",
+      "name": "Integrated Media Technology Limited",
+      "exchange": "NASDAQ",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Electronic Production Equipment",
+      "description": "Integrated Media Technology Limited · Electronic Production Equipment",
+      "change_pct": 0.0,
+      "session_open": 67.5,
+      "session_close": 67.5,
+      "session_volume": 90.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:IMTE",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/IMTE/history/",
+        "date": "2017-08-17",
+        "daily_high": 67.5,
+        "prior_all_time_or_current_month_high": 67.5,
+        "passes_close_filter": true,
+        "source_symbol": "NASDAQ:IMTE",
+        "yahoo_symbol": "IMTE"
+      }
+    },
+    {
+      "ticker": "MVBF",
+      "name": "MVB Financial Corp.",
+      "exchange": "NASDAQ",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "업종: Finance · Regional Banks",
+      "description": "MVB Financial Corp. · Regional Banks",
+      "change_pct": 4.166669426141034,
+      "session_open": 15.0,
+      "session_close": 15.0,
+      "session_volume": 4200.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:MVBF",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/MVBF/history/",
+        "date": "2017-08-17",
+        "daily_high": 15.0,
+        "prior_all_time_or_current_month_high": 20.049999237060547,
+        "passes_close_filter": true,
+        "source_symbol": "NASDAQ:MVBF",
+        "yahoo_symbol": "MVBF"
+      }
+    },
+    {
+      "ticker": "PAYS",
+      "name": "Paysign, Inc.",
+      "exchange": "NASDAQ",
+      "category": "Commercial Services",
+      "high_type": "52_week",
+      "reason": "업종: Commercial Services · Miscellaneous Commercial Services",
+      "description": "Paysign, Inc. · Miscellaneous Commercial Services",
+      "change_pct": 0.0,
+      "session_open": 0.5799999833106995,
+      "session_close": 0.5799999833106995,
+      "session_volume": 1800.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:PAYS",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/PAYS/history/",
+        "date": "2017-08-17",
+        "daily_high": 0.5799999833106995,
+        "prior_all_time_or_current_month_high": 0.9800000190734863,
+        "passes_close_filter": true,
+        "source_symbol": "NASDAQ:PAYS",
+        "yahoo_symbol": "PAYS"
+      }
+    },
+    {
+      "ticker": "WING",
+      "name": "Wingstop, Inc.",
+      "exchange": "NASDAQ",
+      "category": "Consumer Services",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Services · Restaurants",
+      "description": "Wingstop, Inc. · Restaurants",
+      "change_pct": 0.0,
+      "session_open": 35.060001373291016,
+      "session_close": 35.08000183105469,
+      "session_volume": 367400.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:WING",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/WING/history/",
+        "date": "2017-08-17",
+        "daily_high": 35.4900016784668,
+        "prior_all_time_or_current_month_high": 35.959999084472656,
+        "passes_close_filter": true,
+        "source_symbol": "NASDAQ:WING",
+        "yahoo_symbol": "WING"
+      }
+    },
+    {
+      "ticker": "GTY",
+      "name": "Getty Realty Corp.",
+      "exchange": "NYSE",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "업종: Finance · Real Estate Investment Trusts",
+      "description": "Getty Realty Corp. · Real Estate Investment Trusts",
+      "change_pct": 0.5261156949916579,
+      "session_open": 26.540000915527344,
+      "session_close": 26.75,
+      "session_volume": 263500.0,
+      "currency": "USD",
+      "source_symbol": "NYSE:GTY",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/GTY/history/",
+        "date": "2017-08-17",
+        "daily_high": 26.889999389648438,
+        "prior_all_time_or_current_month_high": 33.849998474121094,
+        "passes_close_filter": true,
+        "source_symbol": "NYSE:GTY",
+        "yahoo_symbol": "GTY"
+      }
+    },
+    {
+      "ticker": "IAG",
+      "name": "IAMGOLD Corporation",
+      "exchange": "NYSE",
+      "category": "Non-Energy Minerals",
+      "high_type": "52_week",
+      "reason": "업종: Non-Energy Minerals · Precious Metals",
+      "description": "IAMGOLD Corporation · Precious Metals",
+      "change_pct": 0.5319186262151998,
+      "session_open": 5.670000076293945,
+      "session_close": 5.670000076293945,
+      "session_volume": 3798700.0,
+      "currency": "USD",
+      "source_symbol": "NYSE:IAG",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/IAG/history/",
+        "date": "2017-08-17",
+        "daily_high": 5.75,
+        "prior_all_time_or_current_month_high": 23.8799991607666,
+        "passes_close_filter": true,
+        "source_symbol": "NYSE:IAG",
+        "yahoo_symbol": "IAG"
+      }
+    },
+    {
+      "ticker": "INVH",
+      "name": "Invitation Homes, Inc.",
+      "exchange": "NYSE",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "업종: Finance · Real Estate Investment Trusts",
+      "description": "Invitation Homes, Inc. · Real Estate Investment Trusts",
+      "change_pct": 0.7708792386942553,
+      "session_open": 23.389999389648438,
+      "session_close": 23.530000686645508,
+      "session_volume": 3334600.0,
+      "currency": "USD",
+      "source_symbol": "NYSE:INVH",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/INVH/history/",
+        "date": "2017-08-17",
+        "daily_high": 23.540000915527344,
+        "prior_all_time_or_current_month_high": 23.540000915527344,
+        "passes_close_filter": true,
+        "source_symbol": "NYSE:INVH",
+        "yahoo_symbol": "INVH"
+      }
+    },
+    {
+      "ticker": "MED",
+      "name": "Medifast, Inc.",
+      "exchange": "NYSE",
+      "category": "Commercial Services",
+      "high_type": "all_time",
+      "reason": "업종: Commercial Services · Miscellaneous Commercial Services",
+      "description": "Medifast, Inc. · Miscellaneous Commercial Services",
+      "change_pct": 8.03795782554133,
+      "session_open": 51.97999954223633,
+      "session_close": 55.779998779296875,
+      "session_volume": 358000.0,
+      "currency": "USD",
+      "source_symbol": "NYSE:MED",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/MED/history/",
+        "date": "2017-08-17",
+        "daily_high": 56.09000015258789,
+        "prior_all_time_or_current_month_high": 56.09000015258789,
+        "passes_close_filter": true,
+        "source_symbol": "NYSE:MED",
+        "yahoo_symbol": "MED"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-11-11T12:48:46.208760+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 5705,
+    "history_symbols": 3055,
+    "inactive_symbols": 2648,
+    "failed_symbols": 2,
+    "coverage_ratio": 0.9993457638207393,
+    "coverage_by_exchange": {
+      "NASDAQ": {
+        "covered": 1547,
+        "total": 1549
+      },
+      "NYSE": {
+        "covered": 1356,
+        "total": 1356
+      },
+      "AMEX": {
+        "covered": 152,
+        "total": 152
+      }
+    },
+    "session_symbols": 2984,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-11-11T12:48:46.208760+00:00"
+}

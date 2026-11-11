@@ -59,8 +59,8 @@ try {
   }
   console.log(`PASS real ${actual.date} archive (${actual.count} stocks) and 1440/390/320px layouts`);
 
-  assert.ok(index.reports.some(row => row.date === '2018-01-02'), 'The historical archive must start in 2018');
-  for (const year of ['2018', '2020', '2025', '2026']) {
+  assert.ok(index.reports.some(row => row.date === '2017-01-02'), 'The historical archive must include the first 2017 session');
+  for (const year of ['2017', '2018', '2020', '2025', '2026']) {
     const saved = index.reports.find(row => row.date.startsWith(year) && row.count > 0 && row.date < '2026-11-04');
     assert.ok(saved, `Missing ${year} historical report`);
     await navigate(`/rebounds?date=${saved.date}`); await ready();
@@ -75,7 +75,7 @@ try {
   await navigate(`/rebounds?date=${recordedZero.date}`); await ready();
   assert.equal(await evaluate("document.querySelectorAll('.reboundEmpty').length"), 2);
   assert.equal(await evaluate("document.querySelector('.turnoverReportHeading>span').textContent"), '0종목');
-  console.log('PASS real 2018/2020/2025/2026 history, dated stock links, source explanation and recorded zero day');
+  console.log('PASS real 2017/2018/2020/2025/2026 history, dated stock links, source explanation and recorded zero day');
 
   const stock = (ticker, name, exchange, price, low, cap, change_pct = 0) => ({ ticker, name, exchange, price, low, market_cap: cap, change_pct, rebound_pct: (price / low - 1) * 100, currency: 'KRW', market_cap_currency: 'KRW', sector: 'Electronic Technology', industry: 'Semiconductors' });
   const report = { schema_version: 1, market: 'korea', date: '2026-11-02', rules: index.rules, sources: [], source_metadata: { provider: 'browser fixture', fetched_at: '2026-11-02T07:00:00Z', session: 'daily', scanned_symbols: 2638, excluded: {} }, entries: [stock('009830.KS', '한화솔루션', 'KOSPI', 108, 100, 5e12), stock('039030.KQ', '이오테크닉스', 'KOSDAQ', 105, 100, 1e12), stock('006400.KS', '삼성SDI', 'KOSPI', 110, 100, 5e12, 1)] };

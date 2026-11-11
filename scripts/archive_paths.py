@@ -9,7 +9,7 @@ import json
 from pathlib import Path
 
 # Keep recent public JSON endpoints unchanged; historical reports are lossless.
-COMPRESSED_BEFORE = "2026-07-01"
+COMPRESSED_BEFORE = "2026-11-01"
 
 
 def monthly_report_path(root: Path, market: str, session: date | str) -> Path:
@@ -23,12 +23,19 @@ def publish_daily_report(path: Path, payload: dict, public_root: Path) -> None:
     Durable reports in data/{kind}/reports remain ordinary JSON. Existing
     public copies are moved individually to a content-addressed local backup.
     """
-    relative = path.resolve().relative_to(public_root.resolve())
+    path.resolve().relative_to(public_root.resolve())
     raw = (json.dumps(payload, ensure_ascii=False, indent=2, allow_nan=False) + "\n").encode()
     path.parent.mkdir(parents=True, exist_ok=True)
     if payload["date"] >= COMPRESSED_BEFORE:
         path.write_bytes(raw)
         return
+    publish_compressed_bytes(path, raw, public_root)
+
+
+def publish_compressed_bytes(path: Path, raw: bytes, public_root: Path) -> None:
+    """Publish exact bytes as gzip and preserve an existing public JSON copy."""
+    relative = path.resolve().relative_to(public_root.resolve())
+    path.parent.mkdir(parents=True, exist_ok=True)
     target = path.with_suffix(".json.gz")
     temporary = target.with_suffix(".gz.tmp")
     encoded = gzip.compress(raw, compresslevel=9, mtime=0)

@@ -11,10 +11,25 @@ const code='const liveReportFor=()=>null,liveQuoteFor=()=>undefined;\n'+js;
 const client=await import(`data:text/javascript;base64,${Buffer.from(code).toString('base64')}`);
 const sample={market:'taiwan',date:'2021-04-06',entries:[{ticker:'2330.TW',name:'原本',price:123.4567890123,change_pct:0,profit:-7}]};
 
+test('yearly calendar aggregates decode exact compressed data and retain legacy JSON fallback',async()=>{
+  const oldFetch=globalThis.fetch,oldWindow=globalThis.window;globalThis.window=globalThis;
+  const value={schema_version:1,kind:'new-highs',market:'taiwan',year:'2017',months:[]};
+  try {
+    const calls=[];
+    globalThis.fetch=async url=>{calls.push(url);return new Response(gzipSync(JSON.stringify(value)));};
+    assert.deepEqual(await client.getCalendarHistory('new-highs','taiwan','2017'),value);
+    assert.match(calls[0],/history\/taiwan\/2017\.json\.gz\?/);
+    calls.length=0;
+    globalThis.fetch=async url=>{calls.push(url);return url.includes('.json.gz?')?new Response('',{status:404}):Response.json(value);};
+    assert.deepEqual(await client.getCalendarHistory('new-highs','taiwan','2017'),value);
+    assert.equal(calls.length,2);
+  } finally {globalThis.fetch=oldFetch;globalThis.window=oldWindow;}
+});
+
 test('historical reports decode gzip and already decoded host responses without changing precision or Unicode',async()=>{
   const oldFetch=globalThis.fetch,oldWindow=globalThis.window;globalThis.window=globalThis;
   try {
-    for(const day of ["2021-04-06","2026-06-30"]) for(const encoded of [true,false]) {
+    for(const day of ["2021-04-06","2026-06-30","2026-09-30","2026-10-31"]) for(const encoded of [true,false]) {
       const value={...sample,date:day};
       const requests=[];
       globalThis.fetch=async url=>{requests.push(url);return new Response(encoded?gzipSync(JSON.stringify(value)):JSON.stringify(value));};
@@ -31,8 +46,8 @@ test('legacy JSON remains readable after a gzip miss and recent completed Korean
     globalThis.fetch=async url=>{calls.push(url);return url.includes('.json.gz?')?new Response('',{status:404}):Response.json(sample);};
     assert.deepEqual(await client.getNewHighReport('taiwan','2021-04-06'),sample);
     assert.equal(calls.length,2);assert.match(calls[1],/2021-04-06\.json\?/);
-    calls.length=0;await client.getTurnoverReport('korea','2026-10-29');
-    assert.equal(calls.length,1);assert.match(calls[0],/korea\/2026_10\/2026-10-29\.json\?/);
+    calls.length=0;await client.getTurnoverReport('korea','2026-11-05');
+    assert.equal(calls.length,1);assert.match(calls[0],/korea\/2026_11\/2026-11-05\.json\?/);
   } finally {globalThis.fetch=oldFetch;globalThis.window=oldWindow;}
 });
 

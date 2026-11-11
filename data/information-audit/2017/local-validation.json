@@ -1,0 +1,100 @@
+{
+  "completed_at": "2026-11-11T13:56:32.863413+00:00",
+  "scope": "2017 local data extension",
+  "production_deployed": false,
+  "tests": {
+    "python": 264,
+    "live_api": 26,
+    "frontend": 78,
+    "typescript": "passed"
+  },
+  "browser": {
+    "stock_information_2017": "passed",
+    "investor_flows_2017": "passed",
+    "rebounds_2017_and_later": "passed"
+  },
+  "calendar": {
+    "year": 2017,
+    "validated_at": "2026-11-11T13:23:05.664992+00:00",
+    "markets": {
+      "korea": {
+        "new-highs": 243,
+        "turnover": 243
+      },
+      "us": {
+        "new-highs": 251,
+        "turnover": 251
+      },
+      "japan": {
+        "new-highs": 247,
+        "turnover": 247
+      },
+      "china": {
+        "new-highs": 244,
+        "turnover": 244
+      },
+      "taiwan": {
+        "new-highs": 246,
+        "turnover": 246
+      },
+      "europe": {
+        "new-highs": 255,
+        "turnover": 255
+      }
+    },
+    "sector_days": 243,
+    "investor_days": 243,
+    "credit_reporting_days": 244
+  },
+  "coverage": {
+    "start": "2017-01-01",
+    "end": "2017-12-31",
+    "total": 24954,
+    "checked": 24954,
+    "histories": {
+      "covers_2017": 14750,
+      "later_listing": 9264,
+      "source_limited": 925,
+      "missing_history": 15
+    },
+    "financials_available": 2806,
+    "revenue_available": 2328,
+    "operating_income_available": 2178,
+    "financials_unavailable": 22148,
+    "quarterly_reports": 9792,
+    "by_market": {
+      "korea": 2964,
+      "taiwan": 2274,
+      "us": 5338,
+      "japan": 3706,
+      "hongkong": 1,
+      "china": 5200,
+      "europe": 5471
+    },
+    "validated_at": "2026-11-11T13:24:25.242771+00:00"
+  },
+  "preservation": {
+    "checked_at": "2026-11-11T13:24:29.950918+00:00",
+    "unchanged_source_files": 27086,
+    "unchanged_current_stock_snapshots": 29,
+    "credit_unchanged_rows": 2172,
+    "investors_unchanged_rows": 2165,
+    "prior_financial_listings": 24879,
+    "unchanged_reported_statements": 273470,
+    "preserved_prior_price_points": 41992767,
+    "preserved_semiconductor_listings": 114,
+    "preserved_replay_bars": 4387
+  },
+  "publication": {
+    "new-highs": 1486,
+    "turnover": 1486,
+    "investors": 243,
+    "credit": 244,
+    "semiconductor_histories": 114,
+    "rebound_sessions": 243,
+    "artifact_files": 108984,
+    "artifact_bytes": 1009000693
+  },
+  "artifact": "data/tmp_2017/site",
+  "local_preview": "http://127.0.0.1:4182/"
+}

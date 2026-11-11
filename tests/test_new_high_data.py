@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import copy
+import gzip
 import json
 import sys
 import tempfile
@@ -55,6 +56,11 @@ class NewHighDataTests(unittest.TestCase):
     def generate(self) -> dict:
         return new_highs.generate_new_high_data(self.source, self.generated, self.frontend)
 
+    @staticmethod
+    def read_published(path: Path) -> dict:
+        raw = path.read_bytes() if path.exists() else path.with_suffix(".json.gz").read_bytes()
+        return json.loads(gzip.decompress(raw) if raw[:2] == b"\x1f\x8b" else raw)
+
     def test_deployed_korea_market_defaults_to_all_exchanges(self) -> None:
         markets = new_highs.load_markets(new_highs.SOURCE_DIR)
         korea = next(market for market in markets if market["id"] == "korea")
@@ -105,7 +111,7 @@ class NewHighDataTests(unittest.TestCase):
         self.assertEqual(latest["exchanges"]["KOSDAQ"], {"total": 1, "high_52_week": 1, "high_all_time": 0})
         for destination in (self.generated, self.frontend):
             archived = destination / "new-highs" / "korea" / "2026-09-09.json"
-            self.assertEqual(json.loads(archived.read_text(encoding="utf-8")), self.report)
+            self.assertEqual(self.read_published(archived), self.report)
         first_index_bytes = (self.generated / "new-highs" / "index.json").read_bytes()
         self.generate()
         self.assertEqual(first_index_bytes, (self.generated / "new-highs" / "index.json").read_bytes())
@@ -259,9 +265,7 @@ class NewHighDataTests(unittest.TestCase):
         )["entries"][0]
         self.assertNotIn("market_cap", source_entry)
         for destination in (self.generated, self.frontend):
-            published_entry = json.loads(
-                (destination / "new-highs" / "korea" / "2026-09-09.json").read_text(encoding="utf-8")
-            )["entries"][0]
+            published_entry = self.read_published(destination / "new-highs" / "korea" / "2026-09-09.json")["entries"][0]
             self.assertEqual(published_entry["market_cap"], 123_000_000_000)
             self.assertEqual(published_entry["market_cap_currency"], "KRW")
             self.assertEqual(published_entry["market_cap_usd"], 92_000_000)
@@ -336,7 +340,9 @@ class NewHighDataTests(unittest.TestCase):
         self.write_report(report, market="future-market")
         index = self.generate()
         self.assertEqual(index["reports"][0]["market"], "future-market")
-        self.assertTrue((self.frontend / "new-highs" / "future-market" / "2026-09-09.json").is_file())
+        published = self.frontend / "new-highs" / "future-market" / "2026-09-09.json.gz"
+        self.assertTrue(published.is_file())
+        self.assertEqual(json.loads(gzip.decompress(published.read_bytes()))["entries"][0]["exchange"], "TEST")
 
     def test_invalid_market_configuration_is_rejected(self) -> None:
         for field, value in [("id", "../outside"), ("default_exchange", "UNKNOWN"), ("exchanges", []),

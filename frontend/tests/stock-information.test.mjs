@@ -29,7 +29,7 @@ test("compressed and host-decoded financial archives retain Unicode, zero, losse
 });
 
 test("an unavailable older provider period cannot reset coverage of retained reported financials to zero", () => {
-  for (const year of [2018, 2019, 2021]) {
+  for (const year of [2017, 2018, 2019, 2021]) {
   const coverage={start:`${year}-01-01`,end:`${year}-12-31`,periods:1,annual_periods:1,quarterly_periods:0,note:"reported only"};
   const older={...statement(`${year}-12-31`,"USD",100),type:"annual"};
   const previous={metrics:{},financials:[older],[`historical_${year}_coverage`]:coverage};

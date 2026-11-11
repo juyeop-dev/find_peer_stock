@@ -168,7 +168,9 @@ def backfill(start, end, source_dirs, *, output=SOURCE, deps_dir=None):
              "sessions": [{"date": report["date"], "count": len(report["entries"]),
                            "counts": dict(Counter(row["exchange"] for row in report["entries"]))}
                           for report in reports]}
-    atomic_json(output / "backfill-audit.json", audit)
+    # A one-year extension must not replace the audit of the earlier archive.
+    audit_name = f"backfill-audit-{start.year}.json" if start.year == end.year else "backfill-audit.json"
+    atomic_json(output / audit_name, audit)
     return audit
 
 

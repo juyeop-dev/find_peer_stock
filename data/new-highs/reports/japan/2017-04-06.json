@@ -1,0 +1,292 @@
+{
+  "schema_version": 1,
+  "market": "japan",
+  "date": "2017-04-06",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "3409.T",
+      "name": "KITABO CO., LTD.",
+      "exchange": "TSE",
+      "category": "Process Industries",
+      "high_type": "52_week",
+      "reason": "업종: Process Industries · Textiles",
+      "description": "KITABO CO., LTD. · Textiles",
+      "change_pct": 13.131315198504478,
+      "session_open": 82.8441162109375,
+      "session_close": 92.78541564941406,
+      "session_volume": 6321510.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:3409",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3409.T/history/",
+        "date": "2017-04-06",
+        "daily_high": 105.21202850341797,
+        "prior_all_time_or_current_month_high": 588.1932373046875,
+        "passes_close_filter": true,
+        "source_symbol": "TSE:3409",
+        "yahoo_symbol": "3409.T"
+      }
+    },
+    {
+      "ticker": "4189.T",
+      "name": "KH Neochem Co.,Ltd.",
+      "exchange": "TSE",
+      "category": "Process Industries",
+      "high_type": "all_time",
+      "reason": "업종: Process Industries · Chemicals: Major Diversified",
+      "description": "KH Neochem Co.,Ltd. · Chemicals: Major Diversified",
+      "change_pct": 1.1805555555555625,
+      "session_open": 1440.0,
+      "session_close": 1457.0,
+      "session_volume": 1164200.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:4189",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4189.T/history/",
+        "date": "2017-04-06",
+        "daily_high": 1484.0,
+        "prior_all_time_or_current_month_high": 1484.0,
+        "passes_close_filter": true,
+        "source_symbol": "TSE:4189",
+        "yahoo_symbol": "4189.T"
+      }
+    },
+    {
+      "ticker": "4274.T",
+      "name": "HOSOYA PYRO-ENGINEERING CO LTD",
+      "exchange": "TSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Aerospace & Defense",
+      "description": "HOSOYA PYRO-ENGINEERING CO LTD · Aerospace & Defense",
+      "change_pct": 17.391304347826097,
+      "session_open": 571.0,
+      "session_close": 675.0,
+      "session_volume": 381000.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:4274",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4274.T/history/",
+        "date": "2017-04-06",
+        "daily_high": 675.0,
+        "prior_all_time_or_current_month_high": 901.0,
+        "passes_close_filter": true,
+        "source_symbol": "TSE:4274",
+        "yahoo_symbol": "4274.T"
+      }
+    },
+    {
+      "ticker": "6203.T",
+      "name": "Howa Machinery, Ltd.",
+      "exchange": "TSE",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Industrial Machinery",
+      "description": "Howa Machinery, Ltd. · Industrial Machinery",
+      "change_pct": 6.428571428571428,
+      "session_open": 702.0,
+      "session_close": 745.0,
+      "session_volume": 5254000.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:6203",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6203.T/history/",
+        "date": "2017-04-06",
+        "daily_high": 819.0,
+        "prior_all_time_or_current_month_high": 2860.0,
+        "passes_close_filter": true,
+        "source_symbol": "TSE:6203",
+        "yahoo_symbol": "6203.T"
+      }
+    },
+    {
+      "ticker": "6208.T",
+      "name": "Ishikawa Seisakusho,Ltd.",
+      "exchange": "TSE",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Industrial Machinery",
+      "description": "Ishikawa Seisakusho,Ltd. · Industrial Machinery",
+      "change_pct": 15.197568389057746,
+      "session_open": 1030.0,
+      "session_close": 1137.0,
+      "session_volume": 1483300.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:6208",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6208.T/history/",
+        "date": "2017-04-06",
+        "daily_high": 1137.0,
+        "prior_all_time_or_current_month_high": 2720.0,
+        "passes_close_filter": true,
+        "source_symbol": "TSE:6208",
+        "yahoo_symbol": "6208.T"
+      }
+    },
+    {
+      "ticker": "6946.T",
+      "name": "Nippon Avionics Co., Ltd.",
+      "exchange": "TSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Aerospace & Defense",
+      "description": "Nippon Avionics Co., Ltd. · Aerospace & Defense",
+      "change_pct": 5.668016194331993,
+      "session_open": 500.0,
+      "session_close": 522.0,
+      "session_volume": 1616500.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:6946",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6946.T/history/",
+        "date": "2017-04-06",
+        "daily_high": 552.0,
+        "prior_all_time_or_current_month_high": 1300.0,
+        "passes_close_filter": true,
+        "source_symbol": "TSE:6946",
+        "yahoo_symbol": "6946.T"
+      }
+    },
+    {
+      "ticker": "7963.T",
+      "name": "Koken Ltd.",
+      "exchange": "TSE",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Medical Specialties",
+      "description": "Koken Ltd. · Medical Specialties",
+      "change_pct": 6.123662306777655,
+      "session_open": 1692.0,
+      "session_close": 1785.0,
+      "session_volume": 163300.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:7963",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/7963.T/history/",
+        "date": "2017-04-06",
+        "daily_high": 1808.0,
+        "prior_all_time_or_current_month_high": 3530.0,
+        "passes_close_filter": true,
+        "source_symbol": "TSE:7963",
+        "yahoo_symbol": "7963.T"
+      }
+    },
+    {
+      "ticker": "7980.T",
+      "name": "Shigematsu Works Co., Ltd.",
+      "exchange": "TSE",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Medical Specialties",
+      "description": "Shigematsu Works Co., Ltd. · Medical Specialties",
+      "change_pct": 8.064516129032251,
+      "session_open": 692.0,
+      "session_close": 737.0,
+      "session_volume": 270000.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:7980",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/7980.T/history/",
+        "date": "2017-04-06",
+        "daily_high": 775.0,
+        "prior_all_time_or_current_month_high": 1699.0,
+        "passes_close_filter": true,
+        "source_symbol": "TSE:7980",
+        "yahoo_symbol": "7980.T"
+      }
+    },
+    {
+      "ticker": "8107.T",
+      "name": "KIMURATAN Corporation",
+      "exchange": "TSE",
+      "category": "Consumer Non-Durables",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Non-Durables · Apparel/Footwear",
+      "description": "KIMURATAN Corporation · Apparel/Footwear",
+      "change_pct": 0.0,
+      "session_open": 70.0,
+      "session_close": 70.0,
+      "session_volume": 4449200.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:8107",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/8107.T/history/",
+        "date": "2017-04-06",
+        "daily_high": 80.0,
+        "prior_all_time_or_current_month_high": 1980.0,
+        "passes_close_filter": true,
+        "source_symbol": "TSE:8107",
+        "yahoo_symbol": "8107.T"
+      }
+    },
+    {
+      "ticker": "9647.T",
+      "name": "Kyowa Engineering Consultants Co., Ltd.",
+      "exchange": "TSE",
+      "category": "Industrial Services",
+      "high_type": "52_week",
+      "reason": "업종: Industrial Services · Engineering & Construction",
+      "description": "Kyowa Engineering Consultants Co., Ltd. · Engineering & Construction",
+      "change_pct": 7.8212290502793325,
+      "session_open": 1760.0,
+      "session_close": 1930.0,
+      "session_volume": 149500.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:9647",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/9647.T/history/",
+        "date": "2017-04-06",
+        "daily_high": 2290.0,
+        "prior_all_time_or_current_month_high": 6160.0,
+        "passes_close_filter": true,
+        "source_symbol": "TSE:9647",
+        "yahoo_symbol": "9647.T"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-11-11T12:42:39.074414+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 3761,
+    "history_symbols": 2987,
+    "inactive_symbols": 773,
+    "failed_symbols": 1,
+    "coverage_ratio": 0.999665327978581,
+    "coverage_by_exchange": {
+      "TSE": {
+        "covered": 2987,
+        "total": 2988
+      }
+    },
+    "session_symbols": 2934,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-11-11T12:42:39.074414+00:00"
+}

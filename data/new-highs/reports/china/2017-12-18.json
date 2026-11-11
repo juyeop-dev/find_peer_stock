@@ -1,0 +1,296 @@
+{
+  "schema_version": 1,
+  "market": "china",
+  "date": "2017-12-18",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "600201.SS",
+      "name": "Jinyu Bio-Technology Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Pharmaceuticals: Major",
+      "description": "Jinyu Bio-Technology Co., Ltd. Class A · Pharmaceuticals: Major",
+      "change_pct": 4.473051685449159,
+      "session_open": 22.746152877807617,
+      "session_close": 23.715383529663086,
+      "session_volume": 16909623.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:600201",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/600201.SS/history/",
+        "date": "2017-12-18",
+        "daily_high": 23.75384521484375,
+        "prior_all_time_or_current_month_high": 27.436813354492188,
+        "passes_close_filter": true,
+        "source_symbol": "SSE:600201",
+        "yahoo_symbol": "600201.SS"
+      }
+    },
+    {
+      "ticker": "603939.SS",
+      "name": "Yifeng Pharmacy Chain Co Ltd Class A",
+      "exchange": "SSE",
+      "category": "Retail Trade",
+      "high_type": "52_week",
+      "reason": "업종: Retail Trade · Drugstore Chains",
+      "description": "Yifeng Pharmacy Chain Co Ltd Class A · Drugstore Chains",
+      "change_pct": 4.103628030600803,
+      "session_open": 17.119308471679688,
+      "session_close": 17.821821212768555,
+      "session_volume": 3969827.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:603939",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/603939.SS/history/",
+        "date": "2017-12-18",
+        "daily_high": 17.84144401550293,
+        "prior_all_time_or_current_month_high": 24.964677810668945,
+        "passes_close_filter": true,
+        "source_symbol": "SSE:603939",
+        "yahoo_symbol": "603939.SS"
+      }
+    },
+    {
+      "ticker": "000858.SZ",
+      "name": "Wuliangye Yibin Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Consumer Non-Durables",
+      "high_type": "all_time",
+      "reason": "업종: Consumer Non-Durables · Beverages: Alcoholic",
+      "description": "Wuliangye Yibin Co., Ltd. Class A · Beverages: Alcoholic",
+      "change_pct": 5.661418856182721,
+      "session_open": 75.0,
+      "session_close": 77.08000183105469,
+      "session_volume": 50553294.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:000858",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/000858.SZ/history/",
+        "date": "2017-12-18",
+        "daily_high": 77.08000183105469,
+        "prior_all_time_or_current_month_high": 77.08000183105469,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:000858",
+        "yahoo_symbol": "000858.SZ"
+      }
+    },
+    {
+      "ticker": "002258.SZ",
+      "name": "Lier Chemical Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Process Industries",
+      "high_type": "52_week",
+      "reason": "업종: Process Industries · Chemicals: Agricultural",
+      "description": "Lier Chemical Co., Ltd. Class A · Chemicals: Agricultural",
+      "change_pct": 1.2072442715512999,
+      "session_open": 10.699999809265137,
+      "session_close": 10.778571128845215,
+      "session_volume": 15522092.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002258",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002258.SZ/history/",
+        "date": "2017-12-18",
+        "daily_high": 11.107142448425293,
+        "prior_all_time_or_current_month_high": 16.468345642089844,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:002258",
+        "yahoo_symbol": "002258.SZ"
+      }
+    },
+    {
+      "ticker": "002427.SZ",
+      "name": "Zhejiang Unifull Industrial Fiber Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Process Industries",
+      "high_type": "52_week",
+      "reason": "업종: Process Industries · Textiles",
+      "description": "Zhejiang Unifull Industrial Fiber Co., Ltd. Class A · Textiles",
+      "change_pct": 2.9529346990882166,
+      "session_open": 23.440000534057617,
+      "session_close": 24.34181785583496,
+      "session_volume": 11370475.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002427",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002427.SZ/history/",
+        "date": "2017-12-18",
+        "daily_high": 24.472726821899414,
+        "prior_all_time_or_current_month_high": 25.083635330200195,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:002427",
+        "yahoo_symbol": "002427.SZ"
+      }
+    },
+    {
+      "ticker": "002915.SZ",
+      "name": "Zhejiang Zhongxin Fluoride Materials Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Commercial Services",
+      "high_type": "all_time",
+      "reason": "업종: Commercial Services · Miscellaneous Commercial Services",
+      "description": "Zhejiang Zhongxin Fluoride Materials Co., Ltd. Class A · Miscellaneous Commercial Services",
+      "change_pct": 10.020146155934363,
+      "session_open": 10.40476131439209,
+      "session_close": 10.40476131439209,
+      "session_volume": 301465.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002915",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002915.SZ/history/",
+        "date": "2017-12-18",
+        "daily_high": 10.40476131439209,
+        "prior_all_time_or_current_month_high": 10.40476131439209,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:002915",
+        "yahoo_symbol": "002915.SZ"
+      }
+    },
+    {
+      "ticker": "002916.SZ",
+      "name": "Shennan Circuit Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Electronic Components",
+      "description": "Shennan Circuit Co., Ltd. Class A · Electronic Components",
+      "change_pct": 9.991087144759291,
+      "session_open": 16.936813354492188,
+      "session_close": 16.936813354492188,
+      "session_volume": 70750.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002916",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002916.SZ/history/",
+        "date": "2017-12-18",
+        "daily_high": 16.936813354492188,
+        "prior_all_time_or_current_month_high": 16.936813354492188,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:002916",
+        "yahoo_symbol": "002916.SZ"
+      }
+    },
+    {
+      "ticker": "002919.SZ",
+      "name": "Mingchen Health Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Technology Services",
+      "high_type": "all_time",
+      "reason": "업종: Technology Services · Packaged Software",
+      "description": "Mingchen Health Co., Ltd. Class A · Packaged Software",
+      "change_pct": 0.0,
+      "session_open": 5.061049938201904,
+      "session_close": 5.52197790145874,
+      "session_volume": 29162.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002919",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002919.SZ/history/",
+        "date": "2017-12-18",
+        "daily_high": 5.52197790145874,
+        "prior_all_time_or_current_month_high": 5.52197790145874,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:002919",
+        "yahoo_symbol": "002919.SZ"
+      }
+    },
+    {
+      "ticker": "300730.SZ",
+      "name": "Hunan Creator Information Technologies Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Technology Services",
+      "high_type": "all_time",
+      "reason": "업종: Technology Services · Packaged Software",
+      "description": "Hunan Creator Information Technologies Co., Ltd. Class A · Packaged Software",
+      "change_pct": 9.999988688979155,
+      "session_open": 11.129410743713379,
+      "session_close": 11.129410743713379,
+      "session_volume": 501046.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:300730",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/300730.SZ/history/",
+        "date": "2017-12-18",
+        "daily_high": 11.129410743713379,
+        "prior_all_time_or_current_month_high": 11.129410743713379,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:300730",
+        "yahoo_symbol": "300730.SZ"
+      }
+    },
+    {
+      "ticker": "300731.SZ",
+      "name": "Shenzhen Cotran Industrial Material Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Process Industries",
+      "high_type": "all_time",
+      "reason": "업종: Process Industries · Industrial Specialties",
+      "description": "Shenzhen Cotran Industrial Material Co., Ltd. Class A · Industrial Specialties",
+      "change_pct": 9.993493693239053,
+      "session_open": 17.239795684814453,
+      "session_close": 17.239795684814453,
+      "session_volume": 17050718.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:300731",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/300731.SZ/history/",
+        "date": "2017-12-18",
+        "daily_high": 17.239795684814453,
+        "prior_all_time_or_current_month_high": 17.239795684814453,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:300731",
+        "yahoo_symbol": "300731.SZ"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-11-11T12:47:25.172492+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 5315,
+    "history_symbols": 3299,
+    "inactive_symbols": 2008,
+    "failed_symbols": 8,
+    "coverage_ratio": 0.9975808890232839,
+    "coverage_by_exchange": {
+      "SSE": {
+        "covered": 1329,
+        "total": 1331
+      },
+      "SZSE": {
+        "covered": 1970,
+        "total": 1976
+      }
+    },
+    "session_symbols": 3291,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-11-11T12:47:25.172492+00:00"
+}

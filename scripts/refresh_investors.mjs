@@ -5,7 +5,12 @@ import { investorFlowPage,investorIndexPage,investorRecord,INVESTOR_SOURCE,INVES
 import { localDay } from "../automation/live-api/src/providers.js";
 
 const root=fileURLToPath(new URL("../",import.meta.url)),source=join(root,"data/investors/index.json"),published=join(root,"frontend/public/data/investors/index.json");
-async function save(path,value) {await mkdir(dirname(path),{recursive:true});await writeFile(path+".tmp",JSON.stringify(value)+"\n");await rename(path+".tmp",path);}
+async function save(path,value) {
+  await mkdir(dirname(path),{recursive:true});
+  const body=JSON.stringify(value)+"\n";
+  try {if(await readFile(path,"utf8")===body)return;} catch(error) {if(error.code!=="ENOENT")throw error;}
+  await writeFile(path+".tmp",body);await rename(path+".tmp",path);
+}
 let previous;
 try{previous=JSON.parse(await readFile(source,"utf8"));}catch(error){if(error.code!=="ENOENT")throw error;}
 if(process.argv[2]==="publish") {

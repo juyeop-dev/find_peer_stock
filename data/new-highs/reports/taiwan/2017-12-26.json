@@ -1,0 +1,346 @@
+{
+  "schema_version": 1,
+  "market": "taiwan",
+  "date": "2017-12-26",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "6546.TWO",
+      "name": "AMPAK Technology, Inc.",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Electronic Production Equipment",
+      "description": "AMPAK Technology, Inc. · Electronic Production Equipment",
+      "change_pct": 0.0,
+      "session_open": 17.65999984741211,
+      "session_close": 17.65999984741211,
+      "session_volume": 3767907.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:6546",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6546.TWO/history/",
+        "date": "2017-12-26",
+        "daily_high": 17.899999618530273,
+        "prior_all_time_or_current_month_high": 28.299999237060547,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:6546",
+        "yahoo_symbol": "6546.TWO"
+      }
+    },
+    {
+      "ticker": "1312A.TW",
+      "name": "Grand Pacific Petrochemical Corp Pfd Shs A",
+      "exchange": "TWSE",
+      "category": "Process Industries",
+      "high_type": "all_time",
+      "reason": "업종: Process Industries · Chemicals: Specialty",
+      "description": "Grand Pacific Petrochemical Corp Pfd Shs A · Chemicals: Specialty",
+      "change_pct": 1.269840058826266,
+      "session_open": 31.5,
+      "session_close": 31.899999618530273,
+      "session_volume": 8000.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:1312A",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/1312A.TW/history/",
+        "date": "2017-12-26",
+        "daily_high": 31.899999618530273,
+        "prior_all_time_or_current_month_high": 31.899999618530273,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:1312A",
+        "yahoo_symbol": "1312A.TW"
+      }
+    },
+    {
+      "ticker": "1419.TW",
+      "name": "Shinkong Textile Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Process Industries",
+      "high_type": "52_week",
+      "reason": "업종: Process Industries · Textiles",
+      "description": "Shinkong Textile Co., Ltd. · Textiles",
+      "change_pct": 1.5909108248624015,
+      "session_open": 44.70000076293945,
+      "session_close": 44.70000076293945,
+      "session_volume": 46066.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:1419",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/1419.TW/history/",
+        "date": "2017-12-26",
+        "daily_high": 44.70000076293945,
+        "prior_all_time_or_current_month_high": 55.5,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:1419",
+        "yahoo_symbol": "1419.TW"
+      }
+    },
+    {
+      "ticker": "1514.TW",
+      "name": "Allis Electric Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Electrical Products",
+      "description": "Allis Electric Co., Ltd. · Electrical Products",
+      "change_pct": 0.41840299350979215,
+      "session_open": 9.171299934387207,
+      "session_close": 9.209672927856445,
+      "session_volume": 10479936.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:1514",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/1514.TW/history/",
+        "date": "2017-12-26",
+        "daily_high": 9.516661643981934,
+        "prior_all_time_or_current_month_high": 12.663301467895508,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:1514",
+        "yahoo_symbol": "1514.TW"
+      }
+    },
+    {
+      "ticker": "1526.TW",
+      "name": "Sun Race Sturmey-Archer Inc.",
+      "exchange": "TWSE",
+      "category": "Consumer Durables",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Durables · Motor Vehicles",
+      "description": "Sun Race Sturmey-Archer Inc. · Motor Vehicles",
+      "change_pct": 3.3227887374088994,
+      "session_open": 60.9964599609375,
+      "session_close": 62.725494384765625,
+      "session_volume": 3278069.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:1526",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/1526.TW/history/",
+        "date": "2017-12-26",
+        "daily_high": 63.59001159667969,
+        "prior_all_time_or_current_month_high": 92.32746124267578,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:1526",
+        "yahoo_symbol": "1526.TW"
+      }
+    },
+    {
+      "ticker": "1727.TW",
+      "name": "Chung Hwa Chemical Industrial Works Ltd.",
+      "exchange": "TWSE",
+      "category": "Process Industries",
+      "high_type": "52_week",
+      "reason": "업종: Process Industries · Chemicals: Specialty",
+      "description": "Chung Hwa Chemical Industrial Works Ltd. · Chemicals: Specialty",
+      "change_pct": 6.0283645730427216,
+      "session_open": 14.149999618530273,
+      "session_close": 14.949999809265137,
+      "session_volume": 1748741.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:1727",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/1727.TW/history/",
+        "date": "2017-12-26",
+        "daily_high": 15.399999618530273,
+        "prior_all_time_or_current_month_high": 22.47883415222168,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:1727",
+        "yahoo_symbol": "1727.TW"
+      }
+    },
+    {
+      "ticker": "2015.TW",
+      "name": "Feng Hsin Steel Co. Ltd.",
+      "exchange": "TWSE",
+      "category": "Non-Energy Minerals",
+      "high_type": "52_week",
+      "reason": "업종: Non-Energy Minerals · Steel",
+      "description": "Feng Hsin Steel Co. Ltd. · Steel",
+      "change_pct": 2.242992080260664,
+      "session_open": 53.5,
+      "session_close": 54.70000076293945,
+      "session_volume": 1355352.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2015",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2015.TW/history/",
+        "date": "2017-12-26",
+        "daily_high": 55.0,
+        "prior_all_time_or_current_month_high": 102.9126205444336,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:2015",
+        "yahoo_symbol": "2015.TW"
+      }
+    },
+    {
+      "ticker": "2109.TW",
+      "name": "Hwa Fong Rubber Ind. Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Consumer Durables",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Durables · Recreational Products",
+      "description": "Hwa Fong Rubber Ind. Co., Ltd. · Recreational Products",
+      "change_pct": 5.72520151293876,
+      "session_open": 15.942340850830078,
+      "session_close": 16.477718353271484,
+      "session_volume": 8708604.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2109",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2109.TW/history/",
+        "date": "2017-12-26",
+        "daily_high": 16.656177520751953,
+        "prior_all_time_or_current_month_high": 29.5098934173584,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:2109",
+        "yahoo_symbol": "2109.TW"
+      }
+    },
+    {
+      "ticker": "2237.TW",
+      "name": "RAC Electric Vehicles Inc",
+      "exchange": "TWSE",
+      "category": "Consumer Durables",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Durables · Motor Vehicles",
+      "description": "RAC Electric Vehicles Inc · Motor Vehicles",
+      "change_pct": 0.6172747717127836,
+      "session_open": 16.261751174926758,
+      "session_close": 16.261751174926758,
+      "session_volume": 190631.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2237",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2237.TW/history/",
+        "date": "2017-12-26",
+        "daily_high": 16.46128273010254,
+        "prior_all_time_or_current_month_high": 44.65194320678711,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:2237",
+        "yahoo_symbol": "2237.TW"
+      }
+    },
+    {
+      "ticker": "2464.TW",
+      "name": "Mirle Automation Corp.",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Computer Peripherals",
+      "description": "Mirle Automation Corp. · Computer Peripherals",
+      "change_pct": 3.6170228998711806,
+      "session_open": 47.650001525878906,
+      "session_close": 48.70000076293945,
+      "session_volume": 18315691.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2464",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2464.TW/history/",
+        "date": "2017-12-26",
+        "daily_high": 49.25,
+        "prior_all_time_or_current_month_high": 52.25490188598633,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:2464",
+        "yahoo_symbol": "2464.TW"
+      }
+    },
+    {
+      "ticker": "3550.TW",
+      "name": "Copartner Technology Corporation",
+      "exchange": "TWSE",
+      "category": "Distribution Services",
+      "high_type": "52_week",
+      "reason": "업종: Distribution Services · Wholesale Distributors",
+      "description": "Copartner Technology Corporation · Wholesale Distributors",
+      "change_pct": 9.876533867618509,
+      "session_open": 20.679611206054688,
+      "session_close": 21.601940155029297,
+      "session_volume": 14007724.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:3550",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3550.TW/history/",
+        "date": "2017-12-26",
+        "daily_high": 21.601940155029297,
+        "prior_all_time_or_current_month_high": 42.85714340209961,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:3550",
+        "yahoo_symbol": "3550.TW"
+      }
+    },
+    {
+      "ticker": "8033.TW",
+      "name": "Thunder Tiger Corp.",
+      "exchange": "TWSE",
+      "category": "Consumer Durables",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Durables · Recreational Products",
+      "description": "Thunder Tiger Corp. · Recreational Products",
+      "change_pct": 9.954750272079727,
+      "session_open": 10.690990447998047,
+      "session_close": 11.597814559936523,
+      "session_volume": 4132712.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:8033",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/8033.TW/history/",
+        "date": "2017-12-26",
+        "daily_high": 11.597814559936523,
+        "prior_all_time_or_current_month_high": 48.62421798706055,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:8033",
+        "yahoo_symbol": "8033.TW"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-11-11T12:37:49.731415+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 2360,
+    "history_symbols": 1734,
+    "inactive_symbols": 616,
+    "failed_symbols": 10,
+    "coverage_ratio": 0.9942660550458715,
+    "coverage_by_exchange": {
+      "TWSE": {
+        "covered": 927,
+        "total": 934
+      },
+      "TPEX": {
+        "covered": 807,
+        "total": 810
+      }
+    },
+    "session_symbols": 1733,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-11-11T12:37:49.731415+00:00"
+}

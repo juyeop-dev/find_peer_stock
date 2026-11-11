@@ -37,7 +37,7 @@ def collect_kospi() -> dict:
     for item in chart.iter("item"):
         day, opening, high, low, close, volume = item.attrib["data"].split("|")
         day = datetime.strptime(day, "%Y%m%d").strftime("%Y-%m-%d")
-        if day < "2018-01-01" or day >= today:
+        if day < "2017-01-01" or day >= today:
             continue
         opening, high, low, close, volume = map(float, (opening, high, low, close, volume))
         if not all(math.isfinite(v) and v > 0 for v in (opening, high, low, close)) or low > min(opening, close) or high < max(opening, close) or not math.isfinite(volume) or volume < 0:
@@ -49,7 +49,7 @@ def collect_kospi() -> dict:
 
 
 def collect(ticker: str, name: str, zone: str) -> dict:
-    query = urllib.parse.urlencode({"period1": 1514764800, "period2": int(datetime.now(timezone.utc).timestamp()), "interval": "1d"})
+    query = urllib.parse.urlencode({"period1": 1483228800, "period2": int(datetime.now(timezone.utc).timestamp()), "interval": "1d"})
     url = f"https://query1.finance.yahoo.com/v8/finance/chart/{urllib.parse.quote(ticker, safe='')}?{query}"
     request = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 StockPeer", "Accept": "application/json"})
     with urllib.request.urlopen(request, timeout=45) as response:

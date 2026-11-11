@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "market": "korea",
+  "date": "2017-01-12",
+  "rules": {
+    "KOSPI": {
+      "market_cap_min": 5000000000000,
+      "rebound_min": 8
+    },
+    "KOSDAQ": {
+      "market_cap_min": 1000000000000,
+      "rebound_min": 5
+    }
+  },
+  "entries": [],
+  "source_metadata": {
+    "provider": "KRX daily data via FinanceData/marcap",
+    "fetched_at": "2026-11-11T12:28:03.029477+00:00",
+    "reconstructed_at": "2026-11-11T12:30:18.244092+00:00",
+    "session": "daily",
+    "timezone": "Asia/Seoul",
+    "scanned_symbols": 2246,
+    "common_symbols_by_board": {
+      "KOSPI": 776,
+      "KOSDAQ": 1209
+    },
+    "excluded": {
+      "below_rebound": 38,
+      "declining": 25,
+      "unsupported_listing": 261,
+      "below_market_cap": 1896,
+      "no_trading": 26
+    },
+    "latest_session_by_board": {
+      "KOSPI": "2017-01-12",
+      "KOSDAQ": "2017-01-12"
+    },
+    "source_revision": "eeed0817d1478597b738a3a6149c170ec7e3f4cb",
+    "source_sha256": "a8a40c5013238e2be8e13d52d306e77667efeef5aaeed16fdad38ed27b7755a4",
+    "price_basis": "Unadjusted KRX Low and Close from the same daily source row",
+    "market_cap_basis": "Dated KRX Marcap in KRW; verified against Close * Stocks",
+    "listing_basis": "Dated KOSPI/KOSDAQ common share codes ending in 0; includes historical delistings",
+    "note": "KRX 당시 상장 종목의 당일 저가·종가·시가총액으로 복원한 기록입니다. 현재 시총이나 분할 조정 가격을 소급 적용하지 않습니다."
+  },
+  "sources": [
+    {
+      "label": "KRX daily data via FinanceData/marcap",
+      "url": "https://github.com/FinanceData/marcap"
+    },
+    {
+      "label": "2017년 고정 버전 원본",
+      "url": "https://raw.githubusercontent.com/FinanceData/marcap/eeed0817d1478597b738a3a6149c170ec7e3f4cb/data/marcap-2017.parquet"
+    }
+  ]
+}

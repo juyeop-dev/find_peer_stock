@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "market": "korea",
+  "date": "2017-08-01",
+  "rules": {
+    "KOSPI": {
+      "market_cap_min": 5000000000000,
+      "rebound_min": 8
+    },
+    "KOSDAQ": {
+      "market_cap_min": 1000000000000,
+      "rebound_min": 5
+    }
+  },
+  "entries": [
+    {
+      "ticker": "267250.KS",
+      "name": "현대로보틱스",
+      "exchange": "KOSPI",
+      "currency": "KRW",
+      "price": 463500.0,
+      "low": 426500.0,
+      "change_pct": 5.22,
+      "rebound_pct": 8.675263774912079,
+      "market_cap": 5580735133500.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2017-08-01",
+      "sector": "미분류",
+      "industry": "미분류"
+    },
+    {
+      "ticker": "003670.KQ",
+      "name": "포스코켐텍",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 22750.0,
+      "low": 20850.0,
+      "change_pct": 8.59,
+      "rebound_pct": 9.112709832134303,
+      "market_cap": 1343842500000.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2017-08-01",
+      "sector": "미분류",
+      "industry": "미분류"
+    }
+  ],
+  "source_metadata": {
+    "provider": "KRX daily data via FinanceData/marcap",
+    "fetched_at": "2026-11-11T12:28:03.029477+00:00",
+    "reconstructed_at": "2026-11-11T12:30:19.333985+00:00",
+    "session": "daily",
+    "timezone": "Asia/Seoul",
+    "scanned_symbols": 2270,
+    "common_symbols_by_board": {
+      "KOSPI": 768,
+      "KOSDAQ": 1235
+    },
+    "excluded": {
+      "below_rebound": 47,
+      "declining": 35,
+      "unsupported_listing": 267,
+      "below_market_cap": 1884,
+      "no_trading": 35
+    },
+    "latest_session_by_board": {
+      "KOSPI": "2017-08-01",
+      "KOSDAQ": "2017-08-01"
+    },
+    "source_revision": "eeed0817d1478597b738a3a6149c170ec7e3f4cb",
+    "source_sha256": "a8a40c5013238e2be8e13d52d306e77667efeef5aaeed16fdad38ed27b7755a4",
+    "price_basis": "Unadjusted KRX Low and Close from the same daily source row",
+    "market_cap_basis": "Dated KRX Marcap in KRW; verified against Close * Stocks",
+    "listing_basis": "Dated KOSPI/KOSDAQ common share codes ending in 0; includes historical delistings",
+    "note": "KRX 당시 상장 종목의 당일 저가·종가·시가총액으로 복원한 기록입니다. 현재 시총이나 분할 조정 가격을 소급 적용하지 않습니다."
+  },
+  "sources": [
+    {
+      "label": "KRX daily data via FinanceData/marcap",
+      "url": "https://github.com/FinanceData/marcap"
+    },
+    {
+      "label": "2017년 고정 버전 원본",
+      "url": "https://raw.githubusercontent.com/FinanceData/marcap/eeed0817d1478597b738a3a6149c170ec7e3f4cb/data/marcap-2017.parquet"
+    }
+  ]
+}

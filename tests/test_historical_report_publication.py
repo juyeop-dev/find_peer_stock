@@ -35,8 +35,8 @@ class HistoricalPublicationTests(unittest.TestCase):
     def test_recent_endpoints_stay_json_and_paths_cannot_escape_publication_root(self):
         with tempfile.TemporaryDirectory() as folder:
             root = Path(folder)
-            target = root/'public/turnover/korea/2026_10/2026-10-29.json'
-            value = {'date':'2026-10-29', 'entries':[]}
+            target = root/'public/turnover/korea/2026_11/2026-11-05.json'
+            value = {'date':'2026-11-05', 'entries':[]}
             archive.publish_daily_report(target, value, root/'public')
             self.assertEqual(json.loads(target.read_bytes()), value)
             self.assertFalse(target.with_suffix('.json.gz').exists())
