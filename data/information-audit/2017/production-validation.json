@@ -1,0 +1,31 @@
+{
+  "validated_at": "2026-11-11T15:26:44.069264+00:00",
+  "site": "https://juyeop-dev.github.io/find_peer_stock/",
+  "deployment_commit": "1d51208a92935d341480d4ffe732a061f052295e",
+  "api_version": "84e22e12-02fd-4a15-a0d9-dcf25f249953",
+  "tests": {
+    "python": 264,
+    "api": 26,
+    "frontend": 74,
+    "typescript": "passed"
+  },
+  "production_browser": {
+    "site-production-browser.log": [
+      "PASS 2017: eight detail routes, January 2017 start, reported financials, mobile widths, original information/history refresh."
+    ],
+    "site-production-investors.log": [
+      "{\"result\":\"PASS\",\"dates\":2416,\"checks\":\"Exact-date gross buys/sells/net flows and both indices, market totals, 2017 calendar/closures, URL selection, original historical refresh, failure retention, 1440/390/320px\"}"
+    ],
+    "site-production-rebounds.log": [
+      "PASS real 2026-11-11 archive (50 stocks) and 1440/390/320px layouts",
+      "PASS real 2017/2018/2020/2025/2026 history, dated stock links, source explanation and recorded zero day",
+      "PASS search, full report copy, stock detail/back link, recorded zero, unrecorded/closed/invalid dates, and failure retention"
+    ]
+  },
+  "original_semiconductor_archive": {
+    "path": "data/semiconductor/prior-snapshots-2017.json.gz",
+    "sha256": "344aac1069f5cf49de8ceadb3b6d967df31784dbf657e1e909c08b72a79d9513",
+    "tickers": 112,
+    "observations": 1134346
+  }
+}
