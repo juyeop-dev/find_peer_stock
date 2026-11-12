@@ -1,0 +1,271 @@
+{
+  "schema_version": 1,
+  "market": "taiwan",
+  "date": "2016-04-20",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "3293.TWO",
+      "name": "International Games System Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Technology Services",
+      "high_type": "all_time",
+      "reason": "업종: Technology Services · Packaged Software",
+      "description": "International Games System Co., Ltd. · Packaged Software",
+      "change_pct": 2.265372168284796,
+      "session_open": 78.5,
+      "session_close": 79.0,
+      "session_volume": 7164252.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:3293",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3293.TWO/history/",
+        "date": "2016-04-20",
+        "daily_high": 79.5,
+        "prior_all_time_or_current_month_high": 79.5,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:3293",
+        "yahoo_symbol": "3293.TWO"
+      }
+    },
+    {
+      "ticker": "3522.TWO",
+      "name": "Toplus Global Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Consumer Services",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Services · Restaurants",
+      "description": "Toplus Global Co., Ltd. · Restaurants",
+      "change_pct": 2.787461474579378,
+      "session_open": 22.943462371826172,
+      "session_close": 23.501117706298828,
+      "session_volume": 288139.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:3522",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3522.TWO/history/",
+        "date": "2016-04-20",
+        "daily_high": 23.580781936645508,
+        "prior_all_time_or_current_month_high": 65.32514190673828,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:3522",
+        "yahoo_symbol": "3522.TWO"
+      }
+    },
+    {
+      "ticker": "4903.TWO",
+      "name": "United Fiber Optic Communication Inc.",
+      "exchange": "TPEX",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Electrical Products",
+      "description": "United Fiber Optic Communication Inc. · Electrical Products",
+      "change_pct": 4.530737816406205,
+      "session_open": 22.36421775817871,
+      "session_close": 23.45338249206543,
+      "session_volume": 1709497.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:4903",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4903.TWO/history/",
+        "date": "2016-04-20",
+        "daily_high": 23.889049530029297,
+        "prior_all_time_or_current_month_high": 23.889049530029297,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:4903",
+        "yahoo_symbol": "4903.TWO"
+      }
+    },
+    {
+      "ticker": "4911.TWO",
+      "name": "G&E Herbal Biotechnology Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Pharmaceuticals: Major",
+      "description": "G&E Herbal Biotechnology Co., Ltd. · Pharmaceuticals: Major",
+      "change_pct": 4.33213534855581,
+      "session_open": 113.23342895507812,
+      "session_close": 116.87307739257812,
+      "session_volume": 613847.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:4911",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4911.TWO/history/",
+        "date": "2016-04-20",
+        "daily_high": 117.27748107910156,
+        "prior_all_time_or_current_month_high": 139.86341857910156,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:4911",
+        "yahoo_symbol": "4911.TWO"
+      }
+    },
+    {
+      "ticker": "6199.TWO",
+      "name": "TienPin United Enterprise Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Computer Peripherals",
+      "description": "TienPin United Enterprise Co., Ltd. · Computer Peripherals",
+      "change_pct": 0.0,
+      "session_open": 20.049999237060547,
+      "session_close": 20.049999237060547,
+      "session_volume": 49961.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:6199",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6199.TWO/history/",
+        "date": "2016-04-20",
+        "daily_high": 20.049999237060547,
+        "prior_all_time_or_current_month_high": 40.85982894897461,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:6199",
+        "yahoo_symbol": "6199.TWO"
+      }
+    },
+    {
+      "ticker": "6523.TWO",
+      "name": "DR.WU Skincare Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Consumer Non-Durables",
+      "high_type": "all_time",
+      "reason": "업종: Consumer Non-Durables · Household/Personal Care",
+      "description": "DR.WU Skincare Co., Ltd. · Household/Personal Care",
+      "change_pct": 1.7441890552192252,
+      "session_open": 210.0,
+      "session_close": 210.0,
+      "session_volume": 13620.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:6523",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6523.TWO/history/",
+        "date": "2016-04-20",
+        "daily_high": 214.0,
+        "prior_all_time_or_current_month_high": 214.0,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:6523",
+        "yahoo_symbol": "6523.TWO"
+      }
+    },
+    {
+      "ticker": "8446.TWO",
+      "name": "HIM International Music, Inc.",
+      "exchange": "TPEX",
+      "category": "Consumer Durables",
+      "high_type": "all_time",
+      "reason": "업종: Consumer Durables · Recreational Products",
+      "description": "HIM International Music, Inc. · Recreational Products",
+      "change_pct": 2.473499655183309,
+      "session_open": 112.64822387695312,
+      "session_close": 114.62450408935547,
+      "session_volume": 3503594.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:8446",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/8446.TWO/history/",
+        "date": "2016-04-20",
+        "daily_high": 117.78656005859375,
+        "prior_all_time_or_current_month_high": 117.78656005859375,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:8446",
+        "yahoo_symbol": "8446.TWO"
+      }
+    },
+    {
+      "ticker": "1312A.TW",
+      "name": "Grand Pacific Petrochemical Corp Pfd Shs A",
+      "exchange": "TWSE",
+      "category": "Process Industries",
+      "high_type": "52_week",
+      "reason": "업종: Process Industries · Chemicals: Specialty",
+      "description": "Grand Pacific Petrochemical Corp Pfd Shs A · Chemicals: Specialty",
+      "change_pct": 0.8620640043698113,
+      "session_open": 23.399999618530273,
+      "session_close": 23.399999618530273,
+      "session_volume": 1000.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:1312A",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/1312A.TW/history/",
+        "date": "2016-04-20",
+        "daily_high": 23.399999618530273,
+        "prior_all_time_or_current_month_high": 30.0,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:1312A",
+        "yahoo_symbol": "1312A.TW"
+      }
+    },
+    {
+      "ticker": "2106.TW",
+      "name": "Kenda Rubber Industrial Co., Ltd",
+      "exchange": "TWSE",
+      "category": "Consumer Durables",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Durables · Automotive Aftermarket",
+      "description": "Kenda Rubber Industrial Co., Ltd · Automotive Aftermarket",
+      "change_pct": 1.2345665134764872,
+      "session_open": 51.17340850830078,
+      "session_close": 51.53252029418945,
+      "session_volume": 7492934.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2106",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2106.TW/history/",
+        "date": "2016-04-20",
+        "daily_high": 52.4302978515625,
+        "prior_all_time_or_current_month_high": 62.00530242919922,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:2106",
+        "yahoo_symbol": "2106.TW"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-11-12T11:47:01.999915+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 2361,
+    "history_symbols": 1683,
+    "inactive_symbols": 668,
+    "failed_symbols": 10,
+    "coverage_ratio": 0.9940933254577673,
+    "coverage_by_exchange": {
+      "TWSE": {
+        "covered": 907,
+        "total": 914
+      },
+      "TPEX": {
+        "covered": 776,
+        "total": 779
+      }
+    },
+    "session_symbols": 1647,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-11-12T11:47:01.999915+00:00"
+}

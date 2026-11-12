@@ -1,6 +1,6 @@
 import { jsonSource, localDay, numeric } from "./providers.js";
 
-export const INVESTOR_START = "2017-01-01";
+export const INVESTOR_START = "2016-01-01";
 export const INVESTOR_MARKETS = ["KOSPI", "KOSDAQ"];
 export const INVESTOR_SOURCE = "https://stock.naver.com/market/stock/kr/trend/foreigner";
 const names = {1000:"금융투자",2000:"보험",3000:"투신",3100:"사모",4000:"은행",5000:"기타금융",6000:"연기금 등",7000:"국가·지자체",7100:"기타법인",8000:"개인",9000:"외국인",9001:"기타외국인"};
@@ -34,12 +34,17 @@ export function parseInvestorIndex(row) {
   const signed = value => { const n=numeric(value);return n===null?null:falling?-Math.abs(n):n; };
   return {date,close,change:signed(row.compareToPreviousClosePrice),change_pct:signed(row.fluctuationsRatio),open:numeric(row.openPrice),high:numeric(row.highPrice),low:numeric(row.lowPrice)};
 }
-export async function investorFlowPage(market, page, fetcher=fetch) {
+export async function investorFlowPage(market, page, fetcher=fetch, requestedDate="") {
   if (!INVESTOR_MARKETS.includes(market)) throw new Error("Unknown investor market");
   const query=new URLSearchParams({tradeType:"KRX",marketType:market,startIdx:String(page),pageSize:"200"});
   const payload=await jsonSource(`https://stock.naver.com/api/domestic/market/trend/daily?${query}`,undefined,fetcher);
   if (!Array.isArray(payload?.content)) throw new Error("Investor daily source unavailable");
-  return payload.content.map(parseInvestorFlow);
+  return payload.content.map(row => {
+    const date = investorDate(row?.bizdate);
+    // Date navigation needs the boundaries of the source page. Validate the
+    // requested amounts without letting an unrelated old row block that day.
+    return requestedDate && date !== requestedDate ? {date} : parseInvestorFlow(row);
+  });
 }
 export async function investorIndexPage(market, page, fetcher=fetch) {
   if (!INVESTOR_MARKETS.includes(market)) throw new Error("Unknown index market");
@@ -62,7 +67,7 @@ async function exactDate(date, market, load, size, firstPage, fetcher) {
   for (let attempt=0;attempt<6;attempt++) {
     if (visited.has(page) || page<firstPage) break;
     visited.add(page);
-    const rows=await load(market,page,fetcher);
+    const rows=await load(market,page,fetcher,date);
     const match=rows.find(row=>row.date===date);
     if(match)return match;
     if(!rows.length) {page--;continue;}

@@ -28,6 +28,13 @@ FETCHED_KEY = "historical_2024_h2_fetched_at"
 RESUME = "python -u scripts/backfill_stock_information_2024_h2.py collect"
 
 
+def require_source_access(error):
+    """Do not record sandbox/network permission failures as unavailable data."""
+    reason = getattr(error, "reason", error)
+    if getattr(error, "code", None) in {403, 429} or getattr(reason, "winerror", None) == 10013 or "WinError 10013" in str(reason):
+        raise error
+
+
 @cache
 def european_listings():
     path = info.ROOT / "data/tmp_tradingview_chart/universe.json"
@@ -56,8 +63,7 @@ def resolve_yahoo(row):
             if meta.get("symbol") == symbol and meta.get("exchangeName") == exchange and meta.get("instrumentType") == "EQUITY" and meta.get("currency", "").upper() == listing["currency"].upper() and _company_name_matches(listing["description"], meta):
                 matches.append({"symbol": symbol, "exchange": exchange, "currency": meta["currency"], "company": meta.get("longName") or meta.get("shortName")})
         except Exception as exc:
-            if getattr(exc, "code", None) in {403, 429}:
-                raise
+            require_source_access(exc)
     symbol = matches[0]["symbol"] if len(matches) == 1 else None
     charts.write_json(path, {"ticker": row["ticker"], "symbol": symbol, "matches": matches, "queried_at": datetime.now(timezone.utc).isoformat()})
     return symbol
@@ -74,8 +80,7 @@ def fetch(row):
             payload = info.fetch_json(f"https://query1.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/{quote(symbol, safe='')}?{urlencode(params)}")
             statements = info.parse_yahoo_financials(payload, symbol, END)
         except Exception as exc:
-            if getattr(exc, "code", None) in {403, 429}:
-                raise
+            require_source_access(exc)
             errors.append(f"Yahoo: {type(exc).__name__}: {exc}")
     else:
         errors.append("Exact Yahoo listing unavailable; existing original statements retained")
@@ -87,8 +92,7 @@ def fetch(row):
             keys = {(s["type"], s["period_end"]) for s in statements}
             statements += [s for s in fallback if (s["type"], s["period_end"]) not in keys]
         except Exception as exc:
-            if getattr(exc, "code", None) in {403, 429}:
-                raise
+            require_source_access(exc)
             errors.append(f"Naver: {type(exc).__name__}: {exc}")
     return [s for s in statements if START <= s["period_end"] <= END], errors
 

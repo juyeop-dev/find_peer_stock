@@ -1,0 +1,971 @@
+{
+  "schema_version": 1,
+  "market": "taiwan",
+  "date": "2016-06-04",
+  "summary": "部分復元 · 부분 복원: 공식 거래소 토요일 실제 거래를 사용했습니다. 신고가는 전후 두 거래일 OHLC의 조정 기준이 일치하는 종목만 대조했으며, 원본 미지원·상장폐지 종목은 제외합니다.",
+  "sources": [
+    {
+      "label": "TWSE official historical daily report",
+      "url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?response=json&date=20160604&type=ALLBUT0999"
+    },
+    {
+      "label": "TPEX official historical daily report",
+      "url": "https://www.tpex.org.tw/www/zh-tw/afterTrading/dailyQuotes?date=2016/06/04&id=&response=json"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "1220.TW",
+      "name": "台榮",
+      "exchange": "TWSE",
+      "category": "Process Industries",
+      "high_type": "52_week",
+      "reason": "공식 거래소 토요일 실제 거래 확인 · 이전 52주와 전체기간 고가 대조",
+      "description": "Tai Roun Products Co.,Ltd.",
+      "currency": "TWD",
+      "source_symbol": "TWSE:1220",
+      "change_pct": 0.92592592592593,
+      "session_open": 10.8,
+      "session_close": 10.9,
+      "session_volume": 110002.0,
+      "high_verification": {
+        "source": "Official exchange Saturday quote aligned to verified same-listing split basis",
+        "date": "2016-06-04",
+        "daily_high": 10.95,
+        "prior_all_time_or_current_month_high": 16.450001,
+        "factor": 1.0,
+        "verified_dates": [
+          "2016-06-03",
+          "2016-06-06"
+        ],
+        "original_bar": {
+          "date": "2016-06-04",
+          "open": 10.8,
+          "high": 10.95,
+          "low": 10.7,
+          "close": 10.9,
+          "volume": 110002.0
+        },
+        "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?response=json&date=20160604&type=ALLBUT0999",
+        "chart_cache": "data/tmp_tradingview_chart/1D/4c68b3a9e763fd67d9e6a3de50a7c0a0f4c5db26ed8f90c843804c7388215511.json",
+        "chart_sha256": "bc600b795a7083bc604ccd80b181c6a4e221a1ce1214e71e1b1aac08f618feac"
+      }
+    },
+    {
+      "ticker": "1225.TW",
+      "name": "福懋油",
+      "exchange": "TWSE",
+      "category": "Process Industries",
+      "high_type": "all_time",
+      "reason": "공식 거래소 토요일 실제 거래 확인 · 이전 52주와 전체기간 고가 대조",
+      "description": "Formosa Oilseed Processing Co., Ltd.",
+      "currency": "TWD",
+      "source_symbol": "TWSE:1225",
+      "change_pct": 5.1451171597631795,
+      "session_open": 34.39403471188716,
+      "session_close": 35.97381320915231,
+      "session_volume": 211647.8674566235,
+      "high_verification": {
+        "source": "Official exchange Saturday quote aligned to verified same-listing split basis",
+        "date": "2016-06-04",
+        "daily_high": 36.199495851618764,
+        "prior_all_time_or_current_month_high": 36.199495851618764,
+        "factor": 0.9027305698658046,
+        "verified_dates": [
+          "2016-06-03",
+          "2016-06-06"
+        ],
+        "original_bar": {
+          "date": "2016-06-04",
+          "open": 38.1,
+          "high": 40.1,
+          "low": 38.1,
+          "close": 39.85,
+          "volume": 191061.0
+        },
+        "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?response=json&date=20160604&type=ALLBUT0999",
+        "chart_cache": "data/tmp_tradingview_chart/1D/4ff384e2c29adca4c024674b52e4950996d4d7a4e52f6547acabfd4c94aca27c.json",
+        "chart_sha256": "e01c0a11fdf3f8614832314e8f5a1b66c1c7243f5671727563e34c08d89f248f"
+      }
+    },
+    {
+      "ticker": "1626.TW",
+      "name": "艾美特-KY",
+      "exchange": "TWSE",
+      "category": "Consumer Durables",
+      "high_type": "52_week",
+      "reason": "공식 거래소 토요일 실제 거래 확인 · 이전 52주와 전체기간 고가 대조",
+      "description": "Airmate (Cayman) International Co., Ltd.",
+      "currency": "TWD",
+      "source_symbol": "TWSE:1626",
+      "change_pct": 2.0202004690500486,
+      "session_open": 26.978069801936893,
+      "session_close": 26.978069801936893,
+      "session_volume": 1022501.6171475516,
+      "high_verification": {
+        "source": "Official exchange Saturday quote aligned to verified same-listing split basis",
+        "date": "2016-06-04",
+        "daily_high": 28.135544743934187,
+        "prior_all_time_or_current_month_high": 87.879055,
+        "factor": 0.8903653399979172,
+        "verified_dates": [
+          "2016-06-03",
+          "2016-06-06"
+        ],
+        "original_bar": {
+          "date": "2016-06-04",
+          "open": 30.3,
+          "high": 31.6,
+          "low": 29.85,
+          "close": 30.3,
+          "volume": 910400.0
+        },
+        "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?response=json&date=20160604&type=ALLBUT0999",
+        "chart_cache": "data/tmp_tradingview_chart/1D/36a28f69505c9043c11f36ded42d895b4b20a9db9595a1453643806549098ba7.json",
+        "chart_sha256": "97dd4d39271e688fde1ea94179f94914ec59028380322f991fe8665871d1367b"
+      }
+    },
+    {
+      "ticker": "2305.TW",
+      "name": "全友",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "공식 거래소 토요일 실제 거래 확인 · 이전 52주와 전체기간 고가 대조",
+      "description": "Microtek International, Inc.",
+      "currency": "TWD",
+      "source_symbol": "TWSE:2305",
+      "change_pct": 6.914893617021289,
+      "session_open": 9.45,
+      "session_close": 10.05,
+      "session_volume": 3736002.0,
+      "high_verification": {
+        "source": "Official exchange Saturday quote aligned to verified same-listing split basis",
+        "date": "2016-06-04",
+        "daily_high": 10.3,
+        "prior_all_time_or_current_month_high": 11.45,
+        "factor": 1.0,
+        "verified_dates": [
+          "2016-06-03",
+          "2016-06-06"
+        ],
+        "original_bar": {
+          "date": "2016-06-04",
+          "open": 9.45,
+          "high": 10.3,
+          "low": 9.31,
+          "close": 10.05,
+          "volume": 3736002.0
+        },
+        "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?response=json&date=20160604&type=ALLBUT0999",
+        "chart_cache": "data/tmp_tradingview_chart/1D/75094a109f999ca9f48c58844b4ec13ef3e739a32a0bddd6725cea1f2e2ec030.json",
+        "chart_sha256": "808a78005556f35dc9796b1c6425d1c5536cb3bdd2ca9ea3270e77baf77062f5"
+      }
+    },
+    {
+      "ticker": "2345.TW",
+      "name": "智邦",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "공식 거래소 토요일 실제 거래 확인 · 이전 52주와 전체기간 고가 대조",
+      "description": "Accton Technology Corp.",
+      "currency": "TWD",
+      "source_symbol": "TWSE:2345",
+      "change_pct": 6.755122950115888,
+      "session_open": 41.4499995600907,
+      "session_close": 44.24999953037427,
+      "session_volume": 16902510.179386526,
+      "high_verification": {
+        "source": "Official exchange Saturday quote aligned to verified same-listing split basis",
+        "date": "2016-06-04",
+        "daily_high": 44.499999527721016,
+        "prior_all_time_or_current_month_high": 44.499999527721016,
+        "factor": 0.9999999893869891,
+        "verified_dates": [
+          "2016-06-03",
+          "2016-06-06"
+        ],
+        "original_bar": {
+          "date": "2016-06-04",
+          "open": 41.45,
+          "high": 44.5,
+          "low": 41.45,
+          "close": 44.25,
+          "volume": 16902510.0
+        },
+        "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?response=json&date=20160604&type=ALLBUT0999",
+        "chart_cache": "data/tmp_tradingview_chart/1D/7ec39c3c079276e07379c29800269564663d7682615c875af5e07790744dae26.json",
+        "chart_sha256": "9a07c479b90d96b956567d2b517408ef748a4d8a76f8f59afe46ce06ac2b314a"
+      }
+    },
+    {
+      "ticker": "2412.TW",
+      "name": "中華電",
+      "exchange": "TWSE",
+      "category": "Communications",
+      "high_type": "all_time",
+      "reason": "공식 거래소 토요일 실제 거래 확인 · 이전 52주와 전체기간 고가 대조",
+      "description": "Chunghwa Telecom Co., Ltd",
+      "currency": "TWD",
+      "source_symbol": "TWSE:2412",
+      "change_pct": 0.0,
+      "session_open": 111.5,
+      "session_close": 112.0,
+      "session_volume": 1805374.0,
+      "high_verification": {
+        "source": "Official exchange Saturday quote aligned to verified same-listing split basis",
+        "date": "2016-06-04",
+        "daily_high": 112.0,
+        "prior_all_time_or_current_month_high": 112.0,
+        "factor": 1.0,
+        "verified_dates": [
+          "2016-06-03",
+          "2016-06-06"
+        ],
+        "original_bar": {
+          "date": "2016-06-04",
+          "open": 111.5,
+          "high": 112.0,
+          "low": 111.0,
+          "close": 112.0,
+          "volume": 1805374.0
+        },
+        "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?response=json&date=20160604&type=ALLBUT0999",
+        "chart_cache": "data/tmp_tradingview_chart/1D/aa7d9a5a455d4424a085c664727378848f433509d96a6c930e1d8af11083171a.json",
+        "chart_sha256": "69cc6c62bdcc9880f9140a3d0adbdf67f3461ca55ae008965c392db4c64d1947"
+      }
+    },
+    {
+      "ticker": "3141.TWO",
+      "name": "晶宏",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "공식 거래소 토요일 실제 거래 확인 · 이전 52주와 전체기간 고가 대조",
+      "description": "Ultra Chip, Inc.",
+      "currency": "TWD",
+      "source_symbol": "TPEX:3141",
+      "change_pct": 6.060607794705231,
+      "session_open": 52.388591936103005,
+      "session_close": 54.632423620517095,
+      "session_volume": 15281796.86479188,
+      "high_verification": {
+        "source": "Official exchange Saturday quote aligned to verified same-listing split basis",
+        "date": "2016-06-04",
+        "daily_high": 55.998234211030024,
+        "prior_all_time_or_current_month_high": 55.998234211030024,
+        "factor": 0.9755789932235196,
+        "verified_dates": [
+          "2016-06-03",
+          "2016-06-06"
+        ],
+        "original_bar": {
+          "date": "2016-06-04",
+          "open": 53.7,
+          "high": 57.4,
+          "low": 53.5,
+          "close": 56.0,
+          "volume": 14908600.0
+        },
+        "source_url": "https://www.tpex.org.tw/www/zh-tw/afterTrading/dailyQuotes?date=2016/06/04&id=&response=json",
+        "chart_cache": "data/tmp_tradingview_chart/1D/4393fcca525202155115bba60a46b3bd25e4e671ad856e8d4dae2847553fbbf3.json",
+        "chart_sha256": "5ff7eee4fd2e9371d14f852a7c8e6e974cc198fea2a02230404e6c81e40428cb"
+      }
+    },
+    {
+      "ticker": "3522.TWO",
+      "name": "宏森",
+      "exchange": "TPEX",
+      "category": "Consumer Services",
+      "high_type": "52_week",
+      "reason": "공식 거래소 토요일 실제 거래 확인 · 이전 52주와 전체기간 고가 대조",
+      "description": "Toplus Global Co., Ltd.",
+      "currency": "TWD",
+      "source_symbol": "TPEX:3522",
+      "change_pct": 3.157893041277826,
+      "session_open": 30.325451093500277,
+      "session_close": 30.559323466972007,
+      "session_volume": 585575.7906205088,
+      "high_verification": {
+        "source": "Official exchange Saturday quote aligned to verified same-listing split basis",
+        "date": "2016-06-04",
+        "daily_high": 31.10502567173936,
+        "prior_all_time_or_current_month_high": 117.20696759,
+        "factor": 1.5591491564781634,
+        "verified_dates": [
+          "2016-06-03",
+          "2016-06-06"
+        ],
+        "original_bar": {
+          "date": "2016-06-04",
+          "open": 19.45,
+          "high": 19.95,
+          "low": 19.25,
+          "close": 19.6,
+          "volume": 913000.0
+        },
+        "source_url": "https://www.tpex.org.tw/www/zh-tw/afterTrading/dailyQuotes?date=2016/06/04&id=&response=json",
+        "chart_cache": "data/tmp_tradingview_chart/1D/6c6923d92d0fde2e84e2ebdf4400467b7623652a3da94e26c693f36344bc4b5e.json",
+        "chart_sha256": "4fe535e1d244c3c41c7c766e8df650777e2882d4d1e0e2a8d460cb4efae09587"
+      }
+    },
+    {
+      "ticker": "3548.TWO",
+      "name": "兆利",
+      "exchange": "TPEX",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "공식 거래소 토요일 실제 거래 확인 · 이전 52주와 전체기간 고가 대조",
+      "description": "Jarllytec Co. Ltd.",
+      "currency": "TWD",
+      "source_symbol": "TPEX:3548",
+      "change_pct": 7.679185123671517,
+      "session_open": 56.29291929644293,
+      "session_close": 60.00140553387752,
+      "session_volume": 4849304.392306571,
+      "high_verification": {
+        "source": "Official exchange Saturday quote aligned to verified same-listing split basis",
+        "date": "2016-06-04",
+        "daily_high": 60.76212065950512,
+        "prior_all_time_or_current_month_high": 175.84727713,
+        "factor": 0.9508939070345089,
+        "verified_dates": [
+          "2016-06-03",
+          "2016-06-06"
+        ],
+        "original_bar": {
+          "date": "2016-06-04",
+          "open": 59.2,
+          "high": 63.9,
+          "low": 58.3,
+          "close": 63.1,
+          "volume": 4611174.0
+        },
+        "source_url": "https://www.tpex.org.tw/www/zh-tw/afterTrading/dailyQuotes?date=2016/06/04&id=&response=json",
+        "chart_cache": "data/tmp_tradingview_chart/1D/788f374e4960a2d0a0f2ac2391dcc0b059723e82ec1682857be27174d14029e8.json",
+        "chart_sha256": "c8da68eb5960e61f51c9f0163db61bd94a7765dd5bf6cda8cbcee1bb6317a253"
+      }
+    },
+    {
+      "ticker": "4916.TW",
+      "name": "事欣科",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "공식 거래소 토요일 실제 거래 확인 · 이전 52주와 전체기간 고가 대조",
+      "description": "PARPRO Corporation",
+      "currency": "TWD",
+      "source_symbol": "TWSE:4916",
+      "change_pct": 5.6094958704638875,
+      "session_open": 42.72727629018339,
+      "session_close": 44.50000371073355,
+      "session_volume": 5708246.024004943,
+      "high_verification": {
+        "source": "Official exchange Saturday quote aligned to verified same-listing split basis",
+        "date": "2016-06-04",
+        "daily_high": 44.50000371073355,
+        "prior_all_time_or_current_month_high": 62.272734,
+        "factor": 0.9090909848975189,
+        "verified_dates": [
+          "2016-06-03",
+          "2016-06-06"
+        ],
+        "original_bar": {
+          "date": "2016-06-04",
+          "open": 47.0,
+          "high": 48.95,
+          "low": 46.15,
+          "close": 48.95,
+          "volume": 5189315.0
+        },
+        "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?response=json&date=20160604&type=ALLBUT0999",
+        "chart_cache": "data/tmp_tradingview_chart/1D/ab790305fb6d6f1ec1a8e0e312742fd056a47c5272f8b5f557f7974b856b8a9a.json",
+        "chart_sha256": "d93aef0cba123c0e76540e9c805e31e5b7d030e55d0bf1d3ca17ff02727656b4"
+      }
+    },
+    {
+      "ticker": "5434.TW",
+      "name": "崇越",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "공식 거래소 토요일 실제 거래 확인 · 이전 52주와 전체기간 고가 대조",
+      "description": "Topco Scientific Co., Ltd.",
+      "currency": "TWD",
+      "source_symbol": "TWSE:5434",
+      "change_pct": 2.4183661739840545e-07,
+      "session_open": 64.21816015530302,
+      "session_close": 64.21816015530302,
+      "session_volume": 219198.43959960577,
+      "high_verification": {
+        "source": "Official exchange Saturday quote aligned to verified same-listing split basis",
+        "date": "2016-06-04",
+        "daily_high": 64.60443480285373,
+        "prior_all_time_or_current_month_high": 108.616035,
+        "factor": 0.9656866188767372,
+        "verified_dates": [
+          "2016-06-03",
+          "2016-06-06"
+        ],
+        "original_bar": {
+          "date": "2016-06-04",
+          "open": 66.5,
+          "high": 66.9,
+          "low": 66.2,
+          "close": 66.5,
+          "volume": 211677.0
+        },
+        "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?response=json&date=20160604&type=ALLBUT0999",
+        "chart_cache": "data/tmp_tradingview_chart/1D/d2e426e3198a8afe9df3099300b42f161920e1e9bc88d45ba3280d136bd27dc6.json",
+        "chart_sha256": "d3d4c57271aa3aef1190e2594e2420a87eda795e64f35fdbbd145000bf99c3e3"
+      }
+    },
+    {
+      "ticker": "5439.TWO",
+      "name": "高技",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "공식 거래소 토요일 실제 거래 확인 · 이전 52주와 전체기간 고가 대조",
+      "description": "First Hi-tec Enterprise Co., Ltd.",
+      "currency": "TWD",
+      "source_symbol": "TPEX:5439",
+      "change_pct": 1.0060350578207755,
+      "session_open": 24.132300125391502,
+      "session_close": 24.572849214901694,
+      "session_volume": 372889.43255482626,
+      "high_verification": {
+        "source": "Official exchange Saturday quote aligned to verified same-listing split basis",
+        "date": "2016-06-04",
+        "daily_high": 24.621799113736156,
+        "prior_all_time_or_current_month_high": 37.326066,
+        "factor": 0.9789979766893104,
+        "verified_dates": [
+          "2016-06-03",
+          "2016-06-06"
+        ],
+        "original_bar": {
+          "date": "2016-06-04",
+          "open": 24.65,
+          "high": 25.15,
+          "low": 24.65,
+          "close": 25.1,
+          "volume": 365058.0
+        },
+        "source_url": "https://www.tpex.org.tw/www/zh-tw/afterTrading/dailyQuotes?date=2016/06/04&id=&response=json",
+        "chart_cache": "data/tmp_tradingview_chart/1D/f8c0f3216ff32aa08d8198d27a890328be66641e0d4cb5c7951b99de4b480273.json",
+        "chart_sha256": "88f41dd5ed5b33c83a3ca93612893f7b1e3c91c0604aacb2cfe9f128f7cc6a79"
+      }
+    },
+    {
+      "ticker": "6187.TWO",
+      "name": "萬潤",
+      "exchange": "TPEX",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "공식 거래소 토요일 실제 거래 확인 · 이전 52주와 전체기간 고가 대조",
+      "description": "All Ring Tech Co., Ltd.",
+      "currency": "TWD",
+      "source_symbol": "TPEX:6187",
+      "change_pct": 2.16666666666665,
+      "session_open": 59.9408392,
+      "session_close": 60.833997399999994,
+      "session_volume": 1410885.551966046,
+      "high_verification": {
+        "source": "Official exchange Saturday quote aligned to verified same-listing split basis",
+        "date": "2016-06-04",
+        "daily_high": 61.1317168,
+        "prior_all_time_or_current_month_high": 68.07461558,
+        "factor": 0.992398,
+        "verified_dates": [
+          "2016-06-03",
+          "2016-06-06"
+        ],
+        "original_bar": {
+          "date": "2016-06-04",
+          "open": 60.4,
+          "high": 61.6,
+          "low": 59.4,
+          "close": 61.3,
+          "volume": 1400160.0
+        },
+        "source_url": "https://www.tpex.org.tw/www/zh-tw/afterTrading/dailyQuotes?date=2016/06/04&id=&response=json",
+        "chart_cache": "data/tmp_tradingview_chart/1D/6b9506493398628e50ef11cc5003a23d34299695b624798b7707816030ca7951.json",
+        "chart_sha256": "53db94319d91e53b26aa414c29726ea13c602761400bbc8bd2fe13a1c9c6d491"
+      }
+    },
+    {
+      "ticker": "6235.TW",
+      "name": "華孚",
+      "exchange": "TWSE",
+      "category": "Non-Energy Minerals",
+      "high_type": "52_week",
+      "reason": "공식 거래소 토요일 실제 거래 확인 · 이전 52주와 전체기간 고가 대조",
+      "description": "Waffer Technology Corp.",
+      "currency": "TWD",
+      "source_symbol": "TWSE:6235",
+      "change_pct": 9.909908481612373,
+      "session_open": 11.06766738500265,
+      "session_close": 11.741351486698463,
+      "session_volume": 5605328.5070768455,
+      "high_verification": {
+        "source": "Official exchange Saturday quote aligned to verified same-listing split basis",
+        "date": "2016-06-04",
+        "daily_high": 11.741351486698463,
+        "prior_all_time_or_current_month_high": 97.90182816,
+        "factor": 0.9624058595654479,
+        "verified_dates": [
+          "2016-06-03",
+          "2016-06-06"
+        ],
+        "original_bar": {
+          "date": "2016-06-04",
+          "open": 11.5,
+          "high": 12.2,
+          "low": 11.35,
+          "close": 12.2,
+          "volume": 5394601.0
+        },
+        "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?response=json&date=20160604&type=ALLBUT0999",
+        "chart_cache": "data/tmp_tradingview_chart/1D/0c730d8a489afb58129dbc7ac83062c07697e25b8f2db52ccb2624f1c75ead03.json",
+        "chart_sha256": "041fcb41959a52ab5244f66c8ac29a4722084a37555765eedce4678080abb6ce"
+      }
+    },
+    {
+      "ticker": "6485.TWO",
+      "name": "點序",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "공식 거래소 토요일 실제 거래 확인 · 이전 52주와 전체기간 고가 대조",
+      "description": "ASolid Technology Co Ltd",
+      "currency": "TWD",
+      "source_symbol": "TPEX:6485",
+      "change_pct": 1.174485775301548e-06,
+      "session_open": 51.47061673510757,
+      "session_close": 52.74622061949685,
+      "session_volume": 552114.9697166265,
+      "high_verification": {
+        "source": "Official exchange Saturday quote aligned to verified same-listing split basis",
+        "date": "2016-06-04",
+        "daily_high": 53.511582950130425,
+        "prior_all_time_or_current_month_high": 63.846498,
+        "factor": 0.6378019421946415,
+        "verified_dates": [
+          "2016-06-03",
+          "2016-06-06"
+        ],
+        "original_bar": {
+          "date": "2016-06-04",
+          "open": 80.7,
+          "high": 83.9,
+          "low": 80.3,
+          "close": 82.7,
+          "volume": 352140.0
+        },
+        "source_url": "https://www.tpex.org.tw/www/zh-tw/afterTrading/dailyQuotes?date=2016/06/04&id=&response=json",
+        "chart_cache": "data/tmp_tradingview_chart/1D/7ccb44e29ea24d3d6583e7b43569627f37cf0fa079da3451ff22bc7d204dc5d4.json",
+        "chart_sha256": "f37821d8da973ed9a72d7ef7f051690cefd975b749ca8375750bd7cf4b67ac0b"
+      }
+    },
+    {
+      "ticker": "8074.TWO",
+      "name": "鉅橡",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "공식 거래소 토요일 실제 거래 확인 · 이전 52주와 전체기간 고가 대조",
+      "description": "Aurona Industries, Inc.",
+      "currency": "TWD",
+      "source_symbol": "TPEX:8074",
+      "change_pct": 7.222222222222219,
+      "session_open": 26.442797900000002,
+      "session_close": 28.24793355,
+      "session_volume": 1567160.202060161,
+      "high_verification": {
+        "source": "Official exchange Saturday quote aligned to verified same-listing split basis",
+        "date": "2016-06-04",
+        "daily_high": 28.3942959,
+        "prior_all_time_or_current_month_high": 51.2268225,
+        "factor": 0.975749,
+        "verified_dates": [
+          "2016-06-03",
+          "2016-06-06"
+        ],
+        "original_bar": {
+          "date": "2016-06-04",
+          "open": 27.1,
+          "high": 29.1,
+          "low": 26.9,
+          "close": 28.95,
+          "volume": 1529155.0
+        },
+        "source_url": "https://www.tpex.org.tw/www/zh-tw/afterTrading/dailyQuotes?date=2016/06/04&id=&response=json",
+        "chart_cache": "data/tmp_tradingview_chart/1D/f058e00a5d8923b185c1941fa3af97e391283b049d20a517cfee9cd3023cc5ec.json",
+        "chart_sha256": "604f1ae15fa6b3348be6655c4689bf04260dc31c58f7fa07375ecb3a05d0fdd4"
+      }
+    },
+    {
+      "ticker": "8080.TWO",
+      "name": "奧斯特",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "공식 거래소 토요일 실제 거래 확인 · 이전 52주와 전체기간 고가 대조",
+      "description": "TerraLink Enterprise Co Ltd",
+      "currency": "TWD",
+      "source_symbol": "TPEX:8080",
+      "change_pct": 0.40485409037223086,
+      "session_open": 123.2500061401159,
+      "session_close": 124.00000617747969,
+      "session_volume": 164075.191826039,
+      "high_verification": {
+        "source": "Official exchange Saturday quote aligned to verified same-listing split basis",
+        "date": "2016-06-04",
+        "daily_high": 127.00000632693484,
+        "prior_all_time_or_current_month_high": 211.52369587,
+        "factor": 5.000000249091923,
+        "verified_dates": [
+          "2016-06-03",
+          "2016-06-06"
+        ],
+        "original_bar": {
+          "date": "2016-06-04",
+          "open": 24.65,
+          "high": 25.4,
+          "low": 24.4,
+          "close": 24.8,
+          "volume": 820376.0
+        },
+        "source_url": "https://www.tpex.org.tw/www/zh-tw/afterTrading/dailyQuotes?date=2016/06/04&id=&response=json",
+        "chart_cache": "data/tmp_tradingview_chart/1D/b4e5c3eecf886a5867b2ea57beba63832a9e2148dc183ef1cbd258d229ba6f8f.json",
+        "chart_sha256": "639a13ffd9b731e8a95548f0399c9e63c8ac63e3dda8b84df07939ef5ca094f0"
+      }
+    },
+    {
+      "ticker": "8222.TW",
+      "name": "寶一",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "공식 거래소 토요일 실제 거래 확인 · 이전 52주와 전체기간 고가 대조",
+      "description": "Aero Win Technology Corp.",
+      "currency": "TWD",
+      "source_symbol": "TWSE:8222",
+      "change_pct": 5.958554606905575,
+      "session_open": 38.89999996109473,
+      "session_close": 40.89999995909446,
+      "session_volume": 8615412.00861658,
+      "high_verification": {
+        "source": "Official exchange Saturday quote aligned to verified same-listing split basis",
+        "date": "2016-06-04",
+        "daily_high": 41.949999958044316,
+        "prior_all_time_or_current_month_high": 41.949999958044316,
+        "factor": 0.9999999989998645,
+        "verified_dates": [
+          "2016-06-03",
+          "2016-06-06"
+        ],
+        "original_bar": {
+          "date": "2016-06-04",
+          "open": 38.9,
+          "high": 41.95,
+          "low": 38.8,
+          "close": 40.9,
+          "volume": 8615412.0
+        },
+        "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?response=json&date=20160604&type=ALLBUT0999",
+        "chart_cache": "data/tmp_tradingview_chart/1D/09411b731f51efcf2d9f2510d60881d665aff673791a5b5bfe5f478093f509b2.json",
+        "chart_sha256": "97a02ab869cf76bc4170097bbf6b108d73a5cebfb7fcb0d9889c64e171d4cfa2"
+      }
+    },
+    {
+      "ticker": "8421.TWO",
+      "name": "旭源",
+      "exchange": "TPEX",
+      "category": "Process Industries",
+      "high_type": "52_week",
+      "reason": "공식 거래소 토요일 실제 거래 확인 · 이전 52주와 전체기간 고가 대조",
+      "description": "Xu Yuan Packaging Technology Co., Ltd.",
+      "currency": "TWD",
+      "source_symbol": "TPEX:8421",
+      "change_pct": 6.993003450262614,
+      "session_open": 20.748452256568534,
+      "session_close": 21.64440814946581,
+      "session_volume": 2712316.721464564,
+      "high_verification": {
+        "source": "Official exchange Saturday quote aligned to verified same-listing split basis",
+        "date": "2016-06-04",
+        "daily_high": 22.163119455880025,
+        "prior_all_time_or_current_month_high": 33.86265139,
+        "factor": 0.9431114662076606,
+        "verified_dates": [
+          "2016-06-03",
+          "2016-06-06"
+        ],
+        "original_bar": {
+          "date": "2016-06-04",
+          "open": 22.0,
+          "high": 23.5,
+          "low": 21.45,
+          "close": 22.95,
+          "volume": 2558017.0
+        },
+        "source_url": "https://www.tpex.org.tw/www/zh-tw/afterTrading/dailyQuotes?date=2016/06/04&id=&response=json",
+        "chart_cache": "data/tmp_tradingview_chart/1D/e8ad96502d53d12a09bdadcd820e71f96fcab42fefd7b518cd0fab27117e7822.json",
+        "chart_sha256": "1e5d8ad38569421b555f72fc82a131e6070a3a276dd2570a836ea3e020bfbc21"
+      }
+    },
+    {
+      "ticker": "8444.TWO",
+      "name": "F-綠河",
+      "exchange": "TPEX",
+      "category": "Non-Energy Minerals",
+      "high_type": "all_time",
+      "reason": "공식 거래소 토요일 실제 거래 확인 · 이전 52주와 전체기간 고가 대조",
+      "description": "Green River Holding Co., Ltd.",
+      "currency": "TWD",
+      "source_symbol": "TPEX:8444",
+      "change_pct": 6.30722094603664,
+      "session_open": 84.00064054502369,
+      "session_close": 89.29874808702925,
+      "session_volume": 404918.01704499027,
+      "high_verification": {
+        "source": "Official exchange Saturday quote aligned to verified same-listing split basis",
+        "date": "2016-06-04",
+        "daily_high": 92.28961524783884,
+        "prior_all_time_or_current_month_high": 92.28961524783884,
+        "factor": 0.8545334745170263,
+        "verified_dates": [
+          "2016-06-03",
+          "2016-06-06"
+        ],
+        "original_bar": {
+          "date": "2016-06-04",
+          "open": 98.3,
+          "high": 108.0,
+          "low": 98.3,
+          "close": 104.5,
+          "volume": 346016.0
+        },
+        "source_url": "https://www.tpex.org.tw/www/zh-tw/afterTrading/dailyQuotes?date=2016/06/04&id=&response=json",
+        "chart_cache": "data/tmp_tradingview_chart/1D/b98949b3206dff8511210aa08582d90608d329aac31b22e07715f783e5b87b84.json",
+        "chart_sha256": "b3fde2cfe499ab5551a074691953f7fc8892974d3a870b14c99be7a5316e7e1e"
+      }
+    },
+    {
+      "ticker": "8940.TW",
+      "name": "新天地",
+      "exchange": "TWSE",
+      "category": "Consumer Services",
+      "high_type": "52_week",
+      "reason": "공식 거래소 토요일 실제 거래 확인 · 이전 52주와 전체기간 고가 대조",
+      "description": "New Palace International Co., Ltd.",
+      "currency": "TWD",
+      "source_symbol": "TWSE:8940",
+      "change_pct": 1.4124265137733127,
+      "session_open": 17.800000502824858,
+      "session_close": 17.950000507062143,
+      "session_volume": 891224.9748241534,
+      "high_verification": {
+        "source": "Official exchange Saturday quote aligned to verified same-listing split basis",
+        "date": "2016-06-04",
+        "daily_high": 18.400000519774007,
+        "prior_all_time_or_current_month_high": 36.756341,
+        "factor": 1.0000000282485875,
+        "verified_dates": [
+          "2016-06-03",
+          "2016-06-06"
+        ],
+        "original_bar": {
+          "date": "2016-06-04",
+          "open": 17.8,
+          "high": 18.4,
+          "low": 17.1,
+          "close": 17.95,
+          "volume": 891225.0
+        },
+        "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?response=json&date=20160604&type=ALLBUT0999",
+        "chart_cache": "data/tmp_tradingview_chart/1D/6819c1b8526d183ebb4a4a9c7c07ef5d8abaab3624203cc614df353d299b3dae.json",
+        "chart_sha256": "b0a2d22d2907c82bf9fac8327eb6a5a4e26a2bf57fde513faac07aa1ba19f375"
+      }
+    },
+    {
+      "ticker": "9911.TW",
+      "name": "櫻花",
+      "exchange": "TWSE",
+      "category": "Consumer Durables",
+      "high_type": "52_week",
+      "reason": "공식 거래소 토요일 실제 거래 확인 · 이전 52주와 전체기간 고가 대조",
+      "description": "Taiwan Sakura Corporation",
+      "currency": "TWD",
+      "source_symbol": "TWSE:9911",
+      "change_pct": 2.6615985195680647,
+      "session_open": 32.93749949904944,
+      "session_close": 33.74999948669202,
+      "session_volume": 3102988.8471937464,
+      "high_verification": {
+        "source": "Official exchange Saturday quote aligned to verified same-listing split basis",
+        "date": "2016-06-04",
+        "daily_high": 33.74999948669202,
+        "prior_all_time_or_current_month_high": 40.073524,
+        "factor": 1.2499999809885933,
+        "verified_dates": [
+          "2016-06-03",
+          "2016-06-06"
+        ],
+        "original_bar": {
+          "date": "2016-06-04",
+          "open": 26.35,
+          "high": 27.0,
+          "low": 26.25,
+          "close": 27.0,
+          "volume": 3878736.0
+        },
+        "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?response=json&date=20160604&type=ALLBUT0999",
+        "chart_cache": "data/tmp_tradingview_chart/1D/f04ae5177b998aa844907d7fbacd42a3c6a8247c03b2bd82a74896079495128b.json",
+        "chart_sha256": "f35bc0f3531d68fb0e60082d2c4122421c963bb421e910b6362cf1f322a34b9c"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "TWSE/TPEx exact-date official daily reports and verified same-listing TradingView historical basis",
+    "fetched_at": "2026-11-12T11:41:13.955793+00:00",
+    "universe_fetched_at": "2026-11-12T11:38:59.000394+00:00",
+    "scanned_symbols": 2361,
+    "session_symbols": 1421,
+    "history_symbols": 1343,
+    "coverage_status": "partial",
+    "universe": "Current listed stock universe; historical delisted stocks excluded",
+    "original_sources": [
+      {
+        "url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?response=json&date=20160603&type=ALLBUT0999",
+        "sha256": "4642de0cd238486ec38d78bcf17b3ca492be0e84f18f00f8a3329300e15567a2",
+        "cache": "data/tmp_2016/taiwan-official/d600d50e2afc452cca75fd515d8c93fe91de0d10df89c9766197fe26019e9894.json",
+        "exchange": "TWSE",
+        "date": "2016-06-03"
+      },
+      {
+        "url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?response=json&date=20160604&type=ALLBUT0999",
+        "sha256": "2c706f956c490d5b3d5e433ac074a4c5322957d3ef65a81bb634e1efc7c6f653",
+        "cache": "data/tmp_2016/taiwan-official/c65a4c0a45dd131e3ec82203506232ea3cce8ff0f241031492c68b2836197740.json",
+        "exchange": "TWSE",
+        "date": "2016-06-04"
+      },
+      {
+        "url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?response=json&date=20160606&type=ALLBUT0999",
+        "sha256": "983e702f862d9318e0be07a5c786a4793e1521f8e4a0b26d60c7d47d81073474",
+        "cache": "data/tmp_2016/taiwan-official/879ecd1acb9a56e1c7e7135df1cc4ba6dad7a0e53a30bde05ea50873fe7f6a2b.json",
+        "exchange": "TWSE",
+        "date": "2016-06-06"
+      },
+      {
+        "url": "https://www.tpex.org.tw/www/zh-tw/afterTrading/dailyQuotes?date=2016/06/03&id=&response=json",
+        "sha256": "a8624e1af64ccd67689ba09760d9fc87cfb02a4ace3e5838a983a9b7c7ad1e09",
+        "cache": "data/tmp_2016/taiwan-official/ca1debeeab3894160521f7d62dd2dc0ef1f12733695452465a525330656877d6.json",
+        "exchange": "TPEX",
+        "date": "2016-06-03"
+      },
+      {
+        "url": "https://www.tpex.org.tw/www/zh-tw/afterTrading/dailyQuotes?date=2016/06/04&id=&response=json",
+        "sha256": "3785789d24e6b6c19e4c7a51c0d8ed9d5d71bcedb3d99aadb7ea52fdc0275574",
+        "cache": "data/tmp_2016/taiwan-official/11cb46898b46fa917eb5ef057fcc5b089525368f2c9b7d646b492de4714fc569.json",
+        "exchange": "TPEX",
+        "date": "2016-06-04"
+      },
+      {
+        "url": "https://www.tpex.org.tw/www/zh-tw/afterTrading/dailyQuotes?date=2016/06/06&id=&response=json",
+        "sha256": "bb0b6f6540afde6838b7edd0cd749de9c27a6bd806dbcc5f08183b9dc44cd971",
+        "cache": "data/tmp_2016/taiwan-official/8da622ac40e50ae22bcbb4169667a4c865a4bd1ffb54543bbf5665166c860491.json",
+        "exchange": "TPEX",
+        "date": "2016-06-06"
+      }
+    ],
+    "unresolved_listings": {
+      "TWSE:1203": "Both bracketing original sessions are required",
+      "TWSE:1312A": "'1312A'",
+      "TPEX:1336": "Both bracketing original sessions are required",
+      "TWSE:1410": "'1410'",
+      "TWSE:1414": "Both bracketing original sessions are required",
+      "TWSE:1438": "Both bracketing original sessions are required",
+      "TWSE:1446": "Both bracketing original sessions are required",
+      "TWSE:1470": "Both bracketing original sessions are required",
+      "TWSE:1475": "Both bracketing original sessions are required",
+      "TWSE:1516": "Both bracketing original sessions are required",
+      "TWSE:1538": "Both bracketing original sessions are required",
+      "TPEX:1595": "Both bracketing original sessions are required",
+      "TWSE:1617": "Split basis differs across bracketing OHLC sessions",
+      "TWSE:1713": "Split basis differs across bracketing OHLC sessions",
+      "TWSE:1725": "Both bracketing original sessions are required",
+      "TWSE:2008": "Both bracketing original sessions are required",
+      "TWSE:2012": "Both bracketing original sessions are required",
+      "TPEX:2035": "Split basis differs across bracketing OHLC sessions",
+      "TPEX:2061": "Split basis differs across bracketing OHLC sessions",
+      "TPEX:2063": "Both bracketing original sessions are required",
+      "TPEX:2064": "Both bracketing original sessions are required",
+      "TWSE:2424": "Both bracketing original sessions are required",
+      "TWSE:2429": "'2429'",
+      "TWSE:2440": "Both bracketing original sessions are required",
+      "TWSE:2527": "Both bracketing original sessions are required",
+      "TWSE:2701": "Split basis differs across bracketing OHLC sessions",
+      "TWSE:2722": "'2722'",
+      "TPEX:2724": "Both bracketing original sessions are required",
+      "TWSE:2901": "Both bracketing original sessions are required",
+      "TWSE:2904": "Both bracketing original sessions are required",
+      "TPEX:3093": "Both bracketing original sessions are required",
+      "TPEX:3115": "'3115'",
+      "TWSE:3130": "Both bracketing original sessions are required",
+      "TPEX:3162": "Both bracketing original sessions are required",
+      "TPEX:3171": "Both bracketing original sessions are required",
+      "TPEX:3188": "'3188'",
+      "TPEX:3207": "Both bracketing original sessions are required",
+      "TPEX:3217": "Both bracketing original sessions are required",
+      "TPEX:3219": "'3219'",
+      "TPEX:3230": "'3230'",
+      "TPEX:3297": "Both bracketing original sessions are required",
+      "TPEX:3332": "Both bracketing original sessions are required",
+      "TPEX:3609": "Both bracketing original sessions are required",
+      "TPEX:3629": "Both bracketing original sessions are required",
+      "TPEX:4303": "'4303'",
+      "TPEX:4304": "Split basis differs across bracketing OHLC sessions",
+      "TPEX:4416": "'4416'",
+      "TWSE:4755": "Both bracketing original sessions are required",
+      "TPEX:5201": "Both bracketing original sessions are required",
+      "TPEX:5340": "Both bracketing original sessions are required",
+      "TPEX:5348": "'5348'",
+      "TPEX:5386": "Split basis differs across bracketing OHLC sessions",
+      "TPEX:5432": "Both bracketing original sessions are required",
+      "TPEX:5468": "Both bracketing original sessions are required",
+      "TPEX:5520": "Both bracketing original sessions are required",
+      "TPEX:5601": "'5601'",
+      "TPEX:6020": "Both bracketing original sessions are required",
+      "TPEX:6103": "'6103'",
+      "TPEX:6140": "Both bracketing original sessions are required",
+      "TPEX:6144": "Both bracketing original sessions are required",
+      "TWSE:6155": "Both bracketing original sessions are required",
+      "TPEX:6174": "Both bracketing original sessions are required",
+      "TPEX:6204": "Both bracketing original sessions are required",
+      "TPEX:6248": "Both bracketing original sessions are required",
+      "TPEX:6292": "Split basis differs across bracketing OHLC sessions",
+      "TPEX:6419": "Both bracketing original sessions are required",
+      "TWSE:6443": "Split basis differs across bracketing OHLC sessions",
+      "TPEX:8068": "'8068'",
+      "TPEX:8077": "Both bracketing original sessions are required",
+      "TPEX:8099": "Both bracketing original sessions are required",
+      "TPEX:8905": "Both bracketing original sessions are required",
+      "TPEX:8917": "'8917'",
+      "TPEX:8923": "Both bracketing original sessions are required",
+      "TPEX:8930": "Both bracketing original sessions are required",
+      "TWSE:9918": "Both bracketing original sessions are required",
+      "TWSE:9926": "'9926'",
+      "TPEX:9949": "Both bracketing original sessions are required",
+      "TPEX:9950": "'9950'"
+    },
+    "unresolved_monthly_listings": {},
+    "split_adjusted": true,
+    "session": "regular",
+    "recovery_reason": "Both chart providers omit the official Saturday session"
+  },
+  "collected_at": "2026-11-12T11:41:13.955793+00:00"
+}

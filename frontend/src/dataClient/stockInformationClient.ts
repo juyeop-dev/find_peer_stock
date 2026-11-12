@@ -15,6 +15,7 @@ export interface StockInformation {
   quote: LiveQuote | null; metrics: Record<string, number | null>; metrics_currency?: string;
   financials: StockStatement[]; warnings: string[];
   historical_financials_warning?: string;
+  historical_2016_coverage?: StockInformation["historical_2018_coverage"];
   historical_2017_coverage?: StockInformation["historical_2018_coverage"];
   historical_2018_coverage?: {start: string; end: string; periods: number; annual_periods: number; quarterly_periods: number; note: string};
   historical_2019_coverage?: {start: string; end: string; periods: number; annual_periods: number; quarterly_periods: number; note: string};
@@ -40,6 +41,7 @@ export function mergeInformation(previous: StockInformation | undefined, fresh: 
   const retained = previous?.financials.filter(row => !keys.has(`${row.type}:${row.period_end}`)) ?? [];
   const financials = [...retained, ...fresh.financials].sort((a, b) => a.period_end.localeCompare(b.period_end) || a.type.localeCompare(b.type));
   return { ...fresh,
+    historical_2016_coverage: retainedCoverage(fresh.historical_2016_coverage ?? previous?.historical_2016_coverage, financials),
     historical_2017_coverage: retainedCoverage(fresh.historical_2017_coverage ?? previous?.historical_2017_coverage, financials),
     historical_2018_coverage: retainedCoverage(fresh.historical_2018_coverage ?? previous?.historical_2018_coverage, financials),
     historical_2019_coverage: retainedCoverage(fresh.historical_2019_coverage ?? previous?.historical_2019_coverage, financials),
@@ -57,7 +59,7 @@ function validate(value: StockInformation, ticker: string) {
   if (!value || value.ticker?.toUpperCase() !== ticker.toUpperCase() || !Array.isArray(value.financials) || !Array.isArray(value.warnings)) throw new Error("종목 정보가 일치하지 않습니다.");
   if (value.quote && (value.quote.ticker?.toUpperCase() !== ticker.toUpperCase() || !Number.isFinite(value.quote.price) || value.quote.price <= 0 || !value.quote.currency)) throw new Error("종목 시세 또는 통화가 일치하지 않습니다.");
   for (const row of value.financials) {
-    if (!["annual", "quarterly", "semiannual"].includes(row.type) || !/^\d{4}-\d{2}-\d{2}$/.test(row.period_end) || row.period_end < "2017-01-01" || !row.currency) throw new Error("실적 기간 또는 통화를 확인할 수 없습니다.");
+    if (!["annual", "quarterly", "semiannual"].includes(row.type) || !/^\d{4}-\d{2}-\d{2}$/.test(row.period_end) || row.period_end < "2016-01-01" || !row.currency) throw new Error("실적 기간 또는 통화를 확인할 수 없습니다.");
     for (const key of ["revenue", "operating_income", "net_income", "total_assets", "total_debt", "operating_cash_flow", "free_cash_flow"] as const) if (row[key] != null && !Number.isFinite(row[key])) throw new Error("재무 수치를 확인할 수 없습니다.");
   }
   const profile = (companyProfiles as Record<string, NonNullable<StockInformation["company"]>>)[ticker.toUpperCase()];

@@ -1,0 +1,121 @@
+{
+  "schema_version": 1,
+  "market": "taiwan",
+  "date": "2016-05-04",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "3023.TW",
+      "name": "SINBON Electronics Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Distribution Services",
+      "high_type": "all_time",
+      "reason": "업종: Distribution Services · Electronics Distributors",
+      "description": "SINBON Electronics Co., Ltd. · Electronics Distributors",
+      "change_pct": 3.211683538072707,
+      "session_open": 67.1851806640625,
+      "session_close": 68.64151000976562,
+      "session_volume": 10597556.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:3023",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3023.TW/history/",
+        "date": "2016-05-04",
+        "daily_high": 70.09783172607422,
+        "prior_all_time_or_current_month_high": 70.09783172607422,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:3023",
+        "yahoo_symbol": "3023.TW"
+      }
+    },
+    {
+      "ticker": "4736.TW",
+      "name": "Taidoc Technology Corporation",
+      "exchange": "TWSE",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Medical Specialties",
+      "description": "Taidoc Technology Corporation · Medical Specialties",
+      "change_pct": 0.7407397748964817,
+      "session_open": 110.35037994384766,
+      "session_close": 111.99739837646484,
+      "session_volume": 1931604.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:4736",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4736.TW/history/",
+        "date": "2016-05-04",
+        "daily_high": 113.232666015625,
+        "prior_all_time_or_current_month_high": 114.46792602539062,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:4736",
+        "yahoo_symbol": "4736.TW"
+      }
+    },
+    {
+      "ticker": "5258.TW",
+      "name": "Castles Technology Co. Ltd.",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Computer Processing Hardware",
+      "description": "Castles Technology Co. Ltd. · Computer Processing Hardware",
+      "change_pct": 6.712906155692422,
+      "session_open": 39.561954498291016,
+      "session_close": 39.561954498291016,
+      "session_volume": 303744.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:5258",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/5258.TW/history/",
+        "date": "2016-05-04",
+        "daily_high": 40.225608825683594,
+        "prior_all_time_or_current_month_high": 40.225608825683594,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:5258",
+        "yahoo_symbol": "5258.TW"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-11-12T11:47:01.999915+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 2361,
+    "history_symbols": 1683,
+    "inactive_symbols": 668,
+    "failed_symbols": 10,
+    "coverage_ratio": 0.9940933254577673,
+    "coverage_by_exchange": {
+      "TWSE": {
+        "covered": 907,
+        "total": 914
+      },
+      "TPEX": {
+        "covered": 776,
+        "total": 779
+      }
+    },
+    "session_symbols": 1647,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-11-12T11:47:01.999915+00:00"
+}

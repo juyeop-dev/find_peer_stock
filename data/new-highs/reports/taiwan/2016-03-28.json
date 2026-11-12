@@ -1,0 +1,371 @@
+{
+  "schema_version": 1,
+  "market": "taiwan",
+  "date": "2016-03-28",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "3552.TWO",
+      "name": "Tung Thih Electronic Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Auto Parts: OEM",
+      "description": "Tung Thih Electronic Co., Ltd. · Auto Parts: OEM",
+      "change_pct": 3.6328818924044937,
+      "session_open": 463.2867126464844,
+      "session_close": 473.7762145996094,
+      "session_volume": 2971972.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:3552",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3552.TWO/history/",
+        "date": "2016-03-28",
+        "daily_high": 491.25872802734375,
+        "prior_all_time_or_current_month_high": 491.25872802734375,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:3552",
+        "yahoo_symbol": "3552.TWO"
+      }
+    },
+    {
+      "ticker": "4305.TWO",
+      "name": "Shih-Kuen Plastics Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Process Industries",
+      "high_type": "52_week",
+      "reason": "업종: Process Industries · Chemicals: Specialty",
+      "description": "Shih-Kuen Plastics Co., Ltd. · Chemicals: Specialty",
+      "change_pct": 1.0752729337312639,
+      "session_open": 27.899999618530273,
+      "session_close": 28.200000762939453,
+      "session_volume": 50000.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:4305",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4305.TWO/history/",
+        "date": "2016-03-28",
+        "daily_high": 28.399999618530273,
+        "prior_all_time_or_current_month_high": 37.900001525878906,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:4305",
+        "yahoo_symbol": "4305.TWO"
+      }
+    },
+    {
+      "ticker": "4911.TWO",
+      "name": "G&E Herbal Biotechnology Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Pharmaceuticals: Major",
+      "description": "G&E Herbal Biotechnology Co., Ltd. · Pharmaceuticals: Major",
+      "change_pct": 9.829496057167875,
+      "session_open": 81.68983459472656,
+      "session_close": 88.5647201538086,
+      "session_volume": 414801.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:4911",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4911.TWO/history/",
+        "date": "2016-03-28",
+        "daily_high": 88.5647201538086,
+        "prior_all_time_or_current_month_high": 139.86341857910156,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:4911",
+        "yahoo_symbol": "4911.TWO"
+      }
+    },
+    {
+      "ticker": "6516.TWO",
+      "name": "Kingwaytek Technology Co Ltd",
+      "exchange": "TPEX",
+      "category": "Technology Services",
+      "high_type": "all_time",
+      "reason": "업종: Technology Services · Packaged Software",
+      "description": "Kingwaytek Technology Co Ltd · Packaged Software",
+      "change_pct": 3.688520151885921,
+      "session_open": 87.65923309326172,
+      "session_close": 87.65923309326172,
+      "session_volume": 262988.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:6516",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6516.TWO/history/",
+        "date": "2016-03-28",
+        "daily_high": 88.80261993408203,
+        "prior_all_time_or_current_month_high": 88.80261993408203,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:6516",
+        "yahoo_symbol": "6516.TWO"
+      }
+    },
+    {
+      "ticker": "6532.TWO",
+      "name": "CALITECH CO LTD",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Semiconductors",
+      "description": "CALITECH CO LTD · Semiconductors",
+      "change_pct": 12.994354267440468,
+      "session_open": 44.0,
+      "session_close": 44.0,
+      "session_volume": 1124053.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:6532",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6532.TWO/history/",
+        "date": "2016-03-28",
+        "daily_high": 45.400001525878906,
+        "prior_all_time_or_current_month_high": 45.400001525878906,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:6532",
+        "yahoo_symbol": "6532.TWO"
+      }
+    },
+    {
+      "ticker": "6556.TWO",
+      "name": "Topview Optronics Corp.",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Telecommunications Equipment",
+      "description": "Topview Optronics Corp. · Telecommunications Equipment",
+      "change_pct": 1.3043500581089829,
+      "session_open": 48.93000030517578,
+      "session_close": 48.93000030517578,
+      "session_volume": 60087.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:6556",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6556.TWO/history/",
+        "date": "2016-03-28",
+        "daily_high": 48.93000030517578,
+        "prior_all_time_or_current_month_high": 48.93000030517578,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:6556",
+        "yahoo_symbol": "6556.TWO"
+      }
+    },
+    {
+      "ticker": "8359.TWO",
+      "name": "Cashbox Partyworld Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Consumer Services",
+      "high_type": "all_time",
+      "reason": "업종: Consumer Services · Restaurants",
+      "description": "Cashbox Partyworld Co., Ltd. · Restaurants",
+      "change_pct": 3.853049382213869,
+      "session_open": 69.54000091552734,
+      "session_close": 69.54000091552734,
+      "session_volume": 349013.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:8359",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/8359.TWO/history/",
+        "date": "2016-03-28",
+        "daily_high": 70.98999786376953,
+        "prior_all_time_or_current_month_high": 70.98999786376953,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:8359",
+        "yahoo_symbol": "8359.TWO"
+      }
+    },
+    {
+      "ticker": "8421.TWO",
+      "name": "Xu Yuan Packaging Technology Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Process Industries",
+      "high_type": "52_week",
+      "reason": "업종: Process Industries · Containers/Packaging",
+      "description": "Xu Yuan Packaging Technology Co., Ltd. · Containers/Packaging",
+      "change_pct": 9.665418377289715,
+      "session_open": 13.268292427062988,
+      "session_close": 14.390242576599121,
+      "session_volume": 610102.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:8421",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/8421.TWO/history/",
+        "date": "2016-03-28",
+        "daily_high": 14.390242576599121,
+        "prior_all_time_or_current_month_high": 27.298358917236328,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:8421",
+        "yahoo_symbol": "8421.TWO"
+      }
+    },
+    {
+      "ticker": "1528.TW",
+      "name": "Anderson Industrial Corp.",
+      "exchange": "TWSE",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Industrial Machinery",
+      "description": "Anderson Industrial Corp. · Industrial Machinery",
+      "change_pct": 1.3761489331922006,
+      "session_open": 10.912394523620605,
+      "session_close": 10.961997032165527,
+      "session_volume": 5802209.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:1528",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/1528.TW/history/",
+        "date": "2016-03-28",
+        "daily_high": 11.557217597961426,
+        "prior_all_time_or_current_month_high": 22.839540481567383,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:1528",
+        "yahoo_symbol": "1528.TW"
+      }
+    },
+    {
+      "ticker": "3450.TW",
+      "name": "Elite Advanced Laser Corporation",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Semiconductors",
+      "description": "Elite Advanced Laser Corporation · Semiconductors",
+      "change_pct": 6.376817219129216,
+      "session_open": 110.16413879394531,
+      "session_close": 115.84596252441406,
+      "session_volume": 12350448.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:3450",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3450.TW/history/",
+        "date": "2016-03-28",
+        "daily_high": 117.10858154296875,
+        "prior_all_time_or_current_month_high": 117.10858154296875,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:3450",
+        "yahoo_symbol": "3450.TW"
+      }
+    },
+    {
+      "ticker": "3530.TW",
+      "name": "Silicon Optronics, Inc.",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Semiconductors",
+      "description": "Silicon Optronics, Inc. · Semiconductors",
+      "change_pct": 4.030300872494474,
+      "session_open": 102.98999786376953,
+      "session_close": 102.98999786376953,
+      "session_volume": 200002.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:3530",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3530.TW/history/",
+        "date": "2016-03-28",
+        "daily_high": 103.98999786376953,
+        "prior_all_time_or_current_month_high": 103.98999786376953,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:3530",
+        "yahoo_symbol": "3530.TW"
+      }
+    },
+    {
+      "ticker": "5521.TW",
+      "name": "Kung Sing Engineering Corporation",
+      "exchange": "TWSE",
+      "category": "Industrial Services",
+      "high_type": "52_week",
+      "reason": "업종: Industrial Services · Engineering & Construction",
+      "description": "Kung Sing Engineering Corporation · Engineering & Construction",
+      "change_pct": 1.209672462824063,
+      "session_open": 11.09447193145752,
+      "session_close": 11.228678703308105,
+      "session_volume": 675074.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:5521",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/5521.TW/history/",
+        "date": "2016-03-28",
+        "daily_high": 11.273414611816406,
+        "prior_all_time_or_current_month_high": 18.019737243652344,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:5521",
+        "yahoo_symbol": "5521.TW"
+      }
+    },
+    {
+      "ticker": "6201.TW",
+      "name": "Ya Horng Electronic Co.,Ltd",
+      "exchange": "TWSE",
+      "category": "Consumer Durables",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Durables · Electronics/Appliances",
+      "description": "Ya Horng Electronic Co.,Ltd · Electronics/Appliances",
+      "change_pct": 1.1131696792865853,
+      "session_open": 27.0,
+      "session_close": 27.25,
+      "session_volume": 71000.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:6201",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6201.TW/history/",
+        "date": "2016-03-28",
+        "daily_high": 27.399999618530273,
+        "prior_all_time_or_current_month_high": 49.29999923706055,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:6201",
+        "yahoo_symbol": "6201.TW"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-11-12T11:47:01.999915+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 2361,
+    "history_symbols": 1683,
+    "inactive_symbols": 668,
+    "failed_symbols": 10,
+    "coverage_ratio": 0.9940933254577673,
+    "coverage_by_exchange": {
+      "TWSE": {
+        "covered": 907,
+        "total": 914
+      },
+      "TPEX": {
+        "covered": 776,
+        "total": 779
+      }
+    },
+    "session_symbols": 1644,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-11-12T11:47:01.999915+00:00"
+}

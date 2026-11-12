@@ -1,0 +1,321 @@
+{
+  "schema_version": 1,
+  "market": "china",
+  "date": "2016-01-19",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "603299.SS",
+      "name": "Jiang Su Suyan Jingshen Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Process Industries",
+      "high_type": "all_time",
+      "reason": "업종: Process Industries · Chemicals: Agricultural",
+      "description": "Jiang Su Suyan Jingshen Co., Ltd. Class A · Chemicals: Agricultural",
+      "change_pct": 10.026388344740944,
+      "session_open": 16.68000030517578,
+      "session_close": 16.68000030517578,
+      "session_volume": 634800.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:603299",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/603299.SS/history/",
+        "date": "2016-01-19",
+        "daily_high": 16.68000030517578,
+        "prior_all_time_or_current_month_high": 16.68000030517578,
+        "passes_close_filter": true,
+        "source_symbol": "SSE:603299",
+        "yahoo_symbol": "603299.SS"
+      }
+    },
+    {
+      "ticker": "000586.SZ",
+      "name": "Sichuan Huiyuan Optical Communications Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Electrical Products",
+      "description": "Sichuan Huiyuan Optical Communications Co., Ltd. Class A · Electrical Products",
+      "change_pct": 6.676005135772156,
+      "session_open": 21.65999984741211,
+      "session_close": 22.850000381469727,
+      "session_volume": 21703687.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:000586",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/000586.SZ/history/",
+        "date": "2016-01-19",
+        "daily_high": 23.5,
+        "prior_all_time_or_current_month_high": 23.5,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:000586",
+        "yahoo_symbol": "000586.SZ"
+      }
+    },
+    {
+      "ticker": "002777.SZ",
+      "name": "Sichuan Jiuyuan Yinhai Software Co Ltd Class A",
+      "exchange": "SZSE",
+      "category": "Technology Services",
+      "high_type": "all_time",
+      "reason": "업종: Technology Services · Packaged Software",
+      "description": "Sichuan Jiuyuan Yinhai Software Co Ltd Class A · Packaged Software",
+      "change_pct": 9.997878194980947,
+      "session_open": 10.950971603393555,
+      "session_close": 10.950971603393555,
+      "session_volume": 272421.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002777",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002777.SZ/history/",
+        "date": "2016-01-19",
+        "daily_high": 10.950971603393555,
+        "prior_all_time_or_current_month_high": 10.950971603393555,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:002777",
+        "yahoo_symbol": "002777.SZ"
+      }
+    },
+    {
+      "ticker": "002778.SZ",
+      "name": "Jiangsu Zhongsheng Gaoke Environmental Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Energy Minerals",
+      "high_type": "all_time",
+      "reason": "업종: Energy Minerals · Oil Refining/Marketing",
+      "description": "Jiangsu Zhongsheng Gaoke Environmental Co., Ltd. Class A · Oil Refining/Marketing",
+      "change_pct": 9.984750660321339,
+      "session_open": 20.61428451538086,
+      "session_close": 20.61428451538086,
+      "session_volume": 42000.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002778",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002778.SZ/history/",
+        "date": "2016-01-19",
+        "daily_high": 20.61428451538086,
+        "prior_all_time_or_current_month_high": 20.61428451538086,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:002778",
+        "yahoo_symbol": "002778.SZ"
+      }
+    },
+    {
+      "ticker": "002785.SZ",
+      "name": "XIAMEN WANLI STONE STOCK CO LTD Class A",
+      "exchange": "SZSE",
+      "category": "Non-Energy Minerals",
+      "high_type": "all_time",
+      "reason": "업종: Non-Energy Minerals · Forest Products",
+      "description": "XIAMEN WANLI STONE STOCK CO LTD Class A · Forest Products",
+      "change_pct": 10.011990681893135,
+      "session_open": 18.350000381469727,
+      "session_close": 18.350000381469727,
+      "session_volume": 254190.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002785",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002785.SZ/history/",
+        "date": "2016-01-19",
+        "daily_high": 18.350000381469727,
+        "prior_all_time_or_current_month_high": 18.350000381469727,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:002785",
+        "yahoo_symbol": "002785.SZ"
+      }
+    },
+    {
+      "ticker": "002787.SZ",
+      "name": "Suzhou Hycan Holdings Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Process Industries",
+      "high_type": "all_time",
+      "reason": "업종: Process Industries · Containers/Packaging",
+      "description": "Suzhou Hycan Holdings Co., Ltd. Class A · Containers/Packaging",
+      "change_pct": 10.000001816522497,
+      "session_open": 20.0,
+      "session_close": 23.100000381469727,
+      "session_volume": 43139410.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002787",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002787.SZ/history/",
+        "date": "2016-01-19",
+        "daily_high": 23.100000381469727,
+        "prior_all_time_or_current_month_high": 23.100000381469727,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:002787",
+        "yahoo_symbol": "002787.SZ"
+      }
+    },
+    {
+      "ticker": "200025.SZ",
+      "name": "Shenzhen Tellus Holding Co., Ltd. Class B",
+      "exchange": "SZSE",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "업종: Finance · Real Estate Development",
+      "description": "Shenzhen Tellus Holding Co., Ltd. Class B · Real Estate Development",
+      "change_pct": 10.015177531797171,
+      "session_open": 18.0137939453125,
+      "session_close": 20.0,
+      "session_volume": 1577411.0,
+      "currency": "HKD",
+      "source_symbol": "SZSE:200025",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/200025.SZ/history/",
+        "date": "2016-01-19",
+        "daily_high": 20.0,
+        "prior_all_time_or_current_month_high": 20.0,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:200025",
+        "yahoo_symbol": "200025.SZ"
+      }
+    },
+    {
+      "ticker": "300490.SZ",
+      "name": "HNAC Technology Co Ltd Class A",
+      "exchange": "SZSE",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Industrial Machinery",
+      "description": "HNAC Technology Co Ltd Class A · Industrial Machinery",
+      "change_pct": 10.010700756608838,
+      "session_open": 20.549999237060547,
+      "session_close": 20.549999237060547,
+      "session_volume": 220000.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:300490",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/300490.SZ/history/",
+        "date": "2016-01-19",
+        "daily_high": 20.549999237060547,
+        "prior_all_time_or_current_month_high": 20.549999237060547,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:300490",
+        "yahoo_symbol": "300490.SZ"
+      }
+    },
+    {
+      "ticker": "300491.SZ",
+      "name": "Shijiazhuang Tonhe Electronics Technologies Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Electrical Products",
+      "description": "Shijiazhuang Tonhe Electronics Technologies Co., Ltd. Class A · Electrical Products",
+      "change_pct": 10.00697008205471,
+      "session_open": 26.322221755981445,
+      "session_close": 26.322221755981445,
+      "session_volume": 145706.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:300491",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/300491.SZ/history/",
+        "date": "2016-01-19",
+        "daily_high": 26.322221755981445,
+        "prior_all_time_or_current_month_high": 26.322221755981445,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:300491",
+        "yahoo_symbol": "300491.SZ"
+      }
+    },
+    {
+      "ticker": "300494.SZ",
+      "name": "Hubei Century Network Technology Inc. Class A",
+      "exchange": "SZSE",
+      "category": "Commercial Services",
+      "high_type": "all_time",
+      "reason": "업종: Commercial Services · Advertising/Marketing Services",
+      "description": "Hubei Century Network Technology Inc. Class A · Advertising/Marketing Services",
+      "change_pct": 10.0026836225082,
+      "session_open": 22.7277774810791,
+      "session_close": 22.7277774810791,
+      "session_volume": 534510.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:300494",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/300494.SZ/history/",
+        "date": "2016-01-19",
+        "daily_high": 22.7277774810791,
+        "prior_all_time_or_current_month_high": 22.7277774810791,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:300494",
+        "yahoo_symbol": "300494.SZ"
+      }
+    },
+    {
+      "ticker": "300496.SZ",
+      "name": "Thunder Software Technology Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Technology Services",
+      "high_type": "all_time",
+      "reason": "업종: Technology Services · Packaged Software",
+      "description": "Thunder Software Technology Co., Ltd. Class A · Packaged Software",
+      "change_pct": 5.666193532934338,
+      "session_open": 53.21424102783203,
+      "session_close": 57.82443618774414,
+      "session_volume": 31308817.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:300496",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/300496.SZ/history/",
+        "date": "2016-01-19",
+        "daily_high": 59.81485366821289,
+        "prior_all_time_or_current_month_high": 59.81485366821289,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:300496",
+        "yahoo_symbol": "300496.SZ"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-11-12T11:53:30.700518+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 5315,
+    "history_symbols": 2870,
+    "inactive_symbols": 2437,
+    "failed_symbols": 8,
+    "coverage_ratio": 0.9972202918693537,
+    "coverage_by_exchange": {
+      "SSE": {
+        "covered": 1120,
+        "total": 1122
+      },
+      "SZSE": {
+        "covered": 1750,
+        "total": 1756
+      }
+    },
+    "session_symbols": 2649,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-11-12T11:53:30.700518+00:00"
+}

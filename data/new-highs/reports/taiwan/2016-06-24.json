@@ -1,0 +1,271 @@
+{
+  "schema_version": 1,
+  "market": "taiwan",
+  "date": "2016-06-24",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "3555.TWO",
+      "name": "BaaS Innovation Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Semiconductors",
+      "description": "BaaS Innovation Co., Ltd. · Semiconductors",
+      "change_pct": 9.943720363889152,
+      "session_open": 73.52912139892578,
+      "session_close": 79.79271697998047,
+      "session_volume": 269503.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:3555",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3555.TWO/history/",
+        "date": "2016-06-24",
+        "daily_high": 79.79271697998047,
+        "prior_all_time_or_current_month_high": 2033.07861328125,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:3555",
+        "yahoo_symbol": "3555.TWO"
+      }
+    },
+    {
+      "ticker": "8088.TWO",
+      "name": "Panram International Corp.",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Computer Peripherals",
+      "description": "Panram International Corp. · Computer Peripherals",
+      "change_pct": 1.886785482059472,
+      "session_open": 20.371801376342773,
+      "session_close": 20.51426124572754,
+      "session_volume": 5114195.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:8088",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/8088.TWO/history/",
+        "date": "2016-06-24",
+        "daily_high": 21.796403884887695,
+        "prior_all_time_or_current_month_high": 52.900203704833984,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:8088",
+        "yahoo_symbol": "8088.TWO"
+      }
+    },
+    {
+      "ticker": "8444.TWO",
+      "name": "Green River Holding Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Non-Energy Minerals",
+      "high_type": "all_time",
+      "reason": "업종: Non-Energy Minerals · Forest Products",
+      "description": "Green River Holding Co., Ltd. · Forest Products",
+      "change_pct": 1.2244887547360195,
+      "session_open": 104.68036651611328,
+      "session_close": 105.96216583251953,
+      "session_volume": 444732.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:8444",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/8444.TWO/history/",
+        "date": "2016-06-24",
+        "daily_high": 105.96216583251953,
+        "prior_all_time_or_current_month_high": 105.96216583251953,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:8444",
+        "yahoo_symbol": "8444.TWO"
+      }
+    },
+    {
+      "ticker": "1527.TW",
+      "name": "Basso Industry Corp. Ltd.",
+      "exchange": "TWSE",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Miscellaneous Manufacturing",
+      "description": "Basso Industry Corp. Ltd. · Miscellaneous Manufacturing",
+      "change_pct": 0.3816832793662073,
+      "session_open": 78.5999984741211,
+      "session_close": 78.9000015258789,
+      "session_volume": 2359000.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:1527",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/1527.TW/history/",
+        "date": "2016-06-24",
+        "daily_high": 79.5,
+        "prior_all_time_or_current_month_high": 79.5,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:1527",
+        "yahoo_symbol": "1527.TW"
+      }
+    },
+    {
+      "ticker": "1909.TW",
+      "name": "Longchen Paper & Packaging Co. Ltd.",
+      "exchange": "TWSE",
+      "category": "Process Industries",
+      "high_type": "52_week",
+      "reason": "업종: Process Industries · Pulp & Paper",
+      "description": "Longchen Paper & Packaging Co. Ltd. · Pulp & Paper",
+      "change_pct": 0.0,
+      "session_open": 15.136296272277832,
+      "session_close": 15.185280799865723,
+      "session_volume": 7846314.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:1909",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/1909.TW/history/",
+        "date": "2016-06-24",
+        "daily_high": 15.381219863891602,
+        "prior_all_time_or_current_month_high": 16.44269561767578,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:1909",
+        "yahoo_symbol": "1909.TW"
+      }
+    },
+    {
+      "ticker": "2543.TW",
+      "name": "Hwang Chang General Contractor Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Industrial Services",
+      "high_type": "52_week",
+      "reason": "업종: Industrial Services · Engineering & Construction",
+      "description": "Hwang Chang General Contractor Co., Ltd. · Engineering & Construction",
+      "change_pct": 0.9523641882096756,
+      "session_open": 5.688765048980713,
+      "session_close": 5.742942810058594,
+      "session_volume": 221489.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2543",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2543.TW/history/",
+        "date": "2016-06-24",
+        "daily_high": 5.905479907989502,
+        "prior_all_time_or_current_month_high": 8.073240280151367,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:2543",
+        "yahoo_symbol": "2543.TW"
+      }
+    },
+    {
+      "ticker": "3054.TW",
+      "name": "LIWANLI Innovation Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Computer Peripherals",
+      "description": "LIWANLI Innovation Co., Ltd. · Computer Peripherals",
+      "change_pct": 0.47732372247670796,
+      "session_open": 28.250904083251953,
+      "session_close": 28.31816864013672,
+      "session_volume": 1763943.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:3054",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3054.TW/history/",
+        "date": "2016-06-24",
+        "daily_high": 30.537883758544922,
+        "prior_all_time_or_current_month_high": 263.1869201660156,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:3054",
+        "yahoo_symbol": "3054.TW"
+      }
+    },
+    {
+      "ticker": "4943.TW",
+      "name": "Concraft Holding Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Electronic Components",
+      "description": "Concraft Holding Co., Ltd. · Electronic Components",
+      "change_pct": 1.7722465118439779,
+      "session_open": 75.210693359375,
+      "session_close": 75.210693359375,
+      "session_volume": 228993.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:4943",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4943.TW/history/",
+        "date": "2016-06-24",
+        "daily_high": 77.67449188232422,
+        "prior_all_time_or_current_month_high": 77.67449188232422,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:4943",
+        "yahoo_symbol": "4943.TW"
+      }
+    },
+    {
+      "ticker": "5258.TW",
+      "name": "Castles Technology Co. Ltd.",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Computer Processing Hardware",
+      "description": "Castles Technology Co. Ltd. · Computer Processing Hardware",
+      "change_pct": 7.03747840245601,
+      "session_open": 44.539344787597656,
+      "session_close": 44.539344787597656,
+      "session_volume": 585041.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:5258",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/5258.TW/history/",
+        "date": "2016-06-24",
+        "daily_high": 46.26483917236328,
+        "prior_all_time_or_current_month_high": 46.26483917236328,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:5258",
+        "yahoo_symbol": "5258.TW"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-11-12T11:47:01.999915+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 2361,
+    "history_symbols": 1683,
+    "inactive_symbols": 668,
+    "failed_symbols": 10,
+    "coverage_ratio": 0.9940933254577673,
+    "coverage_by_exchange": {
+      "TWSE": {
+        "covered": 907,
+        "total": 914
+      },
+      "TPEX": {
+        "covered": 776,
+        "total": 779
+      }
+    },
+    "session_symbols": 1651,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-11-12T11:47:01.999915+00:00"
+}

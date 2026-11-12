@@ -1,0 +1,239 @@
+{
+  "schema_version": 1,
+  "market": "china",
+  "date": "2026-11-03",
+  "summary": "장 마감 후 TradingView 주식 스냅샷 기준. 당일 장중 고가가 52주·전체기간 고가에 도달하고, 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다. 전체기간 신고가를 우선 표시하며 신고가 배경은 별도 확인 전입니다.",
+  "sources": [
+    {
+      "label": "TradingView stock screener",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "600261.SS",
+      "name": "Zhejiang Yankon Group Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Electrical Products",
+      "description": "Zhejiang Yankon Group Co., Ltd. Class A · Electrical Products",
+      "change_pct": 10.000000000000004,
+      "session_open": 4.95,
+      "session_close": 4.95,
+      "session_volume": 340716610,
+      "source_symbol": "SSE:600261",
+      "currency": "CNY"
+    },
+    {
+      "ticker": "600887.SS",
+      "name": "Inner Mongolia Yili Industrial Group Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Process Industries",
+      "high_type": "52_week",
+      "reason": "업종: Process Industries · Agricultural Commodities/Milling",
+      "description": "Inner Mongolia Yili Industrial Group Co., Ltd. Class A · Agricultural Commodities/Milling",
+      "change_pct": 2.775963422599601,
+      "session_open": 31,
+      "session_close": 31.47,
+      "session_volume": 103591032,
+      "source_symbol": "SSE:600887",
+      "currency": "CNY"
+    },
+    {
+      "ticker": "601083.SS",
+      "name": "Shanghai Jinjiang Shipping (Group) Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Transportation",
+      "high_type": "52_week",
+      "reason": "업종: Transportation · Marine Shipping",
+      "description": "Shanghai Jinjiang Shipping (Group) Co., Ltd. Class A · Marine Shipping",
+      "change_pct": 5.25568181818182,
+      "session_open": 14.08,
+      "session_close": 14.82,
+      "session_volume": 28778040,
+      "source_symbol": "SSE:601083",
+      "currency": "CNY"
+    },
+    {
+      "ticker": "601088.SS",
+      "name": "China Shenhua Energy Co. Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Energy Minerals",
+      "high_type": "52_week",
+      "reason": "업종: Energy Minerals · Coal",
+      "description": "China Shenhua Energy Co. Ltd. Class A · Coal",
+      "change_pct": 0.30864197530863535,
+      "session_open": 51.59,
+      "session_close": 52,
+      "session_volume": 33918433,
+      "source_symbol": "SSE:601088",
+      "currency": "CNY"
+    },
+    {
+      "ticker": "603939.SS",
+      "name": "Yifeng Pharmacy Chain Co Ltd Class A",
+      "exchange": "SSE",
+      "category": "Retail Trade",
+      "high_type": "52_week",
+      "reason": "업종: Retail Trade · Drugstore Chains",
+      "description": "Yifeng Pharmacy Chain Co Ltd Class A · Drugstore Chains",
+      "change_pct": 2.627627627627625,
+      "session_open": 26.79,
+      "session_close": 27.34,
+      "session_volume": 14935106,
+      "source_symbol": "SSE:603939",
+      "currency": "CNY"
+    },
+    {
+      "ticker": "000333.SZ",
+      "name": "Midea Group Co. Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Consumer Durables",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Durables · Electronics/Appliances",
+      "description": "Midea Group Co. Ltd. Class A · Electronics/Appliances",
+      "change_pct": 1.3917408167921503,
+      "session_open": 88.5,
+      "session_close": 88.88,
+      "session_volume": 34676849,
+      "source_symbol": "SZSE:000333",
+      "currency": "CNY",
+      "peers": [
+        {
+          "ticker": "066570.KS",
+          "name": "LG전자"
+        },
+        {
+          "ticker": "005930.KS",
+          "name": "삼성전자"
+        }
+      ]
+    },
+    {
+      "ticker": "000678.SZ",
+      "name": "Xiangyang Automobile Bearing Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Auto Parts: OEM",
+      "description": "Xiangyang Automobile Bearing Co., Ltd. Class A · Auto Parts: OEM",
+      "change_pct": 1.8602312719959828,
+      "session_open": 19.91,
+      "session_close": 20.26,
+      "session_volume": 156326862,
+      "source_symbol": "SZSE:000678",
+      "currency": "CNY"
+    },
+    {
+      "ticker": "001381.SZ",
+      "name": "CROWN NEW MATERIALS TECHN CO L",
+      "exchange": "SZSE",
+      "category": "Process Industries",
+      "high_type": "all_time",
+      "reason": "업종: Process Industries · Industrial Specialties",
+      "description": "CROWN NEW MATERIALS TECHN CO L · Industrial Specialties",
+      "change_pct": null,
+      "session_open": 56,
+      "session_close": 84.55,
+      "session_volume": 38519573,
+      "source_symbol": "SZSE:001381",
+      "currency": "CNY"
+    },
+    {
+      "ticker": "002086.SZ",
+      "name": "Shandong Oriental Ocean Sci-Tech Co., Ltd Class A",
+      "exchange": "SZSE",
+      "category": "Consumer Non-Durables",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Non-Durables · Food: Meat/Fish/Dairy",
+      "description": "Shandong Oriental Ocean Sci-Tech Co., Ltd Class A · Food: Meat/Fish/Dairy",
+      "change_pct": 9.96784565916399,
+      "session_open": 3.42,
+      "session_close": 3.42,
+      "session_volume": 230574151,
+      "source_symbol": "SZSE:002086",
+      "currency": "CNY"
+    },
+    {
+      "ticker": "002293.SZ",
+      "name": "Luolai Lifestyle Technology Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Process Industries",
+      "high_type": "52_week",
+      "reason": "업종: Process Industries · Textiles",
+      "description": "Luolai Lifestyle Technology Co., Ltd. Class A · Textiles",
+      "change_pct": 1.8930041152263408,
+      "session_open": 12.15,
+      "session_close": 12.38,
+      "session_volume": 11597634,
+      "source_symbol": "SZSE:002293",
+      "currency": "CNY"
+    },
+    {
+      "ticker": "180505.SZ",
+      "name": "CICC Hangzhou Anju Affordable Rental Housing Closed Infrastructure Real Estate Investment Trust",
+      "exchange": "SZSE",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "업종: Finance · Real Estate Investment Trusts",
+      "description": "CICC Hangzhou Anju Affordable Rental Housing Closed Infrastructure Real Estate Investment Trust · Real Estate Investment Trusts",
+      "change_pct": 1.761879337960487,
+      "session_open": 3.729,
+      "session_close": 3.812,
+      "session_volume": 1341563,
+      "source_symbol": "SZSE:180505",
+      "currency": "CNY"
+    },
+    {
+      "ticker": "201872.SZ",
+      "name": "China Merchants Port Group Co., Ltd. Class B",
+      "exchange": "SZSE",
+      "category": "Transportation",
+      "high_type": "52_week",
+      "reason": "업종: Transportation · Other Transportation",
+      "description": "China Merchants Port Group Co., Ltd. Class B · Other Transportation",
+      "change_pct": 0.15463917525773782,
+      "session_open": 19.35,
+      "session_close": 19.43,
+      "session_volume": 183645,
+      "source_symbol": "SZSE:201872",
+      "currency": "HKD"
+    }
+  ],
+  "source_metadata": {
+    "provider": "TradingView public scanner",
+    "scanner": "china",
+    "fetched_at": "2026-11-03T08:02:01.747097+00:00",
+    "universe": "TradingView-listed stock instruments, including common and preferred shares; ETFs excluded",
+    "definition": "daily high >= period high; close >= open; close >= previous close when one exists; all-time takes precedence; ties included",
+    "scanner_exchanges": [
+      "SSE",
+      "SZSE"
+    ],
+    "latest_session_by_exchange": {
+      "SZSE": "2026-11-03",
+      "SSE": "2026-11-03"
+    },
+    "previous_session_by_exchange": {
+      "SZSE": "2026-11-02",
+      "SSE": "2026-11-02"
+    },
+    "current_session_reference_symbols": {
+      "SZSE": "SZSE:000001",
+      "SSE": "SSE:508060"
+    },
+    "scanned_symbols": 5312,
+    "current_session_symbols": 5307,
+    "excluded_symbols": {
+      "other_session": 5,
+      "bearish_or_down_close": 7
+    },
+    "pagination_complete": true
+  },
+  "collected_at": "2026-11-03T08:01:59.397428+00:00"
+}

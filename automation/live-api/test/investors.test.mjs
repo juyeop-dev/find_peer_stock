@@ -37,8 +37,18 @@ test("manual refresh queries both original markets and pairs exact dates even wh
 test("invalid requests are rejected before source access and missing selected dates never fall back to latest",async()=>{
   let calls=0;
   const fetcher=async(url)=>{calls++;return json(url.includes('/trend/daily')?{content:[row()]}:[index("2024-01-02")]);};
-  for(const date of ["2024-02-30","2016-12-30","2099-01-01",123])assert.equal((await handle(request({kind:"investors",date}),{},fetcher)).status,400);
+  for(const date of ["2024-02-30","2015-12-31","2099-01-01",123])assert.equal((await handle(request({kind:"investors",date}),{},fetcher)).status,400);
   assert.equal(calls,0);
   const response=await handle(request({kind:"investors",date:"2024-01-03"}),{},fetcher);
   assert.equal(response.status,502);
+});
+
+test("an unrelated malformed amount does not hide a valid requested historical day",async()=>{
+  const bad={bizdate:"20151231",netAmounts:[]};
+  const fetcher=async(url)=>json(url.includes('/trend/daily')?{content:[row(),bad]}:[index("2024-01-02")]);
+  const value=await investorSnapshot("2024-01-02",fetcher);
+  assert.equal(value.date,"2024-01-02");
+  assert.equal(value.markets.length,2);
+  const invalidTarget=async(url)=>json(url.includes('/trend/daily')?{content:[{...row(),netAmounts:[]}]}:[index("2024-01-02")]);
+  await assert.rejects(()=>investorSnapshot("2024-01-02",invalidTarget),/Missing investor amounts/);
 });

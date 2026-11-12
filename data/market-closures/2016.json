@@ -1,0 +1,145 @@
+{
+  "schema_version": 1,
+  "year": 2016,
+  "markets": [
+    {
+      "market": "korea",
+      "source_urls": [
+        "https://github.com/FinanceData/marcap"
+      ],
+      "dates": {
+        "2016-01-01": "Exchange non-trading day",
+        "2016-02-08": "Exchange non-trading day",
+        "2016-02-09": "Exchange non-trading day",
+        "2016-02-10": "Exchange non-trading day",
+        "2016-03-01": "Exchange non-trading day",
+        "2016-04-13": "Exchange non-trading day",
+        "2016-05-05": "Exchange non-trading day",
+        "2016-05-06": "Exchange non-trading day",
+        "2016-06-06": "Exchange non-trading day",
+        "2016-08-15": "Exchange non-trading day",
+        "2016-09-14": "Exchange non-trading day",
+        "2016-09-15": "Exchange non-trading day",
+        "2016-09-16": "Exchange non-trading day",
+        "2016-10-03": "Exchange non-trading day",
+        "2016-12-30": "Exchange non-trading day"
+      }
+    },
+    {
+      "market": "us",
+      "source_urls": [
+        "https://www.nasdaq.net/PublicPages/assets/MyMID/2016_Trade_Calendar.pdf"
+      ],
+      "dates": {
+        "2016-01-01": "Exchange non-trading day",
+        "2016-01-18": "Exchange non-trading day",
+        "2016-02-15": "Exchange non-trading day",
+        "2016-03-25": "Exchange non-trading day",
+        "2016-05-30": "Exchange non-trading day",
+        "2016-07-04": "Exchange non-trading day",
+        "2016-09-05": "Exchange non-trading day",
+        "2016-11-24": "Exchange non-trading day",
+        "2016-12-26": "Exchange non-trading day"
+      }
+    },
+    {
+      "market": "japan",
+      "source_urls": [
+        "https://www8.cao.go.jp/chosei/shukujitsu/syukujitsu.csv",
+        "https://www.jpx.co.jp/english/corporate/about-jpx/calendar/"
+      ],
+      "dates": {
+        "2016-01-01": "Exchange non-trading day",
+        "2016-01-11": "Exchange non-trading day",
+        "2016-02-11": "Exchange non-trading day",
+        "2016-03-21": "Exchange non-trading day",
+        "2016-04-29": "Exchange non-trading day",
+        "2016-05-03": "Exchange non-trading day",
+        "2016-05-04": "Exchange non-trading day",
+        "2016-05-05": "Exchange non-trading day",
+        "2016-07-18": "Exchange non-trading day",
+        "2016-08-11": "Exchange non-trading day",
+        "2016-09-19": "Exchange non-trading day",
+        "2016-09-22": "Exchange non-trading day",
+        "2016-10-10": "Exchange non-trading day",
+        "2016-11-03": "Exchange non-trading day",
+        "2016-11-23": "Exchange non-trading day",
+        "2016-12-23": "Exchange non-trading day"
+      }
+    },
+    {
+      "market": "china",
+      "source_urls": [
+        "https://www.sse.com.cn/disclosure/dealinstruc/closed/list/c/c_20160104_4028872.shtml"
+      ],
+      "dates": {
+        "2016-01-01": "Exchange non-trading day",
+        "2016-02-08": "Exchange non-trading day",
+        "2016-02-09": "Exchange non-trading day",
+        "2016-02-10": "Exchange non-trading day",
+        "2016-02-11": "Exchange non-trading day",
+        "2016-02-12": "Exchange non-trading day",
+        "2016-04-04": "Exchange non-trading day",
+        "2016-05-02": "Exchange non-trading day",
+        "2016-06-09": "Exchange non-trading day",
+        "2016-06-10": "Exchange non-trading day",
+        "2016-09-15": "Exchange non-trading day",
+        "2016-09-16": "Exchange non-trading day",
+        "2016-10-03": "Exchange non-trading day",
+        "2016-10-04": "Exchange non-trading day",
+        "2016-10-05": "Exchange non-trading day",
+        "2016-10-06": "Exchange non-trading day",
+        "2016-10-07": "Exchange non-trading day"
+      }
+    },
+    {
+      "market": "taiwan",
+      "source_urls": [
+        "https://www.tpex.org.tw/storage/en-us/web/bulletin/trading_date/trading_date_105.htm",
+        "https://wwwc.twse.com.tw/en/clearing/suspended.html"
+      ],
+      "dates": {
+        "2016-01-01": "Exchange non-trading day",
+        "2016-02-04": "Exchange non-trading day",
+        "2016-02-05": "Exchange non-trading day",
+        "2016-02-08": "Exchange non-trading day",
+        "2016-02-09": "Exchange non-trading day",
+        "2016-02-10": "Exchange non-trading day",
+        "2016-02-11": "Exchange non-trading day",
+        "2016-02-12": "Exchange non-trading day",
+        "2016-02-29": "Exchange non-trading day",
+        "2016-04-04": "Exchange non-trading day",
+        "2016-04-05": "Exchange non-trading day",
+        "2016-05-02": "Exchange non-trading day",
+        "2016-06-09": "Exchange non-trading day",
+        "2016-06-10": "Exchange non-trading day",
+        "2016-07-08": "Typhoon market closure; verify against actual TWSE/TPEx originals",
+        "2016-09-15": "Exchange non-trading day",
+        "2016-09-16": "Exchange non-trading day",
+        "2016-09-27": "Typhoon market closure; verify against actual TWSE/TPEx originals",
+        "2016-09-28": "Typhoon market closure; verify against actual TWSE/TPEx originals",
+        "2016-10-10": "Exchange non-trading day"
+      },
+      "additional_open_dates": {
+        "2016-01-30": "Official Saturday make-up trading session",
+        "2016-06-04": "Official Saturday make-up trading session",
+        "2016-09-10": "Official Saturday make-up trading session"
+      }
+    },
+    {
+      "market": "europe",
+      "source_urls": [
+        "https://www.euronext.com/en/about/media/euronext-press-releases/euronext-announces-calendar-2016",
+        "https://www.londonstockexchange.com/equities-trading/business-days",
+        "https://www.six-group.com/dam/download/sites/education/preparatory-documentation/trading-module/trading-guide.pdf",
+        "https://cashmarket.deutsche-boerse.com/resource/blob/259998/85c710e77ed5d595695f5b1d6418eac7/data/trading-calendar-2016.pdf"
+      ],
+      "dates": {
+        "2016-01-01": "Exchange non-trading day",
+        "2016-03-25": "Exchange non-trading day",
+        "2016-03-28": "Exchange non-trading day",
+        "2016-12-26": "Exchange non-trading day"
+      }
+    }
+  ]
+}

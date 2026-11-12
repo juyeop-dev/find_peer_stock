@@ -167,7 +167,7 @@ class SemiconductorDataTests(unittest.TestCase):
         def check_request(url):
             query = urllib.parse.parse_qs(urllib.parse.urlsplit(url).query)
             start = datetime.fromtimestamp(int(query["period1"][0]), tz=semis.KST)
-            self.assertLess(start, datetime(2018, 1, 1, tzinfo=semis.KST))
+            self.assertLess(start, datetime(2016, 1, 1, tzinfo=semis.KST))
             return {"chart": {"result": [{"timestamp": [1514851200, 1514937600], "indicators": {
                 "quote": [{"close": [100, 101], "volume": [10, 20]}]}}]}}
         with patch.object(semis, "fetch_json", side_effect=check_request):

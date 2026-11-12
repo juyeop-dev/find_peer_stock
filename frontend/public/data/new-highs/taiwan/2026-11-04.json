@@ -1,0 +1,214 @@
+{
+  "schema_version": 1,
+  "market": "taiwan",
+  "date": "2026-11-04",
+  "summary": "장 마감 후 TradingView 주식 스냅샷 기준. 당일 장중 고가가 52주·전체기간 고가에 도달하고, 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다. 전체기간 신고가를 우선 표시하며 신고가 배경은 별도 확인 전입니다.",
+  "sources": [
+    {
+      "label": "TradingView stock screener",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "5209.TWO",
+      "name": "CTCI Advanced Systems Inc.",
+      "exchange": "TPEX",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Electrical Products",
+      "description": "CTCI Advanced Systems Inc. · Electrical Products",
+      "change_pct": 3.9215686274509802,
+      "session_open": 204.5,
+      "session_close": 212,
+      "session_volume": 761128,
+      "source_symbol": "TPEX:5209",
+      "currency": "TWD"
+    },
+    {
+      "ticker": "6199.TWO",
+      "name": "TienPin United Enterprise Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Computer Peripherals",
+      "description": "TienPin United Enterprise Co., Ltd. · Computer Peripherals",
+      "change_pct": 0.60790273556231,
+      "session_open": 165,
+      "session_close": 165.5,
+      "session_volume": 8780849,
+      "source_symbol": "TPEX:6199",
+      "currency": "TWD"
+    },
+    {
+      "ticker": "8099.TWO",
+      "name": "Tatung System Technologies Inc.",
+      "exchange": "TPEX",
+      "category": "Commercial Services",
+      "high_type": "all_time",
+      "reason": "업종: Commercial Services · Miscellaneous Commercial Services",
+      "description": "Tatung System Technologies Inc. · Miscellaneous Commercial Services",
+      "change_pct": 6.691449814126393,
+      "session_open": 141,
+      "session_close": 143.5,
+      "session_volume": 2186884,
+      "source_symbol": "TPEX:8099",
+      "currency": "TWD"
+    },
+    {
+      "ticker": "8272.TWO",
+      "name": "Changing Information Technology, Inc.",
+      "exchange": "TPEX",
+      "category": "Technology Services",
+      "high_type": "52_week",
+      "reason": "업종: Technology Services · Information Technology Services",
+      "description": "Changing Information Technology, Inc. · Information Technology Services",
+      "change_pct": 9.110169491525417,
+      "session_open": 90,
+      "session_close": 103,
+      "session_volume": 898218,
+      "source_symbol": "TPEX:8272",
+      "currency": "TWD"
+    },
+    {
+      "ticker": "8432.TWO",
+      "name": "TSH Biopharm Corp. Ltd.",
+      "exchange": "TPEX",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Pharmaceuticals: Major",
+      "description": "TSH Biopharm Corp. Ltd. · Pharmaceuticals: Major",
+      "change_pct": 6.315789473684213,
+      "session_open": 59.5,
+      "session_close": 60.6,
+      "session_volume": 615072,
+      "source_symbol": "TPEX:8432",
+      "currency": "TWD"
+    },
+    {
+      "ticker": "1416.TW",
+      "name": "Kwong Fong Industries Corporation",
+      "exchange": "TWSE",
+      "category": "Technology Services",
+      "high_type": "52_week",
+      "reason": "업종: Technology Services · Information Technology Services",
+      "description": "Kwong Fong Industries Corporation · Information Technology Services",
+      "change_pct": 4.044117647058829,
+      "session_open": 13.65,
+      "session_close": 14.15,
+      "session_volume": 2720441,
+      "source_symbol": "TWSE:1416",
+      "currency": "TWD"
+    },
+    {
+      "ticker": "2033.TW",
+      "name": "Chia Ta World Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Metal Fabrication",
+      "description": "Chia Ta World Co., Ltd. · Metal Fabrication",
+      "change_pct": 9.985734664764623,
+      "session_open": 69.3,
+      "session_close": 77.1,
+      "session_volume": 5525110,
+      "source_symbol": "TWSE:2033",
+      "currency": "TWD"
+    },
+    {
+      "ticker": "2254.TW",
+      "name": "Coplus Inc.",
+      "exchange": "TWSE",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Auto Parts: OEM",
+      "description": "Coplus Inc. · Auto Parts: OEM",
+      "change_pct": 0.9389671361502347,
+      "session_open": 106.5,
+      "session_close": 107.5,
+      "session_volume": 2910735,
+      "source_symbol": "TWSE:2254",
+      "currency": "TWD"
+    },
+    {
+      "ticker": "2412.TW",
+      "name": "Chunghwa Telecom Co., Ltd",
+      "exchange": "TWSE",
+      "category": "Communications",
+      "high_type": "all_time",
+      "reason": "업종: Communications · Major Telecommunications",
+      "description": "Chunghwa Telecom Co., Ltd · Major Telecommunications",
+      "change_pct": 1.5723270440251573,
+      "session_open": 159.5,
+      "session_close": 161.5,
+      "session_volume": 16336099,
+      "source_symbol": "TWSE:2412",
+      "currency": "TWD"
+    },
+    {
+      "ticker": "2465.TW",
+      "name": "Leadtek Research Inc.",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Computer Processing Hardware",
+      "description": "Leadtek Research Inc. · Computer Processing Hardware",
+      "change_pct": 9.649122807017543,
+      "session_open": 114,
+      "session_close": 125,
+      "session_volume": 10796715,
+      "source_symbol": "TWSE:2465",
+      "currency": "TWD"
+    },
+    {
+      "ticker": "6467.TW",
+      "name": "TAHO Pharmaceuticals Ltd",
+      "exchange": "TWSE",
+      "category": "Health Technology",
+      "high_type": "all_time",
+      "reason": "업종: Health Technology · Pharmaceuticals: Major",
+      "description": "TAHO Pharmaceuticals Ltd · Pharmaceuticals: Major",
+      "change_pct": 5.487804878048781,
+      "session_open": 255.5,
+      "session_close": 259.5,
+      "session_volume": 1536013,
+      "source_symbol": "TWSE:6467",
+      "currency": "TWD"
+    }
+  ],
+  "source_metadata": {
+    "provider": "TradingView public scanner",
+    "scanner": "taiwan",
+    "fetched_at": "2026-11-04T06:44:39.401769+00:00",
+    "universe": "TradingView-listed stock instruments, including common and preferred shares; ETFs excluded",
+    "definition": "daily high >= period high; close >= open; close >= previous close when one exists; all-time takes precedence; ties included",
+    "scanner_exchanges": [
+      "TWSE",
+      "TPEX"
+    ],
+    "latest_session_by_exchange": {
+      "TWSE": "2026-11-04",
+      "TPEX": "2026-11-04"
+    },
+    "previous_session_by_exchange": {
+      "TWSE": "2026-11-03",
+      "TPEX": "2026-11-03"
+    },
+    "current_session_reference_symbols": {
+      "TWSE": "TWSE:01001T",
+      "TPEX": "TPEX:1240"
+    },
+    "scanned_symbols": 2356,
+    "current_session_symbols": 2327,
+    "excluded_symbols": {
+      "other_session": 29,
+      "bearish_or_down_close": 1
+    },
+    "pagination_complete": true
+  },
+  "collected_at": "2026-11-04T06:44:38.834751+00:00"
+}

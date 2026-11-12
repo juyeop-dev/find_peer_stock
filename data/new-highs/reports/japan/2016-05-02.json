@@ -1,0 +1,267 @@
+{
+  "schema_version": 1,
+  "market": "japan",
+  "date": "2016-05-02",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "2664.T",
+      "name": "Cawachi Limited",
+      "exchange": "TSE",
+      "category": "Retail Trade",
+      "high_type": "52_week",
+      "reason": "업종: Retail Trade · Drugstore Chains",
+      "description": "Cawachi Limited · Drugstore Chains",
+      "change_pct": 0.3903200624512104,
+      "session_open": 2497.0,
+      "session_close": 2572.0,
+      "session_volume": 315700.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:2664",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2664.T/history/",
+        "date": "2016-05-02",
+        "daily_high": 2623.0,
+        "prior_all_time_or_current_month_high": 5600.0,
+        "passes_close_filter": true,
+        "source_symbol": "TSE:2664",
+        "yahoo_symbol": "2664.T"
+      }
+    },
+    {
+      "ticker": "3698.T",
+      "name": "CRI Middleware Co., Ltd.",
+      "exchange": "TSE",
+      "category": "Technology Services",
+      "high_type": "52_week",
+      "reason": "업종: Technology Services · Packaged Software",
+      "description": "CRI Middleware Co., Ltd. · Packaged Software",
+      "change_pct": 19.595645412130636,
+      "session_open": 3280.0,
+      "session_close": 3845.0,
+      "session_volume": 1284600.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:3698",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3698.T/history/",
+        "date": "2016-05-02",
+        "daily_high": 3855.0,
+        "prior_all_time_or_current_month_high": 6773.33349609375,
+        "passes_close_filter": true,
+        "source_symbol": "TSE:3698",
+        "yahoo_symbol": "3698.T"
+      }
+    },
+    {
+      "ticker": "3933.T",
+      "name": "CHIeru Co., Ltd.",
+      "exchange": "TSE",
+      "category": "Technology Services",
+      "high_type": "all_time",
+      "reason": "업종: Technology Services · Information Technology Services",
+      "description": "CHIeru Co., Ltd. · Information Technology Services",
+      "change_pct": 18.656716417910445,
+      "session_open": 714.75,
+      "session_close": 795.0,
+      "session_volume": 4371600.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:3933",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3933.T/history/",
+        "date": "2016-05-02",
+        "daily_high": 795.0,
+        "prior_all_time_or_current_month_high": 795.0,
+        "passes_close_filter": true,
+        "source_symbol": "TSE:3933",
+        "yahoo_symbol": "3933.T"
+      }
+    },
+    {
+      "ticker": "4346.T",
+      "name": "NEXYZ.Group Corporation",
+      "exchange": "TSE",
+      "category": "Distribution Services",
+      "high_type": "52_week",
+      "reason": "업종: Distribution Services · Wholesale Distributors",
+      "description": "NEXYZ.Group Corporation · Wholesale Distributors",
+      "change_pct": 11.721611721611724,
+      "session_open": 1678.0,
+      "session_close": 1830.0,
+      "session_volume": 1456200.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:4346",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4346.T/history/",
+        "date": "2016-05-02",
+        "daily_high": 1873.0,
+        "prior_all_time_or_current_month_high": 5400.0,
+        "passes_close_filter": true,
+        "source_symbol": "TSE:4346",
+        "yahoo_symbol": "4346.T"
+      }
+    },
+    {
+      "ticker": "6176.T",
+      "name": "Brangista, Inc.",
+      "exchange": "TSE",
+      "category": "Technology Services",
+      "high_type": "all_time",
+      "reason": "업종: Technology Services · Internet Software/Services",
+      "description": "Brangista, Inc. · Internet Software/Services",
+      "change_pct": 14.335060449050086,
+      "session_open": 6190.0,
+      "session_close": 6620.0,
+      "session_volume": 1243100.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:6176",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6176.T/history/",
+        "date": "2016-05-02",
+        "daily_high": 6790.0,
+        "prior_all_time_or_current_month_high": 6790.0,
+        "passes_close_filter": true,
+        "source_symbol": "TSE:6176",
+        "yahoo_symbol": "6176.T"
+      }
+    },
+    {
+      "ticker": "6338.T",
+      "name": "Takatori Corporation",
+      "exchange": "TSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Semiconductors",
+      "description": "Takatori Corporation · Semiconductors",
+      "change_pct": 14.3947655398037,
+      "session_open": 947.0,
+      "session_close": 1049.0,
+      "session_volume": 421100.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:6338",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6338.T/history/",
+        "date": "2016-05-02",
+        "daily_high": 1055.0,
+        "prior_all_time_or_current_month_high": 1640.0,
+        "passes_close_filter": true,
+        "source_symbol": "TSE:6338",
+        "yahoo_symbol": "6338.T"
+      }
+    },
+    {
+      "ticker": "9466.T",
+      "name": "Aidma Marketing Communication Corp.",
+      "exchange": "TSE",
+      "category": "Commercial Services",
+      "high_type": "all_time",
+      "reason": "업종: Commercial Services · Advertising/Marketing Services",
+      "description": "Aidma Marketing Communication Corp. · Advertising/Marketing Services",
+      "change_pct": 1.214882308276377,
+      "session_open": 650.0,
+      "session_close": 666.5,
+      "session_volume": 264800.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:9466",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/9466.T/history/",
+        "date": "2016-05-02",
+        "daily_high": 739.5,
+        "prior_all_time_or_current_month_high": 739.5,
+        "passes_close_filter": true,
+        "source_symbol": "TSE:9466",
+        "yahoo_symbol": "9466.T"
+      }
+    },
+    {
+      "ticker": "9733.T",
+      "name": "Nagase Brothers, Inc.",
+      "exchange": "TSE",
+      "category": "Consumer Services",
+      "high_type": "all_time",
+      "reason": "업종: Consumer Services · Other Consumer Services",
+      "description": "Nagase Brothers, Inc. · Other Consumer Services",
+      "change_pct": 1.746216580479909,
+      "session_open": 1433.3333740234375,
+      "session_close": 1456.6666259765625,
+      "session_volume": 9000.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:9733",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/9733.T/history/",
+        "date": "2016-05-02",
+        "daily_high": 1456.6666259765625,
+        "prior_all_time_or_current_month_high": 1456.6666259765625,
+        "passes_close_filter": true,
+        "source_symbol": "TSE:9733",
+        "yahoo_symbol": "9733.T"
+      }
+    },
+    {
+      "ticker": "9980.T",
+      "name": "MRK Holdings, Inc.",
+      "exchange": "TSE",
+      "category": "Retail Trade",
+      "high_type": "52_week",
+      "reason": "업종: Retail Trade · Apparel/Footwear Retail",
+      "description": "MRK Holdings, Inc. · Apparel/Footwear Retail",
+      "change_pct": 27.472527472527464,
+      "session_open": 232.0,
+      "session_close": 232.0,
+      "session_volume": 439300.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:9980",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/9980.T/history/",
+        "date": "2016-05-02",
+        "daily_high": 232.0,
+        "prior_all_time_or_current_month_high": 1140.0,
+        "passes_close_filter": true,
+        "source_symbol": "TSE:9980",
+        "yahoo_symbol": "9980.T"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-11-12T11:50:12.221963+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 3761,
+    "history_symbols": 2910,
+    "inactive_symbols": 850,
+    "failed_symbols": 1,
+    "coverage_ratio": 0.9996564754379939,
+    "coverage_by_exchange": {
+      "TSE": {
+        "covered": 2910,
+        "total": 2911
+      }
+    },
+    "session_symbols": 2859,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-11-12T11:50:12.221963+00:00"
+}

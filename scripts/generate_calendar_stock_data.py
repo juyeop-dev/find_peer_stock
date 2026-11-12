@@ -7,8 +7,19 @@ import json
 from pathlib import Path
 from urllib.parse import quote
 
+from archive_paths import publish_compressed_bytes
+
 ROOT = Path(__file__).resolve().parents[1]
 CURRENCIES = {"korea": "KRW", "us": "USD", "japan": "JPY", "taiwan": "TWD", "china": "CNY", "europe": "EUR"}
+
+
+def compress_retained_profiles(output: Path) -> int:
+    """Retain legacy filename aliases byte-for-byte in the compact archive."""
+    count = 0
+    for path in output.rglob("*.json"):
+        publish_compressed_bytes(path, path.read_bytes(), output.parent)
+        count += 1
+    return count
 
 
 def calendar_stocks(reports: list[tuple[str, dict]]) -> list[dict]:
@@ -43,9 +54,9 @@ def publish(source: Path = ROOT / "data", output: Path = ROOT / "frontend/public
         # decode a colon into a different filename (and Windows can store them).
         path = output / stock["market"] / f"{quote(stock['ticker'], safe='').replace('%', '~')}.json"
         path.parent.mkdir(parents=True, exist_ok=True)
-        content = json.dumps(stock, ensure_ascii=False, separators=(",", ":"), allow_nan=False) + "\n"
-        if not path.exists() or path.read_text(encoding="utf-8") != content:
-            path.write_text(content, encoding="utf-8")
+        content = (json.dumps(stock, ensure_ascii=False, separators=(",", ":"), allow_nan=False) + "\n").encode("utf-8")
+        publish_compressed_bytes(path, content, output.parent)
+    compress_retained_profiles(output)
     return len(stocks)
 
 

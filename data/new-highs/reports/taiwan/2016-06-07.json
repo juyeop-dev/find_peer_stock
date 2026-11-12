@@ -1,0 +1,371 @@
+{
+  "schema_version": 1,
+  "market": "taiwan",
+  "date": "2016-06-07",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "1216.TW",
+      "name": "Uni-President Enterprises Corp.",
+      "exchange": "TWSE",
+      "category": "Retail Trade",
+      "high_type": "all_time",
+      "reason": "업종: Retail Trade · Food Retail",
+      "description": "Uni-President Enterprises Corp. · Food Retail",
+      "change_pct": 1.7214373205853617,
+      "session_open": 64.0,
+      "session_close": 65.0,
+      "session_volume": 8784000.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:1216",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/1216.TW/history/",
+        "date": "2016-06-07",
+        "daily_high": 65.0,
+        "prior_all_time_or_current_month_high": 65.0,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:1216",
+        "yahoo_symbol": "1216.TW"
+      }
+    },
+    {
+      "ticker": "1590.TW",
+      "name": "Airtac International Group",
+      "exchange": "TWSE",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Industrial Machinery",
+      "description": "Airtac International Group · Industrial Machinery",
+      "change_pct": 4.15755201387924,
+      "session_open": 228.79248046875,
+      "session_close": 232.70346069335938,
+      "session_volume": 2035294.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:1590",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/1590.TW/history/",
+        "date": "2016-06-07",
+        "daily_high": 240.0365447998047,
+        "prior_all_time_or_current_month_high": 335.2270812988281,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:1590",
+        "yahoo_symbol": "1590.TW"
+      }
+    },
+    {
+      "ticker": "1733.TW",
+      "name": "Apex Biotechnology Corp.",
+      "exchange": "TWSE",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Biotechnology",
+      "description": "Apex Biotechnology Corp. · Biotechnology",
+      "change_pct": 4.414593318846749,
+      "session_open": 52.599998474121094,
+      "session_close": 54.400001525878906,
+      "session_volume": 2036000.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:1733",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/1733.TW/history/",
+        "date": "2016-06-07",
+        "daily_high": 54.70000076293945,
+        "prior_all_time_or_current_month_high": 98.38867950439453,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:1733",
+        "yahoo_symbol": "1733.TW"
+      }
+    },
+    {
+      "ticker": "2301.TW",
+      "name": "Lite-On Technology Corp.",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Computer Peripherals",
+      "description": "Lite-On Technology Corp. · Computer Peripherals",
+      "change_pct": 6.064205100975428,
+      "session_open": 42.58744430541992,
+      "session_close": 44.37850570678711,
+      "session_volume": 18588313.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2301",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2301.TW/history/",
+        "date": "2016-06-07",
+        "daily_high": 44.37850570678711,
+        "prior_all_time_or_current_month_high": 73.13613891601562,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:2301",
+        "yahoo_symbol": "2301.TW"
+      }
+    },
+    {
+      "ticker": "2330.TW",
+      "name": "Taiwan Semiconductor Manufacturing Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Semiconductors",
+      "description": "Taiwan Semiconductor Manufacturing Co., Ltd. · Semiconductors",
+      "change_pct": 0.6211180124223503,
+      "session_open": 161.5,
+      "session_close": 162.0,
+      "session_volume": 47046000.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2330",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2330.TW/history/",
+        "date": "2016-06-07",
+        "daily_high": 163.5,
+        "prior_all_time_or_current_month_high": 163.5,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:2330",
+        "yahoo_symbol": "2330.TW"
+      }
+    },
+    {
+      "ticker": "2360.TW",
+      "name": "Chroma Ate Inc.",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Electronic Equipment/Instruments",
+      "description": "Chroma Ate Inc. · Electronic Equipment/Instruments",
+      "change_pct": 0.0,
+      "session_open": 79.80000305175781,
+      "session_close": 80.0,
+      "session_volume": 780000.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2360",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2360.TW/history/",
+        "date": "2016-06-07",
+        "daily_high": 80.5,
+        "prior_all_time_or_current_month_high": 97.11538696289062,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:2360",
+        "yahoo_symbol": "2360.TW"
+      }
+    },
+    {
+      "ticker": "2395.TW",
+      "name": "Advantech Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Computer Processing Hardware",
+      "description": "Advantech Co., Ltd. · Computer Processing Hardware",
+      "change_pct": 3.2653036531595125,
+      "session_open": 185.6246795654297,
+      "session_close": 190.13377380371094,
+      "session_volume": 1526246.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2395",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2395.TW/history/",
+        "date": "2016-06-07",
+        "daily_high": 190.50953674316406,
+        "prior_all_time_or_current_month_high": 208.92169189453125,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:2395",
+        "yahoo_symbol": "2395.TW"
+      }
+    },
+    {
+      "ticker": "2412.TW",
+      "name": "Chunghwa Telecom Co., Ltd",
+      "exchange": "TWSE",
+      "category": "Communications",
+      "high_type": "all_time",
+      "reason": "업종: Communications · Major Telecommunications",
+      "description": "Chunghwa Telecom Co., Ltd · Major Telecommunications",
+      "change_pct": 0.44642857142858094,
+      "session_open": 112.0,
+      "session_close": 112.5,
+      "session_volume": 7181000.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2412",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2412.TW/history/",
+        "date": "2016-06-07",
+        "daily_high": 113.0,
+        "prior_all_time_or_current_month_high": 113.0,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:2412",
+        "yahoo_symbol": "2412.TW"
+      }
+    },
+    {
+      "ticker": "2430.TW",
+      "name": "Tsann Kuen Enterprise Co.,Ltd",
+      "exchange": "TWSE",
+      "category": "Consumer Durables",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Durables · Electronics/Appliances",
+      "description": "Tsann Kuen Enterprise Co.,Ltd · Electronics/Appliances",
+      "change_pct": 2.000000642364097,
+      "session_open": 35.631168365478516,
+      "session_close": 36.34379196166992,
+      "session_volume": 321347.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2430",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2430.TW/history/",
+        "date": "2016-06-07",
+        "daily_high": 36.771366119384766,
+        "prior_all_time_or_current_month_high": 105.46826171875,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:2430",
+        "yahoo_symbol": "2430.TW"
+      }
+    },
+    {
+      "ticker": "3045.TW",
+      "name": "Taiwan Mobile Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Communications",
+      "high_type": "52_week",
+      "reason": "업종: Communications · Wireless Telecommunications",
+      "description": "Taiwan Mobile Co., Ltd. · Wireless Telecommunications",
+      "change_pct": 0.8928571428571397,
+      "session_open": 112.0,
+      "session_close": 113.0,
+      "session_volume": 2839000.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:3045",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3045.TW/history/",
+        "date": "2016-06-07",
+        "daily_high": 113.0,
+        "prior_all_time_or_current_month_high": 121.5,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:3045",
+        "yahoo_symbol": "3045.TW"
+      }
+    },
+    {
+      "ticker": "4904.TW",
+      "name": "Far Eastone Telecommunications Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Communications",
+      "high_type": "52_week",
+      "reason": "업종: Communications · Wireless Telecommunications",
+      "description": "Far Eastone Telecommunications Co., Ltd. · Wireless Telecommunications",
+      "change_pct": 1.052635594418172,
+      "session_open": 76.0,
+      "session_close": 76.80000305175781,
+      "session_volume": 3221000.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:4904",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4904.TW/history/",
+        "date": "2016-06-07",
+        "daily_high": 76.80000305175781,
+        "prior_all_time_or_current_month_high": 83.0,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:4904",
+        "yahoo_symbol": "4904.TW"
+      }
+    },
+    {
+      "ticker": "5434.TW",
+      "name": "Topco Scientific Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Semiconductors",
+      "description": "Topco Scientific Co., Ltd. · Semiconductors",
+      "change_pct": 1.9696987652618514,
+      "session_open": 63.928466796875,
+      "session_close": 64.99072265625,
+      "session_volume": 1182578.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:5434",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/5434.TW/history/",
+        "date": "2016-06-07",
+        "daily_high": 65.47356414794922,
+        "prior_all_time_or_current_month_high": 82.17549133300781,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:5434",
+        "yahoo_symbol": "5434.TW"
+      }
+    },
+    {
+      "ticker": "9911.TW",
+      "name": "Taiwan Sakura Corporation",
+      "exchange": "TWSE",
+      "category": "Consumer Durables",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Durables · Electronics/Appliances",
+      "description": "Taiwan Sakura Corporation · Electronics/Appliances",
+      "change_pct": 1.5094339622641506,
+      "session_open": 33.5625,
+      "session_close": 33.625,
+      "session_volume": 3094400.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:9911",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/9911.TW/history/",
+        "date": "2016-06-07",
+        "daily_high": 34.125,
+        "prior_all_time_or_current_month_high": 40.07352828979492,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:9911",
+        "yahoo_symbol": "9911.TW"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-11-12T11:47:01.999915+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 2361,
+    "history_symbols": 1683,
+    "inactive_symbols": 668,
+    "failed_symbols": 10,
+    "coverage_ratio": 0.9940933254577673,
+    "coverage_by_exchange": {
+      "TWSE": {
+        "covered": 907,
+        "total": 914
+      },
+      "TPEX": {
+        "covered": 776,
+        "total": 779
+      }
+    },
+    "session_symbols": 1651,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-11-12T11:47:01.999915+00:00"
+}

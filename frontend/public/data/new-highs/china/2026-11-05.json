@@ -1,0 +1,259 @@
+{
+  "schema_version": 1,
+  "market": "china",
+  "date": "2026-11-05",
+  "summary": "장 마감 후 TradingView 주식 스냅샷 기준. 당일 장중 고가가 52주·전체기간 고가에 도달하고, 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다. 전체기간 신고가를 우선 표시하며 신고가 배경은 별도 확인 전입니다.",
+  "sources": [
+    {
+      "label": "TradingView stock screener",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "600801.SS",
+      "name": "Huaxin Building Materials Group Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Non-Energy Minerals",
+      "high_type": "52_week",
+      "reason": "업종: Non-Energy Minerals · Construction Materials",
+      "description": "Huaxin Building Materials Group Co., Ltd. Class A · Construction Materials",
+      "change_pct": 5.993690851735014,
+      "session_open": 25.22,
+      "session_close": 26.88,
+      "session_volume": 15586632,
+      "source_symbol": "SSE:600801",
+      "currency": "CNY"
+    },
+    {
+      "ticker": "601156.SS",
+      "name": "Eastern Air Logistics Co. Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Transportation",
+      "high_type": "52_week",
+      "reason": "업종: Transportation · Air Freight/Couriers",
+      "description": "Eastern Air Logistics Co. Ltd. Class A · Air Freight/Couriers",
+      "change_pct": 2.560163850486431,
+      "session_open": 19.5,
+      "session_close": 20.03,
+      "session_volume": 14733042,
+      "source_symbol": "SSE:601156",
+      "currency": "CNY"
+    },
+    {
+      "ticker": "603658.SS",
+      "name": "Autobio Diagnostics Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Medical Specialties",
+      "description": "Autobio Diagnostics Co., Ltd. Class A · Medical Specialties",
+      "change_pct": 2.696456086286606,
+      "session_open": 38.98,
+      "session_close": 39.99,
+      "session_volume": 8015481,
+      "source_symbol": "SSE:603658",
+      "currency": "CNY"
+    },
+    {
+      "ticker": "688018.SS",
+      "name": "Espressif Systems (Shanghai) Co. Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Semiconductors",
+      "description": "Espressif Systems (Shanghai) Co. Ltd. Class A · Semiconductors",
+      "change_pct": 5.931985057323205,
+      "session_open": 151,
+      "session_close": 164.47,
+      "session_volume": 18566913,
+      "source_symbol": "SSE:688018",
+      "currency": "CNY"
+    },
+    {
+      "ticker": "001219.SZ",
+      "name": "Qingdao Foods Co. Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Consumer Non-Durables",
+      "high_type": "all_time",
+      "reason": "업종: Consumer Non-Durables · Food: Major Diversified",
+      "description": "Qingdao Foods Co. Ltd. Class A · Food: Major Diversified",
+      "change_pct": 6.0730593607306025,
+      "session_open": 21.84,
+      "session_close": 23.23,
+      "session_volume": 47335425,
+      "source_symbol": "SZSE:001219",
+      "currency": "CNY"
+    },
+    {
+      "ticker": "002100.SZ",
+      "name": "Tecon Biology Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Process Industries",
+      "high_type": "52_week",
+      "reason": "업종: Process Industries · Agricultural Commodities/Milling",
+      "description": "Tecon Biology Co., Ltd. Class A · Agricultural Commodities/Milling",
+      "change_pct": 1.9393939393939412,
+      "session_open": 8.29,
+      "session_close": 8.41,
+      "session_volume": 37749670,
+      "source_symbol": "SZSE:002100",
+      "currency": "CNY"
+    },
+    {
+      "ticker": "002242.SZ",
+      "name": "Joyoung Company Limited Class A",
+      "exchange": "SZSE",
+      "category": "Consumer Durables",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Durables · Electronics/Appliances",
+      "description": "Joyoung Company Limited Class A · Electronics/Appliances",
+      "change_pct": 2.9138513513513566,
+      "session_open": 23.24,
+      "session_close": 24.37,
+      "session_volume": 73687777,
+      "source_symbol": "SZSE:002242",
+      "currency": "CNY"
+    },
+    {
+      "ticker": "002708.SZ",
+      "name": "Changzhou Nrb Corporation Class A",
+      "exchange": "SZSE",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Metal Fabrication",
+      "description": "Changzhou Nrb Corporation Class A · Metal Fabrication",
+      "change_pct": 5.8853633572159785,
+      "session_open": 18.7,
+      "session_close": 20.69,
+      "session_volume": 116897229,
+      "source_symbol": "SZSE:002708",
+      "currency": "CNY"
+    },
+    {
+      "ticker": "002832.SZ",
+      "name": "BIEM.L.FDLKK Garment Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Consumer Non-Durables",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Non-Durables · Apparel/Footwear",
+      "description": "BIEM.L.FDLKK Garment Co., Ltd. Class A · Apparel/Footwear",
+      "change_pct": 1.052631578947371,
+      "session_open": 28.63,
+      "session_close": 28.8,
+      "session_volume": 8424479,
+      "source_symbol": "SZSE:002832",
+      "currency": "CNY"
+    },
+    {
+      "ticker": "180702.SZ",
+      "name": "Yinhua Yuehai Water Utilities and Water Conservancy Closed-End Infrastructure Real Estate Investment Trust",
+      "exchange": "SZSE",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "업종: Finance · Real Estate Investment Trusts",
+      "description": "Yinhua Yuehai Water Utilities and Water Conservancy Closed-End Infrastructure Real Estate Investment Trust · Real Estate Investment Trusts",
+      "change_pct": 0.5113781641523911,
+      "session_open": 3.919,
+      "session_close": 3.931,
+      "session_volume": 1612876,
+      "source_symbol": "SZSE:180702",
+      "currency": "CNY"
+    },
+    {
+      "ticker": "300413.SZ",
+      "name": "Mango Excellent Media Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Technology Services",
+      "high_type": "52_week",
+      "reason": "업종: Technology Services · Internet Software/Services",
+      "description": "Mango Excellent Media Co., Ltd. Class A · Internet Software/Services",
+      "change_pct": 9.266666666666671,
+      "session_open": 29.2,
+      "session_close": 32.78,
+      "session_volume": 154383276,
+      "source_symbol": "SZSE:300413",
+      "currency": "CNY"
+    },
+    {
+      "ticker": "300949.SZ",
+      "name": "Shenzhen L&A Design Holding Limited Class A",
+      "exchange": "SZSE",
+      "category": "Commercial Services",
+      "high_type": "52_week",
+      "reason": "업종: Commercial Services · Miscellaneous Commercial Services",
+      "description": "Shenzhen L&A Design Holding Limited Class A · Miscellaneous Commercial Services",
+      "change_pct": 10.831509846827124,
+      "session_open": 45.09,
+      "session_close": 50.65,
+      "session_volume": 8034427,
+      "source_symbol": "SZSE:300949",
+      "currency": "CNY"
+    },
+    {
+      "ticker": "301218.SZ",
+      "name": "Zhejiang Whyis Technology Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Technology Services",
+      "high_type": "all_time",
+      "reason": "업종: Technology Services · Information Technology Services",
+      "description": "Zhejiang Whyis Technology Co., Ltd. Class A · Information Technology Services",
+      "change_pct": 5.004559963520292,
+      "session_open": 87.66,
+      "session_close": 92.11,
+      "session_volume": 19294581,
+      "source_symbol": "SZSE:301218",
+      "currency": "CNY"
+    },
+    {
+      "ticker": "301381.SZ",
+      "name": "Sailvan Times Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Retail Trade",
+      "high_type": "52_week",
+      "reason": "업종: Retail Trade · Apparel/Footwear Retail",
+      "description": "Sailvan Times Co., Ltd. Class A · Apparel/Footwear Retail",
+      "change_pct": 4.4943820224719,
+      "session_open": 25.25,
+      "session_close": 26.04,
+      "session_volume": 9849807,
+      "source_symbol": "SZSE:301381",
+      "currency": "CNY"
+    }
+  ],
+  "source_metadata": {
+    "provider": "TradingView public scanner",
+    "scanner": "china",
+    "fetched_at": "2026-11-05T08:12:04.830241+00:00",
+    "universe": "TradingView-listed stock instruments, including common and preferred shares; ETFs excluded",
+    "definition": "daily high >= period high; close >= open; close >= previous close when one exists; all-time takes precedence; ties included",
+    "scanner_exchanges": [
+      "SSE",
+      "SZSE"
+    ],
+    "latest_session_by_exchange": {
+      "SZSE": "2026-11-05",
+      "SSE": "2026-11-05"
+    },
+    "previous_session_by_exchange": {
+      "SZSE": "2026-11-04",
+      "SSE": "2026-11-04"
+    },
+    "current_session_reference_symbols": {
+      "SZSE": "SZSE:000001",
+      "SSE": "SSE:508060"
+    },
+    "scanned_symbols": 5314,
+    "current_session_symbols": 5309,
+    "excluded_symbols": {
+      "other_session": 5,
+      "bearish_or_down_close": 2
+    },
+    "pagination_complete": true
+  },
+  "collected_at": "2026-11-05T08:12:03.282878+00:00"
+}

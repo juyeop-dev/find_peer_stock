@@ -1,0 +1,400 @@
+{
+  "schema_version": 1,
+  "market": "us",
+  "date": "2016-05-19",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "AQMS",
+      "name": "Aqua Metals, Inc.",
+      "exchange": "NASDAQ",
+      "category": "Non-Energy Minerals",
+      "high_type": "all_time",
+      "reason": "업종: Non-Energy Minerals · Other Metals/Minerals",
+      "description": "Aqua Metals, Inc. · Other Metals/Minerals",
+      "change_pct": 28.97435897435898,
+      "session_open": 1760.0,
+      "session_close": 2012.0,
+      "session_volume": 4477.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:AQMS",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/AQMS/history/",
+        "date": "2016-05-19",
+        "daily_high": 2060.0,
+        "prior_all_time_or_current_month_high": 2060.0,
+        "passes_close_filter": true,
+        "source_symbol": "NASDAQ:AQMS",
+        "yahoo_symbol": "AQMS"
+      }
+    },
+    {
+      "ticker": "CHTR",
+      "name": "Charter Communications, Inc. Class A",
+      "exchange": "NASDAQ",
+      "category": "Consumer Services",
+      "high_type": "all_time",
+      "reason": "업종: Consumer Services · Cable/Satellite TV",
+      "description": "Charter Communications, Inc. Class A · Cable/Satellite TV",
+      "change_pct": 0.07035911328998612,
+      "session_open": 225.8000030517578,
+      "session_close": 227.57000732421875,
+      "session_volume": 4343400.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:CHTR",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/CHTR/history/",
+        "date": "2016-05-19",
+        "daily_high": 230.49000549316406,
+        "prior_all_time_or_current_month_high": 230.49000549316406,
+        "passes_close_filter": true,
+        "source_symbol": "NASDAQ:CHTR",
+        "yahoo_symbol": "CHTR"
+      }
+    },
+    {
+      "ticker": "DWSN",
+      "name": "Dawson Geophysical Company",
+      "exchange": "NASDAQ",
+      "category": "Industrial Services",
+      "high_type": "52_week",
+      "reason": "업종: Industrial Services · Engineering & Construction",
+      "description": "Dawson Geophysical Company · Engineering & Construction",
+      "change_pct": 2.568218324354987,
+      "session_open": 5.942856788635254,
+      "session_close": 6.085713863372803,
+      "session_volume": 109515.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:DWSN",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/DWSN/history/",
+        "date": "2016-05-19",
+        "daily_high": 6.190475940704346,
+        "prior_all_time_or_current_month_high": 32.94007873535156,
+        "passes_close_filter": true,
+        "source_symbol": "NASDAQ:DWSN",
+        "yahoo_symbol": "DWSN"
+      }
+    },
+    {
+      "ticker": "IRIX",
+      "name": "IRIDEX Corporation",
+      "exchange": "NASDAQ",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Medical Specialties",
+      "description": "IRIDEX Corporation · Medical Specialties",
+      "change_pct": 7.7871954850691205,
+      "session_open": 12.970000267028809,
+      "session_close": 13.979999542236328,
+      "session_volume": 60000.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:IRIX",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/IRIX/history/",
+        "date": "2016-05-19",
+        "daily_high": 13.989999771118164,
+        "prior_all_time_or_current_month_high": 18.5,
+        "passes_close_filter": true,
+        "source_symbol": "NASDAQ:IRIX",
+        "yahoo_symbol": "IRIX"
+      }
+    },
+    {
+      "ticker": "NVDA",
+      "name": "NVIDIA Corporation",
+      "exchange": "NASDAQ",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Semiconductors",
+      "description": "NVIDIA Corporation · Semiconductors",
+      "change_pct": 0.4381931170711173,
+      "session_open": 1.0797499418258667,
+      "session_close": 1.0887500047683716,
+      "session_volume": 398880000.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:NVDA",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/NVDA/history/",
+        "date": "2016-05-19",
+        "daily_high": 1.096500039100647,
+        "prior_all_time_or_current_month_high": 1.096500039100647,
+        "passes_close_filter": true,
+        "source_symbol": "NASDAQ:NVDA",
+        "yahoo_symbol": "NVDA"
+      }
+    },
+    {
+      "ticker": "TSBK",
+      "name": "Timberland Bancorp, Inc.",
+      "exchange": "NASDAQ",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "업종: Finance · Savings Banks",
+      "description": "Timberland Bancorp, Inc. · Savings Banks",
+      "change_pct": 1.408449379940424,
+      "session_open": 14.199999809265137,
+      "session_close": 14.399999618530273,
+      "session_volume": 2400.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:TSBK",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/TSBK/history/",
+        "date": "2016-05-19",
+        "daily_high": 14.399999618530273,
+        "prior_all_time_or_current_month_high": 19.530000686645508,
+        "passes_close_filter": true,
+        "source_symbol": "NASDAQ:TSBK",
+        "yahoo_symbol": "TSBK"
+      }
+    },
+    {
+      "ticker": "UNB",
+      "name": "Union Bankshares, Inc.",
+      "exchange": "NASDAQ",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "업종: Finance · Regional Banks",
+      "description": "Union Bankshares, Inc. · Regional Banks",
+      "change_pct": 2.333335876464848,
+      "session_open": 30.149999618530273,
+      "session_close": 30.700000762939453,
+      "session_volume": 3100.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:UNB",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/UNB/history/",
+        "date": "2016-05-19",
+        "daily_high": 30.989999771118164,
+        "prior_all_time_or_current_month_high": 30.989999771118164,
+        "passes_close_filter": true,
+        "source_symbol": "NASDAQ:UNB",
+        "yahoo_symbol": "UNB"
+      }
+    },
+    {
+      "ticker": "YHGJ",
+      "name": "Yunhong Green CTI Ltd.",
+      "exchange": "NASDAQ",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Miscellaneous Manufacturing",
+      "description": "Yunhong Green CTI Ltd. · Miscellaneous Manufacturing",
+      "change_pct": 0.89020543106475,
+      "session_open": 66.5999984741211,
+      "session_close": 68.0,
+      "session_volume": 130.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:YHGJ",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/YHGJ/history/",
+        "date": "2016-05-19",
+        "daily_high": 69.0,
+        "prior_all_time_or_current_month_high": 103.9000015258789,
+        "passes_close_filter": true,
+        "source_symbol": "NASDAQ:YHGJ",
+        "yahoo_symbol": "YHGJ"
+      }
+    },
+    {
+      "ticker": "BRC",
+      "name": "Brady Corporation Class A",
+      "exchange": "NYSE",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Miscellaneous Manufacturing",
+      "description": "Brady Corporation Class A · Miscellaneous Manufacturing",
+      "change_pct": 13.710598635821958,
+      "session_open": 27.90999984741211,
+      "session_close": 29.940000534057617,
+      "session_volume": 951400.0,
+      "currency": "USD",
+      "source_symbol": "NYSE:BRC",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/BRC/history/",
+        "date": "2016-05-19",
+        "daily_high": 29.969999313354492,
+        "prior_all_time_or_current_month_high": 44.459999084472656,
+        "passes_close_filter": true,
+        "source_symbol": "NYSE:BRC",
+        "yahoo_symbol": "BRC"
+      }
+    },
+    {
+      "ticker": "DMC",
+      "name": "Del Monte Corporation",
+      "exchange": "NYSE",
+      "category": "Process Industries",
+      "high_type": "all_time",
+      "reason": "업종: Process Industries · Agricultural Commodities/Milling",
+      "description": "Del Monte Corporation · Agricultural Commodities/Milling",
+      "change_pct": 0.7451001335592844,
+      "session_open": 51.02000045776367,
+      "session_close": 51.380001068115234,
+      "session_volume": 198400.0,
+      "currency": "USD",
+      "source_symbol": "NYSE:DMC",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/DMC/history/",
+        "date": "2016-05-19",
+        "daily_high": 51.470001220703125,
+        "prior_all_time_or_current_month_high": 51.470001220703125,
+        "passes_close_filter": true,
+        "source_symbol": "NYSE:DMC",
+        "yahoo_symbol": "DMC"
+      }
+    },
+    {
+      "ticker": "IFF",
+      "name": "International Flavors & Fragrances Inc.",
+      "exchange": "NYSE",
+      "category": "Consumer Non-Durables",
+      "high_type": "all_time",
+      "reason": "업종: Consumer Non-Durables · Food: Specialty/Candy",
+      "description": "International Flavors & Fragrances Inc. · Food: Specialty/Candy",
+      "change_pct": 1.0818943191164276,
+      "session_open": 126.5,
+      "session_close": 128.0,
+      "session_volume": 442300.0,
+      "currency": "USD",
+      "source_symbol": "NYSE:IFF",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/IFF/history/",
+        "date": "2016-05-19",
+        "daily_high": 128.1300048828125,
+        "prior_all_time_or_current_month_high": 128.1300048828125,
+        "passes_close_filter": true,
+        "source_symbol": "NYSE:IFF",
+        "yahoo_symbol": "IFF"
+      }
+    },
+    {
+      "ticker": "LOW",
+      "name": "Lowe's Companies, Inc.",
+      "exchange": "NYSE",
+      "category": "Retail Trade",
+      "high_type": "all_time",
+      "reason": "업종: Retail Trade · Home Improvement Chains",
+      "description": "Lowe's Companies, Inc. · Home Improvement Chains",
+      "change_pct": 1.6030561840854496,
+      "session_open": 78.61000061035156,
+      "session_close": 79.86000061035156,
+      "session_volume": 7037500.0,
+      "currency": "USD",
+      "source_symbol": "NYSE:LOW",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/LOW/history/",
+        "date": "2016-05-19",
+        "daily_high": 80.0,
+        "prior_all_time_or_current_month_high": 80.0,
+        "passes_close_filter": true,
+        "source_symbol": "NYSE:LOW",
+        "yahoo_symbol": "LOW"
+      }
+    },
+    {
+      "ticker": "NSP",
+      "name": "Insperity, Inc.",
+      "exchange": "NYSE",
+      "category": "Commercial Services",
+      "high_type": "all_time",
+      "reason": "업종: Commercial Services · Miscellaneous Commercial Services",
+      "description": "Insperity, Inc. · Miscellaneous Commercial Services",
+      "change_pct": 1.9644560378615505,
+      "session_open": 34.375,
+      "session_close": 35.29499816894531,
+      "session_volume": 704800.0,
+      "currency": "USD",
+      "source_symbol": "NYSE:NSP",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/NSP/history/",
+        "date": "2016-05-19",
+        "daily_high": 35.44499969482422,
+        "prior_all_time_or_current_month_high": 35.44499969482422,
+        "passes_close_filter": true,
+        "source_symbol": "NYSE:NSP",
+        "yahoo_symbol": "NSP"
+      }
+    },
+    {
+      "ticker": "XOM",
+      "name": "Exxonmobil Holdings Corporation",
+      "exchange": "NYSE",
+      "category": "Energy Minerals",
+      "high_type": "52_week",
+      "reason": "업종: Energy Minerals · Integrated Oil",
+      "description": "Exxonmobil Holdings Corporation · Integrated Oil",
+      "change_pct": 0.8505899823272989,
+      "session_open": 88.61000061035156,
+      "session_close": 90.11000061035156,
+      "session_volume": 14397900.0,
+      "currency": "USD",
+      "source_symbol": "NYSE:XOM",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/XOM/history/",
+        "date": "2016-05-19",
+        "daily_high": 90.16000366210938,
+        "prior_all_time_or_current_month_high": 104.76000213623047,
+        "passes_close_filter": true,
+        "source_symbol": "NYSE:XOM",
+        "yahoo_symbol": "XOM"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-11-12T11:54:11.978932+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 5700,
+    "history_symbols": 2880,
+    "inactive_symbols": 2818,
+    "failed_symbols": 2,
+    "coverage_ratio": 0.9993060374739764,
+    "coverage_by_exchange": {
+      "NASDAQ": {
+        "covered": 1458,
+        "total": 1460
+      },
+      "NYSE": {
+        "covered": 1276,
+        "total": 1276
+      },
+      "AMEX": {
+        "covered": 146,
+        "total": 146
+      }
+    },
+    "session_symbols": 2804,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-11-12T11:54:11.978932+00:00"
+}

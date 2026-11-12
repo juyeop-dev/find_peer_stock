@@ -1,0 +1,321 @@
+{
+  "schema_version": 1,
+  "market": "taiwan",
+  "date": "2016-01-25",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "2726.TWO",
+      "name": "Yummy Town (Cayman) Holdings Corp.",
+      "exchange": "TPEX",
+      "category": "Consumer Services",
+      "high_type": "all_time",
+      "reason": "업종: Consumer Services · Restaurants",
+      "description": "Yummy Town (Cayman) Holdings Corp. · Restaurants",
+      "change_pct": 0.40816931726110894,
+      "session_open": 91.19941711425781,
+      "session_close": 91.4472427368164,
+      "session_volume": 66088.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:2726",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2726.TWO/history/",
+        "date": "2016-01-25",
+        "daily_high": 91.4472427368164,
+        "prior_all_time_or_current_month_high": 91.4472427368164,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:2726",
+        "yahoo_symbol": "2726.TWO"
+      }
+    },
+    {
+      "ticker": "3552.TWO",
+      "name": "Tung Thih Electronic Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Auto Parts: OEM",
+      "description": "Tung Thih Electronic Co., Ltd. · Auto Parts: OEM",
+      "change_pct": 0.7894730072444567,
+      "session_open": 333.0419616699219,
+      "session_close": 334.79022216796875,
+      "session_volume": 2654002.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:3552",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3552.TWO/history/",
+        "date": "2016-01-25",
+        "daily_high": 344.4056091308594,
+        "prior_all_time_or_current_month_high": 344.4056091308594,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:3552",
+        "yahoo_symbol": "3552.TWO"
+      }
+    },
+    {
+      "ticker": "4728.TWO",
+      "name": "SunMax Biotechnology Co. Ltd.",
+      "exchange": "TPEX",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Medical Specialties",
+      "description": "SunMax Biotechnology Co. Ltd. · Medical Specialties",
+      "change_pct": 4.740736219618058,
+      "session_open": 34.20000076293945,
+      "session_close": 35.349998474121094,
+      "session_volume": 554669.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:4728",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4728.TWO/history/",
+        "date": "2016-01-25",
+        "daily_high": 35.849998474121094,
+        "prior_all_time_or_current_month_high": 49.599998474121094,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:4728",
+        "yahoo_symbol": "4728.TWO"
+      }
+    },
+    {
+      "ticker": "5245.TWO",
+      "name": "Wisechip Semiconductor Inc.",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Semiconductors",
+      "description": "Wisechip Semiconductor Inc. · Semiconductors",
+      "change_pct": 4.201683181451532,
+      "session_open": 109.11853790283203,
+      "session_close": 111.82395935058594,
+      "session_volume": 1057001.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:5245",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/5245.TWO/history/",
+        "date": "2016-01-25",
+        "daily_high": 112.72576141357422,
+        "prior_all_time_or_current_month_high": 112.72576141357422,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:5245",
+        "yahoo_symbol": "5245.TWO"
+      }
+    },
+    {
+      "ticker": "6221.TWO",
+      "name": "Genesis Technology, Inc. (Taiwan)",
+      "exchange": "TPEX",
+      "category": "Technology Services",
+      "high_type": "52_week",
+      "reason": "업종: Technology Services · Information Technology Services",
+      "description": "Genesis Technology, Inc. (Taiwan) · Information Technology Services",
+      "change_pct": 2.1153960180192444,
+      "session_open": 6.07665491104126,
+      "session_close": 6.13441801071167,
+      "session_volume": 1987534.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:6221",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6221.TWO/history/",
+        "date": "2016-01-25",
+        "daily_high": 6.284601211547852,
+        "prior_all_time_or_current_month_high": 7.534183025360107,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:6221",
+        "yahoo_symbol": "6221.TWO"
+      }
+    },
+    {
+      "ticker": "6555.TWO",
+      "name": "Long Time Technology Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Process Industries",
+      "high_type": "all_time",
+      "reason": "업종: Process Industries · Chemicals: Specialty",
+      "description": "Long Time Technology Co., Ltd. · Chemicals: Specialty",
+      "change_pct": 0.0,
+      "session_open": 35.161529541015625,
+      "session_close": 35.161529541015625,
+      "session_volume": 1454121.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:6555",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6555.TWO/history/",
+        "date": "2016-01-25",
+        "daily_high": 36.72992706298828,
+        "prior_all_time_or_current_month_high": 36.72992706298828,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:6555",
+        "yahoo_symbol": "6555.TWO"
+      }
+    },
+    {
+      "ticker": "1473.TW",
+      "name": "Tainan Enterprises Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Consumer Non-Durables",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Non-Durables · Apparel/Footwear",
+      "description": "Tainan Enterprises Co., Ltd. · Apparel/Footwear",
+      "change_pct": 5.714285714285716,
+      "session_open": 35.29999923706055,
+      "session_close": 37.0,
+      "session_volume": 2248000.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:1473",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/1473.TW/history/",
+        "date": "2016-01-25",
+        "daily_high": 37.79999923706055,
+        "prior_all_time_or_current_month_high": 56.48502731323242,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:1473",
+        "yahoo_symbol": "1473.TW"
+      }
+    },
+    {
+      "ticker": "1536.TW",
+      "name": "Hota Industrial Manufacturing Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Consumer Durables",
+      "high_type": "all_time",
+      "reason": "업종: Consumer Durables · Motor Vehicles",
+      "description": "Hota Industrial Manufacturing Co., Ltd. · Motor Vehicles",
+      "change_pct": 0.7692299803759406,
+      "session_open": 126.95964813232422,
+      "session_close": 127.44608306884766,
+      "session_volume": 6176564.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:1536",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/1536.TW/history/",
+        "date": "2016-01-25",
+        "daily_high": 129.87826538085938,
+        "prior_all_time_or_current_month_high": 129.87826538085938,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:1536",
+        "yahoo_symbol": "1536.TW"
+      }
+    },
+    {
+      "ticker": "2419.TW",
+      "name": "Hitron Technologies Inc.",
+      "exchange": "TWSE",
+      "category": "Technology Services",
+      "high_type": "52_week",
+      "reason": "업종: Technology Services · Information Technology Services",
+      "description": "Hitron Technologies Inc. · Information Technology Services",
+      "change_pct": 0.0,
+      "session_open": 22.82115936279297,
+      "session_close": 22.876550674438477,
+      "session_volume": 14377743.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2419",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2419.TW/history/",
+        "date": "2016-01-25",
+        "daily_high": 23.26428985595703,
+        "prior_all_time_or_current_month_high": 207.3176727294922,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:2419",
+        "yahoo_symbol": "2419.TW"
+      }
+    },
+    {
+      "ticker": "2633.TW",
+      "name": "Taiwan High Speed Rail Corporation",
+      "exchange": "TWSE",
+      "category": "Transportation",
+      "high_type": "52_week",
+      "reason": "업종: Transportation · Other Transportation",
+      "description": "Taiwan High Speed Rail Corporation · Other Transportation",
+      "change_pct": 11.265007161803563,
+      "session_open": 12.050000190734863,
+      "session_close": 12.050000190734863,
+      "session_volume": 5579443.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2633",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2633.TW/history/",
+        "date": "2016-01-25",
+        "daily_high": 12.59000015258789,
+        "prior_all_time_or_current_month_high": 31.25,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:2633",
+        "yahoo_symbol": "2633.TW"
+      }
+    },
+    {
+      "ticker": "6230.TW",
+      "name": "Nidec Chaun-Choung Technology Corporation",
+      "exchange": "TWSE",
+      "category": "Non-Energy Minerals",
+      "high_type": "all_time",
+      "reason": "업종: Non-Energy Minerals · Aluminum",
+      "description": "Nidec Chaun-Choung Technology Corporation · Aluminum",
+      "change_pct": 10.000000000000009,
+      "session_open": 132.5,
+      "session_close": 143.0,
+      "session_volume": 4250000.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:6230",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6230.TW/history/",
+        "date": "2016-01-25",
+        "daily_high": 143.0,
+        "prior_all_time_or_current_month_high": 143.0,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:6230",
+        "yahoo_symbol": "6230.TW"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-11-12T11:47:01.999915+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 2361,
+    "history_symbols": 1683,
+    "inactive_symbols": 668,
+    "failed_symbols": 10,
+    "coverage_ratio": 0.9940933254577673,
+    "coverage_by_exchange": {
+      "TWSE": {
+        "covered": 907,
+        "total": 914
+      },
+      "TPEX": {
+        "covered": 776,
+        "total": 779
+      }
+    },
+    "session_symbols": 1635,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-11-12T11:47:01.999915+00:00"
+}

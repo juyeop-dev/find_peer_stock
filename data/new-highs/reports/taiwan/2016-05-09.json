@@ -1,0 +1,221 @@
+{
+  "schema_version": 1,
+  "market": "taiwan",
+  "date": "2016-05-09",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "3303.TWO",
+      "name": "Univacco Technology Inc.",
+      "exchange": "TPEX",
+      "category": "Process Industries",
+      "high_type": "52_week",
+      "reason": "업종: Process Industries · Containers/Packaging",
+      "description": "Univacco Technology Inc. · Containers/Packaging",
+      "change_pct": 1.952281031818548,
+      "session_open": 23.5,
+      "session_close": 23.5,
+      "session_volume": 850515.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:3303",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3303.TWO/history/",
+        "date": "2016-05-09",
+        "daily_high": 23.600000381469727,
+        "prior_all_time_or_current_month_high": 52.41170883178711,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:3303",
+        "yahoo_symbol": "3303.TWO"
+      }
+    },
+    {
+      "ticker": "6103.TWO",
+      "name": "Avid Electronics Corp.",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Semiconductors",
+      "description": "Avid Electronics Corp. · Semiconductors",
+      "change_pct": 9.966780688070687,
+      "session_open": 108.79183959960938,
+      "session_close": 108.79183959960938,
+      "session_volume": 27317.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:6103",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6103.TWO/history/",
+        "date": "2016-05-09",
+        "daily_high": 108.79183959960938,
+        "prior_all_time_or_current_month_high": 651.3820190429688,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:6103",
+        "yahoo_symbol": "6103.TWO"
+      }
+    },
+    {
+      "ticker": "1605.TW",
+      "name": "Walsin Lihwa Corporation",
+      "exchange": "TWSE",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Electrical Products",
+      "description": "Walsin Lihwa Corporation · Electrical Products",
+      "change_pct": 4.333344293381436,
+      "session_open": 8.95451545715332,
+      "session_close": 9.229737281799316,
+      "session_volume": 24044375.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:1605",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/1605.TW/history/",
+        "date": "2016-05-09",
+        "daily_high": 9.337859153747559,
+        "prior_all_time_or_current_month_high": 22.88433265686035,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:1605",
+        "yahoo_symbol": "1605.TW"
+      }
+    },
+    {
+      "ticker": "2488.TW",
+      "name": "Hanpin Electron Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Consumer Durables",
+      "high_type": "all_time",
+      "reason": "업종: Consumer Durables · Electronics/Appliances",
+      "description": "Hanpin Electron Co., Ltd. · Electronics/Appliances",
+      "change_pct": 4.2222256130642455,
+      "session_open": 45.099998474121094,
+      "session_close": 46.900001525878906,
+      "session_volume": 2976000.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2488",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2488.TW/history/",
+        "date": "2016-05-09",
+        "daily_high": 47.5,
+        "prior_all_time_or_current_month_high": 47.5,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:2488",
+        "yahoo_symbol": "2488.TW"
+      }
+    },
+    {
+      "ticker": "2723.TW",
+      "name": "Gourmet Master Co. Ltd.",
+      "exchange": "TWSE",
+      "category": "Consumer Non-Durables",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Non-Durables · Food: Specialty/Candy",
+      "description": "Gourmet Master Co. Ltd. · Food: Specialty/Candy",
+      "change_pct": 4.999997754986074,
+      "session_open": 205.47085571289062,
+      "session_close": 214.0974884033203,
+      "session_volume": 489646.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2723",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2723.TW/history/",
+        "date": "2016-05-09",
+        "daily_high": 216.45021057128906,
+        "prior_all_time_or_current_month_high": 280.974853515625,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:2723",
+        "yahoo_symbol": "2723.TW"
+      }
+    },
+    {
+      "ticker": "4736.TW",
+      "name": "Taidoc Technology Corporation",
+      "exchange": "TWSE",
+      "category": "Health Technology",
+      "high_type": "all_time",
+      "reason": "업종: Health Technology · Medical Specialties",
+      "description": "Taidoc Technology Corporation · Medical Specialties",
+      "change_pct": 0.0,
+      "session_open": 118.58547973632812,
+      "session_close": 118.99723815917969,
+      "session_volume": 2234207.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:4736",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4736.TW/history/",
+        "date": "2016-05-09",
+        "daily_high": 121.0560073852539,
+        "prior_all_time_or_current_month_high": 121.0560073852539,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:4736",
+        "yahoo_symbol": "4736.TW"
+      }
+    },
+    {
+      "ticker": "5258.TW",
+      "name": "Castles Technology Co. Ltd.",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Computer Processing Hardware",
+      "description": "Castles Technology Co. Ltd. · Computer Processing Hardware",
+      "change_pct": 5.000002759058586,
+      "session_open": 43.552162170410156,
+      "session_close": 43.552162170410156,
+      "session_volume": 387551.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:5258",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/5258.TW/history/",
+        "date": "2016-05-09",
+        "daily_high": 44.78821563720703,
+        "prior_all_time_or_current_month_high": 44.78821563720703,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:5258",
+        "yahoo_symbol": "5258.TW"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-11-12T11:47:01.999915+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 2361,
+    "history_symbols": 1683,
+    "inactive_symbols": 668,
+    "failed_symbols": 10,
+    "coverage_ratio": 0.9940933254577673,
+    "coverage_by_exchange": {
+      "TWSE": {
+        "covered": 907,
+        "total": 914
+      },
+      "TPEX": {
+        "covered": 776,
+        "total": 779
+      }
+    },
+    "session_symbols": 1647,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-11-12T11:47:01.999915+00:00"
+}

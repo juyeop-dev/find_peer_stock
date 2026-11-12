@@ -1,0 +1,101 @@
+{
+  "schema_version": 1,
+  "market": "korea",
+  "date": "2016-10-27",
+  "rules": {
+    "KOSPI": {
+      "market_cap_min": 5000000000000,
+      "rebound_min": 8
+    },
+    "KOSDAQ": {
+      "market_cap_min": 1000000000000,
+      "rebound_min": 5
+    }
+  },
+  "entries": [
+    {
+      "ticker": "214370.KQ",
+      "name": "케어젠",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 102000.0,
+      "low": 88400.0,
+      "change_pct": 14.48,
+      "rebound_pct": 15.384615384615374,
+      "market_cap": 1092420000000.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2016-10-27",
+      "sector": "미분류",
+      "industry": "미분류"
+    },
+    {
+      "ticker": "145020.KQ",
+      "name": "휴젤",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 347800.0,
+      "low": 315000.0,
+      "change_pct": 4.1,
+      "rebound_pct": 10.412698412698408,
+      "market_cap": 1142195372400.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2016-10-27",
+      "sector": "미분류",
+      "industry": "미분류"
+    },
+    {
+      "ticker": "102940.KQ",
+      "name": "코오롱생명과학",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 150100.0,
+      "low": 140500.0,
+      "change_pct": 6.15,
+      "rebound_pct": 6.832740213523136,
+      "market_cap": 1142394589000.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2016-10-27",
+      "sector": "미분류",
+      "industry": "미분류"
+    }
+  ],
+  "source_metadata": {
+    "provider": "KRX daily data via FinanceData/marcap",
+    "fetched_at": "2026-11-12T11:37:49.509009+00:00",
+    "reconstructed_at": "2026-11-12T11:38:59.543510+00:00",
+    "session": "daily",
+    "timezone": "Asia/Seoul",
+    "scanned_symbols": 2215,
+    "common_symbols_by_board": {
+      "KOSPI": 778,
+      "KOSDAQ": 1185
+    },
+    "excluded": {
+      "below_rebound": 47,
+      "declining": 15,
+      "unsupported_listing": 252,
+      "below_market_cap": 1861,
+      "no_trading": 37
+    },
+    "latest_session_by_board": {
+      "KOSPI": "2016-10-27",
+      "KOSDAQ": "2016-10-27"
+    },
+    "source_revision": "eeed0817d1478597b738a3a6149c170ec7e3f4cb",
+    "source_sha256": "947746ac36de3b3385f4335a6a051fba49007f50dbefe3e0589ec77a3e03f0e2",
+    "price_basis": "Unadjusted KRX Low and Close from the same daily source row",
+    "market_cap_basis": "Dated KRX Marcap in KRW; verified against Close * Stocks",
+    "listing_basis": "Dated KOSPI/KOSDAQ common share codes ending in 0; includes historical delistings",
+    "note": "KRX 당시 상장 종목의 당일 저가·종가·시가총액으로 복원한 기록입니다. 현재 시총이나 분할 조정 가격을 소급 적용하지 않습니다."
+  },
+  "sources": [
+    {
+      "label": "KRX daily data via FinanceData/marcap",
+      "url": "https://github.com/FinanceData/marcap"
+    },
+    {
+      "label": "2016년 고정 버전 원본",
+      "url": "https://raw.githubusercontent.com/FinanceData/marcap/eeed0817d1478597b738a3a6149c170ec7e3f4cb/data/marcap-2016.parquet"
+    }
+  ]
+}

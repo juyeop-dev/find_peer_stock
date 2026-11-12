@@ -1,4 +1,5 @@
 import json
+import gzip
 import sys
 import tempfile
 import unittest
@@ -38,7 +39,7 @@ class CalendarStockDataTests(unittest.TestCase):
             path.write_text(json.dumps({"market": "europe", "date": "2026-01-02", "entries": [
                 {"ticker": "EURONEXT:MC", "exchange": "EURONEXT", "session_close": 600}]}), encoding="utf-8")
             self.assertEqual(publish(source, output), 1)
-            data = json.loads((output / "europe/EURONEXT~3AMC.json").read_text(encoding="utf-8"))
+            data = json.loads(gzip.decompress((output / "europe/EURONEXT~3AMC.json.gz").read_bytes()))
             self.assertEqual(data["history"], [{"date": "2026-01-02", "close": 600, "currency": "EUR"}])
 
 

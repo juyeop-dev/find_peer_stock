@@ -1,0 +1,267 @@
+{
+  "schema_version": 1,
+  "market": "japan",
+  "date": "2016-04-07",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "1959.T",
+      "name": "KRAFTIA CORPORATION",
+      "exchange": "TSE",
+      "category": "Industrial Services",
+      "high_type": "all_time",
+      "reason": "업종: Industrial Services · Engineering & Construction",
+      "description": "KRAFTIA CORPORATION · Engineering & Construction",
+      "change_pct": 4.110091743119271,
+      "session_open": 2745.0,
+      "session_close": 2837.0,
+      "session_volume": 649200.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:1959",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/1959.T/history/",
+        "date": "2016-04-07",
+        "daily_high": 2859.0,
+        "prior_all_time_or_current_month_high": 2859.0,
+        "passes_close_filter": true,
+        "source_symbol": "TSE:1959",
+        "yahoo_symbol": "1959.T"
+      }
+    },
+    {
+      "ticker": "2160.T",
+      "name": "GNI Group Ltd.",
+      "exchange": "TSE",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Biotechnology",
+      "description": "GNI Group Ltd. · Biotechnology",
+      "change_pct": 9.665422752058795,
+      "session_open": 900.0,
+      "session_close": 983.3333129882812,
+      "session_volume": 1053900.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:2160",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2160.T/history/",
+        "date": "2016-04-07",
+        "daily_high": 983.3333129882812,
+        "prior_all_time_or_current_month_high": 2800.0,
+        "passes_close_filter": true,
+        "source_symbol": "TSE:2160",
+        "yahoo_symbol": "2160.T"
+      }
+    },
+    {
+      "ticker": "2296.T",
+      "name": "Itoham Yonekyu Holdings, Inc.",
+      "exchange": "TSE",
+      "category": "Consumer Non-Durables",
+      "high_type": "all_time",
+      "reason": "업종: Consumer Non-Durables · Food: Meat/Fish/Dairy",
+      "description": "Itoham Yonekyu Holdings, Inc. · Food: Meat/Fish/Dairy",
+      "change_pct": 5.2989130434782705,
+      "session_open": 3695.0,
+      "session_close": 3875.0,
+      "session_volume": 277640.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:2296",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2296.T/history/",
+        "date": "2016-04-07",
+        "daily_high": 3890.0,
+        "prior_all_time_or_current_month_high": 3890.0,
+        "passes_close_filter": true,
+        "source_symbol": "TSE:2296",
+        "yahoo_symbol": "2296.T"
+      }
+    },
+    {
+      "ticker": "3333.T",
+      "name": "Asahi Co., Ltd.",
+      "exchange": "TSE",
+      "category": "Retail Trade",
+      "high_type": "52_week",
+      "reason": "업종: Retail Trade · Specialty Stores",
+      "description": "Asahi Co., Ltd. · Specialty Stores",
+      "change_pct": 6.109725685785539,
+      "session_open": 1620.0,
+      "session_close": 1702.0,
+      "session_volume": 518400.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:3333",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3333.T/history/",
+        "date": "2016-04-07",
+        "daily_high": 1726.0,
+        "prior_all_time_or_current_month_high": 1869.0,
+        "passes_close_filter": true,
+        "source_symbol": "TSE:3333",
+        "yahoo_symbol": "3333.T"
+      }
+    },
+    {
+      "ticker": "4563.T",
+      "name": "AnGes. Inc.",
+      "exchange": "TSE",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Pharmaceuticals: Generic",
+      "description": "AnGes. Inc. · Pharmaceuticals: Generic",
+      "change_pct": 15.322580645161299,
+      "session_open": 621.0,
+      "session_close": 715.0,
+      "session_volume": 29697600.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:4563",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4563.T/history/",
+        "date": "2016-04-07",
+        "daily_high": 720.0,
+        "prior_all_time_or_current_month_high": 5595.65283203125,
+        "passes_close_filter": true,
+        "source_symbol": "TSE:4563",
+        "yahoo_symbol": "4563.T"
+      }
+    },
+    {
+      "ticker": "4912.T",
+      "name": "Lion Corporation",
+      "exchange": "TSE",
+      "category": "Consumer Non-Durables",
+      "high_type": "all_time",
+      "reason": "업종: Consumer Non-Durables · Household/Personal Care",
+      "description": "Lion Corporation · Household/Personal Care",
+      "change_pct": 6.545741324921139,
+      "session_open": 1320.0,
+      "session_close": 1351.0,
+      "session_volume": 2778000.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:4912",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4912.T/history/",
+        "date": "2016-04-07",
+        "daily_high": 1354.0,
+        "prior_all_time_or_current_month_high": 1354.0,
+        "passes_close_filter": true,
+        "source_symbol": "TSE:4912",
+        "yahoo_symbol": "4912.T"
+      }
+    },
+    {
+      "ticker": "6381.T",
+      "name": "ANEST IWATA Corp.",
+      "exchange": "TSE",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Industrial Machinery",
+      "description": "ANEST IWATA Corp. · Industrial Machinery",
+      "change_pct": 2.941176470588225,
+      "session_open": 1092.0,
+      "session_close": 1120.0,
+      "session_volume": 123100.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:6381",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6381.T/history/",
+        "date": "2016-04-07",
+        "daily_high": 1120.0,
+        "prior_all_time_or_current_month_high": 1120.0,
+        "passes_close_filter": true,
+        "source_symbol": "TSE:6381",
+        "yahoo_symbol": "6381.T"
+      }
+    },
+    {
+      "ticker": "7610.T",
+      "name": "Tay Two Co., Ltd.",
+      "exchange": "TSE",
+      "category": "Consumer Durables",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Durables · Recreational Products",
+      "description": "Tay Two Co., Ltd. · Recreational Products",
+      "change_pct": 42.85714285714286,
+      "session_open": 100.0,
+      "session_close": 100.0,
+      "session_volume": 1070300.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:7610",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/7610.T/history/",
+        "date": "2016-04-07",
+        "daily_high": 100.0,
+        "prior_all_time_or_current_month_high": 3080.0,
+        "passes_close_filter": true,
+        "source_symbol": "TSE:7610",
+        "yahoo_symbol": "7610.T"
+      }
+    },
+    {
+      "ticker": "8985.T",
+      "name": "Japan Hotel Reit Investment Corporation",
+      "exchange": "TSE",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "업종: Finance · Real Estate Investment Trusts",
+      "description": "Japan Hotel Reit Investment Corporation · Real Estate Investment Trusts",
+      "change_pct": 0.8780487804878057,
+      "session_open": 102500.0,
+      "session_close": 103400.0,
+      "session_volume": 12508.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:8985",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/8985.T/history/",
+        "date": "2016-04-07",
+        "daily_high": 104300.0,
+        "prior_all_time_or_current_month_high": 104300.0,
+        "passes_close_filter": true,
+        "source_symbol": "TSE:8985",
+        "yahoo_symbol": "8985.T"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-11-12T11:50:12.221963+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 3761,
+    "history_symbols": 2910,
+    "inactive_symbols": 850,
+    "failed_symbols": 1,
+    "coverage_ratio": 0.9996564754379939,
+    "coverage_by_exchange": {
+      "TSE": {
+        "covered": 2910,
+        "total": 2911
+      }
+    },
+    "session_symbols": 2854,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-11-12T11:50:12.221963+00:00"
+}

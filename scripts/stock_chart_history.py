@@ -97,6 +97,8 @@ def yahoo_symbol(ticker: str) -> str | None:
 def parse_yahoo(payload: dict, ticker: str) -> dict:
     result = payload["chart"]["result"][0]
     meta = result["meta"]
+    if meta.get("dataGranularity") not in {None, "1d"}:
+        raise ValueError(f"Yahoo returned {meta['dataGranularity']} instead of daily history: {ticker}")
     if meta.get("symbol", "").upper() != yahoo_symbol(ticker) or meta.get("instrumentType") not in {"EQUITY", "ETF", "MUTUALFUND"}:
         raise ValueError("Yahoo symbol or listed instrument identity mismatch")
     if not isinstance(meta.get("currency"), str) or not meta["currency"].strip():
@@ -113,6 +115,9 @@ def parse_yahoo(payload: dict, ticker: str) -> dict:
         day = datetime.fromtimestamp(stamp, zone).date().isoformat()
         adj = adjusted[i] if i < len(adjusted) and type(adjusted[i]) in (int, float) and math.isfinite(adjusted[i]) and adjusted[i] > 0 else close
         prices.append([day, close, adj])
+    dates = [point[0] for point in prices]
+    if dates != sorted(set(dates)):
+        raise ValueError(f"Yahoo daily history contains duplicate or unordered sessions: {ticker}")
     first_trade = meta.get("firstTradeDate")
     return {"ticker": ticker, "currency": meta["currency"], "source": "Yahoo Finance daily chart",
             "fetched_at": datetime.fromtimestamp(meta.get("regularMarketTime", 0), timezone.utc).isoformat(),
@@ -136,6 +141,9 @@ def parse_tradingview(payload: dict, ticker: str) -> dict:
     zone = ZoneInfo(info["timezone"])
     prices = [[datetime.fromtimestamp(bar["timestamp"], zone).date().isoformat(), bar["close"], bar["close"]]
               for bar in payload["bars"] if bar["close"] > 0]
+    dates = [point[0] for point in prices]
+    if dates != sorted(set(dates)):
+        raise ValueError(f"TradingView daily history contains duplicate or unordered sessions: {ticker}")
     return {"ticker": ticker, "currency": info["currency_code"], "source": "TradingView · Cboe One split-adjusted daily chart" if cboe else "TradingView split-adjusted daily chart",
             "fetched_at": payload.get("fetched_at"), "first_trade_date": None,
             "requested_bars": payload.get("requested_bars"), "prices": prices}
@@ -169,7 +177,7 @@ def save_candidate(db: sqlite3.Connection, value: dict, *, historical_start: str
         raise ValueError("Daily history currency is unavailable")
     dates = [point[0] for point in value["prices"]]
     if dates != sorted(set(dates)):
-        raise ValueError("Daily history contains duplicate or unordered sessions")
+        raise ValueError(f"Daily history contains duplicate or unordered sessions: {value['ticker']}")
     previous = db.execute("SELECT value FROM history WHERE ticker=?", (value["ticker"],)).fetchone()
     if previous:
         old = json.loads(previous[0])

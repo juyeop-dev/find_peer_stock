@@ -1,0 +1,317 @@
+{
+  "schema_version": 1,
+  "market": "japan",
+  "date": "2016-04-27",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "2579.T",
+      "name": "Coca-Cola Bottlers Japan Holdings Inc.",
+      "exchange": "TSE",
+      "category": "Consumer Non-Durables",
+      "high_type": "all_time",
+      "reason": "업종: Consumer Non-Durables · Beverages: Non-Alcoholic",
+      "description": "Coca-Cola Bottlers Japan Holdings Inc. · Beverages: Non-Alcoholic",
+      "change_pct": 10.46299671892088,
+      "session_open": 2943.0,
+      "session_close": 3030.0,
+      "session_volume": 1518100.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:2579",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2579.T/history/",
+        "date": "2016-04-27",
+        "daily_high": 3040.0,
+        "prior_all_time_or_current_month_high": 3040.0,
+        "passes_close_filter": true,
+        "source_symbol": "TSE:2579",
+        "yahoo_symbol": "2579.T"
+      }
+    },
+    {
+      "ticker": "2811.T",
+      "name": "Kagome Co., Ltd.",
+      "exchange": "TSE",
+      "category": "Consumer Non-Durables",
+      "high_type": "all_time",
+      "reason": "업종: Consumer Non-Durables · Food: Specialty/Candy",
+      "description": "Kagome Co., Ltd. · Food: Specialty/Candy",
+      "change_pct": 0.340136054421758,
+      "session_open": 2355.0,
+      "session_close": 2360.0,
+      "session_volume": 307800.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:2811",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2811.T/history/",
+        "date": "2016-04-27",
+        "daily_high": 2394.0,
+        "prior_all_time_or_current_month_high": 2394.0,
+        "passes_close_filter": true,
+        "source_symbol": "TSE:2811",
+        "yahoo_symbol": "2811.T"
+      }
+    },
+    {
+      "ticker": "3465.T",
+      "name": "KI-Star Real Estate Co., Ltd.",
+      "exchange": "TSE",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "업종: Finance · Real Estate Development",
+      "description": "KI-Star Real Estate Co., Ltd. · Real Estate Development",
+      "change_pct": 6.921778277996626,
+      "session_open": 449.75,
+      "session_close": 475.0,
+      "session_volume": 426800.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:3465",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3465.T/history/",
+        "date": "2016-04-27",
+        "daily_high": 479.5,
+        "prior_all_time_or_current_month_high": 479.5,
+        "passes_close_filter": true,
+        "source_symbol": "TSE:3465",
+        "yahoo_symbol": "3465.T"
+      }
+    },
+    {
+      "ticker": "3624.T",
+      "name": "Axel Mark Inc.",
+      "exchange": "TSE",
+      "category": "Commercial Services",
+      "high_type": "52_week",
+      "reason": "업종: Commercial Services · Advertising/Marketing Services",
+      "description": "Axel Mark Inc. · Advertising/Marketing Services",
+      "change_pct": 18.49405548216645,
+      "session_open": 4050.0,
+      "session_close": 4485.0,
+      "session_volume": 2173800.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:3624",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3624.T/history/",
+        "date": "2016-04-27",
+        "daily_high": 4485.0,
+        "prior_all_time_or_current_month_high": 6240.0,
+        "passes_close_filter": true,
+        "source_symbol": "TSE:3624",
+        "yahoo_symbol": "3624.T"
+      }
+    },
+    {
+      "ticker": "4526.T",
+      "name": "Riken Vitamin Co., Ltd.",
+      "exchange": "TSE",
+      "category": "Consumer Non-Durables",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Non-Durables · Food: Specialty/Candy",
+      "description": "Riken Vitamin Co., Ltd. · Food: Specialty/Candy",
+      "change_pct": 6.490384615384626,
+      "session_open": 2097.5,
+      "session_close": 2215.0,
+      "session_volume": 172800.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:4526",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4526.T/history/",
+        "date": "2016-04-27",
+        "daily_high": 2405.0,
+        "prior_all_time_or_current_month_high": 2885.0,
+        "passes_close_filter": true,
+        "source_symbol": "TSE:4526",
+        "yahoo_symbol": "4526.T"
+      }
+    },
+    {
+      "ticker": "4714.T",
+      "name": "RISO KYOIKU GROUP CORPORATION",
+      "exchange": "TSE",
+      "category": "Consumer Services",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Services · Other Consumer Services",
+      "description": "RISO KYOIKU GROUP CORPORATION · Other Consumer Services",
+      "change_pct": 0.710900448228724,
+      "session_open": 141.6666717529297,
+      "session_close": 141.6666717529297,
+      "session_volume": 782100.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:4714",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4714.T/history/",
+        "date": "2016-04-27",
+        "daily_high": 142.0,
+        "prior_all_time_or_current_month_high": 518.0,
+        "passes_close_filter": true,
+        "source_symbol": "TSE:4714",
+        "yahoo_symbol": "4714.T"
+      }
+    },
+    {
+      "ticker": "4832.T",
+      "name": "JFE Systems, Inc.",
+      "exchange": "TSE",
+      "category": "Technology Services",
+      "high_type": "52_week",
+      "reason": "업종: Technology Services · Information Technology Services",
+      "description": "JFE Systems, Inc. · Information Technology Services",
+      "change_pct": 2.822580645161299,
+      "session_open": 315.0,
+      "session_close": 318.75,
+      "session_volume": 20800.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:4832",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4832.T/history/",
+        "date": "2016-04-27",
+        "daily_high": 337.5,
+        "prior_all_time_or_current_month_high": 3450.0,
+        "passes_close_filter": true,
+        "source_symbol": "TSE:4832",
+        "yahoo_symbol": "4832.T"
+      }
+    },
+    {
+      "ticker": "6036.T",
+      "name": "KeePer Technical Laboratory Co.Ltd.",
+      "exchange": "TSE",
+      "category": "Process Industries",
+      "high_type": "52_week",
+      "reason": "업종: Process Industries · Industrial Specialties",
+      "description": "KeePer Technical Laboratory Co.Ltd. · Industrial Specialties",
+      "change_pct": 10.71428571428572,
+      "session_open": 225.0,
+      "session_close": 248.0,
+      "session_volume": 1651200.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:6036",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6036.T/history/",
+        "date": "2016-04-27",
+        "daily_high": 252.0,
+        "prior_all_time_or_current_month_high": 411.75,
+        "passes_close_filter": true,
+        "source_symbol": "TSE:6036",
+        "yahoo_symbol": "6036.T"
+      }
+    },
+    {
+      "ticker": "6788.T",
+      "name": "Nihon Trim Co., Ltd.",
+      "exchange": "TSE",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Industrial Machinery",
+      "description": "Nihon Trim Co., Ltd. · Industrial Machinery",
+      "change_pct": 10.16129032258064,
+      "session_open": 6110.0,
+      "session_close": 6830.0,
+      "session_volume": 338600.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:6788",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6788.T/history/",
+        "date": "2016-04-27",
+        "daily_high": 6890.0,
+        "prior_all_time_or_current_month_high": 9380.0,
+        "passes_close_filter": true,
+        "source_symbol": "TSE:6788",
+        "yahoo_symbol": "6788.T"
+      }
+    },
+    {
+      "ticker": "8160.T",
+      "name": "KISOJI CO., LTD.",
+      "exchange": "TSE",
+      "category": "Consumer Services",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Services · Restaurants",
+      "description": "KISOJI CO., LTD. · Restaurants",
+      "change_pct": 0.08673026886383273,
+      "session_open": 2306.0,
+      "session_close": 2308.0,
+      "session_volume": 44000.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:8160",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/8160.T/history/",
+        "date": "2016-04-27",
+        "daily_high": 2320.0,
+        "prior_all_time_or_current_month_high": 2455.0,
+        "passes_close_filter": true,
+        "source_symbol": "TSE:8160",
+        "yahoo_symbol": "8160.T"
+      }
+    },
+    {
+      "ticker": "9960.T",
+      "name": "Totech Corporation",
+      "exchange": "TSE",
+      "category": "Distribution Services",
+      "high_type": "all_time",
+      "reason": "업종: Distribution Services · Wholesale Distributors",
+      "description": "Totech Corporation · Wholesale Distributors",
+      "change_pct": 4.689207409881213,
+      "session_open": 308.3333435058594,
+      "session_close": 320.0,
+      "session_volume": 83700.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:9960",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/9960.T/history/",
+        "date": "2016-04-27",
+        "daily_high": 323.3333435058594,
+        "prior_all_time_or_current_month_high": 323.3333435058594,
+        "passes_close_filter": true,
+        "source_symbol": "TSE:9960",
+        "yahoo_symbol": "9960.T"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-11-12T11:50:12.221963+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 3761,
+    "history_symbols": 2910,
+    "inactive_symbols": 850,
+    "failed_symbols": 1,
+    "coverage_ratio": 0.9996564754379939,
+    "coverage_by_exchange": {
+      "TSE": {
+        "covered": 2910,
+        "total": 2911
+      }
+    },
+    "session_symbols": 2859,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-11-12T11:50:12.221963+00:00"
+}

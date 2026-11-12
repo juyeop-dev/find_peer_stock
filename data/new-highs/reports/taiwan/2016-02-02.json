@@ -1,0 +1,246 @@
+{
+  "schema_version": 1,
+  "market": "taiwan",
+  "date": "2016-02-02",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "3293.TWO",
+      "name": "International Games System Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Technology Services",
+      "high_type": "52_week",
+      "reason": "업종: Technology Services · Packaged Software",
+      "description": "International Games System Co., Ltd. · Packaged Software",
+      "change_pct": 9.81595092024541,
+      "session_open": 41.25,
+      "session_close": 44.75,
+      "session_volume": 16422852.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:3293",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3293.TWO/history/",
+        "date": "2016-02-02",
+        "daily_high": 44.75,
+        "prior_all_time_or_current_month_high": 76.41470336914062,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:3293",
+        "yahoo_symbol": "3293.TWO"
+      }
+    },
+    {
+      "ticker": "3349.TWO",
+      "name": "DEXIN Corporation",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Computer Peripherals",
+      "description": "DEXIN Corporation · Computer Peripherals",
+      "change_pct": 4.163820522483053,
+      "session_open": 25.18526840209961,
+      "session_close": 25.18526840209961,
+      "session_volume": 19389.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:3349",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3349.TWO/history/",
+        "date": "2016-02-02",
+        "daily_high": 25.18526840209961,
+        "prior_all_time_or_current_month_high": 25.18526840209961,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:3349",
+        "yahoo_symbol": "3349.TWO"
+      }
+    },
+    {
+      "ticker": "4806.TWO",
+      "name": "Kuei Tien Cultural & Creative Entertainment",
+      "exchange": "TPEX",
+      "category": "Consumer Services",
+      "high_type": "all_time",
+      "reason": "업종: Consumer Services · Movies/Entertainment",
+      "description": "Kuei Tien Cultural & Creative Entertainment · Movies/Entertainment",
+      "change_pct": 1.8329953530526355,
+      "session_open": 363.39794921875,
+      "session_close": 363.39794921875,
+      "session_volume": 64928.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:4806",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4806.TWO/history/",
+        "date": "2016-02-02",
+        "daily_high": 387.6244812011719,
+        "prior_all_time_or_current_month_high": 387.6244812011719,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:4806",
+        "yahoo_symbol": "4806.TWO"
+      }
+    },
+    {
+      "ticker": "8455.TWO",
+      "name": "Daito Me Holdings Co. Ltd.",
+      "exchange": "TPEX",
+      "category": "Distribution Services",
+      "high_type": "all_time",
+      "reason": "업종: Distribution Services · Electronics Distributors",
+      "description": "Daito Me Holdings Co. Ltd. · Electronics Distributors",
+      "change_pct": 9.915014378599318,
+      "session_open": 19.399999618530273,
+      "session_close": 19.399999618530273,
+      "session_volume": 1107000.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:8455",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/8455.TWO/history/",
+        "date": "2016-02-02",
+        "daily_high": 19.399999618530273,
+        "prior_all_time_or_current_month_high": 19.399999618530273,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:8455",
+        "yahoo_symbol": "8455.TWO"
+      }
+    },
+    {
+      "ticker": "1225.TW",
+      "name": "Formosa Oilseed Processing Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Process Industries",
+      "high_type": "all_time",
+      "reason": "업종: Process Industries · Agricultural Commodities/Milling",
+      "description": "Formosa Oilseed Processing Co., Ltd. · Agricultural Commodities/Milling",
+      "change_pct": 7.884612837299687,
+      "session_open": 23.200180053710938,
+      "session_close": 25.321596145629883,
+      "session_volume": 420945.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:1225",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/1225.TW/history/",
+        "date": "2016-02-02",
+        "daily_high": 25.77296257019043,
+        "prior_all_time_or_current_month_high": 25.77296257019043,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:1225",
+        "yahoo_symbol": "1225.TW"
+      }
+    },
+    {
+      "ticker": "2412.TW",
+      "name": "Chunghwa Telecom Co., Ltd",
+      "exchange": "TWSE",
+      "category": "Communications",
+      "high_type": "52_week",
+      "reason": "업종: Communications · Major Telecommunications",
+      "description": "Chunghwa Telecom Co., Ltd · Major Telecommunications",
+      "change_pct": 0.0,
+      "session_open": 103.0,
+      "session_close": 103.0,
+      "session_volume": 9568000.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2412",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2412.TW/history/",
+        "date": "2016-02-02",
+        "daily_high": 103.5,
+        "prior_all_time_or_current_month_high": 111.0,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:2412",
+        "yahoo_symbol": "2412.TW"
+      }
+    },
+    {
+      "ticker": "2419.TW",
+      "name": "Hitron Technologies Inc.",
+      "exchange": "TWSE",
+      "category": "Technology Services",
+      "high_type": "52_week",
+      "reason": "업종: Technology Services · Information Technology Services",
+      "description": "Hitron Technologies Inc. · Information Technology Services",
+      "change_pct": 2.045452162097905,
+      "session_open": 24.482894897460938,
+      "session_close": 24.87063217163086,
+      "session_volume": 14823663.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2419",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2419.TW/history/",
+        "date": "2016-02-02",
+        "daily_high": 25.479936599731445,
+        "prior_all_time_or_current_month_high": 207.3176727294922,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:2419",
+        "yahoo_symbol": "2419.TW"
+      }
+    },
+    {
+      "ticker": "2633.TW",
+      "name": "Taiwan High Speed Rail Corporation",
+      "exchange": "TWSE",
+      "category": "Transportation",
+      "high_type": "52_week",
+      "reason": "업종: Transportation · Other Transportation",
+      "description": "Taiwan High Speed Rail Corporation · Other Transportation",
+      "change_pct": 1.502628121411398,
+      "session_open": 13.510000228881836,
+      "session_close": 13.510000228881836,
+      "session_volume": 4452629.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2633",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2633.TW/history/",
+        "date": "2016-02-02",
+        "daily_high": 13.550000190734863,
+        "prior_all_time_or_current_month_high": 31.25,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:2633",
+        "yahoo_symbol": "2633.TW"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-11-12T11:47:01.999915+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 2361,
+    "history_symbols": 1683,
+    "inactive_symbols": 668,
+    "failed_symbols": 10,
+    "coverage_ratio": 0.9940933254577673,
+    "coverage_by_exchange": {
+      "TWSE": {
+        "covered": 907,
+        "total": 914
+      },
+      "TPEX": {
+        "covered": 776,
+        "total": 779
+      }
+    },
+    "session_symbols": 1636,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-11-12T11:47:01.999915+00:00"
+}

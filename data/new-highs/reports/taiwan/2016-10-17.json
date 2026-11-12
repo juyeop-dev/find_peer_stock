@@ -1,0 +1,296 @@
+{
+  "schema_version": 1,
+  "market": "taiwan",
+  "date": "2016-10-17",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "3219.TWO",
+      "name": "Aethertek Technology Co., Ltd",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Electronic Components",
+      "description": "Aethertek Technology Co., Ltd · Electronic Components",
+      "change_pct": 9.79827095367629,
+      "session_open": 29.15709114074707,
+      "session_close": 30.023923873901367,
+      "session_volume": 153461.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:3219",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3219.TWO/history/",
+        "date": "2016-10-17",
+        "daily_high": 30.023923873901367,
+        "prior_all_time_or_current_month_high": 175.61801147460938,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:3219",
+        "yahoo_symbol": "3219.TWO"
+      }
+    },
+    {
+      "ticker": "3580.TWO",
+      "name": "UVAT Technology Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Industrial Machinery",
+      "description": "UVAT Technology Co., Ltd. · Industrial Machinery",
+      "change_pct": 8.932459444765662,
+      "session_open": 41.597206115722656,
+      "session_close": 46.2191162109375,
+      "session_volume": 387353.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:3580",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3580.TWO/history/",
+        "date": "2016-10-17",
+        "daily_high": 46.2191162109375,
+        "prior_all_time_or_current_month_high": 95.25109100341797,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:3580",
+        "yahoo_symbol": "3580.TWO"
+      }
+    },
+    {
+      "ticker": "6220.TWO",
+      "name": "YFC-BonEagle Electric Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Electrical Products",
+      "description": "YFC-BonEagle Electric Co., Ltd. · Electrical Products",
+      "change_pct": 6.65679890713049,
+      "session_open": 33.45771026611328,
+      "session_close": 35.843994140625,
+      "session_volume": 11683297.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:6220",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6220.TWO/history/",
+        "date": "2016-10-17",
+        "daily_high": 35.843994140625,
+        "prior_all_time_or_current_month_high": 35.843994140625,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:6220",
+        "yahoo_symbol": "6220.TWO"
+      }
+    },
+    {
+      "ticker": "6242.TWO",
+      "name": "LI KANG BIOMEDICAL Co. Ltd.",
+      "exchange": "TPEX",
+      "category": "Consumer Services",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Services · Other Consumer Services",
+      "description": "LI KANG BIOMEDICAL Co. Ltd. · Other Consumer Services",
+      "change_pct": 0.0,
+      "session_open": 38.03518295288086,
+      "session_close": 38.03518295288086,
+      "session_volume": 6543.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:6242",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6242.TWO/history/",
+        "date": "2016-10-17",
+        "daily_high": 38.03518295288086,
+        "prior_all_time_or_current_month_high": 46.3131103515625,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:6242",
+        "yahoo_symbol": "6242.TWO"
+      }
+    },
+    {
+      "ticker": "8069.TWO",
+      "name": "E Ink Holdings Inc",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Computer Peripherals",
+      "description": "E Ink Holdings Inc · Computer Peripherals",
+      "change_pct": 9.072580924267326,
+      "session_open": 25.25,
+      "session_close": 27.049999237060547,
+      "session_volume": 56016820.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:8069",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/8069.TWO/history/",
+        "date": "2016-10-17",
+        "daily_high": 27.25,
+        "prior_all_time_or_current_month_high": 85.5999984741211,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:8069",
+        "yahoo_symbol": "8069.TWO"
+      }
+    },
+    {
+      "ticker": "1215.TW",
+      "name": "Charoen Pokphand Enterprise (Taiwan) Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Process Industries",
+      "high_type": "all_time",
+      "reason": "업종: Process Industries · Agricultural Commodities/Milling",
+      "description": "Charoen Pokphand Enterprise (Taiwan) Co., Ltd. · Agricultural Commodities/Milling",
+      "change_pct": 7.599516990276034,
+      "session_open": 37.909088134765625,
+      "session_close": 40.54545211791992,
+      "session_volume": 11754600.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:1215",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/1215.TW/history/",
+        "date": "2016-10-17",
+        "daily_high": 40.818180084228516,
+        "prior_all_time_or_current_month_high": 40.818180084228516,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:1215",
+        "yahoo_symbol": "1215.TW"
+      }
+    },
+    {
+      "ticker": "1604.TW",
+      "name": "Sampo Corporation",
+      "exchange": "TWSE",
+      "category": "Consumer Durables",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Durables · Electronics/Appliances",
+      "description": "Sampo Corporation · Electronics/Appliances",
+      "change_pct": 1.3227513227513255,
+      "session_open": 23.625,
+      "session_close": 23.9375,
+      "session_volume": 1111200.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:1604",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/1604.TW/history/",
+        "date": "2016-10-17",
+        "daily_high": 23.9375,
+        "prior_all_time_or_current_month_high": 59.87321472167969,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:1604",
+        "yahoo_symbol": "1604.TW"
+      }
+    },
+    {
+      "ticker": "3543.TW",
+      "name": "JOCHU Technology Co. Ltd.",
+      "exchange": "TWSE",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Metal Fabrication",
+      "description": "JOCHU Technology Co. Ltd. · Metal Fabrication",
+      "change_pct": 9.172934207013729,
+      "session_open": 14.520000457763672,
+      "session_close": 14.520000457763672,
+      "session_volume": 155000.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:3543",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3543.TW/history/",
+        "date": "2016-10-17",
+        "daily_high": 14.520000457763672,
+        "prior_all_time_or_current_month_high": 35.5,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:3543",
+        "yahoo_symbol": "3543.TW"
+      }
+    },
+    {
+      "ticker": "6115.TW",
+      "name": "I-Sheng Electric Wire & Cable Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Electrical Products",
+      "description": "I-Sheng Electric Wire & Cable Co., Ltd. · Electrical Products",
+      "change_pct": 1.2910870222024418,
+      "session_open": 43.0,
+      "session_close": 43.150001525878906,
+      "session_volume": 541000.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:6115",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6115.TW/history/",
+        "date": "2016-10-17",
+        "daily_high": 43.5,
+        "prior_all_time_or_current_month_high": 68.5,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:6115",
+        "yahoo_symbol": "6115.TW"
+      }
+    },
+    {
+      "ticker": "6505.TW",
+      "name": "Formosa Petrochemical Corp",
+      "exchange": "TWSE",
+      "category": "Energy Minerals",
+      "high_type": "52_week",
+      "reason": "업종: Energy Minerals · Oil Refining/Marketing",
+      "description": "Formosa Petrochemical Corp · Oil Refining/Marketing",
+      "change_pct": 2.10210054258817,
+      "session_open": 100.0,
+      "session_close": 102.0,
+      "session_volume": 5376000.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:6505",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6505.TW/history/",
+        "date": "2016-10-17",
+        "daily_high": 102.0,
+        "prior_all_time_or_current_month_high": 112.0,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:6505",
+        "yahoo_symbol": "6505.TW"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-11-12T11:47:01.999915+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 2361,
+    "history_symbols": 1683,
+    "inactive_symbols": 668,
+    "failed_symbols": 10,
+    "coverage_ratio": 0.9940933254577673,
+    "coverage_by_exchange": {
+      "TWSE": {
+        "covered": 907,
+        "total": 914
+      },
+      "TPEX": {
+        "covered": 776,
+        "total": 779
+      }
+    },
+    "session_symbols": 1669,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-11-12T11:47:01.999915+00:00"
+}

@@ -7,9 +7,26 @@ import ts from 'typescript';
 const source=await readFile(new URL('../src/dataClient/staticStockDataClient.ts',import.meta.url),'utf8');
 const js=ts.transpileModule(source,{compilerOptions:{module:ts.ModuleKind.ESNext,target:ts.ScriptTarget.ES2022}}).outputText
   .replace(/^import .*;\r?\n/gm,'').replaceAll('import.meta.env.BASE_URL','"/"');
-const code='const liveReportFor=()=>null,liveQuoteFor=()=>undefined;\n'+js;
+const code='const liveReportFor=()=>null,liveQuoteFor=()=>undefined,liveDetailFor=()=>undefined;\n'+js;
 const client=await import(`data:text/javascript;base64,${Buffer.from(code).toString('base64')}`);
 const sample={market:'taiwan',date:'2021-04-06',entries:[{ticker:'2330.TW',name:'原本',price:123.4567890123,change_pct:0,profit:-7}]};
+
+test('calendar stock observations preserve exact prices and currencies through gzip, decoded hosts and JSON fallback',async()=>{
+  const oldFetch=globalThis.fetch,oldWindow=globalThis.window;globalThis.window=globalThis;
+  const value={market:'europe',ticker:'EURONEXT:MC',history:[{date:'2016-01-04',close:123.4567890123,currency:'EUR'}]};
+  try {
+    for(const encoded of [true,false]) {
+      const calls=[];
+      globalThis.fetch=async url=>{calls.push(url);return new Response(encoded?gzipSync(JSON.stringify(value)):JSON.stringify(value));};
+      assert.deepEqual(await client.getCalendarStockPrices('europe','EURONEXT:MC'),value);
+      assert.match(calls[0],/calendar-stocks\/europe\/EURONEXT~3AMC\.json\.gz\?/);
+    }
+    const calls=[];
+    globalThis.fetch=async url=>{calls.push(url);return url.includes('.json.gz?')?new Response('',{status:404}):Response.json(value);};
+    assert.deepEqual(await client.getCalendarStockPrices('europe','EURONEXT:MC'),value);
+    assert.equal(calls.length,2);
+  } finally {globalThis.fetch=oldFetch;globalThis.window=oldWindow;}
+});
 
 test('yearly calendar aggregates decode exact compressed data and retain legacy JSON fallback',async()=>{
   const oldFetch=globalThis.fetch,oldWindow=globalThis.window;globalThis.window=globalThis;

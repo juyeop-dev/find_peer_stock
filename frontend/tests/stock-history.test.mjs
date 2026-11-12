@@ -7,7 +7,7 @@ import { gzipSync } from "node:zlib";
 let source = await readFile(new URL("../src/dataClient/stockHistoryClient.ts", import.meta.url), "utf8");
 source = source.replace('import { liveDetailFor, requestOriginal } from "./liveStockDataClient";', 'const liveDetailFor = () => undefined; const requestOriginal = () => { throw new Error("unit test should not request live data"); };');
 const javascript = ts.transpileModule(source, { compilerOptions: { module: ts.ModuleKind.ESNext, target: ts.ScriptTarget.ES2022 } }).outputText;
-const { chartStart, historyRange, yearCovered, getStockHistory, retainHistoricalPrices } = await import(`data:text/javascript;base64,${Buffer.from(javascript).toString("base64")}`);
+const { CHART_PERIODS, chartPeriodLabel, chartStart, historyRange, yearCovered, getStockHistory, retainHistoricalPrices } = await import(`data:text/javascript;base64,${Buffer.from(javascript).toString("base64")}`);
 const point = date => ({ date, close: 100, adjusted_close: 100, volume: null });
 test("a shorter refresh keeps verified historical prices and never splices incompatible adjustments or currencies", () => {
   const old = {ticker:"TEST",currency:"USD",source:"Stored original",history:["2020-01-02","2021-01-04","2021-01-05","2021-01-06"].map(point)};
@@ -76,4 +76,14 @@ test("2017 and 2018 ranges include the prior close and retain later year control
   assert.equal(chartStart("2026-11-02", "since2019"), "2019-01-01");
   const rows=["2017-12-29", "2018-01-02", "2019-01-02", "2026-10-30"].map(point);
   assert.deepEqual(historyRange(rows,"since2018"), rows);
+});
+
+
+test("2016 range includes the preceding close and keeps 2017 controls", () => {
+  assert.ok(CHART_PERIODS.includes("since2016"));
+  assert.ok(CHART_PERIODS.includes("since2017"));
+  assert.equal(chartStart("2026-11-12", "since2016"), "2016-01-01");
+  assert.equal(chartPeriodLabel("since2016"), "2016년~");
+  const points = [{date:"2015-12-30",close:10},{date:"2016-01-04",close:11},{date:"2017-01-02",close:12}];
+  assert.deepEqual(historyRange(points,"since2016"), points);
 });
