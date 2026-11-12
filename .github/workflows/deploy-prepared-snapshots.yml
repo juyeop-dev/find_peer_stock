@@ -49,6 +49,8 @@ jobs:
           npm run test:stock-information
           npm run test:stock-details
           npm run test:rebounds
+      - name: Publish committed market replay
+        run: python scripts/refresh_chart_replay.py --publish
       - name: Build from committed stock snapshots
         working-directory: frontend
         env:
