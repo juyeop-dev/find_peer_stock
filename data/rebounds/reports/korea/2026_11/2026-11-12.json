@@ -1,0 +1,98 @@
+{
+  "schema_version": 1,
+  "market": "korea",
+  "date": "2026-11-12",
+  "rules": {
+    "KOSPI": {
+      "market_cap_min": 5000000000000,
+      "rebound_min": 8
+    },
+    "KOSDAQ": {
+      "market_cap_min": 1000000000000,
+      "rebound_min": 5
+    }
+  },
+  "entries": [
+    {
+      "ticker": "003230.KS",
+      "name": "삼양식품",
+      "exchange": "KOSPI",
+      "currency": "KRW",
+      "price": 1265000,
+      "low": 1163000,
+      "change_pct": 4.459124690338563,
+      "rebound_pct": 8.77042132416166,
+      "market_cap": 8852797906876,
+      "market_cap_currency": "KRW",
+      "sector": "Consumer Non-Durables",
+      "industry": "Food: Major Diversified"
+    },
+    {
+      "ticker": "043260.KQ",
+      "name": "성호전자",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 24150,
+      "low": 22650,
+      "change_pct": 6.387665198237885,
+      "rebound_pct": 6.62251655629138,
+      "market_cap": 1550535535812,
+      "market_cap_currency": "KRW",
+      "sector": "Electronic Technology",
+      "industry": "Electronic Components"
+    },
+    {
+      "ticker": "036540.KQ",
+      "name": "SFA반도체",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 8750,
+      "low": 8230,
+      "change_pct": 2.82021151586369,
+      "rebound_pct": 6.318347509112998,
+      "market_cap": 1282206271362,
+      "market_cap_currency": "KRW",
+      "sector": "Electronic Technology",
+      "industry": "Semiconductors"
+    },
+    {
+      "ticker": "131290.KQ",
+      "name": "티에스이",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 239000,
+      "low": 225000,
+      "change_pct": 5.286343612334802,
+      "rebound_pct": 6.222222222222218,
+      "market_cap": 1986692710304,
+      "market_cap_currency": "KRW",
+      "sector": "Electronic Technology",
+      "industry": "Semiconductors"
+    }
+  ],
+  "source_metadata": {
+    "provider": "TradingView public scanner",
+    "fetched_at": "2026-11-12T07:07:29.849507+00:00",
+    "session": "daily",
+    "timezone": "Asia/Seoul",
+    "scanned_symbols": 2638,
+    "excluded": {
+      "below_market_cap": 2363,
+      "declining": 107,
+      "unsupported_listing": 106,
+      "below_rebound": 47,
+      "stale_session": 4,
+      "missing_market_cap": 7
+    },
+    "latest_session_by_board": {
+      "KOSPI": "2026-11-12",
+      "KOSDAQ": "2026-11-12"
+    }
+  },
+  "sources": [
+    {
+      "label": "TradingView 국내 주식 스크리너",
+      "url": "https://kr.tradingview.com/markets/stocks-korea/market-movers-all-stocks/"
+    }
+  ]
+}
