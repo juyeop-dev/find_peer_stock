@@ -1,0 +1,98 @@
+{
+  "schema_version": 1,
+  "market": "korea",
+  "date": "2026-11-13",
+  "rules": {
+    "KOSPI": {
+      "market_cap_min": 5000000000000,
+      "rebound_min": 8
+    },
+    "KOSDAQ": {
+      "market_cap_min": 1000000000000,
+      "rebound_min": 5
+    }
+  },
+  "entries": [
+    {
+      "ticker": "437730.KQ",
+      "name": "삼현",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 47050,
+      "low": 42800,
+      "change_pct": 8.786127167630058,
+      "rebound_pct": 9.929906542056077,
+      "market_cap": 1383541669846,
+      "market_cap_currency": "KRW",
+      "sector": "Producer Manufacturing",
+      "industry": "Building Products"
+    },
+    {
+      "ticker": "328130.KQ",
+      "name": "루닛",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 15020,
+      "low": 13750,
+      "change_pct": 9.475218658892128,
+      "rebound_pct": 9.236363636363642,
+      "market_cap": 1051770379638.9999,
+      "market_cap_currency": "KRW",
+      "sector": "Technology Services",
+      "industry": "Packaged Software"
+    },
+    {
+      "ticker": "319660.KQ",
+      "name": "피에스케이",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 97800,
+      "low": 91200,
+      "change_pct": 8.908685968819599,
+      "rebound_pct": 7.236842105263164,
+      "market_cap": 2722871196747,
+      "market_cap_currency": "KRW",
+      "sector": "Producer Manufacturing",
+      "industry": "Industrial Machinery"
+    },
+    {
+      "ticker": "058610.KQ",
+      "name": "에스피지",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 70900,
+      "low": 66400,
+      "change_pct": 7.91476407914764,
+      "rebound_pct": 6.777108433734935,
+      "market_cap": 1736487180519,
+      "market_cap_currency": "KRW",
+      "sector": "Producer Manufacturing",
+      "industry": "Electrical Products"
+    }
+  ],
+  "source_metadata": {
+    "provider": "TradingView public scanner",
+    "fetched_at": "2026-11-13T07:07:32.878110+00:00",
+    "session": "daily",
+    "timezone": "Asia/Seoul",
+    "scanned_symbols": 2637,
+    "excluded": {
+      "below_market_cap": 2362,
+      "declining": 72,
+      "below_rebound": 84,
+      "missing_market_cap": 7,
+      "unsupported_listing": 104,
+      "stale_session": 4
+    },
+    "latest_session_by_board": {
+      "KOSDAQ": "2026-11-13",
+      "KOSPI": "2026-11-13"
+    }
+  },
+  "sources": [
+    {
+      "label": "TradingView 국내 주식 스크리너",
+      "url": "https://kr.tradingview.com/markets/stocks-korea/market-movers-all-stocks/"
+    }
+  ]
+}
