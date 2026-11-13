@@ -1,0 +1,79 @@
+{
+  "site": "https://juyeop-dev.github.io/find_peer_stock/",
+  "checked_at": "2026-11-13T15:41:19.954Z",
+  "calendars": {
+    "new-highs": {
+      "korea": 248,
+      "us": 252,
+      "japan": 244,
+      "china": 244,
+      "taiwan": 244,
+      "europe": 257
+    },
+    "turnover": {
+      "korea": 248,
+      "us": 252,
+      "japan": 244,
+      "china": 244,
+      "taiwan": 244,
+      "europe": 257
+    }
+  },
+  "investors": {
+    "dates": 248,
+    "latest_date": "2026-11-13"
+  },
+  "credit": {
+    "dates": 249,
+    "latest_date": "2026-11-12"
+  },
+  "reported_2015_financials": {
+    "type": "quarterly",
+    "period_start": "2015-09-27",
+    "period_end": "2015-12-26",
+    "currency": "USD",
+    "source": "SEC reported US-GAAP financials",
+    "cik": 320193,
+    "accession": "0000320193-17-000070",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/320193/000032019317000070/",
+    "concepts": {
+      "revenue": "SalesRevenueNet",
+      "net_income": "NetIncomeLoss"
+    },
+    "frame_sources": {
+      "revenue": "https://data.sec.gov/api/xbrl/frames/us-gaap/SalesRevenueNet/USD/CY2015Q4.json",
+      "net_income": "https://data.sec.gov/api/xbrl/frames/us-gaap/NetIncomeLoss/USD/CY2015Q4.json"
+    },
+    "revenue": 75872000000,
+    "net_income": 18361000000
+  },
+  "restored_japan_price": [
+    "2015-12-25",
+    1496.6,
+    1496.6
+  ],
+  "japan_verified_turnover": {
+    "date": "2015-12-25",
+    "entries": 30
+  },
+  "china_verified_turnover": {
+    "date": "2015-02-25",
+    "entries": 30
+  },
+  "replay": [
+    {
+      "ticker": "^KS11",
+      "first": "2015-01-02"
+    },
+    {
+      "ticker": "GC=F",
+      "first": "2015-01-02"
+    }
+  ],
+  "latest_sectors": {
+    "date": "2026-11-13",
+    "listings": 2533,
+    "fetched_at": "2026-11-13T14:53:22.216Z"
+  },
+  "semiconductor_listings": 114
+}
