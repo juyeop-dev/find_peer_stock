@@ -1,0 +1,221 @@
+{
+  "schema_version": 1,
+  "market": "china",
+  "date": "2015-08-05",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "603018.SS",
+      "name": "China Design Group Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Commercial Services",
+      "high_type": "all_time",
+      "reason": "업종: Commercial Services · Miscellaneous Commercial Services",
+      "description": "China Design Group Co., Ltd. Class A · Miscellaneous Commercial Services",
+      "change_pct": 10.002623746662787,
+      "session_open": 10.383060455322266,
+      "session_close": 11.055448532104492,
+      "session_volume": 40806917.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:603018",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/603018.SS/history/",
+        "date": "2015-08-05",
+        "daily_high": 11.055448532104492,
+        "prior_all_time_or_current_month_high": 11.055448532104492,
+        "passes_close_filter": true,
+        "source_symbol": "SSE:603018",
+        "yahoo_symbol": "603018.SS"
+      }
+    },
+    {
+      "ticker": "000518.SZ",
+      "name": "Jiangsu Sihuan Bioengineering Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Pharmaceuticals: Major",
+      "description": "Jiangsu Sihuan Bioengineering Co., Ltd. Class A · Pharmaceuticals: Major",
+      "change_pct": 8.219176561037433,
+      "session_open": 7.130000114440918,
+      "session_close": 7.900000095367432,
+      "session_volume": 219110228.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:000518",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/000518.SZ/history/",
+        "date": "2015-08-05",
+        "daily_high": 8.029999732971191,
+        "prior_all_time_or_current_month_high": 10.5,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:000518",
+        "yahoo_symbol": "000518.SZ"
+      }
+    },
+    {
+      "ticker": "000564.SZ",
+      "name": "CCOOP Group Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Retail Trade",
+      "high_type": "52_week",
+      "reason": "업종: Retail Trade · Department Stores",
+      "description": "CCOOP Group Co., Ltd. Class A · Department Stores",
+      "change_pct": 9.427608373485196,
+      "session_open": 6.5,
+      "session_close": 6.5,
+      "session_volume": 307579.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:000564",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/000564.SZ/history/",
+        "date": "2015-08-05",
+        "daily_high": 6.5,
+        "prior_all_time_or_current_month_high": 10.600000381469727,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:000564",
+        "yahoo_symbol": "000564.SZ"
+      }
+    },
+    {
+      "ticker": "000863.SZ",
+      "name": "Sanxiang Impression Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "업종: Finance · Real Estate Development",
+      "description": "Sanxiang Impression Co., Ltd. Class A · Real Estate Development",
+      "change_pct": 0.932707445127523,
+      "session_open": 14.390000343322754,
+      "session_close": 15.149999618530273,
+      "session_volume": 60414206.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:000863",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/000863.SZ/history/",
+        "date": "2015-08-05",
+        "daily_high": 16.09000015258789,
+        "prior_all_time_or_current_month_high": 24.299999237060547,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:000863",
+        "yahoo_symbol": "000863.SZ"
+      }
+    },
+    {
+      "ticker": "002242.SZ",
+      "name": "Joyoung Company Limited Class A",
+      "exchange": "SZSE",
+      "category": "Consumer Durables",
+      "high_type": "all_time",
+      "reason": "업종: Consumer Durables · Electronics/Appliances",
+      "description": "Joyoung Company Limited Class A · Electronics/Appliances",
+      "change_pct": 10.003760181074028,
+      "session_open": 26.110000610351562,
+      "session_close": 29.25,
+      "session_volume": 22217606.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002242",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002242.SZ/history/",
+        "date": "2015-08-05",
+        "daily_high": 29.25,
+        "prior_all_time_or_current_month_high": 29.25,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:002242",
+        "yahoo_symbol": "002242.SZ"
+      }
+    },
+    {
+      "ticker": "300472.SZ",
+      "name": "New Universal Science Technology Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Industrial Machinery",
+      "description": "New Universal Science Technology Co., Ltd. Class A · Industrial Machinery",
+      "change_pct": 9.992721107604785,
+      "session_open": 22.708332061767578,
+      "session_close": 25.179166793823242,
+      "session_volume": 15561093.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:300472",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/300472.SZ/history/",
+        "date": "2015-08-05",
+        "daily_high": 25.179166793823242,
+        "prior_all_time_or_current_month_high": 25.179166793823242,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:300472",
+        "yahoo_symbol": "300472.SZ"
+      }
+    },
+    {
+      "ticker": "300477.SZ",
+      "name": "Hezong Science and Technology Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Electrical Products",
+      "description": "Hezong Science and Technology Co., Ltd. Class A · Electrical Products",
+      "change_pct": 10.000004096465197,
+      "session_open": 6.671428203582764,
+      "session_close": 7.682538986206055,
+      "session_volume": 63738423.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:300477",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/300477.SZ/history/",
+        "date": "2015-08-05",
+        "daily_high": 7.682538986206055,
+        "prior_all_time_or_current_month_high": 7.682538986206055,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:300477",
+        "yahoo_symbol": "300477.SZ"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-11-13T04:24:15.997444+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 5312,
+    "history_symbols": 2645,
+    "inactive_symbols": 2659,
+    "failed_symbols": 8,
+    "coverage_ratio": 0.9969845457972107,
+    "coverage_by_exchange": {
+      "SSE": {
+        "covered": 1020,
+        "total": 1022
+      },
+      "SZSE": {
+        "covered": 1625,
+        "total": 1631
+      }
+    },
+    "session_symbols": 2620,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-11-13T04:24:15.997444+00:00"
+}

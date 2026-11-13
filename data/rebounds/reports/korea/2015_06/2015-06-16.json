@@ -1,0 +1,176 @@
+{
+  "schema_version": 1,
+  "market": "korea",
+  "date": "2015-06-16",
+  "rules": {
+    "KOSPI": {
+      "market_cap_min": 5000000000000,
+      "rebound_min": 8
+    },
+    "KOSDAQ": {
+      "market_cap_min": 1000000000000,
+      "rebound_min": 5
+    }
+  },
+  "entries": [
+    {
+      "ticker": "008930.KS",
+      "name": "한미사이언스",
+      "exchange": "KOSPI",
+      "currency": "KRW",
+      "price": 90900.0,
+      "low": 83000.0,
+      "change_pct": 3.06,
+      "rebound_pct": 9.51807228915662,
+      "market_cap": 5198164040700.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2015-06-16",
+      "sector": "미분류",
+      "industry": "미분류"
+    },
+    {
+      "ticker": "016100.KQ",
+      "name": "산성앨엔에스",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 96100.0,
+      "low": 77100.0,
+      "change_pct": 27.45,
+      "rebound_pct": 24.643320363164722,
+      "market_cap": 1723987583700.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2015-06-16",
+      "sector": "미분류",
+      "industry": "미분류"
+    },
+    {
+      "ticker": "028300.KQ",
+      "name": "에이치엘비",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 33600.0,
+      "low": 29300.0,
+      "change_pct": 9.62,
+      "rebound_pct": 14.675767918088734,
+      "market_cap": 1147384627200.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2015-06-16",
+      "sector": "미분류",
+      "industry": "미분류"
+    },
+    {
+      "ticker": "082270.KQ",
+      "name": "젬백스",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 38000.0,
+      "low": 33300.0,
+      "change_pct": 4.4,
+      "rebound_pct": 14.114114114114118,
+      "market_cap": 1075274486000.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2015-06-16",
+      "sector": "미분류",
+      "industry": "미분류"
+    },
+    {
+      "ticker": "102940.KQ",
+      "name": "코오롱생명과학",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 150000.0,
+      "low": 140500.0,
+      "change_pct": 2.53,
+      "rebound_pct": 6.761565836298922,
+      "market_cap": 1003633500000.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2015-06-16",
+      "sector": "미분류",
+      "industry": "미분류"
+    },
+    {
+      "ticker": "130960.KQ",
+      "name": "CJ E&M",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 73500.0,
+      "low": 69300.0,
+      "change_pct": 5.0,
+      "rebound_pct": 6.060606060606055,
+      "market_cap": 2846808541500.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2015-06-16",
+      "sector": "미분류",
+      "industry": "미분류"
+    },
+    {
+      "ticker": "034830.KQ",
+      "name": "한국토지신탁",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 4090.0,
+      "low": 3865.0,
+      "change_pct": 0.25,
+      "rebound_pct": 5.821474773609325,
+      "market_cap": 1032680950700.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2015-06-16",
+      "sector": "미분류",
+      "industry": "미분류"
+    },
+    {
+      "ticker": "026960.KQ",
+      "name": "동서",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 30900.0,
+      "low": 29300.0,
+      "change_pct": 4.57,
+      "rebound_pct": 5.460750853242313,
+      "market_cap": 3080730000000.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2015-06-16",
+      "sector": "미분류",
+      "industry": "미분류"
+    }
+  ],
+  "source_metadata": {
+    "provider": "KRX daily data via FinanceData/marcap",
+    "fetched_at": "2026-11-13T04:10:07.156824+00:00",
+    "reconstructed_at": "2026-11-13T04:13:19.462748+00:00",
+    "session": "daily",
+    "timezone": "Asia/Seoul",
+    "scanned_symbols": 2034,
+    "common_symbols_by_board": {
+      "KOSPI": 762,
+      "KOSDAQ": 1073
+    },
+    "excluded": {
+      "declining": 39,
+      "below_rebound": 27,
+      "unsupported_listing": 199,
+      "below_market_cap": 1722,
+      "no_trading": 39
+    },
+    "latest_session_by_board": {
+      "KOSPI": "2015-06-16",
+      "KOSDAQ": "2015-06-16"
+    },
+    "source_revision": "eeed0817d1478597b738a3a6149c170ec7e3f4cb",
+    "source_sha256": "c6f3bbf8ef800cf7dc4fcdc7e6acc57d770a2c1d2f7f3753b032b9d9f3b7a970",
+    "price_basis": "Unadjusted KRX Low and Close from the same daily source row",
+    "market_cap_basis": "Dated KRX Marcap in KRW; verified against Close * Stocks",
+    "listing_basis": "Dated KOSPI/KOSDAQ common share codes ending in 0; includes historical delistings",
+    "note": "KRX 당시 상장 종목의 당일 저가·종가·시가총액으로 복원한 기록입니다. 현재 시총이나 분할 조정 가격을 소급 적용하지 않습니다."
+  },
+  "sources": [
+    {
+      "label": "KRX daily data via FinanceData/marcap",
+      "url": "https://github.com/FinanceData/marcap"
+    },
+    {
+      "label": "2015년 고정 버전 원본",
+      "url": "https://raw.githubusercontent.com/FinanceData/marcap/eeed0817d1478597b738a3a6149c170ec7e3f4cb/data/marcap-2015.parquet"
+    }
+  ]
+}

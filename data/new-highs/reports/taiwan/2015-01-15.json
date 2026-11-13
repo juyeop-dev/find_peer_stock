@@ -1,0 +1,296 @@
+{
+  "schema_version": 1,
+  "market": "taiwan",
+  "date": "2015-01-15",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "3219.TWO",
+      "name": "Aethertek Technology Co., Ltd",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Electronic Components",
+      "description": "Aethertek Technology Co., Ltd · Electronic Components",
+      "change_pct": 6.542065693800514,
+      "session_open": 33.7276611328125,
+      "session_close": 35.934146881103516,
+      "session_volume": 478598.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:3219",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3219.TWO/history/",
+        "date": "2015-01-15",
+        "daily_high": 36.01294708251953,
+        "prior_all_time_or_current_month_high": 175.61801147460938,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:3219",
+        "yahoo_symbol": "3219.TWO"
+      }
+    },
+    {
+      "ticker": "3631.TWO",
+      "name": "Chernan Metal Industrial Corp.",
+      "exchange": "TPEX",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Industrial Machinery",
+      "description": "Chernan Metal Industrial Corp. · Industrial Machinery",
+      "change_pct": 1.81818262249267,
+      "session_open": 60.363094329833984,
+      "session_close": 61.46060562133789,
+      "session_volume": 958723.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:3631",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3631.TWO/history/",
+        "date": "2015-01-15",
+        "daily_high": 61.75992965698242,
+        "prior_all_time_or_current_month_high": 76.88729858398438,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:3631",
+        "yahoo_symbol": "3631.TWO"
+      }
+    },
+    {
+      "ticker": "4543.TWO",
+      "name": "Man Zai Industrial Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Distribution Services",
+      "high_type": "all_time",
+      "reason": "업종: Distribution Services · Wholesale Distributors",
+      "description": "Man Zai Industrial Co., Ltd. · Wholesale Distributors",
+      "change_pct": 7.843134029073839,
+      "session_open": 47.51106643676758,
+      "session_close": 47.51106643676758,
+      "session_volume": 284984.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:4543",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4543.TWO/history/",
+        "date": "2015-01-15",
+        "daily_high": 48.37490463256836,
+        "prior_all_time_or_current_month_high": 48.37490463256836,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:4543",
+        "yahoo_symbol": "4543.TWO"
+      }
+    },
+    {
+      "ticker": "5465.TWO",
+      "name": "Loyalty Founder Enterprise Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Miscellaneous Manufacturing",
+      "description": "Loyalty Founder Enterprise Co., Ltd. · Miscellaneous Manufacturing",
+      "change_pct": 6.872846737815674,
+      "session_open": 15.861818313598633,
+      "session_close": 16.951976776123047,
+      "session_volume": 1023557.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:5465",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/5465.TWO/history/",
+        "date": "2015-01-15",
+        "daily_high": 16.951976776123047,
+        "prior_all_time_or_current_month_high": 16.951976776123047,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:5465",
+        "yahoo_symbol": "5465.TWO"
+      }
+    },
+    {
+      "ticker": "5863.TWO",
+      "name": "TAIPEI STAR BANK",
+      "exchange": "TPEX",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "업종: Finance · Major Banks",
+      "description": "TAIPEI STAR BANK · Major Banks",
+      "change_pct": 0.40815973388352855,
+      "session_open": 10.292864799499512,
+      "session_close": 10.292864799499512,
+      "session_volume": 790570.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:5863",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/5863.TWO/history/",
+        "date": "2015-01-15",
+        "daily_high": 10.326336860656738,
+        "prior_all_time_or_current_month_high": 10.59235668182373,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:5863",
+        "yahoo_symbol": "5863.TWO"
+      }
+    },
+    {
+      "ticker": "1506.TW",
+      "name": "Right Way Industrial Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Auto Parts: OEM",
+      "description": "Right Way Industrial Co., Ltd. · Auto Parts: OEM",
+      "change_pct": 6.846469961130519,
+      "session_open": 23.44318389892578,
+      "session_close": 24.94470977783203,
+      "session_volume": 6552932.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:1506",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/1506.TW/history/",
+        "date": "2015-01-15",
+        "daily_high": 24.94470977783203,
+        "prior_all_time_or_current_month_high": 29.908700942993164,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:1506",
+        "yahoo_symbol": "1506.TW"
+      }
+    },
+    {
+      "ticker": "3051.TW",
+      "name": "Optimax Technology Corporation",
+      "exchange": "TWSE",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Electrical Products",
+      "description": "Optimax Technology Corporation · Electrical Products",
+      "change_pct": 6.979402803196599,
+      "session_open": 17.89329719543457,
+      "session_close": 17.89329719543457,
+      "session_volume": 2299707.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:3051",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3051.TW/history/",
+        "date": "2015-01-15",
+        "daily_high": 17.89329719543457,
+        "prior_all_time_or_current_month_high": 384.08123779296875,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:3051",
+        "yahoo_symbol": "3051.TW"
+      }
+    },
+    {
+      "ticker": "3607.TW",
+      "name": "Coxon Precise Industrial Co., Ltd Class A",
+      "exchange": "TWSE",
+      "category": "Process Industries",
+      "high_type": "52_week",
+      "reason": "업종: Process Industries · Containers/Packaging",
+      "description": "Coxon Precise Industrial Co., Ltd Class A · Containers/Packaging",
+      "change_pct": 3.8461538461538547,
+      "session_open": 66.30000305175781,
+      "session_close": 67.5,
+      "session_volume": 10451000.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:3607",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3607.TW/history/",
+        "date": "2015-01-15",
+        "daily_high": 68.0,
+        "prior_all_time_or_current_month_high": 96.69999694824219,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:3607",
+        "yahoo_symbol": "3607.TW"
+      }
+    },
+    {
+      "ticker": "8016.TW",
+      "name": "Sitronix Technology Corp.",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Semiconductors",
+      "description": "Sitronix Technology Corp. · Semiconductors",
+      "change_pct": 0.21738798721977481,
+      "session_open": 91.9000015258789,
+      "session_close": 92.19999694824219,
+      "session_volume": 1980000.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:8016",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/8016.TW/history/",
+        "date": "2015-01-15",
+        "daily_high": 93.80000305175781,
+        "prior_all_time_or_current_month_high": 126.92611694335938,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:8016",
+        "yahoo_symbol": "8016.TW"
+      }
+    },
+    {
+      "ticker": "9910.TW",
+      "name": "Feng Tay Enterprise Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Consumer Non-Durables",
+      "high_type": "all_time",
+      "reason": "업종: Consumer Non-Durables · Apparel/Footwear",
+      "description": "Feng Tay Enterprise Co., Ltd. · Apparel/Footwear",
+      "change_pct": 2.1341395886751657,
+      "session_open": 57.75492477416992,
+      "session_close": 58.9276123046875,
+      "session_volume": 2652024.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:9910",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/9910.TW/history/",
+        "date": "2015-01-15",
+        "daily_high": 59.220787048339844,
+        "prior_all_time_or_current_month_high": 59.220787048339844,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:9910",
+        "yahoo_symbol": "9910.TW"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-11-13T04:17:39.780482+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 2362,
+    "history_symbols": 1628,
+    "inactive_symbols": 724,
+    "failed_symbols": 10,
+    "coverage_ratio": 0.9938949938949939,
+    "coverage_by_exchange": {
+      "TWSE": {
+        "covered": 888,
+        "total": 895
+      },
+      "TPEX": {
+        "covered": 740,
+        "total": 743
+      }
+    },
+    "session_symbols": 1576,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-11-13T04:17:39.780482+00:00"
+}

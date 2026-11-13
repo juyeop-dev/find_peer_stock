@@ -1,0 +1,246 @@
+{
+  "schema_version": 1,
+  "market": "taiwan",
+  "date": "2015-01-30",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "4131.TWO",
+      "name": "NeoCore Technology Co., Ltd",
+      "exchange": "TPEX",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Medical Specialties",
+      "description": "NeoCore Technology Co., Ltd · Medical Specialties",
+      "change_pct": 17.58794121446887,
+      "session_open": 29.73769760131836,
+      "session_close": 29.73769760131836,
+      "session_volume": 34843.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:4131",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4131.TWO/history/",
+        "date": "2015-01-30",
+        "daily_high": 30.500202178955078,
+        "prior_all_time_or_current_month_high": 189.86376953125,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:4131",
+        "yahoo_symbol": "4131.TWO"
+      }
+    },
+    {
+      "ticker": "8109.TWO",
+      "name": "P-DUKE Technology Co. Ltd",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Semiconductors",
+      "description": "P-DUKE Technology Co. Ltd · Semiconductors",
+      "change_pct": 1.5027322230266815,
+      "session_open": 60.027923583984375,
+      "session_close": 60.76395797729492,
+      "session_volume": 2459622.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:8109",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/8109.TWO/history/",
+        "date": "2015-01-30",
+        "daily_high": 63.05385208129883,
+        "prior_all_time_or_current_month_high": 63.05385208129883,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:8109",
+        "yahoo_symbol": "8109.TWO"
+      }
+    },
+    {
+      "ticker": "8182.TWO",
+      "name": "Harmony Electronics Corp",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Electronic Production Equipment",
+      "description": "Harmony Electronics Corp · Electronic Production Equipment",
+      "change_pct": 1.0230218452403683,
+      "session_open": 19.600000381469727,
+      "session_close": 19.75,
+      "session_volume": 2120769.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:8182",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/8182.TWO/history/",
+        "date": "2015-01-30",
+        "daily_high": 20.299999237060547,
+        "prior_all_time_or_current_month_high": 33.5,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:8182",
+        "yahoo_symbol": "8182.TWO"
+      }
+    },
+    {
+      "ticker": "8431.TWO",
+      "name": "Superior Plating Technology Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Commercial Services",
+      "high_type": "all_time",
+      "reason": "업종: Commercial Services · Miscellaneous Commercial Services",
+      "description": "Superior Plating Technology Co., Ltd. · Miscellaneous Commercial Services",
+      "change_pct": 3.500003814697261,
+      "session_open": 41.400001525878906,
+      "session_close": 41.400001525878906,
+      "session_volume": 698155.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:8431",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/8431.TWO/history/",
+        "date": "2015-01-30",
+        "daily_high": 42.5,
+        "prior_all_time_or_current_month_high": 42.5,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:8431",
+        "yahoo_symbol": "8431.TWO"
+      }
+    },
+    {
+      "ticker": "1776.TW",
+      "name": "Headway Advanced Materials Inc.",
+      "exchange": "TWSE",
+      "category": "Process Industries",
+      "high_type": "all_time",
+      "reason": "업종: Process Industries · Industrial Specialties",
+      "description": "Headway Advanced Materials Inc. · Industrial Specialties",
+      "change_pct": 0.38462020941765207,
+      "session_open": 30.526315689086914,
+      "session_close": 30.526315689086914,
+      "session_volume": 3.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:1776",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/1776.TW/history/",
+        "date": "2015-01-30",
+        "daily_high": 30.526315689086914,
+        "prior_all_time_or_current_month_high": 30.526315689086914,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:1776",
+        "yahoo_symbol": "1776.TW"
+      }
+    },
+    {
+      "ticker": "9802.TW",
+      "name": "Fulgent Sun International (Holding) Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Consumer Non-Durables",
+      "high_type": "all_time",
+      "reason": "업종: Consumer Non-Durables · Apparel/Footwear",
+      "description": "Fulgent Sun International (Holding) Co., Ltd. · Apparel/Footwear",
+      "change_pct": 2.879082446882486,
+      "session_open": 50.73706817626953,
+      "session_close": 52.19783020019531,
+      "session_volume": 1669678.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:9802",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/9802.TW/history/",
+        "date": "2015-01-30",
+        "daily_high": 52.782135009765625,
+        "prior_all_time_or_current_month_high": 52.782135009765625,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:9802",
+        "yahoo_symbol": "9802.TW"
+      }
+    },
+    {
+      "ticker": "9910.TW",
+      "name": "Feng Tay Enterprise Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Consumer Non-Durables",
+      "high_type": "all_time",
+      "reason": "업종: Consumer Non-Durables · Apparel/Footwear",
+      "description": "Feng Tay Enterprise Co., Ltd. · Apparel/Footwear",
+      "change_pct": 5.333333333333323,
+      "session_open": 66.55009460449219,
+      "session_close": 69.4818115234375,
+      "session_volume": 3549108.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:9910",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/9910.TW/history/",
+        "date": "2015-01-30",
+        "daily_high": 70.361328125,
+        "prior_all_time_or_current_month_high": 70.361328125,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:9910",
+        "yahoo_symbol": "9910.TW"
+      }
+    },
+    {
+      "ticker": "9938.TW",
+      "name": "Taiwan Paiho Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Process Industries",
+      "high_type": "all_time",
+      "reason": "업종: Process Industries · Industrial Specialties",
+      "description": "Taiwan Paiho Co., Ltd. · Industrial Specialties",
+      "change_pct": 6.7864303980671,
+      "session_open": 50.599998474121094,
+      "session_close": 53.5,
+      "session_volume": 12167000.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:9938",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/9938.TW/history/",
+        "date": "2015-01-30",
+        "daily_high": 53.599998474121094,
+        "prior_all_time_or_current_month_high": 53.599998474121094,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:9938",
+        "yahoo_symbol": "9938.TW"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-11-13T04:17:39.780482+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 2362,
+    "history_symbols": 1628,
+    "inactive_symbols": 724,
+    "failed_symbols": 10,
+    "coverage_ratio": 0.9938949938949939,
+    "coverage_by_exchange": {
+      "TWSE": {
+        "covered": 888,
+        "total": 895
+      },
+      "TPEX": {
+        "covered": 740,
+        "total": 743
+      }
+    },
+    "session_symbols": 1579,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-11-13T04:17:39.780482+00:00"
+}

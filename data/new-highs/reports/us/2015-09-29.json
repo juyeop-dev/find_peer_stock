@@ -1,0 +1,250 @@
+{
+  "schema_version": 1,
+  "market": "us",
+  "date": "2015-09-29",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "ARTNA",
+      "name": "Artesian Resources Corporation Class A",
+      "exchange": "NASDAQ",
+      "category": "Utilities",
+      "high_type": "all_time",
+      "reason": "업종: Utilities · Water Utilities",
+      "description": "Artesian Resources Corporation Class A · Water Utilities",
+      "change_pct": 0.20851186556993806,
+      "session_open": 24.0,
+      "session_close": 24.030000686645508,
+      "session_volume": 46100.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:ARTNA",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/ARTNA/history/",
+        "date": "2015-09-29",
+        "daily_high": 24.469999313354492,
+        "prior_all_time_or_current_month_high": 24.469999313354492,
+        "passes_close_filter": true,
+        "source_symbol": "NASDAQ:ARTNA",
+        "yahoo_symbol": "ARTNA"
+      }
+    },
+    {
+      "ticker": "COKE",
+      "name": "Coca-Cola Consolidated, Inc.",
+      "exchange": "NASDAQ",
+      "category": "Consumer Non-Durables",
+      "high_type": "all_time",
+      "reason": "업종: Consumer Non-Durables · Beverages: Non-Alcoholic",
+      "description": "Coca-Cola Consolidated, Inc. · Beverages: Non-Alcoholic",
+      "change_pct": 0.6809112563904263,
+      "session_open": 19.215999603271484,
+      "session_close": 19.3700008392334,
+      "session_volume": 471000.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:COKE",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/COKE/history/",
+        "date": "2015-09-29",
+        "daily_high": 19.572999954223633,
+        "prior_all_time_or_current_month_high": 19.572999954223633,
+        "passes_close_filter": true,
+        "source_symbol": "NASDAQ:COKE",
+        "yahoo_symbol": "COKE"
+      }
+    },
+    {
+      "ticker": "FIZZ",
+      "name": "National Beverage Corp.",
+      "exchange": "NASDAQ",
+      "category": "Consumer Non-Durables",
+      "high_type": "all_time",
+      "reason": "업종: Consumer Non-Durables · Beverages: Non-Alcoholic",
+      "description": "National Beverage Corp. · Beverages: Non-Alcoholic",
+      "change_pct": 1.7651068361293598,
+      "session_open": 14.720000267028809,
+      "session_close": 14.989999771118164,
+      "session_volume": 176600.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:FIZZ",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/FIZZ/history/",
+        "date": "2015-09-29",
+        "daily_high": 15.024999618530273,
+        "prior_all_time_or_current_month_high": 15.024999618530273,
+        "passes_close_filter": true,
+        "source_symbol": "NASDAQ:FIZZ",
+        "yahoo_symbol": "FIZZ"
+      }
+    },
+    {
+      "ticker": "MNSB",
+      "name": "MainStreet Bancshares, Inc.",
+      "exchange": "NASDAQ",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "업종: Finance · Regional Banks",
+      "description": "MainStreet Bancshares, Inc. · Regional Banks",
+      "change_pct": 7.713760865456276,
+      "session_open": 10.361905097961426,
+      "session_close": 11.038095474243164,
+      "session_volume": 4935.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:MNSB",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/MNSB/history/",
+        "date": "2015-09-29",
+        "daily_high": 11.038095474243164,
+        "prior_all_time_or_current_month_high": 13.380951881408691,
+        "passes_close_filter": true,
+        "source_symbol": "NASDAQ:MNSB",
+        "yahoo_symbol": "MNSB"
+      }
+    },
+    {
+      "ticker": "OVBC",
+      "name": "Ohio Valley Banc Corp.",
+      "exchange": "NASDAQ",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "업종: Finance · Regional Banks",
+      "description": "Ohio Valley Banc Corp. · Regional Banks",
+      "change_pct": 3.5193202962366277,
+      "session_open": 23.299999237060547,
+      "session_close": 24.1200008392334,
+      "session_volume": 6700.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:OVBC",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/OVBC/history/",
+        "date": "2015-09-29",
+        "daily_high": 25.479999542236328,
+        "prior_all_time_or_current_month_high": 33.0,
+        "passes_close_filter": true,
+        "source_symbol": "NASDAQ:OVBC",
+        "yahoo_symbol": "OVBC"
+      }
+    },
+    {
+      "ticker": "ULBI",
+      "name": "Ultralife Corporation",
+      "exchange": "NASDAQ",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Electrical Products",
+      "description": "Ultralife Corporation · Electrical Products",
+      "change_pct": 2.8169072021973385,
+      "session_open": 5.739999771118164,
+      "session_close": 5.840000152587891,
+      "session_volume": 113500.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:ULBI",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/ULBI/history/",
+        "date": "2015-09-29",
+        "daily_high": 6.0,
+        "prior_all_time_or_current_month_high": 24.959999084472656,
+        "passes_close_filter": true,
+        "source_symbol": "NASDAQ:ULBI",
+        "yahoo_symbol": "ULBI"
+      }
+    },
+    {
+      "ticker": "WCCB",
+      "name": "West Coast Community Bancorp",
+      "exchange": "NASDAQ",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "업종: Finance · Regional Banks",
+      "description": "West Coast Community Bancorp · Regional Banks",
+      "change_pct": 7.407400759159621,
+      "session_open": 11.983470916748047,
+      "session_close": 11.983470916748047,
+      "session_volume": 484.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:WCCB",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/WCCB/history/",
+        "date": "2015-09-29",
+        "daily_high": 11.983470916748047,
+        "prior_all_time_or_current_month_high": 16.528926849365234,
+        "passes_close_filter": true,
+        "source_symbol": "NASDAQ:WCCB",
+        "yahoo_symbol": "WCCB"
+      }
+    },
+    {
+      "ticker": "CUBE",
+      "name": "CubeSmart",
+      "exchange": "NYSE",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "업종: Finance · Real Estate Investment Trusts",
+      "description": "CubeSmart · Real Estate Investment Trusts",
+      "change_pct": 0.6701425952552409,
+      "session_open": 26.81999969482422,
+      "session_close": 27.040000915527344,
+      "session_volume": 2443400.0,
+      "currency": "USD",
+      "source_symbol": "NYSE:CUBE",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/CUBE/history/",
+        "date": "2015-09-29",
+        "daily_high": 27.079999923706055,
+        "prior_all_time_or_current_month_high": 27.079999923706055,
+        "passes_close_filter": true,
+        "source_symbol": "NYSE:CUBE",
+        "yahoo_symbol": "CUBE"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-11-13T04:24:57.001939+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 5703,
+    "history_symbols": 2785,
+    "inactive_symbols": 2916,
+    "failed_symbols": 2,
+    "coverage_ratio": 0.9992823824901328,
+    "coverage_by_exchange": {
+      "NASDAQ": {
+        "covered": 1403,
+        "total": 1405
+      },
+      "NYSE": {
+        "covered": 1236,
+        "total": 1236
+      },
+      "AMEX": {
+        "covered": 146,
+        "total": 146
+      }
+    },
+    "session_symbols": 2751,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-11-13T04:24:57.001939+00:00"
+}

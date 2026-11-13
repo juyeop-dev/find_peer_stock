@@ -4,7 +4,7 @@ export type InvestorMarketKey = "KOSPI" | "KOSDAQ";
 export type InvestorKey = "personal" | "foreign" | "institution" | "other";
 export interface InvestorAmounts {key: InvestorKey; name: string; codes: string[]; buy: number; sell: number; net: number}
 export interface InvestorIndex {date: string; close: number; change: number | null; change_pct: number | null; open: number | null; high: number | null; low: number | null}
-export interface InvestorMarket {market: InvestorMarketKey; date: string; index: InvestorIndex; investors: InvestorAmounts[]; details: {code: string;name: string;buy: number;sell: number;net: number}[]}
+export interface InvestorMarket {market: InvestorMarketKey; date: string; index: InvestorIndex; investors: InvestorAmounts[]; details: {code: string;name: string;buy: number;sell: number;net: number}[]; market_net_difference?: number; source_warning?: string}
 export interface InvestorDay {date: string; status: "closed" | "provisional"; fetched_at: string; markets: InvestorMarket[]}
 export interface InvestorData {schema_version: 1; source: string; source_url: string; unit: "KRW"; trade_type: "KRX"; generated_at: string; latest_date: string; history: InvestorDay[]; source_fetched_at?: string}
 export const INVESTOR_LABELS: Record<InvestorKey,string> = {personal:"개인",foreign:"외국인",institution:"기관",other:"기타법인 등"};
@@ -12,7 +12,7 @@ export const INVESTOR_MARKETS = [{key:"all",label:"전체"},{key:"KOSPI",label:"
 let cached: InvestorData | undefined, checked = 0;
 export const validInvestorDate = (value: string) => /^\d{4}-\d{2}-\d{2}$/.test(value) && Number.isFinite(Date.parse(value)) && new Date(value).toISOString().slice(0,10)===value;
 export function validateInvestorDay(row: InvestorDay): InvestorDay {
-  if(!row || !validInvestorDate(row.date) || row.date<"2016-01-01" || row.date>new Date(Date.now()+9*3600000).toISOString().slice(0,10) || !["closed","provisional"].includes(row.status) || !Number.isFinite(Date.parse(row.fetched_at)) || !Array.isArray(row.markets) || row.markets.length!==2 || new Set(row.markets.map(value=>value.market)).size!==2)throw new Error("투자자 수급 자료의 날짜·시장을 확인할 수 없습니다.");
+  if(!row || !validInvestorDate(row.date) || row.date<"2015-01-01" || row.date>new Date(Date.now()+9*3600000).toISOString().slice(0,10) || !["closed","provisional"].includes(row.status) || !Number.isFinite(Date.parse(row.fetched_at)) || !Array.isArray(row.markets) || row.markets.length!==2 || new Set(row.markets.map(value=>value.market)).size!==2)throw new Error("투자자 수급 자료의 날짜·시장을 확인할 수 없습니다.");
   for(const market of row.markets) {
     if(!["KOSPI","KOSDAQ"].includes(market.market) || market.date!==row.date || market.index?.date!==row.date || !Number.isFinite(market.index.close) || market.index.close<=0 || [market.index.change,market.index.change_pct].some(value=>value!==null&&!Number.isFinite(value)) || !Array.isArray(market.details) || !market.details.length || market.investors?.length!==4 || new Set(market.investors.map(value=>value.key)).size!==4)throw new Error("선택한 거래일의 수급과 지수가 일치하지 않습니다.");
     for(const value of market.investors)if(!Object.hasOwn(INVESTOR_LABELS,value.key)||![value.buy,value.sell,value.net].every(Number.isSafeInteger)||value.buy<0||value.sell<0)throw new Error("투자자별 매매 금액이 올바르지 않습니다.");
@@ -34,9 +34,12 @@ export async function getInvestorData(signal: AbortSignal, fromSource=false, dat
     return cached;
   }
   if(cached && Date.now()-checked<60000)return cached;
-  const response=await fetch(`${import.meta.env.BASE_URL}data/investors/index.json?t=${Date.now()}`,{signal,cache:"no-store"});
+  let response=await fetch(`${import.meta.env.BASE_URL}data/investors/index.json.gz?t=${Date.now()}`,{signal,cache:"no-store"});
+  if(response.status===404)response=await fetch(`${import.meta.env.BASE_URL}data/investors/index.json?t=${Date.now()}`,{signal,cache:"no-store"});
   if(!response.ok)throw new Error("투자자 수급 기록을 불러오지 못했습니다.");
-  const value=await response.json() as InvestorData;
+  const bytes=await response.arrayBuffer(),magic=new Uint8Array(bytes,0,Math.min(2,bytes.byteLength));
+  const text=magic[0]===0x1f&&magic[1]===0x8b?await new Response(new Blob([bytes]).stream().pipeThrough(new DecompressionStream("gzip"))).text():new TextDecoder().decode(bytes);
+  const value=JSON.parse(text) as InvestorData;
   if(value?.schema_version!==1||value.unit!=="KRW"||value.trade_type!=="KRX"||!value.history?.length)throw new Error("투자자 수급 자료 형식이 올바르지 않습니다.");
   value.history.forEach(validateInvestorDay);
   const dates=value.history.map(row=>row.date);

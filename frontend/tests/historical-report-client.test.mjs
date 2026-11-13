@@ -7,7 +7,7 @@ import ts from 'typescript';
 const source=await readFile(new URL('../src/dataClient/staticStockDataClient.ts',import.meta.url),'utf8');
 const js=ts.transpileModule(source,{compilerOptions:{module:ts.ModuleKind.ESNext,target:ts.ScriptTarget.ES2022}}).outputText
   .replace(/^import .*;\r?\n/gm,'').replaceAll('import.meta.env.BASE_URL','"/"');
-const code='const liveReportFor=()=>null,liveQuoteFor=()=>undefined,liveDetailFor=()=>undefined;\n'+js;
+const code='const liveReportFor=()=>null,liveQuoteFor=()=>undefined,liveDetailFor=()=>undefined,applySemiconductor=value=>value;\n'+js;
 const client=await import(`data:text/javascript;base64,${Buffer.from(code).toString('base64')}`);
 const sample={market:'taiwan',date:'2021-04-06',entries:[{ticker:'2330.TW',name:'原本',price:123.4567890123,change_pct:0,profit:-7}]};
 
@@ -72,4 +72,19 @@ test('corrupt compressed observations fail instead of silently producing an empt
   const oldFetch=globalThis.fetch,oldWindow=globalThis.window;globalThis.window=globalThis;
   try {globalThis.fetch=async()=>new Response(new Uint8Array([0x1f,0x8b,0,0]));await assert.rejects(()=>client.getNewHighReport('taiwan','2021-04-06'));}
   finally {globalThis.fetch=oldFetch;globalThis.window=oldWindow;}
+});
+
+
+test('semiconductor snapshots decode gzip and host-decoded responses, with legacy JSON fallback',async()=>{
+  const oldFetch=globalThis.fetch,oldWindow=globalThis.window;globalThis.window=globalThis;
+  const value={schema_version:1,stocks:[],source:{label:'original'},precise:1.1234567890123};
+  try {
+    for(const encoded of [true,false]) {
+      globalThis.fetch=async()=>new Response(encoded?gzipSync(JSON.stringify(value)):JSON.stringify(value));
+      assert.deepEqual(await client.getSemiconductorData(),value);
+    }
+    const calls=[];
+    globalThis.fetch=async url=>{calls.push(url);return url.includes('.json.gz?')?new Response('',{status:404}):Response.json(value);};
+    assert.deepEqual(await client.getSemiconductorData(),value);assert.equal(calls.length,2);
+  } finally {globalThis.fetch=oldFetch;globalThis.window=oldWindow;}
 });

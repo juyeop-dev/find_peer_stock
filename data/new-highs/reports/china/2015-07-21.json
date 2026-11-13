@@ -1,0 +1,371 @@
+{
+  "schema_version": 1,
+  "market": "china",
+  "date": "2015-07-21",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "600667.SS",
+      "name": "Wuxi Taiji Industry Limited Corporation Class A",
+      "exchange": "SSE",
+      "category": "Industrial Services",
+      "high_type": "all_time",
+      "reason": "업종: Industrial Services · Engineering & Construction",
+      "description": "Wuxi Taiji Industry Limited Corporation Class A · Engineering & Construction",
+      "change_pct": 9.987198662267227,
+      "session_open": 7.699999809265137,
+      "session_close": 8.59000015258789,
+      "session_volume": 103341200.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:600667",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/600667.SS/history/",
+        "date": "2015-07-21",
+        "daily_high": 8.59000015258789,
+        "prior_all_time_or_current_month_high": 8.59000015258789,
+        "passes_close_filter": true,
+        "source_symbol": "SSE:600667",
+        "yahoo_symbol": "600667.SS"
+      }
+    },
+    {
+      "ticker": "002010.SZ",
+      "name": "Transfar Zhilian Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Process Industries",
+      "high_type": "all_time",
+      "reason": "업종: Process Industries · Chemicals: Specialty",
+      "description": "Transfar Zhilian Co., Ltd. Class A · Chemicals: Specialty",
+      "change_pct": 10.014512274715791,
+      "session_open": 20.399999618530273,
+      "session_close": 22.739999771118164,
+      "session_volume": 14264476.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002010",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002010.SZ/history/",
+        "date": "2015-07-21",
+        "daily_high": 22.739999771118164,
+        "prior_all_time_or_current_month_high": 22.739999771118164,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:002010",
+        "yahoo_symbol": "002010.SZ"
+      }
+    },
+    {
+      "ticker": "002159.SZ",
+      "name": "Wuhan Sante Cableways Group Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Consumer Services",
+      "high_type": "all_time",
+      "reason": "업종: Consumer Services · Other Consumer Services",
+      "description": "Wuhan Sante Cableways Group Co., Ltd. Class A · Other Consumer Services",
+      "change_pct": 10.003687963116437,
+      "session_open": 29.799999237060547,
+      "session_close": 29.799999237060547,
+      "session_volume": 14507180.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002159",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002159.SZ/history/",
+        "date": "2015-07-21",
+        "daily_high": 29.799999237060547,
+        "prior_all_time_or_current_month_high": 29.799999237060547,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:002159",
+        "yahoo_symbol": "002159.SZ"
+      }
+    },
+    {
+      "ticker": "002173.SZ",
+      "name": "Innovation Medical Management Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Distribution Services",
+      "high_type": "all_time",
+      "reason": "업종: Distribution Services · Wholesale Distributors",
+      "description": "Innovation Medical Management Co., Ltd. Class A · Wholesale Distributors",
+      "change_pct": 10.02611025869724,
+      "session_open": 19.489999771118164,
+      "session_close": 21.06999969482422,
+      "session_volume": 15385581.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002173",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002173.SZ/history/",
+        "date": "2015-07-21",
+        "daily_high": 21.06999969482422,
+        "prior_all_time_or_current_month_high": 21.06999969482422,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:002173",
+        "yahoo_symbol": "002173.SZ"
+      }
+    },
+    {
+      "ticker": "002343.SZ",
+      "name": "Ciwen Media Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Consumer Services",
+      "high_type": "all_time",
+      "reason": "업종: Consumer Services · Movies/Entertainment",
+      "description": "Ciwen Media Co., Ltd. Class A · Movies/Entertainment",
+      "change_pct": 10.01189095355388,
+      "session_open": 25.242856979370117,
+      "session_close": 26.450000762939453,
+      "session_volume": 11985044.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002343",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002343.SZ/history/",
+        "date": "2015-07-21",
+        "daily_high": 26.450000762939453,
+        "prior_all_time_or_current_month_high": 26.450000762939453,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:002343",
+        "yahoo_symbol": "002343.SZ"
+      }
+    },
+    {
+      "ticker": "002475.SZ",
+      "name": "Luxshare Precision Industry Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Electronic Components",
+      "description": "Luxshare Precision Industry Co., Ltd. Class A · Electronic Components",
+      "change_pct": 9.997240181495282,
+      "session_open": 7.181670188903809,
+      "session_close": 8.035378456115723,
+      "session_volume": 133173157.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002475",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002475.SZ/history/",
+        "date": "2015-07-21",
+        "daily_high": 8.035378456115723,
+        "prior_all_time_or_current_month_high": 8.035378456115723,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:002475",
+        "yahoo_symbol": "002475.SZ"
+      }
+    },
+    {
+      "ticker": "002547.SZ",
+      "name": "Suzhou Chunxing Precision Mechanical Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Distribution Services",
+      "high_type": "all_time",
+      "reason": "업종: Distribution Services · Electronics Distributors",
+      "description": "Suzhou Chunxing Precision Mechanical Co., Ltd. Class A · Electronics Distributors",
+      "change_pct": 10.002940986834918,
+      "session_open": 11.293333053588867,
+      "session_close": 12.463333129882812,
+      "session_volume": 51653484.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002547",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002547.SZ/history/",
+        "date": "2015-07-21",
+        "daily_high": 12.463333129882812,
+        "prior_all_time_or_current_month_high": 12.463333129882812,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:002547",
+        "yahoo_symbol": "002547.SZ"
+      }
+    },
+    {
+      "ticker": "002714.SZ",
+      "name": "Muyuan Foods Group Co Ltd Class A",
+      "exchange": "SZSE",
+      "category": "Process Industries",
+      "high_type": "all_time",
+      "reason": "업종: Process Industries · Agricultural Commodities/Milling",
+      "description": "Muyuan Foods Group Co Ltd Class A · Agricultural Commodities/Milling",
+      "change_pct": 9.996984364760419,
+      "session_open": 7.936507225036621,
+      "session_close": 8.539915084838867,
+      "session_volume": 46746956.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002714",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002714.SZ/history/",
+        "date": "2015-07-21",
+        "daily_high": 8.539915084838867,
+        "prior_all_time_or_current_month_high": 8.539915084838867,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:002714",
+        "yahoo_symbol": "002714.SZ"
+      }
+    },
+    {
+      "ticker": "002769.SZ",
+      "name": "Guangdong Prolto Supply Chain Management Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Transportation",
+      "high_type": "all_time",
+      "reason": "업종: Transportation · Air Freight/Couriers",
+      "description": "Guangdong Prolto Supply Chain Management Co., Ltd. Class A · Air Freight/Couriers",
+      "change_pct": 4.181766095843664,
+      "session_open": 19.36062240600586,
+      "session_close": 21.28108024597168,
+      "session_volume": 22599786.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002769",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002769.SZ/history/",
+        "date": "2015-07-21",
+        "daily_high": 22.20530128479004,
+        "prior_all_time_or_current_month_high": 22.20530128479004,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:002769",
+        "yahoo_symbol": "002769.SZ"
+      }
+    },
+    {
+      "ticker": "300469.SZ",
+      "name": "Transportation Telecommunication and Information Development Inc. Ltd. Zhejiang Class A",
+      "exchange": "SZSE",
+      "category": "Technology Services",
+      "high_type": "all_time",
+      "reason": "업종: Technology Services · Information Technology Services",
+      "description": "Transportation Telecommunication and Information Development Inc. Ltd. Zhejiang Class A · Information Technology Services",
+      "change_pct": 10.00833366596603,
+      "session_open": 18.950979232788086,
+      "session_close": 21.55228614807129,
+      "session_volume": 7513309.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:300469",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/300469.SZ/history/",
+        "date": "2015-07-21",
+        "daily_high": 21.55228614807129,
+        "prior_all_time_or_current_month_high": 21.55228614807129,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:300469",
+        "yahoo_symbol": "300469.SZ"
+      }
+    },
+    {
+      "ticker": "300479.SZ",
+      "name": "Synthesis Electronic Technology Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Computer Processing Hardware",
+      "description": "Synthesis Electronic Technology Co., Ltd. Class A · Computer Processing Hardware",
+      "change_pct": 3.1921341286833105,
+      "session_open": 31.725000381469727,
+      "session_close": 34.10499954223633,
+      "session_volume": 7802514.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:300479",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/300479.SZ/history/",
+        "date": "2015-07-21",
+        "daily_high": 35.77000045776367,
+        "prior_all_time_or_current_month_high": 35.77000045776367,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:300479",
+        "yahoo_symbol": "300479.SZ"
+      }
+    },
+    {
+      "ticker": "300480.SZ",
+      "name": "Gl Tech Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Electronic Equipment/Instruments",
+      "description": "Gl Tech Co., Ltd. Class A · Electronic Equipment/Instruments",
+      "change_pct": 9.996973995364034,
+      "session_open": 10.763978958129883,
+      "session_close": 10.763978958129883,
+      "session_volume": 16809481.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:300480",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/300480.SZ/history/",
+        "date": "2015-07-21",
+        "daily_high": 10.763978958129883,
+        "prior_all_time_or_current_month_high": 10.763978958129883,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:300480",
+        "yahoo_symbol": "300480.SZ"
+      }
+    },
+    {
+      "ticker": "300483.SZ",
+      "name": "Sino Prima Gas Technology Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Energy Minerals",
+      "high_type": "all_time",
+      "reason": "업종: Energy Minerals · Integrated Oil",
+      "description": "Sino Prima Gas Technology Co., Ltd. Class A · Integrated Oil",
+      "change_pct": 9.78260877677759,
+      "session_open": 24.77777671813965,
+      "session_close": 28.05555534362793,
+      "session_volume": 8477992.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:300483",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/300483.SZ/history/",
+        "date": "2015-07-21",
+        "daily_high": 28.11111068725586,
+        "prior_all_time_or_current_month_high": 28.11111068725586,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:300483",
+        "yahoo_symbol": "300483.SZ"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-11-13T04:24:15.997444+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 5312,
+    "history_symbols": 2645,
+    "inactive_symbols": 2659,
+    "failed_symbols": 8,
+    "coverage_ratio": 0.9969845457972107,
+    "coverage_by_exchange": {
+      "SSE": {
+        "covered": 1020,
+        "total": 1022
+      },
+      "SZSE": {
+        "covered": 1625,
+        "total": 1631
+      }
+    },
+    "session_symbols": 2620,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-11-13T04:24:15.997444+00:00"
+}

@@ -1,0 +1,221 @@
+{
+  "schema_version": 1,
+  "market": "taiwan",
+  "date": "2015-05-08",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "3552.TWO",
+      "name": "Tung Thih Electronic Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Auto Parts: OEM",
+      "description": "Tung Thih Electronic Co., Ltd. · Auto Parts: OEM",
+      "change_pct": 6.7375852940289915,
+      "session_open": 125.0,
+      "session_close": 131.55593872070312,
+      "session_volume": 4066691.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:3552",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3552.TWO/history/",
+        "date": "2015-05-08",
+        "daily_high": 131.55593872070312,
+        "prior_all_time_or_current_month_high": 131.55593872070312,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:3552",
+        "yahoo_symbol": "3552.TWO"
+      }
+    },
+    {
+      "ticker": "8359.TWO",
+      "name": "Cashbox Partyworld Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Consumer Services",
+      "high_type": "all_time",
+      "reason": "업종: Consumer Services · Restaurants",
+      "description": "Cashbox Partyworld Co., Ltd. · Restaurants",
+      "change_pct": 4.8228500862181,
+      "session_open": 56.5099983215332,
+      "session_close": 56.5099983215332,
+      "session_volume": 857602.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:8359",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/8359.TWO/history/",
+        "date": "2015-05-08",
+        "daily_high": 59.9900016784668,
+        "prior_all_time_or_current_month_high": 59.9900016784668,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:8359",
+        "yahoo_symbol": "8359.TWO"
+      }
+    },
+    {
+      "ticker": "1110.TW",
+      "name": "Southeast Cement Co. Ltd.",
+      "exchange": "TWSE",
+      "category": "Non-Energy Minerals",
+      "high_type": "52_week",
+      "reason": "업종: Non-Energy Minerals · Construction Materials",
+      "description": "Southeast Cement Co. Ltd. · Construction Materials",
+      "change_pct": 0.0,
+      "session_open": 17.600000381469727,
+      "session_close": 17.600000381469727,
+      "session_volume": 144000.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:1110",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/1110.TW/history/",
+        "date": "2015-05-08",
+        "daily_high": 17.649999618530273,
+        "prior_all_time_or_current_month_high": 19.5,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:1110",
+        "yahoo_symbol": "1110.TW"
+      }
+    },
+    {
+      "ticker": "1539.TW",
+      "name": "Chiu Ting Machinery Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Industrial Machinery",
+      "description": "Chiu Ting Machinery Co., Ltd. · Industrial Machinery",
+      "change_pct": 6.859204210103598,
+      "session_open": 28.450000762939453,
+      "session_close": 29.600000381469727,
+      "session_volume": 6184000.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:1539",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/1539.TW/history/",
+        "date": "2015-05-08",
+        "daily_high": 29.600000381469727,
+        "prior_all_time_or_current_month_high": 29.600000381469727,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:1539",
+        "yahoo_symbol": "1539.TW"
+      }
+    },
+    {
+      "ticker": "2442.TW",
+      "name": "Jean Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "업종: Finance · Real Estate Development",
+      "description": "Jean Co., Ltd. · Real Estate Development",
+      "change_pct": 6.796105765844129,
+      "session_open": 8.349764823913574,
+      "session_close": 8.7473726272583,
+      "session_volume": 10560656.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2442",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2442.TW/history/",
+        "date": "2015-05-08",
+        "daily_high": 8.7473726272583,
+        "prior_all_time_or_current_month_high": 64.03736877441406,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:2442",
+        "yahoo_symbol": "2442.TW"
+      }
+    },
+    {
+      "ticker": "2731.TW",
+      "name": "Lion Travel Service Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Consumer Services",
+      "high_type": "all_time",
+      "reason": "업종: Consumer Services · Other Consumer Services",
+      "description": "Lion Travel Service Co., Ltd. · Other Consumer Services",
+      "change_pct": 6.315790276168043,
+      "session_open": 143.05609130859375,
+      "session_close": 148.95530700683594,
+      "session_volume": 1216431.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2731",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2731.TW/history/",
+        "date": "2015-05-08",
+        "daily_high": 149.44691467285156,
+        "prior_all_time_or_current_month_high": 149.44691467285156,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:2731",
+        "yahoo_symbol": "2731.TW"
+      }
+    },
+    {
+      "ticker": "2832.TW",
+      "name": "Taiwan Fire & Marine Insurance Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "업종: Finance · Property/Casualty Insurance",
+      "description": "Taiwan Fire & Marine Insurance Co., Ltd. · Property/Casualty Insurance",
+      "change_pct": 1.8947353272160017,
+      "session_open": 34.0,
+      "session_close": 34.57142639160156,
+      "session_volume": 910700.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2832",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2832.TW/history/",
+        "date": "2015-05-08",
+        "daily_high": 34.78571319580078,
+        "prior_all_time_or_current_month_high": 43.14285659790039,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:2832",
+        "yahoo_symbol": "2832.TW"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-11-13T04:17:39.780482+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 2362,
+    "history_symbols": 1628,
+    "inactive_symbols": 724,
+    "failed_symbols": 10,
+    "coverage_ratio": 0.9938949938949939,
+    "coverage_by_exchange": {
+      "TWSE": {
+        "covered": 888,
+        "total": 895
+      },
+      "TPEX": {
+        "covered": 740,
+        "total": 743
+      }
+    },
+    "session_symbols": 1590,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-11-13T04:17:39.780482+00:00"
+}

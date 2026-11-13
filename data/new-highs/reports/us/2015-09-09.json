@@ -1,0 +1,325 @@
+{
+  "schema_version": 1,
+  "market": "us",
+  "date": "2015-09-09",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "ADUS",
+      "name": "Addus HomeCare Corporation",
+      "exchange": "NASDAQ",
+      "category": "Health Services",
+      "high_type": "52_week",
+      "reason": "업종: Health Services · Medical/Nursing Services",
+      "description": "Addus HomeCare Corporation · Medical/Nursing Services",
+      "change_pct": 4.681143451641145,
+      "session_open": 29.84000015258789,
+      "session_close": 30.860000610351562,
+      "session_volume": 100300.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:ADUS",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/ADUS/history/",
+        "date": "2015-09-09",
+        "daily_high": 31.049999237060547,
+        "prior_all_time_or_current_month_high": 32.400001525878906,
+        "passes_close_filter": true,
+        "source_symbol": "NASDAQ:ADUS",
+        "yahoo_symbol": "ADUS"
+      }
+    },
+    {
+      "ticker": "DSGX",
+      "name": "Descartes Systems Group Inc.",
+      "exchange": "NASDAQ",
+      "category": "Technology Services",
+      "high_type": "52_week",
+      "reason": "업종: Technology Services · Packaged Software",
+      "description": "Descartes Systems Group Inc. · Packaged Software",
+      "change_pct": 1.4100395175107083,
+      "session_open": 17.780000686645508,
+      "session_close": 17.979999542236328,
+      "session_volume": 34600.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:DSGX",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/DSGX/history/",
+        "date": "2015-09-09",
+        "daily_high": 18.06999969482422,
+        "prior_all_time_or_current_month_high": 91.609375,
+        "passes_close_filter": true,
+        "source_symbol": "NASDAQ:DSGX",
+        "yahoo_symbol": "DSGX"
+      }
+    },
+    {
+      "ticker": "MCRB",
+      "name": "Seres Therapeutics Inc",
+      "exchange": "NASDAQ",
+      "category": "Health Technology",
+      "high_type": "all_time",
+      "reason": "업종: Health Technology · Biotechnology",
+      "description": "Seres Therapeutics Inc · Biotechnology",
+      "change_pct": 2.6124831893888256,
+      "session_open": 984.4000244140625,
+      "session_close": 989.7999877929688,
+      "session_volume": 13315.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:MCRB",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/MCRB/history/",
+        "date": "2015-09-09",
+        "daily_high": 1040.0,
+        "prior_all_time_or_current_month_high": 1040.0,
+        "passes_close_filter": true,
+        "source_symbol": "NASDAQ:MCRB",
+        "yahoo_symbol": "MCRB"
+      }
+    },
+    {
+      "ticker": "MPB",
+      "name": "Mid Penn Bancorp, Inc.",
+      "exchange": "NASDAQ",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "업종: Finance · Regional Banks",
+      "description": "Mid Penn Bancorp, Inc. · Regional Banks",
+      "change_pct": 3.229742178998807,
+      "session_open": 16.31999969482422,
+      "session_close": 16.940000534057617,
+      "session_volume": 900.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:MPB",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/MPB/history/",
+        "date": "2015-09-09",
+        "daily_high": 16.940000534057617,
+        "prior_all_time_or_current_month_high": 28.979591369628906,
+        "passes_close_filter": true,
+        "source_symbol": "NASDAQ:MPB",
+        "yahoo_symbol": "MPB"
+      }
+    },
+    {
+      "ticker": "SPWH",
+      "name": "Sportsman's Warehouse Holdings, Inc.",
+      "exchange": "NASDAQ",
+      "category": "Retail Trade",
+      "high_type": "all_time",
+      "reason": "업종: Retail Trade · Specialty Stores",
+      "description": "Sportsman's Warehouse Holdings, Inc. · Specialty Stores",
+      "change_pct": 2.4150920364091943,
+      "session_open": 13.399999618530273,
+      "session_close": 13.569999694824219,
+      "session_volume": 134200.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:SPWH",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/SPWH/history/",
+        "date": "2015-09-09",
+        "daily_high": 13.970000267028809,
+        "prior_all_time_or_current_month_high": 13.970000267028809,
+        "passes_close_filter": true,
+        "source_symbol": "NASDAQ:SPWH",
+        "yahoo_symbol": "SPWH"
+      }
+    },
+    {
+      "ticker": "TOWN",
+      "name": "TowneBank",
+      "exchange": "NASDAQ",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "업종: Finance · Regional Banks",
+      "description": "TowneBank · Regional Banks",
+      "change_pct": 0.598154507897819,
+      "session_open": 18.459999084472656,
+      "session_close": 18.5,
+      "session_volume": 126300.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:TOWN",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/TOWN/history/",
+        "date": "2015-09-09",
+        "daily_high": 18.739999771118164,
+        "prior_all_time_or_current_month_high": 27.087379455566406,
+        "passes_close_filter": true,
+        "source_symbol": "NASDAQ:TOWN",
+        "yahoo_symbol": "TOWN"
+      }
+    },
+    {
+      "ticker": "WKHS",
+      "name": "Workhorse Group Inc",
+      "exchange": "NASDAQ",
+      "category": "Consumer Durables",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Durables · Motor Vehicles",
+      "description": "Workhorse Group Inc · Motor Vehicles",
+      "change_pct": 49.50980392156863,
+      "session_open": 12600.0,
+      "session_close": 18300.0,
+      "session_volume": 28.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:WKHS",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/WKHS/history/",
+        "date": "2015-09-09",
+        "daily_high": 18300.0,
+        "prior_all_time_or_current_month_high": 31500.0,
+        "passes_close_filter": true,
+        "source_symbol": "NASDAQ:WKHS",
+        "yahoo_symbol": "WKHS"
+      }
+    },
+    {
+      "ticker": "AGX",
+      "name": "Argan, Inc.",
+      "exchange": "NYSE",
+      "category": "Industrial Services",
+      "high_type": "all_time",
+      "reason": "업종: Industrial Services · Engineering & Construction",
+      "description": "Argan, Inc. · Engineering & Construction",
+      "change_pct": 4.40764214582503,
+      "session_open": 40.220001220703125,
+      "session_close": 40.97999954223633,
+      "session_volume": 326000.0,
+      "currency": "USD",
+      "source_symbol": "NYSE:AGX",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/AGX/history/",
+        "date": "2015-09-09",
+        "daily_high": 42.5,
+        "prior_all_time_or_current_month_high": 42.5,
+        "passes_close_filter": true,
+        "source_symbol": "NYSE:AGX",
+        "yahoo_symbol": "AGX"
+      }
+    },
+    {
+      "ticker": "BLDR",
+      "name": "Builders FirstSource, Inc.",
+      "exchange": "NYSE",
+      "category": "Retail Trade",
+      "high_type": "52_week",
+      "reason": "업종: Retail Trade · Home Improvement Chains",
+      "description": "Builders FirstSource, Inc. · Home Improvement Chains",
+      "change_pct": 1.970765303957167,
+      "session_open": 15.9399995803833,
+      "session_close": 16.040000915527344,
+      "session_volume": 2352000.0,
+      "currency": "USD",
+      "source_symbol": "NYSE:BLDR",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/BLDR/history/",
+        "date": "2015-09-09",
+        "daily_high": 16.43000030517578,
+        "prior_all_time_or_current_month_high": 22.043733596801758,
+        "passes_close_filter": true,
+        "source_symbol": "NYSE:BLDR",
+        "yahoo_symbol": "BLDR"
+      }
+    },
+    {
+      "ticker": "ITGR",
+      "name": "Integer Holdings Corporation",
+      "exchange": "NYSE",
+      "category": "Health Technology",
+      "high_type": "all_time",
+      "reason": "업종: Health Technology · Medical Specialties",
+      "description": "Integer Holdings Corporation · Medical Specialties",
+      "change_pct": 0.6879164931516302,
+      "session_open": 54.69462203979492,
+      "session_close": 54.7037353515625,
+      "session_volume": 315278.0,
+      "currency": "USD",
+      "source_symbol": "NYSE:ITGR",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/ITGR/history/",
+        "date": "2015-09-09",
+        "daily_high": 55.34184265136719,
+        "prior_all_time_or_current_month_high": 55.34184265136719,
+        "passes_close_filter": true,
+        "source_symbol": "NYSE:ITGR",
+        "yahoo_symbol": "ITGR"
+      }
+    },
+    {
+      "ticker": "WTM",
+      "name": "White Mountains Insurance Group Ltd",
+      "exchange": "NYSE",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "업종: Finance · Multi-Line Insurance",
+      "description": "White Mountains Insurance Group Ltd · Multi-Line Insurance",
+      "change_pct": 0.599104698277686,
+      "session_open": 753.239990234375,
+      "session_close": 753.9400024414062,
+      "session_volume": 10000.0,
+      "currency": "USD",
+      "source_symbol": "NYSE:WTM",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/WTM/history/",
+        "date": "2015-09-09",
+        "daily_high": 759.1900024414062,
+        "prior_all_time_or_current_month_high": 759.1900024414062,
+        "passes_close_filter": true,
+        "source_symbol": "NYSE:WTM",
+        "yahoo_symbol": "WTM"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-11-13T04:24:57.001939+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 5703,
+    "history_symbols": 2785,
+    "inactive_symbols": 2916,
+    "failed_symbols": 2,
+    "coverage_ratio": 0.9992823824901328,
+    "coverage_by_exchange": {
+      "NASDAQ": {
+        "covered": 1403,
+        "total": 1405
+      },
+      "NYSE": {
+        "covered": 1236,
+        "total": 1236
+      },
+      "AMEX": {
+        "covered": 146,
+        "total": 146
+      }
+    },
+    "session_symbols": 2746,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-11-13T04:24:57.001939+00:00"
+}

@@ -1,0 +1,371 @@
+{
+  "schema_version": 1,
+  "market": "taiwan",
+  "date": "2015-10-22",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "3691.TWO",
+      "name": "Giga Solar Materials Corp.",
+      "exchange": "TPEX",
+      "category": "Utilities",
+      "high_type": "52_week",
+      "reason": "업종: Utilities · Electric Utilities",
+      "description": "Giga Solar Materials Corp. · Electric Utilities",
+      "change_pct": 0.0,
+      "session_open": 595.6480102539062,
+      "session_close": 600.428466796875,
+      "session_volume": 865682.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:3691",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3691.TWO/history/",
+        "date": "2015-10-22",
+        "daily_high": 608.0772705078125,
+        "prior_all_time_or_current_month_high": 645.364990234375,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:3691",
+        "yahoo_symbol": "3691.TWO"
+      }
+    },
+    {
+      "ticker": "5536.TWO",
+      "name": "Acter Group Corporation Limited",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Semiconductors",
+      "description": "Acter Group Corporation Limited · Semiconductors",
+      "change_pct": 6.2146850970773215,
+      "session_open": 76.95195770263672,
+      "session_close": 81.27510070800781,
+      "session_volume": 939129.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:5536",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/5536.TWO/history/",
+        "date": "2015-10-22",
+        "daily_high": 82.13973236083984,
+        "prior_all_time_or_current_month_high": 156.45791625976562,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:5536",
+        "yahoo_symbol": "5536.TWO"
+      }
+    },
+    {
+      "ticker": "6417.TWO",
+      "name": "Securitag Assembly Group Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Electronic Production Equipment",
+      "description": "Securitag Assembly Group Co., Ltd. · Electronic Production Equipment",
+      "change_pct": 5.008948836161631,
+      "session_open": 56.092525482177734,
+      "session_close": 57.263153076171875,
+      "session_volume": 2211808.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:6417",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6417.TWO/history/",
+        "date": "2015-10-22",
+        "daily_high": 58.23867416381836,
+        "prior_all_time_or_current_month_high": 58.23867416381836,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:6417",
+        "yahoo_symbol": "6417.TWO"
+      }
+    },
+    {
+      "ticker": "1709.TW",
+      "name": "Formosan Union Chemical Corp.",
+      "exchange": "TWSE",
+      "category": "Process Industries",
+      "high_type": "52_week",
+      "reason": "업종: Process Industries · Chemicals: Specialty",
+      "description": "Formosan Union Chemical Corp. · Chemicals: Specialty",
+      "change_pct": 3.3112563815572704,
+      "session_open": 15.470373153686523,
+      "session_close": 15.825429916381836,
+      "session_volume": 4071168.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:1709",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/1709.TW/history/",
+        "date": "2015-10-22",
+        "daily_high": 16.18048858642578,
+        "prior_all_time_or_current_month_high": 21.375001907348633,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:1709",
+        "yahoo_symbol": "1709.TW"
+      }
+    },
+    {
+      "ticker": "2228.TW",
+      "name": "Iron Force Industrial Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Auto Parts: OEM",
+      "description": "Iron Force Industrial Co., Ltd. · Auto Parts: OEM",
+      "change_pct": 1.1594202898550732,
+      "session_open": 172.5,
+      "session_close": 174.5,
+      "session_volume": 3512000.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2228",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2228.TW/history/",
+        "date": "2015-10-22",
+        "daily_high": 181.5,
+        "prior_all_time_or_current_month_high": 181.5,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:2228",
+        "yahoo_symbol": "2228.TW"
+      }
+    },
+    {
+      "ticker": "2231.TW",
+      "name": "CUB Elecparts, Inc.",
+      "exchange": "TWSE",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Auto Parts: OEM",
+      "description": "CUB Elecparts, Inc. · Auto Parts: OEM",
+      "change_pct": 3.272251167540152,
+      "session_open": 225.7616729736328,
+      "session_close": 233.45472717285156,
+      "session_volume": 1662797.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2231",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2231.TW/history/",
+        "date": "2015-10-22",
+        "daily_high": 235.52593994140625,
+        "prior_all_time_or_current_month_high": 235.52593994140625,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:2231",
+        "yahoo_symbol": "2231.TW"
+      }
+    },
+    {
+      "ticker": "2345.TW",
+      "name": "Accton Technology Corp.",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Telecommunications Equipment",
+      "description": "Accton Technology Corp. · Telecommunications Equipment",
+      "change_pct": 0.8152153350003966,
+      "session_open": 18.5,
+      "session_close": 18.549999237060547,
+      "session_volume": 10660000.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2345",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2345.TW/history/",
+        "date": "2015-10-22",
+        "daily_high": 18.950000762939453,
+        "prior_all_time_or_current_month_high": 78.91651916503906,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:2345",
+        "yahoo_symbol": "2345.TW"
+      }
+    },
+    {
+      "ticker": "2364.TW",
+      "name": "Twinhead International Corp.",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Computer Processing Hardware",
+      "description": "Twinhead International Corp. · Computer Processing Hardware",
+      "change_pct": 9.873954105530625,
+      "session_open": 35.994319915771484,
+      "session_close": 35.994319915771484,
+      "session_volume": 327217.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2364",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2364.TW/history/",
+        "date": "2015-10-22",
+        "daily_high": 35.994319915771484,
+        "prior_all_time_or_current_month_high": 483.17071533203125,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:2364",
+        "yahoo_symbol": "2364.TW"
+      }
+    },
+    {
+      "ticker": "2911.TW",
+      "name": "Les Enphants Co. Ltd.",
+      "exchange": "TWSE",
+      "category": "Consumer Non-Durables",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Non-Durables · Apparel/Footwear",
+      "description": "Les Enphants Co. Ltd. · Apparel/Footwear",
+      "change_pct": 5.6379852793386975,
+      "session_open": 31.203702926635742,
+      "session_close": 32.96296310424805,
+      "session_volume": 3788640.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2911",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2911.TW/history/",
+        "date": "2015-10-22",
+        "daily_high": 33.425926208496094,
+        "prior_all_time_or_current_month_high": 90.56619262695312,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:2911",
+        "yahoo_symbol": "2911.TW"
+      }
+    },
+    {
+      "ticker": "4190.TW",
+      "name": "Jourdeness Group Ltd.",
+      "exchange": "TWSE",
+      "category": "Consumer Non-Durables",
+      "high_type": "all_time",
+      "reason": "업종: Consumer Non-Durables · Household/Personal Care",
+      "description": "Jourdeness Group Ltd. · Household/Personal Care",
+      "change_pct": 13.934426229508201,
+      "session_open": 123.0,
+      "session_close": 139.0,
+      "session_volume": 3855000.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:4190",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4190.TW/history/",
+        "date": "2015-10-22",
+        "daily_high": 144.0,
+        "prior_all_time_or_current_month_high": 144.0,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:4190",
+        "yahoo_symbol": "4190.TW"
+      }
+    },
+    {
+      "ticker": "4426.TW",
+      "name": "Li-Cheng Enterprise Co., Ltd",
+      "exchange": "TWSE",
+      "category": "Process Industries",
+      "high_type": "all_time",
+      "reason": "업종: Process Industries · Textiles",
+      "description": "Li-Cheng Enterprise Co., Ltd · Textiles",
+      "change_pct": 1.6393474983990686,
+      "session_open": 96.09439849853516,
+      "session_close": 98.20636749267578,
+      "session_volume": 9369474.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:4426",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4426.TW/history/",
+        "date": "2015-10-22",
+        "daily_high": 98.99835205078125,
+        "prior_all_time_or_current_month_high": 98.99835205078125,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:4426",
+        "yahoo_symbol": "4426.TW"
+      }
+    },
+    {
+      "ticker": "5284.TW",
+      "name": "JPP Holding Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Industrial Machinery",
+      "description": "JPP Holding Co., Ltd. · Industrial Machinery",
+      "change_pct": 8.2264395087424,
+      "session_open": 60.44053268432617,
+      "session_close": 64.80733489990234,
+      "session_volume": 873013.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:5284",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/5284.TW/history/",
+        "date": "2015-10-22",
+        "daily_high": 66.09752655029297,
+        "prior_all_time_or_current_month_high": 66.09752655029297,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:5284",
+        "yahoo_symbol": "5284.TW"
+      }
+    },
+    {
+      "ticker": "5288.TW",
+      "name": "Eurocharm Holdings Co Ltd",
+      "exchange": "TWSE",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Auto Parts: OEM",
+      "description": "Eurocharm Holdings Co Ltd · Auto Parts: OEM",
+      "change_pct": 9.999998225722194,
+      "session_open": 88.0,
+      "session_close": 94.5999984741211,
+      "session_volume": 3531000.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:5288",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/5288.TW/history/",
+        "date": "2015-10-22",
+        "daily_high": 94.5999984741211,
+        "prior_all_time_or_current_month_high": 94.5999984741211,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:5288",
+        "yahoo_symbol": "5288.TW"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-11-13T04:17:39.780482+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 2362,
+    "history_symbols": 1628,
+    "inactive_symbols": 724,
+    "failed_symbols": 10,
+    "coverage_ratio": 0.9938949938949939,
+    "coverage_by_exchange": {
+      "TWSE": {
+        "covered": 888,
+        "total": 895
+      },
+      "TPEX": {
+        "covered": 740,
+        "total": 743
+      }
+    },
+    "session_symbols": 1618,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-11-13T04:17:39.780482+00:00"
+}

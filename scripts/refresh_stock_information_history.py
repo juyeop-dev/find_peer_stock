@@ -1,4 +1,4 @@
-"""Resume original daily price refreshes for the 2021-to-present information update."""
+"""Resume original daily prices for the configured historical information range."""
 from concurrent.futures import ThreadPoolExecutor
 import argparse
 import hashlib
@@ -32,7 +32,7 @@ def tradingview(row):
     if len(candidates) != 1:
         raise ValueError("Exact trading venue unavailable")
     symbol = candidates[0]
-    days = (datetime.now(timezone.utc).date() - date(2015, 12, 20)).days
+    days = (datetime.now(timezone.utc).date() - date(2014, 12, 20)).days
     count = min(5000, max(550, (days * 5 + 6) // 7 + 60))
     payload = fetch_chart(symbol, "1D", count, timeout=15)
     value = charts.parse_tradingview(payload, symbol)
@@ -50,7 +50,7 @@ def fallback(row, mapped_symbol=None):
     symbol = charts.yahoo_symbol(row["ticker"]) or mapped_symbol
     if symbol:
         now = datetime.now(timezone.utc)
-        start = min(datetime(2015, 12, 20, tzinfo=timezone.utc), now - timedelta(days=732))
+        start = min(datetime(2014, 12, 20, tzinfo=timezone.utc), now - timedelta(days=732))
         params = {"period1": int(start.timestamp()), "period2": int(now.timestamp()), "interval": "1d"}
         try:
             payload = information.fetch_json(f"https://query1.finance.yahoo.com/v8/finance/chart/{quote(symbol, safe='')}?{urlencode(params)}")
@@ -68,7 +68,7 @@ def fallback(row, mapped_symbol=None):
         # whose original Korean code still has observed Naver daily bars.
         from backfill_korean_new_highs import cached_request, history_url, parse_history
         now = datetime.now(timezone.utc)
-        start, end = date(2015, 12, 20), now.date()
+        start, end = date(2014, 12, 20), now.date()
         code = row["ticker"].split(".")[0]
         try:
             bars = parse_history(cached_request(history_url(code, start, end), 18, information.ROOT / "data/tmp_korean_history"),
@@ -92,7 +92,7 @@ def main():
     parser.add_argument("--state-dir", type=Path, help="Isolated resumable database directory, initially seeded from published packs.")
     parser.add_argument("--import-europe-cache", action="store_true", help="Reuse the deepest verified same-listing European charts collected by calendar recovery.")
     parser.add_argument("--import-chart-cache", action="store_true", help="Reuse fresh same-listing charts already verified by calendar recovery, preserving confirmed listing dates.")
-    parser.add_argument("--extend-to-start", action="store_true", help="Recheck histories starting after January 2021 without a confirmed later listing date.")
+    parser.add_argument("--extend-to-start", action="store_true", help="Recheck histories that do not reach the configured start, retaining confirmed later listing dates.")
     args = parser.parse_args()
     resume = "python scripts/refresh_stock_information_history.py" + (f" --state-dir {args.state_dir.as_posix()}" if args.state_dir else "")
     for flag in ["retry_errors", "refresh_tradingview", "import_europe_cache", "import_chart_cache", "extend_to_start"]:
@@ -132,7 +132,7 @@ def main():
                 stored = history.execute("SELECT value FROM history WHERE ticker=?", (row["ticker"],)).fetchone()
                 if stored and not value.get("first_trade_date"):
                     value["first_trade_date"] = json.loads(stored[0]).get("first_trade_date")
-                cutoff = min("2015-12-20", (datetime.now(timezone.utc).date() - timedelta(days=732)).isoformat())
+                cutoff = min("2014-12-20", (datetime.now(timezone.utc).date() - timedelta(days=732)).isoformat())
                 value["prices"] = [point for point in value["prices"] if point[0] >= cutoff]
                 if len(value["prices"]) < 2:
                     continue
@@ -173,7 +173,7 @@ def main():
             if yahoo_batch:
                 try:
                     now = datetime.now(timezone.utc)
-                    years = (now.date() - date(2015, 12, 20)).days / 365.25
+                    years = (now.date() - date(2014, 12, 20)).days / 365.25
                     requested_range = next((f"{size}y" for size in [2, 5, 10] if years <= size), "max")
                     params = {"symbols": ",".join(charts.yahoo_symbol(row["ticker"]) for row in batch), "range": requested_range, "interval": "1d"}
                     payload = information.fetch_json("https://query1.finance.yahoo.com/v7/finance/spark?" + urlencode(params))
@@ -188,7 +188,7 @@ def main():
                                 raise ValueError("Spark omitted the requested historical start; checking dated chart")
                             if requested_range != "2y":
                                 # Bound storage while retaining the historical start and at least two years.
-                                cutoff = min("2015-12-20", (now.date() - timedelta(days=732)).isoformat())
+                                cutoff = min("2014-12-20", (now.date() - timedelta(days=732)).isoformat())
                                 value["prices"] = [point for point in value["prices"] if point[0] >= cutoff]
                             value.update(source="Yahoo Finance daily chart (spark)", requested_range=requested_range, fetched_at=datetime.now(timezone.utc).isoformat())
                             values[row["ticker"]] = value

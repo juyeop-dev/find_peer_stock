@@ -1,0 +1,346 @@
+{
+  "schema_version": 1,
+  "market": "china",
+  "date": "2015-10-22",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "603568.SS",
+      "name": "Zhejiang Weiming Environment Protection Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Industrial Services",
+      "high_type": "all_time",
+      "reason": "업종: Industrial Services · Engineering & Construction",
+      "description": "Zhejiang Weiming Environment Protection Co., Ltd. Class A · Engineering & Construction",
+      "change_pct": 10.003252282788843,
+      "session_open": 15.340784072875977,
+      "session_close": 16.52178192138672,
+      "session_volume": 33151183.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:603568",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/603568.SS/history/",
+        "date": "2015-10-22",
+        "daily_high": 16.52178192138672,
+        "prior_all_time_or_current_month_high": 16.52178192138672,
+        "passes_close_filter": true,
+        "source_symbol": "SSE:603568",
+        "yahoo_symbol": "603568.SS"
+      }
+    },
+    {
+      "ticker": "000025.SZ",
+      "name": "Shenzhen Tellus Holding Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "업종: Finance · Real Estate Development",
+      "description": "Shenzhen Tellus Holding Co., Ltd. Class A · Real Estate Development",
+      "change_pct": 10.002774108423829,
+      "session_open": 48.28965377807617,
+      "session_close": 54.606895446777344,
+      "session_volume": 29704752.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:000025",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/000025.SZ/history/",
+        "date": "2015-10-22",
+        "daily_high": 54.606895446777344,
+        "prior_all_time_or_current_month_high": 54.606895446777344,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:000025",
+        "yahoo_symbol": "000025.SZ"
+      }
+    },
+    {
+      "ticker": "000034.SZ",
+      "name": "Digital China Group Co., Ltd Class A",
+      "exchange": "SZSE",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Telecommunications Equipment",
+      "description": "Digital China Group Co., Ltd Class A · Telecommunications Equipment",
+      "change_pct": 5.791960570639931,
+      "session_open": 11.664284706115723,
+      "session_close": 12.785714149475098,
+      "session_volume": 74156588.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:000034",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/000034.SZ/history/",
+        "date": "2015-10-22",
+        "daily_high": 13.257142066955566,
+        "prior_all_time_or_current_month_high": 13.257142066955566,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:000034",
+        "yahoo_symbol": "000034.SZ"
+      }
+    },
+    {
+      "ticker": "000676.SZ",
+      "name": "Genimous Technology Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Technology Services",
+      "high_type": "all_time",
+      "reason": "업종: Technology Services · Packaged Software",
+      "description": "Genimous Technology Co., Ltd. Class A · Packaged Software",
+      "change_pct": 10.015568300885747,
+      "session_open": 16.30769157409668,
+      "session_close": 16.30769157409668,
+      "session_volume": 16130566.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:000676",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/000676.SZ/history/",
+        "date": "2015-10-22",
+        "daily_high": 16.30769157409668,
+        "prior_all_time_or_current_month_high": 16.30769157409668,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:000676",
+        "yahoo_symbol": "000676.SZ"
+      }
+    },
+    {
+      "ticker": "000990.SZ",
+      "name": "Chengzhi Co. Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Process Industries",
+      "high_type": "all_time",
+      "reason": "업종: Process Industries · Chemicals: Specialty",
+      "description": "Chengzhi Co. Ltd. Class A · Chemicals: Specialty",
+      "change_pct": 2.842926806493984,
+      "session_open": 19.292856216430664,
+      "session_close": 20.671428680419922,
+      "session_volume": 47472510.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:000990",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/000990.SZ/history/",
+        "date": "2015-10-22",
+        "daily_high": 21.128570556640625,
+        "prior_all_time_or_current_month_high": 21.128570556640625,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:000990",
+        "yahoo_symbol": "000990.SZ"
+      }
+    },
+    {
+      "ticker": "002043.SZ",
+      "name": "Dehua TB New Decoration Material Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Non-Energy Minerals",
+      "high_type": "all_time",
+      "reason": "업종: Non-Energy Minerals · Forest Products",
+      "description": "Dehua TB New Decoration Material Co., Ltd. Class A · Forest Products",
+      "change_pct": 10.00715971564825,
+      "session_open": 10.0,
+      "session_close": 10.260000228881836,
+      "session_volume": 83397184.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002043",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002043.SZ/history/",
+        "date": "2015-10-22",
+        "daily_high": 10.260000228881836,
+        "prior_all_time_or_current_month_high": 10.260000228881836,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:002043",
+        "yahoo_symbol": "002043.SZ"
+      }
+    },
+    {
+      "ticker": "002057.SZ",
+      "name": "Sinosteel New Materials Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Process Industries",
+      "high_type": "all_time",
+      "reason": "업종: Process Industries · Chemicals: Specialty",
+      "description": "Sinosteel New Materials Co., Ltd. Class A · Chemicals: Specialty",
+      "change_pct": 10.022780448955393,
+      "session_open": 8.133333206176758,
+      "session_close": 8.586666107177734,
+      "session_volume": 99088785.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002057",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002057.SZ/history/",
+        "date": "2015-10-22",
+        "daily_high": 8.586666107177734,
+        "prior_all_time_or_current_month_high": 8.586666107177734,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:002057",
+        "yahoo_symbol": "002057.SZ"
+      }
+    },
+    {
+      "ticker": "002316.SZ",
+      "name": "Jilin Asia Link Technology Development Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Commercial Services",
+      "high_type": "all_time",
+      "reason": "업종: Commercial Services · Miscellaneous Commercial Services",
+      "description": "Jilin Asia Link Technology Development Co., Ltd. Class A · Miscellaneous Commercial Services",
+      "change_pct": 10.011783326088096,
+      "session_open": 18.68000030517578,
+      "session_close": 18.68000030517578,
+      "session_volume": 9391410.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002316",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002316.SZ/history/",
+        "date": "2015-10-22",
+        "daily_high": 18.68000030517578,
+        "prior_all_time_or_current_month_high": 18.68000030517578,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:002316",
+        "yahoo_symbol": "002316.SZ"
+      }
+    },
+    {
+      "ticker": "002370.SZ",
+      "name": "Zhejiang Yatai Pharmaceutical Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Health Technology",
+      "high_type": "all_time",
+      "reason": "업종: Health Technology · Pharmaceuticals: Major",
+      "description": "Zhejiang Yatai Pharmaceutical Co., Ltd. Class A · Pharmaceuticals: Major",
+      "change_pct": 10.000002127154639,
+      "session_open": 13.795000076293945,
+      "session_close": 14.795000076293945,
+      "session_volume": 52283850.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002370",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002370.SZ/history/",
+        "date": "2015-10-22",
+        "daily_high": 14.795000076293945,
+        "prior_all_time_or_current_month_high": 14.795000076293945,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:002370",
+        "yahoo_symbol": "002370.SZ"
+      }
+    },
+    {
+      "ticker": "002640.SZ",
+      "name": "Global Top E-Commerce Co. Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Retail Trade",
+      "high_type": "all_time",
+      "reason": "업종: Retail Trade · Internet Retail",
+      "description": "Global Top E-Commerce Co. Ltd. Class A · Internet Retail",
+      "change_pct": 9.87101825300931,
+      "session_open": 18.05500030517578,
+      "session_close": 20.8700008392334,
+      "session_volume": 80136456.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002640",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002640.SZ/history/",
+        "date": "2015-10-22",
+        "daily_high": 20.895000457763672,
+        "prior_all_time_or_current_month_high": 20.895000457763672,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:002640",
+        "yahoo_symbol": "002640.SZ"
+      }
+    },
+    {
+      "ticker": "300191.SZ",
+      "name": "Sino Geophysical Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Energy Minerals",
+      "high_type": "all_time",
+      "reason": "업종: Energy Minerals · Integrated Oil",
+      "description": "Sino Geophysical Co., Ltd. Class A · Integrated Oil",
+      "change_pct": 10.000007064254346,
+      "session_open": 39.91999816894531,
+      "session_close": 41.58000183105469,
+      "session_volume": 18517334.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:300191",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/300191.SZ/history/",
+        "date": "2015-10-22",
+        "daily_high": 41.58000183105469,
+        "prior_all_time_or_current_month_high": 41.58000183105469,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:300191",
+        "yahoo_symbol": "300191.SZ"
+      }
+    },
+    {
+      "ticker": "300242.SZ",
+      "name": "Jiayun Technology Inc. Class A",
+      "exchange": "SZSE",
+      "category": "Commercial Services",
+      "high_type": "all_time",
+      "reason": "업종: Commercial Services · Advertising/Marketing Services",
+      "description": "Jiayun Technology Inc. Class A · Advertising/Marketing Services",
+      "change_pct": 9.988450188906818,
+      "session_open": 16.549999237060547,
+      "session_close": 19.049999237060547,
+      "session_volume": 28261028.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:300242",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/300242.SZ/history/",
+        "date": "2015-10-22",
+        "daily_high": 19.049999237060547,
+        "prior_all_time_or_current_month_high": 19.049999237060547,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:300242",
+        "yahoo_symbol": "300242.SZ"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-11-13T04:24:15.997444+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 5312,
+    "history_symbols": 2645,
+    "inactive_symbols": 2659,
+    "failed_symbols": 8,
+    "coverage_ratio": 0.9969845457972107,
+    "coverage_by_exchange": {
+      "SSE": {
+        "covered": 1020,
+        "total": 1022
+      },
+      "SZSE": {
+        "covered": 1625,
+        "total": 1631
+      }
+    },
+    "session_symbols": 2620,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-11-13T04:24:15.997444+00:00"
+}

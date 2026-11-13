@@ -23,7 +23,7 @@ jobs:
       group: prepared-stock-snapshots-${{ github.ref }}
       cancel-in-progress: true
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v5
       - uses: actions/setup-python@v6
@@ -58,8 +58,9 @@ jobs:
         run: npm run build
       - name: Copy SPA fallback
         run: cp frontend/dist/index.html frontend/dist/404.html
-      - name: Verify published 2016 and retained 2017 histories against committed sources
+      - name: Verify published 2015 and retained 2016/2017 histories against committed sources
         run: |
+          python scripts/audit_publication_2015.py --artifact frontend/dist
           python scripts/audit_publication_2017.py --artifact frontend/dist
           python scripts/audit_publication_2016.py --artifact frontend/dist
       - uses: actions/upload-pages-artifact@v4

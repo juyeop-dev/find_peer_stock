@@ -1,0 +1,171 @@
+{
+  "schema_version": 1,
+  "market": "taiwan",
+  "date": "2015-09-25",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "3205.TWO",
+      "name": "Sagittarius Life Science Corp.",
+      "exchange": "TPEX",
+      "category": "Health Technology",
+      "high_type": "all_time",
+      "reason": "업종: Health Technology · Pharmaceuticals: Major",
+      "description": "Sagittarius Life Science Corp. · Pharmaceuticals: Major",
+      "change_pct": 9.999994766122434,
+      "session_open": 171.61398315429688,
+      "session_close": 192.41566467285156,
+      "session_volume": 1071436.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:3205",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3205.TWO/history/",
+        "date": "2015-09-25",
+        "daily_high": 192.41566467285156,
+        "prior_all_time_or_current_month_high": 192.41566467285156,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:3205",
+        "yahoo_symbol": "3205.TWO"
+      }
+    },
+    {
+      "ticker": "4529.TWO",
+      "name": "Electric Power Technology Limited",
+      "exchange": "TPEX",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Electrical Products",
+      "description": "Electric Power Technology Limited · Electrical Products",
+      "change_pct": 9.960159211175323,
+      "session_open": 27.600000381469727,
+      "session_close": 27.600000381469727,
+      "session_volume": 4719565.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:4529",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4529.TWO/history/",
+        "date": "2015-09-25",
+        "daily_high": 27.600000381469727,
+        "prior_all_time_or_current_month_high": 32.66962814331055,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:4529",
+        "yahoo_symbol": "4529.TWO"
+      }
+    },
+    {
+      "ticker": "8444.TWO",
+      "name": "Green River Holding Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Non-Energy Minerals",
+      "high_type": "all_time",
+      "reason": "업종: Non-Energy Minerals · Forest Products",
+      "description": "Green River Holding Co., Ltd. · Forest Products",
+      "change_pct": 9.395892600138511,
+      "session_open": 76.90802001953125,
+      "session_close": 76.90802001953125,
+      "session_volume": 55013.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:8444",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/8444.TWO/history/",
+        "date": "2015-09-25",
+        "daily_high": 76.90802001953125,
+        "prior_all_time_or_current_month_high": 76.90802001953125,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:8444",
+        "yahoo_symbol": "8444.TWO"
+      }
+    },
+    {
+      "ticker": "8916.TWO",
+      "name": "Kwong Lung Enterprise Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Consumer Non-Durables",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Non-Durables · Apparel/Footwear",
+      "description": "Kwong Lung Enterprise Co., Ltd. · Apparel/Footwear",
+      "change_pct": 3.947375245592055,
+      "session_open": 46.900001525878906,
+      "session_close": 47.400001525878906,
+      "session_volume": 3404584.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:8916",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/8916.TWO/history/",
+        "date": "2015-09-25",
+        "daily_high": 48.400001525878906,
+        "prior_all_time_or_current_month_high": 62.01918029785156,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:8916",
+        "yahoo_symbol": "8916.TWO"
+      }
+    },
+    {
+      "ticker": "1709.TW",
+      "name": "Formosan Union Chemical Corp.",
+      "exchange": "TWSE",
+      "category": "Process Industries",
+      "high_type": "52_week",
+      "reason": "업종: Process Industries · Chemicals: Specialty",
+      "description": "Formosan Union Chemical Corp. · Chemicals: Specialty",
+      "change_pct": 3.4722200007533788,
+      "session_open": 14.6080904006958,
+      "session_close": 15.115315437316895,
+      "session_volume": 2965151.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:1709",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/1709.TW/history/",
+        "date": "2015-09-25",
+        "daily_high": 15.368927955627441,
+        "prior_all_time_or_current_month_high": 21.375001907348633,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:1709",
+        "yahoo_symbol": "1709.TW"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-11-13T04:17:39.780482+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 2362,
+    "history_symbols": 1628,
+    "inactive_symbols": 724,
+    "failed_symbols": 10,
+    "coverage_ratio": 0.9938949938949939,
+    "coverage_by_exchange": {
+      "TWSE": {
+        "covered": 888,
+        "total": 895
+      },
+      "TPEX": {
+        "covered": 740,
+        "total": 743
+      }
+    },
+    "session_symbols": 1613,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-11-13T04:17:39.780482+00:00"
+}

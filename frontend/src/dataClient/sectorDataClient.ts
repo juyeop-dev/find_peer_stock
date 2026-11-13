@@ -4,6 +4,19 @@ import { classifiedSectorStock } from "./sectorRankings";
 import koreanCompanyNames from "../../../data/seed/korean_company_names.json";
 
 let latest: SectorSnapshot | undefined;
+export function expandSectorArchive(value: unknown): unknown {
+  const packed=value as {encoding?:string;stock_fields?:unknown;stock_rows?:unknown};
+  if(!packed?.encoding)return value;
+  if(packed.encoding!=="sector-columns-v1"||!Array.isArray(packed.stock_fields)||!Array.isArray(packed.stock_rows))throw new Error("섹터 압축 기록 형식이 올바르지 않습니다.");
+  const fields=packed.stock_fields as unknown[][];
+  if(fields.some(row=>!Array.isArray(row)||!row.length||new Set(row).size!==row.length||row.some(key=>typeof key!=="string"||["__proto__","constructor","prototype"].includes(key))))throw new Error("섹터 압축 기록의 열이 올바르지 않습니다.");
+  const stocks=packed.stock_rows.map((row: unknown)=>{
+    if(!Array.isArray(row)||!Number.isInteger(row[0])||row[0]<0||!fields[row[0]]||row.length!==fields[row[0]].length+1)throw new Error("섹터 압축 기록의 행이 올바르지 않습니다.");
+    return Object.fromEntries(fields[row[0]].map((key,index)=>[key,row[index+1]]));
+  });
+  const {encoding,stock_fields,stock_rows,...metadata}=packed;
+  return {...metadata,stocks};
+}
 export function validSectorDate(value: string) {
   return /^\d{4}-\d{2}-\d{2}$/.test(value) && Number.isFinite(Date.parse(value)) && new Date(value).toISOString().slice(0, 10) === value;
 }
@@ -18,7 +31,7 @@ async function staticSectorJson<T>(path: string, signal?: AbortSignal): Promise<
     const body = magic[0] === 0x1f && magic[1] === 0x8b
       ? await new Response(new Blob([bytes]).stream().pipeThrough(new DecompressionStream("gzip"))).text()
       : new TextDecoder().decode(bytes);
-    return JSON.parse(body) as T;
+    return expandSectorArchive(JSON.parse(body)) as T;
   }
   return response.json();
 }
@@ -40,9 +53,7 @@ export async function getSectorData(signal?: AbortSignal, fromSource = false): P
     data = { ...data, source_fetched_at: data.fetched_at };
   } else {
     try {
-      const response = await fetch(`${import.meta.env.BASE_URL}data/sectors/index.json?t=${Date.now()}`, { cache: "no-store", signal });
-      if (!response.ok) throw new Error("저장된 섹터 자료를 불러오지 못했습니다.");
-      data = validate(await response.json());
+      data = validate(await staticSectorJson<SectorSnapshot>("index.json.gz", signal));
     } catch (error) {
       if (signal?.aborted) throw error;
       if (latest) return latest;

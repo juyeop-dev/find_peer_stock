@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import {readFile} from "node:fs/promises";
 import test from "node:test";
+import {gzipSync} from "node:zlib";
 import ts from "typescript";
 const source=(await readFile(new URL("../src/dataClient/investorDataClient.ts",import.meta.url),"utf8")).replace('import { requestOriginal } from "./liveStockDataClient";','const requestOriginal = (...args) => globalThis.mockInvestorOriginal(...args);');
 const js=ts.transpileModule(source,{compilerOptions:{module:ts.ModuleKind.ESNext,target:ts.ScriptTarget.ES2022}}).outputText.replaceAll('import.meta.env.BASE_URL','"/"');
@@ -17,7 +18,11 @@ test("every archived day pairs both exact-date indices and source flows, includi
   assert.equal(archive.history.filter(row=>row.date.startsWith("2018-")).length,244);
   assert.equal(archive.history.filter(row=>row.date.startsWith("2017-")).length,243);
   assert.equal(archive.history.filter(row=>row.date.startsWith("2016-")).length,246);
-  assert.equal(archive.history[0].date,"2016-01-04");
+  assert.equal(archive.history.filter(row=>row.date.startsWith("2015-")).length,248);
+  assert.equal(archive.history[0].date,"2015-01-02");
+  const anomaly=archive.history.find(row=>row.date==="2015-10-08").markets.find(row=>row.market==="KOSDAQ");
+  assert.equal(anomaly.market_net_difference,45000000);
+  assert.ok(anomaly.source_warning);
 });
 test("whole-market totals sum money, never indices or percentages, and invalid pairs fail",()=>{
   const row=archive.history[0],total=investorTotals(row,"all");
@@ -28,7 +33,7 @@ test("whole-market totals sum money, never indices or percentages, and invalid p
 });
 test("original refresh retains all past records and rejects a response for another requested day",async()=>{
   const originalFetch=globalThis.fetch;
-  globalThis.fetch=async()=>Response.json(archive);
+  globalThis.fetch=async()=>new Response(gzipSync(JSON.stringify(archive)));
   globalThis.mockInvestorOriginal=async()=>({...structuredClone(archive.history[0]),fetched_at:new Date().toISOString(),source_fetched_at:new Date().toISOString()});
   const signal=new AbortController().signal;
   try {

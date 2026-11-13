@@ -1,0 +1,221 @@
+{
+  "schema_version": 1,
+  "market": "china",
+  "date": "2015-08-06",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "600136.SS",
+      "name": "Wuhan MC Culture & Sports Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Consumer Services",
+      "high_type": "all_time",
+      "reason": "업종: Consumer Services · Movies/Entertainment",
+      "description": "Wuhan MC Culture & Sports Co., Ltd. Class A · Movies/Entertainment",
+      "change_pct": 9.984154043643368,
+      "session_open": 13.880000114440918,
+      "session_close": 13.880000114440918,
+      "session_volume": 3655804.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:600136",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/600136.SS/history/",
+        "date": "2015-08-06",
+        "daily_high": 13.880000114440918,
+        "prior_all_time_or_current_month_high": 13.880000114440918,
+        "passes_close_filter": true,
+        "source_symbol": "SSE:600136",
+        "yahoo_symbol": "600136.SS"
+      }
+    },
+    {
+      "ticker": "601968.SS",
+      "name": "Shanghai Baosteel Packaging Co Ltd Class A",
+      "exchange": "SSE",
+      "category": "Process Industries",
+      "high_type": "all_time",
+      "reason": "업종: Process Industries · Containers/Packaging",
+      "description": "Shanghai Baosteel Packaging Co Ltd Class A · Containers/Packaging",
+      "change_pct": 8.259911963676348,
+      "session_open": 18.149999618530273,
+      "session_close": 19.65999984741211,
+      "session_volume": 108756990.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:601968",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/601968.SS/history/",
+        "date": "2015-08-06",
+        "daily_high": 19.959999084472656,
+        "prior_all_time_or_current_month_high": 19.959999084472656,
+        "passes_close_filter": true,
+        "source_symbol": "SSE:601968",
+        "yahoo_symbol": "601968.SS"
+      }
+    },
+    {
+      "ticker": "603117.SS",
+      "name": "JIANGSU WANLIN MODERN LOGISTICS CO LTD Class A",
+      "exchange": "SSE",
+      "category": "Transportation",
+      "high_type": "all_time",
+      "reason": "업종: Transportation · Other Transportation",
+      "description": "JIANGSU WANLIN MODERN LOGISTICS CO LTD Class A · Other Transportation",
+      "change_pct": 10.015407027194234,
+      "session_open": 23.571428298950195,
+      "session_close": 25.5,
+      "session_volume": 54883411.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:603117",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/603117.SS/history/",
+        "date": "2015-08-06",
+        "daily_high": 25.5,
+        "prior_all_time_or_current_month_high": 25.5,
+        "passes_close_filter": true,
+        "source_symbol": "SSE:603117",
+        "yahoo_symbol": "603117.SS"
+      }
+    },
+    {
+      "ticker": "603616.SS",
+      "name": "Beijing Hanjian Heshan Pipeline Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Non-Energy Minerals",
+      "high_type": "all_time",
+      "reason": "업종: Non-Energy Minerals · Construction Materials",
+      "description": "Beijing Hanjian Heshan Pipeline Co., Ltd. Class A · Construction Materials",
+      "change_pct": 10.012489919150314,
+      "session_open": 22.030000686645508,
+      "session_close": 22.030000686645508,
+      "session_volume": 56259472.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:603616",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/603616.SS/history/",
+        "date": "2015-08-06",
+        "daily_high": 22.030000686645508,
+        "prior_all_time_or_current_month_high": 22.030000686645508,
+        "passes_close_filter": true,
+        "source_symbol": "SSE:603616",
+        "yahoo_symbol": "603616.SS"
+      }
+    },
+    {
+      "ticker": "000068.SZ",
+      "name": "Shenzhen Huakong Seg Co. Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Distribution Services",
+      "high_type": "52_week",
+      "reason": "업종: Distribution Services · Wholesale Distributors",
+      "description": "Shenzhen Huakong Seg Co. Ltd. Class A · Wholesale Distributors",
+      "change_pct": 4.995615271226317,
+      "session_open": 11.609999656677246,
+      "session_close": 11.979999542236328,
+      "session_volume": 34278821.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:000068",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/000068.SZ/history/",
+        "date": "2015-08-06",
+        "daily_high": 11.979999542236328,
+        "prior_all_time_or_current_month_high": 14.010000228881836,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:000068",
+        "yahoo_symbol": "000068.SZ"
+      }
+    },
+    {
+      "ticker": "000564.SZ",
+      "name": "CCOOP Group Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Retail Trade",
+      "high_type": "52_week",
+      "reason": "업종: Retail Trade · Department Stores",
+      "description": "CCOOP Group Co., Ltd. Class A · Department Stores",
+      "change_pct": 10.000001467191266,
+      "session_open": 7.150000095367432,
+      "session_close": 7.150000095367432,
+      "session_volume": 348469.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:000564",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/000564.SZ/history/",
+        "date": "2015-08-06",
+        "daily_high": 7.150000095367432,
+        "prior_all_time_or_current_month_high": 10.600000381469727,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:000564",
+        "yahoo_symbol": "000564.SZ"
+      }
+    },
+    {
+      "ticker": "002765.SZ",
+      "name": "Landai Technology Group Corp. Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Auto Parts: OEM",
+      "description": "Landai Technology Group Corp. Ltd. Class A · Auto Parts: OEM",
+      "change_pct": 7.872604695562391,
+      "session_open": 16.5,
+      "session_close": 17.950000762939453,
+      "session_volume": 58463078.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002765",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002765.SZ/history/",
+        "date": "2015-08-06",
+        "daily_high": 18.30500030517578,
+        "prior_all_time_or_current_month_high": 18.30500030517578,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:002765",
+        "yahoo_symbol": "002765.SZ"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-11-13T04:24:15.997444+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 5312,
+    "history_symbols": 2645,
+    "inactive_symbols": 2659,
+    "failed_symbols": 8,
+    "coverage_ratio": 0.9969845457972107,
+    "coverage_by_exchange": {
+      "SSE": {
+        "covered": 1020,
+        "total": 1022
+      },
+      "SZSE": {
+        "covered": 1625,
+        "total": 1631
+      }
+    },
+    "session_symbols": 2620,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-11-13T04:24:15.997444+00:00"
+}

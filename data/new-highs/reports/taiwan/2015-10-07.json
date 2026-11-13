@@ -1,0 +1,371 @@
+{
+  "schema_version": 1,
+  "market": "taiwan",
+  "date": "2015-10-07",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "3492.TWO",
+      "name": "Advanced Connection Technology Inc.",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Electronic Components",
+      "description": "Advanced Connection Technology Inc. · Electronic Components",
+      "change_pct": 9.895834920031099,
+      "session_open": 29.0,
+      "session_close": 31.649999618530273,
+      "session_volume": 1325981.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:3492",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3492.TWO/history/",
+        "date": "2015-10-07",
+        "daily_high": 31.649999618530273,
+        "prior_all_time_or_current_month_high": 36.35786437988281,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:3492",
+        "yahoo_symbol": "3492.TWO"
+      }
+    },
+    {
+      "ticker": "4971.TWO",
+      "name": "IntelliEPI Inc. (Cayman)",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Semiconductors",
+      "description": "IntelliEPI Inc. (Cayman) · Semiconductors",
+      "change_pct": 9.126981099446606,
+      "session_open": 120.0,
+      "session_close": 130.95237731933594,
+      "session_volume": 4525717.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:4971",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4971.TWO/history/",
+        "date": "2015-10-07",
+        "daily_high": 131.42857360839844,
+        "prior_all_time_or_current_month_high": 131.42857360839844,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:4971",
+        "yahoo_symbol": "4971.TWO"
+      }
+    },
+    {
+      "ticker": "5245.TWO",
+      "name": "Wisechip Semiconductor Inc.",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Semiconductors",
+      "description": "Wisechip Semiconductor Inc. · Semiconductors",
+      "change_pct": 9.961686320525365,
+      "session_open": 70.97213745117188,
+      "session_close": 77.6455078125,
+      "session_volume": 584449.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:5245",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/5245.TWO/history/",
+        "date": "2015-10-07",
+        "daily_high": 77.6455078125,
+        "prior_all_time_or_current_month_high": 77.6455078125,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:5245",
+        "yahoo_symbol": "5245.TWO"
+      }
+    },
+    {
+      "ticker": "5315.TWO",
+      "name": "United Radiant Technology Corporation",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Electronic Production Equipment",
+      "description": "United Radiant Technology Corporation · Electronic Production Equipment",
+      "change_pct": 2.463054279761634,
+      "session_open": 20.399999618530273,
+      "session_close": 20.799999237060547,
+      "session_volume": 5706935.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:5315",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/5315.TWO/history/",
+        "date": "2015-10-07",
+        "daily_high": 22.100000381469727,
+        "prior_all_time_or_current_month_high": 22.100000381469727,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:5315",
+        "yahoo_symbol": "5315.TWO"
+      }
+    },
+    {
+      "ticker": "6143.TWO",
+      "name": "Netronix, Inc.",
+      "exchange": "TPEX",
+      "category": "Technology Services",
+      "high_type": "52_week",
+      "reason": "업종: Technology Services · Information Technology Services",
+      "description": "Netronix, Inc. · Information Technology Services",
+      "change_pct": 4.103338636805831,
+      "session_open": 65.80000305175781,
+      "session_close": 68.5,
+      "session_volume": 2841487.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:6143",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6143.TWO/history/",
+        "date": "2015-10-07",
+        "daily_high": 68.80000305175781,
+        "prior_all_time_or_current_month_high": 121.39474487304688,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:6143",
+        "yahoo_symbol": "6143.TWO"
+      }
+    },
+    {
+      "ticker": "6465.TWO",
+      "name": "ATrack Technology Inc",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Telecommunications Equipment",
+      "description": "ATrack Technology Inc · Telecommunications Equipment",
+      "change_pct": 1.2499998749810004,
+      "session_open": 77.23588562011719,
+      "session_close": 77.23588562011719,
+      "session_volume": 132411.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:6465",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6465.TWO/history/",
+        "date": "2015-10-07",
+        "daily_high": 77.712646484375,
+        "prior_all_time_or_current_month_high": 77.712646484375,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:6465",
+        "yahoo_symbol": "6465.TWO"
+      }
+    },
+    {
+      "ticker": "6516.TWO",
+      "name": "Kingwaytek Technology Co Ltd",
+      "exchange": "TPEX",
+      "category": "Technology Services",
+      "high_type": "all_time",
+      "reason": "업종: Technology Services · Packaged Software",
+      "description": "Kingwaytek Technology Co Ltd · Packaged Software",
+      "change_pct": 1.5306104680000487,
+      "session_open": 68.94935607910156,
+      "session_close": 68.94935607910156,
+      "session_volume": 163501.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:6516",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6516.TWO/history/",
+        "date": "2015-10-07",
+        "daily_high": 69.29237365722656,
+        "prior_all_time_or_current_month_high": 69.29237365722656,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:6516",
+        "yahoo_symbol": "6516.TWO"
+      }
+    },
+    {
+      "ticker": "8383.TWO",
+      "name": "Chen Full International Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Miscellaneous Manufacturing",
+      "description": "Chen Full International Co., Ltd. · Miscellaneous Manufacturing",
+      "change_pct": 9.602641185163252,
+      "session_open": 61.20000076293945,
+      "session_close": 66.19999694824219,
+      "session_volume": 9336480.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:8383",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/8383.TWO/history/",
+        "date": "2015-10-07",
+        "daily_high": 66.19999694824219,
+        "prior_all_time_or_current_month_high": 66.19999694824219,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:8383",
+        "yahoo_symbol": "8383.TWO"
+      }
+    },
+    {
+      "ticker": "1527.TW",
+      "name": "Basso Industry Corp. Ltd.",
+      "exchange": "TWSE",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Miscellaneous Manufacturing",
+      "description": "Basso Industry Corp. Ltd. · Miscellaneous Manufacturing",
+      "change_pct": 1.1647267122350868,
+      "session_open": 67.22222137451172,
+      "session_close": 67.55555725097656,
+      "session_volume": 5121000.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:1527",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/1527.TW/history/",
+        "date": "2015-10-07",
+        "daily_high": 68.55555725097656,
+        "prior_all_time_or_current_month_high": 73.9329833984375,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:1527",
+        "yahoo_symbol": "1527.TW"
+      }
+    },
+    {
+      "ticker": "2404.TW",
+      "name": "United Integrated Services Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Industrial Services",
+      "high_type": "52_week",
+      "reason": "업종: Industrial Services · Engineering & Construction",
+      "description": "United Integrated Services Co., Ltd. · Engineering & Construction",
+      "change_pct": 2.826379542395685,
+      "session_open": 46.5625,
+      "session_close": 47.75,
+      "session_volume": 2052800.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2404",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2404.TW/history/",
+        "date": "2015-10-07",
+        "daily_high": 47.75,
+        "prior_all_time_or_current_month_high": 65.125,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:2404",
+        "yahoo_symbol": "2404.TW"
+      }
+    },
+    {
+      "ticker": "4137.TW",
+      "name": "Chlitina Holding Ltd.",
+      "exchange": "TWSE",
+      "category": "Consumer Non-Durables",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Non-Durables · Household/Personal Care",
+      "description": "Chlitina Holding Ltd. · Household/Personal Care",
+      "change_pct": 9.906542056074773,
+      "session_open": 270.0,
+      "session_close": 294.0,
+      "session_volume": 2815000.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:4137",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4137.TW/history/",
+        "date": "2015-10-07",
+        "daily_high": 294.0,
+        "prior_all_time_or_current_month_high": 346.19049072265625,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:4137",
+        "yahoo_symbol": "4137.TW"
+      }
+    },
+    {
+      "ticker": "4722.TW",
+      "name": "Qualipoly Chemical Corp.",
+      "exchange": "TWSE",
+      "category": "Process Industries",
+      "high_type": "52_week",
+      "reason": "업종: Process Industries · Chemicals: Specialty",
+      "description": "Qualipoly Chemical Corp. · Chemicals: Specialty",
+      "change_pct": 3.7914716007114047,
+      "session_open": 30.194194793701172,
+      "session_close": 31.191173553466797,
+      "session_volume": 3360705.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:4722",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4722.TW/history/",
+        "date": "2015-10-07",
+        "daily_high": 31.381074905395508,
+        "prior_all_time_or_current_month_high": 37.45789337158203,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:4722",
+        "yahoo_symbol": "4722.TW"
+      }
+    },
+    {
+      "ticker": "6024.TW",
+      "name": "Capital Futures Corp.",
+      "exchange": "TWSE",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "업종: Finance · Investment Banks/Brokers",
+      "description": "Capital Futures Corp. · Investment Banks/Brokers",
+      "change_pct": 2.831856984527281,
+      "session_open": 22.662336349487305,
+      "session_close": 22.938705444335938,
+      "session_volume": 1151417.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:6024",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6024.TW/history/",
+        "date": "2015-10-07",
+        "daily_high": 23.45196533203125,
+        "prior_all_time_or_current_month_high": 23.45196533203125,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:6024",
+        "yahoo_symbol": "6024.TW"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-11-13T04:17:39.780482+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 2362,
+    "history_symbols": 1628,
+    "inactive_symbols": 724,
+    "failed_symbols": 10,
+    "coverage_ratio": 0.9938949938949939,
+    "coverage_by_exchange": {
+      "TWSE": {
+        "covered": 888,
+        "total": 895
+      },
+      "TPEX": {
+        "covered": 740,
+        "total": 743
+      }
+    },
+    "session_symbols": 1613,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-11-13T04:17:39.780482+00:00"
+}

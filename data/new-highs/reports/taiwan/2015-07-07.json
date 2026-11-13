@@ -1,0 +1,271 @@
+{
+  "schema_version": 1,
+  "market": "taiwan",
+  "date": "2015-07-07",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "1780.TWO",
+      "name": "Allied Biotech Corp",
+      "exchange": "TPEX",
+      "category": "Consumer Non-Durables",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Non-Durables · Food: Specialty/Candy",
+      "description": "Allied Biotech Corp · Food: Specialty/Candy",
+      "change_pct": 0.0,
+      "session_open": 12.25,
+      "session_close": 12.25,
+      "session_volume": 27000.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:1780",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/1780.TWO/history/",
+        "date": "2015-07-07",
+        "daily_high": 12.84000015258789,
+        "prior_all_time_or_current_month_high": 17.299999237060547,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:1780",
+        "yahoo_symbol": "1780.TWO"
+      }
+    },
+    {
+      "ticker": "3131.TWO",
+      "name": "Grand Process Technology Corporation",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Electronic Production Equipment",
+      "description": "Grand Process Technology Corporation · Electronic Production Equipment",
+      "change_pct": 3.0612244897959107,
+      "session_open": 202.0,
+      "session_close": 202.0,
+      "session_volume": 800251.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:3131",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3131.TWO/history/",
+        "date": "2015-07-07",
+        "daily_high": 206.0,
+        "prior_all_time_or_current_month_high": 340.0,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:3131",
+        "yahoo_symbol": "3131.TWO"
+      }
+    },
+    {
+      "ticker": "3465.TWO",
+      "name": "New Advanced Electronics Technologies Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Electronic Equipment/Instruments",
+      "description": "New Advanced Electronics Technologies Co., Ltd. · Electronic Equipment/Instruments",
+      "change_pct": 3.448283199983404,
+      "session_open": 28.484193801879883,
+      "session_close": 29.671035766601562,
+      "session_volume": 29411.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:3465",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3465.TWO/history/",
+        "date": "2015-07-07",
+        "daily_high": 30.66006851196289,
+        "prior_all_time_or_current_month_high": 35.47522735595703,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:3465",
+        "yahoo_symbol": "3465.TWO"
+      }
+    },
+    {
+      "ticker": "8436.TWO",
+      "name": "TCI Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Pharmaceuticals: Other",
+      "description": "TCI Co., Ltd. · Pharmaceuticals: Other",
+      "change_pct": 9.9660238371164,
+      "session_open": 48.09501647949219,
+      "session_close": 52.00474166870117,
+      "session_volume": 7004608.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:8436",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/8436.TWO/history/",
+        "date": "2015-07-07",
+        "daily_high": 52.00474166870117,
+        "prior_all_time_or_current_month_high": 67.40789031982422,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:8436",
+        "yahoo_symbol": "8436.TWO"
+      }
+    },
+    {
+      "ticker": "8444.TWO",
+      "name": "Green River Holding Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Non-Energy Minerals",
+      "high_type": "all_time",
+      "reason": "업종: Non-Energy Minerals · Forest Products",
+      "description": "Green River Holding Co., Ltd. · Forest Products",
+      "change_pct": 0.0,
+      "session_open": 54.86105728149414,
+      "session_close": 54.86105728149414,
+      "session_volume": 1.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:8444",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/8444.TWO/history/",
+        "date": "2015-07-07",
+        "daily_high": 54.86105728149414,
+        "prior_all_time_or_current_month_high": 54.86105728149414,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:8444",
+        "yahoo_symbol": "8444.TWO"
+      }
+    },
+    {
+      "ticker": "1707.TW",
+      "name": "Grape King Bio Ltd.",
+      "exchange": "TWSE",
+      "category": "Health Technology",
+      "high_type": "all_time",
+      "reason": "업종: Health Technology · Pharmaceuticals: Other",
+      "description": "Grape King Bio Ltd. · Pharmaceuticals: Other",
+      "change_pct": 2.709359605911321,
+      "session_open": 206.0,
+      "session_close": 208.5,
+      "session_volume": 1949000.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:1707",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/1707.TW/history/",
+        "date": "2015-07-07",
+        "daily_high": 209.0,
+        "prior_all_time_or_current_month_high": 209.0,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:1707",
+        "yahoo_symbol": "1707.TW"
+      }
+    },
+    {
+      "ticker": "2485.TW",
+      "name": "Zinwell Corporation",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Telecommunications Equipment",
+      "description": "Zinwell Corporation · Telecommunications Equipment",
+      "change_pct": 2.638891008165145,
+      "session_open": 36.849998474121094,
+      "session_close": 36.95000076293945,
+      "session_volume": 14179000.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2485",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2485.TW/history/",
+        "date": "2015-07-07",
+        "daily_high": 38.45000076293945,
+        "prior_all_time_or_current_month_high": 142.27281188964844,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:2485",
+        "yahoo_symbol": "2485.TW"
+      }
+    },
+    {
+      "ticker": "4968.TW",
+      "name": "Richwave Technology Corporation",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Semiconductors",
+      "description": "Richwave Technology Corporation · Semiconductors",
+      "change_pct": 4.436231853218731,
+      "session_open": 33.23202896118164,
+      "session_close": 33.23202896118164,
+      "session_volume": 392738.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:4968",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4968.TW/history/",
+        "date": "2015-07-07",
+        "daily_high": 33.649635314941406,
+        "prior_all_time_or_current_month_high": 33.649635314941406,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:4968",
+        "yahoo_symbol": "4968.TW"
+      }
+    },
+    {
+      "ticker": "8908.TW",
+      "name": "Shinhsiung Natural Gas Inc.",
+      "exchange": "TWSE",
+      "category": "Utilities",
+      "high_type": "52_week",
+      "reason": "업종: Utilities · Gas Distributors",
+      "description": "Shinhsiung Natural Gas Inc. · Gas Distributors",
+      "change_pct": 0.37594024955509564,
+      "session_open": 15.27810001373291,
+      "session_close": 15.297198295593262,
+      "session_volume": 26312.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:8908",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/8908.TW/history/",
+        "date": "2015-07-07",
+        "daily_high": 15.75554084777832,
+        "prior_all_time_or_current_month_high": 16.1114501953125,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:8908",
+        "yahoo_symbol": "8908.TW"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-11-13T04:17:39.780482+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 2362,
+    "history_symbols": 1628,
+    "inactive_symbols": 724,
+    "failed_symbols": 10,
+    "coverage_ratio": 0.9938949938949939,
+    "coverage_by_exchange": {
+      "TWSE": {
+        "covered": 888,
+        "total": 895
+      },
+      "TPEX": {
+        "covered": 740,
+        "total": 743
+      }
+    },
+    "session_symbols": 1600,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-11-13T04:17:39.780482+00:00"
+}

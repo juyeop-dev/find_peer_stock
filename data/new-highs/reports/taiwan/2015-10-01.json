@@ -1,0 +1,171 @@
+{
+  "schema_version": 1,
+  "market": "taiwan",
+  "date": "2015-10-01",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "3205.TWO",
+      "name": "Sagittarius Life Science Corp.",
+      "exchange": "TPEX",
+      "category": "Health Technology",
+      "high_type": "all_time",
+      "reason": "업종: Health Technology · Pharmaceuticals: Major",
+      "description": "Sagittarius Life Science Corp. · Pharmaceuticals: Major",
+      "change_pct": 1.6786551996770926,
+      "session_open": 198.56163024902344,
+      "session_close": 200.4526824951172,
+      "session_volume": 570569.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:3205",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3205.TWO/history/",
+        "date": "2015-10-01",
+        "daily_high": 203.28929138183594,
+        "prior_all_time_or_current_month_high": 203.28929138183594,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:3205",
+        "yahoo_symbol": "3205.TWO"
+      }
+    },
+    {
+      "ticker": "6536.TWO",
+      "name": "Sofone Technology Inc",
+      "exchange": "TPEX",
+      "category": "Technology Services",
+      "high_type": "all_time",
+      "reason": "업종: Technology Services · Packaged Software",
+      "description": "Sofone Technology Inc · Packaged Software",
+      "change_pct": 4.6384511076176915,
+      "session_open": 679.96337890625,
+      "session_close": 679.96337890625,
+      "session_volume": 7234.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:6536",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6536.TWO/history/",
+        "date": "2015-10-01",
+        "daily_high": 684.34765625,
+        "prior_all_time_or_current_month_high": 684.34765625,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:6536",
+        "yahoo_symbol": "6536.TWO"
+      }
+    },
+    {
+      "ticker": "8444.TWO",
+      "name": "Green River Holding Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Non-Energy Minerals",
+      "high_type": "all_time",
+      "reason": "업종: Non-Energy Minerals · Forest Products",
+      "description": "Green River Holding Co., Ltd. · Forest Products",
+      "change_pct": 5.491332015409256,
+      "session_open": 77.97618865966797,
+      "session_close": 77.97618865966797,
+      "session_volume": 9728.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:8444",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/8444.TWO/history/",
+        "date": "2015-10-01",
+        "daily_high": 77.97618865966797,
+        "prior_all_time_or_current_month_high": 77.97618865966797,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:8444",
+        "yahoo_symbol": "8444.TWO"
+      }
+    },
+    {
+      "ticker": "9951.TWO",
+      "name": "Macauto Industrial Co., Ltd",
+      "exchange": "TPEX",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Auto Parts: OEM",
+      "description": "Macauto Industrial Co., Ltd · Auto Parts: OEM",
+      "change_pct": 7.843137254901955,
+      "session_open": 155.5,
+      "session_close": 165.0,
+      "session_volume": 2390452.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:9951",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/9951.TWO/history/",
+        "date": "2015-10-01",
+        "daily_high": 167.0,
+        "prior_all_time_or_current_month_high": 167.0,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:9951",
+        "yahoo_symbol": "9951.TWO"
+      }
+    },
+    {
+      "ticker": "9910.TW",
+      "name": "Feng Tay Enterprise Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Consumer Non-Durables",
+      "high_type": "all_time",
+      "reason": "업종: Consumer Non-Durables · Apparel/Footwear",
+      "description": "Feng Tay Enterprise Co., Ltd. · Apparel/Footwear",
+      "change_pct": 0.9779959256244197,
+      "session_open": 123.80662536621094,
+      "session_close": 124.7125244140625,
+      "session_volume": 4341528.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:9910",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/9910.TW/history/",
+        "date": "2015-10-01",
+        "daily_high": 126.82630157470703,
+        "prior_all_time_or_current_month_high": 126.82630157470703,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:9910",
+        "yahoo_symbol": "9910.TW"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-11-13T04:17:39.780482+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 2362,
+    "history_symbols": 1628,
+    "inactive_symbols": 724,
+    "failed_symbols": 10,
+    "coverage_ratio": 0.9938949938949939,
+    "coverage_by_exchange": {
+      "TWSE": {
+        "covered": 888,
+        "total": 895
+      },
+      "TPEX": {
+        "covered": 740,
+        "total": 743
+      }
+    },
+    "session_symbols": 1613,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-11-13T04:17:39.780482+00:00"
+}

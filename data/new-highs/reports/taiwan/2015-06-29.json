@@ -1,0 +1,346 @@
+{
+  "schema_version": 1,
+  "market": "taiwan",
+  "date": "2015-06-29",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "3081.TWO",
+      "name": "LandMark Optoelectronics Corp.",
+      "exchange": "TPEX",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Industrial Machinery",
+      "description": "LandMark Optoelectronics Corp. · Industrial Machinery",
+      "change_pct": 1.9481139127465186,
+      "session_open": 245.66737365722656,
+      "session_close": 245.66737365722656,
+      "session_volume": 1838736.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:3081",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3081.TWO/history/",
+        "date": "2015-06-29",
+        "daily_high": 253.56643676757812,
+        "prior_all_time_or_current_month_high": 253.56643676757812,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:3081",
+        "yahoo_symbol": "3081.TWO"
+      }
+    },
+    {
+      "ticker": "3465.TWO",
+      "name": "New Advanced Electronics Technologies Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Electronic Equipment/Instruments",
+      "description": "New Advanced Electronics Technologies Co., Ltd. · Electronic Equipment/Instruments",
+      "change_pct": 2.4590216409617005,
+      "session_open": 24.725862503051758,
+      "session_close": 24.725862503051758,
+      "session_volume": 5881.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:3465",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3465.TWO/history/",
+        "date": "2015-06-29",
+        "daily_high": 25.121475219726562,
+        "prior_all_time_or_current_month_high": 35.47522735595703,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:3465",
+        "yahoo_symbol": "3465.TWO"
+      }
+    },
+    {
+      "ticker": "3499.TWO",
+      "name": "Globalsat Worldcom Corp.",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Telecommunications Equipment",
+      "description": "Globalsat Worldcom Corp. · Telecommunications Equipment",
+      "change_pct": 5.284549662201576,
+      "session_open": 24.799999237060547,
+      "session_close": 25.899999618530273,
+      "session_volume": 10926751.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:3499",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3499.TWO/history/",
+        "date": "2015-06-29",
+        "daily_high": 26.799999237060547,
+        "prior_all_time_or_current_month_high": 36.89134979248047,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:3499",
+        "yahoo_symbol": "3499.TWO"
+      }
+    },
+    {
+      "ticker": "4506.TWO",
+      "name": "GFC, LTD.",
+      "exchange": "TPEX",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Industrial Machinery",
+      "description": "GFC, LTD. · Industrial Machinery",
+      "change_pct": 4.646840214595871,
+      "session_open": 26.899999618530273,
+      "session_close": 28.149999618530273,
+      "session_volume": 2379207.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:4506",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4506.TWO/history/",
+        "date": "2015-06-29",
+        "daily_high": 28.899999618530273,
+        "prior_all_time_or_current_month_high": 28.899999618530273,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:4506",
+        "yahoo_symbol": "4506.TWO"
+      }
+    },
+    {
+      "ticker": "4905.TWO",
+      "name": "Tainet Communication System Corp.",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Telecommunications Equipment",
+      "description": "Tainet Communication System Corp. · Telecommunications Equipment",
+      "change_pct": 6.262228830325944,
+      "session_open": 64.83349609375,
+      "session_close": 65.6801986694336,
+      "session_volume": 3654268.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:4905",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4905.TWO/history/",
+        "date": "2015-06-29",
+        "daily_high": 67.97840118408203,
+        "prior_all_time_or_current_month_high": 67.97840118408203,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:4905",
+        "yahoo_symbol": "4905.TWO"
+      }
+    },
+    {
+      "ticker": "5321.TWO",
+      "name": "United Recommend International Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Retail Trade",
+      "high_type": "52_week",
+      "reason": "업종: Retail Trade · Internet Retail",
+      "description": "United Recommend International Co., Ltd. · Internet Retail",
+      "change_pct": 8.878507776099198,
+      "session_open": 28.114133834838867,
+      "session_close": 30.64604949951172,
+      "session_volume": 472069.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:5321",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/5321.TWO/history/",
+        "date": "2015-06-29",
+        "daily_high": 30.941986083984375,
+        "prior_all_time_or_current_month_high": 48.98627853393555,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:5321",
+        "yahoo_symbol": "5321.TWO"
+      }
+    },
+    {
+      "ticker": "5457.TWO",
+      "name": "Speed Tech Corp.",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Electronic Production Equipment",
+      "description": "Speed Tech Corp. · Electronic Production Equipment",
+      "change_pct": 1.9230734376678882,
+      "session_open": 43.70000076293945,
+      "session_close": 45.04999923706055,
+      "session_volume": 6552320.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:5457",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/5457.TWO/history/",
+        "date": "2015-06-29",
+        "daily_high": 46.349998474121094,
+        "prior_all_time_or_current_month_high": 46.349998474121094,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:5457",
+        "yahoo_symbol": "5457.TWO"
+      }
+    },
+    {
+      "ticker": "6510.TWO",
+      "name": "Chunghwa Precision Test Tech Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Semiconductors",
+      "description": "Chunghwa Precision Test Tech Co., Ltd. · Semiconductors",
+      "change_pct": 3.078433766084565,
+      "session_open": 262.8500061035156,
+      "session_close": 262.8500061035156,
+      "session_volume": 273925.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:6510",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6510.TWO/history/",
+        "date": "2015-06-29",
+        "daily_high": 265.5,
+        "prior_all_time_or_current_month_high": 265.5,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:6510",
+        "yahoo_symbol": "6510.TWO"
+      }
+    },
+    {
+      "ticker": "8383.TWO",
+      "name": "Chen Full International Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Miscellaneous Manufacturing",
+      "description": "Chen Full International Co., Ltd. · Miscellaneous Manufacturing",
+      "change_pct": 0.0,
+      "session_open": 48.5,
+      "session_close": 49.0,
+      "session_volume": 9156867.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:8383",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/8383.TWO/history/",
+        "date": "2015-06-29",
+        "daily_high": 51.099998474121094,
+        "prior_all_time_or_current_month_high": 51.099998474121094,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:8383",
+        "yahoo_symbol": "8383.TWO"
+      }
+    },
+    {
+      "ticker": "1227.TW",
+      "name": "Standard Foods Corporation",
+      "exchange": "TWSE",
+      "category": "Consumer Non-Durables",
+      "high_type": "all_time",
+      "reason": "업종: Consumer Non-Durables · Food: Major Diversified",
+      "description": "Standard Foods Corporation · Food: Major Diversified",
+      "change_pct": 2.0454462635216553,
+      "session_open": 69.3000717163086,
+      "session_close": 70.71756744384766,
+      "session_volume": 9325704.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:1227",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/1227.TW/history/",
+        "date": "2015-06-29",
+        "daily_high": 71.19007110595703,
+        "prior_all_time_or_current_month_high": 71.19007110595703,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:1227",
+        "yahoo_symbol": "1227.TW"
+      }
+    },
+    {
+      "ticker": "2383.TW",
+      "name": "Elite Material Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Electrical Products",
+      "description": "Elite Material Co., Ltd. · Electrical Products",
+      "change_pct": 2.389081164391449,
+      "session_open": 58.599998474121094,
+      "session_close": 60.0,
+      "session_volume": 24079000.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2383",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2383.TW/history/",
+        "date": "2015-06-29",
+        "daily_high": 62.29999923706055,
+        "prior_all_time_or_current_month_high": 62.29999923706055,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:2383",
+        "yahoo_symbol": "2383.TW"
+      }
+    },
+    {
+      "ticker": "5269.TW",
+      "name": "Asmedia Technology Inc.",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Semiconductors",
+      "description": "Asmedia Technology Inc. · Semiconductors",
+      "change_pct": 9.885054111935897,
+      "session_open": 227.18630981445312,
+      "session_close": 227.18630981445312,
+      "session_volume": 398708.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:5269",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/5269.TW/history/",
+        "date": "2015-06-29",
+        "daily_high": 227.18630981445312,
+        "prior_all_time_or_current_month_high": 227.18630981445312,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:5269",
+        "yahoo_symbol": "5269.TW"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-11-13T04:17:39.780482+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 2362,
+    "history_symbols": 1628,
+    "inactive_symbols": 724,
+    "failed_symbols": 10,
+    "coverage_ratio": 0.9938949938949939,
+    "coverage_by_exchange": {
+      "TWSE": {
+        "covered": 888,
+        "total": 895
+      },
+      "TPEX": {
+        "covered": 740,
+        "total": 743
+      }
+    },
+    "session_symbols": 1598,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-11-13T04:17:39.780482+00:00"
+}

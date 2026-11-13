@@ -1,0 +1,371 @@
+{
+  "schema_version": 1,
+  "market": "taiwan",
+  "date": "2015-07-06",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "3131.TWO",
+      "name": "Grand Process Technology Corporation",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Electronic Production Equipment",
+      "description": "Grand Process Technology Corporation · Electronic Production Equipment",
+      "change_pct": 3.157894736842115,
+      "session_open": 188.0,
+      "session_close": 196.0,
+      "session_volume": 956834.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:3131",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3131.TWO/history/",
+        "date": "2015-07-06",
+        "daily_high": 203.0,
+        "prior_all_time_or_current_month_high": 340.0,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:3131",
+        "yahoo_symbol": "3131.TWO"
+      }
+    },
+    {
+      "ticker": "3289.TWO",
+      "name": "Integrated Service Technology Inc.",
+      "exchange": "TPEX",
+      "category": "Commercial Services",
+      "high_type": "all_time",
+      "reason": "업종: Commercial Services · Miscellaneous Commercial Services",
+      "description": "Integrated Service Technology Inc. · Miscellaneous Commercial Services",
+      "change_pct": 3.211011195157165,
+      "session_open": 100.97730255126953,
+      "session_close": 101.88292694091797,
+      "session_volume": 4659904.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:3289",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3289.TWO/history/",
+        "date": "2015-07-06",
+        "daily_high": 105.0526123046875,
+        "prior_all_time_or_current_month_high": 105.0526123046875,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:3289",
+        "yahoo_symbol": "3289.TWO"
+      }
+    },
+    {
+      "ticker": "3294.TWO",
+      "name": "Megaforce Co. Ltd.",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Electronic Components",
+      "description": "Megaforce Co. Ltd. · Electronic Components",
+      "change_pct": 6.598980643219909,
+      "session_open": 19.5,
+      "session_close": 21.0,
+      "session_volume": 3360652.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:3294",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3294.TWO/history/",
+        "date": "2015-07-06",
+        "daily_high": 21.649999618530273,
+        "prior_all_time_or_current_month_high": 42.921119689941406,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:3294",
+        "yahoo_symbol": "3294.TWO"
+      }
+    },
+    {
+      "ticker": "3465.TWO",
+      "name": "New Advanced Electronics Technologies Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Electronic Equipment/Instruments",
+      "description": "New Advanced Electronics Technologies Co., Ltd. · Electronic Equipment/Instruments",
+      "change_pct": 3.5714221759077125,
+      "session_open": 27.69296646118164,
+      "session_close": 28.68199920654297,
+      "session_volume": 35584.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:3465",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3465.TWO/history/",
+        "date": "2015-07-06",
+        "daily_high": 28.68199920654297,
+        "prior_all_time_or_current_month_high": 35.47522735595703,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:3465",
+        "yahoo_symbol": "3465.TWO"
+      }
+    },
+    {
+      "ticker": "3684.TWO",
+      "name": "Grand-Tek Technology Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Electronic Production Equipment",
+      "description": "Grand-Tek Technology Co., Ltd. · Electronic Production Equipment",
+      "change_pct": 9.97023689892802,
+      "session_open": 45.740962982177734,
+      "session_close": 51.13853454589844,
+      "session_volume": 1849438.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:3684",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3684.TWO/history/",
+        "date": "2015-07-06",
+        "daily_high": 51.13853454589844,
+        "prior_all_time_or_current_month_high": 62.2796745300293,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:3684",
+        "yahoo_symbol": "3684.TWO"
+      }
+    },
+    {
+      "ticker": "6146.TWO",
+      "name": "Sporton International Inc.",
+      "exchange": "TPEX",
+      "category": "Commercial Services",
+      "high_type": "all_time",
+      "reason": "업종: Commercial Services · Miscellaneous Commercial Services",
+      "description": "Sporton International Inc. · Miscellaneous Commercial Services",
+      "change_pct": 0.8908694382045113,
+      "session_open": 193.888671875,
+      "session_close": 195.615966796875,
+      "session_volume": 499086.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:6146",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6146.TWO/history/",
+        "date": "2015-07-06",
+        "daily_high": 196.91143798828125,
+        "prior_all_time_or_current_month_high": 196.91143798828125,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:6146",
+        "yahoo_symbol": "6146.TWO"
+      }
+    },
+    {
+      "ticker": "8444.TWO",
+      "name": "Green River Holding Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Non-Energy Minerals",
+      "high_type": "all_time",
+      "reason": "업종: Non-Energy Minerals · Forest Products",
+      "description": "Green River Holding Co., Ltd. · Forest Products",
+      "change_pct": 0.6269638757415708,
+      "session_open": 54.86105728149414,
+      "session_close": 54.86105728149414,
+      "session_volume": 1170.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:8444",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/8444.TWO/history/",
+        "date": "2015-07-06",
+        "daily_high": 54.86105728149414,
+        "prior_all_time_or_current_month_high": 54.86105728149414,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:8444",
+        "yahoo_symbol": "8444.TWO"
+      }
+    },
+    {
+      "ticker": "1707.TW",
+      "name": "Grape King Bio Ltd.",
+      "exchange": "TWSE",
+      "category": "Health Technology",
+      "high_type": "all_time",
+      "reason": "업종: Health Technology · Pharmaceuticals: Other",
+      "description": "Grape King Bio Ltd. · Pharmaceuticals: Other",
+      "change_pct": 2.5252525252525304,
+      "session_open": 199.0,
+      "session_close": 203.0,
+      "session_volume": 2057000.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:1707",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/1707.TW/history/",
+        "date": "2015-07-06",
+        "daily_high": 206.0,
+        "prior_all_time_or_current_month_high": 206.0,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:1707",
+        "yahoo_symbol": "1707.TW"
+      }
+    },
+    {
+      "ticker": "2455.TW",
+      "name": "Visual Photonics Epitaxy Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Electronic Production Equipment",
+      "description": "Visual Photonics Epitaxy Co., Ltd. · Electronic Production Equipment",
+      "change_pct": 7.984788930473452,
+      "session_open": 73.33333587646484,
+      "session_close": 75.73332977294922,
+      "session_volume": 24987000.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2455",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2455.TW/history/",
+        "date": "2015-07-06",
+        "daily_high": 76.93333435058594,
+        "prior_all_time_or_current_month_high": 82.23030090332031,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:2455",
+        "yahoo_symbol": "2455.TW"
+      }
+    },
+    {
+      "ticker": "3694.TW",
+      "name": "AzureWave Technologies, Inc.",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Telecommunications Equipment",
+      "description": "AzureWave Technologies, Inc. · Telecommunications Equipment",
+      "change_pct": 9.954745781070029,
+      "session_open": 21.799999237060547,
+      "session_close": 24.299999237060547,
+      "session_volume": 9995000.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:3694",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3694.TW/history/",
+        "date": "2015-07-06",
+        "daily_high": 24.299999237060547,
+        "prior_all_time_or_current_month_high": 42.42216873168945,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:3694",
+        "yahoo_symbol": "3694.TW"
+      }
+    },
+    {
+      "ticker": "6269.TW",
+      "name": "Flexium Interconnect, Inc.",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Electronic Components",
+      "description": "Flexium Interconnect, Inc. · Electronic Components",
+      "change_pct": 0.0,
+      "session_open": 118.50901794433594,
+      "session_close": 119.81610107421875,
+      "session_volume": 8798587.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:6269",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6269.TW/history/",
+        "date": "2015-07-06",
+        "daily_high": 123.73735809326172,
+        "prior_all_time_or_current_month_high": 123.73735809326172,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:6269",
+        "yahoo_symbol": "6269.TW"
+      }
+    },
+    {
+      "ticker": "6456.TW",
+      "name": "General Interface Solution (GIS) Holding Ltd.",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Semiconductors",
+      "description": "General Interface Solution (GIS) Holding Ltd. · Semiconductors",
+      "change_pct": 3.1358885017421567,
+      "session_open": 141.5,
+      "session_close": 148.0,
+      "session_volume": 6287000.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:6456",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6456.TW/history/",
+        "date": "2015-07-06",
+        "daily_high": 151.0,
+        "prior_all_time_or_current_month_high": 151.0,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:6456",
+        "yahoo_symbol": "6456.TW"
+      }
+    },
+    {
+      "ticker": "8476.TW",
+      "name": "Taiwan Environment Scientific Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Commercial Services",
+      "high_type": "all_time",
+      "reason": "업종: Commercial Services · Miscellaneous Commercial Services",
+      "description": "Taiwan Environment Scientific Co., Ltd. · Miscellaneous Commercial Services",
+      "change_pct": 0.0,
+      "session_open": 26.423072814941406,
+      "session_close": 26.423072814941406,
+      "session_volume": 236677.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:8476",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/8476.TW/history/",
+        "date": "2015-07-06",
+        "daily_high": 30.350826263427734,
+        "prior_all_time_or_current_month_high": 30.350826263427734,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:8476",
+        "yahoo_symbol": "8476.TW"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-11-13T04:17:39.780482+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 2362,
+    "history_symbols": 1628,
+    "inactive_symbols": 724,
+    "failed_symbols": 10,
+    "coverage_ratio": 0.9938949938949939,
+    "coverage_by_exchange": {
+      "TWSE": {
+        "covered": 888,
+        "total": 895
+      },
+      "TPEX": {
+        "covered": 740,
+        "total": 743
+      }
+    },
+    "session_symbols": 1600,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-11-13T04:17:39.780482+00:00"
+}

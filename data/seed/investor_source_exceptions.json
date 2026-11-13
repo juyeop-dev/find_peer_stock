@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "exceptions": [
+    {
+      "market": "KOSDAQ",
+      "date": "2015-10-08",
+      "net_difference": 45000000,
+      "details": [
+        {
+          "code": "1000",
+          "buy": 16832000000,
+          "sell": 26474000000,
+          "net": -9642000000
+        },
+        {
+          "code": "2000",
+          "buy": 8080000000,
+          "sell": 36833000000,
+          "net": -28753000000
+        },
+        {
+          "code": "3000",
+          "buy": 24362000000,
+          "sell": 57532000000,
+          "net": -33170000000
+        },
+        {
+          "code": "3100",
+          "buy": 5813000000,
+          "sell": 7916000000,
+          "net": -2103000000
+        },
+        {
+          "code": "4000",
+          "buy": 3022000000,
+          "sell": 9474000000,
+          "net": -6452000000
+        },
+        {
+          "code": "5000",
+          "buy": 579000000,
+          "sell": 2793000000,
+          "net": -2214000000
+        },
+        {
+          "code": "6000",
+          "buy": 12904000000,
+          "sell": 23374000000,
+          "net": -10470000000
+        },
+        {
+          "code": "7000",
+          "buy": 2298000000,
+          "sell": 4898000000,
+          "net": -2600000000
+        },
+        {
+          "code": "7100",
+          "buy": 30524000000,
+          "sell": 21671000000,
+          "net": 8853000000
+        },
+        {
+          "code": "8000",
+          "buy": 2725399000000,
+          "sell": 2614867000000,
+          "net": 110532000000
+        },
+        {
+          "code": "9000",
+          "buy": 158083000000,
+          "sell": 182327000000,
+          "net": -24244000000
+        },
+        {
+          "code": "9001",
+          "buy": 6270000000,
+          "sell": 5962000000,
+          "net": 308000000
+        }
+      ],
+      "source_url": "https://stock.naver.com/api/domestic/market/trend/daily?tradeType=KRX&marketType=KOSDAQ&startIdx=13&pageSize=200",
+      "source_sha256": "ac50d594b6ef8b3a08370c44bc84c75995b0891ef40a0f259064e302bc614bbb",
+      "policy": "Preserve every original amount and disclose the source discrepancy. Do not invent a balancing trade."
+    }
+  ]
+}

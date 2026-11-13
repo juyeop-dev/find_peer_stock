@@ -87,3 +87,23 @@ test("2016 range includes the preceding close and keeps 2017 controls", () => {
   const points = [{date:"2015-12-30",close:10},{date:"2016-01-04",close:11},{date:"2017-01-02",close:12}];
   assert.deepEqual(historyRange(points,"since2016"), points);
 });
+
+
+test("2015 range preserves the previous close and all later-year controls", () => {
+  assert.ok(CHART_PERIODS.includes("since2015"));
+  assert.ok(CHART_PERIODS.includes("since2016"));
+  assert.equal(chartStart("2026-11-13","since2015"),"2015-01-01");
+  const prices=[{date:"2014-12-29",close:1},{date:"2014-12-30",close:2},{date:"2015-01-02",close:3}];
+  assert.deepEqual(historyRange(prices,"since2015"),prices.slice(1));
+});
+
+
+test("a 2015 IPO's fresh short snapshot cannot hide its first trading year",async()=>{
+  const oldFetch=globalThis.fetch,today=new Date().toISOString().slice(0,10),calls=[];
+  const client=await import(`data:text/javascript;base64,${Buffer.from(javascript.replaceAll("import.meta.env.BASE_URL",'"/"')+'\n// 2015 IPO archive').toString("base64")}`);
+  globalThis.fetch=async url=>{calls.push(url);return new Response(gzipSync(JSON.stringify({ticker:"IPO2015",currency:"USD",source:"verified listing archive",first_trade_date:"2015-06-01",fetched_at:new Date().toISOString(),prices:[["2015-06-01",10,10],[today,20,20]]})));};
+  try {
+    const result=await client.getStockHistory("IPO2015",undefined,undefined,false,{ticker:"IPO2015",currency:"USD",source:"short snapshot",first_trade_date:"2015-06-01",fetched_at:new Date().toISOString(),history:[point("2025-01-02"),point(today)]});
+    assert.equal(result.history[0].date,"2015-06-01");assert.equal(calls.length,1);
+  } finally {globalThis.fetch=oldFetch;}
+});

@@ -1,0 +1,136 @@
+{
+  "schema_version": 1,
+  "year": 2015,
+  "markets": [
+    {
+      "market": "korea",
+      "source_urls": [
+        "https://github.com/FinanceData/marcap",
+        "https://www.mofa.go.kr/www/brd/m_4075/view.do?page=160&pitem=10&seq=355899"
+      ],
+      "dates": {
+        "2015-01-01": "Exchange non-trading day",
+        "2015-02-18": "Exchange non-trading day",
+        "2015-02-19": "Exchange non-trading day",
+        "2015-02-20": "Exchange non-trading day",
+        "2015-05-01": "Exchange non-trading day",
+        "2015-05-05": "Exchange non-trading day",
+        "2015-05-25": "Exchange non-trading day",
+        "2015-08-14": "Exchange non-trading day",
+        "2015-09-28": "Exchange non-trading day",
+        "2015-09-29": "Exchange non-trading day",
+        "2015-10-09": "Exchange non-trading day",
+        "2015-12-25": "Exchange non-trading day",
+        "2015-12-31": "Exchange non-trading day"
+      }
+    },
+    {
+      "market": "us",
+      "source_urls": [
+        "https://ir.theice.com/press/news-details/2013/NYSE-Euronext-Announces-2015-Holiday-Calendar-and-Early-Closings/default.aspx"
+      ],
+      "dates": {
+        "2015-01-01": "Exchange non-trading day",
+        "2015-01-19": "Exchange non-trading day",
+        "2015-02-16": "Exchange non-trading day",
+        "2015-04-03": "Exchange non-trading day",
+        "2015-05-25": "Exchange non-trading day",
+        "2015-07-03": "Exchange non-trading day",
+        "2015-09-07": "Exchange non-trading day",
+        "2015-11-26": "Exchange non-trading day",
+        "2015-12-25": "Exchange non-trading day"
+      }
+    },
+    {
+      "market": "japan",
+      "source_urls": [
+        "https://www8.cao.go.jp/chosei/shukujitsu/syukujitsu.csv",
+        "https://www.jpx.co.jp/english/corporate/about-jpx/calendar/"
+      ],
+      "dates": {
+        "2015-01-01": "Exchange non-trading day",
+        "2015-01-02": "Exchange non-trading day",
+        "2015-01-12": "Exchange non-trading day",
+        "2015-02-11": "Exchange non-trading day",
+        "2015-04-29": "Exchange non-trading day",
+        "2015-05-04": "Exchange non-trading day",
+        "2015-05-05": "Exchange non-trading day",
+        "2015-05-06": "Exchange non-trading day",
+        "2015-07-20": "Exchange non-trading day",
+        "2015-09-21": "Exchange non-trading day",
+        "2015-09-22": "Exchange non-trading day",
+        "2015-09-23": "Exchange non-trading day",
+        "2015-10-12": "Exchange non-trading day",
+        "2015-11-03": "Exchange non-trading day",
+        "2015-11-23": "Exchange non-trading day",
+        "2015-12-23": "Exchange non-trading day",
+        "2015-12-31": "Exchange non-trading day"
+      }
+    },
+    {
+      "market": "china",
+      "source_urls": [
+        "https://www.sse.com.cn/disclosure/dealinstruc/closed/list/c/c_20160104_3979217.shtml",
+        "https://www.sse.com.cn/disclosure/dealinstruc/closed/list/c/c_20160104_3979337.shtml"
+      ],
+      "dates": {
+        "2015-01-01": "Exchange non-trading day",
+        "2015-01-02": "Exchange non-trading day",
+        "2015-02-18": "Exchange non-trading day",
+        "2015-02-19": "Exchange non-trading day",
+        "2015-02-20": "Exchange non-trading day",
+        "2015-02-23": "Exchange non-trading day",
+        "2015-02-24": "Exchange non-trading day",
+        "2015-04-06": "Exchange non-trading day",
+        "2015-05-01": "Exchange non-trading day",
+        "2015-06-22": "Exchange non-trading day",
+        "2015-09-03": "Exchange non-trading day",
+        "2015-09-04": "Exchange non-trading day",
+        "2015-10-01": "Exchange non-trading day",
+        "2015-10-02": "Exchange non-trading day",
+        "2015-10-05": "Exchange non-trading day",
+        "2015-10-06": "Exchange non-trading day",
+        "2015-10-07": "Exchange non-trading day"
+      }
+    },
+    {
+      "market": "taiwan",
+      "source_urls": [
+        "https://www.tpex.org.tw/storage/en-us/web/bulletin/trading_date/trading_date_104.htm",
+        "https://wwwc.twse.com.tw/en/clearing/suspended.html"
+      ],
+      "dates": {
+        "2015-01-01": "Exchange non-trading day",
+        "2015-01-02": "Exchange non-trading day",
+        "2015-02-16": "Exchange non-trading day",
+        "2015-02-17": "Exchange non-trading day",
+        "2015-02-18": "Exchange non-trading day",
+        "2015-02-19": "Exchange non-trading day",
+        "2015-02-20": "Exchange non-trading day",
+        "2015-02-23": "Exchange non-trading day",
+        "2015-02-27": "Exchange non-trading day",
+        "2015-04-03": "Exchange non-trading day",
+        "2015-04-06": "Exchange non-trading day",
+        "2015-05-01": "Exchange non-trading day",
+        "2015-06-19": "Exchange non-trading day",
+        "2015-07-10": "Typhoon market closure; checked against observed TWSE/TPEx originals",
+        "2015-09-28": "Exchange non-trading day",
+        "2015-09-29": "Typhoon market closure; checked against observed TWSE/TPEx originals",
+        "2015-10-09": "Exchange non-trading day"
+      }
+    },
+    {
+      "market": "europe",
+      "source_urls": [
+        "https://athens.euronext.com/el/documents/10180/2312453/Xnet_holidays_2015_En.pdf/d4ee8f6b-39da-43fc-add6-ba9c2a5bc5ff",
+        "https://www.xetra.com/resource/blob/252786/26a3eefdbb8b939be91ec1d3d1986347/data/trading-calendar-2015.pdf"
+      ],
+      "dates": {
+        "2015-01-01": "Exchange non-trading day",
+        "2015-04-03": "Exchange non-trading day",
+        "2015-04-06": "Exchange non-trading day",
+        "2015-12-25": "Exchange non-trading day"
+      }
+    }
+  ]
+}

@@ -1,0 +1,167 @@
+{
+  "schema_version": 1,
+  "market": "japan",
+  "date": "2015-10-14",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "2742.T",
+      "name": "Halows Co., Ltd.",
+      "exchange": "TSE",
+      "category": "Retail Trade",
+      "high_type": "all_time",
+      "reason": "업종: Retail Trade · Food Retail",
+      "description": "Halows Co., Ltd. · Food Retail",
+      "change_pct": 2.0826220553089803,
+      "session_open": 2925.0,
+      "session_close": 2990.0,
+      "session_volume": 25500.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:2742",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2742.T/history/",
+        "date": "2015-10-14",
+        "daily_high": 2994.0,
+        "prior_all_time_or_current_month_high": 2994.0,
+        "passes_close_filter": true,
+        "source_symbol": "TSE:2742",
+        "yahoo_symbol": "2742.T"
+      }
+    },
+    {
+      "ticker": "3544.T",
+      "name": "SATUDORA HOLDINGS CO., LTD.",
+      "exchange": "TSE",
+      "category": "Retail Trade",
+      "high_type": "all_time",
+      "reason": "업종: Retail Trade · Drugstore Chains",
+      "description": "SATUDORA HOLDINGS CO., LTD. · Drugstore Chains",
+      "change_pct": 1.9247957829024998,
+      "session_open": 744.3333129882812,
+      "session_close": 759.0,
+      "session_volume": 45600.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:3544",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3544.T/history/",
+        "date": "2015-10-14",
+        "daily_high": 775.0,
+        "prior_all_time_or_current_month_high": 775.0,
+        "passes_close_filter": true,
+        "source_symbol": "TSE:3544",
+        "yahoo_symbol": "3544.T"
+      }
+    },
+    {
+      "ticker": "3762.T",
+      "name": "TechMatrix Corporation",
+      "exchange": "TSE",
+      "category": "Technology Services",
+      "high_type": "all_time",
+      "reason": "업종: Technology Services · Information Technology Services",
+      "description": "TechMatrix Corporation · Information Technology Services",
+      "change_pct": 1.1701170117011772,
+      "session_open": 275.0,
+      "session_close": 281.0,
+      "session_volume": 356400.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:3762",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3762.T/history/",
+        "date": "2015-10-14",
+        "daily_high": 282.25,
+        "prior_all_time_or_current_month_high": 282.25,
+        "passes_close_filter": true,
+        "source_symbol": "TSE:3762",
+        "yahoo_symbol": "3762.T"
+      }
+    },
+    {
+      "ticker": "8111.T",
+      "name": "Goldwin Inc.",
+      "exchange": "TSE",
+      "category": "Consumer Non-Durables",
+      "high_type": "all_time",
+      "reason": "업종: Consumer Non-Durables · Apparel/Footwear",
+      "description": "Goldwin Inc. · Apparel/Footwear",
+      "change_pct": 4.225352021867956,
+      "session_open": 473.3333435058594,
+      "session_close": 493.3333435058594,
+      "session_volume": 2149200.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:8111",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/8111.T/history/",
+        "date": "2015-10-14",
+        "daily_high": 496.6666564941406,
+        "prior_all_time_or_current_month_high": 496.6666564941406,
+        "passes_close_filter": true,
+        "source_symbol": "TSE:8111",
+        "yahoo_symbol": "8111.T"
+      }
+    },
+    {
+      "ticker": "9812.T",
+      "name": "T.O.Holdings CO. LTD.",
+      "exchange": "TSE",
+      "category": "Distribution Services",
+      "high_type": "52_week",
+      "reason": "업종: Distribution Services · Wholesale Distributors",
+      "description": "T.O.Holdings CO. LTD. · Wholesale Distributors",
+      "change_pct": 3.940217391304346,
+      "session_open": 740.0,
+      "session_close": 765.0,
+      "session_volume": 20800.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:9812",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/9812.T/history/",
+        "date": "2015-10-14",
+        "daily_high": 770.0,
+        "prior_all_time_or_current_month_high": 2100.0,
+        "passes_close_filter": true,
+        "source_symbol": "TSE:9812",
+        "yahoo_symbol": "9812.T"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-11-13T04:21:15.979362+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 3760,
+    "history_symbols": 2829,
+    "inactive_symbols": 930,
+    "failed_symbols": 1,
+    "coverage_ratio": 0.9996466431095407,
+    "coverage_by_exchange": {
+      "TSE": {
+        "covered": 2829,
+        "total": 2830
+      }
+    },
+    "session_symbols": 2802,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-11-13T04:21:15.979362+00:00"
+}

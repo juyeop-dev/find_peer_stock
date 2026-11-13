@@ -1,0 +1,246 @@
+{
+  "schema_version": 1,
+  "market": "china",
+  "date": "2015-10-27",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "600719.SS",
+      "name": "Dalian Thermal Power Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Utilities",
+      "high_type": "52_week",
+      "reason": "업종: Utilities · Electric Utilities",
+      "description": "Dalian Thermal Power Co., Ltd. Class A · Electric Utilities",
+      "change_pct": 9.999994342610075,
+      "session_open": 5.885000228881836,
+      "session_close": 6.489999771118164,
+      "session_volume": 60551942.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:600719",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/600719.SS/history/",
+        "date": "2015-10-27",
+        "daily_high": 6.489999771118164,
+        "prior_all_time_or_current_month_high": 8.30769157409668,
+        "passes_close_filter": true,
+        "source_symbol": "SSE:600719",
+        "yahoo_symbol": "600719.SS"
+      }
+    },
+    {
+      "ticker": "000008.SZ",
+      "name": "China High-Speed Railway Technology Co. Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Transportation",
+      "high_type": "52_week",
+      "reason": "업종: Transportation · Railroads",
+      "description": "China High-Speed Railway Technology Co. Ltd. Class A · Railroads",
+      "change_pct": 10.044047148312242,
+      "session_open": 12.170000076293945,
+      "session_close": 12.489999771118164,
+      "session_volume": 79945411.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:000008",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/000008.SZ/history/",
+        "date": "2015-10-27",
+        "daily_high": 12.489999771118164,
+        "prior_all_time_or_current_month_high": 14.518389701843262,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:000008",
+        "yahoo_symbol": "000008.SZ"
+      }
+    },
+    {
+      "ticker": "000630.SZ",
+      "name": "Tongling Nonferrous Metals Group Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Non-Energy Minerals",
+      "high_type": "52_week",
+      "reason": "업종: Non-Energy Minerals · Other Metals/Minerals",
+      "description": "Tongling Nonferrous Metals Group Co., Ltd. Class A · Other Metals/Minerals",
+      "change_pct": 10.098518551490843,
+      "session_open": 4.46999979019165,
+      "session_close": 4.46999979019165,
+      "session_volume": 2082240538.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:000630",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/000630.SZ/history/",
+        "date": "2015-10-27",
+        "daily_high": 4.46999979019165,
+        "prior_all_time_or_current_month_high": 7.763999938964844,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:000630",
+        "yahoo_symbol": "000630.SZ"
+      }
+    },
+    {
+      "ticker": "000676.SZ",
+      "name": "Genimous Technology Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Technology Services",
+      "high_type": "all_time",
+      "reason": "업종: Technology Services · Packaged Software",
+      "description": "Genimous Technology Co., Ltd. Class A · Packaged Software",
+      "change_pct": 10.019493252763144,
+      "session_open": 19.992307662963867,
+      "session_close": 21.707691192626953,
+      "session_volume": 101143815.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:000676",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/000676.SZ/history/",
+        "date": "2015-10-27",
+        "daily_high": 21.707691192626953,
+        "prior_all_time_or_current_month_high": 21.707691192626953,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:000676",
+        "yahoo_symbol": "000676.SZ"
+      }
+    },
+    {
+      "ticker": "002278.SZ",
+      "name": "Shanghai Sk Petroleum & Chemical Equipment Corporation Ltd Class A",
+      "exchange": "SZSE",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Electronic Equipment/Instruments",
+      "description": "Shanghai Sk Petroleum & Chemical Equipment Corporation Ltd Class A · Electronic Equipment/Instruments",
+      "change_pct": 5.009052136345615,
+      "session_open": 16.219999313354492,
+      "session_close": 17.399999618530273,
+      "session_volume": 33343278.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002278",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002278.SZ/history/",
+        "date": "2015-10-27",
+        "daily_high": 17.940000534057617,
+        "prior_all_time_or_current_month_high": 17.940000534057617,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:002278",
+        "yahoo_symbol": "002278.SZ"
+      }
+    },
+    {
+      "ticker": "002407.SZ",
+      "name": "Do-Fluoride New Materials Co. Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Process Industries",
+      "high_type": "all_time",
+      "reason": "업종: Process Industries · Chemicals: Specialty",
+      "description": "Do-Fluoride New Materials Co. Ltd. Class A · Chemicals: Specialty",
+      "change_pct": 5.051945576764094,
+      "session_open": 13.571428298950195,
+      "session_close": 14.734285354614258,
+      "session_volume": 167209493.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002407",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002407.SZ/history/",
+        "date": "2015-10-27",
+        "daily_high": 15.422857284545898,
+        "prior_all_time_or_current_month_high": 15.422857284545898,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:002407",
+        "yahoo_symbol": "002407.SZ"
+      }
+    },
+    {
+      "ticker": "300008.SZ",
+      "name": "Bestway Marine & Energy Technology Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Trucks/Construction/Farm Machinery",
+      "description": "Bestway Marine & Energy Technology Co., Ltd. Class A · Trucks/Construction/Farm Machinery",
+      "change_pct": 10.010081221835442,
+      "session_open": 4.331110954284668,
+      "session_close": 4.860000133514404,
+      "session_volume": 98604661.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:300008",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/300008.SZ/history/",
+        "date": "2015-10-27",
+        "daily_high": 4.860000133514404,
+        "prior_all_time_or_current_month_high": 4.860000133514404,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:300008",
+        "yahoo_symbol": "300008.SZ"
+      }
+    },
+    {
+      "ticker": "300078.SZ",
+      "name": "Hangzhou Century Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Technology Services",
+      "high_type": "all_time",
+      "reason": "업종: Technology Services · Packaged Software",
+      "description": "Hangzhou Century Co., Ltd. Class A · Packaged Software",
+      "change_pct": 9.248892720890023,
+      "session_open": 18.355554580688477,
+      "session_close": 20.605554580688477,
+      "session_volume": 45139665.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:300078",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/300078.SZ/history/",
+        "date": "2015-10-27",
+        "daily_high": 20.75,
+        "prior_all_time_or_current_month_high": 20.75,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:300078",
+        "yahoo_symbol": "300078.SZ"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-11-13T04:24:15.997444+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 5312,
+    "history_symbols": 2645,
+    "inactive_symbols": 2659,
+    "failed_symbols": 8,
+    "coverage_ratio": 0.9969845457972107,
+    "coverage_by_exchange": {
+      "SSE": {
+        "covered": 1020,
+        "total": 1022
+      },
+      "SZSE": {
+        "covered": 1625,
+        "total": 1631
+      }
+    },
+    "session_symbols": 2620,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-11-13T04:24:15.997444+00:00"
+}

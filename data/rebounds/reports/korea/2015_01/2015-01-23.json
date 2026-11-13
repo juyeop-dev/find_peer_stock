@@ -1,0 +1,146 @@
+{
+  "schema_version": 1,
+  "market": "korea",
+  "date": "2015-01-23",
+  "rules": {
+    "KOSPI": {
+      "market_cap_min": 5000000000000,
+      "rebound_min": 8
+    },
+    "KOSDAQ": {
+      "market_cap_min": 1000000000000,
+      "rebound_min": 5
+    }
+  },
+  "entries": [
+    {
+      "ticker": "069080.KQ",
+      "name": "웹젠",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 35300.0,
+      "low": 30150.0,
+      "change_pct": 14.98,
+      "rebound_pct": 17.081260364842453,
+      "market_cap": 1246474205200.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2015-01-23",
+      "sector": "미분류",
+      "industry": "미분류"
+    },
+    {
+      "ticker": "063080.KQ",
+      "name": "게임빌",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 158000.0,
+      "low": 140100.0,
+      "change_pct": 13.26,
+      "rebound_pct": 12.776588151320478,
+      "market_cap": 1030535408000.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2015-01-23",
+      "sector": "미분류",
+      "industry": "미분류"
+    },
+    {
+      "ticker": "078340.KQ",
+      "name": "컴투스",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 194700.0,
+      "low": 173500.0,
+      "change_pct": 13.86,
+      "rebound_pct": 12.219020172910655,
+      "market_cap": 1963889446200.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2015-01-23",
+      "sector": "미분류",
+      "industry": "미분류"
+    },
+    {
+      "ticker": "035720.KQ",
+      "name": "다음카카오",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 155800.0,
+      "low": 146800.0,
+      "change_pct": 5.63,
+      "rebound_pct": 6.130790190735702,
+      "market_cap": 9058555383200.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2015-01-23",
+      "sector": "미분류",
+      "industry": "미분류"
+    },
+    {
+      "ticker": "086900.KQ",
+      "name": "메디톡스",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 378000.0,
+      "low": 357000.0,
+      "change_pct": 4.71,
+      "rebound_pct": 5.882352941176472,
+      "market_cap": 2138170230000.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2015-01-23",
+      "sector": "미분류",
+      "industry": "미분류"
+    },
+    {
+      "ticker": "034230.KQ",
+      "name": "파라다이스",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 25700.0,
+      "low": 24400.0,
+      "change_pct": 5.54,
+      "rebound_pct": 5.327868852459017,
+      "market_cap": 2337226670400.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2015-01-23",
+      "sector": "미분류",
+      "industry": "미분류"
+    }
+  ],
+  "source_metadata": {
+    "provider": "KRX daily data via FinanceData/marcap",
+    "fetched_at": "2026-11-13T04:10:07.156824+00:00",
+    "reconstructed_at": "2026-11-13T04:13:18.761900+00:00",
+    "session": "daily",
+    "timezone": "Asia/Seoul",
+    "scanned_symbols": 2027,
+    "common_symbols_by_board": {
+      "KOSPI": 768,
+      "KOSDAQ": 1060
+    },
+    "excluded": {
+      "below_rebound": 41,
+      "declining": 17,
+      "unsupported_listing": 199,
+      "below_market_cap": 1725,
+      "no_trading": 39
+    },
+    "latest_session_by_board": {
+      "KOSPI": "2015-01-23",
+      "KOSDAQ": "2015-01-23"
+    },
+    "source_revision": "eeed0817d1478597b738a3a6149c170ec7e3f4cb",
+    "source_sha256": "c6f3bbf8ef800cf7dc4fcdc7e6acc57d770a2c1d2f7f3753b032b9d9f3b7a970",
+    "price_basis": "Unadjusted KRX Low and Close from the same daily source row",
+    "market_cap_basis": "Dated KRX Marcap in KRW; verified against Close * Stocks",
+    "listing_basis": "Dated KOSPI/KOSDAQ common share codes ending in 0; includes historical delistings",
+    "note": "KRX 당시 상장 종목의 당일 저가·종가·시가총액으로 복원한 기록입니다. 현재 시총이나 분할 조정 가격을 소급 적용하지 않습니다."
+  },
+  "sources": [
+    {
+      "label": "KRX daily data via FinanceData/marcap",
+      "url": "https://github.com/FinanceData/marcap"
+    },
+    {
+      "label": "2015년 고정 버전 원본",
+      "url": "https://raw.githubusercontent.com/FinanceData/marcap/eeed0817d1478597b738a3a6149c170ec7e3f4cb/data/marcap-2015.parquet"
+    }
+  ]
+}

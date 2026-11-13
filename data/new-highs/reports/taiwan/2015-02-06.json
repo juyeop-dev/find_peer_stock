@@ -1,0 +1,296 @@
+{
+  "schema_version": 1,
+  "market": "taiwan",
+  "date": "2015-02-06",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "6510.TWO",
+      "name": "Chunghwa Precision Test Tech Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Semiconductors",
+      "description": "Chunghwa Precision Test Tech Co., Ltd. · Semiconductors",
+      "change_pct": 6.00000388209474,
+      "session_open": 149.99000549316406,
+      "session_close": 149.99000549316406,
+      "session_volume": 466946.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:6510",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6510.TWO/history/",
+        "date": "2015-02-06",
+        "daily_high": 151.0,
+        "prior_all_time_or_current_month_high": 151.0,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:6510",
+        "yahoo_symbol": "6510.TWO"
+      }
+    },
+    {
+      "ticker": "6512.TWO",
+      "name": "GoMax Electronics, Inc.",
+      "exchange": "TPEX",
+      "category": "Consumer Durables",
+      "high_type": "all_time",
+      "reason": "업종: Consumer Durables · Electronics/Appliances",
+      "description": "GoMax Electronics, Inc. · Electronics/Appliances",
+      "change_pct": 1.0555963136072322,
+      "session_open": 70.19011688232422,
+      "session_close": 70.19011688232422,
+      "session_volume": 32769.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:6512",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6512.TWO/history/",
+        "date": "2015-02-06",
+        "daily_high": 72.34078979492188,
+        "prior_all_time_or_current_month_high": 72.34078979492188,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:6512",
+        "yahoo_symbol": "6512.TWO"
+      }
+    },
+    {
+      "ticker": "8096.TWO",
+      "name": "CoAsia Electronics Corp.",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Electronic Production Equipment",
+      "description": "CoAsia Electronics Corp. · Electronic Production Equipment",
+      "change_pct": 4.545453903632368,
+      "session_open": 13.671785354614258,
+      "session_close": 14.122053146362305,
+      "session_volume": 9829749.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:8096",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/8096.TWO/history/",
+        "date": "2015-02-06",
+        "daily_high": 14.285786628723145,
+        "prior_all_time_or_current_month_high": 46.74968719482422,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:8096",
+        "yahoo_symbol": "8096.TWO"
+      }
+    },
+    {
+      "ticker": "1215.TW",
+      "name": "Charoen Pokphand Enterprise (Taiwan) Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Process Industries",
+      "high_type": "all_time",
+      "reason": "업종: Process Industries · Agricultural Commodities/Milling",
+      "description": "Charoen Pokphand Enterprise (Taiwan) Co., Ltd. · Agricultural Commodities/Milling",
+      "change_pct": 4.504506003013975,
+      "session_open": 23.099172592163086,
+      "session_close": 23.966941833496094,
+      "session_volume": 9609820.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:1215",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/1215.TW/history/",
+        "date": "2015-02-06",
+        "daily_high": 24.132230758666992,
+        "prior_all_time_or_current_month_high": 24.132230758666992,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:1215",
+        "yahoo_symbol": "1215.TW"
+      }
+    },
+    {
+      "ticker": "1452.TW",
+      "name": "Hong Yi Fiber Industry Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Process Industries",
+      "high_type": "52_week",
+      "reason": "업종: Process Industries · Textiles",
+      "description": "Hong Yi Fiber Industry Co., Ltd. · Textiles",
+      "change_pct": 1.4440419043794561,
+      "session_open": 13.949999809265137,
+      "session_close": 14.050000190734863,
+      "session_volume": 1308000.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:1452",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/1452.TW/history/",
+        "date": "2015-02-06",
+        "daily_high": 14.149999618530273,
+        "prior_all_time_or_current_month_high": 18.798076629638672,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:1452",
+        "yahoo_symbol": "1452.TW"
+      }
+    },
+    {
+      "ticker": "3168.TW",
+      "name": "Data Image Corporation",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Electronic Production Equipment",
+      "description": "Data Image Corporation · Electronic Production Equipment",
+      "change_pct": 7.101724468509563,
+      "session_open": 7.141027927398682,
+      "session_close": 7.141027927398682,
+      "session_volume": 19535.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:3168",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3168.TW/history/",
+        "date": "2015-02-06",
+        "daily_high": 7.345788955688477,
+        "prior_all_time_or_current_month_high": 31.99385643005371,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:3168",
+        "yahoo_symbol": "3168.TW"
+      }
+    },
+    {
+      "ticker": "4551.TW",
+      "name": "Global PMX Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Electronic Equipment/Instruments",
+      "description": "Global PMX Co., Ltd. · Electronic Equipment/Instruments",
+      "change_pct": 2.462809442823377,
+      "session_open": 81.95999908447266,
+      "session_close": 81.95999908447266,
+      "session_volume": 246727.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:4551",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4551.TW/history/",
+        "date": "2015-02-06",
+        "daily_high": 83.0,
+        "prior_all_time_or_current_month_high": 83.0,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:4551",
+        "yahoo_symbol": "4551.TW"
+      }
+    },
+    {
+      "ticker": "5222.TW",
+      "name": "Transcom, Inc. (Taiwan)",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Electronic Production Equipment",
+      "description": "Transcom, Inc. (Taiwan) · Electronic Production Equipment",
+      "change_pct": 6.069660994207249,
+      "session_open": 17.143634796142578,
+      "session_close": 17.143634796142578,
+      "session_volume": 201464.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:5222",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/5222.TW/history/",
+        "date": "2015-02-06",
+        "daily_high": 17.143634796142578,
+        "prior_all_time_or_current_month_high": 17.143634796142578,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:5222",
+        "yahoo_symbol": "5222.TW"
+      }
+    },
+    {
+      "ticker": "9914.TW",
+      "name": "Merida Industry Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Consumer Durables",
+      "high_type": "all_time",
+      "reason": "업종: Consumer Durables · Motor Vehicles",
+      "description": "Merida Industry Co., Ltd. · Motor Vehicles",
+      "change_pct": 1.573033707865168,
+      "session_open": 222.0,
+      "session_close": 226.0,
+      "session_volume": 1799000.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:9914",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/9914.TW/history/",
+        "date": "2015-02-06",
+        "daily_high": 235.0,
+        "prior_all_time_or_current_month_high": 235.0,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:9914",
+        "yahoo_symbol": "9914.TW"
+      }
+    },
+    {
+      "ticker": "9921.TW",
+      "name": "Giant Manufacturing Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Consumer Durables",
+      "high_type": "all_time",
+      "reason": "업종: Consumer Durables · Motor Vehicles",
+      "description": "Giant Manufacturing Co., Ltd. · Motor Vehicles",
+      "change_pct": 2.500000274603398,
+      "session_open": 279.8177490234375,
+      "session_close": 284.779052734375,
+      "session_volume": 579484.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:9921",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/9921.TW/history/",
+        "date": "2015-02-06",
+        "daily_high": 292.7171325683594,
+        "prior_all_time_or_current_month_high": 292.7171325683594,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:9921",
+        "yahoo_symbol": "9921.TW"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-11-13T04:17:39.780482+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 2362,
+    "history_symbols": 1628,
+    "inactive_symbols": 724,
+    "failed_symbols": 10,
+    "coverage_ratio": 0.9938949938949939,
+    "coverage_by_exchange": {
+      "TWSE": {
+        "covered": 888,
+        "total": 895
+      },
+      "TPEX": {
+        "covered": 740,
+        "total": 743
+      }
+    },
+    "session_symbols": 1582,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-11-13T04:17:39.780482+00:00"
+}

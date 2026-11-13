@@ -30,7 +30,7 @@ async function fetchJson<T>(path: string, signal?: AbortSignal): Promise<T> {
     const day = path.match(/^data\/(?:new-highs|turnover)\/[^/]+\/(?:\d{4}_\d{2}\/)?(\d{4}-\d{2}-\d{2})\.json$/)?.[1];
     const compressed = day !== undefined && day < "2026-11-01"
       || /^data\/(?:new-highs|turnover)\/history\/[^/]+\/\d{4}\.json$/.test(path)
-      || path.startsWith("data/calendar-stocks/");
+      || path.startsWith("data/calendar-stocks/") || path === "data/semiconductor/index.json";
     const options = {
       cache: "no-store",
       signal: controller.signal,

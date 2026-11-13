@@ -1,0 +1,296 @@
+{
+  "schema_version": 1,
+  "market": "taiwan",
+  "date": "2015-09-14",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "2745.TWO",
+      "name": "Life Travel & Tourist Service Co. Ltd.",
+      "exchange": "TPEX",
+      "category": "Consumer Services",
+      "high_type": "all_time",
+      "reason": "업종: Consumer Services · Other Consumer Services",
+      "description": "Life Travel & Tourist Service Co. Ltd. · Other Consumer Services",
+      "change_pct": 0.0,
+      "session_open": 73.83958435058594,
+      "session_close": 73.83958435058594,
+      "session_volume": 112500.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:2745",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2745.TWO/history/",
+        "date": "2015-09-14",
+        "daily_high": 86.68577575683594,
+        "prior_all_time_or_current_month_high": 86.68577575683594,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:2745",
+        "yahoo_symbol": "2745.TWO"
+      }
+    },
+    {
+      "ticker": "3081.TWO",
+      "name": "LandMark Optoelectronics Corp.",
+      "exchange": "TPEX",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Industrial Machinery",
+      "description": "LandMark Optoelectronics Corp. · Industrial Machinery",
+      "change_pct": 3.1055838665290603,
+      "session_open": 289.510498046875,
+      "session_close": 290.20977783203125,
+      "session_volume": 2183282.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:3081",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3081.TWO/history/",
+        "date": "2015-09-14",
+        "daily_high": 297.2027893066406,
+        "prior_all_time_or_current_month_high": 297.2027893066406,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:3081",
+        "yahoo_symbol": "3081.TWO"
+      }
+    },
+    {
+      "ticker": "3205.TWO",
+      "name": "Sagittarius Life Science Corp.",
+      "exchange": "TPEX",
+      "category": "Health Technology",
+      "high_type": "all_time",
+      "reason": "업종: Health Technology · Pharmaceuticals: Major",
+      "description": "Sagittarius Life Science Corp. · Pharmaceuticals: Major",
+      "change_pct": 9.935891600405178,
+      "session_open": 159.3220672607422,
+      "session_close": 162.15866088867188,
+      "session_volume": 1667568.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:3205",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3205.TWO/history/",
+        "date": "2015-09-14",
+        "daily_high": 162.15866088867188,
+        "prior_all_time_or_current_month_high": 162.15866088867188,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:3205",
+        "yahoo_symbol": "3205.TWO"
+      }
+    },
+    {
+      "ticker": "3552.TWO",
+      "name": "Tung Thih Electronic Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Auto Parts: OEM",
+      "description": "Tung Thih Electronic Co., Ltd. · Auto Parts: OEM",
+      "change_pct": 9.999997381591875,
+      "session_open": 177.01048278808594,
+      "session_close": 192.3076934814453,
+      "session_volume": 2959916.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:3552",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3552.TWO/history/",
+        "date": "2015-09-14",
+        "daily_high": 192.3076934814453,
+        "prior_all_time_or_current_month_high": 192.3076934814453,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:3552",
+        "yahoo_symbol": "3552.TWO"
+      }
+    },
+    {
+      "ticker": "4105.TWO",
+      "name": "TTY Biopharm Company Limited",
+      "exchange": "TPEX",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Pharmaceuticals: Major",
+      "description": "TTY Biopharm Company Limited · Pharmaceuticals: Major",
+      "change_pct": 5.524240918224765,
+      "session_open": 90.30000305175781,
+      "session_close": 93.5999984741211,
+      "session_volume": 8121007.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:4105",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4105.TWO/history/",
+        "date": "2015-09-14",
+        "daily_high": 94.30000305175781,
+        "prior_all_time_or_current_month_high": 114.33927154541016,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:4105",
+        "yahoo_symbol": "4105.TWO"
+      }
+    },
+    {
+      "ticker": "5245.TWO",
+      "name": "Wisechip Semiconductor Inc.",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Semiconductors",
+      "description": "Wisechip Semiconductor Inc. · Semiconductors",
+      "change_pct": 9.880238535070651,
+      "session_open": 62.2246208190918,
+      "session_close": 66.19256591796875,
+      "session_volume": 1479912.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:5245",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/5245.TWO/history/",
+        "date": "2015-09-14",
+        "daily_high": 66.19256591796875,
+        "prior_all_time_or_current_month_high": 66.19256591796875,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:5245",
+        "yahoo_symbol": "5245.TWO"
+      }
+    },
+    {
+      "ticker": "9951.TWO",
+      "name": "Macauto Industrial Co., Ltd",
+      "exchange": "TPEX",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Auto Parts: OEM",
+      "description": "Macauto Industrial Co., Ltd · Auto Parts: OEM",
+      "change_pct": 1.577287066246047,
+      "session_open": 160.0,
+      "session_close": 161.0,
+      "session_volume": 1648539.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:9951",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/9951.TWO/history/",
+        "date": "2015-09-14",
+        "daily_high": 167.0,
+        "prior_all_time_or_current_month_high": 167.0,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:9951",
+        "yahoo_symbol": "9951.TWO"
+      }
+    },
+    {
+      "ticker": "1541.TW",
+      "name": "Chang Type Industrial Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Industrial Machinery",
+      "description": "Chang Type Industrial Co., Ltd. · Industrial Machinery",
+      "change_pct": 7.524538446575346,
+      "session_open": 47.0,
+      "session_close": 49.29999923706055,
+      "session_volume": 4717000.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:1541",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/1541.TW/history/",
+        "date": "2015-09-14",
+        "daily_high": 50.400001525878906,
+        "prior_all_time_or_current_month_high": 50.400001525878906,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:1541",
+        "yahoo_symbol": "1541.TW"
+      }
+    },
+    {
+      "ticker": "4426.TW",
+      "name": "Li-Cheng Enterprise Co., Ltd",
+      "exchange": "TWSE",
+      "category": "Process Industries",
+      "high_type": "all_time",
+      "reason": "업종: Process Industries · Textiles",
+      "description": "Li-Cheng Enterprise Co., Ltd · Textiles",
+      "change_pct": 5.806453657835342,
+      "session_open": 84.214599609375,
+      "session_close": 86.59056091308594,
+      "session_volume": 9024771.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:4426",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4426.TW/history/",
+        "date": "2015-09-14",
+        "daily_high": 88.43852996826172,
+        "prior_all_time_or_current_month_high": 88.43852996826172,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:4426",
+        "yahoo_symbol": "4426.TW"
+      }
+    },
+    {
+      "ticker": "6024.TW",
+      "name": "Capital Futures Corp.",
+      "exchange": "TWSE",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "업종: Finance · Investment Banks/Brokers",
+      "description": "Capital Futures Corp. · Investment Banks/Brokers",
+      "change_pct": 2.3809500636214675,
+      "session_open": 21.635818481445312,
+      "session_close": 22.070114135742188,
+      "session_volume": 816264.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:6024",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6024.TW/history/",
+        "date": "2015-09-14",
+        "daily_high": 22.109596252441406,
+        "prior_all_time_or_current_month_high": 22.164371490478516,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:6024",
+        "yahoo_symbol": "6024.TW"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-11-13T04:17:39.780482+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 2362,
+    "history_symbols": 1628,
+    "inactive_symbols": 724,
+    "failed_symbols": 10,
+    "coverage_ratio": 0.9938949938949939,
+    "coverage_by_exchange": {
+      "TWSE": {
+        "covered": 888,
+        "total": 895
+      },
+      "TPEX": {
+        "covered": 740,
+        "total": 743
+      }
+    },
+    "session_symbols": 1610,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-11-13T04:17:39.780482+00:00"
+}

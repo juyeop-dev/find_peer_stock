@@ -1,0 +1,200 @@
+{
+  "schema_version": 1,
+  "market": "us",
+  "date": "2015-09-22",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "ADUS",
+      "name": "Addus HomeCare Corporation",
+      "exchange": "NASDAQ",
+      "category": "Health Services",
+      "high_type": "all_time",
+      "reason": "업종: Health Services · Medical/Nursing Services",
+      "description": "Addus HomeCare Corporation · Medical/Nursing Services",
+      "change_pct": 1.6398307157049707,
+      "session_open": 33.349998474121094,
+      "session_close": 34.09000015258789,
+      "session_volume": 55700.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:ADUS",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/ADUS/history/",
+        "date": "2015-09-22",
+        "daily_high": 34.93000030517578,
+        "prior_all_time_or_current_month_high": 34.93000030517578,
+        "passes_close_filter": true,
+        "source_symbol": "NASDAQ:ADUS",
+        "yahoo_symbol": "ADUS"
+      }
+    },
+    {
+      "ticker": "EDUC",
+      "name": "Educational Development Corporation",
+      "exchange": "NASDAQ",
+      "category": "Consumer Services",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Services · Publishing: Books/Magazines",
+      "description": "Educational Development Corporation · Publishing: Books/Magazines",
+      "change_pct": 2.94117705985808,
+      "session_open": 3.569999933242798,
+      "session_close": 3.674999952316284,
+      "session_volume": 37600.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:EDUC",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/EDUC/history/",
+        "date": "2015-09-22",
+        "daily_high": 3.734999895095825,
+        "prior_all_time_or_current_month_high": 6.929999828338623,
+        "passes_close_filter": true,
+        "source_symbol": "NASDAQ:EDUC",
+        "yahoo_symbol": "EDUC"
+      }
+    },
+    {
+      "ticker": "HBCP",
+      "name": "Home Bancorp, Inc.",
+      "exchange": "NASDAQ",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "업종: Finance · Regional Banks",
+      "description": "Home Bancorp, Inc. · Regional Banks",
+      "change_pct": 2.2239626251934874,
+      "session_open": 25.559999465942383,
+      "session_close": 26.200000762939453,
+      "session_volume": 7100.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:HBCP",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/HBCP/history/",
+        "date": "2015-09-22",
+        "daily_high": 26.25,
+        "prior_all_time_or_current_month_high": 26.25,
+        "passes_close_filter": true,
+        "source_symbol": "NASDAQ:HBCP",
+        "yahoo_symbol": "HBCP"
+      }
+    },
+    {
+      "ticker": "HFWA",
+      "name": "Heritage Financial Corporation",
+      "exchange": "NASDAQ",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "업종: Finance · Regional Banks",
+      "description": "Heritage Financial Corporation · Regional Banks",
+      "change_pct": 1.6738631656589842,
+      "session_open": 18.3799991607666,
+      "session_close": 18.829999923706055,
+      "session_volume": 105100.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:HFWA",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/HFWA/history/",
+        "date": "2015-09-22",
+        "daily_high": 18.93000030517578,
+        "prior_all_time_or_current_month_high": 29.329999923706055,
+        "passes_close_filter": true,
+        "source_symbol": "NASDAQ:HFWA",
+        "yahoo_symbol": "HFWA"
+      }
+    },
+    {
+      "ticker": "FLO",
+      "name": "Flowers Foods, Inc.",
+      "exchange": "NYSE",
+      "category": "Consumer Non-Durables",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Non-Durables · Food: Specialty/Candy",
+      "description": "Flowers Foods, Inc. · Food: Specialty/Candy",
+      "change_pct": 1.5599308343412943,
+      "session_open": 24.389999389648438,
+      "session_close": 24.739999771118164,
+      "session_volume": 1731500.0,
+      "currency": "USD",
+      "source_symbol": "NYSE:FLO",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/FLO/history/",
+        "date": "2015-09-22",
+        "daily_high": 24.81999969482422,
+        "prior_all_time_or_current_month_high": 25.670000076293945,
+        "passes_close_filter": true,
+        "source_symbol": "NYSE:FLO",
+        "yahoo_symbol": "FLO"
+      }
+    },
+    {
+      "ticker": "UHAL",
+      "name": "U-Haul Holding Company",
+      "exchange": "NYSE",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "업종: Finance · Finance/Rental/Leasing",
+      "description": "U-Haul Holding Company · Finance/Rental/Leasing",
+      "change_pct": 0.3271105253178197,
+      "session_open": 38.85900115966797,
+      "session_close": 39.257999420166016,
+      "session_volume": 784000.0,
+      "currency": "USD",
+      "source_symbol": "NYSE:UHAL",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/UHAL/history/",
+        "date": "2015-09-22",
+        "daily_high": 39.525001525878906,
+        "prior_all_time_or_current_month_high": 39.525001525878906,
+        "passes_close_filter": true,
+        "source_symbol": "NYSE:UHAL",
+        "yahoo_symbol": "UHAL"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-11-13T04:24:57.001939+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 5703,
+    "history_symbols": 2785,
+    "inactive_symbols": 2916,
+    "failed_symbols": 2,
+    "coverage_ratio": 0.9992823824901328,
+    "coverage_by_exchange": {
+      "NASDAQ": {
+        "covered": 1403,
+        "total": 1405
+      },
+      "NYSE": {
+        "covered": 1236,
+        "total": 1236
+      },
+      "AMEX": {
+        "covered": 146,
+        "total": 146
+      }
+    },
+    "session_symbols": 2749,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-11-13T04:24:57.001939+00:00"
+}

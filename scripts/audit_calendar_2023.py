@@ -6,7 +6,7 @@ import json
 from stock_chart_history import ROOT, write_json
 
 
-def main(year=2023):
+def main(year=2023, minimum_sector_matches=1500, minimum_sector_match_ratio=0):
     config = json.loads((ROOT / f"data/market-closures/{year}.json").read_bytes())
     weekdays = {(date(year, 1, 1) + timedelta(days=i)).isoformat() for i in range((date(year+1, 1, 1)-date(year, 1, 1)).days)
                 if (date(year, 1, 1) + timedelta(days=i)).weekday() < 5}
@@ -44,7 +44,8 @@ def main(year=2023):
     assert {path.name[:10] for path in sector_paths} == korean_days
     for path in sector_paths:
         snapshot = json.loads(gzip.decompress(path.read_bytes()))
-        assert snapshot["historical_metrics"]["matched"] > 1500
+        assert snapshot["historical_metrics"]["matched"] > minimum_sector_matches
+        assert snapshot["historical_metrics"]["matched"] >= len(snapshot["stocks"]) * minimum_sector_match_ratio
         assert snapshot["reconstruction"]["classification_date"] > snapshot["date"]
         assert all(row.get("market_cap_date") == snapshot["date"] for row in snapshot["stocks"] if row.get("market_cap") is not None)
     investors = json.loads((ROOT / "data/investors/index.json").read_bytes())

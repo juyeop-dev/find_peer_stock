@@ -1,0 +1,121 @@
+{
+  "schema_version": 1,
+  "market": "taiwan",
+  "date": "2015-12-14",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "2726.TWO",
+      "name": "Yummy Town (Cayman) Holdings Corp.",
+      "exchange": "TPEX",
+      "category": "Consumer Services",
+      "high_type": "all_time",
+      "reason": "업종: Consumer Services · Restaurants",
+      "description": "Yummy Town (Cayman) Holdings Corp. · Restaurants",
+      "change_pct": 1.1111113282926022,
+      "session_open": 78.18862915039062,
+      "session_close": 78.93209838867188,
+      "session_volume": 90571.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:2726",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2726.TWO/history/",
+        "date": "2015-12-14",
+        "daily_high": 78.93209838867188,
+        "prior_all_time_or_current_month_high": 78.93209838867188,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:2726",
+        "yahoo_symbol": "2726.TWO"
+      }
+    },
+    {
+      "ticker": "6547.TWO",
+      "name": "Medigen Vaccine Biologics Corp.",
+      "exchange": "TPEX",
+      "category": "Health Technology",
+      "high_type": "all_time",
+      "reason": "업종: Health Technology · Biotechnology",
+      "description": "Medigen Vaccine Biologics Corp. · Biotechnology",
+      "change_pct": 16.129026349607535,
+      "session_open": 21.767452239990234,
+      "session_close": 21.767452239990234,
+      "session_volume": 2367169.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:6547",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6547.TWO/history/",
+        "date": "2015-12-14",
+        "daily_high": 23.30135726928711,
+        "prior_all_time_or_current_month_high": 23.30135726928711,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:6547",
+        "yahoo_symbol": "6547.TWO"
+      }
+    },
+    {
+      "ticker": "2849.TW",
+      "name": "Entie Commercial Bank",
+      "exchange": "TWSE",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "업종: Finance · Regional Banks",
+      "description": "Entie Commercial Bank · Regional Banks",
+      "change_pct": 7.2254338446571476,
+      "session_open": 17.100000381469727,
+      "session_close": 18.549999237060547,
+      "session_volume": 2114000.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2849",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2849.TW/history/",
+        "date": "2015-12-14",
+        "daily_high": 18.700000762939453,
+        "prior_all_time_or_current_month_high": 29.28041648864746,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:2849",
+        "yahoo_symbol": "2849.TW"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-11-13T04:17:39.780482+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 2362,
+    "history_symbols": 1628,
+    "inactive_symbols": 724,
+    "failed_symbols": 10,
+    "coverage_ratio": 0.9938949938949939,
+    "coverage_by_exchange": {
+      "TWSE": {
+        "covered": 888,
+        "total": 895
+      },
+      "TPEX": {
+        "covered": 740,
+        "total": 743
+      }
+    },
+    "session_symbols": 1625,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-11-13T04:17:39.780482+00:00"
+}

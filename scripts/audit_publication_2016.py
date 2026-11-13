@@ -10,8 +10,16 @@ from stock_chart_history import ROOT, write_json
 
 
 def load(path):
+    if not path.exists() and not path.name.endswith(".gz"):
+        path = path.with_name(path.name + ".gz")
     raw = path.read_bytes()
-    return json.loads(gzip.decompress(raw) if raw[:2] == b"\x1f\x8b" else raw)
+    value = json.loads(gzip.decompress(raw) if raw[:2] == b"\x1f\x8b" else raw)
+    if isinstance(value, dict) and value.get("encoding") == "sector-columns-v1":
+        fields = value.pop("stock_fields")
+        rows = value.pop("stock_rows")
+        value.pop("encoding")
+        value["stocks"] = [dict(zip(fields[row[0]], row[1:], strict=True)) for row in rows]
+    return value
 
 
 def main():

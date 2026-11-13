@@ -1,0 +1,271 @@
+{
+  "schema_version": 1,
+  "market": "taiwan",
+  "date": "2015-10-19",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "3118.TWO",
+      "name": "Level Biotechnology Inc.",
+      "exchange": "TPEX",
+      "category": "Distribution Services",
+      "high_type": "52_week",
+      "reason": "업종: Distribution Services · Medical Distributors",
+      "description": "Level Biotechnology Inc. · Medical Distributors",
+      "change_pct": 2.083333333333326,
+      "session_open": 36.5,
+      "session_close": 36.75,
+      "session_volume": 834310.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:3118",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3118.TWO/history/",
+        "date": "2015-10-19",
+        "daily_high": 38.849998474121094,
+        "prior_all_time_or_current_month_high": 63.42856979370117,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:3118",
+        "yahoo_symbol": "3118.TWO"
+      }
+    },
+    {
+      "ticker": "4529.TWO",
+      "name": "Electric Power Technology Limited",
+      "exchange": "TPEX",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Electrical Products",
+      "description": "Electric Power Technology Limited · Electrical Products",
+      "change_pct": 7.908159218843447,
+      "session_open": 41.5,
+      "session_close": 42.29999923706055,
+      "session_volume": 1002766.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:4529",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4529.TWO/history/",
+        "date": "2015-10-19",
+        "daily_high": 42.400001525878906,
+        "prior_all_time_or_current_month_high": 42.400001525878906,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:4529",
+        "yahoo_symbol": "4529.TWO"
+      }
+    },
+    {
+      "ticker": "5315.TWO",
+      "name": "United Radiant Technology Corporation",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Electronic Production Equipment",
+      "description": "United Radiant Technology Corporation · Electronic Production Equipment",
+      "change_pct": 9.808618094861664,
+      "session_open": 21.0,
+      "session_close": 22.950000762939453,
+      "session_volume": 5829112.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:5315",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/5315.TWO/history/",
+        "date": "2015-10-19",
+        "daily_high": 22.950000762939453,
+        "prior_all_time_or_current_month_high": 22.950000762939453,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:5315",
+        "yahoo_symbol": "5315.TWO"
+      }
+    },
+    {
+      "ticker": "6539.TWO",
+      "name": "DV Biomed Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Health Technology",
+      "high_type": "all_time",
+      "reason": "업종: Health Technology · Biotechnology",
+      "description": "DV Biomed Co., Ltd. · Biotechnology",
+      "change_pct": 3.7891293116718794,
+      "session_open": 208.0201416015625,
+      "session_close": 208.0201416015625,
+      "session_volume": 122.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:6539",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6539.TWO/history/",
+        "date": "2015-10-19",
+        "daily_high": 208.0201416015625,
+        "prior_all_time_or_current_month_high": 208.0201416015625,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:6539",
+        "yahoo_symbol": "6539.TWO"
+      }
+    },
+    {
+      "ticker": "2404.TW",
+      "name": "United Integrated Services Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Industrial Services",
+      "high_type": "52_week",
+      "reason": "업종: Industrial Services · Engineering & Construction",
+      "description": "United Integrated Services Co., Ltd. · Engineering & Construction",
+      "change_pct": 1.0282776349614497,
+      "session_open": 49.0,
+      "session_close": 49.125,
+      "session_volume": 1657600.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2404",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2404.TW/history/",
+        "date": "2015-10-19",
+        "daily_high": 49.5,
+        "prior_all_time_or_current_month_high": 65.125,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:2404",
+        "yahoo_symbol": "2404.TW"
+      }
+    },
+    {
+      "ticker": "2412.TW",
+      "name": "Chunghwa Telecom Co., Ltd",
+      "exchange": "TWSE",
+      "category": "Communications",
+      "high_type": "52_week",
+      "reason": "업종: Communications · Major Telecommunications",
+      "description": "Chunghwa Telecom Co., Ltd · Major Telecommunications",
+      "change_pct": 1.114494566896962,
+      "session_open": 99.30000305175781,
+      "session_close": 99.80000305175781,
+      "session_volume": 11848000.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2412",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2412.TW/history/",
+        "date": "2015-10-19",
+        "daily_high": 99.9000015258789,
+        "prior_all_time_or_current_month_high": 111.0,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:2412",
+        "yahoo_symbol": "2412.TW"
+      }
+    },
+    {
+      "ticker": "3494.TW",
+      "name": "HiTi Digital Inc.",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Computer Peripherals",
+      "description": "HiTi Digital Inc. · Computer Peripherals",
+      "change_pct": 7.453423234680279,
+      "session_open": 54.83210372924805,
+      "session_close": 57.490631103515625,
+      "session_volume": 2730234.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:3494",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3494.TW/history/",
+        "date": "2015-10-19",
+        "daily_high": 58.81989288330078,
+        "prior_all_time_or_current_month_high": 198.38650512695312,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:3494",
+        "yahoo_symbol": "3494.TW"
+      }
+    },
+    {
+      "ticker": "4935.TW",
+      "name": "Global Lighting Technologies Inc.",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Semiconductors",
+      "description": "Global Lighting Technologies Inc. · Semiconductors",
+      "change_pct": 5.7407379150390625,
+      "session_open": 54.5,
+      "session_close": 57.099998474121094,
+      "session_volume": 5587000.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:4935",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4935.TW/history/",
+        "date": "2015-10-19",
+        "daily_high": 57.599998474121094,
+        "prior_all_time_or_current_month_high": 69.19999694824219,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:4935",
+        "yahoo_symbol": "4935.TW"
+      }
+    },
+    {
+      "ticker": "8105.TW",
+      "name": "Giantplus Technology Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Electronic Production Equipment",
+      "description": "Giantplus Technology Co., Ltd. · Electronic Production Equipment",
+      "change_pct": 1.1363679876669641,
+      "session_open": 13.25,
+      "session_close": 13.350000381469727,
+      "session_volume": 3241000.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:8105",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/8105.TW/history/",
+        "date": "2015-10-19",
+        "daily_high": 13.5,
+        "prior_all_time_or_current_month_high": 58.235294342041016,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:8105",
+        "yahoo_symbol": "8105.TW"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-11-13T04:17:39.780482+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 2362,
+    "history_symbols": 1628,
+    "inactive_symbols": 724,
+    "failed_symbols": 10,
+    "coverage_ratio": 0.9938949938949939,
+    "coverage_by_exchange": {
+      "TWSE": {
+        "covered": 888,
+        "total": 895
+      },
+      "TPEX": {
+        "covered": 740,
+        "total": 743
+      }
+    },
+    "session_symbols": 1616,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-11-13T04:17:39.780482+00:00"
+}

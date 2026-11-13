@@ -51,9 +51,15 @@ export function reboundMessage(report: ReboundReport): string {
 }
 async function request<T>(path: string, signal?: AbortSignal): Promise<T> {
   const timeout = AbortSignal.timeout(20000);
-  const response = await fetch(`${import.meta.env.BASE_URL}data/rebounds/${path}?t=${Date.now()}`, { cache: "no-store", signal: signal ? AbortSignal.any([signal, timeout]) : timeout });
+  const compressed=path.startsWith("korea/")&&path.split("/").at(-1)!.slice(0,10)<"2026-11-01";
+  const options={ cache: "no-store", signal: signal ? AbortSignal.any([signal, timeout]) : timeout } satisfies RequestInit;
+  let response = await fetch(`${import.meta.env.BASE_URL}data/rebounds/${path}${compressed?".gz":""}?t=${Date.now()}`, options);
+  if(compressed&&response.status===404)response=await fetch(`${import.meta.env.BASE_URL}data/rebounds/${path}?t=${Date.now()}`,options);
   if (!response.ok) throw new Error(`반등 기록을 불러오지 못했습니다. (${response.status})`);
-  return response.json() as Promise<T>;
+  if(!compressed)return response.json() as Promise<T>;
+  const bytes=await response.arrayBuffer(),magic=new Uint8Array(bytes,0,Math.min(2,bytes.byteLength));
+  const text=magic[0]===0x1f&&magic[1]===0x8b?await new Response(new Blob([bytes]).stream().pipeThrough(new DecompressionStream("gzip"))).text():new TextDecoder().decode(bytes);
+  return JSON.parse(text) as T;
 }
 export async function getReboundIndex(signal?: AbortSignal): Promise<ReboundIndex> {
   const value = await request<ReboundIndex>("index.json", signal);

@@ -1,0 +1,346 @@
+{
+  "schema_version": 1,
+  "market": "taiwan",
+  "date": "2015-06-15",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "6510.TWO",
+      "name": "Chunghwa Precision Test Tech Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Semiconductors",
+      "description": "Chunghwa Precision Test Tech Co., Ltd. · Semiconductors",
+      "change_pct": 11.380145278450371,
+      "session_open": 230.0,
+      "session_close": 230.0,
+      "session_volume": 796996.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:6510",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6510.TWO/history/",
+        "date": "2015-06-15",
+        "daily_high": 230.99000549316406,
+        "prior_all_time_or_current_month_high": 230.99000549316406,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:6510",
+        "yahoo_symbol": "6510.TWO"
+      }
+    },
+    {
+      "ticker": "8048.TWO",
+      "name": "Ruby Tech Corporation",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Computer Communications",
+      "description": "Ruby Tech Corporation · Computer Communications",
+      "change_pct": 3.0023091857796613,
+      "session_open": 37.782264709472656,
+      "session_close": 38.47235107421875,
+      "session_volume": 3235175.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:8048",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/8048.TWO/history/",
+        "date": "2015-06-15",
+        "daily_high": 39.11930847167969,
+        "prior_all_time_or_current_month_high": 39.11930847167969,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:8048",
+        "yahoo_symbol": "8048.TWO"
+      }
+    },
+    {
+      "ticker": "8383.TWO",
+      "name": "Chen Full International Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Miscellaneous Manufacturing",
+      "description": "Chen Full International Co., Ltd. · Miscellaneous Manufacturing",
+      "change_pct": 2.668217091862335,
+      "session_open": 43.400001525878906,
+      "session_close": 44.25,
+      "session_volume": 4809167.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:8383",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/8383.TWO/history/",
+        "date": "2015-06-15",
+        "daily_high": 45.0,
+        "prior_all_time_or_current_month_high": 45.0,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:8383",
+        "yahoo_symbol": "8383.TWO"
+      }
+    },
+    {
+      "ticker": "8444.TWO",
+      "name": "Green River Holding Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Non-Energy Minerals",
+      "high_type": "all_time",
+      "reason": "업종: Non-Energy Minerals · Forest Products",
+      "description": "Green River Holding Co., Ltd. · Forest Products",
+      "change_pct": 0.0,
+      "session_open": 54.091976165771484,
+      "session_close": 54.091976165771484,
+      "session_volume": 5852.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:8444",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/8444.TWO/history/",
+        "date": "2015-06-15",
+        "daily_high": 54.091976165771484,
+        "prior_all_time_or_current_month_high": 54.091976165771484,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:8444",
+        "yahoo_symbol": "8444.TWO"
+      }
+    },
+    {
+      "ticker": "1453.TW",
+      "name": "Ta Jiang Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "업종: Finance · Real Estate Development",
+      "description": "Ta Jiang Co., Ltd. · Real Estate Development",
+      "change_pct": 9.956719393806402,
+      "session_open": 9.572482109069824,
+      "session_close": 9.572482109069824,
+      "session_volume": 7537094.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:1453",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/1453.TW/history/",
+        "date": "2015-06-15",
+        "daily_high": 9.572482109069824,
+        "prior_all_time_or_current_month_high": 336.0390319824219,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:1453",
+        "yahoo_symbol": "1453.TW"
+      }
+    },
+    {
+      "ticker": "1455.TW",
+      "name": "Zig Sheng Ind. Co., Ltd",
+      "exchange": "TWSE",
+      "category": "Process Industries",
+      "high_type": "52_week",
+      "reason": "업종: Process Industries · Chemicals: Major Diversified",
+      "description": "Zig Sheng Ind. Co., Ltd · Chemicals: Major Diversified",
+      "change_pct": 4.999998637608116,
+      "session_open": 14.100000381469727,
+      "session_close": 14.699999809265137,
+      "session_volume": 29973000.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:1455",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/1455.TW/history/",
+        "date": "2015-06-15",
+        "daily_high": 14.899999618530273,
+        "prior_all_time_or_current_month_high": 21.803436279296875,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:1455",
+        "yahoo_symbol": "1455.TW"
+      }
+    },
+    {
+      "ticker": "1457.TW",
+      "name": "Yi Jinn Industrial Co.,Ltd",
+      "exchange": "TWSE",
+      "category": "Process Industries",
+      "high_type": "52_week",
+      "reason": "업종: Process Industries · Textiles",
+      "description": "Yi Jinn Industrial Co.,Ltd · Textiles",
+      "change_pct": 6.939320924842796,
+      "session_open": 11.761839866638184,
+      "session_close": 12.476210594177246,
+      "session_volume": 74359110000.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:1457",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/1457.TW/history/",
+        "date": "2015-06-15",
+        "daily_high": 12.571425437927246,
+        "prior_all_time_or_current_month_high": 37.957706451416016,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:1457",
+        "yahoo_symbol": "1457.TW"
+      }
+    },
+    {
+      "ticker": "1464.TW",
+      "name": "De Licacy Industrial Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Process Industries",
+      "high_type": "all_time",
+      "reason": "업종: Process Industries · Textiles",
+      "description": "De Licacy Industrial Co., Ltd. · Textiles",
+      "change_pct": 9.904758404447156,
+      "session_open": 21.351486206054688,
+      "session_close": 22.8144588470459,
+      "session_volume": 40549025.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:1464",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/1464.TW/history/",
+        "date": "2015-06-15",
+        "daily_high": 22.8144588470459,
+        "prior_all_time_or_current_month_high": 22.8144588470459,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:1464",
+        "yahoo_symbol": "1464.TW"
+      }
+    },
+    {
+      "ticker": "1474.TW",
+      "name": "Honmyue Enterprise Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Process Industries",
+      "high_type": "52_week",
+      "reason": "업종: Process Industries · Textiles",
+      "description": "Honmyue Enterprise Co., Ltd. · Textiles",
+      "change_pct": 0.0,
+      "session_open": 12.399999618530273,
+      "session_close": 12.399999618530273,
+      "session_volume": 7274000.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:1474",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/1474.TW/history/",
+        "date": "2015-06-15",
+        "daily_high": 12.899999618530273,
+        "prior_all_time_or_current_month_high": 13.785385131835938,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:1474",
+        "yahoo_symbol": "1474.TW"
+      }
+    },
+    {
+      "ticker": "1539.TW",
+      "name": "Chiu Ting Machinery Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Industrial Machinery",
+      "description": "Chiu Ting Machinery Co., Ltd. · Industrial Machinery",
+      "change_pct": 8.908414523687401,
+      "session_open": 40.79999923706055,
+      "session_close": 43.400001525878906,
+      "session_volume": 5962000.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:1539",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/1539.TW/history/",
+        "date": "2015-06-15",
+        "daily_high": 43.70000076293945,
+        "prior_all_time_or_current_month_high": 43.70000076293945,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:1539",
+        "yahoo_symbol": "1539.TW"
+      }
+    },
+    {
+      "ticker": "2485.TW",
+      "name": "Zinwell Corporation",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Telecommunications Equipment",
+      "description": "Zinwell Corporation · Telecommunications Equipment",
+      "change_pct": 0.5780369125999885,
+      "session_open": 34.599998474121094,
+      "session_close": 34.79999923706055,
+      "session_volume": 5907000.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2485",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2485.TW/history/",
+        "date": "2015-06-15",
+        "daily_high": 35.849998474121094,
+        "prior_all_time_or_current_month_high": 142.27281188964844,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:2485",
+        "yahoo_symbol": "2485.TW"
+      }
+    },
+    {
+      "ticker": "9917.TW",
+      "name": "Taiwan Secom Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Commercial Services",
+      "high_type": "all_time",
+      "reason": "업종: Commercial Services · Miscellaneous Commercial Services",
+      "description": "Taiwan Secom Co., Ltd. · Miscellaneous Commercial Services",
+      "change_pct": 1.375664605034732,
+      "session_open": 90.0,
+      "session_close": 91.23809814453125,
+      "session_volume": 497700.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:9917",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/9917.TW/history/",
+        "date": "2015-06-15",
+        "daily_high": 91.71428680419922,
+        "prior_all_time_or_current_month_high": 91.71428680419922,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:9917",
+        "yahoo_symbol": "9917.TW"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-11-13T04:17:39.780482+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 2362,
+    "history_symbols": 1628,
+    "inactive_symbols": 724,
+    "failed_symbols": 10,
+    "coverage_ratio": 0.9938949938949939,
+    "coverage_by_exchange": {
+      "TWSE": {
+        "covered": 888,
+        "total": 895
+      },
+      "TPEX": {
+        "covered": 740,
+        "total": 743
+      }
+    },
+    "session_symbols": 1596,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-11-13T04:17:39.780482+00:00"
+}

@@ -1,0 +1,175 @@
+{
+  "schema_version": 1,
+  "market": "us",
+  "date": "2015-08-21",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "EBMT",
+      "name": "Eagle Bancorp Montana, Inc.",
+      "exchange": "NASDAQ",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "업종: Finance · Regional Banks",
+      "description": "Eagle Bancorp Montana, Inc. · Regional Banks",
+      "change_pct": 0.17467648992874896,
+      "session_open": 11.449999809265137,
+      "session_close": 11.470000267028809,
+      "session_volume": 20900.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:EBMT",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/EBMT/history/",
+        "date": "2015-08-21",
+        "daily_high": 11.59000015258789,
+        "prior_all_time_or_current_month_high": 12.029999732971191,
+        "passes_close_filter": true,
+        "source_symbol": "NASDAQ:EBMT",
+        "yahoo_symbol": "EBMT"
+      }
+    },
+    {
+      "ticker": "IOSP",
+      "name": "Innospec Inc.",
+      "exchange": "NASDAQ",
+      "category": "Process Industries",
+      "high_type": "all_time",
+      "reason": "업종: Process Industries · Chemicals: Major Diversified",
+      "description": "Innospec Inc. · Chemicals: Major Diversified",
+      "change_pct": 6.040270618051169,
+      "session_open": 48.04999923706055,
+      "session_close": 48.97999954223633,
+      "session_volume": 3536700.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:IOSP",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/IOSP/history/",
+        "date": "2015-08-21",
+        "daily_high": 50.93000030517578,
+        "prior_all_time_or_current_month_high": 50.93000030517578,
+        "passes_close_filter": true,
+        "source_symbol": "NASDAQ:IOSP",
+        "yahoo_symbol": "IOSP"
+      }
+    },
+    {
+      "ticker": "NORD",
+      "name": "Nordicus Partners Corp",
+      "exchange": "NASDAQ",
+      "category": "Process Industries",
+      "high_type": "52_week",
+      "reason": "업종: Process Industries · Chemicals: Specialty",
+      "description": "Nordicus Partners Corp · Chemicals: Specialty",
+      "change_pct": 36.36363636363635,
+      "session_open": 75.0,
+      "session_close": 75.0,
+      "session_volume": 20.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:NORD",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/NORD/history/",
+        "date": "2015-08-21",
+        "daily_high": 75.0,
+        "prior_all_time_or_current_month_high": 3600.0,
+        "passes_close_filter": true,
+        "source_symbol": "NASDAQ:NORD",
+        "yahoo_symbol": "NORD"
+      }
+    },
+    {
+      "ticker": "OBT",
+      "name": "Orange County Bancorp, Inc.",
+      "exchange": "NASDAQ",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "업종: Finance · Regional Banks",
+      "description": "Orange County Bancorp, Inc. · Regional Banks",
+      "change_pct": 0.0,
+      "session_open": 12.0,
+      "session_close": 12.0,
+      "session_volume": 400.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:OBT",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/OBT/history/",
+        "date": "2015-08-21",
+        "daily_high": 12.0,
+        "prior_all_time_or_current_month_high": 15.0,
+        "passes_close_filter": true,
+        "source_symbol": "NASDAQ:OBT",
+        "yahoo_symbol": "OBT"
+      }
+    },
+    {
+      "ticker": "TOWN",
+      "name": "TowneBank",
+      "exchange": "NASDAQ",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "업종: Finance · Regional Banks",
+      "description": "TowneBank · Regional Banks",
+      "change_pct": 0.9836082660115597,
+      "session_open": 17.90999984741211,
+      "session_close": 18.479999542236328,
+      "session_volume": 130600.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:TOWN",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/TOWN/history/",
+        "date": "2015-08-21",
+        "daily_high": 18.639999389648438,
+        "prior_all_time_or_current_month_high": 27.087379455566406,
+        "passes_close_filter": true,
+        "source_symbol": "NASDAQ:TOWN",
+        "yahoo_symbol": "TOWN"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-11-13T04:24:57.001939+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 5703,
+    "history_symbols": 2785,
+    "inactive_symbols": 2916,
+    "failed_symbols": 2,
+    "coverage_ratio": 0.9992823824901328,
+    "coverage_by_exchange": {
+      "NASDAQ": {
+        "covered": 1403,
+        "total": 1405
+      },
+      "NYSE": {
+        "covered": 1236,
+        "total": 1236
+      },
+      "AMEX": {
+        "covered": 146,
+        "total": 146
+      }
+    },
+    "session_symbols": 2747,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-11-13T04:24:57.001939+00:00"
+}

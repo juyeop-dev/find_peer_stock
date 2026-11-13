@@ -1,0 +1,275 @@
+{
+  "schema_version": 1,
+  "market": "us",
+  "date": "2015-09-24",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "CENT",
+      "name": "Central Garden & Pet Company",
+      "exchange": "NASDAQ",
+      "category": "Consumer Non-Durables",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Non-Durables · Consumer Sundries",
+      "description": "Central Garden & Pet Company · Consumer Sundries",
+      "change_pct": 2.367598934308446,
+      "session_open": 12.396241188049316,
+      "session_close": 12.86609172821045,
+      "session_volume": 208151.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:CENT",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/CENT/history/",
+        "date": "2015-09-24",
+        "daily_high": 12.913078308105469,
+        "prior_all_time_or_current_month_high": 43.531715393066406,
+        "passes_close_filter": true,
+        "source_symbol": "NASDAQ:CENT",
+        "yahoo_symbol": "CENT"
+      }
+    },
+    {
+      "ticker": "CENTA",
+      "name": "Central Garden & Pet Company Class A",
+      "exchange": "NASDAQ",
+      "category": "Consumer Non-Durables",
+      "high_type": "all_time",
+      "reason": "업종: Consumer Non-Durables · Consumer Sundries",
+      "description": "Central Garden & Pet Company Class A · Consumer Sundries",
+      "change_pct": 3.2806815990180427,
+      "session_open": 13.055999755859375,
+      "session_close": 13.600000381469727,
+      "session_volume": 363625.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:CENTA",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/CENTA/history/",
+        "date": "2015-09-24",
+        "daily_high": 13.62399959564209,
+        "prior_all_time_or_current_month_high": 13.62399959564209,
+        "passes_close_filter": true,
+        "source_symbol": "NASDAQ:CENTA",
+        "yahoo_symbol": "CENTA"
+      }
+    },
+    {
+      "ticker": "COKE",
+      "name": "Coca-Cola Consolidated, Inc.",
+      "exchange": "NASDAQ",
+      "category": "Consumer Non-Durables",
+      "high_type": "all_time",
+      "reason": "업종: Consumer Non-Durables · Beverages: Non-Alcoholic",
+      "description": "Coca-Cola Consolidated, Inc. · Beverages: Non-Alcoholic",
+      "change_pct": 6.973389056731705,
+      "session_open": 17.288000106811523,
+      "session_close": 18.5310001373291,
+      "session_volume": 778000.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:COKE",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/COKE/history/",
+        "date": "2015-09-24",
+        "daily_high": 18.663000106811523,
+        "prior_all_time_or_current_month_high": 18.663000106811523,
+        "passes_close_filter": true,
+        "source_symbol": "NASDAQ:COKE",
+        "yahoo_symbol": "COKE"
+      }
+    },
+    {
+      "ticker": "DGII",
+      "name": "Digi International Inc.",
+      "exchange": "NASDAQ",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Telecommunications Equipment",
+      "description": "Digi International Inc. · Telecommunications Equipment",
+      "change_pct": 2.230481096775083,
+      "session_open": 10.609999656677246,
+      "session_close": 11.0,
+      "session_volume": 138000.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:DGII",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/DGII/history/",
+        "date": "2015-09-24",
+        "daily_high": 11.029999732971191,
+        "prior_all_time_or_current_month_high": 30.75,
+        "passes_close_filter": true,
+        "source_symbol": "NASDAQ:DGII",
+        "yahoo_symbol": "DGII"
+      }
+    },
+    {
+      "ticker": "EFSC",
+      "name": "Enterprise Financial Services Corp",
+      "exchange": "NASDAQ",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "업종: Finance · Regional Banks",
+      "description": "Enterprise Financial Services Corp · Regional Banks",
+      "change_pct": 1.8775472835618645,
+      "session_open": 24.350000381469727,
+      "session_close": 24.959999084472656,
+      "session_volume": 174300.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:EFSC",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/EFSC/history/",
+        "date": "2015-09-24",
+        "daily_high": 25.06999969482422,
+        "prior_all_time_or_current_month_high": 34.0,
+        "passes_close_filter": true,
+        "source_symbol": "NASDAQ:EFSC",
+        "yahoo_symbol": "EFSC"
+      }
+    },
+    {
+      "ticker": "FIEE",
+      "name": "FiEE, Inc",
+      "exchange": "NASDAQ",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Computer Communications",
+      "description": "FiEE, Inc · Computer Communications",
+      "change_pct": 8.411214953271017,
+      "session_open": 26.75,
+      "session_close": 29.0,
+      "session_volume": 92.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:FIEE",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/FIEE/history/",
+        "date": "2015-09-24",
+        "daily_high": 29.25,
+        "prior_all_time_or_current_month_high": 37.5,
+        "passes_close_filter": true,
+        "source_symbol": "NASDAQ:FIEE",
+        "yahoo_symbol": "FIEE"
+      }
+    },
+    {
+      "ticker": "MSEX",
+      "name": "Middlesex Water Company",
+      "exchange": "NASDAQ",
+      "category": "Utilities",
+      "high_type": "all_time",
+      "reason": "업종: Utilities · Water Utilities",
+      "description": "Middlesex Water Company · Water Utilities",
+      "change_pct": 1.3239540497067548,
+      "session_open": 24.1299991607666,
+      "session_close": 24.489999771118164,
+      "session_volume": 44400.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:MSEX",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/MSEX/history/",
+        "date": "2015-09-24",
+        "daily_high": 24.579999923706055,
+        "prior_all_time_or_current_month_high": 24.579999923706055,
+        "passes_close_filter": true,
+        "source_symbol": "NASDAQ:MSEX",
+        "yahoo_symbol": "MSEX"
+      }
+    },
+    {
+      "ticker": "FLO",
+      "name": "Flowers Foods, Inc.",
+      "exchange": "NYSE",
+      "category": "Consumer Non-Durables",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Non-Durables · Food: Specialty/Candy",
+      "description": "Flowers Foods, Inc. · Food: Specialty/Candy",
+      "change_pct": 0.3555912860013999,
+      "session_open": 25.239999771118164,
+      "session_close": 25.399999618530273,
+      "session_volume": 1500300.0,
+      "currency": "USD",
+      "source_symbol": "NYSE:FLO",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/FLO/history/",
+        "date": "2015-09-24",
+        "daily_high": 25.5,
+        "prior_all_time_or_current_month_high": 25.670000076293945,
+        "passes_close_filter": true,
+        "source_symbol": "NYSE:FLO",
+        "yahoo_symbol": "FLO"
+      }
+    },
+    {
+      "ticker": "UHAL",
+      "name": "U-Haul Holding Company",
+      "exchange": "NYSE",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "업종: Finance · Finance/Rental/Leasing",
+      "description": "U-Haul Holding Company · Finance/Rental/Leasing",
+      "change_pct": 1.3074498913109744,
+      "session_open": 39.69200134277344,
+      "session_close": 40.446998596191406,
+      "session_volume": 1033000.0,
+      "currency": "USD",
+      "source_symbol": "NYSE:UHAL",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/UHAL/history/",
+        "date": "2015-09-24",
+        "daily_high": 40.8129997253418,
+        "prior_all_time_or_current_month_high": 40.8129997253418,
+        "passes_close_filter": true,
+        "source_symbol": "NYSE:UHAL",
+        "yahoo_symbol": "UHAL"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-11-13T04:24:57.001939+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 5703,
+    "history_symbols": 2785,
+    "inactive_symbols": 2916,
+    "failed_symbols": 2,
+    "coverage_ratio": 0.9992823824901328,
+    "coverage_by_exchange": {
+      "NASDAQ": {
+        "covered": 1403,
+        "total": 1405
+      },
+      "NYSE": {
+        "covered": 1236,
+        "total": 1236
+      },
+      "AMEX": {
+        "covered": 146,
+        "total": 146
+      }
+    },
+    "session_symbols": 2750,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-11-13T04:24:57.001939+00:00"
+}

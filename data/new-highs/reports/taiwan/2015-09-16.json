@@ -1,0 +1,196 @@
+{
+  "schema_version": 1,
+  "market": "taiwan",
+  "date": "2015-09-16",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "3523.TWO",
+      "name": "EFUN Technology Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Semiconductors",
+      "description": "EFUN Technology Co., Ltd. · Semiconductors",
+      "change_pct": 5.545622784216997,
+      "session_open": 93.0,
+      "session_close": 98.33333587646484,
+      "session_volume": 406551.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:3523",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3523.TWO/history/",
+        "date": "2015-09-16",
+        "daily_high": 100.16666412353516,
+        "prior_all_time_or_current_month_high": 394.2605285644531,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:3523",
+        "yahoo_symbol": "3523.TWO"
+      }
+    },
+    {
+      "ticker": "4105.TWO",
+      "name": "TTY Biopharm Company Limited",
+      "exchange": "TPEX",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Pharmaceuticals: Major",
+      "description": "TTY Biopharm Company Limited · Pharmaceuticals: Major",
+      "change_pct": 2.2128539940522884,
+      "session_open": 96.19999694824219,
+      "session_close": 97.0,
+      "session_volume": 6754216.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:4105",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4105.TWO/history/",
+        "date": "2015-09-16",
+        "daily_high": 98.5999984741211,
+        "prior_all_time_or_current_month_high": 114.33927154541016,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:4105",
+        "yahoo_symbol": "4105.TWO"
+      }
+    },
+    {
+      "ticker": "4971.TWO",
+      "name": "IntelliEPI Inc. (Cayman)",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Semiconductors",
+      "description": "IntelliEPI Inc. (Cayman) · Semiconductors",
+      "change_pct": 6.66666412353516,
+      "session_open": 100.95237731933594,
+      "session_close": 106.66666412353516,
+      "session_volume": 8618964.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:4971",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4971.TWO/history/",
+        "date": "2015-09-16",
+        "daily_high": 109.52381134033203,
+        "prior_all_time_or_current_month_high": 109.52381134033203,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:4971",
+        "yahoo_symbol": "4971.TWO"
+      }
+    },
+    {
+      "ticker": "6516.TWO",
+      "name": "Kingwaytek Technology Co Ltd",
+      "exchange": "TPEX",
+      "category": "Technology Services",
+      "high_type": "all_time",
+      "reason": "업종: Technology Services · Packaged Software",
+      "description": "Kingwaytek Technology Co Ltd · Packaged Software",
+      "change_pct": 12.31630570693618,
+      "session_open": 55.60990905761719,
+      "session_close": 55.60990905761719,
+      "session_volume": 493186.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:6516",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6516.TWO/history/",
+        "date": "2015-09-16",
+        "daily_high": 56.29594039916992,
+        "prior_all_time_or_current_month_high": 56.29594039916992,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:6516",
+        "yahoo_symbol": "6516.TWO"
+      }
+    },
+    {
+      "ticker": "6547.TWO",
+      "name": "Medigen Vaccine Biologics Corp.",
+      "exchange": "TPEX",
+      "category": "Health Technology",
+      "high_type": "all_time",
+      "reason": "업종: Health Technology · Biotechnology",
+      "description": "Medigen Vaccine Biologics Corp. · Biotechnology",
+      "change_pct": 0.0,
+      "session_open": 17.782379150390625,
+      "session_close": 17.782379150390625,
+      "session_volume": 96258.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:6547",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6547.TWO/history/",
+        "date": "2015-09-16",
+        "daily_high": 17.905868530273438,
+        "prior_all_time_or_current_month_high": 17.905868530273438,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:6547",
+        "yahoo_symbol": "6547.TWO"
+      }
+    },
+    {
+      "ticker": "1515.TW",
+      "name": "Rexon Industrial Corp. Ltd.",
+      "exchange": "TWSE",
+      "category": "Consumer Durables",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Durables · Recreational Products",
+      "description": "Rexon Industrial Corp. Ltd. · Recreational Products",
+      "change_pct": 5.063286147514812,
+      "session_open": 11.850000381469727,
+      "session_close": 12.449999809265137,
+      "session_volume": 7597000.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:1515",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/1515.TW/history/",
+        "date": "2015-09-16",
+        "daily_high": 12.949999809265137,
+        "prior_all_time_or_current_month_high": 41.58478927612305,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:1515",
+        "yahoo_symbol": "1515.TW"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-11-13T04:17:39.780482+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 2362,
+    "history_symbols": 1628,
+    "inactive_symbols": 724,
+    "failed_symbols": 10,
+    "coverage_ratio": 0.9938949938949939,
+    "coverage_by_exchange": {
+      "TWSE": {
+        "covered": 888,
+        "total": 895
+      },
+      "TPEX": {
+        "covered": 740,
+        "total": 743
+      }
+    },
+    "session_symbols": 1612,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-11-13T04:17:39.780482+00:00"
+}

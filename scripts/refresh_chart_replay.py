@@ -25,7 +25,7 @@ SYMBOLS = [("^KS11", "코스피", "Asia/Seoul"), ("GC=F", "금 선물 (연속)",
 def collect_kospi() -> dict:
     # Yahoo omits some observed KOSPI sessions (including 2022-01-03).
     # Use one continuous Naver index history rather than splicing providers.
-    url = "https://fchart.stock.naver.com/sise.nhn?symbol=KOSPI&timeframe=day&count=3000&requestType=0"
+    url = "https://fchart.stock.naver.com/sise.nhn?symbol=KOSPI&timeframe=day&count=3500&requestType=0"
     request = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 StockPeer"})
     with urllib.request.urlopen(request, timeout=45) as response:
         root = ET.fromstring(response.read().decode("euc-kr"))
@@ -37,7 +37,7 @@ def collect_kospi() -> dict:
     for item in chart.iter("item"):
         day, opening, high, low, close, volume = item.attrib["data"].split("|")
         day = datetime.strptime(day, "%Y%m%d").strftime("%Y-%m-%d")
-        if day < "2016-01-01" or day >= today:
+        if day < "2015-01-01" or day >= today:
             continue
         opening, high, low, close, volume = map(float, (opening, high, low, close, volume))
         if not all(math.isfinite(v) and v > 0 for v in (opening, high, low, close)) or low > min(opening, close) or high < max(opening, close) or not math.isfinite(volume) or volume < 0:
@@ -49,7 +49,7 @@ def collect_kospi() -> dict:
 
 
 def collect(ticker: str, name: str, zone: str) -> dict:
-    query = urllib.parse.urlencode({"period1": 1451606400, "period2": int(datetime.now(timezone.utc).timestamp()), "interval": "1d"})
+    query = urllib.parse.urlencode({"period1": 1420070400, "period2": int(datetime.now(timezone.utc).timestamp()), "interval": "1d"})
     url = f"https://query1.finance.yahoo.com/v8/finance/chart/{urllib.parse.quote(ticker, safe='')}?{query}"
     request = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 StockPeer", "Accept": "application/json"})
     with urllib.request.urlopen(request, timeout=45) as response:

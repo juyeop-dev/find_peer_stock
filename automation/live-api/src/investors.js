@@ -1,6 +1,7 @@
 import { jsonSource, localDay, numeric } from "./providers.js";
+import sourceExceptions from "../../../data/seed/investor_source_exceptions.json" with {type:"json"};
 
-export const INVESTOR_START = "2016-01-01";
+export const INVESTOR_START = "2015-01-01";
 export const INVESTOR_MARKETS = ["KOSPI", "KOSDAQ"];
 export const INVESTOR_SOURCE = "https://stock.naver.com/market/stock/kr/trend/foreigner";
 const names = {1000:"금융투자",2000:"보험",3000:"투신",3100:"사모",4000:"은행",5000:"기타금융",6000:"연기금 등",7000:"국가·지자체",7100:"기타법인",8000:"개인",9000:"외국인",9001:"기타외국인"};
@@ -10,7 +11,7 @@ export function investorDate(raw) {
   if (typeof value !== "string" || !/^\d{4}-\d{2}-\d{2}$/.test(value) || !Number.isFinite(Date.parse(value)) || new Date(value).toISOString().slice(0,10) !== value) throw new Error("Invalid investor date");
   return value;
 }
-export function parseInvestorFlow(row) {
+export function parseInvestorFlow(row, market="") {
   const date = investorDate(row?.bizdate);
   if (!Array.isArray(row.netAmounts) || row.netAmounts.length < 4) throw new Error("Missing investor amounts");
   const seen = new Set();
@@ -24,7 +25,13 @@ export function parseInvestorFlow(row) {
   const aggregate = (key, name, codes) => ({key,name,codes,buy:details.filter(row=>codes.includes(row.code)).reduce((sum,row)=>sum+row.buy,0),sell:details.filter(row=>codes.includes(row.code)).reduce((sum,row)=>sum+row.sell,0),net:details.filter(row=>codes.includes(row.code)).reduce((sum,row)=>sum+row.net,0)});
   const known = new Set(["8000","9000","9001",...institutionCodes]);
   const investors = [aggregate("personal","개인",["8000"]),aggregate("foreign","외국인",["9000","9001"]),aggregate("institution","기관",institutionCodes),aggregate("other","기타법인 등",details.filter(row=>!known.has(row.code)).map(row=>row.code))];
-  if (Math.abs(investors.reduce((sum,row)=>sum+row.net,0)) > details.length*1e6) throw new Error("Investor market totals do not balance");
+  const difference=investors.reduce((sum,row)=>sum+row.net,0);
+  if (Math.abs(difference) > details.length*1e6) {
+    const exception=sourceExceptions.exceptions.find(value=>value.market===market&&value.date===date&&value.net_difference===difference);
+    const original=details.map(({code,buy,sell,net})=>({code,buy,sell,net}));
+    if(!exception || JSON.stringify(original)!==JSON.stringify(exception.details))throw new Error("Investor market totals do not balance");
+    return {date,investors,details,market_net_difference:difference,source_warning:`원본 투자자 순매수 합계가 ${(difference/1e8).toFixed(2)}억원만큼 일치하지 않습니다. 제공된 매수·매도·순매수 값을 보정하지 않고 표시합니다.`};
+  }
   return {date,investors,details};
 }
 export function parseInvestorIndex(row) {
@@ -43,7 +50,7 @@ export async function investorFlowPage(market, page, fetcher=fetch, requestedDat
     const date = investorDate(row?.bizdate);
     // Date navigation needs the boundaries of the source page. Validate the
     // requested amounts without letting an unrelated old row block that day.
-    return requestedDate && date !== requestedDate ? {date} : parseInvestorFlow(row);
+    return requestedDate && date !== requestedDate ? {date} : parseInvestorFlow(row,market);
   });
 }
 export async function investorIndexPage(market, page, fetcher=fetch) {

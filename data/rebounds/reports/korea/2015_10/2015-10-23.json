@@ -1,0 +1,101 @@
+{
+  "schema_version": 1,
+  "market": "korea",
+  "date": "2015-10-23",
+  "rules": {
+    "KOSPI": {
+      "market_cap_min": 5000000000000,
+      "rebound_min": 8
+    },
+    "KOSDAQ": {
+      "market_cap_min": 1000000000000,
+      "rebound_min": 5
+    }
+  },
+  "entries": [
+    {
+      "ticker": "128940.KS",
+      "name": "한미약품",
+      "exchange": "KOSPI",
+      "currency": "KRW",
+      "price": 490500.0,
+      "low": 446000.0,
+      "change_pct": 13.28,
+      "rebound_pct": 9.977578475336312,
+      "market_cap": 5018260864500.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2015-10-23",
+      "sector": "미분류",
+      "industry": "미분류"
+    },
+    {
+      "ticker": "084990.KQ",
+      "name": "바이로메드",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 139100.0,
+      "low": 128500.0,
+      "change_pct": 9.44,
+      "rebound_pct": 8.249027237354078,
+      "market_cap": 1974924690700.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2015-10-23",
+      "sector": "미분류",
+      "industry": "미분류"
+    },
+    {
+      "ticker": "016170.KQ",
+      "name": "로엔",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 78500.0,
+      "low": 74400.0,
+      "change_pct": 5.65,
+      "rebound_pct": 5.510752688172049,
+      "market_cap": 1985398842500.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2015-10-23",
+      "sector": "미분류",
+      "industry": "미분류"
+    }
+  ],
+  "source_metadata": {
+    "provider": "KRX daily data via FinanceData/marcap",
+    "fetched_at": "2026-11-13T04:10:07.156824+00:00",
+    "reconstructed_at": "2026-11-13T04:13:20.126697+00:00",
+    "session": "daily",
+    "timezone": "Asia/Seoul",
+    "scanned_symbols": 2093,
+    "common_symbols_by_board": {
+      "KOSPI": 766,
+      "KOSDAQ": 1116
+    },
+    "excluded": {
+      "below_rebound": 47,
+      "declining": 16,
+      "unsupported_listing": 211,
+      "no_trading": 32,
+      "below_market_cap": 1784
+    },
+    "latest_session_by_board": {
+      "KOSPI": "2015-10-23",
+      "KOSDAQ": "2015-10-23"
+    },
+    "source_revision": "eeed0817d1478597b738a3a6149c170ec7e3f4cb",
+    "source_sha256": "c6f3bbf8ef800cf7dc4fcdc7e6acc57d770a2c1d2f7f3753b032b9d9f3b7a970",
+    "price_basis": "Unadjusted KRX Low and Close from the same daily source row",
+    "market_cap_basis": "Dated KRX Marcap in KRW; verified against Close * Stocks",
+    "listing_basis": "Dated KOSPI/KOSDAQ common share codes ending in 0; includes historical delistings",
+    "note": "KRX 당시 상장 종목의 당일 저가·종가·시가총액으로 복원한 기록입니다. 현재 시총이나 분할 조정 가격을 소급 적용하지 않습니다."
+  },
+  "sources": [
+    {
+      "label": "KRX daily data via FinanceData/marcap",
+      "url": "https://github.com/FinanceData/marcap"
+    },
+    {
+      "label": "2015년 고정 버전 원본",
+      "url": "https://raw.githubusercontent.com/FinanceData/marcap/eeed0817d1478597b738a3a6149c170ec7e3f4cb/data/marcap-2015.parquet"
+    }
+  ]
+}

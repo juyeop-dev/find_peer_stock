@@ -1,0 +1,321 @@
+{
+  "schema_version": 1,
+  "market": "taiwan",
+  "date": "2015-09-18",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "3349.TWO",
+      "name": "DEXIN Corporation",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Computer Peripherals",
+      "description": "DEXIN Corporation · Computer Peripherals",
+      "change_pct": 2.912619398410743,
+      "session_open": 17.494354248046875,
+      "session_close": 17.494354248046875,
+      "session_volume": 19389.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:3349",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3349.TWO/history/",
+        "date": "2015-09-18",
+        "daily_high": 17.74191665649414,
+        "prior_all_time_or_current_month_high": 17.74191665649414,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:3349",
+        "yahoo_symbol": "3349.TWO"
+      }
+    },
+    {
+      "ticker": "3492.TWO",
+      "name": "Advanced Connection Technology Inc.",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Electronic Components",
+      "description": "Advanced Connection Technology Inc. · Electronic Components",
+      "change_pct": 9.691624588764736,
+      "session_open": 22.700000762939453,
+      "session_close": 24.899999618530273,
+      "session_volume": 3097230.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:3492",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3492.TWO/history/",
+        "date": "2015-09-18",
+        "daily_high": 24.950000762939453,
+        "prior_all_time_or_current_month_high": 36.35786437988281,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:3492",
+        "yahoo_symbol": "3492.TWO"
+      }
+    },
+    {
+      "ticker": "4105.TWO",
+      "name": "TTY Biopharm Company Limited",
+      "exchange": "TPEX",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Pharmaceuticals: Major",
+      "description": "TTY Biopharm Company Limited · Pharmaceuticals: Major",
+      "change_pct": 0.20618242086822836,
+      "session_open": 96.69999694824219,
+      "session_close": 97.19999694824219,
+      "session_volume": 5252578.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:4105",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4105.TWO/history/",
+        "date": "2015-09-18",
+        "daily_high": 98.5999984741211,
+        "prior_all_time_or_current_month_high": 114.33927154541016,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:4105",
+        "yahoo_symbol": "4105.TWO"
+      }
+    },
+    {
+      "ticker": "4420.TWO",
+      "name": "Kwang Ming Silk Mill Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Process Industries",
+      "high_type": "all_time",
+      "reason": "업종: Process Industries · Textiles",
+      "description": "Kwang Ming Silk Mill Co., Ltd. · Textiles",
+      "change_pct": 7.615229490898168,
+      "session_open": 47.08339309692383,
+      "session_close": 49.19023895263672,
+      "session_volume": 2993869.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:4420",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4420.TWO/history/",
+        "date": "2015-09-18",
+        "daily_high": 50.19786071777344,
+        "prior_all_time_or_current_month_high": 50.19786071777344,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:4420",
+        "yahoo_symbol": "4420.TWO"
+      }
+    },
+    {
+      "ticker": "4971.TWO",
+      "name": "IntelliEPI Inc. (Cayman)",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Semiconductors",
+      "description": "IntelliEPI Inc. (Cayman) · Semiconductors",
+      "change_pct": 1.3333282063803686,
+      "session_open": 105.71428680419922,
+      "session_close": 108.57142639160156,
+      "session_volume": 5099211.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:4971",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4971.TWO/history/",
+        "date": "2015-09-18",
+        "daily_high": 111.9047622680664,
+        "prior_all_time_or_current_month_high": 111.9047622680664,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:4971",
+        "yahoo_symbol": "4971.TWO"
+      }
+    },
+    {
+      "ticker": "6516.TWO",
+      "name": "Kingwaytek Technology Co Ltd",
+      "exchange": "TPEX",
+      "category": "Technology Services",
+      "high_type": "all_time",
+      "reason": "업종: Technology Services · Packaged Software",
+      "description": "Kingwaytek Technology Co Ltd · Packaged Software",
+      "change_pct": 1.874997720609084,
+      "session_open": 56.47610855102539,
+      "session_close": 56.47610855102539,
+      "session_volume": 225843.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:6516",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6516.TWO/history/",
+        "date": "2015-09-18",
+        "daily_high": 56.47610855102539,
+        "prior_all_time_or_current_month_high": 56.47610855102539,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:6516",
+        "yahoo_symbol": "6516.TWO"
+      }
+    },
+    {
+      "ticker": "6547.TWO",
+      "name": "Medigen Vaccine Biologics Corp.",
+      "exchange": "TPEX",
+      "category": "Health Technology",
+      "high_type": "all_time",
+      "reason": "업종: Health Technology · Biotechnology",
+      "description": "Medigen Vaccine Biologics Corp. · Biotechnology",
+      "change_pct": 4.15951379669417,
+      "session_open": 18.708545684814453,
+      "session_close": 18.708545684814453,
+      "session_volume": 166816.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:6547",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6547.TWO/history/",
+        "date": "2015-09-18",
+        "daily_high": 18.708545684814453,
+        "prior_all_time_or_current_month_high": 18.708545684814453,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:6547",
+        "yahoo_symbol": "6547.TWO"
+      }
+    },
+    {
+      "ticker": "1476.TW",
+      "name": "Eclat Textile Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Consumer Non-Durables",
+      "high_type": "all_time",
+      "reason": "업종: Consumer Non-Durables · Apparel/Footwear",
+      "description": "Eclat Textile Co., Ltd. · Apparel/Footwear",
+      "change_pct": 2.5291909833513815,
+      "session_open": 506.9734802246094,
+      "session_close": 513.7981567382812,
+      "session_volume": 7171657.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:1476",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/1476.TW/history/",
+        "date": "2015-09-18",
+        "daily_high": 535.2470092773438,
+        "prior_all_time_or_current_month_high": 535.2470092773438,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:1476",
+        "yahoo_symbol": "1476.TW"
+      }
+    },
+    {
+      "ticker": "2239.TW",
+      "name": "Cayman Engley Industrial Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Retail Trade",
+      "high_type": "all_time",
+      "reason": "업종: Retail Trade · Specialty Stores",
+      "description": "Cayman Engley Industrial Co., Ltd. · Specialty Stores",
+      "change_pct": 8.275860242056666,
+      "session_open": 155.9217987060547,
+      "session_close": 155.9217987060547,
+      "session_volume": 35292.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2239",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2239.TW/history/",
+        "date": "2015-09-18",
+        "daily_high": 156.91493225097656,
+        "prior_all_time_or_current_month_high": 156.91493225097656,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:2239",
+        "yahoo_symbol": "2239.TW"
+      }
+    },
+    {
+      "ticker": "5388.TW",
+      "name": "Sercomm Corp.",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Telecommunications Equipment",
+      "description": "Sercomm Corp. · Telecommunications Equipment",
+      "change_pct": 2.309788876197416,
+      "session_open": 73.80000305175781,
+      "session_close": 75.30000305175781,
+      "session_volume": 6037000.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:5388",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/5388.TW/history/",
+        "date": "2015-09-18",
+        "daily_high": 75.9000015258789,
+        "prior_all_time_or_current_month_high": 78.80000305175781,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:5388",
+        "yahoo_symbol": "5388.TW"
+      }
+    },
+    {
+      "ticker": "8222.TW",
+      "name": "Aero Win Technology Corp.",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Aerospace & Defense",
+      "description": "Aero Win Technology Corp. · Aerospace & Defense",
+      "change_pct": 4.828969163661023,
+      "session_open": 25.5,
+      "session_close": 26.049999237060547,
+      "session_volume": 9167000.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:8222",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/8222.TW/history/",
+        "date": "2015-09-18",
+        "daily_high": 27.100000381469727,
+        "prior_all_time_or_current_month_high": 27.100000381469727,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:8222",
+        "yahoo_symbol": "8222.TW"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-11-13T04:17:39.780482+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 2362,
+    "history_symbols": 1628,
+    "inactive_symbols": 724,
+    "failed_symbols": 10,
+    "coverage_ratio": 0.9938949938949939,
+    "coverage_by_exchange": {
+      "TWSE": {
+        "covered": 888,
+        "total": 895
+      },
+      "TPEX": {
+        "covered": 740,
+        "total": 743
+      }
+    },
+    "session_symbols": 1612,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-11-13T04:17:39.780482+00:00"
+}

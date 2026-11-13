@@ -1,0 +1,116 @@
+{
+  "schema_version": 1,
+  "market": "korea",
+  "date": "2015-06-08",
+  "rules": {
+    "KOSPI": {
+      "market_cap_min": 5000000000000,
+      "rebound_min": 8
+    },
+    "KOSDAQ": {
+      "market_cap_min": 1000000000000,
+      "rebound_min": 5
+    }
+  },
+  "entries": [
+    {
+      "ticker": "006800.KS",
+      "name": "대우증권",
+      "exchange": "KOSPI",
+      "currency": "KRW",
+      "price": 15500.0,
+      "low": 13850.0,
+      "change_pct": 9.93,
+      "rebound_pct": 11.913357400722013,
+      "market_cap": 5063863810500.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2015-06-08",
+      "sector": "미분류",
+      "industry": "미분류"
+    },
+    {
+      "ticker": "034830.KQ",
+      "name": "한국토지신탁",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 3990.0,
+      "low": 3460.0,
+      "change_pct": 14.99,
+      "rebound_pct": 15.317919075144504,
+      "market_cap": 1007432027700.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2015-06-08",
+      "sector": "미분류",
+      "industry": "미분류"
+    },
+    {
+      "ticker": "068270.KQ",
+      "name": "셀트리온",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 79500.0,
+      "low": 74000.0,
+      "change_pct": 9.96,
+      "rebound_pct": 7.432432432432434,
+      "market_cap": 8842073952000.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2015-06-08",
+      "sector": "미분류",
+      "industry": "미분류"
+    },
+    {
+      "ticker": "034230.KQ",
+      "name": "파라다이스",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 30950.0,
+      "low": 28850.0,
+      "change_pct": 5.99,
+      "rebound_pct": 7.279029462738307,
+      "market_cap": 2814675698400.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2015-06-08",
+      "sector": "미분류",
+      "industry": "미분류"
+    }
+  ],
+  "source_metadata": {
+    "provider": "KRX daily data via FinanceData/marcap",
+    "fetched_at": "2026-11-13T04:10:07.156824+00:00",
+    "reconstructed_at": "2026-11-13T04:13:19.427011+00:00",
+    "session": "daily",
+    "timezone": "Asia/Seoul",
+    "scanned_symbols": 2030,
+    "common_symbols_by_board": {
+      "KOSPI": 762,
+      "KOSDAQ": 1069
+    },
+    "excluded": {
+      "declining": 32,
+      "below_rebound": 37,
+      "unsupported_listing": 199,
+      "below_market_cap": 1714,
+      "no_trading": 44
+    },
+    "latest_session_by_board": {
+      "KOSPI": "2015-06-08",
+      "KOSDAQ": "2015-06-08"
+    },
+    "source_revision": "eeed0817d1478597b738a3a6149c170ec7e3f4cb",
+    "source_sha256": "c6f3bbf8ef800cf7dc4fcdc7e6acc57d770a2c1d2f7f3753b032b9d9f3b7a970",
+    "price_basis": "Unadjusted KRX Low and Close from the same daily source row",
+    "market_cap_basis": "Dated KRX Marcap in KRW; verified against Close * Stocks",
+    "listing_basis": "Dated KOSPI/KOSDAQ common share codes ending in 0; includes historical delistings",
+    "note": "KRX 당시 상장 종목의 당일 저가·종가·시가총액으로 복원한 기록입니다. 현재 시총이나 분할 조정 가격을 소급 적용하지 않습니다."
+  },
+  "sources": [
+    {
+      "label": "KRX daily data via FinanceData/marcap",
+      "url": "https://github.com/FinanceData/marcap"
+    },
+    {
+      "label": "2015년 고정 버전 원본",
+      "url": "https://raw.githubusercontent.com/FinanceData/marcap/eeed0817d1478597b738a3a6149c170ec7e3f4cb/data/marcap-2015.parquet"
+    }
+  ]
+}

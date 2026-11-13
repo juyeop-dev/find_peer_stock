@@ -1,8 +1,11 @@
 import assert from "node:assert/strict";
-import { readFile } from "node:fs/promises";
+import { readFile, mkdtemp, mkdir, writeFile, rm } from "node:fs/promises";
+import {join} from "node:path";
+import {tmpdir} from "node:os";
 import test from "node:test";
 import ts from "typescript";
-import { gzipSync } from "node:zlib";
+import {compactSector, compactPublicData, compactJsonWhitespace} from "../build/compact-public-data.mjs";
+import { gzipSync, gunzipSync } from "node:zlib";
 const rankSource = await readFile(new URL("../src/dataClient/sectorRankings.ts", import.meta.url), "utf8");
 const rankJs = ts.transpileModule(rankSource, { compilerOptions: { module: ts.ModuleKind.ESNext, target: ts.ScriptTarget.ES2022 } }).outputText;
 const rankUrl = `data:text/javascript;base64,${Buffer.from(rankJs).toString("base64")}`;
@@ -47,4 +50,65 @@ test("history selection never replaces the latest cache, and detail membership a
     await assert.rejects(() => client.getSectorSnapshot("2026-02-30"));
     assert.equal(paths.length, before);
   } finally { globalThis.fetch = original; }
+});
+
+
+test("columnar sector archives retain precision, nulls, absent properties and original row order",()=>{
+  const original={schema_version:1,date:"2015-01-02",stocks:[{ticker:"A",price:1.1234567890123,zero:0,returns:{week:null,day:-7}},{ticker:"B",optional:null,price:0.5}]};
+  const packed=compactSector(original);
+  assert.deepEqual(client.expandSectorArchive(packed),original);
+  for(const bad of [
+    {...packed,encoding:"unknown"},
+    {...packed,stock_fields:[["ticker","ticker"]]},
+    {...packed,stock_fields:[["__proto__"]]},
+    {...packed,stock_rows:[[99,1]]},
+    {...packed,stock_rows:[[0]]},
+    {...packed,stock_rows:[[0.5,1]]},
+  ])assert.throws(()=>client.expandSectorArchive(bad));
+});
+
+test("latest sector reads gzip, host-decoded JSON and legacy fallback without dropping cached prices",async()=>{
+  const original=globalThis.fetch;
+  try {
+    for(const [date,price,compressed] of [["2026-10-22",160,true],["2026-10-23",170,false]]) {
+      const value=snapshot(date,"005930.KS",price);
+      globalThis.fetch=async()=>new Response(compressed?gzipSync(JSON.stringify(value)):JSON.stringify(value));
+      assert.equal((await client.getSectorData()).stocks[0].price,price);
+    }
+    const paths=[],legacy=snapshot("2026-10-24","005930.KS",180);
+    globalThis.fetch=async url=>{
+      const path=new URL(url,"https://example.test").pathname;paths.push(path);
+      return path.endsWith('.gz')?new Response('',{status:404}):Response.json(legacy);
+    };
+    assert.equal((await client.getSectorData()).stocks[0].price,180);
+    assert.deepEqual(paths,["/data/sectors/index.json.gz","/data/sectors/index.json"]);
+    globalThis.fetch=async()=>{throw new Error('Source unavailable');};
+    assert.equal((await client.getSectorData()).stocks[0].price,180);
+  } finally {globalThis.fetch=original;}
+});
+
+test("latest sector artifact gzip preserves original byte precision and leaves source data separate",async()=>{
+  const directory=await mkdtemp(join(tmpdir(),"sector-public-gzip-"));
+  try {
+    const target=join(directory,"data/sectors");await mkdir(target,{recursive:true});
+    const bytes=Buffer.from('{"amount":9007199254740993,"price":1.1234567890123456789,"name":"한국","missing":null}\n');
+    await writeFile(join(target,"index.json"),bytes);
+    await compactPublicData(directory);
+    assert.deepEqual(gunzipSync(await readFile(join(target,"index.json.gz"))),bytes);
+    await assert.rejects(()=>readFile(join(target,"index.json")),{code:"ENOENT"});
+  } finally {await rm(directory,{recursive:true,force:true});}
+});
+
+test("report whitespace compaction keeps exact numerical tokens, escaped quotes and spaces inside strings",()=>{
+  const raw=Buffer.from(String.raw`{
+    "amount": 9007199254740993,
+    "price": 1.1234567890123456789,
+    "exponent": 1.000e+20,
+    "label": "한국 주식 \"quoted\" \\ path",
+    "rows": [null, -0.0, true, {"name": "  two spaces  "}]
+  }`);
+  const output=compactJsonWhitespace(raw);
+  assert.deepEqual(JSON.parse(output),JSON.parse(raw));
+  for(const token of ['9007199254740993','1.1234567890123456789','1.000e+20','-0.0','  two spaces  '])assert.ok(output.toString().includes(token));
+  assert.ok(output.length<raw.length);
 });

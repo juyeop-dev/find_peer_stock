@@ -1,0 +1,196 @@
+{
+  "schema_version": 1,
+  "market": "taiwan",
+  "date": "2015-08-10",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "1216.TW",
+      "name": "Uni-President Enterprises Corp.",
+      "exchange": "TWSE",
+      "category": "Retail Trade",
+      "high_type": "52_week",
+      "reason": "업종: Retail Trade · Food Retail",
+      "description": "Uni-President Enterprises Corp. · Food Retail",
+      "change_pct": 5.113637882487532,
+      "session_open": 53.20000076293945,
+      "session_close": 55.5,
+      "session_volume": 17262000.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:1216",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/1216.TW/history/",
+        "date": "2015-08-10",
+        "daily_high": 56.29999923706055,
+        "prior_all_time_or_current_month_high": 58.44880294799805,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:1216",
+        "yahoo_symbol": "1216.TW"
+      }
+    },
+    {
+      "ticker": "1702.TW",
+      "name": "Namchow Holdings Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Consumer Non-Durables",
+      "high_type": "all_time",
+      "reason": "업종: Consumer Non-Durables · Food: Major Diversified",
+      "description": "Namchow Holdings Co., Ltd. · Food: Major Diversified",
+      "change_pct": 0.4026886600775992,
+      "session_open": 74.0,
+      "session_close": 74.80000305175781,
+      "session_volume": 2658000.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:1702",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/1702.TW/history/",
+        "date": "2015-08-10",
+        "daily_high": 75.5,
+        "prior_all_time_or_current_month_high": 75.5,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:1702",
+        "yahoo_symbol": "1702.TW"
+      }
+    },
+    {
+      "ticker": "2313.TW",
+      "name": "Compeq Manufacturing Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Electronic Components",
+      "description": "Compeq Manufacturing Co., Ltd. · Electronic Components",
+      "change_pct": 3.2710316608292045,
+      "session_open": 21.399999618530273,
+      "session_close": 22.100000381469727,
+      "session_volume": 21731000.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2313",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2313.TW/history/",
+        "date": "2015-08-10",
+        "daily_high": 22.200000762939453,
+        "prior_all_time_or_current_month_high": 121.567138671875,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:2313",
+        "yahoo_symbol": "2313.TW"
+      }
+    },
+    {
+      "ticker": "2383.TW",
+      "name": "Elite Material Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Electrical Products",
+      "description": "Elite Material Co., Ltd. · Electrical Products",
+      "change_pct": 5.563282218513277,
+      "session_open": 71.5999984741211,
+      "session_close": 75.9000015258789,
+      "session_volume": 11706000.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2383",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2383.TW/history/",
+        "date": "2015-08-10",
+        "daily_high": 76.5999984741211,
+        "prior_all_time_or_current_month_high": 76.5999984741211,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:2383",
+        "yahoo_symbol": "2383.TW"
+      }
+    },
+    {
+      "ticker": "2515.TW",
+      "name": "BES Engineering Corp.",
+      "exchange": "TWSE",
+      "category": "Industrial Services",
+      "high_type": "52_week",
+      "reason": "업종: Industrial Services · Engineering & Construction",
+      "description": "BES Engineering Corp. · Engineering & Construction",
+      "change_pct": 2.146891097553172,
+      "session_open": 8.04228687286377,
+      "session_close": 8.196422576904297,
+      "session_volume": 27367857.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2515",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2515.TW/history/",
+        "date": "2015-08-10",
+        "daily_high": 8.314291954040527,
+        "prior_all_time_or_current_month_high": 11.614190101623535,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:2515",
+        "yahoo_symbol": "2515.TW"
+      }
+    },
+    {
+      "ticker": "8464.TW",
+      "name": "Nien Made Enterprise Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Consumer Durables",
+      "high_type": "all_time",
+      "reason": "업종: Consumer Durables · Home Furnishings",
+      "description": "Nien Made Enterprise Co., Ltd. · Home Furnishings",
+      "change_pct": 1.9867549668874274,
+      "session_open": 154.0,
+      "session_close": 154.0,
+      "session_volume": 8000.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:8464",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/8464.TW/history/",
+        "date": "2015-08-10",
+        "daily_high": 155.0,
+        "prior_all_time_or_current_month_high": 155.0,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:8464",
+        "yahoo_symbol": "8464.TW"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-11-13T04:17:39.780482+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 2362,
+    "history_symbols": 1628,
+    "inactive_symbols": 724,
+    "failed_symbols": 10,
+    "coverage_ratio": 0.9938949938949939,
+    "coverage_by_exchange": {
+      "TWSE": {
+        "covered": 888,
+        "total": 895
+      },
+      "TPEX": {
+        "covered": 740,
+        "total": 743
+      }
+    },
+    "session_symbols": 1606,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-11-13T04:17:39.780482+00:00"
+}

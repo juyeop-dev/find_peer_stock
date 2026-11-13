@@ -1,0 +1,375 @@
+{
+  "schema_version": 1,
+  "market": "us",
+  "date": "2015-09-03",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "CENT",
+      "name": "Central Garden & Pet Company",
+      "exchange": "NASDAQ",
+      "category": "Consumer Non-Durables",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Non-Durables · Consumer Sundries",
+      "description": "Central Garden & Pet Company · Consumer Sundries",
+      "change_pct": 7.024171407420821,
+      "session_open": 10.924040794372559,
+      "session_close": 11.096319198608398,
+      "session_volume": 614620.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:CENT",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/CENT/history/",
+        "date": "2015-09-03",
+        "daily_high": 11.425214767456055,
+        "prior_all_time_or_current_month_high": 43.531715393066406,
+        "passes_close_filter": true,
+        "source_symbol": "NASDAQ:CENT",
+        "yahoo_symbol": "CENT"
+      }
+    },
+    {
+      "ticker": "CENTA",
+      "name": "Central Garden & Pet Company Class A",
+      "exchange": "NASDAQ",
+      "category": "Consumer Non-Durables",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Non-Durables · Consumer Sundries",
+      "description": "Central Garden & Pet Company Class A · Consumer Sundries",
+      "change_pct": 6.093984184550694,
+      "session_open": 11.039999961853027,
+      "session_close": 11.5600004196167,
+      "session_volume": 344375.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:CENTA",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/CENTA/history/",
+        "date": "2015-09-03",
+        "daily_high": 11.904000282287598,
+        "prior_all_time_or_current_month_high": 12.295999526977539,
+        "passes_close_filter": true,
+        "source_symbol": "NASDAQ:CENTA",
+        "yahoo_symbol": "CENTA"
+      }
+    },
+    {
+      "ticker": "DSGX",
+      "name": "Descartes Systems Group Inc.",
+      "exchange": "NASDAQ",
+      "category": "Technology Services",
+      "high_type": "52_week",
+      "reason": "업종: Technology Services · Packaged Software",
+      "description": "Descartes Systems Group Inc. · Packaged Software",
+      "change_pct": 0.22830483523752498,
+      "session_open": 17.440000534057617,
+      "session_close": 17.559999465942383,
+      "session_volume": 43700.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:DSGX",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/DSGX/history/",
+        "date": "2015-09-03",
+        "daily_high": 17.6299991607666,
+        "prior_all_time_or_current_month_high": 91.609375,
+        "passes_close_filter": true,
+        "source_symbol": "NASDAQ:DSGX",
+        "yahoo_symbol": "DSGX"
+      }
+    },
+    {
+      "ticker": "EDUC",
+      "name": "Educational Development Corporation",
+      "exchange": "NASDAQ",
+      "category": "Consumer Services",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Services · Publishing: Books/Magazines",
+      "description": "Educational Development Corporation · Publishing: Books/Magazines",
+      "change_pct": 2.3584920160142353,
+      "session_open": 3.2300000190734863,
+      "session_close": 3.255000114440918,
+      "session_volume": 94200.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:EDUC",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/EDUC/history/",
+        "date": "2015-09-03",
+        "daily_high": 3.5,
+        "prior_all_time_or_current_month_high": 6.929999828338623,
+        "passes_close_filter": true,
+        "source_symbol": "NASDAQ:EDUC",
+        "yahoo_symbol": "EDUC"
+      }
+    },
+    {
+      "ticker": "INGN",
+      "name": "Inogen, Inc.",
+      "exchange": "NASDAQ",
+      "category": "Health Technology",
+      "high_type": "all_time",
+      "reason": "업종: Health Technology · Medical Specialties",
+      "description": "Inogen, Inc. · Medical Specialties",
+      "change_pct": 2.4837416668640477,
+      "session_open": 50.72999954223633,
+      "session_close": 51.9900016784668,
+      "session_volume": 395400.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:INGN",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/INGN/history/",
+        "date": "2015-09-03",
+        "daily_high": 53.150001525878906,
+        "prior_all_time_or_current_month_high": 53.150001525878906,
+        "passes_close_filter": true,
+        "source_symbol": "NASDAQ:INGN",
+        "yahoo_symbol": "INGN"
+      }
+    },
+    {
+      "ticker": "JRVR",
+      "name": "James River Group Holdings, Inc.",
+      "exchange": "NASDAQ",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "업종: Finance · Multi-Line Insurance",
+      "description": "James River Group Holdings, Inc. · Multi-Line Insurance",
+      "change_pct": 2.2677356562709416,
+      "session_open": 27.309999465942383,
+      "session_close": 27.959999084472656,
+      "session_volume": 104300.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:JRVR",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/JRVR/history/",
+        "date": "2015-09-03",
+        "daily_high": 28.770000457763672,
+        "prior_all_time_or_current_month_high": 28.770000457763672,
+        "passes_close_filter": true,
+        "source_symbol": "NASDAQ:JRVR",
+        "yahoo_symbol": "JRVR"
+      }
+    },
+    {
+      "ticker": "LGIH",
+      "name": "LGI Homes, Inc.",
+      "exchange": "NASDAQ",
+      "category": "Consumer Durables",
+      "high_type": "all_time",
+      "reason": "업종: Consumer Durables · Homebuilding",
+      "description": "LGI Homes, Inc. · Homebuilding",
+      "change_pct": 2.9299791868206526,
+      "session_open": 26.489999771118164,
+      "session_close": 27.049999237060547,
+      "session_volume": 805400.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:LGIH",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/LGIH/history/",
+        "date": "2015-09-03",
+        "daily_high": 27.719999313354492,
+        "prior_all_time_or_current_month_high": 27.719999313354492,
+        "passes_close_filter": true,
+        "source_symbol": "NASDAQ:LGIH",
+        "yahoo_symbol": "LGIH"
+      }
+    },
+    {
+      "ticker": "MZTI",
+      "name": "Marzetti Company",
+      "exchange": "NASDAQ",
+      "category": "Consumer Non-Durables",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Non-Durables · Food: Specialty/Candy",
+      "description": "Marzetti Company · Food: Specialty/Candy",
+      "change_pct": 0.6065007963494295,
+      "session_open": 97.2300033569336,
+      "session_close": 97.87000274658203,
+      "session_volume": 97600.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:MZTI",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/MZTI/history/",
+        "date": "2015-09-03",
+        "daily_high": 99.11000061035156,
+        "prior_all_time_or_current_month_high": 99.7300033569336,
+        "passes_close_filter": true,
+        "source_symbol": "NASDAQ:MZTI",
+        "yahoo_symbol": "MZTI"
+      }
+    },
+    {
+      "ticker": "RMNI",
+      "name": "Rimini Street Inc Class A",
+      "exchange": "NASDAQ",
+      "category": "Technology Services",
+      "high_type": "all_time",
+      "reason": "업종: Technology Services · Information Technology Services",
+      "description": "Rimini Street Inc Class A · Information Technology Services",
+      "change_pct": 0.0,
+      "session_open": 9.75,
+      "session_close": 9.75,
+      "session_volume": 10900.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:RMNI",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/RMNI/history/",
+        "date": "2015-09-03",
+        "daily_high": 9.75,
+        "prior_all_time_or_current_month_high": 9.75,
+        "passes_close_filter": true,
+        "source_symbol": "NASDAQ:RMNI",
+        "yahoo_symbol": "RMNI"
+      }
+    },
+    {
+      "ticker": "ULBI",
+      "name": "Ultralife Corporation",
+      "exchange": "NASDAQ",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Electrical Products",
+      "description": "Ultralife Corporation · Electrical Products",
+      "change_pct": 1.3303756038703485,
+      "session_open": 4.559999942779541,
+      "session_close": 4.570000171661377,
+      "session_volume": 7900.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:ULBI",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/ULBI/history/",
+        "date": "2015-09-03",
+        "daily_high": 4.690000057220459,
+        "prior_all_time_or_current_month_high": 24.959999084472656,
+        "passes_close_filter": true,
+        "source_symbol": "NASDAQ:ULBI",
+        "yahoo_symbol": "ULBI"
+      }
+    },
+    {
+      "ticker": "VISN",
+      "name": "Vistance Networks, Inc.",
+      "exchange": "NASDAQ",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Telecommunications Equipment",
+      "description": "Vistance Networks, Inc. · Telecommunications Equipment",
+      "change_pct": 2.156709783500377,
+      "session_open": 32.220001220703125,
+      "session_close": 32.91999816894531,
+      "session_volume": 890700.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:VISN",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/VISN/history/",
+        "date": "2015-09-03",
+        "daily_high": 33.15999984741211,
+        "prior_all_time_or_current_month_high": 33.15999984741211,
+        "passes_close_filter": true,
+        "source_symbol": "NASDAQ:VISN",
+        "yahoo_symbol": "VISN"
+      }
+    },
+    {
+      "ticker": "BGS",
+      "name": "B&G Foods, Inc.",
+      "exchange": "NYSE",
+      "category": "Consumer Non-Durables",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Non-Durables · Food: Major Diversified",
+      "description": "B&G Foods, Inc. · Food: Major Diversified",
+      "change_pct": 11.658453688386228,
+      "session_open": 32.11000061035156,
+      "session_close": 34.0,
+      "session_volume": 3394900.0,
+      "currency": "USD",
+      "source_symbol": "NYSE:BGS",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/BGS/history/",
+        "date": "2015-09-03",
+        "daily_high": 34.83000183105469,
+        "prior_all_time_or_current_month_high": 37.65999984741211,
+        "passes_close_filter": true,
+        "source_symbol": "NYSE:BGS",
+        "yahoo_symbol": "BGS"
+      }
+    },
+    {
+      "ticker": "DY",
+      "name": "Dycom Industries, Inc.",
+      "exchange": "NYSE",
+      "category": "Industrial Services",
+      "high_type": "all_time",
+      "reason": "업종: Industrial Services · Engineering & Construction",
+      "description": "Dycom Industries, Inc. · Engineering & Construction",
+      "change_pct": 1.7085753485660549,
+      "session_open": 72.45999908447266,
+      "session_close": 73.22000122070312,
+      "session_volume": 485900.0,
+      "currency": "USD",
+      "source_symbol": "NYSE:DY",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/DY/history/",
+        "date": "2015-09-03",
+        "daily_high": 74.62000274658203,
+        "prior_all_time_or_current_month_high": 74.62000274658203,
+        "passes_close_filter": true,
+        "source_symbol": "NYSE:DY",
+        "yahoo_symbol": "DY"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-11-13T04:24:57.001939+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 5703,
+    "history_symbols": 2785,
+    "inactive_symbols": 2916,
+    "failed_symbols": 2,
+    "coverage_ratio": 0.9992823824901328,
+    "coverage_by_exchange": {
+      "NASDAQ": {
+        "covered": 1403,
+        "total": 1405
+      },
+      "NYSE": {
+        "covered": 1236,
+        "total": 1236
+      },
+      "AMEX": {
+        "covered": 146,
+        "total": 146
+      }
+    },
+    "session_symbols": 2746,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-11-13T04:24:57.001939+00:00"
+}

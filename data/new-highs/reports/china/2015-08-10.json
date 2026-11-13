@@ -1,0 +1,346 @@
+{
+  "schema_version": 1,
+  "market": "china",
+  "date": "2015-08-10",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "600160.SS",
+      "name": "Zhejiang Juhua Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Process Industries",
+      "high_type": "52_week",
+      "reason": "업종: Process Industries · Chemicals: Specialty",
+      "description": "Zhejiang Juhua Co., Ltd. Class A · Chemicals: Specialty",
+      "change_pct": 8.358657216352805,
+      "session_open": 10.123076438903809,
+      "session_close": 10.969229698181152,
+      "session_volume": 75263175.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:600160",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/600160.SS/history/",
+        "date": "2015-08-10",
+        "daily_high": 10.984615325927734,
+        "prior_all_time_or_current_month_high": 16.426597595214844,
+        "passes_close_filter": true,
+        "source_symbol": "SSE:600160",
+        "yahoo_symbol": "600160.SS"
+      }
+    },
+    {
+      "ticker": "600602.SS",
+      "name": "INESA Intelligent Tech Inc. Class A",
+      "exchange": "SSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Electronic Components",
+      "description": "INESA Intelligent Tech Inc. Class A · Electronic Components",
+      "change_pct": 9.990297682349514,
+      "session_open": 10.470000267028809,
+      "session_close": 11.34000015258789,
+      "session_volume": 76900809.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:600602",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/600602.SS/history/",
+        "date": "2015-08-10",
+        "daily_high": 11.34000015258789,
+        "prior_all_time_or_current_month_high": 16.17613410949707,
+        "passes_close_filter": true,
+        "source_symbol": "SSE:600602",
+        "yahoo_symbol": "600602.SS"
+      }
+    },
+    {
+      "ticker": "000025.SZ",
+      "name": "Shenzhen Tellus Holding Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "업종: Finance · Real Estate Development",
+      "description": "Shenzhen Tellus Holding Co., Ltd. Class A · Real Estate Development",
+      "change_pct": 9.997322554763088,
+      "session_open": 25.517240524291992,
+      "session_close": 28.303447723388672,
+      "session_volume": 7664618.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:000025",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/000025.SZ/history/",
+        "date": "2015-08-10",
+        "daily_high": 28.303447723388672,
+        "prior_all_time_or_current_month_high": 28.303447723388672,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:000025",
+        "yahoo_symbol": "000025.SZ"
+      }
+    },
+    {
+      "ticker": "000068.SZ",
+      "name": "Shenzhen Huakong Seg Co. Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Distribution Services",
+      "high_type": "52_week",
+      "reason": "업종: Distribution Services · Wholesale Distributors",
+      "description": "Shenzhen Huakong Seg Co. Ltd. Class A · Wholesale Distributors",
+      "change_pct": 4.991813775349141,
+      "session_open": 12.449999809265137,
+      "session_close": 12.829999923706055,
+      "session_volume": 16114889.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:000068",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/000068.SZ/history/",
+        "date": "2015-08-10",
+        "daily_high": 12.829999923706055,
+        "prior_all_time_or_current_month_high": 14.010000228881836,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:000068",
+        "yahoo_symbol": "000068.SZ"
+      }
+    },
+    {
+      "ticker": "000526.SZ",
+      "name": "Xueda (Xiamen) Education Technology Group Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "업종: Finance · Real Estate Development",
+      "description": "Xueda (Xiamen) Education Technology Group Co., Ltd. Class A · Real Estate Development",
+      "change_pct": 10.000006842506547,
+      "session_open": 24.530000686645508,
+      "session_close": 24.530000686645508,
+      "session_volume": 225985.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:000526",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/000526.SZ/history/",
+        "date": "2015-08-10",
+        "daily_high": 24.530000686645508,
+        "prior_all_time_or_current_month_high": 27.40999984741211,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:000526",
+        "yahoo_symbol": "000526.SZ"
+      }
+    },
+    {
+      "ticker": "000564.SZ",
+      "name": "CCOOP Group Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Retail Trade",
+      "high_type": "52_week",
+      "reason": "업종: Retail Trade · Department Stores",
+      "description": "CCOOP Group Co., Ltd. Class A · Department Stores",
+      "change_pct": 10.03811910216954,
+      "session_open": 8.65999984741211,
+      "session_close": 8.65999984741211,
+      "session_volume": 1214009.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:000564",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/000564.SZ/history/",
+        "date": "2015-08-10",
+        "daily_high": 8.65999984741211,
+        "prior_all_time_or_current_month_high": 10.600000381469727,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:000564",
+        "yahoo_symbol": "000564.SZ"
+      }
+    },
+    {
+      "ticker": "002020.SZ",
+      "name": "Zhejiang Jingxin Pharmaceutical Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Health Technology",
+      "high_type": "all_time",
+      "reason": "업종: Health Technology · Pharmaceuticals: Major",
+      "description": "Zhejiang Jingxin Pharmaceutical Co., Ltd. Class A · Pharmaceuticals: Major",
+      "change_pct": 5.7699337916578,
+      "session_open": 10.875,
+      "session_close": 11.991665840148926,
+      "session_volume": 99048422.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002020",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002020.SZ/history/",
+        "date": "2015-08-10",
+        "daily_high": 12.404166221618652,
+        "prior_all_time_or_current_month_high": 12.404166221618652,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:002020",
+        "yahoo_symbol": "002020.SZ"
+      }
+    },
+    {
+      "ticker": "002242.SZ",
+      "name": "Joyoung Company Limited Class A",
+      "exchange": "SZSE",
+      "category": "Consumer Durables",
+      "high_type": "all_time",
+      "reason": "업종: Consumer Durables · Electronics/Appliances",
+      "description": "Joyoung Company Limited Class A · Electronics/Appliances",
+      "change_pct": 10.009502305855822,
+      "session_open": 32.2599983215332,
+      "session_close": 34.72999954223633,
+      "session_volume": 28766228.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002242",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002242.SZ/history/",
+        "date": "2015-08-10",
+        "daily_high": 34.72999954223633,
+        "prior_all_time_or_current_month_high": 34.72999954223633,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:002242",
+        "yahoo_symbol": "002242.SZ"
+      }
+    },
+    {
+      "ticker": "002669.SZ",
+      "name": "Kangda New Materials (Group) Co. Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Process Industries",
+      "high_type": "all_time",
+      "reason": "업종: Process Industries · Industrial Specialties",
+      "description": "Kangda New Materials (Group) Co. Ltd. Class A · Industrial Specialties",
+      "change_pct": 9.98201140378374,
+      "session_open": 23.18000030517578,
+      "session_close": 24.459999084472656,
+      "session_volume": 9436419.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002669",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002669.SZ/history/",
+        "date": "2015-08-10",
+        "daily_high": 24.459999084472656,
+        "prior_all_time_or_current_month_high": 24.459999084472656,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:002669",
+        "yahoo_symbol": "002669.SZ"
+      }
+    },
+    {
+      "ticker": "002762.SZ",
+      "name": "Jinfa Labi Maternity & Baby Articles Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Retail Trade",
+      "high_type": "all_time",
+      "reason": "업종: Retail Trade · Apparel/Footwear Retail",
+      "description": "Jinfa Labi Maternity & Baby Articles Co., Ltd. Class A · Apparel/Footwear Retail",
+      "change_pct": 2.3766023823317273,
+      "session_open": 26.890756607055664,
+      "session_close": 26.890756607055664,
+      "session_volume": 7012563.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002762",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002762.SZ/history/",
+        "date": "2015-08-10",
+        "daily_high": 27.071308135986328,
+        "prior_all_time_or_current_month_high": 27.071308135986328,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:002762",
+        "yahoo_symbol": "002762.SZ"
+      }
+    },
+    {
+      "ticker": "002773.SZ",
+      "name": "Chengdu Kanghong Pharmaceutical Group Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Health Technology",
+      "high_type": "all_time",
+      "reason": "업종: Health Technology · Pharmaceuticals: Major",
+      "description": "Chengdu Kanghong Pharmaceutical Group Co., Ltd. Class A · Pharmaceuticals: Major",
+      "change_pct": 6.367703720308193,
+      "session_open": 34.25128173828125,
+      "session_close": 36.492305755615234,
+      "session_volume": 8943544.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002773",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002773.SZ/history/",
+        "date": "2015-08-10",
+        "daily_high": 37.43589782714844,
+        "prior_all_time_or_current_month_high": 37.43589782714844,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:002773",
+        "yahoo_symbol": "002773.SZ"
+      }
+    },
+    {
+      "ticker": "300042.SZ",
+      "name": "Netac Technology Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Semiconductors",
+      "description": "Netac Technology Co., Ltd. Class A · Semiconductors",
+      "change_pct": 2.73972334300725,
+      "session_open": 28.059999465942383,
+      "session_close": 30.0,
+      "session_volume": 9700239.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:300042",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/300042.SZ/history/",
+        "date": "2015-08-10",
+        "daily_high": 31.246665954589844,
+        "prior_all_time_or_current_month_high": 31.246665954589844,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:300042",
+        "yahoo_symbol": "300042.SZ"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-11-13T04:24:15.997444+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 5312,
+    "history_symbols": 2645,
+    "inactive_symbols": 2659,
+    "failed_symbols": 8,
+    "coverage_ratio": 0.9969845457972107,
+    "coverage_by_exchange": {
+      "SSE": {
+        "covered": 1020,
+        "total": 1022
+      },
+      "SZSE": {
+        "covered": 1625,
+        "total": 1631
+      }
+    },
+    "session_symbols": 2620,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-11-13T04:24:15.997444+00:00"
+}
