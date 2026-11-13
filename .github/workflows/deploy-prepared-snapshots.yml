@@ -49,6 +49,7 @@ jobs:
           npm run test:stock-information
           npm run test:stock-details
           npm run test:rebounds
+          node --test tests/sector-history-client.test.mjs
       - name: Publish committed market replay
         run: python scripts/refresh_chart_replay.py --publish
       - name: Build from committed stock snapshots
