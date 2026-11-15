@@ -1,0 +1,111 @@
+{
+  "status": "complete",
+  "verified_at": "2026-11-15T12:10:04.371051+00:00",
+  "site": "https://juyeop-dev.github.io/find_peer_stock/",
+  "commit": "ae73fbf8943bafc544e99a67a575da4616b52d6c",
+  "workflow": {
+    "id": 43709606727,
+    "url": "https://github.com/juyeop-dev/find_peer_stock/actions/runs/43709606727",
+    "conclusion": "success"
+  },
+  "api": {
+    "url": "https://find-peer-stock-live-api.find-peer-stock-juyeop.workers.dev",
+    "version": "9a39848e-a586-455d-baeb-48e84b350930",
+    "verified": true
+  },
+  "production_checks": {
+    "data": {
+      "command": [
+        "node",
+        "C:\\Users\\user\\Desktop\\stock_study\\stock_peer_site\\data\\tmp_2014\\verify_site_production.mjs"
+      ],
+      "started_at": "2026-11-15T12:09:00.685343+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-15T12:09:04.951675+00:00"
+    },
+    "stock-browser": {
+      "command": [
+        "node",
+        "frontend/tests/stock-information-2014-browser.mjs"
+      ],
+      "started_at": "2026-11-15T12:09:04.952136+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-15T12:09:34.729574+00:00"
+    },
+    "investor-browser": {
+      "command": [
+        "node",
+        "frontend/tests/investor-flows-2014-browser.mjs"
+      ],
+      "started_at": "2026-11-15T12:09:34.729968+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-15T12:09:38.264542+00:00"
+    }
+  },
+  "coverage": {
+    "start": "2014-01-01",
+    "end": "2014-12-31",
+    "total": 25164,
+    "checked": 25164,
+    "histories": {
+      "covers_2014": 12859,
+      "later_listing": 11483,
+      "source_limited": 802,
+      "missing_history": 20
+    },
+    "financials_available": 2462,
+    "revenue_available": 1809,
+    "operating_income_available": 1891,
+    "financials_unavailable": 22702,
+    "quarterly_reports": 8531,
+    "by_market": {
+      "korea": 3042,
+      "taiwan": 2280,
+      "us": 5371,
+      "japan": 3711,
+      "hongkong": 1,
+      "china": 5204,
+      "europe": 5555
+    },
+    "validated_at": "2026-11-15T11:03:36.273294+00:00"
+  },
+  "publication": {
+    "new-highs": 1490,
+    "turnover": 1490,
+    "investors": 245,
+    "credit": 246,
+    "lossless_sector_archives": 2722,
+    "semiconductor_histories": 114,
+    "continuous_stock_histories": 25168,
+    "information_snapshots": 25165,
+    "losslessly_verified_price_points": 57477905,
+    "verified_source_2014_price_calendars": 13821,
+    "verified_taiwan_saturday_prices": 1293,
+    "rebound_sessions": 245,
+    "artifact_files": 116695,
+    "artifact_bytes": 933153641
+  },
+  "local_publication": {
+    "new-highs": 1490,
+    "turnover": 1490,
+    "investors": 245,
+    "credit": 246,
+    "lossless_sector_archives": 2722,
+    "semiconductor_histories": 114,
+    "continuous_stock_histories": 25168,
+    "information_snapshots": 25165,
+    "losslessly_verified_price_points": 57477905,
+    "verified_source_2014_price_calendars": 13821,
+    "verified_taiwan_saturday_prices": 1293,
+    "rebound_sessions": 245,
+    "artifact_files": 116695,
+    "artifact_bytes": 933628344
+  },
+  "tests": {
+    "python": 287,
+    "api": 27,
+    "frontend": 54,
+    "typescript": "passed"
+  },
+  "limitations": "Actual reported data only. Later listings, source-limited history and unavailable periods remain explicit; no inferred prices or quarters."
+}

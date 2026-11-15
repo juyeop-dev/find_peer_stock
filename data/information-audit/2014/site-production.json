@@ -1,0 +1,79 @@
+{
+  "site": "https://juyeop-dev.github.io/find_peer_stock/",
+  "checked_at": "2026-11-15T12:09:00.870Z",
+  "calendars": {
+    "new-highs": {
+      "korea": 245,
+      "us": 252,
+      "japan": 244,
+      "china": 245,
+      "taiwan": 248,
+      "europe": 256
+    },
+    "turnover": {
+      "korea": 245,
+      "us": 252,
+      "japan": 244,
+      "china": 245,
+      "taiwan": 248,
+      "europe": 256
+    }
+  },
+  "investors": {
+    "dates": 245,
+    "latest_date": "2026-11-13"
+  },
+  "credit": {
+    "dates": 246,
+    "latest_date": "2026-11-12"
+  },
+  "reported_2014_financials": {
+    "type": "quarterly",
+    "period_start": "2014-09-28",
+    "period_end": "2014-12-27",
+    "currency": "USD",
+    "source": "SEC reported US-GAAP financials",
+    "cik": 320193,
+    "accession": "0001628280-16-020309",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/320193/000162828016020309/",
+    "concepts": {
+      "revenue": "SalesRevenueNet",
+      "net_income": "NetIncomeLoss"
+    },
+    "frame_sources": {
+      "revenue": "https://data.sec.gov/api/xbrl/frames/us-gaap/SalesRevenueNet/USD/CY2014Q4.json",
+      "net_income": "https://data.sec.gov/api/xbrl/frames/us-gaap/NetIncomeLoss/USD/CY2014Q4.json"
+    },
+    "revenue": 74599000000,
+    "net_income": 18024000000
+  },
+  "restored_taiwan_price": [
+    "2014-12-27",
+    138.5,
+    138.5
+  ],
+  "taiwan_verified_turnover_2014-12-27": {
+    "date": "2014-12-27",
+    "entries": 30
+  },
+  "taiwan_verified_turnover_2014-12-29": {
+    "date": "2014-12-29",
+    "entries": 30
+  },
+  "replay": [
+    {
+      "ticker": "^KS11",
+      "first": "2014-01-02"
+    },
+    {
+      "ticker": "GC=F",
+      "first": "2014-01-02"
+    }
+  ],
+  "latest_sectors": {
+    "date": "2026-11-13",
+    "listings": 2533,
+    "fetched_at": "2026-11-15T11:28:03.320Z"
+  },
+  "semiconductor_listings": 114
+}
