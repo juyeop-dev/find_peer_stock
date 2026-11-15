@@ -1,0 +1,279 @@
+{
+  "status": "complete",
+  "verified_at": "2026-11-15T09:19:57.025927+00:00",
+  "helper_exit_code": 0,
+  "recovered_transient_queries": [
+    {
+      "ticker": "LSE:0QXB",
+      "order": 21700,
+      "updated": true,
+      "queried_at": "2026-11-15T09:03:25.443458+00:00",
+      "attempts": 1,
+      "error": null
+    },
+    {
+      "ticker": "LSE:0T9J",
+      "order": 21942,
+      "updated": true,
+      "queried_at": "2026-11-15T09:03:26.184624+00:00",
+      "attempts": 1,
+      "error": null
+    },
+    {
+      "ticker": "LSE:0YG8",
+      "order": 22033,
+      "updated": true,
+      "queried_at": "2026-11-15T09:03:26.813759+00:00",
+      "attempts": 1,
+      "error": null
+    },
+    {
+      "ticker": "LSE:VP.",
+      "order": 23097,
+      "updated": true,
+      "queried_at": "2026-11-15T09:03:27.224939+00:00",
+      "attempts": 1,
+      "error": null
+    },
+    {
+      "ticker": "XETR:ZAS",
+      "order": 25148,
+      "updated": true,
+      "queried_at": "2026-11-15T09:03:28.223392+00:00",
+      "attempts": 1,
+      "error": null
+    }
+  ],
+  "remaining_source_failures": [
+    {
+      "ticker": "CBZ",
+      "order": 4010,
+      "queried_at": "2026-11-15T08:51:05.033493+00:00",
+      "error": "Fewer than two valid original daily prices TradingView: NYSE:CBZ: symbol_error: ['cs_3c9522c51396', 'symbol_1', 'invalid symbol']",
+      "updated": false
+    },
+    {
+      "ticker": "CCO",
+      "order": 4032,
+      "queried_at": "2026-11-15T08:51:05.035397+00:00",
+      "error": "Fewer than two valid original daily prices TradingView: NYSE:CCO: symbol_error: ['cs_7e22c183efc5', 'symbol_1', 'invalid symbol']",
+      "updated": false
+    },
+    {
+      "ticker": "INDV",
+      "order": 5563,
+      "queried_at": "2026-11-15T08:51:05.037316+00:00",
+      "error": "Fewer than two valid original daily prices TradingView: NASDAQ:INDV: resolved to unexpected symbol NASDAQ:SUPN",
+      "updated": false
+    },
+    {
+      "ticker": "LXP",
+      "order": 6018,
+      "queried_at": "2026-11-15T08:51:05.068548+00:00",
+      "error": "Fewer than two valid original daily prices TradingView: NYSE:LXP: symbol_error: ['cs_38cb2fade1d1', 'symbol_1', 'invalid symbol']",
+      "updated": false
+    },
+    {
+      "ticker": "MSGK/I",
+      "order": 6276,
+      "queried_at": "2026-11-15T08:51:05.076849+00:00",
+      "error": "'MSGK-I' TradingView: NYSE:MSGK/I: resolved to unexpected symbol NYSE:MSGK/PSE:I",
+      "updated": false
+    },
+    {
+      "ticker": "MSGR/I",
+      "order": 6279,
+      "queried_at": "2026-11-15T08:51:05.078818+00:00",
+      "error": "'MSGR-I' TradingView: NYSE:MSGR/I: resolved to unexpected symbol NYSE:MSGR/PSE:I",
+      "updated": false
+    },
+    {
+      "ticker": "NATH",
+      "order": 6347,
+      "queried_at": "2026-11-15T08:51:05.080799+00:00",
+      "error": "Fewer than two valid original daily prices TradingView: NASDAQ:NATH: symbol_error: ['cs_7d71c3a093d0', 'symbol_1', 'invalid symbol']",
+      "updated": false
+    },
+    {
+      "ticker": "RAMP",
+      "order": 7086,
+      "queried_at": "2026-11-15T08:51:05.086568+00:00",
+      "error": "Fewer than two valid original daily prices TradingView: NYSE:RAMP: symbol_error: ['cs_da6b09614aea', 'symbol_1', 'invalid symbol']",
+      "updated": false
+    },
+    {
+      "ticker": "ZZZTA",
+      "order": 8427,
+      "queried_at": "2026-11-15T08:51:08.370254+00:00",
+      "error": "Yahoo returned 1y instead of daily history: ZZZTA TradingView: AMEX:ZZZTA: symbol_error: ['cs_55d78b16b14e', 'symbol_1', 'invalid symbol']",
+      "updated": false
+    },
+    {
+      "ticker": "ZZZTE",
+      "order": 8428,
+      "queried_at": "2026-11-15T08:51:08.373914+00:00",
+      "error": "Yahoo returned 1y instead of daily history: ZZZTE TradingView: AMEX:ZZZTE: symbol_error: ['cs_5a85215b0f38', 'symbol_1', 'invalid symbol']",
+      "updated": false
+    },
+    {
+      "ticker": "ZZZTS",
+      "order": 8429,
+      "queried_at": "2026-11-15T08:51:08.376241+00:00",
+      "error": "Yahoo returned 1y instead of daily history: ZZZTS TradingView: AMEX:ZZZTS: symbol_error: ['cs_91e73023b2dc', 'symbol_1', 'invalid symbol']",
+      "updated": false
+    },
+    {
+      "ticker": "ZZZTT",
+      "order": 8430,
+      "queried_at": "2026-11-15T08:51:08.378342+00:00",
+      "error": "Yahoo returned 1y instead of daily history: ZZZTT TradingView: TradingView listing identity mismatch",
+      "updated": false
+    },
+    {
+      "ticker": "ZZZTX",
+      "order": 8431,
+      "queried_at": "2026-11-15T08:51:08.380324+00:00",
+      "error": "Yahoo returned 1y instead of daily history: ZZZTX TradingView: AMEX:ZZZTX: symbol_error: ['cs_02fe59472fa3', 'symbol_1', 'invalid symbol']",
+      "updated": false
+    },
+    {
+      "ticker": "EURONEXT:ALHEX",
+      "order": 19737,
+      "queried_at": "2026-11-15T08:51:18.559655+00:00",
+      "error": "TradingView: Missing or invalid chart volume",
+      "updated": false
+    },
+    {
+      "ticker": "EURONEXT:EFG",
+      "order": 20019,
+      "queried_at": "2026-11-15T08:51:28.635087+00:00",
+      "error": "TradingView: EURONEXT:EFG: symbol_error: ['cs_d6c8948ec14d', 'symbol_1', 'invalid symbol']",
+      "updated": false
+    },
+    {
+      "ticker": "EURONEXT:INPST",
+      "order": 20126,
+      "queried_at": "2026-11-15T08:51:31.937123+00:00",
+      "error": "TradingView: EURONEXT:INPST: symbol_error: ['cs_58b6f0d61d4c', 'symbol_1', 'invalid symbol']",
+      "updated": false
+    },
+    {
+      "ticker": "EURONEXT:SACI",
+      "order": 20353,
+      "queried_at": "2026-11-15T08:51:38.100689+00:00",
+      "error": "TradingView: EURONEXT:SACI: symbol_error: ['cs_cc756a669c4a', 'symbol_1', 'invalid symbol']",
+      "updated": false
+    },
+    {
+      "ticker": "LSE:0A6K",
+      "order": 20499,
+      "queried_at": "2026-11-15T08:51:42.988930+00:00",
+      "error": "Yahoo returned 1wk instead of daily history: LSE:0A6K TradingView: LSE:0A6K: symbol_error: ['cs_9bb1eeaabcde', 'symbol_1', 'invalid symbol']",
+      "updated": false
+    },
+    {
+      "ticker": "LSE:0HMG",
+      "order": 20837,
+      "queried_at": "2026-11-15T08:52:02.519133+00:00",
+      "error": "Yahoo returned 1wk instead of daily history: LSE:0HMG TradingView: LSE:0HMG: symbol_error: ['cs_90435644d51d', 'symbol_1', 'invalid symbol']",
+      "updated": false
+    },
+    {
+      "ticker": "SIX:MSTR.USD",
+      "order": 23411,
+      "queried_at": "2026-11-15T08:54:38.999590+00:00",
+      "error": "'MSTR.USD.SW' TradingView: Fewer than two valid original daily prices",
+      "updated": false
+    },
+    {
+      "ticker": "BLFS",
+      "order": 3781,
+      "updated": false,
+      "queried_at": "2026-11-15T09:03:20.542849+00:00",
+      "attempts": 1,
+      "error": "ChartHistoryError: NASDAQ:BLFS: symbol_error: ['cs_4548dcc099a9', 'symbol_1', 'invalid symbol']"
+    },
+    {
+      "ticker": "DBRG",
+      "order": 4460,
+      "updated": false,
+      "queried_at": "2026-11-15T09:03:22.441347+00:00",
+      "attempts": 1,
+      "error": "ChartHistoryError: NYSE:DBRG: symbol_error: ['cs_782bc90508d6', 'symbol_1', 'invalid symbol']"
+    },
+    {
+      "ticker": "IPEX",
+      "order": 5614,
+      "updated": false,
+      "queried_at": "2026-11-15T09:03:23.937581+00:00",
+      "attempts": 1,
+      "error": "ChartHistoryError: NASDAQ:IPEX: resolved to unexpected symbol NASDAQ:GOW"
+    },
+    {
+      "ticker": "VACI",
+      "order": 8074,
+      "updated": false,
+      "queried_at": "2026-11-15T09:03:23.940517+00:00",
+      "attempts": 1,
+      "error": "ChartHistoryError: NYSE:VACI: symbol_error: ['cs_a7415ff5d32d', 'symbol_1', 'invalid symbol']"
+    },
+    {
+      "ticker": "VRME",
+      "order": 8159,
+      "updated": false,
+      "queried_at": "2026-11-15T09:03:23.943310+00:00",
+      "attempts": 1,
+      "error": "ChartHistoryError: NASDAQ:VRME: resolved to unexpected symbol NASDAQ:OPNW"
+    },
+    {
+      "ticker": "WBD",
+      "order": 8208,
+      "updated": false,
+      "queried_at": "2026-11-15T09:03:23.945890+00:00",
+      "attempts": 1,
+      "error": "ChartHistoryError: NASDAQ:WBD: symbol_error: ['cs_8e885305e2a7', 'symbol_1', 'invalid symbol']"
+    },
+    {
+      "ticker": "7967.TWO",
+      "order": 14180,
+      "updated": false,
+      "queried_at": "2026-11-15T09:03:23.949961+00:00",
+      "attempts": 1,
+      "error": "ValueError: Fewer than two valid original daily prices"
+    },
+    {
+      "ticker": "7969.TWO",
+      "order": 14181,
+      "updated": false,
+      "queried_at": "2026-11-15T09:03:24.726833+00:00",
+      "attempts": 1,
+      "error": "ValueError: Fewer than two valid original daily prices"
+    },
+    {
+      "ticker": "LSE:0KSJ",
+      "order": 21241,
+      "updated": false,
+      "queried_at": "2026-11-15T09:03:25.309727+00:00",
+      "attempts": 1,
+      "error": "ChartHistoryError: LSE:0KSJ: symbol_error: ['cs_f0ba0e317cdc', 'symbol_1', 'invalid symbol']"
+    },
+    {
+      "ticker": "LSE:PNNF",
+      "order": 22803,
+      "updated": false,
+      "queried_at": "2026-11-15T09:03:27.222838+00:00",
+      "attempts": 1,
+      "error": "ChartHistoryError: LSE:PNNF: symbol_error: ['cs_1f4f5a416919', 'symbol_1', 'invalid symbol']"
+    },
+    {
+      "ticker": "SIX:VRT.USD",
+      "order": 23562,
+      "updated": false,
+      "queried_at": "2026-11-15T09:03:27.709813+00:00",
+      "attempts": 1,
+      "error": "ValueError: Fewer than two valid original daily prices"
+    }
+  ],
+  "next": "Resume the exact Taiwan import failure, then source audits",
+  "source_audits": "passed"
+}

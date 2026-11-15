@@ -37,7 +37,7 @@ def collect_kospi() -> dict:
     for item in chart.iter("item"):
         day, opening, high, low, close, volume = item.attrib["data"].split("|")
         day = datetime.strptime(day, "%Y%m%d").strftime("%Y-%m-%d")
-        if day < "2015-01-01" or day >= today:
+        if day < "2014-01-01" or day >= today:
             continue
         opening, high, low, close, volume = map(float, (opening, high, low, close, volume))
         if not all(math.isfinite(v) and v > 0 for v in (opening, high, low, close)) or low > min(opening, close) or high < max(opening, close) or not math.isfinite(volume) or volume < 0:
@@ -45,11 +45,36 @@ def collect_kospi() -> dict:
         bars.append({"date": day, "open": opening, "high": high, "low": low, "close": close, "adjusted_close": close, "volume": volume})
     if len(bars) < 250 or len({b["date"] for b in bars}) != len(bars):
         raise ValueError("Insufficient or duplicate Naver index sessions")
-    return {"ticker": "^KS11", "name": "코스피", "currency": "KRW", "source": "Naver Finance · KOSPI (^KS11)", "source_url": url, "bars": bars}
+    # Naver's XML endpoint silently caps index rows at about 3,000 even when
+    # count is larger. Extend only with verified same-provider index pages.
+    if bars[0]["date"] > "2014-01-02":
+        archived = json.loads((ROOT / "data/investors/index.json").read_bytes())
+        indices = {row['date']: market['index'] for row in archived['history']
+                   for market in row['markets'] if market['market'] == 'KOSPI'}
+        overlap = [bar for bar in bars if bar['date'] in indices]
+        if len(overlap) < 3 or any(not math.isclose(bar[key], indices[bar['date']][key], rel_tol=1e-10, abs_tol=.005)
+                                  for bar in overlap for key in ['open', 'high', 'low', 'close']):
+            raise ValueError('Naver index page and XML OHLC bases differ')
+        prefix = []
+        for day, row in sorted(indices.items()):
+            if not '2014-01-01' <= day < bars[0]['date']:
+                continue
+            if row['date'] != day or not all(type(row.get(key)) in [int, float] and math.isfinite(row[key]) and row[key] > 0 for key in ['open', 'high', 'low', 'close']):
+                raise ValueError('Historical Naver index OHLC is incomplete')
+            if row['low'] > min(row['open'], row['close']) or row['high'] < max(row['open'], row['close']):
+                raise ValueError('Historical Naver index OHLC bounds differ')
+            prefix.append({key: row[key] for key in ['date', 'open', 'high', 'low', 'close']} |
+                          {'adjusted_close': row['close'], 'volume': None})
+        if not prefix or prefix[0]['date'] != '2014-01-02':
+            raise ValueError('The capped XML response requires the verified 2014 index prefix')
+        bars = prefix + bars
+    return {"ticker": "^KS11", "name": "코스피", "currency": "KRW", "source": "Naver Finance · KOSPI (^KS11)", "source_url": url,
+            "historical_index_source": "https://m.stock.naver.com/api/index/KOSPI/price?pageSize=60",
+            "historical_volume_note": "The older validated index page supplies OHLC; unavailable volume remains null.", "bars": bars}
 
 
 def collect(ticker: str, name: str, zone: str) -> dict:
-    query = urllib.parse.urlencode({"period1": 1420070400, "period2": int(datetime.now(timezone.utc).timestamp()), "interval": "1d"})
+    query = urllib.parse.urlencode({"period1": 1388534400, "period2": int(datetime.now(timezone.utc).timestamp()), "interval": "1d"})
     url = f"https://query1.finance.yahoo.com/v8/finance/chart/{urllib.parse.quote(ticker, safe='')}?{query}"
     request = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 StockPeer", "Accept": "application/json"})
     with urllib.request.urlopen(request, timeout=45) as response:

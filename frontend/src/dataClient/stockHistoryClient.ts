@@ -1,15 +1,17 @@
 import type { SemiconductorPrice } from "./semiconductorTypes";
 import { liveDetailFor, requestOriginal } from "./liveStockDataClient";
+import { expandPriceArchive } from "./priceArchive";
 
 export interface StockHistory {
   ticker: string; currency: string; source: string; fetched_at?: string; first_trade_date?: string | null;
   history: SemiconductorPrice[]; warning?: string;
   prior_snapshots?: {ticker: string; currency: string; source: string; fetched_at?: string; complete_history?: boolean; prices: [string, number, number][]}[];
 }
-export const CHART_PERIODS = [7, 30, 90, 180, "1y", "2y", "since2025", "since2024H2", "since2024", "since2023", "since2022", "since2021", "since2020", "since2019", "since2018", "since2017", "since2016", "since2015"] as const;
+export const CHART_PERIODS = [7, 30, 90, 180, "1y", "2y", "since2025", "since2024H2", "since2024", "since2023", "since2022", "since2021", "since2020", "since2019", "since2018", "since2017", "since2016", "since2015", "since2014"] as const;
 export type ChartPeriod = typeof CHART_PERIODS[number];
-export const chartPeriodLabel = (period: ChartPeriod) => typeof period === "number" ? `${period}일` : period === "since2015" ? "2015년~" : period === "since2016" ? "2016년~" : period === "since2017" ? "2017년~" : period === "since2018" ? "2018년~" : period === "since2019" ? "2019년~" : period === "since2020" ? "2020년~" : period === "since2021" ? "2021년~" : period === "since2022" ? "2022년~" : period === "since2023" ? "2023년~" : period === "since2024" ? "2024년~" : period === "since2024H2" ? "2024년 하반기~" : period === "since2025" ? "2025년~" : period === "1y" ? "1년" : "2년";
+export const chartPeriodLabel = (period: ChartPeriod) => typeof period === "number" ? `${period}일` : period === "since2014" ? "2014년~" : period === "since2015" ? "2015년~" : period === "since2016" ? "2016년~" : period === "since2017" ? "2017년~" : period === "since2018" ? "2018년~" : period === "since2019" ? "2019년~" : period === "since2020" ? "2020년~" : period === "since2021" ? "2021년~" : period === "since2022" ? "2022년~" : period === "since2023" ? "2023년~" : period === "since2024" ? "2024년~" : period === "since2024H2" ? "2024년 하반기~" : period === "since2025" ? "2025년~" : period === "1y" ? "1년" : "2년";
 export function chartStart(end: string, period: ChartPeriod): string {
+  if (period === "since2014") return "2014-01-01";
   if (period === "since2015") return "2015-01-01";
   if (period === "since2016") return "2016-01-01";
   if (period === "since2017") return "2017-01-01";
@@ -54,7 +56,8 @@ function validate(value: StockHistory, ticker: string): StockHistory {
 }
 export async function getPublishedStockHistory(ticker: string, signal?: AbortSignal): Promise<StockHistory> {
   const filename = encodeURIComponent(ticker.toUpperCase()).replaceAll("%", "~");
-  let response = await fetch(`${import.meta.env.BASE_URL}data/stock-history/${filename}.json.gz?t=${Date.now()}`, { signal, cache: "no-store" });
+  let response = await fetch(`${import.meta.env.BASE_URL}data/stock-history/${filename}.delta-v1.json.gz?t=${Date.now()}`, { signal, cache: "no-store" });
+  if (response.status === 404) response = await fetch(`${import.meta.env.BASE_URL}data/stock-history/${filename}.json.gz?t=${Date.now()}`, { signal, cache: "no-store" });
   if (response.status === 404) response = await fetch(`${import.meta.env.BASE_URL}data/stock-history/${filename}.json?t=${Date.now()}`, { signal, cache: "no-store" });
   if (!response.ok) throw new Error("저장된 일봉 없음");
   const bytes = await response.arrayBuffer();
@@ -62,7 +65,7 @@ export async function getPublishedStockHistory(ticker: string, signal?: AbortSig
   const body = magic[0] === 0x1f && magic[1] === 0x8b
     ? await new Response(new Blob([bytes]).stream().pipeThrough(new DecompressionStream("gzip"))).text()
     : new TextDecoder().decode(bytes);
-  const packed = JSON.parse(body);
+  const packed = expandPriceArchive(JSON.parse(body)) as {ticker: string; currency: string; source: string; prices: [string, number, number][]};
   return validate({ ...packed, history: packed.prices.map(([date, close, adjusted_close]: [string, number, number]) => ({ date, close, adjusted_close, volume: null })) }, ticker);
 }
 export function retainHistoricalPrices(previous: StockHistory | undefined, fresh: StockHistory): StockHistory {
@@ -92,7 +95,7 @@ export async function getStockHistory(ticker: string, exchange?: string, signal?
     fetched_at: detail.fetched_at, history: detail.history } : histories.get(ticker.toUpperCase()) ?? initial;
   // Inline peer/quote snapshots may still contain a shorter window. Consult
   // the durable archive before treating a fresh one-year snapshot as enough.
-  const requestedStart = "2015-01-01";
+  const requestedStart = "2014-01-01";
   const expectedStart = base?.first_trade_date && base.first_trade_date > requestedStart ? base.first_trade_date : requestedStart;
   if (!base || base.history[0].date > expectedStart) {
     try {

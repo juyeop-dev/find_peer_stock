@@ -1,0 +1,171 @@
+{
+  "schema_version": 1,
+  "market": "taiwan",
+  "date": "2014-10-28",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "1580.TWO",
+      "name": "Sinmag Equipment Corporation",
+      "exchange": "TPEX",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Industrial Machinery",
+      "description": "Sinmag Equipment Corporation · Industrial Machinery",
+      "change_pct": 2.9810268289795383,
+      "session_open": 174.29193115234375,
+      "session_close": 179.97537231445312,
+      "session_volume": 212487.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:1580",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/1580.TWO/history/",
+        "date": "2014-10-28",
+        "daily_high": 186.60604858398438,
+        "prior_all_time_or_current_month_high": 186.60604858398438,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:1580",
+        "yahoo_symbol": "1580.TWO"
+      }
+    },
+    {
+      "ticker": "2741.TWO",
+      "name": "Renjie Oldsichuan Catering Management Consultant Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Consumer Services",
+      "high_type": "all_time",
+      "reason": "업종: Consumer Services · Restaurants",
+      "description": "Renjie Oldsichuan Catering Management Consultant Co., Ltd. · Restaurants",
+      "change_pct": 0.0,
+      "session_open": 121.53746795654297,
+      "session_close": 121.53746795654297,
+      "session_volume": 89256.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:2741",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2741.TWO/history/",
+        "date": "2014-10-28",
+        "daily_high": 121.53746795654297,
+        "prior_all_time_or_current_month_high": 121.53746795654297,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:2741",
+        "yahoo_symbol": "2741.TWO"
+      }
+    },
+    {
+      "ticker": "2543.TW",
+      "name": "Hwang Chang General Contractor Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Industrial Services",
+      "high_type": "52_week",
+      "reason": "업종: Industrial Services · Engineering & Construction",
+      "description": "Hwang Chang General Contractor Co., Ltd. · Engineering & Construction",
+      "change_pct": 0.0,
+      "session_open": 6.013836860656738,
+      "session_close": 6.013836860656738,
+      "session_volume": 596175.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2543",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2543.TW/history/",
+        "date": "2014-10-28",
+        "daily_high": 6.17637300491333,
+        "prior_all_time_or_current_month_high": 8.073240280151367,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:2543",
+        "yahoo_symbol": "2543.TW"
+      }
+    },
+    {
+      "ticker": "2881.TW",
+      "name": "Fubon Financial Holding Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "업종: Finance · Multi-Line Insurance",
+      "description": "Fubon Financial Holding Co., Ltd. · Multi-Line Insurance",
+      "change_pct": 4.526745471902194,
+      "session_open": 37.61811447143555,
+      "session_close": 38.92057418823242,
+      "session_volume": 62903878.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2881",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2881.TW/history/",
+        "date": "2014-10-28",
+        "daily_high": 38.92057418823242,
+        "prior_all_time_or_current_month_high": 38.92057418823242,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:2881",
+        "yahoo_symbol": "2881.TW"
+      }
+    },
+    {
+      "ticker": "6477.TW",
+      "name": "Anji Technology Co Ltd",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Semiconductors",
+      "description": "Anji Technology Co Ltd · Semiconductors",
+      "change_pct": 0.0,
+      "session_open": 23.471473693847656,
+      "session_close": 23.471473693847656,
+      "session_volume": 90506.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:6477",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6477.TW/history/",
+        "date": "2014-10-28",
+        "daily_high": 33.125064849853516,
+        "prior_all_time_or_current_month_high": 33.125064849853516,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:6477",
+        "yahoo_symbol": "6477.TW"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-11-13T16:00:16.544555+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 2362,
+    "history_symbols": 1574,
+    "inactive_symbols": 778,
+    "failed_symbols": 10,
+    "coverage_ratio": 0.9936868686868687,
+    "coverage_by_exchange": {
+      "TWSE": {
+        "covered": 865,
+        "total": 872
+      },
+      "TPEX": {
+        "covered": 709,
+        "total": 712
+      }
+    },
+    "session_symbols": 1553,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-11-13T16:00:16.544555+00:00"
+}

@@ -38,10 +38,13 @@ test("manual information refresh requests both current fundamentals and historic
       return Response.json({data:[{s:"NASDAQ:AAPL",d:body.columns.map(column => values[column] ?? null)}]});
     }
     const end = new URL(url).searchParams.get("period2");
-    const day = end === "1451606400" ? "2015-12-31" : end === "1483228800" ? "2016-12-31" : end === "1514764800" ? "2017-12-31" : end === "1546300800" ? "2018-12-31" : end === "1577836800" ? "2019-12-31" : end === "1609459200" ? "2020-12-31" : end === "1640995200" ? "2021-12-31" : end === "1672531200" ? "2022-12-31" : end === "1704067200" ? "2023-12-31" : end === "1735689600" ? "2024-12-31" : "2025-09-30";
+    const day = end === "1420070400" ? "2014-12-31" : end === "1451606400" ? "2015-12-31" : end === "1483228800" ? "2016-12-31" : end === "1514764800" ? "2017-12-31" : end === "1546300800" ? "2018-12-31" : end === "1577836800" ? "2019-12-31" : end === "1609459200" ? "2020-12-31" : end === "1640995200" ? "2021-12-31" : end === "1672531200" ? "2022-12-31" : end === "1704067200" ? "2023-12-31" : end === "1735689600" ? "2024-12-31" : "2025-09-30";
     return Response.json({timeseries:{result:[{meta:{symbol:["AAPL"]},annualTotalRevenue:[{asOfDate:day,periodType:"12M",currencyCode:"USD",reportedValue:{raw:1000}}]}]}});
   });
-  assert.equal(calls.length,13); assert.ok(calls[1].includes("period1=1420070400")); assert.ok(calls.some(url=>url.includes("period2=1577836800"))); assert.ok(calls.some(url=>url.includes("period2=1767225600"))); assert.ok(calls.some(url=>url.includes("period2=1735689600"))); assert.ok(calls.some(url=>url.includes("period2=1704067200"))); assert.equal(result.financials[0].revenue,1000); assert.equal(result.quote.price,100);
+  assert.equal(calls.length,14); assert.ok(calls[1].includes("period1=1388534400")); assert.ok(calls.some(url=>url.includes("period2=1577836800"))); assert.ok(calls.some(url=>url.includes("period2=1767225600"))); assert.ok(calls.some(url=>url.includes("period2=1735689600"))); assert.ok(calls.some(url=>url.includes("period2=1704067200"))); assert.equal(result.financials[0].revenue,1000); assert.equal(result.quote.price,100);
+  assert.equal(result.historical_2014_coverage.start,"2014-01-01");
+  assert.equal(result.historical_2014_coverage.annual_periods,1);
+  assert.equal(result.historical_2015_coverage.start,"2015-01-01");
   assert.equal(result.historical_2015_coverage.annual_periods,1);
   assert.equal(result.historical_2016_coverage.start,"2016-01-01");
   assert.equal(result.historical_2016_coverage.annual_periods,1);
@@ -58,5 +61,5 @@ test("manual information refresh requests both current fundamentals and historic
   assert.equal(result.historical_2023_coverage.start,"2023-01-01");
   assert.equal(result.historical_2023_coverage.annual_periods,1);
   assert.equal(result.historical_2024_coverage.annual_periods,1);
-  assert.deepEqual(result.financials.map(row=>row.period_end),["2015-12-31","2016-12-31","2017-12-31","2018-12-31","2019-12-31","2020-12-31","2021-12-31","2022-12-31","2023-12-31","2024-12-31","2025-09-30"]);
+  assert.deepEqual(result.financials.map(row=>row.period_end),["2014-12-31","2015-12-31","2016-12-31","2017-12-31","2018-12-31","2019-12-31","2020-12-31","2021-12-31","2022-12-31","2023-12-31","2024-12-31","2025-09-30"]);
 });

@@ -19,7 +19,8 @@ test("every archived day pairs both exact-date indices and source flows, includi
   assert.equal(archive.history.filter(row=>row.date.startsWith("2017-")).length,243);
   assert.equal(archive.history.filter(row=>row.date.startsWith("2016-")).length,246);
   assert.equal(archive.history.filter(row=>row.date.startsWith("2015-")).length,248);
-  assert.equal(archive.history[0].date,"2015-01-02");
+  assert.equal(archive.history.filter(row=>row.date.startsWith("2014-")).length,245);
+  assert.equal(archive.history[0].date,"2014-01-02");
   const anomaly=archive.history.find(row=>row.date==="2015-10-08").markets.find(row=>row.market==="KOSDAQ");
   assert.equal(anomaly.market_net_difference,45000000);
   assert.ok(anomaly.source_warning);

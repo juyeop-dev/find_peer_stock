@@ -3,8 +3,11 @@ import { readFile } from "node:fs/promises";
 import test from "node:test";
 import ts from "typescript";
 import { gzipSync } from "node:zlib";
+import {priceArchiveUrl} from './compiled-price-archive.mjs';
+import {compactPriceArchive} from '../build/compact-public-data.mjs';
 
 let source = await readFile(new URL("../src/dataClient/stockHistoryClient.ts", import.meta.url), "utf8");
+source = source.replace('from "./priceArchive"', `from "${priceArchiveUrl}"`);
 source = source.replace('import { liveDetailFor, requestOriginal } from "./liveStockDataClient";', 'const liveDetailFor = () => undefined; const requestOriginal = () => { throw new Error("unit test should not request live data"); };');
 const javascript = ts.transpileModule(source, { compilerOptions: { module: ts.ModuleKind.ESNext, target: ts.ScriptTarget.ES2022 } }).outputText;
 const { CHART_PERIODS, chartPeriodLabel, chartStart, historyRange, yearCovered, getStockHistory, retainHistoricalPrices } = await import(`data:text/javascript;base64,${Buffer.from(javascript).toString("base64")}`);
@@ -105,5 +108,20 @@ test("a 2015 IPO's fresh short snapshot cannot hide its first trading year",asyn
   try {
     const result=await client.getStockHistory("IPO2015",undefined,undefined,false,{ticker:"IPO2015",currency:"USD",source:"short snapshot",first_trade_date:"2015-06-01",fetched_at:new Date().toISOString(),history:[point("2025-01-02"),point(today)]});
     assert.equal(result.history[0].date,"2015-06-01");assert.equal(calls.length,1);
+  } finally {globalThis.fetch=oldFetch;}
+});
+
+test('2014 archive controls preserve prior closes and read lossless prices through the real fetch client',async()=>{
+  assert.ok(CHART_PERIODS.includes('since2014'));
+  assert.equal(chartStart('2026-11-14','since2014'),'2014-01-01');
+  const points=['2013-12-27','2013-12-30','2014-01-02','2014-12-27','2014-12-29'].map(point);
+  assert.deepEqual(historyRange(points,'since2014'),points.slice(1));
+  const oldFetch=globalThis.fetch;
+  const client=await import(`data:text/javascript;base64,${Buffer.from(javascript.replaceAll('import.meta.env.BASE_URL','"/"')+'\n// delta archive integration').toString('base64')}`);
+  const archive={ticker:'DELTA2014',currency:'TWD',source:'verified original',fetched_at:new Date().toISOString(),prices:[['2013-12-30',10,5],['2014-01-02',11,5.5],['2014-12-27',12,6],['2014-12-29',13,6.5]]};
+  globalThis.fetch=async()=>new Response(gzipSync(JSON.stringify(compactPriceArchive(archive))));
+  try {
+    const result=await client.getStockHistory('DELTA2014',undefined,undefined,false);
+    assert.deepEqual(result.history.map(row=>[row.date,row.close,row.adjusted_close]),archive.prices);
   } finally {globalThis.fetch=oldFetch;}
 });

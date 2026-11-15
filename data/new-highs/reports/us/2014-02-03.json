@@ -1,0 +1,300 @@
+{
+  "schema_version": 1,
+  "market": "us",
+  "date": "2014-02-03",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "ASM",
+      "name": "Avino Silver & Gold Mines Ltd.",
+      "exchange": "AMEX",
+      "category": "Non-Energy Minerals",
+      "high_type": "52_week",
+      "reason": "업종: Non-Energy Minerals · Precious Metals",
+      "description": "Avino Silver & Gold Mines Ltd. · Precious Metals",
+      "change_pct": 7.1428576496993745,
+      "session_open": 1.7100000381469727,
+      "session_close": 1.7999999523162842,
+      "session_volume": 207500.0,
+      "currency": "USD",
+      "source_symbol": "AMEX:ASM",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/ASM/history/",
+        "date": "2014-02-03",
+        "daily_high": 1.7999999523162842,
+        "prior_all_time_or_current_month_high": 4.0,
+        "passes_close_filter": true,
+        "source_symbol": "AMEX:ASM",
+        "yahoo_symbol": "ASM"
+      }
+    },
+    {
+      "ticker": "AAL",
+      "name": "American Airlines Group Inc.",
+      "exchange": "NASDAQ",
+      "category": "Transportation",
+      "high_type": "52_week",
+      "reason": "업종: Transportation · Airlines",
+      "description": "American Airlines Group Inc. · Airlines",
+      "change_pct": 1.222056204875277,
+      "session_open": 33.95000076293945,
+      "session_close": 33.959999084472656,
+      "session_volume": 21739500.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:AAL",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/AAL/history/",
+        "date": "2014-02-03",
+        "daily_high": 34.47999954223633,
+        "prior_all_time_or_current_month_high": 63.27000045776367,
+        "passes_close_filter": true,
+        "source_symbol": "NASDAQ:AAL",
+        "yahoo_symbol": "AAL"
+      }
+    },
+    {
+      "ticker": "ABUS",
+      "name": "Arbutus Biopharma Corporation",
+      "exchange": "NASDAQ",
+      "category": "Health Technology",
+      "high_type": "all_time",
+      "reason": "업종: Health Technology · Pharmaceuticals: Major",
+      "description": "Arbutus Biopharma Corporation · Pharmaceuticals: Major",
+      "change_pct": 3.1518594497203622,
+      "session_open": 13.829999923706055,
+      "session_close": 14.399999618530273,
+      "session_volume": 437400.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:ABUS",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/ABUS/history/",
+        "date": "2014-02-03",
+        "daily_high": 14.960000038146973,
+        "prior_all_time_or_current_month_high": 14.960000038146973,
+        "passes_close_filter": true,
+        "source_symbol": "NASDAQ:ABUS",
+        "yahoo_symbol": "ABUS"
+      }
+    },
+    {
+      "ticker": "CNVS",
+      "name": "Cineverse Corp. Class A",
+      "exchange": "NASDAQ",
+      "category": "Consumer Services",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Services · Movies/Entertainment",
+      "description": "Cineverse Corp. Class A · Movies/Entertainment",
+      "change_pct": 4.545454545454541,
+      "session_open": 540.0,
+      "session_close": 552.0,
+      "session_volume": 3055.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:CNVS",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/CNVS/history/",
+        "date": "2014-02-03",
+        "daily_high": 580.0,
+        "prior_all_time_or_current_month_high": 2946.0,
+        "passes_close_filter": true,
+        "source_symbol": "NASDAQ:CNVS",
+        "yahoo_symbol": "CNVS"
+      }
+    },
+    {
+      "ticker": "GSAT",
+      "name": "Globalstar, Inc.",
+      "exchange": "NASDAQ",
+      "category": "Communications",
+      "high_type": "52_week",
+      "reason": "업종: Communications · Wireless Telecommunications",
+      "description": "Globalstar, Inc. · Wireless Telecommunications",
+      "change_pct": 14.778324752874639,
+      "session_open": 30.75,
+      "session_close": 34.95000076293945,
+      "session_volume": 922700.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:GSAT",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/GSAT/history/",
+        "date": "2014-02-03",
+        "daily_high": 35.849998474121094,
+        "prior_all_time_or_current_month_high": 225.14999389648438,
+        "passes_close_filter": true,
+        "source_symbol": "NASDAQ:GSAT",
+        "yahoo_symbol": "GSAT"
+      }
+    },
+    {
+      "ticker": "MBUU",
+      "name": "Malibu Boats, Inc. Class A",
+      "exchange": "NASDAQ",
+      "category": "Consumer Durables",
+      "high_type": "all_time",
+      "reason": "업종: Consumer Durables · Recreational Products",
+      "description": "Malibu Boats, Inc. Class A · Recreational Products",
+      "change_pct": 1.9718331350407237,
+      "session_open": 17.639999389648438,
+      "session_close": 18.100000381469727,
+      "session_volume": 240100.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:MBUU",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/MBUU/history/",
+        "date": "2014-02-03",
+        "daily_high": 18.200000762939453,
+        "prior_all_time_or_current_month_high": 18.200000762939453,
+        "passes_close_filter": true,
+        "source_symbol": "NASDAQ:MBUU",
+        "yahoo_symbol": "MBUU"
+      }
+    },
+    {
+      "ticker": "NWFL",
+      "name": "Norwood Financial Corp.",
+      "exchange": "NASDAQ",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "업종: Finance · Regional Banks",
+      "description": "Norwood Financial Corp. · Regional Banks",
+      "change_pct": 7.999991853358912,
+      "session_open": 19.98666763305664,
+      "session_close": 21.239999771118164,
+      "session_volume": 16650.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:NWFL",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/NWFL/history/",
+        "date": "2014-02-03",
+        "daily_high": 21.239999771118164,
+        "prior_all_time_or_current_month_high": 21.239999771118164,
+        "passes_close_filter": true,
+        "source_symbol": "NASDAQ:NWFL",
+        "yahoo_symbol": "NWFL"
+      }
+    },
+    {
+      "ticker": "SIEB",
+      "name": "Siebert Financial Corp.",
+      "exchange": "NASDAQ",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "업종: Finance · Investment Banks/Brokers",
+      "description": "Siebert Financial Corp. · Investment Banks/Brokers",
+      "change_pct": 30.952375159898573,
+      "session_open": 3.0899999141693115,
+      "session_close": 3.8499999046325684,
+      "session_volume": 102900.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:SIEB",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/SIEB/history/",
+        "date": "2014-02-03",
+        "daily_high": 4.449999809265137,
+        "prior_all_time_or_current_month_high": 70.625,
+        "passes_close_filter": true,
+        "source_symbol": "NASDAQ:SIEB",
+        "yahoo_symbol": "SIEB"
+      }
+    },
+    {
+      "ticker": "TSBK",
+      "name": "Timberland Bancorp, Inc.",
+      "exchange": "NASDAQ",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "업종: Finance · Savings Banks",
+      "description": "Timberland Bancorp, Inc. · Savings Banks",
+      "change_pct": 0.6386833447133311,
+      "session_open": 11.0,
+      "session_close": 11.029999732971191,
+      "session_volume": 18700.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:TSBK",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/TSBK/history/",
+        "date": "2014-02-03",
+        "daily_high": 11.109999656677246,
+        "prior_all_time_or_current_month_high": 19.530000686645508,
+        "passes_close_filter": true,
+        "source_symbol": "NASDAQ:TSBK",
+        "yahoo_symbol": "TSBK"
+      }
+    },
+    {
+      "ticker": "TCI",
+      "name": "Transcontinental Realty Investors, Inc.",
+      "exchange": "NYSE",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "업종: Finance · Real Estate Development",
+      "description": "Transcontinental Realty Investors, Inc. · Real Estate Development",
+      "change_pct": 0.2722298704630033,
+      "session_open": 11.050000190734863,
+      "session_close": 11.050000190734863,
+      "session_volume": 300.0,
+      "currency": "USD",
+      "source_symbol": "NYSE:TCI",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/TCI/history/",
+        "date": "2014-02-03",
+        "daily_high": 11.050000190734863,
+        "prior_all_time_or_current_month_high": 22.190000534057617,
+        "passes_close_filter": true,
+        "source_symbol": "NYSE:TCI",
+        "yahoo_symbol": "TCI"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-11-13T16:10:58.739247+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 5704,
+    "history_symbols": 2655,
+    "inactive_symbols": 3046,
+    "failed_symbols": 3,
+    "coverage_ratio": 0.9988713318284425,
+    "coverage_by_exchange": {
+      "NASDAQ": {
+        "covered": 1322,
+        "total": 1325
+      },
+      "NYSE": {
+        "covered": 1189,
+        "total": 1189
+      },
+      "AMEX": {
+        "covered": 144,
+        "total": 144
+      }
+    },
+    "session_symbols": 2509,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-11-13T16:10:58.739247+00:00"
+}

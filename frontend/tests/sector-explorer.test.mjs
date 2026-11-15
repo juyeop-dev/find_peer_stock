@@ -2,9 +2,10 @@ import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import test from "node:test";
 import ts from "typescript";
+import {priceArchiveUrl} from './compiled-price-archive.mjs';
 
 const transpile = text => ts.transpileModule(text,{compilerOptions:{module:ts.ModuleKind.ESNext,target:ts.ScriptTarget.ES2022}}).outputText;
-const historySource = (await readFile(new URL("../src/dataClient/stockHistoryClient.ts",import.meta.url),"utf8")).replace('import { liveDetailFor, requestOriginal } from "./liveStockDataClient";', 'const liveDetailFor=()=>undefined; const requestOriginal=()=>{throw new Error("No original request expected")};');
+const historySource = (await readFile(new URL("../src/dataClient/stockHistoryClient.ts",import.meta.url),"utf8")).replace('from "./priceArchive"', `from "${priceArchiveUrl}"`).replace('import { liveDetailFor, requestOriginal } from "./liveStockDataClient";', 'const liveDetailFor=()=>undefined; const requestOriginal=()=>{throw new Error("No original request expected")};');
 const historyUrl = `data:text/javascript;base64,${Buffer.from(transpile(historySource)).toString("base64")}`;
 const source = (await readFile(new URL("../src/dataClient/sectorExplorer.ts",import.meta.url),"utf8")).replace('from "./stockHistoryClient"',`from "${historyUrl}"`);
 const {sectorHistorySeries,sectorHistoryForDate} = await import(`data:text/javascript;base64,${Buffer.from(transpile(source)).toString("base64")}`);

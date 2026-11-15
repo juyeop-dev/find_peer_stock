@@ -1,0 +1,321 @@
+{
+  "schema_version": 1,
+  "market": "taiwan",
+  "date": "2014-09-24",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "3232.TWO",
+      "name": "Sentronic International Corp.",
+      "exchange": "TPEX",
+      "category": "Distribution Services",
+      "high_type": "all_time",
+      "reason": "업종: Distribution Services · Electronics Distributors",
+      "description": "Sentronic International Corp. · Electronics Distributors",
+      "change_pct": 6.924098973000525,
+      "session_open": 67.9280776977539,
+      "session_close": 73.21643829345703,
+      "session_volume": 793149.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:3232",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3232.TWO/history/",
+        "date": "2014-09-24",
+        "daily_high": 73.21643829345703,
+        "prior_all_time_or_current_month_high": 73.21643829345703,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:3232",
+        "yahoo_symbol": "3232.TWO"
+      }
+    },
+    {
+      "ticker": "3285.TWO",
+      "name": "Microtips Technology Inc.",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Electronic Production Equipment",
+      "description": "Microtips Technology Inc. · Electronic Production Equipment",
+      "change_pct": 6.99300674427783,
+      "session_open": 21.549999237060547,
+      "session_close": 22.950000762939453,
+      "session_volume": 2206539.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:3285",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3285.TWO/history/",
+        "date": "2014-09-24",
+        "daily_high": 22.950000762939453,
+        "prior_all_time_or_current_month_high": 28.75,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:3285",
+        "yahoo_symbol": "3285.TWO"
+      }
+    },
+    {
+      "ticker": "3520.TWO",
+      "name": "Jhen Vei Electronic Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Electronic Components",
+      "description": "Jhen Vei Electronic Co., Ltd. · Electronic Components",
+      "change_pct": 6.968648859690574,
+      "session_open": 158.62583923339844,
+      "session_close": 168.895263671875,
+      "session_volume": 236685.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:3520",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3520.TWO/history/",
+        "date": "2014-09-24",
+        "daily_high": 168.895263671875,
+        "prior_all_time_or_current_month_high": 168.895263671875,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:3520",
+        "yahoo_symbol": "3520.TWO"
+      }
+    },
+    {
+      "ticker": "6113.TWO",
+      "name": "Asec International Corporation",
+      "exchange": "TPEX",
+      "category": "Distribution Services",
+      "high_type": "52_week",
+      "reason": "업종: Distribution Services · Electronics Distributors",
+      "description": "Asec International Corporation · Electronics Distributors",
+      "change_pct": 6.926397843794385,
+      "session_open": 11.333333015441895,
+      "session_close": 11.761903762817383,
+      "session_volume": 7314692.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:6113",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6113.TWO/history/",
+        "date": "2014-09-24",
+        "daily_high": 11.761903762817383,
+        "prior_all_time_or_current_month_high": 29.428571701049805,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:6113",
+        "yahoo_symbol": "6113.TWO"
+      }
+    },
+    {
+      "ticker": "6146.TWO",
+      "name": "Sporton International Inc.",
+      "exchange": "TPEX",
+      "category": "Commercial Services",
+      "high_type": "all_time",
+      "reason": "업종: Commercial Services · Miscellaneous Commercial Services",
+      "description": "Sporton International Inc. · Miscellaneous Commercial Services",
+      "change_pct": 0.0,
+      "session_open": 145.09263610839844,
+      "session_close": 145.09263610839844,
+      "session_volume": 3908126.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:6146",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6146.TWO/history/",
+        "date": "2014-09-24",
+        "daily_high": 153.72909545898438,
+        "prior_all_time_or_current_month_high": 153.72909545898438,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:6146",
+        "yahoo_symbol": "6146.TWO"
+      }
+    },
+    {
+      "ticker": "6470.TWO",
+      "name": "U-MEDIA Communications Inc",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Telecommunications Equipment",
+      "description": "U-MEDIA Communications Inc · Telecommunications Equipment",
+      "change_pct": 0.0,
+      "session_open": 32.48014831542969,
+      "session_close": 32.48014831542969,
+      "session_volume": 171518603.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:6470",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6470.TWO/history/",
+        "date": "2014-09-24",
+        "daily_high": 35.264163970947266,
+        "prior_all_time_or_current_month_high": 35.264163970947266,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:6470",
+        "yahoo_symbol": "6470.TWO"
+      }
+    },
+    {
+      "ticker": "8085.TWO",
+      "name": "Forward Electronics Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Electronic Equipment/Instruments",
+      "description": "Forward Electronics Co., Ltd. · Electronic Equipment/Instruments",
+      "change_pct": 6.9069014331896605,
+      "session_open": 7.526794910430908,
+      "session_close": 7.998623847961426,
+      "session_volume": 2970550.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:8085",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/8085.TWO/history/",
+        "date": "2014-09-24",
+        "daily_high": 7.998623847961426,
+        "prior_all_time_or_current_month_high": 25.958229064941406,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:8085",
+        "yahoo_symbol": "8085.TWO"
+      }
+    },
+    {
+      "ticker": "2104.TW",
+      "name": "International CSRC Investment Holdings Co. Ltd.",
+      "exchange": "TWSE",
+      "category": "Process Industries",
+      "high_type": "52_week",
+      "reason": "업종: Process Industries · Chemicals: Specialty",
+      "description": "International CSRC Investment Holdings Co. Ltd. · Chemicals: Specialty",
+      "change_pct": 1.7214383503738162,
+      "session_open": 21.54566764831543,
+      "session_close": 21.916563034057617,
+      "session_volume": 2529821.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2104",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2104.TW/history/",
+        "date": "2014-09-24",
+        "daily_high": 21.950279235839844,
+        "prior_all_time_or_current_month_high": 35.87821578979492,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:2104",
+        "yahoo_symbol": "2104.TW"
+      }
+    },
+    {
+      "ticker": "2354.TW",
+      "name": "Foxconn Technology Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Electronic Production Equipment",
+      "description": "Foxconn Technology Co., Ltd. · Electronic Production Equipment",
+      "change_pct": 1.8766743725579182,
+      "session_open": 74.0123519897461,
+      "session_close": 74.50250244140625,
+      "session_volume": 11094607.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2354",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2354.TW/history/",
+        "date": "2014-09-24",
+        "daily_high": 75.48279571533203,
+        "prior_all_time_or_current_month_high": 223.4049835205078,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:2354",
+        "yahoo_symbol": "2354.TW"
+      }
+    },
+    {
+      "ticker": "3044.TW",
+      "name": "Tripod Technology Corporation",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Electronic Components",
+      "description": "Tripod Technology Corporation · Electronic Components",
+      "change_pct": 0.15384380634013706,
+      "session_open": 65.0,
+      "session_close": 65.0999984741211,
+      "session_volume": 8795000.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:3044",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3044.TW/history/",
+        "date": "2014-09-24",
+        "daily_high": 66.4000015258789,
+        "prior_all_time_or_current_month_high": 133.7971649169922,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:3044",
+        "yahoo_symbol": "3044.TW"
+      }
+    },
+    {
+      "ticker": "8016.TW",
+      "name": "Sitronix Technology Corp.",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Semiconductors",
+      "description": "Sitronix Technology Corp. · Semiconductors",
+      "change_pct": 4.809054699631687,
+      "session_open": 70.9000015258789,
+      "session_close": 74.0999984741211,
+      "session_volume": 5627000.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:8016",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/8016.TW/history/",
+        "date": "2014-09-24",
+        "daily_high": 74.80000305175781,
+        "prior_all_time_or_current_month_high": 126.92611694335938,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:8016",
+        "yahoo_symbol": "8016.TW"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-11-13T16:00:16.544555+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 2362,
+    "history_symbols": 1574,
+    "inactive_symbols": 778,
+    "failed_symbols": 10,
+    "coverage_ratio": 0.9936868686868687,
+    "coverage_by_exchange": {
+      "TWSE": {
+        "covered": 865,
+        "total": 872
+      },
+      "TPEX": {
+        "covered": 709,
+        "total": 712
+      }
+    },
+    "session_symbols": 1538,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-11-13T16:00:16.544555+00:00"
+}

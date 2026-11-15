@@ -19,6 +19,7 @@ from backfill_yahoo_calendars import _cache_path
 
 YEAR = 2023
 HISTORY_START = "2022-12-20"
+CACHE_YEARS = None
 
 def join_prices(previous, older, start=None, *, split_only=None):
     if previous["ticker"] != older["ticker"] or previous["currency"] != older["currency"]:
@@ -76,9 +77,9 @@ def main():
         else:
             candidates = []
             if symbol := charts.yahoo_symbol(row["ticker"]):
-                candidates.extend((cached_yahoo_path(symbol, year), "yahoo") for year in range(YEAR, 2024))
+                candidates.extend((cached_yahoo_path(symbol, year), "yahoo") for year in (CACHE_YEARS or range(YEAR, 2024)))
             if ":" in row["ticker"]:
-                for count in [2800, 2500, 2000, 1500]:
+                for count in [3700, 3200, 2800, 2500, 2000, 1500]:
                     digest = hashlib.sha256(f"{row['ticker']}:1D:{count}".encode()).hexdigest()
                     candidates.append((info.ROOT / "data/tmp_tradingview_chart/1D" / f"{digest}.json", "tradingview"))
             value = None

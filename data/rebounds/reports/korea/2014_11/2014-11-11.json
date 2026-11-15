@@ -1,0 +1,116 @@
+{
+  "schema_version": 1,
+  "market": "korea",
+  "date": "2014-11-11",
+  "rules": {
+    "KOSPI": {
+      "market_cap_min": 5000000000000,
+      "rebound_min": 8
+    },
+    "KOSDAQ": {
+      "market_cap_min": 1000000000000,
+      "rebound_min": 5
+    }
+  },
+  "entries": [
+    {
+      "ticker": "086280.KS",
+      "name": "현대글로비스",
+      "exchange": "KOSPI",
+      "currency": "KRW",
+      "price": 301000.0,
+      "low": 272000.0,
+      "change_pct": 8.27,
+      "rebound_pct": 10.661764705882359,
+      "market_cap": 11287500000000.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2014-11-11",
+      "sector": "미분류",
+      "industry": "미분류"
+    },
+    {
+      "ticker": "130960.KQ",
+      "name": "CJ E&M",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 36900.0,
+      "low": 34400.0,
+      "change_pct": 7.27,
+      "rebound_pct": 7.267441860465107,
+      "market_cap": 1429214084100.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2014-11-11",
+      "sector": "미분류",
+      "industry": "미분류"
+    },
+    {
+      "ticker": "026960.KQ",
+      "name": "동서",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 23550.0,
+      "low": 22150.0,
+      "change_pct": 7.53,
+      "rebound_pct": 6.320541760722342,
+      "market_cap": 2347935000000.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2014-11-11",
+      "sector": "미분류",
+      "industry": "미분류"
+    },
+    {
+      "ticker": "168330.KQ",
+      "name": "내츄럴엔도텍",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 54600.0,
+      "low": 51500.0,
+      "change_pct": 5.81,
+      "rebound_pct": 6.0194174757281615,
+      "market_cap": 1055649067200.0,
+      "market_cap_currency": "KRW",
+      "market_cap_date": "2014-11-11",
+      "sector": "미분류",
+      "industry": "미분류"
+    }
+  ],
+  "source_metadata": {
+    "provider": "KRX daily data via FinanceData/marcap",
+    "fetched_at": "2026-11-13T15:18:07.505383+00:00",
+    "reconstructed_at": "2026-11-13T15:46:15.288377+00:00",
+    "session": "daily",
+    "timezone": "Asia/Seoul",
+    "scanned_symbols": 1986,
+    "common_symbols_by_board": {
+      "KOSPI": 773,
+      "KOSDAQ": 1023
+    },
+    "excluded": {
+      "declining": 16,
+      "below_rebound": 38,
+      "unsupported_listing": 190,
+      "no_trading": 29,
+      "below_market_cap": 1709
+    },
+    "latest_session_by_board": {
+      "KOSPI": "2014-11-11",
+      "KOSDAQ": "2014-11-11"
+    },
+    "source_revision": "eeed0817d1478597b738a3a6149c170ec7e3f4cb",
+    "source_sha256": "4e8ec59dd7bbc6a58ba4d3e90f271e6eb5fd87b603a4360247c016497eefe351",
+    "price_basis": "Unadjusted KRX Low and Close from the same daily source row",
+    "market_cap_basis": "Dated KRX Marcap in KRW; verified against Close * Stocks",
+    "listing_basis": "Dated KOSPI/KOSDAQ common share codes ending in 0; includes historical delistings",
+    "note": "KRX 당시 상장 종목의 당일 저가·종가·시가총액으로 복원한 기록입니다. 현재 시총이나 분할 조정 가격을 소급 적용하지 않습니다."
+  },
+  "sources": [
+    {
+      "label": "KRX daily data via FinanceData/marcap",
+      "url": "https://github.com/FinanceData/marcap"
+    },
+    {
+      "label": "2014년 고정 버전 원본",
+      "url": "https://raw.githubusercontent.com/FinanceData/marcap/eeed0817d1478597b738a3a6149c170ec7e3f4cb/data/marcap-2014.parquet"
+    }
+  ]
+}

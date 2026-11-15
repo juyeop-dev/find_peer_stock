@@ -1,0 +1,271 @@
+{
+  "schema_version": 1,
+  "market": "china",
+  "date": "2014-05-20",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "600760.SS",
+      "name": "AVIC Shenyang Aircraft Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Aerospace & Defense",
+      "description": "AVIC Shenyang Aircraft Co., Ltd. Class A · Aerospace & Defense",
+      "change_pct": 10.013917624870938,
+      "session_open": 3.622447967529297,
+      "session_close": 4.035714149475098,
+      "session_volume": 140715659.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:600760",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/600760.SS/history/",
+        "date": "2014-05-20",
+        "daily_high": 4.035714149475098,
+        "prior_all_time_or_current_month_high": 9.173468589782715,
+        "passes_close_filter": true,
+        "source_symbol": "SSE:600760",
+        "yahoo_symbol": "600760.SS"
+      }
+    },
+    {
+      "ticker": "000607.SZ",
+      "name": "Zhejiang Huamei Holding Co. Ltd.",
+      "exchange": "SZSE",
+      "category": "Consumer Services",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Services · Publishing: Newspapers",
+      "description": "Zhejiang Huamei Holding Co. Ltd. · Publishing: Newspapers",
+      "change_pct": 10.042741116844356,
+      "session_open": 5.150000095367432,
+      "session_close": 5.150000095367432,
+      "session_volume": 322518.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:000607",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/000607.SZ/history/",
+        "date": "2014-05-20",
+        "daily_high": 5.150000095367432,
+        "prior_all_time_or_current_month_high": 10.220000267028809,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:000607",
+        "yahoo_symbol": "000607.SZ"
+      }
+    },
+    {
+      "ticker": "000670.SZ",
+      "name": "Infotmic Co. Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Semiconductors",
+      "description": "Infotmic Co. Ltd. Class A · Semiconductors",
+      "change_pct": 5.0062627407744476,
+      "session_open": 5.593332767486572,
+      "session_close": 5.593332767486572,
+      "session_volume": 21514404.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:000670",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/000670.SZ/history/",
+        "date": "2014-05-20",
+        "daily_high": 5.593332767486572,
+        "prior_all_time_or_current_month_high": 6.033332824707031,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:000670",
+        "yahoo_symbol": "000670.SZ"
+      }
+    },
+    {
+      "ticker": "002235.SZ",
+      "name": "Xiamen Anne Corporation Limited Class A",
+      "exchange": "SZSE",
+      "category": "Process Industries",
+      "high_type": "all_time",
+      "reason": "업종: Process Industries · Pulp & Paper",
+      "description": "Xiamen Anne Corporation Limited Class A · Pulp & Paper",
+      "change_pct": 1.8072271636027981,
+      "session_open": 8.733332633972168,
+      "session_close": 9.013333320617676,
+      "session_volume": 89123332.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002235",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002235.SZ/history/",
+        "date": "2014-05-20",
+        "daily_high": 9.568887710571289,
+        "prior_all_time_or_current_month_high": 9.568887710571289,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:002235",
+        "yahoo_symbol": "002235.SZ"
+      }
+    },
+    {
+      "ticker": "002387.SZ",
+      "name": "Visionox Technology Inc. Class A",
+      "exchange": "SZSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Computer Peripherals",
+      "description": "Visionox Technology Inc. Class A · Computer Peripherals",
+      "change_pct": 0.31251089647477137,
+      "session_open": 8.466666221618652,
+      "session_close": 8.5600004196167,
+      "session_volume": 14468134.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002387",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002387.SZ/history/",
+        "date": "2014-05-20",
+        "daily_high": 8.640000343322754,
+        "prior_all_time_or_current_month_high": 13.894585609436035,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:002387",
+        "yahoo_symbol": "002387.SZ"
+      }
+    },
+    {
+      "ticker": "002404.SZ",
+      "name": "Zhejiang Jiaxin Silk Corp. Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Process Industries",
+      "high_type": "52_week",
+      "reason": "업종: Process Industries · Textiles",
+      "description": "Zhejiang Jiaxin Silk Corp. Ltd. Class A · Textiles",
+      "change_pct": 5.6650251801734,
+      "session_open": 4.065000057220459,
+      "session_close": 4.289999961853027,
+      "session_volume": 24721478.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002404",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002404.SZ/history/",
+        "date": "2014-05-20",
+        "daily_high": 4.335000038146973,
+        "prior_all_time_or_current_month_high": 5.923076152801514,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:002404",
+        "yahoo_symbol": "002404.SZ"
+      }
+    },
+    {
+      "ticker": "002539.SZ",
+      "name": "Chengdu Wintrue Holding Co. Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Process Industries",
+      "high_type": "52_week",
+      "reason": "업종: Process Industries · Chemicals: Agricultural",
+      "description": "Chengdu Wintrue Holding Co. Ltd. Class A · Chemicals: Agricultural",
+      "change_pct": 8.273382066205759,
+      "session_open": 4.443999767303467,
+      "session_close": 4.815999984741211,
+      "session_volume": 34329257.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002539",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002539.SZ/history/",
+        "date": "2014-05-20",
+        "daily_high": 4.875999927520752,
+        "prior_all_time_or_current_month_high": 7.335999965667725,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:002539",
+        "yahoo_symbol": "002539.SZ"
+      }
+    },
+    {
+      "ticker": "002626.SZ",
+      "name": "Xiamen Kingdomway Group Co. Class A",
+      "exchange": "SZSE",
+      "category": "Health Technology",
+      "high_type": "all_time",
+      "reason": "업종: Health Technology · Pharmaceuticals: Major",
+      "description": "Xiamen Kingdomway Group Co. Class A · Pharmaceuticals: Major",
+      "change_pct": 4.289851534193834,
+      "session_open": 10.943750381469727,
+      "session_close": 11.243749618530273,
+      "session_volume": 8053721.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002626",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002626.SZ/history/",
+        "date": "2014-05-20",
+        "daily_high": 11.246874809265137,
+        "prior_all_time_or_current_month_high": 11.246874809265137,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:002626",
+        "yahoo_symbol": "002626.SZ"
+      }
+    },
+    {
+      "ticker": "300011.SZ",
+      "name": "Beijing Dinghan Technology Group Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Electrical Products",
+      "description": "Beijing Dinghan Technology Group Co., Ltd. Class A · Electrical Products",
+      "change_pct": 6.427224102829521,
+      "session_open": 10.710000038146973,
+      "session_close": 11.260000228881836,
+      "session_volume": 13982689.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:300011",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/300011.SZ/history/",
+        "date": "2014-05-20",
+        "daily_high": 11.479999542236328,
+        "prior_all_time_or_current_month_high": 13.162740707397461,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:300011",
+        "yahoo_symbol": "300011.SZ"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-11-13T16:09:53.777002+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 5312,
+    "history_symbols": 2435,
+    "inactive_symbols": 2869,
+    "failed_symbols": 8,
+    "coverage_ratio": 0.9967253376995497,
+    "coverage_by_exchange": {
+      "SSE": {
+        "covered": 933,
+        "total": 935
+      },
+      "SZSE": {
+        "covered": 1502,
+        "total": 1508
+      }
+    },
+    "session_symbols": 2361,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-11-13T16:09:53.777002+00:00"
+}

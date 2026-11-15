@@ -1,0 +1,271 @@
+{
+  "schema_version": 1,
+  "market": "taiwan",
+  "date": "2014-12-11",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "3234.TWO",
+      "name": "Truelight Corporation",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Semiconductors",
+      "description": "Truelight Corporation · Semiconductors",
+      "change_pct": 1.8633606735900754,
+      "session_open": 30.169172286987305,
+      "session_close": 30.731332778930664,
+      "session_volume": 8327856.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:3234",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3234.TWO/history/",
+        "date": "2014-12-11",
+        "daily_high": 31.621416091918945,
+        "prior_all_time_or_current_month_high": 33.59759521484375,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:3234",
+        "yahoo_symbol": "3234.TWO"
+      }
+    },
+    {
+      "ticker": "4417.TWO",
+      "name": "King Chou Marine Technology Co., Ltd",
+      "exchange": "TPEX",
+      "category": "Process Industries",
+      "high_type": "52_week",
+      "reason": "업종: Process Industries · Textiles",
+      "description": "King Chou Marine Technology Co., Ltd · Textiles",
+      "change_pct": 5.793448516784827,
+      "session_open": 19.227108001708984,
+      "session_close": 19.988576889038086,
+      "session_volume": 2268049.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:4417",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4417.TWO/history/",
+        "date": "2014-12-11",
+        "daily_high": 20.178945541381836,
+        "prior_all_time_or_current_month_high": 29.008743286132812,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:4417",
+        "yahoo_symbol": "4417.TWO"
+      }
+    },
+    {
+      "ticker": "5321.TWO",
+      "name": "United Recommend International Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Retail Trade",
+      "high_type": "52_week",
+      "reason": "업종: Retail Trade · Internet Retail",
+      "description": "United Recommend International Co., Ltd. · Internet Retail",
+      "change_pct": 4.697984051516424,
+      "session_open": 15.059967994689941,
+      "session_close": 15.388788223266602,
+      "session_volume": 32251.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:5321",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/5321.TWO/history/",
+        "date": "2014-12-11",
+        "daily_high": 15.388788223266602,
+        "prior_all_time_or_current_month_high": 48.98627853393555,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:5321",
+        "yahoo_symbol": "5321.TWO"
+      }
+    },
+    {
+      "ticker": "5465.TWO",
+      "name": "Loyalty Founder Enterprise Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Miscellaneous Manufacturing",
+      "description": "Loyalty Founder Enterprise Co., Ltd. · Miscellaneous Manufacturing",
+      "change_pct": 4.4444448764457745,
+      "session_open": 14.608135223388672,
+      "session_close": 15.371246337890625,
+      "session_volume": 1962547.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:5465",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/5465.TWO/history/",
+        "date": "2014-12-11",
+        "daily_high": 15.698293685913086,
+        "prior_all_time_or_current_month_high": 15.698293685913086,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:5465",
+        "yahoo_symbol": "5465.TWO"
+      }
+    },
+    {
+      "ticker": "6179.TWO",
+      "name": "ATE Energy International Co. Ltd.",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Computer Peripherals",
+      "description": "ATE Energy International Co. Ltd. · Computer Peripherals",
+      "change_pct": 6.865669530196761,
+      "session_open": 33.70828628540039,
+      "session_close": 34.577552795410156,
+      "session_volume": 1651740.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:6179",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6179.TWO/history/",
+        "date": "2014-12-11",
+        "daily_high": 34.577552795410156,
+        "prior_all_time_or_current_month_high": 34.577552795410156,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:6179",
+        "yahoo_symbol": "6179.TWO"
+      }
+    },
+    {
+      "ticker": "6417.TWO",
+      "name": "Securitag Assembly Group Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Electronic Production Equipment",
+      "description": "Securitag Assembly Group Co., Ltd. · Electronic Production Equipment",
+      "change_pct": 5.763506297383736,
+      "session_open": 34.72858810424805,
+      "session_close": 34.72858810424805,
+      "session_volume": 111383.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:6417",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6417.TWO/history/",
+        "date": "2014-12-11",
+        "daily_high": 35.10904312133789,
+        "prior_all_time_or_current_month_high": 35.10904312133789,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:6417",
+        "yahoo_symbol": "6417.TWO"
+      }
+    },
+    {
+      "ticker": "6499.TWO",
+      "name": "Medeon Biodesign, Inc.",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Electronic Equipment/Instruments",
+      "description": "Medeon Biodesign, Inc. · Electronic Equipment/Instruments",
+      "change_pct": 0.0,
+      "session_open": 92.43303680419922,
+      "session_close": 92.43303680419922,
+      "session_volume": 864803.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:6499",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6499.TWO/history/",
+        "date": "2014-12-11",
+        "daily_high": 139.89865112304688,
+        "prior_all_time_or_current_month_high": 139.89865112304688,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:6499",
+        "yahoo_symbol": "6499.TWO"
+      }
+    },
+    {
+      "ticker": "8085.TWO",
+      "name": "Forward Electronics Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Electronic Equipment/Instruments",
+      "description": "Forward Electronics Co., Ltd. · Electronic Equipment/Instruments",
+      "change_pct": 0.48779958557989556,
+      "session_open": 11.514874458312988,
+      "session_close": 11.571043968200684,
+      "session_volume": 1259304.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:8085",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/8085.TWO/history/",
+        "date": "2014-12-11",
+        "daily_high": 11.851895332336426,
+        "prior_all_time_or_current_month_high": 25.958229064941406,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:8085",
+        "yahoo_symbol": "8085.TWO"
+      }
+    },
+    {
+      "ticker": "2618.TW",
+      "name": "Eva Airways Corporation",
+      "exchange": "TWSE",
+      "category": "Transportation",
+      "high_type": "52_week",
+      "reason": "업종: Transportation · Airlines",
+      "description": "Eva Airways Corporation · Airlines",
+      "change_pct": 2.6482014260224007,
+      "session_open": 19.06526756286621,
+      "session_close": 19.107635498046875,
+      "session_volume": 46742459.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2618",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2618.TW/history/",
+        "date": "2014-12-11",
+        "daily_high": 19.74314308166504,
+        "prior_all_time_or_current_month_high": 33.45454406738281,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:2618",
+        "yahoo_symbol": "2618.TW"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-11-13T16:00:16.544555+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 2362,
+    "history_symbols": 1574,
+    "inactive_symbols": 778,
+    "failed_symbols": 10,
+    "coverage_ratio": 0.9936868686868687,
+    "coverage_by_exchange": {
+      "TWSE": {
+        "covered": 865,
+        "total": 872
+      },
+      "TPEX": {
+        "covered": 709,
+        "total": 712
+      }
+    },
+    "session_symbols": 1565,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-11-13T16:00:16.544555+00:00"
+}

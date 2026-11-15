@@ -1,0 +1,292 @@
+{
+  "schema_version": 1,
+  "market": "japan",
+  "date": "2014-02-20",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "1787.T",
+      "name": "Nakabohtec Corrosion Protecting Co., Ltd.",
+      "exchange": "TSE",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Electrical Products",
+      "description": "Nakabohtec Corrosion Protecting Co., Ltd. · Electrical Products",
+      "change_pct": 0.8174386920980936,
+      "session_open": 2220.0,
+      "session_close": 2220.0,
+      "session_volume": 2500.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:1787",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/1787.T/history/",
+        "date": "2014-02-20",
+        "daily_high": 2280.0,
+        "prior_all_time_or_current_month_high": 2280.0,
+        "passes_close_filter": true,
+        "source_symbol": "TSE:1787",
+        "yahoo_symbol": "1787.T"
+      }
+    },
+    {
+      "ticker": "2484.T",
+      "name": "DEMAE-CAN CO.LTD.",
+      "exchange": "TSE",
+      "category": "Transportation",
+      "high_type": "52_week",
+      "reason": "업종: Transportation · Air Freight/Couriers",
+      "description": "DEMAE-CAN CO.LTD. · Air Freight/Couriers",
+      "change_pct": 5.783489866534852,
+      "session_open": 253.375,
+      "session_close": 267.5,
+      "session_volume": 1344000.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:2484",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2484.T/history/",
+        "date": "2014-02-20",
+        "daily_high": 274.75,
+        "prior_all_time_or_current_month_high": 353.3333435058594,
+        "passes_close_filter": true,
+        "source_symbol": "TSE:2484",
+        "yahoo_symbol": "2484.T"
+      }
+    },
+    {
+      "ticker": "2922.T",
+      "name": "Natori Co., Ltd.",
+      "exchange": "TSE",
+      "category": "Consumer Non-Durables",
+      "high_type": "all_time",
+      "reason": "업종: Consumer Non-Durables · Food: Meat/Fish/Dairy",
+      "description": "Natori Co., Ltd. · Food: Meat/Fish/Dairy",
+      "change_pct": 1.8633540372670732,
+      "session_open": 1128.0,
+      "session_close": 1148.0,
+      "session_volume": 33300.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:2922",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2922.T/history/",
+        "date": "2014-02-20",
+        "daily_high": 1170.0,
+        "prior_all_time_or_current_month_high": 1170.0,
+        "passes_close_filter": true,
+        "source_symbol": "TSE:2922",
+        "yahoo_symbol": "2922.T"
+      }
+    },
+    {
+      "ticker": "3295.T",
+      "name": "Hulic Reit, Inc.",
+      "exchange": "TSE",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "업종: Finance · Real Estate Investment Trusts",
+      "description": "Hulic Reit, Inc. · Real Estate Investment Trusts",
+      "change_pct": 0.2892263195950928,
+      "session_open": 138500.0,
+      "session_close": 138700.0,
+      "session_volume": 8262.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:3295",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3295.T/history/",
+        "date": "2014-02-20",
+        "daily_high": 139400.0,
+        "prior_all_time_or_current_month_high": 139400.0,
+        "passes_close_filter": true,
+        "source_symbol": "TSE:3295",
+        "yahoo_symbol": "3295.T"
+      }
+    },
+    {
+      "ticker": "4674.T",
+      "name": "CRESCO Limited",
+      "exchange": "TSE",
+      "category": "Technology Services",
+      "high_type": "all_time",
+      "reason": "업종: Technology Services · Information Technology Services",
+      "description": "CRESCO Limited · Information Technology Services",
+      "change_pct": 1.9455252918287869,
+      "session_open": 254.5,
+      "session_close": 262.0,
+      "session_volume": 256000.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:4674",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4674.T/history/",
+        "date": "2014-02-20",
+        "daily_high": 267.5,
+        "prior_all_time_or_current_month_high": 267.5,
+        "passes_close_filter": true,
+        "source_symbol": "TSE:4674",
+        "yahoo_symbol": "4674.T"
+      }
+    },
+    {
+      "ticker": "5105.T",
+      "name": "Toyo Tire Corporation",
+      "exchange": "TSE",
+      "category": "Consumer Durables",
+      "high_type": "all_time",
+      "reason": "업종: Consumer Durables · Automotive Aftermarket",
+      "description": "Toyo Tire Corporation · Automotive Aftermarket",
+      "change_pct": 0.1434720229555264,
+      "session_open": 1384.0,
+      "session_close": 1396.0,
+      "session_volume": 2940000.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:5105",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/5105.T/history/",
+        "date": "2014-02-20",
+        "daily_high": 1424.0,
+        "prior_all_time_or_current_month_high": 1424.0,
+        "passes_close_filter": true,
+        "source_symbol": "TSE:5105",
+        "yahoo_symbol": "5105.T"
+      }
+    },
+    {
+      "ticker": "5542.T",
+      "name": "Shinhokoku Material Corp.",
+      "exchange": "TSE",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Metal Fabrication",
+      "description": "Shinhokoku Material Corp. · Metal Fabrication",
+      "change_pct": 27.777777777777768,
+      "session_open": 184.0,
+      "session_close": 184.0,
+      "session_volume": 30000.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:5542",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/5542.T/history/",
+        "date": "2014-02-20",
+        "daily_high": 184.0,
+        "prior_all_time_or_current_month_high": 1447.5,
+        "passes_close_filter": true,
+        "source_symbol": "TSE:5542",
+        "yahoo_symbol": "5542.T"
+      }
+    },
+    {
+      "ticker": "6071.T",
+      "name": "IBJ, Inc.",
+      "exchange": "TSE",
+      "category": "Technology Services",
+      "high_type": "all_time",
+      "reason": "업종: Technology Services · Information Technology Services",
+      "description": "IBJ, Inc. · Information Technology Services",
+      "change_pct": 4.252402223186724,
+      "session_open": 202.5,
+      "session_close": 211.11111450195312,
+      "session_volume": 340200.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:6071",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6071.T/history/",
+        "date": "2014-02-20",
+        "daily_high": 219.1666717529297,
+        "prior_all_time_or_current_month_high": 219.1666717529297,
+        "passes_close_filter": true,
+        "source_symbol": "TSE:6071",
+        "yahoo_symbol": "6071.T"
+      }
+    },
+    {
+      "ticker": "6467.T",
+      "name": "Nichidai Corporation",
+      "exchange": "TSE",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Metal Fabrication",
+      "description": "Nichidai Corporation · Metal Fabrication",
+      "change_pct": 4.920913884007039,
+      "session_open": 576.0,
+      "session_close": 597.0,
+      "session_volume": 80600.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:6467",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6467.T/history/",
+        "date": "2014-02-20",
+        "daily_high": 600.0,
+        "prior_all_time_or_current_month_high": 1600.0,
+        "passes_close_filter": true,
+        "source_symbol": "TSE:6467",
+        "yahoo_symbol": "6467.T"
+      }
+    },
+    {
+      "ticker": "7520.T",
+      "name": "Eco's Co., Ltd.",
+      "exchange": "TSE",
+      "category": "Retail Trade",
+      "high_type": "52_week",
+      "reason": "업종: Retail Trade · Food Retail",
+      "description": "Eco's Co., Ltd. · Food Retail",
+      "change_pct": 0.14727540500736325,
+      "session_open": 678.0,
+      "session_close": 680.0,
+      "session_volume": 11200.0,
+      "currency": "JPY",
+      "source_symbol": "TSE:7520",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/7520.T/history/",
+        "date": "2014-02-20",
+        "daily_high": 680.0,
+        "prior_all_time_or_current_month_high": 1329.0,
+        "passes_close_filter": true,
+        "source_symbol": "TSE:7520",
+        "yahoo_symbol": "7520.T"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-11-13T16:05:07.726112+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 3760,
+    "history_symbols": 2739,
+    "inactive_symbols": 1020,
+    "failed_symbols": 1,
+    "coverage_ratio": 0.9996350364963503,
+    "coverage_by_exchange": {
+      "TSE": {
+        "covered": 2739,
+        "total": 2740
+      }
+    },
+    "session_symbols": 2665,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-11-13T16:05:07.726112+00:00"
+}

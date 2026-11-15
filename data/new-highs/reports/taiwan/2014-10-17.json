@@ -1,0 +1,196 @@
+{
+  "schema_version": 1,
+  "market": "taiwan",
+  "date": "2014-10-17",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "6241.TWO",
+      "name": "Amigo Technology, Inc.",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Computer Processing Hardware",
+      "description": "Amigo Technology, Inc. · Computer Processing Hardware",
+      "change_pct": 7.000000293833297,
+      "session_open": 38.81774139404297,
+      "session_close": 41.67389678955078,
+      "session_volume": 1629113.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:6241",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6241.TWO/history/",
+        "date": "2014-10-17",
+        "daily_high": 41.67389678955078,
+        "prior_all_time_or_current_month_high": 69.58631896972656,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:6241",
+        "yahoo_symbol": "6241.TWO"
+      }
+    },
+    {
+      "ticker": "1732.TW",
+      "name": "Mao Bao Inc.",
+      "exchange": "TWSE",
+      "category": "Process Industries",
+      "high_type": "52_week",
+      "reason": "업종: Process Industries · Chemicals: Specialty",
+      "description": "Mao Bao Inc. · Chemicals: Specialty",
+      "change_pct": 6.9841294061570025,
+      "session_open": 15.899999618530273,
+      "session_close": 16.850000381469727,
+      "session_volume": 6836000.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:1732",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/1732.TW/history/",
+        "date": "2014-10-17",
+        "daily_high": 16.850000381469727,
+        "prior_all_time_or_current_month_high": 34.37641906738281,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:1732",
+        "yahoo_symbol": "1732.TW"
+      }
+    },
+    {
+      "ticker": "1776.TW",
+      "name": "Headway Advanced Materials Inc.",
+      "exchange": "TWSE",
+      "category": "Process Industries",
+      "high_type": "all_time",
+      "reason": "업종: Process Industries · Industrial Specialties",
+      "description": "Headway Advanced Materials Inc. · Industrial Specialties",
+      "change_pct": 4.459618495032891,
+      "session_open": 30.40935516357422,
+      "session_close": 30.40935516357422,
+      "session_volume": 2.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:1776",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/1776.TW/history/",
+        "date": "2014-10-17",
+        "daily_high": 30.40935516357422,
+        "prior_all_time_or_current_month_high": 30.40935516357422,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:1776",
+        "yahoo_symbol": "1776.TW"
+      }
+    },
+    {
+      "ticker": "2482.TW",
+      "name": "Uniform Industrial Corp.",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Computer Peripherals",
+      "description": "Uniform Industrial Corp. · Computer Peripherals",
+      "change_pct": 4.347820773479172,
+      "session_open": 22.0,
+      "session_close": 22.799999237060547,
+      "session_volume": 7136000.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2482",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2482.TW/history/",
+        "date": "2014-10-17",
+        "daily_high": 23.299999237060547,
+        "prior_all_time_or_current_month_high": 74.22986602783203,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:2482",
+        "yahoo_symbol": "2482.TW"
+      }
+    },
+    {
+      "ticker": "4943.TW",
+      "name": "Concraft Holding Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Electronic Components",
+      "description": "Concraft Holding Co., Ltd. · Electronic Components",
+      "change_pct": 5.4039396069642365,
+      "session_open": 45.90625762939453,
+      "session_close": 45.90625762939453,
+      "session_volume": 88376.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:4943",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4943.TW/history/",
+        "date": "2014-10-17",
+        "daily_high": 48.295127868652344,
+        "prior_all_time_or_current_month_high": 48.295127868652344,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:4943",
+        "yahoo_symbol": "4943.TW"
+      }
+    },
+    {
+      "ticker": "8926.TW",
+      "name": "Taiwan Cogeneration Corporation",
+      "exchange": "TWSE",
+      "category": "Industrial Services",
+      "high_type": "52_week",
+      "reason": "업종: Industrial Services · Engineering & Construction",
+      "description": "Taiwan Cogeneration Corporation · Engineering & Construction",
+      "change_pct": 6.904229225221004,
+      "session_open": 20.217731475830078,
+      "session_close": 21.56557846069336,
+      "session_volume": 3330863.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:8926",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/8926.TW/history/",
+        "date": "2014-10-17",
+        "daily_high": 21.56557846069336,
+        "prior_all_time_or_current_month_high": 23.093141555786133,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:8926",
+        "yahoo_symbol": "8926.TW"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-11-13T16:00:16.544555+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 2362,
+    "history_symbols": 1574,
+    "inactive_symbols": 778,
+    "failed_symbols": 10,
+    "coverage_ratio": 0.9936868686868687,
+    "coverage_by_exchange": {
+      "TWSE": {
+        "covered": 865,
+        "total": 872
+      },
+      "TPEX": {
+        "covered": 709,
+        "total": 712
+      }
+    },
+    "session_symbols": 1547,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-11-13T16:00:16.544555+00:00"
+}

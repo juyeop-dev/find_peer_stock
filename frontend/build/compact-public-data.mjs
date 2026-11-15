@@ -10,6 +10,26 @@ export function compactJsonWhitespace(bytes) {
   return Buffer.from(source.replace(/"(?:[^"\\]|\\.)*"|[ \t\r\n]+/g,token=>token.startsWith('"')?token:""));
 }
 
+export function compactPriceArchive(value) {
+  assert.equal(value.encoding,undefined);
+  const curve=source=>{
+    assert.ok(!Object.hasOwn(source,'price_start'));
+    assert.ok(Array.isArray(source.prices));
+    let previous;
+    const prices=source.prices.map((row,index)=>{
+      assert.ok(Array.isArray(row)&&row.length===3&&typeof row[0]==='string'&&/^\d{4}-\d{2}-\d{2}$/.test(row[0]));
+      const day=Date.parse(row[0]+'T00:00:00Z')/86400000;
+      assert.ok(Number.isSafeInteger(day)&&row[0]>='0001-01-01'&&row[0]<='9999-12-31'&&new Date(day*86400000).toISOString().slice(0,10)===row[0]);
+      assert.ok(row.slice(1).every(number=>typeof number==='number'&&Number.isFinite(number)&&number>0));
+      const delta=index===0?0:day-previous;assert.ok(index===0||delta>0);previous=day;
+      return row[1]===row[2]?[delta,row[1]]:[delta,row[1],row[2]];
+    });
+    return {...source,price_start:source.prices[0]?.[0]??null,prices,
+      ...(source.prior_snapshots===undefined?{}:{prior_snapshots:source.prior_snapshots.map(curve)})};
+  };
+  return {...curve(value),encoding:'stock-history-delta-v1'};
+}
+
 export function compactSector(snapshot) {
   const {stocks,...metadata}=snapshot,stock_fields=[],stock_rows=[];
   for(const stock of stocks) {
@@ -51,6 +71,17 @@ export async function compactPublicData(output) {
     }
   };
   for(const kind of ['new-highs','turnover'])await compactReports(join(data,kind));
+  const historyRoot=join(data,'stock-history');
+  for(const name of await readdir(historyRoot).catch(error=>{if(error.code==='ENOENT')return [];throw error;})) {
+    if(!name.endsWith('.json.gz')||name.endsWith('.delta-v1.json.gz'))continue;
+    const path=join(historyRoot,name),bytes=await readFile(path),original=JSON.parse(gunzipSync(bytes));
+    if(original.encoding==='stock-history-delta-v1')continue;
+    const compact=compactPriceArchive(original);
+    const compressed=gzipSync(JSON.stringify(compact)+'\n',{level:9});
+    // A distinct URL keeps cached older clients from parsing numeric day gaps
+    // as legacy ISO dates. They retain their existing original-provider fallback.
+    if(compressed.length<bytes.length){await writeFile(join(historyRoot,name.replace(/\.json\.gz$/,'.delta-v1.json.gz')),compressed);await unlink(path);saved+=bytes.length-compressed.length;files++;}
+  }
   const reboundRoot=join(data,"rebounds/korea");
   for(const folder of await readdir(reboundRoot,{withFileTypes:true}).catch(error=>{if(error.code==="ENOENT")return [];throw error;})) {
     if(!folder.isDirectory()||!/^\d{4}_\d{2}$/.test(folder.name))continue;

@@ -1,0 +1,321 @@
+{
+  "schema_version": 1,
+  "market": "taiwan",
+  "date": "2014-12-23",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "3217.TWO",
+      "name": "Argosy Research Inc.",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Computer Peripherals",
+      "description": "Argosy Research Inc. · Computer Peripherals",
+      "change_pct": 3.021980366959709,
+      "session_open": 18.023698806762695,
+      "session_close": 18.41658592224121,
+      "session_volume": 4272333.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:3217",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3217.TWO/history/",
+        "date": "2014-12-23",
+        "daily_high": 18.465696334838867,
+        "prior_all_time_or_current_month_high": 29.513587951660156,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:3217",
+        "yahoo_symbol": "3217.TWO"
+      }
+    },
+    {
+      "ticker": "4417.TWO",
+      "name": "King Chou Marine Technology Co., Ltd",
+      "exchange": "TPEX",
+      "category": "Process Industries",
+      "high_type": "52_week",
+      "reason": "업종: Process Industries · Textiles",
+      "description": "King Chou Marine Technology Co., Ltd · Textiles",
+      "change_pct": 4.936010178292283,
+      "session_open": 26.127925872802734,
+      "session_close": 27.31772232055664,
+      "session_volume": 2771978.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:4417",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4417.TWO/history/",
+        "date": "2014-12-23",
+        "daily_high": 27.412906646728516,
+        "prior_all_time_or_current_month_high": 29.008743286132812,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:4417",
+        "yahoo_symbol": "4417.TWO"
+      }
+    },
+    {
+      "ticker": "6124.TWO",
+      "name": "Yeh-Chiang Technology Corp.",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Semiconductors",
+      "description": "Yeh-Chiang Technology Corp. · Semiconductors",
+      "change_pct": 6.689539583046389,
+      "session_open": 31.100000381469727,
+      "session_close": 31.100000381469727,
+      "session_volume": 1948239.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:6124",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6124.TWO/history/",
+        "date": "2014-12-23",
+        "daily_high": 31.149999618530273,
+        "prior_all_time_or_current_month_high": 51.79999923706055,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:6124",
+        "yahoo_symbol": "6124.TWO"
+      }
+    },
+    {
+      "ticker": "1477.TW",
+      "name": "Makalot Industrial Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Consumer Non-Durables",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Non-Durables · Apparel/Footwear",
+      "description": "Makalot Industrial Co., Ltd. · Apparel/Footwear",
+      "change_pct": 4.907971146410195,
+      "session_open": 139.3129119873047,
+      "session_close": 145.7034149169922,
+      "session_volume": 5601673.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:1477",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/1477.TW/history/",
+        "date": "2014-12-23",
+        "daily_high": 146.55548095703125,
+        "prior_all_time_or_current_month_high": 156.6446990966797,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:1477",
+        "yahoo_symbol": "1477.TW"
+      }
+    },
+    {
+      "ticker": "2237.TW",
+      "name": "RAC Electric Vehicles Inc",
+      "exchange": "TWSE",
+      "category": "Consumer Durables",
+      "high_type": "all_time",
+      "reason": "업종: Consumer Durables · Motor Vehicles",
+      "description": "RAC Electric Vehicles Inc · Motor Vehicles",
+      "change_pct": 0.0,
+      "session_open": 47.903770446777344,
+      "session_close": 47.903770446777344,
+      "session_volume": 221396.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2237",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2237.TW/history/",
+        "date": "2014-12-23",
+        "daily_high": 67.9486083984375,
+        "prior_all_time_or_current_month_high": 67.9486083984375,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:2237",
+        "yahoo_symbol": "2237.TW"
+      }
+    },
+    {
+      "ticker": "2506.TW",
+      "name": "Pacific Construction Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Industrial Services",
+      "high_type": "52_week",
+      "reason": "업종: Industrial Services · Engineering & Construction",
+      "description": "Pacific Construction Co., Ltd. · Engineering & Construction",
+      "change_pct": 5.65371174771776,
+      "session_open": 14.149999618530273,
+      "session_close": 14.949999809265137,
+      "session_volume": 7736000.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2506",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2506.TW/history/",
+        "date": "2014-12-23",
+        "daily_high": 15.0,
+        "prior_all_time_or_current_month_high": 61.68042755126953,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:2506",
+        "yahoo_symbol": "2506.TW"
+      }
+    },
+    {
+      "ticker": "2609.TW",
+      "name": "Yang Ming Marine Transport Corp.",
+      "exchange": "TWSE",
+      "category": "Transportation",
+      "high_type": "52_week",
+      "reason": "업종: Transportation · Marine Shipping",
+      "description": "Yang Ming Marine Transport Corp. · Marine Shipping",
+      "change_pct": 2.2435812792872545,
+      "session_open": 33.42047882080078,
+      "session_close": 33.52557373046875,
+      "session_volume": 26737022.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2609",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2609.TW/history/",
+        "date": "2014-12-23",
+        "daily_high": 34.05105209350586,
+        "prior_all_time_or_current_month_high": 72.968017578125,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:2609",
+        "yahoo_symbol": "2609.TW"
+      }
+    },
+    {
+      "ticker": "3532.TW",
+      "name": "Formosa Sumco Technology Corporation",
+      "exchange": "TWSE",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Industrial Machinery",
+      "description": "Formosa Sumco Technology Corporation · Industrial Machinery",
+      "change_pct": 6.963468699058439,
+      "session_open": 93.69999694824219,
+      "session_close": 93.69999694824219,
+      "session_volume": 612500.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:3532",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3532.TW/history/",
+        "date": "2014-12-23",
+        "daily_high": 93.69999694824219,
+        "prior_all_time_or_current_month_high": 311.9151611328125,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:3532",
+        "yahoo_symbol": "3532.TW"
+      }
+    },
+    {
+      "ticker": "4106.TW",
+      "name": "Wellell Inc.",
+      "exchange": "TWSE",
+      "category": "Health Technology",
+      "high_type": "all_time",
+      "reason": "업종: Health Technology · Medical Specialties",
+      "description": "Wellell Inc. · Medical Specialties",
+      "change_pct": 2.9968477604899624,
+      "session_open": 64.5999984741211,
+      "session_close": 65.30000305175781,
+      "session_volume": 4836000.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:4106",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4106.TW/history/",
+        "date": "2014-12-23",
+        "daily_high": 66.19999694824219,
+        "prior_all_time_or_current_month_high": 66.19999694824219,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:4106",
+        "yahoo_symbol": "4106.TW"
+      }
+    },
+    {
+      "ticker": "8028.TW",
+      "name": "Phoenix Silicon International Corp.",
+      "exchange": "TWSE",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Industrial Machinery",
+      "description": "Phoenix Silicon International Corp. · Industrial Machinery",
+      "change_pct": 830.6477449385549,
+      "session_open": 42.80979537963867,
+      "session_close": 42.80979537963867,
+      "session_volume": 1251977.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:8028",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/8028.TW/history/",
+        "date": "2014-12-23",
+        "daily_high": 52.63499450683594,
+        "prior_all_time_or_current_month_high": 52.63499450683594,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:8028",
+        "yahoo_symbol": "8028.TW"
+      }
+    },
+    {
+      "ticker": "8454.TW",
+      "name": "momo.com Incorporated",
+      "exchange": "TWSE",
+      "category": "Retail Trade",
+      "high_type": "all_time",
+      "reason": "업종: Retail Trade · Catalog/Specialty Distribution",
+      "description": "momo.com Incorporated · Catalog/Specialty Distribution",
+      "change_pct": 7.590756120219866,
+      "session_open": 162.80015563964844,
+      "session_close": 172.314453125,
+      "session_volume": 6553506.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:8454",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/8454.TW/history/",
+        "date": "2014-12-23",
+        "daily_high": 174.42874145507812,
+        "prior_all_time_or_current_month_high": 174.42874145507812,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:8454",
+        "yahoo_symbol": "8454.TW"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-11-13T16:00:16.544555+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 2362,
+    "history_symbols": 1574,
+    "inactive_symbols": 778,
+    "failed_symbols": 10,
+    "coverage_ratio": 0.9936868686868687,
+    "coverage_by_exchange": {
+      "TWSE": {
+        "covered": 865,
+        "total": 872
+      },
+      "TPEX": {
+        "covered": 709,
+        "total": 712
+      }
+    },
+    "session_symbols": 1568,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-11-13T16:00:16.544555+00:00"
+}

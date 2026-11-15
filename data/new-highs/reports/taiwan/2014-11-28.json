@@ -1,0 +1,346 @@
+{
+  "schema_version": 1,
+  "market": "taiwan",
+  "date": "2014-11-28",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "6223.TWO",
+      "name": "MPI Corporation",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Electronic Production Equipment",
+      "description": "MPI Corporation · Electronic Production Equipment",
+      "change_pct": 4.29184549356223,
+      "session_open": 117.5,
+      "session_close": 121.5,
+      "session_volume": 5191393.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:6223",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6223.TWO/history/",
+        "date": "2014-11-28",
+        "daily_high": 123.5,
+        "prior_all_time_or_current_month_high": 141.5,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:6223",
+        "yahoo_symbol": "6223.TWO"
+      }
+    },
+    {
+      "ticker": "6486.TWO",
+      "name": "Interactive Digital Technologies Inc",
+      "exchange": "TPEX",
+      "category": "Technology Services",
+      "high_type": "all_time",
+      "reason": "업종: Technology Services · Information Technology Services",
+      "description": "Interactive Digital Technologies Inc · Information Technology Services",
+      "change_pct": 0.1940334342152239,
+      "session_open": 71.0,
+      "session_close": 71.0,
+      "session_volume": 22579.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:6486",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6486.TWO/history/",
+        "date": "2014-11-28",
+        "daily_high": 71.86250305175781,
+        "prior_all_time_or_current_month_high": 71.86250305175781,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:6486",
+        "yahoo_symbol": "6486.TWO"
+      }
+    },
+    {
+      "ticker": "8085.TWO",
+      "name": "Forward Electronics Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Electronic Equipment/Instruments",
+      "description": "Forward Electronics Co., Ltd. · Electronic Equipment/Instruments",
+      "change_pct": 6.9767480885814415,
+      "session_open": 9.627557754516602,
+      "session_close": 10.335301399230957,
+      "session_volume": 2914340.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:8085",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/8085.TWO/history/",
+        "date": "2014-11-28",
+        "daily_high": 10.335301399230957,
+        "prior_all_time_or_current_month_high": 25.958229064941406,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:8085",
+        "yahoo_symbol": "8085.TWO"
+      }
+    },
+    {
+      "ticker": "2327.TW",
+      "name": "Yageo Corporation",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Electronic Production Equipment",
+      "description": "Yageo Corporation · Electronic Production Equipment",
+      "change_pct": 6.1855626693503085,
+      "session_open": 19.142559051513672,
+      "session_close": 20.201677322387695,
+      "session_volume": 15953476.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2327",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2327.TW/history/",
+        "date": "2014-11-28",
+        "daily_high": 20.201677322387695,
+        "prior_all_time_or_current_month_high": 27.424903869628906,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:2327",
+        "yahoo_symbol": "2327.TW"
+      }
+    },
+    {
+      "ticker": "2368.TW",
+      "name": "Gold Circuit Electronics Ltd",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Electronic Components",
+      "description": "Gold Circuit Electronics Ltd · Electronic Components",
+      "change_pct": 5.333336079915463,
+      "session_open": 17.11111068725586,
+      "session_close": 17.55555534362793,
+      "session_volume": 34286400.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2368",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2368.TW/history/",
+        "date": "2014-11-28",
+        "daily_high": 17.61111068725586,
+        "prior_all_time_or_current_month_high": 34.460025787353516,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:2368",
+        "yahoo_symbol": "2368.TW"
+      }
+    },
+    {
+      "ticker": "2542.TW",
+      "name": "Highwealth Construction Corp.",
+      "exchange": "TWSE",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "업종: Finance · Real Estate Development",
+      "description": "Highwealth Construction Corp. · Real Estate Development",
+      "change_pct": 1.7301077317781965,
+      "session_open": 28.967493057250977,
+      "session_close": 29.417766571044922,
+      "session_volume": 20491616.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2542",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2542.TW/history/",
+        "date": "2014-11-28",
+        "daily_high": 29.918067932128906,
+        "prior_all_time_or_current_month_high": 77.875,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:2542",
+        "yahoo_symbol": "2542.TW"
+      }
+    },
+    {
+      "ticker": "2610.TW",
+      "name": "China Airlines Ltd.",
+      "exchange": "TWSE",
+      "category": "Transportation",
+      "high_type": "52_week",
+      "reason": "업종: Transportation · Airlines",
+      "description": "China Airlines Ltd. · Airlines",
+      "change_pct": 4.400001525878916,
+      "session_open": 12.800000190734863,
+      "session_close": 13.050000190734863,
+      "session_volume": 93266000.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2610",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2610.TW/history/",
+        "date": "2014-11-28",
+        "daily_high": 13.350000381469727,
+        "prior_all_time_or_current_month_high": 28.67516326904297,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:2610",
+        "yahoo_symbol": "2610.TW"
+      }
+    },
+    {
+      "ticker": "2615.TW",
+      "name": "Wan Hai Lines Ltd.",
+      "exchange": "TWSE",
+      "category": "Transportation",
+      "high_type": "52_week",
+      "reason": "업종: Transportation · Marine Shipping",
+      "description": "Wan Hai Lines Ltd. · Marine Shipping",
+      "change_pct": 5.609279548421653,
+      "session_open": 20.869564056396484,
+      "session_close": 21.581026077270508,
+      "session_volume": 17166050.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2615",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2615.TW/history/",
+        "date": "2014-11-28",
+        "daily_high": 21.818180084228516,
+        "prior_all_time_or_current_month_high": 24.342805862426758,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:2615",
+        "yahoo_symbol": "2615.TW"
+      }
+    },
+    {
+      "ticker": "2618.TW",
+      "name": "Eva Airways Corporation",
+      "exchange": "TWSE",
+      "category": "Transportation",
+      "high_type": "52_week",
+      "reason": "업종: Transportation · Airlines",
+      "description": "Eva Airways Corporation · Airlines",
+      "change_pct": 6.100793333939181,
+      "session_open": 16.072587966918945,
+      "session_close": 16.40060043334961,
+      "session_volume": 78331277.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2618",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2618.TW/history/",
+        "date": "2014-11-28",
+        "daily_high": 16.523605346679688,
+        "prior_all_time_or_current_month_high": 33.45454406738281,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:2618",
+        "yahoo_symbol": "2618.TW"
+      }
+    },
+    {
+      "ticker": "3034.TW",
+      "name": "Novatek Microelectronics Corp.",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Semiconductors",
+      "description": "Novatek Microelectronics Corp. · Semiconductors",
+      "change_pct": 1.1560693641618602,
+      "session_open": 174.5,
+      "session_close": 175.0,
+      "session_volume": 3439000.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:3034",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3034.TW/history/",
+        "date": "2014-11-28",
+        "daily_high": 178.0,
+        "prior_all_time_or_current_month_high": 222.01612854003906,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:3034",
+        "yahoo_symbol": "3034.TW"
+      }
+    },
+    {
+      "ticker": "3533.TW",
+      "name": "Lotes Co., Ltd",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Electronic Components",
+      "description": "Lotes Co., Ltd · Electronic Components",
+      "change_pct": 0.0,
+      "session_open": 152.26583862304688,
+      "session_close": 152.26583862304688,
+      "session_volume": 2891206.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:3533",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3533.TW/history/",
+        "date": "2014-11-28",
+        "daily_high": 158.12222290039062,
+        "prior_all_time_or_current_month_high": 218.9906768798828,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:3533",
+        "yahoo_symbol": "3533.TW"
+      }
+    },
+    {
+      "ticker": "4967.TW",
+      "name": "Team Group Inc.",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Electronic Production Equipment",
+      "description": "Team Group Inc. · Electronic Production Equipment",
+      "change_pct": 16.88888160597046,
+      "session_open": 26.66683006286621,
+      "session_close": 26.66683006286621,
+      "session_volume": 75240.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:4967",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4967.TW/history/",
+        "date": "2014-11-28",
+        "daily_high": 26.67950439453125,
+        "prior_all_time_or_current_month_high": 26.67950439453125,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:4967",
+        "yahoo_symbol": "4967.TW"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-11-13T16:00:16.544555+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 2362,
+    "history_symbols": 1574,
+    "inactive_symbols": 778,
+    "failed_symbols": 10,
+    "coverage_ratio": 0.9936868686868687,
+    "coverage_by_exchange": {
+      "TWSE": {
+        "covered": 865,
+        "total": 872
+      },
+      "TPEX": {
+        "covered": 709,
+        "total": 712
+      }
+    },
+    "session_symbols": 1560,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-11-13T16:00:16.544555+00:00"
+}

@@ -1,0 +1,121 @@
+{
+  "schema_version": 1,
+  "market": "taiwan",
+  "date": "2014-09-26",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "3520.TWO",
+      "name": "Jhen Vei Electronic Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Electronic Components",
+      "description": "Jhen Vei Electronic Co., Ltd. · Electronic Components",
+      "change_pct": 6.59898451429064,
+      "session_open": 182.46556091308594,
+      "session_close": 192.55160522460938,
+      "session_volume": 358334.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:3520",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3520.TWO/history/",
+        "date": "2014-09-26",
+        "daily_high": 192.55160522460938,
+        "prior_all_time_or_current_month_high": 192.55160522460938,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:3520",
+        "yahoo_symbol": "3520.TWO"
+      }
+    },
+    {
+      "ticker": "8085.TWO",
+      "name": "Forward Electronics Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Electronic Equipment/Instruments",
+      "description": "Forward Electronics Co., Ltd. · Electronic Equipment/Instruments",
+      "change_pct": 1.0071931901046938,
+      "session_open": 7.493093013763428,
+      "session_close": 7.886283874511719,
+      "session_volume": 1754436.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:8085",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/8085.TWO/history/",
+        "date": "2014-09-26",
+        "daily_high": 8.088497161865234,
+        "prior_all_time_or_current_month_high": 25.958229064941406,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:8085",
+        "yahoo_symbol": "8085.TWO"
+      }
+    },
+    {
+      "ticker": "3432.TW",
+      "name": "Tai Twun Enterprise Co. Ltd.",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Computer Peripherals",
+      "description": "Tai Twun Enterprise Co. Ltd. · Computer Peripherals",
+      "change_pct": 1.594527742999352,
+      "session_open": 40.691444396972656,
+      "session_close": 41.2463264465332,
+      "session_volume": 4779923.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:3432",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3432.TW/history/",
+        "date": "2014-09-26",
+        "daily_high": 42.91097640991211,
+        "prior_all_time_or_current_month_high": 85.82195281982422,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:3432",
+        "yahoo_symbol": "3432.TW"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-11-13T16:00:16.544555+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 2362,
+    "history_symbols": 1574,
+    "inactive_symbols": 778,
+    "failed_symbols": 10,
+    "coverage_ratio": 0.9936868686868687,
+    "coverage_by_exchange": {
+      "TWSE": {
+        "covered": 865,
+        "total": 872
+      },
+      "TPEX": {
+        "covered": 709,
+        "total": 712
+      }
+    },
+    "session_symbols": 1540,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-11-13T16:00:16.544555+00:00"
+}

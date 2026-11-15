@@ -14,6 +14,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, time, timedelta
 from pathlib import Path
 from zoneinfo import ZoneInfo
+from semiconductor_provenance import archive_semiconductor, hydrate_semiconductor
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -46,7 +47,7 @@ def numeric(value: object) -> float | None:
 
 def fetch_history(ticker: str) -> list[dict]:
     now = datetime.now(tz=KST)
-    start = min(now - timedelta(days=732), datetime(2014, 12, 20, tzinfo=KST))
+    start = min(now - timedelta(days=732), datetime(2013, 12, 20, tzinfo=KST))
     url = (f"https://query1.finance.yahoo.com/v8/finance/chart/"
            f"{urllib.parse.quote(ticker)}?period1={int(start.timestamp())}&period2={int(now.timestamp()) + 60}&interval=1d")
     chart = fetch_json(url).get("chart") or {}
@@ -197,9 +198,12 @@ def load_existing(path: Path) -> dict:
         return {}
     try:
         payload = json.loads(path.read_text(encoding="utf-8"))
-        return payload if isinstance(payload, dict) else {}
     except (OSError, ValueError):
         return {}
+    if not isinstance(payload, dict):
+        return {}
+    # Archive failures must propagate rather than treating originals as absent.
+    return hydrate_semiconductor(payload, path.parent) if 'stocks' in payload else payload
 
 
 def seed_fingerprint(seed_path: Path = SEED, categories_path: Path = CATEGORIES) -> str:
@@ -285,6 +289,8 @@ def collect_full_entry(seed: dict, previous: dict | None) -> dict:
 
 
 def write_json(path: Path, payload: dict) -> None:
+    if path.name == 'index.json' and path.parent.name == 'semiconductor' and 'stocks' in payload:
+        payload = archive_semiconductor(payload, path.parent)
     path.parent.mkdir(parents=True, exist_ok=True)
     temporary = path.with_suffix(".tmp")
     temporary.write_text(json.dumps(payload, ensure_ascii=False, separators=(",", ":")) + "\n", encoding="utf-8")

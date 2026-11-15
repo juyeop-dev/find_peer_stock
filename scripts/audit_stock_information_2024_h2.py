@@ -2,6 +2,7 @@
 from collections import Counter
 from datetime import datetime, timezone
 import gzip
+import hashlib
 import json
 import math
 
@@ -14,23 +15,35 @@ COVERED_STATUS = "covers_h2_2024"
 PERIODS_KEY = "h2_financial_periods"
 
 
-def packs(folder):
+def packs(folder, shard=None):
     result = {}
-    for path in sorted(folder.glob("*.json.gz")):
-        shard = json.loads(gzip.decompress(path.read_bytes()))
-        assert not set(result).intersection(shard), f"Duplicate packed listing: {path}"
-        result.update(shard)
+    for path in sorted(folder.glob(f"{shard}.json.gz" if shard is not None else "*.json.gz")):
+        entries = json.loads(gzip.decompress(path.read_bytes()))
+        assert not set(result).intersection(entries), f"Duplicate packed listing: {path}"
+        result.update(entries)
     return result
 
 
+def iter_listing_sources(rows):
+    groups = {shard: [] for shard in '0123456789abcdef'}
+    for row in rows:
+        groups[hashlib.sha256(row['ticker'].encode()).hexdigest()[0]].append(row)
+    for shard, group in groups.items():
+        info = packs(information.PACKS, shard)
+        history = packs(charts.PACKS, shard)
+        for values in [info, history]:
+            assert all(hashlib.sha256(ticker.encode()).hexdigest()[0] == shard for ticker in values), f'Misplaced or duplicate listing in shard {shard}'
+        del values
+        for row in group:
+            yield row, info.get(row['ticker']), history.get(row['ticker'], {})
+        del info, history
+
+
 def main():
-    info = packs(information.PACKS)
-    history = packs(charts.PACKS)
     roster = charts.roster()
     results = []
-    for row in roster:
+    for row, value, history in iter_listing_sources(roster):
         ticker = row["ticker"]
-        value = info.get(ticker)
         assert value and value["ticker"] == ticker, f"Missing information: {ticker}"
         statements = value["financials"]
         for statement in statements:
@@ -42,24 +55,26 @@ def main():
         keys = [(s["type"], s["period_end"], s["currency"]) for s in statements]
         assert len(keys) == len(set(keys)), f"Duplicate financial period: {ticker}"
         old = [s for s in statements if START <= s["period_end"] <= END]
-        prices = history.get(ticker, {}).get("prices", [])
+        prices = history.get("prices", [])
         if prices:
-            assert history[ticker]["currency"] and history[ticker]["source"]
+            assert history["currency"] and history["source"]
             dates = [point[0] for point in prices]
             assert dates == sorted(set(dates)), ticker
             assert all(type(n) in {int, float} and math.isfinite(n) and n > 0 for point in prices for n in point[1:]), ticker
-            for previous in history[ticker].get("prior_snapshots", []):
+            for previous in history.get("prior_snapshots", []):
                 assert previous["ticker"] == ticker and previous["currency"] and previous["source"]
                 prior_dates = [point[0] for point in previous["prices"]]
                 assert prior_dates == sorted(set(prior_dates)), ticker
                 assert all(type(n) in {int, float} and math.isfinite(n) and n > 0 for point in previous["prices"] for n in point[1:]), ticker
-        status = "missing_history" if len(prices) < 2 else COVERED_STATUS if prices[0][0] <= START else "later_listing" if history[ticker].get("first_trade_date") and history[ticker]["first_trade_date"] > START else "source_limited"
+        status = "missing_history" if len(prices) < 2 else COVERED_STATUS if prices[0][0] <= START else "later_listing" if history.get("first_trade_date") and history["first_trade_date"] > START else "source_limited"
         results.append({**row, "history_status": status, "first_price": prices[0][0] if prices else None,
-            "last_price": prices[-1][0] if prices else None, "first_trade_date": history.get(ticker, {}).get("first_trade_date"),
+            "last_price": prices[-1][0] if prices else None, "first_trade_date": history.get("first_trade_date"),
             PERIODS_KEY: len(old), "annual_periods": sum(s["type"] == "annual" for s in old),
             "quarterly_periods": sum(s["type"] == "quarterly" for s in old),
             "revenue_available": any(s.get("revenue") is not None for s in old),
             "operating_income_available": any(s.get("operating_income") is not None for s in old)})
+    order = {row['ticker']: index for index, row in enumerate(roster)}
+    results.sort(key=lambda row: order[row['ticker']])
     audit = information.AUDIT / SCOPE
     charts.write_json(audit / "coverage.json", {"start": START, "end": END, "total": len(roster), "checked": len(results),
         "histories": dict(Counter(row["history_status"] for row in results)),

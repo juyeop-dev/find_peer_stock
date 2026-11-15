@@ -1,0 +1,188 @@
+{
+  "schema_version": 1,
+  "market": "taiwan",
+  "date": "2014-12-31",
+  "summary": "부분 복원: 현재 상장 종목군의 검증된 일봉·월봉과 거래소 토요일 실제 거래를 대조했습니다. 원문 미제공·상장폐지 종목은 제외됩니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [],
+  "source_metadata": {
+    "provider": "Same-listing TradingView and TWSE/TPEx original Saturday observations",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-11-13T16:00:16.544555+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 2362,
+    "history_symbols": 1574,
+    "inactive_symbols": 778,
+    "failed_symbols": 10,
+    "coverage_ratio": 0.9936868686868687,
+    "coverage_by_exchange": {
+      "TWSE": {
+        "covered": 865,
+        "total": 872
+      },
+      "TPEX": {
+        "covered": 709,
+        "total": 712
+      }
+    },
+    "session_symbols": 1574,
+    "split_adjusted": true,
+    "coverage_status": "partial",
+    "historical_saturday_included": "2014-12-27",
+    "verified_daily_symbols": 2292,
+    "unresolved_saturday_listings": {
+      "TWSE:01001T": "Official Saturday traded; compatible split basis not verified",
+      "TWSE:01007T": "Official Saturday traded; compatible split basis not verified",
+      "TWSE:1110": "Official Saturday traded; compatible split basis not verified",
+      "TWSE:1418": "Official Saturday traded; compatible split basis not verified",
+      "TWSE:1436": "Official Saturday traded; compatible split basis not verified",
+      "TWSE:1438": "Official Saturday traded; compatible split basis not verified",
+      "TWSE:1439": "Official Saturday traded; compatible split basis not verified",
+      "TWSE:1468": "Official Saturday traded; compatible split basis not verified",
+      "TWSE:1474": "Official Saturday traded; compatible split basis not verified",
+      "TWSE:1475": "Official Saturday traded; compatible split basis not verified",
+      "TWSE:1521": "Official Saturday traded; compatible split basis not verified",
+      "TPEX:2063": "Official Saturday traded; compatible split basis not verified",
+      "TWSE:2429": "Official Saturday traded; compatible split basis not verified",
+      "TWSE:2496": "Official Saturday traded; compatible split basis not verified",
+      "TWSE:2528": "Official Saturday traded; compatible split basis not verified",
+      "TWSE:2546": "Official Saturday traded; compatible split basis not verified",
+      "TWSE:2901": "Official Saturday traded; compatible split basis not verified",
+      "TPEX:2916": "Official Saturday traded; compatible split basis not verified",
+      "TWSE:3002": "Official Saturday traded; compatible split basis not verified",
+      "TWSE:3046": "Official Saturday traded; compatible split basis not verified",
+      "TPEX:3073": "Official Saturday traded; compatible split basis not verified",
+      "TPEX:3093": "Official Saturday traded; compatible split basis not verified",
+      "TPEX:3115": "Official Saturday traded; compatible split basis not verified",
+      "TPEX:3171": "Official Saturday traded; compatible split basis not verified",
+      "TPEX:3188": "Official Saturday traded; compatible split basis not verified",
+      "TPEX:3207": "Official Saturday traded; compatible split basis not verified",
+      "TPEX:3252": "Official Saturday traded; compatible split basis not verified",
+      "TPEX:3332": "Official Saturday traded; compatible split basis not verified",
+      "TPEX:3521": "Official Saturday traded; compatible split basis not verified",
+      "TPEX:3629": "Official Saturday traded; compatible split basis not verified",
+      "TPEX:4205": "Official Saturday traded; compatible split basis not verified",
+      "TPEX:4305": "Official Saturday traded; compatible split basis not verified",
+      "TPEX:4402": "Official Saturday traded; compatible split basis not verified",
+      "TPEX:4416": "Official Saturday traded; compatible split basis not verified",
+      "TPEX:4420": "Official Saturday traded; compatible split basis not verified",
+      "TPEX:4706": "Official Saturday traded; compatible split basis not verified",
+      "TPEX:4907": "Official Saturday traded; compatible split basis not verified",
+      "TPEX:5011": "Official Saturday traded; compatible split basis not verified",
+      "TPEX:5016": "Official Saturday traded; compatible split basis not verified",
+      "TPEX:5205": "Official Saturday traded; compatible split basis not verified",
+      "TPEX:5206": "Official Saturday traded; compatible split basis not verified",
+      "TPEX:5301": "Official Saturday traded; compatible split basis not verified",
+      "TPEX:5340": "Official Saturday traded; compatible split basis not verified",
+      "TPEX:5511": "Official Saturday traded; compatible split basis not verified",
+      "TPEX:5516": "Official Saturday traded; compatible split basis not verified",
+      "TPEX:5520": "Official Saturday traded; compatible split basis not verified",
+      "TPEX:5523": "Official Saturday traded; compatible split basis not verified",
+      "TWSE:5525": "Official Saturday traded; compatible split basis not verified",
+      "TPEX:5601": "Official Saturday traded; compatible split basis not verified",
+      "TPEX:5878": "Official Saturday traded; compatible split basis not verified",
+      "TPEX:5902": "Official Saturday traded; compatible split basis not verified",
+      "TWSE:5906": "Official Saturday traded; compatible split basis not verified",
+      "TPEX:6023": "Official Saturday traded; compatible split basis not verified",
+      "TPEX:6103": "Official Saturday traded; compatible split basis not verified",
+      "TPEX:6114": "Official Saturday traded; compatible split basis not verified",
+      "TPEX:6154": "Official Saturday traded; compatible split basis not verified",
+      "TPEX:6171": "Official Saturday traded; compatible split basis not verified",
+      "TPEX:6222": "Official Saturday traded; compatible split basis not verified",
+      "TPEX:6236": "Official Saturday traded; compatible split basis not verified",
+      "TPEX:6294": "Official Saturday traded; compatible split basis not verified",
+      "TPEX:6506": "Official Saturday traded; compatible split basis not verified",
+      "TPEX:8032": "Official Saturday traded; compatible split basis not verified",
+      "TPEX:8047": "Official Saturday traded; compatible split basis not verified",
+      "TPEX:8067": "Official Saturday traded; compatible split basis not verified",
+      "TPEX:8077": "Official Saturday traded; compatible split basis not verified",
+      "TPEX:8291": "Official Saturday traded; compatible split basis not verified",
+      "TPEX:8906": "Official Saturday traded; compatible split basis not verified",
+      "TWSE:9906": "Official Saturday traded; compatible split basis not verified",
+      "TWSE:9929": "Official Saturday traded; compatible split basis not verified",
+      "TWSE:9931": "Official Saturday traded; compatible split basis not verified"
+    },
+    "unresolved_monthly_listings": {
+      "TWSE:2002": "Install scripts/requirements-chart-history.txt for live chart requests",
+      "TWSE:2302": "Install scripts/requirements-chart-history.txt for live chart requests",
+      "TWSE:2387": "Install scripts/requirements-chart-history.txt for live chart requests",
+      "TWSE:2409": "Install scripts/requirements-chart-history.txt for live chart requests",
+      "TWSE:2426": "Install scripts/requirements-chart-history.txt for live chart requests",
+      "TWSE:2611": "Install scripts/requirements-chart-history.txt for live chart requests",
+      "TPEX:2643": "Install scripts/requirements-chart-history.txt for live chart requests",
+      "TPEX:2736": "Install scripts/requirements-chart-history.txt for live chart requests",
+      "TPEX:2740": "Install scripts/requirements-chart-history.txt for live chart requests",
+      "TWSE:2849": "Install scripts/requirements-chart-history.txt for live chart requests",
+      "TWSE:3045": "Install scripts/requirements-chart-history.txt for live chart requests",
+      "TPEX:4417": "Install scripts/requirements-chart-history.txt for live chart requests",
+      "TWSE:4904": "Install scripts/requirements-chart-history.txt for live chart requests",
+      "TPEX:4979": "Install scripts/requirements-chart-history.txt for live chart requests",
+      "TPEX:5347": "Install scripts/requirements-chart-history.txt for live chart requests",
+      "TPEX:5351": "Install scripts/requirements-chart-history.txt for live chart requests",
+      "TPEX:5364": "Install scripts/requirements-chart-history.txt for live chart requests",
+      "TWSE:6112": "Install scripts/requirements-chart-history.txt for live chart requests",
+      "TPEX:6469": "Install scripts/requirements-chart-history.txt for live chart requests",
+      "TPEX:7402": "Install scripts/requirements-chart-history.txt for live chart requests",
+      "TPEX:8431": "Install scripts/requirements-chart-history.txt for live chart requests",
+      "TWSE:9910": "Install scripts/requirements-chart-history.txt for live chart requests"
+    },
+    "original_sources": [
+      {
+        "url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?response=json&date=20141226&type=ALLBUT0999",
+        "sha256": "a81c40460d1ad559c4bf640e00fa3c77461a94d3004766bd6dcebdc1a4171b85",
+        "cache": "data/tmp_2014/taiwan-official/7e8c0da271f33f7f038a33a6a4b5fd2299411c0da397dd043de6c63eac1199b6.json",
+        "exchange": "TWSE",
+        "date": "2014-12-26"
+      },
+      {
+        "url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?response=json&date=20141227&type=ALLBUT0999",
+        "sha256": "94b9eabc0b44ef12a681af443c1f8fc534fcab6751ffb9d4672fd08caf14081b",
+        "cache": "data/tmp_2014/taiwan-official/f7e15147f7719410b35b3af8902113fafe906eb2f1f03d35a31e7da6b455a2e4.json",
+        "exchange": "TWSE",
+        "date": "2014-12-27"
+      },
+      {
+        "url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?response=json&date=20141229&type=ALLBUT0999",
+        "sha256": "6fe3ef0e46e9132c85abaf9012390ddd732f1f1f49d2aaa8237dcf43e06c87aa",
+        "cache": "data/tmp_2014/taiwan-official/8af2073084dac6925a1da70cef07db511c7e72a042e0f39afea2033dd8f1f21f.json",
+        "exchange": "TWSE",
+        "date": "2014-12-29"
+      },
+      {
+        "url": "https://www.tpex.org.tw/www/zh-tw/afterTrading/dailyQuotes?date=2014/12/26&id=&response=json",
+        "sha256": "ce29b3156565095a39b406f4cad2605202383e5ff49175da0a07c01e1555aba0",
+        "cache": "data/tmp_2014/taiwan-official/75a8941e698c73afb5eecd9bf61266200e4f5b23f02596ea43a4cad6a46555c9.json",
+        "exchange": "TPEX",
+        "date": "2014-12-26"
+      },
+      {
+        "url": "https://www.tpex.org.tw/www/zh-tw/afterTrading/dailyQuotes?date=2014/12/27&id=&response=json",
+        "sha256": "b9fa11c371bd53830b2a30bbdd5112c49821cdcdb0cad837be38774467e5e7a9",
+        "cache": "data/tmp_2014/taiwan-official/ee4bd673933e0078cd7ace5e75f8002bf168f574d4da092ba04377a37058b7d8.json",
+        "exchange": "TPEX",
+        "date": "2014-12-27"
+      },
+      {
+        "url": "https://www.tpex.org.tw/www/zh-tw/afterTrading/dailyQuotes?date=2014/12/29&id=&response=json",
+        "sha256": "70f6cf466d701fa44c5cd2a8d2f5ea12f2a5dda51ef2d8bea3189f2bd0f2cad7",
+        "cache": "data/tmp_2014/taiwan-official/4fc834ee9a18e16734edeea7aee8c2dfb92410eac462cc8d84d6c3845344bd86.json",
+        "exchange": "TPEX",
+        "date": "2014-12-29"
+      }
+    ]
+  },
+  "collected_at": "2026-11-13T16:00:16.544555+00:00"
+}
