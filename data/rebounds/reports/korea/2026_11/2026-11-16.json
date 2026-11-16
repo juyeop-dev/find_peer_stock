@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "market": "korea",
+  "date": "2026-11-16",
+  "rules": {
+    "KOSPI": {
+      "market_cap_min": 5000000000000,
+      "rebound_min": 8
+    },
+    "KOSDAQ": {
+      "market_cap_min": 1000000000000,
+      "rebound_min": 5
+    }
+  },
+  "entries": [
+    {
+      "ticker": "005830.KS",
+      "name": "DB손해보험",
+      "exchange": "KOSPI",
+      "currency": "KRW",
+      "price": 175600,
+      "low": 162000,
+      "change_pct": 7.334963325183375,
+      "rebound_pct": 8.39506172839506,
+      "market_cap": 8956088359070,
+      "market_cap_currency": "KRW",
+      "sector": "Finance",
+      "industry": "Multi-Line Insurance"
+    },
+    {
+      "ticker": "180640.KS",
+      "name": "한진칼",
+      "exchange": "KOSPI",
+      "currency": "KRW",
+      "price": 215500,
+      "low": 199100,
+      "change_pct": 5.896805896805897,
+      "rebound_pct": 8.237066800602722,
+      "market_cap": 13555243583679,
+      "market_cap_currency": "KRW",
+      "sector": "Consumer Services",
+      "industry": "Hotels/Resorts/Cruise lines"
+    },
+    {
+      "ticker": "214450.KQ",
+      "name": "파마리서치",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 258500,
+      "low": 245500,
+      "change_pct": 2.9880478087649402,
+      "rebound_pct": 5.295315682281054,
+      "market_cap": 2607801757812,
+      "market_cap_currency": "KRW",
+      "sector": "Health Technology",
+      "industry": "Pharmaceuticals: Major"
+    }
+  ],
+  "source_metadata": {
+    "provider": "TradingView public scanner",
+    "fetched_at": "2026-11-16T07:17:55.745268+00:00",
+    "session": "daily",
+    "timezone": "Asia/Seoul",
+    "scanned_symbols": 2640,
+    "excluded": {
+      "below_market_cap": 2357,
+      "declining": 111,
+      "unsupported_listing": 105,
+      "stale_session": 7,
+      "below_rebound": 50,
+      "missing_market_cap": 7
+    },
+    "latest_session_by_board": {
+      "KOSDAQ": "2026-11-16",
+      "KOSPI": "2026-11-16"
+    }
+  },
+  "sources": [
+    {
+      "label": "TradingView 국내 주식 스크리너",
+      "url": "https://kr.tradingview.com/markets/stocks-korea/market-movers-all-stocks/"
+    }
+  ]
+}
