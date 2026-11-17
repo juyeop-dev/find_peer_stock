@@ -1,0 +1,197 @@
+{
+  "schema_version": 1,
+  "market": "korea",
+  "date": "2026-11-17",
+  "summary": "장 마감 후 TradingView 주식 스냅샷 기준. 당일 장중 고가가 52주·전체기간 고가에 도달하고, 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다. 전체기간 신고가를 우선 표시하며 신고가 배경은 별도 확인 전입니다.",
+  "sources": [
+    {
+      "label": "TradingView stock screener",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    },
+    {
+      "label": "Naver Finance 종목명·상장 시장·일봉 검증",
+      "url": "https://stock.naver.com/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "263860.KQ",
+      "name": "지니언스",
+      "exchange": "KOSDAQ",
+      "category": "Technology Services",
+      "high_type": "all_time",
+      "reason": "업종: Technology Services · Packaged Software",
+      "description": "지니언스 · Packaged Software",
+      "change_pct": 6.395348837209303,
+      "session_open": 34400,
+      "session_close": 36600,
+      "session_volume": 3785955,
+      "source_symbol": "KRX:263860",
+      "currency": "KRW",
+      "name_original": "GENIANS, INC.",
+      "name_source_url": "https://m.stock.naver.com/api/stock/263860/basic",
+      "high_verification": {
+        "source": "Naver Finance adjusted daily history",
+        "source_url": "https://api.finance.naver.com/siseJson.naver?symbol=263860&requestType=1&startTime=20251118&endTime=20261117&timeframe=day",
+        "date": "2026-11-17",
+        "open": 34400,
+        "daily_high": 38400,
+        "low": 32350,
+        "close": 36600,
+        "previous_close": 34750,
+        "volume": 3785955,
+        "prior_52_week_high": 38250,
+        "observed_bars": 244,
+        "first_observed_date": "2025-11-18",
+        "confirmed": true,
+        "matches_prior_high": false,
+        "bearish_candle": false,
+        "down_close": false,
+        "passes_close_filter": true
+      }
+    },
+    {
+      "ticker": "010640.KS",
+      "name": "진양폴리",
+      "exchange": "KOSPI",
+      "category": "Process Industries",
+      "high_type": "52_week",
+      "reason": "업종: Process Industries · Industrial Specialties",
+      "description": "진양폴리 · Industrial Specialties",
+      "change_pct": 7.420924574209247,
+      "session_open": 4095,
+      "session_close": 4420,
+      "session_volume": 579531,
+      "source_symbol": "KRX:010640",
+      "currency": "KRW",
+      "name_original": "Chinyang Poly Urethane Co., Ltd.",
+      "name_source_url": "https://m.stock.naver.com/api/stock/010640/basic",
+      "high_verification": {
+        "source": "Naver Finance adjusted daily history",
+        "source_url": "https://api.finance.naver.com/siseJson.naver?symbol=010640&requestType=1&startTime=20251118&endTime=20261117&timeframe=day",
+        "date": "2026-11-17",
+        "open": 4095,
+        "daily_high": 4480,
+        "low": 4010,
+        "close": 4420,
+        "previous_close": 4170,
+        "volume": 579531,
+        "prior_52_week_high": 4245,
+        "observed_bars": 244,
+        "first_observed_date": "2025-11-18",
+        "confirmed": true,
+        "matches_prior_high": false,
+        "bearish_candle": false,
+        "down_close": false,
+        "passes_close_filter": true
+      }
+    },
+    {
+      "ticker": "051630.KS",
+      "name": "진양화학",
+      "exchange": "KOSPI",
+      "category": "Process Industries",
+      "high_type": "52_week",
+      "reason": "업종: Process Industries · Chemicals: Specialty",
+      "description": "진양화학 · Chemicals: Specialty",
+      "change_pct": 9.181636726546905,
+      "session_open": 5030,
+      "session_close": 5470,
+      "session_volume": 908922,
+      "source_symbol": "KRX:051630",
+      "currency": "KRW",
+      "name_original": "Chin Yang Chemical Corp.",
+      "name_source_url": "https://m.stock.naver.com/api/stock/051630/basic",
+      "high_verification": {
+        "source": "Naver Finance adjusted daily history",
+        "source_url": "https://api.finance.naver.com/siseJson.naver?symbol=051630&requestType=1&startTime=20251118&endTime=20261117&timeframe=day",
+        "date": "2026-11-17",
+        "open": 5030,
+        "daily_high": 5560,
+        "low": 4900,
+        "close": 5470,
+        "previous_close": 5010,
+        "volume": 908922,
+        "prior_52_week_high": 5500,
+        "observed_bars": 244,
+        "first_observed_date": "2025-11-18",
+        "confirmed": true,
+        "matches_prior_high": false,
+        "bearish_candle": false,
+        "down_close": false,
+        "passes_close_filter": true
+      }
+    },
+    {
+      "ticker": "089860.KS",
+      "name": "롯데렌탈",
+      "exchange": "KOSPI",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "업종: Finance · Finance/Rental/Leasing",
+      "description": "롯데렌탈 · Finance/Rental/Leasing",
+      "change_pct": 0,
+      "session_open": 58400,
+      "session_close": 58500,
+      "session_volume": 197197,
+      "source_symbol": "KRX:089860",
+      "currency": "KRW",
+      "name_original": "LOTTE rental co., ltd.",
+      "name_source_url": "https://m.stock.naver.com/api/stock/089860/basic",
+      "high_verification": {
+        "source": "Naver Finance adjusted daily history",
+        "source_url": "https://api.finance.naver.com/siseJson.naver?symbol=089860&requestType=1&startTime=20251118&endTime=20261117&timeframe=day",
+        "date": "2026-11-17",
+        "open": 58400,
+        "daily_high": 58600,
+        "low": 58400,
+        "close": 58500,
+        "previous_close": 58400,
+        "volume": 197197,
+        "prior_52_week_high": 58500,
+        "observed_bars": 244,
+        "first_observed_date": "2025-11-18",
+        "confirmed": true,
+        "matches_prior_high": false,
+        "bearish_candle": false,
+        "down_close": false,
+        "passes_close_filter": true
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "TradingView public scanner",
+    "scanner": "korea",
+    "fetched_at": "2026-11-17T07:42:56.590114+00:00",
+    "universe": "TradingView-listed stock instruments, including common and preferred shares; ETFs excluded",
+    "definition": "daily high >= period high; close >= open; close >= previous close when one exists; all-time takes precedence; ties included",
+    "scanner_exchanges": [
+      "KRX"
+    ],
+    "latest_session_by_exchange": {
+      "KRX": "2026-11-17"
+    },
+    "previous_session_by_exchange": {
+      "KRX": "2026-11-16"
+    },
+    "current_session_reference_symbols": {
+      "KRX": "KRX:000020",
+      "KOSPI": "KRX:000020",
+      "KOSDAQ": "KRX:0001A0"
+    },
+    "scanned_symbols": 2749,
+    "current_session_symbols": 2724,
+    "excluded_symbols": {
+      "other_session": 25,
+      "korean_daily_history_disagrees": 3,
+      "bearish_or_down_close": 2,
+      "unsupported_korean_board": 3
+    },
+    "pagination_complete": true
+  },
+  "collected_at": "2026-11-17T07:42:42.084789+00:00"
+}
