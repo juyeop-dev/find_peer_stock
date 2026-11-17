@@ -1,0 +1,182 @@
+{
+  "schema_version": 1,
+  "market": "korea",
+  "date": "2026-11-17",
+  "rules": {
+    "KOSPI": {
+      "market_cap_min": 5000000000000,
+      "rebound_min": 8
+    },
+    "KOSDAQ": {
+      "market_cap_min": 1000000000000,
+      "rebound_min": 5
+    }
+  },
+  "entries": [
+    {
+      "ticker": "140860.KQ",
+      "name": "파크시스템스",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 177000,
+      "low": 152000,
+      "change_pct": 9.801488833746898,
+      "rebound_pct": 16.447368421052634,
+      "market_cap": 1478392648697,
+      "market_cap_currency": "KRW",
+      "sector": "Electronic Technology",
+      "industry": "Electronic Equipment/Instruments"
+    },
+    {
+      "ticker": "086450.KQ",
+      "name": "동국제약",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 24800,
+      "low": 22500,
+      "change_pct": 7.592190889370933,
+      "rebound_pct": 10.222222222222221,
+      "market_cap": 1069255862427,
+      "market_cap_currency": "KRW",
+      "sector": "Health Technology",
+      "industry": "Pharmaceuticals: Major"
+    },
+    {
+      "ticker": "356860.KQ",
+      "name": "티엘비",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 40000,
+      "low": 36950,
+      "change_pct": 6.666666666666667,
+      "rebound_pct": 8.25439783491204,
+      "market_cap": 1026219766617,
+      "market_cap_currency": "KRW",
+      "sector": "Electronic Technology",
+      "industry": "Electronic Components"
+    },
+    {
+      "ticker": "328130.KQ",
+      "name": "루닛",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 15820,
+      "low": 14650,
+      "change_pct": 7.6190476190476195,
+      "rebound_pct": 7.986348122866893,
+      "market_cap": 1117227093506,
+      "market_cap_currency": "KRW",
+      "sector": "Technology Services",
+      "industry": "Packaged Software"
+    },
+    {
+      "ticker": "084370.KQ",
+      "name": "유진테크",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 71000,
+      "low": 65900,
+      "change_pct": 4.874446085672083,
+      "rebound_pct": 7.7389984825493086,
+      "market_cap": 1780375213623,
+      "market_cap_currency": "KRW",
+      "sector": "Producer Manufacturing",
+      "industry": "Industrial Machinery"
+    },
+    {
+      "ticker": "226950.KQ",
+      "name": "올릭스",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 78400,
+      "low": 72900,
+      "change_pct": 4.533333333333333,
+      "rebound_pct": 7.544581618655699,
+      "market_cap": 1850575927162,
+      "market_cap_currency": "KRW",
+      "sector": "Health Technology",
+      "industry": "Pharmaceuticals: Major"
+    },
+    {
+      "ticker": "030530.KQ",
+      "name": "원익홀딩스",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 32000,
+      "low": 29800,
+      "change_pct": 3.225806451612903,
+      "rebound_pct": 7.38255033557047,
+      "market_cap": 2394607390594,
+      "market_cap_currency": "KRW",
+      "sector": "Electronic Technology",
+      "industry": "Semiconductors"
+    },
+    {
+      "ticker": "043260.KQ",
+      "name": "성호전자",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 22750,
+      "low": 21300,
+      "change_pct": 4.838709677419355,
+      "rebound_pct": 6.8075117370892,
+      "market_cap": 1765573310852,
+      "market_cap_currency": "KRW",
+      "sector": "Electronic Technology",
+      "industry": "Electronic Components"
+    },
+    {
+      "ticker": "232140.KQ",
+      "name": "와이씨",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 13720,
+      "low": 12900,
+      "change_pct": 4.652936689549962,
+      "rebound_pct": 6.356589147286829,
+      "market_cap": 1039397952271,
+      "market_cap_currency": "KRW",
+      "sector": "Electronic Technology",
+      "industry": "Electronic Equipment/Instruments"
+    },
+    {
+      "ticker": "290650.KQ",
+      "name": "엘앤씨바이오",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 19390,
+      "low": 18450,
+      "change_pct": 1.7847769028871392,
+      "rebound_pct": 5.094850948509477,
+      "market_cap": 1231309400749,
+      "market_cap_currency": "KRW",
+      "sector": "Health Technology",
+      "industry": "Medical Specialties"
+    }
+  ],
+  "source_metadata": {
+    "provider": "TradingView public scanner",
+    "fetched_at": "2026-11-17T06:53:07.513275+00:00",
+    "session": "daily",
+    "timezone": "Asia/Seoul",
+    "scanned_symbols": 2642,
+    "excluded": {
+      "below_market_cap": 2355,
+      "unsupported_listing": 107,
+      "declining": 131,
+      "below_rebound": 23,
+      "missing_market_cap": 7,
+      "stale_session": 9
+    },
+    "latest_session_by_board": {
+      "KOSPI": "2026-11-17",
+      "KOSDAQ": "2026-11-17"
+    }
+  },
+  "sources": [
+    {
+      "label": "TradingView 국내 주식 스크리너",
+      "url": "https://kr.tradingview.com/markets/stocks-korea/market-movers-all-stocks/"
+    }
+  ]
+}

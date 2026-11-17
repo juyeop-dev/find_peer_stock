@@ -1,0 +1,169 @@
+{
+  "schema_version": 1,
+  "market": "taiwan",
+  "date": "2026-11-17",
+  "summary": "장 마감 후 TradingView 주식 스냅샷 기준. 당일 장중 고가가 52주·전체기간 고가에 도달하고, 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다. 전체기간 신고가를 우선 표시하며 신고가 배경은 별도 확인 전입니다.",
+  "sources": [
+    {
+      "label": "TradingView stock screener",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "1259.TWO",
+      "name": "An-Shin Food Services Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Consumer Services",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Services · Restaurants",
+      "description": "An-Shin Food Services Co., Ltd. · Restaurants",
+      "change_pct": 2.4242424242424154,
+      "session_open": 65.7,
+      "session_close": 67.6,
+      "session_volume": 46143,
+      "source_symbol": "TPEX:1259",
+      "currency": "TWD"
+    },
+    {
+      "ticker": "4174.TWO",
+      "name": "OBI Pharma, Inc.",
+      "exchange": "TPEX",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Pharmaceuticals: Major",
+      "description": "OBI Pharma, Inc. · Pharmaceuticals: Major",
+      "change_pct": 9.957924263674627,
+      "session_open": 78.4,
+      "session_close": 78.4,
+      "session_volume": 343392,
+      "source_symbol": "TPEX:4174",
+      "currency": "TWD"
+    },
+    {
+      "ticker": "6199.TWO",
+      "name": "TienPin United Enterprise Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Computer Peripherals",
+      "description": "TienPin United Enterprise Co., Ltd. · Computer Peripherals",
+      "change_pct": 0.591715976331361,
+      "session_open": 169,
+      "session_close": 170,
+      "session_volume": 9556948,
+      "source_symbol": "TPEX:6199",
+      "currency": "TWD"
+    },
+    {
+      "ticker": "8415.TWO",
+      "name": "Brighton-Best International (Taiwan), Inc.",
+      "exchange": "TPEX",
+      "category": "Distribution Services",
+      "high_type": "52_week",
+      "reason": "업종: Distribution Services · Wholesale Distributors",
+      "description": "Brighton-Best International (Taiwan), Inc. · Wholesale Distributors",
+      "change_pct": 9.97340425531915,
+      "session_open": 37.95,
+      "session_close": 41.35,
+      "session_volume": 9107160,
+      "source_symbol": "TPEX:8415",
+      "currency": "TWD"
+    },
+    {
+      "ticker": "4155.TW",
+      "name": "Ok Biotech Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Medical Specialties",
+      "description": "Ok Biotech Co., Ltd. · Medical Specialties",
+      "change_pct": 5.698005698005698,
+      "session_open": 17.55,
+      "session_close": 18.55,
+      "session_volume": 3656311,
+      "source_symbol": "TWSE:4155",
+      "currency": "TWD"
+    },
+    {
+      "ticker": "6108.TW",
+      "name": "APCB Inc.",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Electronic Components",
+      "description": "APCB Inc. · Electronic Components",
+      "change_pct": 2.5990099009901098,
+      "session_open": 39.7,
+      "session_close": 41.45,
+      "session_volume": 5778700,
+      "source_symbol": "TWSE:6108",
+      "currency": "TWD"
+    },
+    {
+      "ticker": "6743.TW",
+      "name": "Ampacs Corporation",
+      "exchange": "TWSE",
+      "category": "Consumer Durables",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Durables · Electronics/Appliances",
+      "description": "Ampacs Corporation · Electronics/Appliances",
+      "change_pct": 1.8624641833810847,
+      "session_open": 34.6,
+      "session_close": 35.55,
+      "session_volume": 3891377,
+      "source_symbol": "TWSE:6743",
+      "currency": "TWD"
+    },
+    {
+      "ticker": "9933.TW",
+      "name": "CTCI Corporation",
+      "exchange": "TWSE",
+      "category": "Industrial Services",
+      "high_type": "52_week",
+      "reason": "업종: Industrial Services · Engineering & Construction",
+      "description": "CTCI Corporation · Engineering & Construction",
+      "change_pct": 9.902912621359226,
+      "session_open": 52.4,
+      "session_close": 56.6,
+      "session_volume": 53644219,
+      "source_symbol": "TWSE:9933",
+      "currency": "TWD"
+    }
+  ],
+  "source_metadata": {
+    "provider": "TradingView public scanner",
+    "scanner": "taiwan",
+    "fetched_at": "2026-11-17T06:52:45.596191+00:00",
+    "universe": "TradingView-listed stock instruments, including common and preferred shares; ETFs excluded",
+    "definition": "daily high >= period high; close >= open; close >= previous close when one exists; all-time takes precedence; ties included",
+    "scanner_exchanges": [
+      "TWSE",
+      "TPEX"
+    ],
+    "latest_session_by_exchange": {
+      "TWSE": "2026-11-17",
+      "TPEX": "2026-11-17"
+    },
+    "previous_session_by_exchange": {
+      "TWSE": "2026-11-16",
+      "TPEX": "2026-11-16"
+    },
+    "current_session_reference_symbols": {
+      "TWSE": "TWSE:01001T",
+      "TPEX": "TPEX:1240"
+    },
+    "scanned_symbols": 2366,
+    "current_session_symbols": 2309,
+    "excluded_symbols": {
+      "other_session": 57,
+      "bearish_or_down_close": 10
+    },
+    "pagination_complete": true
+  },
+  "collected_at": "2026-11-17T06:52:45.088691+00:00"
+}
