@@ -1,0 +1,98 @@
+{
+  "schema_version": 1,
+  "market": "korea",
+  "date": "2026-11-20",
+  "rules": {
+    "KOSPI": {
+      "market_cap_min": 5000000000000,
+      "rebound_min": 8
+    },
+    "KOSDAQ": {
+      "market_cap_min": 1000000000000,
+      "rebound_min": 5
+    }
+  },
+  "entries": [
+    {
+      "ticker": "128940.KS",
+      "name": "한미약품",
+      "exchange": "KOSPI",
+      "currency": "KRW",
+      "price": 449500,
+      "low": 412500,
+      "change_pct": 6.516587677725119,
+      "rebound_pct": 8.969696969696962,
+      "market_cap": 5560273807526,
+      "market_cap_currency": "KRW",
+      "sector": "Health Technology",
+      "industry": "Pharmaceuticals: Major"
+    },
+    {
+      "ticker": "180640.KS",
+      "name": "한진칼",
+      "exchange": "KOSPI",
+      "currency": "KRW",
+      "price": 236000,
+      "low": 217500,
+      "change_pct": 9.25925925925926,
+      "rebound_pct": 8.505747126436791,
+      "market_cap": 14799965506649,
+      "market_cap_currency": "KRW",
+      "sector": "Consumer Services",
+      "industry": "Hotels/Resorts/Cruise lines"
+    },
+    {
+      "ticker": "293490.KQ",
+      "name": "카카오게임즈",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 12820,
+      "low": 11910,
+      "change_pct": 4.058441558441558,
+      "rebound_pct": 7.64063811922755,
+      "market_cap": 1249516847229,
+      "market_cap_currency": "KRW",
+      "sector": "Technology Services",
+      "industry": "Packaged Software"
+    },
+    {
+      "ticker": "041510.KQ",
+      "name": "에스엠",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 97500,
+      "low": 92600,
+      "change_pct": 2.5236593059936907,
+      "rebound_pct": 5.291576673866083,
+      "market_cap": 2012443212318,
+      "market_cap_currency": "KRW",
+      "sector": "Consumer Services",
+      "industry": "Movies/Entertainment"
+    }
+  ],
+  "source_metadata": {
+    "provider": "TradingView public scanner",
+    "fetched_at": "2026-11-20T07:28:09.128252+00:00",
+    "session": "daily",
+    "timezone": "Asia/Seoul",
+    "scanned_symbols": 2640,
+    "excluded": {
+      "below_market_cap": 2365,
+      "declining": 141,
+      "unsupported_listing": 103,
+      "below_rebound": 12,
+      "stale_session": 8,
+      "missing_market_cap": 7
+    },
+    "latest_session_by_board": {
+      "KOSPI": "2026-11-20",
+      "KOSDAQ": "2026-11-20"
+    }
+  },
+  "sources": [
+    {
+      "label": "TradingView 국내 주식 스크리너",
+      "url": "https://kr.tradingview.com/markets/stocks-korea/market-movers-all-stocks/"
+    }
+  ]
+}
