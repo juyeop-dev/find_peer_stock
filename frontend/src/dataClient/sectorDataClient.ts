@@ -1,3 +1,4 @@
+import { fetchDataAsset } from "./assetDataClient";
 import { requestOriginal } from "./liveStockDataClient";
 import type { SectorCalendar, SectorSnapshot } from "./sectorRankings";
 import { classifiedSectorStock } from "./sectorRankings";
@@ -21,7 +22,7 @@ export function validSectorDate(value: string) {
   return /^\d{4}-\d{2}-\d{2}$/.test(value) && Number.isFinite(Date.parse(value)) && new Date(value).toISOString().slice(0, 10) === value;
 }
 async function staticSectorJson<T>(path: string, signal?: AbortSignal): Promise<T> {
-  const response = await fetch(`${import.meta.env.BASE_URL}data/sectors/${path}?t=${Date.now()}`, { cache: "no-store", signal });
+  const response = await fetchDataAsset(`${import.meta.env.BASE_URL}data/sectors/${path}`, { cache: "no-cache", signal });
   if (response.status === 404 && path.endsWith(".gz")) return staticSectorJson<T>(path.slice(0, -3), signal);
   if (!response.ok) throw new Error("해당 날짜의 저장된 섹터 기록을 불러오지 못했습니다.");
   if (path.endsWith(".gz")) {

@@ -19,7 +19,7 @@ def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--retry-history-errors',action='store_true')
     args=parser.parse_args()
-    year.configure()
+    request = year.configure()
     rows=charts.roster()
     db=info.open_database(info.ROOT/'data/tmp_2015/deployment-information')
     values={ticker:json.loads(raw) for ticker,raw in db.execute('SELECT ticker,value FROM information')}
@@ -31,7 +31,7 @@ def main():
         missing=[row for row in rows if row['ticker'] in retry]
     histories={};results=[]
     def fetch(row):
-        statements,errors=recovery.fetch(row)
+        statements,errors=recovery.fetch(row, request)
         try:history=fallback(row)
         except Exception as error:
             recovery.require_source_access(error)
@@ -41,7 +41,7 @@ def main():
         for row,statements,history,errors in pool.map(fetch,missing):
             ticker=row['ticker'];now=datetime.now(timezone.utc).isoformat()
             previous=values.get(ticker) or {'ticker':ticker,'requested_start':'2015-01-01','fetched_at':now,'quote':None,'metrics':{},'financials':[],'warnings':['Original current information unavailable']}
-            value=recovery.merge(previous,statements,now)
+            value=recovery.merge(previous,statements,now,request)
             db.execute('INSERT OR REPLACE INTO information VALUES (?,?)',(ticker,json.dumps(value,ensure_ascii=False)))
             db.commit()
             if history:histories[ticker]=history

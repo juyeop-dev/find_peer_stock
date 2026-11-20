@@ -1,9 +1,10 @@
 import { jsonSource, numeric, tvSymbol, yahooSymbol } from "./providers.js";
 import companyProfiles from "../../../data/seed/company_profiles.json" with { type: "json" };
 
-const START = "2014-01-01";
+import {collectionHistory} from "./history-policy.js";
+export const MAX_FINANCIAL_WINDOWS = 32;
 const fields = { revenue: "TotalRevenue", operating_income: "OperatingIncome", net_income: "NetIncome", total_assets: "TotalAssets", total_debt: "TotalDebt", operating_cash_flow: "OperatingCashFlow", free_cash_flow: "FreeCashFlow" };
-export function reportedFinancials(payload, symbol, today) {
+export function reportedFinancials(payload, symbol, today, range = collectionHistory(today)) {
   if (payload.timeseries?.error) throw new Error("확정 실적 조회 실패");
   const rows = new Map();
   for (const series of payload.timeseries?.result ?? []) {
@@ -11,7 +12,7 @@ export function reportedFinancials(payload, symbol, today) {
     for (const type of ["annual", "quarterly"]) for (const [metric, field] of Object.entries(fields)) {
       for (const item of series[type + field] ?? []) {
         const day = item.asOfDate, currency = item.currencyCode, value = numeric(item.reportedValue?.raw);
-        if (!/^\d{4}-\d{2}-\d{2}$/.test(day ?? "") || day < START || day > today || !currency || value === null || item.periodType !== (type === "annual" ? "12M" : "3M")) continue;
+        if (!/^\d{4}-\d{2}-\d{2}$/.test(day ?? "") || day < range.start_date || day > range.end_date || day > today || !currency || value === null || item.periodType !== (type === "annual" ? "12M" : "3M")) continue;
         const key = `${type}:${day}:${currency}`;
         const row = rows.get(key) ?? { type, period_end: day, currency, source: "Yahoo Finance reported financials" };
         row[metric] = value; rows.set(key, row);
@@ -20,14 +21,14 @@ export function reportedFinancials(payload, symbol, today) {
   }
   return [...rows.values()];
 }
-export function naverStatements(payload, type, today) {
+export function naverStatements(payload, type, today, range = collectionHistory(today)) {
   const info = payload.financeInfo ?? {};
   const metrics = Object.fromEntries((info.rowList ?? []).map(row => [row.title, row.columns ?? {}]));
   return (info.trTitleList ?? []).filter(period => period.isConsensus === "N" && /^\d{6}$/.test(period.key)).flatMap(period => {
     const year = Number(period.key.slice(0, 4)), month = Number(period.key.slice(4));
     if (month < 1 || month > 12) return [];
     const day = new Date(Date.UTC(year, month, 0)).toISOString().slice(0, 10);
-    if (day < START || day > today) return [];
+    if (day < range.start_date || day > range.end_date || day > today) return [];
     const row = { type, period_end: day, currency: "KRW", source: "Naver Finance reported financials" };
     for (const [metric, title] of [["revenue", "매출액"], ["operating_income", "영업이익"], ["net_income", "당기순이익"]]) {
       const value = numeric(metrics[title]?.[period.key]?.value); row[metric] = value === null ? null : value * 1e8;
@@ -36,7 +37,7 @@ export function naverStatements(payload, type, today) {
   });
 }
 
-async function scanner(stock, today, fetcher) {
+async function scanner(stock, today, fetcher, range) {
   let candidates = [tvSymbol(stock.ticker, stock.exchange)];
   if (stock.ticker.endsWith(".HK")) candidates = [`HKEX:${Number(stock.ticker.split(".")[0])}`];
   if (!candidates[0].includes(":")) candidates = ["NASDAQ", "NYSE", "AMEX"].map(exchange => `${exchange}:${stock.ticker}`);
@@ -52,7 +53,7 @@ async function scanner(stock, today, fetcher) {
     } catch { /* The native-currency capitalization remains independently valid. */ }
   }
   const fetched_at = new Date().toISOString();
-  const result = { ticker: stock.ticker, requested_start: START, fetched_at, source_symbol: response.data[0].s, quote: null,
+  const result = { ticker: stock.ticker, requested_start: range.start_date, fetched_at, source_symbol: response.data[0].s, quote: null,
     company: Object.fromEntries(["description", "sector", "industry", "number_of_employees"].map(key => [key, row[key]])),
     metrics_currency: row.fundamental_currency_code, metrics: Object.fromEntries([["per", "price_earnings_ttm"], ["pbr", "price_book_fq"], ["eps", "earnings_per_share_diluted_ttm"], ["dividend_yield", "dividends_yield_current"], ["high_52_week", "price_52_week_high"], ["low_52_week", "price_52_week_low"]].map(([key, field]) => [key, numeric(row[field])])), financials: [] };
   if (result.company.number_of_employees == null && companyProfiles[stock.ticker]) Object.assign(result.company, companyProfiles[stock.ticker]);
@@ -68,49 +69,46 @@ async function scanner(stock, today, fetcher) {
     const timestamp = numeric(row[`fiscal_period_end_${suffix}`]);
     if (!timestamp || !row.fundamental_currency_code) continue;
     const day = new Date(timestamp * 1000).toISOString().slice(0, 10);
-    if (day < START || day > today) continue;
+    if (day < range.start_date || day > range.end_date || day > today) continue;
     const financial = { type, period_end: day, currency: row.fundamental_currency_code, source: "TradingView reported financials", revenue: numeric(row[`total_revenue_${suffix}`]), operating_income: numeric(row[`oper_income_${suffix}`]), net_income: numeric(row[`net_income_${suffix}`]) };
     if ([financial.revenue, financial.operating_income, financial.net_income].some(value => value !== null)) result.financials.push(financial);
   }
   return result;
 }
 
-export async function information(stock, fetcher = fetch) {
+export async function information(stock, fetcher = fetch, range = collectionHistory()) {
   const today = new Date().toISOString().slice(0, 10), warnings = [];
   const safe = async (label, operation) => { try { return await operation(); } catch { warnings.push(`${label} 조회 실패`); return null; } };
   const yahooStatements = async (end, quarterlyOnly = false) => {
     const symbol = yahooSymbol(stock.ticker);
     if (!symbol) return [];
     const types = (quarterlyOnly ? ["quarterly"] : ["annual", "quarterly"]).flatMap(prefix => Object.values(fields).map(field => prefix + field));
-    const query = new URLSearchParams({type: types.join(","), period1: String(Date.parse(`${START}T00:00:00Z`) / 1000), period2: String(end)});
-    return reportedFinancials(await jsonSource(`https://query1.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/${encodeURIComponent(symbol)}?${query}`, undefined, fetcher), symbol, today);
+    const query = new URLSearchParams({type: types.join(","), period1: String(Date.parse(`${range.start_date}T00:00:00Z`) / 1000), period2: String(Math.min(end, Date.parse(`${range.end_date}T00:00:00Z`) / 1000 + 86400))});
+    return reportedFinancials(await jsonSource(`https://query1.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/${encodeURIComponent(symbol)}?${query}`, undefined, fetcher), symbol, today, range);
   };
   const financials = async () => {
     let latest;
     if (/^\d{6}\.(KS|KQ)$/.test(stock.ticker)) {
       const code = stock.ticker.slice(0, 6);
-      latest = (await Promise.all([["annual", "annual"], ["quarterly", "quarter"]].map(async ([type, path]) => await safe(`${type === "annual" ? "연간" : "분기"} 실적`, async () => naverStatements(await jsonSource(`https://m.stock.naver.com/api/stock/${code}/finance/${path}`, undefined, fetcher), type, today)) ?? []))).flat();
+      latest = (await Promise.all([["annual", "annual"], ["quarterly", "quarter"]].map(async ([type, path]) => await safe(`${type === "annual" ? "연간" : "분기"} 실적`, async () => naverStatements(await jsonSource(`https://m.stock.naver.com/api/stock/${code}/finance/${path}`, undefined, fetcher), type, today, range)) ?? []))).flat();
     } else {
       latest = await safe("최근 확정 실적", () => yahooStatements(Math.floor(Date.now() / 1000))) ?? [];
     }
-    const older = await safe("2025년 과거 분기 실적", () => yahooStatements(1767225600, true)) ?? [];
-    const historical = await safe("2024년 확정 실적", () => yahooStatements(1735689600)) ?? [];
-    const year2023 = await safe("2023년 확정 실적", () => yahooStatements(1704067200)) ?? [];
-    const year2022 = await safe("2022년 확정 실적", () => yahooStatements(1672531200)) ?? [];
-    const year2014 = await safe("2014년 확정 실적", () => yahooStatements(1420070400)) ?? [];
-    const year2015 = await safe("2015년 확정 실적", () => yahooStatements(1451606400)) ?? [];
-    const year2016 = await safe("2016년 확정 실적", () => yahooStatements(1483228800)) ?? [];
-    const year2017 = await safe("2017년 확정 실적", () => yahooStatements(1514764800)) ?? [];
-    const year2018 = await safe("2018년 확정 실적", () => yahooStatements(1546300800)) ?? [];
-    const year2019 = await safe("2019년 확정 실적", () => yahooStatements(1577836800)) ?? [];
-    const year2020 = await safe("2020년 확정 실적", () => yahooStatements(1609459200)) ?? [];
-    const year2021 = await safe("2021년 확정 실적", () => yahooStatements(1640995200)) ?? [];
+    const historical = [];
+    const firstYear = Number(range.start_date.slice(0, 4));
+    const lastYear = Math.min(Number(range.end_date.slice(0, 4)), Number(today.slice(0, 4)) - 1);
+    if (lastYear - firstYear + 1 > MAX_FINANCIAL_WINDOWS) warnings.push("오래된 실적 일부는 이번 원본 조회 범위를 초과하여 저장된 자료를 유지합니다.");
+    for (let year = lastYear; year >= Math.max(firstYear, lastYear - MAX_FINANCIAL_WINDOWS + 1); year--) {
+      const endpoint = Date.parse(`${String(year + 1).padStart(4, '0')}-01-01T00:00:00Z`) / 1000;
+      const rows = await safe(`${year}년 확정 실적`, () => yahooStatements(endpoint, year === Number(today.slice(0, 4)) - 1)) ?? [];
+      historical.push(...rows);
+    }
     const keys = new Set(latest.map(row => `${row.type}:${row.period_end}`));
     const merged = [...latest];
-    for (const row of [...older, ...historical, ...year2023, ...year2022, ...year2021, ...year2020, ...year2019, ...year2018, ...year2017, ...year2016, ...year2015, ...year2014]) {
+    for (const row of historical) {
       const key = `${row.type}:${row.period_end}`;
       if (!keys.has(key)) { merged.push(row); keys.add(key); }
-      else if (row.period_end < "2025-01-01") {
+      else if (row.period_end < `${today.slice(0, 4)}-01-01`) {
         const index = merged.findIndex(item => `${item.type}:${item.period_end}` === key);
         const previous = merged[index];
         // Prefer one complete native report, without splicing fields from
@@ -122,36 +120,22 @@ export async function information(stock, fetcher = fetch) {
     }
     return merged;
   };
-  const [snapshot, statements] = await Promise.all([safe("기업 정보·투자 지표", () => scanner(stock, today, fetcher)), safe("과거 확정 실적", financials)]);
+  const [snapshot, statements] = await Promise.all([safe("기업 정보·투자 지표", () => scanner(stock, today, fetcher, range)), safe("과거 확정 실적", financials)]);
   if (!snapshot && !statements?.length) throw new Error("종목 원본 정보를 확인하지 못했습니다.");
-  const result = snapshot ?? {ticker: stock.ticker, requested_start: START, fetched_at: new Date().toISOString(), quote: null, metrics: {}, financials: []};
+  const result = snapshot ?? {ticker: stock.ticker, requested_start: range.start_date, fetched_at: new Date().toISOString(), quote: null, metrics: {}, financials: []};
   const keys = new Set((statements ?? []).map(row => `${row.type}:${row.period_end}`));
   result.financials = [...result.financials.filter(row => !keys.has(`${row.type}:${row.period_end}`)), ...(statements ?? [])].sort((a, b) => a.period_end.localeCompare(b.period_end) || a.type.localeCompare(b.type));
-  if (!result.financials.length) warnings.push("2014년 이후 확정 실적이 제공되지 않습니다.");
+  if (!result.financials.length) warnings.push(`${range.start_date.slice(0, 4)}년 이후 확정 실적이 제공되지 않습니다.`);
   if (result.quote?.status === "stale") warnings.push("제공처에 최근 7일 이내 거래 자료가 없어 이전 제공 가격을 표시합니다.");
   const dates = result.financials.map(row => row.period_end).sort();
-  const historical = result.financials.filter(row => row.period_end >= "2024-01-01" && row.period_end <= "2024-12-31");
-  const year2023 = result.financials.filter(row => row.period_end >= "2023-01-01" && row.period_end <= "2023-12-31");
-  const year2022 = result.financials.filter(row => row.period_end >= "2022-01-01" && row.period_end <= "2022-12-31");
-  const year2014 = result.financials.filter(row => row.period_end >= "2014-01-01" && row.period_end <= "2014-12-31");
-  const year2015 = result.financials.filter(row => row.period_end >= "2015-01-01" && row.period_end <= "2015-12-31");
-  const year2016 = result.financials.filter(row => row.period_end >= "2016-01-01" && row.period_end <= "2016-12-31");
-  const year2017 = result.financials.filter(row => row.period_end >= "2017-01-01" && row.period_end <= "2017-12-31");
-  const year2018 = result.financials.filter(row => row.period_end >= "2018-01-01" && row.period_end <= "2018-12-31");
-  const year2019 = result.financials.filter(row => row.period_end >= "2019-01-01" && row.period_end <= "2019-12-31");
-  const year2020 = result.financials.filter(row => row.period_end >= "2020-01-01" && row.period_end <= "2020-12-31");
-  const year2021 = result.financials.filter(row => row.period_end >= "2021-01-01" && row.period_end <= "2021-12-31");
-  return { ...result, warnings, financials_fetched_at: new Date().toISOString(),
-    historical_2014_coverage: {start: START, end: "2014-12-31", periods: year2014.length, annual_periods: year2014.filter(row => row.type === "annual").length, quarterly_periods: year2014.filter(row => row.type === "quarterly").length, note: "확인된 확정 실적만 표시합니다. 연간 실적은 해당 회계연도 전체이며, 미제공 분기는 추정하지 않습니다."},
-    historical_2015_coverage: {start: "2015-01-01", end: "2015-12-31", periods: year2015.length, annual_periods: year2015.filter(row => row.type === "annual").length, quarterly_periods: year2015.filter(row => row.type === "quarterly").length, note: "확인된 확정 실적만 표시합니다. 연간 실적은 해당 회계연도 전체이며, 미제공 분기는 추정하지 않습니다."},
-    historical_2016_coverage: {start: "2016-01-01", end: "2016-12-31", periods: year2016.length, annual_periods: year2016.filter(row => row.type === "annual").length, quarterly_periods: year2016.filter(row => row.type === "quarterly").length, note: "확인된 확정 실적만 표시합니다. 연간 실적은 해당 회계연도 전체이며, 미제공 분기는 추정하지 않습니다."},
-    historical_2017_coverage: {start: "2017-01-01", end: "2017-12-31", periods: year2017.length, annual_periods: year2017.filter(row => row.type === "annual").length, quarterly_periods: year2017.filter(row => row.type === "quarterly").length, note: "확인된 확정 실적만 표시합니다. 연간 실적은 해당 회계연도 전체이며, 미제공 분기는 추정하지 않습니다."},
-    historical_2018_coverage: {start: "2018-01-01", end: "2018-12-31", periods: year2018.length, annual_periods: year2018.filter(row => row.type === "annual").length, quarterly_periods: year2018.filter(row => row.type === "quarterly").length, note: "확인된 확정 실적만 표시합니다. 연간 실적은 해당 회계연도 전체이며, 미제공 분기는 추정하지 않습니다."},
-    historical_2019_coverage: {start: "2019-01-01", end: "2019-12-31", periods: year2019.length, annual_periods: year2019.filter(row => row.type === "annual").length, quarterly_periods: year2019.filter(row => row.type === "quarterly").length, note: "확인된 확정 실적만 표시합니다. 연간 실적은 해당 회계연도 전체이며, 미제공 분기는 추정하지 않습니다."},
-    historical_2020_coverage: {start: "2020-01-01", end: "2020-12-31", periods: year2020.length, annual_periods: year2020.filter(row => row.type === "annual").length, quarterly_periods: year2020.filter(row => row.type === "quarterly").length, note: "확인된 확정 실적만 표시합니다. 연간 실적은 해당 회계연도 전체이며, 미제공 분기는 추정하지 않습니다."},
-    historical_2021_coverage: {start: "2021-01-01", end: "2021-12-31", periods: year2021.length, annual_periods: year2021.filter(row => row.type === "annual").length, quarterly_periods: year2021.filter(row => row.type === "quarterly").length, note: "확인된 확정 실적만 표시합니다. 연간 실적은 해당 회계연도 전체이며, 미제공 분기는 추정하지 않습니다."},
-    historical_2022_coverage: {start: "2022-01-01", end: "2022-12-31", periods: year2022.length, annual_periods: year2022.filter(row => row.type === "annual").length, quarterly_periods: year2022.filter(row => row.type === "quarterly").length, note: "확인된 확정 실적만 표시합니다. 연간 실적은 해당 회계연도 전체이며, 미제공 분기는 추정하지 않습니다."},
-    historical_2023_coverage: {start: "2023-01-01", end: "2023-12-31", periods: year2023.length, annual_periods: year2023.filter(row => row.type === "annual").length, quarterly_periods: year2023.filter(row => row.type === "quarterly").length, note: "확인된 확정 실적만 표시합니다. 연간 실적은 해당 회계연도 전체이며, 미제공 분기는 추정하지 않습니다."},
-    historical_2024_coverage: {start: "2024-01-01", end: "2024-12-31", periods: historical.length, annual_periods: historical.filter(row => row.type === "annual").length, quarterly_periods: historical.filter(row => row.type === "quarterly").length, note: "확인된 확정 실적만 표시합니다. 연간 실적은 해당 회계연도 전체이며, 미제공 분기는 추정하지 않습니다."},
+  const coverage = {};
+  for (let year = Number(range.start_date.slice(0, 4)); year <= Math.min(Number(range.end_date.slice(0, 4)), Number(today.slice(0, 4)) - 1); year++) {
+    const start = `${String(year).padStart(4, '0')}-01-01`, end = `${String(year).padStart(4, '0')}-12-31`;
+    const rows = result.financials.filter(row => row.period_end >= start && row.period_end <= end);
+    coverage[`historical_${year}_coverage`] = {start, end, periods: rows.length, annual_periods: rows.filter(row => row.type === 'annual').length,
+      quarterly_periods: rows.filter(row => row.type === 'quarterly').length,
+      note: "확인된 확정 실적만 표시합니다. 연간 실적은 해당 회계연도 전체이며, 미제공 분기는 추정하지 않습니다."};
+  }
+  return { ...result, ...coverage, warnings, financials_fetched_at: new Date().toISOString(),
     financial_coverage: { first_period: dates[0] ?? null, latest_period: dates.at(-1) ?? null, note: "제공된 확정 회계기간만 표시합니다. 제공처가 제한한 과거 분기와 공시되지 않은 기간은 채우지 않습니다." } };
 }

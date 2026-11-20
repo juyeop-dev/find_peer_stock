@@ -1,3 +1,4 @@
+import { fetchDataAsset } from "./assetDataClient";
 import { getPublishedStockHistory, getStockHistory } from "./stockHistoryClient";
 import { validateReplayMarket } from "./chartReplay";
 import type { ReplayMarket } from "./chartReplay";
@@ -5,8 +6,8 @@ import type { ReplayMarket } from "./chartReplay";
 let snapshot: Promise<ReplayMarket[]> | undefined;
 function getReplayMarkets() {
   if (!snapshot) snapshot = (async () => {
-    let response = await fetch(`${import.meta.env.BASE_URL}data/chart-replay/markets.json.gz`);
-    if(response.status===404)response=await fetch(`${import.meta.env.BASE_URL}data/chart-replay/markets.json`);
+    let response = await fetchDataAsset(`${import.meta.env.BASE_URL}data/chart-replay/markets.json.gz`);
+    if(response.status===404)response=await fetchDataAsset(`${import.meta.env.BASE_URL}data/chart-replay/markets.json`);
     if (!response.ok) throw new Error("시장 차트 자료를 불러오지 못했습니다. 다시 시도해 주세요.");
     const bytes=await response.arrayBuffer(),magic=new Uint8Array(bytes,0,Math.min(2,bytes.byteLength));
     const text=magic[0]===0x1f&&magic[1]===0x8b?await new Response(new Blob([bytes]).stream().pipeThrough(new DecompressionStream("gzip"))).text():new TextDecoder().decode(bytes);

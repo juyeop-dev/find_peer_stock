@@ -1,3 +1,4 @@
+import {collectionHistory, historyWindow} from "./history-policy.js";
 import { localDay, numeric, tvSymbol, yahooData, yahooSymbol } from "./providers.js";
 
 const encode = (method, params) => {
@@ -15,7 +16,8 @@ export function decodeFrames(frame) {
   }
   return messages;
 }
-export async function tradingViewHistory(stock, fetcher = fetch) {
+export async function tradingViewHistory(stock, fetcher = fetch, range = collectionHistory()) {
+  const window = historyWindow(range);
   const symbol = tvSymbol(stock.ticker, stock.exchange);
   if (!symbol.includes(":")) throw new Error("정확한 거래소를 확인할 수 없습니다.");
   const response = await fetcher("https://data.tradingview.com/socket.io/websocket", {
@@ -59,7 +61,7 @@ export async function tradingViewHistory(stock, fetcher = fetch) {
               if (days.has(day)) throw new Error("중복 일봉이 포함돼 있습니다.");
               days.set(day, { date: day, close: values[4], adjusted_close: values[4], volume: numeric(values[5]) });
             }
-            const history = [...days.values()].sort((a, b) => a.date.localeCompare(b.date));
+            const history = [...days.values()].filter(point => point.date >= window.startDate && point.date <= window.endDate).sort((a, b) => a.date.localeCompare(b.date));
             if (history.length < 2) throw new Error("표시할 일봉이 부족합니다.");
             finish({ ticker: stock.ticker, currency: info.currency_code, source: cboe ? "TradingView · Cboe One split-adjusted daily chart" : "TradingView split-adjusted daily chart",
               fetched_at: new Date().toISOString(), first_trade_date: null, history });
@@ -70,18 +72,18 @@ export async function tradingViewHistory(stock, fetcher = fetch) {
     socket.send(encode("set_auth_token", ["unauthorized_user_token"]));
     socket.send(encode("chart_create_session", [session, ""]));
     socket.send(encode("resolve_symbol", [session, "symbol_1", "=" + JSON.stringify({ symbol, adjustment: "splits", session: "regular" })]));
-    const days = Math.max(0, (Date.now() - Date.parse("2013-12-20T00:00:00Z")) / 86400000);
+    const days = Math.max(0, (Date.now() - window.start) / 86400000);
     const count = Math.min(5000, Math.max(550, Math.ceil(days * 5 / 7) + 60));
     socket.send(encode("create_series", [session, "s1", "s1", "symbol_1", "1D", count]));
   });
 }
 
-export async function history(stock, fetcher = fetch) {
+export async function history(stock, fetcher = fetch, range = collectionHistory()) {
   try {
-    const fresh = await yahooData(stock.ticker, fetcher, true);
+    const fresh = await yahooData(stock.ticker, fetcher, true, range);
     if (fresh.symbol !== yahooSymbol(stock.ticker) || !["EQUITY", "ETF", "MUTUALFUND"].includes(fresh.instrument_type)) throw new Error("일봉 종목이 일치하지 않습니다.");
     if (fresh.history.length < 2) throw new Error("표시할 일봉이 부족합니다.");
     return { ticker: stock.ticker, currency: fresh.quote.currency, source: "Yahoo Finance daily chart", fetched_at: fresh.quote.fetched_at,
       first_trade_date: fresh.first_trade_date, history: fresh.history };
-  } catch { return tradingViewHistory(stock, fetcher); }
+  } catch { return tradingViewHistory(stock, fetcher, range); }
 }

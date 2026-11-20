@@ -36,50 +36,9 @@ JOBS = {
 }
 
 
-def main():
-    if len(sys.argv) != 2 or sys.argv[1] not in JOBS:
-        raise SystemExit("Choose one job: " + ", ".join(JOBS))
-    name = sys.argv[1]
-    STATE.mkdir(parents=True, exist_ok=True)
-    record = STATE / f"{name}.process.json"
-    # A cross-process exclusive lock prevents duplicate collectors, including
-    # the interval between launching the child and writing its PID record.
-    lock = STATE / f"{name}.lock"
-    with lock.open("x"):
-        pass
-    value = {"pid": os.getpid(), "command": JOBS[name], "started_at": datetime.now(timezone.utc).isoformat()}
-    record.write_text(json.dumps(value, indent=2), encoding="utf-8")
-    env = {**os.environ, "PYTHONPATH": str(ROOT / "data/tmp_info_update/deps"), "PYTHONIOENCODING": "utf-8"}
-    try:
-        for dependency in {"taiwan-gap": ["taiwan", "taiwan-bases"], "europe-turnover": ["europe"]}.get(name, []):
-            while True:
-                dependency_record = STATE / f"{dependency}.process.json"
-                if dependency_record.exists():
-                    try:
-                        dependency_value = json.loads(dependency_record.read_bytes())
-                    except (FileNotFoundError, ValueError):
-                        time.sleep(2)
-                        continue
-                    if "exit_code" in dependency_value:
-                        if dependency_value["exit_code"]:
-                            raise RuntimeError(f"Dependency {dependency} failed; inspect its log")
-                        break
-                time.sleep(2)
-        with (STATE / f"{name}.log").open("ab", buffering=0) as output:
-            child = subprocess.Popen(JOBS[name], cwd=ROOT, stdout=output, stderr=subprocess.STDOUT, env=env)
-            value["child_pid"] = child.pid
-            record.write_text(json.dumps(value, indent=2), encoding="utf-8")
-            code = child.wait()
-        value.update(exit_code=code, finished_at=datetime.now(timezone.utc).isoformat())
-        record.write_text(json.dumps(value, indent=2), encoding="utf-8")
-        print(f"{name}: exit={code}", flush=True)
-        raise SystemExit(code)
-    except Exception as error:
-        value.update(exit_code=1, error=f"{type(error).__name__}: {error}", finished_at=datetime.now(timezone.utc).isoformat())
-        record.write_text(json.dumps(value, indent=2), encoding="utf-8")
-        raise
-    finally:
-        lock.unlink(missing_ok=True)
+def main(argv=None):
+    from history_jobs import legacy_main
+    legacy_main(JOBS, year=2014, argv=argv, root=ROOT, dependencies={"taiwan-gap": ["taiwan", "taiwan-bases"], "europe-turnover": ["europe"]})
 
 
 if __name__ == "__main__":

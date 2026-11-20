@@ -149,9 +149,10 @@ def parse_tradingview(payload: dict, ticker: str) -> dict:
             "requested_bars": payload.get("requested_bars"), "prices": prices}
 
 
-def database() -> sqlite3.Connection:
-    DATABASE.parent.mkdir(parents=True, exist_ok=True)
-    db = sqlite3.connect(DATABASE)
+def database(path: Path | None = None) -> sqlite3.Connection:
+    path = DATABASE if path is None else path
+    path.parent.mkdir(parents=True, exist_ok=True)
+    db = sqlite3.connect(path)
     db.execute("CREATE TABLE IF NOT EXISTS history (ticker TEXT PRIMARY KEY, value TEXT NOT NULL)")
     db.execute("CREATE TABLE IF NOT EXISTS imported (path TEXT PRIMARY KEY)")
     if not db.execute("SELECT count(*) FROM history").fetchone()[0]:

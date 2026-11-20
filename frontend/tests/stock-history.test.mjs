@@ -4,14 +4,22 @@ import test from "node:test";
 import ts from "typescript";
 import { gzipSync } from "node:zlib";
 import {priceArchiveUrl} from './compiled-price-archive.mjs';
+import {historyAvailabilityUrl} from './compiled-history-availability.mjs';
 import {compactPriceArchive} from '../build/compact-public-data.mjs';
 
 let source = await readFile(new URL("../src/dataClient/stockHistoryClient.ts", import.meta.url), "utf8");
 source = source.replace('from "./priceArchive"', `from "${priceArchiveUrl}"`);
+source = source.replace('from "./historyAvailability"', `from "${historyAvailabilityUrl}"`);
 source = source.replace('import { liveDetailFor, requestOriginal } from "./liveStockDataClient";', 'const liveDetailFor = () => undefined; const requestOriginal = () => { throw new Error("unit test should not request live data"); };');
-const javascript = ts.transpileModule(source, { compilerOptions: { module: ts.ModuleKind.ESNext, target: ts.ScriptTarget.ES2022 } }).outputText;
+const javascript = ts.transpileModule(source.replace('import { fetchDataAsset } from "./assetDataClient";', 'const fetchDataAsset = (...args) => fetch(...args);'), { compilerOptions: { module: ts.ModuleKind.ESNext, target: ts.ScriptTarget.ES2022 } }).outputText;
 const { CHART_PERIODS, chartPeriodLabel, chartStart, historyRange, yearCovered, getStockHistory, retainHistoricalPrices } = await import(`data:text/javascript;base64,${Buffer.from(javascript).toString("base64")}`);
 const point = date => ({ date, close: 100, adjusted_close: 100, volume: null });
+
+test("period labels retain Korean day/year units", () => {
+  assert.equal(chartPeriodLabel(7), "7일");
+  assert.equal(chartPeriodLabel("1y"), "1년");
+  assert.equal(chartPeriodLabel("2y"), "2년");
+});
 test("a shorter refresh keeps verified historical prices and never splices incompatible adjustments or currencies", () => {
   const old = {ticker:"TEST",currency:"USD",source:"Stored original",history:["2020-01-02","2021-01-04","2021-01-05","2021-01-06"].map(point)};
   const fresh = {...old,source:"Current original",history:["2021-01-04","2021-01-05","2021-01-06","2026-10-29"].map(point)};

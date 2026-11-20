@@ -25,17 +25,9 @@ JOBS = {
 }
 
 
-def main():
-    STATE.mkdir(parents=True, exist_ok=True)
-    env = {**os.environ, 'PYTHONPATH': str(ROOT / 'data/tmp_info_update/deps'), 'PYTHONIOENCODING': 'utf-8'}
-    for name in sys.argv[1:]:
-        command = JOBS[name]
-        with (STATE / f'{name}.log').open('ab', buffering=0) as output:
-            child = subprocess.Popen(command, cwd=ROOT, stdout=output, stderr=subprocess.STDOUT,
-                                     creationflags=subprocess.CREATE_NO_WINDOW, env=env)
-        (STATE / f'{name}.process.json').write_text(json.dumps({'pid': child.pid, 'command': command,
-            'started_at': datetime.now(timezone.utc).isoformat()}), encoding='utf-8')
-        print(f'{name}: PID {child.pid}', flush=True)
+def main(argv=None):
+    from history_jobs import legacy_main
+    legacy_main(JOBS, year=2018, argv=argv, root=ROOT, dependencies={"europe-turnover": ["europe"]})
 
 
 if __name__ == '__main__':

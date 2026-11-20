@@ -12,7 +12,7 @@ import backfill_stock_information_2024_h2 as recovery
 
 
 def main():
-    year.configure()
+    request = year.configure()
     rows = charts.roster()
     db = info.open_database(info.ROOT / "data/tmp_2017/deployment-information")
     existing = {ticker for ticker, in db.execute("SELECT ticker FROM information")}
@@ -23,8 +23,8 @@ def main():
 
     def fetch(row):
         now = datetime.now(timezone.utc).isoformat()
-        value = info.collect_one(row, scanners[row["ticker"]], now[:10])
-        value = recovery.merge(value, [], now)
+        value = info.collect_one(row, scanners[row["ticker"]], now[:10], start=request.start)
+        value = recovery.merge(value, [], now, request)
         try:
             history = charts.fetch_live_history(row)
             history.update(requested_start="2016-12-20", requested_range="dated")

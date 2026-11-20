@@ -5,8 +5,4 @@ from audit_daily_frequency_2014 import main as verify_daily
 
 if __name__ == "__main__":
     verify_daily()
-    audit.START, audit.END = "2014-01-01", "2014-12-31"
-    audit.SCOPE = "2014"
-    audit.COVERED_STATUS = "covers_2014"
-    audit.PERIODS_KEY = "financial_2014_periods"
-    audit.main()
+    audit.main(audit.financial_request(year=2014, root=audit.information.ROOT))

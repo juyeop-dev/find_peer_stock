@@ -1,3 +1,4 @@
+import { fetchDataAsset } from "./assetDataClient";
 export const REBOUND_BOARDS = ["KOSPI", "KOSDAQ"] as const;
 export type ReboundBoard = typeof REBOUND_BOARDS[number];
 export const REBOUND_RULES = { KOSPI: { market_cap_min: 5e12, rebound_min: 8 }, KOSDAQ: { market_cap_min: 1e12, rebound_min: 5 } };
@@ -52,9 +53,9 @@ export function reboundMessage(report: ReboundReport): string {
 async function request<T>(path: string, signal?: AbortSignal): Promise<T> {
   const timeout = AbortSignal.timeout(20000);
   const compressed=path.startsWith("korea/")&&path.split("/").at(-1)!.slice(0,10)<"2026-11-01";
-  const options={ cache: "no-store", signal: signal ? AbortSignal.any([signal, timeout]) : timeout } satisfies RequestInit;
-  let response = await fetch(`${import.meta.env.BASE_URL}data/rebounds/${path}${compressed?".gz":""}?t=${Date.now()}`, options);
-  if(compressed&&response.status===404)response=await fetch(`${import.meta.env.BASE_URL}data/rebounds/${path}?t=${Date.now()}`,options);
+  const options={ cache: "no-cache", signal: signal ? AbortSignal.any([signal, timeout]) : timeout } satisfies RequestInit;
+  let response = await fetchDataAsset(`${import.meta.env.BASE_URL}data/rebounds/${path}${compressed?".gz":""}`, options);
+  if(compressed&&response.status===404)response=await fetchDataAsset(`${import.meta.env.BASE_URL}data/rebounds/${path}`,options);
   if (!response.ok) throw new Error(`반등 기록을 불러오지 못했습니다. (${response.status})`);
   if(!compressed)return response.json() as Promise<T>;
   const bytes=await response.arrayBuffer(),magic=new Uint8Array(bytes,0,Math.min(2,bytes.byteLength));

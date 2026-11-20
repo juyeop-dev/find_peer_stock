@@ -20,6 +20,7 @@ from rebound_data import ROOT, SOURCE, RULES, closures, number, validate_report
 from archive_paths import monthly_report_path
 from recalculate_korea_history import normalize_row, SOURCE as PROVIDER, SOURCE_URL
 from refresh_new_highs import atomic_json
+from history_policy import DEFAULT_POLICY, load_history_policy
 
 COLUMNS = ["Date", "Code", "Name", "Close", "Low", "ChangesRatio", "Volume", "Amount", "Marcap", "Stocks", "Market"]
 NOTE = "KRX 당시 상장 종목의 당일 저가·종가·시가총액으로 복원한 기록입니다. 현재 시총이나 분할 조정 가격을 소급 적용하지 않습니다."
@@ -176,12 +177,15 @@ def backfill(start, end, source_dirs, *, output=SOURCE, deps_dir=None):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--start", type=date.fromisoformat, default=date(2018, 1, 1))
+    parser.add_argument("--start", type=date.fromisoformat)
     parser.add_argument("--end", type=date.fromisoformat, required=True)
     parser.add_argument("--source-dir", type=Path, action="append", help="Annual Parquet directories in priority order")
     parser.add_argument("--output-dir", type=Path, default=SOURCE)
     parser.add_argument("--deps-dir", type=Path, help="Optional local installation of pyarrow")
+    parser.add_argument("--history-config", type=Path, default=DEFAULT_POLICY)
     args = parser.parse_args()
+    policy = load_history_policy(args.history_config)
+    args.start = args.start or date.fromisoformat(policy["collection"]["start_date"])
     result = backfill(args.start, args.end, args.source_dir or [ROOT / "data/tmp_rebounds/source", ROOT / "data/tmp_korea_recalculation/source"],
                       output=args.output_dir, deps_dir=args.deps_dir)
     print(f"Added {result['added']} rebound sessions ({result['source_start']} to {result['source_end']})")

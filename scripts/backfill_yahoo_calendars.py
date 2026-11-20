@@ -26,6 +26,7 @@ from urllib.error import HTTPError, URLError
 from urllib.parse import quote, urlencode
 from urllib.request import Request, urlopen
 from zoneinfo import ZoneInfo
+from historical_sessions import verified_sessions
 
 from generate_new_high_data import SOURCE_DIR as NEW_HIGH_DIR
 from generate_new_high_data import load_markets, validate_report as validate_new_high
@@ -570,6 +571,7 @@ def main() -> None:
         parser.error(f"no completed candidate session between {args.start} and {args.end}")
     if effective_end != args.end:
         print(f"{args.market}: excluding sessions after {effective_end} because the local close is not complete", flush=True)
+    verified_sessions(args.start, effective_end, args.market)
     reports_new, reports_turnover = build_reports(
         args.market, args.start, effective_end, workers=args.workers, timeout=args.timeout,
         minimum_coverage_ratio=args.minimum_coverage_ratio, cache_dir=args.cache_dir,

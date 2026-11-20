@@ -13,12 +13,15 @@ import json
 import math
 from pathlib import Path
 import sqlite3
+import re
 from urllib.error import HTTPError
 from urllib.parse import quote, urlencode
 from urllib.request import Request, urlopen
 from zoneinfo import ZoneInfo
 
 import stock_chart_history as charts
+from history_policy import load_history_policy, DEFAULT_POLICY
+from price_history_range import load_price_range
 
 ROOT = Path(__file__).resolve().parents[1]
 AUDIT = ROOT / "data/information-audit"
@@ -118,7 +121,15 @@ def scan(db, rows, as_of, force=False):
         print(f"Stock scanner {min(start + len(batch), len(pending))}/{len(pending)}", flush=True)
 
 
-def parse_yahoo_financials(payload, symbol, today):
+def financial_start(today, start=None):
+    value = start if start is not None else load_history_policy(as_of=today)["collection"]["start_date"]
+    if date.fromisoformat(value).isoformat() != value or value > today:
+        raise ValueError("Financial start must be a real date no later than the endpoint")
+    return value
+
+
+def parse_yahoo_financials(payload, symbol, today, *, start=None):
+    start = financial_start(today, start)
     info = payload.get("timeseries") or {}
     if info.get("error"):
         raise ValueError("Financial source returned an error")
@@ -132,7 +143,7 @@ def parse_yahoo_financials(payload, symbol, today):
                 for item in series.get(key, []):
                     day, currency = item.get("asOfDate", ""), item.get("currencyCode", "")
                     value = number((item.get("reportedValue") or {}).get("raw"))
-                    if not START <= day <= today or value is None or not currency:
+                    if not start <= day <= today or value is None or not currency:
                         continue
                     if item.get("periodType") != ("12M" if kind == "annual" else "3M"):
                         continue
@@ -142,7 +153,8 @@ def parse_yahoo_financials(payload, symbol, today):
     return list(rows.values())
 
 
-def parse_naver_financials(payload, kind, today):
+def parse_naver_financials(payload, kind, today, *, start=None):
+    start = financial_start(today, start)
     info = payload.get("financeInfo") or {}
     columns = {row["title"]: row.get("columns") or {} for row in info.get("rowList") or []}
     rows = []
@@ -152,7 +164,7 @@ def parse_naver_financials(payload, kind, today):
             continue
         year, month = int(key[:4]), int(key[4:])
         day = f"{year:04d}-{month:02d}-{calendar.monthrange(year, month)[1]:02d}"
-        if not START <= day <= today:
+        if not start <= day <= today:
             continue
         row = {"type": kind, "period_end": day, "currency": "KRW", "source": "Naver Finance reported financials"}
         for metric, label in [("revenue", "매출액"), ("operating_income", "영업이익"), ("net_income", "당기순이익")]:
@@ -163,9 +175,10 @@ def parse_naver_financials(payload, kind, today):
     return rows
 
 
-def scanner_information(ticker, raw, today):
+def scanner_information(ticker, raw, today, *, start=None):
+    start = financial_start(today, start)
     row = raw.get("row") or {}
-    result = {"ticker": ticker, "requested_start": START, "fetched_at": raw["fetched_at"], "quote": None, "metrics": {}, "financials": [], "warnings": []}
+    result = {"ticker": ticker, "requested_start": start, "fetched_at": raw["fetched_at"], "quote": None, "metrics": {}, "financials": [], "warnings": []}
     if not row:
         result["warnings"].append("현재 제공처에서 같은 거래소의 종목을 확인하지 못했습니다.")
         return result
@@ -189,7 +202,7 @@ def scanner_information(ticker, raw, today):
         if not stamp or not currency:
             continue
         day = datetime.fromtimestamp(stamp, timezone.utc).date().isoformat()
-        if not START <= day <= today:
+        if not start <= day <= today:
             continue
         financial = {"type": kind, "period_end": day, "currency": currency, "source": "TradingView reported financials", **{metric: number(row.get(f"{field}_{suffix}")) for metric, field in [("revenue", "total_revenue"), ("operating_income", "oper_income"), ("net_income", "net_income")]}}
         if any(financial.get(key) is not None for key in METRICS):
@@ -197,44 +210,52 @@ def scanner_information(ticker, raw, today):
     return result
 
 
-def collect_one(row, raw, today):
-    info = scanner_information(row["ticker"], raw, today)
+def collect_one(row, raw, today, *, start=None):
+    start = financial_start(today, start)
+    info = scanner_information(row["ticker"], raw, today, start=start)
     fetched = []
     try:
         if row["market"] == "korea":
             code = row["ticker"].split(".")[0]
             for kind, endpoint in [("annual", "annual"), ("quarterly", "quarter")]:
-                fetched.extend(parse_naver_financials(fetch_json(f"https://m.stock.naver.com/api/stock/{code}/finance/{endpoint}"), kind, today))
+                fetched.extend(parse_naver_financials(fetch_json(f"https://m.stock.naver.com/api/stock/{code}/finance/{endpoint}"), kind, today, start=start))
             # Retain full FY2024 balance-sheet/cash-flow reporting during the
             # daily refresh too. Naver's summary has only three income fields.
             symbol = charts.yahoo_symbol(row["ticker"])
-            params = {"type": ",".join("annual" + field for field in METRICS.values()), "period1": int(datetime.fromisoformat(START).replace(tzinfo=timezone.utc).timestamp()), "period2": 1735689600}
-            historical = parse_yahoo_financials(fetch_json(f"https://query1.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/{quote(symbol, safe='')}?{urlencode(params)}"), symbol, "2024-12-31")
+            supplement_end = min(today, "2024-12-31")  # Existing FY2024 source supplement, not the collection policy.
+            historical = []
+            if start <= supplement_end:
+                params = {"type": ",".join("annual" + field for field in METRICS.values()), "period1": int(datetime.fromisoformat(start).replace(tzinfo=timezone.utc).timestamp()), "period2": int((datetime.fromisoformat(supplement_end).replace(tzinfo=timezone.utc) + timedelta(days=1)).timestamp())}
+                historical = parse_yahoo_financials(fetch_json(f"https://query1.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/{quote(symbol, safe='')}?{urlencode(params)}"), symbol, supplement_end, start=start)
             for statement in historical:
                 old = next((item for item in fetched if item["type"] == statement["type"] and item["period_end"] == statement["period_end"]), None)
                 if not old or (old["currency"] == statement["currency"] and all(old.get(metric) is None or statement.get(metric) is not None for metric in METRICS)):
                     fetched = [item for item in fetched if item is not old] + [statement]
         elif symbol := charts.yahoo_symbol(row["ticker"]):
             types = [prefix + field for prefix in ("annual", "quarterly") for field in METRICS.values()]
-            params = {"type": ",".join(types), "period1": int(datetime.fromisoformat(START).replace(tzinfo=timezone.utc).timestamp()), "period2": int(datetime.now(timezone.utc).timestamp())}
-            fetched = parse_yahoo_financials(fetch_json(f"https://query1.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/{quote(symbol, safe='')}?{urlencode(params)}"), symbol, today)
+            params = {"type": ",".join(types), "period1": int(datetime.fromisoformat(start).replace(tzinfo=timezone.utc).timestamp()), "period2": int(datetime.now(timezone.utc).timestamp())}
+            fetched = parse_yahoo_financials(fetch_json(f"https://query1.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/{quote(symbol, safe='')}?{urlencode(params)}"), symbol, today, start=start)
     except Exception as exc:
         info["warnings"].append(f"과거 확정 실적 조회 실패: {type(exc).__name__}: {exc}")
         if isinstance(exc, HTTPError) and exc.code in {403, 429}:
             info["rate_limited"] = True
     # Keep each statement's original currency. Never splice converted metrics into a native statement.
-    preferred = {(item["type"], item["period_end"]) for item in fetched}
-    info["financials"] = sorted([item for item in info["financials"] if (item["type"], item["period_end"]) not in preferred] + fetched, key=lambda item: (item["period_end"], item["type"]))
+    preferred = {(item["type"], item["period_end"], item["currency"]) for item in fetched}
+    info["financials"] = sorted([item for item in info["financials"] if (item["type"], item["period_end"], item["currency"]) not in preferred] + fetched, key=lambda item: (item["period_end"], item["type"]))
     info["financials_fetched_at"] = datetime.now(timezone.utc).isoformat()
+    info["requested_end"] = today
     if not info["financials"]:
-        info["warnings"].append("2014년 이후 확정 실적이 제공되지 않습니다. 신규 상장·펀드·자료 미지원 여부를 원문에서 확인해 주세요.")
+        info["warnings"].append(f"{start[:4]}년 이후 확정 실적이 제공되지 않습니다. 신규 상장·펀드·자료 미지원 여부를 원문에서 확인해 주세요.")
     info["financial_coverage"] = {"first_period": min((item["period_end"] for item in info["financials"]), default=None),
                                   "latest_period": max((item["period_end"] for item in info["financials"]), default=None),
                                   "note": "제공된 확정 회계기간만 표시합니다. 제공처가 제한한 과거 분기와 공시되지 않은 기간은 채우지 않습니다."}
     return info
 
 
-def checkpoint(db, rows, history_db=None):
+def checkpoint(db, rows, history_db=None, *, history_request=None, history_resume=None, audit_dir=None):
+    audit_dir = AUDIT if audit_dir is None else audit_dir
+    requested_start = history_request.start if history_request else load_history_policy()["collection"]["start_date"]
+    history_end = history_request.end if history_request else datetime.now(ZoneInfo("Asia/Seoul")).date().isoformat()
     results = []
     for row in rows:
         stored = db.execute("SELECT value FROM information WHERE ticker=?", (row["ticker"],)).fetchone()
@@ -243,104 +264,75 @@ def checkpoint(db, rows, history_db=None):
         history = json.loads(prices[0]) if prices else {}
         points = history.get("prices") or []
         start = points[0][0] if points else None
-        recent_cutoff = (datetime.now(ZoneInfo("Asia/Seoul")).date() - timedelta(days=7)).isoformat()
-        status = "missing" if len(points) < 2 else "no_recent_data" if points[-1][0] < recent_cutoff else "complete" if start and start <= START else "recent_listing" if history.get("first_trade_date", "") and history["first_trade_date"] > START else "limited"
+        recent_cutoff = (date.fromisoformat(history_end) - timedelta(days=7)).isoformat()
+        status = "missing" if len(points) < 2 else "no_recent_data" if points[-1][0] < recent_cutoff else "complete" if start and start <= requested_start else "recent_listing" if history.get("first_trade_date", "") and history["first_trade_date"] > requested_start else "limited"
         result = {**row, "status": "checked" if stored else "pending", "quote": bool(value.get("quote")), "financial_periods": len(value.get("financials", [])),
                   "financial_first": value.get("financial_coverage", {}).get("first_period"), "financial_latest": value.get("financial_coverage", {}).get("latest_period"),
                   "history_status": status, "history_start": start, "history_end": points[-1][0] if points else None,
                   "warnings": value.get("warnings", []), "historical_financials_warning": value.get("historical_financials_warning"), "price_points": len(points), "checked_at": value.get("financials_fetched_at")}
         results.append(result)
-    AUDIT.mkdir(parents=True, exist_ok=True)
-    with (AUDIT / "results.jsonl").open("w", encoding="utf-8") as output:
+    audit_dir.mkdir(parents=True, exist_ok=True)
+    with (audit_dir / "results.jsonl").open("w", encoding="utf-8") as output:
         for result in results:
             output.write(json.dumps(result, ensure_ascii=False, separators=(",", ":")) + "\n")
     pending = [row for row in results if row["status"] == "pending"]
     fields = ["order", "ticker", "name", "market", "status", "quote", "financial_periods", "financial_first", "financial_latest", "history_status", "history_start", "history_end", "price_points", "historical_financials_warning", "warnings", "checked_at"]
-    with (AUDIT / "results.csv").open("w", encoding="utf-8-sig", newline="") as output:
+    with (audit_dir / "results.csv").open("w", encoding="utf-8-sig", newline="") as output:
         writer = csv.DictWriter(output, fieldnames=fields, extrasaction="ignore", lineterminator="\n")
         writer.writeheader()
         writer.writerows({**row, "warnings": " / ".join(row.get("warnings", []))} for row in results)
     exceptions = [row for row in results if row["status"] == "checked" and (not row["quote"] or not row["financial_periods"] or row["warnings"] or row.get("historical_financials_warning") or row["history_status"] in {"limited", "missing", "no_recent_data"})]
-    charts.write_json(AUDIT / "exceptions.json", exceptions)
+    charts.write_json(audit_dir / "exceptions.json", exceptions)
     tables = {row[0] for row in db.execute("SELECT name FROM sqlite_master WHERE type='table'")}
     stages = {"current_information": {"checked": len(rows) - len(pending), "next": pending[0] if pending else None}}
-    financial_stage = ("financial_2024_h2", "financial_2024_h2_updates") if "financial_2024_h2_updates" in tables else ("financial_2025", "financial_2025_updates")
-    if "financial_2024_updates" in tables:
-        financial_stage = ("financial_2024", "financial_2024_updates")
-    if "financial_2023_updates" in tables:
-        financial_stage = ("financial_2023", "financial_2023_updates")
-    if "financial_2022_updates" in tables:
-        financial_stage = ("financial_2022", "financial_2022_updates")
-    if "financial_2021_updates" in tables:
-        financial_stage = ("financial_2021", "financial_2021_updates")
-    if "financial_2020_updates" in tables:
-        financial_stage = ("financial_2020", "financial_2020_updates")
-    if "financial_2019_updates" in tables:
-        financial_stage = ("financial_2019", "financial_2019_updates")
-    if "financial_2018_updates" in tables:
-        financial_stage = ("financial_2018", "financial_2018_updates")
-    if "financial_2017_updates" in tables:
-        financial_stage = ("financial_2017", "financial_2017_updates")
-    if "financial_2016_updates" in tables:
-        financial_stage = ("financial_2016", "financial_2016_updates")
-    if "financial_2015_updates" in tables:
-        financial_stage = ("financial_2015", "financial_2015_updates")
-    if "financial_2014_updates" in tables:
-        financial_stage = ("financial_2014", "financial_2014_updates")
-    history_table = next((f"history_{year}_updates" for year in range(2014, 2025) if f"history_{year}_updates" in tables), "history_2024_updates")
+    financial_tables = sorted((table for table in tables if re.fullmatch(r"financial_\d{4}(?:_(?:h2|onward|\d{4}))?_updates", table)),
+                              key=lambda table: (table[10:14], "_h2_" in table, table))
+    financial_table = financial_tables[0] if financial_tables else "financial_2025_updates"
+    financial_stage = (financial_table.removesuffix("_updates"), financial_table)
+    history_table = (history_request.table if history_request else
+                     next(iter(sorted(table for table in tables if re.fullmatch(r"history_\d{4}_updates", table))), "history_2024_updates"))
     for name, table in [financial_stage, ("daily_history", history_table)]:
         done = {row[0] for row in db.execute(f"SELECT ticker FROM {table}")} if table in tables else set()
         todo = [row for row in rows if row["ticker"] not in done]
         stages[name] = {"checked": len(rows) - len(todo), "next": todo[0] if todo else None}
     next_step = next((name for name, value in stages.items() if value["next"]), None)
-    commands = {"current_information": "python scripts/stock_information.py collect", "financial_2025": "python scripts/backfill_stock_information_2025.py", "financial_2024": "python scripts/backfill_stock_information_2024.py collect", "financial_2024_h2": "python scripts/backfill_stock_information_2024_h2.py collect", "daily_history": "python scripts/refresh_stock_information_history.py"}
-    commands["financial_2023"] = "python scripts/backfill_stock_information_2023.py collect"
-    commands["financial_2022"] = "python scripts/backfill_stock_information_2022.py collect"
-    commands["financial_2021"] = "python scripts/backfill_stock_information_2021.py collect"
-    commands["financial_2020"] = "python scripts/backfill_stock_information_2020.py collect"
-    commands["financial_2019"] = "python scripts/backfill_stock_information_2019.py collect"
-    commands["financial_2018"] = "python scripts/backfill_stock_information_2018.py collect"
-    commands["financial_2017"] = "python scripts/backfill_stock_information_2017.py collect"
-    commands["financial_2016"] = "python scripts/backfill_stock_information_2016.py collect"
-    commands["financial_2015"] = "python scripts/backfill_stock_information_2015.py collect"
-    commands["financial_2014"] = "python scripts/backfill_stock_information_2014.py collect"
-    if financial_stage[0] == "financial_2014":
-        commands["daily_history"] += " --state-dir data/tmp_2014_history"
-    elif financial_stage[0] == "financial_2015":
-        commands["daily_history"] += " --state-dir data/tmp_2015_history"
-    elif financial_stage[0] == "financial_2016":
-        commands["daily_history"] += " --state-dir data/tmp_2016_history"
-    elif financial_stage[0] == "financial_2017":
-        commands["daily_history"] += " --state-dir data/tmp_2017_history"
-    elif financial_stage[0] == "financial_2018":
-        commands["daily_history"] += " --state-dir data/tmp_2018_history"
-    elif financial_stage[0] == "financial_2019":
-        commands["daily_history"] += " --state-dir data/tmp_2019_history"
-    elif financial_stage[0] == "financial_2020":
-        commands["daily_history"] += " --state-dir data/tmp_2020_history"
-    elif financial_stage[0] == "financial_2021":
-        commands["daily_history"] += " --state-dir data/tmp_2021_history"
-    elif financial_stage[0] == "financial_2022":
-        commands["daily_history"] += " --state-dir data/tmp_2022_history"
-    elif financial_stage[0] == "financial_2024":
-        commands["daily_history"] += " --state-dir data/tmp_2024"
-    elif financial_stage[0] == "financial_2024_h2":
-        commands["daily_history"] += " --state-dir data/tmp_2024_h2"
-    elif financial_stage[0] == "financial_2023":
-        commands["daily_history"] += " --state-dir data/tmp_2023_history"
-    charts.write_json(AUDIT / "progress.json", {"requested_start": START, "as_of": datetime.now(ZoneInfo("Asia/Seoul")).date().isoformat(), "total": len(rows), "checked": len(rows) - len(pending),
+    financial_key = financial_table.removeprefix("financial_").removesuffix("_updates")
+    financial_script = ROOT / f"scripts/backfill_stock_information_{financial_key}.py"
+    financial_command = (f"python scripts/{financial_script.name}" + (" collect" if financial_key != "2025" else "")
+                         if financial_script.exists() else
+                         "python scripts/backfill_stock_information.py collect --year " + financial_key[:4])
+    if financial_tables:
+        saved = db.execute(f"SELECT value FROM {financial_table} LIMIT 1").fetchone()
+        if saved:
+            financial_command = json.loads(saved[0]).get("resume") or financial_command
+    commands = {"current_information": "python scripts/stock_information.py collect",
+                financial_stage[0]: financial_command,
+                "daily_history": "python scripts/refresh_stock_information_history.py"}
+    if financial_tables and financial_key != "2025":
+        state_key = financial_key
+        if re.fullmatch(r"\d{4}", financial_key) and financial_key <= "2023":
+            state_key += "_history"
+        commands["daily_history"] += " --state-dir data/tmp_" + state_key
+    if history_resume is not None:
+        commands["daily_history"] = history_resume
+    charts.write_json(audit_dir / "progress.json", {"requested_start": requested_start,
+        **({"requested_end": history_request.end, "history_state_table": history_table} if history_request else {}),
+        "as_of": datetime.now(ZoneInfo("Asia/Seoul")).date().isoformat(), "total": len(rows), "checked": len(rows) - len(pending),
         "quotes": sum(row["quote"] for row in results), "financials": sum(row["financial_periods"] > 0 for row in results), "history_counts": dict(Counter(row["history_status"] for row in results)),
         "phase": next_step or "audited_with_source_exceptions", "stages": stages,
         "next": stages[next_step]["next"] if next_step else None, "exceptions": len(exceptions), "resume": commands.get(next_step, "원본 미제공 예외를 exceptions.json의 종목 순서로 재확인"), "updated_at": datetime.now(timezone.utc).isoformat()})
 
 
-def collect(db, rows, limit=None, force=False):
-    today = datetime.now(ZoneInfo("Asia/Seoul")).date().isoformat()
+def collect(db, rows, limit=None, force=False, *, start=None, end=None, request=None):
+    today = end or datetime.now(ZoneInfo("Asia/Seoul")).date().isoformat()
+    start = financial_start(today, start)
     scan(db, rows, today)
     pending = []
     for row in rows:
         stored = db.execute("SELECT value FROM information WHERE ticker=?", (row["ticker"],)).fetchone()
-        if force or not stored or not fresh(json.loads(stored[0]).get("financials_fetched_at"), hours=20):
+        if (force or not stored or not fresh((previous := json.loads(stored[0])).get("financials_fetched_at"), hours=20)
+                or previous.get("requested_start", start) > start
+                or (previous.get("requested_end") is not None and previous["requested_end"] != today)):
             pending.append(row)
     if limit is not None:
         pending = pending[:limit]
@@ -349,16 +341,18 @@ def collect(db, rows, limit=None, force=False):
         for start in range(0, len(pending), 20):
             batch = pending[start:start + 20]
             raw = [json.loads(db.execute("SELECT value FROM scanner WHERE ticker=?", (row["ticker"],)).fetchone()[0]) for row in batch]
-            futures = [pool.submit(collect_one, row, source, today) for row, source in zip(batch, raw)]
+            futures = [pool.submit(collect_one, row, source, today, start=start) for row, source in zip(batch, raw)]
             for row, future in zip(batch, futures):
                 value = future.result()
                 old = db.execute("SELECT value FROM information WHERE ticker=?", (row["ticker"],)).fetchone()
                 if old:
                     previous = json.loads(old[0])
-                    keys = {(item["type"], item["period_end"]) for item in value["financials"]}
-                    value["financials"] = sorted(value["financials"] + [item for item in previous.get("financials", []) if (item["type"], item["period_end"]) not in keys], key=lambda item: (item["period_end"], item["type"]))
-                    for key in ["historical_financials_fetched_at", "historical_financials_warning", "historical_2024_h2_fetched_at", "historical_2024_h2_coverage", "historical_2024_coverage", "historical_2024_fetched_at", "historical_2023_coverage", "historical_2023_fetched_at", "historical_2022_coverage", "historical_2022_fetched_at", "historical_2021_coverage", "historical_2021_fetched_at", "historical_2020_coverage", "historical_2020_fetched_at", "historical_2019_coverage", "historical_2019_fetched_at", "historical_2018_coverage", "historical_2018_fetched_at", "historical_2017_coverage", "historical_2017_fetched_at", "historical_2016_coverage", "historical_2016_fetched_at", "historical_2014_coverage", "historical_2014_fetched_at", "historical_2015_coverage", "historical_2015_fetched_at", "prior_financial_snapshots"]:
-                        if key in previous: value[key] = previous[key]
+                    keys = {(item["type"], item["period_end"], item["currency"]) for item in value["financials"]}
+                    value["financials"] = sorted(value["financials"] + [item for item in previous.get("financials", []) if (item["type"], item["period_end"], item["currency"]) not in keys], key=lambda item: (item["period_end"], item["type"]))
+                    for key in previous:
+                        if key.startswith("historical_") or key == "prior_financial_snapshots":
+                            value[key] = previous[key]
+                    value["requested_start"] = min(previous.get("requested_start", start), start)
                     dates = sorted(item["period_end"] for item in value["financials"])
                     value["financial_coverage"].update(first_period=dates[0] if dates else None, latest_period=dates[-1] if dates else None)
                     if value["quote"] is None and previous.get("quote"):
@@ -367,11 +361,11 @@ def collect(db, rows, limit=None, force=False):
                 db.commit()
                 print(f"{row['order']}/{len(rows)} {row['ticker']} quote={bool(value['quote'])} statements={len(value['financials'])}", flush=True)
                 if value.get("rate_limited"):
-                    checkpoint(db, rows, history_db)
+                    checkpoint(db, rows, history_db, history_request=request, audit_dir=None if request is None or request.scope == "2014" else AUDIT / "information-ranges" / request.scope)
                     raise RuntimeError("Source access limited; checkpoint saved. Retry later.")
             if (start + len(batch)) % 200 == 0 or start + len(batch) == len(pending):
-                checkpoint(db, rows, history_db)
-    checkpoint(db, rows, history_db)
+                checkpoint(db, rows, history_db, history_request=request, audit_dir=None if request is None or request.scope == "2014" else AUDIT / "information-ranges" / request.scope)
+    checkpoint(db, rows, history_db, history_request=request, audit_dir=None if request is None or request.scope == "2014" else AUDIT / "information-ranges" / request.scope)
     history_db.close()
 
 
@@ -379,9 +373,6 @@ def export(db):
     PACKS.mkdir(parents=True, exist_ok=True)
     for shard in "0123456789abcdef":
         entries = {ticker: json.loads(raw) for ticker, raw in db.execute("SELECT ticker,value FROM information ORDER BY ticker") if hashlib.sha256(ticker.encode()).hexdigest()[0] == shard}
-        for value in entries.values():
-            if "requested_start" in value:
-                value["requested_start"] = min(value["requested_start"], START)
         body = json.dumps(entries, ensure_ascii=False, separators=(",", ":"), allow_nan=False).encode()
         target = PACKS / f"{shard}.json.gz"
         temporary = target.with_suffix(".gz.tmp")
@@ -550,17 +541,26 @@ def fill_daily_quotes(db):
     db.commit(); history.close()
 
 
-def main():
+def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("mode", choices=["collect", "refresh-quotes", "fill-daily-quotes", "checkpoint", "export", "publish"])
     parser.add_argument("--limit", type=int)
     parser.add_argument("--force", action="store_true")
-    args = parser.parse_args()
+    parser.add_argument("--history-config", type=Path, default=DEFAULT_POLICY)
+    parser.add_argument("--dry-run", action="store_true")
+    args = parser.parse_args(argv)
+    try:
+        policy = load_history_policy(args.history_config)
+    except (ValueError, OSError) as error:
+        parser.error(str(error))
+    if args.dry_run:
+        print(json.dumps(policy))
+        return
     if args.mode == "publish":
         publish(); return
     db = open_database()
     rows = charts.roster()
-    if args.mode == "collect": collect(db, rows, args.limit, args.force)
+    if args.mode == "collect": collect(db, rows, args.limit, args.force, start=policy["collection"]["start_date"], end=policy["collection"]["end_date"], request=load_price_range(args.history_config))
     elif args.mode == "refresh-quotes": refresh_quotes(db, rows)
     elif args.mode == "fill-daily-quotes": fill_daily_quotes(db)
     elif args.mode == "checkpoint":

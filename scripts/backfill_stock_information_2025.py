@@ -15,7 +15,7 @@ def fetch(row):
     types = ["quarterly" + field for field in info.METRICS.values()]
     params = {"type": ",".join(types), "period1": 1735689600, "period2": 1767225600}
     payload = info.fetch_json(f"https://query1.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/{quote(symbol, safe='')}?{urlencode(params)}")
-    return info.parse_yahoo_financials(payload, symbol, "2025-12-31"), None
+    return info.parse_yahoo_financials(payload, symbol, "2025-12-31", start="2025-01-01"), None
 
 
 def main():
@@ -43,8 +43,8 @@ def main():
                 stored = db.execute("SELECT value FROM information WHERE ticker=?", (row["ticker"],)).fetchone()
                 if stored:
                     value = json.loads(stored[0])
-                    keys = {(item["type"], item["period_end"]) for item in value["financials"]}
-                    added = [item for item in financials if (item["type"], item["period_end"]) not in keys]
+                    keys = {(item["type"], item["period_end"], item["currency"]) for item in value["financials"]}
+                    added = [item for item in financials if (item["type"], item["period_end"], item["currency"]) not in keys]
                     value["financials"] = sorted(value["financials"] + added, key=lambda item: (item["period_end"], item["type"]))
                     value["historical_financials_fetched_at"] = datetime.now(timezone.utc).isoformat()
                     dates = sorted(item["period_end"] for item in value["financials"])

@@ -5,7 +5,7 @@ import {gzipSync} from 'node:zlib';
 import ts from 'typescript';
 
 const source=await readFile(new URL('../src/dataClient/staticStockDataClient.ts',import.meta.url),'utf8');
-const js=ts.transpileModule(source,{compilerOptions:{module:ts.ModuleKind.ESNext,target:ts.ScriptTarget.ES2022}}).outputText
+const js=ts.transpileModule(source.replace('import { fetchDataAsset } from "./assetDataClient";', 'const fetchDataAsset = (...args) => fetch(...args);'),{compilerOptions:{module:ts.ModuleKind.ESNext,target:ts.ScriptTarget.ES2022}}).outputText
   .replace(/^import .*;\r?\n/gm,'').replaceAll('import.meta.env.BASE_URL','"/"');
 const code='const liveReportFor=()=>null,liveQuoteFor=()=>undefined,liveDetailFor=()=>undefined,applySemiconductor=value=>value;\n'+js;
 const client=await import(`data:text/javascript;base64,${Buffer.from(code).toString('base64')}`);
@@ -19,10 +19,10 @@ test('calendar stock observations preserve exact prices and currencies through g
       const calls=[];
       globalThis.fetch=async url=>{calls.push(url);return new Response(encoded?gzipSync(JSON.stringify(value)):JSON.stringify(value));};
       assert.deepEqual(await client.getCalendarStockPrices('europe','EURONEXT:MC'),value);
-      assert.match(calls[0],/calendar-stocks\/europe\/EURONEXT~3AMC\.json\.gz\?/);
+      assert.match(calls[0],/calendar-stocks\/europe\/EURONEXT~3AMC\.json\.gz(?:\?|$)/);
     }
     const calls=[];
-    globalThis.fetch=async url=>{calls.push(url);return url.includes('.json.gz?')?new Response('',{status:404}):Response.json(value);};
+    globalThis.fetch=async url=>{calls.push(url);return url.includes('.json.gz')?new Response('',{status:404}):Response.json(value);};
     assert.deepEqual(await client.getCalendarStockPrices('europe','EURONEXT:MC'),value);
     assert.equal(calls.length,2);
   } finally {globalThis.fetch=oldFetch;globalThis.window=oldWindow;}
@@ -35,9 +35,9 @@ test('yearly calendar aggregates decode exact compressed data and retain legacy 
     const calls=[];
     globalThis.fetch=async url=>{calls.push(url);return new Response(gzipSync(JSON.stringify(value)));};
     assert.deepEqual(await client.getCalendarHistory('new-highs','taiwan','2017'),value);
-    assert.match(calls[0],/history\/taiwan\/2017\.json\.gz\?/);
+    assert.match(calls[0],/history\/taiwan\/2017\.json\.gz(?:\?|$)/);
     calls.length=0;
-    globalThis.fetch=async url=>{calls.push(url);return url.includes('.json.gz?')?new Response('',{status:404}):Response.json(value);};
+    globalThis.fetch=async url=>{calls.push(url);return url.includes('.json.gz')?new Response('',{status:404}):Response.json(value);};
     assert.deepEqual(await client.getCalendarHistory('new-highs','taiwan','2017'),value);
     assert.equal(calls.length,2);
   } finally {globalThis.fetch=oldFetch;globalThis.window=oldWindow;}
@@ -51,7 +51,7 @@ test('historical reports decode gzip and already decoded host responses without 
       const requests=[];
       globalThis.fetch=async url=>{requests.push(url);return new Response(encoded?gzipSync(JSON.stringify(value)):JSON.stringify(value));};
       assert.deepEqual(await client.getNewHighReport('taiwan',day),value);
-      assert.equal(requests.length,1);assert.ok(requests[0].includes(day+'.json.gz?'));
+      assert.equal(requests.length,1);assert.ok(requests[0].includes(day+'.json.gz'));
     }
   } finally {globalThis.fetch=oldFetch;globalThis.window=oldWindow;}
 });
@@ -60,11 +60,11 @@ test('legacy JSON remains readable after a gzip miss and recent completed Korean
   const oldFetch=globalThis.fetch,oldWindow=globalThis.window;globalThis.window=globalThis;
   try {
     const calls=[];
-    globalThis.fetch=async url=>{calls.push(url);return url.includes('.json.gz?')?new Response('',{status:404}):Response.json(sample);};
+    globalThis.fetch=async url=>{calls.push(url);return url.includes('.json.gz')?new Response('',{status:404}):Response.json(sample);};
     assert.deepEqual(await client.getNewHighReport('taiwan','2021-04-06'),sample);
-    assert.equal(calls.length,2);assert.match(calls[1],/2021-04-06\.json\?/);
+    assert.equal(calls.length,2);assert.match(calls[1],/2021-04-06\.json(?:\?|$)/);
     calls.length=0;await client.getTurnoverReport('korea','2026-11-05');
-    assert.equal(calls.length,1);assert.match(calls[0],/korea\/2026_11\/2026-11-05\.json\?/);
+    assert.equal(calls.length,1);assert.match(calls[0],/korea\/2026_11\/2026-11-05\.json(?:\?|$)/);
   } finally {globalThis.fetch=oldFetch;globalThis.window=oldWindow;}
 });
 
@@ -84,7 +84,7 @@ test('semiconductor snapshots decode gzip and host-decoded responses, with legac
       assert.deepEqual(await client.getSemiconductorData(),value);
     }
     const calls=[];
-    globalThis.fetch=async url=>{calls.push(url);return url.includes('.json.gz?')?new Response('',{status:404}):Response.json(value);};
+    globalThis.fetch=async url=>{calls.push(url);return url.includes('.json.gz')?new Response('',{status:404}):Response.json(value);};
     assert.deepEqual(await client.getSemiconductorData(),value);assert.equal(calls.length,2);
   } finally {globalThis.fetch=oldFetch;globalThis.window=oldWindow;}
 });

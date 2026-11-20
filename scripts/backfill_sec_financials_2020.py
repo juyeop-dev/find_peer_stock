@@ -108,8 +108,8 @@ def collect():
 def apply():
     import backfill_stock_information_2020 as config
     import backfill_stock_information_2024_h2 as recovery
-    config.configure()
-    db=info.open_database(recovery.STATE)
+    request = config.configure()
+    db=info.open_database(request.state)
     rows=json.loads((info.ROOT/'data/seed/reported_financials_sec_2020.json').read_bytes())['statements']
     grouped={}
     for row in rows:grouped.setdefault(row['ticker'],[]).append({k:v for k,v in row.items() if k!='ticker'})
@@ -118,12 +118,12 @@ def apply():
     for ticker,statements in grouped.items():
         raw=db.execute('SELECT value FROM information WHERE ticker=?',(ticker,)).fetchone()
         if not raw:continue
-        old=json.loads(raw[0]);updated=recovery.merge(old,statements,now)
+        old=json.loads(raw[0]);updated=recovery.merge(old,statements,now,request)
         db.execute('UPDATE information SET value=? WHERE ticker=?',(json.dumps(updated,ensure_ascii=False,separators=(',',':')),ticker))
-        result={'queried_at':now,'status':'available',**updated[recovery.COVERAGE_KEY],'errors':[],'supplement_source':'SEC XBRL Frames API'}
-        db.execute(f'INSERT OR REPLACE INTO {recovery.TABLE} VALUES (?,?)',(ticker,json.dumps(result)))
+        result={'queried_at':now,'status':'available',**updated[request.coverage_key],'errors':[],'supplement_source':'SEC XBRL Frames API'}
+        db.execute(f'INSERT OR REPLACE INTO {request.table} VALUES (?,?)',(ticker,json.dumps(result)))
         applied.append(ticker)
-    db.commit();recovery.checkpoint(db,charts.roster());db.close()
+    db.commit();recovery.checkpoint(db,charts.roster(),request);db.close()
     charts.write_json(info.AUDIT/'2020/sec-applied.json',{'tickers':applied,'applied_at':now})
     print(f'Applied SEC statements for {len(applied)} listings',flush=True)
 

@@ -1,0 +1,28 @@
+<!doctype html><html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>정적 데이터 검증</title></head><body><main id="result">검증 준비</main><script type="module">
+import {createStaticDataClient} from '../../shared/static-data.mjs';
+window.runStaticDataTests = async base => {
+  const decode = bytes => JSON.parse(new TextDecoder().decode(bytes));
+  const check = (value, message) => {if (!value) throw new Error(message);};
+  const client = createStaticDataClient({baseUrl:base+'/a'});
+  const values = await Promise.all(Array.from({length:8},()=>client.get('index.json')));
+  const value = decode(values[0]); check(value.name==='원본' && value.value===123.4567890123,'JSON precision / Unicode');
+  check(value.fetched_at==='2026-11-16T00:00:00Z','Source time preserved');
+  const gzip = await client.get('new-highs/korea/2014-01-02.json.gz'); check(gzip[0]===31 && gzip[1]===139,'Raw gzip bytes');
+  check(decode(await client.get('new-highs/korea/2014-01-02.json')).loss===-7,'Legacy gzip alias');
+  check((await client.get('investors/index.json.gz')).length===150000,'Segment reconstruction');
+  const encoded = createStaticDataClient({baseUrl:base+'/encoded'});
+  check(decode(await encoded.get('index.json')).value===value.value,'HTTP host decoding');
+  let corrupt=false, denied=false;
+  try {await createStaticDataClient({baseUrl:base+'/bad'}).get('index.json');} catch {corrupt=true;}
+  try {await createStaticDataClient({baseUrl:base+'/denied'}).get('index.json');} catch {denied=true;}
+  check(corrupt && denied,'Corruption and CORS failure must reject');
+  const oldReader = createStaticDataClient({baseUrl:base+'/b',fetcher:async (url,init)=>{
+    if(String(url).endsWith('/manifest.json')) return fetch(base+'/a/manifest.json',init);
+    return fetch(url,init);
+  }});
+  check(decode(await oldReader.get('index.json')).value===value.value,'Retained old version');
+  const result = {result:'PASS',crossOrigin: new URL(base).origin!==location.origin,corrupt,denied,sourceTime:value.fetched_at,stats:client.stats()};
+  document.getElementById('result').textContent=JSON.stringify(result);
+  return result;
+};
+</script></body></html>

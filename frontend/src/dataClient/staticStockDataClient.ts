@@ -1,3 +1,4 @@
+import { fetchDataAsset } from "./assetDataClient";
 import type { SiteIndex, StockSummary } from "./types";
 import type { NewHighIndex, NewHighReport } from "./newHighTypes";
 import type { TurnoverIndex, TurnoverReport } from "./turnoverTypes";
@@ -12,7 +13,7 @@ let refreshedCredit: CreditData | null = null;
 function assetUrl(path: string): string {
   const cleanBase = import.meta.env.BASE_URL.replace(/\/$/, "");
   const cleanPath = path.replace(/^\//, "");
-  return `${cleanBase}/${cleanPath}?t=${Date.now()}`;
+  return `${cleanBase}/${cleanPath}`;
 }
 
 async function fetchJson<T>(path: string, signal?: AbortSignal): Promise<T> {
@@ -32,12 +33,12 @@ async function fetchJson<T>(path: string, signal?: AbortSignal): Promise<T> {
       || /^data\/(?:new-highs|turnover)\/history\/[^/]+\/\d{4}\.json$/.test(path)
       || path.startsWith("data/calendar-stocks/") || path === "data/semiconductor/index.json";
     const options = {
-      cache: "no-store",
+      cache: "no-cache",
       signal: controller.signal,
       headers: { Accept: "application/json" }
     } satisfies RequestInit;
-    let response = await fetch(assetUrl(compressed ? `${path}.gz` : path), options);
-    if (compressed && response.status === 404) response = await fetch(assetUrl(path), options);
+    let response = await fetchDataAsset(assetUrl(compressed ? `${path}.gz` : path), options);
+    if (compressed && response.status === 404) response = await fetchDataAsset(assetUrl(path), options);
     if (!response.ok) {
       throw new Error(`데이터를 불러오지 못했습니다. (${response.status})`);
     }

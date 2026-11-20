@@ -16,10 +16,9 @@ from urllib.parse import quote, urlencode
 import stock_chart_history as charts
 import stock_information as info
 from backfill_yahoo_calendars import _cache_path
+from history_policy import DEFAULT_POLICY
+from price_history_range import load_price_range
 
-YEAR = 2023
-HISTORY_START = "2022-12-20"
-CACHE_YEARS = None
 
 def join_prices(previous, older, start=None, *, split_only=None):
     if previous["ticker"] != older["ticker"] or previous["currency"] != older["currency"]:
@@ -34,15 +33,15 @@ def join_prices(previous, older, start=None, *, split_only=None):
     if len(overlap) < 3 or not all(math.isclose(a, b, rel_tol=1e-5, abs_tol=.005)
                                   for left, right in overlap for a, b in zip(left[1:], right[1:])):
         return None
-    prefix = [point for point in candidates if (start or HISTORY_START) <= point[0] < previous["prices"][0][0]]
+    start = start or load_price_range(year=2023).reference_start
+    prefix = [point for point in candidates if start <= point[0] < previous["prices"][0][0]]
     if not prefix:
         return None
     return {**previous, "prices": prefix + previous["prices"],
             "first_trade_date": previous.get("first_trade_date") or older.get("first_trade_date")}
 
 
-def cached_yahoo_path(symbol, year=None):
-    year = year or YEAR
+def cached_yahoo_path(symbol, year=2023):
     start = date(year, 1, 1) - timedelta(days=370)
     end = date(year, 12, 31) + timedelta(days=2)
     params = {"interval": "1d", "events": "splits", "includePrePost": "false",
@@ -52,14 +51,35 @@ def cached_yahoo_path(symbol, year=None):
     return _cache_path(info.ROOT / "data/tmp_calendar_history", "1d-dated", url)
 
 
-def main():
+def main(argv=None, *, year=2023, cache_years=None):
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--state-dir", type=Path, default=info.ROOT / f"data/tmp_{YEAR}_history")
-    args = parser.parse_args()
-    charts.DATABASE = args.state_dir / "history.sqlite"
-    db = charts.database()
+    parser.add_argument("--state-dir", type=Path)
+    parser.add_argument("--year", type=int, default=year)
+    parser.add_argument("--history-config", type=Path, default=DEFAULT_POLICY,
+                        help="Validated policy; --year selects the compatibility collection year.")
+    parser.add_argument("--dry-run", action="store_true", help="Print the resolved range and state without importing cached originals.")
+    args = parser.parse_args(argv)
+    try:
+        request = load_price_range(args.history_config, year=args.year)
+    except (ValueError, OSError) as error:
+        parser.error(str(error))
+    year = request.year
+    args.state_dir = args.state_dir or info.ROOT / f"data/tmp_{year}_history"
+    # Existing annual cache-import tables remain valid for the default window.
+    scope = str(year) if request.reference_days == 12 else request.scope
+    table = f"history_{scope}_updates"
+    # 2014's wrapper intentionally consults only its verified cache.
+    years = tuple(cache_years) if args.year == parser.get_default("year") and cache_years is not None else tuple(range(year, max(year, 2023) + 1))
+    filename = "history-cache-import.json" if scope == str(year) else f"history-cache-import-{scope}.json"
+    audit = info.AUDIT / str(year) / filename
+    if args.dry_run:
+        print(json.dumps({"requested_start": request.start, "requested_end": request.end,
+                          "price_reference_start": request.reference_start,
+                          "cache_years": years, "state_table": table,
+                          "state_dir": str(args.state_dir), "audit": str(audit)}))
+        return
+    db = charts.database(args.state_dir / "history.sqlite")
     progress = info.open_database(args.state_dir)
-    table = f"history_{YEAR}_updates"
     progress.execute(f"CREATE TABLE IF NOT EXISTS {table}(ticker TEXT PRIMARY KEY,value TEXT NOT NULL)")
     results = []
     for row in charts.roster():
@@ -72,12 +92,12 @@ def main():
             continue
         result = {"ticker": row["ticker"], "order": row["order"], "updated": True, "error": None,
                   "queried_at": datetime.now(timezone.utc).isoformat()}
-        if prices[0][0] <= f"{YEAR}-01-01" or previous.get("first_trade_date", "") and previous["first_trade_date"] > f"{YEAR}-12-31":
-            result["cache_status"] = "already_covered" if prices[0][0] <= f"{YEAR}-01-01" else "later_listing"
+        if prices[0][0] <= request.start or previous.get("first_trade_date", "") and previous["first_trade_date"] > request.end:
+            result["cache_status"] = "already_covered" if prices[0][0] <= request.start else "later_listing"
         else:
             candidates = []
             if symbol := charts.yahoo_symbol(row["ticker"]):
-                candidates.extend((cached_yahoo_path(symbol, year), "yahoo") for year in (CACHE_YEARS or range(YEAR, 2024)))
+                candidates.extend((cached_yahoo_path(symbol, cached_year), "yahoo") for cached_year in years)
             if ":" in row["ticker"]:
                 for count in [3700, 3200, 2800, 2500, 2000, 1500]:
                     digest = hashlib.sha256(f"{row['ticker']}:1D:{count}".encode()).hexdigest()
@@ -90,10 +110,10 @@ def main():
                     raw = path.read_bytes()
                     payload = json.loads(raw)
                     older = (charts.parse_yahoo if provider == "yahoo" else charts.parse_tradingview)(payload, row["ticker"])
-                    value = join_prices(previous, older)
+                    value = join_prices(previous, older, start=request.reference_start)
                     if value:
                         result.update(cache_status="overlap_verified", cache=str(path.relative_to(info.ROOT)), sha256=hashlib.sha256(raw).hexdigest())
-                        value[f"historical_{YEAR}_extension"] = {"source": older["source"], "cache": result["cache"], "sha256": result["sha256"],
+                        value[f"historical_{year}_extension"] = {"source": older["source"], "cache": result["cache"], "sha256": result["sha256"],
                             "verified_at": result["queried_at"], "price_convention": "split-adjusted close" if all(p[1] == p[2] for p in previous["prices"]) else "original close and adjusted close"}
                         db.execute("UPDATE history SET value=? WHERE ticker=?", (json.dumps(value, ensure_ascii=False, separators=(",", ":"), allow_nan=False), row["ticker"]))
                         db.commit()
@@ -105,7 +125,9 @@ def main():
         progress.execute(f"INSERT OR REPLACE INTO {table} VALUES (?,?)", (row["ticker"], json.dumps(result)))
         progress.commit()
         results.append(result)
-    charts.write_json(info.AUDIT / f"{YEAR}/history-cache-import.json", {"counts": dict(Counter(r["cache_status"] for r in results)), "results": results})
+    charts.write_json(audit, {"requested_start": request.start,
+                      "price_reference_start": request.reference_start,
+                      "counts": dict(Counter(r["cache_status"] for r in results)), "results": results})
     print(dict(Counter(r["cache_status"] for r in results)), flush=True)
     db.close()
     progress.close()

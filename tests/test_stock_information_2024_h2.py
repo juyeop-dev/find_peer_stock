@@ -1,4 +1,5 @@
 from datetime import date
+from dataclasses import replace
 from pathlib import Path
 import sys
 import unittest
@@ -18,10 +19,10 @@ class HistoricalInformationTests(unittest.TestCase):
         def response(url):
             symbol = url.split("/chart/")[1].split("?")[0]
             return {"chart": {"result": [{"meta": {"symbol": symbol, "exchangeName": "PAR", "instrumentType": "EQUITY", "currency": "EUR", "longName": "Example Industries"}}]}}
-        with tempfile.TemporaryDirectory() as folder, patch.object(recovery, "STATE", Path(folder)), patch.object(recovery, "european_listings", return_value={row["ticker"]: listing}), patch.object(recovery.info, "fetch_json", side_effect=response):
-            self.assertEqual(recovery.resolve_yahoo(row), "EXAMPLE.PA")
-        with tempfile.TemporaryDirectory() as folder, patch.object(recovery, "STATE", Path(folder)), patch.object(recovery, "european_listings", return_value={row["ticker"]: {**listing, "currency": "USD"}}), patch.object(recovery.info, "fetch_json", side_effect=response):
-            self.assertIsNone(recovery.resolve_yahoo(row))
+        with tempfile.TemporaryDirectory() as folder, patch.object(recovery, "european_listings", return_value={row["ticker"]: listing}), patch.object(recovery.info, "fetch_json", side_effect=response):
+            self.assertEqual(recovery.resolve_yahoo(row, replace(recovery.default_request(), state=Path(folder))), "EXAMPLE.PA")
+        with tempfile.TemporaryDirectory() as folder, patch.object(recovery, "european_listings", return_value={row["ticker"]: {**listing, "currency": "USD"}}), patch.object(recovery.info, "fetch_json", side_effect=response):
+            self.assertIsNone(recovery.resolve_yahoo(row, replace(recovery.default_request(), state=Path(folder))))
 
     def test_add_old_report_without_losing_latest_quote_or_metrics(self):
         old = {"quote": {"price": 250}, "metrics": {"per": 20}, "financials": [

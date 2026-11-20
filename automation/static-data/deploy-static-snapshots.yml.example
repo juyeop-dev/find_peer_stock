@@ -1,0 +1,164 @@
+# Review-only template. Activate as ONE Pages workflow after account/budget checks.
+name: Deploy separate static snapshots
+on:
+  workflow_dispatch:
+    inputs:
+      legacy_pages_run_id:
+        description: Current successful production Pages run ID
+        type: string
+        required: true
+      publish:
+        description: Publish the verified snapshot and deploy Pages
+        type: boolean
+        default: false
+permissions:
+  contents: read
+  actions: read
+  pages: write
+  id-token: write
+concurrency:
+  group: separate-stock-publication
+  cancel-in-progress: false
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 1
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - name: Validate actual cost evidence before downloads or uploads
+        env:
+          COST_EVIDENCE: ${{ vars.STATIC_COST_EVIDENCE_JSON }}
+          DATA_BASE: ${{ vars.STATIC_DATA_BASE_URL }}
+          PUBLISH: ${{ inputs.publish }}
+          PAGES_SWITCH: ${{ vars.STATIC_DATA_PAGES_ENABLED }}
+        run: |
+          python - <<'PY'
+          import os,json,sys
+          from pathlib import Path
+          sys.path.insert(0,'scripts')
+          from prepare_hosting_release import cost_status
+          value=json.loads(os.environ['COST_EVIDENCE'])
+          assert cost_status(value)['verified'], 'Current zero-additional-cost evidence required'
+          assert value['github_repository']==os.environ['GITHUB_REPOSITORY']
+          assert os.environ['DATA_BASE'].startswith('https://')
+          assert os.environ['PUBLISH']!='true' or os.environ['PAGES_SWITCH']=='true', 'Cutover switch is disabled'
+          Path(os.environ['RUNNER_TEMP'],'cost-evidence.json').write_text(json.dumps(value))
+          with open(os.environ['GITHUB_ENV'],'a') as stream: stream.write('CLOUDFLARE_ACCOUNT_ID='+value['cloudflare_account_id']+'\n')
+          PY
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '22'
+          # No Actions dependency cache or new dataset artifact is added here.
+      - working-directory: frontend
+        run: npm ci
+      - name: Validate source and readers
+        run: |
+          python -m unittest discover -s tests
+          node --test automation/live-api/test/*.test.mjs
+          cd frontend
+          npm run test:static-data
+          npm run test:stock-history
+          npm run test:stock-information
+      - name: Retain previous immutable data version
+        env:
+          DATA_BASE: ${{ vars.STATIC_DATA_BASE_URL }}
+        run: python scripts/sync_previous_static.py --base-url "$DATA_BASE" --output "$RUNNER_TEMP/previous-static" --report "$RUNNER_TEMP/previous-static.json"
+      - name: Download existing frozen Pages artifact for old clients
+        uses: actions/download-artifact@v5
+        with:
+          name: github-pages
+          run-id: ${{ inputs.legacy_pages_run_id }}
+          github-token: ${{ github.token }}
+          path: ${{ runner.temp }}/legacy-pages
+      - name: Extract only regular frozen data files
+        run: |
+          python - <<'PY'
+          import os,tarfile,shutil
+          from pathlib import Path
+          import sys; sys.path.insert(0,'scripts')
+          from package_static_data import valid_path
+          root=Path(os.environ['RUNNER_TEMP'],'legacy'); root.mkdir()
+          with tarfile.open(Path(os.environ['RUNNER_TEMP'],'legacy-pages/artifact.tar')) as archive:
+            seen=set()
+            for member in archive:
+              name=member.name.removeprefix('./')
+              if member.isdir() or (name!='index.html' and not name.startswith(('data/','assets/'))): continue
+              logical=name
+              assert valid_path(logical) and member.isfile() and logical not in seen
+              seen.add(logical); target=root/logical; target.parent.mkdir(parents=True,exist_ok=True)
+              with archive.extractfile(member) as source,target.open('wb') as destination: shutil.copyfileobj(source,destination)
+          PY
+      - name: Package data and prepare Pages with frozen compatibility files
+        env:
+          DATA_BASE: ${{ vars.STATIC_DATA_BASE_URL }}
+          LEGACY_INVENTORY: ${{ vars.STATIC_LEGACY_INVENTORY_SHA256 }}
+        run: |
+          python - <<'PY'
+          import os,json,sys
+          from pathlib import Path
+          sys.path.insert(0,'scripts')
+          from package_static_data import package
+          from prepare_hosting_release import prepare
+          temp=Path(os.environ['RUNNER_TEMP'])
+          previous=Path(json.loads((temp/'previous-static.json').read_bytes())['directory'])
+          production_data=temp/'legacy/data'
+          packed=package(production_data,temp/'packed',previous=previous)
+          report=prepare(Path(packed['ready_directory']),temp/'hosting-prepared',os.environ['DATA_BASE'],base_path='/'+os.environ['GITHUB_REPOSITORY'].split('/')[1]+'/',cost_evidence=temp/'cost-evidence.json',compat_data=production_data,compat_inventory_sha256=os.environ['LEGACY_INVENTORY'])
+          assert report['cost_checks']['verified']
+          Path(temp/'publication-plan.json').write_text(json.dumps(report))
+          with open(os.environ['GITHUB_ENV'],'a') as stream:
+            stream.write('STATIC_CONFIG='+report['prepared_directory']+'/wrangler.json\n')
+            stream.write('STATIC_REVISION='+packed['revision']+'\n')
+            stream.write('PAGES_OUTPUT='+report['prepared_directory']+'/ui\n')
+          PY
+      - name: Check the cutover artifact still matches live Pages
+        if: ${{ inputs.publish }}
+        run: |
+          python - <<'PY'
+          import os
+          from pathlib import Path
+          from urllib.request import Request, urlopen
+          owner, repo = os.environ['GITHUB_REPOSITORY'].split('/')
+          base = f'https://{owner.lower()}.github.io/{repo}/'
+          legacy = Path(os.environ['RUNNER_TEMP'], 'legacy')
+          for path in ('index.html', 'data/index.json', 'data/credit/index.json'):
+              request = Request(base + path, headers={'Cache-Control': 'no-cache'})
+              with urlopen(request, timeout=30) as response:
+                  assert response.read() == (legacy / path).read_bytes(), f'Pages moved after the selected run: {path}'
+          PY
+      - name: Upload data first using validated assets-only configuration
+        if: ${{ inputs.publish }}
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_STATIC_API_TOKEN }}
+          WRANGLER_SEND_METRICS: 'false'
+        run: npx --yes wrangler@4.151.2 deploy --config "$STATIC_CONFIG"
+      - name: Verify public data before publishing the UI
+        if: ${{ inputs.publish }}
+        env:
+          DATA_BASE: ${{ vars.STATIC_DATA_BASE_URL }}
+        run: node scripts/verify-static-host.mjs "$DATA_BASE" "$STATIC_REVISION" index.json credit/index.json investors/index.json
+      - uses: actions/upload-pages-artifact@v4
+        if: ${{ inputs.publish }}
+        with:
+          path: ${{ env.PAGES_OUTPUT }}
+          retention-days: 1
+  deploy:
+    needs: prepare
+    if: ${{ inputs.publish }}
+    concurrency:
+      group: pages
+      cancel-in-progress: false
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy only after data verification
+        id: deployment
+        uses: actions/deploy-pages@v4

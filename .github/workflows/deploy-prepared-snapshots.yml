@@ -12,6 +12,9 @@ on:
       - frontend/src/**
       - frontend/package.json
       - frontend/package-lock.json
+      - frontend/vite.config.ts
+      - shared/**
+      - config/**
 
 permissions:
   contents: read
@@ -20,6 +23,7 @@ permissions:
 
 jobs:
   build:
+    if: ${{ vars.STATIC_DATA_PAGES_ENABLED != 'true' }}
     concurrency:
       group: prepared-stock-snapshots-${{ github.ref }}
       cancel-in-progress: true
@@ -70,6 +74,7 @@ jobs:
         with:
           path: frontend/dist
   deploy:
+    if: ${{ vars.STATIC_DATA_PAGES_ENABLED != 'true' }}
     concurrency:
       group: pages
       cancel-in-progress: true

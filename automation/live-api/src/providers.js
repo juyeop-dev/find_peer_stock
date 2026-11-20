@@ -1,3 +1,4 @@
+import {collectionHistory, historyWindow} from "./history-policy.js";
 const AGENT = "Mozilla/5.0 (compatible; StockPeerLive/1.0)";
 export const MARKETS = {
   korea: ["korea", { KRX: "Asia/Seoul" }],
@@ -64,12 +65,11 @@ export function yahooSymbol(ticker) {
   const normalized = ticker.replaceAll("/", "-");
   return /\.(KS|KQ|T|TW|TWO|SS|SZ|HK|DE|L|SW|PA|AS|BR|LS)$/.test(normalized) ? normalized : normalized.replaceAll(".", "-");
 }
-export async function yahooData(ticker, fetcher = fetch, history = false) {
+export async function yahooData(ticker, fetcher = fetch, history = false, range = collectionHistory()) {
   const symbol = yahooSymbol(ticker);
   if (!symbol) throw new Error("이 거래소는 TradingView에서 직접 조회합니다.");
-  const twoYearsAgo = new Date(); twoYearsAgo.setUTCFullYear(twoYearsAgo.getUTCFullYear() - 2);
-  const start = Math.floor(Math.min(twoYearsAgo.getTime(), Date.parse("2013-12-20T00:00:00Z")) / 1000);
-  const period = history ? `period1=${start}&period2=${Math.floor(Date.now() / 1000) + 60}` : "range=5d";
+  const window = historyWindow(range);
+  const period = history ? `period1=${Math.floor(window.start / 1000)}&period2=${Math.floor(window.end / 1000)}` : "range=5d";
   const payload = await jsonSource(`https://query1.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(symbol)}?${period}&interval=1d&includePrePost=true`, undefined, fetcher);
   const result = payload.chart?.result?.[0];
   if (!result || payload.chart?.error) throw new Error("Yahoo Finance 가격 자료가 없습니다.");
@@ -79,7 +79,7 @@ export async function yahooData(ticker, fetcher = fetch, history = false) {
   const timezone = meta.exchangeTimezoneName ?? "UTC";
   const points = (result.timestamp ?? []).flatMap((time, i) => numeric(closes[i]) > 0 ? [{
     date: localDay(time * 1000, timezone), close: numeric(closes[i]), adjusted_close: numeric(adjusted[i]) ?? numeric(closes[i]), volume: numeric(volumes[i]),
-  }] : []);
+  }] : []).filter(point => !history || (point.date >= window.startDate && point.date <= window.endDate));
   const price = numeric(meta.regularMarketPrice) ?? points.at(-1)?.close;
   if (!(price > 0)) throw new Error("Yahoo Finance 현재가를 확인할 수 없습니다.");
   const day = meta.regularMarketTime ? localDay(meta.regularMarketTime * 1000, timezone) : points.at(-1)?.date;

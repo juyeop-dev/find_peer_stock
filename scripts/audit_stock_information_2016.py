@@ -7,8 +7,4 @@ from stock_chart_history import ROOT
 if __name__ == "__main__":
     proof = ROOT / "data/information-audit/2016/daily-frequency-recovery.json"
     assert proof.exists() and not json.loads(proof.read_bytes())["remaining_monthly"], "Daily frequency repair must finish before coverage is published"
-    audit.START, audit.END = "2016-01-01", "2016-12-31"
-    audit.SCOPE = "2016"
-    audit.COVERED_STATUS = "covers_2016"
-    audit.PERIODS_KEY = "financial_2016_periods"
-    audit.main()
+    audit.main(audit.financial_request(year=2016, root=audit.information.ROOT))

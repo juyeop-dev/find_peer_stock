@@ -13,20 +13,18 @@ from backfill_yahoo_calendars import requested_dates
 
 class Historical2015Tests(unittest.TestCase):
     def test_actual_2015_quarters_survive_and_later_statements_are_unchanged(self):
-        names = ["START", "END", "STATE", "AUDIT", "TABLE", "COVERAGE_KEY", "FETCHED_KEY", "RESUME"]
-        with patch.multiple(recovery, **{name: getattr(recovery, name) for name in names}), patch.object(recovery.info, "START", recovery.info.START):
-            config.configure()
-            payload = {"timeseries": {"result": [{"meta": {"symbol": ["TEST"]},
-                "quarterlyTotalRevenue": [{"asOfDate": "2015-03-31", "periodType": "3M", "currencyCode": "USD", "reportedValue": {"raw": 0}}],
-                "quarterlyOperatingIncome": [{"asOfDate": "2015-03-31", "periodType": "3M", "currencyCode": "USD", "reportedValue": {"raw": -7}}]}]}}
-            rows = recovery.info.parse_yahoo_financials(payload, "TEST", "2015-12-31")
-            self.assertEqual(len(rows), 1)
-            later = {"type": "annual", "period_end": "2016-12-31", "currency": "USD", "source": "original", "revenue": 12}
-            value = recovery.merge({"financials": [later]}, rows, "2026-11-13T00:00:00Z")
-            self.assertIn(later, value["financials"])
-            self.assertEqual(value["financials"][0]["revenue"], 0)
-            self.assertEqual(value["financials"][0]["operating_income"], -7)
-            self.assertEqual(value["historical_2015_coverage"]["quarterly_periods"], 1)
+        request = config.configure()
+        payload = {"timeseries": {"result": [{"meta": {"symbol": ["TEST"]},
+            "quarterlyTotalRevenue": [{"asOfDate": "2015-03-31", "periodType": "3M", "currencyCode": "USD", "reportedValue": {"raw": 0}}],
+            "quarterlyOperatingIncome": [{"asOfDate": "2015-03-31", "periodType": "3M", "currencyCode": "USD", "reportedValue": {"raw": -7}}]}]}}
+        rows = recovery.info.parse_yahoo_financials(payload, "TEST", "2015-12-31", start=request.start)
+        self.assertEqual(len(rows), 1)
+        later = {"type": "annual", "period_end": "2016-12-31", "currency": "USD", "source": "original", "revenue": 12}
+        value = recovery.merge({"financials": [later]}, rows, "2026-11-13T00:00:00Z", request)
+        self.assertIn(later, value["financials"])
+        self.assertEqual(value["financials"][0]["revenue"], 0)
+        self.assertEqual(value["financials"][0]["operating_income"], -7)
+        self.assertEqual(value["historical_2015_coverage"]["quarterly_periods"], 1)
 
     def test_sec_uses_actual_periods_without_turning_cumulative_values_into_quarters(self):
         def fact(start, end):

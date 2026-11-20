@@ -14,7 +14,7 @@ const names = JSON.parse(await readFile(new URL("../../data/seed/korean_company_
 source = source.replace('import koreanCompanyNames from "../../../data/seed/korean_company_names.json";', `const koreanCompanyNames = ${JSON.stringify(names)};`);
 source = source.replace('from "./sectorRankings";', `from "${rankUrl}";`).replace('import { classifiedSectorStock } from "./sectorRankings";', `import { classifiedSectorStock } from "${rankUrl}";`);
 source = source.replace('import { requestOriginal } from "./liveStockDataClient";', 'const requestOriginal = async () => { throw new Error("Historical records must not request live prices"); };').replaceAll("import.meta.env.BASE_URL", '"/"');
-const js = ts.transpileModule(source, { compilerOptions: { module: ts.ModuleKind.ESNext, target: ts.ScriptTarget.ES2022 } }).outputText;
+const js = ts.transpileModule(source.replace('import { fetchDataAsset } from "./assetDataClient";', 'const fetchDataAsset = (...args) => fetch(...args);'), { compilerOptions: { module: ts.ModuleKind.ESNext, target: ts.ScriptTarget.ES2022 } }).outputText;
 const client = await import(`data:text/javascript;base64,${Buffer.from(js).toString("base64")}`);
 const stock = (ticker, date, price) => ({ ticker, date, price, sector: "Electronic Technology", industry: "Semiconductors", currency: "KRW", exchange: "KOSPI", turnover: 100, market_cap: 1000, returns: { day: 1, week: 2, month: 3, quarter: 4, year: 5 } });
 const snapshot = (date, ticker, price) => ({ schema_version: 1, market: "korea", currency: "KRW", date, fetched_at: date + "T06:30:00Z", stocks: [stock(ticker, date, price)] });

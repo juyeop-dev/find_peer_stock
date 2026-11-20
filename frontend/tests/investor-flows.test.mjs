@@ -4,7 +4,7 @@ import test from "node:test";
 import {gzipSync} from "node:zlib";
 import ts from "typescript";
 const source=(await readFile(new URL("../src/dataClient/investorDataClient.ts",import.meta.url),"utf8")).replace('import { requestOriginal } from "./liveStockDataClient";','const requestOriginal = (...args) => globalThis.mockInvestorOriginal(...args);');
-const js=ts.transpileModule(source,{compilerOptions:{module:ts.ModuleKind.ESNext,target:ts.ScriptTarget.ES2022}}).outputText.replaceAll('import.meta.env.BASE_URL','"/"');
+const js=ts.transpileModule(source.replace('import { fetchDataAsset } from "./assetDataClient";', 'const fetchDataAsset = (...args) => fetch(...args);'),{compilerOptions:{module:ts.ModuleKind.ESNext,target:ts.ScriptTarget.ES2022}}).outputText.replaceAll('import.meta.env.BASE_URL','"/"');
 const {validateInvestorDay,investorTotals,investorMoney,getInvestorData}=await import(`data:text/javascript;base64,${Buffer.from(js).toString("base64")}`);
 const archive=JSON.parse(await readFile(new URL("../../data/investors/index.json",import.meta.url),"utf8"));
 test("every archived day pairs both exact-date indices and source flows, including all 244 Korean 2024 trading days",()=>{

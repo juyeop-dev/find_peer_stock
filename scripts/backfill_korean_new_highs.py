@@ -23,7 +23,9 @@ from new_high_sources.tradingview import (
     _scan,
     fetch_korean_listing,
 )
-from refresh_new_highs import atomic_json
+from refresh_new_highs import atomic_json, collection_date
+from historical_sessions import verified_sessions
+from zoneinfo import ZoneInfo
 from market_closures import load_scheduled_closures
 
 
@@ -325,33 +327,50 @@ def main() -> None:
     parser.add_argument("--workers", type=int, default=24)
     parser.add_argument("--timeout", type=float, default=30)
     parser.add_argument("--force", action="store_true")
+    parser.add_argument("--skip-existing", action="store_true", help="Resume missing reports while preserving existing reports and reviews.")
     parser.add_argument("--skip-turnover", action="store_true", help="Keep existing turnover reports untouched.")
     parser.add_argument("--source-dir", type=Path, default=SOURCE_DIR)
     parser.add_argument("--cache-dir", type=Path, default=SOURCE_DIR.parent / "tmp_korean_history")
     args = parser.parse_args()
     if not 1 <= args.workers <= 64:
         parser.error("--workers must be between 1 and 64")
+    if args.force and args.skip_existing:
+        parser.error("--force and --skip-existing cannot be combined")
+    configured_market = next(market for market in load_markets(args.source_dir) if market["id"] == "korea")
+    now = datetime.now(timezone.utc)
+    completed = collection_date(configured_market, now)
+    if completed is None:
+        completed = now.astimezone(ZoneInfo(configured_market["timezone"])).date() - timedelta(days=1)
+    effective_end = min(args.end, completed)
+    verified_sessions(args.start, effective_end, "korea")
     reports, reviews, turnover_reports = build_reports(
-        args.start, args.end, timeout=args.timeout, workers=args.workers, cache_dir=args.cache_dir
+        args.start, effective_end, timeout=args.timeout, workers=args.workers, cache_dir=args.cache_dir
     )
     markets = {market["id"]: market for market in load_markets(args.source_dir)}
     turnover_markets = {market["id"]: market for market in load_markets(TURNOVER_DIR)}
     for session, report in reports.items():
         report_path = args.source_dir / "reports" / "korea" / f"{session}.json"
+        if report_path.exists() and args.skip_existing:
+            continue
         if report_path.exists() and not args.force:
             parser.error(f"report already exists: {report_path}; use --force to replace it")
         validate_report(report, report_path, args.source_dir / "reports", markets)
     if not args.skip_turnover:
         for session, report in turnover_reports.items():
             report_path = monthly_report_path(TURNOVER_DIR / "reports", "korea", session)
+            if report_path.exists() and args.skip_existing:
+                continue
             if report_path.exists() and not args.force:
                 parser.error(f"report already exists: {report_path}; use --force to replace it")
             validate_turnover(report, report_path, TURNOVER_DIR / "reports", turnover_markets)
     for session, report in reports.items():
-        atomic_json(args.source_dir / "reports" / "korea" / f"{session}.json", report)
-        atomic_json(args.source_dir / "reviews" / "korea" / f"{session}.json", reviews[session])
-        if not args.skip_turnover:
-            atomic_json(monthly_report_path(TURNOVER_DIR / "reports", "korea", session), turnover_reports[session])
+        report_path = args.source_dir / "reports" / "korea" / f"{session}.json"
+        if args.force or not report_path.exists():
+            atomic_json(report_path, report)
+            atomic_json(args.source_dir / "reviews" / "korea" / f"{session}.json", reviews[session])
+        turnover_path = monthly_report_path(TURNOVER_DIR / "reports", "korea", session)
+        if not args.skip_turnover and (args.force or not turnover_path.exists()):
+            atomic_json(turnover_path, turnover_reports[session])
         print(f"korea {session}: new-high={len(report['entries'])}" +
               ("" if args.skip_turnover else ", turnover=30"))
 

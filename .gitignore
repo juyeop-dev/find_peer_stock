@@ -12,6 +12,8 @@ frontend/public/data/stock-information/
 frontend/public/data/sectors/
 frontend/public/data/investors/
 frontend/.vite/
+frontend/.vite-refactor/
+hosting-output/
 frontend/tsconfig.tsbuildinfo
 frontend/*.log
 
@@ -24,6 +26,7 @@ __pycache__/
 !.env.example
 
 # Local logs / caches / temp files
+.wrangler/
 *.log
 *.tmp
 *.bak

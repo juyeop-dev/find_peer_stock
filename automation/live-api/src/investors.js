@@ -1,7 +1,8 @@
 import { jsonSource, localDay, numeric } from "./providers.js";
 import sourceExceptions from "../../../data/seed/investor_source_exceptions.json" with {type:"json"};
 
-export const INVESTOR_START = "2014-01-01";
+import {publishedHistoryStart} from "./history-policy.js";
+export const INVESTOR_START = publishedHistoryStart("investors");
 export const INVESTOR_MARKETS = ["KOSPI", "KOSDAQ"];
 export const INVESTOR_SOURCE = "https://stock.naver.com/market/stock/kr/trend/foreigner";
 const names = {1000:"금융투자",2000:"보험",3000:"투신",3100:"사모",4000:"은행",5000:"기타금융",6000:"연기금 등",7000:"국가·지자체",7100:"기타법인",8000:"개인",9000:"외국인",9001:"기타외국인"};

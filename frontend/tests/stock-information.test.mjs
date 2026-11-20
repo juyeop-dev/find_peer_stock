@@ -9,7 +9,7 @@ const profiles = JSON.parse(await readFile(new URL("../../data/seed/company_prof
 source = source.replace('import companyProfiles from "../../../data/seed/company_profiles.json";', `const companyProfiles = ${JSON.stringify(profiles)};`);
 source = source.replace('import { requestOriginal, rememberInformationQuote } from "./liveStockDataClient";', 'const requestOriginal = () => { throw new Error("unexpected network"); }; const rememberInformationQuote = () => {};');
 source = source.replaceAll('import.meta.env.BASE_URL','"/"');
-const javascript = ts.transpileModule(source, {compilerOptions: {module: ts.ModuleKind.ESNext, target: ts.ScriptTarget.ES2022}}).outputText;
+const javascript = ts.transpileModule(source.replace('import { fetchDataAsset } from "./assetDataClient";', 'const fetchDataAsset = (...args) => fetch(...args);'), {compilerOptions: {module: ts.ModuleKind.ESNext, target: ts.ScriptTarget.ES2022}}).outputText;
 const {mergeInformation,decodePublishedInformation,getStockInformation} = await import(`data:text/javascript;base64,${Buffer.from(javascript).toString("base64")}`);
 const statement = (period_end, currency, revenue) => ({type:"quarterly",period_end,currency,revenue,source:"fixture"});
 
@@ -23,7 +23,7 @@ test("compressed and host-decoded financial archives retain Unicode, zero, losse
   try {
     assert.deepEqual(JSON.parse(JSON.stringify(await getStockInformation("LEGACY"))),value);
     assert.equal(requests.length,2);
-    assert.ok(requests[0].includes('.json.gz')&&requests[1].includes('.json?'));
+    assert.ok(requests[0].includes('.json.gz')&&requests[1].includes('.json'));
   } finally {globalThis.fetch=original;}
   await assert.rejects(decodePublishedInformation(new Response(Buffer.from([0x1f,0x8b,1,2]))));
 });
@@ -51,7 +51,7 @@ test("refresh preserves older reported periods while replacing a revised period 
 });
 test("UTC original quotes supersede older KST snapshots across midnight", async () => {
   const source = (await readFile(new URL("../src/dataClient/liveStockDataClient.ts", import.meta.url), "utf8")).replace("import.meta.env.VITE_LIVE_API_URL", "undefined");
-  const javascript = ts.transpileModule(source, {compilerOptions: {module:ts.ModuleKind.ESNext,target:ts.ScriptTarget.ES2022}}).outputText;
+  const javascript = ts.transpileModule(source.replace('import { fetchDataAsset } from "./assetDataClient";', 'const fetchDataAsset = (...args) => fetch(...args);'), {compilerOptions: {module:ts.ModuleKind.ESNext,target:ts.ScriptTarget.ES2022}}).outputText;
   const {rememberInformationQuote,applyQuote,applyIndex} = await import(`data:text/javascript;base64,${Buffer.from(javascript).toString("base64")}`);
   rememberInformationQuote({ticker:"TEST",price:2,market_cap:20,currency:"USD",fetched_at:"2026-10-19T15:01:00Z"});
   const before = {ticker:"TEST",price:1,fetched_at:"2026-10-20T00:00:00+09:00"};

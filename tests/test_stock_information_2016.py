@@ -40,20 +40,18 @@ class Historical2016Tests(unittest.TestCase):
                 recovery.fetch({"ticker": "AAPL", "market": "us"})
 
     def test_2016_report_survives_parser_and_preserves_later_periods(self):
-        names = ["START", "END", "STATE", "AUDIT", "TABLE", "COVERAGE_KEY", "FETCHED_KEY", "RESUME"]
-        with patch.multiple(recovery, **{name: getattr(recovery, name) for name in names}), patch.object(recovery.info, "START", recovery.info.START):
-            year2016.configure()
-            payload = {"timeseries": {"result": [{"meta": {"symbol": ["TEST"]},
-                "quarterlyTotalRevenue": [{"asOfDate": "2016-03-31", "periodType": "3M", "currencyCode": "TWD", "reportedValue": {"raw": 0}}],
-                "quarterlyOperatingIncome": [{"asOfDate": "2016-03-31", "periodType": "3M", "currencyCode": "TWD", "reportedValue": {"raw": -7}}]}]}}
-            rows = recovery.info.parse_yahoo_financials(payload, "TEST", "2016-12-31")
-            self.assertEqual(len(rows), 1)
-            later = {"type": "annual", "period_end": "2017-12-31", "currency": "TWD", "source": "original", "revenue": 12}
-            value = recovery.merge({"financials": [later]}, rows, "2026-11-11T00:00:00Z")
-            self.assertEqual(value["financials"][0]["revenue"], 0)
-            self.assertEqual(value["financials"][0]["operating_income"], -7)
-            self.assertIn(later, value["financials"])
-            self.assertEqual(value["historical_2016_coverage"]["quarterly_periods"], 1)
+        request = year2016.configure()
+        payload = {"timeseries": {"result": [{"meta": {"symbol": ["TEST"]},
+            "quarterlyTotalRevenue": [{"asOfDate": "2016-03-31", "periodType": "3M", "currencyCode": "TWD", "reportedValue": {"raw": 0}}],
+            "quarterlyOperatingIncome": [{"asOfDate": "2016-03-31", "periodType": "3M", "currencyCode": "TWD", "reportedValue": {"raw": -7}}]}]}}
+        rows = recovery.info.parse_yahoo_financials(payload, "TEST", "2016-12-31", start=request.start)
+        self.assertEqual(len(rows), 1)
+        later = {"type": "annual", "period_end": "2017-12-31", "currency": "TWD", "source": "original", "revenue": 12}
+        value = recovery.merge({"financials": [later]}, rows, "2026-11-11T00:00:00Z", request)
+        self.assertEqual(value["financials"][0]["revenue"], 0)
+        self.assertEqual(value["financials"][0]["operating_income"], -7)
+        self.assertIn(later, value["financials"])
+        self.assertEqual(value["historical_2016_coverage"]["quarterly_periods"], 1)
 
     def test_sec_uses_actual_2016_period_and_rejects_ytd_and_other_years(self):
         def fact(start, end):

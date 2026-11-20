@@ -17,6 +17,7 @@ from generate_turnover_data import SOURCE_DIR, load_markets, validate_report
 from refresh_new_highs import atomic_json
 from quote_sources.tradingview_chart import ChartHistoryError
 from dated_fx import usd_rates_for_dates
+from historical_sessions import verified_sessions, verified_european_closures
 
 parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument('--start', required=True, type=date.fromisoformat)
@@ -26,6 +27,8 @@ parser.add_argument('--partial-history', action='store_true', help='Explicitly l
 args = parser.parse_args()
 START, END = args.start, args.end
 assert START.year == END.year and END >= START
+sessions = verified_sessions(START, END, "europe", root=ROOT)
+verified_european_closures(START, END, root=ROOT)
 review_path = f'data/turnover/reviews/europe/{START}_to_{END}.json'
 CACHE = ROOT / 'data/tmp_tradingview_chart'
 universe_path = CACHE / 'universe.json'
@@ -66,10 +69,6 @@ for row in rows:
 assert len(histories) == reference_meta['history_required_symbols'] == reference_meta['history_symbols']
 print(f'europe: verified all {len(histories)} cached stock histories', flush=True)
 
-sessions = [START + timedelta(days=i) for i in range((END - START).days + 1)
-            if (START + timedelta(days=i)).weekday() < 5]
-closed_market = next(set(item['dates']) for item in json.loads((ROOT / f'data/market-closures/{START.year}.json').read_text(encoding='utf-8'))['markets'] if item['market'] == 'europe')
-sessions = [day for day in sessions if str(day) not in closed_market]
 closures = json.loads((ROOT / 'data/new-highs/europe-exchange-closures.json').read_text(encoding='utf-8'))['closures']
 currencies = {row['currency'].upper() for row, _bars in histories.values()}
 fx_currencies = {('GBP' if c == 'GBX' else c) for c in currencies} - {'USD'}

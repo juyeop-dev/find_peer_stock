@@ -15,6 +15,8 @@ from datetime import datetime, time, timedelta
 from pathlib import Path
 from zoneinfo import ZoneInfo
 from semiconductor_provenance import archive_semiconductor, hydrate_semiconductor
+from price_history_range import load_price_range
+from history_policy import DEFAULT_POLICY
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -45,11 +47,13 @@ def numeric(value: object) -> float | None:
     return number if math.isfinite(number) else None
 
 
-def fetch_history(ticker: str) -> list[dict]:
+def fetch_history(ticker: str, history_request=None) -> list[dict]:
+    history_request = history_request or load_price_range()
     now = datetime.now(tz=KST)
-    start = min(now - timedelta(days=732), datetime(2013, 12, 20, tzinfo=KST))
+    start = datetime.fromisoformat(history_request.storage_start()).replace(tzinfo=KST)
+    end = min(int(now.timestamp()) + 60, int(datetime.fromisoformat(history_request.end).replace(tzinfo=KST).timestamp()) + 86400)
     url = (f"https://query1.finance.yahoo.com/v8/finance/chart/"
-           f"{urllib.parse.quote(ticker)}?period1={int(start.timestamp())}&period2={int(now.timestamp()) + 60}&interval=1d")
+           f"{urllib.parse.quote(ticker)}?period1={int(start.timestamp())}&period2={end}&interval=1d")
     chart = fetch_json(url).get("chart") or {}
     if chart.get("error") or not chart.get("result"):
         raise ValueError(f"{ticker}: Yahoo chart unavailable: {chart.get('error')}")
@@ -73,6 +77,8 @@ def fetch_history(ticker: str) -> list[dict]:
             "adjusted_close": round(adjusted_close or close, 2),
             "volume": int(volume) if volume is not None else None,
         })
+    cutoff = history_request.storage_start()
+    history = [point for point in history if cutoff <= point["date"] <= history_request.end]
     if len(history) < 2:
         raise ValueError(f"{ticker}: fewer than two usable daily prices")
     return history
@@ -253,25 +259,37 @@ def classified_seeds(seed_path: Path = SEED, categories_path: Path = CATEGORIES)
     return list(by_ticker.values())
 
 
-def collect_full_entry(seed: dict, previous: dict | None) -> dict:
+def collect_full_entry(seed: dict, previous: dict | None, history_request=None) -> dict:
+    history_request = history_request or load_price_range()
     ticker = seed["ticker"]
     code = ticker.split(".", 1)[0]
     entry = {**(previous or {}), **seed, "code": code, "market": "KOSPI" if ticker.endswith(".KS") else "KOSDAQ"}
     errors = []
     try:
-        entry["history"] = fetch_history(ticker)
+        entry["history"] = fetch_history(ticker, history_request)
     except Exception as exc:
         errors.append(f"history: {exc}")
         entry["history"] = (previous or {}).get("history") or []
-    if entry["history"]:
+    if entry["history"] and history_request.end == history_request.as_of:
         try:
             entry["history"] = fill_missing_recent_prices(entry["history"], fetch_recent_naver_prices(code))
         except Exception as exc:
             errors.append(f"recent prices: {exc}")
+    old_history = (previous or {}).get("history") or []
+    observed = {row["date"]: row for row in entry["history"]}
+    if old_history and any(observed.get(row["date"]) != row for row in old_history):
+        entry["prior_history_snapshots"] = [*(previous or {}).get("prior_history_snapshots", []),
+            {"source": "Previous semiconductor daily source", "history": old_history,
+             "reason": "Retain original observations omitted or revised by a later provider response"}]
     for period_type in ("annual", "quarter"):
         key = "annual_financials" if period_type == "annual" else "quarterly_financials"
         try:
-            entry[key] = fetch_financials(code, period_type)
+            fresh = fetch_financials(code, period_type)
+            retained = {(row["period"], row["type"]): row for row in (previous or {}).get(key, [])}
+            for row in fresh:
+                identity = row["period"], row["type"]
+                retained[identity] = {**retained.get(identity, {}), **{k: v for k, v in row.items() if v is not None}}
+            entry[key] = list(retained.values())
         except Exception as exc:
             errors.append(f"{period_type}: {exc}")
             entry[key] = (previous or {}).get(key) or []
@@ -298,7 +316,7 @@ def write_json(path: Path, payload: dict) -> None:
 
 
 def generate_full(seed_path: Path = SEED, output_path: Path = SOURCE, *, force: bool = False,
-                  now: datetime | None = None, categories_path: Path = CATEGORIES) -> dict:
+                  now: datetime | None = None, categories_path: Path = CATEGORIES, history_request=None) -> dict:
     now = now or datetime.now(tz=KST)
     existing = load_existing(output_path)
     seed_hash = seed_fingerprint(seed_path, categories_path)
@@ -311,7 +329,7 @@ def generate_full(seed_path: Path = SEED, output_path: Path = SOURCE, *, force: 
     prior = {row["ticker"]: row for row in existing.get("stocks") or []}
     rows = [None] * len(seeds)
     with ThreadPoolExecutor(max_workers=6) as pool:
-        futures = {pool.submit(collect_full_entry, seed, prior.get(seed["ticker"])): index
+        futures = {pool.submit(collect_full_entry, seed, prior.get(seed["ticker"]), history_request): index
                    for index, seed in enumerate(seeds)}
         for future in as_completed(futures):
             index = futures[future]
@@ -388,9 +406,18 @@ def main() -> None:
     parser.add_argument("--source", type=Path, default=SOURCE)
     parser.add_argument("--output", type=Path, default=PUBLISHED)
     parser.add_argument("--force", action="store_true")
+    parser.add_argument("--history-config", type=Path, default=DEFAULT_POLICY)
+    parser.add_argument("--dry-run", action="store_true")
     args = parser.parse_args()
+    try:
+        history_request = load_price_range(args.history_config)
+    except (ValueError, OSError) as error:
+        parser.error(str(error))
+    if args.dry_run:
+        print(json.dumps({"start": history_request.start, "end": history_request.end,
+                          "price_reference_start": history_request.reference_start})); return
     if args.mode == "full":
-        generate_full(args.seed, args.source, force=args.force, categories_path=args.categories)
+        generate_full(args.seed, args.source, force=args.force, categories_path=args.categories, history_request=history_request)
     else:
         publish(args.source, args.output)
 

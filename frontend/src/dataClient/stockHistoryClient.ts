@@ -1,29 +1,22 @@
+import { fetchDataAsset } from "./assetDataClient";
 import type { SemiconductorPrice } from "./semiconductorTypes";
 import { liveDetailFor, requestOriginal } from "./liveStockDataClient";
 import { expandPriceArchive } from "./priceArchive";
+import { publishedHistoryYears, publishedHistoryStart, sinceStart, sinceLabel } from "./historyAvailability";
 
 export interface StockHistory {
   ticker: string; currency: string; source: string; fetched_at?: string; first_trade_date?: string | null;
   history: SemiconductorPrice[]; warning?: string;
   prior_snapshots?: {ticker: string; currency: string; source: string; fetched_at?: string; complete_history?: boolean; prices: [string, number, number][]}[];
 }
-export const CHART_PERIODS = [7, 30, 90, 180, "1y", "2y", "since2025", "since2024H2", "since2024", "since2023", "since2022", "since2021", "since2020", "since2019", "since2018", "since2017", "since2016", "since2015", "since2014"] as const;
-export type ChartPeriod = typeof CHART_PERIODS[number];
-export const chartPeriodLabel = (period: ChartPeriod) => typeof period === "number" ? `${period}일` : period === "since2014" ? "2014년~" : period === "since2015" ? "2015년~" : period === "since2016" ? "2016년~" : period === "since2017" ? "2017년~" : period === "since2018" ? "2018년~" : period === "since2019" ? "2019년~" : period === "since2020" ? "2020년~" : period === "since2021" ? "2021년~" : period === "since2022" ? "2022년~" : period === "since2023" ? "2023년~" : period === "since2024" ? "2024년~" : period === "since2024H2" ? "2024년 하반기~" : period === "since2025" ? "2025년~" : period === "1y" ? "1년" : "2년";
+export type ChartPeriod = number | "1y" | "2y" | `since${number}` | "since2024H2";
+export const getChartPeriods = (): readonly ChartPeriod[] => [7, 30, 90, 180, "1y", "2y",
+  ...publishedHistoryYears("stock_history").flatMap<ChartPeriod>(year => year === 2024 ? ["since2024H2", "since2024"] : [`since${year}`])];
+export const CHART_PERIODS = getChartPeriods();
+export const chartPeriodLabel = (period: ChartPeriod) => typeof period === "number" ? `${period}일` : sinceLabel(period) ?? (period === "1y" ? "1년" : "2년");
 export function chartStart(end: string, period: ChartPeriod): string {
-  if (period === "since2014") return "2014-01-01";
-  if (period === "since2015") return "2015-01-01";
-  if (period === "since2016") return "2016-01-01";
-  if (period === "since2017") return "2017-01-01";
-  if (period === "since2018") return "2018-01-01";
-  if (period === "since2019") return "2019-01-01";
-  if (period === "since2020") return "2020-01-01";
-  if (period === "since2021") return "2021-01-01";
-  if (period === "since2022") return "2022-01-01";
-  if (period === "since2023") return "2023-01-01";
-  if (period === "since2024") return "2024-01-01";
-  if (period === "since2024H2") return "2024-07-01";
-  if (period === "since2025") return "2025-01-01";
+  const historical = sinceStart(period);
+  if (historical) return historical;
   const day = new Date(`${end}T12:00:00Z`);
   if (typeof period === "number") day.setUTCDate(day.getUTCDate() - period);
   else {
@@ -56,9 +49,9 @@ function validate(value: StockHistory, ticker: string): StockHistory {
 }
 export async function getPublishedStockHistory(ticker: string, signal?: AbortSignal): Promise<StockHistory> {
   const filename = encodeURIComponent(ticker.toUpperCase()).replaceAll("%", "~");
-  let response = await fetch(`${import.meta.env.BASE_URL}data/stock-history/${filename}.delta-v1.json.gz?t=${Date.now()}`, { signal, cache: "no-store" });
-  if (response.status === 404) response = await fetch(`${import.meta.env.BASE_URL}data/stock-history/${filename}.json.gz?t=${Date.now()}`, { signal, cache: "no-store" });
-  if (response.status === 404) response = await fetch(`${import.meta.env.BASE_URL}data/stock-history/${filename}.json?t=${Date.now()}`, { signal, cache: "no-store" });
+  let response = await fetchDataAsset(`${import.meta.env.BASE_URL}data/stock-history/${filename}.delta-v1.json.gz`, { signal, cache: "no-cache" });
+  if (response.status === 404) response = await fetchDataAsset(`${import.meta.env.BASE_URL}data/stock-history/${filename}.json.gz`, { signal, cache: "no-cache" });
+  if (response.status === 404) response = await fetchDataAsset(`${import.meta.env.BASE_URL}data/stock-history/${filename}.json`, { signal, cache: "no-cache" });
   if (!response.ok) throw new Error("저장된 일봉 없음");
   const bytes = await response.arrayBuffer();
   const magic = new Uint8Array(bytes, 0, Math.min(2, bytes.byteLength));
@@ -95,7 +88,7 @@ export async function getStockHistory(ticker: string, exchange?: string, signal?
     fetched_at: detail.fetched_at, history: detail.history } : histories.get(ticker.toUpperCase()) ?? initial;
   // Inline peer/quote snapshots may still contain a shorter window. Consult
   // the durable archive before treating a fresh one-year snapshot as enough.
-  const requestedStart = "2014-01-01";
+  const requestedStart = publishedHistoryStart("stock_history") ?? base?.history[0]?.date ?? new Date().toISOString().slice(0, 10);
   const expectedStart = base?.first_trade_date && base.first_trade_date > requestedStart ? base.first_trade_date : requestedStart;
   if (!base || base.history[0].date > expectedStart) {
     try {

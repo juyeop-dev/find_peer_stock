@@ -3,7 +3,7 @@ import { readFile } from 'node:fs/promises';
 import test from 'node:test';
 import ts from 'typescript';
 const source = await readFile(new URL('../src/dataClient/reboundClient.ts', import.meta.url), 'utf8');
-const js = ts.transpileModule(source, { compilerOptions: { module: ts.ModuleKind.ESNext, target: ts.ScriptTarget.ES2022 } }).outputText;
+const js = ts.transpileModule(source.replace('import { fetchDataAsset } from "./assetDataClient";', 'const fetchDataAsset = (...args) => fetch(...args);'), { compilerOptions: { module: ts.ModuleKind.ESNext, target: ts.ScriptTarget.ES2022 } }).outputText;
 const { REBOUND_RULES, validateReboundReport, reboundEntries, reboundMessage, validReboundDate } = await import(`data:text/javascript;base64,${Buffer.from(js).toString('base64')}`);
 const stock = (ticker, name, exchange, price, low, cap, change_pct = 0) => ({ ticker, name, exchange, price, low, market_cap: cap, change_pct, rebound_pct: (price / low - 1) * 100, currency: 'KRW', market_cap_currency: 'KRW', sector: '', industry: '' });
 const report = { schema_version: 1, market: 'korea', date: '2026-11-02', rules: REBOUND_RULES, sources: [], source_metadata: { session: 'daily', fetched_at: '2026-11-02T07:00:00Z', scanned_symbols: 2638 }, entries: [stock('009830.KS', '한화솔루션', 'KOSPI', 108, 100, 5e12), stock('039030.KQ', '이오테크닉스', 'KOSDAQ', 105, 100, 1e12), stock('006400.KS', '삼성SDI', 'KOSPI', 110, 100, 5e12, 1)] };

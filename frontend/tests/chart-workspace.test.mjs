@@ -4,7 +4,7 @@ import test from 'node:test';
 import ts from 'typescript';
 async function load(path) {
   const source=await readFile(new URL(path,import.meta.url),'utf8');
-  const js=ts.transpileModule(source,{compilerOptions:{module:ts.ModuleKind.ESNext,target:ts.ScriptTarget.ES2022}}).outputText;
+  const js=ts.transpileModule(source.replace('import { fetchDataAsset } from "./assetDataClient";', 'const fetchDataAsset = (...args) => fetch(...args);'),{compilerOptions:{module:ts.ModuleKind.ESNext,target:ts.ScriptTarget.ES2022}}).outputText;
   return import(`data:text/javascript;base64,${Buffer.from(js).toString('base64')}`);
 }
 const {compareHistories,movingAverage,clampWindow,zoomWindow,parseDrawings,drawingStorageKey,nearestDate,channelSegments,measureChange}=await load('../src/dataClient/chartWorkspace.ts');

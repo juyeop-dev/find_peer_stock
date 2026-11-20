@@ -5,6 +5,7 @@ new-high reports are written; mixed-currency turnover rankings are not rebuilt.
 Install scripts/requirements-chart-history.txt before live collection.
 """
 from __future__ import annotations
+from historical_sessions import verified_sessions, verified_european_closures
 
 import argparse
 import hashlib
@@ -312,12 +313,9 @@ def main() -> None:
     markets = {market["id"]: market for market in load_markets(SOURCE_DIR)}
     now = datetime.now(timezone.utc)
     end = min(args.end, completed_through(now))
-    closures = json.loads((SOURCE_DIR.parent / f"market-closures/{args.start.year}.json").read_text(encoding="utf-8"))
-    closed = next(set(item["dates"]) for item in closures["markets"] if item["market"] == "europe")
-    sessions = [args.start + timedelta(days=offset) for offset in range((end - args.start).days + 1)
-                if (args.start + timedelta(days=offset)).weekday() < 5
-                and str(args.start + timedelta(days=offset)) not in closed
-                and not (SOURCE_DIR / "reports/europe" / f"{args.start + timedelta(days=offset)}.json").exists()]
+    verified_european_closures(args.start, end, root=SOURCE_DIR.parent.parent)
+    sessions = [day for day in verified_sessions(args.start, end, "europe", root=SOURCE_DIR.parent.parent)
+                if not (SOURCE_DIR / "reports/europe" / f"{day}.json").exists()]
     print(f"europe: recovering {len(sessions)} missing completed sessions", flush=True)
     try:
         reports = build_reports(sessions, workers=args.workers, timeout=args.timeout,

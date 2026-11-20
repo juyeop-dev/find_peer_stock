@@ -8,6 +8,10 @@ on:
         required: false
         default: true
         type: boolean
+      publish_pages:
+        description: "Publish the Pages UI as well as refreshing static data."
+        default: false
+        type: boolean
   schedule:
     - cron: "3,8,13,18,23,28,33,38,43,48,53,58 * * * *"
   push:
@@ -15,6 +19,7 @@ on:
       - main
 
 permissions:
+  actions: read
   contents: write
   pages: write
   id-token: write
@@ -27,7 +32,9 @@ jobs:
       # Release pushes replace stale builds; scheduled collectors keep queuing.
       cancel-in-progress: ${{ github.event_name == 'push' }}
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: ${{ vars.STATIC_DATA_PAGES_ENABLED == 'true' && 60 || 45 }}
+    outputs:
+      pages_uploaded: ${{ steps.pages_upload.outcome == 'success' }}
     steps:
       - name: Check out repository
         uses: actions/checkout@v5
@@ -159,6 +166,10 @@ jobs:
         working-directory: frontend
         run: npm ci
 
+      - name: Test packed static data and retention
+        working-directory: frontend
+        run: npm run test:static-data
+
       - name: Test semiconductor return calculations
         working-directory: frontend
         run: npm run test:semiconductor
@@ -226,12 +237,52 @@ jobs:
           python scripts/audit_publication_2016.py --artifact frontend/dist
           python scripts/audit_publication_2017.py --artifact frontend/dist
 
+      - name: Prepare separate static publication
+        id: packed
+        if: ${{ vars.STATIC_DATA_PAGES_ENABLED == 'true' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ vars.STATIC_CLOUDFLARE_ACCOUNT_ID }}
+          DATA_BASE: ${{ vars.STATIC_DATA_BASE_URL }}
+          PUBLISH_PAGES: ${{ github.event_name == 'push' || inputs.publish_pages == true }}
+          STATIC_PAGES_COMPAT_URL: ${{ vars.STATIC_PAGES_COMPAT_URL }}
+          STATIC_PAGES_COMPAT_SHA256: ${{ vars.STATIC_PAGES_COMPAT_SHA256 }}
+          STATIC_PAGES_COMPAT_INVENTORY_SHA256: ${{ vars.STATIC_PAGES_COMPAT_INVENTORY_SHA256 }}
+        run: |
+          args=(--source frontend/dist/data --output "$RUNNER_TEMP/static-publication" --data-base-url "$DATA_BASE")
+          if [ "$PUBLISH_PAGES" = true ]; then args+=(--pages); fi
+          python scripts/prepare_static_ci.py "${args[@]}"
+
+      - name: Publish changed data before Pages
+        if: ${{ vars.STATIC_DATA_PAGES_ENABLED == 'true' && steps.packed.outputs.changed == 'true' }}
+        env:
+          CLOUDFLARE_ACCOUNT_ID: ${{ vars.STATIC_CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_STATIC_API_TOKEN }}
+          STATIC_CONFIG: ${{ steps.packed.outputs.config }}
+          WRANGLER_SEND_METRICS: 'false'
+        run: |
+          if [ -z "$CLOUDFLARE_API_TOKEN" ]; then
+            echo '::error::CLOUDFLARE_STATIC_API_TOKEN is required for static data publishing.'
+            exit 1
+          fi
+          npx --yes wrangler@4.151.2 deploy --config "$STATIC_CONFIG"
+
+      - name: Verify live data before Pages
+        if: ${{ vars.STATIC_DATA_PAGES_ENABLED == 'true' }}
+        env:
+          DATA_BASE: ${{ vars.STATIC_DATA_BASE_URL }}
+          STATIC_REVISION: ${{ steps.packed.outputs.revision }}
+        run: node scripts/verify-static-host.mjs "$DATA_BASE" "$STATIC_REVISION" index.json credit/index.json investors/index.json semiconductor/index.json
+
       - name: Upload Pages artifact
+        id: pages_upload
+        if: ${{ vars.STATIC_DATA_PAGES_ENABLED != 'true' || steps.packed.outputs.pages != '' }}
         uses: actions/upload-pages-artifact@v4
         with:
-          path: frontend/dist
+          path: ${{ steps.packed.outputs.pages || 'frontend/dist' }}
 
   deploy:
+    if: ${{ needs.build.outputs.pages_uploaded == 'true' }}
     # Replace a stuck Pages deployment without blocking the next archive build.
     concurrency:
       group: pages

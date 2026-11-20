@@ -7,6 +7,8 @@ import json
 from backfill_korean_new_highs import cached_request, history_url, parse_history
 from backfill_sector_history_2024_h2 import reconstruct
 from stock_chart_history import ROOT, write_json
+from collection_request import collection_request
+from historical_sessions import verified_sessions
 
 
 def eligible_on_day(stock, history, first_trade_dates, day):
@@ -15,10 +17,18 @@ def eligible_on_day(stock, history, first_trade_dates, day):
     return not first or first <= str(day) or any(observed <= day for observed in history)
 
 
-def main(year=2024, end_before="2024-07-01", audit_scope="2024"):
+def main(year=2024, end_before="2024-07-01", audit_scope="2024", request=None):
+    request = request or collection_request(year=year, root=ROOT)
     directory = ROOT / "data/sectors"
     latest = json.loads((directory / "index.json").read_text(encoding="utf-8"))
-    sessions = sorted(date.fromisoformat(p.stem) for p in (ROOT / "data/new-highs/reports/korea").glob(f"{year}-*.json") if end_before is None or p.stem < end_before)
+    end = min(request.end, (date.fromisoformat(request.as_of) - timedelta(days=1)).isoformat())
+    if end_before is not None:
+        end = min(end, (date.fromisoformat(end_before) - timedelta(days=1)).isoformat())
+    sessions = verified_sessions(request.start, end, "korea", root=ROOT)
+    observed = {p.stem for p in (ROOT / "data/new-highs/reports/korea").rglob("*.json")}
+    missing = [str(day) for day in sessions if str(day) not in observed]
+    if missing:
+        raise ValueError(f"Collect validated Korean calendar reports first: {missing[:5]}")
     if not sessions:
         raise ValueError(f"Collect validated Korean {year} calendar reports first")
     start, end = sessions[0] - timedelta(days=380), sessions[-1]
@@ -64,7 +74,7 @@ def main(year=2024, end_before="2024-07-01", audit_scope="2024"):
         temporary.write_bytes(gzip.compress(json.dumps(snapshot, ensure_ascii=False, separators=(",", ":"), allow_nan=False).encode(), mtime=0))
         temporary.replace(path)
         count += 1
-    write_json(ROOT / f"data/information-audit/{audit_scope}/sector-progress.json", {"start": str(sessions[0]), "end": str(end), "added": count,
+    write_json(request.audit / "sector-progress.json", {"start": str(sessions[0]), "end": str(end), "added": count,
         "source_start": str(start), "classification_date": latest["date"], "history_symbols": len(histories)})
     print(f"Added {count} {year} sector observations; existing archives retained", flush=True)
 

@@ -11,18 +11,16 @@ from extend_stock_history_2023 import join_prices
 
 class Historical2022Tests(unittest.TestCase):
     def test_bounded_2022_recovery_preserves_later_reports_and_native_currency(self):
-        names = ["START", "END", "STATE", "AUDIT", "TABLE", "COVERAGE_KEY", "FETCHED_KEY", "RESUME"]
-        with patch.multiple(recovery, **{name: getattr(recovery, name) for name in names}):
-            year2022.configure()
-            later = {"type": "annual", "period_end": "2023-12-31", "currency": "TWD", "source": "original", "revenue": 7}
-            older = {"type": "annual", "period_end": "2022-12-31", "currency": "TWD", "source": "reported", "revenue": 0, "operating_income": -1}
-            value = recovery.merge({"financials": [later]}, [older], "2026-10-29T00:00:00Z")
-            self.assertEqual(value["historical_2022_coverage"]["periods"], 1)
-            self.assertEqual(value["financials"], [older, later])
-            with patch.object(recovery.info, "fetch_json", return_value={"timeseries": {"result": []}}) as fetch:
-                recovery.fetch({"ticker": "AAPL", "market": "us"})
-                self.assertIn("period1=1640995200", fetch.call_args.args[0])
-                self.assertIn("period2=1672531200", fetch.call_args.args[0])
+        request = year2022.configure()
+        later = {"type": "annual", "period_end": "2023-12-31", "currency": "TWD", "source": "original", "revenue": 7}
+        older = {"type": "annual", "period_end": "2022-12-31", "currency": "TWD", "source": "reported", "revenue": 0, "operating_income": -1}
+        value = recovery.merge({"financials": [later]}, [older], "2026-10-29T00:00:00Z", request)
+        self.assertEqual(value["historical_2022_coverage"]["periods"], 1)
+        self.assertEqual(value["financials"], [older, later])
+        with patch.object(recovery.info, "fetch_json", return_value={"timeseries": {"result": []}}) as fetch:
+            recovery.fetch({"ticker": "AAPL", "market": "us"}, request)
+            self.assertIn("period1=1640995200", fetch.call_args.args[0])
+            self.assertIn("period2=1672531200", fetch.call_args.args[0])
 
     def test_2022_extension_retains_every_later_point_and_rejects_incompatible_adjustments(self):
         later = {"ticker": "TEST", "currency": "USD", "prices": [["2022-12-28", 10, 9], ["2022-12-29", 11, 10], ["2022-12-30", 12, 11], ["2026-10-28", 20, 20]]}
