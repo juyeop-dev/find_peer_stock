@@ -12,6 +12,10 @@ on:
         description: "Publish the Pages UI as well as refreshing static data."
         default: false
         type: boolean
+      rehearse_static:
+        description: "Verify the static Pages build without publishing."
+        default: false
+        type: boolean
   schedule:
     - cron: "3,8,13,18,23,28,33,38,43,48,53,58 * * * *"
   push:
@@ -26,6 +30,7 @@ permissions:
 
 jobs:
   build:
+    if: ${{ github.ref == 'refs/heads/main' && !inputs.rehearse_static }}
     # A Pages deployment can wait indefinitely. Keep archive collection independent.
     concurrency:
       group: market-archive-${{ github.ref }}
@@ -297,3 +302,50 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+  rehearse:
+    if: ${{ github.event_name == 'workflow_dispatch' && inputs.rehearse_static }}
+    permissions:
+      actions: read
+      contents: read
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          persist-credentials: false
+          sparse-checkout: |
+            config
+            data/information-audit/2014
+            frontend/build
+            frontend/src
+            frontend/tests
+            scripts
+            shared
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '22'
+      - working-directory: frontend
+        run: npm ci
+      - name: Rehearse the packing and frozen Pages build
+        id: packed
+        env:
+          GH_TOKEN: ${{ github.token }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ vars.STATIC_CLOUDFLARE_ACCOUNT_ID }}
+          DATA_BASE: ${{ vars.STATIC_DATA_BASE_URL }}
+          STATIC_PAGES_COMPAT_URL: ${{ vars.STATIC_PAGES_COMPAT_URL }}
+          STATIC_PAGES_COMPAT_SHA256: ${{ vars.STATIC_PAGES_COMPAT_SHA256 }}
+          STATIC_PAGES_COMPAT_INVENTORY_SHA256: ${{ vars.STATIC_PAGES_COMPAT_INVENTORY_SHA256 }}
+        run: python scripts/prepare_static_ci.py --pages --output "$RUNNER_TEMP/static-publication" --data-base-url "$DATA_BASE"
+      - name: Verify the current Cloudflare deployment
+        env:
+          DATA_BASE: ${{ vars.STATIC_DATA_BASE_URL }}
+          STATIC_REVISION: ${{ steps.packed.outputs.revision }}
+          STATIC_CHANGED: ${{ steps.packed.outputs.changed }}
+        run: |
+          if [ "$STATIC_CHANGED" = false ]; then
+            node scripts/verify-static-host.mjs "$DATA_BASE" "$STATIC_REVISION" index.json credit/index.json investors/index.json
+          fi

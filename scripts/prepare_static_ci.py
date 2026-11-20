@@ -112,14 +112,6 @@ def prepare_publication(source, output, data_base, *, pages):
     output.mkdir()
     evidence_path = output / 'cost-evidence.json'
     evidence_path.write_bytes(canonical(evidence))
-    previous = download(data_base, output / 'previous')
-    old = json.loads((Path(previous['directory']) / 'manifest.json').read_bytes())
-    packed = package(source, output / 'packed', previous=Path(previous['directory']))
-    release = Path(packed['ready_directory'])
-    current = json.loads((release / 'manifest.json').read_bytes())
-    changed = any(current[key] != old[key] for key in ('source_inventory_sha256', 'publication'))
-    if not changed:
-        release = Path(previous['directory'])
 
     compatibility = None
     compatibility_inventory = None
@@ -130,6 +122,20 @@ def prepare_publication(source, output, data_base, *, pages):
         compatibility = download_compatibility(
             os.environ['STATIC_PAGES_COMPAT_URL'], os.environ['STATIC_PAGES_COMPAT_SHA256'], repository, output
         )
+    if source is None:
+        if compatibility is None:
+            raise ValueError('A data source is required for a data-only refresh')
+        source = compatibility
+
+    previous = download(data_base, output / 'previous')
+    old = json.loads((Path(previous['directory']) / 'manifest.json').read_bytes())
+    packed = package(source, output / 'packed', previous=Path(previous['directory']))
+    release = Path(packed['ready_directory'])
+    current = json.loads((release / 'manifest.json').read_bytes())
+    changed = any(current[key] != old[key] for key in ('source_inventory_sha256', 'publication'))
+    if not changed:
+        release = Path(previous['directory'])
+
     plan = prepare(
         release, output / 'prepared', data_base, base_path='/' + repository.split('/')[1] + '/',
         cost_evidence=evidence_path, build_ui=pages, compat_data=compatibility,
@@ -144,7 +150,7 @@ def prepare_publication(source, output, data_base, *, pages):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--source', type=Path, required=True)
+    parser.add_argument('--source', type=Path, help='Audited data directory. Omit with --pages to rehearse against the frozen archive.')
     parser.add_argument('--output', type=Path, required=True)
     parser.add_argument('--data-base-url', required=True)
     parser.add_argument('--pages', action='store_true')
