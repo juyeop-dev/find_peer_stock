@@ -17,7 +17,10 @@ def download(base_url,output):
     output=Path(output).resolve(); output.mkdir(parents=True,exist_ok=True); directory=workspace_directory(output,'previous-')
     def fetch(path,descriptor=None):
         if not valid_path(path): raise ValueError('Invalid remote asset path')
-        with urllib.request.urlopen(base_url.rstrip('/')+'/'+path,timeout=30) as response:
+        request = urllib.request.Request(base_url.rstrip('/')+'/'+path, headers={
+            'User-Agent': 'find-peer-stock-static-publisher/1.0 (+https://github.com/juyeop-dev/find_peer_stock)',
+        })
+        with urllib.request.urlopen(request,timeout=30) as response:
             raw=response.read(MAX_ASSET+1)
             if response.headers.get('Content-Encoding')=='gzip': raw=gzip.decompress(raw)
         if len(raw)>MAX_ASSET or (descriptor and (len(raw)!=descriptor['size'] or digest(raw)!=descriptor['sha256'])): raise ValueError('Previous release asset differs')

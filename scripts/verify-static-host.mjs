@@ -5,7 +5,8 @@ export async function verifyStaticHost(baseUrl, expectedRevision, paths = ['inde
   if (!/^[a-f0-9]{64}$/.test(expectedRevision)) throw new Error('Expected verified revision is required');
   let requests = 0;
   const fetcher = async (url, init) => {
-    const response = await fetch(url, {...init, headers: {Origin:origin}}); requests++;
+    const response = await fetch(url, {...init, headers: {Origin:origin,
+      'User-Agent':'find-peer-stock-static-publisher/1.0 (+https://github.com/juyeop-dev/find_peer_stock)'}}); requests++;
     if (response.ok) {
       const cors = response.headers.get('access-control-allow-origin');
       if (cors !== '*' && cors !== origin) throw new Error('Production static CORS header differs');
