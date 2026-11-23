@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "market": "taiwan",
+  "date": "2026-11-23",
+  "summary": "장 마감 후 TradingView 주식 스냅샷 기준. 당일 장중 고가가 52주·전체기간 고가에 도달하고, 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다. 전체기간 신고가를 우선 표시하며 신고가 배경은 별도 확인 전입니다.",
+  "sources": [
+    {
+      "label": "TradingView stock screener",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "6199.TWO",
+      "name": "TienPin United Enterprise Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Computer Peripherals",
+      "description": "TienPin United Enterprise Co., Ltd. · Computer Peripherals",
+      "change_pct": 1.7699115044247788,
+      "session_open": 172,
+      "session_close": 172.5,
+      "session_volume": 13128431,
+      "source_symbol": "TPEX:6199",
+      "currency": "TWD"
+    },
+    {
+      "ticker": "7584.TWO",
+      "name": "Happytuk Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Technology Services",
+      "high_type": "52_week",
+      "reason": "업종: Technology Services · Packaged Software",
+      "description": "Happytuk Co., Ltd. · Packaged Software",
+      "change_pct": 3.8543897216274026,
+      "session_open": 48,
+      "session_close": 48.5,
+      "session_volume": 311889,
+      "source_symbol": "TPEX:7584",
+      "currency": "TWD"
+    }
+  ],
+  "source_metadata": {
+    "provider": "TradingView public scanner",
+    "scanner": "taiwan",
+    "fetched_at": "2026-11-23T06:42:37.481173+00:00",
+    "universe": "TradingView-listed stock instruments, including common and preferred shares; ETFs excluded",
+    "definition": "daily high >= period high; close >= open; close >= previous close when one exists; all-time takes precedence; ties included",
+    "scanner_exchanges": [
+      "TWSE",
+      "TPEX"
+    ],
+    "latest_session_by_exchange": {
+      "TWSE": "2026-11-23",
+      "TPEX": "2026-11-23"
+    },
+    "previous_session_by_exchange": {
+      "TWSE": "2026-11-20",
+      "TPEX": "2026-11-20"
+    },
+    "current_session_reference_symbols": {
+      "TWSE": "TWSE:01001T",
+      "TPEX": "TPEX:1240"
+    },
+    "scanned_symbols": 2367,
+    "current_session_symbols": 2335,
+    "excluded_symbols": {
+      "other_session": 32,
+      "bearish_or_down_close": 3
+    },
+    "pagination_complete": true
+  },
+  "collected_at": "2026-11-23T06:42:36.933695+00:00"
+}
