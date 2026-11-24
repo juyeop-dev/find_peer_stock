@@ -1,0 +1,160 @@
+{
+  "schema_version": 1,
+  "market": "korea",
+  "date": "2026-11-24",
+  "summary": "장 마감 후 TradingView 주식 스냅샷 기준. 당일 장중 고가가 52주·전체기간 고가에 도달하고, 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다. 전체기간 신고가를 우선 표시하며 신고가 배경은 별도 확인 전입니다.",
+  "sources": [
+    {
+      "label": "TradingView stock screener",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    },
+    {
+      "label": "Naver Finance 종목명·상장 시장·일봉 검증",
+      "url": "https://stock.naver.com/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "036710.KQ",
+      "name": "심텍홀딩스",
+      "exchange": "KOSDAQ",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Electronic Components",
+      "description": "심텍홀딩스 · Electronic Components",
+      "change_pct": 12.736660929432015,
+      "session_open": 6260,
+      "session_close": 6580,
+      "session_volume": 3307263,
+      "source_symbol": "KRX:036710",
+      "currency": "KRW",
+      "name_original": "SIMMTECH Holdings Co., Ltd.",
+      "name_source_url": "https://m.stock.naver.com/api/stock/036710/basic",
+      "high_verification": {
+        "source": "Naver Finance adjusted daily history",
+        "source_url": "https://api.finance.naver.com/siseJson.naver?symbol=036710&requestType=1&startTime=20251125&endTime=20261124&timeframe=day",
+        "date": "2026-11-24",
+        "open": 6260,
+        "daily_high": 6800,
+        "low": 5930,
+        "close": 6580,
+        "previous_close": 5870,
+        "volume": 3307263,
+        "prior_52_week_high": 6500,
+        "observed_bars": 244,
+        "first_observed_date": "2025-11-25",
+        "confirmed": true,
+        "matches_prior_high": false,
+        "bearish_candle": false,
+        "down_close": false,
+        "passes_close_filter": true
+      }
+    },
+    {
+      "ticker": "489460.KQ",
+      "name": "바이오비쥬",
+      "exchange": "KOSDAQ",
+      "category": "Consumer Non-Durables",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Non-Durables · Household/Personal Care",
+      "description": "바이오비쥬 · Household/Personal Care",
+      "change_pct": 3.64741641337386,
+      "session_open": 16600,
+      "session_close": 17030,
+      "session_volume": 130378,
+      "source_symbol": "KRX:489460",
+      "currency": "KRW",
+      "name_original": "BioBijou Co., Ltd.",
+      "name_source_url": "https://m.stock.naver.com/api/stock/489460/basic",
+      "high_verification": {
+        "source": "Naver Finance adjusted daily history",
+        "source_url": "https://api.finance.naver.com/siseJson.naver?symbol=489460&requestType=1&startTime=20251125&endTime=20261124&timeframe=day",
+        "date": "2026-11-24",
+        "open": 16600,
+        "daily_high": 17150,
+        "low": 16170,
+        "close": 17030,
+        "previous_close": 16380,
+        "volume": 130378,
+        "prior_52_week_high": 16770,
+        "observed_bars": 244,
+        "first_observed_date": "2025-11-25",
+        "confirmed": true,
+        "matches_prior_high": false,
+        "bearish_candle": false,
+        "down_close": false,
+        "passes_close_filter": true
+      }
+    },
+    {
+      "ticker": "089860.KS",
+      "name": "롯데렌탈",
+      "exchange": "KOSPI",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "업종: Finance · Finance/Rental/Leasing",
+      "description": "롯데렌탈 · Finance/Rental/Leasing",
+      "change_pct": 0,
+      "session_open": 58600,
+      "session_close": 58600,
+      "session_volume": 35338,
+      "source_symbol": "KRX:089860",
+      "currency": "KRW",
+      "name_original": "LOTTE rental co., ltd.",
+      "name_source_url": "https://m.stock.naver.com/api/stock/089860/basic",
+      "high_verification": {
+        "source": "Naver Finance adjusted daily history",
+        "source_url": "https://api.finance.naver.com/siseJson.naver?symbol=089860&requestType=1&startTime=20251125&endTime=20261124&timeframe=day",
+        "date": "2026-11-24",
+        "open": 58600,
+        "daily_high": 58700,
+        "low": 58600,
+        "close": 58600,
+        "previous_close": 58600,
+        "volume": 35338,
+        "prior_52_week_high": 58700,
+        "observed_bars": 244,
+        "first_observed_date": "2025-11-25",
+        "confirmed": true,
+        "matches_prior_high": true,
+        "bearish_candle": false,
+        "down_close": false,
+        "passes_close_filter": true
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "TradingView public scanner",
+    "scanner": "korea",
+    "fetched_at": "2026-11-24T07:52:57.625063+00:00",
+    "universe": "TradingView-listed stock instruments, including common and preferred shares; ETFs excluded",
+    "definition": "daily high >= period high; close >= open; close >= previous close when one exists; all-time takes precedence; ties included",
+    "scanner_exchanges": [
+      "KRX"
+    ],
+    "latest_session_by_exchange": {
+      "KRX": "2026-11-24"
+    },
+    "previous_session_by_exchange": {
+      "KRX": "2026-11-23"
+    },
+    "current_session_reference_symbols": {
+      "KRX": "KRX:000020",
+      "KOSPI": "KRX:000020",
+      "KOSDAQ": "KRX:0001A0"
+    },
+    "scanned_symbols": 2750,
+    "current_session_symbols": 2721,
+    "excluded_symbols": {
+      "other_session": 29,
+      "korean_daily_history_disagrees": 5,
+      "bearish_or_down_close": 3
+    },
+    "pagination_complete": true
+  },
+  "collected_at": "2026-11-24T07:52:37.180662+00:00"
+}
