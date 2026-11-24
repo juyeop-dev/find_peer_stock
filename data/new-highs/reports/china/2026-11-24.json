@@ -1,0 +1,214 @@
+{
+  "schema_version": 1,
+  "market": "china",
+  "date": "2026-11-24",
+  "summary": "장 마감 후 TradingView 주식 스냅샷 기준. 당일 장중 고가가 52주·전체기간 고가에 도달하고, 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다. 전체기간 신고가를 우선 표시하며 신고가 배경은 별도 확인 전입니다.",
+  "sources": [
+    {
+      "label": "TradingView stock screener",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "600025.SS",
+      "name": "Huaneng Lancang River Hydropower Co Ltd Class A",
+      "exchange": "SSE",
+      "category": "Utilities",
+      "high_type": "52_week",
+      "reason": "업종: Utilities · Electric Utilities",
+      "description": "Huaneng Lancang River Hydropower Co Ltd Class A · Electric Utilities",
+      "change_pct": 0.5176876617773986,
+      "session_open": 11.5,
+      "session_close": 11.65,
+      "session_volume": 36090111,
+      "source_symbol": "SSE:600025",
+      "currency": "CNY"
+    },
+    {
+      "ticker": "600467.SS",
+      "name": "Shandong Homey Aquatic Development Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Process Industries",
+      "high_type": "52_week",
+      "reason": "업종: Process Industries · Agricultural Commodities/Milling",
+      "description": "Shandong Homey Aquatic Development Co., Ltd. Class A · Agricultural Commodities/Milling",
+      "change_pct": 3.8095238095238133,
+      "session_open": 2.99,
+      "session_close": 3.27,
+      "session_volume": 441797992,
+      "source_symbol": "SSE:600467",
+      "currency": "CNY"
+    },
+    {
+      "ticker": "601009.SS",
+      "name": "Bank of Nanjing Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "업종: Finance · Major Banks",
+      "description": "Bank of Nanjing Co., Ltd. Class A · Major Banks",
+      "change_pct": 0.5961251862891213,
+      "session_open": 13.32,
+      "session_close": 13.5,
+      "session_volume": 60424327,
+      "source_symbol": "SSE:601009",
+      "currency": "CNY"
+    },
+    {
+      "ticker": "601985.SS",
+      "name": "China National Nuclear Power Co. Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Utilities",
+      "high_type": "52_week",
+      "reason": "업종: Utilities · Electric Utilities",
+      "description": "China National Nuclear Power Co. Ltd. Class A · Electric Utilities",
+      "change_pct": 2.760736196319032,
+      "session_open": 9.7,
+      "session_close": 10.05,
+      "session_volume": 179255887,
+      "source_symbol": "SSE:601985",
+      "currency": "CNY"
+    },
+    {
+      "ticker": "001201.SZ",
+      "name": "Dongrui Food Group Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Process Industries",
+      "high_type": "52_week",
+      "reason": "업종: Process Industries · Agricultural Commodities/Milling",
+      "description": "Dongrui Food Group Co., Ltd. Class A · Agricultural Commodities/Milling",
+      "change_pct": 0.22509848058525125,
+      "session_open": 17.5,
+      "session_close": 17.81,
+      "session_volume": 15643383,
+      "source_symbol": "SZSE:001201",
+      "currency": "CNY"
+    },
+    {
+      "ticker": "001358.SZ",
+      "name": "Shaoxing Xingxin New Material Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Process Industries",
+      "high_type": "52_week",
+      "reason": "업종: Process Industries · Chemicals: Specialty",
+      "description": "Shaoxing Xingxin New Material Co., Ltd. Class A · Chemicals: Specialty",
+      "change_pct": 10.006925207756236,
+      "session_open": 29.01,
+      "session_close": 31.77,
+      "session_volume": 17792053,
+      "source_symbol": "SZSE:001358",
+      "currency": "CNY"
+    },
+    {
+      "ticker": "002148.SZ",
+      "name": "Beijing Bewinner Communications Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Technology Services",
+      "high_type": "52_week",
+      "reason": "업종: Technology Services · Packaged Software",
+      "description": "Beijing Bewinner Communications Co., Ltd. Class A · Packaged Software",
+      "change_pct": 3.0713640469738017,
+      "session_open": 11.4,
+      "session_close": 11.41,
+      "session_volume": 231148195,
+      "source_symbol": "SZSE:002148",
+      "currency": "CNY"
+    },
+    {
+      "ticker": "002242.SZ",
+      "name": "Joyoung Company Limited Class A",
+      "exchange": "SZSE",
+      "category": "Consumer Durables",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Durables · Electronics/Appliances",
+      "description": "Joyoung Company Limited Class A · Electronics/Appliances",
+      "change_pct": 10.012554927809159,
+      "session_open": 34.3,
+      "session_close": 35.05,
+      "session_volume": 32960100,
+      "source_symbol": "SZSE:002242",
+      "currency": "CNY"
+    },
+    {
+      "ticker": "002872.SZ",
+      "name": "Tiansheng Pharmaceutical Group Co. Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Pharmaceuticals: Major",
+      "description": "Tiansheng Pharmaceutical Group Co. Ltd. Class A · Pharmaceuticals: Major",
+      "change_pct": 10.068259385665526,
+      "session_open": 6.4,
+      "session_close": 6.45,
+      "session_volume": 9829850,
+      "source_symbol": "SZSE:002872",
+      "currency": "CNY"
+    },
+    {
+      "ticker": "300550.SZ",
+      "name": "Heren Health Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Technology Services",
+      "high_type": "52_week",
+      "reason": "업종: Technology Services · Packaged Software",
+      "description": "Heren Health Co., Ltd. Class A · Packaged Software",
+      "change_pct": 17.729502452697975,
+      "session_open": 14.44,
+      "session_close": 16.8,
+      "session_volume": 24517749,
+      "source_symbol": "SZSE:300550",
+      "currency": "CNY"
+    },
+    {
+      "ticker": "301313.SZ",
+      "name": "Guangzhou Frontop Digital Creative Technology Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Communications",
+      "high_type": "all_time",
+      "reason": "업종: Communications · Specialty Telecommunications",
+      "description": "Guangzhou Frontop Digital Creative Technology Co., Ltd. Class A · Specialty Telecommunications",
+      "change_pct": 16.636145936047335,
+      "session_open": 79.88,
+      "session_close": 82.8,
+      "session_volume": 34966191,
+      "source_symbol": "SZSE:301313",
+      "currency": "CNY"
+    }
+  ],
+  "source_metadata": {
+    "provider": "TradingView public scanner",
+    "scanner": "china",
+    "fetched_at": "2026-11-24T08:32:37.506036+00:00",
+    "universe": "TradingView-listed stock instruments, including common and preferred shares; ETFs excluded",
+    "definition": "daily high >= period high; close >= open; close >= previous close when one exists; all-time takes precedence; ties included",
+    "scanner_exchanges": [
+      "SSE",
+      "SZSE"
+    ],
+    "latest_session_by_exchange": {
+      "SZSE": "2026-11-24",
+      "SSE": "2026-11-24"
+    },
+    "previous_session_by_exchange": {
+      "SZSE": "2026-11-23",
+      "SSE": "2026-11-23"
+    },
+    "current_session_reference_symbols": {
+      "SZSE": "SZSE:000001",
+      "SSE": "SSE:508060"
+    },
+    "scanned_symbols": 5315,
+    "current_session_symbols": 5313,
+    "excluded_symbols": {
+      "other_session": 2,
+      "bearish_or_down_close": 4
+    },
+    "pagination_complete": true
+  },
+  "collected_at": "2026-11-24T08:32:35.929617+00:00"
+}
