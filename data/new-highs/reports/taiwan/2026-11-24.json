@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "market": "taiwan",
+  "date": "2026-11-24",
+  "summary": "장 마감 후 TradingView 주식 스냅샷 기준. 당일 장중 고가가 52주·전체기간 고가에 도달하고, 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다. 전체기간 신고가를 우선 표시하며 신고가 배경은 별도 확인 전입니다.",
+  "sources": [
+    {
+      "label": "TradingView stock screener",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "6623.TWO",
+      "name": "SG Biomedical Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Technology Services",
+      "high_type": "52_week",
+      "reason": "업종: Technology Services · Information Technology Services",
+      "description": "SG Biomedical Co., Ltd. · Information Technology Services",
+      "change_pct": 6.524633821571246,
+      "session_open": 75.4,
+      "session_close": 80,
+      "session_volume": 195675,
+      "source_symbol": "TPEX:6623",
+      "currency": "TWD"
+    }
+  ],
+  "source_metadata": {
+    "provider": "TradingView public scanner",
+    "scanner": "taiwan",
+    "fetched_at": "2026-11-24T07:03:11.915813+00:00",
+    "universe": "TradingView-listed stock instruments, including common and preferred shares; ETFs excluded",
+    "definition": "daily high >= period high; close >= open; close >= previous close when one exists; all-time takes precedence; ties included",
+    "scanner_exchanges": [
+      "TWSE",
+      "TPEX"
+    ],
+    "latest_session_by_exchange": {
+      "TWSE": "2026-11-24",
+      "TPEX": "2026-11-24"
+    },
+    "previous_session_by_exchange": {
+      "TWSE": "2026-11-23",
+      "TPEX": "2026-11-23"
+    },
+    "current_session_reference_symbols": {
+      "TWSE": "TWSE:01001T",
+      "TPEX": "TPEX:1240"
+    },
+    "scanned_symbols": 2368,
+    "current_session_symbols": 2353,
+    "excluded_symbols": {
+      "other_session": 15,
+      "bearish_or_down_close": 6
+    },
+    "pagination_complete": true
+  },
+  "collected_at": "2026-11-24T07:03:11.182231+00:00"
+}
