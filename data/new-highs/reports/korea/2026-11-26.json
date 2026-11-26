@@ -1,0 +1,232 @@
+{
+  "schema_version": 1,
+  "market": "korea",
+  "date": "2026-11-26",
+  "summary": "장 마감 후 TradingView 주식 스냅샷 기준. 당일 장중 고가가 52주·전체기간 고가에 도달하고, 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다. 전체기간 신고가를 우선 표시하며 신고가 배경은 별도 확인 전입니다.",
+  "sources": [
+    {
+      "label": "TradingView stock screener",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    },
+    {
+      "label": "Naver Finance 종목명·상장 시장·일봉 검증",
+      "url": "https://stock.naver.com/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "051160.KQ",
+      "name": "지어소프트",
+      "exchange": "KOSDAQ",
+      "category": "Commercial Services",
+      "high_type": "52_week",
+      "reason": "업종: Commercial Services · Advertising/Marketing Services",
+      "description": "지어소프트 · Advertising/Marketing Services",
+      "change_pct": 0.964630225080386,
+      "session_open": 15550,
+      "session_close": 15710,
+      "session_volume": 128340,
+      "source_symbol": "KRX:051160",
+      "currency": "KRW",
+      "name_original": "GaeaSoft Corp.",
+      "name_source_url": "https://m.stock.naver.com/api/stock/051160/basic",
+      "high_verification": {
+        "source": "Naver Finance adjusted daily history",
+        "source_url": "https://api.finance.naver.com/siseJson.naver?symbol=051160&requestType=1&startTime=20251127&endTime=20261126&timeframe=day",
+        "date": "2026-11-26",
+        "open": 15550,
+        "daily_high": 16190,
+        "low": 15550,
+        "close": 15710,
+        "previous_close": 15280,
+        "volume": 128340,
+        "prior_52_week_high": 15900,
+        "observed_bars": 244,
+        "first_observed_date": "2025-11-27",
+        "confirmed": true,
+        "matches_prior_high": false,
+        "bearish_candle": false,
+        "down_close": false,
+        "passes_close_filter": true
+      }
+    },
+    {
+      "ticker": "053800.KQ",
+      "name": "안랩",
+      "exchange": "KOSDAQ",
+      "category": "Technology Services",
+      "high_type": "52_week",
+      "reason": "업종: Technology Services · Packaged Software",
+      "description": "안랩 · Packaged Software",
+      "change_pct": 4.179860671310956,
+      "session_open": 154700,
+      "session_close": 161300,
+      "session_volume": 1611567,
+      "source_symbol": "KRX:053800",
+      "currency": "KRW",
+      "name_original": "AhnLab, Inc.",
+      "name_source_url": "https://m.stock.naver.com/api/stock/053800/basic",
+      "high_verification": {
+        "source": "Naver Finance adjusted daily history",
+        "source_url": "https://api.finance.naver.com/siseJson.naver?symbol=053800&requestType=1&startTime=20251127&endTime=20261126&timeframe=day",
+        "date": "2026-11-26",
+        "open": 154700,
+        "daily_high": 174900,
+        "low": 154300,
+        "close": 161300,
+        "previous_close": 157900,
+        "volume": 1611567,
+        "prior_52_week_high": 157900,
+        "observed_bars": 244,
+        "first_observed_date": "2025-11-27",
+        "confirmed": true,
+        "matches_prior_high": false,
+        "bearish_candle": false,
+        "down_close": false,
+        "passes_close_filter": true
+      }
+    },
+    {
+      "ticker": "068930.KQ",
+      "name": "디지털대성",
+      "exchange": "KOSDAQ",
+      "category": "Commercial Services",
+      "high_type": "52_week",
+      "reason": "업종: Commercial Services · Miscellaneous Commercial Services",
+      "description": "디지털대성 · Miscellaneous Commercial Services",
+      "change_pct": 3.4871794871794872,
+      "session_open": 9750,
+      "session_close": 10040,
+      "session_volume": 308031,
+      "source_symbol": "KRX:068930",
+      "currency": "KRW",
+      "name_original": "Digital Daesung Co., Ltd",
+      "name_source_url": "https://m.stock.naver.com/api/stock/068930/basic",
+      "high_verification": {
+        "source": "Naver Finance adjusted daily history",
+        "source_url": "https://api.finance.naver.com/siseJson.naver?symbol=068930&requestType=1&startTime=20251127&endTime=20261126&timeframe=day",
+        "date": "2026-11-26",
+        "open": 9750,
+        "daily_high": 10170,
+        "low": 9710,
+        "close": 10040,
+        "previous_close": 9690,
+        "volume": 308031,
+        "prior_52_week_high": 10000,
+        "observed_bars": 244,
+        "first_observed_date": "2025-11-27",
+        "confirmed": true,
+        "matches_prior_high": false,
+        "bearish_candle": false,
+        "down_close": false,
+        "passes_close_filter": true
+      }
+    },
+    {
+      "ticker": "204620.KQ",
+      "name": "글로벌텍스프리",
+      "exchange": "KOSDAQ",
+      "category": "Consumer Services",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Services · Other Consumer Services",
+      "description": "글로벌텍스프리 · Other Consumer Services",
+      "change_pct": 7.487520798668886,
+      "session_open": 6020,
+      "session_close": 6450,
+      "session_volume": 3515953,
+      "source_symbol": "KRX:204620",
+      "currency": "KRW",
+      "name_original": "Global Tax Free Co., Ltd.",
+      "name_source_url": "https://m.stock.naver.com/api/stock/204620/basic",
+      "high_verification": {
+        "source": "Naver Finance adjusted daily history",
+        "source_url": "https://api.finance.naver.com/siseJson.naver?symbol=204620&requestType=1&startTime=20251127&endTime=20261126&timeframe=day",
+        "date": "2026-11-26",
+        "open": 6020,
+        "daily_high": 6700,
+        "low": 5960,
+        "close": 6450,
+        "previous_close": 6040,
+        "volume": 3515953,
+        "prior_52_week_high": 6540,
+        "observed_bars": 244,
+        "first_observed_date": "2025-11-27",
+        "confirmed": true,
+        "matches_prior_high": false,
+        "bearish_candle": false,
+        "down_close": false,
+        "passes_close_filter": true
+      }
+    },
+    {
+      "ticker": "192820.KS",
+      "name": "코스맥스",
+      "exchange": "KOSPI",
+      "category": "Consumer Non-Durables",
+      "high_type": "all_time",
+      "reason": "업종: Consumer Non-Durables · Household/Personal Care",
+      "description": "코스맥스 · Household/Personal Care",
+      "change_pct": 2.90519877675841,
+      "session_open": 327000,
+      "session_close": 338000,
+      "session_volume": 150015,
+      "source_symbol": "KRX:192820",
+      "currency": "KRW",
+      "name_original": "COSMAX, Inc.",
+      "name_source_url": "https://m.stock.naver.com/api/stock/192820/basic",
+      "high_verification": {
+        "source": "Naver Finance adjusted daily history",
+        "source_url": "https://api.finance.naver.com/siseJson.naver?symbol=192820&requestType=1&startTime=20251127&endTime=20261126&timeframe=day",
+        "date": "2026-11-26",
+        "open": 327000,
+        "daily_high": 348000,
+        "low": 321500,
+        "close": 338000,
+        "previous_close": 329500,
+        "volume": 150015,
+        "prior_52_week_high": 333000,
+        "observed_bars": 244,
+        "first_observed_date": "2025-11-27",
+        "confirmed": true,
+        "matches_prior_high": false,
+        "bearish_candle": false,
+        "down_close": false,
+        "passes_close_filter": true
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "TradingView public scanner",
+    "scanner": "korea",
+    "fetched_at": "2026-11-26T07:32:54.480172+00:00",
+    "universe": "TradingView-listed stock instruments, including common and preferred shares; ETFs excluded",
+    "definition": "daily high >= period high; close >= open; close >= previous close when one exists; all-time takes precedence; ties included",
+    "scanner_exchanges": [
+      "KRX"
+    ],
+    "latest_session_by_exchange": {
+      "KRX": "2026-11-26"
+    },
+    "previous_session_by_exchange": {
+      "KRX": "2026-11-25"
+    },
+    "current_session_reference_symbols": {
+      "KRX": "KRX:000020",
+      "KOSPI": "KRX:000020",
+      "KOSDAQ": "KRX:0001A0"
+    },
+    "scanned_symbols": 2748,
+    "current_session_symbols": 2721,
+    "excluded_symbols": {
+      "other_session": 27,
+      "bearish_or_down_close": 4,
+      "korean_daily_history_disagrees": 1
+    },
+    "pagination_complete": true
+  },
+  "collected_at": "2026-11-26T07:32:41.880602+00:00"
+}

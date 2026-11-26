@@ -2,11 +2,12 @@
   "schema_version": 1,
   "markets": {
     "korea": {
-      "last_success_at": "2026-11-25T07:37:51.361692+00:00",
-      "last_success_date": "2026-11-25",
-      "status": "pending",
+      "status": "updated",
       "target_date": "2026-11-26",
-      "message": "장 마감 후 일별 자료를 확인합니다."
+      "last_attempt_at": "2026-11-26T07:32:41.880602+00:00",
+      "last_success_at": "2026-11-26T07:32:41.880602+00:00",
+      "last_success_date": "2026-11-26",
+      "message": "장 마감 후 신고가 자료를 갱신했습니다."
     },
     "us": {
       "status": "updated",
@@ -25,24 +26,24 @@
     "taiwan": {
       "status": "updated",
       "target_date": "2026-11-26",
-      "last_attempt_at": "2026-11-26T06:52:38.051972+00:00",
-      "last_success_at": "2026-11-26T06:52:38.051972+00:00",
+      "last_success_date": "2026-11-26",
+      "message": "이 거래일의 신고가 자료가 등록되었습니다.",
+      "last_success_at": "2026-11-26T06:52:38.051972+00:00"
+    },
+    "japan": {
+      "status": "updated",
+      "target_date": "2026-11-26",
+      "last_attempt_at": "2026-11-26T07:32:41.880602+00:00",
+      "last_success_at": "2026-11-26T07:32:41.880602+00:00",
       "last_success_date": "2026-11-26",
       "message": "장 마감 후 신고가 자료를 갱신했습니다."
     },
-    "japan": {
-      "last_success_at": "2026-11-25T07:37:51.361692+00:00",
+    "europe": {
+      "last_success_at": "2026-11-25T18:47:44.071318+00:00",
       "last_success_date": "2026-11-25",
       "status": "pending",
       "target_date": "2026-11-26",
       "message": "장 마감 후 일별 자료를 확인합니다."
-    },
-    "europe": {
-      "status": "updated",
-      "target_date": "2026-11-25",
-      "last_success_date": "2026-11-25",
-      "message": "이 거래일의 신고가 자료가 등록되었습니다.",
-      "last_success_at": "2026-11-25T18:47:44.071318+00:00"
     }
   }
 }
