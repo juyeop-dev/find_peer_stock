@@ -1,0 +1,168 @@
+{
+  "schema_version": 1,
+  "market": "korea",
+  "date": "2026-11-26",
+  "rules": {
+    "KOSPI": {
+      "market_cap_min": 5000000000000,
+      "rebound_min": 8
+    },
+    "KOSDAQ": {
+      "market_cap_min": 1000000000000,
+      "rebound_min": 5
+    }
+  },
+  "entries": [
+    {
+      "ticker": "310210.KQ",
+      "name": "보로노이",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 138500,
+      "low": 119900,
+      "change_pct": 18.1740614334471,
+      "rebound_pct": 15.512927439532941,
+      "market_cap": 1980802185059,
+      "market_cap_currency": "KRW",
+      "sector": "Health Technology",
+      "industry": "Pharmaceuticals: Major"
+    },
+    {
+      "ticker": "226950.KQ",
+      "name": "올릭스",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 91600,
+      "low": 80100,
+      "change_pct": 13.506815365551425,
+      "rebound_pct": 14.357053682896371,
+      "market_cap": 1807113698959,
+      "market_cap_currency": "KRW",
+      "sector": "Health Technology",
+      "industry": "Pharmaceuticals: Major"
+    },
+    {
+      "ticker": "000250.KQ",
+      "name": "삼천당제약",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 166400,
+      "low": 148300,
+      "change_pct": 9.617918313570488,
+      "rebound_pct": 12.204989885367489,
+      "market_cap": 3360704847336,
+      "market_cap_currency": "KRW",
+      "sector": "Health Technology",
+      "industry": "Pharmaceuticals: Major"
+    },
+    {
+      "ticker": "347850.KQ",
+      "name": "디앤디파마텍",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 36450,
+      "low": 33400,
+      "change_pct": 7.680945347119645,
+      "rebound_pct": 9.1317365269461,
+      "market_cap": 1513274621964,
+      "market_cap_currency": "KRW",
+      "sector": "Health Technology",
+      "industry": "Pharmaceuticals: Major"
+    },
+    {
+      "ticker": "141080.KQ",
+      "name": "리가켐바이오",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 56700,
+      "low": 53100,
+      "change_pct": 5.58659217877095,
+      "rebound_pct": 6.779661016949157,
+      "market_cap": 1939069993591,
+      "market_cap_currency": "KRW",
+      "sector": "Health Technology",
+      "industry": "Pharmaceuticals: Major"
+    },
+    {
+      "ticker": "053800.KQ",
+      "name": "안랩",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 164500,
+      "low": 154300,
+      "change_pct": 4.179860671310956,
+      "rebound_pct": 6.610499027867789,
+      "market_cap": 1159109995365,
+      "market_cap_currency": "KRW",
+      "sector": "Technology Services",
+      "industry": "Packaged Software"
+    },
+    {
+      "ticker": "218410.KQ",
+      "name": "RFHIC",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 60000,
+      "low": 56400,
+      "change_pct": 11.940298507462686,
+      "rebound_pct": 6.382978723404253,
+      "market_cap": 1454391563416,
+      "market_cap_currency": "KRW",
+      "sector": "Electronic Technology",
+      "industry": "Semiconductors"
+    },
+    {
+      "ticker": "086450.KQ",
+      "name": "동국제약",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 25550,
+      "low": 24200,
+      "change_pct": 0.5905511811023622,
+      "rebound_pct": 5.578512396694224,
+      "market_cap": 1136363970947,
+      "market_cap_currency": "KRW",
+      "sector": "Health Technology",
+      "industry": "Pharmaceuticals: Major"
+    },
+    {
+      "ticker": "257720.KQ",
+      "name": "실리콘투",
+      "exchange": "KOSDAQ",
+      "currency": "KRW",
+      "price": 29600,
+      "low": 28100,
+      "change_pct": 2.422145328719723,
+      "rebound_pct": 5.3380782918149405,
+      "market_cap": 1691867202759,
+      "market_cap_currency": "KRW",
+      "sector": "Retail Trade",
+      "industry": "Specialty Stores"
+    }
+  ],
+  "source_metadata": {
+    "provider": "TradingView public scanner",
+    "fetched_at": "2026-11-26T06:53:00.664830+00:00",
+    "session": "daily",
+    "timezone": "Asia/Seoul",
+    "scanned_symbols": 2641,
+    "excluded": {
+      "declining": 76,
+      "below_market_cap": 2360,
+      "missing_market_cap": 7,
+      "unsupported_listing": 105,
+      "below_rebound": 74,
+      "stale_session": 10
+    },
+    "latest_session_by_board": {
+      "KOSDAQ": "2026-11-26",
+      "KOSPI": "2026-11-26"
+    }
+  },
+  "sources": [
+    {
+      "label": "TradingView 국내 주식 스크리너",
+      "url": "https://kr.tradingview.com/markets/stocks-korea/market-movers-all-stocks/"
+    }
+  ]
+}
