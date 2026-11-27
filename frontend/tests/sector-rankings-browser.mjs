@@ -6,6 +6,7 @@ import { tmpdir } from "node:os";
 import { join, resolve, sep } from "node:path";
 import { fileURLToPath } from "node:url";
 import ts from "typescript";
+import { expandSectorWeek, sectorWeekStart } from "../../shared/sector-week.mjs";
 
 const root = fileURLToPath(new URL("../../", import.meta.url));
 const rankingSource = await readFile(new URL("../src/dataClient/sectorRankings.ts", import.meta.url), "utf8");
@@ -77,10 +78,13 @@ try {
   await evaluate(`(()=>{const input=document.querySelector('.sectorCalendarNavigation input');Object.getOwnPropertyDescriptor(HTMLInputElement.prototype,'value').set.call(input,${JSON.stringify(historic.date.slice(0,7))});input.dispatchEvent(new Event('input',{bubbles:true}));})()`);
   await evaluate(`document.querySelector('.sectorCalendarGrid button[data-date="${historic.date}"]').click()`);
   await until(()=>evaluate(`document.querySelector('.sectorSummary strong')?.innerText===${JSON.stringify(historic.date)}`),'Historical ranking did not load');
-  const sourceResponse=await fetch(base+'/data/sectors/daily/'+historic.date+'.json.gz');
+  let sourceResponse=await fetch(base+'/data/sectors/weekly/'+sectorWeekStart(historic.date)+'.json.gz');
+  if (sourceResponse.status===404) sourceResponse=await fetch(base+'/data/sectors/daily/'+historic.date+'.json.gz');
   const sourceBytes=await sourceResponse.arrayBuffer(),sourceMagic=new Uint8Array(sourceBytes,0,Math.min(2,sourceBytes.byteLength));
   const sourceText=sourceMagic[0]===0x1f&&sourceMagic[1]===0x8b?await new Response(new Blob([sourceBytes]).stream().pipeThrough(new DecompressionStream('gzip'))).text():new TextDecoder().decode(sourceBytes);
-  const sourceSnapshot=JSON.parse(sourceText);
+  const packedSnapshot=JSON.parse(sourceText);
+  const sourceSnapshot=packedSnapshot.encoding==='sector-week-v1' ? expandSectorWeek(packedSnapshot,historic.date) : packedSnapshot;
+  const sourceStocks=sourceSnapshot.stocks ?? sourceSnapshot.stock_rows.map(([shape,...fields])=>Object.fromEntries(sourceSnapshot.stock_fields[shape].map((key,i)=>[key,fields[i]])));
   if (sourceSnapshot.historical_metrics) {
     assert.ok(await evaluate("[...document.querySelectorAll('.sectorReturn')].filter(node=>Number.isFinite(parseFloat(node.innerText))).length>50"), "Restored dated caps must enable historical weighted returns");
     assert.equal(await evaluate("document.body.innerText.includes('당시 시가총액이 없어')"), false);
@@ -89,7 +93,7 @@ try {
   await until(()=>evaluate("Boolean(document.querySelector('.sectorExpansionRow .sectorMemberTable'))"),'Inline sector members did not expand');
   const expanded=await evaluate("(()=>{const row=document.querySelector('.sectorRankingTable tr.selected');return {key:row.dataset.sector,inline:row.nextElementSibling.classList.contains('sectorExpansionRow'),count:document.querySelectorAll('.sectorMemberTable tbody tr').length,code:document.querySelector('.sectorMemberTable .semiStockLink span').innerText,price:document.querySelector('.sectorMemberTable tbody tr .stockPriceValue').innerText};})()");
   const [parent,industry]=expanded.key.split('\t');
-  const expectedMembers=sourceSnapshot.stocks.map(classifiedSectorStock).filter(stock=>stock.date===historic.date&&stock.sector===parent&&stock.industry===industry);
+  const expectedMembers=sourceStocks.map(classifiedSectorStock).filter(stock=>stock.date===historic.date&&stock.sector===parent&&stock.industry===industry);
   assert.equal(expanded.inline,true);assert.equal(expanded.count,expectedMembers.length);
   assert.equal(Number(expanded.price.replace(/[^0-9.]/g,'')),expectedMembers.find(stock=>stock.code===expanded.code).price);
   const sourceBefore=statuses.filter(item=>item.kind==='sectors').length;

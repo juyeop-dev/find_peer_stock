@@ -1,6 +1,8 @@
 import { requestOriginal } from "./liveStockDataClient";
 import type { SectorCalendar, SectorSnapshot } from "./sectorRankings";
 import { classifiedSectorStock } from "./sectorRankings";
+import { withSectorPriceReturns } from "./sectorPriceReturns";
+import { expandSectorWeek, sectorWeekStart } from "../../../shared/sector-week.mjs";
 import koreanCompanyNames from "../../../data/seed/korean_company_names.json";
 
 let latest: SectorSnapshot | undefined;
@@ -24,29 +26,35 @@ async function staticSectorJson<T>(path: string, signal?: AbortSignal): Promise<
   const response = await fetch(`${import.meta.env.BASE_URL}data/sectors/${path}?t=${Date.now()}`, { cache: "no-store", signal });
   if (response.status === 404 && path.endsWith(".gz")) return staticSectorJson<T>(path.slice(0, -3), signal);
   if (!response.ok) throw new Error("해당 날짜의 저장된 섹터 기록을 불러오지 못했습니다.");
-  if (path.endsWith(".gz")) {
-    const bytes = await response.arrayBuffer();
-    // Some hosts decode Content-Encoding themselves; inspect the gzip magic.
-    const magic = new Uint8Array(bytes, 0, Math.min(2, bytes.byteLength));
-    const body = magic[0] === 0x1f && magic[1] === 0x8b
-      ? await new Response(new Blob([bytes]).stream().pipeThrough(new DecompressionStream("gzip"))).text()
-      : new TextDecoder().decode(bytes);
-    return expandSectorArchive(JSON.parse(body)) as T;
-  }
+  if (path.endsWith(".gz")) return expandSectorArchive(await readSectorGzip(response)) as T;
   return response.json();
+}
+async function readSectorGzip(response: Response): Promise<unknown> {
+  const bytes = await response.arrayBuffer();
+  const magic = new Uint8Array(bytes, 0, Math.min(2, bytes.byteLength));
+  if (magic[0] === 0x1f && magic[1] === 0x8b) {
+    return new Response(new Blob([bytes]).stream().pipeThrough(new DecompressionStream("gzip"))).json();
+  }
+  return JSON.parse(new TextDecoder().decode(bytes));
+}
+async function getHistoricalListing(date: string, signal?: AbortSignal): Promise<SectorSnapshot> {
+  const response = await fetch(`${import.meta.env.BASE_URL}data/sectors/weekly/${sectorWeekStart(date)}.json.gz`, { cache: "no-cache", signal });
+  if (response.status === 404) return staticSectorJson<SectorSnapshot>(`daily/${date}.json.gz`, signal);
+  if (!response.ok) throw new Error("해당 날짜의 저장된 섹터 기록을 불러오지 못했습니다.");
+  return expandSectorWeek(await readSectorGzip(response), date) as SectorSnapshot;
 }
 function validate(value: SectorSnapshot) {
   if (value?.schema_version !== 1 || value.market !== "korea" || value.currency !== "KRW" || !/^\d{4}-\d{2}-\d{2}$/.test(value.date) || !Number.isFinite(Date.parse(value.fetched_at)) || !Array.isArray(value.stocks) || !value.stocks.length) throw new Error("섹터 자료를 확인할 수 없습니다.");
   const tickers = new Set();
   for (const stock of value.stocks) {
-    if (!stock || !/^[0-9A-Z]{6}\.(KS|KQ)$/.test(stock.ticker) || stock.currency !== "KRW" || !["KOSPI", "KOSDAQ"].includes(stock.exchange) || !Number.isFinite(stock.price) || stock.price <= 0 || !stock.returns || typeof stock.sector !== "string" || typeof stock.industry !== "string" || tickers.has(stock.ticker)) throw new Error("종목·통화가 일치하지 않는 섹터 자료입니다.");
+    if (!stock || !/^[0-9A-Z]{6}\.(KS|KQ)$/.test(stock.ticker) || stock.currency !== "KRW" || !["KOSPI", "KOSDAQ"].includes(stock.exchange) || !Number.isFinite(stock.price) || stock.price <= 0 || typeof stock.sector !== "string" || typeof stock.industry !== "string" || tickers.has(stock.ticker)) throw new Error("종목·통화가 일치하지 않는 섹터 자료입니다.");
     tickers.add(stock.ticker);
-    for (const number of [stock.turnover, stock.market_cap, ...Object.values(stock.returns)]) if (number !== null && (typeof number !== "number" || !Number.isFinite(number))) throw new Error("섹터 수치가 올바르지 않습니다.");
+    for (const number of [stock.turnover, stock.market_cap]) if (number !== null && (typeof number !== "number" || !Number.isFinite(number))) throw new Error("섹터 수치가 올바르지 않습니다.");
   }
   const names: Record<string, string> = koreanCompanyNames.names;
   return { ...value, stocks: value.stocks.map(stock => ({ ...stock, name: names[stock.ticker] ?? stock.name })) };
 }
-export async function getSectorData(signal?: AbortSignal, fromSource = false): Promise<SectorSnapshot> {
+async function getLatestSnapshot(signal?: AbortSignal, fromSource = false): Promise<SectorSnapshot> {
   let data: SectorSnapshot;
   if (fromSource) {
     data = validate(await requestOriginal<SectorSnapshot>({ kind: "sectors" }, signal));
@@ -57,11 +65,15 @@ export async function getSectorData(signal?: AbortSignal, fromSource = false): P
     } catch (error) {
       if (signal?.aborted) throw error;
       if (latest) return latest;
-      return getSectorData(signal, true);
+      return getLatestSnapshot(signal, true);
     }
   }
   if (!latest || Date.parse(data.fetched_at) >= Date.parse(latest.fetched_at)) latest = data;
   return latest;
+}
+
+export async function getSectorData(signal?: AbortSignal, fromSource = false): Promise<SectorSnapshot> {
+  return withSectorPriceReturns(await getLatestSnapshot(signal, fromSource), true, signal);
 }
 
 export async function getSectorCalendar(signal?: AbortSignal): Promise<SectorCalendar> {
@@ -74,16 +86,16 @@ export async function getSectorCalendar(signal?: AbortSignal): Promise<SectorCal
 export async function getSectorSnapshot(date: string, signal?: AbortSignal, fromSource = false): Promise<SectorSnapshot> {
   if (!date) return getSectorData(signal, fromSource);
   if (!validSectorDate(date)) throw new Error("올바른 섹터 기록 날짜를 선택해 주세요.");
-  const current = await getSectorData(signal);
+  const current = await getLatestSnapshot(signal);
   if (current.date === date) {
-    if (!fromSource) return current;
-    const fresh = await getSectorData(signal, true);
-    if (fresh.date === date) return fresh;
+    if (!fromSource) return withSectorPriceReturns(current, true, signal);
+    const fresh = await getLatestSnapshot(signal, true);
+    if (fresh.date === date) return withSectorPriceReturns(fresh, true, signal);
     // A new trading day must not move an explicitly selected historical date.
   }
-  const snapshot = validate(await staticSectorJson<SectorSnapshot>(`daily/${date}.json.gz`, signal));
+  const snapshot = validate(await getHistoricalListing(date, signal));
   if (snapshot.date !== date) throw new Error("선택한 날짜와 섹터 기록이 일치하지 않습니다.");
-  return { ...snapshot, archived: true, source_fetched_at: undefined };
+  return withSectorPriceReturns({ ...snapshot, archived: true, source_fetched_at: undefined }, false, signal);
 }
 export async function getSectorStock(ticker: string, signal: AbortSignal, date = "") {
   const data = await getSectorSnapshot(date, signal);

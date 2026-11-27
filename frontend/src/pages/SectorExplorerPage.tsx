@@ -102,6 +102,7 @@ function DomesticSectorExplorer({mode, sector, data, error, loading, refreshing,
     <DataRefreshStatus cadence="sectors" generatedAt={data?.fetched_at} refreshing={refreshing || chartLoading && refreshVersion > 0} lastCheckedAt={lastCheckedAt} lastSourceAt={lastSourceAt} onRefresh={() => {refresh(); if (mode === "trends") setRefreshVersion(value => value + 1);}} />
     {loading && <LoadingSpinner />}{error && <ErrorNotice message={error} />}
     {data && <>
+      {data.price_data_unavailable && <ErrorNotice message="종목 일봉을 불러오지 못해 수익률을 표시할 수 없습니다." />}
       <section className="semiPanel"><div className="semiFilters">
         {mode === "trends" ? <label>분류 단계<select value={level} onChange={event => change("level", event.target.value)}><option value="industry">세부 업종</option><option value="sector">대분류</option></select></label> : <label>업종<select value={industry} onChange={event => change("industry", event.target.value)}><option value="">전체 업종</option>{industries.map(item => <option key={item} value={item}>{sectorLabel(item)}</option>)}</select></label>}
         <label>시장<select value={board} onChange={event => change("board", event.target.value)}><option value="">KOSPI + KOSDAQ</option><option>KOSPI</option><option>KOSDAQ</option></select></label>

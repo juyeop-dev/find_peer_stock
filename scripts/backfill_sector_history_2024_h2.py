@@ -1,10 +1,8 @@
-"""Reconstruct dated sector returns from verified Naver daily bars.
+"""Reconstruct dated sector listings from verified Naver daily bars.
 
 Membership uses the explicitly dated current classification, not a fictitious
 historical constituent list. Historical capitalization is deliberately null.
 """
-import bisect
-import calendar
 from datetime import date, datetime, timedelta, timezone
 import gzip
 import hashlib
@@ -15,25 +13,13 @@ from backfill_korean_new_highs import history_url, parse_history
 from stock_chart_history import ROOT, write_json
 
 
-def previous_month(day, months):
-    year, month = divmod(day.year * 12 + day.month - 1 - months, 12)
-    return date(year, month + 1, min(day.day, calendar.monthrange(year, month + 1)[1]))
-
-
 def reconstruct(stock, history, day):
     current = history.get(day)
     if not current or current[4] <= 0 or current[5] <= 0:
         return None
-    dates = sorted(d for d, row in history.items() if row[4] > 0)
-    index = bisect.bisect_left(dates, day)
-    targets = {"day": dates[index - 1] if index else None, "week": day - timedelta(days=7),
-               "month": previous_month(day, 1), "quarter": previous_month(day, 3), "year": previous_month(day, 12)}
-    returns = {}
-    for key, target in targets.items():
-        anchor = bisect.bisect_right(dates, target) - 1 if target else -1
-        returns[key] = (current[4] / history[dates[anchor]][4] - 1) * 100 if anchor >= 0 else None
-    return {**stock, "date": day.isoformat(), "price": current[4], "change_pct": returns["day"],
-            "returns": returns, "turnover": current[4] * current[5], "market_cap": None}
+    listing = {key: value for key, value in stock.items() if key not in ('returns', 'change_pct')}
+    return {**listing, "date": day.isoformat(), "price": current[4],
+            "turnover": current[4] * current[5], "market_cap": None}
 
 
 def main():
@@ -69,7 +55,7 @@ def main():
             "stale_count": 0, "stocks": stocks,
             "reconstruction": {"classification_date": latest["date"], "classification_source": latest["source_url"],
                 "note": "현재 업종 분류 기준으로 과거 주가를 재구성한 자료입니다. 당시 구성 종목 전체와 다를 수 있습니다. 거래대금은 종가×거래량 추정치이며 당시 시가총액은 제공하지 않습니다.",
-                "returns": "Adjusted close at session / last adjusted close on or before calendar lookback date - 1; daily uses previous observed session"}}
+                "returns": "Calculated on request from published daily stock prices"}}
         path.parent.mkdir(parents=True, exist_ok=True)
         temporary = path.with_suffix(".gz.tmp")
         temporary.write_bytes(gzip.compress(json.dumps(snapshot, ensure_ascii=False, separators=(",", ":"), allow_nan=False).encode(), mtime=0))

@@ -38,6 +38,8 @@ def load(path):
         path = path.with_name(path.name.removesuffix('.json.gz') + '.delta-v1.json.gz')
     raw = path.read_bytes()
     value = json.loads(gzip.decompress(raw) if raw[:2] == b'\x1f\x8b' else raw)
+    if isinstance(value, dict) and value.get('encoding') == 'sector-week-v1':
+        return value
     if isinstance(value, dict) and value.get('encoding') == 'sector-columns-v1':
         fields = value.pop('stock_fields')
         rows = value.pop('stock_rows')
@@ -45,3 +47,33 @@ def load(path):
         value['stocks'] = [dict(zip(fields[row[0]], row[1:], strict=True)) for row in rows]
         return value
     return expand_price_archive(value)
+
+
+def load_sector_listing(path):
+    snapshot = load(path)
+    return {**snapshot, 'stocks': [
+        {key: value for key, value in stock.items() if key not in ('returns', 'change_pct')}
+        for stock in snapshot['stocks']
+    ]}
+
+
+def load_published_sector_day(directory, day):
+    session = date.fromisoformat(day)
+    monday = session - timedelta(days=session.weekday())
+    weekly = directory / 'weekly' / f'{monday}.json.gz'
+    if not weekly.is_file():
+        return load(directory / 'daily' / f'{day}.json.gz')
+    bundle = load(weekly)
+    if bundle.get('encoding') != 'sector-week-v1':
+        raise ValueError('Unknown sector week encoding')
+    day_index, (header, *order) = next((i, values) for i, values in enumerate(bundle['days']) if values[0]['date'] == day)
+    fields = ('price', 'turnover', 'market_cap', 'date', 'market_cap_date')
+    stocks = {}
+    for profile, mask, observations in bundle['profiles']:
+        row = next((values[1:] for values in observations if values[0] == day_index), None)
+        if row is None:
+            continue
+        values = {key: day if i >= 3 and value == 1 else value
+                  for i, (key, value) in enumerate(zip(fields, row, strict=True)) if mask & (1 << i)}
+        stocks[profile['ticker']] = {**profile, **values}
+    return {**header, 'stocks': [stocks[ticker] for ticker in (order[0] if order else sorted(stocks))]}

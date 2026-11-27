@@ -3,7 +3,8 @@ import { fileURLToPath } from "node:url";
 import { join } from "node:path";
 import { execFileSync } from "node:child_process";
 import { sectors } from "../automation/live-api/src/sectors.js";
-import { archiveSectorSnapshot, publishSectorArchive, saveSectorFile } from "./sector_archive.mjs";
+import { archiveSectorSnapshot, publishSectorArchive, saveSectorFile, sectorListingSnapshot } from "./sector_archive.mjs";
+import { publishKoreanPriceIndex } from "./korean_price_index.mjs";
 
 const root = fileURLToPath(new URL("../", import.meta.url));
 const durable = join(root, "data/sectors/index.json");
@@ -23,9 +24,13 @@ if (process.argv[2] === "restore-history") {
   if (snapshot.date < previous.date) throw new Error("Provider returned an older trading day; retaining the current sector snapshot.");
   // The latest JSON serves intraday requests. Finalize its archive on rollover
   // instead of adding a changing compressed binary to Git every five minutes.
-  if (previous.date !== snapshot.date) await archiveSectorSnapshot(directory, previous);
-  await saveSectorFile(durable, JSON.stringify(snapshot) + "\n");
+  if (previous.date !== snapshot.date) await archiveSectorSnapshot(directory, sectorListingSnapshot(previous));
+  await saveSectorFile(durable, JSON.stringify(sectorListingSnapshot(snapshot)) + "\n");
   console.log(`Sector snapshot: ${snapshot.stocks.length} stocks, ${snapshot.date}, ${snapshot.stale_count} older bars excluded from ranking.`);
 }
 const calendar = await publishSectorArchive(directory, join(root, "frontend/public/data/sectors"));
 console.log(`Published ${calendar.records.length} sector trading-day records.`);
+if (process.argv[2] === "publish") {
+  const dates = await publishKoreanPriceIndex(join(root, "frontend/public/data/stock-history"), directory);
+  console.log(`Indexed Korean stock prices for ${dates} dates.`);
+}

@@ -56,7 +56,7 @@ def main(year=2024, end_before="2024-07-01", audit_scope="2024"):
             "excluded": {"no_session": len(histories) - len(stocks)}, "stale_count": 0, "stocks": stocks,
             "reconstruction": {"classification_date": latest["date"], "classification_source": latest["source_url"],
                 "note": "현재 업종 분류 기준으로 과거 조정 주가를 재구성한 자료입니다. 당시 구성 종목 전체와 다를 수 있습니다. 거래대금과 시가총액은 KRX 일별 확정 자료로 보완합니다.",
-                "returns": "Observed adjusted closes; prior trading session on or before calendar lookback; no extrapolation",
+                "returns": "Calculated on request from published daily stock prices",
                 "coverage": {"eligible_listings": eligible, "observed_listings": len(stocks), "minimum_ratio": .75,
                              "basis": "Verified first-trade dates exclude later listings; unknown dates remain eligible"}}}
         path.parent.mkdir(parents=True, exist_ok=True)

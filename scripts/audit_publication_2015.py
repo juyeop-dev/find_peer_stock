@@ -9,7 +9,7 @@ from urllib.parse import quote
 from stock_chart_history import ROOT, write_json
 
 
-from publication_readers import load
+from publication_readers import load, load_published_sector_day, load_sector_listing
 
 
 def main():
@@ -35,10 +35,11 @@ def main():
         source = load(ROOT / f"data/{kind}/index.json")
         assert load(public / f"{kind}/index.json") == source, kind
         counts[kind] = sum(row["date"].startswith("2015-") for row in source["history"])
+    load_sector_source = load_sector_listing if (public / "stock-history/korea-daily/index.json").is_file() else load
     for path in (ROOT / "data/sectors/daily").glob("*.json.gz"):
-        assert load(public / "sectors/daily" / path.name) == load(path), path.name
-    assert load(public / "sectors/index.json") == load(ROOT / "data/sectors/index.json"), "latest sector snapshot"
-    counts["lossless_sector_archives"] = len(list((ROOT / "data/sectors/daily").glob("*.json.gz")))
+        assert load_published_sector_day(public / "sectors", path.name[:10]) == load_sector_source(path), path.name
+    assert load(public / "sectors/index.json") == load_sector_source(ROOT / "data/sectors/index.json"), "latest sector snapshot"
+    counts["sector_listing_archives"] = len(list((ROOT / "data/sectors/daily").glob("*.json.gz")))
     source = load(ROOT / "data/semiconductor/index.json")
     by_ticker = {row["ticker"]: row for row in load(public / "semiconductor/index.json")["stocks"]}
     for row in source["stocks"]:

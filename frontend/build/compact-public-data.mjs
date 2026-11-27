@@ -2,6 +2,8 @@ import {readFile,writeFile,unlink,readdir} from "node:fs/promises";
 import {resolve,join,sep} from "node:path";
 import {gzipSync,gunzipSync} from "node:zlib";
 import assert from "node:assert/strict";
+import {compactSector} from "../../scripts/sector_archive.mjs";
+export {compactSector};
 
 export function compactJsonWhitespace(bytes) {
   const source=bytes.toString("utf8");
@@ -28,17 +30,6 @@ export function compactPriceArchive(value) {
       ...(source.prior_snapshots===undefined?{}:{prior_snapshots:source.prior_snapshots.map(curve)})};
   };
   return {...curve(value),encoding:'stock-history-delta-v1'};
-}
-
-export function compactSector(snapshot) {
-  const {stocks,...metadata}=snapshot,stock_fields=[],stock_rows=[];
-  for(const stock of stocks) {
-    const fields=Object.keys(stock),key=JSON.stringify(fields);
-    let shape=stock_fields.findIndex(value=>JSON.stringify(value)===key);
-    if(shape<0){shape=stock_fields.length;stock_fields.push(fields);}
-    stock_rows.push([shape,...fields.map(field=>stock[field])]);
-  }
-  return {...metadata,encoding:"sector-columns-v1",stock_fields,stock_rows};
 }
 
 export async function compactPublicData(output) {

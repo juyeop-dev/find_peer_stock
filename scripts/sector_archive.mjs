@@ -1,6 +1,7 @@
 import { mkdir, readFile, readdir, rename, unlink, writeFile } from "node:fs/promises";
 import { dirname, join } from "node:path";
 import { gzipSync, gunzipSync } from "node:zlib";
+import { packSectorWeek, sectorWeekStart } from "../shared/sector-week.mjs";
 
 export function validSectorDate(value) {
   return typeof value === "string" && /^\d{4}-\d{2}-\d{2}$/.test(value) && Number.isFinite(Date.parse(value)) && new Date(value).toISOString().slice(0, 10) === value;
@@ -9,6 +10,24 @@ export async function saveSectorFile(path, value) {
   await mkdir(dirname(path), { recursive: true });
   await writeFile(path + ".tmp", value);
   await rename(path + ".tmp", path);
+}
+export function sectorListingSnapshot(snapshot) {
+  return { ...snapshot, stocks: snapshot.stocks.map(({ returns, change_pct, ...stock }) => stock) };
+}
+
+export function compactSector(snapshot) {
+  const { stocks, ...metadata } = snapshot;
+  const stock_fields = [], stock_rows = [], shapes = new Map();
+  for (const stock of stocks) {
+    const fields = Object.keys(stock);
+    const key = JSON.stringify(fields);
+    if (!shapes.has(key)) {
+      shapes.set(key, stock_fields.length);
+      stock_fields.push(fields);
+    }
+    stock_rows.push([shapes.get(key), ...fields.map(field => stock[field])]);
+  }
+  return { ...metadata, encoding: "sector-columns-v1", stock_fields, stock_rows };
 }
 export function archiveMetadata(snapshot) {
   if (snapshot?.schema_version !== 1 || snapshot.market !== "korea" || snapshot.currency !== "KRW" || !validSectorDate(snapshot.date)
@@ -27,26 +46,45 @@ export async function archiveSectorSnapshot(directory, snapshot) {
   return true;
 }
 export async function publishSectorArchive(directory, output) {
-  await mkdir(join(directory, "daily"), { recursive: true });
-  const records = [];
-  for (const name of (await readdir(join(directory, "daily"))).sort()) {
-    if (!/^\d{4}-\d{2}-\d{2}\.json\.gz$/.test(name)) continue;
-    const compressed = await readFile(join(directory, "daily", name));
-    const bytes = gunzipSync(compressed);
-    const snapshot = JSON.parse(bytes);
+  const current = JSON.parse(await readFile(join(directory, "index.json"), "utf8"));
+  archiveMetadata(current);
+  const weekly = join(output, "weekly"), archive = join(directory, "daily");
+  const dailyName = /^\d{4}-\d{2}-\d{2}\.json\.gz$/;
+  const currentName = current.date + ".json.gz";
+  const names = new Set([...await readdir(archive), currentName]);
+  const records = [], kept = new Set();
+  let week = "", snapshots = [];
+  async function flush() {
+    if (!snapshots.length) return;
+    const name = week + ".json.gz";
+    await saveSectorFile(join(weekly, name), gzipSync(JSON.stringify(packSectorWeek(snapshots)), { level: 6 }));
+    kept.add(name);
+  }
+  for (const name of [...names].filter(name => dailyName.test(name)).sort()) {
+    const snapshot = name === currentName ? current : JSON.parse(gunzipSync(await readFile(join(archive, name))));
     if (name !== snapshot.date + ".json.gz") throw new Error("Sector archive date mismatch");
     records.push(archiveMetadata(snapshot));
-    await saveSectorFile(join(output, "daily", snapshot.date + ".json.gz"), compressed);
-    await unlink(join(output, "daily", snapshot.date + ".json")).catch(error => { if (error.code !== "ENOENT") throw error; });
+    const start = sectorWeekStart(snapshot.date);
+    if (start !== week) {
+      await flush();
+      week = start;
+      snapshots = [];
+    }
+    snapshots.push(sectorListingSnapshot(snapshot));
   }
-  const current = JSON.parse(await readFile(join(directory, "index.json"), "utf8"));
-  const latest = archiveMetadata(current);
-  const calendar = { schema_version: 1, market: "korea", latest_date: current.date, records: [...records.filter(record => record.date !== current.date), latest].sort((a, b) => a.date.localeCompare(b.date)) };
+  await flush();
+  const calendar = { schema_version: 1, market: "korea", latest_date: current.date, records };
   const text = JSON.stringify(calendar) + "\n";
   await saveSectorFile(join(directory, "calendar.json"), text);
   await saveSectorFile(join(output, "calendar.json"), text);
-  await saveSectorFile(join(output, "index.json"), JSON.stringify(current) + "\n");
-  await saveSectorFile(join(output, "daily", current.date + ".json.gz"), gzipSync(JSON.stringify(current) + "\n"));
-  await unlink(join(output, "daily", current.date + ".json")).catch(error => { if (error.code !== "ENOENT") throw error; });
+  await saveSectorFile(join(output, "index.json"), JSON.stringify(sectorListingSnapshot(current)) + "\n");
+  for (const entry of await readdir(weekly, { withFileTypes: true })) {
+    if (entry.isFile() && dailyName.test(entry.name) && !kept.has(entry.name)) await unlink(join(weekly, entry.name));
+  }
+  const legacy = join(output, "daily");
+  const previous = await readdir(legacy, { withFileTypes: true }).catch(error => { if (error.code === "ENOENT") return []; throw error; });
+  for (const entry of previous) {
+    if (entry.isFile() && /^\d{4}-\d{2}-\d{2}\.json(?:\.gz)?$/.test(entry.name)) await unlink(join(legacy, entry.name));
+  }
   return calendar;
 }
