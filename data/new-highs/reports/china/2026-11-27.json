@@ -1,0 +1,154 @@
+{
+  "schema_version": 1,
+  "market": "china",
+  "date": "2026-11-27",
+  "summary": "장 마감 후 TradingView 주식 스냅샷 기준. 당일 장중 고가가 52주·전체기간 고가에 도달하고, 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다. 전체기간 신고가를 우선 표시하며 신고가 배경은 별도 확인 전입니다.",
+  "sources": [
+    {
+      "label": "TradingView stock screener",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "000698.SZ",
+      "name": "Shenyang Chemical Industry Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Process Industries",
+      "high_type": "52_week",
+      "reason": "업종: Process Industries · Chemicals: Specialty",
+      "description": "Shenyang Chemical Industry Co., Ltd. Class A · Chemicals: Specialty",
+      "change_pct": 2.6128266033254235,
+      "session_open": 4.14,
+      "session_close": 4.32,
+      "session_volume": 34742630,
+      "source_symbol": "SZSE:000698",
+      "currency": "CNY"
+    },
+    {
+      "ticker": "002122.SZ",
+      "name": "HuiZhou Intelligence Technology Group Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Metal Fabrication",
+      "description": "HuiZhou Intelligence Technology Group Co., Ltd. Class A · Metal Fabrication",
+      "change_pct": 9.999999999999998,
+      "session_open": 3.85,
+      "session_close": 4.18,
+      "session_volume": 351147180,
+      "source_symbol": "SZSE:002122",
+      "currency": "CNY"
+    },
+    {
+      "ticker": "002771.SZ",
+      "name": "Beijing Transtrue Technology Inc Class A",
+      "exchange": "SZSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Computer Communications",
+      "description": "Beijing Transtrue Technology Inc Class A · Computer Communications",
+      "change_pct": 7.653061224489795,
+      "session_open": 19.5,
+      "session_close": 21.1,
+      "session_volume": 95676520,
+      "source_symbol": "SZSE:002771",
+      "currency": "CNY"
+    },
+    {
+      "ticker": "002872.SZ",
+      "name": "Tiansheng Pharmaceutical Group Co. Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Pharmaceuticals: Major",
+      "description": "Tiansheng Pharmaceutical Group Co. Ltd. Class A · Pharmaceuticals: Major",
+      "change_pct": 9.987195902688864,
+      "session_open": 8.27,
+      "session_close": 8.59,
+      "session_volume": 98947539,
+      "source_symbol": "SZSE:002872",
+      "currency": "CNY"
+    },
+    {
+      "ticker": "201872.SZ",
+      "name": "China Merchants Port Group Co., Ltd. Class B",
+      "exchange": "SZSE",
+      "category": "Transportation",
+      "high_type": "52_week",
+      "reason": "업종: Transportation · Other Transportation",
+      "description": "China Merchants Port Group Co., Ltd. Class B · Other Transportation",
+      "change_pct": 1.0325245224574047,
+      "session_open": 19.37,
+      "session_close": 19.57,
+      "session_volume": 298300,
+      "source_symbol": "SZSE:201872",
+      "currency": "HKD"
+    },
+    {
+      "ticker": "300829.SZ",
+      "name": "Henan Jindan Lactic Acid Technology Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Process Industries",
+      "high_type": "52_week",
+      "reason": "업종: Process Industries · Chemicals: Specialty",
+      "description": "Henan Jindan Lactic Acid Technology Co., Ltd. Class A · Chemicals: Specialty",
+      "change_pct": 9.135802469135806,
+      "session_open": 32.98,
+      "session_close": 35.36,
+      "session_volume": 46123473,
+      "source_symbol": "SZSE:300829",
+      "currency": "CNY"
+    },
+    {
+      "ticker": "301313.SZ",
+      "name": "Guangzhou Frontop Digital Creative Technology Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Communications",
+      "high_type": "all_time",
+      "reason": "업종: Communications · Specialty Telecommunications",
+      "description": "Guangzhou Frontop Digital Creative Technology Co., Ltd. Class A · Specialty Telecommunications",
+      "change_pct": 2.8112965340179685,
+      "session_open": 76.72,
+      "session_close": 80.09,
+      "session_volume": 39269686,
+      "source_symbol": "SZSE:301313",
+      "currency": "CNY"
+    }
+  ],
+  "source_metadata": {
+    "provider": "TradingView public scanner",
+    "scanner": "china",
+    "fetched_at": "2026-11-27T08:22:55.516151+00:00",
+    "universe": "TradingView-listed stock instruments, including common and preferred shares; ETFs excluded",
+    "definition": "daily high >= period high; close >= open; close >= previous close when one exists; all-time takes precedence; ties included",
+    "scanner_exchanges": [
+      "SSE",
+      "SZSE"
+    ],
+    "latest_session_by_exchange": {
+      "SZSE": "2026-11-27",
+      "SSE": "2026-11-27"
+    },
+    "previous_session_by_exchange": {
+      "SZSE": "2026-11-26",
+      "SSE": "2026-11-26"
+    },
+    "current_session_reference_symbols": {
+      "SZSE": "SZSE:000001",
+      "SSE": "SSE:508060"
+    },
+    "scanned_symbols": 5315,
+    "current_session_symbols": 5313,
+    "excluded_symbols": {
+      "other_session": 2,
+      "bearish_or_down_close": 10
+    },
+    "pagination_complete": true
+  },
+  "collected_at": "2026-11-27T08:22:52.996439+00:00"
+}
