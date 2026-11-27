@@ -5,12 +5,13 @@ import { join, resolve, sep } from "node:path";
 import { tmpdir } from "node:os";
 import { gzipSync, gunzipSync } from "node:zlib";
 import { archiveMetadata, archiveSectorSnapshot, publishSectorArchive, saveSectorFile, validSectorDate } from "../scripts/sector_archive.mjs";
-import { publishKoreanPriceIndex } from "../scripts/korean_price_index.mjs";
-import { expandSectorWeek, packSectorWeek, sectorWeekStart } from "../shared/sector-week.mjs";
+import { expandSectorWeek, packSectorWeek } from "../shared/sector-week.mjs";
+import { expandSectorDay, packSectorDay } from "../shared/sector-day.mjs";
 const snapshot = (date, fetched_at, price) => ({ schema_version: 1, market: "korea", currency: "KRW", date, fetched_at, stocks: [{ ticker: "005930.KS", date, sector: "Electronic Technology", industry: "Semiconductors", price, change_pct: 1, returns: {day: 1} }] });
 const readListing = async (path, date) => {
-  const week = JSON.parse(gunzipSync(await readFile(join(path, "weekly", sectorWeekStart(date) + ".json.gz"))));
-  return expandSectorWeek(week, date);
+  const day = JSON.parse(gunzipSync(await readFile(join(path, "daily", date + ".json.gz"))));
+  const lookup = JSON.parse(gunzipSync(await readFile(join(path, "profiles.json.gz"))));
+  return expandSectorDay(day, lookup);
 };
 test("daily archives retain the last real snapshot per trading date and publish distinct historical prices", async () => {
   const directory = await mkdtemp(join(tmpdir(), "sector-archive-test-"));
@@ -24,7 +25,7 @@ test("daily archives retain the last real snapshot per trading date and publish 
     assert.equal(await archiveSectorSnapshot(directory, current), true);
     await saveSectorFile(join(directory, "index.json"), JSON.stringify(current));
     const published = join(directory, "public");
-    const legacy = join(published, "daily", "2026-10-19.json.gz");
+    const legacy = join(published, "weekly", "2026-10-19.json.gz");
     await saveSectorFile(legacy, gzipSync(JSON.stringify(final)));
     const calendar = await publishSectorArchive(directory, published);
     await assert.rejects(readFile(legacy), {code: "ENOENT"});
@@ -68,31 +69,14 @@ test("invalid or mismatched dates cannot become archive filenames", () => {
   assert.throws(() => archiveMetadata({ ...snapshot("2026-10-21", "invalid", 100) }));
 });
 
-test("dated stock-price index keeps separate bases and skips an unfinished chart close", async () => {
-  const directory = await mkdtemp(join(tmpdir(), "korean-price-index-test-"));
-  try {
-    const history = join(directory, "stock-history"), sectors = join(directory, "sectors");
-    const ticker = "005930.KS";
-    const sessions = ["2026-10-19", "2026-10-20", "2026-10-21", "2026-10-22"];
-    const chart = {ticker, currency: "KRW", fetched_at: "2026-10-22T04:00:00Z", price_start: sessions[0],
-      prices: [[0, 100, 50], [1, 110, 55], [1, 120, 60], [1, 140, 70]], prior_snapshots: [
-        {ticker, currency: "KRW", complete_history: true, price_start: "2026-10-16", prices: [[0, 88], [3, 100]]},
-      ]};
-    await saveSectorFile(join(history, ticker + ".delta-v1.json.gz"), gzipSync(JSON.stringify(chart)));
-    for (const [index, date] of sessions.entries()) {
-      const observed = snapshot(date, date + "T06:32:00Z", 100 + index * 10);
-      observed.source = "TradingView";
-      observed.stocks[0].currency = "KRW";
-      await archiveSectorSnapshot(sectors, observed);
-    }
-    assert.equal(await publishKoreanPriceIndex(history, sectors), 5);
-    const root = join(history, "korea-daily");
-    const index = JSON.parse(await readFile(join(root, "index.json")));
-    assert.deepEqual(index.tickers, [[ticker, 0, [1], 2, 0.5]]);
-    const last = JSON.parse(gunzipSync(await readFile(join(root, sessions.at(-1) + ".json.gz"))));
-    assert.deepEqual(last, {key: index.key, date: sessions.at(-1), rows: [[1, 60], [3, 100], [0, 130]]});
-  } finally {
-    assert.ok(resolve(directory).startsWith(resolve(tmpdir()) + sep));
-    await rm(directory, { recursive: true, force: true });
-  }
+test("daily listings keep row order, original price precision, and a matching shared profile lookup", () => {
+  const original = { date: "2026-10-19", stocks: [
+    { ticker: "Z", market_cap: 9007199254740991, date: "2026-10-19", market_cap_date: null },
+    { ticker: "A", price: 1.123456789, turnover: null, date: "2026-10-16", market_cap_date: "2026-10-19" },
+  ] };
+  const profiles = [], key = "a".repeat(64);
+  const packed = { ...packSectorDay(original, profile => profiles.push(profile) - 1), key };
+  const lookup = { encoding: "sector-profiles-v1", keys: [key], profiles };
+  assert.deepEqual(expandSectorDay(JSON.parse(JSON.stringify(packed)), lookup), original);
+  assert.throws(() => expandSectorDay(packed, {...lookup, keys: []}));
 });

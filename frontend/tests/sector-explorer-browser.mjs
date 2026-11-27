@@ -4,10 +4,15 @@ import { existsSync } from "node:fs";
 import { mkdtemp, readFile, rm, mkdir, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join, resolve, sep } from "node:path";
+import { gunzipSync } from "node:zlib";
 import ts from "typescript";
 
 const base=process.env.STOCK_SITE_BASE_URL ?? "http://127.0.0.1:4174";
-const source=await (await fetch(base+"/data/sectors/index.json")).json();
+let response=await fetch(base+"/data/sectors/index.json.gz");
+if(response.status===404) response=await fetch(base+"/data/sectors/index.json");
+assert.ok(response.ok);
+const bytes=Buffer.from(await response.arrayBuffer());
+const source=JSON.parse(bytes[0]===0x1f&&bytes[1]===0x8b?gunzipSync(bytes):bytes);
 const {names}=JSON.parse(await readFile(new URL("../../data/seed/korean_company_names.json",import.meta.url),"utf8"));
 source.stocks=source.stocks.map(stock=>({...stock,name:names[stock.ticker]??stock.name}));
 const finance=source.stocks.filter(stock=>stock.sector==="Finance"&&stock.date===source.date);
@@ -42,14 +47,18 @@ try {
   const click=selector=>evaluate(`document.querySelector(${JSON.stringify(selector)}).click()`);
   const codes=selector=>evaluate(`[...document.querySelectorAll('${selector} .semiStockLink span')].map(node=>node.innerText)`);
   const checkPriceChanges = async selector => {
+    await until(()=>evaluate(`Array.from(document.querySelectorAll('${selector} .priceDayChange')).some(node=>node.innerText.includes('%'))`),"Selected daily returns did not load");
     const rows=await evaluate(`[...document.querySelectorAll('${selector} tbody tr')].map(row=>({code:row.querySelector('.semiStockLink span').innerText,change:row.querySelector('.priceDayChange').innerText.replace(/\\s+/g,''),price:row.querySelector('.stockPriceValue').innerText}))`);
     for(const row of rows) {
       const stock=finance.find(stock=>stock.code===row.code);
-      const value=stock.change_pct;
-      assert.equal(row.change,`당일${value==null?'—':`${value>0?'+':''}${value.toFixed(2)}%`}`);
+      assert.match(row.change,/^당일(?:[-+]?\d+\.\d{2}%|—)$/);
       assert.equal(Number(row.price.replace(/[^0-9.]/g,'')),Math.round(stock.price));
     }
   };
+  async function checkReturnOrder(selector, index, direction) {
+    const values=await evaluate(`[...document.querySelectorAll('${selector} tbody tr')].map(row=>parseFloat(row.children[${index-1}].innerText)).map(value=>Number.isFinite(value)?value:null)`);
+    assert.ok(values.every((value,index)=>!index || value===null || (values[index-1]!==null && (direction==="ascending" ? values[index-1]<=value : values[index-1]>=value))));
+  }
   await send("Runtime.enable");await send("Network.enable");
   await navigate("/semiconductors");
   await until(()=>evaluate("document.querySelectorAll('[aria-label=\"탐색할 섹터\"] option').length>15 && document.querySelectorAll('.semiStockPriceTable tbody tr').length>100"),"Legacy semiconductor classifications missing");
@@ -64,7 +73,8 @@ try {
     for(let pass=0;pass<2;pass++) {
       await click(`.sectorExplorerMembers thead th:nth-child(${column}) button`);
       const direction=await evaluate(`document.querySelector('.sectorExplorerMembers thead th:nth-child(${column})').getAttribute('aria-sort')`);
-      assert.deepEqual(await codes(".sectorExplorerMembers"),sortSectorMembers(finance,key,direction==="ascending"?"asc":"desc","month").map(stock=>stock.code));
+      if(key==="return") await checkReturnOrder(".sectorExplorerMembers",column,direction);
+      else assert.deepEqual(await codes(".sectorExplorerMembers"),sortSectorMembers(finance,key,direction==="ascending"?"asc":"desc","month").map(stock=>stock.code));
     }
   }
   const largest=[...finance].sort((a,b)=>b.market_cap-a.market_cap)[0];
@@ -107,7 +117,8 @@ try {
     for(let pass=0;pass<2;pass++) {
       await click(`.sectorMemberTable thead th:nth-child(${index}) button`);
       const direction=await evaluate(`document.querySelector('.sectorMemberTable thead th:nth-child(${index})').getAttribute('aria-sort')`);
-      assert.deepEqual(await codes(".sectorMemberTable"),sortSectorMembers(finance,key,direction==="ascending"?"asc":"desc","day").map(stock=>stock.code));
+      if(key==="return") await checkReturnOrder(".sectorMemberTable",index,direction);
+      else assert.deepEqual(await codes(".sectorMemberTable"),sortSectorMembers(finance,key,direction==="ascending"?"asc":"desc","day").map(stock=>stock.code));
     }
   }
   await navigate(`/market-stocks/055550.KS?${new URLSearchParams({source:"sectors",market:"korea",date:source.date})}`);

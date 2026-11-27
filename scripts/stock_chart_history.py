@@ -470,7 +470,25 @@ def refresh_batches(db: sqlite3.Connection, rows: list[dict], as_of: date, limit
                 break
 
 
-def publish(output: Path = ROOT / "frontend/public/data/stock-history") -> int:
+def sector_closes(directory: Path) -> dict[str, list[list]]:
+    observations = {}
+    for path in sorted(directory.glob("*.json.gz")):
+        snapshot = json.loads(gzip.decompress(path.read_bytes()))
+        if snapshot.get("reconstruction") or snapshot.get("source") != "TradingView":
+            continue
+        day = snapshot["date"]
+        close = datetime.fromisoformat(day + "T06:30:00+00:00")
+        if datetime.fromisoformat(snapshot["fetched_at"].replace("Z", "+00:00")) < close:
+            continue
+        for stock in snapshot["stocks"]:
+            price = stock.get("price")
+            if stock.get("date") == day and stock.get("currency") == "KRW" and type(price) in (int, float) and price > 0:
+                observations.setdefault(stock["ticker"], []).append([day, price])
+    return observations
+
+
+def publish(output: Path = ROOT / "frontend/public/data/stock-history", *, sector_archive: Path | None = None) -> int:
+    closes = sector_closes(sector_archive) if sector_archive else {}
     count = 0
     for path in sorted(PACKS.glob("*.json.gz")):
         for ticker, value in json.loads(gzip.decompress(path.read_bytes())).items():
@@ -482,6 +500,8 @@ def publish(output: Path = ROOT / "frontend/public/data/stock-history") -> int:
                 value = {**value, "prior_snapshots": [curve for curve in value["prior_snapshots"]
                     if value["currency"] == curve["currency"] == "KRW" and curve.get("complete_history")
                     and any(point[0] not in dates for point in curve["prices"])]}
+            if value["currency"] == "KRW" and ticker in closes:
+                value = {**value, "sector_quotes": closes[ticker]}
             filename = quote(ticker, safe="").replace("%", "~")
             output.mkdir(parents=True, exist_ok=True)
             target = output / f"{filename}.json.gz"
@@ -504,7 +524,7 @@ def main() -> None:
     parser.add_argument("--as-of", type=date.fromisoformat, default=datetime.now(ZoneInfo("Asia/Seoul")).date())
     args = parser.parse_args()
     if args.mode == "publish":
-        publish()
+        publish(sector_archive=ROOT / "data/sectors/daily")
         return
     rows = roster()
     write_json(AUDIT / "roster.json", rows)

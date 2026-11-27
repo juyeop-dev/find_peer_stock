@@ -6,7 +6,9 @@ import test from "node:test";
 import ts from "typescript";
 import {compactSector, compactPublicData, compactJsonWhitespace} from "../build/compact-public-data.mjs";
 import { gzipSync, gunzipSync } from "node:zlib";
-import { packSectorWeek } from "../../shared/sector-week.mjs";
+import { packSectorDay } from "../../shared/sector-day.mjs";
+import { priceArchiveUrl } from "./compiled-price-archive.mjs";
+const moduleUrl = source => `data:text/javascript;base64,${Buffer.from(ts.transpileModule(source, { compilerOptions: { module: ts.ModuleKind.ESNext, target: ts.ScriptTarget.ES2022 } }).outputText).toString("base64")}`;
 const rankSource = await readFile(new URL("../src/dataClient/sectorRankings.ts", import.meta.url), "utf8");
 const rankJs = ts.transpileModule(rankSource, { compilerOptions: { module: ts.ModuleKind.ESNext, target: ts.ScriptTarget.ES2022 } }).outputText;
 const rankUrl = `data:text/javascript;base64,${Buffer.from(rankJs).toString("base64")}`;
@@ -14,12 +16,20 @@ let source = await readFile(new URL("../src/dataClient/sectorDataClient.ts", imp
 const names = JSON.parse(await readFile(new URL("../../data/seed/korean_company_names.json", import.meta.url), "utf8"));
 source = source.replace('import koreanCompanyNames from "../../../data/seed/korean_company_names.json";', `const koreanCompanyNames = ${JSON.stringify(names)};`);
 source = source.replace('from "./sectorRankings";', `from "${rankUrl}";`).replace('import { classifiedSectorStock } from "./sectorRankings";', `import { classifiedSectorStock } from "${rankUrl}";`);
-const priceSource = (await readFile(new URL("../src/dataClient/sectorPriceReturns.ts", import.meta.url), "utf8")).replaceAll("import.meta.env.BASE_URL", '"/"');
+const historySource = (await readFile(new URL("../src/dataClient/stockHistoryClient.ts", import.meta.url), "utf8"))
+  .replace('from "./priceArchive"', `from "${priceArchiveUrl}"`)
+  .replace('import { liveDetailFor, requestOriginal } from "./liveStockDataClient";', 'const liveDetailFor = () => undefined; const requestOriginal = () => {throw new Error("No live history expected");};')
+  .replaceAll("import.meta.env.BASE_URL", '"/"');
+const explorer = (await readFile(new URL("../src/dataClient/sectorExplorer.ts", import.meta.url), "utf8"))
+  .replace('from "./stockHistoryClient"', `from "${moduleUrl(historySource)}"`);
+const priceSource = (await readFile(new URL("../src/dataClient/sectorPriceReturns.ts", import.meta.url), "utf8"))
+  .replace('from "./sectorExplorer"', `from "${moduleUrl(explorer)}"`);
 const priceJs = ts.transpileModule(priceSource, { compilerOptions: { module: ts.ModuleKind.ESNext, target: ts.ScriptTarget.ES2022 } }).outputText;
 const priceUrl = `data:text/javascript;base64,${Buffer.from(priceJs).toString("base64")}`;
 const prices = await import(priceUrl);
 source = source.replace('from "./sectorPriceReturns";', `from "${priceUrl}";`);
 source = source.replace('from "../../../shared/sector-week.mjs";', `from "${new URL("../../shared/sector-week.mjs", import.meta.url)}";`);
+source = source.replace('from "../../../shared/sector-day.mjs";', `from "${new URL("../../shared/sector-day.mjs", import.meta.url)}";`);
 source = source.replace('import { requestOriginal } from "./liveStockDataClient";', 'const requestOriginal = async () => { throw new Error("Historical records must not request live prices"); };').replaceAll("import.meta.env.BASE_URL", '"/"');
 const js = ts.transpileModule(source, { compilerOptions: { module: ts.ModuleKind.ESNext, target: ts.ScriptTarget.ES2022 } }).outputText;
 const client = await import(`data:text/javascript;base64,${Buffer.from(js).toString("base64")}`);
@@ -44,7 +54,7 @@ test("history selection never replaces the latest cache, and detail membership a
   const paths = [];
   globalThis.fetch = async url => {
     const path = new URL(url, "https://example.test").pathname; paths.push(path);
-    if (path.includes("weekly/")) return new Response(null, {status: 404});
+    if (path.includes("weekly/") || path.includes("stock-history/")) return new Response(null, {status: 404});
     return new Response(path.includes("daily/") ? gzipSync(JSON.stringify(old)) : JSON.stringify(current));
   };
   try {
@@ -89,49 +99,54 @@ test("latest sector reads gzip, host-decoded JSON and legacy fallback without dr
       return path.endsWith('.gz')?new Response('',{status:404}):Response.json(legacy);
     };
     assert.equal((await client.getSectorData()).stocks[0].price,180);
-    assert.deepEqual(paths,["/data/sectors/index.json.gz","/data/sectors/index.json","/data/stock-history/korea-daily/index.json"]);
+    assert.deepEqual(paths,["/data/sectors/index.json.gz","/data/sectors/index.json"]);
     globalThis.fetch=async()=>{throw new Error('Source unavailable');};
     assert.equal((await client.getSectorData()).stocks[0].price,180);
   } finally {globalThis.fetch=original;}
 });
 
-test("a historical selection calculates from matched dated prices and ignores stored returns", async () => {
+test("selecting a day reads its listing and opening one sector reads only its stock histories", async () => {
   const original = globalThis.fetch;
-  const date = "2024-02-29", current = snapshot("2026-10-25", "005930.KS", 140);
+  const date = "2024-02-29";
   const historical = snapshot(date, "005930.KS", 999);
   historical.stocks.push(stock("000660.KS", date, 999), stock("000020.KS", date, 999));
-  const key = "a".repeat(64), revision = "b".repeat(64);
+  const key = "a".repeat(64);
   const dates = ["2023-02-28", "2023-11-29", "2024-01-29", "2024-02-22", "2024-02-28", date];
-  const tickers = [["005930.KS", 0, [1], null, null], ["000660.KS", 2, [], null, null]];
-  const observations = new Map(dates.map((day, i) => [day, [[0, 99], [0, 100 + 10 * i], i < 4 ? null : [i === 4 ? 0 : 1, 10]]]));
-  observations.get(date)[0] = [1, 99];
+  const profiles = [];
+  const save = packSectorDay(historical, profile => profiles.push(profile) - 1);
+  const ticker = "005930.KS";
+  const history = {ticker, currency: "KRW", source: "Daily trial", prices: dates.slice(0, -1).map(day => [day, 99, 99]), prior_snapshots: [
+    {ticker, currency: "KRW", source: "Independent daily trial", complete_history: true,
+      prices: dates.map((day, i) => [day, 100 + 10 * i, 100 + 10 * i])},
+  ]};
   const requested = [];
   globalThis.fetch = async url => {
     const path = new URL(url, "https://example.test").pathname;
     requested.push(path);
-    if (path === "/data/sectors/index.json.gz") return Response.json(current);
-    if (path === "/data/sectors/weekly/2024-02-26.json.gz") return new Response(gzipSync(JSON.stringify(packSectorWeek([historical]))));
-    assert.ok(path.startsWith("/data/stock-history/korea-daily/"));
-    if (path.endsWith("/index.json")) return Response.json({version: 1, key, revision, count: 3, dates, tickers});
-    const day = path.split("/").at(-1).slice(0, 10);
-    return new Response(gzipSync(JSON.stringify({key, date: day, rows: observations.get(day)})));
+    if (path === "/data/sectors/daily/2024-02-29.json.gz") return new Response(gzipSync(JSON.stringify({...save, key})));
+    if (path === "/data/sectors/profiles.json.gz") return Response.json({encoding: "sector-profiles-v1", keys: [key], profiles});
+    if (path === "/data/stock-history/005930.KS.delta-v1.json.gz") return Response.json(history);
+    assert.fail(`Unexpected request ${path}`);
   };
   try {
     assert.deepEqual(prices.returnReferenceDates(date), {day: "2024-02-28", week: "2024-02-22", month: "2024-01-29", quarter: "2023-11-29", year: "2023-02-28"});
     assert.equal(prices.returnReferenceDates("2024-03-31").month, "2024-02-29");
     const value = await client.getSectorSnapshot(date);
     assert.equal(value.stocks[0].price, 999);
-    assert.equal(value.stocks[0].returns.year, 50);
-    assert.ok(Math.abs(value.stocks[0].change_pct - (150 / 140 - 1) * 100) < 1e-10);
-    for (const row of value.stocks.slice(1)) assert.ok(Object.values(row.returns).every(item => item === null));
-    assert.equal(requested.filter(path => path.endsWith(".json.gz") && path.includes("korea-daily")).length, 6);
-    assert.equal(requested.some(path => path.includes("/sectors/daily/")), false);
+    assert.deepEqual(requested, ["/data/sectors/daily/2024-02-29.json.gz", "/data/sectors/profiles.json.gz"]);
+    for (const row of value.stocks) assert.ok(Object.values(row.returns).every(item => item === null));
+    const selected = await prices.loadSectorReturns(value, [value.stocks[0]], new AbortController().signal);
+    assert.equal(requested.at(-1), "/data/stock-history/005930.KS.delta-v1.json.gz");
+    assert.equal(requested.length, 3);
+    assert.equal(selected.stocks[0].returns.year, 50);
+    assert.ok(Math.abs(selected.stocks[0].change_pct - (150 / 140 - 1) * 100) < 1e-10);
     const live = {...snapshot("2024-03-01", "005930.KS", 120), source: "TradingView"};
-    const quoteIndex = {dates, tickers: [["005930.KS", 0, [], 1, 1.25]]};
-    const priceDays = new Map(dates.map(day => [day, {rows: [[0, 100], day === date ? [0, 100] : null]}]));
-    const computed = prices.calculateSectorPriceReturns(live, quoteIndex, priceDays, true);
-    assert.ok(Math.abs(computed.stocks[0].returns.day - 20) < 1e-10);
-    assert.equal(computed.stocks[0].returns.year, 50);
+    const source = {ticker, currency: "KRW", fetched_at: "2024-02-29T04:00:00Z",
+      history: dates.map((day, i) => ({date: day, adjusted_close: i === dates.length - 1 ? 999 : 100})),
+      sector_quotes: [["2024-01-29", 80], ["2024-02-22", 80], ["2024-02-28", 80], [date, 100]]};
+    const [computed] = prices.priceSectorMembers(live, live.stocks, [source]);
+    assert.ok(Math.abs(computed.returns.day - 20) < 1e-10);
+    assert.equal(computed.returns.year, 50);
   } finally { globalThis.fetch = original; }
 });
 

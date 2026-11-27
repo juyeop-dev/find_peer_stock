@@ -26,11 +26,18 @@ class StockChartHistoryTests(unittest.TestCase):
             source = packs / "0.json.gz"
             original = gzip.compress(json.dumps({"A": value}).encode())
             source.write_bytes(original)
+            archive = root / "sectors"
+            archive.mkdir()
+            for day, hour, reconstructed in (("2026-01-02", "06:30", False), ("2026-01-05", "04:00", False), ("2026-01-06", "06:30", True)):
+                snapshot = {"date": day, "fetched_at": day + f"T{hour}:00Z", "source": "TradingView", "reconstruction": reconstructed,
+                            "stocks": [{"ticker": "A", "date": day, "currency": "KRW", "price": 30}]}
+                (archive / f"{day}.json.gz").write_bytes(gzip.compress(json.dumps(snapshot).encode()))
             with patch.object(charts, "PACKS", packs):
-                charts.publish(root / "public")
+                charts.publish(root / "public", sector_archive=archive)
             published = json.loads(gzip.decompress((root / "public/A.json.gz").read_bytes()))
             self.assertEqual(published["prices"], value["prices"])
             self.assertEqual(published["prior_snapshots"], [complete])
+            self.assertEqual(published["sector_quotes"], [["2026-01-02", 30]])
             self.assertEqual(source.read_bytes(), original)
 
     def test_provider_omissions_and_revisions_preserve_original_observations_without_mixing_price_conventions(self):

@@ -5,6 +5,7 @@ import { expandPriceArchive } from "./priceArchive";
 export interface StockHistory {
   ticker: string; currency: string; source: string; fetched_at?: string; first_trade_date?: string | null;
   history: SemiconductorPrice[]; warning?: string;
+  sector_quotes?: [date: string, close: number][];
   prior_snapshots?: {ticker: string; currency: string; source: string; fetched_at?: string; complete_history?: boolean; prices: [string, number, number][]}[];
 }
 export const CHART_PERIODS = [7, 30, 90, 180, "1y", "2y", "since2025", "since2024H2", "since2024", "since2023", "since2022", "since2021", "since2020", "since2019", "since2018", "since2017", "since2016", "since2015", "since2014"] as const;

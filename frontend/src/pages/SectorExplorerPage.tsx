@@ -13,6 +13,7 @@ import { formatPercent } from "../dataClient/semiconductorMath";
 import { SECTOR_PERIODS, classifiedSectorStock, sectorLabel, sectorMoney, sectorRankings, sortSectorMembers, sortSectors } from "../dataClient/sectorRankings";
 import type { SectorLevel, SectorMemberSort, SectorPeriod, SectorSnapshot, SectorSort, SectorStock } from "../dataClient/sectorRankings";
 import { loadSectorHistories, sectorHistorySeries } from "../dataClient/sectorExplorer";
+import { priceSectorMembers } from "../dataClient/sectorPriceReturns";
 import type { SectorHistoryProgress } from "../dataClient/sectorExplorer";
 import type { StockHistory } from "../dataClient/stockHistoryClient";
 import "../styles/sectorExplorer.css";
@@ -63,32 +64,38 @@ function DomesticSectorExplorer({mode, sector, data, error, loading, refreshing,
   const [groupSort, setGroupSort] = useState<{key: SectorSort; direction: "asc" | "desc"}>({key: "return", direction: "desc"});
   const stocks = useMemo(() => (data?.stocks ?? []).map(classifiedSectorStock).filter(stock => stock.date === data?.date && (sector === "all" || stock.sector === sector) && (!board || stock.exchange === board)), [data, sector, board]);
   const industries = useMemo(() => [...new Set(stocks.map(stock => stock.industry))].sort((a,b) => sectorLabel(a).localeCompare(sectorLabel(b), "ko")), [stocks]);
-  const groups = useMemo(() => data ? sortSectors(sectorRankings({...data, stocks}, level, period, "", "equal"), groupSort.key, groupSort.direction) : [], [data, stocks, level, period, groupSort]);
+  const directory = useMemo(() => data ? sectorRankings({...data, stocks}, level, "day", "", "equal") : [], [data, stocks, level]);
   // Reordering the ranking must not change the user's active sector.
-  const defaultGroup = useMemo(() => [...groups].sort((a,b) => a.name.localeCompare(b.name, "ko"))[0], [groups]);
-  const active = groups.find(group => group.key === params.get("group")) ?? defaultGroup;
-  const members = useMemo(() => sortSectorMembers((mode === "trends" ? active?.members ?? [] : stocks).filter(stock => (!industry || mode === "trends" || stock.industry === industry) && (!query.trim() || `${stock.name} ${stock.code} ${sectorLabel(stock.industry)}`.toLowerCase().includes(query.trim().toLowerCase()))), memberSort.key, memberSort.direction, period), [stocks, active, mode, industry, query, memberSort, period]);
-  const [histories, setHistories] = useState<StockHistory[]>([]);
+  const defaultGroup = useMemo(() => [...directory].sort((a,b) => a.name.localeCompare(b.name, "ko"))[0], [directory]);
+  const active = directory.find(group => group.key === params.get("group")) ?? defaultGroup;
+  const displayedStocks = useMemo(() => mode === "trends" ? active?.members ?? [] : stocks.filter(stock => !industry || stock.industry === industry), [mode, active, stocks, industry]);
+  const pricingStocks = mode === "trends" || sector !== "all" || industry ? displayedStocks : [];
+  const [loaded, setLoaded] = useState<{key: string; histories: StockHistory[]}>();
   const [progress, setProgress] = useState<SectorHistoryProgress>();
   const [chartLoading, setChartLoading] = useState(false);
   const [refreshVersion, setRefreshVersion] = useState(0);
   const consumedRefresh = useRef(0);
-  const chartStocks = active?.members ?? [];
-  const membership = chartStocks.map(stock => stock.ticker).sort().join(",");
-  const currentStocks = useRef(chartStocks); currentStocks.current = chartStocks;
+  const membership = pricingStocks.map(stock => stock.ticker).sort().join(",");
+  const historyKey = membership ? `${data?.date}/${membership}` : "";
+  const currentStocks = useRef(pricingStocks); currentStocks.current = pricingStocks;
   const loadHistories = useCallback((signal: AbortSignal, live: boolean) => loadSectorHistories(currentStocks.current, signal, live, setProgress), []);
   useEffect(() => {
-    if (mode !== "trends" || !membership) return;
+    if (!historyKey) return;
     const controller = new AbortController();
     const live = refreshVersion !== consumedRefresh.current;
     consumedRefresh.current = refreshVersion;
-    setHistories([]); setChartLoading(true); setProgress({checked: 0, total: currentStocks.current.length, errors: 0});
+    setLoaded(undefined); setChartLoading(true); setProgress({checked: 0, total: currentStocks.current.length, errors: 0});
     loadHistories(controller.signal, live).then(result => {
-      if (!controller.signal.aborted) setHistories(result.values);
+      if (!controller.signal.aborted) setLoaded({key: historyKey, histories: result.values});
     }).catch(() => {}).finally(() => { if (!controller.signal.aborted) setChartLoading(false); });
     return () => controller.abort();
-  }, [mode, membership, data?.date, refreshVersion, loadHistories]);
-  const chart = useMemo(() => data ? sectorHistorySeries(histories, period, data.date) : null, [histories, period, data]);
+  }, [historyKey, refreshVersion, loadHistories]);
+  const histories = loaded?.key === historyKey ? loaded.histories : null;
+  const priced = useMemo(() => data && histories ? priceSectorMembers(data, displayedStocks, histories) : displayedStocks, [data, histories, displayedStocks]);
+  const pricedGroup = useMemo(() => data && histories && mode === "trends" ? sectorRankings({...data, stocks: priced}, level, period, "", "equal")[0] : null, [data, histories, mode, priced, level, period]);
+  const groups = useMemo(() => sortSectors(directory.map(group => group.key === pricedGroup?.key ? pricedGroup : group), groupSort.key, groupSort.direction), [directory, pricedGroup, groupSort]);
+  const members = useMemo(() => sortSectorMembers(priced.filter(stock => !query.trim() || `${stock.name} ${stock.code} ${sectorLabel(stock.industry)}`.toLowerCase().includes(query.trim().toLowerCase())), memberSort.key, memberSort.direction, period), [priced, query, memberSort, period]);
+  const chart = useMemo(() => data && histories ? sectorHistorySeries(histories, period, data.date) : null, [histories, period, data]);
   const title = sector === "all" ? "국내 전체 섹터" : sectorLabel(sector);
   const returnTo = `/sector-${mode}?${params}`;
   const stockLink = (stock: SectorStock) => `/market-stocks/${encodeURIComponent(stock.ticker)}?${new URLSearchParams({source: "sectors", market: "korea", date: stock.date, returnTo})}`;
@@ -102,7 +109,6 @@ function DomesticSectorExplorer({mode, sector, data, error, loading, refreshing,
     <DataRefreshStatus cadence="sectors" generatedAt={data?.fetched_at} refreshing={refreshing || chartLoading && refreshVersion > 0} lastCheckedAt={lastCheckedAt} lastSourceAt={lastSourceAt} onRefresh={() => {refresh(); if (mode === "trends") setRefreshVersion(value => value + 1);}} />
     {loading && <LoadingSpinner />}{error && <ErrorNotice message={error} />}
     {data && <>
-      {data.price_data_unavailable && <ErrorNotice message="종목 일봉을 불러오지 못해 수익률을 표시할 수 없습니다." />}
       <section className="semiPanel"><div className="semiFilters">
         {mode === "trends" ? <label>분류 단계<select value={level} onChange={event => change("level", event.target.value)}><option value="industry">세부 업종</option><option value="sector">대분류</option></select></label> : <label>업종<select value={industry} onChange={event => change("industry", event.target.value)}><option value="">전체 업종</option>{industries.map(item => <option key={item} value={item}>{sectorLabel(item)}</option>)}</select></label>}
         <label>시장<select value={board} onChange={event => change("board", event.target.value)}><option value="">KOSPI + KOSDAQ</option><option>KOSPI</option><option>KOSDAQ</option></select></label>
@@ -110,6 +116,9 @@ function DomesticSectorExplorer({mode, sector, data, error, loading, refreshing,
         <label>종목 검색<ImeSearchInput value={query} onValueChange={value => change("q", value)} placeholder="종목명 · 코드 · 업종" /></label>
       </div></section>
       <section className="semiPanel"><div className="semiPanelHeading semiHeadingSplit"><div><h2>{mode === "trends" ? `${active?.name ?? "선택 섹터"} 구성 종목` : "종목별 가격"}</h2><p>{members.length}개 종목 · {data.date} 기준 · 종목을 선택하면 주가·실적 상세 정보를 확인합니다.</p></div>{mode === "stocks" && periodTabs}</div>
+        {mode === "stocks" && !historyKey && <p className="semiFootnote">섹터나 업종을 선택하면 수익률을 계산합니다.</p>}
+        {mode === "stocks" && historyKey && !histories && <p role="status">선택한 종목의 일봉을 불러오는 중…</p>}
+        {mode === "stocks" && histories && progress && progress.errors > 0 && <p className="semiFootnote" role="status">{progress.errors}개 종목의 일봉을 불러오지 못했습니다.</p>}
         <div className="semiTableWrap"><table className="semiTable sectorExplorerMembers"><thead><tr>{memberHeading("name", "종목")}<th scope="col">섹터 · 업종</th>{memberHeading("exchange", "시장")}{memberHeading("price", "최근 가격")}{memberHeading("return", `${label} 수익률`)}{memberHeading("turnover", "거래대금")}{memberHeading("marketCap", "시가총액")}</tr></thead><tbody>{members.map(stock => <tr key={stock.ticker}><th scope="row"><Link className="semiStockLink" to={stockLink(stock)}><strong>{stock.name}</strong><span>{stock.code}</span></Link></th><td>{sectorLabel(stock.sector)}<small>{sectorLabel(stock.industry)}</small></td><td>{stock.exchange}</td><td className="semiNumber"><PriceWithChange price={stock.price} change={stock.change_pct} /></td><td className={`semiNumber ${tone(stock.returns[period])}`}>{formatPercent(stock.returns[period])}</td><td className="semiNumber">{sectorMoney(stock.turnover)}</td><td className="semiNumber">{sectorMoney(stock.market_cap)}</td></tr>)}</tbody></table></div>
         {!members.length && <p className="semiEmpty">조건에 맞는 종목이 없습니다.</p>}
       </section>

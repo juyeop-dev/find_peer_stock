@@ -1,9 +1,9 @@
 import { chartStart, getPublishedStockHistory, refreshStockHistory } from "./stockHistoryClient";
 import type { StockHistory } from "./stockHistoryClient";
 import type { SectorPeriod, SectorStock } from "./sectorRankings";
-import type { SemiconductorPrice } from "./semiconductorTypes";
 
 const cache = new Map<string, StockHistory>();
+const HISTORY_CACHE_SIZE = 160;
 export interface SectorHistoryProgress { checked: number; total: number; errors: number }
 export function sectorHistoryForDate(value: StockHistory, end: string): StockHistory {
   if (value.history.some(point => point.date === end)) return value;
@@ -22,12 +22,16 @@ export async function loadSectorHistories(stocks: SectorStock[], signal: AbortSi
       signal.throwIfAborted();
       const stock = stocks[cursor++];
       try {
-        const loaded = fromSource ? await refreshStockHistory(stock.ticker, stock.exchange, signal) : cache.get(stock.ticker) ?? await getPublishedStockHistory(stock.ticker, signal);
-        const candidate = sectorHistoryForDate(loaded, stock.date);
         const previous = cache.get(stock.ticker);
-        const history = !candidate.history.some(point => point.date === stock.date) && previous?.history.some(point => point.date === stock.date) ? previous : candidate;
+        const loaded = fromSource ? await refreshStockHistory(stock.ticker, stock.exchange, signal) : previous ?? await getPublishedStockHistory(stock.ticker, signal);
+        const hasDate = (value: StockHistory) => sectorHistoryForDate(value, stock.date).history.some(point => point.date === stock.date);
+        const candidate = previous && fromSource && !hasDate(loaded) && hasDate(previous) ? previous : loaded;
+        const history = previous?.sector_quotes && !candidate.sector_quotes ? { ...candidate, sector_quotes: previous.sector_quotes } : candidate;
         if (history.currency !== "KRW") throw new Error("이력 통화가 일치하지 않습니다.");
-        cache.set(stock.ticker, history); values.push(history);
+        cache.delete(stock.ticker);
+        cache.set(stock.ticker, fromSource && previous ? previous : history);
+        if (cache.size > HISTORY_CACHE_SIZE) cache.delete(cache.keys().next().value!);
+        values.push(history);
       } catch (error) {
         if (signal.aborted) throw error;
         errors++;
@@ -41,7 +45,7 @@ export async function loadSectorHistories(stocks: SectorStock[], signal: AbortSi
   return {values, errors};
 }
 
-function atOrBefore(points: SemiconductorPrice[], date: string) {
+export function atOrBefore<T extends {date: string}>(points: T[], date: string) {
   let left = 0, right = points.length - 1, found = -1;
   while (left <= right) {
     const mid = (left + right) >>> 1;
@@ -53,7 +57,7 @@ export function sectorHistorySeries(histories: StockHistory[], period: SectorPer
   const start = period === "day" ? new Date(Date.parse(`${end}T12:00:00Z`) - 86400000).toISOString().slice(0, 10)
     : chartStart(end, period === "year" ? "1y" : ({week: 7, month: 30, quarter: 90} as const)[period]);
   const eligible = histories.flatMap(value => {
-    const prices = value.history.filter(point => point.date <= end);
+    const prices = sectorHistoryForDate(value, end).history.filter(point => point.date <= end);
     const base = atOrBefore(prices, start);
     // Keep a fixed cohort for the complete period. A newly listed or stale
     // stock cannot silently change the weights halfway through the chart.

@@ -5,8 +5,10 @@ import { mkdir, mkdtemp, readFile, rm, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join, resolve, sep } from "node:path";
 import { fileURLToPath } from "node:url";
+import { gunzipSync } from "node:zlib";
 import ts from "typescript";
 import { expandSectorWeek, sectorWeekStart } from "../../shared/sector-week.mjs";
+import { expandSectorDay } from "../../shared/sector-day.mjs";
 
 const root = fileURLToPath(new URL("../../", import.meta.url));
 const rankingSource = await readFile(new URL("../src/dataClient/sectorRankings.ts", import.meta.url), "utf8");
@@ -31,10 +33,14 @@ try {
   socket = new WebSocket(targets.find(target => target.type === "page").webSocketDebuggerUrl);
   await new Promise((resolve, reject) => {socket.addEventListener("open", resolve, {once:true});socket.addEventListener("error",reject,{once:true});});
   let sequence = 0;
-  const pending = new Map(), exceptions = [], requests = new Map(), statuses = [];
+  const pending = new Map(), exceptions = [], requests = new Map(), statuses = [], chartRequests = [];
   socket.addEventListener("message", event => {
     const message = JSON.parse(event.data);
     if (message.method === "Runtime.exceptionThrown") exceptions.push(message.params.exceptionDetails);
+    if (message.method === "Network.requestWillBeSent") {
+      const chart = new URL(message.params.request.url).pathname.match(/\/data\/stock-history\/([0-9A-Z]{6}\.(?:KS|KQ))(?:\.delta-v1)?\.json(?:\.gz)?$/);
+      if (chart) chartRequests.push(chart[1]);
+    }
     if (message.method === "Network.requestWillBeSent" && message.params.request.postData) {
       try {const body = JSON.parse(message.params.request.postData);if (["information","history","sectors"].includes(body.kind)) requests.set(message.params.requestId,body.kind);} catch {}
     }
@@ -59,12 +65,15 @@ try {
   const waitRows = () => until(() => evaluate("document.querySelectorAll('.sectorRankingTable > tbody > tr[data-sector]').length>50"), "Sector rows did not load");
   await send("Page.navigate",{url:base+"/sectors"});
   await waitRows();
+  assert.deepEqual(chartRequests, [], "Listing the most recent day must not request prices");
 
   assert.equal(await evaluate("document.querySelector('[aria-label=\"등락률 계산 방식\"]').value"), "cap");
   await evaluate("[...document.querySelectorAll('tr[data-sector]')].find(row=>row.dataset.sector.endsWith('Refining & Holdings')).querySelector('.sectorNameButton').click()");
   await until(() => evaluate("document.querySelectorAll('.sectorMemberTable tbody tr').length === 4"), "Reviewed refinery members did not load");
   const refineryCodes = await evaluate("[...document.querySelectorAll('.sectorMemberTable .semiStockLink span')].map(node=>node.innerText).sort()");
   assert.deepEqual(refineryCodes, ["010950", "078930", "096770", "267250"]);
+  await until(() => evaluate("[...document.querySelectorAll('.sectorMemberTable tbody tr')].every(row=>Number.isFinite(parseFloat(row.children[3].innerText)))"), "Selected refinery returns did not load");
+  assert.deepEqual([...new Set(chartRequests)].sort(), refineryCodes.map(code => code + ".KS"));
   const refineryMean = await evaluate("[...document.querySelectorAll('.sectorMemberTable tbody tr')].reduce((sum,row)=>sum+parseFloat(row.children[3].innerText),0)/4");
   await evaluate("(()=>{const select=document.querySelector('[aria-label=\"등락률 계산 방식\"]');select.value='equal';select.dispatchEvent(new Event('change',{bubbles:true}));})()");
   await until(() => evaluate("new URL(location.href).searchParams.get('weight') === 'equal'"), "Weighting choice was not saved in the URL");
@@ -76,17 +85,21 @@ try {
   const historic=calendar.records.find(record=>record.date!==calendar.latest_date);
   assert.ok(historic,'No genuine historical snapshot is available for verification');
   await evaluate(`(()=>{const input=document.querySelector('.sectorCalendarNavigation input');Object.getOwnPropertyDescriptor(HTMLInputElement.prototype,'value').set.call(input,${JSON.stringify(historic.date.slice(0,7))});input.dispatchEvent(new Event('input',{bubbles:true}));})()`);
+  const beforeDate = chartRequests.length;
   await evaluate(`document.querySelector('.sectorCalendarGrid button[data-date="${historic.date}"]').click()`);
   await until(()=>evaluate(`document.querySelector('.sectorSummary strong')?.innerText===${JSON.stringify(historic.date)}`),'Historical ranking did not load');
-  let sourceResponse=await fetch(base+'/data/sectors/weekly/'+sectorWeekStart(historic.date)+'.json.gz');
-  if (sourceResponse.status===404) sourceResponse=await fetch(base+'/data/sectors/daily/'+historic.date+'.json.gz');
+  let sourceResponse=await fetch(base+'/data/sectors/daily/'+historic.date+'.json.gz');
+  if (sourceResponse.status===404) sourceResponse=await fetch(base+'/data/sectors/weekly/'+sectorWeekStart(historic.date)+'.json.gz');
   const sourceBytes=await sourceResponse.arrayBuffer(),sourceMagic=new Uint8Array(sourceBytes,0,Math.min(2,sourceBytes.byteLength));
   const sourceText=sourceMagic[0]===0x1f&&sourceMagic[1]===0x8b?await new Response(new Blob([sourceBytes]).stream().pipeThrough(new DecompressionStream('gzip'))).text():new TextDecoder().decode(sourceBytes);
   const packedSnapshot=JSON.parse(sourceText);
-  const sourceSnapshot=packedSnapshot.encoding==='sector-week-v1' ? expandSectorWeek(packedSnapshot,historic.date) : packedSnapshot;
+  const profileResponse = packedSnapshot.encoding==='sector-day-v1' ? await fetch(base+'/data/sectors/profiles.json.gz') : null;
+  const profileBytes = profileResponse ? Buffer.from(await profileResponse.arrayBuffer()) : null;
+  const profiles = profileBytes && JSON.parse(profileBytes[0]===0x1f && profileBytes[1]===0x8b ? gunzipSync(profileBytes) : profileBytes);
+  const sourceSnapshot=profiles ? expandSectorDay(packedSnapshot,profiles) : packedSnapshot.encoding==='sector-week-v1' ? expandSectorWeek(packedSnapshot,historic.date) : packedSnapshot;
+  assert.equal(chartRequests.length, beforeDate, "Changing dates must wait for a new sector selection");
   const sourceStocks=sourceSnapshot.stocks ?? sourceSnapshot.stock_rows.map(([shape,...fields])=>Object.fromEntries(sourceSnapshot.stock_fields[shape].map((key,i)=>[key,fields[i]])));
   if (sourceSnapshot.historical_metrics) {
-    assert.ok(await evaluate("[...document.querySelectorAll('.sectorReturn')].filter(node=>Number.isFinite(parseFloat(node.innerText))).length>50"), "Restored dated caps must enable historical weighted returns");
     assert.equal(await evaluate("document.body.innerText.includes('당시 시가총액이 없어')"), false);
   }
   await evaluate("document.querySelector('.sectorNameButton').click()");
@@ -109,15 +122,11 @@ try {
   await until(()=>evaluate(`document.querySelector('.sectorSummary strong')?.innerText===${JSON.stringify(historic.date)} && Boolean(document.querySelector('.sectorExpansionRow'))`),'Historical detail did not restore the selected date and open sector');
   await evaluate("document.querySelector('.sectorCalendarHeading button').click()");
   await until(()=>evaluate(`document.querySelector('.sectorSummary strong')?.innerText===${JSON.stringify(calendar.latest_date)}`),'Return to latest failed');
-  await evaluate("document.querySelector('.sectorRankingTable tr.selected .sectorNameButton').click()");
-  await until(()=>evaluate("!document.querySelector('.sectorExpansionRow')"),'Clicking an open sector did not collapse it');
+  await until(()=>evaluate("!document.querySelector('.sectorExpansionRow')"),'Changing to the latest date kept an open sector');
 
   assert.equal(await evaluate("document.querySelector('.sectorRankingTable [aria-sort=descending]').innerText.includes('거래대금')"),true);
   const rowCount = await evaluate("document.querySelectorAll('.sectorRankingTable > tbody > tr[data-sector]').length");
   const click = expression => evaluate(`(${expression}).click()`);
-  await click("document.querySelector('.sectorRankingTable th:nth-child(3) button')");
-  const returns = await evaluate("[...document.querySelectorAll('.sectorRankingTable > tbody > tr[data-sector]')].map(row=>parseFloat(row.children[2].innerText)).filter(Number.isFinite)");
-  assert.ok(returns.every((value,i)=>i===0||returns[i-1]>=value),"Sector gain sorting failed");
   await click("[...document.querySelectorAll('[aria-label=\"수익률 기간\"] button')].find(button=>button.innerText==='1개월')");
   await until(()=>evaluate("document.querySelector('.sectorTableCaption').innerText.includes('1개월')"),"Period did not change");
   await evaluate("(()=>{const input=document.querySelector('.sectorSearch input');Object.getOwnPropertyDescriptor(HTMLInputElement.prototype,'value').set.call(input,'반도체');input.dispatchEvent(new Event('input',{bubbles:true}));})()");

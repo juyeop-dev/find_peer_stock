@@ -1,7 +1,8 @@
 import { mkdir, readFile, readdir, rename, unlink, writeFile } from "node:fs/promises";
 import { dirname, join } from "node:path";
 import { gzipSync, gunzipSync } from "node:zlib";
-import { packSectorWeek, sectorWeekStart } from "../shared/sector-week.mjs";
+import { createHash } from "node:crypto";
+import { packSectorDay } from "../shared/sector-day.mjs";
 
 export function validSectorDate(value) {
   return typeof value === "string" && /^\d{4}-\d{2}-\d{2}$/.test(value) && Number.isFinite(Date.parse(value)) && new Date(value).toISOString().slice(0, 10) === value;
@@ -48,43 +49,47 @@ export async function archiveSectorSnapshot(directory, snapshot) {
 export async function publishSectorArchive(directory, output) {
   const current = JSON.parse(await readFile(join(directory, "index.json"), "utf8"));
   archiveMetadata(current);
-  const weekly = join(output, "weekly"), archive = join(directory, "daily");
+  const archive = join(directory, "daily");
   const dailyName = /^\d{4}-\d{2}-\d{2}\.json\.gz$/;
   const currentName = current.date + ".json.gz";
-  const names = new Set([...await readdir(archive), currentName]);
-  const records = [], kept = new Set();
-  let week = "", snapshots = [];
-  async function flush() {
-    if (!snapshots.length) return;
-    const name = week + ".json.gz";
-    await saveSectorFile(join(weekly, name), gzipSync(JSON.stringify(packSectorWeek(snapshots)), { level: 6 }));
-    kept.add(name);
+  const names = [...new Set([...await readdir(archive), currentName])].filter(name => dailyName.test(name)).sort();
+  const records = [], profiles = [], ids = new Map(), keys = new Set();
+  const fingerprint = createHash("sha256");
+  function profileId(profile) {
+    const bytes = JSON.stringify(profile);
+    if (!ids.has(bytes)) {
+      ids.set(bytes, profiles.length);
+      profiles.push(profile);
+      fingerprint.update(bytes + "\n");
+    }
+    return ids.get(bytes);
   }
-  for (const name of [...names].filter(name => dailyName.test(name)).sort()) {
+
+  for (const name of names) {
     const snapshot = name === currentName ? current : JSON.parse(gunzipSync(await readFile(join(archive, name))));
     if (name !== snapshot.date + ".json.gz") throw new Error("Sector archive date mismatch");
     records.push(archiveMetadata(snapshot));
-    const start = sectorWeekStart(snapshot.date);
-    if (start !== week) {
-      await flush();
-      week = start;
-      snapshots = [];
-    }
-    snapshots.push(sectorListingSnapshot(snapshot));
+    const day = packSectorDay(sectorListingSnapshot(snapshot), profileId);
+    const key = fingerprint.copy().digest("hex");
+    keys.add(key);
+    await saveSectorFile(join(output, "daily", name), gzipSync(JSON.stringify({ ...day, key, current: name === currentName }), { level: 6 }));
   }
-  await flush();
+  await saveSectorFile(join(output, "profiles.json.gz"), gzipSync(JSON.stringify({ encoding: "sector-profiles-v1", keys: [...keys], profiles }), { level: 9 }));
   const calendar = { schema_version: 1, market: "korea", latest_date: current.date, records };
   const text = JSON.stringify(calendar) + "\n";
   await saveSectorFile(join(directory, "calendar.json"), text);
   await saveSectorFile(join(output, "calendar.json"), text);
   await saveSectorFile(join(output, "index.json"), JSON.stringify(sectorListingSnapshot(current)) + "\n");
-  for (const entry of await readdir(weekly, { withFileTypes: true })) {
-    if (entry.isFile() && dailyName.test(entry.name) && !kept.has(entry.name)) await unlink(join(weekly, entry.name));
-  }
-  const legacy = join(output, "daily");
-  const previous = await readdir(legacy, { withFileTypes: true }).catch(error => { if (error.code === "ENOENT") return []; throw error; });
-  for (const entry of previous) {
-    if (entry.isFile() && /^\d{4}-\d{2}-\d{2}\.json(?:\.gz)?$/.test(entry.name)) await unlink(join(legacy, entry.name));
+
+  const kept = new Set(names);
+  for (const folder of ["daily", "weekly"]) {
+    const subfolder = join(output, folder);
+    const entries = await readdir(subfolder, { withFileTypes: true }).catch(error => { if (error.code === "ENOENT") return []; throw error; });
+    for (const entry of entries) {
+      if (entry.isFile() && /^\d{4}-\d{2}-\d{2}\.json(?:\.gz)?$/.test(entry.name) && (folder !== "daily" || !kept.has(entry.name))) {
+        await unlink(join(subfolder, entry.name));
+      }
+    }
   }
   return calendar;
 }

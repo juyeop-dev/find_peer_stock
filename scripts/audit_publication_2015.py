@@ -35,7 +35,7 @@ def main():
         source = load(ROOT / f"data/{kind}/index.json")
         assert load(public / f"{kind}/index.json") == source, kind
         counts[kind] = sum(row["date"].startswith("2015-") for row in source["history"])
-    load_sector_source = load_sector_listing if (public / "stock-history/korea-daily/index.json").is_file() else load
+    load_sector_source = load_sector_listing if (public / "sectors/profiles.json.gz").is_file() or (public / "stock-history/korea-daily/index.json").is_file() else load
     for path in (ROOT / "data/sectors/daily").glob("*.json.gz"):
         assert load_published_sector_day(public / "sectors", path.name[:10]) == load_sector_source(path), path.name
     assert load(public / "sectors/index.json") == load_sector_source(ROOT / "data/sectors/index.json"), "latest sector snapshot"

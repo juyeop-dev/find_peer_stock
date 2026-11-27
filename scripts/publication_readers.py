@@ -1,5 +1,6 @@
 """Read lossless artifact encodings without changing canonical source values."""
 from datetime import date, timedelta
+from functools import lru_cache
 import gzip
 import json
 
@@ -38,7 +39,7 @@ def load(path):
         path = path.with_name(path.name.removesuffix('.json.gz') + '.delta-v1.json.gz')
     raw = path.read_bytes()
     value = json.loads(gzip.decompress(raw) if raw[:2] == b'\x1f\x8b' else raw)
-    if isinstance(value, dict) and value.get('encoding') == 'sector-week-v1':
+    if isinstance(value, dict) and value.get('encoding') in ('sector-week-v1', 'sector-day-v1', 'sector-profiles-v1'):
         return value
     if isinstance(value, dict) and value.get('encoding') == 'sector-columns-v1':
         fields = value.pop('stock_fields')
@@ -57,7 +58,32 @@ def load_sector_listing(path):
     ]}
 
 
+@lru_cache(maxsize=1)
+def load_sector_profiles(path):
+    value = load(path)
+    if value.get('encoding') != 'sector-profiles-v1':
+        raise ValueError('Unknown sector profile encoding')
+    return value
+
+
 def load_published_sector_day(directory, day):
+    fields = ('price', 'turnover', 'market_cap', 'date', 'market_cap_date')
+    daily = directory / 'daily' / f'{day}.json.gz'
+    if daily.is_file():
+        value = load(daily)
+        if value.get('encoding') != 'sector-day-v1':
+            return value
+        dictionary = load_sector_profiles(directory / 'profiles.json.gz')
+        if value['key'] not in dictionary['keys'] or value['header']['date'] != day:
+            raise ValueError('Dated sector listing and profile lookup do not match')
+        stocks = []
+        for index, *row in value['rows']:
+            profile, mask = dictionary['profiles'][index]
+            stocks.append({**profile, **{
+                key: day if i >= 3 and cell is None else None if cell is False else cell
+                for i, (key, cell) in enumerate(zip(fields, row, strict=True)) if mask & (1 << i)
+            }})
+        return {**value['header'], 'stocks': stocks}
     session = date.fromisoformat(day)
     monday = session - timedelta(days=session.weekday())
     weekly = directory / 'weekly' / f'{monday}.json.gz'
@@ -67,7 +93,6 @@ def load_published_sector_day(directory, day):
     if bundle.get('encoding') != 'sector-week-v1':
         raise ValueError('Unknown sector week encoding')
     day_index, (header, *order) = next((i, values) for i, values in enumerate(bundle['days']) if values[0]['date'] == day)
-    fields = ('price', 'turnover', 'market_cap', 'date', 'market_cap_date')
     stocks = {}
     for profile, mask, observations in bundle['profiles']:
         row = next((values[1:] for values in observations if values[0] == day_index), None)

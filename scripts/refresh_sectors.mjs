@@ -1,10 +1,9 @@
-import { readFile } from "node:fs/promises";
+import { readFile, readdir, unlink } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 import { join } from "node:path";
 import { execFileSync } from "node:child_process";
 import { sectors } from "../automation/live-api/src/sectors.js";
 import { archiveSectorSnapshot, publishSectorArchive, saveSectorFile, sectorListingSnapshot } from "./sector_archive.mjs";
-import { publishKoreanPriceIndex } from "./korean_price_index.mjs";
 
 const root = fileURLToPath(new URL("../", import.meta.url));
 const durable = join(root, "data/sectors/index.json");
@@ -31,6 +30,9 @@ if (process.argv[2] === "restore-history") {
 const calendar = await publishSectorArchive(directory, join(root, "frontend/public/data/sectors"));
 console.log(`Published ${calendar.records.length} sector trading-day records.`);
 if (process.argv[2] === "publish") {
-  const dates = await publishKoreanPriceIndex(join(root, "frontend/public/data/stock-history"), directory);
-  console.log(`Indexed Korean stock prices for ${dates} dates.`);
+  const legacy = join(root, "frontend/public/data/stock-history/korea-daily");
+  const entries = await readdir(legacy, { withFileTypes: true }).catch(error => { if (error.code === "ENOENT") return []; throw error; });
+  for (const entry of entries) {
+    if (entry.isFile() && (entry.name === "index.json" || /^\d{4}-\d{2}-\d{2}\.json\.gz$/.test(entry.name))) await unlink(join(legacy, entry.name));
+  }
 }

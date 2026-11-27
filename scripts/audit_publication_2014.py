@@ -6,7 +6,7 @@ import json
 from pathlib import Path
 from urllib.parse import quote
 
-from stock_chart_history import ROOT, write_json
+from stock_chart_history import ROOT, sector_closes, write_json
 from deployment_history_2014 import trading_dates_2014
 
 
@@ -46,7 +46,8 @@ def main():
         source = load(ROOT / f"data/{kind}/index.json")
         assert load(public / f"{kind}/index.json") == source, kind
         counts[kind] = sum(row["date"].startswith("2014-") for row in source["history"])
-    load_sector_source = load_sector_listing if (public / "stock-history/korea-daily/index.json").is_file() else load
+    dated_listings = (public / "sectors/profiles.json.gz").is_file()
+    load_sector_source = load_sector_listing if dated_listings or (public / "stock-history/korea-daily/index.json").is_file() else load
     for path in (ROOT / "data/sectors/daily").glob("*.json.gz"):
         assert load_published_sector_day(public / "sectors", path.name[:10]) == load_sector_source(path), path.name
     assert load(public / "sectors/index.json") == load_sector_source(ROOT / "data/sectors/index.json"), "latest sector snapshot"
@@ -57,6 +58,7 @@ def main():
         assert by_ticker[row["ticker"]]["history"] == row["history"], row["ticker"]
     counts["semiconductor_histories"] = len(by_ticker)
     histories = information = price_points = 0
+    quotes = sector_closes(ROOT / "data/sectors/daily") if dated_listings else {}
     for path in (ROOT / "data/stock-history").glob("*.gz"):
         for ticker, value in load(path).items():
             filename = quote(ticker, safe="").replace("%", "~") + ".json.gz"
@@ -64,6 +66,8 @@ def main():
             assert published["ticker"] == ticker and published["currency"] == value["currency"], ticker
             assert published["prices"] == value["prices"], ticker
             expected = dict(value)
+            if value['currency'] == 'KRW' and ticker in quotes:
+                expected['sector_quotes'] = quotes[ticker]
             if 'prior_snapshots' in expected:
                 primary_dates = {point[0] for point in value['prices']}
                 expected['prior_snapshots'] = [curve for curve in value['prior_snapshots']
