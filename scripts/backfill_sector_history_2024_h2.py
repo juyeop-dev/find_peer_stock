@@ -4,6 +4,8 @@ Membership uses the explicitly dated current classification, not a fictitious
 historical constituent list. Historical capitalization is deliberately null.
 """
 from datetime import date, datetime, timedelta, timezone
+import bisect
+import calendar
 import gzip
 import hashlib
 import json
@@ -13,13 +15,28 @@ from backfill_korean_new_highs import history_url, parse_history
 from stock_chart_history import ROOT, write_json
 
 
-def reconstruct(stock, history, day):
+def previous_month(day, months):
+    year, month = divmod(day.year * 12 + day.month - 1 - months, 12)
+    return date(year, month + 1, min(day.day, calendar.monthrange(year, month + 1)[1]))
+
+
+def reconstruct(stock, history, day, *, include_returns=True):
     current = history.get(day)
     if not current or current[4] <= 0 or current[5] <= 0:
         return None
-    listing = {key: value for key, value in stock.items() if key not in ('returns', 'change_pct')}
-    return {**listing, "date": day.isoformat(), "price": current[4],
-            "turnover": current[4] * current[5], "market_cap": None}
+    listing = {key: value for key, value in stock.items() if key not in ("returns", "change_pct")}
+    listing.update(date=day.isoformat(), price=current[4], turnover=current[4] * current[5], market_cap=None)
+    if not include_returns:
+        return listing
+    dates = sorted(observed for observed, row in history.items() if row[4] > 0)
+    index = bisect.bisect_left(dates, day)
+    targets = {"day": dates[index - 1] if index else None, "week": day - timedelta(days=7),
+               "month": previous_month(day, 1), "quarter": previous_month(day, 3), "year": previous_month(day, 12)}
+    returns = {}
+    for key, target in targets.items():
+        anchor = bisect.bisect_right(dates, target) - 1 if target else -1
+        returns[key] = (current[4] / history[dates[anchor]][4] - 1) * 100 if anchor >= 0 else None
+    return {**listing, "change_pct": returns["day"], "returns": returns}
 
 
 def main():
@@ -45,7 +62,7 @@ def main():
         path = directory / "daily" / f"{day}.json.gz"
         if path.exists():
             continue
-        stocks = [value for stock in latest["stocks"] if (value := reconstruct(stock, histories.get(stock["ticker"], {}), day))]
+        stocks = [value for stock in latest["stocks"] if (value := reconstruct(stock, histories.get(stock["ticker"], {}), day, include_returns=False))]
         if len(stocks) < len(histories) * .75:
             raise ValueError(f"Incomplete historical session: {day} {len(stocks)}/{len(histories)}")
         snapshot = {"schema_version": 1, "market": "korea", "currency": "KRW", "date": day.isoformat(),

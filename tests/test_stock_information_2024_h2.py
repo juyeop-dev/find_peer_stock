@@ -50,6 +50,8 @@ class HistoricalInformationTests(unittest.TestCase):
         self.assertEqual(value["turnover"], 2200)
         self.assertEqual(previous_month(date(2024, 8, 31), 6), date(2024, 2, 29))
         self.assertIsNone(reconstruct(stock, history, date(2024, 7, 3)))
+        listing = reconstruct(stock, history, date(2024, 7, 1), include_returns=False)
+        self.assertEqual(listing, {key: item for key, item in value.items() if key not in ("change_pct", "returns")})
 
 
 if __name__ == "__main__":

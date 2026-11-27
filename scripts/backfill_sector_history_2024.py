@@ -42,7 +42,7 @@ def main(year=2024, end_before="2024-07-01", audit_scope="2024"):
             continue
         stocks = []
         for stock in latest["stocks"]:
-            value = reconstruct(stock, histories[stock["ticker"]], day)
+            value = reconstruct(stock, histories[stock["ticker"]], day, include_returns=False)
             if value:
                 value.pop("market_cap_date", None)
                 value.pop("monetary_source", None)
