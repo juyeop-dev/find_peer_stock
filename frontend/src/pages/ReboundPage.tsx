@@ -4,12 +4,32 @@ import { TurnoverCalendar } from "../components/TurnoverCalendar";
 import { DataRefreshStatus } from "../components/DataRefreshStatus";
 import { ErrorNotice } from "../components/ErrorNotice";
 import { LoadingSpinner } from "../components/LoadingSpinner";
+import { MoreStocks, useStockList } from "../components/StockListPagination";
 import { calendarStockLink } from "../dataClient/stockDetailLinks";
 import { usePollingData } from "../dataClient/usePollingData";
 import { formatDateTime } from "../dataClient/formatters";
 import { getReboundIndex, getReboundReport, REBOUND_BOARDS, REBOUND_RULES, reboundDateLabel, reboundEntries, reboundMessage, reboundPercent, reboundPrice, validReboundDate } from "../dataClient/reboundClient";
+import type { ReboundBoard as Board, ReboundReport } from "../dataClient/reboundClient";
 import "../styles/turnover.css";
 import "../styles/rebounds.css";
+
+function ReboundBoard({ board, report, query }: { board: Board; report: ReboundReport; query: string }) {
+  const { date } = report;
+  const all = reboundEntries(report, board);
+  const entries = query.trim() ? reboundEntries(report, board, query) : all;
+  const stockList = useStockList(entries, JSON.stringify([date, query]));
+
+  return <section className={`reboundBoard ${board.toLowerCase()}`} aria-label={`${board} 반등 종목`}>
+    <h3><i aria-hidden="true" />{board} <span>({all.length})</span></h3>
+    {query.trim() && <p className="semiFootnote">검색 결과 {entries.length}개 / 전체 {all.length}개</p>}
+    {entries.length ? <ul>{stockList.visible.map(row => <li key={row.ticker}>
+      <div className="reboundStock"><Link to={calendarStockLink(row.ticker, "rebounds", "korea", date, `/rebounds?${new URLSearchParams({ date })}`)}>{row.name}</Link><small>{row.ticker}</small></div>
+      <div className="reboundReturn"><strong>{reboundPercent(row.rebound_pct)}</strong><span>{reboundPrice(row.price)} <b className={row.change_pct > 0 ? "semiUp" : ""}>({reboundPercent(row.change_pct)})</b></span></div>
+      <p className="reboundContext">당일 저가 {reboundPrice(row.low)} · 시총 {(row.market_cap / 1e12).toLocaleString("ko-KR", { maximumFractionDigits: 2 })}조원</p>
+    </li>)}</ul> : <p className="reboundEmpty">{query.trim() ? "검색 조건에 맞는 종목이 없습니다." : "이 시장에 선별 조건을 충족한 종목이 없습니다."}</p>}
+    <MoreStocks {...stockList.more} />
+  </section>;
+}
 
 export function ReboundPage() {
   const [params, setParams] = useSearchParams(), [month, setMonth] = useState(""), [query, setQuery] = useState(""), [copyStatus, setCopyStatus] = useState("");
@@ -44,10 +64,7 @@ export function ReboundPage() {
       {index.refresh.status !== "updated" && <p role="status" className="semiFootnote">{index.refresh.status === "error" ? "최근 반등 수집에 실패했습니다. 저장된 거래일의 기록은 계속 조회할 수 있습니다." : index.refresh.message}</p>}
       {report && <>
         <div className="reboundToolbar"><input aria-label="반등 종목 검색" type="search" placeholder="종목명 · 종목코드 검색" value={query} onChange={event => setQuery(event.target.value)} /><button type="button" onClick={async () => { try { await navigator.clipboard.writeText(reboundMessage(report)); setCopyStatus("전체 반등 목록을 복사했습니다."); } catch { setCopyStatus("복사하지 못했습니다. 브라우저의 클립보드 권한을 확인해 주세요."); } }}>반등 목록 복사</button></div><p className="semiFootnote" role="status">{copyStatus}</p>
-        {REBOUND_BOARDS.map(board => { const all = reboundEntries(report, board), entries = reboundEntries(report, board, query); return <section key={board} className={`reboundBoard ${board.toLowerCase()}`} aria-label={`${board} 반등 종목`}><h3><i aria-hidden="true" />{board} <span>({all.length})</span></h3>
-          {query.trim() && <p className="semiFootnote">검색 결과 {entries.length}개 / 전체 {all.length}개</p>}
-          {entries.length ? <ul>{entries.map(row => <li key={row.ticker}><div className="reboundStock"><Link to={calendarStockLink(row.ticker, "rebounds", "korea", date, `/rebounds?${new URLSearchParams({ date })}`)}>{row.name}</Link><small>{row.ticker}</small></div><div className="reboundReturn"><strong>{reboundPercent(row.rebound_pct)}</strong><span>{reboundPrice(row.price)} <b className={row.change_pct > 0 ? "semiUp" : ""}>({reboundPercent(row.change_pct)})</b></span></div><p className="reboundContext">당일 저가 {reboundPrice(row.low)} · 시총 {(row.market_cap / 1e12).toLocaleString("ko-KR", { maximumFractionDigits: 2 })}조원</p></li>)}</ul> : <p className="reboundEmpty">{query.trim() ? "검색 조건에 맞는 종목이 없습니다." : "이 시장에 선별 조건을 충족한 종목이 없습니다."}</p>}
-        </section>; })}
+        {REBOUND_BOARDS.map(board => <ReboundBoard key={board} board={board} report={report} query={query} />)}
         <p className="semiFootnote">반등률 = (종가 ÷ 당일 저가 − 1) × 100. 괄호 안 수치는 전일 대비 종가 등락률입니다. 표시 전 원래 수치로 선별하며, 시가총액·저가·종가·등락률을 확인할 수 없는 종목은 제외합니다. ETF·우선주·KONEX는 포함하지 않습니다.</p>
         {report.source_metadata.note && <p className="semiFootnote">{report.source_metadata.note}</p>}
         <div className="turnoverSources"><span>원본 수집 {formatDateTime(report.source_metadata.fetched_at)} · 전체 {report.source_metadata.scanned_symbols.toLocaleString("ko-KR")}개 조회</span>{report.sources.map(source => <a key={source.url} href={source.url} target="_blank" rel="noreferrer">{source.label} ↗</a>)}</div>

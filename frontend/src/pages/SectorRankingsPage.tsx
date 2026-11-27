@@ -3,6 +3,7 @@ import { Link, useSearchParams } from "react-router-dom";
 import { DataRefreshStatus } from "../components/DataRefreshStatus";
 import { ErrorNotice } from "../components/ErrorNotice";
 import { LoadingSpinner } from "../components/LoadingSpinner";
+import { MoreStocks, useStockList } from "../components/StockListPagination";
 import { PriceWithChange } from "../components/PriceWithChange";
 import { ImeSearchInput } from "../components/ImeSearchInput";
 import { getSectorCalendar, getSectorSnapshot, validSectorDate } from "../dataClient/sectorDataClient";
@@ -49,6 +50,7 @@ export function SectorRankingsPage() {
     [priced, scope, selection, level, period, board, weighting]);
   const ranked = useMemo(() => sortSectors(visible.map(group => group.key === active?.key ? active : group), sort.key, sort.direction), [visible, active, sort]);
   const members = useMemo(() => sortSectorMembers(active?.members ?? [], memberSort.key, memberSort.direction, period), [active, period, memberSort]);
+  const stockList = useStockList(members, JSON.stringify([data?.date, level, board, active?.key, period, memberSort.key, memberSort.direction]));
   const periodLabel = SECTOR_PERIODS.find(item => item.key === period)!.label;
   const latestStocks = data?.stocks.filter(stock => stock.date === data.date && (!board || stock.exchange === board)) ?? [];
   const returnTo = `/sectors${params.size ? `?${params}` : ""}`;
@@ -73,7 +75,8 @@ export function SectorRankingsPage() {
         {pricing.error && <ErrorNotice message={pricing.error} />}
         {priced && priced.errors > 0 && <p className="semiFootnote" role="status">{priced.errors}개 종목의 일봉을 불러오지 못했습니다.</p>}
         <p className="semiFootnote">{weightingLabel} · 단순 평균 {formatPercent(active.equalValue)}.{active.members.some(stock => stock.industry === "Refining & Holdings") ? " 정유 지주는 회사 전체 시가총액을 반영하며 정유 사업만의 가치가 아닙니다." : ""}</p>
-        <div className="semiTableWrap"><table className="semiTable sectorMemberTable"><thead><tr>{memberHeading("name", "종목")}{memberHeading("exchange", "시장")}{memberHeading("price", "최근 가격")}{memberHeading("return", `${periodLabel} 등락률`)}{memberHeading("turnover", "거래대금")}{memberHeading("marketCap", "시가총액")}{memberHeading("basis", "분류 근거")}</tr></thead><tbody>{members.map(stock => <tr key={stock.ticker}><th scope="row"><Link className="semiStockLink" to={stockLink(stock)}><strong>{stock.name}</strong><span>{stock.code}</span></Link></th><td>{stock.exchange}</td><td className="semiNumber"><PriceWithChange price={stock.price} change={stock.change_pct} /></td><td className={`semiNumber ${tone(stock.returns[period])}`}>{formatPercent(stock.returns[period])}</td><td className="semiNumber">{sectorMoney(stock.turnover)}</td><td className="semiNumber">{sectorMoney(stock.market_cap)}</td><td>{stock.classificationUrl ? <a href={stock.classificationUrl} target="_blank" rel="noreferrer">{stock.classificationNote} ↗</a> : "TradingView"}</td></tr>)}</tbody></table></div>
+        <div className="semiTableWrap"><table className="semiTable sectorMemberTable"><thead><tr>{memberHeading("name", "종목")}{memberHeading("exchange", "시장")}{memberHeading("price", "최근 가격")}{memberHeading("return", `${periodLabel} 등락률`)}{memberHeading("turnover", "거래대금")}{memberHeading("marketCap", "시가총액")}{memberHeading("basis", "분류 근거")}</tr></thead><tbody>{stockList.visible.map(stock => <tr key={stock.ticker}><th scope="row"><Link className="semiStockLink" to={stockLink(stock)}><strong>{stock.name}</strong><span>{stock.code}</span></Link></th><td>{stock.exchange}</td><td className="semiNumber"><PriceWithChange price={stock.price} change={stock.change_pct} /></td><td className={`semiNumber ${tone(stock.returns[period])}`}>{formatPercent(stock.returns[period])}</td><td className="semiNumber">{sectorMoney(stock.turnover)}</td><td className="semiNumber">{sectorMoney(stock.market_cap)}</td><td>{stock.classificationUrl ? <a href={stock.classificationUrl} target="_blank" rel="noreferrer">{stock.classificationNote} ↗</a> : "TradingView"}</td></tr>)}</tbody></table></div>
+        <MoreStocks {...stockList.more} />
       </section> : null;
   return <main className="pageShell semiPage sectorRankingsPage">
     <header className="sectorHero"><div><p className="eyebrow">SECTOR RANKING</p><h1>국내 섹터 상승률</h1><p>어느 업종이 오르고, 어디에 거래가 모이는지 한눈에 비교하세요.</p></div><Link className="semiTextButton" to="/semiconductors/trends">반도체 세부 섹터 추이 ↗</Link></header>

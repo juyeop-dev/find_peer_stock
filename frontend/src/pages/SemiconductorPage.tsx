@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { DataRefreshStatus } from "../components/DataRefreshStatus";
 import { ErrorNotice } from "../components/ErrorNotice";
 import { LoadingSpinner } from "../components/LoadingSpinner";
+import { MoreStocks, useStockList } from "../components/StockListPagination";
 import { RecentFinancialCells } from "../components/RecentFinancials";
 import { SemiconductorSummaryStrip } from "../components/SemiconductorSummaryStrip";
 import { SemiconductorClassificationReview } from "../components/SemiconductorClassificationReview";
@@ -73,6 +74,7 @@ export function SemiconductorPage() {
       : compareNullable(a[sortKey], b[sortKey], sortDirection);
     return result || a.stock.name.localeCompare(b.stock.name, "ko") || a.stock.code.localeCompare(b.stock.code);
   }), [visible, date, period, major, middle, minor, sortKey, sortDirection]);
+  const stockList = useStockList(rows, JSON.stringify([major, middle, minor, market, query, date, period, sortKey, sortDirection]));
   function toggleSort(key: SortKey) {
     if (sortKey === key) setSortDirection((current) => current === "asc" ? "desc" : "asc");
     else { setSortKey(key); setSortDirection("desc"); }
@@ -124,7 +126,7 @@ export function SemiconductorPage() {
           <div className="semiPeriodTabs" aria-label="수익률 기간">{PERIODS.map((days) => <button key={days} type="button" className={period === days ? "active" : ""} onClick={() => setPeriod(days)}>{days}일</button>)}</div>
         </div>
         <div className="semiTableWrap"><table className="semiTable semiStockPriceTable"><thead><tr><th>종목</th><th>대분류</th><th>중분류</th><th>소분류</th><th>시장</th><th className="semiNumber">가격</th>{sortHeader("marketCap", "시가총액")}<th>기준일</th>{sortHeader("change", "등락률")}{sortHeader("gain", `${period}일 수익률`)}{sortHeader("revenue", "최근 1년 매출")}{sortHeader("operatingIncome", "최근 1년 영업이익")}<th>실적 기간</th></tr></thead><tbody>
-          {rows.map(({ stock, classification, price, asOf, change, gain }) => {
+          {stockList.visible.map(({ stock, classification, price, asOf, change, gain }) => {
             return <tr key={stock.ticker}><td><Link className="semiStockLink" to={`/semiconductors/${encodeURIComponent(stock.ticker)}`}><strong>{stock.name}</strong><span>{stock.code}</span></Link></td>
               <td>{classification.major}</td><td>{classification.middle}</td><td>{classification.minor}</td><td>{stock.market}</td>
               <td className="semiNumber">{formatWon(price)}</td><td className="semiNumber">{stock.metrics.marketValue || "-"}</td><td>{asOf}</td>
@@ -133,6 +135,7 @@ export function SemiconductorPage() {
               <RecentFinancialCells summary={stock.recent_financials} /></tr>;
           })}
         </tbody></table>{visible.length === 0 && <p className="semiEmpty">조건에 맞는 종목이 없습니다.</p>}</div>
+        <MoreStocks {...stockList.more} />
       </section>
       <p className="semiFootnote">최근 1년 실적(TTM): 최신 발표 분기까지 최근 4개 분기 매출·영업이익 합계, 단위는 억원입니다. 추정치는 제외하며 실적 기간을 종목별로 표시합니다. 연속 4개 분기가 부족하면 최근 결산 연간 실적을 대체 표시합니다. 실적은 선택한 가격 날짜와 관계없이 최신 발표 자료입니다.</p>
       <p className="semiFootnote">가격: Naver Finance 현재가 / Yahoo Finance 일봉. 누락된 최근 거래일은 Naver Finance 일봉으로 보완합니다. 시가총액은 선택 날짜와 관계없이 최근 수집값입니다. 수익률은 배당·분할 조정 종가 기준이며, 기준 날짜 이전 가장 가까운 거래일과 비교합니다. 현재가는 실시간 체결가가 아니며 제공처 기준 시각을 확인하세요.</p>

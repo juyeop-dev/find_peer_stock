@@ -4,6 +4,7 @@ import { Link, useLocation, useNavigate, useSearchParams } from "react-router-do
 import { DataRefreshStatus } from "../components/DataRefreshStatus";
 import { ErrorNotice } from "../components/ErrorNotice";
 import { LoadingSpinner } from "../components/LoadingSpinner";
+import { MoreStocks, useStockList } from "../components/StockListPagination";
 import { SemiconductorLineChart } from "../components/SemiconductorLineChart";
 import { PriceWithChange } from "../components/PriceWithChange";
 import { ImeSearchInput } from "../components/ImeSearchInput";
@@ -95,6 +96,7 @@ function DomesticSectorExplorer({mode, sector, data, error, loading, refreshing,
   const pricedGroup = useMemo(() => data && histories && mode === "trends" ? sectorRankings({...data, stocks: priced}, level, period, "", "equal")[0] : null, [data, histories, mode, priced, level, period]);
   const groups = useMemo(() => sortSectors(directory.map(group => group.key === pricedGroup?.key ? pricedGroup : group), groupSort.key, groupSort.direction), [directory, pricedGroup, groupSort]);
   const members = useMemo(() => sortSectorMembers(priced.filter(stock => !query.trim() || `${stock.name} ${stock.code} ${sectorLabel(stock.industry)}`.toLowerCase().includes(query.trim().toLowerCase())), memberSort.key, memberSort.direction, period), [priced, query, memberSort, period]);
+  const stockList = useStockList(members, JSON.stringify([data?.date, board, industry, level, mode === "trends" ? active?.key : sector, query, period, memberSort.key, memberSort.direction]));
   const chart = useMemo(() => data && histories ? sectorHistorySeries(histories, period, data.date) : null, [histories, period, data]);
   const title = sector === "all" ? "국내 전체 섹터" : sectorLabel(sector);
   const returnTo = `/sector-${mode}?${params}`;
@@ -119,8 +121,9 @@ function DomesticSectorExplorer({mode, sector, data, error, loading, refreshing,
         {mode === "stocks" && !historyKey && <p className="semiFootnote">섹터나 업종을 선택하면 수익률을 계산합니다.</p>}
         {mode === "stocks" && historyKey && !histories && <p role="status">선택한 종목의 일봉을 불러오는 중…</p>}
         {mode === "stocks" && histories && progress && progress.errors > 0 && <p className="semiFootnote" role="status">{progress.errors}개 종목의 일봉을 불러오지 못했습니다.</p>}
-        <div className="semiTableWrap"><table className="semiTable sectorExplorerMembers"><thead><tr>{memberHeading("name", "종목")}<th scope="col">섹터 · 업종</th>{memberHeading("exchange", "시장")}{memberHeading("price", "최근 가격")}{memberHeading("return", `${label} 수익률`)}{memberHeading("turnover", "거래대금")}{memberHeading("marketCap", "시가총액")}</tr></thead><tbody>{members.map(stock => <tr key={stock.ticker}><th scope="row"><Link className="semiStockLink" to={stockLink(stock)}><strong>{stock.name}</strong><span>{stock.code}</span></Link></th><td>{sectorLabel(stock.sector)}<small>{sectorLabel(stock.industry)}</small></td><td>{stock.exchange}</td><td className="semiNumber"><PriceWithChange price={stock.price} change={stock.change_pct} /></td><td className={`semiNumber ${tone(stock.returns[period])}`}>{formatPercent(stock.returns[period])}</td><td className="semiNumber">{sectorMoney(stock.turnover)}</td><td className="semiNumber">{sectorMoney(stock.market_cap)}</td></tr>)}</tbody></table></div>
+        <div className="semiTableWrap"><table className="semiTable sectorExplorerMembers"><thead><tr>{memberHeading("name", "종목")}<th scope="col">섹터 · 업종</th>{memberHeading("exchange", "시장")}{memberHeading("price", "최근 가격")}{memberHeading("return", `${label} 수익률`)}{memberHeading("turnover", "거래대금")}{memberHeading("marketCap", "시가총액")}</tr></thead><tbody>{stockList.visible.map(stock => <tr key={stock.ticker}><th scope="row"><Link className="semiStockLink" to={stockLink(stock)}><strong>{stock.name}</strong><span>{stock.code}</span></Link></th><td>{sectorLabel(stock.sector)}<small>{sectorLabel(stock.industry)}</small></td><td>{stock.exchange}</td><td className="semiNumber"><PriceWithChange price={stock.price} change={stock.change_pct} /></td><td className={`semiNumber ${tone(stock.returns[period])}`}>{formatPercent(stock.returns[period])}</td><td className="semiNumber">{sectorMoney(stock.turnover)}</td><td className="semiNumber">{sectorMoney(stock.market_cap)}</td></tr>)}</tbody></table></div>
         {!members.length && <p className="semiEmpty">조건에 맞는 종목이 없습니다.</p>}
+        <MoreStocks {...stockList.more} />
       </section>
       {mode === "trends" && active && <section className="semiPanel sectorExplorerChart"><div className="semiPanelHeading semiHeadingSplit"><div><h2>{active.name} 주가 추이</h2><p>기준값 100 · 조정 종가 동일 비중 · {chart?.count ?? 0}/{active.members.length}개 종목 계산</p></div>{periodTabs}</div>
         {chartLoading ? <p role="status">일봉 조회 중 {progress?.checked ?? 0}/{progress?.total ?? 0}종목</p> : <SemiconductorLineChart points={chart?.points ?? []} title={`${active.name} ${label} 추이`} unit="지수" />}

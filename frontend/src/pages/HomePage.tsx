@@ -6,6 +6,7 @@ import { usePollingData } from "../dataClient/usePollingData";
 import { DataRefreshStatus } from "../components/DataRefreshStatus";
 import { ErrorNotice } from "../components/ErrorNotice";
 import { LoadingSpinner } from "../components/LoadingSpinner";
+import { MoreStocks, useStockList } from "../components/StockListPagination";
 import { livePriceLabel } from "../dataClient/liveStockDataClient";
 
 export function HomePage() {
@@ -19,6 +20,7 @@ export function HomePage() {
       .filter((stock) => stock.is_target)
       .sort((left, right) => compareMarketCapDesc(left, right) || left.ticker.localeCompare(right.ticker));
   }, [index]);
+  const stockList = useStockList(featured);
 
   return (
     <main className="pageShell">
@@ -53,7 +55,7 @@ export function HomePage() {
               <span>{featured.length}개</span>
             </div>
             <div className="stockGrid">
-              {featured.map((stock) => (
+              {stockList.visible.map((stock) => (
                 <Link className="stockTile" key={stock.ticker} to={`/stocks/${encodeURIComponent(stock.ticker)}`}>
                   <span className="tickerText">{stock.ticker}</span>
                   <strong>{stock.name_kr}</strong>
@@ -63,6 +65,7 @@ export function HomePage() {
                 </Link>
               ))}
             </div>
+            <MoreStocks {...stockList.more} />
           </section>
         </>
       ) : null}

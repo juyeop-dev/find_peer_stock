@@ -21,7 +21,7 @@ const server = createServer(async (request, response) => {
   const relative = pathname.startsWith("/assets/") || pathname.startsWith("/data/") ? pathname.slice(1) : "index.html";
   try {
     const body = await readFile(join(frontend, "dist", relative));
-    const mime = { ".js": "text/javascript", ".css": "text/css", ".json": "application/json", ".html": "text/html" };
+    const mime = { ".js": "text/javascript", ".css": "text/css", ".json": "application/json", ".html": "text/html", ".gz": "application/gzip" };
     response.writeHead(200, { "Content-Type": mime[extname(relative)] });
     response.end(body);
   } catch {
@@ -130,12 +130,14 @@ try {
   await send("Page.enable");
   await send("Page.navigate", { url: `${origin}/semiconductors` });
   await until(() => evaluate("document.querySelectorAll('.semiStockPriceTable tbody tr').length > 0"), "Semiconductor stocks did not load.");
-  assert.equal(await evaluate("document.querySelectorAll('.semiStockPriceTable tbody tr').length"), 102);
+  const rowCount = () => evaluate("document.querySelectorAll('.semiStockPriceTable tbody tr').length");
+  assert.equal(await rowCount(), 30);
+  await evaluate("document.querySelector('.semiStockPriceTable').closest('.semiPanel').querySelector('.stockListMore').click()");
+  await until(async () => await rowCount() === 60, "The next 30 semiconductor stocks did not load.");
   const stockOverviewLayout = await overviewLayout();
   assert.deepEqual(await evaluate("[...document.querySelectorAll('.semiStockPriceTable th')].map(item => item.innerText.replace(/[↕↑↓]/g, '').trim())"),
     ["종목", "대분류", "중분류", "소분류", "시장", "가격", "시가총액", "기준일", "등락률", "30일 수익률", "최근 1년 매출", "최근 1년 영업이익", "실적 기간"]);
   assert.equal(await evaluate("[...document.querySelectorAll('.semiStockPriceTable .semiFinancialPeriod')].every(cell => cell.innerText.includes('2025년 3Q~2026년 2Q') && cell.innerText.includes('TTM'))"), true);
-  const caps = () => evaluate("[...document.querySelectorAll('.semiStockPriceTable tbody tr')].map(row => row.cells[6].innerText.trim())");
   const clickSort = (label) => evaluate(`[...document.querySelectorAll('.semiStockPriceTable .semiSortButton')].find(button => button.innerText.includes(${JSON.stringify(label)})).click()`);
   const numericRows = async (table, column) => {
     const values = await evaluate(`[...document.querySelectorAll('.${table} tbody tr')].map(row => row.cells[${column}].innerText.trim())`);
@@ -151,11 +153,13 @@ try {
     assert.ok(values.slice(available.length).every(Number.isNaN), "Missing values must sort last.");
   };
   await clickSort("시가총액");
-  assert.equal(await evaluate("document.querySelector('.semiStockPriceTable th[aria-sort=descending]')?.innerText.includes('시가총액')"), true);
-  const descendingCaps = await caps();
-  await clickSort("시가총액");
   assert.equal(await evaluate("document.querySelector('.semiStockPriceTable th[aria-sort=ascending]')?.innerText.includes('시가총액')"), true);
-  assert.deepEqual(await caps(), descendingCaps.reverse());
+  assert.equal(await rowCount(), 30);
+  assertOrder(await numericRows("semiStockPriceTable", 6), "asc");
+  await clickSort("시가총액");
+  assert.equal(await evaluate("document.querySelector('.semiStockPriceTable th[aria-sort=descending]')?.innerText.includes('시가총액')"), true);
+  assert.equal(await rowCount(), 30);
+  assertOrder(await numericRows("semiStockPriceTable", 6), "desc");
   for (const [label, column] of [["등락률", 8], ["30일 수익률", 9], ["최근 1년 매출", 10], ["최근 1년 영업이익", 11]]) {
     await clickSort(label);
     assert.equal(await evaluate(`document.querySelector('.semiStockPriceTable th[aria-sort=descending]')?.innerText.includes(${JSON.stringify(label)})`), true);

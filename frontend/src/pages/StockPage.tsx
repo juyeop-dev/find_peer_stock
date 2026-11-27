@@ -59,7 +59,7 @@ export function StockPage() {
             {summary.peer_groups.length > 0 ? (
               summary.peer_groups.map((group) => (
                 <PeerGroupSection
-                  key={`${group.group.name}-${group.group.summary ?? ""}`}
+                  key={JSON.stringify([summary.company.ticker, group.group.name, group.group.summary])}
                   group={group}
                 />
               ))

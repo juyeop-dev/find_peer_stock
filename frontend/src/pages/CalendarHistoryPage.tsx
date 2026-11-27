@@ -2,6 +2,7 @@ import { useCallback, useMemo, useRef, useState } from "react";
 import { Link, useLocation, useSearchParams } from "react-router-dom";
 import { ErrorNotice } from "../components/ErrorNotice";
 import { LoadingSpinner } from "../components/LoadingSpinner";
+import { MoreStocks, useStockList } from "../components/StockListPagination";
 import { getCalendarHistory, getNewHighIndex, getTurnoverIndex } from "../dataClient/staticStockDataClient";
 import { usePollingData } from "../dataClient/usePollingData";
 import { addMoney, formatHistoryMoney, historyDays, mergeHistoryStocks, summarizeDays } from "../dataClient/calendarHistory";
@@ -24,7 +25,6 @@ export function CalendarHistoryPage() {
   const location = useLocation();
   const { data: indexes, error, loading } = usePollingData(loadIndexes);
   const [search, setSearch] = useState("");
-  const [visibleStocks, setVisibleStocks] = useState(50);
   const kind: HistoryKind = params.get("kind") === "turnover" ? "turnover" : "new-highs";
   const yearly = params.get("view") === "year";
   const markets = indexes?.highs.markets ?? [];
@@ -58,8 +58,9 @@ export function CalendarHistoryPage() {
   const stocks = useMemo(() => history ? mergeHistoryStocks(history, prefix) : [], [history, prefix]);
   const query = search.trim().toLocaleLowerCase();
   const matchingStocks = stocks.filter((stock) => [stock.name, stock.ticker, stock.category, stock.exchange].join(" ").toLocaleLowerCase().includes(query));
+  const stockList = useStockList(matchingStocks, JSON.stringify([kind, marketId, prefix, query]));
   const quoteTargets = useRef<StockRequest[]>([]);
-  quoteTargets.current = matchingStocks.slice(0, visibleStocks);
+  quoteTargets.current = stockList.visible;
   const loadQuotes = useCallback((signal: AbortSignal, fromSource = false): Promise<SourceMetadata> => fromSource ? refreshQuotes(quoteTargets.current, signal) : Promise.resolve({}), [marketId, kind, prefix]);
   const sourceQuotes = usePollingData(loadQuotes);
   const index = kind === "new-highs" ? indexes?.highs : indexes?.turnover;
@@ -83,7 +84,6 @@ export function CalendarHistoryPage() {
       else next.set(key, value);
     }
     setParams(next);
-    setVisibleStocks(50);
     setSearch("");
   }
   const rows = yearly ? months
@@ -187,7 +187,7 @@ export function CalendarHistoryPage() {
       <section className="historyPanel" aria-busy={historyLoading}>
         <div className="historySectionHeading"><div><h3>종목별 누적 기록 <span>{history ? `${number(stocks.length)}종목` : ""}</span></h3>
           <p>{kind === "new-highs" ? "신고가를 기록한 날짜가 많은 순서입니다." : "거래대금 상위 30위에 등장한 날짜가 많은 순서입니다. 거래대금은 등장일에 한해 합산합니다."}</p></div>
-          <input type="search" aria-label="누적 종목 검색" placeholder="종목명 · 티커 · 업종 검색" value={search} onChange={(event) => { setSearch(event.target.value); setVisibleStocks(50); }} />
+          <input type="search" aria-label="누적 종목 검색" placeholder="종목명 · 티커 · 업종 검색" value={search} onChange={(event) => setSearch(event.target.value)} />
         </div>
         {historyLoading ? <LoadingSpinner /> : null}
         {historyError ? <><ErrorNotice message={historyError} /><button className="historyRetry" onClick={refresh}>다시 불러오기</button></> : null}
@@ -196,7 +196,7 @@ export function CalendarHistoryPage() {
             <th scope="col">순번</th><th scope="col">종목</th><th scope="col">업종</th><th scope="col">등장일</th>
             {kind === "new-highs" ? <th scope="col">52주 / 역대</th> : <th scope="col">누적 거래대금</th>}
             <th scope="col">최초 기록</th><th scope="col">최근 기록</th>{sourceQuotes.lastSourceAt ? <th scope="col">현재가 · 직접 조회</th> : null}
-          </tr></thead><tbody>{matchingStocks.slice(0, visibleStocks).map((stock, i) => <tr key={stock.ticker}>
+          </tr></thead><tbody>{stockList.visible.map((stock, i) => <tr key={stock.ticker}>
             <td>{i + 1}</td><th scope="row"><Link to={calendarStockLink(stock.ticker, kind, marketId, stock.dates.at(-1)!, `${location.pathname}${location.search}`)}
               title={`${stock.name} 종목 상세 보기`}><strong>{stock.name}</strong><small>{stock.ticker} · {stock.exchange}</small></Link></th>
             <td className="historyCategory">{stock.category}</td><td><strong>{stock.dates.length}일</strong></td>
@@ -205,7 +205,7 @@ export function CalendarHistoryPage() {
             {sourceQuotes.lastSourceAt ? <td className="sourceQuote">{livePriceLabel(stock.ticker) ?? "조회 실패 · 기존 기록 유지"}</td> : null}
           </tr>)}</tbody></table></div>
           {!matchingStocks.length ? <div className="historyEmpty"><strong>{search ? "검색 결과가 없습니다." : "이 기간에 기록된 종목이 없습니다."}</strong></div> : null}
-          {matchingStocks.length > visibleStocks ? <button className="historyShowMore" onClick={() => setVisibleStocks((value) => value + 50)}>50종목 더 보기 · {number(visibleStocks)} / {number(matchingStocks.length)}</button> : null}
+          <MoreStocks {...stockList.more} />
         </> : null}
       </section>
       <footer className="historyFootnote"><strong>집계 기준</strong><p>누적 건수는 종목과 거래일의 조합을 셉니다. 고유 종목 수는 선택 기간의 티커 중복을 제거합니다.

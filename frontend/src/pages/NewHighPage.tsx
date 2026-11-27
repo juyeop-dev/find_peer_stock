@@ -2,6 +2,7 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import { ErrorNotice } from "../components/ErrorNotice";
 import { LoadingSpinner } from "../components/LoadingSpinner";
+import { MoreStocks, useStockList } from "../components/StockListPagination";
 import { NewHighCalendar } from "../components/NewHighCalendar";
 import { PeriodReturns } from "../components/PeriodReturns";
 import { DataRefreshStatus } from "../components/DataRefreshStatus";
@@ -152,6 +153,8 @@ export function NewHighPage() {
     && [entry.name, entry.ticker, entry.category, entry.reason, entry.description,
       report?.category_reasons?.[entry.category]].filter(Boolean).join(" ").toLocaleLowerCase().includes(query))
     .sort((left, right) => compareMarketCapDesc(left, right) || left.ticker.localeCompare(right.ticker));
+  const stockList = useStockList(filteredEntries, JSON.stringify([marketId, selectedDate, exchange, highType, query]));
+  const shownEntries = new Set(stockList.visible);
 
   function selectDate(date: string) {
     setParams({ market: marketId, exchange, date });
@@ -307,15 +310,15 @@ export function NewHighPage() {
               </div> : <div className="newHighResults" aria-live="polite">
                 {HIGH_TYPES.filter((type) => highType === "all" || type.id === highType).map((type) => {
                   const typedEntries = filteredEntries.filter((entry) => entry.high_type === type.id);
-                  if (!typedEntries.length) return null;
+                  if (!typedEntries.some(entry => shownEntries.has(entry))) return null;
                   const groups = new Map<string, NewHighEntry[]>();
                   typedEntries.forEach((entry) => groups.set(entry.category, [...(groups.get(entry.category) ?? []), entry]));
                   return <section className={`newHighTypeSection ${type.id}`} key={type.id}>
                     <header><div><h3><i />{type.label}<span>{typedEntries.length}</span></h3><p>{type.description}</p></div></header>
-                    {[...groups].map(([category, stocks]) => <article className="newHighTheme" key={category}>
+                    {[...groups].filter(([, stocks]) => stocks.some(entry => shownEntries.has(entry))).map(([category, stocks]) => <article className="newHighTheme" key={category}>
                       <header><h4>{category}<span>{stocks.length}종목</span></h4>
                         {report.category_reasons?.[category] ? <p>{report.category_reasons[category]}</p> : null}</header>
-                      <ul>{stocks.map((entry) => {
+                      <ul>{stocks.filter(entry => shownEntries.has(entry)).map((entry) => {
                         const externalQuoteLink = getExternalQuoteLink(entry.ticker);
                         return <li key={entry.ticker}>
                         <div className="newHighStockTop"><div className="newHighStockIdentity"><Link className="newHighStockDetailLink"
@@ -352,6 +355,7 @@ export function NewHighPage() {
                   </section>;
                 })}
               </div>}
+              <MoreStocks {...stockList.more} />
               {report.sources?.length ? <footer className="newHighSources"><strong>자료 출처</strong>
                 {report.sources.map((source, i) => source.url && /^https?:\/\//i.test(source.url)
                   ? <a key={i} href={source.url} target="_blank" rel="noopener noreferrer">{source.label} ↗</a>

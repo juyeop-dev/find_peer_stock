@@ -107,7 +107,7 @@ try {
   const expanded=await evaluate("(()=>{const row=document.querySelector('.sectorRankingTable tr.selected');return {key:row.dataset.sector,inline:row.nextElementSibling.classList.contains('sectorExpansionRow'),count:document.querySelectorAll('.sectorMemberTable tbody tr').length,code:document.querySelector('.sectorMemberTable .semiStockLink span').innerText,price:document.querySelector('.sectorMemberTable tbody tr .stockPriceValue').innerText};})()");
   const [parent,industry]=expanded.key.split('\t');
   const expectedMembers=sourceStocks.map(classifiedSectorStock).filter(stock=>stock.date===historic.date&&stock.sector===parent&&stock.industry===industry);
-  assert.equal(expanded.inline,true);assert.equal(expanded.count,expectedMembers.length);
+  assert.equal(expanded.inline,true);assert.equal(expanded.count,Math.min(30,expectedMembers.length));
   assert.equal(Number(expanded.price.replace(/[^0-9.]/g,'')),expectedMembers.find(stock=>stock.code===expanded.code).price);
   const sourceBefore=statuses.filter(item=>item.kind==='sectors').length;
   await evaluate("document.querySelector('.refreshButton').click()");

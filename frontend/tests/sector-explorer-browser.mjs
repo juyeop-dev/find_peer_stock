@@ -61,23 +61,33 @@ try {
   }
   await send("Runtime.enable");await send("Network.enable");
   await navigate("/semiconductors");
-  await until(()=>evaluate("document.querySelectorAll('[aria-label=\"탐색할 섹터\"] option').length>15 && document.querySelectorAll('.semiStockPriceTable tbody tr').length>100"),"Legacy semiconductor classifications missing");
+  await until(()=>evaluate("document.querySelectorAll('[aria-label=\"탐색할 섹터\"] option').length>15 && document.querySelectorAll('.semiStockPriceTable tbody tr').length===30"),"Legacy semiconductor classifications missing");
   await evaluate("(()=>{const select=document.querySelector('[aria-label=\"탐색할 섹터\"]');select.value='Finance';select.dispatchEvent(new Event('change',{bubbles:true}));})()");
-  await until(()=>evaluate(`document.querySelectorAll('.sectorExplorerMembers tbody tr').length===${finance.length}`),"Finance stocks did not load");
+  await until(()=>evaluate("document.querySelectorAll('.sectorExplorerMembers tbody tr').length===30"),"Finance stocks did not load");
   assert.equal(await evaluate("new URL(location.href).searchParams.get('sector')"),"Finance");
-  const expected=finance.map(stock=>stock.code).sort();
-  assert.deepEqual((await codes(".sectorExplorerMembers")).sort(),expected);
+  const expected=sortSectorMembers(finance,"marketCap","desc","month").map(stock=>stock.code);
+  assert.deepEqual(await codes(".sectorExplorerMembers"),expected.slice(0,30));
   await checkPriceChanges(".sectorExplorerMembers");
+  await click(".domesticSectorExplorer .stockListMore");
+  await until(async()=>(await codes(".sectorExplorerMembers")).length===Math.min(60,finance.length),"The next 30 finance stocks did not load");
+  assert.deepEqual(await codes(".sectorExplorerMembers"),expected.slice(0,60));
   assert.equal(await evaluate("[...document.querySelectorAll('.sectorExplorerMembers .semiStockLink')].find(link=>link.querySelector('span').innerText==='024110')?.querySelector('strong').innerText"), "기업은행");
   for(const [column,key] of [[1,"name"],[3,"exchange"],[4,"price"],[5,"return"],[6,"turnover"],[7,"marketCap"]]) {
     for(let pass=0;pass<2;pass++) {
       await click(`.sectorExplorerMembers thead th:nth-child(${column}) button`);
       const direction=await evaluate(`document.querySelector('.sectorExplorerMembers thead th:nth-child(${column})').getAttribute('aria-sort')`);
+      assert.equal((await codes(".sectorExplorerMembers")).length,30);
       if(key==="return") await checkReturnOrder(".sectorExplorerMembers",column,direction);
-      else assert.deepEqual(await codes(".sectorExplorerMembers"),sortSectorMembers(finance,key,direction==="ascending"?"asc":"desc","month").map(stock=>stock.code));
+      else assert.deepEqual(await codes(".sectorExplorerMembers"),sortSectorMembers(finance,key,direction==="ascending"?"asc":"desc","month").slice(0,30).map(stock=>stock.code));
     }
   }
   const largest=[...finance].sort((a,b)=>b.market_cap-a.market_cap)[0];
+  while (!(await codes(".sectorExplorerMembers")).includes(largest.code)) {
+    const count = (await codes(".sectorExplorerMembers")).length;
+    assert.ok(count < finance.length, "Largest stock missing from the full finance list");
+    await click(".domesticSectorExplorer .stockListMore");
+    await until(async()=>(await codes(".sectorExplorerMembers")).length>count,"The next finance stocks did not load");
+  }
   await evaluate(`[...document.querySelectorAll('.sectorExplorerMembers .semiStockLink')].find(link=>link.querySelector('span').innerText===${JSON.stringify(largest.code)}).click()`);
   await until(()=>evaluate("Boolean(document.querySelector('.stockMetricTable tbody td'))"),"Finance detail metrics missing");
   const metricAlignments=await evaluate("({heads:[...document.querySelectorAll('.stockMetricTable th')].map(node=>getComputedStyle(node).textAlign),values:[...document.querySelectorAll('.stockMetricTable td')].map(node=>getComputedStyle(node).textAlign),text:[...document.querySelectorAll('.stockMetricTable td')].map(node=>node.innerText)})");
@@ -111,14 +121,14 @@ try {
   await navigate("/semiconductors/trends");
   await until(()=>evaluate("Boolean(document.querySelector('.semiTrendTable')) && document.querySelector('[aria-label=\"탐색할 섹터\"]')?.value==='semiconductors'"),"Original semiconductor trends unavailable");
   await navigate("/sectors?level=sector&selected=Finance");
-  await until(()=>evaluate(`document.querySelectorAll('.sectorMemberTable tbody tr').length===${finance.length}`),"Sector ranking members unavailable");
+  await until(()=>evaluate("document.querySelectorAll('.sectorMemberTable tbody tr').length===30"),"Sector ranking members unavailable");
   await checkPriceChanges(".sectorMemberTable");
   for(const [index,key] of [[1,"name"],[2,"exchange"],[3,"price"],[4,"return"],[5,"turnover"],[6,"marketCap"],[7,"basis"]]) {
     for(let pass=0;pass<2;pass++) {
       await click(`.sectorMemberTable thead th:nth-child(${index}) button`);
       const direction=await evaluate(`document.querySelector('.sectorMemberTable thead th:nth-child(${index})').getAttribute('aria-sort')`);
       if(key==="return") await checkReturnOrder(".sectorMemberTable",index,direction);
-      else assert.deepEqual(await codes(".sectorMemberTable"),sortSectorMembers(finance,key,direction==="ascending"?"asc":"desc","day").map(stock=>stock.code));
+      else assert.deepEqual(await codes(".sectorMemberTable"),sortSectorMembers(finance,key,direction==="ascending"?"asc":"desc","day").slice(0,30).map(stock=>stock.code));
     }
   }
   await navigate(`/market-stocks/055550.KS?${new URLSearchParams({source:"sectors",market:"korea",date:source.date})}`);

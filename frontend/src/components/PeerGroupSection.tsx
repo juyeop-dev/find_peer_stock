@@ -10,6 +10,7 @@ import {
   quoteRefreshNotice
 } from "../dataClient/formatters";
 import type { PeerGroup } from "../dataClient/types";
+import { MoreStocks, useStockList } from "./StockListPagination";
 
 interface PeerGroupSectionProps {
   group: PeerGroup;
@@ -20,6 +21,7 @@ export function PeerGroupSection({ group }: PeerGroupSectionProps) {
     compareMarketCapDesc(left.quote, right.quote)
     || left.company.ticker.localeCompare(right.company.ticker)
   );
+  const stockList = useStockList(peers);
 
   return (
     <section className="peerSection">
@@ -44,7 +46,7 @@ export function PeerGroupSection({ group }: PeerGroupSectionProps) {
             </tr>
           </thead>
           <tbody>
-            {peers.map((peer) => {
+            {stockList.visible.map((peer) => {
               const tone = changeTone(peer.quote);
               const refreshNotice = quoteRefreshNotice(peer.quote);
               const externalQuoteLink = getExternalQuoteLink(peer.company.ticker);
@@ -80,6 +82,7 @@ export function PeerGroupSection({ group }: PeerGroupSectionProps) {
           </tbody>
         </table>
       </div>
+      <MoreStocks {...stockList.more} />
     </section>
   );
 }

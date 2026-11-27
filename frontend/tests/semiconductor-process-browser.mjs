@@ -21,7 +21,7 @@ const server = createServer(async (request, response) => {
   const relative = pathname.startsWith("/assets/") || pathname.startsWith("/data/") ? pathname.slice(1) : "index.html";
   try {
     const body = await readFile(join(frontend, "dist", relative));
-    const mime = { ".js": "text/javascript", ".css": "text/css", ".json": "application/json", ".html": "text/html" };
+    const mime = { ".js": "text/javascript", ".css": "text/css", ".json": "application/json", ".html": "text/html", ".gz": "application/gzip" };
     response.writeHead(200, { "Content-Type": mime[extname(relative)] });
     response.end(body);
   } catch {
@@ -88,13 +88,23 @@ try {
   });
   await send("Runtime.enable");
   await send("Page.navigate", { url: `${origin}/semiconductors` });
-  await until(() => evaluate("document.querySelectorAll('.semiStockPriceTable tbody tr').length === 114"), "114 companies did not load");
+  await until(() => evaluate("document.querySelectorAll('.semiStockPriceTable tbody tr').length === 30"), "The first 30 companies did not load");
   const setFilter = (index, value) => evaluate(`(() => { const el = document.querySelectorAll('.semiFilters select')[${index}]; el.value = ${JSON.stringify(value)}; el.dispatchEvent(new Event('change', {bubbles:true})); })()`);
   const codes = () => evaluate("[...document.querySelectorAll('.semiStockLink span')].map(el => el.innerText).sort()");
+  const expand = async () => {
+    while (await evaluate("Boolean(document.querySelector('.semiStockPriceTable').closest('.semiPanel').querySelector('.stockListMore'))")) {
+      const count = (await codes()).length;
+      await evaluate("document.querySelector('.semiStockPriceTable').closest('.semiPanel').querySelector('.stockListMore').click()");
+      await until(async () => (await codes()).length > count, "The next group of companies did not load");
+    }
+  };
+  await expand();
+  assert.equal((await codes()).length, expected.stocks.length);
   for (const process of review.processes) {
     await setFilter(0, process.major ?? "전공정 소부장");
     await setFilter(1, process.middle);
     await setFilter(2, process.minor);
+    await expand();
     assert.deepEqual(await codes(), process.members.map(ticker => ticker.slice(0, 6)).sort(), process.minor);
   }
   await setFilter(0, "");

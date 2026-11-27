@@ -2,6 +2,7 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import { ErrorNotice } from "../components/ErrorNotice";
 import { LoadingSpinner } from "../components/LoadingSpinner";
+import { MoreStocks, useStockList } from "../components/StockListPagination";
 import { PeriodReturns } from "../components/PeriodReturns";
 import { TurnoverCalendar } from "../components/TurnoverCalendar";
 import { getTurnoverIndex, getTurnoverReport } from "../dataClient/staticStockDataClient";
@@ -99,6 +100,7 @@ export function TurnoverPage() {
   const entries = (report?.entries ?? []).filter((entry) => [entry.name, entry.ticker, entry.sector, entry.industry]
     .join(" ").toLocaleLowerCase().includes(query));
   const days = useMemo(() => Object.fromEntries(reports.map((item) => [item.date, item.count])), [reports]);
+  const stockList = useStockList(entries, JSON.stringify([marketId, selectedDate, search]));
 
   function selectDate(date: string) { setParams({ market: marketId, date }); setMonth(date.slice(0, 7)); }
   function selectMarket(id: string) { setParams({ market: id }); setSearch(""); }
@@ -138,7 +140,7 @@ export function TurnoverPage() {
             <div className="turnoverToolbar"><p>{report.summary}</p><input type="search" value={search} onChange={(event) => setSearch(event.target.value)} placeholder="종목명 · 티커 · 산업 검색" aria-label="순위표 검색" /></div>
             <div className="turnoverTableWrap"><table className="turnoverTable"><thead><tr>
               <th>순위</th><th>종목명</th><th>{sourceMetadata(report).source_fetched_at ? "제공처 최근가" : "당일 종가"}</th><th>등락률</th><th>거래대금</th><th>시가총액</th><th>산업</th>
-            </tr></thead><tbody>{entries.map((entry) => {
+            </tr></thead><tbody>{stockList.visible.map((entry) => {
               const quote = getExternalQuoteLink(entry.ticker);
               return <tr key={entry.ticker}><td className="turnoverRank"><strong>{entry.rank}</strong></td><td><Link className="turnoverCompany"
                 to={calendarStockLink(entry.ticker, "turnover", marketId, selectedDate, `/turnover?${new URLSearchParams({ market: marketId, date: selectedDate })}`)}
@@ -150,6 +152,7 @@ export function TurnoverPage() {
                 <td className="number turnoverValue"><strong>{formatHundredMillions(entry.turnover, entry.turnover_currency ?? entry.currency)}</strong></td><td className="number marketCapValue">{formatHundredMillions(entry.market_cap, entry.market_cap_currency ?? entry.currency, true)}</td>
                 <td><span className="turnoverIndustry"><strong>{entry.sector}</strong><small>{entry.industry}</small></span></td></tr>;
             })}</tbody></table></div>
+            <MoreStocks {...stockList.more} />
             {entries.length === 0 ? <div className="turnoverEmpty compact"><strong>검색 결과가 없습니다.</strong><button onClick={() => setSearch("")}>검색 초기화</button></div> : null}
             {report.sources?.length ? <div className="turnoverSources"><strong>자료</strong>{report.sources.map((source) => source.url ? <a key={source.label} href={source.url} target="_blank" rel="noreferrer">{source.label}</a> : <span key={source.label}>{source.label}</span>)}</div> : null}
           </> : null}

@@ -143,6 +143,22 @@ a {
   gap: 12px;
 }
 
+.stockListMore {
+  display: block;
+  margin: 16px auto 0;
+  padding: 9px 22px;
+  border: 1px solid #cddde5;
+  border-radius: 8px;
+  background: #f6fafc;
+  color: #145b72;
+  font: inherit;
+  font-weight: 650;
+  cursor: pointer;
+}
+
+.stockListMore:hover { background: #eaf4f8; }
+.stockListMore:focus-visible { outline: 2px solid #17819a; outline-offset: 2px; }
+
 .stockTile {
   min-height: 140px;
   padding: 18px;
