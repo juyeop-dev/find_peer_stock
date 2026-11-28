@@ -18,15 +18,15 @@ export interface ReplaySettings {
   autoPeer: boolean; peerReason?: string;
 }
 export function initialReplaySettings(ticker?: string, name?: string, exchange?: string, now = new Date()): ReplaySettings {
-  const selections = REPLAY_PRESET.map(row => ({ ...row }));
+  const end = new Intl.DateTimeFormat("sv-SE", { timeZone: "Asia/Seoul" }).format(now);
+  const selections = REPLAY_PRESET.map(row => ({ ...row, start: "2026-01-01", end }));
   if (ticker) {
-    const end = new Intl.DateTimeFormat("sv-SE", { timeZone: "Asia/Seoul" }).format(now);
     const [year, month, day] = end.split("-").map(Number);
     const start = new Date(Date.UTC(year - 1, month - 1, Math.min(day, new Date(Date.UTC(year - 1, month, 0)).getUTCDate()))).toISOString().slice(0, 10);
     selections[0] = { ticker, name: name ?? ticker, exchange, start, end };
     selections[1] = { ticker: "", name: "비교 종목 선택", start, end };
   }
-  return { selections, overlay: Boolean(ticker), kind: ticker ? "line" : "candles", interval: "day", average: false, volume: false, logarithmic: false, count: ticker ? null : 25, speed: 2, autoPeer: Boolean(ticker) };
+  return { selections, overlay: true, kind: ticker ? "line" : "candles", interval: "day", average: false, volume: false, logarithmic: false, count: null, speed: 2, autoPeer: Boolean(ticker) };
 }
 export function restoreReplaySettings(raw: string | null, fallback: ReplaySettings, stockContext = false): ReplaySettings {
   try {
@@ -65,6 +65,13 @@ export function hasOHLC(bar: ReplayBar): boolean {
 export function replayRange(bars: ReplayBar[], start: string, end: string): ReplayBar[] {
   if (!validReplayDate(start) || !validReplayDate(end) || start > end) throw new Error("시작일과 종료일을 확인해 주세요.");
   return bars.filter(bar => bar.date >= start && bar.date <= end);
+}
+
+export function alignReplayDates(first: ReplayBar[], second: ReplayBar[]): ReplayBar[][] {
+  const secondDates = new Set(second.map(bar => bar.date));
+  const shared = first.filter(bar => secondDates.has(bar.date));
+  const sharedDates = new Set(shared.map(bar => bar.date));
+  return [shared, second.filter(bar => sharedDates.has(bar.date))];
 }
 // Aggregate only the bars already revealed by replay. A weekly/monthly bar
 // must never contain a high, low, close or volume from a hidden future day.

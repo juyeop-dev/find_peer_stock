@@ -1,0 +1,275 @@
+{
+  "schema_version": 1,
+  "market": "us",
+  "date": "2013-06-05",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "DXCM",
+      "name": "DexCom, Inc.",
+      "exchange": "NASDAQ",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "업종: Health Technology · Medical Specialties",
+      "description": "DexCom, Inc. · Medical Specialties",
+      "change_pct": 0.8321789743860553,
+      "session_open": 5.389999866485596,
+      "session_close": 5.452499866485596,
+      "session_volume": 2460000.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:DXCM",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/DXCM/history/",
+        "date": "2013-06-05",
+        "daily_high": 5.494999885559082,
+        "prior_all_time_or_current_month_high": 6.675000190734863,
+        "passes_close_filter": true,
+        "source_symbol": "NASDAQ:DXCM",
+        "yahoo_symbol": "DXCM"
+      }
+    },
+    {
+      "ticker": "HELE",
+      "name": "Helen of Troy Limited",
+      "exchange": "NASDAQ",
+      "category": "Consumer Durables",
+      "high_type": "all_time",
+      "reason": "업종: Consumer Durables · Home Furnishings",
+      "description": "Helen of Troy Limited · Home Furnishings",
+      "change_pct": 0.27308990487879825,
+      "session_open": 40.11000061035156,
+      "session_close": 40.38999938964844,
+      "session_volume": 145300.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:HELE",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/HELE/history/",
+        "date": "2013-06-05",
+        "daily_high": 40.65999984741211,
+        "prior_all_time_or_current_month_high": 40.65999984741211,
+        "passes_close_filter": true,
+        "source_symbol": "NASDAQ:HELE",
+        "yahoo_symbol": "HELE"
+      }
+    },
+    {
+      "ticker": "MU",
+      "name": "Micron Technology, Inc.",
+      "exchange": "NASDAQ",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Semiconductors",
+      "description": "Micron Technology, Inc. · Semiconductors",
+      "change_pct": 2.6473135662410607,
+      "session_open": 11.6899995803833,
+      "session_close": 12.020000457763672,
+      "session_volume": 40890700.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:MU",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/MU/history/",
+        "date": "2013-06-05",
+        "daily_high": 12.140000343322754,
+        "prior_all_time_or_current_month_high": 97.5,
+        "passes_close_filter": true,
+        "source_symbol": "NASDAQ:MU",
+        "yahoo_symbol": "MU"
+      }
+    },
+    {
+      "ticker": "NWFL",
+      "name": "Norwood Financial Corp.",
+      "exchange": "NASDAQ",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "업종: Finance · Regional Banks",
+      "description": "Norwood Financial Corp. · Regional Banks",
+      "change_pct": 0.2888292750602872,
+      "session_open": 20.600000381469727,
+      "session_close": 20.833332061767578,
+      "session_volume": 3750.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:NWFL",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/NWFL/history/",
+        "date": "2013-06-05",
+        "daily_high": 21.239999771118164,
+        "prior_all_time_or_current_month_high": 21.239999771118164,
+        "passes_close_filter": true,
+        "source_symbol": "NASDAQ:NWFL",
+        "yahoo_symbol": "NWFL"
+      }
+    },
+    {
+      "ticker": "OPBK",
+      "name": "OP Bancorp",
+      "exchange": "NASDAQ",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "업종: Finance · Regional Banks",
+      "description": "OP Bancorp · Regional Banks",
+      "change_pct": 3.0042993113079675,
+      "session_open": 4.800000190734863,
+      "session_close": 4.800000190734863,
+      "session_volume": 10500.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:OPBK",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/OPBK/history/",
+        "date": "2013-06-05",
+        "daily_high": 4.800000190734863,
+        "prior_all_time_or_current_month_high": 14.75,
+        "passes_close_filter": true,
+        "source_symbol": "NASDAQ:OPBK",
+        "yahoo_symbol": "OPBK"
+      }
+    },
+    {
+      "ticker": "RRGB",
+      "name": "Red Robin Gourmet Burgers, Inc.",
+      "exchange": "NASDAQ",
+      "category": "Consumer Services",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Services · Restaurants",
+      "description": "Red Robin Gourmet Burgers, Inc. · Restaurants",
+      "change_pct": 1.1425481956633954,
+      "session_open": 55.33000183105469,
+      "session_close": 55.77000045776367,
+      "session_volume": 427200.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:RRGB",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/RRGB/history/",
+        "date": "2013-06-05",
+        "daily_high": 56.310001373291016,
+        "prior_all_time_or_current_month_high": 62.90999984741211,
+        "passes_close_filter": true,
+        "source_symbol": "NASDAQ:RRGB",
+        "yahoo_symbol": "RRGB"
+      }
+    },
+    {
+      "ticker": "WLDN",
+      "name": "Willdan Group, Inc.",
+      "exchange": "NASDAQ",
+      "category": "Commercial Services",
+      "high_type": "52_week",
+      "reason": "업종: Commercial Services · Miscellaneous Commercial Services",
+      "description": "Willdan Group, Inc. · Miscellaneous Commercial Services",
+      "change_pct": 3.9999961853027344,
+      "session_open": 3.0,
+      "session_close": 3.119999885559082,
+      "session_volume": 32600.0,
+      "currency": "USD",
+      "source_symbol": "NASDAQ:WLDN",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/WLDN/history/",
+        "date": "2013-06-05",
+        "daily_high": 3.2799999713897705,
+        "prior_all_time_or_current_month_high": 11.149999618530273,
+        "passes_close_filter": true,
+        "source_symbol": "NASDAQ:WLDN",
+        "yahoo_symbol": "WLDN"
+      }
+    },
+    {
+      "ticker": "GJR",
+      "name": "STRATS Trust for Allstate Corp For Proctr&Gambl Ctf 2006-1",
+      "exchange": "NYSE",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "업종: Finance · Finance/Rental/Leasing",
+      "description": "STRATS Trust for Allstate Corp For Proctr&Gambl Ctf 2006-1 · Finance/Rental/Leasing",
+      "change_pct": 0.0,
+      "session_open": 20.670000076293945,
+      "session_close": 20.670000076293945,
+      "session_volume": 300.0,
+      "currency": "USD",
+      "source_symbol": "NYSE:GJR",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/GJR/history/",
+        "date": "2013-06-05",
+        "daily_high": 20.670000076293945,
+        "prior_all_time_or_current_month_high": 22.40999984741211,
+        "passes_close_filter": true,
+        "source_symbol": "NYSE:GJR",
+        "yahoo_symbol": "GJR"
+      }
+    },
+    {
+      "ticker": "KAI",
+      "name": "Kadant Inc.",
+      "exchange": "NYSE",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Industrial Machinery",
+      "description": "Kadant Inc. · Industrial Machinery",
+      "change_pct": 1.451615364320813,
+      "session_open": 31.100000381469727,
+      "session_close": 31.450000762939453,
+      "session_volume": 101800.0,
+      "currency": "USD",
+      "source_symbol": "NYSE:KAI",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/KAI/history/",
+        "date": "2013-06-05",
+        "daily_high": 31.860000610351562,
+        "prior_all_time_or_current_month_high": 101.66666412353516,
+        "passes_close_filter": true,
+        "source_symbol": "NYSE:KAI",
+        "yahoo_symbol": "KAI"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-11-28T02:32:05.822970+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 5699,
+    "history_symbols": 2497,
+    "inactive_symbols": 3199,
+    "failed_symbols": 3,
+    "coverage_ratio": 0.9988,
+    "coverage_by_exchange": {
+      "NASDAQ": {
+        "covered": 1230,
+        "total": 1233
+      },
+      "NYSE": {
+        "covered": 1126,
+        "total": 1126
+      },
+      "AMEX": {
+        "covered": 141,
+        "total": 141
+      }
+    },
+    "session_symbols": 2420,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-11-28T02:32:05.822970+00:00"
+}

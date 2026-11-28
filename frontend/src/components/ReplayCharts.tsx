@@ -6,7 +6,7 @@ import type { ReplayBar, ReplayInterval, ReplayMarket } from "../dataClient/char
 
 interface Props {
   markets: (ReplayMarket | undefined)[]; ranges: ReplayBar[][]; count: number;
-  overlay: boolean; kind: "line" | "candles"; interval: ReplayInterval;
+  overlay: boolean; calendarAligned: boolean; kind: "line" | "candles"; interval: ReplayInterval;
   average: boolean; volume: boolean; logarithmic: boolean; fit: number;
 }
 const COLORS = ["#137d87", "#bd8526"];
@@ -18,7 +18,8 @@ export function ReplayCharts(props: Props) {
   const hosts = useRef<(HTMLDivElement | null)[]>([]), charts = useRef<IChartApi[]>([]);
   const update = useRef<(value: Props) => void>(() => {}), current = useRef(props);
   current.current = props;
-  const { overlay, kind, interval, average, volume, logarithmic, fit } = props;
+  const { overlay, calendarAligned, kind, interval, average, volume, logarithmic, fit } = props;
+  const elapsedAxis = overlay && !calendarAligned;
   useEffect(() => {
     const instances: IChartApi[] = [];
     const renderers: ((p: Props) => void)[] = [];
@@ -31,8 +32,8 @@ export function ReplayCharts(props: Props) {
         layout: { background: { type: ColorType.Solid, color: "#ffffff" }, textColor: "#586b7b", fontFamily: "system-ui, sans-serif", attributionLogo: true },
         grid: { vertLines: { color: "#edf2f5" }, horzLines: { color: "#edf2f5" } },
         rightPriceScale: { mode: overlay ? PriceScaleMode.Normal : logarithmic ? PriceScaleMode.Logarithmic : PriceScaleMode.Normal, scaleMargins: { top: .13, bottom: volume && !overlay ? .24 : .1 } },
-        timeScale: { borderColor: "#dce5e9", ...(overlay ? { tickMarkFormatter: (time: Time) => `${Math.round((Number(time) - 946684800) / 86400) + 1}봉` } : {}) },
-        ...(overlay ? { localization: { timeFormatter: (time: Time) => `경과 ${Math.round((Number(time) - 946684800) / 86400) + 1}봉` } } : {}),
+        timeScale: { borderColor: "#dce5e9", ...(elapsedAxis ? { tickMarkFormatter: (time: Time) => `${Math.round((Number(time) - 946684800) / 86400) + 1}봉` } : {}) },
+        ...(elapsedAxis ? { localization: { timeFormatter: (time: Time) => `경과 ${Math.round((Number(time) - 946684800) / 86400) + 1}봉` } } : {}),
       });
       instances.push(chart);
       const indexes = overlay ? [0, 1] : [panel];
@@ -46,7 +47,7 @@ export function ReplayCharts(props: Props) {
         renderers.push(p => {
           const visible = p.ranges[index]?.slice(0, p.count) ?? [];
           const bars = aggregateReplay(visible, p.interval);
-          if (line) line.setData(overlay ? replayReturns(visible).map((point, i) => ({ time: sessionTime(i), value: point.value })) : bars.map(bar => ({ time: bar.date, value: bar.close })));
+          if (line) line.setData(overlay ? replayReturns(visible).map(point => ({ time: elapsedAxis ? sessionTime(point.session - 1) : point.date, value: point.value })) : bars.map(bar => ({ time: bar.date, value: bar.close })));
           if (candles) candles.setData(bars.filter(hasOHLC).map(bar => ({ time: bar.date, open: bar.open!, high: bar.high!, low: bar.low!, close: bar.close })));
           if (ma) ma.setData(replayAverage(bars, 20).map(point => ({ time: point.date, value: point.value })));
           if (histogram) histogram.setData(bars.filter(bar => bar.volume !== null).map(bar => ({ time: bar.date, value: bar.volume!, color: bar.close >= (bar.open ?? bar.close) ? "#d456564d" : "#4387b54d" })));
@@ -76,7 +77,7 @@ export function ReplayCharts(props: Props) {
     update.current(current.current);
     instances.forEach(chart => chart.timeScale().fitContent());
     return () => { update.current = () => {}; charts.current = []; instances.forEach(chart => chart.remove()); };
-  }, [overlay, kind, interval, average, volume, logarithmic]);
+  }, [overlay, elapsedAxis, kind, interval, average, volume, logarithmic]);
   useEffect(() => {
     update.current(props);
     // Follow newly revealed bars while preserving user zoom. Seeking backwards
@@ -95,11 +96,12 @@ export function ReplayCharts(props: Props) {
     let top = 0; for (const img of images) { ctx.drawImage(img, 0, top); top += img.height; }
     canvas.toBlob(blob => { if (!blob) return; const url = URL.createObjectURL(blob), link = document.createElement("a"); link.href = url; link.download = "stock-peer-replay.png"; link.click(); setTimeout(() => URL.revokeObjectURL(url), 1000); });
   }
+  const comparisonAxis = calendarAligned ? "공통 거래일" : "경과 거래일";
   return <>
     <div className={`replayPlots ${overlay ? "isOverlay" : ""}`}>
       {(overlay ? [0] : [0, 1]).map(index => <div className="replayPlotPanel" key={index}>
-        <div className="replayPlotHeading">{overlay ? "수익률 비교 · 각 기간 첫 수정종가 = 0%" : `${props.markets[index]?.name ?? (index === 0 ? "차트 A" : "차트 B")} · ${props.markets[index]?.ticker === "^KS11" ? "pt" : props.markets[index]?.currency ?? ""}`}<span>{overlay ? "같은 경과 거래일끼리 정렬" : "휠로 확대 · 드래그로 이동"}</span></div>
-        <div ref={node => { hosts.current[index] = node; }} className="replayCanvas" role="img" aria-label={overlay ? "경과 봉 수 기준 수익률 비교 차트" : `${props.markets[index]?.name ?? "조회 중"} 리플레이 차트`} />
+        <div className="replayPlotHeading">{overlay ? "일봉 수익률 비교" : `${props.markets[index]?.name ?? (index === 0 ? "차트 A" : "차트 B")} · ${props.markets[index]?.ticker === "^KS11" ? "pt" : props.markets[index]?.currency ?? ""}`}<span>{overlay ? `${comparisonAxis} 기준` : "휠로 확대 · 드래그로 이동"}</span></div>
+        <div ref={node => { hosts.current[index] = node; }} className="replayCanvas" role="img" aria-label={overlay ? `${comparisonAxis} 기준 수익률 비교 차트` : `${props.markets[index]?.name ?? "조회 중"} 리플레이 차트`} />
       </div>)}
     </div>
     <div className="replayCanvasFooter"><span>차트: <a href="https://www.tradingview.com/" target="_blank" rel="noopener noreferrer">TradingView Lightweight Charts™</a> · Copyright (c) 2025 TradingView, Inc. · Apache 2.0</span><button type="button" onClick={download}>차트 이미지 저장</button></div>

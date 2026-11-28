@@ -28,16 +28,18 @@ test("index decline signs are preserved and another day's index cannot be paired
 });
 test("manual refresh queries both original markets and pairs exact dates even when the source ignores date parameters",async()=>{
   const calls=[];
-  const fetcher=async(url,options)=>{calls.push({url,options});return json(url.includes('/trend/daily')?{content:[row()]}:[index("2024-01-02")]);};
-  const value=await investorSnapshot("2024-01-02",fetcher);
-  assert.equal(value.date,"2024-01-02");assert.equal(value.markets.length,2);assert.equal(calls.length,4);
+  const fetcher=async(url,options)=>{calls.push({url,options});return json(url.includes('/trend/daily')?{content:[{...row(),bizdate:"20130102"}]}:[index("2013-01-02")]);};
+  const response=await handle(request({kind:"investors",date:"2013-01-02"}),{},fetcher);
+  assert.equal(response.status,200);
+  const value=await response.json();
+  assert.equal(value.date,"2013-01-02");assert.equal(value.markets.length,2);assert.equal(calls.length,4);
   assert.ok(calls.every(call=>call.options.cf.cacheTtl===0));
   assert.ok(calls.some(call=>call.url.includes("marketType=KOSPI"))&&calls.some(call=>call.url.includes("marketType=KOSDAQ")));
 });
 test("invalid requests are rejected before source access and missing selected dates never fall back to latest",async()=>{
   let calls=0;
   const fetcher=async(url)=>{calls++;return json(url.includes('/trend/daily')?{content:[row()]}:[index("2024-01-02")]);};
-  for(const date of ["2024-02-30","2013-12-31","2099-01-01",123])assert.equal((await handle(request({kind:"investors",date}),{},fetcher)).status,400);
+  for(const date of ["2024-02-30","2012-12-31","2099-01-01",123])assert.equal((await handle(request({kind:"investors",date}),{},fetcher)).status,400);
   assert.equal(calls,0);
   const response=await handle(request({kind:"investors",date:"2024-01-03"}),{},fetcher);
   assert.equal(response.status,502);

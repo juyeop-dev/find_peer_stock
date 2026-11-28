@@ -2,7 +2,7 @@ import { useEffect, useId, useMemo, useRef, useState } from "react";
 import { getChartSymbols, searchChartSymbols, similarChartSymbols } from "../dataClient/chartComparisonClient";
 import type { ChartSymbol } from "../dataClient/chartComparisonClient";
 import { getReplayMarket } from "../dataClient/chartReplayClient";
-import { hasOHLC, initialReplaySettings, restoreReplaySettings, REPLAY_PRESET, replayRange, replayReturns, validReplayDate } from "../dataClient/chartReplay";
+import { alignReplayDates, hasOHLC, initialReplaySettings, restoreReplaySettings, REPLAY_PRESET, replayRange, replayReturns, validReplayDate } from "../dataClient/chartReplay";
 import type { ReplayInterval, ReplayMarket, ReplaySelection, ReplaySettings as Settings } from "../dataClient/chartReplay";
 import { ImeSearchInput } from "./ImeSearchInput";
 import { ReplayCharts } from "./ReplayCharts";
@@ -62,9 +62,13 @@ export function ChartReplayWorkspace({ ticker, name, exchange, active = true }: 
   }, [ticker, active, settings.autoPeer, comparisonBase, comparisonTicker]);
   const first = useMarket(settings.selections[0], retry[0]), second = useMarket(settings.selections[1], retry[1]);
   const markets = useMemo(() => [first.market, second.market], [first.market, second.market]);
-  const ranges = useMemo(() => settings.selections.map((selection, i) => replayRange(markets[i]?.bars ?? [], selection.start, selection.end)), [markets, settings.selections]);
-  const errors = [first, second].map((row, i) => !settings.selections[i].ticker ? "비교할 종목을 선택해 주세요." : row.error ?? (!row.loading && ranges[i].length < 2 ? "선택 기간에 거래일이 2개 이상 필요합니다. 제공 범위를 확인해 주세요." : ""));
-  const ready = !first.loading && !second.loading && errors.every(error => !error);
+  const [selectionA, selectionB] = settings.selections;
+  const calendarAligned = !ticker && selectionA.start === selectionB.start && selectionA.end === selectionB.end;
+  const selectedRanges = useMemo(() => settings.selections.map((selection, i) => replayRange(markets[i]?.bars ?? [], selection.start, selection.end)), [markets, settings.selections]);
+  const ranges = useMemo(() => calendarAligned ? alignReplayDates(selectedRanges[0], selectedRanges[1]) : selectedRanges, [calendarAligned, selectedRanges]);
+  const errors = [first, second].map((row, i) => !settings.selections[i].ticker ? "비교할 종목을 선택해 주세요." : row.error ?? (!row.loading && selectedRanges[i].length < 2 ? "선택 기간에 거래일이 2개 이상 필요합니다. 제공 범위를 확인해 주세요." : ""));
+  const missingCommonDates = calendarAligned && !first.loading && !second.loading && errors.every(error => !error) && ranges[0].length < 2;
+  const ready = !first.loading && !second.loading && errors.every(error => !error) && !missingCommonDates;
   // Stop at the shorter history: both panels advance one actual daily session
   // per tick. Different market holidays do not create artificial bars.
   const maximum = ready ? Math.min(...ranges.map(rows => rows.length)) : 1;
@@ -108,7 +112,7 @@ export function ChartReplayWorkspace({ ticker, name, exchange, active = true }: 
     catch { setNotice("브라우저 저장 공간에 접근할 수 없습니다. 현재 화면은 계속 사용할 수 있습니다."); }
   }
   return <section ref={root} tabIndex={-1} className={`semiPanel chartReplayWorkspace${expanded ? " replayExpanded" : ""}`} role={expanded ? "dialog" : undefined} aria-modal={expanded ? true : undefined} aria-label="차트 리플레이 작업 공간">
-    <div className="replayHeading"><div><p className="eyebrow">CHART WORKSPACE</p><h2>차트 비교 · 리플레이</h2><p>{ticker ? "비슷한 종목의 같은 기간 수익률을 겹쳐 비교하세요." : "다른 시기의 시장을 같은 속도로 살펴보세요."}</p></div><div className="replayHeadingActions"><button type="button" disabled={!ready} onClick={save}>설정 저장</button><button type="button" aria-pressed={expanded} onClick={() => setExpanded(value => !value)}>{expanded ? "크게 보기 닫기" : "크게 보기"}</button></div></div>
+    <div className="replayHeading"><div><p className="eyebrow">CHART WORKSPACE</p><h2>차트 비교 · 리플레이</h2><p>{ticker ? "비슷한 종목의 같은 기간 수익률을 겹쳐 비교하세요." : "같은 날짜의 시장 수익률을 겹쳐 비교할 수 있습니다."}</p></div><div className="replayHeadingActions"><button type="button" disabled={!ready} onClick={save}>설정 저장</button><button type="button" aria-pressed={expanded} onClick={() => setExpanded(value => !value)}>{expanded ? "크게 보기 닫기" : "크게 보기"}</button></div></div>
     <div className="replayToolbar">
       <div className="replaySegment" role="group" aria-label="비교 레이아웃"><button type="button" aria-pressed={!settings.overlay} onClick={() => patch({ overlay: false })}>나란히 보기</button><button type="button" aria-pressed={settings.overlay} onClick={() => patch({ overlay: true })}>수익률 겹쳐 보기</button></div>
       <label>봉 간격<select aria-label="리플레이 봉 간격" value={settings.interval} disabled={settings.overlay} onChange={event => patch({ interval: event.target.value as ReplayInterval })}><option value="day">일</option><option value="week">주</option><option value="month">월</option></select></label>
@@ -120,7 +124,7 @@ export function ChartReplayWorkspace({ ticker, name, exchange, active = true }: 
     </div>
     <div className="replaySelections">{settings.selections.map((selection, index) => <SelectionEditor key={index} selection={selection} index={index} onApply={value => select(index, value)} />)}</div>
     {(peerStatus || settings.peerReason) && <p className="replayNotice" role="status" data-peer-reason>{peerStatus || `비교 종목 선정: ${settings.peerReason}`}</p>}
-    <div className="replayPreset"><button type="button" onClick={() => { setPlaying(false); patch({ selections: REPLAY_PRESET.map(row => ({ ...row })), count: 25, autoPeer: false, peerReason: undefined }); setPeerStatus(""); setFit(value => value + 1); }}>예시: 코스피 2022 ↔ 금 2024</button><span>각 시장의 첫 거래일부터 경과 거래일 수를 맞춥니다.</span></div>
+    <div className="replayPreset">{!ticker && <button type="button" onClick={() => { setPlaying(false); patch(initialReplaySettings()); setFit(value => value + 1); }}>코스피 · 금 기본 비교</button>}<button type="button" onClick={() => { setPlaying(false); patch({ selections: REPLAY_PRESET.map(row => ({ ...row })), count: 25, autoPeer: false, peerReason: undefined }); setPeerStatus(""); setFit(value => value + 1); }}>예시: 코스피 2022 ↔ 금 2024</button></div>
     <div className="replayTransport" role="group" aria-label="리플레이 재생 제어">
       <button type="button" disabled={!ready} onClick={() => { setPlaying(false); patch({ count: 1 }); }} aria-label="리플레이 처음으로">↤ 처음</button>
       <button type="button" disabled={!ready || count <= 1} onClick={() => { setPlaying(false); patch({ count: count - 1 }); }} aria-label="리플레이 이전 봉">이전 봉</button>
@@ -132,6 +136,7 @@ export function ChartReplayWorkspace({ ticker, name, exchange, active = true }: 
       <button type="button" disabled={!ready || count >= maximum} onClick={() => { setPlaying(false); patch({ count: maximum }); }}>끝으로</button>
     </div>
     {notice && <p className="replayNotice" role="status">{notice}</p>}
+    {missingCommonDates && <p className="replayNotice" role="alert">같은 날짜의 일봉이 양쪽에 2개 이상 필요합니다. 비교 기간을 확인해 주세요.</p>}
     <div className="replayReadouts">{[first, second].map((row, index) => {
       const visible = ranges[index].slice(0, ready ? count : 0), bar = visible.at(-1), change = replayReturns(visible).at(-1)?.value;
       return <div key={index} className={`replayReadout replayReadout${index}`} data-replay-series={index} data-visible-bars={visible.length} data-visible-date={bar?.date ?? ""}>
@@ -143,9 +148,9 @@ export function ChartReplayWorkspace({ ticker, name, exchange, active = true }: 
         {row.market && <p className="replaySource">제공 범위 {row.market.bars[0].date} ~ {row.market.bars.at(-1)!.date} · {row.market.source}{row.market.bars.every(hasOHLC) ? " · 실제 OHLC" : " · 종가 자료"}</p>}
       </div>;
     })}</div>
-    <ReplayCharts markets={markets} ranges={ready ? ranges : [[], []]} count={ready ? count : 0} overlay={settings.overlay} kind={candleAvailable ? settings.kind : "line"} interval={settings.interval} average={settings.average} volume={settings.volume} logarithmic={settings.logarithmic} fit={fit} />
-    <p className="replayFootnote">하루에 한 거래일씩 공개합니다. 주·월봉과 MA 20은 공개된 일봉으로만 계산하며, 두 기간 중 짧은 쪽의 마지막 거래일에서 함께 멈춥니다. 수익률은 각 기간 첫 수정종가 기준이며 환율은 반영하지 않습니다.{settings.selections.some(row => row.ticker === "GC=F") && " 금은 현물이 아닌 GC=F 연속선물로 계약 교체의 영향을 받습니다."}</p>
-    {settings.overlay && <p className="replayFootnote">수익률 겹쳐 보기는 일봉 기준입니다. 가로축의 1봉은 각 기간의 첫 거래일입니다.</p>}
+    <ReplayCharts markets={markets} ranges={ready ? ranges : [[], []]} count={ready ? count : 0} overlay={settings.overlay} calendarAligned={calendarAligned} kind={candleAvailable ? settings.kind : "line"} interval={settings.interval} average={settings.average} volume={settings.volume} logarithmic={settings.logarithmic} fit={fit} />
+    <p className="replayFootnote">{calendarAligned ? "두 시장이 모두 거래한 날짜를 비교합니다. 수익률은 첫 공통 거래일의 수정종가를 기준으로 계산합니다." : "각 시장의 첫 거래일부터 경과 거래일 수를 맞추고, 짧은 기간의 마지막 거래일에서 함께 멈춥니다. 수익률은 각 기간의 첫 수정종가를 기준으로 계산합니다."} 주·월봉과 MA 20은 공개된 일봉으로 계산하며, 수익률에 환율은 반영하지 않습니다.{settings.selections.some(row => row.ticker === "GC=F") && " 금은 GC=F 연속선물로 계약 교체의 영향을 받습니다."}</p>
+    {settings.overlay && !calendarAligned && <p className="replayFootnote">수익률 겹쳐 보기는 일봉 기준입니다. 가로축의 1봉은 각 기간의 첫 거래일입니다.</p>}
   </section>;
 }
 

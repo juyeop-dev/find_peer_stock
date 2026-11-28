@@ -1,0 +1,1128 @@
+{
+  "schema_version": 1,
+  "market": "taiwan",
+  "date": "2013-02-23",
+  "summary": "部分復元 · 부분 복원: 공식 거래소 토요일 실제 거래를 사용했습니다. 신고가는 전후 두 거래일 OHLC의 조정 기준이 일치하는 종목만 대조했으며, 원본 미지원·상장폐지 종목은 제외합니다.",
+  "sources": [
+    {
+      "label": "TWSE official historical daily report",
+      "url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?response=json&date=20130223&type=ALLBUT0999"
+    },
+    {
+      "label": "TPEX official historical daily report",
+      "url": "https://www.tpex.org.tw/www/zh-tw/afterTrading/dailyQuotes?date=2013/02/23&id=&response=json"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "1232.TW",
+      "name": "大統益",
+      "exchange": "TWSE",
+      "category": "Process Industries",
+      "high_type": "52_week",
+      "reason": "공식 거래소 토요일 실제 거래 확인 · 이전 52주와 전체기간 고가 대조",
+      "description": "TTET Union Corporation",
+      "currency": "TWD",
+      "source_symbol": "TWSE:1232",
+      "change_pct": 0.37807087954526697,
+      "session_open": 53.000001500010654,
+      "session_close": 53.10000150284086,
+      "session_volume": 33815.99904293663,
+      "high_verification": {
+        "source": "Official exchange Saturday quote aligned to verified same-listing split basis",
+        "date": "2013-02-23",
+        "daily_high": 53.200001505671075,
+        "prior_all_time_or_current_month_high": 56.099998,
+        "factor": 1.0000000283020878,
+        "verified_dates": [
+          "2013-02-22",
+          "2013-02-25"
+        ],
+        "original_bar": {
+          "date": "2013-02-23",
+          "open": 53.0,
+          "high": 53.2,
+          "low": 53.0,
+          "close": 53.1,
+          "volume": 33816.0
+        },
+        "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?response=json&date=20130223&type=ALLBUT0999",
+        "chart_cache": "data/tmp_tradingview_chart/1D/a688ada700b7e2cd482b379e5f12b8650014f434994720abbc4f09e87526d9f5.json",
+        "chart_sha256": "615dcc97f9231ed9393f30f3d3298597a423cbcc43e6e1fadaad7d464e3c1173"
+      }
+    },
+    {
+      "ticker": "1432.TW",
+      "name": "大魯閣",
+      "exchange": "TWSE",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "공식 거래소 토요일 실제 거래 확인 · 이전 52주와 전체기간 고가 대조",
+      "description": "TRK Corporation",
+      "currency": "TWD",
+      "source_symbol": "TWSE:1432",
+      "change_pct": 4.388715084689987,
+      "session_open": 23.669634487144545,
+      "session_close": 24.40244050841837,
+      "session_volume": 458325.9283489142,
+      "high_verification": {
+        "source": "Official exchange Saturday quote aligned to verified same-listing split basis",
+        "date": "2013-02-23",
+        "daily_high": 24.40244050841837,
+        "prior_all_time_or_current_month_high": 29.898486,
+        "factor": 1.46561204254765,
+        "verified_dates": [
+          "2013-02-22",
+          "2013-02-25"
+        ],
+        "original_bar": {
+          "date": "2013-02-23",
+          "open": 16.15,
+          "high": 16.65,
+          "low": 15.8,
+          "close": 16.65,
+          "volume": 671728.0
+        },
+        "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?response=json&date=20130223&type=ALLBUT0999",
+        "chart_cache": "data/tmp_tradingview_chart/1D/3544188df714f0b5a202247da25891853a273505eafc14256cc9bac57d8c97fa.json",
+        "chart_sha256": "7a17c15a068f4151a6e1ef564944a0c05e993e14afcff03d6a8d5c176d8c2037"
+      }
+    },
+    {
+      "ticker": "1467.TW",
+      "name": "南緯",
+      "exchange": "TWSE",
+      "category": "Process Industries",
+      "high_type": "52_week",
+      "reason": "공식 거래소 토요일 실제 거래 확인 · 이전 52주와 전체기간 고가 대조",
+      "description": "Tex-Ray Industrial Co., Ltd.",
+      "currency": "TWD",
+      "source_symbol": "TWSE:1467",
+      "change_pct": 2.2522522522522515,
+      "session_open": 11.2,
+      "session_close": 11.35,
+      "session_volume": 1404061.0,
+      "high_verification": {
+        "source": "Official exchange Saturday quote aligned to verified same-listing split basis",
+        "date": "2013-02-23",
+        "daily_high": 11.6,
+        "prior_all_time_or_current_month_high": 22.941173,
+        "factor": 1.0,
+        "verified_dates": [
+          "2013-02-22",
+          "2013-02-25"
+        ],
+        "original_bar": {
+          "date": "2013-02-23",
+          "open": 11.2,
+          "high": 11.6,
+          "low": 11.1,
+          "close": 11.35,
+          "volume": 1404061.0
+        },
+        "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?response=json&date=20130223&type=ALLBUT0999",
+        "chart_cache": "data/tmp_tradingview_chart/1D/76e0a177ae33c4065e9e969d8ad6fd1962f19543192e30450774140a867a808d.json",
+        "chart_sha256": "2f768ed2ae6cc445d50a1958bd69b7b4c7981c8f5b1e60628e2d6dcf29824af0"
+      }
+    },
+    {
+      "ticker": "1560.TW",
+      "name": "中砂",
+      "exchange": "TWSE",
+      "category": "Process Industries",
+      "high_type": "52_week",
+      "reason": "공식 거래소 토요일 실제 거래 확인 · 이전 52주와 전체기간 고가 대조",
+      "description": "Kinik Co.",
+      "currency": "TWD",
+      "source_symbol": "TWSE:1560",
+      "change_pct": 6.829768673086356,
+      "session_open": 50.000000444514484,
+      "session_close": 52.40000046585117,
+      "session_volume": 5829003.948178466,
+      "high_verification": {
+        "source": "Official exchange Saturday quote aligned to verified same-listing split basis",
+        "date": "2013-02-23",
+        "daily_high": 52.40000046585117,
+        "prior_all_time_or_current_month_high": 151.552765,
+        "factor": 1.0000000088902896,
+        "verified_dates": [
+          "2013-02-22",
+          "2013-02-25"
+        ],
+        "original_bar": {
+          "date": "2013-02-23",
+          "open": 50.0,
+          "high": 52.4,
+          "low": 50.0,
+          "close": 52.4,
+          "volume": 5829004.0
+        },
+        "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?response=json&date=20130223&type=ALLBUT0999",
+        "chart_cache": "data/tmp_tradingview_chart/1D/8970559f09110257f419d4e77b9e6c69537cdcd2d35ffb7b57c603f33e6f83de.json",
+        "chart_sha256": "f213417d3dea69ac2a16bf5b8c1f586b6232bd9f800505fdb32dc9f91fd4103f"
+      }
+    },
+    {
+      "ticker": "1773.TW",
+      "name": "勝一",
+      "exchange": "TWSE",
+      "category": "Process Industries",
+      "high_type": "52_week",
+      "reason": "공식 거래소 토요일 실제 거래 확인 · 이전 52주와 전체기간 고가 대조",
+      "description": "Shiny Chemical Industrial Co., Ltd.",
+      "currency": "TWD",
+      "source_symbol": "TWSE:1773",
+      "change_pct": 2.8169021211185807,
+      "session_open": 19.046069536335693,
+      "session_close": 19.491071161016436,
+      "session_volume": 996176.1382737391,
+      "high_verification": {
+        "source": "Official exchange Saturday quote aligned to verified same-listing split basis",
+        "date": "2013-02-23",
+        "daily_high": 19.513321242250473,
+        "prior_all_time_or_current_month_high": 23.40708564,
+        "factor": 0.44500162468074056,
+        "verified_dates": [
+          "2013-02-22",
+          "2013-02-25"
+        ],
+        "original_bar": {
+          "date": "2013-02-23",
+          "open": 42.8,
+          "high": 43.85,
+          "low": 42.8,
+          "close": 43.8,
+          "volume": 443300.0
+        },
+        "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?response=json&date=20130223&type=ALLBUT0999",
+        "chart_cache": "data/tmp_tradingview_chart/1D/1aa0a43b5122388be8d9837de70935e5bfb36538c004772b6aea7d22d6b6113d.json",
+        "chart_sha256": "c384e5548a8b4b4a59b801cfd93611bd8280bda19b944c7da016e7b7e3be4b9a"
+      }
+    },
+    {
+      "ticker": "1789.TW",
+      "name": "神隆",
+      "exchange": "TWSE",
+      "category": "Health Technology",
+      "high_type": "all_time",
+      "reason": "공식 거래소 토요일 실제 거래 확인 · 이전 52주와 전체기간 고가 대조",
+      "description": "Scinopharm Taiwan, Ltd.",
+      "currency": "TWD",
+      "source_symbol": "TWSE:1789",
+      "change_pct": 1.2278270243282652,
+      "session_open": 60.41149776161843,
+      "session_close": 60.98684535934813,
+      "session_volume": 12990661.175075218,
+      "high_verification": {
+        "source": "Official exchange Saturday quote aligned to verified same-listing split basis",
+        "date": "2013-02-23",
+        "daily_high": 63.28823575026692,
+        "prior_all_time_or_current_month_high": 63.28823575026692,
+        "factor": 0.8219251396138562,
+        "verified_dates": [
+          "2013-02-22",
+          "2013-02-25"
+        ],
+        "original_bar": {
+          "date": "2013-02-23",
+          "open": 73.5,
+          "high": 77.0,
+          "low": 73.4,
+          "close": 74.2,
+          "volume": 10677351.0
+        },
+        "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?response=json&date=20130223&type=ALLBUT0999",
+        "chart_cache": "data/tmp_tradingview_chart/1D/787e6f9fa1e595e5803c63f6c88f2f6970e6ec2c1883ca2816fc423882bcbcd0.json",
+        "chart_sha256": "629af6f31d38df4b47a92c98a43ed5e449cc1fb6181ff2eece0545ab545f1f54"
+      }
+    },
+    {
+      "ticker": "1799.TWO",
+      "name": "紅電醫",
+      "exchange": "TPEX",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "공식 거래소 토요일 실제 거래 확인 · 이전 52주와 전체기간 고가 대조",
+      "description": "Easywell Biomedicals, Inc.",
+      "currency": "TWD",
+      "source_symbol": "TPEX:1799",
+      "change_pct": 6.81818114450341,
+      "session_open": 33.36085294869146,
+      "session_close": 33.36085294869146,
+      "session_volume": 1347635.3158339567,
+      "high_verification": {
+        "source": "Official exchange Saturday quote aligned to verified same-listing split basis",
+        "date": "2013-02-23",
+        "daily_high": 33.36085294869146,
+        "prior_all_time_or_current_month_high": 54.848611,
+        "factor": 1.774513454717631,
+        "verified_dates": [
+          "2013-02-22",
+          "2013-02-25"
+        ],
+        "original_bar": {
+          "date": "2013-02-23",
+          "open": 18.8,
+          "high": 18.8,
+          "low": 18.8,
+          "close": 18.8,
+          "volume": 2391397.0
+        },
+        "source_url": "https://www.tpex.org.tw/www/zh-tw/afterTrading/dailyQuotes?date=2013/02/23&id=&response=json",
+        "chart_cache": "data/tmp_tradingview_chart/1D/ff523e2137cfc97a19e1b5960c84388c53edff258b7c009ff8c582641691be4a.json",
+        "chart_sha256": "0caa244ff45538a2b484842612b2f5e3a43f996b13750a02139b4e92bfcca3fd"
+      }
+    },
+    {
+      "ticker": "1904.TW",
+      "name": "正隆",
+      "exchange": "TWSE",
+      "category": "Process Industries",
+      "high_type": "52_week",
+      "reason": "공식 거래소 토요일 실제 거래 확인 · 이전 52주와 전체기간 고가 대조",
+      "description": "Cheng Loong Corp.",
+      "currency": "TWD",
+      "source_symbol": "TWSE:1904",
+      "change_pct": 0.7936507936507908,
+      "session_open": 12.65,
+      "session_close": 12.7,
+      "session_volume": 2252436.0,
+      "high_verification": {
+        "source": "Official exchange Saturday quote aligned to verified same-listing split basis",
+        "date": "2013-02-23",
+        "daily_high": 12.85,
+        "prior_all_time_or_current_month_high": 15.769223,
+        "factor": 1.0,
+        "verified_dates": [
+          "2013-02-22",
+          "2013-02-25"
+        ],
+        "original_bar": {
+          "date": "2013-02-23",
+          "open": 12.65,
+          "high": 12.85,
+          "low": 12.6,
+          "close": 12.7,
+          "volume": 2252436.0
+        },
+        "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?response=json&date=20130223&type=ALLBUT0999",
+        "chart_cache": "data/tmp_tradingview_chart/1D/d3269377ec645b63c2d318b95ca62d966696c8ed941972b358417cb00bfb189a.json",
+        "chart_sha256": "06d61751077c9c0542480503033dc4485926f9fae3024cb2b971f514f5303264"
+      }
+    },
+    {
+      "ticker": "1907.TW",
+      "name": "永豐餘",
+      "exchange": "TWSE",
+      "category": "Process Industries",
+      "high_type": "52_week",
+      "reason": "공식 거래소 토요일 실제 거래 확인 · 이전 52주와 전체기간 고가 대조",
+      "description": "YFY, Inc.",
+      "currency": "TWD",
+      "source_symbol": "TWSE:1907",
+      "change_pct": 6.040268456375841,
+      "session_open": 15.1,
+      "session_close": 15.8,
+      "session_volume": 37677586.0,
+      "high_verification": {
+        "source": "Official exchange Saturday quote aligned to verified same-listing split basis",
+        "date": "2013-02-23",
+        "daily_high": 15.9,
+        "prior_all_time_or_current_month_high": 16.970351,
+        "factor": 1.0,
+        "verified_dates": [
+          "2013-02-22",
+          "2013-02-25"
+        ],
+        "original_bar": {
+          "date": "2013-02-23",
+          "open": 15.1,
+          "high": 15.9,
+          "low": 15.1,
+          "close": 15.8,
+          "volume": 37677586.0
+        },
+        "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?response=json&date=20130223&type=ALLBUT0999",
+        "chart_cache": "data/tmp_tradingview_chart/1D/5c7593789f081b155c92343767c6536c7e69c3e92d47253746176f644eeb8db0.json",
+        "chart_sha256": "869a0954c33ed2334a2907c937c605b0739ff0314bd6e2ee24d9e07178381681"
+      }
+    },
+    {
+      "ticker": "2882.TW",
+      "name": "國泰金",
+      "exchange": "TWSE",
+      "category": "Finance",
+      "high_type": "52_week",
+      "reason": "공식 거래소 토요일 실제 거래 확인 · 이전 52주와 전체기간 고가 대조",
+      "description": "Cathay Financial Holdings Co., Ltd.",
+      "currency": "TWD",
+      "source_symbol": "TWSE:2882",
+      "change_pct": 0.5347562174229825,
+      "session_open": 32.664863456770405,
+      "session_close": 32.70835861450246,
+      "session_volume": 33533225.904943023,
+      "high_verification": {
+        "source": "Official exchange Saturday quote aligned to verified same-listing split basis",
+        "date": "2013-02-23",
+        "daily_high": 33.099815034090916,
+        "prior_all_time_or_current_month_high": 69.472756,
+        "factor": 0.8699031546410227,
+        "verified_dates": [
+          "2013-02-22",
+          "2013-02-25"
+        ],
+        "original_bar": {
+          "date": "2013-02-23",
+          "open": 37.55,
+          "high": 38.05,
+          "low": 37.55,
+          "close": 37.6,
+          "volume": 29170659.0
+        },
+        "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?response=json&date=20130223&type=ALLBUT0999",
+        "chart_cache": "data/tmp_tradingview_chart/1D/6810176825c358089da9e3d9e0d972a1480916098c09cf68c0605d903a0e2137.json",
+        "chart_sha256": "8ff05b35a80613b64b7787d3d7759e17959220e744d580d64cad054aec70eb5e"
+      }
+    },
+    {
+      "ticker": "2926.TWO",
+      "name": "誠品生",
+      "exchange": "TPEX",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "공식 거래소 토요일 실제 거래 확인 · 이전 52주와 전체기간 고가 대조",
+      "description": "Eslite Spectrum Corporation",
+      "currency": "TWD",
+      "source_symbol": "TPEX:2926",
+      "change_pct": 7.000000104999993,
+      "session_open": 241.90477423738318,
+      "session_close": 254.76191775,
+      "session_volume": 601215.269349259,
+      "high_verification": {
+        "source": "Official exchange Saturday quote aligned to verified same-listing split basis",
+        "date": "2013-02-23",
+        "daily_high": 254.76191775,
+        "prior_all_time_or_current_month_high": 254.76191775,
+        "factor": 0.9523810009345794,
+        "verified_dates": [
+          "2013-02-22",
+          "2013-02-25"
+        ],
+        "original_bar": {
+          "date": "2013-02-23",
+          "open": 254.0,
+          "high": 267.5,
+          "low": 250.5,
+          "close": 267.5,
+          "volume": 572586.0
+        },
+        "source_url": "https://www.tpex.org.tw/www/zh-tw/afterTrading/dailyQuotes?date=2013/02/23&id=&response=json",
+        "chart_cache": "data/tmp_tradingview_chart/1D/6488a92469029d8ea7618ba5704fee7c438753cc00b65537a85663665b6bb89b.json",
+        "chart_sha256": "4d7e94d0e73c18dd5105f98f080b460e1b33581f652d1dcde365619e3dd0d59d"
+      }
+    },
+    {
+      "ticker": "3023.TW",
+      "name": "信邦",
+      "exchange": "TWSE",
+      "category": "Distribution Services",
+      "high_type": "52_week",
+      "reason": "공식 거래소 토요일 실제 거래 확인 · 이전 52주와 전체기간 고가 대조",
+      "description": "SINBON Electronics Co., Ltd.",
+      "currency": "TWD",
+      "source_symbol": "TWSE:3023",
+      "change_pct": 6.9548864271931965,
+      "session_open": 25.327649812720846,
+      "session_close": 27.089159292176994,
+      "session_volume": 6231717.982800255,
+      "high_verification": {
+        "source": "Official exchange Saturday quote aligned to verified same-listing split basis",
+        "date": "2013-02-23",
+        "daily_high": 27.089159292176994,
+        "prior_all_time_or_current_month_high": 37.475922,
+        "factor": 0.952167286192513,
+        "verified_dates": [
+          "2013-02-22",
+          "2013-02-25"
+        ],
+        "original_bar": {
+          "date": "2013-02-23",
+          "open": 26.6,
+          "high": 28.45,
+          "low": 26.6,
+          "close": 28.45,
+          "volume": 5933638.0
+        },
+        "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?response=json&date=20130223&type=ALLBUT0999",
+        "chart_cache": "data/tmp_tradingview_chart/1D/7d3e21dc7a38725d407ff3967f29dc1c75ea5d43d80008b45d00f9a0eafb2ad9.json",
+        "chart_sha256": "21586d28371c64eeb14785da5a8d3ef26a54c2658bac91c78394d2762a5bcf2b"
+      }
+    },
+    {
+      "ticker": "3131.TWO",
+      "name": "弘塑",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "공식 거래소 토요일 실제 거래 확인 · 이전 52주와 전체기간 고가 대조",
+      "description": "Grand Process Technology Corporation",
+      "currency": "TWD",
+      "source_symbol": "TPEX:3131",
+      "change_pct": 6.833712984054663,
+      "session_open": 226.0,
+      "session_close": 234.5,
+      "session_volume": 1236892.0,
+      "high_verification": {
+        "source": "Official exchange Saturday quote aligned to verified same-listing split basis",
+        "date": "2013-02-23",
+        "daily_high": 234.5,
+        "prior_all_time_or_current_month_high": 234.5,
+        "factor": 1.0,
+        "verified_dates": [
+          "2013-02-22",
+          "2013-02-25"
+        ],
+        "original_bar": {
+          "date": "2013-02-23",
+          "open": 226.0,
+          "high": 234.5,
+          "low": 224.0,
+          "close": 234.5,
+          "volume": 1236892.0
+        },
+        "source_url": "https://www.tpex.org.tw/www/zh-tw/afterTrading/dailyQuotes?date=2013/02/23&id=&response=json",
+        "chart_cache": "data/tmp_tradingview_chart/1D/eea222bfe5abc0a17171caeffee234f7d086235eadf9e5d7d16a943f4a5f6c08.json",
+        "chart_sha256": "01cecba2ec700b0e97c2b3569ba374f985b4a02262864cf824e3d2b370ecc26e"
+      }
+    },
+    {
+      "ticker": "3516.TWO",
+      "name": "亞帝歐",
+      "exchange": "TPEX",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "공식 거래소 토요일 실제 거래 확인 · 이전 52주와 전체기간 고가 대조",
+      "description": "ADO Optronic Corp.",
+      "currency": "TWD",
+      "source_symbol": "TPEX:3516",
+      "change_pct": 6.692912308857291,
+      "session_open": 16.641808593196934,
+      "session_close": 16.765539512105462,
+      "session_volume": 372025.8477513626,
+      "high_verification": {
+        "source": "Official exchange Saturday quote aligned to verified same-listing split basis",
+        "date": "2013-02-23",
+        "daily_high": 16.765539512105462,
+        "prior_all_time_or_current_month_high": 176.18647145,
+        "factor": 1.2373091890852739,
+        "verified_dates": [
+          "2013-02-22",
+          "2013-02-25"
+        ],
+        "original_bar": {
+          "date": "2013-02-23",
+          "open": 13.45,
+          "high": 13.55,
+          "low": 13.45,
+          "close": 13.55,
+          "volume": 460311.0
+        },
+        "source_url": "https://www.tpex.org.tw/www/zh-tw/afterTrading/dailyQuotes?date=2013/02/23&id=&response=json",
+        "chart_cache": "data/tmp_tradingview_chart/1D/e96c5a18a2bdb66232e58ab49fd720bcf9212b743befa04d2ee1c2ddf33aa6b0.json",
+        "chart_sha256": "a3f0367efa520e9f69acc10d0cdcfedb4894081778cad9e1dc43bdd72f7d65df"
+      }
+    },
+    {
+      "ticker": "3556.TWO",
+      "name": "禾瑞亞",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "공식 거래소 토요일 실제 거래 확인 · 이전 52주와 전체기간 고가 대조",
+      "description": "eGalax_eMPIA Technology Inc.",
+      "currency": "TWD",
+      "source_symbol": "TPEX:3556",
+      "change_pct": 2.3899370130000097,
+      "session_open": 60.725279083921755,
+      "session_close": 61.63388675101285,
+      "session_volume": 1976237.781207241,
+      "high_verification": {
+        "source": "Official exchange Saturday quote aligned to verified same-listing split basis",
+        "date": "2013-02-23",
+        "daily_high": 61.93675597337655,
+        "prior_all_time_or_current_month_high": 143.437757,
+        "factor": 0.7571730559092488,
+        "verified_dates": [
+          "2013-02-22",
+          "2013-02-25"
+        ],
+        "original_bar": {
+          "date": "2013-02-23",
+          "open": 80.2,
+          "high": 81.8,
+          "low": 79.5,
+          "close": 81.4,
+          "volume": 1496354.0
+        },
+        "source_url": "https://www.tpex.org.tw/www/zh-tw/afterTrading/dailyQuotes?date=2013/02/23&id=&response=json",
+        "chart_cache": "data/tmp_tradingview_chart/1D/f4b3d4611233fb3bcc76c9cd04af600df316b3c339c0df4cdee5b8ee58e41848.json",
+        "chart_sha256": "a17c588e7f96464de3bd409b0b5fcce2080f9e2c9b6657b615abd94f6d7741f5"
+      }
+    },
+    {
+      "ticker": "3587.TWO",
+      "name": "閎康",
+      "exchange": "TPEX",
+      "category": "Commercial Services",
+      "high_type": "all_time",
+      "reason": "공식 거래소 토요일 실제 거래 확인 · 이전 52주와 전체기간 고가 대조",
+      "description": "Materials Analysis Technology Inc.",
+      "currency": "TWD",
+      "source_symbol": "TPEX:3587",
+      "change_pct": 6.982872232976667,
+      "session_open": 75.01892679851237,
+      "session_close": 78.3981577353823,
+      "session_volume": 2204768.5225387667,
+      "high_verification": {
+        "source": "Official exchange Saturday quote aligned to verified same-listing split basis",
+        "date": "2013-02-23",
+        "daily_high": 78.3981577353823,
+        "prior_all_time_or_current_month_high": 78.3981577353823,
+        "factor": 0.9654945533914076,
+        "verified_dates": [
+          "2013-02-22",
+          "2013-02-25"
+        ],
+        "original_bar": {
+          "date": "2013-02-23",
+          "open": 77.7,
+          "high": 81.2,
+          "low": 77.7,
+          "close": 81.2,
+          "volume": 2128692.0
+        },
+        "source_url": "https://www.tpex.org.tw/www/zh-tw/afterTrading/dailyQuotes?date=2013/02/23&id=&response=json",
+        "chart_cache": "data/tmp_tradingview_chart/1D/3e46667ef0f2bc7bd50cf19beec8f2eb93e3ba7d4682c6f94c317180b4fca8bd.json",
+        "chart_sha256": "0e344898146691afc30376fabae8026a7f61381b8e850eca218d8840cfd99288"
+      }
+    },
+    {
+      "ticker": "3630.TWO",
+      "name": "新鉅科",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "공식 거래소 토요일 실제 거래 확인 · 이전 52주와 전체기간 고가 대조",
+      "description": "Newmax Technology Co., Ltd.",
+      "currency": "TWD",
+      "source_symbol": "TPEX:3630",
+      "change_pct": 6.906906770548171,
+      "session_open": 64.1207925758722,
+      "session_close": 67.73591144513503,
+      "session_volume": 2441274.137632893,
+      "high_verification": {
+        "source": "Official exchange Saturday quote aligned to verified same-listing split basis",
+        "date": "2013-02-23",
+        "daily_high": 67.73591144513503,
+        "prior_all_time_or_current_month_high": 173.145172,
+        "factor": 0.951347070858638,
+        "verified_dates": [
+          "2013-02-22",
+          "2013-02-25"
+        ],
+        "original_bar": {
+          "date": "2013-02-23",
+          "open": 67.4,
+          "high": 71.2,
+          "low": 67.4,
+          "close": 71.2,
+          "volume": 2322499.0
+        },
+        "source_url": "https://www.tpex.org.tw/www/zh-tw/afterTrading/dailyQuotes?date=2013/02/23&id=&response=json",
+        "chart_cache": "data/tmp_tradingview_chart/1D/2435aa6d0c7d874ea4b016075147eb441657a91ec7398501e3abb5640d035ae9.json",
+        "chart_sha256": "c7b725a85afd2c4b279a70d22af0b0f0443eca80fb9f0adb38bee9e766ca5f31"
+      }
+    },
+    {
+      "ticker": "4128.TWO",
+      "name": "中天",
+      "exchange": "TPEX",
+      "category": "Health Technology",
+      "high_type": "all_time",
+      "reason": "공식 거래소 토요일 실제 거래 확인 · 이전 52주와 전체기간 고가 대조",
+      "description": "Microbio Co., Ltd.",
+      "currency": "TWD",
+      "source_symbol": "TPEX:4128",
+      "change_pct": 2.5572003579424463,
+      "session_open": 24.372253872091413,
+      "session_close": 24.894983177659057,
+      "session_volume": 18618878.827601027,
+      "high_verification": {
+        "source": "Official exchange Saturday quote aligned to verified same-listing split basis",
+        "date": "2013-02-23",
+        "daily_high": 25.94044178879435,
+        "prior_all_time_or_current_month_high": 25.94044178879435,
+        "factor": 0.6534116319595553,
+        "verified_dates": [
+          "2013-02-22",
+          "2013-02-25"
+        ],
+        "original_bar": {
+          "date": "2013-02-23",
+          "open": 37.3,
+          "high": 39.7,
+          "low": 37.2,
+          "close": 38.1,
+          "volume": 12165792.0
+        },
+        "source_url": "https://www.tpex.org.tw/www/zh-tw/afterTrading/dailyQuotes?date=2013/02/23&id=&response=json",
+        "chart_cache": "data/tmp_tradingview_chart/1D/a666041bc6da5c606b378273fc5266fe4eca1bcdd1f938dfdef33fee78b87ffd.json",
+        "chart_sha256": "3e93e3ec459aa327002718dfe3bdbb5b18f5a1c35893baf1acb25c8313ac678b"
+      }
+    },
+    {
+      "ticker": "4414.TW",
+      "name": "如興",
+      "exchange": "TWSE",
+      "category": "Consumer Non-Durables",
+      "high_type": "52_week",
+      "reason": "공식 거래소 토요일 실제 거래 확인 · 이전 52주와 전체기간 고가 대조",
+      "description": "Roo Hsing Co., Ltd.",
+      "currency": "TWD",
+      "source_symbol": "TWSE:4414",
+      "change_pct": 6.944444506536129,
+      "session_open": 31.208750469601206,
+      "session_close": 33.06982274531137,
+      "session_volume": 750877.662430791,
+      "high_verification": {
+        "source": "Official exchange Saturday quote aligned to verified same-listing split basis",
+        "date": "2013-02-23",
+        "daily_high": 33.06982274531137,
+        "prior_all_time_or_current_month_high": 100.20385412,
+        "factor": 2.8631881164771746,
+        "verified_dates": [
+          "2013-02-22",
+          "2013-02-25"
+        ],
+        "original_bar": {
+          "date": "2013-02-23",
+          "open": 10.9,
+          "high": 11.55,
+          "low": 10.9,
+          "close": 11.55,
+          "volume": 2149904.0
+        },
+        "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?response=json&date=20130223&type=ALLBUT0999",
+        "chart_cache": "data/tmp_tradingview_chart/1D/48c615946e0d20cbfeb6d8ed0689446f3113a2f157f483a3a7da8cb9e84828a3.json",
+        "chart_sha256": "761f723636d20fafae8d5b09a05d337c0c437658b17f558f8de2b2055e8f5629"
+      }
+    },
+    {
+      "ticker": "4743.TWO",
+      "name": "合一",
+      "exchange": "TPEX",
+      "category": "Health Technology",
+      "high_type": "all_time",
+      "reason": "공식 거래소 토요일 실제 거래 확인 · 이전 52주와 전체기간 고가 대조",
+      "description": "Oneness Biotech Co., Ltd.",
+      "currency": "TWD",
+      "source_symbol": "TPEX:4743",
+      "change_pct": 0.8488945842704654,
+      "session_open": 37.26741927662893,
+      "session_close": 37.456593993769175,
+      "session_volume": 19146743.046612833,
+      "high_verification": {
+        "source": "Official exchange Saturday quote aligned to verified same-listing split basis",
+        "date": "2013-02-23",
+        "daily_high": 39.726690599452155,
+        "prior_all_time_or_current_month_high": 39.726690599452155,
+        "factor": 0.6305823904674945,
+        "verified_dates": [
+          "2013-02-22",
+          "2013-02-25"
+        ],
+        "original_bar": {
+          "date": "2013-02-23",
+          "open": 59.1,
+          "high": 63.0,
+          "low": 58.0,
+          "close": 59.4,
+          "volume": 12073599.0
+        },
+        "source_url": "https://www.tpex.org.tw/www/zh-tw/afterTrading/dailyQuotes?date=2013/02/23&id=&response=json",
+        "chart_cache": "data/tmp_tradingview_chart/1D/b57c6d932e8fcb6931cdc6398a784bebc60a3763f36e5da321680ea69abe7f9c.json",
+        "chart_sha256": "8a7f79a09fb1984dad620fe7881ddba5ea416dc3d2dc6f6a61ed9fa16cf9f3c9"
+      }
+    },
+    {
+      "ticker": "5234.TW",
+      "name": "達興材料",
+      "exchange": "TWSE",
+      "category": "Process Industries",
+      "high_type": "all_time",
+      "reason": "공식 거래소 토요일 실제 거래 확인 · 이전 52주와 전체기간 고가 대조",
+      "description": "Daxin Materials Corporation",
+      "currency": "TWD",
+      "source_symbol": "TWSE:5234",
+      "change_pct": 3.5294130239409416,
+      "session_open": 51.60173972679502,
+      "session_close": 53.333341731049885,
+      "session_volume": 1510139.162217738,
+      "high_verification": {
+        "source": "Official exchange Saturday quote aligned to verified same-listing split basis",
+        "date": "2013-02-23",
+        "daily_high": 54.3723029336028,
+        "prior_all_time_or_current_month_high": 54.3723029336028,
+        "factor": 0.8658010021274332,
+        "verified_dates": [
+          "2013-02-22",
+          "2013-02-25"
+        ],
+        "original_bar": {
+          "date": "2013-02-23",
+          "open": 59.6,
+          "high": 62.8,
+          "low": 59.5,
+          "close": 61.6,
+          "volume": 1307480.0
+        },
+        "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?response=json&date=20130223&type=ALLBUT0999",
+        "chart_cache": "data/tmp_tradingview_chart/1D/0e0762c4ab9c0e6bb5193db64b8faa0d09caf75327a560a4d2646eab68b0ccda.json",
+        "chart_sha256": "dc23f685d3f4001afd8087bbb09e1797b5eafe2d6b1080a2a91cf61ee80f2aa5"
+      }
+    },
+    {
+      "ticker": "6130.TWO",
+      "name": "基因",
+      "exchange": "TPEX",
+      "category": "Health Technology",
+      "high_type": "52_week",
+      "reason": "공식 거래소 토요일 실제 거래 확인 · 이전 52주와 전체기간 고가 대조",
+      "description": "Shangya Technology Co Ltd",
+      "currency": "TWD",
+      "source_symbol": "TPEX:6130",
+      "change_pct": 3.7800687285223455,
+      "session_open": 139.373052,
+      "session_close": 143.165516,
+      "session_volume": 327954.5962730299,
+      "high_verification": {
+        "source": "Official exchange Saturday quote aligned to verified same-listing split basis",
+        "date": "2013-02-23",
+        "daily_high": 147.432038,
+        "prior_all_time_or_current_month_high": 2095.697282,
+        "factor": 0.948116,
+        "verified_dates": [
+          "2013-02-22",
+          "2013-02-25"
+        ],
+        "original_bar": {
+          "date": "2013-02-23",
+          "open": 147.0,
+          "high": 155.5,
+          "low": 145.5,
+          "close": 151.0,
+          "volume": 310939.0
+        },
+        "source_url": "https://www.tpex.org.tw/www/zh-tw/afterTrading/dailyQuotes?date=2013/02/23&id=&response=json",
+        "chart_cache": "data/tmp_tradingview_chart/1D/8de5f8521713c6192c205bac00db271154ec28420785f918d183853a02ecb2d4.json",
+        "chart_sha256": "48220f96e482fa4707dad2ff19707df838954e9f232ca3a045db7c17849343d5"
+      }
+    },
+    {
+      "ticker": "6189.TW",
+      "name": "豐藝",
+      "exchange": "TWSE",
+      "category": "Distribution Services",
+      "high_type": "52_week",
+      "reason": "공식 거래소 토요일 실제 거래 확인 · 이전 52주와 전체기간 고가 대조",
+      "description": "Promate Electronic Co., Ltd.",
+      "currency": "TWD",
+      "source_symbol": "TWSE:6189",
+      "change_pct": 1.1811023447387825,
+      "session_open": 21.166912936346154,
+      "session_close": 21.416915845043157,
+      "session_volume": 396715.3843006044,
+      "high_verification": {
+        "source": "Official exchange Saturday quote aligned to verified same-listing split basis",
+        "date": "2013-02-23",
+        "daily_high": 21.416915845043157,
+        "prior_all_time_or_current_month_high": 33.25261272,
+        "factor": 0.8333430289900061,
+        "verified_dates": [
+          "2013-02-22",
+          "2013-02-25"
+        ],
+        "original_bar": {
+          "date": "2013-02-23",
+          "open": 25.4,
+          "high": 25.7,
+          "low": 25.4,
+          "close": 25.7,
+          "volume": 330600.0
+        },
+        "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?response=json&date=20130223&type=ALLBUT0999",
+        "chart_cache": "data/tmp_tradingview_chart/1D/19152e326664559d7a15d754364734d9457dbe9ae2d1dddf97719c2a89f478d5.json",
+        "chart_sha256": "a6b02df27bf1e7280011d1031de93100a32cd3e07df23d623706ca7d3c890ba2"
+      }
+    },
+    {
+      "ticker": "6274.TWO",
+      "name": "台燿",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "공식 거래소 토요일 실제 거래 확인 · 이전 52주와 전체기간 고가 대조",
+      "description": "Taiwan Union Technology Corporation",
+      "currency": "TWD",
+      "source_symbol": "TPEX:6274",
+      "change_pct": 0.887573964497057,
+      "session_open": 17.0,
+      "session_close": 17.05,
+      "session_volume": 4726483.0,
+      "high_verification": {
+        "source": "Official exchange Saturday quote aligned to verified same-listing split basis",
+        "date": "2013-02-23",
+        "daily_high": 17.3,
+        "prior_all_time_or_current_month_high": 25.788079,
+        "factor": 1.0,
+        "verified_dates": [
+          "2013-02-22",
+          "2013-02-25"
+        ],
+        "original_bar": {
+          "date": "2013-02-23",
+          "open": 17.0,
+          "high": 17.3,
+          "low": 17.0,
+          "close": 17.05,
+          "volume": 4726483.0
+        },
+        "source_url": "https://www.tpex.org.tw/www/zh-tw/afterTrading/dailyQuotes?date=2013/02/23&id=&response=json",
+        "chart_cache": "data/tmp_tradingview_chart/1D/c3ce259cc779f7156d7d4c3f9feed99e9f8d8e38c35ec61bb0a57ea465a2b0b1.json",
+        "chart_sha256": "89c3c50a961f486344faa5996c9906cf058bdee86a6811cb629448de24c97b22"
+      }
+    },
+    {
+      "ticker": "6283.TW",
+      "name": "淳安",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "공식 거래소 토요일 실제 거래 확인 · 이전 52주와 전체기간 고가 대조",
+      "description": "Shun On Electronic Co., Ltd.",
+      "currency": "TWD",
+      "source_symbol": "TWSE:6283",
+      "change_pct": 1.4035072704200902,
+      "session_open": 24.674027459206272,
+      "session_close": 24.932845929058082,
+      "session_volume": 1176972.0305293929,
+      "high_verification": {
+        "source": "Official exchange Saturday quote aligned to verified same-listing split basis",
+        "date": "2013-02-23",
+        "daily_high": 25.364210045477773,
+        "prior_all_time_or_current_month_high": 40.124097,
+        "factor": 1.72545646567876,
+        "verified_dates": [
+          "2013-02-22",
+          "2013-02-25"
+        ],
+        "original_bar": {
+          "date": "2013-02-23",
+          "open": 14.3,
+          "high": 14.7,
+          "low": 14.25,
+          "close": 14.45,
+          "volume": 2030814.0
+        },
+        "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?response=json&date=20130223&type=ALLBUT0999",
+        "chart_cache": "data/tmp_tradingview_chart/1D/f942c8b7ab66499ca1772db5f686c74f4aaa2efe24c6b4f6b58ba98b3e6359a1.json",
+        "chart_sha256": "5e6703623f2781471b297a4c6a415dc5c3eb2c76fdd214fad649329cf1c531d1"
+      }
+    },
+    {
+      "ticker": "8114.TW",
+      "name": "振樺電",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "공식 거래소 토요일 실제 거래 확인 · 이전 52주와 전체기간 고가 대조",
+      "description": "Posiflex Technology Inc.",
+      "currency": "TWD",
+      "source_symbol": "TWSE:8114",
+      "change_pct": 0.9523786317686689,
+      "session_open": 55.90271371495327,
+      "session_close": 56.43512051223854,
+      "session_volume": 74795.06310409345,
+      "high_verification": {
+        "source": "Official exchange Saturday quote aligned to verified same-listing split basis",
+        "date": "2013-02-23",
+        "daily_high": 57.23373070816644,
+        "prior_all_time_or_current_month_high": 57.23373070816644,
+        "factor": 0.8873446621421154,
+        "verified_dates": [
+          "2013-02-22",
+          "2013-02-25"
+        ],
+        "original_bar": {
+          "date": "2013-02-23",
+          "open": 63.0,
+          "high": 64.5,
+          "low": 63.0,
+          "close": 63.6,
+          "volume": 66369.0
+        },
+        "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?response=json&date=20130223&type=ALLBUT0999",
+        "chart_cache": "data/tmp_tradingview_chart/1D/b623f700c92c0de1c32c83a09cf0c984dcad2c395ea2aa725a3b42b76c2f82c4.json",
+        "chart_sha256": "d3ae0a670ef260799417496019934617736a550ba599aa0b6739fd34a16747a8"
+      }
+    },
+    {
+      "ticker": "9910.TW",
+      "name": "豐泰",
+      "exchange": "TWSE",
+      "category": "Consumer Non-Durables",
+      "high_type": "all_time",
+      "reason": "공식 거래소 토요일 실제 거래 확인 · 이전 52주와 전체기간 고가 대조",
+      "description": "Feng Tay Enterprise Co., Ltd.",
+      "currency": "TWD",
+      "source_symbol": "TWSE:9910",
+      "change_pct": 1.0416616877476637,
+      "session_open": 20.816933974226806,
+      "session_close": 21.033777036458336,
+      "session_volume": 371961.1739935682,
+      "high_verification": {
+        "source": "Official exchange Saturday quote aligned to verified same-listing split basis",
+        "date": "2013-02-23",
+        "daily_high": 21.033777036458336,
+        "prior_all_time_or_current_month_high": 21.033777036458336,
+        "factor": 0.5421076555788231,
+        "verified_dates": [
+          "2013-02-22",
+          "2013-02-25"
+        ],
+        "original_bar": {
+          "date": "2013-02-23",
+          "open": 38.4,
+          "high": 38.8,
+          "low": 38.4,
+          "close": 38.8,
+          "volume": 201643.0
+        },
+        "source_url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?response=json&date=20130223&type=ALLBUT0999",
+        "chart_cache": "data/tmp_tradingview_chart/1D/c1bcf92507249eca9a9398e00b08645a4df493ed80e854413ea76f00198030d1.json",
+        "chart_sha256": "ebbbf27a07b4177c685f139d39081f7fbf70052b6f1a127119177629956f87d0"
+      }
+    },
+    {
+      "ticker": "9951.TWO",
+      "name": "皇田",
+      "exchange": "TPEX",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "공식 거래소 토요일 실제 거래 확인 · 이전 52주와 전체기간 고가 대조",
+      "description": "Macauto Industrial Co., Ltd",
+      "currency": "TWD",
+      "source_symbol": "TPEX:9951",
+      "change_pct": 1.2021846994535457,
+      "session_open": 45.699999506479486,
+      "session_close": 46.2999995,
+      "session_volume": 233782.00252464364,
+      "high_verification": {
+        "source": "Official exchange Saturday quote aligned to verified same-listing split basis",
+        "date": "2013-02-23",
+        "daily_high": 47.49999948704104,
+        "prior_all_time_or_current_month_high": 57.462438,
+        "factor": 0.999999989200864,
+        "verified_dates": [
+          "2013-02-22",
+          "2013-02-25"
+        ],
+        "original_bar": {
+          "date": "2013-02-23",
+          "open": 45.7,
+          "high": 47.5,
+          "low": 45.7,
+          "close": 46.3,
+          "volume": 233782.0
+        },
+        "source_url": "https://www.tpex.org.tw/www/zh-tw/afterTrading/dailyQuotes?date=2013/02/23&id=&response=json",
+        "chart_cache": "data/tmp_tradingview_chart/1D/886cdcd9a03859f882ccb2e6cd80ed6ba6addabe949d54327c700deae4085fb4.json",
+        "chart_sha256": "7c711b2065acb300dea06f956859cfd63022fc84e12461816b141a45d138b4ce"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "TWSE/TPEx exact-date official daily reports and verified same-listing TradingView historical basis",
+    "fetched_at": "2026-11-28T02:23:57.057141+00:00",
+    "universe_fetched_at": "2026-11-13T15:18:03.838472+00:00",
+    "scanned_symbols": 2362,
+    "session_symbols": 1274,
+    "history_symbols": 1261,
+    "coverage_status": "partial",
+    "universe": "Current listed stock universe; historical delisted stocks excluded",
+    "original_sources": [
+      {
+        "url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?response=json&date=20130222&type=ALLBUT0999",
+        "sha256": "22fcf2bfa5b1914beb257785be15c08bb0680060f299304af760114a4d8d37d8",
+        "cache": "data/tmp_2013/taiwan-official/478c91e5a3adc5b216c1c4c13ccdf51a299bafffbedf308c62d330aa71dbd4c8.json",
+        "exchange": "TWSE",
+        "date": "2013-02-22"
+      },
+      {
+        "url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?response=json&date=20130223&type=ALLBUT0999",
+        "sha256": "65de84c7e0e13027f8a26938ad4d02df1457f2eb2fb86610980b38e9623c69d4",
+        "cache": "data/tmp_2013/taiwan-official/e3c0803f6bf96707b2fe399e4187eae98453ab34d6fb988e0860f2bce70f614b.json",
+        "exchange": "TWSE",
+        "date": "2013-02-23"
+      },
+      {
+        "url": "https://www.twse.com.tw/exchangeReport/MI_INDEX?response=json&date=20130225&type=ALLBUT0999",
+        "sha256": "eaa83f9ccf0cadc50bc91ae5569f68c2e48732536d2fd3d1eb5a605839f0f95e",
+        "cache": "data/tmp_2013/taiwan-official/a0dd912f69e68295b1cdd4c0bfe20554162fed8bdc188ed1d9e4a85697a9e0d6.json",
+        "exchange": "TWSE",
+        "date": "2013-02-25"
+      },
+      {
+        "url": "https://www.tpex.org.tw/www/zh-tw/afterTrading/dailyQuotes?date=2013/02/22&id=&response=json",
+        "sha256": "2764bc79df390041ce3586ee3f8b0db996c08d7fbc7695fef67ab16abe2f5686",
+        "cache": "data/tmp_2013/taiwan-official/922b4b7157a36799883342f58ef6da4330a81c671d2c4b1c5afc1ed96c30779c.json",
+        "exchange": "TPEX",
+        "date": "2013-02-22"
+      },
+      {
+        "url": "https://www.tpex.org.tw/www/zh-tw/afterTrading/dailyQuotes?date=2013/02/23&id=&response=json",
+        "sha256": "5da8a98563cf17bc6e3b4f6f8ff1667de19a0985ca949bdc6593ec1dd8254a38",
+        "cache": "data/tmp_2013/taiwan-official/c941b9b083fab4209c81a17f4fb4ecb9abec9d858dccb3df214bdc38eda94983.json",
+        "exchange": "TPEX",
+        "date": "2013-02-23"
+      },
+      {
+        "url": "https://www.tpex.org.tw/www/zh-tw/afterTrading/dailyQuotes?date=2013/02/25&id=&response=json",
+        "sha256": "037815aa988c35fd10eab1979d92167cf92fedca03262e8c4eae45b1d5c96d6e",
+        "cache": "data/tmp_2013/taiwan-official/13a5457cc43da5adcf2acc9b94d98ad68e0821d49cb8d3996c7bc6cb5409df95.json",
+        "exchange": "TPEX",
+        "date": "2013-02-25"
+      }
+    ],
+    "unresolved_listings": {
+      "TWSE:1475": "'1475'",
+      "TWSE:1516": "'1516'",
+      "TWSE:2002A": "'2002A'",
+      "TWSE:2348": "'2348'",
+      "TWSE:2440": "'2440'",
+      "TPEX:3332": "'3332'",
+      "TPEX:3434": "'3434'",
+      "TPEX:4907": "'4907'",
+      "TPEX:5321": "'5321'",
+      "TPEX:5432": "'5432'",
+      "TPEX:6144": "'6144'",
+      "TPEX:8097": "'8097'",
+      "TPEX:8923": "'8923'"
+    },
+    "unresolved_monthly_listings": {},
+    "split_adjusted": true,
+    "session": "regular",
+    "recovery_reason": "Both chart providers omit the official Saturday session"
+  },
+  "collected_at": "2026-11-28T02:23:57.057141+00:00"
+}

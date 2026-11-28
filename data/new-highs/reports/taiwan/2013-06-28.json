@@ -1,0 +1,296 @@
+{
+  "schema_version": 1,
+  "market": "taiwan",
+  "date": "2013-06-28",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "1565.TWO",
+      "name": "St.Shine Optical Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Health Technology",
+      "high_type": "all_time",
+      "reason": "업종: Health Technology · Medical Specialties",
+      "description": "St.Shine Optical Co., Ltd. · Medical Specialties",
+      "change_pct": 3.8666666666666627,
+      "session_open": 750.0,
+      "session_close": 779.0,
+      "session_volume": 1257010.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:1565",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/1565.TWO/history/",
+        "date": "2013-06-28",
+        "daily_high": 790.0,
+        "prior_all_time_or_current_month_high": 790.0,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:1565",
+        "yahoo_symbol": "1565.TWO"
+      }
+    },
+    {
+      "ticker": "6284.TWO",
+      "name": "INPAQ Technology Co., Ltd",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Electronic Production Equipment",
+      "description": "INPAQ Technology Co., Ltd · Electronic Production Equipment",
+      "change_pct": 3.1249964442775724,
+      "session_open": 23.939687728881836,
+      "session_close": 24.201608657836914,
+      "session_volume": 3176828.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:6284",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6284.TWO/history/",
+        "date": "2013-06-28",
+        "daily_high": 24.725454330444336,
+        "prior_all_time_or_current_month_high": 51.25142288208008,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:6284",
+        "yahoo_symbol": "6284.TWO"
+      }
+    },
+    {
+      "ticker": "1702.TW",
+      "name": "Namchow Holdings Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Consumer Non-Durables",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Non-Durables · Food: Major Diversified",
+      "description": "Namchow Holdings Co., Ltd. · Food: Major Diversified",
+      "change_pct": 3.1770023034770167,
+      "session_open": 33.5,
+      "session_close": 34.099998474121094,
+      "session_volume": 4349000.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:1702",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/1702.TW/history/",
+        "date": "2013-06-28",
+        "daily_high": 34.79999923706055,
+        "prior_all_time_or_current_month_high": 48.5,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:1702",
+        "yahoo_symbol": "1702.TW"
+      }
+    },
+    {
+      "ticker": "1817.TW",
+      "name": "Sanitar Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Building Products",
+      "description": "Sanitar Co., Ltd. · Building Products",
+      "change_pct": 2.112677427918852,
+      "session_open": 29.0,
+      "session_close": 29.0,
+      "session_volume": 100000000.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:1817",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/1817.TW/history/",
+        "date": "2013-06-28",
+        "daily_high": 29.0,
+        "prior_all_time_or_current_month_high": 29.0,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:1817",
+        "yahoo_symbol": "1817.TW"
+      }
+    },
+    {
+      "ticker": "2013.TW",
+      "name": "China Steel Structure Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Industrial Services",
+      "high_type": "all_time",
+      "reason": "업종: Industrial Services · Engineering & Construction",
+      "description": "China Steel Structure Co., Ltd. · Engineering & Construction",
+      "change_pct": 2.564102564102555,
+      "session_open": 39.099998474121094,
+      "session_close": 40.0,
+      "session_volume": 782000.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2013",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2013.TW/history/",
+        "date": "2013-06-28",
+        "daily_high": 40.0,
+        "prior_all_time_or_current_month_high": 40.0,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:2013",
+        "yahoo_symbol": "2013.TW"
+      }
+    },
+    {
+      "ticker": "2355.TW",
+      "name": "Chin-Poon Industrial Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "all_time",
+      "reason": "업종: Electronic Technology · Electronic Components",
+      "description": "Chin-Poon Industrial Co., Ltd. · Electronic Components",
+      "change_pct": 5.389221556886237,
+      "session_open": 42.45000076293945,
+      "session_close": 44.0,
+      "session_volume": 4437000.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2355",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2355.TW/history/",
+        "date": "2013-06-28",
+        "daily_high": 44.45000076293945,
+        "prior_all_time_or_current_month_high": 44.45000076293945,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:2355",
+        "yahoo_symbol": "2355.TW"
+      }
+    },
+    {
+      "ticker": "2367.TW",
+      "name": "Unitech Printed Circuit Board Corp.",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Electronic Components",
+      "description": "Unitech Printed Circuit Board Corp. · Electronic Components",
+      "change_pct": 3.9999992995774614,
+      "session_open": 11.13461685180664,
+      "session_close": 11.328262329101562,
+      "session_volume": 37704977.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2367",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2367.TW/history/",
+        "date": "2013-06-28",
+        "daily_high": 11.618730545043945,
+        "prior_all_time_or_current_month_high": 35.356876373291016,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:2367",
+        "yahoo_symbol": "2367.TW"
+      }
+    },
+    {
+      "ticker": "2412.TW",
+      "name": "Chunghwa Telecom Co., Ltd",
+      "exchange": "TWSE",
+      "category": "Communications",
+      "high_type": "52_week",
+      "reason": "업종: Communications · Major Telecommunications",
+      "description": "Chunghwa Telecom Co., Ltd · Major Telecommunications",
+      "change_pct": 6.360790799857274,
+      "session_open": 95.9000015258789,
+      "session_close": 102.0,
+      "session_volume": 20830000.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2412",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2412.TW/history/",
+        "date": "2013-06-28",
+        "daily_high": 102.0,
+        "prior_all_time_or_current_month_high": 111.0,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:2412",
+        "yahoo_symbol": "2412.TW"
+      }
+    },
+    {
+      "ticker": "4904.TW",
+      "name": "Far Eastone Telecommunications Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Communications",
+      "high_type": "all_time",
+      "reason": "업종: Communications · Wireless Telecommunications",
+      "description": "Far Eastone Telecommunications Co., Ltd. · Wireless Telecommunications",
+      "change_pct": 5.091385905440315,
+      "session_open": 77.5,
+      "session_close": 80.5,
+      "session_volume": 16232000.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:4904",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/4904.TW/history/",
+        "date": "2013-06-28",
+        "daily_high": 80.5,
+        "prior_all_time_or_current_month_high": 80.5,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:4904",
+        "yahoo_symbol": "4904.TW"
+      }
+    },
+    {
+      "ticker": "9938.TW",
+      "name": "Taiwan Paiho Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Process Industries",
+      "high_type": "52_week",
+      "reason": "업종: Process Industries · Industrial Specialties",
+      "description": "Taiwan Paiho Co., Ltd. · Industrial Specialties",
+      "change_pct": 6.794057041631718,
+      "session_open": 23.700000762939453,
+      "session_close": 25.149999618530273,
+      "session_volume": 3037000.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:9938",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/9938.TW/history/",
+        "date": "2013-06-28",
+        "daily_high": 25.149999618530273,
+        "prior_all_time_or_current_month_high": 42.15721893310547,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:9938",
+        "yahoo_symbol": "9938.TW"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-11-28T02:30:55.632486+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 2371,
+    "history_symbols": 1517,
+    "inactive_symbols": 843,
+    "failed_symbols": 11,
+    "coverage_ratio": 0.9928010471204188,
+    "coverage_by_exchange": {
+      "TWSE": {
+        "covered": 843,
+        "total": 850
+      },
+      "TPEX": {
+        "covered": 674,
+        "total": 678
+      }
+    },
+    "session_symbols": 1484,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-11-28T02:30:55.632486+00:00"
+}

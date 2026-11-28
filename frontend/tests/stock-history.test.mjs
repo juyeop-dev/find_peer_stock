@@ -114,6 +114,7 @@ test("a 2015 IPO's fresh short snapshot cannot hide its first trading year",asyn
 test('2014 archive controls preserve prior closes and read lossless prices through the real fetch client',async()=>{
   assert.ok(CHART_PERIODS.includes('since2014'));
   assert.equal(chartStart('2026-11-14','since2014'),'2014-01-01');
+  assert.equal(chartStart('2026-11-14','since2013'),'2013-01-01');
   const points=['2013-12-27','2013-12-30','2014-01-02','2014-12-27','2014-12-29'].map(point);
   assert.deepEqual(historyRange(points,'since2014'),points.slice(1));
   const oldFetch=globalThis.fetch;

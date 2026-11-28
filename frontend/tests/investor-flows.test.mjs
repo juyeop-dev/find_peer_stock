@@ -7,7 +7,7 @@ const source=(await readFile(new URL("../src/dataClient/investorDataClient.ts",i
 const js=ts.transpileModule(source,{compilerOptions:{module:ts.ModuleKind.ESNext,target:ts.ScriptTarget.ES2022}}).outputText.replaceAll('import.meta.env.BASE_URL','"/"');
 const {validateInvestorDay,investorTotals,investorMoney,getInvestorData}=await import(`data:text/javascript;base64,${Buffer.from(js).toString("base64")}`);
 const archive=JSON.parse(await readFile(new URL("../../data/investors/index.json",import.meta.url),"utf8"));
-test("every archived day pairs both exact-date indices and source flows, including all 244 Korean 2024 trading days",()=>{
+test("every archived day pairs both exact-date indices and source flows",()=>{
   archive.history.forEach(validateInvestorDay);
   assert.equal(archive.history.filter(row=>row.date.startsWith("2024-")).length,244);
   assert.equal(archive.history.filter(row=>row.date.startsWith("2023-")).length,245);
@@ -20,7 +20,8 @@ test("every archived day pairs both exact-date indices and source flows, includi
   assert.equal(archive.history.filter(row=>row.date.startsWith("2016-")).length,246);
   assert.equal(archive.history.filter(row=>row.date.startsWith("2015-")).length,248);
   assert.equal(archive.history.filter(row=>row.date.startsWith("2014-")).length,245);
-  assert.equal(archive.history[0].date,"2014-01-02");
+  assert.equal(archive.history.filter(row=>row.date.startsWith("2013-")).length,247);
+  assert.equal(archive.history[0].date,"2013-01-02");
   const anomaly=archive.history.find(row=>row.date==="2015-10-08").markets.find(row=>row.market==="KOSDAQ");
   assert.equal(anomaly.market_net_difference,45000000);
   assert.ok(anomaly.source_warning);

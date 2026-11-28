@@ -19,6 +19,8 @@ from zoneinfo import ZoneInfo
 ROOT = Path(__file__).resolve().parents[1]
 SNAPSHOT = ROOT / "data/chart-replay/markets.json"
 PUBLIC = ROOT / "frontend/public/data/chart-replay/markets.json"
+START = "2013-01-01"
+FIRST_KOSPI_SESSION = "2013-01-02"
 SYMBOLS = [("^KS11", "코스피", "Asia/Seoul"), ("GC=F", "금 선물 (연속)", "America/New_York")]
 
 
@@ -37,7 +39,7 @@ def collect_kospi() -> dict:
     for item in chart.iter("item"):
         day, opening, high, low, close, volume = item.attrib["data"].split("|")
         day = datetime.strptime(day, "%Y%m%d").strftime("%Y-%m-%d")
-        if day < "2014-01-01" or day >= today:
+        if day < START or day >= today:
             continue
         opening, high, low, close, volume = map(float, (opening, high, low, close, volume))
         if not all(math.isfinite(v) and v > 0 for v in (opening, high, low, close)) or low > min(opening, close) or high < max(opening, close) or not math.isfinite(volume) or volume < 0:
@@ -47,7 +49,7 @@ def collect_kospi() -> dict:
         raise ValueError("Insufficient or duplicate Naver index sessions")
     # Naver's XML endpoint silently caps index rows at about 3,000 even when
     # count is larger. Extend only with verified same-provider index pages.
-    if bars[0]["date"] > "2014-01-02":
+    if bars[0]["date"] > FIRST_KOSPI_SESSION:
         archived = json.loads((ROOT / "data/investors/index.json").read_bytes())
         indices = {row['date']: market['index'] for row in archived['history']
                    for market in row['markets'] if market['market'] == 'KOSPI'}
@@ -57,7 +59,7 @@ def collect_kospi() -> dict:
             raise ValueError('Naver index page and XML OHLC bases differ')
         prefix = []
         for day, row in sorted(indices.items()):
-            if not '2014-01-01' <= day < bars[0]['date']:
+            if not START <= day < bars[0]['date']:
                 continue
             if row['date'] != day or not all(type(row.get(key)) in [int, float] and math.isfinite(row[key]) and row[key] > 0 for key in ['open', 'high', 'low', 'close']):
                 raise ValueError('Historical Naver index OHLC is incomplete')
@@ -65,8 +67,8 @@ def collect_kospi() -> dict:
                 raise ValueError('Historical Naver index OHLC bounds differ')
             prefix.append({key: row[key] for key in ['date', 'open', 'high', 'low', 'close']} |
                           {'adjusted_close': row['close'], 'volume': None})
-        if not prefix or prefix[0]['date'] != '2014-01-02':
-            raise ValueError('The capped XML response requires the verified 2014 index prefix')
+        if not prefix or prefix[0]['date'] != FIRST_KOSPI_SESSION:
+            raise ValueError(f'The capped XML response requires the verified {START[:4]} index prefix')
         bars = prefix + bars
     return {"ticker": "^KS11", "name": "코스피", "currency": "KRW", "source": "Naver Finance · KOSPI (^KS11)", "source_url": url,
             "historical_index_source": "https://m.stock.naver.com/api/index/KOSPI/price?pageSize=60",
@@ -74,11 +76,16 @@ def collect_kospi() -> dict:
 
 
 def collect(ticker: str, name: str, zone: str) -> dict:
-    query = urllib.parse.urlencode({"period1": 1388534400, "period2": int(datetime.now(timezone.utc).timestamp()), "interval": "1d"})
+    start = datetime.fromisoformat(f"{START}T00:00:00+00:00")
+    query = urllib.parse.urlencode({"period1": int(start.timestamp()), "period2": int(datetime.now(timezone.utc).timestamp()), "interval": "1d"})
     url = f"https://query1.finance.yahoo.com/v8/finance/chart/{urllib.parse.quote(ticker, safe='')}?{query}"
     request = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 StockPeer", "Accept": "application/json"})
     with urllib.request.urlopen(request, timeout=45) as response:
         payload = json.load(response)
+    return parse_yahoo_replay(payload, ticker, name, zone, url)
+
+
+def parse_yahoo_replay(payload: dict, ticker: str, name: str, zone: str, url: str) -> dict:
     if payload["chart"].get("error"):
         raise ValueError(payload["chart"]["error"])
     result = payload["chart"]["result"][0]

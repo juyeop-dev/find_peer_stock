@@ -1,0 +1,321 @@
+{
+  "schema_version": 1,
+  "market": "china",
+  "date": "2013-06-25",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "600688.SS",
+      "name": "Sinopec Shanghai Petrochemical Co. Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Energy Minerals",
+      "high_type": "52_week",
+      "reason": "업종: Energy Minerals · Oil Refining/Marketing",
+      "description": "Sinopec Shanghai Petrochemical Co. Ltd. Class A · Oil Refining/Marketing",
+      "change_pct": 4.936513356531735,
+      "session_open": 3.3066658973693848,
+      "session_close": 3.3066658973693848,
+      "session_volume": 179718239.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:600688",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/600688.SS/history/",
+        "date": "2013-06-25",
+        "daily_high": 3.3066658973693848,
+        "prior_all_time_or_current_month_high": 9.99555492401123,
+        "passes_close_filter": true,
+        "source_symbol": "SSE:600688",
+        "yahoo_symbol": "600688.SS"
+      }
+    },
+    {
+      "ticker": "600871.SS",
+      "name": "Sinopec Oilfield Service Corporation Class A",
+      "exchange": "SSE",
+      "category": "Industrial Services",
+      "high_type": "52_week",
+      "reason": "업종: Industrial Services · Contract Drilling",
+      "description": "Sinopec Oilfield Service Corporation Class A · Contract Drilling",
+      "change_pct": 5.054630098468826,
+      "session_open": 5.126666069030762,
+      "session_close": 5.126666069030762,
+      "session_volume": 2493064.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:600871",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/600871.SS/history/",
+        "date": "2013-06-25",
+        "daily_high": 5.126666069030762,
+        "prior_all_time_or_current_month_high": 11.279999732971191,
+        "passes_close_filter": true,
+        "source_symbol": "SSE:600871",
+        "yahoo_symbol": "600871.SS"
+      }
+    },
+    {
+      "ticker": "001896.SZ",
+      "name": "Henan Yuneng Holding Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Utilities",
+      "high_type": "52_week",
+      "reason": "업종: Utilities · Electric Utilities",
+      "description": "Henan Yuneng Holding Co., Ltd. Class A · Electric Utilities",
+      "change_pct": 10.076040112337758,
+      "session_open": 5.150000095367432,
+      "session_close": 5.789999961853027,
+      "session_volume": 19317196.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:001896",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/001896.SZ/history/",
+        "date": "2013-06-25",
+        "daily_high": 5.789999961853027,
+        "prior_all_time_or_current_month_high": 13.989999771118164,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:001896",
+        "yahoo_symbol": "001896.SZ"
+      }
+    },
+    {
+      "ticker": "002259.SZ",
+      "name": "Sichuan Shengda Forestry Industry Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Utilities",
+      "high_type": "52_week",
+      "reason": "업종: Utilities · Gas Distributors",
+      "description": "Sichuan Shengda Forestry Industry Co., Ltd. Class A · Gas Distributors",
+      "change_pct": 6.937798415371943,
+      "session_open": 4.139999866485596,
+      "session_close": 4.46999979019165,
+      "session_volume": 37046190.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002259",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002259.SZ/history/",
+        "date": "2013-06-25",
+        "daily_high": 4.599999904632568,
+        "prior_all_time_or_current_month_high": 6.0833330154418945,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:002259",
+        "yahoo_symbol": "002259.SZ"
+      }
+    },
+    {
+      "ticker": "002261.SZ",
+      "name": "Talkweb Information System Co. Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Technology Services",
+      "high_type": "52_week",
+      "reason": "업종: Technology Services · Packaged Software",
+      "description": "Talkweb Information System Co. Ltd. Class A · Packaged Software",
+      "change_pct": 10.000008091783474,
+      "session_open": 4.707141876220703,
+      "session_close": 5.185713768005371,
+      "session_volume": 149502088.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002261",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002261.SZ/history/",
+        "date": "2013-06-25",
+        "daily_high": 5.185713768005371,
+        "prior_all_time_or_current_month_high": 8.60073184967041,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:002261",
+        "yahoo_symbol": "002261.SZ"
+      }
+    },
+    {
+      "ticker": "002292.SZ",
+      "name": "Alpha Group Class A",
+      "exchange": "SZSE",
+      "category": "Consumer Durables",
+      "high_type": "all_time",
+      "reason": "업종: Consumer Durables · Recreational Products",
+      "description": "Alpha Group Class A · Recreational Products",
+      "change_pct": 6.934306061231665,
+      "session_open": 9.350000381469727,
+      "session_close": 10.255000114440918,
+      "session_volume": 43836668.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002292",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002292.SZ/history/",
+        "date": "2013-06-25",
+        "daily_high": 10.359999656677246,
+        "prior_all_time_or_current_month_high": 10.359999656677246,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:002292",
+        "yahoo_symbol": "002292.SZ"
+      }
+    },
+    {
+      "ticker": "002351.SZ",
+      "name": "Edifier Technology Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Consumer Durables",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Durables · Electronics/Appliances",
+      "description": "Edifier Technology Co., Ltd. Class A · Electronics/Appliances",
+      "change_pct": 10.03168651520614,
+      "session_open": 3.0666658878326416,
+      "session_close": 3.4733328819274902,
+      "session_volume": 41120253.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002351",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002351.SZ/history/",
+        "date": "2013-06-25",
+        "daily_high": 3.4733328819274902,
+        "prior_all_time_or_current_month_high": 7.070000171661377,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:002351",
+        "yahoo_symbol": "002351.SZ"
+      }
+    },
+    {
+      "ticker": "002589.SZ",
+      "name": "Realcan Pharmaceutical Group Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Health Technology",
+      "high_type": "all_time",
+      "reason": "업종: Health Technology · Pharmaceuticals: Generic",
+      "description": "Realcan Pharmaceutical Group Co., Ltd. Class A · Pharmaceuticals: Generic",
+      "change_pct": 9.771569308606342,
+      "session_open": 4.217391014099121,
+      "session_close": 4.701086044311523,
+      "session_volume": 13806467.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002589",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002589.SZ/history/",
+        "date": "2013-06-25",
+        "daily_high": 4.701086044311523,
+        "prior_all_time_or_current_month_high": 4.701086044311523,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:002589",
+        "yahoo_symbol": "002589.SZ"
+      }
+    },
+    {
+      "ticker": "002640.SZ",
+      "name": "Global Top E-Commerce Co. Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Retail Trade",
+      "high_type": "all_time",
+      "reason": "업종: Retail Trade · Internet Retail",
+      "description": "Global Top E-Commerce Co. Ltd. Class A · Internet Retail",
+      "change_pct": 3.2817394643636755,
+      "session_open": 3.541666030883789,
+      "session_close": 3.671665906906128,
+      "session_volume": 32064642.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002640",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002640.SZ/history/",
+        "date": "2013-06-25",
+        "daily_high": 3.858333110809326,
+        "prior_all_time_or_current_month_high": 3.858333110809326,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:002640",
+        "yahoo_symbol": "002640.SZ"
+      }
+    },
+    {
+      "ticker": "300212.SZ",
+      "name": "Beijing E-Hualu Information Technology Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Technology Services",
+      "high_type": "all_time",
+      "reason": "업종: Technology Services · Information Technology Services",
+      "description": "Beijing E-Hualu Information Technology Co., Ltd. Class A · Information Technology Services",
+      "change_pct": 9.98558192868526,
+      "session_open": 13.011187553405762,
+      "session_close": 14.713541030883789,
+      "session_volume": 8591859.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:300212",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/300212.SZ/history/",
+        "date": "2013-06-25",
+        "daily_high": 14.713541030883789,
+        "prior_all_time_or_current_month_high": 14.713541030883789,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:300212",
+        "yahoo_symbol": "300212.SZ"
+      }
+    },
+    {
+      "ticker": "300229.SZ",
+      "name": "TRS Information Technology Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Technology Services",
+      "high_type": "all_time",
+      "reason": "업종: Technology Services · Packaged Software",
+      "description": "TRS Information Technology Co., Ltd. Class A · Packaged Software",
+      "change_pct": 5.847074393172891,
+      "session_open": 6.553332805633545,
+      "session_close": 7.059999942779541,
+      "session_volume": 50987457.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:300229",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/300229.SZ/history/",
+        "date": "2013-06-25",
+        "daily_high": 7.2133331298828125,
+        "prior_all_time_or_current_month_high": 7.2133331298828125,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:300229",
+        "yahoo_symbol": "300229.SZ"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-11-28T02:31:17.774534+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 5315,
+    "history_symbols": 2320,
+    "inactive_symbols": 2987,
+    "failed_symbols": 8,
+    "coverage_ratio": 0.9965635738831615,
+    "coverage_by_exchange": {
+      "SSE": {
+        "covered": 890,
+        "total": 892
+      },
+      "SZSE": {
+        "covered": 1430,
+        "total": 1436
+      }
+    },
+    "session_symbols": 2318,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-11-28T02:31:17.774534+00:00"
+}

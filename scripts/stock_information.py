@@ -355,10 +355,14 @@ def collect(db, rows, limit=None, force=False):
                 old = db.execute("SELECT value FROM information WHERE ticker=?", (row["ticker"],)).fetchone()
                 if old:
                     previous = json.loads(old[0])
+                    value["requested_start"] = min(value["requested_start"], previous.get("requested_start", START))
                     keys = {(item["type"], item["period_end"]) for item in value["financials"]}
                     value["financials"] = sorted(value["financials"] + [item for item in previous.get("financials", []) if (item["type"], item["period_end"]) not in keys], key=lambda item: (item["period_end"], item["type"]))
                     for key in ["historical_financials_fetched_at", "historical_financials_warning", "historical_2024_h2_fetched_at", "historical_2024_h2_coverage", "historical_2024_coverage", "historical_2024_fetched_at", "historical_2023_coverage", "historical_2023_fetched_at", "historical_2022_coverage", "historical_2022_fetched_at", "historical_2021_coverage", "historical_2021_fetched_at", "historical_2020_coverage", "historical_2020_fetched_at", "historical_2019_coverage", "historical_2019_fetched_at", "historical_2018_coverage", "historical_2018_fetched_at", "historical_2017_coverage", "historical_2017_fetched_at", "historical_2016_coverage", "historical_2016_fetched_at", "historical_2014_coverage", "historical_2014_fetched_at", "historical_2015_coverage", "historical_2015_fetched_at", "prior_financial_snapshots"]:
                         if key in previous: value[key] = previous[key]
+                    for key in ("historical_2013_coverage", "historical_2013_fetched_at"):
+                        if key in previous:
+                            value[key] = previous[key]
                     dates = sorted(item["period_end"] for item in value["financials"])
                     value["financial_coverage"].update(first_period=dates[0] if dates else None, latest_period=dates[-1] if dates else None)
                     if value["quote"] is None and previous.get("quote"):

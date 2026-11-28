@@ -5,7 +5,7 @@ import ts from 'typescript';
 
 const source = await readFile(new URL('../src/dataClient/chartReplay.ts', import.meta.url), 'utf8');
 const javascript = ts.transpileModule(source, { compilerOptions: { module: ts.ModuleKind.ESNext, target: ts.ScriptTarget.ES2022 } }).outputText;
-const { aggregateReplay, hasOHLC, replayAverage, replayRange, replayReturns, validateReplayMarket, validReplayDate } = await import(`data:text/javascript;base64,${Buffer.from(javascript).toString('base64')}`);
+const { alignReplayDates, aggregateReplay, hasOHLC, replayAverage, replayRange, replayReturns, validateReplayMarket, validReplayDate } = await import(`data:text/javascript;base64,${Buffer.from(javascript).toString('base64')}`);
 const bar = (date, close, extra = {}) => ({ date, close, adjusted_close: close, volume: null, ...extra });
 const { initialReplaySettings, restoreReplaySettings } = await import(`data:text/javascript;base64,${Buffer.from(javascript).toString('base64')}`);
 
@@ -18,9 +18,25 @@ test('stock replay defaults to a full one-year return overlay with matching date
   assert.equal(value.selections[0].end, '2024-03-01');
   assert.equal(value.selections[1].ticker, '');
   assert.equal(value.selections[1].start, value.selections[0].start);
-  assert.equal(initialReplaySettings(undefined).overlay, false);
-  assert.equal(initialReplaySettings(undefined).selections[1].ticker, 'GC=F');
   assert.equal(initialReplaySettings('MU', '', '', new Date('2024-02-29T00:00:00Z')).selections[0].start, '2023-02-28');
+});
+
+test('market replay opens the full KOSPI and gold comparison through the current Seoul date', () => {
+  const settings = initialReplaySettings(undefined, undefined, undefined, new Date('2026-11-27T16:00:00Z'));
+  assert.equal(settings.overlay, true);
+  assert.equal(settings.count, null);
+  assert.deepEqual(settings.selections.map(({ ticker, start, end }) => [ticker, start, end]), [
+    ['^KS11', '2026-01-01', '2026-11-28'], ['GC=F', '2026-01-01', '2026-11-28'],
+  ]);
+});
+
+test('same-date replay skips non-shared sessions on both markets and uses the same return base date', () => {
+  const kospi = [bar('2026-01-02', 100), bar('2026-01-05', 105), bar('2026-01-06', 110), bar('2026-01-07', 115)];
+  const gold = [bar('2026-01-05', 200), bar('2026-01-07', 210), bar('2026-01-08', 220)];
+  const [a, b] = alignReplayDates(kospi, gold);
+  assert.deepEqual(a, [kospi[1], kospi[3]]);
+  assert.deepEqual(b, [gold[0], gold[1]]);
+  assert.deepEqual([replayReturns(a)[0].value, replayReturns(b)[0].value], [0, 0]);
 });
 
 test('legacy gold defaults migrate to peer selection while intentional saved comparisons and new layout preferences survive', () => {

@@ -1,0 +1,346 @@
+{
+  "schema_version": 1,
+  "market": "taiwan",
+  "date": "2013-11-12",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "1580.TWO",
+      "name": "Sinmag Equipment Corporation",
+      "exchange": "TPEX",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Industrial Machinery",
+      "description": "Sinmag Equipment Corporation · Industrial Machinery",
+      "change_pct": 2.517987798829502,
+      "session_open": 124.66020202636719,
+      "session_close": 127.341064453125,
+      "session_volume": 974844.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:1580",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/1580.TWO/history/",
+        "date": "2013-11-12",
+        "daily_high": 132.2559814453125,
+        "prior_all_time_or_current_month_high": 132.2559814453125,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:1580",
+        "yahoo_symbol": "1580.TWO"
+      }
+    },
+    {
+      "ticker": "3252.TWO",
+      "name": "Haiwan International Development Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Consumer Services",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Services · Hotels/Resorts/Cruise lines",
+      "description": "Haiwan International Development Co., Ltd. · Hotels/Resorts/Cruise lines",
+      "change_pct": 6.907897904721461,
+      "session_open": 31.337141036987305,
+      "session_close": 31.337141036987305,
+      "session_volume": 252594.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:3252",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/3252.TWO/history/",
+        "date": "2013-11-12",
+        "daily_high": 31.337141036987305,
+        "prior_all_time_or_current_month_high": 103.86225128173828,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:3252",
+        "yahoo_symbol": "3252.TWO"
+      }
+    },
+    {
+      "ticker": "5864.TWO",
+      "name": "Concord International Securities Co., Ltd",
+      "exchange": "TPEX",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "업종: Finance · Investment Banks/Brokers",
+      "description": "Concord International Securities Co., Ltd · Investment Banks/Brokers",
+      "change_pct": 1.4906825727061257,
+      "session_open": 4.757373809814453,
+      "session_close": 4.757373809814453,
+      "session_volume": 69502.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:5864",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/5864.TWO/history/",
+        "date": "2013-11-12",
+        "daily_high": 4.833073139190674,
+        "prior_all_time_or_current_month_high": 4.833073139190674,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:5864",
+        "yahoo_symbol": "5864.TWO"
+      }
+    },
+    {
+      "ticker": "5904.TWO",
+      "name": "POYA International Co., Ltd.",
+      "exchange": "TPEX",
+      "category": "Retail Trade",
+      "high_type": "all_time",
+      "reason": "업종: Retail Trade · Specialty Stores",
+      "description": "POYA International Co., Ltd. · Specialty Stores",
+      "change_pct": 3.2352941360497045,
+      "session_open": 15.241955757141113,
+      "session_close": 15.735077857971191,
+      "session_volume": 5823782.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:5904",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/5904.TWO/history/",
+        "date": "2013-11-12",
+        "daily_high": 15.959223747253418,
+        "prior_all_time_or_current_month_high": 15.959223747253418,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:5904",
+        "yahoo_symbol": "5904.TWO"
+      }
+    },
+    {
+      "ticker": "6104.TWO",
+      "name": "Genesys Logic, Inc.",
+      "exchange": "TPEX",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Semiconductors",
+      "description": "Genesys Logic, Inc. · Semiconductors",
+      "change_pct": 3.728071973301139,
+      "session_open": 23.5,
+      "session_close": 23.649999618530273,
+      "session_volume": 2834922.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:6104",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6104.TWO/history/",
+        "date": "2013-11-12",
+        "daily_high": 24.350000381469727,
+        "prior_all_time_or_current_month_high": 67.5,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:6104",
+        "yahoo_symbol": "6104.TWO"
+      }
+    },
+    {
+      "ticker": "6146.TWO",
+      "name": "Sporton International Inc.",
+      "exchange": "TPEX",
+      "category": "Commercial Services",
+      "high_type": "all_time",
+      "reason": "업종: Commercial Services · Miscellaneous Commercial Services",
+      "description": "Sporton International Inc. · Miscellaneous Commercial Services",
+      "change_pct": 5.809120904799747,
+      "session_open": 106.26240539550781,
+      "session_close": 107.95582580566406,
+      "session_volume": 1613954.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:6146",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6146.TWO/history/",
+        "date": "2013-11-12",
+        "daily_high": 108.37918853759766,
+        "prior_all_time_or_current_month_high": 108.37918853759766,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:6146",
+        "yahoo_symbol": "6146.TWO"
+      }
+    },
+    {
+      "ticker": "6434.TWO",
+      "name": "TacBright Optronics Corp.",
+      "exchange": "TPEX",
+      "category": "Process Industries",
+      "high_type": "all_time",
+      "reason": "업종: Process Industries · Containers/Packaging",
+      "description": "TacBright Optronics Corp. · Containers/Packaging",
+      "change_pct": 0.0,
+      "session_open": 14.989999771118164,
+      "session_close": 14.989999771118164,
+      "session_volume": 376301.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:6434",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6434.TWO/history/",
+        "date": "2013-11-12",
+        "daily_high": 17.68000030517578,
+        "prior_all_time_or_current_month_high": 17.68000030517578,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:6434",
+        "yahoo_symbol": "6434.TWO"
+      }
+    },
+    {
+      "ticker": "8027.TWO",
+      "name": "E&R Engineering Corp.",
+      "exchange": "TPEX",
+      "category": "Producer Manufacturing",
+      "high_type": "all_time",
+      "reason": "업종: Producer Manufacturing · Industrial Machinery",
+      "description": "E&R Engineering Corp. · Industrial Machinery",
+      "change_pct": 1561.1884156414405,
+      "session_open": 13.463168144226074,
+      "session_close": 13.463168144226074,
+      "session_volume": 340835.0,
+      "currency": "TWD",
+      "source_symbol": "TPEX:8027",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/8027.TWO/history/",
+        "date": "2013-11-12",
+        "daily_high": 19.994237899780273,
+        "prior_all_time_or_current_month_high": 19.994237899780273,
+        "passes_close_filter": true,
+        "source_symbol": "TPEX:8027",
+        "yahoo_symbol": "8027.TWO"
+      }
+    },
+    {
+      "ticker": "1540.TW",
+      "name": "Roundtop Machinery Industries Co., Ltd",
+      "exchange": "TWSE",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Industrial Machinery",
+      "description": "Roundtop Machinery Industries Co., Ltd · Industrial Machinery",
+      "change_pct": 6.770829090641772,
+      "session_open": 19.700000762939453,
+      "session_close": 20.5,
+      "session_volume": 5263000.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:1540",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/1540.TW/history/",
+        "date": "2013-11-12",
+        "daily_high": 20.5,
+        "prior_all_time_or_current_month_high": 41.04347610473633,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:1540",
+        "yahoo_symbol": "1540.TW"
+      }
+    },
+    {
+      "ticker": "2440.TW",
+      "name": "Space Shuttle Hi-Tech Co. Ltd.",
+      "exchange": "TWSE",
+      "category": "Producer Manufacturing",
+      "high_type": "52_week",
+      "reason": "업종: Producer Manufacturing · Electrical Products",
+      "description": "Space Shuttle Hi-Tech Co. Ltd. · Electrical Products",
+      "change_pct": 6.609806801649887,
+      "session_open": 10.0,
+      "session_close": 10.0,
+      "session_volume": 257000.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2440",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2440.TW/history/",
+        "date": "2013-11-12",
+        "daily_high": 10.0,
+        "prior_all_time_or_current_month_high": 223.0825958251953,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:2440",
+        "yahoo_symbol": "2440.TW"
+      }
+    },
+    {
+      "ticker": "2466.TW",
+      "name": "Cosmo Electronics Corporation",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Semiconductors",
+      "description": "Cosmo Electronics Corporation · Semiconductors",
+      "change_pct": 0.1526716368894121,
+      "session_open": 29.315324783325195,
+      "session_close": 29.45000457763672,
+      "session_volume": 144787.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:2466",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/2466.TW/history/",
+        "date": "2013-11-12",
+        "daily_high": 29.494897842407227,
+        "prior_all_time_or_current_month_high": 128.58258056640625,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:2466",
+        "yahoo_symbol": "2466.TW"
+      }
+    },
+    {
+      "ticker": "6277.TW",
+      "name": "Aten International Co., Ltd.",
+      "exchange": "TWSE",
+      "category": "Electronic Technology",
+      "high_type": "52_week",
+      "reason": "업종: Electronic Technology · Computer Peripherals",
+      "description": "Aten International Co., Ltd. · Computer Peripherals",
+      "change_pct": 0.8794027525820924,
+      "session_open": 80.0,
+      "session_close": 80.30000305175781,
+      "session_volume": 989000.0,
+      "currency": "TWD",
+      "source_symbol": "TWSE:6277",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/6277.TW/history/",
+        "date": "2013-11-12",
+        "daily_high": 82.30000305175781,
+        "prior_all_time_or_current_month_high": 156.7891082763672,
+        "passes_close_filter": true,
+        "source_symbol": "TWSE:6277",
+        "yahoo_symbol": "6277.TW"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-11-28T02:30:55.632486+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 2371,
+    "history_symbols": 1517,
+    "inactive_symbols": 843,
+    "failed_symbols": 11,
+    "coverage_ratio": 0.9928010471204188,
+    "coverage_by_exchange": {
+      "TWSE": {
+        "covered": 843,
+        "total": 850
+      },
+      "TPEX": {
+        "covered": 674,
+        "total": 678
+      }
+    },
+    "session_symbols": 1499,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-11-28T02:30:55.632486+00:00"
+}

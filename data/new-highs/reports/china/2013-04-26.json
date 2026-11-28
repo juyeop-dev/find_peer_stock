@@ -1,0 +1,346 @@
+{
+  "schema_version": 1,
+  "market": "china",
+  "date": "2013-04-26",
+  "summary": "Yahoo Finance 과거 일봉으로 복원했습니다. 당일 장중 고가가 52주·전체기간 고가에 도달하고 음봉 또는 전일 대비 하락 마감이 아닌 종목입니다.",
+  "sources": [
+    {
+      "label": "Yahoo Finance historical data",
+      "url": "https://finance.yahoo.com/"
+    },
+    {
+      "label": "TradingView stock universe",
+      "url": "https://www.tradingview.com/screener/"
+    },
+    {
+      "label": "TradingView 신고가 산정 기준",
+      "url": "https://www.tradingview.com/support/solutions/43000753745-how-are-high-low-and-new-high-new-low-calculated/"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "600182.SS",
+      "name": "Giti Tire Corporation Class A",
+      "exchange": "SSE",
+      "category": "Consumer Durables",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Durables · Automotive Aftermarket",
+      "description": "Giti Tire Corporation Class A · Automotive Aftermarket",
+      "change_pct": 0.1949269360935979,
+      "session_open": 10.149999618530273,
+      "session_close": 10.279999732971191,
+      "session_volume": 8825975.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:600182",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/600182.SS/history/",
+        "date": "2013-04-26",
+        "daily_high": 10.739999771118164,
+        "prior_all_time_or_current_month_high": 15.1899995803833,
+        "passes_close_filter": true,
+        "source_symbol": "SSE:600182",
+        "yahoo_symbol": "600182.SS"
+      }
+    },
+    {
+      "ticker": "600315.SS",
+      "name": "Shanghai Jahwa United Co. Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Consumer Non-Durables",
+      "high_type": "all_time",
+      "reason": "업종: Consumer Non-Durables · Household/Personal Care",
+      "description": "Shanghai Jahwa United Co. Ltd. Class A · Household/Personal Care",
+      "change_pct": 0.9285736590016969,
+      "session_open": 46.41999816894531,
+      "session_close": 47.099998474121094,
+      "session_volume": 6124020.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:600315",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/600315.SS/history/",
+        "date": "2013-04-26",
+        "daily_high": 49.19333267211914,
+        "prior_all_time_or_current_month_high": 49.19333267211914,
+        "passes_close_filter": true,
+        "source_symbol": "SSE:600315",
+        "yahoo_symbol": "600315.SS"
+      }
+    },
+    {
+      "ticker": "600419.SS",
+      "name": "Xinjiang Terun Dairy Co., Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Consumer Non-Durables",
+      "high_type": "52_week",
+      "reason": "업종: Consumer Non-Durables · Food: Meat/Fish/Dairy",
+      "description": "Xinjiang Terun Dairy Co., Ltd. Class A · Food: Meat/Fish/Dairy",
+      "change_pct": 10.014105622941273,
+      "session_open": 6.511092185974121,
+      "session_close": 6.863042831420898,
+      "session_volume": 25780855.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:600419",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/600419.SS/history/",
+        "date": "2013-04-26",
+        "daily_high": 6.863042831420898,
+        "prior_all_time_or_current_month_high": 9.404911041259766,
+        "passes_close_filter": true,
+        "source_symbol": "SSE:600419",
+        "yahoo_symbol": "600419.SS"
+      }
+    },
+    {
+      "ticker": "600535.SS",
+      "name": "Tasly Pharmaceutical Group Co. Ltd. Class A",
+      "exchange": "SSE",
+      "category": "Health Technology",
+      "high_type": "all_time",
+      "reason": "업종: Health Technology · Pharmaceuticals: Major",
+      "description": "Tasly Pharmaceutical Group Co. Ltd. Class A · Pharmaceuticals: Major",
+      "change_pct": 2.942799094950166,
+      "session_open": 26.14285659790039,
+      "session_close": 26.610713958740234,
+      "session_volume": 11473532.0,
+      "currency": "CNY",
+      "source_symbol": "SSE:600535",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/600535.SS/history/",
+        "date": "2013-04-26",
+        "daily_high": 26.857141494750977,
+        "prior_all_time_or_current_month_high": 26.857141494750977,
+        "passes_close_filter": true,
+        "source_symbol": "SSE:600535",
+        "yahoo_symbol": "600535.SS"
+      }
+    },
+    {
+      "ticker": "000688.SZ",
+      "name": "GuoCheng Mining Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Non-Energy Minerals",
+      "high_type": "52_week",
+      "reason": "업종: Non-Energy Minerals · Other Metals/Minerals",
+      "description": "GuoCheng Mining Co., Ltd. Class A · Other Metals/Minerals",
+      "change_pct": 119.57672628455738,
+      "session_open": 8.119999885559082,
+      "session_close": 8.300000190734863,
+      "session_volume": 66648077.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:000688",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/000688.SZ/history/",
+        "date": "2013-04-26",
+        "daily_high": 9.65999984741211,
+        "prior_all_time_or_current_month_high": 15.199999809265137,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:000688",
+        "yahoo_symbol": "000688.SZ"
+      }
+    },
+    {
+      "ticker": "000819.SZ",
+      "name": "Yueyang Xingchang Petro-Chemical Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Process Industries",
+      "high_type": "52_week",
+      "reason": "업종: Process Industries · Chemicals: Specialty",
+      "description": "Yueyang Xingchang Petro-Chemical Co., Ltd. Class A · Chemicals: Specialty",
+      "change_pct": 1.4266270486480215,
+      "session_open": 10.399529457092285,
+      "session_close": 10.634586334228516,
+      "session_volume": 9639056.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:000819",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/000819.SZ/history/",
+        "date": "2013-04-26",
+        "daily_high": 10.969366073608398,
+        "prior_all_time_or_current_month_high": 27.119070053100586,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:000819",
+        "yahoo_symbol": "000819.SZ"
+      }
+    },
+    {
+      "ticker": "000820.SZ",
+      "name": "Shenwu Energy Saving Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Industrial Services",
+      "high_type": "52_week",
+      "reason": "업종: Industrial Services · Engineering & Construction",
+      "description": "Shenwu Energy Saving Co., Ltd. Class A · Engineering & Construction",
+      "change_pct": 67.3701408279751,
+      "session_open": 8.59000015258789,
+      "session_close": 10.3100004196167,
+      "session_volume": 49386925.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:000820",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/000820.SZ/history/",
+        "date": "2013-04-26",
+        "daily_high": 10.3100004196167,
+        "prior_all_time_or_current_month_high": 13.229999542236328,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:000820",
+        "yahoo_symbol": "000820.SZ"
+      }
+    },
+    {
+      "ticker": "002148.SZ",
+      "name": "Beijing Bewinner Communications Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Technology Services",
+      "high_type": "52_week",
+      "reason": "업종: Technology Services · Packaged Software",
+      "description": "Beijing Bewinner Communications Co., Ltd. Class A · Packaged Software",
+      "change_pct": 9.981515288051956,
+      "session_open": 10.704999923706055,
+      "session_close": 11.899999618530273,
+      "session_volume": 29522874.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002148",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002148.SZ/history/",
+        "date": "2013-04-26",
+        "daily_high": 11.899999618530273,
+        "prior_all_time_or_current_month_high": 17.399999618530273,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:002148",
+        "yahoo_symbol": "002148.SZ"
+      }
+    },
+    {
+      "ticker": "002344.SZ",
+      "name": "Haining China Leather Market Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Finance",
+      "high_type": "all_time",
+      "reason": "업종: Finance · Real Estate Development",
+      "description": "Haining China Leather Market Co., Ltd. Class A · Real Estate Development",
+      "change_pct": 7.021455839005952,
+      "session_open": 17.75,
+      "session_close": 19.204999923706055,
+      "session_volume": 6757814.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002344",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002344.SZ/history/",
+        "date": "2013-04-26",
+        "daily_high": 19.309999465942383,
+        "prior_all_time_or_current_month_high": 19.309999465942383,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:002344",
+        "yahoo_symbol": "002344.SZ"
+      }
+    },
+    {
+      "ticker": "002701.SZ",
+      "name": "ORG Technology Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Process Industries",
+      "high_type": "all_time",
+      "reason": "업종: Process Industries · Containers/Packaging",
+      "description": "ORG Technology Co., Ltd. Class A · Containers/Packaging",
+      "change_pct": 4.745231443015929,
+      "session_open": 4.088541030883789,
+      "session_close": 4.2825517654418945,
+      "session_volume": 58097809.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:002701",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/002701.SZ/history/",
+        "date": "2013-04-26",
+        "daily_high": 4.359375,
+        "prior_all_time_or_current_month_high": 4.359375,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:002701",
+        "yahoo_symbol": "002701.SZ"
+      }
+    },
+    {
+      "ticker": "300236.SZ",
+      "name": "Shanghai Sinyang Semiconductor Materials Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Process Industries",
+      "high_type": "52_week",
+      "reason": "업종: Process Industries · Industrial Specialties",
+      "description": "Shanghai Sinyang Semiconductor Materials Co., Ltd. Class A · Industrial Specialties",
+      "change_pct": 10.007518312054131,
+      "session_open": 6.091666221618652,
+      "session_close": 6.091666221618652,
+      "session_volume": 1078884.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:300236",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/300236.SZ/history/",
+        "date": "2013-04-26",
+        "daily_high": 6.091666221618652,
+        "prior_all_time_or_current_month_high": 8.866665840148926,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:300236",
+        "yahoo_symbol": "300236.SZ"
+      }
+    },
+    {
+      "ticker": "300251.SZ",
+      "name": "Beijing Enlight Media Co., Ltd. Class A",
+      "exchange": "SZSE",
+      "category": "Consumer Services",
+      "high_type": "all_time",
+      "reason": "업종: Consumer Services · Movies/Entertainment",
+      "description": "Beijing Enlight Media Co., Ltd. Class A · Movies/Entertainment",
+      "change_pct": 7.613628113400872,
+      "session_open": 5.0346150398254395,
+      "session_close": 5.463460922241211,
+      "session_volume": 134555184.0,
+      "currency": "CNY",
+      "source_symbol": "SZSE:300251",
+      "high_verification": {
+        "source": "Yahoo Finance split-adjusted daily/monthly history",
+        "source_url": "https://finance.yahoo.com/quote/300251.SZ/history/",
+        "date": "2013-04-26",
+        "daily_high": 5.573075771331787,
+        "prior_all_time_or_current_month_high": 5.573075771331787,
+        "passes_close_filter": true,
+        "source_symbol": "SZSE:300251",
+        "yahoo_symbol": "300251.SZ"
+      }
+    }
+  ],
+  "source_metadata": {
+    "provider": "Yahoo Finance chart history",
+    "universe_provider": "TradingView public scanner",
+    "fetched_at": "2026-11-28T02:31:17.774534+00:00",
+    "universe": "Current TradingView-listed stock instruments; ETFs excluded; delisted historical listings excluded",
+    "scanned_symbols": 5315,
+    "history_symbols": 2320,
+    "inactive_symbols": 2987,
+    "failed_symbols": 8,
+    "coverage_ratio": 0.9965635738831615,
+    "coverage_by_exchange": {
+      "SSE": {
+        "covered": 890,
+        "total": 892
+      },
+      "SZSE": {
+        "covered": 1430,
+        "total": 1436
+      }
+    },
+    "session_symbols": 2318,
+    "split_adjusted": true
+  },
+  "collected_at": "2026-11-28T02:31:17.774534+00:00"
+}
