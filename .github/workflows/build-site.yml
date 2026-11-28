@@ -27,7 +27,7 @@ jobs:
       # Release pushes replace stale builds; scheduled collectors keep queuing.
       cancel-in-progress: ${{ github.event_name == 'push' }}
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 60
     steps:
       - name: Check out repository
         uses: actions/checkout@v5
@@ -218,6 +218,9 @@ jobs:
             sleep 1
           done
           npm run test:korean-search:browser
+
+      - name: Verify published 2013 histories
+        run: python scripts/audit_publication_2013.py --public frontend/dist/data
 
       - name: Verify published 2014 and retained 2015/2016/2017 histories
         run: |

@@ -60,6 +60,9 @@ jobs:
         run: npm run build
       - name: Copy SPA fallback
         run: cp frontend/dist/index.html frontend/dist/404.html
+      - name: Verify published 2013 histories against committed sources
+        run: python scripts/audit_publication_2013.py --public frontend/dist/data
+
       - name: Verify published 2014 and retained 2015/2016/2017 histories against committed sources
         run: |
           python scripts/audit_publication_2014.py --artifact frontend/dist
